@@ -8,6 +8,12 @@
 
 ## 最新進度
 
+- **工作區納入版控並推上 GitHub**（2026-08-03，**推翻 2026-07-17「這裡不做版控」**）：母 repo＝`git@github.com:justty32/modding_skyrim.git`（**public**），`projects/` 下 **10 個子專案為 submodule**。首版 commit `80c9386`，內容 **2.2 MB / 753 檔全是文字**。
+  - 為此新開三個 **private** repo 並推上：`skyrim_darksouls_port`、`skyrim_sofia_patch`、`skyrim_game_data`（先前沒有 remote；內容敏感——DS 資產抽取器、逐字提取的對白）。ModForge 的 `110b0fc` 也推了，否則 submodule 會釘在未 push 的 commit 上。
+  - `.gitignore` 排除 **490MB 的他人 clone**：`external/frameworks/`（193M）、`analysis/tool-survey/repos/`（294M）——著作權 + 體積，且各自帶 `.git`；`findings/`、README、`external/mods/` 保留。
+  - **驗收＝實跑 `git clone --recurse-submodules` 到暫存區**，10 個 submodule 全抓下來且有內容，不是只看 push 成功。
+  - 🔴 **唯一沒納入的：`projects/houseCARL`**——別人 repo 的 fork 且本機 HEAD 在未推上 fork 的 rebase 分支，釘成 submodule 會讓別人 clone 直接失敗。已 gitignore，解法見 [WAIT_USER.md](WAIT_USER.md)。
+
 - **darksouls-port P1 實機驗收通過，進 P2**（2026-08-03）：用 agent-bridge 的 QA 迴圈全程無 GUI 裝入 + 進場（`mo2ctl install/launch` → `POST /console`），使用者實看確認「整個北方不死院都有了」，玩家 Z 穩定 19973–19977 十五秒 → **成形 ✅、地板站得住 ✅**。三個回報事項的根因已全部定位並寫進 [projects/darksouls-port/p1/P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md)（commit `e0c1f7f`）：
   - **幽靈碰撞**＝`collision_hulls.py --planar-thresh` 預設 **1.5 m** 太寬，連通分量整塊換成凸包 → (a) 有門洞的牆把門洞填實（`h0006` 實測憑空多 **56.9 m²**）(b) 起伏 ≤1.5 m 的曲面/階梯塌成實心塊。修法＝門檻降到 0.05–0.10 m + 對「凸包面積/實際面積」超標的分量另走 V-HACD。
   - **DS-only 擺放物**＝MSB 324 筆裡 **Object 151 + DummyObject 18** 完全沒移植；且 **ConnectCollision 2 筆（`h0054B1`/`h0099B1`）是地圖切換觸發體卻被當實心碰撞進口**——獨立做的距離分析正好抓到 `h0099` 是離視覺 >30 m 的 18 m 方塊，兩條線互相印證。**剔除判準要用 MSB part 型別，不是距離。**
