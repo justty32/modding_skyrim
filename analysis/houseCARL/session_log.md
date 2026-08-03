@@ -1,0 +1,36 @@
+# session_log.md
+
+- 2026-07-10：建立 houseCARL 精簡 Analysis 工作目錄，目標限定為 Manjaro + Proton Skyrim + MO2 執行適配。
+- 2026-07-10：clone `https://github.com/Avick3110/houseCARL` 至 `projects/houseCARL`，目前 HEAD 為 `e463f55`。
+- 2026-07-10：讀取 README、plugin MCP 設定、MO2/load-order/config 相關 C# 原始碼，確認官方路線是 Windows installer，但 server 支援 native stdio/http。
+- 2026-07-10：盤點本機 Skyrim/MO2 路徑，確認 MO2 ini 使用 Wine `Z:\\home\\...` gamePath，因此 native Linux 不適合直接使用 Mo2InstanceDir 模式。
+- 2026-07-10：執行 `dotnet build housecarl.sln` 成功，並確認 framework-dependent 執行會因缺 .NET 9 / ASP.NET Core 9 runtime 失敗。
+- 2026-07-10：執行 Linux self-contained publish 成功，並以 explicit DataDir/ModsDir/ProfileDir 啟動 HTTP server 成功。
+- 2026-07-10：撰寫 `answers/linux-manjaro-mo2-runbook.md`，整理建議安裝、Codex MCP 註冊、風險與最小驗證順序。
+- 2026-07-10：將 houseCARL publish 到 `~/tools/housecarl/server`，並用 `codex mcp add housecarl` 註冊 explicit paths 版 stdio MCP server。
+- 2026-07-10：以手寫 MCP client 驗證 `tools/list`、`housecarl_load_order_status`、`housecarl_skse_inventory`、`housecarl_read_record` 均可呼叫。
+- 2026-07-10：修正本機 houseCARL source 的 Linux loose asset path 問題，使 `SKSE\Plugins` 能對應到 Linux `SKSE/Plugins` 並成功讀到 65 個 SKSE DLL。
+- 2026-07-10：重開前快照：houseCARL 已全域註冊為 Codex MCP，server 在 `~/tools/housecarl/server/housecarl-mcp`，重開 Codex 後於 `/home/lorkhan/repo/pas` 測試 `housecarl_load_order_status`；已知警告為 3 個 CC plugin 實體缺失與 profile 缺 `Skyrim.ini`，暫勿用 in-place edit。
+- 2026-07-10（Claude Code，`~/repo/ModForge` session）：在 Claude Code 註冊同一個 server 並實測讀取工具。發現 `corpus.json` 未被複製到 exe 旁（publish 不含此步），導致 `cross_plugin_query` 與**全部寫入工具**失效；用 self-contained publish 的 generator 重生後補上，不需重啟即生效。
+- 2026-07-10：確認上一條「profile 缺 `Skyrim.ini`」是**誤診**——`profiles/Default/skyrim.ini` 一直存在且含完整 `[Archive]`，是 `ArchiveDiscovery` 硬編碼大寫檔名、Linux 大小寫敏感所致。
+- 2026-07-10：再找出兩個同類 bug：`AssetResolver` 的 loose subtree 快取 key 大小寫不敏感但路徑組合大小寫敏感（小寫查詢會毒化整個子樹，讓 `validate_dialogue` 把已編譯腳本誤報為 `WILL NOT FIRE`）；`DialogueValidate` 用全大寫 `SEQ\` 找磁碟上的 `Seq/`，謊報缺 `.seq`。另修 `DialogueValidate` 非 ASCII 檢查把合法 Windows-1252 字元誤報為 mojibake。
+- 2026-07-10：三個修正皆以 harness 驗證（asset 解析 5 項 + 編碼分類 7 項全過，且已移除先前的 `Skyrim.ini` symlink workaround，確保測的是程式碼）；`dotnet build housecarl.sln` 成功。新 server 以目錄 rename 換上，舊版備份於 `~/tools/housecarl/server.bak-<timestamp>/`。**需重啟 MCP server 才生效**。
+- 2026-07-10：發現 upstream 的 `AssetResolverProbe` 其 fixture 用 `Path.Combine(dir, "meshes\\actors\\...")` 建檔，在 Linux 上反斜線是普通字元 → 該 probe 從未在 Linux 跑過（其 FAIL 與本次修正無關）。另 `Path.IsPathRooted("C:\\...")` 在 Linux 為 false，所以 drive-rooted 拒絕的 arm 也失效。
+- 2026-07-10：依 upstream `CONTRIBUTING.md`（一 PR 一改動、必須附「改前失敗改後通過」且不依賴遊戲資料的 probe）新增兩個跨平台 probe 並拆成兩條 branch，推到 fork `justty32/houseCARL`（remote `fork`）：
+  - `fix/linux-loose-asset-resolution`（分隔符 + 大小寫 A/B/C）＋ `case-insensitive-asset-guard`：pristine main 9 FAIL → branch 0 FAIL。
+  - `fix/dialogue-encoding-lint`（非 ASCII 檢查拆兩級）＋ `dialogue-encoding-guard`：pristine main 8 FAIL → branch 0 FAIL。
+  - 兩者皆以 `git worktree` 從 main 乾淨組裝，互不依賴；本機 `main` 工作區仍保留未提交的聯集（不破壞既有 WIP）。
+- 2026-07-10：**upstream PR 尚未開**（`Avick3110/houseCARL`；CONTRIBUTING 要求非 typo 修正先開 issue），待決定。
+- 2026-07-10：以 `SearchUI` (Nexus 155713) 實測。檔案層安裝進 `mods/SearchUI` + 手改 profile 三檔（先關 MO2，否則它退出時會用記憶體清單覆寫）。`load_order_status` 立刻反映（103→104 enabled、52→53 plugins），證實「profile 變動自動 refresh、不需重啟」。
+- 2026-07-10：**bug A 的真實世界 repro（比合成 fixture 強）**：vanilla Steam 的 `Data/Scripts/` 裡是 `quest.pex`（小寫）。舊 binary 下 `asset_status("Scripts/Quest.pex")` 回報 `WINS: Data (loose)`（檔名表大小寫不敏感 → 判定存在），但 `validate_scripts` 拿同一個 resolver 給的路徑去開檔卻得到 `Input file does not exist .../Data/Scripts/Quest.pex`。同一 process 兩個矛盾答案，正是「回報 present 的路徑不可開啟」。修好的版本回傳磁碟真實檔名 → extends chain 可走完。
+- 2026-07-10：`asset_status` 順帶發現 `Scripts/SKI_ConfigBase.pex` 的 winner 是 `MCM Recorder (loose)`，蓋過 `SkyUI_SE.bsa`。若版本落後會影響**全部** MCM 選單。屬於 xEdit 看不到（不看資產）的類別，值得單獨查證。
+- 2026-07-10：`cross_plugin_query --conflict_tree` 對 CELL 的 `Persistent/Temporary/NavigationMeshes` 差異措辭是 record 層級（"field deltas vs winner"），**不等於執行期刪除**（CELL 子 ref 各自獨立、由引擎逐一合併）。易誤讀，引用時要註明。
+- 2026-07-10：**撤回**前一條對 `SKI_ConfigBase.pex` 的風險警告。追查結果：MCM Recorder 夾帶的 loose `SKI_ConfigBase.pex` 是作者 mrowr 於 2022-01-17 從 SkyUI 原始碼重編的改造版（pex header: user=mrowr machine=MROWR-PURR），SkyUI 5.2SE 本體自 2018 未動，蓋過去無害。
+- 2026-07-10：追查同時揭出一條真實的手動 patch：`MCM Recorder/Scripts/` 下的 `SKI_ConfigManager.pex` 與 `McmRecorder.pex` 於 2026-06-13 12:27 被覆寫（其餘檔案仍是 2022 zip 的 mtime）。前者與 `MCM Unlocked.bsa` 內的 `scripts\ski_configmanager.pex` **byte-identical**（sha f0031693cb13）；後者含 `mcmunlocked` / `GetConfigBase` 字串，是 MCM Unlocked 作者重編的相容版。MCM Unlocked 的 zip 下載於同日 12:21。
+  - 這個覆寫是**必要且正確**的：MCM Recorder 夾帶 loose 腳本，而 loose 永遠贏 BSA，否則 MCM Unlocked 放在 BSA 的 patched `SKI_ConfigManager` 會被靜默遮蔽（該 BSA 內的 MessageBox 字串顯示作者知道這個坑）。
+  - **潛在維護風險**：若 MCM Unlocked 日後更新 BSA，`MCM Recorder/` 下那份 loose 複本會再度靜默遮蔽新版。`asset_status Scripts/SKI_ConfigManager.pex` 會顯示 `MCM Recorder (loose) > MCM Unlocked.bsa`；升級後必須重新覆寫。
+- 2026-07-10（方法備忘）：`.pex` header（big-endian：magic FA57C0DE、compilationTime u64、sourceFileName/username/machinename）是判斷「誰、何時、用什麼編譯器」的最省事證據；MCM Unlocked / Nether's Follower Framework 都把 user/machine 塗成 `-----`。另：本機 shell 的 `grep -r` 預設跳過 binary，搜 pex 內容必須加 `-a`。
+- 2026-07-17：盤點發現 main 落後 upstream 91 commits(已出到 1.8.1),且兩條 fix branch **從未開 PR**(`gh pr list --author justty32` 為空)。確認 upstream 未自行修掉同類問題(cherry 比對 + 原始碼檢查)。
+- 2026-07-17：main fast-forward 至 `8385fc6`;兩條 fix branch rebase 至該點。`fix/linux-loose-asset-resolution` 在 `LoadOrderService.cs` 有一處純位置衝突(upstream 在同位置插入 SKSE config audit 區段 vs branch 的 `AssetFileName`/`SeqExistsBeside` helpers),兩側皆保留解掉。
+- 2026-07-17：驗證:`dotnet build` 0 error;本機無 .NET 9 / AspNetCore runtime(僅 8 與 10),故照 runbook 以 self-contained publish generator 跑 probe——`case-insensitive-asset-guard` PASS、`dialogue-encoding-guard` PASS。
+- 2026-07-17：待使用者決定 force-push fork 與開 upstream PR(見根目錄 WAIT_USER.md)。

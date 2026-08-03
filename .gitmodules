@@ -1,0 +1,30 @@
+[submodule "projects/agent-bridge"]
+	path = projects/agent-bridge
+	url = git@github.com:justty32/skyrim_agent_bridge.git
+[submodule "projects/darksouls-port"]
+	path = projects/darksouls-port
+	url = git@github.com:justty32/skyrim_darksouls_port.git
+[submodule "projects/game-data"]
+	path = projects/game-data
+	url = git@github.com:justty32/skyrim_game_data.git
+[submodule "projects/godot-worldspace-editor"]
+	path = projects/godot-worldspace-editor
+	url = git@github.com:justty32/skyrim_godot_worldspace_editor.git
+[submodule "projects/model-converter"]
+	path = projects/model-converter
+	url = git@github.com:justty32/skyrim_model_converter.git
+[submodule "projects/ModForge"]
+	path = projects/ModForge
+	url = git@github.com:justty32/skyrim_modforge.git
+[submodule "projects/my_skyrim_plugin_1"]
+	path = projects/my_skyrim_plugin_1
+	url = git@github.com:justty32/my_skyrim_plugin_1.git
+[submodule "projects/scene-capture-bridge"]
+	path = projects/scene-capture-bridge
+	url = git@github.com:justty32/skyrim_scene_capture_bridge.git
+[submodule "projects/skyrim-voicegen"]
+	path = projects/skyrim-voicegen
+	url = git@github.com:justty32/skyrim_voicegen.git
+[submodule "projects/sofia-patch"]
+	path = projects/sofia-patch
+	url = git@github.com:justty32/skyrim_sofia_patch.git
