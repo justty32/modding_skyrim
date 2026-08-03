@@ -1,0 +1,18 @@
+# --- 他人的 clone 與二進位素材:不進版控 ---------------------------------
+# 著作權(不是我們的產物)+ 體積(合計約 490MB)+ 它們各自都有自己的 .git。
+# 需要時照各自 README 重新 clone。
+/external/frameworks/
+/analysis/tool-survey/repos/
+
+# --- houseCARL:暫不列為 submodule -------------------------------------
+# 它是 Avick3110/houseCARL 的 fork,且本機 HEAD 在 rebase 過的
+# fix/dialogue-encoding-lint(87ce894)——那個 commit 還沒推上 fork,
+# 釘成 submodule 會讓別人 clone 直接壞掉。等 WAIT_USER 裡的 force-push
+# 決定拍板後再加。
+/projects/houseCARL/
+
+# --- 本機環境 ---------------------------------------------------------
+venv/
+.venv/
+__pycache__/
+*.pyc
