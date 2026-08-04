@@ -12,6 +12,12 @@
 
 ## Open
 
+- **houseCARL 的 `set_mo2_instance` 在 Linux 下不能用——第三個同族 Linux 路徑 bug**（2026-08-04）：指向 `~/games/mod-organizer-2-skyrimspecialedition/modorganizer2` 被拒，錯誤是找不到 `Z:\home\lorkhan\.local\share\Steam\steamapps\common\Skyrim Special Edition/Data`。它把 `ModOrganizer.ini` 的 `gamePath` 當字面路徑用，**沒有把 Wine 的 `Z:\` 前綴翻回 Linux 路徑**，然後接上 `/Data` 就成了混合式的壞路徑。跟已在本檔掛著的 `fix/linux-loose-asset-resolution` 是同一家族。
+
+  **實際影響有限**：explicit-paths mode 全程可用（本次建檔、DLL 檢查、load order 讀取都是在這個模式下完成的）。**唯一失去的是 `load_order_status(profile=...)` 跨 profile 檢查**——無法用它比對 `Default` 與新建的 `QA`，只能直接讀 profile 檔案。
+
+  要你定：**是否開第三條 fix branch**？考慮到 fork 上已經有兩條沒推、PR 從未開出（見下面兩條），再加一條會讓那筆債更難清。另一個選項是先不修，維持 explicit-paths mode。
+
 - **`projects/houseCARL` 還沒納入母 repo 的 submodule**（2026-08-03）：它是 `Avick3110/houseCARL` 的 fork，本機 HEAD 在 `fix/dialogue-encoding-lint`（`87ce894`）——**那個 rebase 過的 commit 還沒推上 fork**，釘成 submodule 會讓別人 `clone --recurse-submodules` 直接失敗。目前用 `.gitignore` 排除。解法二選一，要你定：
   1. 先做上面那條 force-push（把兩條 fix branch 推上 fork），再把 submodule 釘在 fork 的分支上；
   2. 或 submodule 只釘 `main`（`8385fc6`，已在 origin），fix branch 留本機。
