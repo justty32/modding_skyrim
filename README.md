@@ -8,7 +8,7 @@ Skyrim SE modding 的開發、分析、產物集中地。**不是 git repo**;只
 |---|---|
 | **做好的 mod / plugin 成品**(拿去部署、安裝) | [`dist/`](dist/README.md) —— `mods/`(mod 包)、`plugins/`(SKSE DLL)、`libs/`、`docs/`;每個成品資料夾內有 `SOURCE.md` 記來源。**歷史自製成品目前在 `~/skyrim_mods/mine/`**(DSPort*/ModForge*/MF* 系列,使用者決定留原地),新成品才進 dist/ |
 | 開發中的原始碼 | `projects/` —— 見下表;各自是獨立 git repo |
-| 引擎/SKSE 知識、分析文件 | `analysis/` —— `skyrim_engine/`(CommonLibSSE-NG 引擎手冊)、`skyrim_mods/`(七個參考 mod 拆解)、`houseCARL/`(Linux 適配 runbook)、`mod-survey/`(136 份他人 mod 結構化調查)、`tool-survey/`(製作工具調查)、`followers-patch/`(8 份隨從人設 brief) |
+| 引擎/SKSE 知識、分析文件 | `analysis/` —— `skyrim_engine/`(CommonLibSSE-NG 引擎手冊)、`skyrim_mods/`(七個參考 mod 拆解)、`houseCARL/`(Linux 適配 runbook)、`mod-survey/`(136 份他人 mod 結構化調查)、`tool-survey/`(製作工具調查)、`followers-patch/`(8 份隨從人設 brief)、`port-source-survey/`(移植素材來源候選調查) |
 | 他人的 mod、框架、參考素材 | 實體在 **`~/skyrim_mods/`**(97G 下載庫:`hdd/`、`aa/`、根目錄壓縮檔;解壓素材在 `unzip/`;使用者決定留原地不遷)。[`external/`](external/README.md) 是未來新進素材的預定落點 |
 
 ## `projects/` 裡有什麼
