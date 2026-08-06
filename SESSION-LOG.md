@@ -8,6 +8,17 @@
 
 ## 最新進度
 
+- **三個 agent 並行：碰撞修正實機複驗、流水線 P1 落地、mod 庫清理**（2026-08-06）：本 session 把三條線同時推進——Claude 做 darksouls-port 碰撞，**codex CLI** 做流水線 P1，**pi + deepseek-v4-pro** 做 mod 庫。三者各據一個獨立 git repo（`projects/darksouls-port` / `projects/agent-bridge` / `~/notes`），不搶 index.lock。
+  - **跨 agent 的通道是 tmux，不是 stdin 注入。** 「找到 process 丟 stdin」在這台機器上做不到：互動模式的 stdin 是 tty，寫 `/proc/<pid>/fd/0` 是寫到終端裝置（方向反了），而唯一能塞進 tty 輸入佇列的 `ioctl(TIOCSTI)` 被 `dev.tty.legacy_tiocsti=0` 關掉（kernel 6.2 起預設關）。**tmux 持有 pty master，`send-keys` 是合法寫入**；`capture-pane` 讀回。使用者可隨時 `attach` 插手，實際上也這樣做了。
+  - **darksouls-port P2 碰撞修正完成**（commit `1d65760`、`20c6fad`）：`decompose_components()` 改成「近平面 patch 廣度優先成長 → 憑空面積遞迴二分」，V-HACD 從這條路徑移除。**全 47 檔憑空碰撞面積 27,774 m² → 314 m²（降 98.9%）**，hulls 4,893 → 17,706，載體 NIF 116 → 332（過濾後）。實機複驗：玩家 Z 從 19973 降到 **19937**，低的 0.54 m 正是舊版增厚地板的量。使用者實走：**「只有過門會卡，過道基本沒問題」**——根因(b) 幽靈牆消失，根因(a) 門洞填實仍在。細節與下一步參數見 [projects/darksouls-port/p1/P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md)。
+    - **判準必須是「憑空面積」而不是 patch 自己的填充率**：patch 邊界本來就鋸齒狀，凸包蓋到的是隔壁 patch 的真實幾何。填充率版本實測會把平坦的牆切成單一三角形（h0006 47→319 hulls）。同理 fill 只能在 patch **長完之後**檢查，邊長邊檢查等於自我封鎖（47→231）。
+    - **剩下的 314 m² 全集中在門洞，是因為 `--ghost-tol` 是逐顆 hull 的容許量**——門洞切成數顆、每顆各填 0.24 m² 就把門框內縮到卡人。掃描出 0.02 是甜蜜點（+30% hull 換 20 倍改善），**使用者決定先收現狀不套用**。
+    - **`ModForge package` 會併進既有輸出目錄**，不會清乾淨：被過濾掉的 5 個載體 NIF 就這樣一路混到 MO2。重新打包前先 `rm -rf out/DSPortP1`。`mo2ctl install --force` 本身是真的取代（實測 332 而非 337）。
+  - **流水線 P1 完成**（agent-bridge `b0e87ad`，codex 產出，9 個測試綠）：`mo2ctl inspect <archive> [--write-choices]`、`install --priority bottom|top|before:|after:` ＋ `--fomod-choices`、zip-slip 防護、7z/rar 偵測（無工具則 `handoff_user`）、FOMOD 宣告式解析與可重放、`archives.txt` 的 unmanaged BSA 維護、**優先權預設從 top 改為 bottom**、8 個單元測試。解析不了的 FOMOD 變體（`conditionalFileInstalls`、flag 傳遞、step 可見性條件）一律 `handoff_user`，不猜。
+  - 🔴 **P0.2「清掉 3 條 stale CC 條目」證實守不住**（profiles repo `ae3cf71`）：`Default/loadorder.txt` mtime 是 2026-08-05 20:37，**玩一次遊戲引擎就把那三條寫回去**，並把 `plugins.txt` header 換成 MO2 版、整檔重輸出成 CRLF。已把現實 commit 成新基準——與其每次產生雜訊 diff，不如讓靜態關卡的輸出保持乾淨。**這條計畫步驟本身是徒勞的，不要再花力氣清它。**
+  - **mod 庫 L1+L2 執行完畢**（`~/notes` commit `5eb1239`）：L1 完全重複 33 檔 / 0.47 GiB、L2 舊版本 74 檔 / 5.79 GiB。⚠️ **`.quarantine/2026-08-06/` 在建立後被刪除**，107 筆沒經 restore 就永久消失（ext4、無快照、不在 Trash）。**逐筆查證後實質損失為零**：L1 的孿生副本全在庫內，L2 的 64 組有 62 組留著新版，剩 2 組被刪光但都是使用者當場指定全刪的。真正的代價是**復原路徑沒了**，以及 MongoDB 有 107 筆標著 `quarantined_at` 但檔案不存在的不一致（重掃前要處理）。事故記錄在 `~/notes/projects/modding/skyrim/docs/2026-08-06-deletion-incident.md`。
+  - **mod 庫的 MongoDB 不在 systemd 那個服務上**：資料在 `~/data/mongodb`，要手動起 `mongod --dbpath ~/data/mongodb --port 27018`。所有治具要帶 `SKYRIM_MONGO_URI=mongodb://127.0.0.1:27018`。systemd 的 `mongodb.service`（27017）是空的。
+
 - **第三方 mod 流水線 + mod 庫建檔，兩份計畫開工**（2026-08-04）：兩份新計畫 [workflows/plans/third-party-mod-pipeline.md](workflows/plans/third-party-mod-pipeline.md)（取得→安裝→驗證）與 [workflows/plans/mod-library-catalog.md](workflows/plans/mod-library-catalog.md)（`~/skyrim_mods` 建檔與清理）。**程式落 `~/notes/projects/modding/skyrim/`**（使用者授權的例外，與 rimworld 那套同構；設計文件留本 repo，程式不進本 repo）。
   - **建檔完成**：1,692 個壓縮檔 → 去重後 **1,659 筆 / 85.7 GiB** 進 MongoDB（db `skyrim`），檔名解析 99.0%、0 失敗、1 分 46 秒。抄了 rimworld 最貴的教訓：`$set`（磁碟事實）／`$setOnInsert`（養成資料）從第一版就分離。
   - **DLL runtime 檢查完成**：186 個含 dll 的壓縮檔全查（自寫 PE export 解析，不載入 dll），**151 相容 1.6.1170 / 9 不相容 / 26 無法判定 / 0 失敗**；解析器已對 houseCARL 的已裝層讀值校驗通過（同樣抓到那 5 個 version-LOCKED）。
