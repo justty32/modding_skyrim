@@ -76,8 +76,8 @@ L2 這一級**必須等 A2 跑完**才產得出來（判準依賴在架狀態）
 ### Done when
 
 - [x] `candidates` collection 存在，schema 有否決狀態欄位（被否決過的不再出現在審閱清單）（2026-08-07 B1：schema + ingest/check/gallery 工具落地）
-- [ ] 至少一輪採集落地：截圖 + 翻譯後簡介 + 原始連結 + 連結存活狀態
-- [x] 本機 HTML 圖庫可開，使用者能在上面逐筆過目（2026-08-07 B1：`build_gallery.py` 已用暫存 DB fixture 驗證）
+- [x] 至少一輪採集落地：截圖 + 翻譯後簡介 + 原始連結 + 連結存活狀態（2026-08-07 B2/B3：`korean-public-2026-08-07-b2` 匯入 6 筆，連結 6/6 live）
+- [x] 本機 HTML 圖庫可開，使用者能在上面逐筆過目（2026-08-07 B1：`build_gallery.py` 已用暫存 DB fixture 驗證；2026-08-07 B3：`~/notes/projects/modding/skyrim/docs/candidates-gallery.html` 實批次 6 筆）
 - [ ] 地圖 porting 類的候選回饋到 `analysis/port-source-survey/`
 
 ### B1（codex）：`candidates` schema + 治具
@@ -94,6 +94,12 @@ L2 這一級**必須等 A2 跑完**才產得出來（判準依賴在架狀態）
 - **只抓不載**：抓頁面 HTML、截圖、原始連結。**絕不下載 mod 本體**
 - **產出格式**固定成 B1 定的資料夾結構，`meta.json` 欄位由 codex 指定
 - **翻譯**：只翻已抓下來的 `page.html` 內的原文成繁中，寫進 `meta.json` 的 `title_zh`/`summary_zh`。原文一併留著供對照
+
+2026-08-07 執行結果：
+
+- `agy` CLI 三次小/大批次嘗試都在 print mode timeout，沒有產出 fixture；前兩次主要問題是把大型 `~/skyrim_mods` workspace 掛進 agy，第三次不掛 workspace 仍超時。
+- `arca.live/b/tullius` 匿名 `curl` 目前回 hCaptcha 門檻，不能作為「機器抓到原物」通過。
+- 為完成 B2/B3，codex 改以 deterministic `curl`/Python 從公開 Tistory 頁建立 fixture：`~/skyrim_mods/.candidates/korean-public-2026-08-07-b2/`。本批 6 筆，禁止檔檢查通過，未下載 mod 本體。
 
 ### B3（codex）：收斂
 
