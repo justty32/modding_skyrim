@@ -1,4 +1,6 @@
-# plan：工作區結構整理（非侵入式佈局 + ModForge 升頂層）
+# plan：工作區結構整理（已被取代）
+
+> **狀態：不執行。** 2026-08-02/03 已改採 `projects/` 下多個獨立 git repo，並由母 repo 以 submodule 管理的佈局。本文只保留為歷史設計記錄，不是現役待辦。
 
 出計畫日期 2026-08-01。參照正規模板 `~/repo/workflows/`（kernel + flavor），採其 [non-invasive-import.md](file:///home/lorkhan/repo/workflows/non-invasive-import.md) 的非侵入式佈局。
 

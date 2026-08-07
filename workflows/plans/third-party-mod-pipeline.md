@@ -10,9 +10,9 @@
 
 ## Done when
 
-- [ ] P1：`.zip` 第三方 mod（含帶 FOMOD 的）能在不開 MO2 GUI、不用人點精靈的前提下裝進 MO2，且 FOMOD 選項記在檔案裡可重放。
-- [ ] P2：MO2 profile 走 git；`try/<mod>` 分支跑完紅燈後 `checkout main` 能把 profile 三檔還原到已驗證狀態，MO2 重啟後行為與安裝前一致。
-- [ ] P3：靜態關卡（houseCARL 五項）能在不啟動遊戲的前提下對新裝 mod 出一份 pass/fail 報告；插入式排序有明確落點決策依據。
+- [x] P1：archive + FOMOD 解析層已落地（2026-08-06，9 個測試綠）；真實第三方 mod 的整條實機驗收留在 P4。
+- [x] P2：MO2 profile 走 git；`try/<mod>` 可 pass 快進 main 或 fail 卸載新 mod 後回到 main。回滾判準已依實機修正為語意等價，不要求會被 MO2/引擎合法重寫的檔案 byte-identical。（2026-08-06）
+- [x] P3：`static-gates` 能在不啟動遊戲、不修改 profile 的前提下直接呼叫 houseCARL stdio MCP，產出 before/after pass/fail 報告；已對 live `Default` profile 與 `_ResourcePack.esl` 實測。（2026-08-06）
 - [ ] P4：至少一個真實第三方 `.zip` mod 走完全程（下載工作單 → 安裝 → 排序 → 靜態關卡 → `qa.json` 驗「到達地點 + 穿上裝備」→ 視覺 handoff），並在 git 留下一個可回滾的 commit。
 
 **不包含**：自動化下載（見 D5）、LOOT 整合（見 D2）、技能與劇情觸發的斷言（見 D4）、`/state` 的欄位擴充、`.7z`/`.rar` 的原生支援（見 D1）。
@@ -319,4 +319,6 @@ D3 原文寫「profile 三檔」是錯的。ini 類也必須版控——有些 m
 
 ## 八、狀態
 
-未動工。P0 五項（含重審上移的 git init）與 P1 為下一步。跨 session 狀態記到 `SESSION-LOG.md`，需使用者親自處理的（下載點擊、視覺驗收、private remote 開設）記到 `WAIT_USER.md`。
+P0–P3 已完成（2026-08-06）。實作在 `projects/agent-bridge/`：P1 `30a97be`、P2 `35d5692`、P3 `6106646`；2026-08-07 在另一台機器重跑 py_compile 與 20 個單元測試全綠。設計與 live smoke 證據分別在該 repo 的 `client/P1-ARCHIVE-FOMOD-REPORT.md`、`P2-PROFILE-GIT-REPORT.md`、`P3-STATIC-GATES-REPORT.md`。
+
+唯一剩餘的 Done when 是 P4：挑一個真實第三方 mod 走完下載工作單、安裝、排序、靜態關卡、`qa.json` 與視覺 handoff，並在 profile git 留可回滾 commit。這需家中 MO2/Skyrim 實機與使用者視覺驗收。

@@ -1,6 +1,6 @@
 # ~/repo/moddings/skyrim —— Skyrim modding 總資料夾
 
-Skyrim SE modding 的開發、分析、產物集中地。**不是 git repo**;只有 `projects/` 下各專案自帶版控。
+Skyrim SE modding 的開發、分析、產物集中地。本工作區是 public 母 git repo；`projects/` 下各開發專案保持獨立版控，其中 10 個由母 repo 以 submodule 管理。
 
 ## 你來找什麼?
 

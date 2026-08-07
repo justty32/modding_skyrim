@@ -12,6 +12,8 @@
 
 ## Open
 
+- **第三方 mod 流水線只剩 P4 端到端實機驗收**（2026-08-07）：P0–P3 已完成，20 個單元測試全綠。需在家挑一個真實第三方 mod，走完「下載工作單 → `try/<mod>` 安裝 → 排序 → houseCARL before/after 靜態關卡 → `qa.json` 實機 → 視覺 handoff → `try-pass`」，並確認 profile git 留下可回滾 commit。權威步驟見 [third-party-mod-pipeline.md](workflows/plans/third-party-mod-pipeline.md) P4。
+
 - **mod 庫的 MongoDB 有 107 筆不一致，重掃前要清**（2026-08-06）：那些筆標著 `quarantined_at` 但檔案在原位置和隔離區都不存在（`.quarantine/2026-08-06/` 被刪，見 SESSION-LOG）。`quarantine.py list` 對它們全部回報「✗ 檔案不見了」，`restore --all` 會全部失敗。要你定：是把這 107 筆的 `quarantined_at` 改成「已確認刪除」的終態，還是直接從 `archives` 移除？前者保留「這個 hash 曾經在庫裡」的知識（之後重下時能認出來），後者乾淨但會遺忘。**建議前者。**
 
   順帶：`mongod` 不是 systemd 那個。資料在 `~/data/mongodb`，要手動 `mongod --dbpath ~/data/mongodb --bind_ip 127.0.0.1 --port 27018 --logpath /tmp/mongod-manual.log --fork`，治具要帶 `SKYRIM_MONGO_URI=mongodb://127.0.0.1:27018`。

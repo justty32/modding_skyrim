@@ -17,8 +17,8 @@
 - [x] Phase 0 三項地基驗證全部有明確結論（通 / 不通 + 證據）。（2026-08-02 全通）
 - [x] `agent-bridge` DLL 能在 Proton 內的 Skyrim 進程起 HTTP server，Linux 端 `curl` 拿得到 `/state` 的 JSON、`/console` 能執行 `coc`。（2026-08-02，0.3.0；`/screenshot` 依 D6 移出本條件）
 - [x] **（2026-08-02 達成）** `mo2ctl install <mod資料夾>` 能在**不開 MO2 GUI** 的前提下讓一個 ModForge 產物出現在 MO2 並被 Skyrim 載入（用 `/state?include=plugins` 驗證 plugin 生效）。
-- [ ] 一份 `qa.json` 能跑完「裝 → 開 → 載 baseline → coc → assert → 交棒人工」全程，產出報告。（依 D6 拿掉截圖環節）
-- [ ] 至少一個既有 ModForge 產物（從 `wait_todo/ingame-tests.md` 挑）用這條迴圈完成一次驗證。
+- [x] 一份 `qa.json` 能跑完「裝 → 開 → 載 baseline → coc → assert → 交棒人工」全程，產出報告。（2026-08-02，smoke 8/8）
+- [x] 至少一個既有 ModForge 產物用這條迴圈完成一次驗證。（2026-08-02，`ModForgeNavmeshNoop.esp`）
 
 **不包含**：真·新遊戲流程（Helgen 開場 + 種族選單）自動化、跨機器/遠端執行、把 bridge 送進 Windows CI 出貨、任何給玩家用的產物。
 
@@ -321,7 +321,7 @@ smoke 前兩輪都掛在 `player.cell == "WhiterunBanneredMare"` 回 `""`，但�
 
 **Phase 0 / 1 / 2 / 3 全過，Phase 4 依 D6 只剩 handoff 而那已隨 3.2 落地。本計畫無 open 項。**
 
-程式碼與文檔的家：`projects/ModForge/sub_projs/agent-bridge/`（子專案 README 有 Pitfall 段；`client/QA-SCHEMA.md` 是 qa.json 的權威）。commit `50cebe6` / `fb94931` / `a7c5863` / `a1e5f31`，**未 push——使用者要自己 push，agent 不代勞**。
+程式碼與文檔的家：`projects/agent-bridge/`（子專案 README 有 Pitfall 段；`client/QA-SCHEMA.md` 是 qa.json 的權威）。原始結案 commits 為 `50cebe6` / `fb94931` / `a7c5863` / `a1e5f31`；後續已抽成獨立 repo 並 push。
 
 **MCP server 四個 tool 實機驗完**（`qa_status` / `qa_state` / `qa_console` / `qa_run`，註冊在 `~/.claude.json`，註冊當下那個 session 不生效、下一個才生效）。一輪完整 `qa_run` ≈ 30 秒（含冷啟動 19 秒），收尾後 profile 零殘留。
 
