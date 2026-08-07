@@ -91,6 +91,7 @@ L2 這一級**必須等 A2 跑完**才產得出來（判準依賴在架狀態）
 
 - **範圍**：arca.live 等**公開板**與公開部落格。**需登入／入會審核的站（Naver cafe 類）不做。**
 - **主題**：人物美化、獨立隨從、武器裝備、其他遊戲地圖 porting
+- **下一輪優先條件（使用者 2026-08-07 補充）**：Nexus 政策原因無法上架或較敏感的其他遊戲素材 porting；Google Drive 連結必須有效；優先一次很多套裝備/武器的合集，其次是地圖 porting。
 - **只抓不載**：抓頁面 HTML、截圖、原始連結。**絕不下載 mod 本體**
 - **產出格式**固定成 B1 定的資料夾結構，`meta.json` 欄位由 codex 指定
 - **翻譯**：只翻已抓下來的 `page.html` 內的原文成繁中，寫進 `meta.json` 的 `title_zh`/`summary_zh`。原文一併留著供對照
@@ -100,6 +101,7 @@ L2 這一級**必須等 A2 跑完**才產得出來（判準依賴在架狀態）
 - `agy` CLI 三次小/大批次嘗試都在 print mode timeout，沒有產出 fixture；前兩次主要問題是把大型 `~/skyrim_mods` workspace 掛進 agy，第三次不掛 workspace 仍超時。
 - `arca.live/b/tullius` 匿名 `curl` 目前回 hCaptcha 門檻，不能作為「機器抓到原物」通過。
 - 為完成 B2/B3，codex 改以 deterministic `curl`/Python 從公開 Tistory 頁建立 fixture：`~/skyrim_mods/.candidates/korean-public-2026-08-07-b2/`。本批 6 筆，禁止檔檢查通過，未下載 mod 本體。
+- 依使用者補充偏好追加 `korean-policy-porting-2026-08-07-b2b`：3 筆 live pending 候選（BDO Arethel/Heled、Dark Souls 3 Silver Knight、Bloodborne Lantern），均有有效 Google Drive 頁面連結且 `binary_downloaded=false`；另外 3 筆 Drive 失效候選只留在 `_dead_drive/`，不匯入 `skyrim.candidates`。
 
 ### B3（codex）：收斂
 
