@@ -14,10 +14,6 @@
 
 - **第三方 mod 流水線只剩 P4 端到端實機驗收**（2026-08-07）：P0–P3 已完成，20 個單元測試全綠。需在家挑一個真實第三方 mod，走完「下載工作單 → `try/<mod>` 安裝 → 排序 → houseCARL before/after 靜態關卡 → `qa.json` 實機 → 視覺 handoff → `try-pass`」，並確認 profile git 留下可回滾 commit。權威步驟見 [third-party-mod-pipeline.md](workflows/plans/third-party-mod-pipeline.md) P4。
 
-- **mod 庫的 MongoDB 有 107 筆不一致，重掃前要清**（2026-08-06）：那些筆標著 `quarantined_at` 但檔案在原位置和隔離區都不存在（`.quarantine/2026-08-06/` 被刪，見 SESSION-LOG）。`quarantine.py list` 對它們全部回報「✗ 檔案不見了」，`restore --all` 會全部失敗。要你定：是把這 107 筆的 `quarantined_at` 改成「已確認刪除」的終態，還是直接從 `archives` 移除？前者保留「這個 hash 曾經在庫裡」的知識（之後重下時能認出來），後者乾淨但會遺忘。**建議前者。**
-
-  順帶：`mongod` 不是 systemd 那個。資料在 `~/data/mongodb`，要手動 `mongod --dbpath ~/data/mongodb --bind_ip 127.0.0.1 --port 27018 --logpath /tmp/mongod-manual.log --fork`，治具要帶 `SKYRIM_MONGO_URI=mongodb://127.0.0.1:27018`。
-
 - **darksouls-port 門洞仍卡，參數已備好但未套用**（2026-08-06，**使用者決定先收現狀**）：`--ghost-tol` 0.25 → 0.02，h0006 實測憑空面積 2.0 → 0.1 m²，代價是載體 NIF 341 → 約 440 塊。要動就是改預設、全量重跑 47 個 hkx、`rm -rf out/DSPortP1` 後重新打包、`mo2ctl install --force` 重裝，再進場走一次門。**`DSPortP1` 目前仍裝在 MO2 裡**（新版碰撞、332 個載體），故意留著讓下次能直接進場。
 
 - **houseCARL 的 `set_mo2_instance` 在 Linux 下不能用——第三個同族 Linux 路徑 bug**（2026-08-04）：指向 `~/games/mod-organizer-2-skyrimspecialedition/modorganizer2` 被拒，錯誤是找不到 `Z:\home\lorkhan\.local\share\Steam\steamapps\common\Skyrim Special Edition/Data`。它把 `ModOrganizer.ini` 的 `gamePath` 當字面路徑用，**沒有把 Wine 的 `Z:\` 前綴翻回 Linux 路徑**，然後接上 `/Data` 就成了混合式的壞路徑。跟已在本檔掛著的 `fix/linux-loose-asset-resolution` 是同一家族。

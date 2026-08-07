@@ -117,7 +117,10 @@ RimWorld 的 `extract_mod_metadata.py` 原本 `drop_collection` + `insert_many`�
 
 因此：
 
-- 建檔階段用 `housecarl_nexus_mod(mod_id)` 查每個 mod **是否仍在架**。查不到 / 已隱藏 → `nexus_status: "gone" | "hidden"` → **標記為 `never_delete: true`，覆蓋所有清理判準**。
+- 建檔階段用 Nexus API 查每個 mod **是否仍在架**。查不到 / 已隱藏 → `nexus_status: "gone" | "hidden"` → **標記為 `never_delete: true`，覆蓋所有清理判準**。
+- **2026-08-07 實測釘死 Nexus API 欄位**：`GET https://api.nexusmods.com/v1/games/skyrimspecialedition/mods/{id}.json`，header `apikey`。`status="published"` 且 `available=true` → `live`；404 → `gone`；`available=false` 或 `status` 為 `removed` / `wastebinned` 等下架狀態 → `hidden`；其他一律 `unknown`，且 `unknown` 不得觸發清理。
+- `nexus_latest_version` 不能取 mod header 的 `version`。SkyUI 12604 實測 header 是 6.9，但最新 MAIN file 是 6.11；必須另打 `/mods/{id}/files.json`，取 `category_name="MAIN"`、`category_id=1`、`is_primary=true` 的最新檔案版本。
+- Nexus rate limit 實測 2,000/小時、20,000/天；1,272 個 nexus_id 以 1 秒以上 request interval 可在一小時內跑完，rate limit 不是瓶頸。
 - 所有清理動作都是**移入隔離區**（`~/skyrim_mods/.quarantine/<日期>/`，保留原相對路徑），不是 `rm`。移動記錄寫回 Mongo（`quarantined_at`、`quarantine_reason`、`original_path`）。
 - 真正的刪除是**另一次獨立的、使用者主動發起的操作**，不在本計畫的 Done when 裡。
 - RimWorld 的 `prune` 是 `delete_many` 且無 dry-run 無備份——**這一點不抄**。
@@ -243,6 +246,8 @@ RimWorld 的 runbook 明文警告：MongoDB 那套適合「篩選查詢」，但
 已定的形狀：
 
 - **起點不是零**：庫裡已有大量 `- CHS` / `- CHT` / `(Chinese Translation)` 檔（實查確認，如 `Honed Metal` 一組六個變體）。本計畫的 `is_translation` / `translates_mod_id` 就是給這件事鋪路的。
+- **資料模型陷阱（2026-08-07 A4a）**：漢化包在 Nexus 上常有自己的 mod id，所以 `mods` 裡會出現純漢化包 stub（`archive_ids=[]`、`translation_archive_ids` 非空）。A4a 實掃有 255 個這種 stub。比對本體時必須排除它們，只比對 `archive_ids` 非空的真本體；否則會把漢化包配到另一個漢化包，實例是 `Beyond Skyrim - Bruma SE (CHT)` 被配到 `Beyond Skyrim Bruma - CNS`。
+- **A4a 掃出的翻譯衍生標記**（剔除誤收的 `MCM`、`CLEAN`）：`CHINESE`、`CHS`、`CHT`、`CNS`、`Chinese`、`Chinese Localisation`、`Chinese Localisation Based on WOK`、`Chinese Simple`、`Chinese Translation`、`Chinese translation`、`Chinese version`、`Simpifity Chinese`、`Simplified Chinese`、`Simplified Chinese Translation`、`Simplified Chinese translation`、`Traditional Chinese`、`Traditional Chinese Translation`、`Traditional Chinese translation`、`ZH`、`\CHS\`、`\CHT\`、`\chs\`、`\cht\`、`chinese translation`、`chs`、`cht`、`cns`、`simplified Chinese`、`simplified Chinese translation`、`traditional Chinese`、`traditional Chinese translation`、`zh`、`zh_CN`、`汉化`、`汉化补丁`。
 - **版本不對的正確解法不是換 esp。** 漢化包通常是整份 plugin 替換——拿 v1.0 的漢化 esp 蓋 v1.2 的本體，等於把 v1.2 的所有改動退回 v1.0。正確做法是**只把譯文欄位（FULL / DESC / 對話）forward 到當前版本的 plugin，輸出成 patch**。houseCARL 的 `forward_record` / `bulk_apply` / `set_field` / `cross_plugin_query` / `batch_record_detail` 正是這組工具，能力已經在手上。
 - **最大的技術陷阱是編碼。** Skyrim plugin 的字串或內嵌（非 localized，Windows-1252）或走 `Strings/*.STRINGS`（localized）。中文無法用 Windows-1252 表示，所以漢化包要嘛走 localized strings、要嘛靠 codepage 詮釋的老 hack。**houseCARL 目前就有一條 `fix/dialogue-encoding-lint` 分支掛在 `WAIT_USER.md`**——編碼在自家工具鏈裡已經是活的議題，不是理論風險。動手前先把那條分支的結論確定。
 - 非 plugin 的字串也要顧：MCM 的 `Interface/Translate_<name>_<lang>.txt`、SkyUI MCM 的 json、`.pex` 內硬編字串（難）、語音 `.fuz`（`projects/skyrim-voicegen` 是另一條路，屬 TTS 不屬翻譯）。

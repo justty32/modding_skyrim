@@ -13,10 +13,15 @@
 
 ### mod 庫建檔
 
-- 1,659 筆 / 85.7 GiB 已建檔；DLL runtime 檢查、L1/L2 清理與 L3 隔離已執行。
-- 下一步：P1.4 Nexus 在架狀態補值，再完成可重跑的清理報告。
-- 107 筆 `quarantined_at` 與檔案不一致的資料在重掃前必須先決定終態；見 [WAIT_USER.md](WAIT_USER.md)。
+- 1,585 筆 archive / 1,433 個 mod group 已建檔；DLL runtime 檢查、L1/L2 清理與 L3 隔離已執行。
+- P1.4 Nexus 在架狀態補值治具已完成並過 SkyUI 驗收；A2 正在跑全量補值。完成後再產可重跑清理報告。
+- 107 筆 `quarantined_at` 不一致紀錄已從 `archives` 移除；稽核清單在 `~/notes/projects/modding/skyrim/docs/removed-missing-quarantine-2026-08-07.md`。
 - 權威計畫：[mod-library-catalog.md](workflows/plans/mod-library-catalog.md)。
+
+### 韓文站採集
+
+- 本輪已開線 B：先做公開站偵查與候選資料 schema，再由 agy 只抓頁面 HTML、截圖與原始連結，不下載 mod 本體。
+- 權威計畫：[round-2026-08-07-catalog-and-korean.md](workflows/plans/round-2026-08-07-catalog-and-korean.md)。
 
 ### darksouls-port
 
