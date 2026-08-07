@@ -6,9 +6,9 @@
 
 ### 第三方 mod 流水線
 
-- P0–P3 已完成；`projects/agent-bridge` 的 P1/P2/P3 commits 為 `30a97be` / `35d5692` / `6106646`。2026-08-07 重跑 py_compile 與 20 個單元測試全綠。
-- 已有 archive/FOMOD 安裝與重放、manifest、profile git `try/<mod>` pass/fail 回滾治具，以及 houseCARL before/after 靜態關卡。
-- 唯一剩餘的是 P4：挑一個真實第三方 mod 走完全流程。需家中 MO2/Skyrim 與使用者視覺 handoff。
+- P0–P4 已完成；`projects/agent-bridge` 的 P1/P2/P3 commits 為 `30a97be` / `35d5692` / `6106646`，P4 補強 commit 為 `c641d77`。
+- P4 實測 mod：`Bend Time Rings`（Nexus 10974，本機 archive sha256 `53f6d341cc72c143bd45d4518a487934345ab0b7da725b5d8cb880b1bcdc5513`），profile git commit `cfb34db Validate Bend Time Rings P4`。
+- 驗收結果：zip install → manifest → QA profile `try/bend-time-rings` → houseCARL static gates → `qa.json` 到達 Bannered Mare + 穿上 `Ring of Slow Time` → 使用者視覺 handoff 通過。
 - 權威計畫：[third-party-mod-pipeline.md](workflows/plans/third-party-mod-pipeline.md)。
 
 ### mod 庫建檔

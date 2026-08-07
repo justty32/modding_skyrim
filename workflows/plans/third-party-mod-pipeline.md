@@ -13,7 +13,7 @@
 - [x] P1：archive + FOMOD 解析層已落地（2026-08-06，9 個測試綠）；真實第三方 mod 的整條實機驗收留在 P4。
 - [x] P2：MO2 profile 走 git；`try/<mod>` 可 pass 快進 main 或 fail 卸載新 mod 後回到 main。回滾判準已依實機修正為語意等價，不要求會被 MO2/引擎合法重寫的檔案 byte-identical。（2026-08-06）
 - [x] P3：`static-gates` 能在不啟動遊戲、不修改 profile 的前提下直接呼叫 houseCARL stdio MCP，產出 before/after pass/fail 報告；已對 live `Default` profile 與 `_ResourcePack.esl` 實測。（2026-08-06）
-- [ ] P4：至少一個真實第三方 `.zip` mod 走完全程（下載工作單 → 安裝 → 排序 → 靜態關卡 → `qa.json` 驗「到達地點 + 穿上裝備」→ 視覺 handoff），並在 git 留下一個可回滾的 commit。
+- [x] P4：至少一個真實第三方 `.zip` mod 走完全程（下載工作單 → 安裝 → 排序 → 靜態關卡 → `qa.json` 驗「到達地點 + 穿上裝備」→ 視覺 handoff），並在 git 留下一個可回滾的 commit。（2026-08-07，`Bend Time Rings`，profile git `cfb34db`）
 
 **不包含**：自動化下載（見 D5）、LOOT 整合（見 D2）、技能與劇情觸發的斷言（見 D4）、`/state` 的欄位擴充、`.7z`/`.rar` 的原生支援（見 D1）。
 
@@ -319,6 +319,6 @@ D3 原文寫「profile 三檔」是錯的。ini 類也必須版控——有些 m
 
 ## 八、狀態
 
-P0–P3 已完成（2026-08-06）。實作在 `projects/agent-bridge/`：P1 `30a97be`、P2 `35d5692`、P3 `6106646`；2026-08-07 在另一台機器重跑 py_compile 與 20 個單元測試全綠。設計與 live smoke 證據分別在該 repo 的 `client/P1-ARCHIVE-FOMOD-REPORT.md`、`P2-PROFILE-GIT-REPORT.md`、`P3-STATIC-GATES-REPORT.md`。
+P0–P4 已完成。實作在 `projects/agent-bridge/`：P1 `30a97be`、P2 `35d5692`、P3 `6106646`；2026-08-07 P4 實測後補上 `validate_scripts` scoped false-positive 修正與 `examples/bend-time-rings.qa.json`，並重跑 py_compile 與 21 個單元測試全綠。設計與 live smoke 證據分別在該 repo 的 `client/P1-ARCHIVE-FOMOD-REPORT.md`、`P2-PROFILE-GIT-REPORT.md`、`P3-STATIC-GATES-REPORT.md`。
 
-唯一剩餘的 Done when 是 P4：挑一個真實第三方 mod 走完下載工作單、安裝、排序、靜態關卡、`qa.json` 與視覺 handoff，並在 profile git 留可回滾 commit。這需家中 MO2/Skyrim 實機與使用者視覺驗收。
+P4 實測 mod 為 `Bend Time Rings`（Nexus 10974；本機 archive `Stop and Slow Time with a Ring -v1.0.0--10974-1-0-0.zip`，sha256 `53f6d341cc72c143bd45d4518a487934345ab0b7da725b5d8cb880b1bcdc5513`）。流程結果：`QA` profile 上 `try/bend-time-rings` 安裝到 bottom priority，manifest 記錄 archive catalog `present`；houseCARL scoped static gates 對 `BendTimeRings.esp` 無新增 SKSE/script 問題；`qa_runner.py examples/bend-time-rings.qa.json` 驗到 `BendTimeRings.esp` 載入、到達 `WhiterunBanneredMare`（`cell_form_id=90206`）、`Ring of Slow Time` 在 inventory 且 `worn=true`；使用者視覺確認正常渲染且有 ring。profile git 已 fast-forward 到 `cfb34db Validate Bend Time Rings P4`。

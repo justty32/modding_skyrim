@@ -12,8 +12,6 @@
 
 ## Open
 
-- **第三方 mod 流水線只剩 P4 端到端實機驗收**（2026-08-07）：P0–P3 已完成，20 個單元測試全綠。需在家挑一個真實第三方 mod，走完「下載工作單 → `try/<mod>` 安裝 → 排序 → houseCARL before/after 靜態關卡 → `qa.json` 實機 → 視覺 handoff → `try-pass`」，並確認 profile git 留下可回滾 commit。權威步驟見 [third-party-mod-pipeline.md](workflows/plans/third-party-mod-pipeline.md) P4。
-
 - **darksouls-port 門洞仍卡，參數已備好但未套用**（2026-08-06，**使用者決定先收現狀**）：`--ghost-tol` 0.25 → 0.02，h0006 實測憑空面積 2.0 → 0.1 m²，代價是載體 NIF 341 → 約 440 塊。要動就是改預設、全量重跑 47 個 hkx、`rm -rf out/DSPortP1` 後重新打包、`mo2ctl install --force` 重裝，再進場走一次門。**`DSPortP1` 目前仍裝在 MO2 裡**（新版碰撞、332 個載體），故意留著讓下次能直接進場。
 
 - **houseCARL 的 `set_mo2_instance` 在 Linux 下不能用——第三個同族 Linux 路徑 bug**（2026-08-04）：指向 `~/games/mod-organizer-2-skyrimspecialedition/modorganizer2` 被拒，錯誤是找不到 `Z:\home\lorkhan\.local\share\Steam\steamapps\common\Skyrim Special Edition/Data`。它把 `ModOrganizer.ini` 的 `gamePath` 當字面路徑用，**沒有把 Wine 的 `Z:\` 前綴翻回 Linux 路徑**，然後接上 `/Data` 就成了混合式的壞路徑。跟已在本檔掛著的 `fix/linux-loose-asset-resolution` 是同一家族。
@@ -29,4 +27,3 @@
 - **houseCARL:兩條 fix branch 已 rebase 到 upstream 最新(8385fc6),probe 全 PASS,待使用者決定**(2026-07-17):
   1. 是否 force-push 更新 fork 上的 `fix/linux-loose-asset-resolution`、`fix/dialogue-encoding-lint`(fork 上仍是舊 base 版本)。
   2. 是否向 upstream `Avick3110/houseCARL` 開兩個 PR——**當初 branch 推了 fork 但 PR 從未開出**;upstream 91 個新 commit 皆未修這些 Linux 問題,修正仍有效。
-
