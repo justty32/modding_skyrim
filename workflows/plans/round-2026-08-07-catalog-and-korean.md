@@ -25,11 +25,11 @@
 
 ### Done when
 
-- [ ] `mods` 裡每筆有真 `nexus_mod_id` 的都有 `nexus_status`（`live`/`hidden`/`gone`/`unknown`）與 `nexus_latest_version`
-- [ ] `nexus_status ∈ {gone, hidden}` 的一律 `never_delete=true`（D5 保險栓）
+- [x] `mods` 裡每筆有真 `nexus_mod_id` 的都有 `nexus_status`（`live`/`hidden`/`gone`/`unknown`）與 `nexus_latest_version`
+- [x] `nexus_status ∈ {gone, hidden}` 的一律 `never_delete=true`（D5 保險栓）
 - [ ] 清理報告產生器可重跑、兩次結果一致，L2 三條例外有測到
-- [ ] 每次寫入前自動 pymongo dump（P1.7）
-- [ ] 漢化包能回答「這個漢化包對應哪個本體、版本差多少」
+- [x] 每次寫入前自動 pymongo dump（P1.7）
+- [x] 漢化包能回答「這個漢化包對應哪個本體、版本差多少」（2026-08-07 A4-review：280 筆中 259 high 寫回 `archives.translates_mod_id`，9 low + 12 none 留人工）
 
 ### A1（codex）：Nexus 補值治具
 
@@ -75,9 +75,9 @@ L2 這一級**必須等 A2 跑完**才產得出來（判準依賴在架狀態）
 
 ### Done when
 
-- [ ] `candidates` collection 存在，schema 有否決狀態欄位（被否決過的不再出現在審閱清單）
+- [x] `candidates` collection 存在，schema 有否決狀態欄位（被否決過的不再出現在審閱清單）（2026-08-07 B1：schema + ingest/check/gallery 工具落地）
 - [ ] 至少一輪採集落地：截圖 + 翻譯後簡介 + 原始連結 + 連結存活狀態
-- [ ] 本機 HTML 圖庫可開，使用者能在上面逐筆過目
+- [x] 本機 HTML 圖庫可開，使用者能在上面逐筆過目（2026-08-07 B1：`build_gallery.py` 已用暫存 DB fixture 驗證）
 - [ ] 地圖 porting 類的候選回饋到 `analysis/port-source-survey/`
 
 ### B1（codex）：`candidates` schema + 治具
