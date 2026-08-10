@@ -39,7 +39,7 @@
 ## 已關閉的方向
 
 - `scene-capture-bridge` 的 Windows/MSVC CI 於 2026-08-07 放棄：唯一受支援的建置與出貨路徑是 Linux clang-cl + xwin。失敗的 GitHub Actions workflow 已移除，不再追 fmt/MSVC STL 相容性。
-- AI 全自動 mod QA 迴圈已結案，無 open 項；見 [ai-ingame-qa-loop.md](workflows/plans/ai-ingame-qa-loop.md) 第六節。
+- AI 全自動 mod QA 迴圈已結案，無 open 項；2026-08-10 再補 runtime semantic actor/dialogue API（列 current-cell actors、移到 NPC、開／讀／選對話），並以 livingNpcs generic anchor/parley 整鏈 **31/31 PASS**。實作權威在 `projects/agent-bridge` README，原計畫見 [ai-ingame-qa-loop.md](workflows/plans/ai-ingame-qa-loop.md) 第六節。
 - 舊 `workspace-reorg` 方案已被現行多 repo + submodule 佈局取代，不再執行。
 
 ## 各工作流 session-log

@@ -29,7 +29,7 @@ Skyrim SE modding 的開發、分析、產物集中地。本工作區是 public 
 | `scene-capture-bridge` | SKSE C++ DLL,遊戲內採集/編輯場景 | `scene.json` → 生 patch esp |
 | `model-converter` | Skyrim `.nif` ↔ glTF/FBX/OBJ 雙向轉換(Python) | `MODFORGE_NIF2GLTF_BIN` |
 | `skyrim-voicegen` | 語音合成:臺詞+情緒+參考嗓音 → `.wav` | `MODFORGE_TTS_BIN` |
-| `agent-bridge` | AI 全自動 mod QA 迴圈:遊戲內 HTTP DLL + Linux 端 mo2ctl/runner/MCP | console + `/state` 斷言 |
+| `agent-bridge` | AI 全自動 mod QA 迴圈:遊戲內 HTTP DLL + Linux 端 mo2ctl/runner/MCP | console + runtime state；可列 cell actors、移到 NPC、開／讀／選對話 |
 | `game-data` | 全遊戲文本/清單抽取(vanilla+DLC+CC+mod),給 agent 唯讀取用 | 消費 CLI `gamedata` |
 
 **內容專案**(用 ModForge 做出實際的 mod)
