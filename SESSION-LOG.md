@@ -4,12 +4,6 @@
 
 ## 現役工作
 
-### agent-bridge 0.6.0 semantic control
-
-- 已完成離線實作：`loaded_actors`、actor name/runtime FormID selector、跨 cell `move_to`、dialogue index/TopicInfo FormID selector，以及 MCP `qa_wait`／語意 action retry。
-- clang-cl/xwin DLL build 與 41 個 Python unit tests 已 PASS；尚未部署，亦未啟動 Skyrim/MO2。
-- 使用者目前在玩其他遊戲，實機矩陣延後，見 [WAIT_USER.md](WAIT_USER.md)。
-
 ### 第三方 mod 流水線
 
 - P0–P4 已完成；`projects/agent-bridge` 的 P1/P2/P3 commits 為 `30a97be` / `35d5692` / `6106646`，P4 補強 commit 為 `c641d77`。
@@ -45,13 +39,13 @@
 ## 已關閉的方向
 
 - `scene-capture-bridge` 的 Windows/MSVC CI 於 2026-08-07 放棄：唯一受支援的建置與出貨路徑是 Linux clang-cl + xwin。失敗的 GitHub Actions workflow 已移除，不再追 fmt/MSVC STL 相容性。
-- AI 全自動 mod QA 基礎迴圈與 0.5.0 current-cell actor/dialogue API 已結案，livingNpcs generic anchor/parley 整鏈 **31/31 PASS**；0.6.0 擴充的實機驗證另列於上方現役工作。實作權威在 `projects/agent-bridge` README，原計畫見 [ai-ingame-qa-loop.md](workflows/plans/ai-ingame-qa-loop.md) 第六節。
+- AI 全自動 mod QA 迴圈與 agent-bridge 0.6.0 semantic control 已結案：livingNpcs generic anchor/parley 整鏈 **31/31 PASS**；loaded actor、name/runtime FormID、跨 interior/exterior cell move、action retry、dialogue index/TopicInfo FormID 與 MCP `qa_wait` 均已實機通過。實作與驗收權威在 `projects/agent-bridge` README，原計畫見 [ai-ingame-qa-loop.md](workflows/plans/ai-ingame-qa-loop.md) 第六節。
 - 舊 `workspace-reorg` 方案已被現行多 repo + submodule 佈局取代，不再執行。
 
 ## 各工作流 session-log
 
 | 工作流 | session-log | open 摘要 |
 |--------|-------------|----------|
-| feature-dev | [workflows/feature-dev/session-log.md](workflows/feature-dev/session-log.md) | agent-bridge 0.6.0 待實機驗證 |
+| feature-dev | [workflows/feature-dev/session-log.md](workflows/feature-dev/session-log.md) | 無 |
 | refactor | [workflows/refactor/session-log.md](workflows/refactor/session-log.md) | 無 |
 | investigation | [workflows/investigation/session-log.md](workflows/investigation/session-log.md) | 無 |

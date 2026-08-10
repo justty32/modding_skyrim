@@ -12,8 +12,6 @@
 
 ## Open
 
-- **agent-bridge 0.6.0 實機驗證延後**（2026-08-10，使用者目前在玩其他遊戲）：離線 build 與 41 個單元測試已通過，尚未部署 DLL。等使用者方便時再測：`loaded_actors` 列舉、同 cell FormID move/activate、相鄰或不同 cell `scope=loaded` move、actor 延遲出現時 retry、依 dialogue `index`／`info_form_id` 選項，以及 MCP `qa_wait`。測試不得打斷其他遊戲工作階段。
-
 - **darksouls-port 門洞仍卡，參數已備好但未套用**（2026-08-06，**使用者決定先收現狀**）：`--ghost-tol` 0.25 → 0.02，h0006 實測憑空面積 2.0 → 0.1 m²，代價是載體 NIF 341 → 約 440 塊。要動就是改預設、全量重跑 47 個 hkx、`rm -rf out/DSPortP1` 後重新打包、`mo2ctl install --force` 重裝，再進場走一次門。**`DSPortP1` 目前仍裝在 MO2 裡**（新版碰撞、332 個載體），故意留著讓下次能直接進場。
 
 - **houseCARL 的 `set_mo2_instance` 在 Linux 下不能用——第三個同族 Linux 路徑 bug**（2026-08-04）：指向 `~/games/mod-organizer-2-skyrimspecialedition/modorganizer2` 被拒，錯誤是找不到 `Z:\home\lorkhan\.local\share\Steam\steamapps\common\Skyrim Special Edition/Data`。它把 `ModOrganizer.ini` 的 `gamePath` 當字面路徑用，**沒有把 Wine 的 `Z:\` 前綴翻回 Linux 路徑**，然後接上 `/Data` 就成了混合式的壞路徑。跟已在本檔掛著的 `fix/linux-loose-asset-resolution` 是同一家族。
