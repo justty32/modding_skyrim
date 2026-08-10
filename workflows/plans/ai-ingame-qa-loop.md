@@ -22,6 +22,21 @@
 
 **不包含**：真·新遊戲流程（Helgen 開場 + 種族選單）自動化、跨機器/遠端執行、把 bridge 送進 Windows CI 出貨、任何給玩家用的產物。
 
+## 現況摘要（2026-08-10）
+
+本計畫的基礎迴圈於 2026-08-02 結案，後續 semantic control 擴充亦已在
+AgentBridge 0.6.0 完成實機驗收。現在除了 console/state 之外，AI 還能：
+
+- 列出 current-cell 與四層 ProcessLists 中的 actors；
+- 依精確名稱或 runtime reference FormID 定位 actor，並跨 cell 移到其旁；
+- 開啟對話、讀取顯示選項，依文字、index 或 TopicInfo FormID 選擇；
+- 讀 TESGlobal，並用 retry／`qa_wait` 等待 cell、actor、dialogue 等非同步狀態收斂。
+
+livingNpcs generic anchor/parley 回歸為 **31/31 PASS**；loaded actor、跨
+interior/exterior cell、延遲 actor retry 與兩種結構化 dialogue selector 也已逐項通過。
+現行 API 與完整驗收證據以 [`projects/agent-bridge/README.md`](../../projects/agent-bridge/README.md)
+為準。本計畫保留歷史決策與早期分階段紀錄，不再作為 API 清單。
+
 ## 一、環境事實（2026-08-01 實查，規劃基於這些前提）
 
 | 項目 | 事實 | 來源 |
@@ -95,22 +110,23 @@ Wine 的 winsock 走 host socket，Proton 的 pressure-vessel 預設共用 netwo
 ## 三、架構
 
 ```
-Claude (Linux)
+Agent (Linux)
   ├─ ModForge CLI ─────────── spec.json → .esp + mod 資料夾（已有）
   ├─ mo2ctl（新）──────────── 裝 mod / 改 profile / 啟動 / 關閉遊戲
-  └─ qa-client（新）────────── bridge.py / qa_runner.py → 127.0.0.1:5099（MCP 包裝待做＝2.2）
+  └─ qa-client ─────────────── bridge.py / qa_runner.py / qa_mcp.py → 127.0.0.1:5099
                                        │
                       ┌────────────────┴────────────────┐
                       │  Skyrim.exe (Proton 9.0-203)    │
                       │   agent-bridge.dll               │
                       │    GET  /state                   │
                       │    POST /console                 │
-                      │    POST /input                   │
-                      │    POST /screenshot              │
+                      │    POST /actor/*                 │
+                      │    POST /dialogue/*              │
                       └──────────────────────────────────┘
 ```
 
 `agent-bridge` 已定案為 `scene-capture-bridge` 的 **sibling 子專案**（1.1，理由見該列）。上圖的 `/input`、`/screenshot` 依 D6 延後，目前實作的是 `/ping`、`/state`、`/console`。
+現行實作另含 `/global`、`/actor/*` 與 `/dialogue/*`；完整 route table 不在歷史計畫重複維護，見子專案 README。
 
 ## 四、分階段任務
 
@@ -182,7 +198,7 @@ $ curl -s 127.0.0.1:5099/state
 
 | # | 任務 | 驗證 |
 |---|---|---|
-| 1.1 | **✅ 已定案（2026-08-02，使用者決定）：開 sibling 子專案 `projects/ModForge/sub_projs/agent-bridge/`。** 理由：兩者生命週期相反——`scene-capture-bridge` 是人用熱鍵驅動的**創作**工具、與內容一起出貨；`agent-bridge` 是**測試治具**，每次 QA 跑完就卸，絕不能進玩家 load order。把會執行 console 指令的監聽 port 併進創作工具，等於每次做內容都開著那個 port。程式碼複用往反方向走：需要時把 cell 走訪那段搬進 agent-bridge | 子專案已建立並編出 DLL，見 0.1 |
+| 1.1 | **✅ 已定案（2026-08-02，使用者決定）：開 sibling 子專案；現已抽離為 `projects/agent-bridge/` 獨立 repo/submodule。** 理由：兩者生命週期相反——`scene-capture-bridge` 是人用熱鍵驅動的**創作**工具、與內容一起出貨；`agent-bridge` 是**測試治具**，每次 QA 跑完就卸，絕不能進玩家 load order。把會執行 console 指令的監聽 port 併進創作工具，等於每次做內容都開著那個 port。程式碼複用往反方向走：需要時把 cell 走訪那段搬進 agent-bridge | 子專案已建立並編出 DLL，見 0.1 |
 | 1.2 | **✅ PASS（2026-08-02）** `GET /state` 完整欄位，分成「永遠回傳」與「選配」兩層 | 見下方「1.2 實測結果」 |
 | 1.3 | **✅ 執行面 PASS，輸出面部分達成（2026-08-02）** `POST /console` 執行任意指令 | 見下方「1.3 實測結果」 |
 | 1.4 | **⏸ 延後（D6）** `POST /screenshot`：抓 D3D11 backbuffer 寫 PNG。只有「使用者出門、AI 自己多試幾次留圖」才需要 | Linux 端讀得到 PNG 且內容正確 |
@@ -194,7 +210,7 @@ $ curl -s 127.0.0.1:5099/state
 | # | 任務 | 驗證 |
 |---|---|---|
 | 2.1 | **✅ PASS（2026-08-02）** `mo2ctl`：`install` / `uninstall` / `enable` / `disable` / `launch` / `kill` / `status`，落在 `agent-bridge/client/mo2ctl.py`（純 stdlib） | 見下方「2.1 實測結果」 |
-| 2.2 | **✅ PASS（2026-08-02）** `client/qa_mcp.py`，已在 `~/.claude.json` 與 houseCARL 並列註冊。暴露 `qa_status` / `qa_state` / `qa_console` / `qa_run` | 見下方「2.2 實測結果」 |
+| 2.2 | **✅ PASS（2026-08-02；0.3.0 semantic tools 於 2026-08-10 實測）** `client/qa_mcp.py`，已在 `~/.claude.json` 與 houseCARL 並列註冊。現行 tool 清單見子專案 README | 見下方「2.2 實測結果」與子專案 0.6.0 acceptance |
 
 #### 2.1 實測結果（2026-08-02）— 全程免 GUI 的裝-跑-卸
 
@@ -223,7 +239,13 @@ $ curl -s 127.0.0.1:5099/state
 
 `client/qa_mcp.py`，手寫 JSON-RPC over stdio（不引 `mcp` 套件，維持 client/ 全 stdlib）。已寫進 `~/.claude.json` 的 `mcpServers`，與 `housecarl` 並列，`env` 帶 `MO2_ROOT` / `MO2_PROFILE`。**要下一個 session 才會生效**——MCP server 是啟動時連的。
 
-**暴露四個，刻意不暴露另外四個。** 給的是 `qa_status` / `qa_state` / `qa_console` / `qa_run`。**不給 `install` / `uninstall` / `launch` / `kill`**：這四個各自只是一行 Bash、一個 session 用不到幾次，而真正頻繁、真正值得走 MCP 的是 `state` 與 `console`。讓模型能用一次 tool call 就終結使用者的遊戲 session，是比「要它自己打指令」更差的人機介面。`qa_run` 仍然會做完整套，但那是從一份使用者可以先讀過的 qa.json 來的。
+**暴露語意讀寫工具，刻意不暴露生命週期操作。** 初版四個是 `qa_status` /
+`qa_state` / `qa_console` / `qa_run`；0.3.0 再加入 `qa_actor` / `qa_dialogue` /
+`qa_global` / `qa_wait`。仍然**不給 `install` / `uninstall` / `launch` / `kill`**：
+這四個各自只是一行 Bash、一個 session 用不到幾次，而真正頻繁、真正值得走
+MCP 的是 state 與 semantic action。讓模型能用一次 tool call 就終結使用者的遊戲
+session，是比「要它自己打指令」更差的人機介面。`qa_run` 仍然會做完整套，但那
+是從一份使用者可以先讀過的 qa.json 來的。
 
 **stdio 的唯一鐵律：stdout 只能有協議流量。** 一個誤觸的 `print()` 就會汙染串流，client 端只會看到連線莫名斷掉。兩個由此而來的實作決定：`qa_run` 強制 `interactive=False`（runner 在這裡卡在 `input()` 會讓 server 整個吊死且沒人回得了）；notification（沒有 `id` 的訊息，例如 `notifications/initialized`）一律不回應——對 notification 回應是協議違規，有些 client 會直接斷線。
 
@@ -317,13 +339,15 @@ smoke 前兩輪都掛在 `player.cell == "WhiterunBanneredMare"` 回 `""`，但�
 - **無法 headless**：遊戲需要顯示輸出，這條迴圈只能在使用者的桌面 session 跑，不能背景常駐。
 - **cross-compile 的 DLL 與 MSVC 產物行為差異**：D3 已接受此風險（內部工具，非出貨物）。
 
-## 六、結案（2026-08-02）
+## 六、原始計畫結案（2026-08-02；後續 0.6.0 見頁首摘要）
 
 **Phase 0 / 1 / 2 / 3 全過，Phase 4 依 D6 只剩 handoff 而那已隨 3.2 落地。本計畫無 open 項。**
 
 程式碼與文檔的家：`projects/agent-bridge/`（子專案 README 有 Pitfall 段；`client/QA-SCHEMA.md` 是 qa.json 的權威）。原始結案 commits 為 `50cebe6` / `fb94931` / `a7c5863` / `a1e5f31`；後續已抽成獨立 repo 並 push。
 
-**MCP server 四個 tool 實機驗完**（`qa_status` / `qa_state` / `qa_console` / `qa_run`，註冊在 `~/.claude.json`，註冊當下那個 session 不生效、下一個才生效）。一輪完整 `qa_run` ≈ 30 秒（含冷啟動 19 秒），收尾後 profile 零殘留。
+**MCP server 八個 tool 已實機驗完**（現行清單見子專案 README；註冊在
+`~/.claude.json`，tool schema 變更要到下一個 session 才會生效）。初版 smoke 的
+完整 `qa_run` 約 30 秒；0.6.0 livingNpcs 回歸為 31/31 PASS，收尾後 profile 零殘留。
 
 **首跑抓到的那個 ModForge bug 已修，而且是被這條迴圈自己驗證的**（commit `eb0bb6c`）：`CopyCellEnv` 從來沒複製 `EditorID` → CELL override 讓 vanilla cell 變無名。用修好的產生器重 build `ModForgeNavmeshNoop.esp`，跑一份把 `player.cell == "WhiterunBanneredMare"` 加回斷言的 smoke 變體（即首跑失敗的那條），`pass` 8/8。**但 schema 的建議不變：production spec 仍用 `cell_form_id`**——修的是我們的產生器，任何別人的 mod 漏帶 EDID 都能重演同一件事。
 
