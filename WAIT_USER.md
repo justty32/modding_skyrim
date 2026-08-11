@@ -14,7 +14,7 @@
 
 - **Play-KR 環境音人耳驗證＋補室內 runtime 證據**（2026-08-11）：六個 plugin 已經 engine runtime load order 確認，現有 Save3 也已在戶外 WhiterunExterior15 載入，無新 crash 或目標 mod 特定 Papyrus/SkyPatcher 錯誤。但本輪的 Breezehome `coc` 與 Save2 重載都被 AgentBridge 0.6.0 main-menu/load-transition game-thread queue 503 擋住，尚缺室內結構化 state；機器也不能判斷聽感。下次進 Play-KR 後，請在戶外不同區域與下雨／打雷時，以及旅店、民宅、洞穴等室內短暫走動，確認區域環境音、室內雨雷與殘響自然且音量合適；同時補一次室內 bridge state 即可關閉 runtime acceptance。技術結果見 [SESSION-LOG.md](SESSION-LOG.md) Play-KR 節。
 
-- **agent-bridge 0.7.0 MessageBox 實機驗收**（2026-08-11；目前 MO2／Skyrim 執行權由另一個 agent 持有）：離線實作、client tests 47/47 與 DLL 交叉編譯均已完成。待可使用遊戲時，以 `ini Editor MCM` 的 `Debug.MessageBox("Done Writing")` 重現 modal。需驗證 `/state.game.message_box` 的 message/buttons、依文字與 index 各選一次 `OK`、精確 message guard 拒絕錯誤 modal、選後 menu 消失且遊戲時間／actor 恢復；最後重跑 dialogue 與 living-NPC regressions。權威操作與 acceptance 在 `projects/agent-bridge/README.md` 的 MessageBox 節。
+- **agent-bridge 0.7.0 MessageBox 實機驗收**（2026-08-11）：離線實作、client tests 47/47 與 DLL 交叉編譯均已完成。待下次可使用遊戲時，以 `ini Editor MCM` 的 `Debug.MessageBox("Done Writing")` 重現 modal。需驗證 `/state.game.message_box` 的 message/buttons、依文字與 index 各選一次 `OK`、精確 message guard 拒絕錯誤 modal、選後 menu 消失且遊戲時間／actor 恢復；最後重跑 dialogue 與 living-NPC regressions。權威操作與 acceptance 在 `projects/agent-bridge/README.md` 的 MessageBox 節。
 
 - **darksouls-port 門洞仍卡，參數已備好但未套用**（2026-08-06，**使用者決定先收現狀**；2026-08-11 補上前置條件與備援）：症狀是使用者實走回報「只有過門會卡，過道上走基本沒問題」——根因是平面內填洞，有門洞的牆其凸包把門洞填實。`--ghost-tol` 是**每顆 hull** 的容許量，一個門洞切成好幾顆、每顆合法填 0.24 m²，加起來就把門框內縮到卡人。
 
