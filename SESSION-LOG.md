@@ -4,6 +4,15 @@
 
 ## 現役工作
 
+### Play-KR 環境音 runtime 驗收
+
+- 2026-08-11 使用 Play-KR + 暫時 QA try branch 實機啟動，AgentBridge 0.6.0 的 `GET /state?include=plugins` 直接確認六個目標 plugin 都在 engine runtime load order：`Regional Sounds Expansion.esp` (`FE:01D`)、`Reverb Interior Sounds Expansion.esp` (`FE:01E`)、Rain (`FE:01F`)、Thunder (`FE:020`)、`AcousticTemplateFixes.esp` (`FE:021`)、Reverb compatibility (`FE:022`)。
+- 已載入現有 `Save3_474D...Tamriel...` 測試存檔，結構化 state 顯示玩家在戶外 `WhiterunExterior15` (`CELL 0x0000963B`)、`interior=false`、`worldspace=Tamriel`，玩家狀態正常；過程無 CTD。
+- **這次尚未完成室內 runtime acceptance**：從戶外 `coc WhiterunBreezehome` 後 game-thread state 持續 503；乾淨重啟後單次 `load Save2_474D...WhiterunBreezehome...` 也未在時限內開始抽取 game-thread task。Skyrim 程序仍存活、`/ping` 正常且無 crash log，但這不能當作室內通過證據。後續應從已進入遊戲的 state 載入 Save2，或先解決 0.6.0 在 main-menu/load transition 的 task-queue 可觀測性，再補室內取樣。
+- log 範圍：本輪後新 crash log = 0；最新 Papyrus log 只有 5 條既有類型的 missing-class 訊息，無 Regional/Reverb/AcousticTemplate 目標名稱；SkyPatcher 載入 `Acoustic Space Improvement Fixes` cell config 並完成 Cell Patcher，無 error/warn。Sound Record Distributor 已解析 Regional/Reverb 規則，但 log 仍有一條通用 `Failed to dispatch message to MergeMapper`，本輪無 before-runtime baseline 可證明它是新訊息，故不將其歸因於本批 mod。
+- 結束已 `mo2ctl kill --mo2` + `try-fail`：測試存檔副本與 try branch 均移除，AgentBridge 回復 disabled；selected profile 仍是 Play-KR，profile repo `main` 於 `dd65524` 乾淨、與 HEAD 語意相同。`dd65524` 只是保留第一次啟動產生的合法 Play-KR runtime INI/plugins 格式化基線。
+- 自動化穩定性不等於聽感；戶外區域音、雨雷、室內殘響與音量仍留 [WAIT_USER.md](WAIT_USER.md) 由使用者人耳驗證。
+
 ### agent-bridge MessageBox control
 
 - 0.7.0 離線實作已完成（agent-bridge `716349f`）：`game.message_box` structured state、`POST /messagebox/select`、Python client、qa.json step 與 MCP tool 已落地；精確 message guard 用來避免等待期間 modal 被替換後誤按。client tests 47/47 PASS，clang-cl + xwin DLL build PASS。
