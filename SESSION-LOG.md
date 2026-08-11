@@ -39,9 +39,9 @@
 - P2 新版碰撞已將懸空碰撞面積降 98.9%；走廊基本正常，門洞仍會卡。
 - **幽靈碰撞有兩個互相獨立的來源，別混為一談**：
   - **根因一：平面內填洞**（有門洞的牆，凸包把洞填實）→ 解法是 `--ghost-tol` 0.25 → 0.02。使用者已決定先收現狀，套用與實機複驗留在 [WAIT_USER.md](WAIT_USER.md)。
-  - **根因二：`ConnectCollision` 被當成實心碰撞搬進來**（DS 的地圖切換觸發體，在 DS 裡不可見）→ 與根因一無關，**不需要使用者決定，是 extractor 的程式修正**：出碰撞時就該讀 MSB part 型別，把 `ConnectCollision` 整類排除。MSB 兩筆分別引用 `h0054B1`（144 hulls）與 `h0099B1`（2 hulls，18×18×18 m 方塊，離最近渲染幾何 >30 m）。**判準必須是 MSB part 型別，不是「離視覺多遠」**——距離只是事後補網，`h0054B1` 只有 4 顆孤兒，靠距離抓不到。
-- 另有離視覺幾何 >2 m 的 hull 共 61 顆（1.2%），位置本來就沒有可見物，可直接砍，零風險。
-- **動任何碰撞重跑前的已知阻礙**：`tools/collision_hulls.py` 依賴 `trimesh` / `scipy` / `vhacdx`，目前沒有任何 venv 裝了這三個。
+  - **根因二：`ConnectCollision` 被當成實心碰撞搬進來**（DS 的地圖切換觸發體，在 DS 裡不可見）→ 與根因一無關。**但「按 MSB part 型別整類排除」這個修法目前是有爭議的，先別動手**（2026-08-11 稽核發現）：P1 findings（`e0c1f7f`，2026-08-03）主張型別判準，而後來的 P2 實作（`1d65760`，2026-08-06）在 `tools/p1_batch.py` `msb_collision_models()` docstring 記下相反發現——`h0054B1` 與 `h0099B1` **各自同時**被註冊成 `Collision` 與 `ConnectCollision`，且 `h0054B1` 那 144 顆 hull **多數是真地板**，故型別分不開、改用距離。晚的證據在程式碼那邊；照舊文件整類排除會砍掉 144 顆地板。**待驗證**：dump MSB 看兩者的 part 引用與型別，需要 `extracted/msb_m18_01.json`（只在家裡那台）。細節見 [P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md) 根因二。
+- 離視覺幾何 >2 m 的 61 顆孤兒 hull（1.2%）**已在 P2 砍掉，不是待辦**：`drop_orphan_hulls()` 以 `ORPHAN_DIST = 2.0` m 逐顆過濾並無條件套用，`h0098`/`h0099` 整檔清空、殘留載體 NIF 也一併 prune。現裝的 `DSPortP1` 已含此過濾。
+- **動任何碰撞重跑前的已知阻礙**：`tools/collision_hulls.py` 的相依全是 lazy import，跑起來才炸，而目前哪個 venv 都不齊。**`shapely` 是必要的且正好在 `--ghost-tol` 的關鍵路徑上；`vhacdx` 不需要**（只在 `--method vhacd` 用，預設是 `components`）。權威 setup 在該檔檔頭 docstring，步驟見 [WAIT_USER.md](WAIT_USER.md)。
 - 技術細節：[P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md)。
 
 ### houseCARL
