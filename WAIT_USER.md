@@ -14,16 +14,21 @@
 
 - **darksouls-port 門洞仍卡，參數已備好但未套用**（2026-08-06，**使用者決定先收現狀**；2026-08-11 補上前置條件與備援）：症狀是使用者實走回報「只有過門會卡，過道上走基本沒問題」——根因是平面內填洞，有門洞的牆其凸包把門洞填實。`--ghost-tol` 是**每顆 hull** 的容許量，一個門洞切成好幾顆、每顆合法填 0.24 m²，加起來就把門框內縮到卡人。
 
-  **⚠️ 動手前的前置條件**：`tools/collision_hulls.py` 需要 `trimesh`、`scipy`、`vhacdx`，**目前哪個 venv 都沒有**（`model-converter/.venv` 只有 numpy + pygltflib，`import trimesh`／`import scipy` 皆失敗）。不補相依就跑不了全量重跑這步。
+  **⚠️ 動手前的前置條件**：`tools/collision_hulls.py` 的相依全是 lazy import，跑起來才會炸。**目前哪個 venv 都不齊**（`model-converter/.venv` 只有 numpy + pygltflib）。**權威 setup 在 `tools/collision_hulls.py` 檔頭 docstring**（2026-08-11 核對程式碼）：專屬 venv + `soulstruct` / `soulstruct-havok` 從 GitHub 源碼裝（`pip install -e ./soulstruct && pip install --no-deps -e ./soulstruct-havok`——PyPI 的 soulstruct 只到 2.3.2 < havok 要求的 2.4.0，且**必須 editable**，否則漏 package-data JSON 會 `FileNotFoundError`），再 `pip install numpy scipy colorama networkx vhacdx trimesh shapely`。
+
+  兩個修正（`p1/P1-INGAME-FINDINGS.md` 末段那句「需要 trimesh、scipy、vhacdx」不完整，以本條為準）：
+
+  - **`shapely` 是必要的，且正好在本任務的關鍵路徑上**——`_ghost_area()`（line 141 import shapely）由 `_split_by_ghost()` line 223 呼叫，那就是 `--ghost-tol` 的核心機制。漏裝會在要跑的那一步失敗。
+  - **`vhacdx` 不需要**——只在 `_vhacd()` 內 import，而 `--method` 預設是 `components` 而非 `vhacd`。
 
   執行步驟：
 
-  1. 補上 `trimesh` / `scipy` / `vhacdx` 相依。
+  1. 照 `tools/collision_hulls.py` 檔頭建好 venv 與相依。
   2. `--ghost-tol` 預設 0.25 → **0.02**（h0006 實測：hull 233 → 302，總憑空面積 2.0 → 0.1 m²，**+30% hull 換 20 倍改善**）。
   3. 全量重跑 47 個 hkx。全量代價估計：載體 NIF 341 → 約 440 塊。
   4. `rm -rf out/DSPortP1` 後重新打包 → `mo2ctl install --force` 重裝 → 進場走一次門。
 
-  **若 0.02 還是卡**：下一個懷疑對象是門框側壁（reveal）自成 patch 後的**厚度**，那要調 `--planar-thresh`，**不是繼續降 `--ghost-tol`**。
+  **若 0.02 還是卡**：下一個懷疑對象是門框側壁（reveal）自成 patch 後的**厚度**，那要調 `--planar-thresh`（現行預設 **0.15**），**不是繼續降 `--ghost-tol`**。（兩個預設值均於 2026-08-11 對 `tools/collision_hulls.py` 核對：`--ghost-tol` 0.25 於 line 327、`--planar-thresh` 0.15 於檔頭說明。）
 
   **`DSPortP1` 目前仍裝在 MO2 裡**（新版碰撞、332 個載體），故意留著讓下次能直接進場。技術細節見 [P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md)。
 
