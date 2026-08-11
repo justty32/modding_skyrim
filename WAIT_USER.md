@@ -12,6 +12,8 @@
 
 ## Open
 
+- **push 順序：darksouls-port 的 ConnectCollision 實證 commit**（2026-08-11）：`projects/darksouls-port` 有一筆尚未 push 的本地 commit `711512e`（用 `extracted/msb_m18_01.json` 解決 dual-registration 爭議），母 repo commit `8d6c189` 已釘到它。日後要同步 remote 時，**先 push `projects/darksouls-port` 的 `main`，再 push 母 repo `main`**；否則別人 clone 母 repo 後會抓不到該 submodule commit。
+
 - **darksouls-port 門洞仍卡，參數已備好但未套用**（2026-08-06，**使用者決定先收現狀**；2026-08-11 補上前置條件與備援）：症狀是使用者實走回報「只有過門會卡，過道上走基本沒問題」——根因是平面內填洞，有門洞的牆其凸包把門洞填實。`--ghost-tol` 是**每顆 hull** 的容許量，一個門洞切成好幾顆、每顆合法填 0.24 m²，加起來就把門框內縮到卡人。
 
   **⚠️ 動手前的前置條件**：`tools/collision_hulls.py` 的相依全是 lazy import，跑起來才會炸。**目前哪個 venv 都不齊**（`model-converter/.venv` 只有 numpy + pygltflib）。**權威 setup 在 `tools/collision_hulls.py` 檔頭 docstring**（2026-08-11 核對程式碼）：專屬 venv + `soulstruct` / `soulstruct-havok` 從 GitHub 源碼裝（`pip install -e ./soulstruct && pip install --no-deps -e ./soulstruct-havok`——PyPI 的 soulstruct 只到 2.3.2 < havok 要求的 2.4.0，且**必須 editable**，否則漏 package-data JSON 會 `FileNotFoundError`），再 `pip install numpy scipy colorama networkx vhacdx trimesh shapely`。
