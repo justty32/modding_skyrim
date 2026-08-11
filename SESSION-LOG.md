@@ -41,8 +41,18 @@
 
 ### houseCARL
 
-- Linux `set_mo2_instance` 仍不會將 Wine `Z:\\...` 轉回 Linux path；explicit-paths mode 可繼續使用。
-- 兩條 rebase 後的 fix branch 尚未 force-push/開 PR，`projects/houseCARL` 也因此尚未納入 submodule。三項都等使用者決定，見 [WAIT_USER.md](WAIT_USER.md)。
+**2026-08-11 定案：只顧自己的 fork，不再追上游。** force-push 兩條 fix branch 到 fork、submodule 釘 fork branch、**不開 upstream PR**、`set_mo2_instance` 的第三條 fix **先不開**。執行步驟在 [WAIT_USER.md](WAIT_USER.md)（需在家做）。
+
+上游現況（2026-08-11 查證，是這次決策的依據）：
+
+- upstream `main` 比兩條 branch 的 rebase 基準 `8385fc6` **多 228 個 commit、147 個檔案有改動**，總計 717 commits，最新 release 1.9.0，八月初仍在密集出 PR（#311–#320）。**2026-07-17 那次 rebase 已再度過期**，而且是個持續移動的目標。
+- 那些 Linux 問題**仍然沒有人修**：近期 commit 搜 Linux / Wine / gamePath / loose asset / dialogue lint 全部零命中；issue 搜 Linux、Wine、Proton 也是零。修正仍有效。
+- 但上游對 Linux 的接受度不樂觀：README 第一條需求寫「Windows.」，通篇未提 Linux/Wine；`CONTRIBUTING.md` 雖寫歡迎 issue 與 PR 且要求「動大工程前先開 issue」，**但該 repo 的 issue creation 被限制**，前置步驟不一定做得到；近期可見的 PR（#278–#320）作者清一色是 owner 本人（用 PR 對自己 review 當工作流）。*未翻完全部 248 個 closed PR，故不斷言「從無外部 PR 被合併」。*
+- 推論：開 PR 的期望值低，且維持 PR 存活要一直追那 228+ 的漂移；force-push 到自己 fork 不依賴任何人點頭，是唯一能讓修正不被上游漂移吃掉的動作。
+
+已知限制（決策後仍存在，不再視為待辦）：
+
+- Linux 下 `set_mo2_instance` 不會把 `ModOrganizer.ini` 的 Wine `Z:\...` 前綴轉回 Linux path，接上 `/Data` 成為壞路徑。**繞法：explicit-paths mode**（`DataDir`/`ModsDir`/`ProfileDir`），mod 庫建檔、DLL 檢查、load order 讀取都是在這個模式下完成的。唯一失去的是 `load_order_status(profile=...)` 跨 profile 檢查，改為直接讀 profile 檔案。哪天 explicit-paths 真的擋到再開第三條 branch。
 
 ## 已關閉的方向
 
