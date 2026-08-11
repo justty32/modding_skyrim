@@ -59,6 +59,18 @@
 - **UE4/5**：FModel 可把 `.umap` 匯出成 JSON，再用 [umodel_tools](https://skarndev.github.io/umodel_tools/) 的 Blender addon 重建。**限制是只吃靜態資料**（static mesh、燈光擺放）；UE 裡常有物件是 blueprint 或 C++ 在執行期生成的，那部分不會出現在匯出裡。所以 UE 候選要先問「這遊戲的場景有多少是靜態擺的」。UE5 另需 `mappings.usmap`。
 - **Unity**：**別用 AssetStudio 做這關**。AssetStudio 適合確認有沒有加密、匯出單體模型；要完整場景層級（GameObject、transform、父子關係、prefab 結構）該用 [AssetRipper](https://assetripper.org/)，它重建的是近乎原始的場景佈局。
 
+### 已完成移植的旁路（韓文站候選回饋，2026-08-11）
+
+`korean-policy-porting-2026-08-07-b2b` 的三筆候選已逐筆對照本機保留的 `meta.json` 與原始 `page.html`。先前把它們籠統稱為「地圖 porting 類」是分類錯誤；三者都是裝備或道具，沒有一筆包含地圖或場景佈局。
+
+| 候選 | 頁面實際內容 | 對本調查的證據力 |
+|---|---|---|
+| BDO Arethel & Heled | 兩套服裝，CBBE 3BA / HDT-SMP | 只證明特定角色裝備的網格、材質與物理已有 Skyrim 成品 |
+| Dark Souls 3 Silver Knight | 兩套盔甲及劍、槍、盾、弓箭 | 只證明單體角色資產可移植；不證明 MSB3 佈局或地圖 havok 已解 |
+| Bloodborne Lantern HDT | 紅／藍提燈的道具版與武器版 | 只證明單一道具的網格、材質與物理已有 Skyrim 成品 |
+
+**結論**：這三筆不會推翻四道關卡對「自己抽地圖」的判斷，也不能用來上修 BDO、DS3 或 Bloodborne 的地圖候選排名。它們證明的是另一條路：若只要單體物件，可直接使用別人已轉成 Skyrim 格式的成品，因而繞過來源遊戲的容器、佈局與碰撞解析。這條「成品移植旁路」要另外處理來源、版本相容性與授權；本調查仍只允許本機個人使用，不把下載連結存活視為可再發佈的證明。
+
 ## 候選總表（按省力程度排序）
 
 > ⚠️ 以下星等是 2026-08-04 的初版猜測，最高分那幾個已在上一節重評；兩處衝突以上一節為準。
@@ -106,9 +118,7 @@
 
 ## 待辦（尚未動工）
 
-桌面查證能做的已在「四道關卡」做完；**以下每一條都需要本機有該遊戲**，是實測而非查資料。
-
-- **接收韓文站採集的地圖 porting 候選**（線 B 唯一剩餘 open 項，見 [SESSION-LOG](../../SESSION-LOG.md)）：`korean-policy-porting-2026-08-07-b2b` 那 3 筆是 **BDO Arethel/Heled、Dark Souls 3 Silver Knight、Bloodborne Lantern**。**它們與本文的結論有直接張力，值得優先釐清**：這三款遊戲在上方分別被列為「排除／高風險」（黑色沙漠：`.pak` 加密、公開解包工具生態幾乎空白）與 FromSoft 棧，但既然已經有韓國 modder 產出可用的 Skyrim mod，代表**至少那些特定資產有人已經把移植做完了**。若屬實，它們該歸到「零轉換」那一層的同一種邏輯——**拿別人做完的成果，而不是自己解容器**——那條路完全繞開本文的四道關卡。*尚未查證這些 mod 的資產實際怎麼取得的，也未評估其授權狀態；本鐵律（僅本機個人使用、絕不發佈）照舊適用。*
+韓文站候選的桌面回饋已在上節做完；**以下每一條都需要本機有該遊戲**，是實測而非查資料。
 - **BG3（自己動手的候選裡建議優先）**：拿 LSLib 解一張小地圖的 `.lsf` → `.lsx`，確認擺放資料的欄位結構是否真能對映到 ModForge spec 的 placements。這是唯一一條能在不寫新解析器的前提下驗證 ③ 的候選。
 - **Bethesda 系**：跑一次 `skyblivion-NIFConverter`，確認它產出的 NIF 能被現有 `model-converter` 管線接受，以及碰撞是否需要重生。
 - 實測 Pathfinder: Kingmaker、Pillars of Eternity 的 Unity 資產是否加密（AssetStudio 開一下即知），若過關再用 AssetRipper 驗 ③。

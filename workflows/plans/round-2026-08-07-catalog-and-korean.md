@@ -27,7 +27,7 @@
 
 - [x] `mods` 裡每筆有真 `nexus_mod_id` 的都有 `nexus_status`（`live`/`hidden`/`gone`/`unknown`）與 `nexus_latest_version`
 - [x] `nexus_status ∈ {gone, hidden}` 的一律 `never_delete=true`（D5 保險栓）
-- [ ] 清理報告產生器可重跑、兩次結果一致，L2 三條例外有測到
+- [x] 清理報告產生器可重跑、兩次結果一致，L2 三條例外有測到（2026-08-11 重驗：`--self-test` 13/13 PASS；實庫唯讀 `--verify` 6/6 PASS）
 - [x] 每次寫入前自動 pymongo dump（P1.7）
 - [x] 漢化包能回答「這個漢化包對應哪個本體、版本差多少」（2026-08-07 A4-review：280 筆中 259 high 寫回 `archives.translates_mod_id`，9 low + 12 none 留人工）
 
@@ -78,7 +78,7 @@ L2 這一級**必須等 A2 跑完**才產得出來（判準依賴在架狀態）
 - [x] `candidates` collection 存在，schema 有否決狀態欄位（被否決過的不再出現在審閱清單）（2026-08-07 B1：schema + ingest/check/gallery 工具落地）
 - [x] 至少一輪採集落地：截圖 + 翻譯後簡介 + 原始連結 + 連結存活狀態（2026-08-07 B2/B3：`korean-public-2026-08-07-b2` 匯入 6 筆，連結 6/6 live）
 - [x] 本機 HTML 圖庫可開，使用者能在上面逐筆過目（2026-08-07 B1：`build_gallery.py` 已用暫存 DB fixture 驗證；2026-08-07 B3：`~/notes/projects/modding/skyrim/docs/candidates-gallery.html` 實批次 6 筆）
-- [ ] 地圖 porting 類的候選回饋到 `analysis/port-source-survey/`
+- [x] porting 候選回饋到 `analysis/port-source-survey/`（2026-08-11：核對後確認三筆都是裝備／道具，非地圖；已記錄其只能證明「成品移植旁路」，不證明場景佈局或碰撞可抽取）
 
 ### B1（codex）：`candidates` schema + 治具
 
@@ -106,7 +106,7 @@ L2 這一級**必須等 A2 跑完**才產得出來（判準依賴在架狀態）
 ### B3（codex）：收斂
 
 跑 `ingest_candidates.py` + `check_links.py` + `build_gallery.py`，把圖庫路徑交給使用者審閱。
-地圖 porting 類的候選另外整理一段，回饋到 `analysis/port-source-survey/README.md`。
+porting 類候選另外整理一段，回饋到 `analysis/port-source-survey/README.md`；要先依頁面內容分清「地圖／場景」與「裝備／道具」，不只看 `other-game-porting` tag。
 
 ---
 

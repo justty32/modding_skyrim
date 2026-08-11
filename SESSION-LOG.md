@@ -15,15 +15,16 @@
 
 - 1,585 筆 archive / 1,433 個 mod group 已建檔；DLL runtime 檢查、L1/L2 清理與 L3 隔離已執行。
 - P1.4 Nexus 在架狀態補值已完成；A4-review 已完成，280 個漢化包中 259 個 high 寫回 `archives.translates_mod_id`，9 low + 12 none 留人工。
-- 剩餘主要 open：A3 清理報告產生器（P1.5）+ L2 三條例外驗證。
+- A3 清理報告產生器（P1.5/P1.7）已在 notes 側落地：`tools/cleanup_report.py` 可重跑、寫入前自動備份。2026-08-11 重驗：離線 fixture 13/13 PASS（含 L2 三條例外），實庫唯讀 invariants 6/6 PASS，兩次分類一致。
+- 本線現無可自動執行的清理待辦；後續只剩 notes 側 `l4-review-worklist.md` 的人工辨識與來源挑選，不進刪除流程。
 - 107 筆 `quarantined_at` 不一致紀錄已從 `archives` 移除；稽核清單在 `~/notes/projects/modding/skyrim/docs/removed-missing-quarantine-2026-08-07.md`。
 - 權威計畫：[mod-library-catalog.md](workflows/plans/mod-library-catalog.md)。
 
 ### 韓文站採集
 
-- **B1/B2/B3 皆已完成**（2026-08-07）。B1：`candidates` schema + `ingest_candidates.py` / `check_links.py` / `build_gallery.py` 落地，`rejected` 保險栓用暫存 DB fixture 驗證。B2/B3：兩批候選落地——`korean-public-2026-08-07-b2` 6 筆（連結 6/6 live），`korean-policy-porting-2026-08-07-b2b` 3 筆 live pending；圖庫在 `~/notes/projects/modding/skyrim/docs/candidates-gallery.html`。全程未下載任何 mod 本體。
+- **B1/B2/B3 皆已完成**（2026-08-07；2026-08-11 完成調查回饋）。B1：`candidates` schema + `ingest_candidates.py` / `check_links.py` / `build_gallery.py` 落地，`rejected` 保險栓用暫存 DB fixture 驗證。B2/B3：兩批候選落地——`korean-public-2026-08-07-b2` 6 筆（連結 6/6 live），`korean-policy-porting-2026-08-07-b2b` 3 筆 live pending；圖庫在 `~/notes/projects/modding/skyrim/docs/candidates-gallery.html`。全程未下載任何 mod 本體。
 - **採集方式已改變，別再照原計畫派 agy**：`agy` CLI 三次批次嘗試全部在 print mode timeout、零產出（前兩次疑因掛了大型 `~/skyrim_mods` workspace，第三次不掛仍超時）。改由 codex 以 deterministic `curl`/Python 從公開 Tistory 頁建 fixture。另：`arca.live/b/tullius` 匿名 `curl` 會撞 hCaptcha，不能作為「機器抓到原物」的通過條件。
-- **唯一剩餘 open：地圖 porting 類候選回饋到 [port-source-survey](analysis/port-source-survey/README.md)**。b2b 那 3 筆正是此類（BDO Arethel/Heled、Dark Souls 3 Silver Knight、Bloodborne Lantern），且與該調查的結論有直接張力，見其「待辦」段。
+- b2b 三筆已回饋到 [port-source-survey](analysis/port-source-survey/README.md)：逐筆對照保留的 `meta.json` 與 `page.html` 後，確認 BDO Arethel/Heled 是服裝、DS3 Silver Knight 是盔甲武器、Bloodborne Lantern 是道具／武器，**全部都不是地圖 port**。它們證明「使用別人已轉好的 Skyrim 成品」這條旁路，不證明來源遊戲的場景佈局或碰撞可抽取。線 B 無剩餘 open。
 - 權威計畫：[round-2026-08-07-catalog-and-korean.md](workflows/plans/round-2026-08-07-catalog-and-korean.md)。
 
 ### 移植素材來源調查（port-source-survey）
