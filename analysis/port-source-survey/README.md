@@ -4,7 +4,7 @@
 
 調查「除了 Dark Souls Remastered 之外，還有哪些遊戲適合抽資產移植進 Skyrim」的候選清單。起點是 [darksouls-port](../../projects/darksouls-port/) 的技術棧（SoulsFormatsNEXT 解 FromSoft 容器格式、`collision_hulls.py` 做引擎無關的碰撞後處理、glTF 當中介格式刻意不做座標轉換以利換引擎）。
 
-**性質**：純討論記錄，非實測結論。下面標「不確定」的地方動手前務必先驗證，不要當定論引用。
+**性質**：下方候選總表仍是**純討論記錄**（2026-08-04），非實測結論。**2026-08-11 新增「四道關卡」一節**，把最高分的幾個候選改用可查證的判準重評，並更正了三處初版過於樂觀的評分——以那節為準，總表的星等視為初版猜測。
 
 **鐵律**（承襲 darksouls-port 的 IP 立場）：所有候選都以**僅本機個人使用、絕不發佈**為前提；凡是現行營運的網路遊戲（有 anti-cheat／EULA 明文禁反向工程）一律排除或降到最後考慮，風險層級跟單機遊戲的成熟 modding 生態不是同一回事。
 
@@ -21,7 +21,47 @@
 | **Wyrmstooth / Beyond Reach / Falskaar** | 新增大型 worldspace 的知名 quest mod | 各自獨立設計的新大陸，城鎮/地牢佈局可直接拆解參考 |
 | **Vigilant** | 大型原創 quest mod（sofia-patch 已經在碰的世界觀） | 已經是你現有專案在用的素材，順手可以再深挖 |
 
+## 四道關卡（2026-08-11 桌面查證）
+
+初版總表用單一「省力程度」排序，但那把四件難度不同的事壓成一個數字。從 [darksouls-port/extractor](../../projects/darksouls-port/extractor/README.md) 實際在做的四段回推，任何候選都要分別過四關：
+
+| 關卡 | DS1R 的作法 | 為什麼是獨立的一關 |
+|---|---|---|
+| **① 開容器** | SoulsFormatsNEXT 讀 DCX/BND3/BXF3 | 加密或格式未逆向就整條斷；這關最容易查（拿通用工具開一下就知道） |
+| **② 網格** | FLVER2 → glTF（SharpGLTF） | 有工具就過，多數引擎都有社群解包器 |
+| **③ 佈局** | MSB1 → JSON（position/rotation/scale **＋ part 型別**） | **最被低估的一關**。沒有它，抽出來的是散裝資產不是城鎮 |
+| **④ 碰撞** | hkx → `soulstruct-havok` → `collision_hulls.py` 凸分解 | 唯一可全部重生的一關——`collision_hulls.py` 吃通用三角網格、與來源引擎無關，最壞情況從網格重算 |
+
+③ 的重要性有實例：`p1/P1-INGAME-FINDINGS.md` 記著判準必須是「MSB part 型別」而非「離視覺多遠」，`ConnectCollision` 要整類排除。這種資訊只有真正的關卡檔給得出來。
+
+### 重評結果
+
+| 候選 | ① 容器 | ② 網格 | ③ 佈局 | ④ 碰撞 | 修正後判斷 |
+|---|---|---|---|---|---|
+| **Bethesda 系（Oblivion/Morrowind/FO）** | ✅ BSA，工具遍地 | ✅ 原生 NIF | ✅ 原生 CELL/REFR，xEdit/CK 直接看 | ✅ 原生 havok | **仍是第一名，但不是「零轉檔」**（見下） |
+| **BG3** | ✅ LSLib 解 `.pak` | ⚠️ GR2 需自備 `granny2.dll` | ✅ **`Levels/` 下 `.lsf` → `.lsx` 純文字擺放** | ⚠️ 需從網格重算 | **實質最強的非 Bethesda 候選** |
+| **DS3 / Sekiro** | ⚠️ 未驗 | ⚠️ 未驗 | ⚠️ MSB3 / MSBS，**非現有 MSB1** | ⚠️ havok 版本不同 | **降級——不是「同棧」**（見下） |
+| **UE4/5（霍格華茲、LotF）** | ✅ FModel | ✅ FModel/UModel | ⚠️ **只有靜態** `.umap`，blueprint 動態生成的物件抓不到 | ⚠️ 需從網格重算 | 佈局會缺一塊，缺多少視遊戲而定 |
+| **Unity（Pathfinder/PoE）** | ✅ 多數不加密 | ✅ AssetStudio | ⚠️ **要換 AssetRipper**，AssetStudio 導不出完整場景層級 | ⚠️ 需從網格重算 | 可行，但工具選錯就卡在 ③ |
+
+### 三處更正
+
+**1. Bethesda 系不是「零轉檔」。** NIF 版本實際不同：Morrowind `4.0.0.2`、Oblivion `20.0.0.5`、Skyrim `20.2.0.7`，而且**手動改版號無效**——UESP 明載用新版 NifSkope 存 Morrowind 檔會讓 mesh 在遊戲裡直接不顯示。好消息是有現成轉換器 [Ormin/skyblivion-NIFConverter](https://github.com/Ormin/skyblivion-NIFConverter)（Skyblivion/Skywind 在用）。**結論不變（仍最省力），但省掉的是 glTF 那一段，不是整條管線**；仍需一個 NIF→NIF 轉換步驟。
+
+**2. DS3/Sekiro 從 ★★★★☆ 降級——「同棧」的說法不成立。** extractor README 自陳「只在 DSR v1.04 `m18` 實測過；其他地圖／其他 FromSoft 遊戲（用 MSB3/FLVER0 等）未驗」。具體差在：③ DS3 用 MSB3、Sekiro 用 MSBS，現有解析器釘死 `MSB1`；④ havok 版本不同，現在靠 `soulstruct-havok` 讀 DSR 的 2015 tagfile，而 `HKLib` 只支援 2018（艾爾登）——**中間這代沒有現成 Python 讀取器**，這正是初版標給艾爾登法環的那道牆，DS3/Sekiro 同樣要面對。[Smithbox](https://github.com/vawser/Smithbox) 確實支援 DS3/Sekiro 的 Map Editor 與 Model Editor，但它是 GUI 編輯器，不等於現成的批次抽取管線。
+
+**3. BG3 上修，且初版有一處分類錯誤。** 下方「全新戰場」段把 BG3 歸進 Unity 系，與總表的「Larian 自研（LSX/LSF）」矛盾——**以總表為準，BG3 不是 Unity**。查證後三件事：官方 Toolkit **不含 level editor**（只能唯讀載入關卡看 entity 配置），但這不重要，因為 `Levels/` 目錄下每張圖的 `.lsf` 記的就是 Characters/Items 等物件與其擺放，LSLib 可轉成 `.lsx` XML **直接當文字讀**——功能上等價於 MSB，也就是最難的 ③ 這關 BG3 是通的。網格側 `.gr2` 需要在 LSLib 的 `Tools/` 放一份相容的 `granny2.dll`，否則匯入匯出直接報 `Granny2.dll not found`。
+
+### 關卡 ③ 的通用查法
+
+比查文件準的一招，按引擎家族分：
+
+- **UE4/5**：FModel 可把 `.umap` 匯出成 JSON，再用 [umodel_tools](https://skarndev.github.io/umodel_tools/) 的 Blender addon 重建。**限制是只吃靜態資料**（static mesh、燈光擺放）；UE 裡常有物件是 blueprint 或 C++ 在執行期生成的，那部分不會出現在匯出裡。所以 UE 候選要先問「這遊戲的場景有多少是靜態擺的」。UE5 另需 `mappings.usmap`。
+- **Unity**：**別用 AssetStudio 做這關**。AssetStudio 適合確認有沒有加密、匯出單體模型；要完整場景層級（GameObject、transform、父子關係、prefab 結構）該用 [AssetRipper](https://assetripper.org/)，它重建的是近乎原始的場景佈局。
+
 ## 候選總表（按省力程度排序）
+
+> ⚠️ 以下星等是 2026-08-04 的初版猜測，最高分那幾個已在上一節重評；兩處衝突以上一節為準。
 
 | 候選 | 引擎/格式 | 城鎮/NPC 素材量 | 省力程度 | 美術評價 | 一句話理由 |
 |---|---|---|---|---|---|
@@ -61,11 +101,29 @@
 ## 與 darksouls-port 技術棧的關係
 
 - **完全複用**：`collision_hulls.py`（連通元件→凸包/V-HACD 後處理）吃通用三角網格 JSON，跟來源引擎無關；glTF 中介格式刻意維持來源原生座標系不做轉換，就是為了「換目標引擎不必重抽」。
-- **需要重寫前端解析器**：Elden Ring（MSBE、Oodle）、DS3/Sekiro（大機率同樣需要，未驗）；Bethesda 系列反而可能完全不需要這層，因為目標格式（NIF）本來就相容。
-- **全新戰場**：Unity 系（Pathfinder/PoE/BG3 等）要另外接 AssetStudio/UABE 這類通用 Unity 解包工具，跟 FromSoft 棧完全獨立，是另一條管線。
+- **需要重寫前端解析器**：Elden Ring（MSBE、Oodle）、**DS3（MSB3）/Sekiro（MSBS）——2026-08-11 查證後確認需要，不是「大機率」**；havok 版本亦不同，見上面「三處更正」第 2 點。Bethesda 系列這層需求最小，但仍需 NIF→NIF 版本轉換（第 1 點）。
+- **全新戰場**：Unity 系（Pathfinder/PoE 等）要另外接 AssetRipper（**不是 AssetStudio**，見「關卡 ③ 的通用查法」）這類通用 Unity 解包工具，跟 FromSoft 棧完全獨立，是另一條管線。**BG3 不屬於此類**——它是 Larian 自研 LSX/LSF，走 LSLib，是第三條路。
 
 ## 待辦（尚未動工）
 
-- 實測 Pathfinder: Kingmaker、Pillars of Eternity 的 Unity 資產是否加密（AssetStudio 直接開）。
-- 查證 DS3/Sekiro 的 DCX 壓縮是否已上 Oodle（影響是否要先解決 Elden Ring 那條 Oodle DLL 路徑）。
+桌面查證能做的已在「四道關卡」做完；**以下每一條都需要本機有該遊戲**，是實測而非查資料。
+
+- **BG3（建議優先）**：拿 LSLib 解一張小地圖的 `.lsf` → `.lsx`，確認擺放資料的欄位結構是否真能對映到 ModForge spec 的 placements。這是唯一一條能在不寫新解析器的前提下驗證 ③ 的候選。
+- **Bethesda 系**：跑一次 `skyblivion-NIFConverter`，確認它產出的 NIF 能被現有 `model-converter` 管線接受，以及碰撞是否需要重生。
+- 實測 Pathfinder: Kingmaker、Pillars of Eternity 的 Unity 資產是否加密（AssetStudio 開一下即知），若過關再用 AssetRipper 驗 ③。
+- 查證 DS3/Sekiro 的 DCX 壓縮是否已上 Oodle（影響是否要先解決 Elden Ring 那條 Oodle DLL 路徑）。**注意**：即使 Oodle 這關過了，MSB3/MSBS 與 havok 版本兩道仍在，見上。
 - 查證 Aion/ArcheAge 的 CryEngine `.cgf` 通用轉檔工具（如 CryEngine Converter）目前是否還維護、能不能吃這兩款的版本。
+
+## 來源
+
+2026-08-11 查證所依據的外部來源：
+
+- [Ormin/skyblivion-NIFConverter](https://github.com/Ormin/skyblivion-NIFConverter) — Oblivion→Skyrim NIF 轉換器
+- [UESP: Creating Morrowind Meshes Using New Versions of Blender](https://en.uesp.net/wiki/Morrowind_Mod:Creating_Morrowind_Meshes_Using_New_Versions_of_Blender) — NIF 版本號與「改版號無效」
+- [Norbyte/lslib](https://github.com/Norbyte/lslib) — BG3 LSF/LSX/GR2 轉換
+- [BG3 Modding Wiki: Getting Started with 3D Modding](https://wiki.bg3.community/Tutorials/Visual/getting-started-with-3d-modding) — `granny2.dll` 需求
+- [bg3.wiki: Working with LSX files](https://bg3.wiki/wiki/Modding:Working_with_LSX_files) — `Levels/` 下 `.lsf` 的擺放資料結構
+- [BG3 官方 modding 文件](https://docs.baldursgate3.game/) — Toolkit 範圍（無 level editor）
+- [vawser/Smithbox](https://github.com/vawser/Smithbox) — DS3/Sekiro 的 Map/Model Editor 支援
+- [umodel_tools](https://skarndev.github.io/umodel_tools/usage.html) — UE `.umap` 匯出僅含靜態資料
+- [AssetRipper](https://assetripper.org/) — Unity 場景層級重建

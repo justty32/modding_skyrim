@@ -25,6 +25,14 @@
 - 下一步是 agy recon 驗收與 B2 正式採集：只抓公開頁 HTML、截圖與原始連結，不下載 mod 本體。
 - 權威計畫：[round-2026-08-07-catalog-and-korean.md](workflows/plans/round-2026-08-07-catalog-and-korean.md)。
 
+### 移植素材來源調查（port-source-survey）
+
+- 2026-08-11 新增「四道關卡」評估框架（開容器／網格／**佈局**／碰撞），把最高分候選從猜測星等改成有來源的判斷。
+- 三處更正：Bethesda 系非零轉檔（NIF 版本不同，需 `skyblivion-NIFConverter`）；**DS3/Sekiro 不是「同棧」**（MSB3/MSBS + havok 版本皆異，現有 extractor 釘死 MSB1）；BG3 上修並修掉「BG3 屬 Unity 系」的分類錯誤。
+- 實質結論：**BG3 是最強的非 Bethesda 候選**——`Levels/` 的 `.lsf` 可經 LSLib 轉 `.lsx` 純文字讀取擺放，功能等價於 MSB，最難的「佈局」關是通的。
+- 桌面能查的已做完；剩下的待辦都需要本機有該遊戲，建議優先驗 BG3 的 `.lsx` 擺放欄位能否對映 ModForge spec placements。
+- 權威文件：[analysis/port-source-survey/README.md](analysis/port-source-survey/README.md)。
+
 ### darksouls-port
 
 - P2 新版碰撞已將懸空碰撞面積降 98.9%；走廊基本正常，門洞仍會卡。
