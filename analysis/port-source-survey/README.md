@@ -108,7 +108,8 @@
 
 桌面查證能做的已在「四道關卡」做完；**以下每一條都需要本機有該遊戲**，是實測而非查資料。
 
-- **BG3（建議優先）**：拿 LSLib 解一張小地圖的 `.lsf` → `.lsx`，確認擺放資料的欄位結構是否真能對映到 ModForge spec 的 placements。這是唯一一條能在不寫新解析器的前提下驗證 ③ 的候選。
+- **接收韓文站採集的地圖 porting 候選**（線 B 唯一剩餘 open 項，見 [SESSION-LOG](../../SESSION-LOG.md)）：`korean-policy-porting-2026-08-07-b2b` 那 3 筆是 **BDO Arethel/Heled、Dark Souls 3 Silver Knight、Bloodborne Lantern**。**它們與本文的結論有直接張力，值得優先釐清**：這三款遊戲在上方分別被列為「排除／高風險」（黑色沙漠：`.pak` 加密、公開解包工具生態幾乎空白）與 FromSoft 棧，但既然已經有韓國 modder 產出可用的 Skyrim mod，代表**至少那些特定資產有人已經把移植做完了**。若屬實，它們該歸到「零轉換」那一層的同一種邏輯——**拿別人做完的成果，而不是自己解容器**——那條路完全繞開本文的四道關卡。*尚未查證這些 mod 的資產實際怎麼取得的，也未評估其授權狀態；本鐵律（僅本機個人使用、絕不發佈）照舊適用。*
+- **BG3（自己動手的候選裡建議優先）**：拿 LSLib 解一張小地圖的 `.lsf` → `.lsx`，確認擺放資料的欄位結構是否真能對映到 ModForge spec 的 placements。這是唯一一條能在不寫新解析器的前提下驗證 ③ 的候選。
 - **Bethesda 系**：跑一次 `skyblivion-NIFConverter`，確認它產出的 NIF 能被現有 `model-converter` 管線接受，以及碰撞是否需要重生。
 - 實測 Pathfinder: Kingmaker、Pillars of Eternity 的 Unity 資產是否加密（AssetStudio 開一下即知），若過關再用 AssetRipper 驗 ③。
 - 查證 DS3/Sekiro 的 DCX 壓縮是否已上 Oodle（影響是否要先解決 Elden Ring 那條 Oodle DLL 路徑）。**注意**：即使 Oodle 這關過了，MSB3/MSBS 與 havok 版本兩道仍在，見上。

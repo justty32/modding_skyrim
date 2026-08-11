@@ -21,8 +21,9 @@
 
 ### 韓文站採集
 
-- B1 已完成：`candidates` schema + `ingest_candidates.py` / `check_links.py` / `build_gallery.py` 已落地，`rejected` 保險栓用暫存 DB fixture 驗證。
-- 下一步是 agy recon 驗收與 B2 正式採集：只抓公開頁 HTML、截圖與原始連結，不下載 mod 本體。
+- **B1/B2/B3 皆已完成**（2026-08-07）。B1：`candidates` schema + `ingest_candidates.py` / `check_links.py` / `build_gallery.py` 落地，`rejected` 保險栓用暫存 DB fixture 驗證。B2/B3：兩批候選落地——`korean-public-2026-08-07-b2` 6 筆（連結 6/6 live），`korean-policy-porting-2026-08-07-b2b` 3 筆 live pending；圖庫在 `~/notes/projects/modding/skyrim/docs/candidates-gallery.html`。全程未下載任何 mod 本體。
+- **採集方式已改變，別再照原計畫派 agy**：`agy` CLI 三次批次嘗試全部在 print mode timeout、零產出（前兩次疑因掛了大型 `~/skyrim_mods` workspace，第三次不掛仍超時）。改由 codex 以 deterministic `curl`/Python 從公開 Tistory 頁建 fixture。另：`arca.live/b/tullius` 匿名 `curl` 會撞 hCaptcha，不能作為「機器抓到原物」的通過條件。
+- **唯一剩餘 open：地圖 porting 類候選回饋到 [port-source-survey](analysis/port-source-survey/README.md)**。b2b 那 3 筆正是此類（BDO Arethel/Heled、Dark Souls 3 Silver Knight、Bloodborne Lantern），且與該調查的結論有直接張力，見其「待辦」段。
 - 權威計畫：[round-2026-08-07-catalog-and-korean.md](workflows/plans/round-2026-08-07-catalog-and-korean.md)。
 
 ### 移植素材來源調查（port-source-survey）
