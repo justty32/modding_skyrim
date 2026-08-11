@@ -32,7 +32,7 @@
 | **③ 佈局** | MSB1 → JSON（position/rotation/scale **＋ part 型別**） | **最被低估的一關**。沒有它，抽出來的是散裝資產不是城鎮 |
 | **④ 碰撞** | hkx → `soulstruct-havok` → `collision_hulls.py` 凸分解 | 唯一可全部重生的一關——`collision_hulls.py` 吃通用三角網格、與來源引擎無關，最壞情況從網格重算 |
 
-③ 的重要性有實例：`p1/P1-INGAME-FINDINGS.md` 記著判準必須是「MSB part 型別」而非「離視覺多遠」，`ConnectCollision` 要整類排除。這種資訊只有真正的關卡檔給得出來。
+③ 的重要性有實例：`p1/P1-INGAME-FINDINGS.md` 的 MSB dump 能說明 `ConnectCollision` 是地圖連接語意，也能揭露 `h0054B1` / `h0099B1` 同時被註冊為普通 `Collision` 與 `ConnectCollision`。這正是單靠散裝網格看不到的資訊；但因為兩種 part 共用同一 model 與 transform，實作上也不能盲目按型別整類排除，仍要與視覺幾何的距離證據交叉判斷。
 
 ### 重評結果
 
