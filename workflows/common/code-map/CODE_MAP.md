@@ -24,7 +24,7 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 
 | 類別 | 檔案 | 職責 |
 |------|------|------|
-| Runtime | `projects/agent-bridge/src/GameActions.*`, `StateActors.*`, `State.*`, `Routes.*` | game-thread actor/dialogue actions、structured state、HTTP contract |
+| Runtime | `projects/agent-bridge/src/GameActions.*`, `MessageBox.*`, `StateActors.*`, `State.*`, `Routes.*` | game-thread actor/dialogue/MessageBox actions、structured state、HTTP contract |
 | Linux client | `projects/agent-bridge/client/bridge.py`, `qa_runner.py`, `qa_mcp.py` | HTTP calls、declarative QA steps、MCP semantic tools |
 | Tests | `projects/agent-bridge/client/test_bridge.py`, `test_qa_runner.py`, `test_qa_mcp.py` | request shape、retry/validation、MCP routing |
 | Docs | `projects/agent-bridge/README.md`, `client/README.md`, `client/QA-SCHEMA.md` | runtime API、client entry、qa.json contract |

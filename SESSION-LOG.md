@@ -4,6 +4,11 @@
 
 ## 現役工作
 
+### agent-bridge MessageBox control
+
+- 0.7.0 離線實作已完成（agent-bridge `716349f`）：`game.message_box` structured state、`POST /messagebox/select`、Python client、qa.json step 與 MCP tool 已落地；精確 message guard 用來避免等待期間 modal 被替換後誤按。client tests 47/47 PASS，clang-cl + xwin DLL build PASS。
+- 本輪不啟動、不切換、不修改 MO2／Skyrim 執行狀態；實機 acceptance 等另一個 agent 釋放執行權後再做，項目已列在 [WAIT_USER.md](WAIT_USER.md)。
+
 ### 第三方 mod 流水線
 
 - P0–P4 已完成；`projects/agent-bridge` 的 P1/P2/P3 commits 為 `30a97be` / `35d5692` / `6106646`，P4 補強 commit 為 `c641d77`。
