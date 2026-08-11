@@ -12,7 +12,20 @@
 
 ## Open
 
-- **darksouls-port 門洞仍卡，參數已備好但未套用**（2026-08-06，**使用者決定先收現狀**）：`--ghost-tol` 0.25 → 0.02，h0006 實測憑空面積 2.0 → 0.1 m²，代價是載體 NIF 341 → 約 440 塊。要動就是改預設、全量重跑 47 個 hkx、`rm -rf out/DSPortP1` 後重新打包、`mo2ctl install --force` 重裝，再進場走一次門。**`DSPortP1` 目前仍裝在 MO2 裡**（新版碰撞、332 個載體），故意留著讓下次能直接進場。
+- **darksouls-port 門洞仍卡，參數已備好但未套用**（2026-08-06，**使用者決定先收現狀**；2026-08-11 補上前置條件與備援）：症狀是使用者實走回報「只有過門會卡，過道上走基本沒問題」——根因是平面內填洞，有門洞的牆其凸包把門洞填實。`--ghost-tol` 是**每顆 hull** 的容許量，一個門洞切成好幾顆、每顆合法填 0.24 m²，加起來就把門框內縮到卡人。
+
+  **⚠️ 動手前的前置條件**：`tools/collision_hulls.py` 需要 `trimesh`、`scipy`、`vhacdx`，**目前哪個 venv 都沒有**（`model-converter/.venv` 只有 numpy + pygltflib，`import trimesh`／`import scipy` 皆失敗）。不補相依就跑不了全量重跑這步。
+
+  執行步驟：
+
+  1. 補上 `trimesh` / `scipy` / `vhacdx` 相依。
+  2. `--ghost-tol` 預設 0.25 → **0.02**（h0006 實測：hull 233 → 302，總憑空面積 2.0 → 0.1 m²，**+30% hull 換 20 倍改善**）。
+  3. 全量重跑 47 個 hkx。全量代價估計：載體 NIF 341 → 約 440 塊。
+  4. `rm -rf out/DSPortP1` 後重新打包 → `mo2ctl install --force` 重裝 → 進場走一次門。
+
+  **若 0.02 還是卡**：下一個懷疑對象是門框側壁（reveal）自成 patch 後的**厚度**，那要調 `--planar-thresh`，**不是繼續降 `--ghost-tol`**。
+
+  **`DSPortP1` 目前仍裝在 MO2 裡**（新版碰撞、332 個載體），故意留著讓下次能直接進場。技術細節見 [P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md)。
 
 - **houseCARL：收進自己的 fork，需在家執行**（決策於 2026-08-11，取代原本三條待決事項）：方針是**只顧自己的 repo，不再追上游**——force-push 兩條 fix branch 到 fork、submodule 釘 fork branch、**不開 upstream PR**。要你在家做，因為 clone 只在家裡那台、且需要你的推送權限：
 

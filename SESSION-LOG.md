@@ -36,8 +36,12 @@
 ### darksouls-port
 
 - P2 新版碰撞已將懸空碰撞面積降 98.9%；走廊基本正常，門洞仍會卡。
-- `--ghost-tol 0.02` 可將 h0006 懸空面積由 2.0 降到 0.1 m²，代價是載體約 341 → 440；使用者已決定先收現狀，套用與實機複驗留在 [WAIT_USER.md](WAIT_USER.md)。
-- 技術細節：`projects/darksouls-port/p1/P1-INGAME-FINDINGS.md`。
+- **幽靈碰撞有兩個互相獨立的來源，別混為一談**：
+  - **根因一：平面內填洞**（有門洞的牆，凸包把洞填實）→ 解法是 `--ghost-tol` 0.25 → 0.02。使用者已決定先收現狀，套用與實機複驗留在 [WAIT_USER.md](WAIT_USER.md)。
+  - **根因二：`ConnectCollision` 被當成實心碰撞搬進來**（DS 的地圖切換觸發體，在 DS 裡不可見）→ 與根因一無關，**不需要使用者決定，是 extractor 的程式修正**：出碰撞時就該讀 MSB part 型別，把 `ConnectCollision` 整類排除。MSB 兩筆分別引用 `h0054B1`（144 hulls）與 `h0099B1`（2 hulls，18×18×18 m 方塊，離最近渲染幾何 >30 m）。**判準必須是 MSB part 型別，不是「離視覺多遠」**——距離只是事後補網，`h0054B1` 只有 4 顆孤兒，靠距離抓不到。
+- 另有離視覺幾何 >2 m 的 hull 共 61 顆（1.2%），位置本來就沒有可見物，可直接砍，零風險。
+- **動任何碰撞重跑前的已知阻礙**：`tools/collision_hulls.py` 依賴 `trimesh` / `scipy` / `vhacdx`，目前沒有任何 venv 裝了這三個。
+- 技術細節：[P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md)。
 
 ### houseCARL
 
