@@ -16,14 +16,16 @@
   實證）：`main` 已快轉到 `b95ee0d`，但 `git pull` 的遞迴子模組 fetch 會報
   `upload-pack: not our ref`。GitHub 與本機都沒有以下三個被母 repo gitlink 指定的 commit：
 
-  | submodule | 母 repo 要求 | GitHub `main` 目前 |
-  |---|---|---|
-  | `my_skyrim_plugin_1` | `ea6bfeb` | `e257642` |
-  | `scene-capture-bridge` | `1e44326` | `298566a` |
-  | `sofia-patch` | `fc25fc1` | `c1c6f80` |
+  | submodule | 母 repo 要求 | GitHub `main` 目前 | 首次被母 repo 引用 |
+  |---|---|---|---|
+  | `my_skyrim_plugin_1` | `ea6bfeb` | `e257642` | `e4a95e8`（15:56） |
+  | `scene-capture-bridge` | `1e44326` | `298566a` | `e4a95e8`（15:56） |
+  | `sofia-patch` | `fc25fc1` | `c1c6f80` | `b90b1fb` → `3692362`（13:30–14:25） |
 
   請在仍持有這三個 commit 的電腦，逐 repo 將包含目標 commit 的 branch push 到各自 GitHub
-  remote；先確認 `git branch --contains <sha>` 與欲推 branch，再 push，**不要在這台把母 repo
+  remote；上表母 repo commits 均由公司電腦的 `guanyu.lu` 於 2026-08-12 建立，可依時間與
+  parent commit 訊息定位原 session。先確認 `git branch --contains <sha>` 與欲推 branch，再
+  push，**不要在這台把母 repo
   指標倒退到舊 `main`**，否則會丟掉本批已落地內容。之後在母 repo 執行
   `git submodule update --init --recursive`，三者都能 checkout 才算完成。這台其餘子模組已
   對齊；目前只有上述三個仍顯示 gitlink mismatch。
