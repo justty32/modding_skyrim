@@ -24,8 +24,9 @@
 | upstream `origin/main` | `655221d` |
 | upstream 相對基準漂移 | 159 commits、134 files；`+22597/-1843` |
 
-兩個本地 branch 已在 2026-07-17 以 self-contained publish generator 重驗：
-`case-insensitive-asset-guard` 與 `dialogue-encoding-guard` 均 PASS，`dotnet build` 0 error。
+兩個本地 branch 已在 2026-08-12 於各自 detached worktree 重新 self-contained publish；
+`case-insensitive-asset-guard` 與 `dialogue-encoding-guard` 均 PASS，publish 0 error（只有既有
+nullable/obsolete warnings）。臨時 worktree 與 publish 產物已清除，原工作區未切 branch。
 fork 尚未收到 rebase 後 SHA，因此一般 push 會是 non-fast-forward；實際發布必須使用
 `--force-with-lease`，並先核對上表的 fork 舊 tip 沒被別的工作覆寫。
 
