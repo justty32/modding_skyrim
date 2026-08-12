@@ -73,6 +73,16 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
 
         self.assertEqual(result, 1)
 
+    def test_cli_can_skip_markdown_symlink(self):
+        missing_target = self.root / "missing.md"
+        link = self.root / "link.md"
+        link.symlink_to(missing_target)
+
+        with redirect_stdout(io.StringIO()):
+            result = main(["--skip-symlinks", str(link)])
+
+        self.assertEqual(result, 0)
+
 
 if __name__ == "__main__":
     unittest.main()

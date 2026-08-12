@@ -17,6 +17,11 @@ git status --short --branch
 git submodule status
 ```
 
+GitHub 的 `Documentation checks` 跑同一組 unittest，link checker 則加 `--skip-symlinks`：
+兩份 `.md` symlink 的 canonical 文件住在 ModForge submodule，而目前 recursive checkout 會先被
+三個未發布 gitlink 擋住。本機完整 gate 仍不跳過 symlink；submodule 發布修好後再讓 CI 初始化
+ModForge 並移除這個選項。
+
 `git submodule status` 行首空白代表 checkout 與母 repo gitlink 一致；`+` 代表不一致，`-` 代表
 尚未初始化。fresh clone 或母 repo gitlink 更新後再跑：
 

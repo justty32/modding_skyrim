@@ -93,11 +93,20 @@ def check_file(source: Path, root: Path) -> tuple[int, list[tuple[int, str, Path
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--skip-symlinks",
+        action="store_true",
+        help="skip tracked Markdown symlinks whose canonical files live in submodules",
+    )
     parser.add_argument("paths", nargs="*", type=Path)
     args = parser.parse_args(argv)
 
     root = repo_root()
     sources = args.paths or tracked_markdown(root)
+    skipped_symlinks = 0
+    if args.skip_symlinks:
+        skipped_symlinks = sum(source.is_symlink() for source in sources)
+        sources = [source for source in sources if not source.is_symlink()]
     total_links = 0
     broken_count = 0
     for source in sources:
@@ -114,7 +123,8 @@ def main(argv: list[str] | None = None) -> int:
     if broken_count:
         print(f"Markdown links FAILED: {broken_count} broken local link(s)")
         return 1
-    print(f"Markdown links OK: {len(sources)} file(s), {total_links} local link(s)")
+    suffix = f", {skipped_symlinks} symlink(s) skipped" if skipped_symlinks else ""
+    print(f"Markdown links OK: {len(sources)} file(s), {total_links} local link(s){suffix}")
     return 0
 
 

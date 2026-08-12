@@ -10,7 +10,7 @@
 |------|--------|------|--------|
 | 家用 Manjaro（2026-08-12 實測） | Git、Python 3.14、.NET SDK 10、CMake、Ninja、Wine；部分 repo 自有 venv | 母 repo 維護、ModForge/Python 離線 suite、可取得 submodule 的 build/test | 目前 PATH 無 Godot/Pwsh；感官與遊戲內結果仍需人工驗收 |
 | 公司 Windows 離線工作區（2026-08-12 finding） | .NET SDK 10、Git Bash、Godot 4.6、model-converter venv；無 Skyrim | ModForge 與四條 correctness contract 的離線測試 | Skyrim/MO2 runtime、真實遊戲資料與模型驗收 |
-| GitHub／各子 repo CI | 每個子 repo 自己的 workflow 與依賴 | 該 repo 宣告的 build/test/package gate | 母 repo 沒有統一 CI，也不能取代實機驗收 |
+| GitHub／各子 repo CI | 母 repo 文件 gate；每個子 repo 自己的 workflow 與依賴 | 母 repo link/unit gate；子 repo 宣告的 build/test/package gate | 不跨 repo 建置，也不能取代實機驗收 |
 
 這是**開發能力**矩陣，不是部署現況。MO2 instance/profile/load order、已安裝 mod 與實機
 驗收一律由 `~/notes/projects/modding/skyrim/` 管；本 repo 不複製那份狀態。
