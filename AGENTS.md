@@ -5,9 +5,9 @@
 ## 專案摘要
 
 - 專案一句話：Skyrim SE modding 分析工作區——引擎/mod 逆向分析（CommonLibSSE-NG C++、Papyrus）＋ houseCARL（Skyrim 讀寫用 MCP 工具）的 Linux 適配。
-- 主要語言/框架：分析對象為 C++（SKSE plugin / CommonLibSSE-NG）、Papyrus（`.psc`）、C#（houseCARL 用 Mutagen）；本 repo 自身只有 Markdown 分析文件，無建置產物。
+- 主要語言/框架：分析對象為 C++（SKSE plugin / CommonLibSSE-NG）、Papyrus（`.psc`）、C#（houseCARL 用 Mutagen）；本 repo 自身主要是 Markdown 分析文件，另有 Python stdlib 文件驗證腳本，無建置產物。
 - 主要 build 指令：無（純分析 repo）。若要重跑 houseCARL 的本機建置，見 `analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`（`dotnet build housecarl.sln`／self-contained `dotnet publish -r linux-x64`）。
-- 主要 test 指令：無自動化測試；houseCARL 驗證方式見上述 runbook（HTTP 模式啟動 + explicit paths 測試）。
+- 主要 test 指令：`python -m unittest discover -s tests -v`、`python scripts/check_markdown_links.py`；各 submodule 測試矩陣見 `workflows/testing.md`。houseCARL 驗證方式見上述 runbook（HTTP 模式啟動 + explicit paths 測試）。
 
 ## 先讀哪裡
 

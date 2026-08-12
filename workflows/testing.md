@@ -6,9 +6,12 @@
 
 ## 母 repo 驗證
 
-母 repo 只有 Markdown、索引與 submodule gitlink，沒有統一 build 或 test runner。改文件時至少跑：
+母 repo 主要是 Markdown、索引與 submodule gitlink，另有一個 Python stdlib 文件驗證器；
+沒有統一 build。改文件時至少跑：
 
 ```bash
+python -m unittest discover -s tests -v
+python scripts/check_markdown_links.py
 git diff --check
 git status --short --branch
 git submodule status
