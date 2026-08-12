@@ -108,12 +108,12 @@
 |---------|---------------|------|
 | 計價 / 收益 / 倍率 GLOB（`RE_*Mult`/`*BasePrice`/`*Owned`）| `GlobalSpec`（`Spec.Globals.cs`，`spec.globals[]`，含 Short/Float/Int）| ✅ landed |
 | 教學 quest（stages + objectives + alias QuestObject/ForcedReference）| QUST（`Spec.Quests.cs`，含 InstanceGlobals / GlobalWrite fragment sugar）| ✅ landed |
-| 腳本化 Activator 告示牌（ACTI + 多屬性 script-attach + `OnActivate`）| ACTI + script-attach + fragments | ✅ landed（[skillTrees](world.md) 的 node activator 即此 pattern）|
+| 腳本化 Activator 告示牌（ACTI + 多屬性 script-attach + `OnActivate`）| ACTI + script-attach + fragments | ✅ landed（[skillTrees](../../../projects/ModForge/workflows/feature-dev/landed/world.md) 的 node activator 即此 pattern）|
 | 保險箱 `SetActorOwner` / 告示牌房產所有權（XOWN/owner）| **placement `OwnershipSpec`（XOWN owner+rank）**（`Generator.Build.Placements.cs:143`、`Spec.World.cs:58`）| ✅ landed（靜態 XOWN）；**runtime `Reference.SetActorOwner` 切換**需走 script fragment（可生成，無一級 sugar）|
 | 4 個 relationship PERK ±rank | PERK（含 entry-point，[perk-entry-points](perk-entry-points.md)）+ RELA | ✅ landed |
 | 被動收租 timer（`RegisterForUpdateGameTime`）| script-attach + fragment（任意 Papyrus 可寫進 attach script）| ✅ 可生成（非宣告式 sugar，需手寫 fragment）|
 | `RE_LedgersQuill` 總帳（quest InstanceGlobal）| `Spec.Quests.cs` InstanceGlobals / GlobalWriteSpec | ✅ landed |
-| 礦工 base（autoCalcStats+class）+ enable/disable ACHR | NPC（[npcs](npcs.md)）+ placement + enableParent | ✅ landed |
+| 礦工 base（autoCalcStats+class）+ enable/disable ACHR | NPC（[npcs](../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）+ placement + enableParent | ✅ landed |
 | MCM（買賣 / 倍率 / 週期 / 開關 / cheat 頁）| **MCM 生成（`McmGen.cs`/`Generator.Build.Mcm.cs`，`Spec.Mcm.cs`）** | ✅ landed，**但生成的是 MCM-Helper `config.json` 風格**，非 RE 的 `SKI_ConfigBase` 手寫腳本（兩者最終都出 SkyUI MCM，功能等價；ModForge 走宣告式那條，見 [mcm-helper](mcm-helper.md)）|
 | **多按鈕 message-box 選單**（Buy / Sell / Cancel 等 22 個 MESG，買賣 UI 核心）| **`MessageSpec` 只有 `EditorId/Name/Description`**（`Spec.Items.cs:42`）——**無 menu buttons / ITXT choices 欄位** | ⚠️ **GAP（已核實）**：ModForge 的 MESG 只能生「純文字提示框」，**生不出「多按鈕選單型 message-box」**。RE 的買/賣分支全靠這種選單。`Spec.Identity.cs` 的 `AcquireText` 是寫死的 yes/no prompt，非通用多按鈕。 |
 | 「一棟房子 = 一個資產」的 spec 抽象 | **settlements macro（`Spec.Settlement.cs`/`Generator.Settlements.cs`）** | ⚠️ 部分：macro 涵蓋 residents+routine+shop faction，**不涵蓋「property ownership / buyable / 收租」維度**（見 roadmap）|
@@ -125,7 +125,7 @@
 **2. settlements macro 的「ownership / 收益」面（idea #22 的另一半）。** [settlement-npc-expansions](settlement-npc-expansions.md) 與 [populated-skyrim-family](populated-skyrim-family.md) 補的是「住滿人 + 店家結構」；RE 補的是**「這個地點屬於誰、產出多少資源」**。`SettlementSpec` 目前無此維度。若 #22 要做「玩家開拓並擁有一個聚落」，可從 RE 借三個原語：(a) **per-asset 計價/收益 GLOB 組** + (b) **被動收益 timer fragment 模板**（`RegisterForUpdateGameTime`→`AddItem(Gold)` 進指定容器）+ (c) **token-replacement 式所有權切換** 或更乾淨的 runtime `SetActorOwner` fragment。這些 ModForge 全能生（GLOB/script-attach/placement 都 landed），缺的是**把它們打包成 `ownership:` / `income:` 宣告層**的便利層——和家族 finding 反覆得到的同一結論（缺量產 sugar，不缺能力）。
 
 **3. 可直接複用的 pattern（無需新支援）：**
-- **「腳本化 Activator 告示牌」= 給任意 vanilla 地點掛一個可買/可互動掛鉤**（不改該地點記錄、純 additive 置放一個帶 per-instance 屬性的 ACTI ref）。這是「在既有世界上疊一層玩家系統」最低衝突的做法，[skillTrees](world.md) 的 in-world node 已證明 ModForge 完全能生。
+- **「腳本化 Activator 告示牌」= 給任意 vanilla 地點掛一個可買/可互動掛鉤**（不改該地點記錄、純 additive 置放一個帶 per-instance 屬性的 ACTI ref）。這是「在既有世界上疊一層玩家系統」最低衝突的做法，[skillTrees](../../../projects/ModForge/workflows/feature-dev/landed/world.md) 的 in-world node 已證明 ModForge 完全能生。
 - **token Form 當「可替換引用容器」**（`RE_*Replacement` weapons）：讓 script 屬性指向一個佔位 Form、runtime 改其指向——繞過「Papyrus 不能動態建 Form」的限制。值得記入 conventions 當一個可重用招式。
 - **「一個 quest instance + InstanceGlobal 當總帳」**（`RE_Quest` + ledger quill）：ModForge 的 `InstanceGlobals` 正是這個 pattern 的一級支援。
 

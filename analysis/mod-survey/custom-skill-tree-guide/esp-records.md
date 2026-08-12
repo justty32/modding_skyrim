@@ -20,7 +20,7 @@
 - **Perk Sections / entry points 或 abilities**：perk 的實際效果。
 - **多階 perk**：若一個節點要有 4 階，建 4 個 PERK record，用 `Next Perk` 串起來，node 只填第一階。
 
-> **地雷（必看）**：entry-point perk 在載入時如果 `PerkConditionTabCount` 那個 byte 是 0 會直接 CTD。請設成 vanilla canonical 值。這是 ModForge 既有筆記 [perk-conditiontabcount-ctd](記憶) 記錄過的坑——做 entry-point perk 時務必比對。
+> **地雷（必看）**：entry-point perk 在載入時如果 `PerkConditionTabCount` 那個 byte 是 0 會直接 CTD。請設成 vanilla canonical 值。這是 ModForge 既有 memory `perk-conditiontabcount-ctd` 記錄過的坑——做 entry-point perk 時務必比對。
 
 ### 4.2 三個 GLOB（GlobalVariable）——每棵技能一組
 
@@ -57,4 +57,3 @@ Constellations 做了 `CustomSkillAdvance_*` 與 `CustomSkillBook_*`，**沒做*
 **這條需要一個你自寫的 native SKSE plugin（像 Constellations 的 `Constellations.dll`）來讀那份 toml——純 esp 做不到。** 預設別做，當作未來擴充。細節見 survey §6.3。
 
 ---
-

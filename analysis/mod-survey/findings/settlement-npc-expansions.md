@@ -120,7 +120,7 @@ ETaC Murzol：`Race/Class/Outfit` 全指 vanilla，`AutoCalcStats + Unique + Pro
 - `shops:`（新增**最有價值的一格**）：給 `{ vendorType（法師/鐵匠/旅店/雜貨）, owner, hours, sellBuyList, inventory }` → 自動生 **Vendor FACT + MerchantContainer + 庫存 + 店員 base + 服務對白掛接**，把本三 mod 手刻的「per-NPC Vendor faction」變一鍵。
 - 選配 `relationships:`（店員/居民間 RELA）+ `enableParent`/`gate GLOB`（補靜態置放「無狀態」弱點，順手做 MCM 式密度/開店開關）。
 
-[`skillTrees:`](world.md)（idea #20 Phase 3 landed）已證明這條 macro-expansion 路在 ModForge 完全可行（`Build()` pass-0 `Expand*` 展開成既有低階記錄、重用全 pass、新碼極少）。本三 mod 就是該 section 要生出來的活樣本：**ICN = 日程 staffing 樣本，ICMF/ETaC = 店家/服務 faction 樣本，三者合起來 = 「一個有人住、有人上班、有店可逛的聚落」的完整參數字典**。
+[`skillTrees:`](../../../projects/ModForge/workflows/feature-dev/landed/world.md)（idea #20 Phase 3 landed）已證明這條 macro-expansion 路在 ModForge 完全可行（`Build()` pass-0 `Expand*` 展開成既有低階記錄、重用全 pass、新碼極少）。本三 mod 就是該 section 要生出來的活樣本：**ICN = 日程 staffing 樣本，ICMF/ETaC = 店家/服務 faction 樣本，三者合起來 = 「一個有人住、有人上班、有店可逛的聚落」的完整參數字典**。
 
 風險（沿用 family finding）：① cell override 數/置放數膨脹快，量產層要給上限與 navmesh-safe 紀律；② 大量 base 要 FaceGen 提醒（ICN/ETaC 都背 facegen）；③ Vendor faction 別忘 MerchantContainer + sellBuyList（漏一個就「店員不開店」）；④ 靜態日程 ≠ 動態狀態。
 
