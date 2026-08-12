@@ -29,6 +29,7 @@ git submodule update --init --recursive
 | repo | 命令 | 本機基線／範圍 |
 |---|---|---|
 | `ModForge` | `./scripts/test-offline.sh` | 1123 pass；排除 `RequiresSkyrim` |
+| `agent-bridge` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s client -p 'test*.py' -v` | 47 pass；stdlib-only Linux client、無需 MO2/遊戲 |
 | `game-data` | `python -m unittest discover -s tests -v` | 12 pass；fake dotnet，無需遊戲資料 |
 | `skyrim-voicegen` | `python -m unittest discover -s tests -v` | 6 pass；不載 TTS 模型 |
 | `model-converter` | `.venv/bin/python -m pytest` | 68 pass；若無 POSIX venv，依該 repo README 建環境 |
@@ -45,7 +46,7 @@ PYTHONDONTWRITEBYTECODE=1 ../model-converter/.venv/bin/python \
 
 其他 repo 的測試入口以各自 README／工作流為準，不在母 repo 複製容易過期的命令：
 
-- `agent-bridge`：runtime CMake/CTest 與 `client/` Python 測試分開。
+- `agent-bridge`：上表只驗 Linux client；SKSE DLL 另依 README 走 Linux clang-cl+xwin cross-build。
 - `scene-capture-bridge`：portable CTest、MinGW contract 與 Linux clang-cl+xwin DLL build 的環境不同。
 - `my_skyrim_plugin_1`：以 README 的 CMake/CTest 與 packaging contract 為準。
 - `houseCARL`：不是目前母 repo 的 submodule；建置與 HTTP explicit-path 驗證見
