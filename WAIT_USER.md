@@ -12,6 +12,22 @@
 
 ## Open
 
+- **母 repo 最新 commit 引用了三個尚未 push 的子模組 commit**（2026-08-12，家用 Manjaro
+  實證）：`main` 已快轉到 `b95ee0d`，但 `git pull` 的遞迴子模組 fetch 會報
+  `upload-pack: not our ref`。GitHub 與本機都沒有以下三個被母 repo gitlink 指定的 commit：
+
+  | submodule | 母 repo 要求 | GitHub `main` 目前 |
+  |---|---|---|
+  | `my_skyrim_plugin_1` | `ea6bfeb` | `e257642` |
+  | `scene-capture-bridge` | `1e44326` | `298566a` |
+  | `sofia-patch` | `fc25fc1` | `c1c6f80` |
+
+  請在仍持有這三個 commit 的電腦，逐 repo 將包含目標 commit 的 branch push 到各自 GitHub
+  remote；先確認 `git branch --contains <sha>` 與欲推 branch，再 push，**不要在這台把母 repo
+  指標倒退到舊 `main`**，否則會丟掉本批已落地內容。之後在母 repo 執行
+  `git submodule update --init --recursive`，三者都能 checkout 才算完成。這台其餘子模組已
+  對齊；目前只有上述三個仍顯示 gitlink mismatch。
+
 - **scene-capture-bridge 離線 catalog Browser 實機驗收＋相容性證據**（2026-08-12）：portable parser/merge/provenance 與 exact runtime global-source-order gate 已由 MinGW CTest 驗證，但公司 Windows 主機沒有本專案唯一支援的 Linux clang-cl+xwin SKSE DLL toolchain，也不能啟動 Skyrim。下次在可出貨/實機環境：用含 full+light 的完整 resolved load order 建 catalog，確認 `TESDataHandler::files` 過濾出的 loaded sequence 與實際 override precedence 一致，並驗 Browser loaded/match、EditorID 搜尋/顯示與 preview/place；再各測缺一個、多一個、反轉順序、壞 JSON 時皆退回 runtime-only。另需確認 MO2 process 內 `Data/<plugin>` 可讀/hash，才能設計不造成數 GB 啟動延遲的 SHA gate；現階段 UI 會明示 SHA 尚未驗證。
 
 - **Play-KR 環境音人耳驗證＋補室內 runtime 證據**（2026-08-11）：六個 plugin 已經 engine runtime load order 確認，現有 Save3 也已在戶外 WhiterunExterior15 載入，無新 crash 或目標 mod 特定 Papyrus/SkyPatcher 錯誤。但本輪的 Breezehome `coc` 與 Save2 重載都被 AgentBridge 0.6.0 main-menu/load-transition game-thread queue 503 擋住，尚缺室內結構化 state；機器也不能判斷聽感。下次進 Play-KR 後，請在戶外不同區域與下雨／打雷時，以及旅店、民宅、洞穴等室內短暫走動，確認區域環境音、室內雨雷與殘響自然且音量合適；同時補一次室內 bridge state 即可關閉 runtime acceptance。技術結果見 [SESSION-LOG.md](SESSION-LOG.md) Play-KR 節。
