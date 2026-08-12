@@ -37,7 +37,7 @@ git submodule update --init --recursive
 | repo | 命令 | 本機基線／範圍 |
 |---|---|---|
 | `ModForge` | `./scripts/test-offline.sh` | 1123 pass；排除 `RequiresSkyrim` |
-| `agent-bridge` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s client -p 'test*.py' -v` | 47 pass；stdlib-only Linux client、無需 MO2/遊戲 |
+| `agent-bridge` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s client -p 'test*.py' -v` | 54 pass；stdlib-only Linux client、無需 MO2/遊戲 |
 | `game-data` | `python -m unittest discover -s tests -v` | 12 pass；fake dotnet，無需遊戲資料 |
 | `skyrim-voicegen` | `python -m unittest discover -s tests -v` | 6 pass；不載 TTS 模型 |
 | `model-converter` | `.venv/bin/python -m pytest` | 68 pass；若無 POSIX venv，依該 repo README 建環境 |
