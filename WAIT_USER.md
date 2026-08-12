@@ -30,7 +30,14 @@
 
 - **scene-capture-bridge 離線 catalog Browser 實機驗收＋相容性證據**（2026-08-12）：portable parser/merge/provenance 與 exact runtime global-source-order gate 已由 MinGW CTest 驗證，但公司 Windows 主機沒有本專案唯一支援的 Linux clang-cl+xwin SKSE DLL toolchain，也不能啟動 Skyrim。下次在可出貨/實機環境：用含 full+light 的完整 resolved load order 建 catalog，確認 `TESDataHandler::files` 過濾出的 loaded sequence 與實際 override precedence 一致，並驗 Browser loaded/match、EditorID 搜尋/顯示與 preview/place；再各測缺一個、多一個、反轉順序、壞 JSON 時皆退回 runtime-only。另需確認 MO2 process 內 `Data/<plugin>` 可讀/hash，才能設計不造成數 GB 啟動延遲的 SHA gate；現階段 UI 會明示 SHA 尚未驗證。
 
-- **Play-KR 環境音人耳驗證＋補室內 runtime 證據**（2026-08-11）：六個 plugin 已經 engine runtime load order 確認，現有 Save3 也已在戶外 WhiterunExterior15 載入，無新 crash 或目標 mod 特定 Papyrus/SkyPatcher 錯誤。但本輪的 Breezehome `coc` 與 Save2 重載都被 AgentBridge 0.6.0 main-menu/load-transition game-thread queue 503 擋住，尚缺室內結構化 state；機器也不能判斷聽感。下次進 Play-KR 後，請在戶外不同區域與下雨／打雷時，以及旅店、民宅、洞穴等室內短暫走動，確認區域環境音、室內雨雷與殘響自然且音量合適；同時補一次室內 bridge state 即可關閉 runtime acceptance。技術結果見 [SESSION-LOG.md](SESSION-LOG.md) Play-KR 節。
+- **Play-KR 環境音人耳驗證＋補室內 runtime 證據**（2026-08-11）：六個 plugin 已經 engine runtime load order 確認，現有 Save3 也已在戶外 WhiterunExterior15 載入，無新 crash 或目標 mod 特定 Papyrus/SkyPatcher 錯誤。但本輪的 Breezehome `coc` 與 Save2 重載都被 AgentBridge 0.6.0 main-menu/load-transition game-thread queue 503 擋住，尚缺室內結構化 state；機器也不能判斷聽感。下次進 Play-KR 後，請在戶外不同區域與下雨／打雷時，以及旅店、民宅、洞穴等室內短暫走動，確認區域環境音、室內雨雷與殘響自然且音量合適；同時補一次室內 bridge state 即可關閉 runtime acceptance。
+
+- **BG3 場景佈局實檔驗證**（2026-08-11）：桌面研究已確認 LSLib 可把 BG3
+  `Levels/` 下的 `.lsf` 轉成可讀 `.lsx`，但尚未用使用者持有的遊戲資料驗證 placement
+  欄位能否無損對映 ModForge `placements`（位置、旋轉、尺度、base/resource identity）。下次
+  有 BG3 安裝或合法抽取素材時，挑一個小型 level 做 `.lsf` → `.lsx`，記錄欄位與一組實例，
+  再決定是否開 converter/spec 工作；沒有實檔前不宣稱 port pipeline 可行。評估框架與候選
+  比較見 [port-source-survey](analysis/port-source-survey/README.md)。
 
 - **agent-bridge 0.7.0 MessageBox 實機驗收**（2026-08-11）：離線實作、client tests 47/47 與 DLL 交叉編譯均已完成。待下次可使用遊戲時，以 `ini Editor MCM` 的 `Debug.MessageBox("Done Writing")` 重現 modal。需驗證 `/state.game.message_box` 的 message/buttons、依文字與 index 各選一次 `OK`、精確 message guard 拒絕錯誤 modal、選後 menu 消失且遊戲時間／actor 恢復；最後重跑 dialogue 與 living-NPC regressions。權威操作與 acceptance 在 `projects/agent-bridge/README.md` 的 MessageBox 節。
 
@@ -60,4 +67,5 @@
   2. 把 `projects/houseCARL` 從 `.gitignore` 移除，以 submodule 釘在 fork 的 `fix/dialogue-encoding-lint`（本機 HEAD `87ce894`）——**必須等 1. 推完**，否則 `clone --recurse-submodules` 會失敗。
   3. 同步更新 `AGENTS.md` 裡「`projects/houseCARL` 不是 submodule、不要在母 repo 追蹤它的內容」那段本地規則。
 
-  決策理由與上游現況見 [SESSION-LOG.md](SESSION-LOG.md) 的 houseCARL 節。
+  決策理由、branch SHA 與上游漂移現況見
+  [fork-maintenance-decision.md](analysis/houseCARL/answers/fork-maintenance-decision.md)。
