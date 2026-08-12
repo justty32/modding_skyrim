@@ -47,6 +47,19 @@ PYTHONDONTWRITEBYTECODE=1 ../model-converter/.venv/bin/python \
   -m unittest discover -s tests -v
 ```
 
+`agent-bridge` 的 Windows DLL 可在家用 Manjaro 以唯一支援的 clang-cl+xwin 路線驗證，
+不部署到 MO2：
+
+```bash
+export VCPKG_ROOT="$HOME/vcpkg"
+cmake --fresh --preset build-release-clang-cl-linux
+cmake --build build/release-clang-cl-linux
+file build/release-clang-cl-linux/AgentBridge.dll
+```
+
+2026-08-12 基線為 build 成功，輸出 `PE32+` x86-64 DLL。`--fresh` 是為清除 2026-08-02
+搬離 `ModForge/sub_projs` 前留下的絕對 source cache；不會修改原始碼或部署遊戲。
+
 其他 repo 的測試入口以各自 README／工作流為準，不在母 repo 複製容易過期的命令：
 
 - `agent-bridge`：上表只驗 Linux client；SKSE DLL 另依 README 走 Linux clang-cl+xwin cross-build。
