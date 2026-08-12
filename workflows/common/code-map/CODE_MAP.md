@@ -10,14 +10,14 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 |------|------------------|
 | ModForge | [`projects/ModForge/workflows/common/code-map/CODE_MAP.md`](../../../projects/ModForge/workflows/common/code-map/CODE_MAP.md) — generator domain、CLI、schema、tests 的完整分域索引 |
 | agent-bridge | [`projects/agent-bridge/README.md`](../../../projects/agent-bridge/README.md) — SKSE HTTP runtime；[`client/README.md`](../../../projects/agent-bridge/client/README.md) — Linux client/MCP；[`QA-SCHEMA.md`](../../../projects/agent-bridge/client/QA-SCHEMA.md) — qa.json contract |
-| scene-capture-bridge | [`projects/scene-capture-bridge/README.md`](../../../projects/scene-capture-bridge/README.md) — SKSE runtime；`src/CatalogFile.*` + `tests/CatalogFileTests.cpp` 是不依賴 SKSE 的 ModForge scene-catalog v1 parser/FormKey index/provenance+runtime global-source-order gate/metadata merge 與 MinGW CTest；`Catalog.cpp` 由 `TESDataHandler::files` 取得 full/light 全域 loaded sequence，kDataLoaded 後把合格離線 EditorID/name 補進 Browser |
-| godot-worldspace-editor | [`projects/godot-worldspace-editor/README.md`](../../../projects/godot-worldspace-editor/README.md) |
+| scene-capture-bridge | [`projects/scene-capture-bridge/README.md`](../../../projects/scene-capture-bridge/README.md) — SKSE runtime；`src/CatalogFile.*` + `tests/CatalogFileTests.cpp` 是不依賴 SKSE 的 ModForge scene-catalog v1 parser/FormKey index/provenance+runtime global-source-order gate/metadata merge；`tests/RunModForgeCatalogContract.cmake` 另以真實 ModForge CLI 串 full/light plugin→catalog exporter bytes→consumer 的 MinGW CTest；`Catalog.cpp` 由 `TESDataHandler::files` 取得 full/light 全域 loaded sequence，kDataLoaded 後把合格離線 EditorID/name 補進 Browser |
+| godot-worldspace-editor | [`projects/godot-worldspace-editor/README.md`](../../../projects/godot-worldspace-editor/README.md) — `godot/placements_io.gd` 是 placements producer；`tests/test_placements_contract.py` 以 Godot headless 真實 exporter→ModForge CLI→ESP REFR 讀回的跨 repo contract test |
 | model-converter | [`projects/model-converter/README.md`](../../../projects/model-converter/README.md) |
 | skyrim-voicegen | [`projects/skyrim-voicegen/README.md`](../../../projects/skyrim-voicegen/README.md) |
 | game-data | [`projects/game-data/README.md`](../../../projects/game-data/README.md) |
 | darksouls-port | [`projects/darksouls-port/README.md`](../../../projects/darksouls-port/README.md) |
 | sofia-patch | [`projects/sofia-patch/README.md`](../../../projects/sofia-patch/README.md) |
-| my_skyrim_plugin_1 | [`projects/my_skyrim_plugin_1/README.md`](../../../projects/my_skyrim_plugin_1/README.md) |
+| my_skyrim_plugin_1 | [`projects/my_skyrim_plugin_1/README.md`](../../../projects/my_skyrim_plugin_1/README.md) — DaylightDungeon SKSE plugin；`scripts/test_packaging.ps1` 以 synthetic CMake cache/DLL 驗 CI/PowerShell/bash 打包命名與 MO2 layout contract |
 | houseCARL（本機、非 submodule） | [`projects/houseCARL/README.md`](../../../projects/houseCARL/README.md)；Linux 適配結論在 [`linux-manjaro-mo2-runbook.md`](../../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md) |
 
 ## agent-bridge semantic QA 快速圖
