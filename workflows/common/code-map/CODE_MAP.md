@@ -10,7 +10,7 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 |------|------------------|
 | ModForge | [`projects/ModForge/workflows/common/code-map/CODE_MAP.md`](../../../projects/ModForge/workflows/common/code-map/CODE_MAP.md) — generator domain、CLI、schema、tests 的完整分域索引 |
 | agent-bridge | [`projects/agent-bridge/README.md`](../../../projects/agent-bridge/README.md) — SKSE HTTP runtime；[`client/README.md`](../../../projects/agent-bridge/client/README.md) — Linux client/MCP；[`QA-SCHEMA.md`](../../../projects/agent-bridge/client/QA-SCHEMA.md) — qa.json contract |
-| scene-capture-bridge | [`projects/scene-capture-bridge/README.md`](../../../projects/scene-capture-bridge/README.md) |
+| scene-capture-bridge | [`projects/scene-capture-bridge/README.md`](../../../projects/scene-capture-bridge/README.md) — SKSE runtime；`src/CatalogFile.*` + `tests/CatalogFileTests.cpp` 是不依賴 SKSE 的 ModForge scene-catalog v1 parser/FormKey index 與 MinGW CTest |
 | godot-worldspace-editor | [`projects/godot-worldspace-editor/README.md`](../../../projects/godot-worldspace-editor/README.md) |
 | model-converter | [`projects/model-converter/README.md`](../../../projects/model-converter/README.md) |
 | skyrim-voicegen | [`projects/skyrim-voicegen/README.md`](../../../projects/skyrim-voicegen/README.md) |
