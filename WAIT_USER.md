@@ -12,6 +12,8 @@
 
 ## Open
 
+- **scene-capture-bridge 離線 catalog Browser 實機驗收**（2026-08-12）：portable parser/merge 已由 MinGW CTest 驗證，但公司 Windows 主機沒有本專案唯一支援的 Linux clang-cl+xwin SKSE DLL toolchain，也不能啟動 Skyrim。下次在可出貨/實機環境：用 ModForge `catalog export-json` 產生 `scene-catalog.json`，放到 SKSE 資料目錄後完整重啟；確認 Browser 顯示 loaded/match 數、可用 EditorID 搜尋、列表與 selected detail 顯示 EditorID、點選仍可 preview/place；再各測一次缺檔與故意破壞 JSON 時 Browser 仍保留 runtime-only 清單並顯示原因。另確認 source hashes 尚未 runtime 驗證的提示可接受。
+
 - **Play-KR 環境音人耳驗證＋補室內 runtime 證據**（2026-08-11）：六個 plugin 已經 engine runtime load order 確認，現有 Save3 也已在戶外 WhiterunExterior15 載入，無新 crash 或目標 mod 特定 Papyrus/SkyPatcher 錯誤。但本輪的 Breezehome `coc` 與 Save2 重載都被 AgentBridge 0.6.0 main-menu/load-transition game-thread queue 503 擋住，尚缺室內結構化 state；機器也不能判斷聽感。下次進 Play-KR 後，請在戶外不同區域與下雨／打雷時，以及旅店、民宅、洞穴等室內短暫走動，確認區域環境音、室內雨雷與殘響自然且音量合適；同時補一次室內 bridge state 即可關閉 runtime acceptance。技術結果見 [SESSION-LOG.md](SESSION-LOG.md) Play-KR 節。
 
 - **agent-bridge 0.7.0 MessageBox 實機驗收**（2026-08-11）：離線實作、client tests 47/47 與 DLL 交叉編譯均已完成。待下次可使用遊戲時，以 `ini Editor MCM` 的 `Debug.MessageBox("Done Writing")` 重現 modal。需驗證 `/state.game.message_box` 的 message/buttons、依文字與 index 各選一次 `OK`、精確 message guard 拒絕錯誤 modal、選後 menu 消失且遊戲時間／actor 恢復；最後重跑 dialogue 與 living-NPC regressions。權威操作與 acceptance 在 `projects/agent-bridge/README.md` 的 MessageBox 節。
