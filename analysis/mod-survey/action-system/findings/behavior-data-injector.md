@@ -26,7 +26,7 @@
   - `type` — `kInt` / `kBool` / `kFloat` / `kEvent`（事件型**省略 `value`**）。
   - `name` — 變數/事件名；`value` — 初始預設值。
 - 實例：DMK 的 `DirecionalMovement_BDI.json`（8 個變數，見 [DMK](directional-movement-keys.md)）、BFCO 的 `BFCO_BDI.json`（`BFCO_ComboLocked`/`BFCO_LastAttack`/`BFCO_NextNormal`/`BFCO_NextPower`）。
-- 解壓樣本在 `sub_projs/game-data/mods/action-system/`（gitignored）。
+- 解壓樣本在 `../../../../projects/game-data/mods/action-system/`（gitignored）。
 
 ## 為什麼對 ModForge 是金礦
 - BDI 把「behavior graph 的可編程狀態」從**改不得的 binary**降為**寫 config 檔**——這正是 ModForge 主場。

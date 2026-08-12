@@ -11,7 +11,7 @@
 | Dungeons/Caves/Ruins | `Populated Dungeons Caves Ruins Legendary Edition-2820-1-0.7z` | `Populated Dungns Caves Ruins Legendary.esp` (0.28 MB) |
 | Hell Edition（極限版＝四者聯集＋更多） | `Populated Skyrim Hell Edition-5017-…7z` | `Populated Skyrim Legendary.esp` (2.8 MB) |
 
-抽取：`7z x` → `~/skyrim_mods/unzip/`，`extract.sh` → `sub_projs/game-data/mods/<name>/`，record 概覽用 `dump`，package 用 `packagediag`。記憶體鐵律遵守（只走 CLI lazy overlay）。
+抽取：`7z x` → `~/skyrim_mods/unzip/`，`extract.sh` → `../../../projects/game-data/mods/<name>/`，record 概覽用 `dump`，package 用 `packagediag`。記憶體鐵律遵守（只走 CLI lazy overlay）。
 
 ## Classification
 

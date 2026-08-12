@@ -14,7 +14,7 @@
 | MCM / loose config | **無**——BSA 內無任何 `.json`/`.ini`/`SkyUI`/`MCM-Helper` 檔。所有「設定」走遊戲內 MESG 選單（見 §5）。|
 | EditorID 前綴 | 一律 `aaaFort*`（mod 內部代號 = "Fort"/"Outpost"）|
 
-抽 `.pex`：用 repo 內 `sub_projs/sofia-patch/vigilant-reconstruction-redo/_tools/bsa_reader.py`（7z 開不了此 BSA）+ 自寫 Skyrim `.pex` 字串表 parser（magic `0xFA57C0DE`，big-endian）。記憶體鐵律遵守（只走 CLI lazy overlay，未整載任何主檔）。
+抽 `.pex`：用 repo 內 `../../../projects/sofia-patch/vigilant-reconstruction-redo/_tools/bsa_reader.py`（7z 開不了此 BSA）+ 自寫 Skyrim `.pex` 字串表 parser（magic `0xFA57C0DE`，big-endian）。記憶體鐵律遵守（只走 CLI lazy overlay，未整載任何主檔）。
 
 ## 1. Classification
 

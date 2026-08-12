@@ -114,4 +114,4 @@
 3. **後做：Reference 刪除** — 設 deleted flag + EnqueueForm
 4. **長期：LAND 高度圖編輯** — C++ raycast 筆刷 + C# ILandscapeGetter 序列化
 
-Repo 已 clone 至：`sub_projs/tool-survey/repos/SkyrimIngameEditor/`（shallow, gitignored）
+Repo 已 clone 至：`../repos/SkyrimIngameEditor/`（相對本 finding；shallow, gitignored）

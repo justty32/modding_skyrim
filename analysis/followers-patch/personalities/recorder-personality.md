@@ -1,7 +1,7 @@
 # Recorder 性格分析（2026-06-14）— 寫作 brief
 
 做 Recorder 擴充時的**角色聖經 / writing brief**：要產出「聽起來像 Recorder」的新台詞，先吃透這份。
-所有引用台詞都從 `sub_projs/game-data/mods/Recorder/dialogue.md`（~1605 行，FormID 000D70 的 INFO）直接抽出。背景面見 `quests.md`（含 *Tracking the Lost Files*、Marriage arc）。
+所有引用台詞都從 `../../../projects/game-data/mods/Recorder/dialogue.md`（~1605 行，FormID 000D70 的 INFO）直接抽出。背景面見 `quests.md`（含 *Tracking the Lost Files*、Marriage arc）。
 
 ---
 

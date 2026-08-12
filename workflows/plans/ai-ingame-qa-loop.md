@@ -53,7 +53,7 @@ interior/exterior cell、延遲 actor retry 與兩種結構化 dialogue selector
 | 截圖工具 | grim / scrot / maim **都沒裝**；ffmpeg 有 | 現場 |
 | 輸入工具 | xdotool 有（Wayland 下對非 XWayland 視窗基本無效）；ydotool / wmctrl 沒裝 | 現場 |
 | .NET | SDK 10.0.110、8.0.129 | `dotnet --list-sdks` |
-| 既有 QA 素材 | `projects/ModForge/sub_projs/scene-capture-bridge/`：SKSE C++23 DLL，已有 console 指令系統、cell placed-ref 走訪、scene.json 匯出 | 該子專案 README |
+| 既有 QA 素材 | `projects/scene-capture-bridge/`：SKSE C++23 DLL，已有 console 指令系統、cell placed-ref 走訪、scene.json 匯出 | 該子專案 README |
 | Linux cross-compile | `my_skyrim_plugin_1` 的 `release-clang-cl-linux` preset（clang-cl + lld-link + xwin）**實測產出過可用 DLL**：`build/release-clang-cl-linux/DaylightDungeon.dll`（PE32+ DLL，1.1M，2026-06-06） | `file` 輸出 |
 
 **兩個對不上的地方（未處理，留給 notes 側）**：
