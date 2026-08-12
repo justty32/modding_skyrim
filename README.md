@@ -46,7 +46,7 @@ Skyrim SE modding 的開發、分析、產物集中地。本工作區是 public 
 | `houseCARL` | Skyrim MCP 工具 fork(資料層讀寫 load order) |
 | `my_skyrim_plugin_1` | SKSE C++ plugin 樣板 + 建置骨架(CMake/vcpkg/CI/靜態 CRT) |
 
-> 除了 ModForge／houseCARL／my_skyrim_plugin_1,其餘八個都是 **2026-08-02 從 ModForge `sub_projs/` 抽出來的**(未帶舊 commit 歷史);ModForge 原位置各留一份 stub 導引,它們的契約/spec/計畫文檔仍在 ModForge。**remote 狀態**:godot-worldspace-editor / scene-capture-bridge / model-converter / agent-bridge / skyrim-voicegen 已推上 GitHub(`justty32/skyrim_*`,public);**darksouls-port、sofia-patch、game-data 三個還沒有 remote**——前兩者含他人 mod 的台詞原文與資產抽取器,要開也該開 private。
+> 除了 ModForge／houseCARL／my_skyrim_plugin_1,其餘八個都是 **2026-08-02 從 ModForge `sub_projs/` 抽出來的**(未帶舊 commit 歷史);ModForge 原位置各留一份 stub 導引,它們的契約/spec/計畫文檔仍在 ModForge。母 repo 追蹤的 10 個 submodule 目前都已在 `.gitmodules` 設定各自的 GitHub remote；不要從這份 public 母 repo 推論各子 repo 的公開範圍。若 recursive update 報 `not our ref`,先看 [WAIT_USER.md](WAIT_USER.md) 的未發布 submodule commit 條目,不要把 gitlink 倒退。
 
 ## 部署注意
 
