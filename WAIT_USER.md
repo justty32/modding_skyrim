@@ -113,12 +113,3 @@
   **若 0.02 還是卡**：下一個懷疑對象是門框側壁（reveal）自成 patch 後的**厚度**，那要調 `--planar-thresh`（現行預設 **0.15**），**不是繼續降 `--ghost-tol`**。（兩個預設值均於 2026-08-11 對 `tools/collision_hulls.py` 核對：`--ghost-tol` 0.25 於 line 327、`--planar-thresh` 0.15 於檔頭說明。）
 
   **`DSPortP1` 目前仍裝在 MO2 裡**（新版碰撞、332 個載體），故意留著讓下次能直接進場。技術細節見 [P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md)。
-
-- **houseCARL：收進自己的 fork，等待明確 push 授權**（決策於 2026-08-11，取代原本三條待決事項）：方針是**只顧自己的 repo，不再追上游**——force-push 兩條 fix branch 到 fork、submodule 釘 fork branch、**不開 upstream PR**。兩條 branch 已在家用機於 2026-08-12 重新 self-contained publish 並跑 guard 全綠；現在只因專案鐵律「未經明確確認不 push」而停。確認後可由 agent 依序執行：
-
-  1. `git push --force-with-lease` 把 `fix/linux-loose-asset-resolution`、`fix/dialogue-encoding-lint` 推上 fork（fork 上仍是 rebase 前的舊 base 版本）。用 `--force-with-lease` 不要用 `--force`。
-  2. 把 `projects/houseCARL` 從 `.gitignore` 移除，以 submodule 釘在 fork 的 `fix/dialogue-encoding-lint`（本機 HEAD `87ce894`）——**必須等 1. 推完**，否則 `clone --recurse-submodules` 會失敗。
-  3. 同步更新 `AGENTS.md` 裡「`projects/houseCARL` 不是 submodule、不要在母 repo 追蹤它的內容」那段本地規則。
-
-  決策理由、branch SHA 與上游漂移現況見
-  [fork-maintenance-decision.md](analysis/houseCARL/answers/fork-maintenance-decision.md)。

@@ -1,6 +1,6 @@
 # houseCARL fork 維護決策
 
-> 決策日期：2026-08-11。狀態：已定案，等待發布到 fork 與納入母 repo。
+> 決策日期：2026-08-11。狀態：2026-08-13 已發布到 fork 並納入母 repo。
 
 ## 決策
 
@@ -17,9 +17,9 @@
 | 項目 | SHA／結果 |
 |---|---|
 | 本地 `fix/linux-loose-asset-resolution` | `84576e3` |
-| fork 同名 branch | `40c9e3f`（rebase 前） |
+| fork 同名 branch | `84576e3`（2026-08-13 已發布） |
 | 本地 `fix/dialogue-encoding-lint` | `87ce894` |
-| fork 同名 branch | `0bbd208`（rebase 前） |
+| fork 同名 branch | `87ce894`（2026-08-13 已發布） |
 | 本地 rebase 基準 `main` | `8385fc6` |
 | upstream `origin/main` | `655221d` |
 | upstream 相對基準漂移 | 159 commits、134 files；`+22597/-1843` |
@@ -27,8 +27,7 @@
 兩個本地 branch 已在 2026-08-12 於各自 detached worktree 重新 self-contained publish；
 `case-insensitive-asset-guard` 與 `dialogue-encoding-guard` 均 PASS，publish 0 error（只有既有
 nullable/obsolete warnings）。臨時 worktree 與 publish 產物已清除，原工作區未切 branch。
-fork 尚未收到 rebase 後 SHA，因此一般 push 會是 non-fast-forward；實際發布必須使用
-`--force-with-lease`，並先核對上表的 fork 舊 tip 沒被別的工作覆寫。
+兩條 branch 已於 2026-08-13 以 explicit `--force-with-lease` 發布，遠端 tip 已核對為上表 SHA。
 
 ## 為什麼不追 upstream
 
@@ -41,9 +40,8 @@ fork 尚未收到 rebase 後 SHA，因此一般 push 會是 non-fast-forward；�
 
 ## 完成條件與執行入口
 
-發布、submodule 納管與母 repo 規則更新的精確順序放在根
-[`WAIT_USER.md`](../../../WAIT_USER.md)。Linux build、publish、explicit-paths 設定與驗證方式
-見 [linux-manjaro-mo2-runbook.md](linux-manjaro-mo2-runbook.md)。
+發布、submodule 納管與母 repo 規則更新已於 2026-08-13 完成。Linux build、publish、
+explicit-paths 設定與驗證方式見 [linux-manjaro-mo2-runbook.md](linux-manjaro-mo2-runbook.md)。
 
 Done when：兩條 fork branch 可由 fresh clone 取得；母 repo recursive clone 能 checkout
 `projects/houseCARL`；`.gitignore`、`AGENTS.md` 與 README 的 submodule 清單同步。

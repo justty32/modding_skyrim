@@ -1,6 +1,6 @@
 # ~/repo/moddings/skyrim —— Skyrim modding 總資料夾
 
-Skyrim SE modding 的開發、分析、產物集中地。本工作區是 public 母 git repo；`projects/` 下各開發專案保持獨立版控，其中 10 個由母 repo 以 submodule 管理。
+Skyrim SE modding 的開發、分析、產物集中地。本工作區是 public 母 git repo；`projects/` 下各開發專案保持獨立版控，其中 11 個由母 repo 以 submodule 管理。
 
 ## 你來找什麼?
 
@@ -46,7 +46,7 @@ Skyrim SE modding 的開發、分析、產物集中地。本工作區是 public 
 | `houseCARL` | Skyrim MCP 工具 fork(資料層讀寫 load order) |
 | `my_skyrim_plugin_1` | SKSE C++ plugin 樣板 + 建置骨架(CMake/vcpkg/CI/靜態 CRT) |
 
-> 除了 ModForge／houseCARL／my_skyrim_plugin_1,其餘八個都是 **2026-08-02 從 ModForge `sub_projs/` 抽出來的**(未帶舊 commit 歷史);ModForge 原位置各留一份 stub 導引,它們的契約/spec/計畫文檔仍在 ModForge。母 repo 追蹤的 10 個 submodule 目前都已在 `.gitmodules` 設定各自的 GitHub remote；不要從這份 public 母 repo 推論各子 repo 的公開範圍。若 recursive update 報 `not our ref`,先看 [WAIT_USER.md](WAIT_USER.md) 的未發布 submodule commit 條目,不要把 gitlink 倒退。
+> 除了 ModForge／houseCARL／my_skyrim_plugin_1,其餘八個都是 **2026-08-02 從 ModForge `sub_projs/` 抽出來的**(未帶舊 commit 歷史);ModForge 原位置各留一份 stub 導引,它們的契約/spec/計畫文檔仍在 ModForge。母 repo 追蹤的 11 個 submodule 目前都已在 `.gitmodules` 設定各自的 GitHub remote；houseCARL 釘在自有 fork 的 `fix/dialogue-encoding-lint`。不要從這份 public 母 repo 推論各子 repo 的公開範圍。若 recursive update 報 `not our ref`,先看 [WAIT_USER.md](WAIT_USER.md) 的未發布 submodule commit 條目,不要把 gitlink 倒退。
 
 ## 部署注意
 

@@ -10,6 +10,10 @@
 [submodule "projects/godot-worldspace-editor"]
 	path = projects/godot-worldspace-editor
 	url = git@github.com:justty32/skyrim_godot_worldspace_editor.git
+[submodule "projects/houseCARL"]
+	path = projects/houseCARL
+	url = git@github.com:justty32/houseCARL.git
+	branch = fix/dialogue-encoding-lint
 [submodule "projects/model-converter"]
 	path = projects/model-converter
 	url = git@github.com:justty32/skyrim_model_converter.git

@@ -70,7 +70,7 @@ file build/release-clang-cl-linux/AgentBridge.dll
 - `agent-bridge`：上表只驗 Linux client；SKSE DLL 另依 README 走 Linux clang-cl+xwin cross-build。
 - `scene-capture-bridge`：portable CTest、MinGW contract 與 Linux clang-cl+xwin DLL build 的環境不同。
 - `my_skyrim_plugin_1`：以 README 的 CMake/CTest 與 packaging contract 為準。
-- `houseCARL`：不是目前母 repo 的 submodule；建置與 HTTP explicit-path 驗證見
+- `houseCARL`：母 repo 釘自有 fork 的 `fix/dialogue-encoding-lint`；建置與 HTTP explicit-path 驗證見
   [`analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`](../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)。
 - `sofia-patch`：內容／文件專案，沒有統一自動化 suite。
 
