@@ -12,6 +12,22 @@
 
 ## Open
 
+- **無心人物美化 SE/AE 1.6.1170 適配缺合法來源檔**（2026-08-13）：本機 `/home/lorkhan/skyrim_mods`
+  與 MO2 mods 都沒有無心、`Decent Women` 或 `Women's faces` archive，houseCARL 只能讀 Nexus
+  metadata、不能下載。使用者需先選一條並透過官方 Nexus 取得檔案：
+
+  - 要**經典無心人物**：下載使用者合法持有的無心人物模組，或 LE `Decent Women` 所需原檔
+    （Nexus Skyrim id `14443`）。這條才保留經典外觀，但需 LE→SE 資產／plugin 轉換；作者權限
+    限制轉換、修改及資產使用，未取得許可不得把移植版或未授權第三方資產公開重打包。
+  - 接受**不同臉的現成 SSE 替代品**：從 Nexus SSE id `5630` 用 mod-manager 下載英文
+    `NPS_Female_SE_Eng`。它是自包含的純資料 mod，原則上可在 1.6.1170 使用，但不是經典
+    `Decent Women` 原樣，而且不改 companions。
+
+  將 archive 放進既有 `/home/lorkhan/skyrim_mods/` 後通知 agent。後續在 `Modpack-KR-Dev`
+  驗證 archive、Form 44／BSA／FaceGen，再依 `AI Overhaul → 外觀 → conflict patch` 建 patch 並做
+  實機黑臉／頸縫／AI 驗收。完整調查見
+  [wuxin-character-overhaul-se-ae-compatibility.md](workflows/investigation/findings/wuxin-character-overhaul-se-ae-compatibility.md)。
+
 - **母 repo 最新 commit 引用了三個尚未 push 的子模組 commit**（2026-08-12，家用 Manjaro
   實證）：`main` 已快轉到 `b95ee0d`，但 `git pull` 的遞迴子模組 fetch 會報
   `upload-pack: not our ref`。GitHub 與本機都沒有以下三個被母 repo gitlink 指定的 commit：

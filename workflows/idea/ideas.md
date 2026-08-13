@@ -11,19 +11,11 @@
 
 ## Ideas
 
-- **「無心人物風格」任務角色群**（2026-08-13）：使用者喜歡經典版「無心個人整合版」
-  的人物風格，未來可能把這種角色外觀做成一個任務中的**全新具名 NPC 群**，而不是只替換
-  vanilla NPC。已核對該整合的 LE 人物線以 `Decent Women`、Fair Skin、ECE、UNPB/CBBE、
-  KS/SG hair 等為主；本機目前沒有無心包或 `Decent Women` archive。
-
-  - 私人原型：可研究 LE FaceGen／head parts，轉成 SE 格式後建立新的 `NPC_` record、FaceGeom、
-    FaceTint、voice type、outfit、AI package 與 quest alias；任務／對話由 ModForge spec 生成。
-  - 公開發布：`Decent Women` Nexus 權限明示修改／再發布需作者許可，髮型、皮膚、眉毛等又有
-    各自作者權利。沒有完整許可鏈時只能重做「相近審美」的原創 preset／FaceGen，不能把無心包
-    或其第三方資產重新打包。
-  - 升級成 spec 前先決定：角色數量與身份、是否只做女性、任務題材、私人自用或公開發布，並
-    取得合法來源檔。技術驗證先挑一名角色做 LE→SE 外觀轉換與新 NPC 小樣，確認頸縫、膚色、
-    表情、眨眼、Lip Sync、裝備 body 與存檔持久性，再批量化。
+- **把無心人物外觀用進未來任務**（2026-08-13）：這只是人物美化完成後的可選延伸；目前主要
+  工作是先讓經典無心人物美化在 SE/AE 1.6.1170 正常運作，見
+  [適配調查](../investigation/findings/wuxin-character-overhaul-se-ae-compatibility.md)。若日後真的建立
+  全新具名 NPC 群，私人原型仍需從合法來源拆分 FaceGen／head parts；公開發布則必須取得
+  `Decent Women` 與髮型、皮膚、眉毛等完整資產許可，否則只能重做相近審美的原創外觀。
 
 ## 何時不用
 
