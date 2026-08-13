@@ -30,7 +30,62 @@
   `git submodule update --init --recursive`，三者都能 checkout 才算完成。這台其餘子模組已
   對齊；目前只有上述三個仍顯示 gitlink mismatch。
 
-- **scene-capture-bridge 離線 catalog Browser 實機驗收＋相容性證據**（2026-08-12）：portable parser/merge/provenance 與 exact runtime global-source-order gate 已由 MinGW CTest 驗證，但公司 Windows 主機沒有本專案唯一支援的 Linux clang-cl+xwin SKSE DLL toolchain，也不能啟動 Skyrim。下次在可出貨/實機環境：用含 full+light 的完整 resolved load order 建 catalog，確認 `TESDataHandler::files` 過濾出的 loaded sequence 與實際 override precedence 一致，並驗 Browser loaded/match、EditorID 搜尋/顯示與 preview/place；再各測缺一個、多一個、反轉順序、壞 JSON 時皆退回 runtime-only。另需確認 MO2 process 內 `Data/<plugin>` 可讀/hash，才能設計不造成數 GB 啟動延遲的 SHA gate；現階段 UI 會明示 SHA 尚未驗證。
+- **scene-capture-bridge 離線 catalog Browser 實機驗收**（2026-08-12 開條，**2026-08-13 家用機大幅修正**）：
+
+  **⚠️ 真正的阻礙不是 toolchain，是那顆 commit 沒推。** 原本這條寫「公司機沒有 Linux
+  clang-cl+xwin toolchain」——家用機**有，而且 2026-08-13 實測整條 build path 是活的**
+  （`rm -rf build/release-clang-cl-linux` → `cmake --preset build-release-clang-cl-linux`
+  → build 29/29 通過；import 表只有 KERNEL32/ole32/VERSION/USER32/SHELL32，靜態 CRT 乾淨；
+  `scripts/deploy.sh` 已部署，crc32 `7e94ad30`）。真正卡住的是：**DLL 消費端程式碼在母 repo
+  gitlink 指的 `1e44326`，那顆不在家用機也不在 GitHub**（`git cat-file` 確認），還躺在公司機。
+  本機 HEAD `298566a` 的 `Catalog.cpp` 只有 **runtime-only** 版，沒有 json 讀檔/merge/
+  provenance/global-source-order gate。**在那顆被 push 上來之前，離線 catalog 的實機驗收做不了**
+  ——見本檔上面「母 repo 最新 commit 引用了三個尚未 push 的子模組 commit」條目，那三顆裡就有它。
+
+  **產生端（ModForge）已在家用機對真實完整 load order 跑通**（2026-08-13）：
+
+  | | 結果 |
+  |---|---|
+  | resolved load order | 59 個實體檔（8 esm + 9 esl + 42 esp），full+light 混合 |
+  | `catalog build` | 59 sources / 1,408,820 records / 12.8s |
+  | `catalog export-json` | 1,338,046 winners（70,774 筆被 override）/ 4.6s / **468 MB** |
+
+  重建方式：`scripts/resolve_load_order.py Play-KR > lo.txt`（把 MO2 profile 的 load order 依
+  mod 優先序解成實體路徑；Linux 沒有活的 usvfs 可讀，只能自己解），再
+  `dotnet run --project src/ModForge.Cli -c Release -- catalog build <db> $(< lo.txt)`。
+  ⚠️ `catalog build` 的 plugin 參數順序**就是** load order index，別打亂。
+
+  **三個發現（都已量化，不是推測）：**
+
+  1. **468 MB 裡約 97% 是 DLL 永遠用不到的。** `PlacedObject` 一種型別佔 1,015,529 筆（72%）
+     ——那是世界裡的 REFR 實例，而 Browser 是 Object Window，只列 base object。
+     `catalog export-json` **沒有型別過濾**。照 DLL 的 21 個 `kTypes` 過濾後實測：
+     **468 MB → 11 MB**，同 schema v1、同 59 sources、33,737 筆，EditorID 覆蓋率
+     33,736/33,737。這直接關係到本條原本要求的「不造成數 GB 啟動延遲」——**建議把型別過濾
+     做進 `export-json`（例如 `--placeable`），不要指望 DLL 端 parse 完 468 MB 再丟掉**。
+  2. **過濾軸必須是 record_type，不能是 model_path。** ARMO 的模型掛在 ARMA 上，Mutagen 的
+     `IModeledGetter.Model` 對它是 null；拿 model_path 當條件會把 4,944 件護甲整批砍掉。
+  3. **`Catalog.cpp` 的 `kTypes` 裡 `Armor` 是死條目。** CommonLibSSE 標頭確認
+     `TESObjectARMO` 繼承鏈裡沒有 `TESModel`（走 `TESBipedModelForm`），所以緊接著那道
+     `base->As<RE::TESModel>()` gate 會把**所有護甲**濾掉——列在可瀏覽型別裡但一筆都進不了
+     Browser。`StaticCollection` 預測同樣掛零（待實機確認）。
+
+  **還沒做完的：runtime-only Browser 實機驗收。** DLL 已部署、遊戲已由
+  `mo2ctl launch --no-wait` 啟動（Play-KR profile），但**沒人進去點過**。接手的 agent：請使用者
+  F1 → `Scene Capture Bridge` → Browser 頁（首開觸發全 form-array 掃描，注意頓不頓），然後讀
+  `<Proton prefix>/drive_c/users/steamuser/Documents/My Games/Skyrim Special Edition/SKSE/SceneCaptureBridge.log`
+  的 `Catalog:` 那行對帳。**離線算出來的預測值**：placeable bases **27,246**、
+  from **33** plugin(s)、**19** type(s)（不是 21）、skipped **6,491** model-less（其中 4,944 是護甲）。
+  type 下拉選單裡**應該找不到 Armor**——找不到就是發現 3 實錘；找得到就是判斷錯，
+  `TESObjectARMO` 在 runtime 另有取得 model 的路徑。兩種結果都要記回來。
+
+  **`1e44326` 到手之後才輪得到的**：確認 `TESDataHandler::files` 過濾出的 loaded sequence 與實際
+  override precedence 一致，驗 Browser loaded/match、EditorID 搜尋/顯示與 preview/place；再各測
+  缺一個、多一個、反轉順序、壞 JSON 時皆退回 runtime-only。另需確認 MO2 process 內
+  `Data/<plugin>` 可讀/hash，才能設計 SHA gate；現階段 UI 會明示 SHA 尚未驗證。
+  ⚠️ 注意 `loadorder.txt` 有三個 CC plugin（`ccbgssse068-bloodfall`、`ccbgssse069-contest`、
+  `ccvsvsse004-beafarmer`）**磁碟上根本不存在**，遊戲直接跳過；任何 resolver 與「缺一個」測試都得
+  先把這個既有的洞算進去，別誤判成 bug。
 
 - **BG3 場景佈局實檔驗證**（2026-08-11）：桌面研究已確認 LSLib 可把 BG3
   `Levels/` 下的 `.lsf` 轉成可讀 `.lsx`，但尚未用使用者持有的遊戲資料驗證 placement
