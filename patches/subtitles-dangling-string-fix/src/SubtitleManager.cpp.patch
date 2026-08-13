@@ -1,0 +1,21 @@
+diff --git a/src/SubtitleManager.cpp b/src/SubtitleManager.cpp
+index e502add..155c1bc 100644
+--- a/src/SubtitleManager.cpp
++++ b/src/SubtitleManager.cpp
+@@ -125,11 +125,12 @@ namespace Subtitles
+ 		auto hudMenu = RE::UI::GetSingleton()->GetMenu<RE::HUDMenu>(RE::HUDMenu::MENU_NAME);
+ 		auto root = hudMenu->GetRuntimeData().root;
+ 
+-		if (bigSubtitle.str().length() > 0) {
+-			RE::GFxValue asStr(bigSubtitle.str().c_str());
++		const auto subtitleText = bigSubtitle.str();
++		if (!subtitleText.empty()) {
++			RE::GFxValue asStr(subtitleText.c_str());
+ 			root.Invoke("ShowSubtitle", nullptr, &asStr, 1);
+ 		} else {
+ 			root.Invoke("HideSubtitle", nullptr, nullptr, 0);
+ 		}
+ 	}
+-}
+\ No newline at end of file
++}
