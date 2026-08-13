@@ -14,15 +14,19 @@
 
 ## 已確認事實
 
-1. 無心傳奇版的 MOD 原址清單把「女性 NPC 美化」指向 LE `Decent Women - improve female npcs face`（Nexus Skyrim id `14443`）：
+1. 夜貓－無心的 Bilibili 作者頁仍提供「無心個人整合版 3.1.0」下載；頁面明載它只支援
+   傳奇版，人物美化包含多種女性／男性臉部、皮膚、頭髮、眉毛等，另有獨立「頭模替換」修改
+   1138 名 NPC。這是目前要精確保留無心角色時的首選來源：
+   <https://www.bilibili.com/opus/839987838099390470>
+2. 無心傳奇版的舊 MOD 原址清單把「女性 NPC 美化」指向 LE `Decent Women - improve female npcs face`（Nexus Skyrim id `14443`）：
    <https://www.uu-gg.one/forum.php?extra=&mobile=no&mod=viewthread&tid=32779>
-2. `Decent Women` 目前頁面列出四個獨立檔案：Commoners、Followers、Enemies and Wanderers、Children；它不是一個現成的 SSE archive：
+3. `Decent Women` 目前頁面列出四個獨立檔案：Commoners、Followers、Enemies and Wanderers、Children；它不是一個現成的 SSE archive：
    <https://www.nexusmods.com/skyrim/mods/14443>
-3. 同一份來源整理中的「重製版」段落使用 SSE `Women's faces`（Nexus SSE id `5630`），但該段落屬於**另一個重製版整合清單**，不能把它說成 `Decent Women` 的原樣移植。
-4. houseCARL 於 2026-08-13 讀到 `Women's faces`：v1.7、323 名女性 NPC、英文主檔 `NPS_Female_SE_Eng`、290.7 MB、無列出的 Nexus requirements、BSA 自包含、不改 companions；作者已停用一般直接下載，須走 Nexus mod-manager（NXM）下載：
+4. 同一份來源整理中的「重製版」段落使用 SSE `Women's faces`（Nexus SSE id `5630`），但該段落屬於**另一個重製版整合清單**，不能把它說成 `Decent Women` 的原樣移植。
+5. houseCARL 於 2026-08-13 讀到 `Women's faces`：v1.7、323 名女性 NPC、英文主檔 `NPS_Female_SE_Eng`、290.7 MB、無列出的 Nexus requirements、BSA 自包含、不改 companions；作者已停用一般直接下載，須走 Nexus mod-manager（NXM）下載：
    <https://www.nexusmods.com/skyrimspecialedition/mods/5630>
-5. `Women's faces` 沒有 SKSE DLL；就已知內容而言，Skyrim runtime `1.6.1170` 不是主要相容障礙。真正風險是它與其他 NPC record 修改的 winner／FaceGen 不一致，造成黑臉、髮型或 AI 改動被覆蓋。
-6. 目前 `Modpack-KR-Dev` 可辨識但不是 selected profile；現役人物相關 mod 有 RaceMenu、
+6. `Women's faces` 沒有 SKSE DLL；就已知內容而言，Skyrim runtime `1.6.1170` 不是主要相容障礙。真正風險是它與其他 NPC record 修改的 winner／FaceGen 不一致，造成黑臉、髮型或 AI 改動被覆蓋。
+7. 目前 `Modpack-KR-Dev` 可辨識但不是 selected profile；現役人物相關 mod 有 RaceMenu、
    XPMSSE／Skeleton Auto Patch、Face Discoloration Fix 與 AI Overhaul，尚無 body、skin 或 hair
    overhaul。Face Discoloration Fix 只能兜底，不能取代正確的 NPC winner patch。
 
@@ -30,9 +34,9 @@
 
 ### A. 精確保留經典無心人物（目標路線）
 
-需要取得使用者合法持有的下列其中一種來源：
+需要取得使用者合法持有的下列其中一種來源，優先順序如下：
 
-- 無心整合包中可分離的人物模組；或
+- 無心 3.1.0 下載資料夾中名稱含「人物美化」與「頭模替換」的 archive；或
 - Nexus LE `Decent Women` 的所需原始檔案。
 
 取得後才可實際驗證並轉換：
@@ -56,4 +60,7 @@
 
 ## 下一步
 
-使用者若要**經典無心外觀**，請把無心人物包或 `Decent Women` 原檔下載到既有 Skyrim archive 目錄；若接受**近似的現成 SSE 替代品**，則用 MO2/Nexus 下載 `Women's faces` 英文檔。archive 出現後，安裝 agent 可繼續檔案級驗證、轉換、衝突 patch 與部署。
+使用者若要**經典無心外觀**，從作者頁提供的百度網盤下載名稱含「人物美化」與「頭模替換」
+的 archive，放到既有 Skyrim archive 目錄；不需要下載遊戲本體、環境美化或其他功能包。若接受
+**近似的現成 SSE 替代品**，則用 MO2/Nexus 下載 `Women's faces` 英文檔。archive 出現後，安裝
+agent 可繼續檔案級驗證、轉換、衝突 patch 與部署。

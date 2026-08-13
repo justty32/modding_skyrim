@@ -16,9 +16,10 @@
   與 MO2 mods 都沒有無心、`Decent Women` 或 `Women's faces` archive，houseCARL 只能讀 Nexus
   metadata、不能下載。使用者需先選一條並透過官方 Nexus 取得檔案：
 
-  - 要**經典無心人物**：下載使用者合法持有的無心人物模組，或 LE `Decent Women` 所需原檔
-    （Nexus Skyrim id `14443`）。這條才保留經典外觀，但需 LE→SE 資產／plugin 轉換；作者權限
-    限制轉換、修改及資產使用，未取得許可不得把移植版或未授權第三方資產公開重打包。
+  - 要**經典無心人物**：從夜貓－無心的 Bilibili 作者頁所列 3.1.0 百度網盤下載名稱含
+    「人物美化」與「頭模替換」的 archive；不需下載遊戲本體、環境或功能包。也可退而下載
+    LE `Decent Women` 所需原檔（Nexus Skyrim id `14443`），但它不包含 3.1.0 獨有的 1138 NPC
+    頭模替換。兩者都需 LE→SE 資產／plugin 轉換；未取得完整資產許可不得公開重打包。
   - 接受**不同臉的現成 SSE 替代品**：從 Nexus SSE id `5630` 用 mod-manager 下載英文
     `NPS_Female_SE_Eng`。它是自包含的純資料 mod，原則上可在 1.6.1170 使用，但不是經典
     `Decent Women` 原樣，而且不改 companions。
