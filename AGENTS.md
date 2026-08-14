@@ -12,7 +12,6 @@
 ## 先讀哪裡
 
 - 使用者要你動手做某件事 → [WORKFLOWS.md](WORKFLOWS.md)：依意圖派發到對應工作流。
-- 任何測試／實機驗證 → [workflows/testing.md](workflows/testing.md)；本機 MO2 細節再依該入口讀 notes 側 testing workflow。
 - 想看 repo 結構 → 專案自己的 `INDEX.md` 或 `README.md`。
 - 碰原始碼 → 先讀 [workflows/common/conventions.md](workflows/common/conventions.md)，再讀 [CODE_MAP](workflows/common/code-map/CODE_MAP.md)。
 
