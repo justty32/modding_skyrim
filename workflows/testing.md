@@ -4,6 +4,14 @@
 
 開始前寫 `Done when: <指定測試/驗證命令跑完，結果已回報>`。
 
+## 執行前狀態 gate
+
+- 先核對最新使用者要求、repo／工作流 open session、WAIT_USER 與最近使用者驗收；已完成項不得因
+  過期活狀態重測，並應先從 WAIT_USER／session 移除。
+- 需要啟動本機 Skyrim／MO2 時，本 repo 不複製部署程序；必須完整遵循 notes 側唯一入口：
+  [`~/notes/projects/modding/skyrim/workflows/testing.md`](../../../../notes/projects/modding/skyrim/workflows/testing.md)。
+  禁止自行以較弱的臨時 launch 命令取代其中 baseline、background-active、cleanup gate。
+
 ## 母 repo 驗證
 
 母 repo 主要是 Markdown、索引與 submodule gitlink，另有一個 Python stdlib 文件驗證器；
