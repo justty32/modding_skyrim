@@ -1,0 +1,199 @@
+form_key	editor_id	field	source	target	provenance
+018E6A:Skyrim.esm	LightFingers20	FULL	Light Fingers	巧手	Skyrim Traditional Chinese 8.20 record mapping
+018E6A:Skyrim.esm	LightFingers20	DESC	Pickpocketing is 40% easier. Item weight and value reduce pickpocketing odds.	偷竊成功機率增加 40%。物品的重量和價值影響成功率。	Skyrim Traditional Chinese 8.20 record mapping
+018E6B:Skyrim.esm	LightFingers40	FULL	Light Fingers	巧手	Skyrim Traditional Chinese 8.20 record mapping
+018E6B:Skyrim.esm	LightFingers40	DESC	Pickpocketing is 60% easier. Item weight and value reduce pickpocketing odds.	偷竊成功機率增加 60%。物品的重量和價值影響成功率。	Skyrim Traditional Chinese 8.20 record mapping
+018E6C:Skyrim.esm	LightFingers60	FULL	Light Fingers	巧手	Skyrim Traditional Chinese 8.20 record mapping
+018E6C:Skyrim.esm	LightFingers60	DESC	Pickpocketing is 80% easier. Item weight and value reduce pickpocketing odds.	偷竊成功機率增加 80%。物品的重量和價值影響成功率。	Skyrim Traditional Chinese 8.20 record mapping
+018E6D:Skyrim.esm	LightFingers80	FULL	Light Fingers	巧手	Skyrim Traditional Chinese 8.20 record mapping
+018E6D:Skyrim.esm	LightFingers80	DESC	Pickpocketing is 100% easier. Item weight and value reduce pickpocketing odds.	偷竊成功機率增加 100%。物品的重量和價值影響成功率。	Skyrim Traditional Chinese 8.20 record mapping
+03AF83:Skyrim.esm	DeepWounds30	FULL	Deep Wounds	重創打擊	Skyrim Traditional Chinese 8.20 record mapping
+03AF83:Skyrim.esm	DeepWounds30	DESC	Attacks with greatswords have a 10% chance of doing critical damage.	使用巨劍攻擊有 10% 的機率造成致命一擊。	Skyrim Traditional Chinese 8.20 record mapping
+03AFA7:Skyrim.esm	Warmaster	FULL	Warmaster	將領	Skyrim Traditional Chinese 8.20 record mapping
+03AFA7:Skyrim.esm	Warmaster	DESC	Backwards power attack has a 25% chance to paralyze the target.	倒退強力攻擊有 25% 的機率癱瘓目標。	Skyrim Traditional Chinese 8.20 record mapping
+03FFFA:Skyrim.esm	HackAndSlash30	FULL	Hack and Slash	猛烈砍擊	Skyrim Traditional Chinese 8.20 record mapping
+03FFFA:Skyrim.esm	HackAndSlash30	DESC	Attacks with war axes cause extra bleeding damage.	使用戰斧攻擊造成額外流血傷害。	Skyrim Traditional Chinese 8.20 record mapping
+051B17:Skyrim.esm	MatchingSet	FULL	Matching Set	體裝合一	Skyrim Traditional Chinese 8.20 record mapping
+051B17:Skyrim.esm	MatchingSet	DESC	Additional 25% Armor bonus if wearing a matched set of Light Armor.	裝備整套輕甲時獲得額外 25% 護具防禦力。	Skyrim Traditional Chinese 8.20 record mapping
+052190:Skyrim.esm	DragonArmor	FULL	Dragon Smithing	龍類製品鍛造	Skyrim Traditional Chinese 8.20 record mapping
+052190:Skyrim.esm	DragonArmor	DESC	Can create Dragon armor and Dragonbone weapons at forges, and improve them twice as much.	可在鍛造爐製作龍系護具與龍骨武器，並將其強化兩倍。	Skyrim Traditional Chinese 8.20 adapted to USSEP 4.3.8a
+052D50:Skyrim.esm	FightingStance	FULL	Fighting Stance	戰鬥姿態	Skyrim Traditional Chinese 8.20 record mapping
+052D50:Skyrim.esm	FightingStance	DESC	Power attacks with one-handed weapons cost 25% less Stamina.	單手武器的強力攻擊消耗耐力減少 25%。	Skyrim Traditional Chinese 8.20 record mapping
+052D51:Skyrim.esm	ChampionsStance	FULL	Champion's Stance	勇士姿態	Skyrim Traditional Chinese 8.20 record mapping
+052D51:Skyrim.esm	ChampionsStance	DESC	Power attacks with two-handed weapons cost 25% less Stamina.	雙手武器的強力攻擊消耗耐力減少 25%。	Skyrim Traditional Chinese 8.20 record mapping
+053128:Skyrim.esm	MagicResistance30	FULL	Magic Resistance	魔法抗性	Skyrim Traditional Chinese 8.20 record mapping
+053128:Skyrim.esm	MagicResistance30	DESC	Blocks 10% of a spell's effects.	阻擋 10% 法術效果。	Skyrim Traditional Chinese 8.20 record mapping
+0581DD:Skyrim.esm	Necromancy	FULL	Necromancy	死靈術士	Skyrim Traditional Chinese 8.20 record mapping
+0581DD:Skyrim.esm	Necromancy	DESC	Greater duration for reanimated or summoned undead.	復生或召喚的不死生物持續時間更長。	Skyrim Traditional Chinese 8.20 adapted to USSEP 4.3.8a
+0581DE:Skyrim.esm	DarkSouls	FULL	Dark Souls	黑暗靈魂	Skyrim Traditional Chinese 8.20 record mapping
+0581DE:Skyrim.esm	DarkSouls	DESC	Reanimated undead have 100 points more Health.	活化不死者 100 點的生命。	Skyrim Traditional Chinese 8.20 record mapping
+0581E4:Skyrim.esm	Necromage	FULL	Necromage	死靈術士	Skyrim Traditional Chinese 8.20 record mapping
+0581E4:Skyrim.esm	Necromage	DESC	All spells are more effective against undead.	所有法術對不死者將更加有效。	Skyrim Traditional Chinese 8.20 record mapping
+0581F7:Skyrim.esm	atronach	FULL	Atronach	屬靈虹吸	Skyrim Traditional Chinese 8.20 record mapping
+0581F7:Skyrim.esm	atronach	DESC	Absorb 30% of the Magicka of any spells that hit you.	吸收任何擊中你的法術的 30% 的法力。	Skyrim Traditional Chinese 8.20 record mapping
+058202:Skyrim.esm	NightThief	FULL	Night Thief	夜賊	Skyrim Traditional Chinese 8.20 record mapping
+058202:Skyrim.esm	NightThief	DESC	Pickpocketing is 25% easier when the target is asleep.	對睡眠中的目標扒竊成功機率提高 25%。	Skyrim Traditional Chinese 8.20 record mapping
+058F64:Skyrim.esm	Bullseye	FULL	Bullseye	正中要害	Skyrim Traditional Chinese 8.20 record mapping
+058F64:Skyrim.esm	Bullseye	DESC	15% chance of paralyzing the target for a few seconds.	有 15% 機率癱瘓目標數秒。	Skyrim Traditional Chinese 8.20 record mapping
+058F6E:Skyrim.esm	FistsOfSteel	FULL	Fists of Steel	鐵拳出擊	Skyrim Traditional Chinese 8.20 record mapping
+058F6E:Skyrim.esm	FistsOfSteel	DESC	Unarmed attacks with Heavy Armor gauntlets do extra damage equal to their armor rating.	重甲手套會在徒手攻擊時根據護具本身的防禦力造成額外傷害	Skyrim Traditional Chinese 8.20 record mapping
+058F79:Skyrim.esm	fence	FULL	Fence	銷售贓物	Skyrim Traditional Chinese 8.20 record mapping
+058F79:Skyrim.esm	fence	DESC	Can barter stolen goods with any merchant.	可以向任何商人出售贓物。	Skyrim Traditional Chinese 8.20 adapted to USSEP 4.3.8a
+058F7C:Skyrim.esm	SoulSqueezer	FULL	Soul Squeezer	靈魂榨取	Skyrim Traditional Chinese 8.20 record mapping
+058F7C:Skyrim.esm	SoulSqueezer	DESC	Soul gems provide extra Magicka for recharging.	靈魂石充能時提供額外能量。	Skyrim Traditional Chinese 8.20 record mapping
+058F7D:Skyrim.esm	CorpusEnchanter	FULL	Corpus Enchanter	體質附魔	Skyrim Traditional Chinese 8.20 record mapping
+058F7D:Skyrim.esm	CorpusEnchanter	DESC	Health, Magicka, and Stamina enchantments on armor are 25% stronger.	護具上的生命、法力、耐力附魔效果提升 25%。	Skyrim Traditional Chinese 8.20 record mapping
+059B76:Skyrim.esm	MasterOfTheMind	FULL	Master of the Mind	心靈掌控大師	Skyrim Traditional Chinese 8.20 record mapping
+059B76:Skyrim.esm	MasterOfTheMind	DESC	Illusion spells work on undead, Daedra, and automatons.	幻象系法術能影響不死者，魔族和機械構裝物。	Skyrim Traditional Chinese 8.20 record mapping
+059B78:Skyrim.esm	AspectOfTerror	FULL	Aspect of Terror	恐怖面目	Skyrim Traditional Chinese 8.20 record mapping
+059B78:Skyrim.esm	AspectOfTerror	DESC	Fear spells work on higher level opponents. Cumulative with Kindred Mage and Animage.	恐懼法術對更高等級的敵人有效，可與人類迷惑或野獸迷惑疊加。	Skyrim Traditional Chinese 8.20 record mapping
+05F56F:Skyrim.esm	Bladesman30	FULL	Bladesman	刀劍精通	Skyrim Traditional Chinese 8.20 record mapping
+05F56F:Skyrim.esm	Bladesman30	DESC	Attacks with swords have a 10% chance of doing critical damage.	使用刀劍攻擊有 10% 機率造成致命一擊傷害。	Skyrim Traditional Chinese 8.20 record mapping
+068BCC:Skyrim.esm	wardAbsorb	FULL	Ward Absorb	汲能結界	Skyrim Traditional Chinese 8.20 record mapping
+068BCC:Skyrim.esm	wardAbsorb	DESC	Wards recharge your Magicka when hit with spells.	結界被法術擊中時將轉而恢復你的法力。	Skyrim Traditional Chinese 8.20 record mapping
+079355:Skyrim.esm	ShieldWall20	FULL	Shield Wall	堅壁防禦	Skyrim Traditional Chinese 8.20 record mapping
+079355:Skyrim.esm	ShieldWall20	DESC	Blocking is 20% more effective.	格擋效果增加 20%。	Skyrim Traditional Chinese 8.20 record mapping
+079357:Skyrim.esm	ShieldWall60	FULL	Shield Wall	堅壁防禦	Skyrim Traditional Chinese 8.20 record mapping
+079357:Skyrim.esm	ShieldWall60	DESC	Blocking is 40% more effective.	格擋效果增加 40%。	Skyrim Traditional Chinese 8.20 record mapping
+079358:Skyrim.esm	ShieldWall80	FULL	Shield Wall	堅壁防禦	Skyrim Traditional Chinese 8.20 record mapping
+079358:Skyrim.esm	ShieldWall80	DESC	Blocking is 50% more effective.	格擋效果增加 50%。	Skyrim Traditional Chinese 8.20 record mapping
+0A3F64:Skyrim.esm	AvoidDeath	FULL	Avoid Death	瀕死救贖	Skyrim Traditional Chinese 8.20 record mapping
+0A3F64:Skyrim.esm	AvoidDeath	DESC	Once a day, heals 250 points automatically if you fall below 10% Health.	每天一次，如果當生命低於 10% 則自動治療 250 點。	Skyrim Traditional Chinese 8.20 record mapping
+0BCCAE:Skyrim.esm	ShieldWall00	FULL	Shield Wall	堅壁防禦	Skyrim Traditional Chinese 8.20 record mapping
+0BCCAE:Skyrim.esm	ShieldWall00	DESC	Blocking is 10% more effective.	格擋效果增加 10%。	Skyrim Traditional Chinese 8.20 record mapping
+0BE124:Skyrim.esm	LightFingers00	FULL	Light Fingers	巧手	Skyrim Traditional Chinese 8.20 record mapping
+0BE124:Skyrim.esm	LightFingers00	DESC	Pickpocketing is 20% easier. Item weight and value reduce pickpocketing odds.	偷竊成功機率增加 20%。物品的重量和價值影響成功率。	Skyrim Traditional Chinese 8.20 record mapping
+0C1E90:Skyrim.esm	Bladesman60	FULL	Bladesman	刀劍精通	Skyrim Traditional Chinese 8.20 record mapping
+0C1E90:Skyrim.esm	Bladesman60	DESC	Attacks with swords have a 15% chance of doing more critical damage.	使用刀劍攻擊有 15% 機率造成更多致命一擊傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0C1E91:Skyrim.esm	Bladesman90	FULL	Bladesman	刀劍精通	Skyrim Traditional Chinese 8.20 record mapping
+0C1E91:Skyrim.esm	Bladesman90	DESC	Attacks with swords have a 20% chance of doing even more critical damage.	使用刀劍攻擊有 20% 機率造成非常多致命一擊傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0C1E94:Skyrim.esm	DeepWounds60	FULL	Deep Wounds	重創打擊	Skyrim Traditional Chinese 8.20 record mapping
+0C1E94:Skyrim.esm	DeepWounds60	DESC	Attacks with greatswords have a 15% chance of doing more critical damage.	使用巨劍攻擊有 15% 的機率造成更多致命一擊傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0C1E95:Skyrim.esm	DeepWounds90	FULL	Deep Wounds	重創打擊	Skyrim Traditional Chinese 8.20 record mapping
+0C1E95:Skyrim.esm	DeepWounds90	DESC	Attacks with greatswords have a 20% chance of doing even more critical damage.	使用巨劍攻擊有 20% 的機率造成非常多致命一擊傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0C3678:Skyrim.esm	HackAndSlash60	FULL	Hack and Slash	猛烈砍擊	Skyrim Traditional Chinese 8.20 record mapping
+0C3678:Skyrim.esm	HackAndSlash60	DESC	Attacks with war axes cause more bleeding damage.	使用戰斧攻擊造成更多流血傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0C3679:Skyrim.esm	HackAndSlash90	FULL	Hack and Slash	猛烈砍擊	Skyrim Traditional Chinese 8.20 record mapping
+0C3679:Skyrim.esm	HackAndSlash90	DESC	Attacks with war axes cause even more bleeding damage.	使用戰斧攻擊造成非常多流血傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0C44B7:Skyrim.esm	AlterationApprentice25	FULL	Apprentice Alteration	學徒級變換系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44B7:Skyrim.esm	AlterationApprentice25	DESC	Cast Apprentice level Alteration spells for half Magicka.	施放學徒級變換系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44B8:Skyrim.esm	AlterationAdept50	FULL	Adept Alteration	行家級變換系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44B8:Skyrim.esm	AlterationAdept50	DESC	Cast Adept level Alteration spells for half Magicka.	施放行家級變換系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44B9:Skyrim.esm	AlterationExpert75	FULL	Expert Alteration	專家級變換系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44B9:Skyrim.esm	AlterationExpert75	DESC	Cast Expert level Alteration spells for half Magicka.	施放專家級變換系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44BA:Skyrim.esm	AlterationMaster100	FULL	Master Alteration	大師級變換系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44BA:Skyrim.esm	AlterationMaster100	DESC	Cast Master level Alteration spells for half Magicka.	施放大師級變換系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44BB:Skyrim.esm	ConjurationApprentice25	FULL	Apprentice Conjuration	學徒級召喚系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44BB:Skyrim.esm	ConjurationApprentice25	DESC	Cast Apprentice level Conjuration spells for half Magicka.	施放學徒級召喚系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44BC:Skyrim.esm	ConjurationAdept50	FULL	Adept Conjuration	行家級召喚系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44BC:Skyrim.esm	ConjurationAdept50	DESC	Cast Adept level Conjuration spells for half Magicka.	施放行家級召喚系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44BD:Skyrim.esm	ConjurationExpert75	FULL	Expert Conjuration	專家級召喚系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44BD:Skyrim.esm	ConjurationExpert75	DESC	Cast Expert level Conjuration spells for half Magicka.	施放專家級召喚系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44BE:Skyrim.esm	ConjurationMaster100	FULL	Master Conjuration	大師級召喚系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44BE:Skyrim.esm	ConjurationMaster100	DESC	Cast Master level Conjuration spells for half Magicka.	施放大師級召喚系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44BF:Skyrim.esm	DestructionApprentice25	FULL	Apprentice Destruction	學徒級毀滅系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44BF:Skyrim.esm	DestructionApprentice25	DESC	Cast Apprentice level Destruction spells for half Magicka.	施放學徒級毀滅系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44C0:Skyrim.esm	DestructionAdept50	FULL	Adept Destruction	行家級毀滅系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44C0:Skyrim.esm	DestructionAdept50	DESC	Cast Adept level Destruction spells for half Magicka.	施放行家級毀滅系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44C1:Skyrim.esm	DestructionExpert75	FULL	Expert Destruction	專家級毀滅系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44C1:Skyrim.esm	DestructionExpert75	DESC	Cast Expert level Destruction spells for half Magicka.	施放專家級毀滅系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44C2:Skyrim.esm	DestructionMaster100	FULL	Master Destruction	大師級毀滅系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44C2:Skyrim.esm	DestructionMaster100	DESC	Cast Master level Destruction spells for half Magicka.	施放大師級毀滅系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44C3:Skyrim.esm	IllusionApprentice25	FULL	Apprentice Illusion	學徒級幻象系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44C3:Skyrim.esm	IllusionApprentice25	DESC	Cast Apprentice level Illusion spells for half Magicka.	施放學徒級幻象系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44C4:Skyrim.esm	IllusionAdept50	FULL	Adept Illusion	行家級幻象系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44C4:Skyrim.esm	IllusionAdept50	DESC	Cast Adept level Illusion spells for half Magicka.	施放行家級幻象系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44C5:Skyrim.esm	IllusionExpert75	FULL	Expert Illusion	專家級幻象系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44C5:Skyrim.esm	IllusionExpert75	DESC	Cast Expert level Illusion spells for half Magicka.	施放專家級幻象系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44C6:Skyrim.esm	IllusionMaster100	FULL	Master Illusion	大師級幻象系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44C6:Skyrim.esm	IllusionMaster100	DESC	Cast Master level Illusion spells for half Magicka.	施放大師級幻象系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44C7:Skyrim.esm	RestorationApprentice25	FULL	Apprentice Restoration	學徒級恢復系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44C7:Skyrim.esm	RestorationApprentice25	DESC	Cast Apprentice level Restoration spells for half Magicka.	施放學徒級恢復系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44C8:Skyrim.esm	RestorationAdept50	FULL	Adept Restoration	行家級恢復系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44C8:Skyrim.esm	RestorationAdept50	DESC	Cast Adept level Restoration spells for half Magicka.	施放行家級恢復系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44C9:Skyrim.esm	RestorationExpert75	FULL	Expert Restoration	專家級恢復系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44C9:Skyrim.esm	RestorationExpert75	DESC	Cast Expert level Restoration spells for half Magicka.	施放專家級恢復系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C44CA:Skyrim.esm	RestorationMaster100	FULL	Master Restoration	大師級恢復系法術	Skyrim Traditional Chinese 8.20 record mapping
+0C44CA:Skyrim.esm	RestorationMaster100	DESC	Cast Master level Restoration spells for half Magicka.	施放大師級恢復系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0C5C05:Skyrim.esm	Limbsplitter30	FULL	Limbsplitter	肢解	Skyrim Traditional Chinese 8.20 record mapping
+0C5C05:Skyrim.esm	Limbsplitter30	DESC	Attacks with battle axes cause extra bleeding damage.	使用巨斧攻擊造成額外流血傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0C5C06:Skyrim.esm	Limbsplitter60	FULL	Limbsplitter	肢解	Skyrim Traditional Chinese 8.20 record mapping
+0C5C06:Skyrim.esm	Limbsplitter60	DESC	Attacks with battle axes cause more bleeding damage.	使用巨斧攻擊造成更多流血傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0C5C07:Skyrim.esm	Limbsplitter90	FULL	Limbsplitter	肢解	Skyrim Traditional Chinese 8.20 record mapping
+0C5C07:Skyrim.esm	Limbsplitter90	DESC	Attacks with battle axes cause even more bleeding damage.	使用巨斧攻擊造成非常多流血傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0CB405:Skyrim.esm	SavageBlows	FULL	Savage Blows	野蠻一擊	Skyrim Traditional Chinese 8.20 record mapping
+0CB405:Skyrim.esm	SavageBlows	DESC	Dual-wielding power attacks do extra damage.	雙持武器的強力攻擊可以造成更多傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0CB40D:Skyrim.esm	SteelSmithing	FULL	Steel Smithing	鋼鐵製品鍛造	Skyrim Traditional Chinese 8.20 record mapping
+0CB40D:Skyrim.esm	SteelSmithing	DESC	Can create Steel armor and weapons at forges, and improve them twice as much.	可鍛造並雙倍強化鋼鐵護具與武器。	Skyrim Traditional Chinese 8.20 record mapping
+0CF788:Skyrim.esm	PerkSkillBoosts	FULL	Skill Boosts	技能增強	Skyrim Traditional Chinese 8.20 record mapping
+0CF788:Skyrim.esm	PerkSkillBoosts	DESC	Unified perk for applying skill benefits from perks	用於套用天賦技能增益的統一天賦。	USSEP 4.3.8a custom Traditional Chinese
+0E7509:Skyrim.esm	Headsman	FULL	Headsman	行刑者	Skyrim Traditional Chinese 8.20 record mapping
+0E7509:Skyrim.esm	Headsman	DESC	Chance to decapitate with a dual-wielding power attack.	雙持武器的強力攻擊有機率造成斬首。	Skyrim Traditional Chinese 8.20 record mapping
+0F2CA6:Skyrim.esm	AlterationNovice00	FULL	Novice Alteration	入門級變換系法術	Skyrim Traditional Chinese 8.20 record mapping
+0F2CA6:Skyrim.esm	AlterationNovice00	DESC	Cast Novice level Alteration spells for half Magicka.	施放入門級變換系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0F2CA7:Skyrim.esm	ConjurationNovice00	FULL	Novice Conjuration	入門級召喚系法術	Skyrim Traditional Chinese 8.20 record mapping
+0F2CA7:Skyrim.esm	ConjurationNovice00	DESC	Cast Novice level Conjuration spells for half Magicka.	施放入門級召喚系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0F2CA8:Skyrim.esm	DestructionNovice00	FULL	Novice Destruction	入門級毀滅系法術	Skyrim Traditional Chinese 8.20 record mapping
+0F2CA8:Skyrim.esm	DestructionNovice00	DESC	Cast Novice level Destruction spells for half Magicka.	施放入門級毀滅系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0F2CA9:Skyrim.esm	IllusionNovice00	FULL	Novice Illusion	入門級幻象系法術	Skyrim Traditional Chinese 8.20 record mapping
+0F2CA9:Skyrim.esm	IllusionNovice00	DESC	Cast Novice level Illusion spells for half Magicka.	施放入門級幻象系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0F2CAA:Skyrim.esm	RestorationNovice00	FULL	Novice Restoration	入門級恢復系法術	Skyrim Traditional Chinese 8.20 record mapping
+0F2CAA:Skyrim.esm	RestorationNovice00	DESC	Cast Novice level Restoration spells for half Magicka.	施放入門級恢復系法術消耗減半。	Skyrim Traditional Chinese 8.20 record mapping
+0F392E:Skyrim.esm	IntenseFlames	FULL	Intense Flames	烈焰壓迫	Skyrim Traditional Chinese 8.20 record mapping
+0F392E:Skyrim.esm	IntenseFlames	DESC	Fire damage causes targets to flee if their Health is low.	如果目標的生命很低，火焰傷害將使目標逃跑。	Skyrim Traditional Chinese 8.20 record mapping
+0F3933:Skyrim.esm	DeepFreeze	FULL	Deep Freeze	深度凍結	Skyrim Traditional Chinese 8.20 record mapping
+0F3933:Skyrim.esm	DeepFreeze	DESC	Frost damage paralyzes targets if their Health is low.	如果目標的生命很低，寒霜傷害將使目標麻痺。	Skyrim Traditional Chinese 8.20 record mapping
+0F3F0E:Skyrim.esm	Disintegrate	FULL	Disintegrate	粉身碎骨	Skyrim Traditional Chinese 8.20 record mapping
+0F3F0E:Skyrim.esm	Disintegrate	DESC	Shock damage disintegrates targets if their Health is low.	如果目標的生命很低，閃電傷害將使目標粉碎。	Skyrim Traditional Chinese 8.20 record mapping
+103ADA:Skyrim.esm	SteadyHand40	FULL	Steady Hand	穩定之手	Skyrim Traditional Chinese 8.20 record mapping
+103ADA:Skyrim.esm	SteadyHand40	DESC	Zooming in with a bow slows time by 50%.	張弓切入瞄準時，時間減慢 50%。	Skyrim Traditional Chinese 8.20 adapted to USSEP 4.3.8a
+103ADB:Skyrim.esm	SteadyHand60	FULL	Steady Hand	穩定之手	Skyrim Traditional Chinese 8.20 record mapping
+103ADB:Skyrim.esm	SteadyHand60	DESC	Zooming in with a bow slows time by 75%.	張弓切入瞄準時，時間減慢 75%。	Skyrim Traditional Chinese 8.20 adapted to USSEP 4.3.8a
+105F1C:Skyrim.esm	CriticalShot30	FULL	Critical Shot	精準射擊	Skyrim Traditional Chinese 8.20 record mapping
+105F1C:Skyrim.esm	CriticalShot30	DESC	10% chance of a critical hit that does extra damage.	有 10% 機率發動致命一擊，造成額外傷害。	Skyrim Traditional Chinese 8.20 record mapping
+105F1E:Skyrim.esm	CriticalShot60	FULL	Critical Shot	精準射擊	Skyrim Traditional Chinese 8.20 record mapping
+105F1E:Skyrim.esm	CriticalShot60	DESC	15% chance of a critical hit that does 25% more critical damage.	有 15% 機率發動致命一擊，造成 25% 的額外致命傷害。	Skyrim Traditional Chinese 8.20 record mapping
+105F1F:Skyrim.esm	CriticalShot90	FULL	Critical Shot	精準射擊	Skyrim Traditional Chinese 8.20 record mapping
+105F1F:Skyrim.esm	CriticalShot90	DESC	20% chance of a critical hit that does 50% more critical damage.	有 20% 機率發動致命一擊，造成 50% 的額外致命傷害。	Skyrim Traditional Chinese 8.20 record mapping
+105F2B:Skyrim.esm	Experimenter90	FULL	Experimenter	試藥精通	Skyrim Traditional Chinese 8.20 record mapping
+105F2B:Skyrim.esm	Experimenter90	DESC	Eating an ingredient reveals all its effects.	吃下一種材料時能夠確認所有的藥性。	Skyrim Traditional Chinese 8.20 record mapping
+105F2E:Skyrim.esm	GreenThumb	FULL	Green Thumb	園藝精通	Skyrim Traditional Chinese 8.20 record mapping
+105F2E:Skyrim.esm	GreenThumb	DESC	Two ingredients are gathered from harvestable ingredient sources.	從可採集的材料來源取得兩份材料。	Skyrim Traditional Chinese 8.20 adapted to USSEP 4.3.8a
+106253:Skyrim.esm	BlockRunner	FULL	Block Runner	奔跑防禦	Skyrim Traditional Chinese 8.20 record mapping
+106253:Skyrim.esm	BlockRunner	DESC	Able to move faster with a shield raised.	允許你在防守動作時快速移動。	Skyrim Traditional Chinese 8.20 record mapping
+106256:Skyrim.esm	DualFlurry30	FULL	Dual Flurry	雙持亂舞	Skyrim Traditional Chinese 8.20 record mapping
+106256:Skyrim.esm	DualFlurry30	DESC	Dual-wielding attacks are 20% faster.	雙持武器攻擊速度加快 20%。	Skyrim Traditional Chinese 8.20 record mapping
+106257:Skyrim.esm	DualFlurry50	FULL	Dual Flurry	雙持亂舞	Skyrim Traditional Chinese 8.20 record mapping
+106257:Skyrim.esm	DualFlurry50	DESC	Dual-wielding attacks are 35% faster.	雙持武器攻擊速度加快 35%。	Skyrim Traditional Chinese 8.20 record mapping
+106258:Skyrim.esm	DualSavagery	FULL	Dual Savagery	野蠻雙持	Skyrim Traditional Chinese 8.20 record mapping
+106258:Skyrim.esm	DualSavagery	DESC	Dual-wielding power attacks do 50% bonus damage.	雙持武器的強力攻擊可以造成 50% 額外傷害。	Skyrim Traditional Chinese 8.20 record mapping
+107831:Skyrim.esm	DeftMovement	FULL	Deft Movement	靈動步伐	Skyrim Traditional Chinese 8.20 record mapping
+107831:Skyrim.esm	DeftMovement	DESC	10% chance of avoiding all damage from a melee attack while wearing all Light Armor: head, chest, hands, feet.	全身裝備輕甲（頭胸手腳）時有 10% 機率躲避近戰傷害。	Skyrim Traditional Chinese 8.20 record mapping
+107E2C:Skyrim.esm	dunHunterQstPerk	FULL	Kyne's Blessing	凱娜的賜福	Skyrim Traditional Chinese 8.20 record mapping
+107E2C:Skyrim.esm	dunHunterQstPerk	DESC	Damage taken from animals is reduced by 10%.	動物對你造成的傷害降低 <10>%。	Skyrim Traditional Chinese 8.20 record mapping
+005994:Dawnguard.esm	DLC1VampiricBite	FULL	Blood Healing	鮮血療癒	Skyrim Traditional Chinese 8.20 record mapping
+005994:Dawnguard.esm	DLC1VampiricBite	DESC	Killing a person with a power attack bite restores all your Health.	藉由強力的啃咬而殺死人，可回復你所有的生命。	Skyrim Traditional Chinese 8.20 record mapping
+005998:Dawnguard.esm	DLC1PowerOfTheGrave	FULL	Power of the Grave	逝地之力	Skyrim Traditional Chinese 8.20 record mapping
+005998:Dawnguard.esm	DLC1PowerOfTheGrave	DESC	50 point bonus to Health, Magicka, and Stamina as a Vampire Lord.	轉化成吸血鬼貴族時增加 50 點的生命、法力與耐力。	Skyrim Traditional Chinese 8.20 record mapping
+00599B:Dawnguard.esm	DLC1DetectLifePerk	FULL	Detect All Creatures	萬物感知術	Skyrim Traditional Chinese 8.20 record mapping
+00599B:Dawnguard.esm	DLC1DetectLifePerk	DESC	Night Power: Detect all creatures, even Dwarven automatons.	夜間能力：感知萬物，包含矮人機械。	Skyrim Traditional Chinese 8.20 record mapping
+00599C:Dawnguard.esm	DLC1MistFormPerk	FULL	Mist Form	化霧型態	Skyrim Traditional Chinese 8.20 record mapping
+00599C:Dawnguard.esm	DLC1MistFormPerk	DESC	Night Power: Transform into an invulnerable mist, while Health, Magicka, and Stamina regenerate.	夜間能力：幻化成無法捉摸的霧團，並逐步回復生命、法力、耐力。	Skyrim Traditional Chinese 8.20 record mapping
+0059A5:Dawnguard.esm	DLC1AnimalVigorPerk	FULL	Animal Vigor	野性精力	Skyrim Traditional Chinese 8.20 record mapping
+0059A5:Dawnguard.esm	DLC1AnimalVigorPerk	DESC	100 point bonus to Health and Stamina in beast form.	獸化狀態下增加 100 點的生命與耐力。	Skyrim Traditional Chinese 8.20 record mapping
+0059A7:Dawnguard.esm	DLC1GorgingPerk	FULL	Gorging	同類獵食	Skyrim Traditional Chinese 8.20 record mapping
+0059A7:Dawnguard.esm	DLC1GorgingPerk	DESC	Feeding heals twice as much Health.	可藉由啃食人類遺體來恢復兩倍的生命。	Skyrim Traditional Chinese 8.20 record mapping
+017740:Dragonborn.esm	DLC2wardAbsorbNPC	FULL	NPC Ward Absorb	NPC 結界吸收	USSEP 4.3.8a custom Traditional Chinese
+017740:Dragonborn.esm	DLC2wardAbsorbNPC	DESC	Wards recharge your Magicka when hit with spells.	結界被法術擊中時將轉而恢復你的法力。	Skyrim Traditional Chinese 8.20 record mapping
+024109:Dragonborn.esm	DLC2MatchingSet	FULL	Matching Set	體裝合一	Skyrim Traditional Chinese 8.20 record mapping
+024109:Dragonborn.esm	DLC2MatchingSet	DESC	Additional 25% Armor bonus if wearing a matched set of Light Armor.	裝備整套輕甲時獲得額外 25% 護具防禦力。	Skyrim Traditional Chinese 8.20 record mapping
+02410A:Dragonborn.esm	DLC2MatchingSetHeavy	FULL	Matching Set	體裝合一	Skyrim Traditional Chinese 8.20 record mapping
+02410A:Dragonborn.esm	DLC2MatchingSetHeavy	DESC	Additional 25% Armor bonus if wearing a matched set of Heavy Armor.	裝備整套重甲時獲得額外 25% 護具防禦力。	Skyrim Traditional Chinese 8.20 record mapping
+0250E8:Dragonborn.esm	DLC2AcolyteMaskAugmentFrost	FULL	Dukaan's Fury	度坎之怒	Skyrim Traditional Chinese 8.20 adapted to USSEP 4.3.8a
+0250E8:Dragonborn.esm	DLC2AcolyteMaskAugmentFrost	DESC	Frost spells do 25% more damage.	寒霜法術可以造成 25% 額外傷害。	Skyrim Traditional Chinese 8.20 record mapping
+0250E9:Dragonborn.esm	DLC2AcolyteMaskAugmentShock	FULL	Zahkriisos' Ire	薩克里斯之怒	Skyrim Traditional Chinese 8.20 adapted to USSEP 4.3.8a
+0250E9:Dragonborn.esm	DLC2AcolyteMaskAugmentShock	DESC	Shock spells do 25% more damage.	閃電法術可以造成 25% 額外傷害。	Skyrim Traditional Chinese 8.20 record mapping
+027330:Dragonborn.esm	DLC2dunKolbjornGauntletsPerk	FULL	Ahzidal's Warding	阿季達的結界術	Skyrim Traditional Chinese 8.20 record mapping
+027330:Dragonborn.esm	DLC2dunKolbjornGauntletsPerk	DESC	Your Wards are <25>% less effective, but absorb <50>% of the Magicka from incoming spells.	你的結界效果減弱 <25>%，但可從任何擊中你的法術吸收 <50>% 法力。	Skyrim Traditional Chinese 8.20 record mapping
+000854:ccbgssse037-curios.esl	ccBGSSSE037_SilverboltPerk	FULL	Silverbolt Perk	銀矢特技	USSEP 4.3.8a custom Traditional Chinese
+000854:ccbgssse037-curios.esl	ccBGSSSE037_SilverboltPerk	DESC	Silver damage against werewolves and the undead.	對狼人與不死生物造成銀製武器傷害。	USSEP 4.3.8a custom Traditional Chinese

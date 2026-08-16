@@ -1,0 +1,51 @@
+$BFCO	BFCO烽火戰鬥動作框架
+
+$BFCO_SettingsPage	設定
+
+$BFCO_header00	模式選擇
+
+$BFCO_TgInputType	攻擊輸入模式
+$BFCO_TgInputType_help	[原版]：透過輕按/長按攻擊鍵輸入輕擊和重擊；[現代]：攻擊鍵只輸入輕擊，重擊需額外綁定熱鍵；[現代+自動]：攻擊鍵只輸入輕擊，按住攻擊鍵輸入連續輕擊
+$BFCO_TgInputTypeNUM_0	原版
+$BFCO_TgInputTypeNUM_1	現代
+$BFCO_TgInputTypeNUM_2	現代+自動輕擊
+$BFCO_TgInputTypeNUM_2short	現代+自動NA
+$BFCO_TgAnimaType	動作模式
+$BFCO_TgAnimaType_help	[BFCO]：所有攻擊使用BFCO動作；[BFCO+原版輕擊]：玩家輕擊使用原版動作，其他攻擊使用BFCO動作
+$BFCO_AnimaType_0	BFCO
+$BFCO_AnimaType_1	BFCO+原版輕擊
+$BFCO_AnimaType_1short	BFCO+原版NA
+
+$BFCO_header01	常規重擊
+
+$BFCO_KeyAttackPowerNUM	熱鍵：常規重擊
+$BFCO_KeyAttackPowerNUM_help	為常規重擊（衝刺/空中/盾反和連段重擊1-20）綁定熱鍵，作為同類模組（如OCPA）的替代品【ESC=取消綁定】
+$BFCO_KeyAttackPowerNUMmodf	修飾鍵
+$BFCO_KeyAttackPowerNUMmodf_help	為常規重擊熱鍵綁定修飾鍵【ESC=取消綁定】
+$BFCO_TgRmbAttackPowerNUM	啟用格擋鍵重擊
+$BFCO_TgRmbAttackPowerNUM_help	啟用後，攻擊時按下格擋鍵=重擊（與快速格擋互斥）【預設關閉，僅作為重擊熱鍵的替代方案】
+
+
+$BFCO_header02	強力重擊
+
+$BFCO_KeyAttackComb	熱鍵：強力重擊
+$BFCO_KeyAttackComb_help	[第三人稱]為強力重擊（BFCO_PowerAttackComb.hkx）綁定熱鍵【ESC=取消綁定】
+$BFCO_KeyAttackCombmodf	修飾鍵
+$BFCO_KeyAttackCombmodf_help	[第三人稱]為強力重擊熱鍵綁定修飾鍵【ESC=取消綁定】
+$BFCO_TgKeyAttackComb	啟用強力重擊
+$BFCO_TgKeyAttackComb_help	[第三人稱]啟用強力重擊（BFCO_PowerAttackComb.hkx）
+
+
+$BFCO_Debugheader	可選功能
+
+$BFCO_TgJumpingAttack	啟用跳躍攻擊
+$BFCO_TgJumpingAttack_help	啟用跳躍攻擊（BFCO_JumpAttack.hkx/BFCO_JumpAttackPower.hkx）
+$BFCO_TgDirectionalAttack	啟用方向重擊(原版攻擊模式)
+$BFCO_TgDirectionalAttack_help	為[攻擊輸入模式：原版]啟用第三人稱方向重擊（BFCO_PowerAttackA/B/L/R.hkx），觸發方式：方向鍵+攻擊鍵長按【*第一人稱方向重擊總是啟用，不受BFCO管理】
+$BFCO_TgDirectionalAttackHK	啟用方向重擊(熱鍵)
+$BFCO_TgDirectionalAttackHK_help	為[熱鍵：常規重擊]啟用第三人稱方向重擊（BFCO_PowerAttackA/B/L/R.hkx），觸發方式：方向鍵+重擊熱鍵【*第一人稱方向重擊總是啟用，不受BFCO管理】
+$BFCO_TgInstantBlock	啟用快速格擋
+$BFCO_TgInstantBlock_help	攻擊時按下格擋鍵立刻取消攻擊進入格擋狀態（與格擋鍵重擊互斥）
+
+
+

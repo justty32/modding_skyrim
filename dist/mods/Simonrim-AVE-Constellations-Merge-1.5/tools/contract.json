@@ -1,0 +1,857 @@
+{
+  "base_counts": {
+    "02BA43:Dragonborn.esm": 9,
+    "02BA45:Dragonborn.esm": 7,
+    "02BA47:Dragonborn.esm": 6,
+    "02BA4F:Dragonborn.esm": 11,
+    "02BA51:Dragonborn.esm": 11,
+    "02BA53:Dragonborn.esm": 9,
+    "02BA64:Dragonborn.esm": 10,
+    "02BA66:Dragonborn.esm": 8,
+    "02BA68:Dragonborn.esm": 7,
+    "02BA6F:Dragonborn.esm": 11,
+    "02BA70:Dragonborn.esm": 11,
+    "02BA71:Dragonborn.esm": 10,
+    "02BA72:Dragonborn.esm": 10,
+    "02BA73:Dragonborn.esm": 9,
+    "02BA74:Dragonborn.esm": 10,
+    "02BA86:Dragonborn.esm": 11,
+    "02BA88:Dragonborn.esm": 10,
+    "02BA89:Dragonborn.esm": 9,
+    "02BA93:Dragonborn.esm": 10,
+    "02BA94:Dragonborn.esm": 8,
+    "02BA96:Dragonborn.esm": 6,
+    "02BA9F:Dragonborn.esm": 11,
+    "02BAA0:Dragonborn.esm": 10,
+    "02BAA1:Dragonborn.esm": 11,
+    "02BAA2:Dragonborn.esm": 10,
+    "02BAA3:Dragonborn.esm": 9,
+    "02BAA4:Dragonborn.esm": 9,
+    "07A82D:Skyrim.esm": 11,
+    "07A82E:Skyrim.esm": 26,
+    "07A82F:Skyrim.esm": 22,
+    "07A830:Skyrim.esm": 10,
+    "07A831:Skyrim.esm": 29,
+    "07A832:Skyrim.esm": 11,
+    "07A833:Skyrim.esm": 26,
+    "07A834:Skyrim.esm": 19,
+    "07A835:Skyrim.esm": 19,
+    "084B5F:Skyrim.esm": 11,
+    "084B60:Skyrim.esm": 10,
+    "084B61:Skyrim.esm": 10,
+    "084B62:Skyrim.esm": 26,
+    "084B63:Skyrim.esm": 25,
+    "084B64:Skyrim.esm": 22,
+    "08B64A:Skyrim.esm": 22,
+    "08B64B:Skyrim.esm": 21,
+    "08B64C:Skyrim.esm": 19,
+    "08B64D:Skyrim.esm": 11,
+    "08B64E:Skyrim.esm": 10,
+    "08B64F:Skyrim.esm": 9,
+    "08B650:Skyrim.esm": 26,
+    "08B651:Skyrim.esm": 25,
+    "08B652:Skyrim.esm": 22,
+    "08FFF1:Skyrim.esm": 10,
+    "08FFF2:Skyrim.esm": 8,
+    "08FFF3:Skyrim.esm": 6,
+    "092A0F:Skyrim.esm": 11,
+    "092A10:Skyrim.esm": 10,
+    "092A11:Skyrim.esm": 9,
+    "0B4213:Skyrim.esm": 7,
+    "0B4214:Skyrim.esm": 6,
+    "0B4215:Skyrim.esm": 28,
+    "0B4216:Skyrim.esm": 26,
+    "0B4217:Skyrim.esm": 10,
+    "0B4219:Skyrim.esm": 10,
+    "0B421A:Skyrim.esm": 25,
+    "0B421B:Skyrim.esm": 22,
+    "0B421C:Skyrim.esm": 24,
+    "0B421D:Skyrim.esm": 19,
+    "0B421E:Skyrim.esm": 17,
+    "0B421F:Skyrim.esm": 16,
+    "0B4220:Skyrim.esm": 14,
+    "0B506E:Skyrim.esm": 10,
+    "0B506F:Skyrim.esm": 7,
+    "0B5070:Skyrim.esm": 6,
+    "0B5071:Skyrim.esm": 22,
+    "0B5072:Skyrim.esm": 21,
+    "0B5073:Skyrim.esm": 19,
+    "0B5074:Skyrim.esm": 11,
+    "0B5075:Skyrim.esm": 10,
+    "0B5076:Skyrim.esm": 10,
+    "0B5083:Skyrim.esm": 26,
+    "0B5084:Skyrim.esm": 25,
+    "0B5085:Skyrim.esm": 22,
+    "0B5088:Skyrim.esm": 21,
+    "0B5089:Skyrim.esm": 19,
+    "0B508A:Skyrim.esm": 10,
+    "0B508B:Skyrim.esm": 9,
+    "0B508C:Skyrim.esm": 25,
+    "0B508D:Skyrim.esm": 22,
+    "0B508E:Skyrim.esm": 19,
+    "0B508F:Skyrim.esm": 14,
+    "0B50FB:Skyrim.esm": 37,
+    "0B50FC:Skyrim.esm": 34,
+    "0B50FD:Skyrim.esm": 31,
+    "0B50FE:Skyrim.esm": 22,
+    "0B50FF:Skyrim.esm": 20,
+    "0B5100:Skyrim.esm": 18,
+    "0B5101:Skyrim.esm": 44,
+    "0B5102:Skyrim.esm": 42,
+    "0B5103:Skyrim.esm": 36,
+    "0B5104:Skyrim.esm": 20,
+    "0B5105:Skyrim.esm": 19,
+    "0B5106:Skyrim.esm": 14,
+    "0FD996:Skyrim.esm": 26,
+    "0FD997:Skyrim.esm": 25,
+    "0FD998:Skyrim.esm": 22,
+    "0FD999:Skyrim.esm": 11,
+    "0FD99A:Skyrim.esm": 10,
+    "0FD99B:Skyrim.esm": 9,
+    "0FD99F:Skyrim.esm": 31,
+    "0FD9A0:Skyrim.esm": 28,
+    "0FD9A1:Skyrim.esm": 26,
+    "0FD9A2:Skyrim.esm": 35,
+    "0FD9A3:Skyrim.esm": 35,
+    "0FD9A4:Skyrim.esm": 32,
+    "0FD9A8:Skyrim.esm": 16,
+    "0FD9A9:Skyrim.esm": 15,
+    "0FD9AA:Skyrim.esm": 14,
+    "0FD9AB:Skyrim.esm": 19,
+    "0FD9AC:Skyrim.esm": 19,
+    "0FD9AD:Skyrim.esm": 14,
+    "0FD9AE:Skyrim.esm": 24,
+    "0FD9B5:Skyrim.esm": 23,
+    "0FD9B6:Skyrim.esm": 21,
+    "0FD9B7:Skyrim.esm": 27,
+    "0FD9B8:Skyrim.esm": 24,
+    "0FD9B9:Skyrim.esm": 23,
+    "0FD9BD:Skyrim.esm": 11,
+    "0FD9BE:Skyrim.esm": 9,
+    "0FD9BF:Skyrim.esm": 9,
+    "0FD9C0:Skyrim.esm": 19,
+    "0FD9C1:Skyrim.esm": 19,
+    "0FD9C2:Skyrim.esm": 14,
+    "0FD9C3:Skyrim.esm": 24,
+    "0FD9C4:Skyrim.esm": 23,
+    "0FD9C5:Skyrim.esm": 21,
+    "0FD9CC:Skyrim.esm": 27,
+    "0FD9CD:Skyrim.esm": 24,
+    "0FD9CE:Skyrim.esm": 23,
+    "0FD9D2:Skyrim.esm": 11,
+    "0FD9D3:Skyrim.esm": 9,
+    "0FD9D4:Skyrim.esm": 9,
+    "0FD9DE:Skyrim.esm": 37,
+    "0FD9DF:Skyrim.esm": 35,
+    "0FD9E0:Skyrim.esm": 31,
+    "0FD9E2:Skyrim.esm": 26,
+    "0FD9E3:Skyrim.esm": 24,
+    "0FD9E4:Skyrim.esm": 22,
+    "0FD9E5:Skyrim.esm": 10,
+    "0FD9E6:Skyrim.esm": 8,
+    "0FD9E7:Skyrim.esm": 6,
+    "0FD9E8:Skyrim.esm": 11,
+    "0FD9E9:Skyrim.esm": 10,
+    "0FD9EA:Skyrim.esm": 10,
+    "0FD9EB:Skyrim.esm": 24,
+    "0FD9EC:Skyrim.esm": 23,
+    "0FD9ED:Skyrim.esm": 21,
+    "0FD9EE:Skyrim.esm": 21,
+    "0FD9EF:Skyrim.esm": 20,
+    "0FD9F0:Skyrim.esm": 19,
+    "0FD9F3:Skyrim.esm": 22,
+    "0FD9F4:Skyrim.esm": 10,
+    "0FD9F5:Skyrim.esm": 8,
+    "0FD9F6:Skyrim.esm": 6,
+    "0FD9F7:Skyrim.esm": 11,
+    "0FD9F8:Skyrim.esm": 10,
+    "0FD9F9:Skyrim.esm": 10,
+    "0FD9FD:Skyrim.esm": 24,
+    "0FD9FE:Skyrim.esm": 23,
+    "0FD9FF:Skyrim.esm": 20,
+    "0FDA00:Skyrim.esm": 26,
+    "0FDA01:Skyrim.esm": 23,
+    "0FDA02:Skyrim.esm": 22,
+    "0FDA03:Skyrim.esm": 10,
+    "0FDA04:Skyrim.esm": 6,
+    "0FDA07:Skyrim.esm": 6,
+    "0FDA08:Skyrim.esm": 11,
+    "0FDA09:Skyrim.esm": 10,
+    "0FDA0A:Skyrim.esm": 10,
+    "100E85:Skyrim.esm": 14,
+    "100E86:Skyrim.esm": 4,
+    "100E87:Skyrim.esm": 4,
+    "101071:Skyrim.esm": 28,
+    "1046DB:Skyrim.esm": 28,
+    "10F75E:Skyrim.esm": 236
+  },
+  "base_semantic_sha256": {
+    "02BA43:Dragonborn.esm": "12e9459acec52084efce526dec59e67ed6e2ee9913466fd4b123a0274e059193",
+    "02BA45:Dragonborn.esm": "084334b43e284767c9bf9d37096a55f5a5f4bbe87d1603f0c8cb5b799f53cdb7",
+    "02BA47:Dragonborn.esm": "ee29b065a2f21af199d6ef5134e6963ce217bbb058daa4da4000bcfdbd46cd44",
+    "02BA4F:Dragonborn.esm": "1d00e314e79ebb3c653904462c0fcced0af9e7424753aa0b45b19240cc4408d8",
+    "02BA51:Dragonborn.esm": "a1c9315978031dd00505a6f4f133de1712823019dae5a08cb4e06d57b5e60433",
+    "02BA53:Dragonborn.esm": "597e970da82f3e4a6585ead257ff5fbb15f7599d5e7d550bc19105ff01fc41d0",
+    "02BA64:Dragonborn.esm": "8d9c3e502a4787dd725859e44d4816f561244f159405dcc94042a6dc885e7108",
+    "02BA66:Dragonborn.esm": "1fb9f818a1c5ebfcf748a98caa5a7e64eb4c79ef192e959ac0443e9464f05ba6",
+    "02BA68:Dragonborn.esm": "e6b419fe12da32b61c2e3741971a54751d7c2b98d968f039a63e45acac07d0af",
+    "02BA6F:Dragonborn.esm": "3b0077e43ee29eed9317641352cea3d4f72c7366b48a8d21a91e8ef443f839ca",
+    "02BA70:Dragonborn.esm": "b8d67b903ae56bedcee18ea6fb878211421635f7551a2a0db9184ee7f9074647",
+    "02BA71:Dragonborn.esm": "af78e591b198d16b9ecd78a233180f86a1922c987e0a3b95713f669242a376b7",
+    "02BA72:Dragonborn.esm": "5c6b0b9a3b13ab9cdb765f8e6aa5acead43a295fa3d27cc19bd45d9bf0421738",
+    "02BA73:Dragonborn.esm": "7d95c37ed111f89d290d4a9b3ba299123719e18977040e2da62b5570d1cba18a",
+    "02BA74:Dragonborn.esm": "118885a71127dc363735814b6e5fc411d6a5f8e67a3a7af0cfcaca9eeaca8da9",
+    "02BA86:Dragonborn.esm": "b45dda8423b927072dd735f0a30c01f54a7a1cd94c389fc5efbfffbbcb96dd82",
+    "02BA88:Dragonborn.esm": "b096df5e5d966869bb24880c3f3dccd9baf5b7ee887550fd9683508d6be74ad5",
+    "02BA89:Dragonborn.esm": "18193b9b4254f4619a8b9d3c52e601fb45e59965e66e600d9ef6e74c01d09904",
+    "02BA93:Dragonborn.esm": "303f5b9fd79e20196e07d67e0c06559933bb04c81fa5b7b4204ef89de9119a67",
+    "02BA94:Dragonborn.esm": "0c673b7ac72bc8ff5bd439a7b8ff67710c130ea67db1cc76661a26138855bfd6",
+    "02BA96:Dragonborn.esm": "3b1c06eb874792ef02d561fe145bb2c195b31291a2358c6ef7e91dc25359fc98",
+    "02BA9F:Dragonborn.esm": "6298af5047a808929efdf2422d62c9585baf4ea78b222550d4f2c7c920bb1203",
+    "02BAA0:Dragonborn.esm": "ca1bc7b33e6440b42b8c558131b220c5a0c06819da19856d6d11af7c93a23856",
+    "02BAA1:Dragonborn.esm": "d21d36e7f258ab67d0885289443fc98047cd608d8548d3916faa82fb380ed307",
+    "02BAA2:Dragonborn.esm": "06a3b6345de9ec12213a72a06c62693d465d1876aa6aa0532a474a102864758a",
+    "02BAA3:Dragonborn.esm": "d104d5eb6d2f373ef84167a9f1219cc2dc1d1b1c899eca1d17d63f111b7a298f",
+    "02BAA4:Dragonborn.esm": "873fbb4a0e2246bd12f5b2b120f790c9b3ac4e9b93d7423c87c2585cc0f06595",
+    "07A82D:Skyrim.esm": "6562f4f246129cb94e2380d7556b0491b4602fe388e5ce463d992fcd50e47501",
+    "07A82E:Skyrim.esm": "34043992d3880d13187a4e97fdc64f139073509d1bd94a990d6700ca4ab2ea4d",
+    "07A82F:Skyrim.esm": "d3bda8a52dcd947e672888307d305d8d5995a03e8aec565f2ca77c892a254e03",
+    "07A830:Skyrim.esm": "169f9c1cb4ce85cd4a9b202687468113affcebd5c316b381ea99741999e75d7a",
+    "07A831:Skyrim.esm": "fb7d75ed5c866b5439c606318268278256612dd562da91cb792b87a0a63d0237",
+    "07A832:Skyrim.esm": "0c50064f88193be3d67223238b91efd47d3a2173d7282f8012fba35c76cd433c",
+    "07A833:Skyrim.esm": "255fbd161269e1cb65ad1f6359511af42e0c8d1ec617636075754354bbb792d1",
+    "07A834:Skyrim.esm": "3491facb3ed34a4ef6dd72f2d0762bb5549ebfeeab6f1ae20907812db3d5e555",
+    "07A835:Skyrim.esm": "372a0fac0ee4a4057056a2f5f4db1ad8119992e931fc5db1fd0895e37b46e9c3",
+    "084B5F:Skyrim.esm": "6095878ee1522835a722f7c9c03bc3a622786df38fa3cb5e0bd5416cb4cd4f69",
+    "084B60:Skyrim.esm": "2f804b5de4bcdeab24e4f8b7155591f1c8180863616f9f845af96cb2a1ee460f",
+    "084B61:Skyrim.esm": "71f7a18b63a4038958c3519ef595503813bd7119df3ac7230502617f256ee74b",
+    "084B62:Skyrim.esm": "f8afe95abdc56f7a25cd688020196135b794be6388b90ab356456bfcc6a57bb2",
+    "084B63:Skyrim.esm": "2e27a5d296e5091bb4d2a9d159beb8484e4ccdf751cbcb6b1adedef4833cff75",
+    "084B64:Skyrim.esm": "329ee58539b68c5fd258e4205ad0f4c9aa5bdad1217a3125052a01139ee29f8f",
+    "08B64A:Skyrim.esm": "facec0136e30519a7a968610fd6fd79ddcaf9ce91e24958f05374d42f853706d",
+    "08B64B:Skyrim.esm": "2131245d45ad1cfbd23faf22de89615d35d5b58ab412a80308470d6da7b5a3a5",
+    "08B64C:Skyrim.esm": "e6ab1638363b3ed916d70a219ea401695ca7c02dd19a9407bf2e989a701e9df8",
+    "08B64D:Skyrim.esm": "7cfb269151f7fdc24917981deac863a4ab68fef057bfe8fb0ead9f7fbc376a42",
+    "08B64E:Skyrim.esm": "47724725c82378cb4c23a5df6c51973f4aa0a0d7c4060640a2af5e65eb57f1ee",
+    "08B64F:Skyrim.esm": "bffefe34b0aba0b97f2d611f0086a5fe98718c3636e3853be401858b0d6ad393",
+    "08B650:Skyrim.esm": "fbd8afd328dd015239901292c83ed833b17e5a6191ced5d0970785ca38fc73fa",
+    "08B651:Skyrim.esm": "320e8d93c71c5d2d36cdbd9f5e8a0cf9d3e652a2efeb4679fe6aacb242054b16",
+    "08B652:Skyrim.esm": "af3aff54d742337aa89aaa65e6ba4ae8288ea13fc945ef425720d3f8231bb943",
+    "08FFF1:Skyrim.esm": "170728dcb86c278dfe929caad05570f3c1aae6a28422f4c94055438de29a0dee",
+    "08FFF2:Skyrim.esm": "6f2df6d18f3eef7554fdfb007c0ce19e3eed28d78def38b9d7fe7f0fbaea1cc1",
+    "08FFF3:Skyrim.esm": "d93855581da7303eacc31667d089573898bc7cc1eb89997a790135525b2b580a",
+    "092A0F:Skyrim.esm": "de5dd99711bd4de11ef63b66ff2cb8d994fe37563490d10d30547e10efc9037f",
+    "092A10:Skyrim.esm": "d995599f90c9293e037ba38abea162a94259d0814e4928d109c9333dee306c3b",
+    "092A11:Skyrim.esm": "9cafbd7e620d56099dce53d5dd7756daea1ef5800408745ddc6de09c1aeee938",
+    "0B4213:Skyrim.esm": "e800caab6da765c2e1151353a389afe6718915b963252842e8cd2094e0d00433",
+    "0B4214:Skyrim.esm": "64b8ff370212ffa940dce51fc7389fcc848e0764a7e48c38dcfde2e9d57c24be",
+    "0B4215:Skyrim.esm": "9a32e29acf2c98429ced1f4d19897a5fa41b69191cb07395cff6c5a3115d991b",
+    "0B4216:Skyrim.esm": "21db7613ee8032c8357bac2510a7d4565025de641f7fd4b990b5552539040fad",
+    "0B4217:Skyrim.esm": "979d66f1a863cef36bcc078dd7466fab31c498459242bebb72c69a9131a9d1b0",
+    "0B4219:Skyrim.esm": "6fe9decc63cc104ba2860ee8a6150abd5b3911c6cd5d8a179393b20b240df192",
+    "0B421A:Skyrim.esm": "e29f40d2bc9c69ee2b5206a1173ba7fbbdb6b879a838c63432a8125b43d67269",
+    "0B421B:Skyrim.esm": "9fe03fcc77aed81a679eea914be364f17a5a42699a630429614ca7f1d294f2f2",
+    "0B421C:Skyrim.esm": "8d57bad4ca10072328d2cbcc98bee4fd3602425cc5b38e309950655fbd34f203",
+    "0B421D:Skyrim.esm": "145cb8aea976fb3598c7e4d5ddf41d25ee38501d860b61c69e9997964643f946",
+    "0B421E:Skyrim.esm": "89abe6d569dc90042bc4c567b3193f1ff6e0959563a74205e858c0eaa99f1777",
+    "0B421F:Skyrim.esm": "f8b8afab0cc94dfa7115e62c57ab8247d46c7a4f8a9f0fd818a05969981027d7",
+    "0B4220:Skyrim.esm": "8f1c5403bb8fb1dca25266635375b78e7ca294d2e93646984092a31ad06fa514",
+    "0B506E:Skyrim.esm": "d2203420ed721d45b684d82c471597c0add8b3a52ad55cab594427bf9e577dcf",
+    "0B506F:Skyrim.esm": "dcfd076c3d69be98f6c8878471d80e84f9e1b09f717c3d11d72f0084c64df18b",
+    "0B5070:Skyrim.esm": "9480811cc217b0370edebdc9a4e71c9a59639c90c92113adfe9c6da758197bb7",
+    "0B5071:Skyrim.esm": "4c5df2c79e7d7b7f6d088aa06a402a4d2bf60c09675a99e943629e02c7e0d192",
+    "0B5072:Skyrim.esm": "28bfc9b2bad5c2d548632cd2f57746d25f084c65cd2caa3a9318faf161c08736",
+    "0B5073:Skyrim.esm": "0ef4ed546c92548048922768ed27852d552b6b2cba49ddb1f1202af31c27da7b",
+    "0B5074:Skyrim.esm": "89cc0768d311914ddf2c09b914287a0ea968d85e7c253c1c578db06a0fc552d5",
+    "0B5075:Skyrim.esm": "fe7511fa2b49a31a391640f4bf3c9d780af52e324d083f6da485a1dc0bd39f4a",
+    "0B5076:Skyrim.esm": "5690a4d0089a4763a516b9ea52f4d47361f2c2acb4e7259e45c5c1be57e838b1",
+    "0B5083:Skyrim.esm": "1a320b40105dec5ece5ead1d2ad638dd3cd4983e3170edff50a897f04e715f35",
+    "0B5084:Skyrim.esm": "b6ef5e2e2e5141395609b03dac5f90b0d89ca2541caf5a1c9df5659e6f17b848",
+    "0B5085:Skyrim.esm": "9235e33301f68eb0a5a5d19b6b6916d4633611b56a7ba344c34bfcc37da3e99a",
+    "0B5088:Skyrim.esm": "f2b1b2e88c418336813dfaa0caa4ae300774951bce87b30695d7ca1bf8e2a25a",
+    "0B5089:Skyrim.esm": "51631440cba4bbda361b5be52e91ffbfb5c369663bf58dfe47607b31d87a95b7",
+    "0B508A:Skyrim.esm": "26a9cdb411e7efc7b16a39b7d27fc7763d8b33b634127b8648f237f7a0307a37",
+    "0B508B:Skyrim.esm": "acb6ff9c353d0ae65b588bf48981b3a1c4620163acfeff53836a457b8984caa4",
+    "0B508C:Skyrim.esm": "ed57f0005e58233f2967b99fc25add60d79e6bba7cb75994cdc841dec9c4275b",
+    "0B508D:Skyrim.esm": "3fcd387ddc17ad190bf18089bf96ab32b62a0964d588f9a390a58f9843219d42",
+    "0B508E:Skyrim.esm": "c4f2eb74e0746bc3483dede06a3539f421181adb985489bc4a56ad3fced84893",
+    "0B508F:Skyrim.esm": "90806f19121692efa092b1ada6a6e790780dc9321d386aa6b135957c8fe7233c",
+    "0B50FB:Skyrim.esm": "0d9a7fed7c78d8e1b4991b4c6719ebad7d31c7c78c93385ff7daa70889bd54d7",
+    "0B50FC:Skyrim.esm": "142b1e016d2034fb09e6eb8dadaf13f391857dcf5c5db55df8675aa98cdcefe7",
+    "0B50FD:Skyrim.esm": "bbd56ebaeb3c2a72c96bd70d5a02d7553af34a06d24d5d2455b9bf01fb00c8ec",
+    "0B50FE:Skyrim.esm": "eb22e835c1c696bd57af9658b1b33c0edea80bcd59c3d49b254ac8104dade70b",
+    "0B50FF:Skyrim.esm": "68ec16344f76cced9df89a0fa34d55352ee78074b293926df5df7e86f5f65485",
+    "0B5100:Skyrim.esm": "437141ebd71f6c75c72ae17c092145de2a89a55b25c8f2ff449791befcc05920",
+    "0B5101:Skyrim.esm": "3724e40d6e56dfa22b7cff2e6b7ae8d13c182e8ddd34e4598a81c89055a4d1aa",
+    "0B5102:Skyrim.esm": "357162ad71b723e584623cba0109d816ff71222c20e6fd7fedc8b5bae385aa4b",
+    "0B5103:Skyrim.esm": "a1d4aa0044a2ea1c7ccfc940d1ca24cb1212e07be5f9896f7cc3e902685c06ec",
+    "0B5104:Skyrim.esm": "b93e2fd1bf67e3d2385f7eb87fc1a9ab37cb432d51d81b3263d2b271b5135805",
+    "0B5105:Skyrim.esm": "f6767be3a41ed664ed761d0130db9b011339b620db5f28d64e3cc7268b8771b6",
+    "0B5106:Skyrim.esm": "f5a557522e3e9201e11a66c348d971ed621295826df114770917eb98ed041ad6",
+    "0FD996:Skyrim.esm": "2d2387f48e43c7c5b0ad5837f544fc612ba56ba593c5a14e27c1ce89a4cece56",
+    "0FD997:Skyrim.esm": "9c3478d7109c335a2817bb2b58b9f2de653e080e3899c0721ad8b9fd10a161e0",
+    "0FD998:Skyrim.esm": "238a362fd17ea1a8e1a33afb54a0e45680ccf8b516bd5bbb38a7e55a849e0910",
+    "0FD999:Skyrim.esm": "8a0efdf3031f8def61f287b04a5fc8c6ee5244690497b623db812508be5e9880",
+    "0FD99A:Skyrim.esm": "fb56f31982b4166ac107b947f666ef18b98a87582dbb4391be76c4a38cee780b",
+    "0FD99B:Skyrim.esm": "be298fd91e1f0798a691bb7cb0a32e41710ac983df09e9bf993537835cba9515",
+    "0FD99F:Skyrim.esm": "069f8e9777cda8403d64635ea082e6b41f575da27fbf29b84a00e297dde5c4d2",
+    "0FD9A0:Skyrim.esm": "3f6a573b6e9bae60e475db74e8192e45a7b425108a0abf64e30d0322deddd2e0",
+    "0FD9A1:Skyrim.esm": "5df1b18363909f0363a2614659a68ab1ee456f2e99b2f1c8ffe03e71d851499d",
+    "0FD9A2:Skyrim.esm": "cb591b93e5f0e05acb3e44b61feb5b3daa063e99223882304eabfe075a34ee6c",
+    "0FD9A3:Skyrim.esm": "2813e31c1be4d9d6721027105d2c83c32bf1a79fd6bf80d4940075e791dd361e",
+    "0FD9A4:Skyrim.esm": "594abed4ab619ad182ba17524cd2f04fc4775773ab87bf1b4710e5f75e733f56",
+    "0FD9A8:Skyrim.esm": "c39f82f8bddbd6e74c9e2000bc5e9c98738d5c25bf185ac0883fd1744a677a62",
+    "0FD9A9:Skyrim.esm": "b21018af7b98764a09456b61a6520b819e149b77862064cfafb159dc8d44545f",
+    "0FD9AA:Skyrim.esm": "f8c1b13d7067e80de870b19ac023ced4c7bc5d479bc9b97d5ad1bcfb6d43ff49",
+    "0FD9AB:Skyrim.esm": "c9a9747548b7a0ce6e560e364583c39e23c866615f8bef220f5a3f896aea2187",
+    "0FD9AC:Skyrim.esm": "0a16553df7a522129bd043eb9dd508b84078504b0d5a644f2d2a1fb40f3d9d63",
+    "0FD9AD:Skyrim.esm": "86110b9147de8c7bd8d97906fe056366ab1a9716962459fe0fa8649b31b4a1a9",
+    "0FD9AE:Skyrim.esm": "35729b7cfa8e1722a51128aa160cd03ed3bd776374c6d767ad1534d5d69f6f5c",
+    "0FD9B5:Skyrim.esm": "ee1e9035ba47aecaa4aca21d3ad3e8d07928b4ef04caf5df3cbafbc5c7677438",
+    "0FD9B6:Skyrim.esm": "b9e899f7e7b186a22ed8c790387b0c9dd5a1cdbea2db901663ebf318815ea60e",
+    "0FD9B7:Skyrim.esm": "d62101a9b51e03ee7af9dd86a710d4206b2cb83e7758b13205d8e459891d843d",
+    "0FD9B8:Skyrim.esm": "f013ea9b99bdadca0b00071bf6ca34ebe0f0c28032373c39c84a8691d396afd4",
+    "0FD9B9:Skyrim.esm": "80bd7ce6ab845e6734c98ca9189456926fb6be9dc93ac95669ad65c8a7f18e0f",
+    "0FD9BD:Skyrim.esm": "482fcbcb9ca6d22f0641fe5e0b59cfaed54a010661166c0dd6402c74ef90d16d",
+    "0FD9BE:Skyrim.esm": "dbeaaa510a231d750f71fb6686108bedb8161b1443b258b6e118df045c17446a",
+    "0FD9BF:Skyrim.esm": "cf60e9d90897175f64aac246bf636554b32faa11e42bb763ae1ea91f37ae7634",
+    "0FD9C0:Skyrim.esm": "4cbb98cafaf9908d0d1e7395f3fa5f995c123eabb352b09826b13d1c7a0b6505",
+    "0FD9C1:Skyrim.esm": "8dbbbe0f83535935bba87ddea978ea74d2823992fce62fa1661023934bfc426c",
+    "0FD9C2:Skyrim.esm": "dbb425feed47875da1f379010c969745db05b6910c1b01f6a9c83c86eae613a4",
+    "0FD9C3:Skyrim.esm": "e0ca1992881f5b8421fe2bc375f90f8494ec1e2dd2f6af109861e0221370c042",
+    "0FD9C4:Skyrim.esm": "9aa81c57d4a725be3cdb8107c1081d460310fae33001d59a91f1dc206f1fca7e",
+    "0FD9C5:Skyrim.esm": "d4713c08d4ee679b7a7ef4b67788dc47b8045eb2687234be12dce4d2b6eccfa9",
+    "0FD9CC:Skyrim.esm": "48e9c1bb279e6abff21988002b247406ec5bef5702ca68a6282de29a92b16cd5",
+    "0FD9CD:Skyrim.esm": "7bc94d93062103e7231c5149acb5364da753730fd02719ae790c92140d67bf13",
+    "0FD9CE:Skyrim.esm": "c3a2d382aafba146dd91c394aa7de60ee42363e0272a7e8416c84752021f0b53",
+    "0FD9D2:Skyrim.esm": "bbaca2ce86dea64e0945666b77d2f2f041829ed780df9523c95cb9bd7196b3ad",
+    "0FD9D3:Skyrim.esm": "cda1dc2c1fe959f5423f490a61d4284c1a0e8ee9eb9366dd65c7cfabd7a71514",
+    "0FD9D4:Skyrim.esm": "f4ce1f0b87ee94024fa21a17ff2c5c3e5949875014ccf51e15e46bc19d826d05",
+    "0FD9DE:Skyrim.esm": "fe579470accf733af7c6d4dd5fc90f9be89f76a545adb1b7e320c3d36135adc0",
+    "0FD9DF:Skyrim.esm": "40e80365f57c43b1d14a1246bac51ce420c2df5352b6d08169b4ba5c94d657f1",
+    "0FD9E0:Skyrim.esm": "4bba967d58f605d026093beb39247b452b20ff9596ba0531ba640441f8eb90b9",
+    "0FD9E2:Skyrim.esm": "fe24bd6049520d114287b4e133a1efc63b20d9370e80fafba066a62bdeec8024",
+    "0FD9E3:Skyrim.esm": "56b625a5200fee4787261979aeece6dbc9f62f6bc4d15549d9f93b1ed6114144",
+    "0FD9E4:Skyrim.esm": "d26244ee369080958fc5cfdc67bb6b9606ee5ff7e70536d9f77d77017ca831ed",
+    "0FD9E5:Skyrim.esm": "b44e510cae0d67225d3fca39cb41b94d12012b5f42f33dfc4b7580a1da39dd88",
+    "0FD9E6:Skyrim.esm": "ed4b0c6f8ee3d5d09ed1afaaa0bd256b05c9431ef7e8fbf36b2da192ef812567",
+    "0FD9E7:Skyrim.esm": "136d60ae9d120242e7f19b314622aec50946bcc0b219077e7949e8060200034b",
+    "0FD9E8:Skyrim.esm": "1aee0610adb8e75c69896f6a8d4ca2c034c87b910b05348480719c64622e8d49",
+    "0FD9E9:Skyrim.esm": "569b04a7bc7b09ad99737cad311b41482fb9311eaba2936dd83ead3ed8e231d6",
+    "0FD9EA:Skyrim.esm": "6512ec3bfbde34297783d9bf6e398c14f37587a92debb0c497b8b81529249b99",
+    "0FD9EB:Skyrim.esm": "510d03dcc7cddd93f7b1f9fcb03081788d278ddf15ed87fb0da25d79f5818a55",
+    "0FD9EC:Skyrim.esm": "843b80deb8b7be064e385e1e821a780fb0ff66de138947357aad13a5fc4c742f",
+    "0FD9ED:Skyrim.esm": "fe7e0e6f0dae19700f476e3cbdd7e8d8df232baaa2f3e41510384e2c2d436f6f",
+    "0FD9EE:Skyrim.esm": "59af249778df2259c25a5bd67c3432432a14856e125228e01f47ac536b413617",
+    "0FD9EF:Skyrim.esm": "d98d90b2ddb1eb25eae874ed6444033c59c3d170c877b47a097abd6b247c62d9",
+    "0FD9F0:Skyrim.esm": "6aae83bbe16be65ca22c335c00d82ecb77f591b9dfe0e10ad43f5297db78e1fa",
+    "0FD9F3:Skyrim.esm": "e4385efb59b9339d21cab66ac6f7c220afac29e28224ecbe4e4564d43a01fee5",
+    "0FD9F4:Skyrim.esm": "6315081cda7a0726cdc3ecbee0cec1e6c770a7126c8705fc2be16bfea1c31a02",
+    "0FD9F5:Skyrim.esm": "461cc6cbaa6ec57359211a866c26f8f39a6a7e70c9a85eadb8448bd5633f3370",
+    "0FD9F6:Skyrim.esm": "3456c130e3d1ebf12a2c0882157b09875a4fc01ed7f1ab9bdb7f03090858a36a",
+    "0FD9F7:Skyrim.esm": "d672324ee7d7e93e0f4db798702fa5889a8dbc01ec67d25c7c88afb21d0b0b43",
+    "0FD9F8:Skyrim.esm": "e36f195d04d6f90053e89d34ec734a813910ad6471665844043c136180bb91fb",
+    "0FD9F9:Skyrim.esm": "5075345e617d8dbbf89f8b94d33fffabf1181879e3c1b8b21338570631d6ea06",
+    "0FD9FD:Skyrim.esm": "dee5a1fb5f809a98be11b49a9ca3e2cf05e7e5d247a9556cb7bf04a0005dfda0",
+    "0FD9FE:Skyrim.esm": "165dafe0f3c5ff90cb839888fc76d8b33cf1ab6e991dc860f2a7d54290363114",
+    "0FD9FF:Skyrim.esm": "579a44f0a71475e784156666450a8b888d84a9be4715f9cc5bf08ff8e9a4381b",
+    "0FDA00:Skyrim.esm": "f7bee23f1150a251a8dd54f75c29b092fcc29e4e31daaab4269ee1d3a34e3126",
+    "0FDA01:Skyrim.esm": "58f6f7201a3309ee696add04bb5cde9242cb2e4a90a36ffd1b255aa9257f0aa7",
+    "0FDA02:Skyrim.esm": "cfb39b588412608a32d009d9df5f2f6241a5d01bbcefaf44d404597cc120e95d",
+    "0FDA03:Skyrim.esm": "df972b028062cd0fdbf14ec7d5d3a0457d9394d6a9db2f2895ca1c10ebcb8739",
+    "0FDA04:Skyrim.esm": "32efd57e9846bfc7d102fea772d833cf067a8a8075563b2e5d8f8ea023e14c20",
+    "0FDA07:Skyrim.esm": "0bf422d9b97d0d14d12396c0fff77b7ef9a477733950820088031389c200c1f0",
+    "0FDA08:Skyrim.esm": "1a7bdb3f73a64ce74b88b848f3a81f82a83a090fdda9738859447c5fd9e2014a",
+    "0FDA09:Skyrim.esm": "b76265f9c5b33be29c7142e56fdc34167fa51eaac379629ebb057f1fa68c5929",
+    "0FDA0A:Skyrim.esm": "96c70c03c8925e11d3aa7de31f038d4f8b31e1d2186d6bb808769a3c32978caf",
+    "100E85:Skyrim.esm": "a3278ee18aa9f1bb1d1a8170c96e2bd74260aff31a72dde4b41c9695a03bf0c8",
+    "100E86:Skyrim.esm": "58c9bf08b31c951b4a3083914057ec99b370cb9588e0ac31b6dd3cf8146ee67f",
+    "100E87:Skyrim.esm": "ed933032cc9b8684018029fc433a47b928e515366b96133cb0235906b3591d5c",
+    "101071:Skyrim.esm": "6e23a43622ac243b5346674759fc97cf89b9a969e9bc03d51b99a45230fa8573",
+    "1046DB:Skyrim.esm": "ebfdab53a6ce8ddf775579cc780533c790398b2a858ac40be2eee4eff773e581",
+    "10F75E:Skyrim.esm": "1bc2bdac1fe69c650954e7c29333e28cc26cb2bf25225f8b754fef0b613d11c4"
+  },
+  "constellations_additions": {
+    "02BA43:Dragonborn.esm": [
+      "000110:ConstellationsNewSkills.esp"
+    ],
+    "02BA45:Dragonborn.esm": [
+      "000111:ConstellationsNewSkills.esp"
+    ],
+    "02BA47:Dragonborn.esm": [
+      "000112:ConstellationsNewSkills.esp"
+    ],
+    "02BA4F:Dragonborn.esm": [
+      "0000FE:ConstellationsNewSkills.esp",
+      "000119:ConstellationsNewSkills.esp"
+    ],
+    "02BA51:Dragonborn.esm": [
+      "0000FF:ConstellationsNewSkills.esp",
+      "00011A:ConstellationsNewSkills.esp"
+    ],
+    "02BA53:Dragonborn.esm": [
+      "000100:ConstellationsNewSkills.esp",
+      "00011B:ConstellationsNewSkills.esp"
+    ],
+    "02BA64:Dragonborn.esm": [
+      "000113:ConstellationsNewSkills.esp"
+    ],
+    "02BA66:Dragonborn.esm": [
+      "000114:ConstellationsNewSkills.esp"
+    ],
+    "02BA68:Dragonborn.esm": [
+      "000115:ConstellationsNewSkills.esp"
+    ],
+    "02BA6F:Dragonborn.esm": [
+      "000101:ConstellationsNewSkills.esp",
+      "00011C:ConstellationsNewSkills.esp"
+    ],
+    "02BA70:Dragonborn.esm": [
+      "000104:ConstellationsNewSkills.esp",
+      "00011F:ConstellationsNewSkills.esp"
+    ],
+    "02BA71:Dragonborn.esm": [
+      "000102:ConstellationsNewSkills.esp",
+      "00011D:ConstellationsNewSkills.esp"
+    ],
+    "02BA72:Dragonborn.esm": [
+      "000105:ConstellationsNewSkills.esp",
+      "000120:ConstellationsNewSkills.esp"
+    ],
+    "02BA73:Dragonborn.esm": [
+      "000103:ConstellationsNewSkills.esp",
+      "00011E:ConstellationsNewSkills.esp"
+    ],
+    "02BA74:Dragonborn.esm": [
+      "000106:ConstellationsNewSkills.esp",
+      "000121:ConstellationsNewSkills.esp"
+    ],
+    "02BA86:Dragonborn.esm": [
+      "000107:ConstellationsNewSkills.esp",
+      "000122:ConstellationsNewSkills.esp"
+    ],
+    "02BA88:Dragonborn.esm": [
+      "000108:ConstellationsNewSkills.esp",
+      "000123:ConstellationsNewSkills.esp"
+    ],
+    "02BA89:Dragonborn.esm": [
+      "000109:ConstellationsNewSkills.esp",
+      "000124:ConstellationsNewSkills.esp"
+    ],
+    "02BA93:Dragonborn.esm": [
+      "000116:ConstellationsNewSkills.esp"
+    ],
+    "02BA94:Dragonborn.esm": [
+      "000117:ConstellationsNewSkills.esp"
+    ],
+    "02BA96:Dragonborn.esm": [
+      "000118:ConstellationsNewSkills.esp"
+    ],
+    "02BA9F:Dragonborn.esm": [
+      "00010D:ConstellationsNewSkills.esp",
+      "000128:ConstellationsNewSkills.esp"
+    ],
+    "02BAA0:Dragonborn.esm": [
+      "00010E:ConstellationsNewSkills.esp",
+      "000129:ConstellationsNewSkills.esp"
+    ],
+    "02BAA1:Dragonborn.esm": [
+      "00010A:ConstellationsNewSkills.esp",
+      "000125:ConstellationsNewSkills.esp"
+    ],
+    "02BAA2:Dragonborn.esm": [
+      "00010F:ConstellationsNewSkills.esp",
+      "00012A:ConstellationsNewSkills.esp"
+    ],
+    "02BAA3:Dragonborn.esm": [
+      "00010B:ConstellationsNewSkills.esp",
+      "000126:ConstellationsNewSkills.esp"
+    ],
+    "02BAA4:Dragonborn.esm": [
+      "00010C:ConstellationsNewSkills.esp",
+      "000127:ConstellationsNewSkills.esp"
+    ],
+    "07A82D:Skyrim.esm": [
+      "000069:ConstellationsNewSkills.esp",
+      "0000C9:ConstellationsNewSkills.esp"
+    ],
+    "07A830:Skyrim.esm": [
+      "0000A3:ConstellationsNewSkills.esp"
+    ],
+    "07A832:Skyrim.esm": [
+      "000068:ConstellationsNewSkills.esp",
+      "0000C8:ConstellationsNewSkills.esp"
+    ],
+    "084B5F:Skyrim.esm": [
+      "00006F:ConstellationsNewSkills.esp",
+      "0000D0:ConstellationsNewSkills.esp"
+    ],
+    "084B60:Skyrim.esm": [
+      "00007A:ConstellationsNewSkills.esp",
+      "0000DA:ConstellationsNewSkills.esp"
+    ],
+    "084B61:Skyrim.esm": [
+      "000090:ConstellationsNewSkills.esp",
+      "0000F0:ConstellationsNewSkills.esp"
+    ],
+    "08B64D:Skyrim.esm": [
+      "00006E:ConstellationsNewSkills.esp",
+      "0000CF:ConstellationsNewSkills.esp"
+    ],
+    "08B64E:Skyrim.esm": [
+      "00007D:ConstellationsNewSkills.esp",
+      "0000DE:ConstellationsNewSkills.esp"
+    ],
+    "08B64F:Skyrim.esm": [
+      "00008F:ConstellationsNewSkills.esp",
+      "0000EF:ConstellationsNewSkills.esp"
+    ],
+    "08FFF1:Skyrim.esm": [
+      "0000A7:ConstellationsNewSkills.esp"
+    ],
+    "08FFF2:Skyrim.esm": [
+      "0000B0:ConstellationsNewSkills.esp"
+    ],
+    "08FFF3:Skyrim.esm": [
+      "0000BA:ConstellationsNewSkills.esp"
+    ],
+    "092A0F:Skyrim.esm": [
+      "00006D:ConstellationsNewSkills.esp",
+      "0000CE:ConstellationsNewSkills.esp"
+    ],
+    "092A10:Skyrim.esm": [
+      "00007C:ConstellationsNewSkills.esp",
+      "0000DD:ConstellationsNewSkills.esp"
+    ],
+    "092A11:Skyrim.esm": [
+      "00008E:ConstellationsNewSkills.esp",
+      "0000EE:ConstellationsNewSkills.esp"
+    ],
+    "0B4213:Skyrim.esm": [
+      "0000AB:ConstellationsNewSkills.esp"
+    ],
+    "0B4214:Skyrim.esm": [
+      "0000B4:ConstellationsNewSkills.esp"
+    ],
+    "0B4217:Skyrim.esm": [
+      "000075:ConstellationsNewSkills.esp",
+      "0000D5:ConstellationsNewSkills.esp"
+    ],
+    "0B4219:Skyrim.esm": [
+      "000084:ConstellationsNewSkills.esp",
+      "0000E4:ConstellationsNewSkills.esp"
+    ],
+    "0B506E:Skyrim.esm": [
+      "0000A1:ConstellationsNewSkills.esp"
+    ],
+    "0B506F:Skyrim.esm": [
+      "0000A9:ConstellationsNewSkills.esp"
+    ],
+    "0B5070:Skyrim.esm": [
+      "0000B2:ConstellationsNewSkills.esp"
+    ],
+    "0B5074:Skyrim.esm": [
+      "000066:ConstellationsNewSkills.esp",
+      "0000C6:ConstellationsNewSkills.esp"
+    ],
+    "0B5075:Skyrim.esm": [
+      "000072:ConstellationsNewSkills.esp",
+      "0000D2:ConstellationsNewSkills.esp"
+    ],
+    "0B5076:Skyrim.esm": [
+      "000081:ConstellationsNewSkills.esp",
+      "0000E1:ConstellationsNewSkills.esp"
+    ],
+    "0B508A:Skyrim.esm": [
+      "000073:ConstellationsNewSkills.esp",
+      "0000D3:ConstellationsNewSkills.esp"
+    ],
+    "0B508B:Skyrim.esm": [
+      "000082:ConstellationsNewSkills.esp",
+      "0000E2:ConstellationsNewSkills.esp"
+    ],
+    "0B50FE:Skyrim.esm": [
+      "000065:ConstellationsNewSkills.esp",
+      "0000C5:ConstellationsNewSkills.esp"
+    ],
+    "0B50FF:Skyrim.esm": [
+      "000071:ConstellationsNewSkills.esp",
+      "0000CD:ConstellationsNewSkills.esp"
+    ],
+    "0B5100:Skyrim.esm": [
+      "000080:ConstellationsNewSkills.esp",
+      "0000DC:ConstellationsNewSkills.esp"
+    ],
+    "0FD999:Skyrim.esm": [
+      "00007B:ConstellationsNewSkills.esp",
+      "0000DB:ConstellationsNewSkills.esp"
+    ],
+    "0FD99A:Skyrim.esm": [
+      "00008D:ConstellationsNewSkills.esp",
+      "0000ED:ConstellationsNewSkills.esp"
+    ],
+    "0FD99B:Skyrim.esm": [
+      "000098:ConstellationsNewSkills.esp",
+      "0000F8:ConstellationsNewSkills.esp"
+    ],
+    "0FD9A8:Skyrim.esm": [
+      "00007A:ConstellationsNewSkills.esp",
+      "0000DA:ConstellationsNewSkills.esp"
+    ],
+    "0FD9A9:Skyrim.esm": [
+      "00008C:ConstellationsNewSkills.esp",
+      "0000EC:ConstellationsNewSkills.esp"
+    ],
+    "0FD9AA:Skyrim.esm": [
+      "000097:ConstellationsNewSkills.esp",
+      "0000F7:ConstellationsNewSkills.esp"
+    ],
+    "0FD9BD:Skyrim.esm": [
+      "000088:ConstellationsNewSkills.esp",
+      "0000E8:ConstellationsNewSkills.esp"
+    ],
+    "0FD9BE:Skyrim.esm": [
+      "000093:ConstellationsNewSkills.esp",
+      "0000F3:ConstellationsNewSkills.esp"
+    ],
+    "0FD9BF:Skyrim.esm": [
+      "00009B:ConstellationsNewSkills.esp",
+      "0000FB:ConstellationsNewSkills.esp"
+    ],
+    "0FD9D2:Skyrim.esm": [
+      "000089:ConstellationsNewSkills.esp",
+      "0000E9:ConstellationsNewSkills.esp"
+    ],
+    "0FD9D3:Skyrim.esm": [
+      "000094:ConstellationsNewSkills.esp",
+      "0000F4:ConstellationsNewSkills.esp"
+    ],
+    "0FD9D4:Skyrim.esm": [
+      "00009C:ConstellationsNewSkills.esp",
+      "0000FC:ConstellationsNewSkills.esp"
+    ],
+    "0FD9E5:Skyrim.esm": [
+      "0000A6:ConstellationsNewSkills.esp"
+    ],
+    "0FD9E6:Skyrim.esm": [
+      "0000AF:ConstellationsNewSkills.esp"
+    ],
+    "0FD9E7:Skyrim.esm": [
+      "0000B9:ConstellationsNewSkills.esp"
+    ],
+    "0FD9E8:Skyrim.esm": [
+      "00006C:ConstellationsNewSkills.esp",
+      "0000CC:ConstellationsNewSkills.esp"
+    ],
+    "0FD9E9:Skyrim.esm": [
+      "000078:ConstellationsNewSkills.esp",
+      "0000D8:ConstellationsNewSkills.esp"
+    ],
+    "0FD9EA:Skyrim.esm": [
+      "000087:ConstellationsNewSkills.esp",
+      "0000E7:ConstellationsNewSkills.esp"
+    ],
+    "0FD9F4:Skyrim.esm": [
+      "0000AC:ConstellationsNewSkills.esp"
+    ],
+    "0FD9F5:Skyrim.esm": [
+      "0000B5:ConstellationsNewSkills.esp"
+    ],
+    "0FD9F6:Skyrim.esm": [
+      "0000BB:ConstellationsNewSkills.esp"
+    ],
+    "0FD9F7:Skyrim.esm": [
+      "000079:ConstellationsNewSkills.esp",
+      "0000D9:ConstellationsNewSkills.esp"
+    ],
+    "0FD9F8:Skyrim.esm": [
+      "00008B:ConstellationsNewSkills.esp",
+      "0000EB:ConstellationsNewSkills.esp"
+    ],
+    "0FD9F9:Skyrim.esm": [
+      "000096:ConstellationsNewSkills.esp",
+      "0000F6:ConstellationsNewSkills.esp"
+    ],
+    "0FDA03:Skyrim.esm": [
+      "0000B8:ConstellationsNewSkills.esp"
+    ],
+    "0FDA04:Skyrim.esm": [
+      "0000BE:ConstellationsNewSkills.esp"
+    ],
+    "0FDA07:Skyrim.esm": [
+      "0000C1:ConstellationsNewSkills.esp"
+    ],
+    "0FDA08:Skyrim.esm": [
+      "00008A:ConstellationsNewSkills.esp",
+      "0000EA:ConstellationsNewSkills.esp"
+    ],
+    "0FDA09:Skyrim.esm": [
+      "000095:ConstellationsNewSkills.esp",
+      "0000F5:ConstellationsNewSkills.esp"
+    ],
+    "0FDA0A:Skyrim.esm": [
+      "00009D:ConstellationsNewSkills.esp",
+      "0000FD:ConstellationsNewSkills.esp"
+    ],
+    "100E85:Skyrim.esm": [
+      "00013C:ConstellationsNewSkills.esp"
+    ],
+    "100E86:Skyrim.esm": [
+      "00013D:ConstellationsNewSkills.esp"
+    ],
+    "100E87:Skyrim.esm": [
+      "00013E:ConstellationsNewSkills.esp"
+    ],
+    "101071:Skyrim.esm": [
+      "000137:ConstellationsNewSkills.esp",
+      "000138:ConstellationsNewSkills.esp",
+      "000139:ConstellationsNewSkills.esp"
+    ],
+    "1046DB:Skyrim.esm": [
+      "000137:ConstellationsNewSkills.esp",
+      "000138:ConstellationsNewSkills.esp",
+      "000139:ConstellationsNewSkills.esp"
+    ],
+    "10F75E:Skyrim.esm": [
+      "000088:ConstellationsNewSkills.esp",
+      "000093:ConstellationsNewSkills.esp",
+      "00009B:ConstellationsNewSkills.esp",
+      "0000E8:ConstellationsNewSkills.esp",
+      "0000F3:ConstellationsNewSkills.esp",
+      "0000FB:ConstellationsNewSkills.esp"
+    ]
+  },
+  "constellations_plugin_sha256": "500fefc8f5cd15fa3c3caf34493a954013c93246c7fdebb343f699c7a3039baa",
+  "donor_plugin_sha256": "2be517fdb58262230c1e1100680d2ff95301c2221655c9b019fc64d2027894a0",
+  "expected_final_counts": {
+    "02BA43:Dragonborn.esm": 10,
+    "02BA45:Dragonborn.esm": 8,
+    "02BA47:Dragonborn.esm": 7,
+    "02BA4F:Dragonborn.esm": 13,
+    "02BA51:Dragonborn.esm": 13,
+    "02BA53:Dragonborn.esm": 11,
+    "02BA64:Dragonborn.esm": 11,
+    "02BA66:Dragonborn.esm": 9,
+    "02BA68:Dragonborn.esm": 8,
+    "02BA6F:Dragonborn.esm": 13,
+    "02BA70:Dragonborn.esm": 13,
+    "02BA71:Dragonborn.esm": 12,
+    "02BA72:Dragonborn.esm": 12,
+    "02BA73:Dragonborn.esm": 11,
+    "02BA74:Dragonborn.esm": 12,
+    "02BA86:Dragonborn.esm": 13,
+    "02BA88:Dragonborn.esm": 12,
+    "02BA89:Dragonborn.esm": 11,
+    "02BA93:Dragonborn.esm": 11,
+    "02BA94:Dragonborn.esm": 9,
+    "02BA96:Dragonborn.esm": 7,
+    "02BA9F:Dragonborn.esm": 13,
+    "02BAA0:Dragonborn.esm": 12,
+    "02BAA1:Dragonborn.esm": 13,
+    "02BAA2:Dragonborn.esm": 12,
+    "02BAA3:Dragonborn.esm": 11,
+    "02BAA4:Dragonborn.esm": 11,
+    "07A82D:Skyrim.esm": 13,
+    "07A830:Skyrim.esm": 11,
+    "07A832:Skyrim.esm": 13,
+    "084B5F:Skyrim.esm": 13,
+    "084B60:Skyrim.esm": 12,
+    "084B61:Skyrim.esm": 12,
+    "08B64D:Skyrim.esm": 13,
+    "08B64E:Skyrim.esm": 12,
+    "08B64F:Skyrim.esm": 11,
+    "08FFF1:Skyrim.esm": 11,
+    "08FFF2:Skyrim.esm": 9,
+    "08FFF3:Skyrim.esm": 7,
+    "092A0F:Skyrim.esm": 13,
+    "092A10:Skyrim.esm": 12,
+    "092A11:Skyrim.esm": 11,
+    "0B4213:Skyrim.esm": 8,
+    "0B4214:Skyrim.esm": 7,
+    "0B4217:Skyrim.esm": 12,
+    "0B4219:Skyrim.esm": 12,
+    "0B506E:Skyrim.esm": 11,
+    "0B506F:Skyrim.esm": 8,
+    "0B5070:Skyrim.esm": 7,
+    "0B5074:Skyrim.esm": 13,
+    "0B5075:Skyrim.esm": 12,
+    "0B5076:Skyrim.esm": 12,
+    "0B508A:Skyrim.esm": 12,
+    "0B508B:Skyrim.esm": 11,
+    "0B50FE:Skyrim.esm": 24,
+    "0B50FF:Skyrim.esm": 22,
+    "0B5100:Skyrim.esm": 20,
+    "0FD999:Skyrim.esm": 13,
+    "0FD99A:Skyrim.esm": 12,
+    "0FD99B:Skyrim.esm": 11,
+    "0FD9A8:Skyrim.esm": 18,
+    "0FD9A9:Skyrim.esm": 17,
+    "0FD9AA:Skyrim.esm": 16,
+    "0FD9BD:Skyrim.esm": 13,
+    "0FD9BE:Skyrim.esm": 11,
+    "0FD9BF:Skyrim.esm": 11,
+    "0FD9D2:Skyrim.esm": 13,
+    "0FD9D3:Skyrim.esm": 11,
+    "0FD9D4:Skyrim.esm": 11,
+    "0FD9E5:Skyrim.esm": 11,
+    "0FD9E6:Skyrim.esm": 9,
+    "0FD9E7:Skyrim.esm": 7,
+    "0FD9E8:Skyrim.esm": 13,
+    "0FD9E9:Skyrim.esm": 12,
+    "0FD9EA:Skyrim.esm": 12,
+    "0FD9F4:Skyrim.esm": 11,
+    "0FD9F5:Skyrim.esm": 9,
+    "0FD9F6:Skyrim.esm": 7,
+    "0FD9F7:Skyrim.esm": 13,
+    "0FD9F8:Skyrim.esm": 12,
+    "0FD9F9:Skyrim.esm": 12,
+    "0FDA03:Skyrim.esm": 11,
+    "0FDA04:Skyrim.esm": 7,
+    "0FDA07:Skyrim.esm": 7,
+    "0FDA08:Skyrim.esm": 13,
+    "0FDA09:Skyrim.esm": 12,
+    "0FDA0A:Skyrim.esm": 12,
+    "100E85:Skyrim.esm": 15,
+    "100E86:Skyrim.esm": 5,
+    "100E87:Skyrim.esm": 5,
+    "101071:Skyrim.esm": 31,
+    "1046DB:Skyrim.esm": 31,
+    "10F75E:Skyrim.esm": 242
+  },
+  "expected_lvli_records": 184,
+  "expected_masters": [
+    "Skyrim.esm",
+    "Update.esm",
+    "Dragonborn.esm",
+    "ConstellationsNewSkills.esp",
+    "AVExpansion.esp",
+    "Thaumaturgy.esp"
+  ],
+  "format": "modpackkr-simonrim-ave-constellations-merge-v2",
+  "plugin_name": "ModpackKR_Simonrim_AVE_Constellations_MergeDev.esp",
+  "plugin_sha256": "13e48e85663c4ef82c615f5d9b5af89f407fb289ef34fc18b1324e42a7de2d3a",
+  "source_masters": {
+    "ave_thaumaturgy_1_1": [
+      "Skyrim.esm",
+      "Update.esm",
+      "Dawnguard.esm",
+      "Dragonborn.esm",
+      "AVExpansion.esp",
+      "Thaumaturgy.esp"
+    ],
+    "constellations": [
+      "Skyrim.esm",
+      "Update.esm",
+      "Dawnguard.esm",
+      "HearthFires.esm",
+      "Dragonborn.esm"
+    ],
+    "thaumaturgy_1_5": [
+      "Skyrim.esm",
+      "Update.esm",
+      "Dawnguard.esm",
+      "Dragonborn.esm"
+    ]
+  },
+  "thaumaturgy_plugin_sha256": "0191fd9e55edc5f21864b0729a4b644baffa7b15cbca26532f81c9c964b36fce"
+}

@@ -1,0 +1,45 @@
+form_key	editor_id	source_name	target_name	source_description	target_description
+000163:ConstellationsNewSkills.esp	CNS_SOR_StaffPower1	Catalyst	催化	Staves are 25% more powerful.	法杖威力提升 25%。
+000164:ConstellationsNewSkills.esp	CNS_SOR_StaffPower2	Catalyst	催化	Staves are 50% more powerful.	法杖威力提升 50%。
+000165:ConstellationsNewSkills.esp	CNS_H2H_UnarmedSpeed	Fast Strike	迅捷打擊	Unarmed attacks are 15% faster.	徒手攻擊速度提升 15%。
+000166:ConstellationsNewSkills.esp	CNS_SOR_StaffAbsorb	Lightning Rod	引雷針	Absorb 5% of hostile spells while wielding a staff, and convert absorbed magicka to staff charge.	手持法杖時，有 5% 機率吸收敵對法術，並將吸收的法力轉化為法杖充能。
+000167:ConstellationsNewSkills.esp	CNS_SOR_StaffReflect	Overflow	能量溢流	Reflect hostile spells you would absorb when at full magicka and staff charge.	法力與法杖充能全滿時，反射原本會被你吸收的敵對法術。
+000168:ConstellationsNewSkills.esp	CNS_ATH_SprintEvade	Afterimage	殘影	50% chance to dodge incoming arrows while sprinting.	衝刺時有 50% 機率閃避來襲的箭矢。
+000169:ConstellationsNewSkills.esp	CNS_H2H_UnarmedTemper	Tempered Fists	百鍊鐵拳	Unarmed attacks with gauntlets do bonus damage based on their temper quality.	戴著護手進行徒手攻擊時，依護手的鍛造品質造成額外傷害。
+00016A:ConstellationsNewSkills.esp	CNS_SOR_Mastery1	Sorcerer	術士	Staves are 20% more efficient.	法杖效率提升 20%。
+00016B:ConstellationsNewSkills.esp	CNS_SOR_Mastery2	Sorcerer	術士	Staves are 40% more efficient.	法杖效率提升 40%。
+00016C:ConstellationsNewSkills.esp	CNS_SOR_Mastery3	Sorcerer	術士	Staves are 60% more efficient.	法杖效率提升 60%。
+00016D:ConstellationsNewSkills.esp	CNS_SOR_Mastery4	Sorcerer	術士	Staves are 80% more efficient.	法杖效率提升 80%。
+00016E:ConstellationsNewSkills.esp	CNS_SOR_Mastery5	Sorcerer	術士	Staves are twice as efficient.	法杖效率加倍。
+00016F:ConstellationsNewSkills.esp	CNS_H2H_Mastery1	Brawler	格鬥家	Unarmed attacks do 20% more damage.	徒手攻擊傷害提升 20%。
+000170:ConstellationsNewSkills.esp	CNS_H2H_Mastery2	Brawler	格鬥家	Unarmed attacks do 40% more damage.	徒手攻擊傷害提升 40%。
+000171:ConstellationsNewSkills.esp	CNS_H2H_Mastery3	Brawler	格鬥家	Unarmed attacks do 60% more damage.	徒手攻擊傷害提升 60%。
+000172:ConstellationsNewSkills.esp	CNS_H2H_Mastery4	Brawler	格鬥家	Unarmed attacks do 80% more damage.	徒手攻擊傷害提升 80%。
+000173:ConstellationsNewSkills.esp	CNS_H2H_Mastery5	Brawler	格鬥家	Unarmed attacks do twice as much damage.	徒手攻擊傷害加倍。
+000174:ConstellationsNewSkills.esp	CNS_H2H_DualUnarmedSpeed	Fists of Fury	怒拳連擊	Dual unarmed attacks are an additional 15% faster.	雙手徒手攻擊速度額外提升 15%。
+000175:ConstellationsNewSkills.esp	CNS_ATH_Mastery1	Swift Step	疾行步	Move 5% faster.	移動速度提升 5%。
+000176:ConstellationsNewSkills.esp	CNS_ATH_Mastery2	Swift Step	疾行步	Move 10% faster.	移動速度提升 10%。
+000177:ConstellationsNewSkills.esp	CNS_ATH_Mastery3	Swift Step	疾行步	Move 15% faster.	移動速度提升 15%。
+000178:ConstellationsNewSkills.esp	CNS_ATH_Mastery4	Swift Step	疾行步	Move 20% faster.	移動速度提升 20%。
+000179:ConstellationsNewSkills.esp	CNS_ATH_Mastery5	Swift Step	疾行步	Move 25% faster.	移動速度提升 25%。
+00017A:ConstellationsNewSkills.esp	CNS_SOR_CastShield	Nullification	魔法消解	30% reduced damage from elemental effects while focusing a staff.	蓄力施放法杖時，受到的元素效果傷害降低 30%。
+00017B:ConstellationsNewSkills.esp	CNS_SOR_StaffSpeed	Rapid Fire	迅速施法	Staves cast 50% faster.	法杖施法速度提升 50%。
+00017C:ConstellationsNewSkills.esp	CNS_H2H_PowerKnockdown	Haymaker	重拳擊倒	Unarmed left or right power attacks have a 25% chance to knock down opponents.	左手或右手的徒手強力攻擊有 25% 機率擊倒對手。
+00017E:ConstellationsNewSkills.esp	CNS_ATH_SlowTime	Heightened Senses	感官強化	Time slows down when an enemy attack would be lethal.	當敵人的一次攻擊足以致命時，時間流逝速度減慢。
+00017F:ConstellationsNewSkills.esp	CNS_SOR_CastResistStagger	Deep Focus	深度專注	50% less stagger while focusing a staff.	蓄力施放法杖時，受到的失衡效果降低 50%。
+000180:ConstellationsNewSkills.esp	CNS_SOR_ScrollPower1	Incantation	咒語詠唱	Scrolls are 100% more powerful.	卷軸威力提升 100%。
+000181:ConstellationsNewSkills.esp	CNS_SOR_ScrollPower2	Incantation	咒語詠唱	Scrolls are 150% more powerful.	卷軸威力提升 150%。
+000182:ConstellationsNewSkills.esp	CNS_SOR_ScrollPower3	Incantation	咒語詠唱	Scrolls are 200% more powerful.	卷軸威力提升 200%。
+000183:ConstellationsNewSkills.esp	CNS_H2H_Danger	Hysterical Strength	絕境之力	Unarmed attacks do more damage when your health is low.	生命偏低時，徒手攻擊造成更多傷害。
+000184:ConstellationsNewSkills.esp	CNS_ATH_Falling	Acrobat	特技高手	90% reduced damage from falling.	落下傷害降低 90%。
+000185:ConstellationsNewSkills.esp	CNS_ATH_FastRegen	Second Wind	再振	Stamina regenerates 10 times faster out of combat.	非戰鬥狀態下，耐力恢復速度變為 10 倍。
+000186:ConstellationsNewSkills.esp	CNS_ATH_CombatRestore	Fight or Flight	戰或逃	Completely restore stamina when entering combat.	進入戰鬥時完全恢復耐力。
+000187:ConstellationsNewSkills.esp	CNS_H2H_DualPowerDamage	Powerhouse	強勢重拳	Dual unarmed power attacks are 50% stronger.	雙手徒手強力攻擊傷害提升 50%。
+000188:ConstellationsNewSkills.esp	CNS_ATH_Warmth1	Adaptation	環境適應	20% resistance to frost damage and +10 warmth rating.	寒霜傷害抗性提升 20%，保暖值提高 10 點。
+000189:ConstellationsNewSkills.esp	CNS_H2H_DualCombo	Power Combo	強力連擊	Unarmed combination power attacks cause increasing stagger on successive hits.	徒手組合強力攻擊連續命中時，造成的失衡逐次提高。
+00018A:ConstellationsNewSkills.esp	CNS_H2H_DamageAttack1	Disorientation	迷亂	Unarmed attacks briefly reduce the opponent's attack damage by 5%.	徒手攻擊會短暫降低對手 5% 的攻擊傷害。
+00018B:ConstellationsNewSkills.esp	CNS_H2H_DamageAttack2	Disorientation	迷亂	Unarmed attacks briefly reduce the opponent's attack damage by 10%.	徒手攻擊會短暫降低對手 10% 的攻擊傷害。
+00018C:ConstellationsNewSkills.esp	CNS_SOR_StaffRegen	Attunement	調諧	Magicka regenerates 50% faster while wielding a staff.	手持法杖時，法力恢復速度提升 50%。
+00018D:ConstellationsNewSkills.esp	CNS_ATH_Warmth2	Adaptation	環境適應	35% resistance to frost damage and +20 warmth rating.	寒霜傷害抗性提升 35%，保暖值提高 20 點。
+00018E:ConstellationsNewSkills.esp	CNS_ATH_PredatorFriend	Imposing Presence	威嚴氣勢	Animals will not attack you.	動物不會主動攻擊你。
+00018F:ConstellationsNewSkills.esp	CNS_ATH_SprintReduceCost	Perseverance	堅持不懈	Sprinting drains 25% less stamina.	衝刺消耗的耐力降低 25%。

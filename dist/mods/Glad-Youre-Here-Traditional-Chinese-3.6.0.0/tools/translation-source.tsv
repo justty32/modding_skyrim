@@ -1,0 +1,213 @@
+$ImGladYoureHere	很高興你在這裡
+$YES	是
+$NO	否
+$General_Page	一般設定
+$Follower_Page	追隨者設定
+$Family_Page	家庭設定
+$Letter_Page	信件設定
+$Patches_Page	補丁
+$Back	返回
+$Off	關閉
+$Notifications	允許通知
+$Notifications_Help	設定是否啟用本模組的訊息通知。包括但不限於：增益效果套用與失效。無論此設定為何，都會回報警告與錯誤。
+$UnequipShields	卸下 NPC 盾牌
+$UnequipShields_Help	啟用後，NPC 會在擁抱前自動卸下已裝備的盾牌，但不會自動重新裝備。預設關閉，因為大多數使用者可能已有背盾模組而不會遇到此問題；若盾牌妨礙擁抱動畫，這可能是實用的解決方法。
+$SheatheWeapons	自動收起武器
+$SheatheWeapons_Help	若以拔出武器的狀態開始對話，會在擁抱前自動收起玩家與 NPC 的武器。帶著武器擁抱可能使武器出錯！建議將此選項保持啟用作為保護措施；只有在你想拍攝史詩般的持武擁抱畫面時才停用。
+$BoonSettings	遊戲增益設定
+$Boon	擁抱後套用遊戲增益
+$Boon_Help	設定感謝互動後是否套用遊戲增益。（此設定獨立於擁抱設定；即使實際動畫已停用，仍可套用增益。）擁抱追隨者會將增益套用至追隨者；擁抱配偶或收養的孩子則會套用至玩家。
+$FollowerBoonDuration	追隨者增益持續時間
+$FollowerBoonDuration_Help	設定套用至被擁抱追隨者的增益持續時間（遊戲內小時）。
+$FamilyBoonDuration	家庭增益持續時間
+$FamilyBoonDuration_Help	設定擁抱配偶或孩子時套用至玩家與被擁抱配偶的增益持續時間（遊戲內小時）。
+$BoonMagnitudePercent	增益強度
+$BoonMagnitudePercent_Help	設定增益屬性提升的強度（以 % 為單位）。擁抱追隨者會使其生命值提高此 %；擁抱配偶會使玩家與配偶的生命值和耐力提高此 %；擁抱孩子則會使玩家的魔力提高此 %。
+$CameraSettings	鏡頭設定
+$forceCameraNPC	強制成人視角
+$forceCameraNPC_Help	允許你在擁抱成人 NPC 前強制玩家切換為指定的鏡頭視角（可於下方選擇）。若未使用相容的第一人稱鏡頭模組，建議啟用。
+$forceCameraChild	強制孩童視角
+$forceCameraChild_Help	允許你在擁抱孩童前強制玩家切換為指定的鏡頭視角（可於下方選擇）。建議始終啟用，因為孩童的第一人稱動畫效果不佳。
+$forceCameraAnimal	強制動物視角
+$forceCameraAnimal_Help	允許你在擁抱／撫摸動物前強制玩家切換為指定的鏡頭視角（可於下方選擇）。若未使用相容的第一人稱鏡頭模組，建議啟用。
+$forcedView	- 強制視角類型
+$forcedView_Help	選擇擁抱上述指定 NPC 時要強制使用的鏡頭模式。建議設定為第三人稱。
+$FPerson	第一人稱
+$TPerson	第三人稱
+$SoundSettings	音效設定
+$AllowXVASynth	允許 AI 生成語音
+$AllowXVASynth_Help	設定是否允許播放以 xVASynth 製作的對話台詞。這些資產多用於會依地點、事件或其他條件而變化的零星對話，可讓 NPC 更具沉浸感；但它們是電腦生成的台詞，品質低於原版資產。停用此設定後，只會播放完全由原版語音剪接而成的台詞。
+$AllowMiscSound	允許其他音效
+$AllowMiscSound_Help	啟用後，動畫期間也會播放輕微音效，例如擁抱時衣物摩擦聲，或敬禮時帶有盔甲感的腳步聲。
+$MiscSoundVolume	其他音效音量
+$MiscSoundVolume_Help	設定其他音效播放音量的衰減量（分貝）。
+$AllowRumble	允許控制器震動
+$AllowRumble_Help	（僅限控制器）啟用後，部分其他音效也會伴隨控制器的輕微震動。
+$PCSettings	玩家角色設定
+$AllowPCHeightOverride	允許覆寫玩家身高
+$AllowPCHeightOverride_Help	啟用後，本模組不再檢查遊戲中角色的身高來判定身高最佳化動畫設定，而會使用下方設定的數值。這可讓模組更一致地選擇較合適的動畫設定。
+$PlayerHeight	玩家身高
+$PlayerHeight_Help	設定本模組要使用的角色身高比例。這不會修改你在遊戲中的身高，只是告訴本模組應採用哪個數值。請設為你「感覺」角色應有的身高，可能有助於選出較合適的身高最佳化動畫。滑桿很靈敏，請以小幅度嘗試。
+$ExtraDialogueSettings	額外對話條件
+$RestrictedGender	限制下列性別關係的 NPC
+$RestrictedGender_Help	允許依 NPC 性別與玩家性別的比較結果停用模組功能。預設關閉。
+$SameGender	同性別
+$OppositeGender	異性別
+$RestrictGenderDisableDialogue	- 停用對話
+$RestrictGenderDisableDialogue_Help	若選取，性別關係符合上方指定條件的 NPC 不會出現對話選項。\n注意：此設定不影響你的配偶或孩子。
+$RestrictGenderDisableAnimation	- 停用動畫
+$RestrictGenderDisableAnimation_Help	若選取，性別關係符合上方指定條件的 NPC 在對話後不會播放動畫。注意：此設定不影響你的配偶或孩子。
+$DebugTools	除錯工具
+$RREditor	開啟 NPC 除錯器熱鍵
+$RREditor_Help	在遊戲中按下指定熱鍵後，可啟用一名 NPC 來開啟其 NPC 除錯器。該選單提供所選 NPC 的多種設定與選項；你可以在其中變更 NPC 與你的關係（朋友或配偶）等，快速修正被模組錯誤辨識的 NPC。
+$RREditorSpell	新增 NPC 除錯器法術
+$RREditorSpell_Help	啟用後，會將「(GYH) NPC 除錯器」法術新增給玩家。對 NPC 施放它即可開啟除錯器功能。（熱鍵開啟的是相同功能，請依方便程度使用。）
+$AllowCreatureFaction	允許生物陣營
+$AllowCreatureFaction_Help	允許生物陣營中的 NPC 顯示對話。若你使用某些馬匹模組，且模組對話出現在馬匹身上而妨礙騎乘，停用此選項或許可解決問題。
+$GYHEnabled	模組已啟用
+$GYHEnabled_Help	停用後，會完全關閉本模組所有功能。這不代表可以安全解除安裝本模組！關閉後再重新啟用，會將模組完全重設為預設狀態。
+$OGAnimPool	異性別動畫池
+$SGAnimPool	同性別動畫池
+$VanillaHug	原版擁抱
+$VanillaHug_Help	允許播放原版擁抱動畫。動畫會從你在此啟用的動畫池中隨機選擇。
+$Salute	敬禮
+$Salute_Help	允許播放敬禮動畫。動畫會從你在此啟用的動畫池中隨機選擇。
+$Embrace	擁抱（OAR）
+$Embrace_Help	允許播放擁抱動畫。此動畫需要安裝 OPEN/DYNAMIC ANIMATION REPLACER！動畫會從你在此啟用的動畫池中隨機選擇。
+$EmbraceChild	擁抱孩童（OAR）
+$EmbraceChild_Help	允許播放孩童擁抱動畫。此動畫需要安裝 OPEN/DYNAMIC ANIMATION REPLACER！動畫會從你在此啟用的動畫池中隨機選擇。
+$FollowerAnimSettings	追隨者動畫設定
+$FPersonHugRoles	第一人稱擁抱角色
+$FPersonHugRoles_Help	設定第一人稱擁抱 NPC 時的擁抱角色。選項：(1) 友好：玩家手臂放在 NPC 頸部，NPC 手臂環繞玩家腰部。(2) 浪漫：玩家手臂環繞 NPC 腰部，NPC 手臂放在玩家頸部。(3) 隨機：隨機選取。(4) 依身高：玩家與 NPC 身高差小時使用友好，差距大時使用浪漫。(5) 依身高隨機：身高差大時使用浪漫，差距小時隨機選取。
+$TPersonHugRoles	第三人稱擁抱角色
+$TPersonHugRoles_Help	設定第三人稱擁抱 NPC 時的擁抱角色。選項：(1) 友好：玩家手臂放在 NPC 頸部，NPC 手臂環繞玩家腰部。(2) 浪漫：玩家手臂環繞 NPC 腰部，NPC 手臂放在玩家頸部。(3) 隨機：隨機選取。(4) 依身高：玩家與 NPC 身高差小時使用友好，差距大時使用浪漫。(5) 依身高隨機：身高差大時使用浪漫，差距小時隨機選取。
+$Friendly	友好
+$Romantic	浪漫
+$Random	隨機
+$HeightBased	依身高
+$HeightBasedRandom	依身高隨機
+$FollowerSettings	追隨者設定
+$AutoAddAH	自動加入「隨時可擁抱」旗標
+$AutoAddAH_Help	啟用後，擁抱 NPC 追隨者會移除日後再次擁抱時必須是追隨者的條件（他們會成為「隨時可擁抱」）。
+$PetSettings	寵物設定
+$AllowPetDialogue	允許寵物對話
+$AllowPetDialogue_Help	也允許動物同伴出現本模組的追隨者對話。預設開啟。
+$AllowHorseInteraction	允許與馬匹互動
+$AllowHorseInteraction_Help	啟用後，當你非常靠近馬匹時，啟用牠會顯示撫摸牠的提示。
+$PetAnimPool	寵物動畫池
+$PetVanilla	原版撫摸
+$PetVanilla_Help	允許與寵物互動時播放原版跪下撫摸動畫。動畫會從你在此啟用的動畫池中隨機選擇。
+$PetTheDog	JaySerpa 的 PetTheDog（請閱讀說明！）
+$PetTheDog_Help	允許與寵物互動時播放 JaySerpa 的「Pet the Dog」動畫。此動畫隨 Immerisve Interactions 或 Pet the Dog 提供，必須安裝其中之一！此動畫需要 OAR 或 DAR，並需要 NEXUS 上 Pet the Dog 模組的獨立補丁才能正確播放。動畫會從你在此啟用的動畫池中隨機選擇。
+$SpouseAnimPool	配偶動畫池
+$SpouseAnimSettings	配偶動畫設定
+$SpouseHugEvents	配偶擁抱事件
+$WeddingHug	婚禮儀式擁抱
+$WeddingHug_Help	啟用後，新婚伴侶會在原版婚禮儀式結束時互相擁抱。
+$LoadGameHug	讀取遊戲時擁抱
+$LoadGameHug_Help	啟用後，讀取存檔時若配偶與你位於同一個儲存格，配偶會用擁抱歡迎你回到遊戲。（若有多名配偶，會套用至同一儲存格中找到的第一名配偶。）僅考慮列入「歡迎回家」功能的配偶。在效能較低且模組很多的配置中，請考慮停用此功能。
+$LoadDelay	讀取延遲
+$LoadDelay_Help	遊戲啟動時通常有大量腳本工作，在模組繁多的遊戲中可能讓讀取遊戲時的擁抱出錯。延遲可讓遊戲先處理其他工作。滑桿以秒設定延遲。僅在接近原版且沒有掉幀的配置中設為零；在嚴重延遲的配置中請設高一些。
+$SpouseGiftOptions	配偶送禮設定
+$AllowGifts	允許贈送禮物給配偶
+$AllowGifts_Help	允許玩家透過對話贈送禮物給配偶。
+$AllowGiftAnim	送禮後播放動畫
+$AllowGiftAnim_Help	開啟後，送禮給配偶後會播放其擁抱動畫。
+$Gift1stPersonHugRoles	送禮第一人稱角色
+$Gift3rdPersonHugRoles	送禮第三人稱角色
+$SpouseWHSettings	配偶歡迎回家設定
+$AllowWH	允許歡迎回家強制對話
+$AllowWH_Help	啟用後，「啟用中配偶清單」內的配偶，會在距離上次見面已過「經過天數」個遊戲日後，下次再見面時強制以擁抱向玩家問候。以模組主要對話擁抱配偶時，會自動加入啟用中清單。關閉此選項會清除所有既有清單。
+$WHExitDialogue	離開對話
+$WHExitDialogue_Help	切換是否在配偶歡迎回家強制對話後自動離開交談。目前此設定會被擁抱動畫及使用遊戲手把時忽略。
+$WHDays	經過天數
+$WHDays_Help	設定兩次見面之間必須經過多少遊戲日，才會觸發強制對話擁抱。
+$WHStackDays	累計天數
+$WHStackDays_Help	停用時，在「經過天數」尚未過完前遇見配偶會重設計數器，之後必須再次經過相同天數才會觸發。啟用時不會重設（也就是無論中間見面多少次，技術上保證每「經過天數」天會發生一次強制對話）。
+$WHList	管理追蹤中的配偶
+$WHList_Help	顯示強制對話功能所追蹤的配偶清單。從清單中選取 NPC，會將其從此清單移除並加入黑名單。
+$EWHList	管理黑名單
+$EWHList_Help	顯示被列入追蹤黑名單的 NPC。即使符合資格，這些 NPC 也不會排入強制對話功能。從清單中選取 NPC，會將其從黑名單移除。
+$ChildAnimPool	孩童動畫池
+$ChildWHSettings	孩童歡迎回家設定
+$AllowChildWH	允許歡迎回家強制對話
+$AllowChildWH_Help	啟用後，會為孩童新增「歡迎回家」強制對話選項並放入其歡迎互動池中；孩童只會擁抱玩家。
+$ChildWHGoodbye	離開對話
+$ChildWHGoodbye_Help	切換是否在孩童歡迎回家強制對話後自動離開交談。目前此設定會被「擁抱孩童」動畫忽略。
+$ChildWHChance	機率
+$ChildWHChance_Help	設定觸發強制對話擁抱的機率。這是絕對機率：你設定的值就是此擁抱強制對話的實際機率；其餘 4 種原版強制對話會以原版平均機率出現在剩餘情況。建議設定為 20%，如此每種互動都有相同機率。設定為 100% 會阻止原版強制對話發生。
+$LetterSettings	信件設定
+$AllowLetters	允許家書
+$AllowLetters_Help	啟用或停用「家書」功能：若一段時間未見面，追隨者與家人會寫信給你。停用會清除所有已建立、符合資格的寫信 NPC 清單。
+$InstantDelivery	即時送達
+$InstantDelivery_Help	停用時，信件會由原版信差 NPC 送達。啟用時，信件會「神奇地」立刻加入你的物品欄。若遊戲中的原版信差完全壞掉，這可能很有用。
+$DateInName	信件名稱顯示日期
+$DateInName_Help	設定是否在信件名稱中顯示撰寫日期。當你不斷收到同一 NPC 的信件時，這有助於排序。
+$LetterFrequency	收信頻率
+$LetterDaysMin	最短間隔
+$LetterDaysMin_Help	設定兩封信之間必須經過的最少天數。
+$LetterDaysMax	最長間隔
+$LetterDaysMax_Help	設定兩封信之間允許經過的最多天數。
+$TimeFactor	時間係數
+$TimeFactor_Help	設定決定實際收到下一封信前天數的係數。若符合資格的寫信 NPC 清單相對此數值很短，數值越大，實際間隔越長。例如設為 5.0 而清單中只有 2 名可能寫信的 NPC 時，最短與最長天數都會乘以 5/2；但若有 5 名以上 NPC，間隔天數不會修改。建議設定：設為你認為遊玩期間會擁有的朋友 NPC 數量。
+$WritersAtSameTime	同時寫信者
+$WritersAtSameTime_Help	清單中最多可有此百分比的 NPC 同時寫信（無條件捨去）。例如設為 50%，且清單有 7 名 NPC 時，每次送達會隨機收到 1 到 3 封信。上限也受下方滑桿設定的硬性限制約束。
+$LettersAtSameTime	同時信件上限
+$LettersAtSameTime_Help	硬性上限：你絕不會同時收到超過此數量的信件。
+$WriterListsSettings	可能寫信者清單
+$LetterScanning	檢查新的 NPC
+$LetterScanning_Help	設定模組是否在透過對話擁抱 NPC 時，嘗試將新的 NPC 加入寫信者清單。
+$WriteJustOnce	只寫一次
+$WriteJustOnce_Help	啟用後，NPC 寫過一封信後會自動從清單移除（必須再次在遊戲中擁抱，才會重新成為可能的寫信者）。
+$RemoveExpired	自動移除失效者
+$RemoveExpired_Help	啟用後，無法再產生文字的 NPC 會自動從啟用中的寫信者清單移除。停用可能影響效能！
+$WriterList	管理寫信者
+$WriterList_Help	顯示被記錄為可能寫信者的 NPC 清單（朋友與家人）。在遊戲中擁抱 NPC 即可加入此清單！從清單中選取 NPC，會將其移除並加入黑名單。
+$WriterBlackList	管理黑名單
+$WriterBlackList_Help	顯示被列入寫信黑名單的 NPC。從清單中選取 NPC，會將其從黑名單移除。
+$ActivePatches	啟用中的語音補丁
+$InactivePatches	未啟用的語音補丁
+$OtherPatches	其他補丁
+$InactiveOtherPatches	未啟用的其他補丁
+$UseFollower	使用追隨者設定
+$RandomOAR	隨機（OAR）
+$InigoPatch	Inigo
+$InigoPatch_Help	套用與 Inigo 對話的語音補丁。
+$SofiaPatch	Sofia - 幽默的全語音追隨者
+$SofiaPatch_Help	套用與 Sofia 對話的語音補丁，並套用腳本補丁以確保對話一致。
+$AuriPatch	Song of the Green（Auri 追隨者）
+$AuriPatch_Help	套用與 Auri 對話的語音補丁，並套用腳本補丁以修正其配偶對話。
+$LucienPatch	Lucien Flavius
+$LucienPatch_Help	套用與 Lucien 對話的語音補丁。
+$LucienAlwaysHugs	Lucien 永遠擁抱
+$LucienAlwaysHugs_Help	依作者要求，Lucien 只可使用擁抱動畫，其他動畫（目前為敬禮）會被列入黑名單。你可在此選單選擇擁抱 Lucien 時使用的動畫。「隨機」會在每次擁抱時隨機選取原版或擁抱。「使用追隨者設定」會取消 Lucien 的此項特殊處理。標示為（OAR）的動畫需要安裝 Open Animation Replacer。
+$KaidanPatch	Kaidan 2
+$KaidanPatch_Help	套用與 Kaidan 對話的語音補丁。
+$MiraiPatch	Mirai - 龍心少女
+$MiraiPatch_Help	套用與 Mirai 對話的語音補丁。
+$INPCPatch	Interesting NPCs（3DNPC）
+$INPCPatch_Help	套用與數名 Interesting NPCs NPC 的語音補丁（Rumarin、Zora、Amalee、Among the Hist）。
+$LydiaPatch	Improved Follower Dialogue - Lydia
+$LydiaPatch_Help	將模組內部對 Lydia 使用的語音類型，從通用 Skyrim 語音調整為「Improved Follower Dialogue Lydia」模組的專屬 Lydia 語音。
+$TrissPatch	Triss Merigold - 自訂語音追隨者
+$TrissPatch_Help	套用與 Triss Merigold 對話的語音補丁。
+$MrissiPatch	M'rissi's Tails of Troubles
+$MrissiPatch_Help	套用與 M'rissi 對話的語音補丁。
+$AdoptPatch	Hearthfires Multiple Adoptions
+$AdoptPatch_Help	讓模組的孩童功能（例如歡迎回家擁抱）適用於所有透過 Hearthfires Multiple Adoptions 收養的孩童。
+$CatPatch	A Cat's Life
+$CatPatch_Help	讓 GYH 能正確將 A Cat's Life 的貓辨識為動物。
+$Maintenance_Page	維護
+$AutoloadSettings_Header	自動載入設定
+$Enabled	已啟用
+$EnabledMaintenance_Help	若不想載入模組專用變數，請取消勾選此選項。這不適用於設定檔中的變數，也不適用於腳本升級至較新版本時。當自動載入與其他模組衝突時，停用此選項會很有用。
+$LoadingDelay	載入延遲
+$LoadingDelayMaintenance_Help	以秒設定載入設定的延遲時間。若模組需要時間初始化，這會很有用。
+$LoadSettings	載入設定
+$LoadSettingsMaintenance_Help	強制模組重新載入設定。若已停用自動載入，這會很有用。
+$ResetSettings	重設設定
+$ResetSettingsMaintenance_Help	將設定重設為預設值。
+$LoadSettingsonReload	重新讀取時載入設定
+$LoadSettingsonReloadMaintenance_Help	若希望每次讀取遊戲時都載入設定，請勾選此選項。當有功能會還原設定時很有用。若基礎模組未使用 OnGameReload 事件，或你已停用自動載入，此選項不會生效。
+$Verbose	詳細資訊
+$VerboseMaintenance_Help	勾選此選項以查看載入器運作時的額外資訊。

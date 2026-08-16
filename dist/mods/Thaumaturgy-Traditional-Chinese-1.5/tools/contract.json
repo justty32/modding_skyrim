@@ -1,0 +1,24 @@
+{
+  "plugin_name": "Thaumaturgy.esp",
+  "source_sha256": "3d1a1e2d2cf0d9b79b14574ff6e6b08cd2f4f188f6178f71c3f9b0b590a17e08",
+  "expected_masters": [
+    "Skyrim.esm",
+    "Update.esm",
+    "Dawnguard.esm",
+    "Dragonborn.esm"
+  ],
+  "expected_records": 11976,
+  "expected_rows": 10689,
+  "fields": [
+    {"record_type": "MGEF", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "MGEF", "field": "DNAM", "table": "DLSTRINGS"},
+    {"record_type": "ENCH", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "ARMO", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "WEAP", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "PERK", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "PERK", "field": "DESC", "table": "DLSTRINGS"},
+    {"record_type": "SPEL", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "SPEL", "field": "DESC", "table": "DLSTRINGS"},
+    {"record_type": "CELL", "field": "FULL", "table": "STRINGS"}
+  ]
+}

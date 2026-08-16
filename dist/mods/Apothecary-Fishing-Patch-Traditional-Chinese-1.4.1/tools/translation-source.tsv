@@ -1,0 +1,10 @@
+string_id	form_key	record_type	editor_id	field	occurrence	source	target	provenance
+00000001	0008EB:ccBGSSSE001-Fish.esm	INGR	ccBGSSSE001_AngelfishIng	FULL	0	Angelfish	神仙魚	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000002	0008EC:ccBGSSSE001-Fish.esm	INGR	ccBGSSSE001_PearlfishIng	FULL	0	Pearlfish	隱魚	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000003	0008ED:ccBGSSSE001-Fish.esm	INGR	ccBGSSSE001_PygmySunfishIng	FULL	0	Pygmy Sunfish	小日鱸	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000004	0008EE:ccBGSSSE001-Fish.esm	INGR	ccBGSSSE001_GlassfishIng	FULL	0	Glassfish	玻璃魚	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000005	0008EF:ccBGSSSE001-Fish.esm	INGR	ccBGSSSE001_GoldfishIng	FULL	0	Goldfish	金魚	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000006	0008F0:ccBGSSSE001-Fish.esm	INGR	ccBGSSSE001_AnglerLarvaeIng	FULL	0	Angler Larvae	燈籠幼魚	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000007	0008F1:ccBGSSSE001-Fish.esm	INGR	ccBGSSSE001_LyretailAnthiasIng	FULL	0	Lyretail Anthias	絲鰭擬花鮨	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000008	0008F2:ccBGSSSE001-Fish.esm	INGR	ccBGSSSE001_JuvenileMudcrabIng	FULL	0	Juvenile Mudcrab	泥沼蟹幼蟹	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000009	0008F3:ccBGSSSE001-Fish.esm	INGR	ccBGSSSE001_PinnateSpadefishIng	FULL	0	Spadefish	燕魚	Skyrim Traditional Chinese 8.20 exact FormKey and English source

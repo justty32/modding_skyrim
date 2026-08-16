@@ -1,0 +1,8 @@
+string_id	form_key	record_type	editor_id	field	occurrence	source	target	provenance
+00000001	0B9589:ccbgssse025-advdsgs.esm	MGEF	ccBGSSSE025_MysticVenomFFSelf	FULL	0	Mystic Venom	神秘毒液	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000002	0B9589:ccbgssse025-advdsgs.esm	MGEF	ccBGSSSE025_MysticVenomFFSelf	DNAM	0	A poison that does <mag> points damage to Health and Magicka for <dur> seconds.	一種毒液，使生命和法力受到 <mag> 點傷害，持續 <dur> 秒。	Apothecary 1.4.0 CHS exact FormKey; OpenCC s2twp + terminology review
+00000003	059151:ccbgssse025-advdsgs.esm	INGR	ccBGSSSE025_GreenButterfly	FULL	0	Green Butterfly Wing	綠蝶翅膀	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000004	059153:ccbgssse025-advdsgs.esm	INGR	ccBGSSSE025_PurpleButterfly	FULL	0	Purple Butterfly Wing	紫蝶翅膀	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000005	059155:ccbgssse025-advdsgs.esm	INGR	ccBGSSSE025_Blissbug	FULL	0	Bliss Bug Thorax	極樂蟲胸殼	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000006	095E23:ccbgssse025-advdsgs.esm	INGR	ccBGSSSE025_FlameStalk	FULL	0	Flame Stalk	火焰莖	Skyrim Traditional Chinese 8.20 exact FormKey and English source
+00000007	0B9587:ccbgssse025-advdsgs.esm	ALCH	ccBGSSSE025_MysticVenom	FULL	0	Mystic Venom	神秘毒液	Skyrim Traditional Chinese 8.20 exact FormKey and English source

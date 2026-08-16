@@ -1,0 +1,3 @@
+string_id	form_key	record_type	editor_id	field	occurrence	source	target	provenance
+00000001	2EDE92:Thaumaturgy.esp	MGEF	MAG_EnchExecuteDamageFFContact	FULL	0	Magic Damage	魔法傷害	Thaumaturgy Traditional Chinese 1.5 exact FormKey and field
+00000002	2EDE92:Thaumaturgy.esp	MGEF	MAG_EnchExecuteDamageFFContact	DNAM	0	Deals <mag> Magic Damage to enemies below half Health.	對生命值低於一半的敵人造成 <mag> 點魔法傷害。	Thaumaturgy Traditional Chinese 1.5 exact FormKey and field

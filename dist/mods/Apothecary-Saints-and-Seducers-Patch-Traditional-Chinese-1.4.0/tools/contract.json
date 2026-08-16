@@ -1,0 +1,33 @@
+{
+  "plugin_name": "Apothecary - Saints & Seducers Patch.esp",
+  "source_sha256": "6c0cdd74bd3cd5618f2a9687404d799726d7121dcaccf9fc78781c958b1a53f1",
+  "expected_masters": [
+    "Skyrim.esm",
+    "ccbgssse025-advdsgs.esm",
+    "Apothecary.esp"
+  ],
+  "expected_records": 7,
+  "expected_rows": 7,
+  "fields": [
+    {
+      "record_type": "MGEF",
+      "field": "FULL",
+      "table": "STRINGS"
+    },
+    {
+      "record_type": "MGEF",
+      "field": "DNAM",
+      "table": "DLSTRINGS"
+    },
+    {
+      "record_type": "INGR",
+      "field": "FULL",
+      "table": "STRINGS"
+    },
+    {
+      "record_type": "ALCH",
+      "field": "FULL",
+      "table": "STRINGS"
+    }
+  ]
+}

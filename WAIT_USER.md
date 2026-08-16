@@ -12,21 +12,59 @@
 
 ## Open
 
-- **無心人物美化 SE/AE 1.6.1170 適配缺合法來源檔**（2026-08-13）：本機 `/home/lorkhan/skyrim_mods`
-  與 MO2 mods 都沒有無心、`Decent Women` 或 `Women's faces` archive，houseCARL 只能讀 Nexus
-  metadata、不能下載。使用者需先選一條並透過官方 Nexus 取得檔案：
+- **Simonrim Batch 4E 只剩真人附魔功能／手感抽樣**（2026-08-16）：Thaumaturgy 1.5、精確同版繁中、
+  Execute XP VMAD fix 與 184-record AVE／Constellations 最終 merge 已完成 Dev-only 靜態與 runtime
+  smoke。固定 baseline QA 6/6；本體、fix、AVE、Constellations、merge 都由引擎載入，代表物繁中無
+  方框／mojibake，AVE 護手第三人稱模型正常，本次啟動時間窗沒有新 crash。使用者日後只需正常遊玩
+  抽樣：附魔分解→學習→製作→裝備／重載／充能、Empowered Strike 的 power-attack proc、slot
+  restriction，以及 loot/vendor 中 vanilla／AVE enchanted items 的階級與比例是否自然。完整證據在
+  notes 側 `logs/simonrim-batch4-4e-2026-08-16/RESULT.md`；回滾方式也在同一份報告。
 
-  - 要**經典無心人物**：從夜貓－無心的 Bilibili 作者頁所列 3.1.0 百度網盤下載名稱含
-    「人物美化」與「頭模替換」的 archive；不需下載遊戲本體、環境或功能包。也可退而下載
-    LE `Decent Women` 所需原檔（Nexus Skyrim id `14443`），但它不包含 3.1.0 獨有的 1138 NPC
-    頭模替換。兩者都需 LE→SE 資產／plugin 轉換；未取得完整資產許可不得公開重打包。
-  - 接受**不同臉的現成 SSE 替代品**：從 Nexus SSE id `5630` 用 mod-manager 下載英文
-    `NPS_Female_SE_Eng`。它是自包含的純資料 mod，原則上可在 1.6.1170 使用，但不是經典
-    `Decent Women` 原樣，而且不改 companions。
+- **Simonrim Batch 4A 只剩真人鍊金／經濟／戰鬥手感抽樣**（2026-08-16）：Apothecary 1.3.9、
+  Fishing 1.4.1、Saints and Seducers 1.4.0、Rare Curios 1.4.0、四個精確版本繁中層與獨立
+  Become Ethereal VMAD fix 已完成 Dev-only 靜態與 runtime 驗證。固定 baseline QA 7/7、SPID
+  `19/19`；`隱秘藥劑` 的繁中名稱／說明、15 秒開始／結束效果及修補後 Papyrus 增量都已由 agent
+  驗證，代表性本體與三個 CC 物品也無方框／mojibake／新 crash，不需重跑這些。使用者日後遊玩時
+  只需以正常流程抽樣：鍊金台混合 vanilla／Fishing／Saints／Rare Curios 原料、在戰鬥中正常塗抹
+  一種毒劑、觀察 vendor 庫存／價格與 early-game 供應，以及較長 session 的平衡與存讀檔手感。
+  完整證據在 notes 側 `logs/simonrim-batch4-4a-2026-08-16/RESULT.md`；不阻塞獨立 Batch 4E。
 
-  將 archive 放進既有 `/home/lorkhan/skyrim_mods/` 後通知 agent。後續在 `Modpack-KR-Dev`
-  驗證 archive、Form 44／BSA／FaceGen，再依 `AI Overhaul → 外觀 → conflict patch` 建 patch 並做
-  實機黑臉／頸縫／AI 驗收。完整調查見
+- **Simonrim Batch 4M/P 只剩真人功能／手感抽樣**（2026-08-16）：Mysticism 2.5.0、Adamant 6.0.2、
+  精確版本繁中、Adamant Scrambled Bugs 設定與 `MAG_BastionControllerPerkNPC` SPID 單行修正已完成
+  Dev-only 安裝；load order／VFS／baseline runtime 4/4、SPID `16/16`、恢復系天賦樹與 2.5 新法術
+  「強效火焰弱化」的繁中靜態畫面都已由 agent 驗證，無方框／mojibake／新 crash，不需重跑這些。
+  使用者日後遊玩時只需抽樣：正常向 vendor 買書→讀書→施放 novice／apprentice 法術、點代表性
+  Adamant 天賦並感受效果，以及 BFCO 輕／重／方向／sprint attack 搭配武器天賦是否自然；長期平衡
+  與存讀檔手感也屬真人範圍。完整證據在 notes 側
+  `logs/simonrim-batch4-4mp-2026-08-16/RESULT.md`。不阻塞接續 Batch 4A；回滾只需停用該報告列出的
+  五個 Dev layer。
+
+- **RaceMenu 0.4.20.0 NiOverride signature patch 仍需 fresh-launch 驗收**（2026-08-15）：
+  已在
+  [`dist/mods/RaceMenu-NiOverride-Signature-Patch-0.4.20.0/`](dist/mods/RaceMenu-NiOverride-Signature-Patch-0.4.20.0/README.md)
+  建立未部署的 hash-gated script-only 產物；靜態驗證證明 PEX 只有
+  `GetNodeTransformScaleMode` return type `Float -> Int` 一個語義差異，完整解析為
+  183 functions + 2 state events。日後經使用者同意部署到 Dev profile 後，需 fresh launch 並確認
+  `Papyrus.0.log` 不再出現該函式的 `Function will not be bound`。只驗 binding warning；官方
+  `skee64.dll` 另有 scale-mode key predicate bug，本 PEX patch 沒有也不得宣稱修好它。
+
+- **Expanded Skyrim Weaponry Batch 3A 只剩真人動態驗收**（2026-08-15）：agent 已完成中文名稱、
+  inventory preview、第一／第三人稱、地面模型、鍛造配方與 runtime leveled-list distribution 驗證；
+  三件代表武器無方框／mojibake／紫模／缺 mesh，`LItemWeaponBattleAxe` 100 次解析也精確產生
+  21 鐵製戰戟、23 鐵製雙鋒巨斧與 56 原版戰斧。使用者回家後只需以真人遊玩或錄影確認鐵製戰戟
+  與鋼製雙刃巨劍的拔收、BFCO 普攻及動作銜接正常；單張截圖不能替代時間軸結論。完成後移除此條。
+  回滾只需停用 merge patch、CHT 與 NPC 原包，原始 USSEP／ESW 檔均未被改寫。
+
+- **精確換成無心 3.1.0 仍需使用者日後提供原包**（2026-08-15 更新）：目前已用官方 Nexus
+  JH People `1.1.3` + NPC Plugin Chooser 2 做成可在 1.6.1170 運作的 Dev-only 536 NPC 外觀 patch，
+  並完成靜態與遊戲內黑臉檢查；這已滿足本輪「經典韓系 NPC 美化」，不阻塞整合包。但它不是
+  夜貓－無心 3.1.0 的完整 1138 NPC「人物美化＋頭模替換」，不能冒充相同內容。
+
+  若日後仍要**精確換成無心 3.1.0**，請從作者頁所列百度網盤只下載名稱含「人物美化」與
+  「頭模替換」的 archive，不需下載遊戲本體、環境或功能包；放進既有
+  `/home/lorkhan/skyrim_mods/` 後通知 agent。到時以新獨立批次驗證來源、轉換 LE 資產／plugin，
+  重建 NPC coverage 與 winner patch，再取代目前 JH output；未取得完整資產許可不得公開重打包。
+  原相容性調查見
   [wuxin-character-overhaul-se-ae-compatibility.md](workflows/investigation/findings/wuxin-character-overhaul-se-ae-compatibility.md)。
 
 - **母 repo 最新 commit 引用了三個尚未 push 的子模組 commit**（2026-08-12，家用 Manjaro

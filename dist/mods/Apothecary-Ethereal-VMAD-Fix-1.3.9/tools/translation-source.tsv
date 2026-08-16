@@ -1,0 +1,3 @@
+string_id	form_key	record_type	editor_id	field	occurrence	source	target	provenance
+00000001	0F3879:Apothecary.esp	MGEF	MAG_AlchBecomeEthereal	FULL	0	Become Ethereal	虛體變換	Apothecary Traditional Chinese 1.3.9 exact FormKey and field
+00000002	0F3879:Apothecary.esp	MGEF	MAG_AlchBecomeEthereal	DNAM	0	You become ethereal for <dur> seconds.	變為虛體狀態，持續 <dur> 秒。	Apothecary Traditional Chinese 1.3.9 exact FormKey and field
