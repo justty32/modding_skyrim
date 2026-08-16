@@ -1,0 +1,1398 @@
+$FF_ResetHorseDo	正在設定隨從馬匹
+$FF_ResetHorseDone	隨從馬匹設定完成
+$FF_WarnInSlots	隨從已在框架中
+$FF_WarnTooMany	你的隨從已達最大數量
+$FF_WarnInvalid	這名隨從不在框架中
+$FF_WarnImport	沒有可供加入隨從的空欄位
+$FF_AllDisStart	正在解散隨從...
+$FF_AllDisEnd	隨從已解散
+$FF_AllRemoveStart	移除隨從...
+$FF_AllRemoveEnd	隨從已移除
+$FF_AllWaiting	所有隨從在等待
+$FF_AllFollow	所有隨從在跟隨
+$FF_SortingStart	整理隨從欄位...
+$FF_SortingEnd	隨從欄位整理完畢
+$FF_FlushStart	重新整理隨從欄位...
+$FF_FlushEnd	欄位已重新整理
+$FF_HomeStart	正在更新據點
+$FF_HomeEnd	據點更新完成
+$FF_StartTasks	(NFF) 正在執行啟動任務...
+$FF_ResetRequired	重置任務和解散隨從是必需的...
+$FF_AddBasesSlots	調整據點
+$FF_EndTasks	(NFF) 啟動任務完成。
+$FF_StartRefreshWpn	正在重新整理武器...
+$FF_EndRefreshWpn	武器重新整理完成。
+$FF_StartHorses	應用馬匹變更...
+$FF_ConvertedOutfits	裝備系統準備完畢
+$FF_EndHorses	變更完畢。
+$FF_NoSpell	沒有裝備法術。
+$FF_StartRelax	隨從正在放鬆
+$FF_EndRelax	隨從不再放鬆
+$FF_FrameworkReady	隨從框架就緒。
+$FF_WarnSellMagic	隨從無法出售附魔物品。
+$FF_WarnOutfitItem	你不能把這個用在裝備上。
+$FF_ClearedAlias	找到別名。清除...
+$FF_ResetDefaults	清除派系和重置預設值...
+$FF_ReturnSale	將未售出的物品返還給玩家...
+$FF_FollowersAttacking	隨從正在攻擊
+$FF_FollowersRetreating	隨從正在撤退
+$FF_FollowersRetreatingCancel	隨從停止撤退
+$FF_FollowersNoTarget	所有隨從攻擊：無目標
+$FF_FollowersRetreat	撤退/安撫 所有隨從
+$FF_FollowersRetreatCancel	停止撤退 所有隨從
+$FF_FolBaseRemove	隨從被移出據點
+$FF_FolAssignBase	隨從被分配到據點
+$FF_FolBaseRemSel	從據點移除
+$FF_OutfitMax	已達使用裝備數量上限。
+$FF_OutfitMovedPlayer	裝備物品被轉移到你的物品欄中
+$FF_OutfitMovedPChest	裝備物品被移到了玩家的箱子
+$FF_SatchelMoved	背包物品被轉移到你的物品欄中
+$FF_ExtraMovedPChest	物品被移到玩家的箱子
+$FF_SlotGameFill	遊戲欄位現在已被佔用
+$FF_SlotGameClear	遊戲欄位現在已被清除
+$FF_ExitMCMMsg	請退出MCM選單以完成。
+$FF_ResetMainStart	開始框架重置。請稍等...
+$FF_ResetRemove	...隨從已移除。
+$FF_ResetDFQuest	...隨從任務重新開始。
+$FF_ResetMainEnd	框架重置完成。
+$FF_ResetMainEnd2	推薦：儲存然後載入你儲存的遊戲。
+$FF_RestartQuest	重新開始隨從任務...
+$FF_HomeSet	據點設定
+$FF_WorkSet	工作地點設定
+$FF_RelaxSet	放鬆地點設定
+$FF_RangeSetClose	隨從設定為近距離
+$FF_RangeSetCloseAll	所有隨從設定為近距離
+$FF_RangeSetMed	隨從設定為中距離
+$FF_RangeSetMedAll	所有隨從設定為中距離
+$FF_RangeSetFar	隨從設定為遠距離
+$FF_RangeSetFarAll	隨從設定為遠距離
+$FF_RangeSetCloseCbt	隨從設定為近距離戰鬥
+$FF_RangeSetCloseAllCbt	所有隨從設定為近距離戰鬥
+$FF_RangeSetMedCbt	隨從設定為中距離戰鬥
+$FF_RangeSetMedAllCbt	所有隨從設定為中距離戰鬥
+$FF_RangeSetFarCbt	隨從設定為遠距離戰鬥
+$FF_RangeSetFarAllCbt	隨從設定為遠距離戰鬥
+$FF_RoleSet	隨從角色設定
+$FF_CombatStyleSet	隨從戰鬥風格設定
+$FF_CombatStyleWarn	無法設定非獨特角色的戰鬥風格
+$FF_Exit	[離開]
+$FF_All	- 全部 -
+$FF_Refresh	（重新整理）
+$FF_TakeTorches	拿取所有火把
+$FF_GiveTorches	返還所有火把
+$FF_RefreshGear	重新整理全部冒險裝備
+$FF_ToggleWeaponAll	僅在戰鬥中拿武器 (全部)
+$FF_ToggleShieldAll	僅在戰鬥中拿盾牌 (全部)
+$FF_AllWaitFollow	等待/跟隨/在我身後 所有隨從 >
+$FF_InventoryLoot	戰利品（搜刮）/物品欄 >
+$FF_SummonAll	召喚 >
+$FF_SandboxToggle	沙盒切換
+$FF_HistoryFav	歷史/收藏/欄位 >
+$FF_RangeAll	設定範圍 所有隨從 >
+$FF_TraitsAll	設定特性 所有隨從 >
+$FF_DmgMultAll	動態傷害倍數 >
+$FF_DismissAll	解散 所有隨從
+$FF_AllFollowRange	跟隨範圍 所有隨從 >
+$FF_AllCombatRange	戰鬥範圍 所有隨從 >
+$FF_ShowHistory	顯示歷史
+$FF_SubSingle	單一命令 >
+$FF_DoFavor	幫助
+$FF_Recruit	招募
+$FF_WaitFollow	等待/跟隨 >
+$FF_Extras	其他選項 >
+$FF_IsWaiting	正在等你
+$FF_IsFollowing	正在跟隨你
+$FF_Range	設定範圍 >
+$FF_FollowClose	跟隨範圍：近 >
+$FF_FollowMed	跟隨範圍：中 >
+$FF_FollowFar	跟隨範圍：遠 >
+$FF_CombatClose	戰鬥範圍：近 >
+$FF_CombatMed	戰鬥範圍：中 >
+$FF_CombatFar	戰鬥範圍：遠 >
+$FF_EnforceRangeOn	強制戰鬥距離（開啟）
+$FF_EnforceRangeOff	強制戰鬥距離（關閉）
+$FF_Traits	設定特性 >
+$FF_SetCraft	製作與互動 >
+$FF_SetHomeBase	設定據點 >
+$FF_SendHome	安排回家（傳送）
+$FF_CraftTorchOn	製作火把（開啟）
+$FF_CraftTorchOff	製作火把（關閉）
+$FF_CraftArrowsOn	製作箭矢（開啟）
+$FF_CraftBoltsOn	製作弩矢（開啟）
+$FF_CraftArrowsOff	製作箭矢（關閉）
+$FF_CraftPotionsOn	製作藥水（開啟）
+$FF_CraftPotionsOff	製作藥水（關閉）
+$FF_SharpWeaponsOn	鋒利武器（開啟）
+$FF_SharpWeaponsOff	鋒利武器（關閉）
+$FF_DrinkOn	在酒館喝酒（開啟）
+$FF_DrinkOff	在酒館喝酒（關閉）
+$FF_LoadSaveTweaks	載入／儲存設定 >
+$FF_SaveFol	儲存隨從設定
+$FF_LoadFol	載入隨從設定
+$FF_LoadSaveTitle	載入／儲存設定
+$FF_Equip	設定裝備/物品欄 >
+$FF_Teach	教授法術 >
+$FF_TeachInvalid	教授法術（無）
+$FF_Dismiss	解散
+$FF_Push	推（修復小問題）
+$FF_SubAll	命令 所有隨從 >
+$FF_CommandAll	命令所有隨從
+$FF_Followers	隨從
+$FF_WaitMenu	等待/跟隨/在我身後
+$FF_RangeTitle	範圍
+$FF_FollowRange	跟隨範圍
+$FF_CombatRange	戰鬥範圍
+$FF_TeachTitle	教授法術
+$FF_EquipTitle	裝備/物品欄
+$FF_CraftTitle	製作/互動
+$FF_TraitsTitle	特性
+$FF_DmgMultTitle	動態傷害倍數
+$FF_HeadwearTitle	頭飾
+$FF_SkillTitle	技能（排序）
+$FF_SkillMenu	技能 >
+$FF_SpellTitle	法術
+$FF_SpellMenu	法術 >
+$FF_BuffSharpen	磨利武器（增益）
+$FF_BuffCourage	勇氣（增益）
+$FF_BuffInspired	激勵（增益）
+$FF_InvTitle	物品欄
+$FF_InvMenu	物品欄 >
+$FF_HistoryFavTitle	歷史/收藏
+$FF_ExtrasTitle	額外
+$FF_SummonTitle	召喚隨從
+$FF_FavoritesTitle{}	收藏 ({})
+$FF_Favorites	顯示收藏 >
+$FF_HistoryTitle{}	歷史({})
+$FF_LootTitle	戰利品（搜刮）/物品欄
+$FF_RenCategory	重新命名分類
+$FF_RemCategory	移除分類
+$FF_FavDefault	預設收藏名單
+$FF_FavEmpty	空
+$FF_FavoritesMax	收藏名單已達 25 人上限
+$FF_FavoritesAdded	已將隨從加入收藏
+$FF_FavoritesRemoved	已移除收藏的隨從
+$FF_FavoriteRemove	從收藏中移除隨從
+$FF_FavoriteAdd	加入收藏 >
+$FF_FavoriteFull	（收藏名單已滿）
+$FF_FavoritesAdjust	已從收藏中移除一名或多名無效隨從
+$FF_FavPortM	將收藏的隨從召喚到身邊
+$FF_FavPort	已召喚收藏的隨從
+$FF_FavWaitingM	命令所有收藏隨從等待
+$FF_FavWaiting	收藏的隨從正在等待
+$FF_FavFollowM	命令所有收藏隨從跟隨
+$FF_FavRecruitAM	招募所有收藏隨從（加入）
+$FF_FavRecruitSM	招募所有收藏隨從（替換）
+$FF_FavRecruitA	已招募收藏的隨從
+$FF_FavRecruitS	已換入收藏的隨從
+$FF_FavFollow	收藏的隨從正在跟隨
+$FF_AllWait	所有隨從等待
+$FF_AllFollowM	所有隨從跟隨
+$FF_AllBehind	所有隨從在我身後
+$FF_AllSnap	讓所有隨從清醒過來
+$FF_Wait	等待
+$FF_Follow	跟隨
+$FF_Behind	在我身後
+$FF_AllRangeClose	所有隨從 近距離
+$FF_AllRangeMedium	所有隨從 中距離
+$FF_AllRangeFar	所有隨從 遠距離
+$FF_RangeClose	近
+$FF_RangeMedium	中
+$FF_RangeFar	遠
+$FF_TeachNoneR	教授（右手）：無
+$FF_TeachNoneL	教授（左手）：無
+$FF_Trade	交易
+$FF_OpenStorage	開啟隨從儲存空間
+$FF_SellItems	出售物品
+$FF_SetGear	設定裝備
+$FF_HeadwearOff	儲存頭飾：關閉 >
+$FF_HeadwearNone	儲存頭飾：無 >
+$FF_HeadSetNone	設定為：無
+$FF_HeadSetCurrent	目前設定：無
+$FF_HeadCombatOn	只在戰鬥中戴頭飾（開啟）
+$FF_HeadCombatOff	只在戰鬥中戴頭飾（關閉）
+$FF_NoHelmOn	不戴頭飾（開啟）
+$FF_NoHelmOff	不戴頭飾（關閉）
+$FF_ShieldOff	儲存的盾牌：關閉>
+$FF_ShieldNone	儲存的盾牌：無>
+$FF_ShieldCombatOn	只在戰鬥中使用盾牌（開啟）
+$FF_ShieldCombatOff	只在戰鬥中使用盾牌（關閉）
+$FF_ShieldTitle	盾牌
+$FF_ShieldApplied	盾牌設定已應用
+$FF_Undress	脫衣
+$FF_Redress	重新換裝
+$FF_RoleStandard	戰鬥角色：標準>
+$FF_RoleHealer	戰鬥角色：治療師>
+$FF_RoleTank	戰鬥角色：坦克>
+$FF_Role_0	標準
+$FF_Role_1	治療師
+$FF_Role_2	坦克
+$FF_Unaggressive	攻擊性：不主動攻擊 >
+$FF_Aggressive	攻擊性：主動攻擊 >
+$FF_Aggression1	不主動攻擊
+$FF_Aggression2	主動攻擊
+$FF_AggressionAll	所有隨從的攻擊性 >
+$FF_AggressionSet	隨從攻擊性已設定
+$FF_AggressionSetAll	所有隨從的攻擊性已設定
+$FF_AssistNobody	協助：不協助任何人 >
+$FF_AssistAllies	協助：盟友 >
+$FF_AssistFriends	協助：朋友與盟友 >
+$FF_Assist1	不協助任何人
+$FF_Assist2	協助盟友
+$FF_Assist3	協助朋友與盟友
+$FF_AssistAll	所有隨從的協助方式 >
+$FF_AssistSet	隨從協助方式已設定
+$FF_AssistSetAll	所有隨從的協助方式已設定
+$FF_ConCoward	信心：膽小 >
+$FF_ConCautious	信心：謹慎 >
+$FF_ConAverage	信心：普通 >
+$FF_ConBrave	信心：勇敢 >
+$FF_ConFoolhardy	信心：魯莽 >
+$FF_ConAll	所有隨從的信心 >
+$FF_ConSet	隨從信心已設定
+$FF_ConSetAll	所有隨從的信心已設定
+$FF_Confidence1	膽小
+$FF_Confidence2	謹慎
+$FF_Confidence3	普通
+$FF_Confidence4	勇敢
+$FF_Confidence5	魯莽
+$FF_MoralAny	道德：任何罪行 >
+$FF_MoralEnemy	道德：敵人與財產犯罪 >
+$FF_MoralProperty	道德：僅財產犯罪 >
+$FF_MoralNo	道德：拒絕犯罪 >
+$FF_MoralSet	隨從道德設定
+$FF_MoralSetAll	所有隨從道德設定
+$FF_Morality1	任何犯罪
+$FF_Morality2	敵人與財產犯罪
+$FF_Morality3	僅財產犯罪
+$FF_Morality4	拒絕犯罪
+$FF_MoralityAll	所有隨從的道德觀 >
+$FF_CStyle0	戰鬥風格：預設 >
+$FF_CStyle1	戰鬥風格：僱傭兵 >
+$FF_CStyle2	戰鬥風格：守衛者 >
+$FF_CStyle3	戰鬥風格：狂戰士 >
+$FF_CStyle4	戰鬥風格：射手 >
+$FF_CStyle5	戰鬥風格：遊俠 >
+$FF_CStyle6	戰鬥風格：魔劍士 >
+$FF_CStyle7	戰鬥風格：巫師 >
+$FF_CStyle8	戰鬥風格：魔法師 >
+$FF_CStyle9	戰鬥風格：祭司 >
+$FF_CStyle10	戰鬥風格：平衡 >
+$FF_CStyle11	戰鬥風格：奧術射手 >
+$FF_CStyle12	戰鬥風格：戰鬥祭祀 >
+$FF_CombatStyle1	僱傭兵
+$FF_CombatStyle2	守衛者
+$FF_CombatStyle3	狂戰士
+$FF_CombatStyle4	射手
+$FF_CombatStyle5	遊俠
+$FF_CombatStyle6	魔劍士
+$FF_CombatStyle7	巫師
+$FF_CombatStyle8	法師
+$FF_CombatStyle9	祭司
+$FF_CombatStyle10	平衡
+$FF_CombatStyle11	奧術弓箭手
+$FF_CombatStyle12	戰爭司祭
+$FF_LootingTypeOff	戰利品（搜刮）: 關閉 >
+$FF_LootingType0	戰利品（搜刮）: 金幣 >
+$FF_LootingType1	戰利品（搜刮）: 彈藥 >
+$FF_LootingType2	戰利品（搜刮）: 食物 >
+$FF_LootingType3	戰利品（搜刮）: 藥水 >
+$FF_LootingType4	戰利品（搜刮）：鍊金材料 >
+$FF_LootingType5	戰利品（搜刮）: 雜項 >
+$FF_LootingType6	戰利品（搜刮）: 武器/彈藥/護甲 >
+$FF_LootingType7	戰利品（搜刮）: 護甲 >
+$FF_LootingType8	戰利品（搜刮）: 武器 >
+$FF_LootingType9	戰利品（搜刮）: 書籍 >
+$FF_LootingType10	戰利品（搜刮）: 植物 >
+$FF_LootingTitle	戰利品（搜刮）
+$FF_LootingOffOn	無 (啟用)
+$FF_LootingOn0	金幣 (啟用)
+$FF_LootingOn1	彈藥 (啟用)
+$FF_LootingOn2	食物 (啟用)
+$FF_LootingOn3	藥水 (啟用)
+$FF_LootingOn4	鍊金材料（啟用）
+$FF_LootingOn5	雜項 (啟用)
+$FF_LootingOn6	武器/彈藥/護甲 (啟用)
+$FF_LootingOn7	護甲 (啟用)
+$FF_LootingOn8	武器 (啟用)
+$FF_LootingOn9	書籍(啟用)
+$FF_LootingOn10	植物 (啟用)
+$FF_LootingOff	無
+$FF_Looting0	金幣
+$FF_Looting1	彈藥
+$FF_Looting2	食物
+$FF_Looting3	藥水
+$FF_Looting4	鍊金材料
+$FF_Looting5	雜項
+$FF_Looting6	武器/彈藥/護甲
+$FF_Looting7	護甲
+$FF_Looting8	武器
+$FF_Looting9	書籍
+$FF_Looting10	植物
+$FF_SendLootType0	傳送戰利品（搜刮）: 物品欄 >
+$FF_SendLootType1	傳送戰利品（搜刮）: 隨從儲存空間 >
+$FF_SendLootType1alt	傳送戰利品（搜刮）: 服裝背包 >
+$FF_SendLootType2	傳送戰利品（搜刮）：玩家儲物箱 >
+$FF_SendLootTypeOff	傳送戰利品（搜刮）: 關閉 >
+$FF_SendLoot_0	正常物品欄
+$FF_SendLootOn_0	正常物品欄 (啟用)
+$FF_SendLoot_1	隨從儲存空間
+$FF_SendLoot_1alt	服裝背包
+$FF_SendLootOn_1	隨從儲存空間(啟用)
+$FF_SendLootOn_1alt	服裝背包(啟用)
+$FF_SendLoot_2	玩家儲物箱
+$FF_SendLootOn_2	玩家儲物箱（啟用）
+$FF_On	開啟
+$FF_OnSilent	開啟，靜默
+$FF_Off	關閉
+$FF_Cancel	- 取消 -
+$FF_Back	< 後退
+$FF_BuildHistory	正在讀取歷史...
+$FF_ClickReset	點擊重置
+$FF_ClickView	點擊顯示
+$FF_Visit	訪問
+$FF_Tamriel	泰姆瑞爾大陸
+$FF_Teleporting	傳送中...
+$FF_CallFollower	召喚...
+$FF_TorchesTaken	隨從火把拿取
+$FF_TorchesGiven	隨從火把給予
+$FF_OpenSell	正在開啟銷售視窗...
+$FF_Undressing	正在為隨從脫衣...
+$FF_Redressing	隨從正在重新換裝...
+$FF_PortOut	傳送結束
+$FF_PortIn	召喚結束
+$FF_CallToYou	召喚到你身邊
+$FF_CallAllToYou	召喚所有隨從到你身邊
+$FF_TravelTo	快速旅行到
+$FF_None	無
+$FF_CanMarry	這個NPC現在可以結婚了。
+$FF_CanElope	你可以和這個NPC私奔。
+$FF_IsMarry	這個NPC已具備結婚資格。
+$FF_CantMarry	這個NPC沒有結婚資格。
+$FF_CanFollower	這個NPC現在可以成為隨從了。
+$FF_IsFollower	這個NPC已經可以成為一個隨從了。
+$FF_CantFollower	這個NPC不能成為隨從。
+$FF_HeadwearStored	頭飾儲存
+$FF_HeadwearCleared	頭飾清除
+$FF_HeadwearApplied	頭飾設定應用
+$FF_AreMarried	恭喜你結婚！
+$FF_AreMarriedAdd	恭喜你最近的婚姻！
+$FF_AreDivorced	你現在離婚了。
+$FF_AreDivorcedAdd	你現在少了 1 位配偶。
+$FF_MountStyle1	不支援
+$FF_MountStyle2	生成的馬匹
+$FF_MountStyle3	僅騎乘中支援
+$FF_HorseFX1	無
+$FF_HorseFX2	火焰
+$FF_HorseFX3	寒霜
+$FF_HorseFX4	鬼魂
+$FF_HorseFX5	暗影
+$FF_LightFX0	原版/模組
+$FF_LightFX1	冷色調
+$FF_LightFX2	暖色調
+$FF_LightFX3	中性色調
+$FF_LightFX4	請勿施放
+$FF_Skill1	鍊金術
+$FF_Skill2	變換系
+$FF_Skill3	格擋
+$FF_Skill4	召喚系
+$FF_Skill5	毀滅系
+$FF_Skill6	附魔
+$FF_Skill7	重甲
+$FF_Skill8	幻術系
+$FF_Skill9	輕甲
+$FF_Skill10	開鎖
+$FF_Skill11	箭術
+$FF_Skill12	單手武器
+$FF_Skill13	扒竊
+$FF_Skill14	恢復系
+$FF_Skill15	鍛造
+$FF_Skill16	潛行
+$FF_Skill17	口才
+$FF_Skill18	雙手武器
+$FF_PerkAlc	鍊金術技能提升
+$FF_PerkSkill	通用/一般技能提升
+$FF_Resist1	傷害
+$FF_Resist2	疾病
+$FF_Resist3	毒藥
+$FF_Resist4	火焰
+$FF_Resist5	電擊
+$FF_Resist6	寒霜
+$FF_Resist7	法術
+$FF_UseDefault	預設
+$FF_BoxRadius1	1024.0 單位
+$FF_BoxRadius2	2048.0 單位
+$FF_BoxRadius3	4096.0 單位
+$FF_NoClassSupport	非獨特的
+$FF_Class0	- 取消 -
+$FF_Class1	刺客
+$FF_Class2	野蠻人
+$FF_Class3	召喚法師
+$FF_Class4	毀滅法師
+$FF_Class5	元素法師
+$FF_Class6	死靈法師
+$FF_Class7	僧侶
+$FF_Class8	秘術師
+$FF_Class9	夜刃
+$FF_Class10	夜鶯
+$FF_Class11	遊俠
+$FF_Class12	流氓
+$FF_Class13	斥候
+$FF_Class14	術士
+$FF_Class15	魔劍士
+$FF_Class16	盜賊
+$FF_Class17	單手戰士（1H）
+$FF_Class18	雙手戰士（2H）
+$FF_Class19	巫刃
+$FF_HorseG	使用全域
+$FF_Horse0	棕色
+$FF_Horse1	黑色
+$FF_Horse2	黑白花色
+$FF_Horse3	灰色
+$FF_Horse4	金黃色
+$FF_Horse5	暗影
+$FF_Horse6	石塚
+$FF_HorseRnd	隨機挑選
+$FF_ModName	NFF
+$FF_Title	Nether's 隨從框架
+$FF_Version	隨從框架版本
+$FF_Page1	啟用
+$FF_Page2	遊戲玩法
+$FF_Page3	互動
+$FF_Page4	系統
+$FF_Page5	隨從除錯
+$FF_Page6	隨從資料
+$FF_Page7	隨從技能
+$FF_Page8	隨從能力
+$FF_Page9	隨從服裝與裝備
+$FF_Page10	據點
+$FF_Page11	欄位與歷史
+$FF_TitlePage1	隨從框架 - 啟用
+$FF_TitlePage2	隨從框架 - 遊戲性
+$FF_TitlePage3	隨從框架 - 任務與對話
+$FF_TitlePage4	隨從框架 - 系統
+$FF_TitlePage5	隨從框架 - 隨從除錯
+$FF_TitlePage6	隨從框架 - 隨從資料
+$FF_TitlePage7	隨從框架 - 隨從技能
+$FF_TitlePage8	隨從框架 - 隨從能力
+$FF_TitlePage9	隨從框架 - 隨從服裝與裝備
+$FF_TitlePage10	隨從框架 - 據點
+$FF_TitlePage11	隨從框架 - 欄位與歷史
+$FF_SayAnimalRecruit	嘿，小狗，想來嗎？
+$FF_SayTrade	我要和你交換物品。
+$FF_SayBehind	你可以到我身後嗎？
+$FF_SayBladesRecruit	我想招募你進刀鋒衛士。
+$FF_SayBladesDeny	我不想招募你進刀鋒衛士。
+$FF_SayCheckCount	我想我的隊伍還有你的位置。
+$FF_SayDivorceInitial	我想我們應該結束這場婚姻。
+$FF_SayDivorceJoke	我只是開玩笑。
+$FF_SayDivorceFinal	我想我們不應該在一起。
+$FF_SayExpel	我不再需要你的幫助了(驅逐)。
+$FF_SayExport	[從框架中移除（匯出）]
+$FF_SayStewardRemove	我不需要你做我的管家了。
+$FF_SayDismissFamily	我想你是時候回家了。
+$FF_SayDismissGuard	我不需要你的侍奉了。
+$FF_SayDoSomething	我需要你做些事。
+$FF_SayFollow	跟著我。
+$FF_SayShowYou	對，我來告訴你。
+$FF_SayNeverMind	不，沒事。
+$FF_SayRecruitNo	想了想，別管了。
+$FF_SayRecruitFamily	想和我一起去冒險嗎？
+$FF_SayRecruitAgain	介意再和我一起嗎？
+$FF_SayRecruitGuard	我想僱你和我一起。
+$FF_SayWait	在這裡等著。
+$FF_SayImport	[加入框架（匯入）]
+$FF_SayDivorceSorry	我很抱歉事情變成這樣。
+$FF_SayPayExplain	關於你的工資...
+$FF_SayPayBroke	我沒有多餘的金幣給你。
+$FF_SayPayGold	這是我欠你的錢。
+$FF_SayPayDeny	我只是現在沒有這麼多錢。
+$FF_SaySellItems	我想要你幫我賣點東西。
+$FF_SaySubmenu	我要佔用你一點時間。(NFF)
+$FF_SaySubreturn	算了。
+$FF_SayShake	嘿！振作起來！（修復小問題）
+$FF_SayElope	我想我們應該永遠在一起。（私奔）
+$FF_SayElopeYes	是的，永遠在一起。
+$FF_SayElopeNo	想了想， 不！
+$FF_SayTeach	我想教你個新法術。
+$FF_LootingChooseOff	不要搜刮任何東西。
+$FF_LootingChoose0	留意金幣。
+$FF_LootingChoose1	留意彈藥。
+$FF_LootingChoose2	留意食物。
+$FF_LootingChoose3	留意藥水。
+$FF_LootingChoose4	留意材料。
+$FF_LootingChoose5	留意各種雜項。
+$FF_LootingChoose6	留意武器/彈藥/盔甲。
+$FF_LootingChoose7	留意盔甲。
+$FF_LootingChoose8	留意武器。
+$FF_LootingChoose9	留意書籍。
+$FF_LootingChoose10	留意植物。
+$FF_LootingChooseForget	嗯，沒關係。
+$FF_LootingChangeOff	我希望你和我在一起的時候能搜刮一些東西。
+$FF_LootingChange0	我希望你能搜刮一些不同的東西(目前：金幣)。
+$FF_LootingChange1	我希望你能搜刮一些不同的東西(目前：彈藥)。
+$FF_LootingChange2	我希望你能搜刮一些不同的東西(目前：食物)。
+$FF_LootingChange3	我希望你能搜刮一些不同的東西(目前：藥水)。
+$FF_LootingChange4	我希望你能搜刮一些不同的東西(目前：材料)。
+$FF_LootingChange5	我希望你能搜刮一些不同的東西(目前：雜項)。
+$FF_LootingChange6	我希望你能搜刮一些不同的東西(目前：武器/彈藥/盔甲)。
+$FF_LootingChange7	我希望你能搜刮一些不同的東西(目前：盔甲)。
+$FF_LootingChange8	我希望你能搜刮一些不同的東西(目前：武器)。
+$FF_LootingChange9	我希望你能搜刮一些不同的東西(目前：書籍)。
+$FF_LootingChange10	我希望你能搜刮一些不同的東西(目前：植物)。
+$FF_SendLootChoose0	我想要你把戰利品儲存在你的物品欄。
+$FF_SendLootChoose1	我想要你把戰利品儲存在隨從儲存空間。
+$FF_SendLootChooseAlt1	我想要你把戰利品儲存在服裝背包。
+$FF_SendLootChoose2	我想要你把戰利品儲存在玩家保險箱。
+$FF_SendLootChooseForget	我改變主意了。
+$FF_SendLootChange0	我希望你在另一個地方儲存戰利品(目前：物品欄)
+$FF_SendLootChange1	我希望你在另一個地方儲存戰利品(目前：隨從儲存空間)
+$FF_SendLootChangeAlt1	我希望你在另一個地方儲存戰利品(目前：服裝背包)
+$FF_SendLootChange2	我希望你在另一個地方儲存戰利品(目前：玩家保險箱)
+$FF_OutfitChangeMenu	我想給你換一套服裝。
+$FF_OutfitCreateMenu	我想給你設計一套服裝。
+$FF_OutfitCreateBase	我想讓你穿一套標準服裝。
+$FF_OutfitChangeBase	我想給你換一套標準服裝。
+$FF_OutfitCreateTown	我想讓你穿城裡的服裝。
+$FF_OutfitChangeTown	我想給你換一套城裡的服裝。
+$FF_OutfitCreateHome	我想讓你穿居家服裝。
+$FF_OutfitChangeHome	我想給你換套居家服裝。
+$FF_OutfitRemoveMenu	我想移除一套服裝。
+$FF_OutfitRemoveBase	我想把你的標準服裝移除。
+$FF_OutfitRemoveTown	我想把你的城鎮服裝移除。
+$FF_OutfitRemoveHome	我想把你的居家服裝移除。
+$FF_OutfitSatchel	開啟你的服裝背包。
+$FF_RoleChange0	我想改變你的戰鬥角色(目前：標準)
+$FF_RoleChange1	我想改變你的戰鬥角色(目前：治療師)
+$FF_RoleChange2	我想改變你的戰鬥角色(目前：坦克)
+$FF_RoleChoose0	我希望你扮演一個平衡的、標準的角色。
+$FF_RoleChoose1	我希望你在戰鬥中治療我和我的同伴。
+$FF_RoleChoose2	我希望你在戰鬥中嘲諷敵人。
+$FF_RoleChooseForget	再考慮一下，只要保持你目前的角色就行了。
+$FF_Sandbox	沙盒
+$FF_Sandbox_0	關閉
+$FF_Sandbox_1	允許
+$FF_Sandbox_2	允許／城鎮內自動沙盒
+$FF_Sandbox_3	允許／家中自動沙盒
+$FF_SandboxDS	玩家短暫閒置時，允許隨從進行沙盒活動。自動沙盒會讓隨從在城鎮室內、玩家住處與自訂地點持續進行沙盒活動。此功能以 AI 套件實作。\n（預設：開啟）
+$FF_AllowSandbox	沙盒風格
+$FF_RelaxRadius	放鬆半徑
+$FF_RelaxRadiusDS	隨從沙盒活動的半徑。半徑會隨著玩家移動而逐漸移動。\n（預設： 2048單位)
+$FF_RelaxTime	放鬆閒置時間
+$FF_RelaxTimeDS	在隨從進入沙盒模式之前，玩家空閒的時間。\n（預設：5秒）
+$FF_RelaxRamp	放鬆加速
+$FF_RelaxRampDS	當玩家移動（衝刺/跑步）時，隨從停止沙盒行為必需的秒數。\n（預設：3秒）
+$FF_RelaxAvoid	放鬆迴避
+$FF_RelaxAvoidDS	沙盒時隨從自由活動和玩家間隔的距離。如果隨從在你靠近他們時太頻繁地遠離，請減少這個值。\n（預設：45單位）
+$FF_ToggleFurn	忽視特殊傢俱
+$FF_ToggleFurnDS	隨從會忽略那些可以與之互動的特殊傢俱，比如熔爐、伐木堆等。它們仍然可以使用空閒標記。\n（預設：關閉）
+$FF_ToggleBoxdlg	對話時停止
+$FF_ToggleBoxdlgDS	如果啟用，當玩家在對話時，隨從將停止沙盒。這是為了模擬隨從對正在發生的事情表現出關注。\n（預設：關閉）
+$FF_ToggleTown	只在城鎮啟用沙盒
+$FF_ToggleTownDS	隨從僅在城市、城鎮、住宅或玩家定義的自訂位置時使用沙盒。\n（預設：關閉）
+$FF_ToggleDungeon	只在非地下城啟用沙盒
+$FF_ToggleDungeonDS	隨從僅在沒有標記為地下城的位置進行沙盒(透過關鍵字)。\n(預設值：關閉)
+$FF_AutoboxExt	戶外自動沙盒
+$FF_AutoboxExtDS	僅當「自動沙盒」在上級選單「沙盒」下拉式清單中處於活動狀態時才有效，這允許隨從在城市、城鎮和玩家住宅外部自動沙盒，而無需將其專門新增到自訂位置列表中。\n（預設：關閉）
+$FF_MultiBox	多層沙盒
+$FF_MultiBoxDS	如果啟用，則允許隨從（和其他NPC）在多層結構的樓層之間進行沙盒操作。\n（預設：關閉）
+$FF_CustomBoxDS	將此區域設定為一個自訂位置，當隨從僅在城鎮中使用沙盒或在城鎮內部使用自動沙盒時，將沙盒設定在該位置。\n（預設：關閉）
+$FF_KeyTogBox	切換沙盒熱鍵
+$FF_KeyTogBoxDS	設定用於開啟和關閉沙盒的鍵。這可以與命令隨從功能分開使用。
+$FF_Stealth	潛行
+$FF_ToggleStealth	提高潛行AI
+$FF_ToggleStealthDS	讓隨從在你潛行的時候表現得更好。他們不會在你潛行時攻擊，除非他們或你在戰鬥中被擊中。它基於AI 套件和一些腳本。\n（預設：開啟）
+$FF_ToggleEnhSneak	增強潛行
+$FF_ToggleEnhSneakDS	跟隨玩家潛行的隨從會提升潛行能力，大幅增加他們的潛行能力，他們幾乎無法被探測到。需要「提高潛行AI」才能啟用。\n（預設：開啟)
+$FF_Extinguish	隱形時熄滅火把
+$FF_ExtinguishDS	當玩家潛行時，隨從會熄滅他們的火把。這實際上是從他們的物品欄中移除火把，並在玩家不再隱形或進入戰鬥時恢復它們。僅適用於原版遊戲火把。需要「提高潛行AI」才能啟用。如果你正在使用命令所有隨從的手動版本，建議關閉。\n（預設：關閉）
+$FF_AutoLootHeader	自動搜刮
+$FF_LootMaxTime	最大搜刮時間
+$FF_LootMaxTimeDS	隨從可以自動搜刮的最大時間，以秒為單位。潛行，戰鬥和最大玩家距離仍然會停止隨從搜刮行動。
+$FF_LootDelayCombat	戰鬥後搜刮延遲
+$FF_LootDelayCombatDS	這是隨從在戰鬥後自動搜刮的延遲時間(以秒為單位)。
+$FF_LootDelay	搜刮開始/停止延遲
+$FF_LootDelayDS	這是當你透過命令要求你的隨從去搜刮時的延遲時間，以秒為單位(非戰鬥後自動搜刮)。
+$FF_LootPlayerDistance	最大玩家距離
+$FF_LootPlayerDistanceDS	這是自動搜刮時隨從與玩家的最大距離。在室內，將會自動減少設定距離的65%。若超過此距離，自動搜刮將停止。
+$FF_LootSpeed	搜刮速度
+$FF_LootSpeedDS	搜刮中的隨從移動速度；提高速度也能縮短搜刮所需時間。
+$FF_LootPostCombat	戰鬥後自動搜刮
+$FF_LootPostCombatDS	如果啟用，隨從將在戰鬥結束時進行自動搜刮。如果隨從處於流血狀態（倒地），則自動搜刮將延遲5秒鐘，以使隨從能夠恢復。然後將再次進行檢查，如果隨從仍然處於倒地狀態，自動搜刮將被取消。這修復了一個隨從可以互相搜刮的錯誤。
+$FF_LootDropJunk	丟棄低價雜物
+$FF_LootDropJunkDS	啟用後，自動搜刮雜項物品的隨從會把價值低於下一項設定的雜物丟在地上。搜尋時無法預先排除這些物品；丟下的物品會標記為只有玩家能拾取。
+$FF_LootJunkVal	雜物最低價值
+$FF_LootJunkValDS	雜項物品至少必須達到此金幣價值，搜刮中的隨從才不會把它丟棄。
+$FF_KeyActAutoLoot	開始/停止 自動搜刮熱鍵
+$FF_KeyActAutoLootDS	允許開始自動搜刮，此時隨從會立即搜刮目前區域，或停止目前正在搜刮的隨從。如果隨從處於流血狀態（倒地），並且如果他們在5秒鐘內未恢復活動，則自動搜刮將被取消。
+$FF_KeyTogLootCbt	切換 在戰鬥中自動搜刮熱鍵
+$FF_KeyTogLootCbtDS	允許你在戰鬥後為所有隨從啟用或停用自動搜刮。也可以按需啟用。可以為每個隨從分別設定被搜刮的物品類型。
+$FF_TogAutoLootOn	自動搜刮 啟用
+$FF_TogAutoLootOff	自動搜刮 停用
+$FF_AutoLootStart	開始 自動搜刮
+$FF_AutoLootStop	停止 自動搜刮
+$FF_AutoLootStartMsg	隨從正在搜刮...
+$FF_AutoLootStopMsg	隨從停止搜刮
+$FF_CatchUp	追趕（傳送）
+$FF_ToggleWarp	允許傳送
+$FF_ToggleWarpDS	隨從與玩家的距離達到「追趕距離」時，自動將其傳送到玩家身後。這可能讓隨從進入原本無法抵達的地點。\n（預設：開啟）
+$FF_WarpRange	追趕距離
+$FF_WarpRangeDS	啟用追趕傳送前所需的最小距離。\n（預設：2560單位）
+$FF_WarpStart	追趕時間
+$FF_WarpStartDS	檢查追趕距離之前必須經過的時間。\n（預設：8秒）
+$FF_WarpWait	請求傳送等待的隨從
+$FF_WarpWaitDS	使用命令能力或熱鍵隨時傳送時，也可召喚正在等待的隨從；每名等待中的隨從都會個別顯示「是／否」確認視窗。
+$FF_KeyPort	傳送隨從熱鍵
+$FF_KeyPortDS	設定熱鍵來傳送隨從到你的位置。這可以與命令隨從能力分開使用。它允許隨從進入他們通常不去的地方。
+$FF_Movement	移動
+$FF_MoveSpeed	移動增強
+$FF_MoveSpeedDS	將所有隨從的速度值設定為該值（百分比）。將此值設定為預設值100時，將基本上關閉此功能。當關閉時，個別隨從的速度（如果超過100）將不會切回預設值，直到你載入一個新遊戲。必須退出MCM才能設定此更改。\n(預設：100%)
+$FF_DynamicMove	動態速度調整
+$FF_DynamicMoveDS	如果啟用，隨從移動速度設定為100%，當玩家跑步/衝刺時，隨從移動速度將提升到「移動增強」中設定的值。只有當玩家不在戰鬥中，不在室內區域中，隨從不在沙盒中，且距離超過768單位時才會發生。動態速度通常在使用時生效，但僅在正確的條件下進行更改。必須退出MCM才能設定此更改。\n(預設：關閉）
+$FF_FleeDistance	避免靠近
+$FF_FleeDistanceDS	隨從偵測到玩家並主動讓路的距離。若設定過高，隨從會不斷閃避你。\n（預設：12 單位）
+$FF_ProtectCell	切換儲存格時保護隨從
+$FF_ProtectCellDS	有時，如果你有多個隨從，則遊戲可能會意外地將其放置在其他物件內部或彼此之間。啟用後，進入新地區後2秒鐘內，他/她們不會受到傷害或記錄命中事件。除非你有一些遊戲問題，否則建議使用此功能。
+$FF_Waiting	等待中
+$FF_WaitNoBox	非沙盒等待
+$FF_WaitNoBoxDS	如果勾選，則在命令等待時，隨從將不再沙盒，無論他們在哪個位置。\n（預設：關閉）
+$FF_WaitForever	一直等待
+$FF_WaitForeverDS	如果勾選，隨從將永遠在你指定的地方等待。換言之，他們將不會遵守Skyrim的規定（即在3天后被解僱）。這將不適用於具有自己對話的自訂隨從或不使用普通等待/跟隨命令系統的隨從。\n（預設：關閉）
+$FF_KeyFollowAll	隨從 等待/跟隨熱鍵
+$FF_KeyFollowAllDS	設定熱鍵在所有隨從的跟隨和等待狀態之間切換。查看你要改變的第一個隨從的狀態（跟隨或等待）。
+$FF_Mounts	坐騎
+$FF_MountsInvalid	坐騎（下馬以更改）
+$FF_MountStyle	坐騎支援
+$FF_MountStyleDS	設定隨從的坐騎與騎乘支援方式。「不支援」會讓其他模組完全接管；「生成馬匹」會提供坐騎與騎乘 AI 套件；「僅騎乘支援」只提供騎乘 AI 套件，不由 NFF 生成坐騎。\n（預設：生成馬匹）
+$FF_HorseSkinGlobal	全域馬匹皮膚
+$FF_HorseSkinGlobalDS	為所有重新整理的隨從馬匹設定預設外觀。\n（預設：棕色）
+$FF_KeepHorse	馬匹停在附近
+$FF_KeepHorseDS	下馬後，生成的馬匹現在會停留在周圍。\n（預設：關閉）
+$FF_PlayerHorse	玩家的馬
+$FF_KeyHorse	呼叫玩家的馬熱鍵
+$FF_KeyHorseDS	設定用於呼叫玩家最後騎過的馬的鍵。按「Esc」將清除熱鍵。
+$FF_KeyHorseM	呼叫玩家的馬
+$FF_ToggleHorseRev	在鏡頭外重新整理馬匹
+$FF_ToggleHorseRevDS	如果玩家的馬被移動到玩家身邊，嘗試從鏡頭外生成它。
+$FF_ToggleHorseDis	呼叫 停用/啟用 附近的馬
+$FF_ToggleHorseDisDS	當玩家的馬在附近時使用「呼叫馬」，停用或啟用它。不建議將此選項與沉浸式馬或方便的馬一起安裝使用。
+$FF_SparHead	比武
+$FF_SparAllow	允許比武
+$FF_SparAllowDS	允許在與人交談時透過對話進行比武。
+$FF_SparAny	任何人都可以比武
+$FF_SparAnyDS	幾乎允許遊戲中的任何人進行比武。這裡的目的是允許你測試匯入隨從或其他NPC的力量。請注意，如果你不加思索地這樣做，可能會破壞遊戲，也可能引起騷亂。只對獨特的人起作用，不標記為兒童。區域內的任何盟友都可能幫助他們，導致暴亂。
+$FF_SparVocal	使用播音員
+$FF_SparVocalDS	以無形旁白宣告比武開始。
+$FF_SparBrave	勇敢的戰鬥
+$FF_SparBraveDS	比武時，戰鬥人員很有信心，除非他們感到不敵，否則不會逃跑。
+$FF_SparStrip	衣物破損
+$FF_SparStripDS	純屬娛樂、不講究沉浸感！為比武加入衣物破損橋段，參賽者受擊時可能掉落衣物。搭配占用 5 個以上身體槽位的服裝效果最佳。
+$FF_SparStripFX	撕裂聲
+$FF_SparStripFXDS	發出撕裂的聲音，作為脫去衣服部件時的聲音提示。聲音效果的材料沒有區別。
+$FF_SparTied	比賽打平
+$FF_SparFollow	戰鬥人員正在跟蹤你
+$FF_SparCancel	比賽被取消
+$FF_SaySpar	有興趣做一些比武訓練嗎？
+$FF_SaySpar0	我希望你能成為第一個戰鬥員。
+$FF_SaySparAlt0	我更希望你是第一個戰鬥員。
+$FF_SaySpar1	我想讓你做第二個戰鬥員。
+$FF_SaySpar2	取消比武競賽。
+$FF_Combat	戰鬥
+$FF_ReduceFight	減少內訌
+$FF_ReduceFightDS	試圖在友方造成傷害或使用範圍殺傷法術和能力的情況下消除隨從之間的內訌。不能消除意外或附帶的損傷。\n（預設：開啟）
+$FF_NoPTDamage	對隊友沒有傷害
+$FF_NoPTDamageDS	啟用後，玩家的攻擊、毀滅法術與龍吼（「不卸之力」除外）不會傷害隨從或隊友。這會為玩家套用類似《龍裔》黑暗經書能力的專長。顯示上的副作用：拔出武器、法術或拳頭時，武器傷害可能顯示為零。\n（預設：關閉）
+$FF_ToggleUnForce	不卸之力忽略隨從
+$FF_ToggleUnForceDS	啟用後，不卸之力不會影響到隨從和隊友。如果你想用它把他們推開(比如擋門擋路)則應該將此設定為關。需要安裝並啟用「無團隊魔法傷害」。
+$FF_CombatAware	改進的戰鬥意識
+$FF_CombatAwareDS	隨從在戰鬥中沒有目標時，會嘗試尋找附近敵人：優先攻擊玩家的目標，否則隨機選擇一個目標。不影響信心設為「謹慎」或「膽小」的隨從。\n（預設：開啟）
+$FF_EnsureCombatEnd	確保戰鬥結束
+$FF_EnsureCombatEndDS	修復了一個偶發的遊戲錯誤，當玩家不再處於戰鬥狀態，且沒有敵人，但隨從仍處於戰鬥狀態。\n（預設：關閉)
+$FF_Protection	受保護的隨從
+$FF_ProtectionDS	啟用此設定後，跟隨你的隨從將被標記為受保護（只能被你殺死並將進入倒地流血狀態）。關閉此選項後，隨從可能會被任何人（包括你）殺死，如果他們不重要，則不會進入倒地流血狀態。遊戲中的大多數隨從（和下載的）都是重要的，僱傭的守衛和士兵則不是。更改在關閉MCM選單後生效。\n（預設：開啟）
+$FF_Bleedout	流血瀕死
+$FF_BleedTime	流血瀕死時間
+$FF_BleedTimeDS	NPC在恢復前會停留在倒地狀態的時間，以秒為單位。這會影響所有NPC，而不僅僅是隨從\n（預設：15秒）
+$FF_ToggleBleed	停用流血瀕死恢復
+$FF_ToggleBleedDS	如果啟用，隨從在戰鬥中不再從倒地狀態恢復。你不能用藥劑或治療法術影響它們。\n（預設：關閉）
+$FF_ToggleRevive	戰後恢復
+$FF_ToggleReviveDS	當你們脫離戰鬥時確保隨從從倒地狀態中恢復。幫助消除遊戲使他們流血的情況。\n（預設：關閉）
+$FF_Potion_0	關閉
+$FF_Potion_1	所有人 (虛弱到強大)
+$FF_Potion_2	所有人 (強大到虛弱)
+$FF_Potion_3	輕度癒合
+$FF_Potion_4	治癒術
+$FF_Potion_5	大量癒合
+$FF_Potion_6	超強癒合
+$FF_Potion_7	極強癒合
+$FF_Potion_8	終極癒合
+$FF_AllowPotion	藥劑恢復
+$FF_AllowPotionDS	如果隨從的生命值在50%或以下，或者正在流血，你可以使用治療藥水。使用的藥水類型由選單選擇決定。\n（預設：關閉）
+$FF_Sharing	金幣分享
+$FF_PhatLoot	分享財富
+$FF_PhatLootDS	搜刮容器或屍體並獲得大量金幣時，可能讓你與隨從分享收穫，短時間提高他們的士氣（額外生命值）。收集到的金幣有一半會分給隨從。
+$FF_PhatThreshold	最低分成
+$FF_PhatThresholdDS	為發起分享對話所必須收集的金幣的最小數量。
+$FF_PhatRandom	隨機分享
+$FF_PhatRandomDS	戰利品是隨機共享的，取決程度是你設定的最小值（高於其值）。如果停用，戰利品總是共享的。
+$FF_PhatAsk	要求分享
+$FF_PhatAskDS	如果啟用，與你的隨從分享戰利品時會顯示一個提示。否則，戰利品將在未經你同意的情況下共享。注意可能會導致誤報，因為並不是每個容器都能在每個遊戲環境中被確定。
+$FF_NoGivenGold	不給予金幣
+$FF_NoGivenGoldDS	如果啟用，在任何時候，玩家透過這個模式與隨從分享金幣，但金幣不會出現在他們的物品欄。
+$FF_RegardHeader	敬重系統
+$FF_UseRegard	允許累積敬重
+$FF_UseRegardDS	允許隨從使用敬重系統，逐步與你建立默契。與他們共度時光、並肩作戰及分享獎勵，可提升 9 個敬重等級。
+$FF_RegardGifts	允許贈送禮物（敬重等級 3）
+$FF_RegardGiftsDS	隨從可以隨時給你禮物，等級3（每日檢查，33%的機率）。這通常包括工藝材料（毛皮、基礎金屬、寶石）。僅當他們在侍奉你時發生。\n（預設：開啟）。
+$FF_RegardGiftInterval	贈禮間隔
+$FF_RegardGiftIntervalDS	在隨從給你禮物之前必須經過的天數。
+$FF_RegardCourage	允許勇氣能力（敬重等級 6）
+$FF_RegardCourageDS	當6級時，跟隨你的隨從不會逃離戰場。恐懼法術對隨從的效果只有數秒。\n（預設：開啟）。
+$FF_RegardInspired	允許激勵能力（敬重等級 9）
+$FF_RegardInspiredDS	隨從在9級時受到鼓舞。他們的遠端、武器和毀滅技能提高10，他們的生命和體力將提高25。\n（預設：開啟）。
+$FF_HealRoleAdj	治療師角色
+$FF_HealChance	治療檢定機率
+$FF_HealChanceDS	在戰鬥中，治療師檢查是否需要治療的機率。每隔4秒檢查一次。降低該值將使治療師更偏向戰鬥或執行其他操作。
+$FF_HealThresh	治癒級乘數
+$FF_HealThreshDS	使用 NFF 的治療法術時，可設定乘數來減少或增加治療師隨從提供的治療量。治療法術通常回復 75 +（恢復技能的 20%）+（治療師等級）。設為 100% 時即為此數值；設為 50% 時則為一半。
+$FF_HealPlayerVal	玩家治療百分比
+$FF_HealPlayerValDS	當處於治療師角色時，隨從可能治癒玩家的百分比。將此設定為0將導致治療師不治療玩家。
+$FF_HealSelfVal	自愈百分比
+$FF_HealSelfValDS	隨從擔任治療師時，低於此生命值百分比才可能治療自己。設為 0 可停用自我治療（只會停用腳本施放的治療法術）。
+$FF_HealOtherVal	其他治癒百分比
+$FF_HealOtherValDS	當處於治療師角色時，隨從可能治癒其他隊員的百分比。將此設定為0將導致治療師不治療其他隊友。
+$FF_notifyHeal	玩家治癒通知
+$FF_notifyHealDS	當充當治療師角色的隨從治療玩家時顯示訊息。\n（預設：開啟）
+$FF_notifyHealOther	隨從治療通知
+$FF_notifyHealOtherDS	當扮演治療師角色的隨從治癒另一個隨從時顯示訊息。\n（預設：開啟）
+$FF_TankRoleAdj	坦克角色
+$FF_TauntChance	嘲諷機率檢定
+$FF_TauntChanceDS	坦克在戰鬥中嘲諷的機率。僅當嘲諷冷卻時間完畢時，才以4秒的間隔進行檢查。減小該值將使坦克更偏向戰鬥或執行其他操作。
+$FF_ToggleTauntVis	停用嘲諷視覺
+$FF_ToggleTauntVisDS	當一個隨從扮演坦克的角色時停用嘲諷視覺效果。如果在遊戲中嘲諷使物件四處飛來飛去，你可能希望取消選擇此選項。\n（預設：關閉）
+$FF_notifyTaunt	坦克嘲諷通知
+$FF_notifyTauntDS	當充當坦克角色的隨從使用他們的嘲諷能力時，顯示一條訊息。\n（預設：開啟）
+$FF_Magic	法術
+$FF_Charge_0	關閉
+$FF_Charge_1	使用靈魂石
+$FF_Charge_2	自動充能
+$FF_AllowCharge	武器再充能
+$FF_AllowChargeDS	允許隨從定期向他們使用的武器充能。使用在其物品欄中已經填充的靈魂寶石（非玩家填充）。自動充能根據武器的附魔技能自動給武器充能。\n（預設：關閉）
+$FF_notifyCharge	武器再充能通知
+$FF_notifyChargeDS	當隨從重新充能武器、使用靈魂寶石或不能使用交易給他們的寶石時顯示訊息（必須啟用武器再充能）。\n（預設：開啟）
+$FF_LightStyle	燭光術風格
+$FF_LightStyleDS	如果教過燭光術，這就是隨從將要施放的光的樣式。隨從燭光持續3分鐘。你可以將此設定為「請勿施放」，則預設情況下沒有隨從施放光照。
+$FF_Summoning	召喚生物
+$FF_MinionSupport	召喚生物支援
+$FF_MinionSupportDS	讓框架支援玩家或隨從召喚／復生的生物，最多 10 隻。框架會「接管」這些生物以減少彼此內鬥；每次施法最多可接管 5 隻。若使用「無隊友魔法傷害」，生物不會受到玩家或隨從法術傷害。系統也可能誤判並接管其他 NPC 的召喚物。
+$FF_MinionFollows	召喚生物跟隨
+$FF_MinionFollowsDS	如果上面的召喚生物支援被啟用，它們將跟隨玩家。這解決了一個問題:一個部下/下屬可能會被玩家或隨從意外擊中而只是站在那裡。這可能會導致「誤判」捕獲而跟隨玩家。
+$FF_notifyMinion	獲得召喚生物通知
+$FF_notifyMinionDS	當被召喚/重新啟用的生物被框架捕獲並支援時，顯示一條訊息。需要召喚生物支援才能啟用。\n（預設： 關閉)
+$FF_TeachHeader	指導與傳授
+$FF_LearnSpells	學習法術書
+$FF_LearnSpellsDS	如果你給隨從法術書，他們可以學習新的法術。他們必須有法力才能施展法術來學習。如果隨從學習了法術，這本書就會被銷燬。\n（預設：關閉）
+$FF_TeachSpells	學習你掌握的法術
+$FF_TeachSpellsDS	隨從可以學習你左手或右手準備的新法術。他們必須有法力才能施展法術來學習。這需要以可被命令的隨從為目標。\n（預設：關閉）。
+$FF_notifyLearn	法術學習通知
+$FF_notifyLearnDS	當隨從學習到一個法術或無法使用時顯示一條訊息（必須啟用學習法術書）。\n（預設：開啟）
+$FF_SkillAffinity	允許技能親和性
+$FF_SkillAffinityDS	與隨從並肩作戰時，你可從他們的技巧與經驗中學習並提升自身技能。隨從的技能高於你時，學習機率會更高。僅武器、護甲與魔法技能適用，而且隨從的該項技能必須高於 15。
+$FF_SkillAffinityMod	親和機率調整
+$FF_SkillAffinityModDS	這是你從隨從那裡學習技能的基礎機率。如果他們的技能比你的高，就會增加，否則就使用基礎機率。12%是預設的機率，這將給你相當好的機會提高技能。
+$FF_Selling	銷售
+$FF_SellThreshold	出售物品閾值
+$FF_SellThresholdDS	在為玩家銷售物品時，隨從離開的最長時間。\n（預設：1小時）
+$FF_Dialogue	主要對話功能
+$FF_AllowGuard	臨時招募
+$FF_AllowGuardDS	可用金幣賄賂非關鍵 NPC，嘗試將其招募為隨從。出價越高，對方越可能加入。\n（預設：開啟）
+$FF_DlgDivorce	配偶離婚
+$FF_DlgDivorceDS	啟用此選項可以透過對話與配偶離婚。被拋棄的隨從將離開你，並在遊戲中的4個小時內不與你交談。不建議與多配偶模組一起使用。\n（預設：關閉）
+$FF_DlgElope	私奔
+$FF_DlgElopeDS	啟用後，此選項將為潛在的配偶提供附加對話，允許你立即與他們結婚，而無需舉行儀式或取得瑪拉護身符。（預設：關閉）
+$FF_DlgSteward	解僱管家
+$FF_DlgStewardDS	顯示一個對話，允許你在與爐火管家交談時將其解僱。\n（預設：關閉）
+$FF_DlgBlades	支援刀鋒衛士招募
+$FF_DlgBladesDS	增加了對要求戴爾芬招募刀鋒衛士的額外支援。它使用框架的計數而不是遊戲的隨從計數。刀鋒衛士必須在遊戲欄位中才能正常工作。
+$FF_SubDialogue	額外對話功能(子選單)
+$FF_DlgSubmenu	框架子選單
+$FF_DlgSubmenuDS	此選項顯示一個包含本節中所有對話的對話方塊。關閉此選項可以完全隱藏子選單。
+$FF_DlgSell	出售物品
+$FF_DlgSellDS	顯示隨從對話，允許他們為玩家出售物品。\n（預設：開啟）
+$FF_DlgTeach	教授法術
+$FF_DlgTeachDS	顯示隨從的對話，如果啟用了此遊戲選項，玩家可以透過對話教授他們法術。\n（預設：關閉）
+$FF_DlgBehind	在我身後
+$FF_DlgBehindDS	顯示隨從的對話，使他們在你後面移動（傳送）。\n（預設：關閉）
+$FF_DlgShake	振作起來
+$FF_DlgShakeDS	在隨從對話中顯示可能有助改善於動作故障的選項，例如原地跑步或快速轉向不同方向。\n（預設：關閉）
+$FF_AllowExpel	驅逐隨從
+$FF_AllowExpelDS	出於除錯目的，這將顯示一個驅逐對話，強制從框架中移除隨從，並將其從正確的派系中新增或移除。僅適用於非匯入隨從。在其他情況下，可用於替代正常的解散對話。\n（預設：關閉）
+$FF_Hiring	僱傭
+$FF_HireCost	初始隨從週薪
+$FF_HireCostDS	每週僱傭隨從的初始成本，用金幣計算。一旦一個隨從以這個比率被僱傭，她就被鎖定在與你的協議中，她將每週得到這個數額的報酬。改變這個值只會影響新招募的隨從。如果你不能付給隨從報酬，她最終會離開你。匯入的隨從是例外，因為NFF不能影響他們的招聘或解僱。\n（預設：0金幣）
+$FF_ExpendCost	消耗品支出
+$FF_ExpendCostDS	僱傭消耗性新兵的最高成本。中等和低消耗值是根據最大成本計算的。\n（預設：250金幣）
+$FF_Chatter	閒聊
+$FF_Chatter_0	開啟
+$FF_Chatter_1	關閉
+$FF_Chatter_2	沙盒
+$FF_SetChatter	閒聊啟用
+$FF_SetChatterDS	當在沙盒時為隨從設定閒聊開啟、關閉。不影響匯入的隨從。\n（預設：開啟）
+$FF_SetChatterFreq	閒聊頻率
+$FF_SetChatterFreqDS	為隨從設定閒聊頻率，以15分鐘為增量，最多8小時（480分鐘）。將此設定為0將使用預設時間（原版為1小時，RDO為隨機時間）。\n（預設： 0 至 停用)
+$FF_AllowHellos	允許問候
+$FF_AllowHellosDS	允許隨從在被招募時向玩家打招呼/問候。
+$FF_AffectHellos	影響問候的距離
+$FF_AffectHellosDS	解鎖影響遊戲中的問候距離的能力。這影響到所有的NPC，而不僅僅是隨從。
+$FF_HelloDistance	最小問候的距離
+$FF_HelloDistanceDS	允許你設定NPC與玩家打招呼的最小距離。如果你將其設定為0，NPC將不會與你打招呼。這包括隨從，不管上面的允許問候設定如何。
+$FF_PlayerChest	額外儲存空間
+$FF_KeyPlaceChest	放置保險箱熱鍵
+$FF_KeyPlaceChestDS	允許玩家放置一個保險箱，只有玩家才有使用權，作為一個額外的且受保護的儲存空間。不能放置在地下城。可在城市、城鎮和據點(主要區域)內隨意移動。否則在遊戲中每4小時只能移動一次。
+$FF_KeyPlaceChestM	放置保險箱
+$FF_KeyOpenChest	開啟保險箱熱鍵
+$FF_KeyOpenChestDS	允許玩家在城市，城鎮和據點(主要區域)遠端開啟玩家保險箱。在遊戲的其它地點，這被限制為每12小時一次(遊戲時間)。
+$FF_KeyOpenChestM	開啟保險箱
+$FF_DisableStorage	停用額外物品欄
+$FF_DisableStorageDS	在所有隨從上全域啟用或停用物品欄。這只會隱藏選單項。
+$FF_Import	隨從匯入
+$FF_DlgAllowImport	允許 匯入/匯出對話
+$FF_DlgAllowImportDS	與隨從交談時顯示對話方塊，你可以從NFF匯入或匯出她。匯入通常只檢查一個隨從是否在遊戲的隨從陣營中，以及他們是否是玩家的隊友。如果僅是玩家隊友，則匯入後容易出現誤判，因此請自行判斷。
+$FF_DlgImport	確認匯入/匯出
+$FF_DlgImportDS	如果啟用，則在匯入或匯出隨從時顯示確認訊息。\n（預設：開啟）
+$FF_DlgImportSet	推薦的匯入調整
+$FF_DlgImportSetDS	如果啟用，將在匯入隨從時顯示一個或多個對話方塊，允許你對其應用「安全」設定。不保證相容性。每個匯入的獨特隨從只顯示一次。如果停用，它將在每個獨特的隨從匯入時靜默工作一次，使用推薦的安全設定。\n（預設：開啟)
+$FF_AutoImpGen	自動匯入/匯出
+$FF_AutoImpGenDS	支援自動匯入和匯出其他匯入的隨從，這取決於檢測到的對玩家隊友標誌的改變。在匯入或匯出時一次性顯示對話（每個可匯入的隨從），允許你教NFF自動匯入/匯出他們。根據你是否解僱他們，使用你的最佳判斷。選擇否，將他們排除在匯入或匯出之外（單獨設定）。遵循隨從計數設定進行檢查。
+$FF_AutoImpSerana	自動匯入瑟拉娜
+$FF_AutoImpSeranaDS	支援瑟拉娜的自動匯入，取決於她自己遊戲腳本的變化。遵循隨從計數設定進行檢查。請注意，自動匯出已經為瑟拉娜內建。然而，如果她被自動匯入，當與她說話時，你將不會得到匯出對話。
+$FF_BehaviorBase	預設行為
+$FF_SetAggrBase	侵略性
+$FF_SetAggrBaseDS	隨從的基礎戰鬥侵略性。戰鬥之外則不受影響。
+$FF_SetAsstBase	支援
+$FF_SetAsstBaseDS	隨從的基礎戰鬥支援數值。
+$FF_SetConfBase	自信
+$FF_SetConfBaseDS	隨從的基礎戰鬥勇氣值。
+$FF_SetMoralBase	道德
+$FF_SetMoralBaseDS	隨從會容忍和支援玩家犯罪的值。
+$FF_CraftingBase	製作/互動 預設
+$FF_CraftTorchesBase	製作火把
+$FF_CraftTorchesBaseDS	啟用後，新獲得的隨從可以預設建立火把。有關詳細資訊，請參閱隨從調整。\n（預設：關閉）
+$FF_CraftArrowsBase	製作箭矢
+$FF_CraftArrowsBaseDS	啟用後，新獲得的隨從預設可以建立箭矢。有關詳細資訊，請參閱隨從調整。\n（預設：關閉）
+$FF_CraftPotionsBase	製作藥水
+$FF_CraftPotionsBaseDS	啟用後，新獲得的隨從預設可以建立藥劑。有關詳細資訊，請參閱隨從調整。\n（預設：關閉）
+$FF_SharpWeaponsBase	鋒利武器
+$FF_SharpWeaponsBaseDS	啟用後，新獲得的隨從預設可鋒利武器。有關詳細資訊，請參閱隨從調整。\n（預設：關閉）
+$FF_DrinkTavernBase	在酒館喝酒
+$FF_DrinkTavernBaseDS	啟用後，新獲得的隨從可以與侍者互動，並在酒館點酒。\n（預設：關閉）
+$FF_DoDrunk	允許醉酒效果
+$FF_DoDrunkDS	如果啟用，並且你在允許隨從進入的酒館裡喝酒，他們就有機會在喝酒的時候喝醉。
+$FF_PlayerInteract	允許玩家互動
+$FF_PlayerInteractDS	允許原版(和一些從RDO擴充)的語音隨從評論一些玩家的活動。可以透過微調關閉個別隨從評論。目前只支援玩家在鍛造場升級和手工製作時吐槽。\n（預設：開啟）
+$FF_AllowForge	允許額外製作/工藝
+$FF_AllowForgeDS	允許你製造額外的物品，如：燭光法術書，隱藏的頭盔，忽略標記和獨立的瑟拉娜的兜帽。\n(預設值：開啟)
+$FF_Tracking	隨從追蹤
+$FF_AllowTracking	允許追蹤隨從
+$FF_AllowTrackingDS	新增一個任務到雜項任務日誌，允許你追蹤地圖上的隨從。
+$FF_Companions	可選隨從
+$FF_CompSaadia	薩提亞
+$FF_CompSaadiaDS	一旦「患難與共」完成，允許薩提亞作為同伴。並允許你和她結婚。（完成後可能需要更改位置）\n（預設：關閉）
+$FF_CompYsolda	伊索爾達
+$FF_CompYsoldaDS	成為朋友關係後，允許伊索爾達作為伴侶（比如給她帶了一根猛獁象象牙。完成後可能需要更改位置）。\n（預設：關閉）
+$FF_CompWinter	冬堡法師
+$FF_CompWinterDS	一旦你成為冬堡學院的首席法師，就允許科萊特、德雷維斯、法勞達、妮爾雅、菲尼斯、塞爾吉烏斯和托夫迪爾成為隨從。你也可以個他們結婚。完整功能需要RDO（或類似模組）。（完成後可能需要更改位置）\n（預設：關閉）
+$FF_CompThieves	盜賊工會成員
+$FF_CompThievesDS	一旦你擊敗了墨瑟，就允許託尼莉亞、藍寶石、錫尼克、尼魯因、魯尼、錫蘭和維皮爾成為隨從。你也可以和他們結婚。完整功能需要RDO（或類似模組）。（完成後可能需要更改位置）\n（預設：關閉）
+$FF_DifficultyHead	遊戲難度覆蓋
+$FF_AllowDiff	允許難度覆蓋
+$FF_AllowDiffDS	允許你在目前遊戲難度上覆蓋玩家的傷害比例和承受傷害比例。切換難度將重置任何改動。在SSE中，不確定此設定是否與CC生存模式有任何衝突。
+$FF_PlayerDamageOutDS	變更玩家對敵人造成的傷害比例，切換難度將重置所有改動。
+$FF_PlayerDamageInDS	變更敵人對玩家造成的傷害比例，切換難度將重置所有改動。
+$FF_Diff0	新手
+$FF_Diff1	學徒
+$FF_Diff2	老手
+$FF_Diff3	專家
+$FF_Diff4	大師
+$FF_Diff5	傳奇
+$FF_Abilities	玩家施法能力
+$FF_AllowCmd	命令隨從
+$FF_AllowCmdDS	你可以為單個（或所有）隨從傳送命令、解除、交易、設定服裝和其他操作。\n（預設：開啟）
+$FF_AllowCalm	安撫隨從
+$FF_AllowCalmDS	讓你擁有安撫隨從的力量。這個技能可以讓所有的隨從和隊友平靜下來，並立即將他們從戰鬥中移除。持續60秒，影響相當大的區域。\n（預設：關閉）
+$FF_AllowRetreat	隨從撤退
+$FF_AllowRetreatDS	允許你擁有讓隨從撤退的力量。這個技能將導致所有的隨從從戰鬥中撤退。持續30秒，影響大範圍。\n（預設：關閉)
+$FF_Notify	通知
+$FF_notifyStartup	啟動任務的通知
+$FF_notifyStartupDS	第一次安裝模組或載入舊存檔時顯示框架啟動訊息。\n（預設：開啟）
+$FF_notifyHelm	頭飾存放通知
+$FF_notifyHelmDS	當隨從儲存頭飾物品時顯示訊息（必須啟用僅在戰鬥中使用頭飾）。\n（預設：開啟）
+$FF_notifyInteract	互動通知
+$FF_notifyInteractDS	當隨從與其他NPC互動時顯示訊息，例如在酒館購買飲料。\n（預設：開啟）
+$FF_ModSupport	模組支援
+$FF_GenSupport	SOT創世紀
+$FF_GenSupportDS	如果創世紀已安裝並處於啟用狀態，則將FriendFlower材料自動新增到隨從物品欄。當隨從在身邊時，這允許創世紀可以建立額外的重新整理。
+$FF_NoActor	無角色
+$FF_Invalid	無
+$FF_NotInScene	不在場景中
+$FF_Debug	除錯 (準星指向的NPC)
+$FF_DebugTarget	除錯目標
+$FF_DebugTargetDS	目前目標角色
+$FF_DebugMod	角色模組
+$FF_DebugModDS	物件引用(遊戲例項)來源的模組的名稱。
+$FF_DebugScene	場景任務
+$FF_DebugSceneDS	如果有的話，在NPC上執行場景的任務。
+$FF_DebugSceneMod	任務模組
+$FF_DebugSceneModDS	如果有的話，目前在NPC上執行場景的任務。
+$FF_DebugPackage	目前AI 套件
+$FF_DebugPackageDS	目前執行的AI 套件的十六進位制程式碼（如果有）。此程式碼的前兩位數字為模組的載入順序。
+$FF_DebugPackMod	AI模組
+$FF_DebugPackModDS	目前在這個NPC上執行AI 套件的模組的名稱（如果有）。
+$FF_DebugPackQuest	AI 套件任務
+$FF_DebugPackQuestDS	目前執行的AI 套件（如果有）所屬的任務。這僅在任務明確擁有AI 套件時顯示資訊。
+$FF_ClickPurge	點擊以清除
+$FF_DebugExit	退出時清除
+$FF_ClickHere	點擊此
+$FF_MCMExit	退出MCM以應用
+$FF_MCMExitBox	請完全退出MCM以應用這一更改。
+$FF_ResetExit	退出時重置
+$FF_SetExit	設定為退出
+$FF_MCMOk	完成
+$FF_ResetImport	清除NPC
+$FF_ResetImportDS	從框架中移除目標隨從。匯入的隨從不會被解僱。在進入MCM選單之前，NPC必須位於十字準心下。
+$FF_ForceFollower	強制隨從派系
+$FF_ForceFollowerDS	強制這個角色加入隨從派系和/或婚姻派系（如果他們有有效的聲音）。支援RDO新增的語音。僅在通常不作為隨從的NPC上使用。注意禁止使用這個來完成一個隨從的任務，或者"修復"一個正常的隨從，可能會導致作為隨從的那個角色出現問題。注意這不是隨從匯入。
+$FF_NoForceFollower	不能強迫跟隨
+$FF_ImportEn	匯入啟用
+$FF_ImportDisDS	在允許和不允許這個NPC由NFF的對話匯入中切換
+$FF_ForceMarry	強制結婚/私奔
+$FF_ForceMarryDS	強制這個角色加入婚姻派系（如果他們有有效的聲音）。支援RDO新增聲音。如果找不到有效的聲音，你仍然可以和他們私奔(你將無法選擇家/據點)。注意不要在任務NPC上使用，直到你完成了所有的任務。
+$FF_NoForceMarry	不能強迫結婚/私奔
+$FF_Config	儲存/載入設定檔
+$FF_SaveConfig	儲存到檔案
+$FF_SaveConfigDS	將全域設定（互動和系統值）儲存到可稍後呼叫的檔案中。不儲存個別隨從的設定。不再需要儲存你的遊戲來生效。
+$FF_LoadConfig	從檔案載入
+$FF_LoadConfigDS	從以前儲存的檔案載入全域設定（互動和系統值）。
+$FF_ConfigLoaded	設定已載入。請退出MCM選單以應用所有的改變。
+$FF_ConfigSaved	設定已儲存。
+$FF_ConfigError	需要安裝PapyrusUtil才能儲存/載入設定檔。
+$FF_Tweaks	儲存/載入 隨從設定
+$FF_SaveTweaks	儲存隨從設定
+$FF_SaveTweaksDS	將目前所選隨從的設定儲存到JSON檔案中。儲存所有的調整，特徵和基本裝備隱藏特徵。只支援獨立隨從。
+$FF_LoadTweaks	載入隨從設定
+$FF_LoadTweaksDS	從儲存的JSON檔案中載入到目前選定隨從的設定。
+$FF_SaveAllTweaks	儲存所有目前隨從
+$FF_SaveAllTweaksDS	將所有目前隨從的設定儲存到單獨的JSON檔案中。只支援獨立隨從。
+$FF_AutoSaveTweaks	關閉時自動儲存
+$FF_AutoSaveTweaksDS	解散或匯出獨立隨從時自動儲存。
+$FF_NotFound	未找到
+$FF_TweaksLoaded	隨從設定已載入.
+$FF_TweaksSaved	隨從設定已儲存.
+$FF_GroupKeys	隨從行動快捷鍵
+$FF_KeyCmd	命令隨從熱鍵
+$FF_KeyCmdDS	設定用於命令隨從能力的鍵。如果使用熱鍵，可以取消選中施法版本。按「Esc」將清除熱鍵。
+$FF_KeyInfo	NPC資訊熱鍵
+$FF_KeyInfoDS	設定用於獲取有關NPC資訊的熱鍵，例如等級，職業，生命值等。在目前的隨從上使用時，這會更有用。
+$FF_KeyAttack	隨從攻擊熱鍵
+$FF_KeyAttackDS	使隨從攻擊在玩家目前目標或在玩家目前視線範圍內的敵人。取消撤退的行為。
+$FF_KeyRetreat	隨從撤退熱鍵
+$FF_KeyRetreatDS	導致隨從從戰場上撤退。使用第二次取消撤退。持續45秒或直至取消。
+$FF_KeyCalm	安撫隨從熱鍵
+$FF_KeyCalmDS	設定用於安撫能力的鍵。如果使用熱鍵，可以取消選中施法版本。按「Esc」將清除熱鍵。
+$FF_KeyBehindAll	所有隨從在你身後熱鍵
+$FF_KeyBehindAllDS	設定一個熱鍵，將所有在你前面的隨從放置在你身後面。將觸發一個影響你身邊所有隨從的短程傳送效果。
+$FF_KeyTrade	交易物品熱鍵
+$FF_KeyTradeDS	設定用於透過隨從調出交易選單的熱鍵。 這可以遠距離使用。
+$FF_KeyClone	克隆裝備熱鍵
+$FF_KeyCloneDS	設定用於克隆目標隨從裝備的鍵。這可以遠距離使用。
+$FF_KeySell	出售物品熱鍵
+$FF_KeySellDS	設定讓隨從為你銷售商品的熱鍵。可以遠距離使用。
+$FF_KeyHistoryMenu	歷史選單熱鍵
+$FF_KeyHistoryMenuDS	顯示歷史選單，使用SkyUILib，你可以選擇以前的隨從，並傳送到他們所在地點或傳送到你身邊。
+$FF_KeyFavoritesMenu	收藏選單熱鍵
+$FF_KeyFavoritesMenuDS	顯示收藏選單，使用SkyUILib，在那裡你可以選擇一個之前儲存的收藏的隨從，並傳送到他們所在地點或傳送到你身邊。
+$FF_NotifyGetLoot	隨從已搜刮通知
+$FF_NotifyGetLootDS	當設定為自動搜刮的隨從拾取物品時，顯示一條訊息。\n（預設：開啟）
+$FF_NotifyDropLoot	隨從丟棄戰利品（搜刮）通知
+$FF_NotifyDropLootDS	當設定為自動搜刮的隨從丟棄物品時，顯示一條訊息。\n（預設：開啟）
+$FF_Yes	是
+$FF_No	否
+$FF_Core	核心
+$FF_RealCount	即時隨從計數
+$FF_RealCountDS	即時檢查跟隨從數量（建議啟用）。如果停用，你可以在NFF的額外選單中手動檢查數量。\n（預設：開啟）。
+$FF_UseConsole	啟用 ConsoleUtil
+$FF_UseConsoleDS	此選項將允許框架檢查ConsoleUtil（LE）或ConsoleUtilSSE。這個可選的SKSE增強只在透過MCM升級隨從和治療師使用動畫時需要。如果停用，並且未安裝ConsoleUtil，則Papyrus中不會有檢查錯誤。
+$FF_UseColorMsg	允許SkyUILib彩色通知訊息
+$FF_UseColorMsgDS	使用SkyUILib顯示彩色通知訊息。如果你正在使用UI縮放或調整類模組，並且文字對你來說太大，請關閉此選項。\n（預設：關閉)。
+$FF_ResetFolQuest	重新開始主要任務
+$FF_ResetFolQuestDS	如果在退出MCM選單時選中，這將重新啟動並重置原版隨從任務，並且匯入隨從任務和沒有匯入的隨從將被取消。僅用於故障排除。
+$FF_MenuStyle	遊戲內選單風格
+$FF_UseEnhMenu	使用增強選單
+$FF_UseEnhMenuDS	用來自SkyUILib的增強選單替換命令隨從能力選單。增強選單包含了比普通選單更多的特性。\n（預設：開啟)。
+$FF_MenuStopTime	在增強的選單中停止時間流逝
+$FF_MenuStopTimeDS	當增強選單處於活動狀態時，時間的流逝將停止。如果NPC在選單系統下移動，這會有一定幫助。\n（預設：關閉）。
+$FF_Follower	隨從
+$FF_ViewActor	查看
+$FF_PickActorDS	微調此隨從的個別設定。
+$FF_NoFollowers	無隨從
+$FF_FollowerActions	隨從行動
+$FF_ShowExtras	顯示額外資訊
+$FF_ShowExtrasDS	切換以顯示此頁上的額外資訊。目前只支援製作/工藝冷卻。這將在所有隨從之間保持切換狀態。\n（預設：關閉)
+$FF_ToggleBoxFac	允許沙盒
+$FF_ToggleBoxFacAlt	允許沙盒模式*
+$FF_ToggleBoxFacDS	允許此隨從使用沙盒。這可能會與擁有自己的沙盒功能的隨從即智慧AI隨從或是被設計為在「停機」期間做其它事情的隨從發生衝突。它是基於AI 套件的。\n（預設：開啟）
+$FF_SetChatterFol	允許閒聊
+$FF_SetChatterFolDS	當在沙盒時，為這個隨從設定閒聊開，關功能。如果主閒聊設定設定為關閉，此設定將被忽略。它是基於AI 套件的。\n（預設：開啟）
+$FF_ToggleStealthFac	允許使用潛行AI
+$FF_ToggleStealthFacAlt	允許潛行AI*
+$FF_ToggleStealthFacDS	允許此隨從使用改進的脫離戰鬥的隱身移動。如果一個隨從在戰鬥之外有自己的潛行包，可能會引起衝突。它是基於AI 套件的。\n（預設：開啟）
+$FF_SetLooting	自動搜刮
+$FF_SetLootingDS	允許這個隨從自動搜刮某些類型的物品。當玩家沒有移動，沒有潛行，也沒有使用武器/魔法時發生。這是繫結到NFF的隨從包，所以隨從將需要使用它。同時，它還可能增加沙盒啟動時間至10秒或更多，以給她/他們時間來搜刮。
+$FF_SendLoot	傳送戰利品（搜刮）到
+$FF_SendLootDS	如果啟用了自動搜刮，則可以在將戰利品傳送到隨從的物品欄、隨從儲存空間（如果正在使用）或玩家的保險箱。
+$FF_AllowInventory	允許隨從物品欄
+$FF_AllowInventoryDS	啟用後，此隨從可使用額外的物品欄空間。這個儲存空間只在隨從處於招募、僱用或匯入狀態時有效；隨從遭解散後，其中所有物品都會送到玩家儲物箱。
+$FF_SetRange	設定跟隨範圍
+$FF_SetRangeDS	退出戰鬥時隨從跟隨玩家的距離。它是基於AI 套件的。\n（預設：中等）
+$FF_ToggleBaseFollow	使用預設跟隨
+$FF_ToggleBaseFollowAlt	使用預設跟隨*
+$FF_ToggleBaseFollowDS	如果啟用，隨從將不會使用框架的跟隨包。他們將使用他們預設的跟隨包。對於基本的隨從，這是原版包。對於匯入的隨從來說，這是他們附帶的跟隨包。
+$FF_ToggleBaseCombat	使用預設戰鬥
+$FF_ToggleBaseCombatAlt	使用預設戰鬥*
+$FF_ToggleBaseCombatDS	如果啟用，隨從將不使用框架的戰鬥包（包括遠端）或戰鬥風格。相反，他們將使用自己的戰鬥包以及它們附帶的包中定義的風格。對於基本隨從，這是Skyrim的預設戰鬥包列表。
+$FF_AnimalInventory	允許物品欄（僅限動物/機械師）
+$FF_AnimalInventoryDS	如果啟用，你可以與這個動物/機械師（龍裔）隨從進行交易，就像其他隨從一樣。交易裝備可能會使它們裝備上它，但不會在它們身上顯示。
+$FF_LightStyleFac	燭光（隨從）
+$FF_LightStyleFacDS	如果教授燭光法術，這是隨從將施放的預設光樣式。你可以將此設定為「請勿施放」，以防止此隨從施放燈光法術。這完全獨立於所有隨從的設定。
+$FF_FollowerMount	隨從坐騎
+$FF_FollowerMountInvalid	隨從坐騎（下馬以更改）
+$FF_ToggleHorseFac	允許使用馬匹
+$FF_ToggleHorseFacAlt	允許使用馬匹*
+$FF_ToggleHorseFacDS	如果停用，隨從將不會生成馬，但仍使用騎馬包。如果隨從有自己的騎馬包或者自己可以生成馬，請關閉。它是基於AI 套件的。\n（預設：開啟）
+$FF_HorseSkinFol	隨從馬皮
+$FF_HorseSkinFolDS	為隨從的馬設定皮膚。\n（預設：棕色）
+$FF_HorseFXFol	隨從的馬效果
+$FF_HorseFXFolDS	對隨從的馬應用效果。\n（預設：無）
+$FF_CombatF	隨從戰鬥
+$FF_SetRole	戰鬥角色
+$FF_SetRoleAlt	戰鬥角色*
+$FF_SetRoleDS	設定隨從在戰鬥中的角色。預設情況下，治療師和坦克是此時可能的選擇。但可能會與擁有自己的嘲諷或治療AI 套件的隨從發生衝突。
+$FF_TauntSound	嘲諷聲
+$FF_TauntSoundDS	當隨從在坦克模式下使用嘲諷時，自訂語音類型。
+$FF_Taunt_0	男性（平均）
+$FF_Taunt_1	男性（高）
+$FF_Taunt_2	男性（低沉）
+$FF_Taunt_3	女性（平均）
+$FF_Taunt_4	女性（高）
+$FF_Taunt_5	女性（低沉）
+$FF_Taunt_6	無聲
+$FF_SetCStyle	戰鬥風格
+$FF_SetCStyleAlt	戰鬥風格*
+$FF_SetCStyleDS	改變這個隨從的戰鬥風格。這會影響戰鬥和武器類型選擇（魔法、遠端、近戰和/或參謀）中的進攻、防禦、盤旋和掃射移動/AI。預設為隨從附帶的戰鬥風格。它是基於AI 套件的。
+$FF_SetCStyle_0	如果沒有定義樣式，隨從將使用其本地戰鬥風格或原版預設樣式。
+$FF_SetCStyle_1	隨從使用傭兵，強調近戰。你的臉上有一種戰士式的表情，攻擊性強於防禦性。
+$FF_SetCStyle_2	隨從使用防禦者，強調近戰。他會試圖粘住敵人，但防禦性大於進攻性。
+$FF_SetCStyle_3	隨從使用狂戰士，強調攻擊性近戰。每隻手都能揮舞武器。
+$FF_SetCStyle_4	隨從使用的是射手，它強調遠端，但可以進行一些近戰。在遠端掃射攻擊中表現出色。
+$FF_SetCStyle_5	隨從使用的是遊俠，這是一個不錯的混合遠端和近戰。他們每隻手都能使用武器，但在可能的時候會切換到遠端。
+$FF_SetCStyle_6	隨從使用的是魔劍士，混合了近戰和魔法，還有一些道具使用。
+$FF_SetCStyle_7	隨從使用的是巫師，這是傳統的進攻魔法，和一些法杖使用。擅長掃射和控制法術。
+$FF_SetCStyle_8	隨從正在使用魔術師，這是一個使用法術的法師，但仍偏愛使用道具，可以給予並儲存在他們的物品欄。
+$FF_SetCStyle_9	隨從正在使用祭司，這是一個防禦法師，並且可以使用一些法杖。善於控制和防守。
+$FF_SetCStyle_10	隨從使用的是平衡，這在進攻，防禦和他們將使用什麼武器方面是相當公平的。
+$FF_SetCStyle_11	隨從使用奧術弓箭手，他強調遠端，但能進行一些近戰和魔法。擅長遠端掃射攻擊。
+$FF_SetCStyle_12	隨從使用戰爭祭祀，他將強調近戰，但可以在一定程度上使用遠端或魔法，如果有的話。他會試圖粘住敵人，但防禦性大於進攻性。
+$FF_SetClass	職業
+$FF_SetClassAlt	職業*
+$FF_SetClassDS	更改此隨從的職業。職業提供NPC使用的基本技能權重和生命/魔法/耐力權重。它既不提供也不影響專長和法術。如果你改變一個隨從的職業，它將是永久性的。除非在此列表中提供，否則無法還原其原始類型。不在列表中的類別顯示在括號中。需要主控台ConsoleUtil。
+$FF_SetClassWarn	*警告*\n\n使用此功能更改隨從的職業是永久性的。不能將具有自訂類別的隨從還原為其原始職業。如果你這樣做了，它會用NFF清除任何技能編輯。它不能用於非獨特角色，因為無法檢測其基本職業。\n\n此訊息將只顯示一次。
+$FF_SetCbtRange	設定戰鬥距離
+$FF_SetCbtRangeDS	在戰鬥中隨從跟隨玩家的距離。\n（預設：中等）
+$FF_DefenseStance	防禦姿態
+$FF_DefenseStanceDS	如果啟用，這個隨從在戰鬥中使用防禦姿態。他們只會在他們或玩家被攻擊(戰鬥中被攻擊)時才會攻擊。如果隨從或玩家退出戰鬥，則重置。\n（預設：關閉)
+$FF_NoCombat	無戰鬥狀態
+$FF_NoCombatDS	迫使隨從完全處於防禦。他們將不會參與戰鬥，也不會停留在玩家附近。如果是治療師角色，他們將繼續治療。他們不能嘲諷。由於玩家隊友的標記，他們仍然會抽出武器。在這種狀態下，他們的行為將毫無生氣/十分呆滯。如果你有一個寵物隨從、或僅作為治療師的隨從，或是馱騾，這將會很有用。\n（預設：關閉)
+$FF_WerewolfChange	狼人變換
+$FF_WerewolfChangeDS	允許你將這個隨從設定為在戰鬥中受到一定程度的傷害後變為狼人（閾值，如下）。
+$FF_WerewolfThresh	狼人變化閾值
+$FF_WerewolfThreshDS	在變成狼人之前，隨從必須承受的傷害量(佔總生命值的百分比)。
+$FF_EnforceRange	增強戰鬥範圍
+$FF_EnforceRangeDS	在戰鬥中，這可以確保隨從在沒有攻擊或施法的情況下保持與玩家的戰鬥距離。這有助於讓隨從離開過道和其他惡作劇。啟用此選項也會將其應用於捕獲的爪牙。
+$FF_DamageMult	傷害乘數
+$FF_DamageMultDS	改變隨從的傷害倍數，影響他們整體的傷害程度。如果安裝了SPID並且你選擇了魔法模組，也會將這個倍數與毀滅系法術和龍吼的幅度聯絡起來。
+$FF_DamageMultFixed	固定傷害倍數
+$FF_DamageMultFixedDS	設定這個隨從有一個固定的傷害乘數，保持在你在這個頁面上設定的數值，而不考慮全域傷害乘數。
+$FF_DamageMultAll	動態傷害倍數
+$FF_DamageMultAllDS	將任何招募的、匯入的或僱傭的隨從的傷害倍率改變為設定值。如果安裝了SPID並且選擇了魔法模組，也會將這個倍數與毀滅系法術和龍吼的幅度聯絡起來。一旦一個隨從被解僱或匯出，他們的倍數就會變回x1.00。你可以在設定下設定一個固定的傷害乘數。
+$FF_FollowerPack	隨從系統
+$FF_PackHigh	打包優先順序
+$FF_PackHighDS	這將設定隨從使用框架包的高優先順序版本。這影響到沙盒，等待，裝配，騎乘，潛行加強，碰撞，跟隨，治療師的角色和戰鬥風格，都會打包替換。如果隨從在大多數（幾乎所有）情況下都不使用這些設定選項，請使用此項。除非有必要，否則不要開啟它，因為它可能會影響其他提供隨從功能的模組。\n（預設：關閉）
+$FF_Pack_1	標準（50）
+$FF_Pack_2	高 (70)
+$FF_Pack_3	非常高 (99)
+$FF_AutoImpReset	重置自動匯入/匯出
+$FF_AutoImpResetDS	點擊此選項，為這個匯入的隨從重置自動匯入和匯出設定。將再次顯示是/否對話方塊，允許你改變自己的決定。需要自動匯入/匯出功能被啟用。
+$FF_AutoImpResetDlg	隨從自動匯入和匯出已被重置。
+$FF_FollowerProt	隨從保護
+$FF_BaseEssential	角色是必要的 (基本形式)
+$FF_BaseNonUnique	角色非必要的 (非獨特)
+$FF_SetEssential	設定為必要
+$FF_SetEssentialAlt	設定為必要*
+$FF_SetEssentialDS	將此隨從設定為必要/重要或相反。\n（預設：關閉）
+$FF_Crafting	製作
+$FF_CraftMax	當耗盡時
+$FF_CraftTime	當可以時
+$FF_CraftTorches	可以製作火把
+$FF_TorchTime	製作火把
+$FF_CraftTorchesAlt	可以製作火把*
+$FF_CraftTorchesDS	當沙盒時，如果她的照明不足，允許隨從製作火把。只有當她在鍛爐附近時才會發生這種情況。它的冷卻時間為8（遊戲中）小時。\n（預設：關閉）
+$FF_CraftArrows	可以製作箭矢
+$FF_ArrowTime	製作箭矢
+$FF_CraftArrowsAlt	可以製作箭矢*
+$FF_CraftArrowsDS	沙盒模式時，允許隨從製作額外的箭矢（而不是弩矢）品質比玩家可用的低。箭術越高，每次製作的數量就越多。只有當她在鍛爐附近時才會發生這種情況。它的冷卻時間為8小時。\n（預設：關閉）
+$FF_CraftBolts	可以製作弩矢
+$FF_BoltTime	製作弩矢
+$FF_CraftBoltsAlt	可以製作弩矢*
+$FF_CraftBoltsDS	沙盒模式時，允許隨從創造鋼弩矢，而不是箭矢。箭術越高，每次製造的數量就越多。只有當她在鍛爐附近時才會發生這種情況。它的冷卻時間為8小時。\n（預設：關閉）
+$FF_CraftPotions	可以製作藥劑
+$FF_PotionTime	製作藥水
+$FF_CraftPotionsAlt	可以製作藥劑*
+$FF_CraftPotionsDS	沙盒模式時，允許隨從創造藥劑，他們的能力基於玩家的等級。鍊金術的技能越高，他們一次做的越多。只有當她在鍊金術臺附近時才會發生這種情況。它的冷卻時間為8小時。\n（預設：關閉）
+$FF_SharpWeapon	可以鋒利武器
+$FF_SharpenTime	鋒利武器
+$FF_SharpWeaponAlt	可以鋒利武器*
+$FF_SharpWeaponDS	沙盒模式時，允許隨從暫時加強他們的武器，一個小幅的傷害增益效果（+1）。只有當她在磨刀石附近時才會發生這種情況。它有6個小時的冷卻時間。\n（預設：關閉）
+$FF_Interaction	互動
+$FF_TavernInteract	在酒館喝酒
+$FF_TavernInteractAlt	在酒館喝酒*
+$FF_TavernInteractDS	沙盒模式時，允許隨從與旅店老闆和酒館女侍互動，讓他們訂購和消費飲料。這是隨機發生的，從他們進入酒館一個小時後甚至更久。隨著時間的推移，他們可以點多種飲料，偶爾會「喝太多」，導致他們在短時間內喝醉。\n（預設：關閉）
+$FF_PlayerInterFac	玩家互動
+$FF_PlayerInterFacDS	允許此隨從對玩家的某些活動發表評論。僅當它們具有原版/RDO擴充語音並且啟用了「玩家互動」時有效。\n（預設：開啟）
+$FF_RegardFac	可以使用崇拜系統
+$FF_RegardFacDS	允許隨從使用崇拜系統。
+$FF_ResetRegard	重置崇拜值
+$FF_ResetRegardDS	點擊此處可重置此隨從的崇拜等級，並將其還原為初始值。
+$FF_Stats	基礎統計
+$FF_sLevel	等級
+$FF_sLevelDS	點擊以將此隨從的級別提升到玩家的級別（需要用於Skyrim的ConsoleUtil或用於SSE的ConsoleUtilSE）才能工作。你也可以使用可選的BAT檔案來執行此操作。瞄準主控台中的隨從並輸入：bat nfflevel。這將允許他們不斷地與玩家等級保持一致，每個獨立隨從只需要做一次。
+$FF_sLevelUp	隨從等級已設定。
+$FF_sHealth	生命
+$FF_sHealthDS	點擊以更改生命值統計的值。這將修改目前值（就像佩戴附魔物品的加成）。
+$FF_sMagicka	法力
+$FF_sMagickaDS	點擊以更改法力值統計的值。這將修改目前值（就像佩戴附魔物品的加成）。
+$FF_sStamina	體力
+$FF_sStaminaDS	點擊以更改體力值統計的值。這將修改目前值（就像佩戴附魔物品的加成）。
+$FF_sSkillDS	點擊此處可更改所選技能的值。這將修改目前值（就像佩戴附魔物品的加成一樣）。
+$FF_sMove	移動速度
+$FF_Behavior	行為
+$FF_SetAggression	侵略性
+$FF_SetAggressionAlt	侵略性*
+$FF_SetAggressionDS	隨從的戰鬥攻擊性可能。可能與Followers with specifically designed AI features功能衝突。
+$FF_SetAssistance	支援
+$FF_SetAssistanceAlt	支援*
+$FF_SetAssistanceDS	隨從在戰鬥中會進行支援。可能與Followers with specifically designed AI features功能衝突。
+$FF_SetConfidence	自信
+$FF_SetConfidenceAlt	自信心*
+$FF_SetConfidenceDS	隨從在戰鬥中的勇猛程度。可能與Followers with specifically designed AI features功能衝突。
+$FF_SetMorality	道德
+$FF_SetMoralityAlt	道德*
+$FF_SetMoralityDS	隨從會容忍和支援玩家犯罪的類型。可能與Followers with specifically designed AI features功能衝突。
+$FF_RegardHead	隨從崇拜值
+$FF_RegardRank	崇拜等級
+$FF_RegardPoints	崇拜點數
+$FF_FollowerCostHead	隨從佣金
+$FF_FollowerCost	週薪
+$FF_FollowerCostDS	僱傭這個隨從每週所消耗的金幣。
+$FF_FollowerZero	免費
+$FF_StatEdit	允許統計編輯
+$FF_StatEditDS	切換編輯生命、魔法、耐力和隨從技能的能力。變化不是永久的，直到隨從升級。
+$FF_Skills	技能
+$FF_pArchery	箭術
+$FF_pOneHand	單手武器
+$FF_pTwoHand	雙手武器
+$FF_pLightArmor	輕甲
+$FF_pHeavyArmor	重甲
+$FF_pBlocking	格擋
+$FF_pAlteration	變換系
+$FF_pConjuration	召喚系
+$FF_pDestruction	毀滅系
+$FF_pEnchanting	附魔
+$FF_pIllusion	幻術系
+$FF_pRestoration	恢復系
+$FF_pAlchemy	鍊金術
+$FF_pSneak	潛行
+$FF_NoPerks	無技能點
+$FF_NoAbilities	無
+$FF_AbilitiesBase	基礎法術與能力
+$FF_AbilitiesBaseCost	基礎法術與能力 / 消耗
+$FF_AbilitiesGranted	教授的 法術與能力
+$FF_AbilitiesGrantedCost	教授的 法術與能力 / 消耗
+$FF_RemoveSpellDS	點擊以刪除此教授的法術。不會移除屬於專長效果的法術。在處理特定隨從的法術時，請使用你的最佳判斷。
+$FF_RemoveConfirm	你確定要刪除這個法術嗎？
+$FF_Resist	抗性
+$FF_EquipTweaks	裝備行動
+$FF_SeranaHoodOff	停用瑟拉娜的兜帽
+$FF_SeranaHoodOffDS	啟用這一選項，以防止遊戲不斷地為瑟拉娜製作兜帽。
+$FF_ToggleHelmFac	僅在戰鬥中穿戴頭飾
+$FF_ToggleHelmFacDS	隨從僅在戰鬥中穿戴頭飾。可能會與具有特定兜帽或頭盔功能的隨從發生衝突（但支援瑟拉娜）。\n（預設：關閉）
+$FF_NoHelm	從不穿戴頭飾
+$FF_NoHelmDS	隨從從不戴頭飾。對於將頭飾作為預設裝備的一部分並希望隱藏頭飾的隨從更有用。可能會與具有特定兜帽或頭盔功能的隨從發生衝突。\n（預設：關閉）
+$FF_askHelm	要將目前裝備的頭部物品\n設為隨從儲存的頭飾嗎？
+$FF_ToggleShieldFac	只在戰鬥時佩盾。
+$FF_ToggleShieldFacDS	隨從只在戰鬥時佩盾。可能會與具備特殊盾牌裝備功能的隨從衝突\n（預設：關閉）
+$FF_ToggleAmmoFac	自動卸箭袋
+$FF_ToggleAmmoFacDS	當解除安裝弓或弩時，隨從會移除箭袋。支援模組修改的箭矢和弩矢（至少與任何隨從交換一次這些東西以納入它們）。\n（預設：關閉）
+$FF_MenuAmmo	彈藥支援
+$FF_MenuAmmoDS	框架支援的彈藥只讀列表。列表適用於所有隨從。
+$FF_ToggleWeaponFac	只有在戰鬥中才拿武器
+$FF_ToggleWeaponFacDS	隨從只在戰鬥中使用武器，或者如果玩家沒有拔出武器。否則，它們將完全隱藏。\n（預設：關閉）
+$FF_RefreshWeaponFac	戰鬥後重新整理武器
+$FF_RefreshWeaponFacDS	戰鬥後重新整理隨從的武器（先卸下再重新裝備）。這有助於處理異常的武器問題或隨從不戰鬥的情況，尤其適合使用 2H 武器的隨從\n（預設：關閉）
+$FF_BaseOutfit	基礎裝備
+$FF_CloneOutfit	複製套裝
+$FF_CloneOutfitDS	建立此隨從裝備的副本。請注意只點擊一次，物品將放入你的物品欄。
+$FF_OutfitExclude	顯示裝備對話
+$FF_OutfitExcludeDS	如果勾選此項，隨從將顯示自訂裝備選單項。否則，它是隱藏的。關閉這個功能並不會讓隨從恢復到原來的裝備。
+$FF_OutfitBase	裝備設定（全域）
+$FF_SetsUsed	使用中的裝備
+$FF_SetsUsedDS	點擊查看所有已經指定了裝備的角色的列表。
+$FF_ShowGearSlots	顯示裝備槽位
+$FF_ShowGearSlotsDS	如果啟用，將顯示裝備的「身體槽位」（載入頁面較慢）。\n（預設：關閉)
+$FF_ViewGear	外套預覽模式
+$FF_ViewGearDS	如果啟用，允許你預覽外套，就像你與一個隨從交易一樣。這會將他們的物品欄暫時移入和移出一個容器。\n(預設：關閉)
+$FF_CustomHomeLocAdd	非據點點
+$FF_CustomHomeLocRem	是據點點
+$FF_CustomHomeLocDS	新增或移除這個地點作為適合居家裝備使用的地點。不能更改關鍵字「Player Home」。名稱為「泰姆瑞爾」的地點是通用位置，不能更改。有些區域沒有地點，因此不會受到影響。
+$FF_SwitchStyle	套裝切換風格
+$FF_SwitchStyleDS	允許你選擇如何為目前的隨從切換裝備。自動根據位置更改。切換到最適合該位置的服裝，如果再次使用，切換回標準/預設。選單為你提供了一套服裝供你選擇，並會一直保留在該選擇中，直到你進行更改。
+$FF_SwitchStyle_0	自動切換
+$FF_SwitchStyle_1	切換開關
+$FF_SwitchStyle_2	選單切換
+$FF_SwitchHotkey	套裝切換熱鍵
+$FF_SwitchHotkeyDS	允許你自訂一個熱鍵來切換目前隨從的裝備。僅適用於切換開關或選單切換類型。
+$FF_SwitchMenu	套裝切換
+$FF_SwitchMenuDis	套裝切換(停用)
+$FF_AutoGearScan	掃描「套裝切換」區域
+$FF_AutoGearScanDS	啟用此選項可以在載入區域中掃描之前的隨從，以將他們的裝備設定為適合玩家所在的地點。如果以前的僱傭兵只有基本裝備或是與你在一起的隨從，則不需要。
+$FF_DlgEquip	顯示裝備對話（一般）
+$FF_DlgEquipDS	與隨從說話時顯示自訂裝備對話。\n（預設：開啟）
+$FF_DlgEquip2	主選單上的裝備對話
+$FF_DlgEquip2DS	如果啟用，裝備對話方塊會顯示在主要對話選單上。如果未選中，它將顯示在NFF的子選單中。
+$FF_KeySetGear	設定裝備熱鍵
+$FF_KeySetGearDS	設定用於為目標隨從設定裝備的鍵。這可以遠距離使用。僅適用於標準服裝。
+$FF_KeyRemoveGear	移除裝備熱鍵
+$FF_KeyRemoveGearDS	設定用於為目標隨從移除裝備的鍵。這可以遠距離使用。僅適用於標準服裝。
+$FF_GearBase	裝備設定（全域）
+$FF_RefreshWeapons	重新整理武器
+$FF_RefreshWeaponsDS	修復了一個偶發的遊戲錯誤，在載入遊戲時，隨從不能正確識別武器。這只會在遊戲載入時發生，需要額外的一到兩秒的時間來從每個隨從那裡交易武器，歸還並重新裝備它們。\n（預設：開啟)
+$FF_ToggleDraw	停用拔出武器
+$FF_ToggleDrawDS	當你抽取武器時，隨從不會抽取武器。\n（預設：關閉）
+$FF_TorchExpire	隨從火把過期
+$FF_TorchExpireDS	通常，隨從的火把持續性不確定。啟用此選項將導致火把持續一小時（遊戲時間），然後過期。與玩家的火把一樣，如果少於可用時間，火把的冷卻時間將在解除安裝時重置。\n（預設：關閉）
+$FF_KeyRedress	脫衣/重新換裝熱鍵
+$FF_KeyRedressDS	將設定一個熱鍵來重新裝備目標隨從。重新換裝將檢查和重新應用頭飾，盾牌和箭矢設定。這可以遠距離使用。
+$FF_FollowerOutfits	隨從裝備
+$FF_Outfits_0	標準服裝
+$FF_Outfits_1	城鎮服裝
+$FF_Outfits_2	居家服裝
+$FF_Outfits_3	預設服裝
+$FF_OutfitsDS_0	這是隨從穿的標準的、自訂的服裝，覆蓋了他們的預設服裝。
+$FF_OutfitsDS_1	隨從的城鎮服裝，穿著地點在城市和城鎮。
+$FF_OutfitsDS_2	此服裝穿著地點在玩家據點或任何定義為玩家據點的地點。
+$FF_OutfitsDS_3	隨從的預設服裝，這是他們預設形式的一部分。沒有物品列示意味著如果隨從的物品欄中沒有盔甲或衣服，隨從是赤裸的。
+$FF_OutfitActive	<font color='#42F09D'>使用中</font>
+$FF_OutfitActiveBase	<font color='#5CB6E0'>使用中</font>
+$FF_OutfitInactive	<font color='#F05951'>未使用</font>
+$FF_GearList	裝備列表
+$FF_OutfitItems	物品顯示
+$FF_GearStyle_0	標準
+$FF_GearStyle_1	城鎮
+$FF_GearStyle_2	住宅
+$FF_GearStyle_3	預設
+$FF_NoBase	無
+$FF_NoBaseName	(無)
+$FF_PickBase	選擇據點
+$FF_PickActor	選擇角色
+$FF_NoResidents	無居民
+$FF_homeHeader	據點
+$FF_createBase	建立據點
+$FF_createBaseDS	建立一個新的據點。
+$FF_selBase	選擇/建立據點
+$FF_selBaseDS	允許你建立新的據點（如果列表中未顯示），或選擇現有的據點進行查看或編輯。
+$FF_nameBase	重新命名據點
+$FF_nameBaseDS	更改目前正在查看的據點的顯示名稱。
+$FF_setLocHeader	顯示/設定地點
+$FF_homeBaseLoc	住宅/據點
+$FF_homeLoc	住宅
+$FF_setHomeLocDS	允許你將所選的據點的住宅位置設定（或更改）為目前所處的位置。分配給這個據點的隨從在不工作或不放鬆的時候會在這個地方打發時間。必須退出MCM才能設定此變動。
+$FF_renHomeLocDS	更改所選據點的住宅位置的顯示名稱。只影響顯示的內容。
+$FF_remHomeLocDS	刪除所選據點的住宅位置。警告：這將完全刪除選定的據點以及分配給它的任何工作或放鬆位置。任何分配給這個據點的隨從都將返回他們以前的家園。
+$FF_workLoc	工作
+$FF_setWorkLocDS	允許你將所選據點的工作位置設定（或更改）為目前所在位置。隨從將在上午8點到下午4點前往該地點並在該地點逗留。必須退出MCM才能設定此變動。
+$FF_renWorkLocDS	更改所選據點的工作位置的顯示名稱。只影響顯示的內容。
+$FF_remWorkLocDS	刪除所選據點的工作位置。
+$FF_playLoc	放鬆
+$FF_setPlayLocDS	允許你將所選據點的放鬆位置設定（或更改）為你目前所處的位置。隨從將在下午6點到凌晨2點前往該地點並在該地點逗留。必須退出MCM才能設定此更改。
+$FF_renPlayLocDS	更改選定的據點的放鬆位置的顯示名稱。只影響顯示的內容。
+$FF_remPlayLocDS	刪除所選據點的放鬆位置。
+$FF_folBaseHeader	加入/移除 隨從
+$FF_pickCurrent	隨從
+$FF_pickCurrentDS	允許你選擇目前與你在一起的隨從，以便將其新增到據點或從中刪除。
+$FF_addFolBase	新增到目前據點
+$FF_addFolBaseDS	將目前顯示的隨從指定給所選的據點。如果已經分配了一個據點，他們將切換據點。
+$FF_resHeader	分配/刪除居民
+$FF_selBaseAct	據點居民
+$FF_selBaseActDS	允許你選擇分配給所選據點的隨從，以便將其刪除或分配給其他據點。
+$FF_destBase	目標據點
+$FF_destBaseDS	允許你建立新的據點（如果列表中未顯示），或選擇現有的據點進行查看或編輯。
+$FF_moveBaseAct	移動到據點
+$FF_moveBaseActDS	將選定的隨從從目前的據點移動到目標中顯示的據點。如果目前和目標據點設定為相同，則可以重新整理據點以嘗試解決與居民有關的任何問題。
+$FF_refreshBaseAct	重新整理據點
+$FF_removeBase	移除
+$FF_removeBaseDS	將目前顯示的隨從從分配給它們的任何據點中移除。
+$FF_popHeader	人口
+$FF_popTotal	所有據點的隨從總數
+$FF_popBase	所選據點的隨從
+$FF_remLocHeader	移除位置
+$FF_nameLocHeader	重新命名位置
+$FF_visitLocHeader	訪問位置
+$FF_resLocation	居民位置
+$FF_HBTweaks	據點除錯（全域）
+$FF_HBOwner	獲得所有權
+$FF_HBOwnerDS	允許你取得設定的據點、工作或放鬆地點的所有權。目前只適用於室內區域。還可以掃描該區域的床鋪並允許你擁有這些床鋪。總是會先提問你是否執行。注意這是實驗性功能。
+$FF_HBWorkStart	工作開始時間
+$FF_HBWorkStartDS	隨從將在他們的工作地點開始工作的時間。適用於所有的據點。
+$FF_HBWorkEnd	工作結束時間
+$FF_HBWorkEndDS	隨從將停止工作的時間。適用於所有的據點。
+$FF_HBRelaxStart	放鬆開始時間
+$FF_HBRelaxStartDS	隨從將在他們的放鬆地點開始放鬆的時間。適用於所有的據點。
+$FF_HBRelaxEnd	放鬆結束時間
+$FF_HBRelaxEndDS	隨從將停止放鬆的時間。適用於所有的據點。
+$FF_HBSleepStart	睡眠開始時間
+$FF_HBSleepStartDS	隨從將在不工作或不放鬆的時候開始睡眠的時間。適用於所有的據點。
+$FF_HBSleepEnd	睡眠結束時間
+$FF_HBSleepEndDS	隨從將停止睡眠的時間。適用於所有的據點。
+$FF_OwnCell	你現在擁有了這個地區/區域
+$FF_FollowerCount	支援的隨從數量
+$FF_FollowerCountDS	允許你設定框架支援的隨從的數量。最小值是2，最大值是10。\n（預設：10)
+$FF_CountChangeWarn	設定一個低於目前隨從數量的計數值將會移除/匯出所有目前隨從。\n繼續？
+$FF_slotHeader1	欄位/隨從
+$FF_slotHeader2	整理中
+$FF_GameSlotRem	從遊戲欄位中移除
+$FF_GameSlotRemDS	從Skyrim的原始遊戲欄位中移除這個隨從，並將其放在第一個可用的欄位中。在關閉MCM後生效。
+$FF_GameSlotSend	傳送到遊戲欄位
+$FF_GameSlotSendDS	將這個隨從放置到Skyrim的原始遊戲欄位。只有在你確實需要這樣做時才推薦。例如包括結婚，招募刀鋒衛士或是隻能識別這個欄位的模組隨從。這不應該是一個永久的安置，只有當你需要時才推薦這樣做。在關閉MCM後生效。
+$FF_SortSlots	整理隨從欄位
+$FF_SortSlotsDS	從高到低排列隨從欄位，填補空位。也將清除遊戲欄位。關閉MCM後生效。
+$FF_FlushSlots	清除隨從欄位
+$FF_FlushSlotsDS	清除所有隨從欄位，從這些欄位中刪除所有隨從。關閉MCM後生效。
+$FF_KickActorDS	選擇此隨從以切換從此欄位中刪除它們。還將嘗試重新整理無效角色的欄位。關閉MCM後生效。
+$FF_histHeader	隨從歷史
+$FF_histActor	隨從
+$FF_histActorDS	之前曾效力於你的隨從列表。
+$FF_histLoc	位置
+$FF_histLocDS	之前的隨從目前的行蹤。點擊此位置可快速前往。「泰姆瑞爾「是這個未命名世界的焦點所在。退出MCM選單時應用的更改。
+$FF_histPort	召喚
+$FF_histPortClick	召喚到你這
+$FF_histPortDS	把這個隨從召喚到你身邊。退出MCM選單時應用更改。
+$FF_histLength	歷史長度
+$FF_histLengthDS	將歷史記錄長度（記住的數字）設定為0到100。設定為0將停用歷史記錄。
