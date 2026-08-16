@@ -18,3 +18,7 @@ sha256sum -c MANIFEST.sha256
 ## 範圍檢查
 
 本次只讀取現役來源的 `meta.ini` 與英文翻譯檔以決定版本與鍵契約。未改動來源模組、MO2、任何 profile 或遊戲資料，亦未開啟遊戲 GUI。
+
+2026-08-16 新增 gameplay ESP gate：1,211 筆現役 records 全數保留；828 個匹配文字欄位落地，
+除 record/group 大小與必要的 compressed bytes 重排外，semantic headers、subrecord topology 與
+所有非文字 payload 逐 byte 相同。未匹配的 3.6.0 新文字維持英文，需後續人工翻譯或新版種子。

@@ -1,18 +1,26 @@
 # Glad You're Here 3.6.0.0 繁體中文 text-only override
 
-這是 Glad You're Here 的繁體中文介面文字覆寫包，只含遊戲讀取的翻譯檔：
+這是 Glad You're Here 的繁體中文文字覆寫包，包含 MCM 翻譯表與由精確 3.6.0 ESP 建立的
+gameplay 對話覆寫：
 
 ```text
 interface/translations/ImGladYoureHere_english.txt
+ImGladYoureHere.esp
 ```
 
-`english` 檔名（包含上游的小寫拼法）是刻意精確保留的；它會覆寫上游同名檔案，並與目前目標環境使用的英文語言檔命名相符。本包不含 ESP、MCM JSON、腳本、動畫、模型、材質或語音。
+`english` 檔名（包含上游的小寫拼法）是刻意精確保留的。ESP 由現役 3.6.0 原檔作唯一基底，
+只把舊版 3.2.3 簡中種子能以 record FormID＋localizable tag occurrence 穩定對齊的 828 個欄位
+轉成台灣正體；所有 record 身份、順序、header、GRUP path、subrecord topology 與非文字 payload
+不變。本包不含 MCM JSON、腳本、動畫、模型、材質或語音。
 
 ## 目標版本與範圍
 
 - 目標：Glad You're Here `3.6.0.0`（Nexus mod ID `41856`）。
 - 來源版本唯一依據：現役 `Modpack-KR-Dev` 的 `Glad You're Here - Main File/meta.ini` 與 `interface/translations/ImGladYoureHere_english.txt`。
 - 完整翻譯 213 筆 MCM 介面鍵；所有 key、順序、`%` 與字面 `\\n` token 都由驗證器鎖定。
+- gameplay ESP 翻譯 828 個穩定對齊欄位；使用者回報的 `I'm glad you're here.` 已人工校訂為
+  `很高興你在這裡。`。
+- 3.6.0 新增且舊種子無法安全對齊的文字刻意保留原文，不冒充完整新版翻譯。
 - 遊戲檔採 UTF-16 LE BOM 與 CRLF；檔名精確保留上游的 `_english`。
 
 ## 建置與驗證

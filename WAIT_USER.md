@@ -12,6 +12,26 @@
 
 ## Open
 
+- **RDO Final 正體中文需 Dev-only runtime 驗收**（2026-08-16）：已在
+  [`dist/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/`](dist/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)
+  建立並部署獨立最高優先級 layer，只覆寫同名 ESP 與六個 follower 通知 PEX；Play profile 未變。
+  離線 gate 證明 9,766-record topology／全部非文字 payload 相同，4,071 個 ESP zstrings 與六個 PEX
+  display slots 改為正體；PEX declaration／properties／bytecode tails 逐 byte 相同。另修正 seed 唯一
+  `<BribeCost>` → 官方 `<bribecost>` token-case 漂移。load order／FormLink／抽樣 PEX winner 通過；
+  script-binding gate 只重報官方 RDO 既有 VMAD findings。請抽查一般關係對話、選項／字幕、任務／
+  通知、賄賂金額替換，以及 Gelebor／Isran／Valerica 的等待／離隊通知，確認沒有方框、mojibake、
+  空白、未替換 token、截斷或新 crash。未通過前不部署到 Play profile。
+
+- **IFD Lydia 4.2.2 正體中文需 Dev-only runtime 驗收**（2026-08-16）：已在
+  [`dist/mods/Improved-Follower-Dialogue-Lydia-Traditional-Chinese-4.2.2/`](dist/mods/Improved-Follower-Dialogue-Lydia-Traditional-Chinese-4.2.2/README.md)
+  建立同名 ESP＋PEX 覆寫，並部署為 `Modpack-KR-Dev` 的獨立最高優先級 layer；Play profile 未變。
+  離線 gate 證明 5,708-record 拓撲與所有非文字 payload 不變，
+  只有 1,794 個 ESP zstring 與 PEX 18 個既有 MCM string slots 改為正體；PEX declaration／bytecode
+  tail 3,986 bytes 逐 byte 相同。houseCARL 的 load-order 與 FormLink gate 通過；script-binding gate
+  僅重報官方 IFD 既有 findings，翻譯沒有改 VMAD 或 bytecode。請抽查萊迪亞姓名、對話選項／字幕、
+  任務日誌、兩本書及 Lydia MCM，確認目前 Proton／`sLanguage=ENGLISH` 能正確讀取 inline UTF-8，
+  沒有方框、mojibake、空白、截斷或新 crash。未通過前不部署到 Play profile。
+
 - **Simonrim Batch 4E 只剩真人附魔功能／手感抽樣**（2026-08-16）：Thaumaturgy 1.5、精確同版繁中、
   Execute XP VMAD fix 與 184-record AVE／Constellations 最終 merge 已完成 Dev-only 靜態與 runtime
   smoke。固定 baseline QA 6/6；本體、fix、AVE、Constellations、merge 都由引擎載入，代表物繁中無
@@ -38,15 +58,6 @@
   與存讀檔手感也屬真人範圍。完整證據在 notes 側
   `logs/simonrim-batch4-4mp-2026-08-16/RESULT.md`。不阻塞接續 Batch 4A；回滾只需停用該報告列出的
   五個 Dev layer。
-
-- **RaceMenu 0.4.20.0 NiOverride signature patch 仍需 fresh-launch 驗收**（2026-08-15）：
-  已在
-  [`dist/mods/RaceMenu-NiOverride-Signature-Patch-0.4.20.0/`](dist/mods/RaceMenu-NiOverride-Signature-Patch-0.4.20.0/README.md)
-  建立未部署的 hash-gated script-only 產物；靜態驗證證明 PEX 只有
-  `GetNodeTransformScaleMode` return type `Float -> Int` 一個語義差異，完整解析為
-  183 functions + 2 state events。日後經使用者同意部署到 Dev profile 後，需 fresh launch 並確認
-  `Papyrus.0.log` 不再出現該函式的 `Function will not be bound`。只驗 binding warning；官方
-  `skee64.dll` 另有 scale-mode key predicate bug，本 PEX patch 沒有也不得宣稱修好它。
 
 - **Expanded Skyrim Weaponry Batch 3A 只剩真人動態驗收**（2026-08-15）：agent 已完成中文名稱、
   inventory preview、第一／第三人稱、地面模型、鍛造配方與 runtime leveled-list distribution 驗證；

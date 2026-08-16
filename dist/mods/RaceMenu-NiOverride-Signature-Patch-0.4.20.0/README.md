@@ -40,9 +40,9 @@ sha256sum -c MANIFEST.sha256
 
 ## 安裝／回滾邊界
 
-本批沒有部署。若日後經使用者同意測試，應把整個資料夾作為獨立 script-only mod，
-置於 RaceMenu 之後，讓 loose `Scripts/NiOverride.pex` 覆蓋 BSA 成員。回滾只需停用或
-移除這個獨立 override；不要改寫官方 RaceMenu 目錄。
+把整個資料夾作為獨立 script-only mod，置於 RaceMenu 之後，讓 loose
+`Scripts/NiOverride.pex` 覆蓋 BSA 成員。回滾只需停用或移除這個獨立 override；不要改寫官方
+RaceMenu 目錄。實際 profile 部署與 runtime 狀態以部署工作區為準，本 artifact 不維護機器專屬狀態。
 
 來源與授權邊界見 [SOURCE.md](SOURCE.md)，實際驗證結果見
 [VERIFICATION.md](VERIFICATION.md)，現役 provider／caller snapshot 見

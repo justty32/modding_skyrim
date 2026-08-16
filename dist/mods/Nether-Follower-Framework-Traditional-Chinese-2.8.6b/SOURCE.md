@@ -15,14 +15,19 @@
 - 檢查／建置日期：2026-08-16。
 
 同版本簡中包 `Nether's Follower Framework Chinese Translation-113822-2-8-6b-1712844205.zip`
-（SHA-256 `6c99a3d976d4331cb456e0ee2cc30c34fac50ff47fadefbaae71888dbbc0a870`）只作術語與初稿參考。
-其 ESP 與 19 個 PEX 均未納入本產物：它們與現役 NFF 本體 byte 不同，且本次未取得足以證明
-behavior-preserving 的語意差異證據。
+（SHA-256 `6c99a3d976d4331cb456e0ee2cc30c34fac50ff47fadefbaae71888dbbc0a870`）只作 MCM 術語初稿參考。
+
+ESP／PEX 改採 Nexus 67680 的 `Nether's Follower Framework - Traditional Chinese 2.8.6b`
+（archive SHA-256 `be9e3a791f140deb1321e3d10f61ee3b81c9cae5f1f9bfbed1339079024b377a`）。
+其 ESP SHA-256 是 `5509f40b3b9af4b7711dbbe3e1818c47ddc4aa7a3872933cec58555b9b958dd8`；
+它提供 465 個 display zstrings。Dev runtime QA 另證明 dialogue menu 不會解析
+`$FF_OutfitCreateMenu` 與 `$FF_SaySubmenu`，所以最終 ESP 以同一份已稽核繁中表的兩個 literal
+取代這兩個原始 key；總計只改 467 個 display zstrings。20 個 PEX 只改 297 個既有 string-table slots，
+其餘 header、prestrings、declaration、properties 與 bytecode tail 不變。
 
 ## 衍生內容與邊界
 
-本包只包含自行校訂的繁體中文譯文、由該譯文重建的同名翻譯表、驗證工具與文件。不複製或
-散布 NFF 的 ESP、PEX、SWF、模型、材質、原始說明書或其他資產。NFF 及原翻譯包的權利屬各自
-作者；公開發布前仍須確認 Permissions 條款。
+本包的 MCM 翻譯表是自行校訂；ESP／PEX 譯文來自 Nexus 67680 並只供本地整合與稽核。
+NFF 及原翻譯包的權利屬各自作者；公開發布或再散布前必須另行確認 Permissions 條款。
 
 這是資料型 text-only override，不是由 `projects/` 下的程式 repo 編譯而成，因此沒有對應專案 commit。
