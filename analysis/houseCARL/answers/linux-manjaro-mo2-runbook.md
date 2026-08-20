@@ -34,7 +34,7 @@ native Linux houseCARL 會把這個值清成 `Z:\home\...`，而不是 `/home/lo
 | Skyrim Data | `~/.local/share/Steam/steamapps/common/Skyrim Special Edition/Data` |
 | MO2 instance | `~/games/mod-organizer-2-skyrimspecialedition/modorganizer2` |
 | MO2 mods | `~/games/mod-organizer-2-skyrimspecialedition/modorganizer2/mods` |
-| MO2 profile | `~/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles/Default` |
+| MO2 profile | `~/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles/Modpack-KR`（唯一 profile；`Default` 已於 2026-08-20 退役） |
 | profile files | `modlist.txt`、`plugins.txt`、`loadorder.txt` 皆存在 |
 | .NET | SDK 8/10、runtime 8/10；缺系統 .NET 9 runtime 與 ASP.NET Core runtime 9 |
 
@@ -84,7 +84,7 @@ dotnet publish src/housecarl-mcp/housecarl-mcp.csproj \
 HOUSECARL_DATA_DIR=/tmp/housecarl-test \
 HouseCarl__DataDir="$HOME/.local/share/Steam/steamapps/common/Skyrim Special Edition/Data" \
 HouseCarl__ModsDir="$HOME/games/mod-organizer-2-skyrimspecialedition/modorganizer2/mods" \
-HouseCarl__ProfileDir="$HOME/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles/Default" \
+HouseCarl__ProfileDir="$HOME/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles/Modpack-KR" \
 /tmp/housecarl-linux-publish/housecarl-mcp --http
 ```
 
@@ -101,7 +101,7 @@ codex mcp add housecarl \
   --env HOUSECARL_DATA_DIR="$HOME/.local/share/housecarl" \
   --env HouseCarl__DataDir="$HOME/.local/share/Steam/steamapps/common/Skyrim Special Edition/Data" \
   --env HouseCarl__ModsDir="$HOME/games/mod-organizer-2-skyrimspecialedition/modorganizer2/mods" \
-  --env HouseCarl__ProfileDir="$HOME/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles/Default" \
+  --env HouseCarl__ProfileDir="$HOME/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles/Modpack-KR" \
   -- "$HOME/tools/housecarl/server/housecarl-mcp"
 ```
 
@@ -112,7 +112,8 @@ codex mcp add housecarl \
 使用手寫 MCP client 直接呼叫 `~/tools/housecarl/server/housecarl-mcp`，結果：
 
 1. `tools/list`：成功列出 35 個工具，包含 `housecarl_load_order_status`、`housecarl_read_record`、`housecarl_skse_inventory`。
-2. `housecarl_load_order_status`：成功讀取 `Default` profile。
+2. `housecarl_load_order_status`：成功讀取當時仍在使用的 `Default` profile（已於 2026-08-20
+   退役；目前唯一 profile 是 `Modpack-KR`）。
    - 103 enabled mods，2 disabled mods。
    - 52 active plugins。
    - 49 plugins resolved to real files。
@@ -150,7 +151,9 @@ codex mcp add housecarl \
 | B | `housecarl-core/DialogueValidate.cs`、`housecarl-mcp/LoadOrderService.cs` | 組出全大寫 `SEQ\<plugin>.seq`，磁碟上是 `Seq/` → 謊報「SGE quest 沒有 .seq」，叫你重生一個早就存在的檔案 |
 | C | `housecarl-core/ArchiveDiscovery.cs` | 硬編碼 `"Skyrim.ini"`，Linux MO2 寫的是 `skyrim.ini` |
 
-**C 就是本文件先前記為「profile 缺 `Skyrim.ini`」的那個警告** —— 檔案一直都在（`profiles/Default/skyrim.ini`，含完整 `[Archive]` 區段），是 houseCARL 找不到。後果是 base BSA 完全不進資產掃描，vanilla 資產一律讀成 ABSENT。
+**C 就是本文件先前記為「profile 缺 `Skyrim.ini`」的那個警告** —— 檔案一直都在（目前為
+`profiles/Modpack-KR/skyrim.ini`，含完整 `[Archive]` 區段），是 houseCARL 找不到。後果是 base BSA
+完全不進資產掃描，vanilla 資產一律讀成 ABSENT。
 
 A 的連鎖後果最嚴重：`validate_dialogue` 會把**已編譯的** result script 報成 `WILL NOT FIRE`，`validate_scripts` 把腳本報成 unverifiable。單次呼叫內即可重現：
 
@@ -206,7 +209,7 @@ codex mcp add housecarl \
   --env HOUSECARL_DATA_DIR="$HOME/.local/share/housecarl" \
   --env HouseCarl__DataDir="$HOME/.local/share/Steam/steamapps/common/Skyrim Special Edition/Data" \
   --env HouseCarl__ModsDir="$HOME/games/mod-organizer-2-skyrimspecialedition/modorganizer2/mods" \
-  --env HouseCarl__ProfileDir="$HOME/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles/Default" \
+  --env HouseCarl__ProfileDir="$HOME/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles/Modpack-KR" \
   -- "$HOME/tools/housecarl/server/housecarl-mcp"
 ```
 
@@ -217,6 +220,29 @@ codex mcp list
 ```
 
 確認 `housecarl` 狀態是 enabled。
+
+### 2026-08-20 profile 遷移後的故障模式
+
+MO2 單 profile 遷移後，`Default` 已退役，`ModOrganizer.ini` 的
+`selected_profile=@ByteArray(Modpack-KR)`，`profiles/` 底下也只剩 `Modpack-KR`。若 houseCARL 的
+explicit `ProfileDir` 仍指向舊目錄，每個查詢都會失敗並回報：
+
+```text
+InvalidOperationException: No active plugins resolved from the MO2 profile
+```
+
+遇到這個症狀時，先核對 houseCARL 實際收到的 `HouseCarl__ProfileDir` 是否指向仍存在且包含
+`modlist.txt`、`plugins.txt`、`loadorder.txt` 的 profile。本機需同步修正以下兩處：
+
+- `~/.codex/config.toml`
+- `~/.claude.json`
+
+兩者的 `HouseCarl__ProfileDir` 都應指向
+`~/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles/Modpack-KR`。2026-08-20 修正時已各留
+一份 `.bak-20260820` 備份。
+
+> **操作警告：** 修改 `~/.codex/config.toml` 會讓所有正在執行的 Codex session 退出；2026-08-20
+> 實測四條線都在改檔後 90 秒內死亡。要改設定前先讓所有 Codex session 收工，再動這個檔案。
 
 ### 3. 不建議先走的路線
 
@@ -246,7 +272,7 @@ sudo pacman -S dotnet-runtime-9.0 aspnet-runtime-9.0
 ## 最小驗證順序
 
 1. 註冊 MCP 後，先問 houseCARL load order status。
-2. 確認它看到 `Default` profile、active plugin 數與 MO2 大致一致。
+2. 確認它看到 `Modpack-KR` profile、active plugin 數與 MO2 大致一致。
 3. 讀 `Skyrim.esm` 裡一個穩定 vanilla record。
 4. 查一個已裝 SKSE plugin inventory，確認 VFS/mod winner 能解析。
 5. 建立一個無害測試 patch mod，例如新增/修改容易回復的 dummy override；產物應出現在 `~/games/mod-organizer-2-skyrimspecialedition/modorganizer2/mods/houseCARL - <name>/`。
