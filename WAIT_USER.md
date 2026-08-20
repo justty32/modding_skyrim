@@ -164,12 +164,15 @@
   3. **Armor 死條目已在 source 修掉。** CommonLibSSE 標頭確認 `TESObjectARMO` 不繼承
      `TESModel`，其掉落／inventory world mesh 在 `TESBipedModelForm::worldModels[男/女]`。
      scene-capture-bridge `0e6fd74` 已改用該路徑並支援 template chain fallback；Linux clang-cl
-     release build 與 portable／真 ModForge contract tests 全過。尚未部署／實機；
+     release build 與 portable／真 ModForge contract tests 全過。2026-08-20 已把同一顆 DLL 安全
+     部署到正式／release staging 兩個 MO2 mod（SHA-256 `f447435d…`），但尚未實機；
      `StaticCollection` 預測仍可能掛零，待同一次實機確認。
 
-  **還沒做完的：部署新 DLL 後做 Browser 實機驗收。** 接手時先依安全 deploy 流程部署
-  `0e6fd74` 的 build，再由使用者 F1 → `Scene Capture Bridge` → Browser 頁（首開觸發全
-  form-array 掃描，注意頓不頓），然後讀
+  **還沒做完的：Browser 實機驗收。** 現役 `Modpack-KR` 已在 profile Git
+  `feat/scene-browser-runtime`（commit `6cba240`）啟用正式 `SceneCaptureBridge` 與
+  `SceneCaptureTools.esp`，release staging 仍停用；22,923,853-byte compact catalog 亦已生成到
+  SKSE 文件目錄（97 sources／48,038 winners，SHA-256 `b8ccbd24…`）。由使用者 F1 →
+  `Scene Capture Bridge` → Browser 頁（首開觸發全 form-array 掃描，注意頓不頓），然後讀
   `<Proton prefix>/drive_c/users/steamuser/Documents/My Games/Skyrim Special Edition/SKSE/SceneCaptureBridge.log`
   的 `Catalog:` 那行對帳。舊版 pre-fix 基線是 27,246 bases／33 plugins／19 types／6,491
   model-less；新版本不再沿用該數字當預期值。type 下拉應出現 **Armor**；搜尋一件護甲並走
