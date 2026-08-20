@@ -84,10 +84,11 @@
   一種毒劑、觀察 vendor 庫存／價格與 early-game 供應，以及較長 session 的平衡與存讀檔手感。
   完整證據在 notes 側 `logs/simonrim-batch4-4a-2026-08-16/RESULT.md`；不阻塞獨立 Batch 4E。
 
-- **Simonrim Batch 4M/P 只剩真人功能／手感抽樣**（2026-08-16）：Mysticism 2.5.0、Adamant 6.0.2、
-  精確版本繁中、Adamant Scrambled Bugs 設定與 `MAG_BastionControllerPerkNPC` SPID 單行修正已完成
-  Dev-only 安裝；load order／VFS／baseline runtime 4/4、SPID `16/16`、恢復系天賦樹與 2.5 新法術
-  「強效火焰弱化」的繁中靜態畫面都已由 agent 驗證，無方框／mojibake／新 crash，不需重跑這些。
+- **Simonrim Batch 4M/P 只剩真人功能／手感抽樣**（更新 2026-08-20）：Mysticism 2.5.0、Adamant
+  6.0.4、精確版本繁中、Adamant Scrambled Bugs 設定與 `MAG_BastionControllerPerkNPC` SPID 單行
+  修正已完成 Dev-only 安裝。6.0.4 的 load order／VFS／靜態完整性與實機存讀檔皆通過；引擎實際
+  載入 `Adamant.esp`，使用者確認技能樹名稱與說明繁中正常，第二次載入後無新 crash 或 Adamant
+  錯誤。恢復系天賦樹與 Mysticism 2.5 新法術「強效火焰弱化」的既有驗證也不需重跑。
   使用者日後遊玩時只需抽樣：正常向 vendor 買書→讀書→施放 novice／apprentice 法術、點代表性
   Adamant 天賦並感受效果，以及 BFCO 輕／重／方向／sprint attack 搭配武器天賦是否自然；長期平衡
   與存讀檔手感也屬真人範圍。完整證據在 notes 側
