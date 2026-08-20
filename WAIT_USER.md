@@ -16,6 +16,15 @@
 
 ## Open
 
+- **Modpack-KR Batch 6 最終 gameplay 驗收**：自動 lane 已於 2026-08-21 以 21/21 PASS、
+  `load_epoch 1 → 2`、0 new crash 收束，但不得冒充真人 gameplay PASS。仍需真人做真正新遊戲、
+  城市/NPC 外觀巡查、BFCO 戰鬥與移動手感、Mysticism/Adamant、CT77/AVE 換裝、隨從招募與
+  RDO/Recorder/Sofia 對話、Altano 的 VIGILANT 正常入口／字幕／語音，以及自然跨入新增 worldspace。
+  VIGILANT 已於 2026-08-21 升到本體／英語語音／正體／book overlay 精確同版 1.8.2；同一輪真人
+  驗收再抽看 MCM 是否無方框／亂碼、兩三本有 description overlay 的書，以及字幕與語音語意即可。
+  Silent Voice 缺口是已接受狀態，不需生成 TTS。逐項判準、agent 已完成的邊界與畫面見
+  [Batch 6 final smoke 結果](../../../notes/projects/modding/skyrim/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md)。
+
 - **RDO Final 正體中文仍需真人 runtime 驗收**（2026-08-16）：已在
   [`dist/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/`](dist/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)
   建立並部署獨立最高優先級 layer，只覆寫同名 ESP 與六個 follower 通知 PEX；部署時期只套用於
