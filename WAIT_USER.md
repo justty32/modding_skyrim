@@ -2,9 +2,9 @@
 
 只列需要使用者親自做/驗證才能繼續的 open 項。完成即移除，不留完成清單。
 
-> 2026-08-20 起，MO2 只保留 `Modpack-KR`；遊玩、開發與驗收狀態改由 profile Git repo 的
-> `main`、`feat/*`、`release/*` 分支管理。下方較早的 `Play-KR`／`Modpack-KR-Dev`／`QA`
-> 名稱只描述當時的歷史驗證環境，不再是可選 profile。
+> 2026-08-20 起，MO2 只保留 `Modpack-KR`，遊玩、開發與驗收狀態改由 profile Git repo 分支管理。
+> 下文保留的 `Play-KR`／`Modpack-KR-Dev`／`QA` 舊名稱只描述當時的部署或驗證環境，不代表現在
+> 仍有這些 profile 可以切換。
 
 常見類型：
 
@@ -16,20 +16,23 @@
 
 ## Open
 
-- **RDO Final 正體中文需 Dev-only runtime 驗收**（2026-08-16）：已在
+- **RDO Final 正體中文仍需真人 runtime 驗收**（2026-08-16）：已在
   [`dist/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/`](dist/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)
-  建立並部署獨立最高優先級 layer，只覆寫同名 ESP 與六個 follower 通知 PEX；Play profile 未變。
+  建立並部署獨立最高優先級 layer，只覆寫同名 ESP 與六個 follower 通知 PEX；部署時期只套用於
+  當時的 Dev profile，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 `Modpack-KR`）。
   離線 gate 證明 9,766-record topology／全部非文字 payload 相同，4,071 個 ESP zstrings 與六個 PEX
   display slots 改為正體；PEX declaration／properties／bytecode tails 逐 byte 相同。另修正 seed 唯一
   `<BribeCost>` → 官方 `<bribecost>` token-case 漂移。load order／FormLink／抽樣 PEX winner 通過；
   script-binding gate 只重報官方 RDO 既有 VMAD findings。請抽查一般關係對話、選項／字幕、任務／
   通知、賄賂金額替換，以及 Gelebor／Isran／Valerica 的等待／離隊通知，確認沒有方框、mojibake、
-  空白、未替換 token、截斷或新 crash。未通過前不部署到 Play profile。
+  空白、未替換 token、截斷或新 crash。部署當時的門檻是未通過前不進入一般遊玩環境；profile
+  合併不改變此項仍待驗的結論。
 
 - **Recorder Follower 3.0 正體中文需真人對話抽查**（2026-08-20）：已在
   [`dist/mods/Recorder-Follower-Traditional-Chinese-3.0/`](dist/mods/Recorder-Follower-Traditional-Chinese-3.0/README.md)
-  從官方 3.0 baseline 與同版 CHT seed 重建獨立同名 ESP 覆寫，並只部署到 `Modpack-KR-Dev`；
-  Play profile 未變。離線 gate 證明 1,380-record topology／全部非文字 payload 相同，只有 1,429 個
+  從官方 3.0 baseline 與同版 CHT seed 重建獨立同名 ESP 覆寫；部署時期只套用於當時的 Dev
+  profile，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 `Modpack-KR`）。離線 gate
+  證明 1,380-record topology／全部非文字 payload 相同，只有 1,429 個
   玩家可見 zstring 改為正體；scoped houseCARL after-gate 全 PASS。固定 baseline runtime smoke
   3/3 PASS，精確 ESS／SKSE pair 與 state fingerprint 匹配、load epoch `0 → 1`，遊戲確實載入
   `Recorder Follower Base.esp`，且已完成 teardown。請日後抽查 Recorder 的招募／一般對話、字幕、
@@ -38,7 +41,8 @@
 - **Sofia Follower 2.51 正體中文 v2 需真人對話／MCM 抽查**（2026-08-20）：已在
   [`dist/mods/Sofia-Follower-Traditional-Chinese-2.51-v2/`](dist/mods/Sofia-Follower-Traditional-Chinese-2.51-v2/README.md)
   從官方 2.51 baseline 與 Nexus 183562 的 Traditional Chinese Localization Patch v2 重建獨立
-  ESP＋8 PEX 覆寫，並只部署到 `Modpack-KR-Dev`；Play profile 未變。離線 gate 證明 1,742-record
+  ESP＋8 PEX 覆寫；部署時期只套用於當時的 Dev profile，未納入當時的一般遊玩環境（兩者已於
+  2026-08-20 併入唯一 `Modpack-KR`）。離線 gate 證明 1,742-record
   topology 與全部非文字 payload 相同，只有 1,665 個 ESP 顯示文字欄位及 105 個既有 PEX
   string-table slots 改為正體；所有 PEX declaration／properties／control-flow／bytecode tails 逐 byte
   相同。固定 baseline runtime smoke 3/3 PASS，精確 ESS／SKSE pair 與 state fingerprint 匹配、
@@ -47,8 +51,9 @@
   截斷或新 crash；英語配音本來就保留。
 
 - **VIGILANT 1.8.1 正體中文需真人主線／顯示抽查**（2026-08-20）：已取得 Nexus 158886
-  保留的 exact-version `VIGILANT SE (CHT)` 1.8.1，並只部署到 `Modpack-KR-Dev` 的最高優先級；
-  Play profile 未變。官方英文與翻譯 ESM 都有 129,107 records，record identity／header／GRUP／
+  保留的 exact-version `VIGILANT SE (CHT)` 1.8.1；部署時期只套用於當時 Dev profile 的最高
+  優先級，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 `Modpack-KR`）。官方英文與
+  翻譯 ESM 都有 129,107 records，record identity／header／GRUP／
   subrecord topology 完全一致；7,250 個差異全部落在可本地化文字 payload，非文字差異為零。
   以現役英文 ESM 作 before baseline 的 houseCARL after-gate 4/4 PASS；固定 baseline runtime smoke
   3/3 PASS，精確 ESS／SKSE pair 與 state fingerprint 匹配、`load_epoch 0 → 1`，遊戲確實載入
@@ -60,20 +65,23 @@
   「石之碎片」確認描述行也是正體。現有英／
   日語配音保留是預期行為；作者檔與私人修正都不納入公開 `dist/` 成品或對外重發。
 
-- **2026-08-20 新任務內容批只剩 Dev-only UI／真人內容抽查**：UNSLAAD 3.0.6b、Missives
-  2.03、DAc0da 1.1.0b 與 GLENMORIL 0.96.80b 的本體、英譯、正體、適用擴充及現成語音已只部署到
-  `Modpack-KR-Dev`；`Play-KR` 未變。2026-08-20 的短自動 runtime smoke 7/7 PASS：受信任 baseline
+- **2026-08-20 新任務內容批只剩 UI／真人內容抽查**：UNSLAAD 3.0.6b、Missives
+  2.03、DAc0da 1.1.0b 與 GLENMORIL 0.96.80b 的本體、英譯、正體、適用擴充及現成語音，在部署
+  時期只套用於當時的 Dev profile，未納入當時的一般遊玩環境；兩者已於 2026-08-20 併入唯一
+  `Modpack-KR`。2026-08-20 的短自動 runtime smoke 7/7 PASS：受信任 baseline
   配對與新 load epoch 通過，且引擎實際載入 `Unslaad.esm`、`Missives.esp`、`DAc0da.esm`、
   `Glenmoril.esm`；本時窗沒有新 crash，teardown 已關閉 Skyrim／MO2、停用 AgentBridge 並切回
-  `Play-KR`。後續只需拆批抽查 MCM／任務入口、正體日誌／對話／字幕、實際語音與跨 worldspace；
+  當時的 `Play-KR` 歷史 profile（該名稱現已不存在）。後續只需拆批抽查 MCM／任務入口、正體
+  日誌／對話／字幕、實際語音與跨 worldspace；
   尚未真人走過的任務流程不可稱 gameplay PASS。GLENMORIL 現有有效語音覆蓋為
   3,653／4,792（76.23%），UNSLAAD 現成英語語音只涵蓋 Act 1；剩餘內容使用 Silent Voice 是已接受
   的預期狀態，**不需要生成 TTS，也不應因缺語音判定失敗**。安裝矩陣與回滾 commits 見 notes
   `projects/modding/skyrim/logs/quest-content-batch-2026-08-20.md`。
 
 - **Simonrim Batch 4E 只剩真人附魔功能／手感抽樣**（2026-08-16）：Thaumaturgy 1.5、精確同版繁中、
-  Execute XP VMAD fix 與 184-record AVE／Constellations 最終 merge 已完成 Dev-only 靜態與 runtime
-  smoke。固定 baseline QA 6/6；本體、fix、AVE、Constellations、merge 都由引擎載入，代表物繁中無
+  Execute XP VMAD fix 與 184-record AVE／Constellations 最終 merge 已在當時的 Dev profile 完成
+  靜態與 runtime smoke（該環境已於 2026-08-20 併入唯一 `Modpack-KR`）。固定 baseline QA 6/6；
+  本體、fix、AVE、Constellations、merge 都由引擎載入，代表物繁中無
   方框／mojibake，AVE 護手第三人稱模型正常，本次啟動時間窗沒有新 crash。使用者日後只需正常遊玩
   抽樣：附魔分解→學習→製作→裝備／重載／充能、Empowered Strike 的 power-attack proc、slot
   restriction，以及 loot/vendor 中 vanilla／AVE enchanted items 的階級與比例是否自然。完整證據在
@@ -81,7 +89,8 @@
 
 - **Simonrim Batch 4A 只剩真人鍊金／經濟／戰鬥手感抽樣**（2026-08-16）：Apothecary 1.3.9、
   Fishing 1.4.1、Saints and Seducers 1.4.0、Rare Curios 1.4.0、四個精確版本繁中層與獨立
-  Become Ethereal VMAD fix 已完成 Dev-only 靜態與 runtime 驗證。固定 baseline QA 7/7、SPID
+  Become Ethereal VMAD fix 已在當時的 Dev profile 完成靜態與 runtime 驗證（該環境已於
+  2026-08-20 併入唯一 `Modpack-KR`）。固定 baseline QA 7/7、SPID
   `19/19`；`隱秘藥劑` 的繁中名稱／說明、15 秒開始／結束效果及修補後 Papyrus 增量都已由 agent
   驗證，代表性本體與三個 CC 物品也無方框／mojibake／新 crash，不需重跑這些。使用者日後遊玩時
   只需以正常流程抽樣：鍊金台混合 vanilla／Fishing／Saints／Rare Curios 原料、在戰鬥中正常塗抹
@@ -90,14 +99,15 @@
 
 - **Simonrim Batch 4M/P 只剩真人功能／手感抽樣**（更新 2026-08-20）：Mysticism 2.5.0、Adamant
   6.0.4、精確版本繁中、Adamant Scrambled Bugs 設定與 `MAG_BastionControllerPerkNPC` SPID 單行
-  修正已完成 Dev-only 安裝。6.0.4 的 load order／VFS／靜態完整性與實機存讀檔皆通過；引擎實際
+  修正於部署時期只安裝在當時的 Dev profile（該環境已於 2026-08-20 併入唯一 `Modpack-KR`）。
+  6.0.4 的 load order／VFS／靜態完整性與實機存讀檔皆通過；引擎實際
   載入 `Adamant.esp`，使用者確認技能樹名稱與說明繁中正常，第二次載入後無新 crash 或 Adamant
   錯誤。恢復系天賦樹與 Mysticism 2.5 新法術「強效火焰弱化」的既有驗證也不需重跑。
   使用者日後遊玩時只需抽樣：正常向 vendor 買書→讀書→施放 novice／apprentice 法術、點代表性
   Adamant 天賦並感受效果，以及 BFCO 輕／重／方向／sprint attack 搭配武器天賦是否自然；長期平衡
   與存讀檔手感也屬真人範圍。完整證據在 notes 側
   `logs/simonrim-batch4-4mp-2026-08-16/RESULT.md`。不阻塞接續 Batch 4A；回滾只需停用該報告列出的
-  五個 Dev layer。
+  五個部署 layer（部署當時稱為 Dev layer，現由唯一 profile 的 Git 分支狀態管理）。
 
 - **Expanded Skyrim Weaponry Batch 3A 只剩真人動態驗收**（2026-08-15）：agent 已完成中文名稱、
   inventory preview、第一／第三人稱、地面模型、鍛造配方與 runtime leveled-list distribution 驗證；
@@ -107,8 +117,9 @@
   回滾只需停用 merge patch、CHT 與 NPC 原包，原始 USSEP／ESW 檔均未被改寫。
 
 - **精確換成無心 3.1.0 仍需使用者日後提供原包**（2026-08-15 更新）：目前已用官方 Nexus
-  JH People `1.1.3` + NPC Plugin Chooser 2 做成可在 1.6.1170 運作的 Dev-only 536 NPC 外觀 patch，
-  並完成靜態與遊戲內黑臉檢查；這已滿足本輪「經典韓系 NPC 美化」，不阻塞整合包。但它不是
+  JH People `1.1.3` + NPC Plugin Chooser 2 在當時的 Dev profile 做成可於 1.6.1170 運作的 536 NPC
+  外觀 patch（該環境已於 2026-08-20 併入唯一 `Modpack-KR`），並完成靜態與遊戲內黑臉檢查；這已
+  滿足本輪「經典韓系 NPC 美化」，不阻塞整合包。但它不是
   夜貓－無心 3.1.0 的完整 1138 NPC「人物美化＋頭模替換」，不能冒充相同內容。
 
   若日後仍要**精確換成無心 3.1.0**，請從作者頁所列百度網盤只下載名稱含「人物美化」與
