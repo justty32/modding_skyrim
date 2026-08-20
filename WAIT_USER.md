@@ -78,35 +78,24 @@
   原相容性調查見
   [wuxin-character-overhaul-se-ae-compatibility.md](workflows/investigation/findings/wuxin-character-overhaul-se-ae-compatibility.md)。
 
-- **母 repo 最新 commit 引用了三個尚未 push 的子模組 commit**（2026-08-12，家用 Manjaro
-  實證）：`main` 已快轉到 `b95ee0d`，但 `git pull` 的遞迴子模組 fetch 會報
-  `upload-pack: not our ref`。GitHub 與本機都沒有以下三個被母 repo gitlink 指定的 commit：
+- **scene-capture-bridge 離線 catalog Browser 實機驗收**（2026-08-12 開條，**2026-08-13 家用機大幅修正**，**2026-08-20 阻礙已解除**）：
 
-  | submodule | 母 repo 要求 | GitHub `main` 目前 | 首次被母 repo 引用 |
-  |---|---|---|---|
-  | `my_skyrim_plugin_1` | `ea6bfeb` | `e257642` | `e4a95e8`（15:56） |
-  | `scene-capture-bridge` | `1e44326` | `298566a` | `e4a95e8`（15:56） |
-  | `sofia-patch` | `fc25fc1` | `c1c6f80` | `b90b1fb` → `3692362`（13:30–14:25） |
+  **✅ 2026-08-20：那顆 commit 已經推上去了，這條可以開始做。** 公司機（`guanyu.lu`）持有的三顆
+  未發布 submodule commit 已全部 fast-forward 到各自 GitHub `main`：`scene-capture-bridge`
+  `298566a → 1e44326`、`my_skyrim_plugin_1` `e257642 → ea6bfeb`、`sofia-patch`
+  `c1c6f80 → fc25fc1`。母 repo 的遞迴 fetch 不再報 `upload-pack: not our ref`，`git submodule
+  status` 三者皆已對齊 remote。**家用機 `git pull` ＋ `git submodule update --init` 之後就拿得到
+  DLL 消費端程式碼**，可直接接上下面的實機驗收。（⚠️ `houseCARL` 仍需另外處理——它釘在
+  SSH remote `git@github.com:justty32/houseCARL.git` 的自有 fork，公司機沒有 SSH 金鑰，
+  與本條無關。）
 
-  請在仍持有這三個 commit 的電腦，逐 repo 將包含目標 commit 的 branch push 到各自 GitHub
-  remote；上表母 repo commits 均由公司電腦的 `guanyu.lu` 於 2026-08-12 建立，可依時間與
-  parent commit 訊息定位原 session。先確認 `git branch --contains <sha>` 與欲推 branch，再
-  push，**不要在這台把母 repo
-  指標倒退到舊 `main`**，否則會丟掉本批已落地內容。之後在母 repo 執行
-  `git submodule update --init --recursive`，三者都能 checkout 才算完成。這台其餘子模組已
-  對齊；目前只有上述三個仍顯示 gitlink mismatch。
-
-- **scene-capture-bridge 離線 catalog Browser 實機驗收**（2026-08-12 開條，**2026-08-13 家用機大幅修正**）：
-
-  **⚠️ 真正的阻礙不是 toolchain，是那顆 commit 沒推。** 原本這條寫「公司機沒有 Linux
-  clang-cl+xwin toolchain」——家用機**有，而且 2026-08-13 實測整條 build path 是活的**
-  （`rm -rf build/release-clang-cl-linux` → `cmake --preset build-release-clang-cl-linux`
-  → build 29/29 通過；import 表只有 KERNEL32/ole32/VERSION/USER32/SHELL32，靜態 CRT 乾淨；
-  `scripts/deploy.sh` 已部署，crc32 `7e94ad30`）。真正卡住的是：**DLL 消費端程式碼在母 repo
-  gitlink 指的 `1e44326`，那顆不在家用機也不在 GitHub**（`git cat-file` 確認），還躺在公司機。
-  本機 HEAD `298566a` 的 `Catalog.cpp` 只有 **runtime-only** 版，沒有 json 讀檔/merge/
-  provenance/global-source-order gate。**在那顆被 push 上來之前，離線 catalog 的實機驗收做不了**
-  ——見本檔上面「母 repo 最新 commit 引用了三個尚未 push 的子模組 commit」條目，那三顆裡就有它。
+  原本卡住的是：DLL 消費端程式碼在母 repo gitlink 指的 `1e44326`，那顆不在家用機也不在
+  GitHub，還躺在公司機；家用機 HEAD `298566a` 的 `Catalog.cpp` 只有 **runtime-only** 版，
+  沒有 json 讀檔/merge/provenance/global-source-order gate。**toolchain 從來不是問題**——家用機
+  2026-08-13 實測整條 build path 是活的（`rm -rf build/release-clang-cl-linux` →
+  `cmake --preset build-release-clang-cl-linux` → build 29/29 通過；import 表只有
+  KERNEL32/ole32/VERSION/USER32/SHELL32，靜態 CRT 乾淨；`scripts/deploy.sh` 已部署，
+  crc32 `7e94ad30`）。
 
   **產生端（ModForge）已在家用機對真實完整 load order 跑通**（2026-08-13）：
 
