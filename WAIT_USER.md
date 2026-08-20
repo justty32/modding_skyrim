@@ -149,18 +149,3 @@
   有 BG3 安裝或合法抽取素材時，挑一個小型 level 做 `.lsf` → `.lsx`，記錄欄位與一組實例，
   再決定是否開 converter/spec 工作；沒有實檔前不宣稱 port pipeline 可行。評估框架與候選
   比較見 [port-source-survey](analysis/port-source-survey/README.md)。
-
-- **darksouls-port ghost-tol 0.02 門洞仍需真人實走**（更新至 **2026-08-21 01:16，
-  Asia/Taipei**）：舊版「參數未套用／venv 未齊／待全量重跑」已被今晚工作取代。專用環境與
-  `--ghost-tol 0.02` 已完成 47 件碰撞全量重建；21,226 hulls 經既有 MSB/orphan 過濾後輸出
-  389 個載體 NIF，638-file ZIP 的 SHA-256 是
-  `8166b7c80018d9443676d942d0dfc2361a6eab69c9d866a4491521c91e22f97c`，離線 15/15 tests、archive
-  test 與 ModForge validate/dump 均通過。
-
-  01:00 後曾把新版安裝為 `DSPortP1` runtime candidate；resolver 為 102/102、0 missing。但給足
-  600 秒仍未啟動 Skyrim，沒有 load epoch、before/after position 或實體 `W` 輸入，所以這次結果是
-  **inconclusive，不是門洞 FAIL，也不是 PASS**。teardown 已停用 `DSPortP1` 與 AgentBridge，
-  MO2 payload 保留，下一次**不需重建或重下載**。請在可實際進遊戲的時窗啟用候選並走過原先會卡的
-  門洞一次；若 0.02 仍卡，下一個調查方向才是門框側壁 thickness／`--planar-thresh` 0.15，
-  不再下降 `--ghost-tol`。完整時序與證據見
-  [P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md)。

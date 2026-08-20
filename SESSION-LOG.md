@@ -6,9 +6,8 @@
 
 ## 現役工作
 
-截至 **2026-08-21 01:16（Asia/Taipei）**，母 repo 沒有仍在執行中的 agent 工作；今晚
-22:00 後的母 repo 變更已收束為 9 筆 commit（交辦同步時原為 8 筆，01:16 另加入
-`b64e413`）：
+截至 **2026-08-21 02:40（Asia/Taipei）**，母 repo 沒有仍在執行中的 agent 工作；Skyrim／MO2
+已 teardown、遊戲鎖已釋放。今晚已完成的主要提交與 durable 狀態如下：
 
 - `a10682d`、`4c6d5ae`：移除已由程式化 runtime 證據完成的 Scene Browser 舊待辦，並把
   `WAIT_USER.md` 的歷史 profile 名稱校正為唯一現役 `Modpack-KR` 的時序說明。
@@ -18,9 +17,13 @@
 - `64a88a1`：將 scene-capture-bridge pin 至 placement drift 修正 `75308c9`；Armor、Editor commit
   與 save/load 的 runtime regression 已通過。未 commit ghost 的第三人稱攝影機語意仍待使用者
   選擇，列在 `WAIT_USER.md`，不冒充已決定。
-- `2932152`、`b64e413`：將 darksouls-port pin 至 ghost-tol 0.02 全量門洞重建及 01:16 runtime
-  紀錄。離線重建已完成；本次 Skyrim 未成功啟動，故實走結論仍是 **inconclusive**，不是門洞
-  PASS 或 FAIL，後續真人走門保留在 `WAIT_USER.md`。
+- `2932152`、`b64e413`、`c7703d2`、`fe64d6f`、`b3dd673`：先完成 darksouls-port
+  ghost-tol 0.02 全量門洞重建，再查明 `moshortcut` 被 Steam modal 阻塞的啟動根因；plain MO2
+  workaround 解封後已做實體 `W` 時間軸測試。角色 6 秒後停在 `Y=1940.9648`，未達
+  `Y<1803.84`，結論為 **FAIL**。`h0001B1A18` 的 planar-thresh 0.15/0.08/0.05/0.02 sweep
+  不改 blocker cross-section，所以未提交無效參數變更；下一步是 player-capsule-aware 的局部門洞
+  clearance 修法，細節歸檔於 `projects/darksouls-port/p1/P1-INGAME-FINDINGS.md`，不再列為
+  `WAIT_USER.md` 的真人實走項目。
 - `e9e2680`：新增 exact-version、45-record fail-closed 的 VIGILANT `BOOK.DESC` 私人修正產生器；
   工具已完成，1.8.2 是否升級仍不在本批範圍。
 
