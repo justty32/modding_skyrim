@@ -22,15 +22,39 @@
   通知、賄賂金額替換，以及 Gelebor／Isran／Valerica 的等待／離隊通知，確認沒有方框、mojibake、
   空白、未替換 token、截斷或新 crash。未通過前不部署到 Play profile。
 
-- **IFD Lydia 4.2.2 正體中文需 Dev-only runtime 驗收**（2026-08-16）：已在
-  [`dist/mods/Improved-Follower-Dialogue-Lydia-Traditional-Chinese-4.2.2/`](dist/mods/Improved-Follower-Dialogue-Lydia-Traditional-Chinese-4.2.2/README.md)
-  建立同名 ESP＋PEX 覆寫，並部署為 `Modpack-KR-Dev` 的獨立最高優先級 layer；Play profile 未變。
-  離線 gate 證明 5,708-record 拓撲與所有非文字 payload 不變，
-  只有 1,794 個 ESP zstring 與 PEX 18 個既有 MCM string slots 改為正體；PEX declaration／bytecode
-  tail 3,986 bytes 逐 byte 相同。houseCARL 的 load-order 與 FormLink gate 通過；script-binding gate
-  僅重報官方 IFD 既有 findings，翻譯沒有改 VMAD 或 bytecode。請抽查萊迪亞姓名、對話選項／字幕、
-  任務日誌、兩本書及 Lydia MCM，確認目前 Proton／`sLanguage=ENGLISH` 能正確讀取 inline UTF-8，
-  沒有方框、mojibake、空白、截斷或新 crash。未通過前不部署到 Play profile。
+- **Recorder Follower 3.0 正體中文需真人對話抽查**（2026-08-20）：已在
+  [`dist/mods/Recorder-Follower-Traditional-Chinese-3.0/`](dist/mods/Recorder-Follower-Traditional-Chinese-3.0/README.md)
+  從官方 3.0 baseline 與同版 CHT seed 重建獨立同名 ESP 覆寫，並只部署到 `Modpack-KR-Dev`；
+  Play profile 未變。離線 gate 證明 1,380-record topology／全部非文字 payload 相同，只有 1,429 個
+  玩家可見 zstring 改為正體；scoped houseCARL after-gate 全 PASS。固定 baseline runtime smoke
+  3/3 PASS，精確 ESS／SKSE pair 與 state fingerprint 匹配、load epoch `0 → 1`，遊戲確實載入
+  `Recorder Follower Base.esp`，且已完成 teardown。請日後抽查 Recorder 的招募／一般對話、字幕、
+  任務日誌、書籍與通知，確認沒有方框、mojibake、空白、截斷或新 crash；英語配音本來就保留。
+
+- **Sofia Follower 2.51 正體中文 v2 需真人對話／MCM 抽查**（2026-08-20）：已在
+  [`dist/mods/Sofia-Follower-Traditional-Chinese-2.51-v2/`](dist/mods/Sofia-Follower-Traditional-Chinese-2.51-v2/README.md)
+  從官方 2.51 baseline 與 Nexus 183562 的 Traditional Chinese Localization Patch v2 重建獨立
+  ESP＋8 PEX 覆寫，並只部署到 `Modpack-KR-Dev`；Play profile 未變。離線 gate 證明 1,742-record
+  topology 與全部非文字 payload 相同，只有 1,665 個 ESP 顯示文字欄位及 105 個既有 PEX
+  string-table slots 改為正體；所有 PEX declaration／properties／control-flow／bytecode tails 逐 byte
+  相同。固定 baseline runtime smoke 3/3 PASS，精確 ESS／SKSE pair 與 state fingerprint 匹配、
+  `load_epoch 0 → 1`，遊戲確實載入 `SofiaFollower.esp`，且已完成 teardown。請日後抽查 Sofia 的
+  招募／一般對話、字幕、任務日誌、MCM、關係狀態與左上角通知，確認沒有方框、mojibake、空白、
+  截斷或新 crash；英語配音本來就保留。
+
+- **VIGILANT 1.8.1 正體中文需真人主線／顯示抽查**（2026-08-20）：已取得 Nexus 158886
+  保留的 exact-version `VIGILANT SE (CHT)` 1.8.1，並只部署到 `Modpack-KR-Dev` 的最高優先級；
+  Play profile 未變。官方英文與翻譯 ESM 都有 129,107 records，record identity／header／GRUP／
+  subrecord topology 完全一致；7,250 個差異全部落在可本地化文字 payload，非文字差異為零。
+  以現役英文 ESM 作 before baseline 的 houseCARL after-gate 4/4 PASS；固定 baseline runtime smoke
+  3/3 PASS，精確 ESS／SKSE pair 與 state fingerprint 匹配、`load_epoch 0 → 1`，遊戲確實載入
+  `Vigilant.esm`，且已完成 teardown。請日後在晨星城風岳旅店找 Altano，抽查任務開場、對話／字幕、
+  日誌／目標、書籍、物品／效果與 MCM，確認沒有方框、mojibake、空白、截斷或新 crash。後續稽核
+  發現官方 1.8.1 與 1.8.2 正體包都原樣留下同一批 45 個召喚書／石之碎片 `BOOK.DESC` 英文行；已另
+  建私人最高優先級 text-only layer，沿用同一筆 `BOOK.FULL` 的既有正體專名補齊，45-record gate 與
+  houseCARL before/after 4/4 PASS；修正後固定 baseline runtime 亦 3/3 PASS。抽查時請至少打開一件
+  「石之碎片」確認描述行也是正體。現有英／
+  日語配音保留是預期行為；作者檔與私人修正都不納入公開 `dist/` 成品或對外重發。
 
 - **Simonrim Batch 4E 只剩真人附魔功能／手感抽樣**（2026-08-16）：Thaumaturgy 1.5、精確同版繁中、
   Execute XP VMAD fix 與 184-record AVE／Constellations 最終 merge 已完成 Dev-only 靜態與 runtime
