@@ -161,21 +161,21 @@
      winners，且保留 11,616 筆沒有 direct model 的合法 base，不再讓 DLL parse 完整大檔再丟棄。
   2. **過濾軸必須是 record_type，不能是 model_path。** ARMO 的模型掛在 ARMA 上，Mutagen 的
      `IModeledGetter.Model` 對它是 null；拿 model_path 當條件會把 4,944 件護甲整批砍掉。
-  3. **`Catalog.cpp` 的 `kTypes` 裡 `Armor` 是死條目。** CommonLibSSE 標頭確認
-     `TESObjectARMO` 繼承鏈裡沒有 `TESModel`（走 `TESBipedModelForm`），所以緊接著那道
-     `base->As<RE::TESModel>()` gate 會把**所有護甲**濾掉——列在可瀏覽型別裡但一筆都進不了
-     Browser。`StaticCollection` 預測同樣掛零（待實機確認）。
+  3. **Armor 死條目已在 source 修掉。** CommonLibSSE 標頭確認 `TESObjectARMO` 不繼承
+     `TESModel`，其掉落／inventory world mesh 在 `TESBipedModelForm::worldModels[男/女]`。
+     scene-capture-bridge `0e6fd74` 已改用該路徑並支援 template chain fallback；Linux clang-cl
+     release build 與 portable／真 ModForge contract tests 全過。尚未部署／實機；
+     `StaticCollection` 預測仍可能掛零，待同一次實機確認。
 
-  **還沒做完的：runtime-only Browser 實機驗收。** DLL 已部署、遊戲已由
-  `mo2ctl launch --no-wait` 啟動（Play-KR profile），但**沒人進去點過**。接手的 agent：請使用者
-  F1 → `Scene Capture Bridge` → Browser 頁（首開觸發全 form-array 掃描，注意頓不頓），然後讀
+  **還沒做完的：部署新 DLL 後做 Browser 實機驗收。** 接手時先依安全 deploy 流程部署
+  `0e6fd74` 的 build，再由使用者 F1 → `Scene Capture Bridge` → Browser 頁（首開觸發全
+  form-array 掃描，注意頓不頓），然後讀
   `<Proton prefix>/drive_c/users/steamuser/Documents/My Games/Skyrim Special Edition/SKSE/SceneCaptureBridge.log`
-  的 `Catalog:` 那行對帳。**離線算出來的預測值**：placeable bases **27,246**、
-  from **33** plugin(s)、**19** type(s)（不是 21）、skipped **6,491** model-less（其中 4,944 是護甲）。
-  type 下拉選單裡**應該找不到 Armor**——找不到就是發現 3 實錘；找得到就是判斷錯，
-  `TESObjectARMO` 在 runtime 另有取得 model 的路徑。兩種結果都要記回來。
+  的 `Catalog:` 那行對帳。舊版 pre-fix 基線是 27,246 bases／33 plugins／19 types／6,491
+  model-less；新版本不再沿用該數字當預期值。type 下拉應出現 **Armor**；搜尋一件護甲並走
+  preview／place，確認模型可見。另確認 `StaticCollection` 是否出現在 type 下拉。
 
-  **`1e44326` 到手之後才輪得到的**：確認 `TESDataHandler::files` 過濾出的 loaded sequence 與實際
+  **其餘 runtime 相容性矩陣**：確認 `TESDataHandler::files` 過濾出的 loaded sequence 與實際
   override precedence 一致，驗 Browser loaded/match、EditorID 搜尋/顯示與 preview/place；再各測
   缺一個、多一個、反轉順序、壞 JSON 時皆退回 runtime-only。另需確認 MO2 process 內
   `Data/<plugin>` 可讀/hash，才能設計 SHA gate；現階段 UI 會明示 SHA 尚未驗證。
