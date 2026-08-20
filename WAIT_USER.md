@@ -157,8 +157,10 @@
      `catalog export-json` **沒有型別過濾**。照 DLL 的 21 個 `kTypes` 過濾後實測：
      **468 MB → 11 MB**，同 schema v1、同 59 sources、33,737 筆，EditorID 覆蓋率
      33,736/33,737。2026-08-20 已把型別過濾正式做成 `catalog export-json --placeable`；現役
-     97-source load order 重跑為 **595,738,360 → 22,923,853 bytes（縮小 96.15%）**，48,038
-     winners，且保留 11,616 筆沒有 direct model 的合法 base，不再讓 DLL parse 完整大檔再丟棄。
+     初次 97-source load order 重跑為 **595,738,360 → 22,923,853 bytes（縮小 96.15%）**，48,038
+     winners，且保留 11,616 筆沒有 direct model 的合法 base。後續發現 root resolver 漏算 MO2
+     shared `overwrite` 這個最高優先 provider；修正並納入三個 CC plugin 與已啟用的
+     `SceneCaptureTools.esp` 後，現役正確基線是 **101 sources／48,121 winners／22,964,331 bytes**。
   2. **過濾軸必須是 record_type，不能是 model_path。** ARMO 的模型掛在 ARMA 上，Mutagen 的
      `IModeledGetter.Model` 對它是 null；拿 model_path 當條件會把 4,944 件護甲整批砍掉。
   3. **Armor 死條目已在 source 修掉。** CommonLibSSE 標頭確認 `TESObjectARMO` 不繼承
@@ -170,21 +172,22 @@
 
   **還沒做完的：Browser 實機驗收。** 現役 `Modpack-KR` 已在 profile Git
   `feat/scene-browser-runtime`（commit `6cba240`）啟用正式 `SceneCaptureBridge` 與
-  `SceneCaptureTools.esp`，release staging 仍停用；22,923,853-byte compact catalog 亦已生成到
-  SKSE 文件目錄（97 sources／48,038 winners，SHA-256 `b8ccbd24…`）。由使用者 F1 →
+  `SceneCaptureTools.esp`，release staging 仍停用；修正 resolver 後的 22,964,331-byte compact catalog
+  亦已生成到 SKSE 文件目錄（101 sources／48,121 winners，SHA-256 `60cb323e…`），且用 DLL 共用的
+  C++ consumer gate 對同一份 resolved order 驗證相容。由使用者 F1 →
   `Scene Capture Bridge` → Browser 頁（首開觸發全 form-array 掃描，注意頓不頓），然後讀
   `<Proton prefix>/drive_c/users/steamuser/Documents/My Games/Skyrim Special Edition/SKSE/SceneCaptureBridge.log`
   的 `Catalog:` 那行對帳。舊版 pre-fix 基線是 27,246 bases／33 plugins／19 types／6,491
   model-less；新版本不再沿用該數字當預期值。type 下拉應出現 **Armor**；搜尋一件護甲並走
   preview／place，確認模型可見。另確認 `StaticCollection` 是否出現在 type 下拉。
 
-  **其餘 runtime 相容性矩陣**：確認 `TESDataHandler::files` 過濾出的 loaded sequence 與實際
-  override precedence 一致，驗 Browser loaded/match、EditorID 搜尋/顯示與 preview/place；再各測
-  缺一個、多一個、反轉順序、壞 JSON 時皆退回 runtime-only。另需確認 MO2 process 內
+  **其餘 runtime 相容性矩陣**：portable probe 已確認正確 101-source order 通過，而缺一個、多一個、
+  反轉順序、壞 JSON 會分別 fail closed；實機仍需確認 `TESDataHandler::files` 過濾出的 loaded sequence
+  與 resolver 一致，並驗 Browser loaded/match、EditorID 搜尋/顯示與 preview/place。另需確認 MO2 process 內
   `Data/<plugin>` 可讀/hash，才能設計 SHA gate；現階段 UI 會明示 SHA 尚未驗證。
-  ⚠️ 注意 `loadorder.txt` 有三個 CC plugin（`ccbgssse068-bloodfall`、`ccbgssse069-contest`、
-  `ccvsvsse004-beafarmer`）**磁碟上根本不存在**，遊戲直接跳過；任何 resolver 與「缺一個」測試都得
-  先把這個既有的洞算進去，別誤判成 bug。
+  ⚠️ 三個 CC plugin（`ccbgssse068-bloodfall`、`ccbgssse069-contest`、`ccvsvsse004-beafarmer`）不是
+  不存在，而是只由 shared `overwrite` 提供；resolver 現已依 MO2 precedence 把它們算入。未來把
+  Creation Club 檔拆出 overwrite 時，必須先建立等價 owner，否則 catalog 與 runtime 會一起缺檔。
 
 - **BG3 場景佈局實檔驗證**（2026-08-11）：桌面研究已確認 LSLib 可把 BG3
   `Levels/` 下的 `.lsf` 轉成可讀 `.lsx`，但尚未用使用者持有的遊戲資料驗證 placement

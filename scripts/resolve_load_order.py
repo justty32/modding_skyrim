@@ -1,56 +1,77 @@
 #!/usr/bin/env python3
-"""Resolve the MO2 profile's enabled load order to real plugin file paths.
+"""Resolve an MO2 profile's enabled load order to real plugin file paths."""
 
-MO2 on Linux has no live VFS to read, so the winner for each plugin filename is
-found the way MO2 itself would: walk enabled mods from highest priority (first
-line of modlist.txt) down, then fall back to the game's own Data directory.
-"""
+from __future__ import annotations
+
+import argparse
 import sys
 from pathlib import Path
 
-MO2 = Path("/home/lorkhan/games/mod-organizer-2-skyrimspecialedition/modorganizer2")
-GAME_DATA = Path("/home/lorkhan/.local/share/Steam/steamapps/common/Skyrim Special Edition/Data")
-PROFILE = MO2 / "profiles" / (sys.argv[1] if len(sys.argv) > 1 else "Modpack-KR")
+DEFAULT_MO2 = Path("/home/lorkhan/games/mod-organizer-2-skyrimspecialedition/modorganizer2")
+DEFAULT_GAME_DATA = Path(
+    "/home/lorkhan/.local/share/Steam/steamapps/common/Skyrim Special Edition/Data"
+)
 
 
-def lines(path):
+def lines(path: Path) -> list[str]:
     return [l.strip() for l in path.read_text(encoding="utf-8-sig", errors="replace").splitlines()
             if l.strip() and not l.startswith("#")]
 
 
-order = lines(PROFILE / "loadorder.txt")
-# plugins.txt omits the implicitly-always-on masters (vanilla + Creation Club)
-# entirely, and lists an explicitly disabled plugin without its `*`. So absent
-# means enabled, and only a listed-but-unstarred entry is really off.
-listed = {l.lstrip("*").lower() for l in lines(PROFILE / "plugins.txt")}
-starred = {l[1:].lower() for l in lines(PROFILE / "plugins.txt") if l.startswith("*")}
-enabled = starred | {n.lower() for n in order if n.lower() not in listed}
-# modlist.txt is highest-priority-first; MO2 resolves later (lower) mods first losing.
-mods = [l[1:] for l in lines(PROFILE / "modlist.txt") if l.startswith("+")]
+def resolve(profile: Path, mo2: Path, game_data: Path) -> tuple[list[tuple[str, Path]], list[str], int, int]:
+    order = lines(profile / "loadorder.txt")
+    # plugins.txt omits implicitly-always-on masters (vanilla + Creation Club)
+    # and lists an explicitly disabled plugin without `*`. Absent therefore
+    # means enabled; only a listed-but-unstarred entry is disabled.
+    plugin_lines = lines(profile / "plugins.txt")
+    listed = {line.lstrip("*").lower() for line in plugin_lines}
+    starred = {line[1:].lower() for line in plugin_lines if line.startswith("*")}
+    enabled = starred | {name.lower() for name in order if name.lower() not in listed}
+    # modlist.txt is highest-priority-first.
+    mods = [line[1:] for line in lines(profile / "modlist.txt") if line.startswith("+")]
 
-missing, resolved = [], []
-for name in order:
-    if name.lower() not in enabled:
-        continue
-    hit = None
-    for mod in mods:                       # highest priority first == first hit wins
-        cand = MO2 / "mods" / mod / name
-        if cand.is_file():
-            hit = cand
-            break
-    if hit is None:
-        cand = GAME_DATA / name
-        if cand.is_file():
-            hit = cand
-    if hit is None:
-        missing.append(name)
-    else:
-        resolved.append((name, hit))
+    missing: list[str] = []
+    resolved: list[tuple[str, Path]] = []
+    for name in order:
+        if name.lower() not in enabled:
+            continue
 
-for name, path in resolved:
-    print(path)
+        # MO2's shared overwrite is the virtual Data tree's highest-priority
+        # provider. It must win before every named mod and the physical game
+        # Data directory, even though it has no `+` line in modlist.txt.
+        candidates = [mo2 / "overwrite" / name]
+        candidates.extend(mo2 / "mods" / mod / name for mod in mods)
+        candidates.append(game_data / name)
+        hit = next((candidate for candidate in candidates if candidate.is_file()), None)
+        if hit is None:
+            missing.append(name)
+        else:
+            resolved.append((name, hit))
+    return resolved, missing, len(order), len(enabled)
 
-print(f"-- {len(resolved)} resolved, {len(missing)} missing, "
-      f"{len(order)} in loadorder, {len(enabled)} enabled", file=sys.stderr)
-for name in missing:
-    print(f"MISSING: {name}", file=sys.stderr)
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("profile", nargs="?", default="Modpack-KR")
+    parser.add_argument("--mo2-root", type=Path, default=DEFAULT_MO2)
+    parser.add_argument("--game-data", type=Path, default=DEFAULT_GAME_DATA)
+    args = parser.parse_args(argv)
+
+    profile = args.mo2_root / "profiles" / args.profile
+    resolved, missing, order_count, enabled_count = resolve(
+        profile, args.mo2_root, args.game_data
+    )
+    for unused_name, path in resolved:
+        print(path)
+    print(
+        f"-- {len(resolved)} resolved, {len(missing)} missing, "
+        f"{order_count} in loadorder, {enabled_count} enabled",
+        file=sys.stderr,
+    )
+    for name in missing:
+        print(f"MISSING: {name}", file=sys.stderr)
+    return 0 if not missing else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
