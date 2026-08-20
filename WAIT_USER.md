@@ -64,6 +64,16 @@
   houseCARL before/after 4/4 PASS；修正後固定 baseline runtime 亦 3/3 PASS。抽查時請至少打開一件
   「石之碎片」確認描述行也是正體。現有英／
   日語配音保留是預期行為；作者檔與私人修正都不納入公開 `dist/` 成品或對外重發。
+  截至 **2026-08-21 01:16（Asia/Taipei）**，今晚新增的是可重建上述 45 筆私人修正的
+  exact-version 產生器；1.8.2 來源準備尚未取代現役 1.8.1 layer，因此本項 1.8.1 真人抽查仍成立。
+
+- **Scene Capture Browser：請決定未 commit ghost 的第三人稱攝影機語意**（2026-08-21）：
+  placement drift 的 Armor、Editor commit 與 save/load 修正已由 AgentBridge 座標序列及
+  `load_epoch 1 → 2` 通過，不需重做；剩下的是已確認的 camera/player-facing ray 語意選擇，並非
+  尚未診斷的漂移。請選一項：**commit 後清 ghost**（最簡單，但會破壞連續放置）、**暫停／恢復
+  follow**（保留預覽但增加狀態操作），或 **改用 rendered-camera ray**（體驗最佳、改動與相容性
+  驗證最大）。選定前 `feat/placement-drift` 的 ghost 分支維持原狀；完整證據與取捨見 notes
+  `projects/modding/skyrim/logs/scene-capture-placement-drift-2026-08-20.md`。
 
 - **2026-08-20 新任務內容批只剩 UI／真人內容抽查**：UNSLAAD 3.0.6b、Missives
   2.03、DAc0da 1.1.0b 與 GLENMORIL 0.96.80b 的本體、英譯、正體、適用擴充及現成語音，在部署
@@ -77,6 +87,10 @@
   3,653／4,792（76.23%），UNSLAAD 現成英語語音只涵蓋 Act 1；剩餘內容使用 Silent Voice 是已接受
   的預期狀態，**不需要生成 TTS，也不應因缺語音判定失敗**。安裝矩陣與回滾 commits 見 notes
   `projects/modding/skyrim/logs/quest-content-batch-2026-08-20.md`。
+  截至 **2026-08-21 00:57（Asia/Taipei）**，後續 Batch 6 final automatic lane 另以 101-plugin
+  當時快照完成 21 PASS、0 FAIL、3 handoff；它只補強 load／cell／save-reload 證據，不取代本項
+  真人任務、語音、UI 與 worldspace 流程抽查。詳見 notes
+  `projects/modding/skyrim/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md`。
 
 - **Simonrim Batch 4E 只剩真人附魔功能／手感抽樣**（2026-08-16）：Thaumaturgy 1.5、精確同版繁中、
   Execute XP VMAD fix 與 184-record AVE／Constellations 最終 merge 已在當時的 Dev profile 完成
@@ -136,22 +150,17 @@
   再決定是否開 converter/spec 工作；沒有實檔前不宣稱 port pipeline 可行。評估框架與候選
   比較見 [port-source-survey](analysis/port-source-survey/README.md)。
 
-- **darksouls-port 門洞仍卡，參數已備好但未套用**（2026-08-06，**使用者決定先收現狀**；2026-08-11 補上前置條件與備援）：症狀是使用者實走回報「只有過門會卡，過道上走基本沒問題」——根因是平面內填洞，有門洞的牆其凸包把門洞填實。`--ghost-tol` 是**每顆 hull** 的容許量，一個門洞切成好幾顆、每顆合法填 0.24 m²，加起來就把門框內縮到卡人。
+- **darksouls-port ghost-tol 0.02 門洞仍需真人實走**（更新至 **2026-08-21 01:16，
+  Asia/Taipei**）：舊版「參數未套用／venv 未齊／待全量重跑」已被今晚工作取代。專用環境與
+  `--ghost-tol 0.02` 已完成 47 件碰撞全量重建；21,226 hulls 經既有 MSB/orphan 過濾後輸出
+  389 個載體 NIF，638-file ZIP 的 SHA-256 是
+  `8166b7c80018d9443676d942d0dfc2361a6eab69c9d866a4491521c91e22f97c`，離線 15/15 tests、archive
+  test 與 ModForge validate/dump 均通過。
 
-  **⚠️ 動手前的前置條件**：`tools/collision_hulls.py` 的相依全是 lazy import，跑起來才會炸。**目前哪個 venv 都不齊**（`model-converter/.venv` 只有 numpy + pygltflib）。**權威 setup 在 `tools/collision_hulls.py` 檔頭 docstring**（2026-08-11 核對程式碼）：專屬 venv + `soulstruct` / `soulstruct-havok` 從 GitHub 源碼裝（`pip install -e ./soulstruct && pip install --no-deps -e ./soulstruct-havok`——PyPI 的 soulstruct 只到 2.3.2 < havok 要求的 2.4.0，且**必須 editable**，否則漏 package-data JSON 會 `FileNotFoundError`），再 `pip install numpy scipy colorama networkx vhacdx trimesh shapely`。
-
-  兩個容易踩的點（`p1/P1-INGAME-FINDINGS.md`「工具現況」節已於 2026-08-11 同步修正，含逐項核對表）：
-
-  - **`shapely` 是必要的，且正好在本任務的關鍵路徑上**——`_ghost_area()`（line 141 import shapely）由 `_split_by_ghost()` line 223 呼叫，那就是 `--ghost-tol` 的核心機制。漏裝會在要跑的那一步失敗。
-  - **`vhacdx` 不需要**——只在 `_vhacd()` 內 import，而 `--method` 預設是 `components` 而非 `vhacd`。
-
-  執行步驟：
-
-  1. 照 `tools/collision_hulls.py` 檔頭建好 venv 與相依。
-  2. `--ghost-tol` 預設 0.25 → **0.02**（h0006 實測：hull 233 → 302，總憑空面積 2.0 → 0.1 m²，**+30% hull 換 20 倍改善**）。
-  3. 全量重跑 47 個 hkx。全量代價估計：載體 NIF 341 → 約 440 塊。
-  4. `rm -rf out/DSPortP1` 後重新打包 → `mo2ctl install --force` 重裝 → 進場走一次門。
-
-  **若 0.02 還是卡**：下一個懷疑對象是門框側壁（reveal）自成 patch 後的**厚度**，那要調 `--planar-thresh`（現行預設 **0.15**），**不是繼續降 `--ghost-tol`**。（兩個預設值均於 2026-08-11 對 `tools/collision_hulls.py` 核對：`--ghost-tol` 0.25 於 line 327、`--planar-thresh` 0.15 於檔頭說明。）
-
-  **`DSPortP1` 目前仍裝在 MO2 裡**（新版碰撞、332 個載體），故意留著讓下次能直接進場。技術細節見 [P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md)。
+  01:00 後曾把新版安裝為 `DSPortP1` runtime candidate；resolver 為 102/102、0 missing。但給足
+  600 秒仍未啟動 Skyrim，沒有 load epoch、before/after position 或實體 `W` 輸入，所以這次結果是
+  **inconclusive，不是門洞 FAIL，也不是 PASS**。teardown 已停用 `DSPortP1` 與 AgentBridge，
+  MO2 payload 保留，下一次**不需重建或重下載**。請在可實際進遊戲的時窗啟用候選並走過原先會卡的
+  門洞一次；若 0.02 仍卡，下一個調查方向才是門框側壁 thickness／`--planar-thresh` 0.15，
+  不再下降 `--ghost-tol`。完整時序與證據見
+  [P1-INGAME-FINDINGS.md](projects/darksouls-port/p1/P1-INGAME-FINDINGS.md)。
