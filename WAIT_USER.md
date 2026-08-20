@@ -156,8 +156,9 @@
      ——那是世界裡的 REFR 實例，而 Browser 是 Object Window，只列 base object。
      `catalog export-json` **沒有型別過濾**。照 DLL 的 21 個 `kTypes` 過濾後實測：
      **468 MB → 11 MB**，同 schema v1、同 59 sources、33,737 筆，EditorID 覆蓋率
-     33,736/33,737。這直接關係到本條原本要求的「不造成數 GB 啟動延遲」——**建議把型別過濾
-     做進 `export-json`（例如 `--placeable`），不要指望 DLL 端 parse 完 468 MB 再丟掉**。
+     33,736/33,737。2026-08-20 已把型別過濾正式做成 `catalog export-json --placeable`；現役
+     97-source load order 重跑為 **595,738,360 → 22,923,853 bytes（縮小 96.15%）**，48,038
+     winners，且保留 11,616 筆沒有 direct model 的合法 base，不再讓 DLL parse 完整大檔再丟棄。
   2. **過濾軸必須是 record_type，不能是 model_path。** ARMO 的模型掛在 ARMA 上，Mutagen 的
      `IModeledGetter.Model` 對它是 null；拿 model_path 當條件會把 4,944 件護甲整批砍掉。
   3. **`Catalog.cpp` 的 `kTypes` 裡 `Armor` 是死條目。** CommonLibSSE 標頭確認
