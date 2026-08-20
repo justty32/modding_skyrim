@@ -1,0 +1,36 @@
+{
+  "plugin_name": "Adamant.esp",
+  "source_sha256": "88903af1b94d089858abafbc13bd6172aa1c37e1303cc3fecc0b6fc988ac11a7",
+  "expected_masters": [
+    "Skyrim.esm",
+    "Update.esm",
+    "Dawnguard.esm",
+    "HearthFires.esm",
+    "Dragonborn.esm",
+    "MysticismMagic.esp"
+  ],
+  "expected_records": 2009,
+  "expected_rows": 3234,
+  "fields": [
+    {"record_type": "ALCH", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "AMMO", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "ARMO", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "AVIF", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "AVIF", "field": "DESC", "table": "DLSTRINGS"},
+    {"record_type": "ENCH", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "GMST", "field": "DATA", "table": "STRINGS", "editor_prefix": "s"},
+    {"record_type": "HAZD", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "LSCR", "field": "DESC", "table": "DLSTRINGS"},
+    {"record_type": "MESG", "field": "DESC", "table": "DLSTRINGS"},
+    {"record_type": "MGEF", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "MGEF", "field": "DNAM", "table": "DLSTRINGS"},
+    {"record_type": "MISC", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "PERK", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "PERK", "field": "DESC", "table": "DLSTRINGS"},
+    {"record_type": "QUST", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "SCRL", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "SPEL", "field": "FULL", "table": "STRINGS"},
+    {"record_type": "SPEL", "field": "DESC", "table": "DLSTRINGS"},
+    {"record_type": "WEAP", "field": "FULL", "table": "STRINGS"}
+  ]
+}
