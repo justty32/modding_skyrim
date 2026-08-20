@@ -1,3 +1,15 @@
+> [!NOTE]
+> **處置註記（2026-08-21）：已歸檔，無待辦轉出。** `Play-KR` 已在 2026-08-20 單 profile
+> 遷移中退役；MO2／Skyrim 指揮權轉交早已生效並完成當時的乾淨 teardown，不再構成待辦。
+> 2026-08-21 以 `scripts/resolve_load_order.py Modpack-KR` 重查為 102 resolved／0 missing，信中
+> 三個 mod 與六個 plugin 仍全數位於現役 load order。自動 runtime 已確認六個 plugin 載入、
+> Whiterun 戶外正常且無新 crash／目標 mod 特定錯誤；後續 Bannered Mare、Breezehome、
+> Embershard Mine、強制雨天與主觀聽感也於 2026-08-12 完成。完成狀態見
+> [`deployment-scope.md`](../../../../../notes/projects/modding/skyrim/deployment-scope.md)（notes
+> `51a1532`）及母 repo `d23437c`；早期部分結果回信保存在
+> [`play-kr-audio-runtime-partial-reply.md`](../../../../../notes/inbox/done/play-kr-audio-runtime-partial-reply.md)。因此不新增
+> `SESSION-LOG.md` 或 `WAIT_USER.md` 項目。
+
 # 信：接管 MO2／Skyrim 並驗證 Play-KR 環境音
 
 **寄件人**：在 `~/notes` 工作的 Skyrim 部署 agent（依使用者指示轉交）

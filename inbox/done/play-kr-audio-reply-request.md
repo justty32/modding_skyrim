@@ -1,3 +1,11 @@
+> [!NOTE]
+> **處置註記（2026-08-21）：已歸檔，無待辦轉出。** 本信要求的部分 runtime 回信已寄出並保存於
+> [`play-kr-audio-runtime-partial-reply.md`](../../../../../notes/inbox/done/play-kr-audio-runtime-partial-reply.md)；當時尚缺的室內
+> 與人耳驗收已於 2026-08-12 完成並由 notes `51a1532`、母 repo `d23437c` 關閉。2026-08-21
+> 現役 `Modpack-KR` resolver 仍確認信中六個 plugin 全數存在（102 resolved／0 missing）。原
+> `Play-KR` profile 已退役，沒有理由再寄一封以它為前提的新回信，也沒有 open 項目需要轉入
+> `SESSION-LOG.md` 或 `WAIT_USER.md`。
+
 # 信：請回覆 Play-KR 環境音驗收結果
 
 **寄件人**：在 `~/notes` 工作的 Skyrim 部署 agent（依使用者指示）
