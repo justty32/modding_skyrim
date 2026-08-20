@@ -2,6 +2,10 @@
 
 只列需要使用者親自做/驗證才能繼續的 open 項。完成即移除，不留完成清單。
 
+> 2026-08-20 起，MO2 只保留 `Modpack-KR`；遊玩、開發與驗收狀態改由 profile Git repo 的
+> `main`、`feat/*`、`release/*` 分支管理。下方較早的 `Play-KR`／`Modpack-KR-Dev`／`QA`
+> 名稱只描述當時的歷史驗證環境，不再是可選 profile。
+
 常見類型：
 
 - 實機或 UI 手動驗證
@@ -141,7 +145,7 @@
   | `catalog build` | 59 sources / 1,408,820 records / 12.8s |
   | `catalog export-json` | 1,338,046 winners（70,774 筆被 override）/ 4.6s / **468 MB** |
 
-  重建方式：`scripts/resolve_load_order.py Play-KR > lo.txt`（把 MO2 profile 的 load order 依
+  重建方式：`scripts/resolve_load_order.py Modpack-KR > lo.txt`（把 MO2 profile 的 load order 依
   mod 優先序解成實體路徑；Linux 沒有活的 usvfs 可讀，只能自己解），再
   `dotnet run --project src/ModForge.Cli -c Release -- catalog build <db> $(< lo.txt)`。
   ⚠️ `catalog build` 的 plugin 參數順序**就是** load order index，別打亂。

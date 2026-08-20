@@ -10,7 +10,7 @@ from pathlib import Path
 
 MO2 = Path("/home/lorkhan/games/mod-organizer-2-skyrimspecialedition/modorganizer2")
 GAME_DATA = Path("/home/lorkhan/.local/share/Steam/steamapps/common/Skyrim Special Edition/Data")
-PROFILE = MO2 / "profiles" / (sys.argv[1] if len(sys.argv) > 1 else "Play-KR")
+PROFILE = MO2 / "profiles" / (sys.argv[1] if len(sys.argv) > 1 else "Modpack-KR")
 
 
 def lines(path):
