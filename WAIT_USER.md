@@ -56,11 +56,13 @@
   「石之碎片」確認描述行也是正體。現有英／
   日語配音保留是預期行為；作者檔與私人修正都不納入公開 `dist/` 成品或對外重發。
 
-- **2026-08-20 新任務內容批需 Dev-only 分段 runtime／真人抽查**：UNSLAAD 3.0.6b、Missives
+- **2026-08-20 新任務內容批只剩 Dev-only UI／真人內容抽查**：UNSLAAD 3.0.6b、Missives
   2.03、DAc0da 1.1.0b 與 GLENMORIL 0.96.80b 的本體、英譯、正體、適用擴充及現成語音已只部署到
-  `Modpack-KR-Dev`；`Play-KR` 未變。本批已完成 plugin／字串／FUZ 對應等靜態檢查，但沒有啟動
-  Skyrim，因此不可視為 runtime PASS。後續請拆批驗證：先確認遊戲可啟動、讀檔、MCM／任務入口及
-  正體日誌／對話／字幕，再於實際進度中抽查語音與跨 worldspace。GLENMORIL 現有有效語音覆蓋為
+  `Modpack-KR-Dev`；`Play-KR` 未變。2026-08-20 的短自動 runtime smoke 7/7 PASS：受信任 baseline
+  配對與新 load epoch 通過，且引擎實際載入 `Unslaad.esm`、`Missives.esp`、`DAc0da.esm`、
+  `Glenmoril.esm`；本時窗沒有新 crash，teardown 已關閉 Skyrim／MO2、停用 AgentBridge 並切回
+  `Play-KR`。後續只需拆批抽查 MCM／任務入口、正體日誌／對話／字幕、實際語音與跨 worldspace；
+  尚未真人走過的任務流程不可稱 gameplay PASS。GLENMORIL 現有有效語音覆蓋為
   3,653／4,792（76.23%），UNSLAAD 現成英語語音只涵蓋 Act 1；剩餘內容使用 Silent Voice 是已接受
   的預期狀態，**不需要生成 TTS，也不應因缺語音判定失敗**。安裝矩陣與回滾 commits 見 notes
   `projects/modding/skyrim/logs/quest-content-batch-2026-08-20.md`。
