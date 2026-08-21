@@ -16,23 +16,6 @@
 
 ## Open
 
-- **下載 AI Overhaul 1.9.5 官方與精確簡中檔，讓 agent 完成私人正體 ESP layer**（2026-08-21）：
-  請用 Nexus mod-manager download 保存以下兩個 MAIN files 到既有 Skyrim archive library，再通知
-  agent：
-
-  - [官方 AI Overhaul AE 1.9.5](https://www.nexusmods.com/skyrimspecialedition/mods/21654?tab=files&file_id=765713)：
-    file id `765713`，精確檔名
-    `AI Overhaul AE 1.9.5 21654 1.9.5 2026-06-19T21-47Z n0oTCmkUb.zip`。
-  - [AI Overhaul AE 1.9.5 - CHS](https://www.nexusmods.com/skyrimspecialedition/mods/62035?tab=files&file_id=785390)：
-    file id `785390`，精確檔名
-    `AI Overhaul AE 1.9.5 - CHS 62035 1.9.5 2026-08-04T13-41Z s6Og0dfQx.zip`。
-
-  兩邊 metadata 都是 1.9.5，但官方已移除 USSEP hard master、簡中頁仍寫需要 USSEP；必須取得實檔
-  才能判斷 master／record topology 是否精確相同。舊版實檔已證明翻譯面含大量 NPC／地名、字幕與
-  任務文字，判定可自製但需人工校對；版本／topology 對不上就維持英文。po3 Tweaks 1.16.0 的三行
-  私人 INI-value-only 正體層已完成 offline gate，不需另下載中文來源。完整判定見 notes
-  [`cht-layer-feasibility-round2-2026-08-21.md`](../../../notes/projects/modding/skyrim/logs/cht-layer-feasibility-round2-2026-08-21.md)。
-
 - **Modpack-KR Batch 6 最終 gameplay 驗收**：自動 lane 已於 2026-08-21 以 21/21 PASS、
   `load_epoch 1 → 2`、0 new crash 收束，但不得冒充真人 gameplay PASS。仍需真人做真正新遊戲、
   城市/NPC 外觀巡查、BFCO 戰鬥與移動手感、Mysticism/Adamant、CT77/AVE 換裝、隨從招募與
