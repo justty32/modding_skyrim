@@ -16,6 +16,16 @@
 
 ## Open
 
+- **下載 DMK 1.5.0 精確簡中語言檔，讓 agent 完成私人正體 JSON layer**（2026-08-21）：請從
+  [Directional Movement Keys - DMK - LOYI CHS](https://www.nexusmods.com/skyrimspecialedition/mods/181640?tab=files&file_id=781475)
+  下載 MAIN file id `781475`、version `1.5.0`，精確檔名
+  `Directional Movement Keys - DMK - CHS 181640 1.5.0 2026-07-26T07-46Z 587RqThU7.7z`，放到既有
+  Skyrim archive library 後通知 agent。官方 DMK 1.5.0 原生讀外部 `Language.json`，所以可做不含
+  DLL 的 text-only 正體層；但目前本機沒有這份約 1 KiB archive，不能先猜它的 key／文字或冒充已
+  通過 exact-version gate。OAR 3.2 不需下載：其簡中包會替換 DLL，已判定不符合本包的非文字
+  payload 契約。MCM Helper 1.6.2 的兩行私人正體層則已完成 offline gate。完整判定見 notes
+  [`cht-layer-feasibility-2026-08-21.md`](../../../notes/projects/modding/skyrim/logs/cht-layer-feasibility-2026-08-21.md)。
+
 - **Modpack-KR Batch 6 最終 gameplay 驗收**：自動 lane 已於 2026-08-21 以 21/21 PASS、
   `load_epoch 1 → 2`、0 new crash 收束，但不得冒充真人 gameplay PASS。仍需真人做真正新遊戲、
   城市/NPC 外觀巡查、BFCO 戰鬥與移動手感、Mysticism/Adamant、CT77/AVE 換裝、隨從招募與
