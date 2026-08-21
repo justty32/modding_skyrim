@@ -4,6 +4,9 @@
 **Author**: Jonahex | **License**: MIT | **Last release**: 2025-05-25
 **Surveyed**: 2026-06-15（原始碼完整閱讀）
 
+同線比較：[SkyPlace — Tool Survey Finding](skyplace.md)。SkyPlace 已有完整的玩家向
+runtime reference 操作 UX，但只持久化到特定 save／`_Place.bin`，沒有 ESP 匯出。
+
 ---
 
 ## 工具定位
@@ -53,6 +56,12 @@
 ## 對「擴展以取代 CK 場景/地景編輯」的分析
 
 ### Feature 1：Reference / Object 放置與移動
+
+**與 SkyPlace 的邊界**：SkyPlace 用準星物理 raycast 選取，直接操作或以
+`PlaceObjectAtMe()` 重建 runtime references，並已處理多選、群組、collision、floor
+clipping 與鍵鼠／手把 UX；本工具則以 `Console::SelectReference` 選取，目標是把 edited
+form 經 EspGenerator 寫成可發布的 ESP。前者可作 interaction design 參考，但不能替代
+後者的 authored REFR／export pipeline；詳 [SkyPlace finding](skyplace.md)。
 
 **C# 端（EspGenerator）**：✅ **已就位**
 - `IPlacedGetter` 分支已完整實作（line 283-314 in `EspGenerator.cs`）
@@ -108,6 +117,10 @@
 ---
 
 ## 擴展實作建議（優先序）
+
+SkyPlace 不改變此順序：它能省下準星 raycast、群組 transform、碰撞／貼地與 controller UX
+的探索，但沒有 ESP writer，且 source repo 未宣告授權，不能直接搬碼；因此以下四段沒有一段
+可直接刪除。
 
 1. **先做：存檔按鈕** — 在 MainWindow 加「Save to ESP」觸發 `Serializer::Export()`，驗證現有 form 編輯能正確輸出
 2. **次做：Reference 新建** — `PlaceObjectAtPlayer()` helper + base form 選擇器 + EnqueueForm

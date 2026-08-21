@@ -25,6 +25,7 @@ repos/
 | 工具 | 類型 | 狀態 | 摘要 |
 |------|------|------|------|
 | [skyrim-ingame-editor](findings/skyrim-ingame-editor.md) | SKSE plugin + EspGenerator | ✅ 完整調查 | 遊戲內即時 Weather/Cell/ImageSpace/LGTM 編輯；EspGenerator 已支援 Reference（IPlacedGetter）匯出；**擴展路徑清楚**（見 roadmap generation.md #3） |
+| [SkyPlace](findings/skyplace.md) | SKSE runtime object manipulator | ✅ 原始碼調查 | 準星 raycast + runtime reference 群組／搬動／縮放；結果綁定 save 與 `_Place.bin`，**無 ESP 匯出**；source repo 未宣告授權 |
 | TES5Edit | Delphi GUI 編輯器 | 📄 Gemini raw | xEdit：record 查看/清理/衝突解決/Pascal 腳本；`wbDefinitions.pas` 定義 record binary 佈局 |
 | F4RefToBlender | Python Blender 腳本 | 📄 Gemini raw | CK reference data + PyNifly → Blender 3D 場景重建；了解 reference 資料流用 |
 | BodySlide-and-Outfit-Studio | C++ wxWidgets GUI | 📄 Gemini raw | NIF 服裝/身體 mesh 編輯器；BodySlide 滑桿自訂 + Batch Build；Outfit Studio mesh 編輯 + skinning |
