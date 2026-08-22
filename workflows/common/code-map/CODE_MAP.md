@@ -39,3 +39,6 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 | `scripts/resolve_load_order.py` | 把唯一 `Modpack-KR` 的 enabled `loadorder.txt` 解析成真實 plugin paths；provider precedence 是 shared `overwrite` → `modlist.txt` 最高優先 enabled mod → game `Data`，任何 enabled missing plugin 以非零 exit fail closed |
 | `tests/test_resolve_load_order.py` | synthetic MO2 tree 驗 overwrite winner、named-mod priority、implicit master 與 disabled／missing plugin 行為 |
 | `scripts/build_vigilant_book_desc_overlay.py` | 以指定版本的 VIGILANT 正體 plugin 同時作結構 seed 與術語來源，只補齊精確 45 筆仍為英文的 `BOOK.DESC`；筆數、record topology 與所有非目標 payload 都 fail closed，並輸出逐筆 ledger |
+| `tools/agent_inbox/inbox_send.sh` | Codex 工作線以固定 frontmatter／STATUS 契約原子發布完成、阻塞或進度訊息到執行期 inbox |
+| `tools/agent_inbox/inbox_read.sh` | 無副作用、空 inbox 完全靜默的未讀訊息摘要，供調度者與 `UserPromptSubmit` hook 使用 |
+| `tools/agent_inbox/notify_watch.sh` | 每 20 秒靜默輪詢新訊息與受監看 tmux session，對新信、消失 session 及兩輪確認的孤兒狀態各通知一次 |

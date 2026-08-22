@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/lorkhan/repo/moddings/skyrim/tools/agent_inbox/inbox_read.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
