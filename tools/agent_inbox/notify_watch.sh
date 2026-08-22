@@ -119,7 +119,10 @@ check_session() {
         return
     fi
 
-    if [[ $capture == *'Working ('* ]]; then
+    # 'Working (' 是明顯在跑；'Waiting for background terminal (' 是被自己開的背景
+    # 指令擋住（例如五分鐘一次的輪詢 sleep、或 protontricks 拉起 MO2 GUI）。
+    # 後者一樣是活著的，不算孤兒——2026-08-22 對 codex-pandora 誤報兩次才補上。
+    if [[ $capture == *'Working ('* || $capture == *'Waiting for background terminal ('* ]]; then
         touch "$seen_marker" || true
         clear_pending "$pending_marker"
         return
