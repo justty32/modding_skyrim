@@ -282,10 +282,18 @@ modorganizer2/profiles -> /home/lorkhan/repo/moddings/skyrim/instance/profiles
 
 ## 還沒做的
 
-| # | 事項 | 為什麼還沒做 |
+### 使用者裁決（2026-08-23）
+
+| 事項 | 裁決 |
+|---|---|
+| **從 Steam 啟動驗證 symlink** | ✅ **通過**。成功 redirect 到 MO2，Wine 跟得住 Linux symlink |
+| `modpack-design` / `agentctl` 翻 public | **不翻**。使用者說「沒差，真的沒差」——維持 private，不做無謂的審查工 |
+| `git filter-repo` 清母 repo 歷史 | **不做**。翻譯層已從 HEAD 移走，歷史留著 |
+| `~/Downloads` 壓縮檔歸檔 | **要做**。歸進 `~/skyrim_mods/` |
+
+### 仍未完成
+
+| # | 事項 | 狀態 |
 |---|---|---|
-| 1 | **從 Steam 啟動一次驗證 symlink** | 只有使用者能做。這是 B1 唯一的實機驗收 |
-| 2 | `modpack-design` 與 `agentctl` 是否翻成 public | 需要逐檔審完 457 檔 archive 與 296 檔 qa 才能確定沒夾帶第三方內容 |
-| 3 | 母 repo 是否用 `git filter-repo` 清掉歷史裡的翻譯層 | 要重寫歷史並強制推送，是獨立決定 |
-| 4 | `~/Downloads` 71 個 Nexus 壓縮檔（0.8GB）歸檔 | 待使用者確認要不要進 `~/skyrim_mods/` |
-| 5 | SCB camera-ray 15 條驗收 | 中斷於統整之前，證據只支持 2 條 |
+| 1 | `~/Downloads` 壓縮檔歸進 `~/skyrim_mods/` | 進行中：先逐檔判斷是不是 Skyrim mod，再對既有 125GB 庫做重複比對 |
+| 2 | SCB camera-ray 15 條驗收 | 中斷於統整之前，證據只支持 2 條 |
