@@ -11,7 +11,8 @@
 | 觸發 | 工作流 | 入口檔 |
 |------|--------|--------|
 | 「想找 mod，還不知道要哪個」 | mod-discovery | [workflows/mod-discovery/README.md](workflows/mod-discovery/README.md) |
-| 「要抓某個 mod 下來裝」 | nexus-intake | [workflows/nexus-intake/README.md](workflows/nexus-intake/README.md) |
+| 「要抓某個 mod 下來裝」 | nexus-intake | [workflows/nexus-intake/README.md](workflows/nexus-intake/README.md) —— 單件與衛星件（擴充／patch／漢化）|
+| 「要抓一整套系列（動作、perk、任務框架…）」 | nexus-intake | [workflows/nexus-intake/series.md](workflows/nexus-intake/series.md) —— 每層各自成批、生成式 output |
 | 「做中文層／補全現有中文層」 | localization | [workflows/localization/README.md](workflows/localization/README.md) |
 | 「改 MO2 profile：裝／移除／改排序」 | profile-change | [workflows/profile-change/README.md](workflows/profile-change/README.md) |
 | 「規劃整合包要玩什麼」 | modpack-planning | [workflows/modpack-planning/README.md](workflows/modpack-planning/README.md) |
