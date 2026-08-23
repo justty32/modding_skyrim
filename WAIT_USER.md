@@ -180,3 +180,17 @@
   有 BG3 安裝或合法抽取素材時，挑一個小型 level 做 `.lsf` → `.lsx`，記錄欄位與一組實例，
   再決定是否開 converter/spec 工作；沒有實檔前不宣稱 port pipeline 可行。評估框架與候選
   比較見 [port-source-survey](analysis/port-source-survey/README.md)。
+
+- **`~/Downloads/_已入庫-2026-08-23/` 的 52 個確認重複壓縮檔要不要刪**（2026-08-23）：
+  這 55 個項目共 **5.7GB**，是 Downloads 歸檔時逐檔開壓縮檔比對後確認**內容已在
+  `~/skyrim_mods/` 裡**的重複件（同 SHA-256，或瀏覽器重複下載留下的 `X.7z`／`X (1).7z` 對）。
+  沒有刪，原樣搬到這個資料夾等你決定。刪掉沒有風險——庫裡有同內容的檔，MongoDB 也已建索引；
+  但這是不可逆操作，所以不自行執行。要刪就直接 `rm -rf` 整個資料夾。
+
+- **L4 剩下 146 個舊命名壓縮檔只能人工辨識**（2026-08-23）：全庫 `naming_pattern=legacy`
+  的 174 筆已用 Nexus `md5_search` 從**檔案內容**還原來源，28 筆查到（結果進 Mongo 的
+  `nexus_md5*` 欄位）。**剩下 146 筆 Nexus 查無此 md5**——來源是對岸站台、被解壓重打包過、
+  或本來就不是 Nexus 的東西，自動化到此為止。清單（含大小與壓縮檔內的 plugin 名當線索）在
+  [l4-md5-resolution.md](mod-library/audits/l4-md5-resolution.md#仍需人工辨識146-筆)，
+  最大的幾筆是 `BDOR Complete Collection`（2.63 GiB）、`Snezhinka.Sentinel.Girls2`（1.39 GiB）、
+  `JH_NPC整合包SSE.zip`（1.29 GiB）。你只需判斷「想留／想裝／沒興趣」，不必逐行填表。
