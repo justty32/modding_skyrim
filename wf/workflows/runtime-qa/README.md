@@ -58,9 +58,16 @@ Aetheria agent 死鎖。細節見 [`agentctl/docs/resource-locks.md`](../../../a
 ## AI 能對遊戲做什麼
 
 鍵盤 ✅（`xdotool` 對 XWayland，或 `sendkey.c` 在遊戲的 wineserver 內 `SendInput`）、
-主控台與狀態查詢 ✅（AgentBridge）、截圖 ✅（`spectacle`）、
-load order 資料層 ✅（houseCARL）、**滑鼠 ❌**（兩條路徑都不通，這是唯一缺口）。
-完整表在 [`agentctl/README.md`](../../../agentctl/README.md)。
+主控台與狀態查詢 ✅（AgentBridge）、截圖 ✅（`spectacle -b -n -f -o out.png`，**唯一可用的**）、
+load order 資料層 ✅（houseCARL）、**滑鼠 ❌**。
+
+**滑鼠不是「還沒做」，是「在現有授權範圍內做不到」**：`ydotool` 有裝但 daemon 起不來，
+要起它得寫 `/dev/uinput`（`root:root 660`），而 sudo／改 group／改 udev 三條都是紅線。
+需要滑鼠的驗收一律是使用者的事，記到 [WAIT_USER.md](../../../WAIT_USER.md)，不要為此去要 sudo。
+
+實測過的完整能力表與工具限制在
+[`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md#這台機器的-hid-實況2026-08-23-實測)；
+能力總表在 [`agentctl/README.md`](../../../agentctl/README.md)。
 
 ## 何時不用
 
