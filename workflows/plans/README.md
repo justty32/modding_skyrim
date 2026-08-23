@@ -29,7 +29,7 @@ idea → roadmap → spec → plan → feature-dev
 | 計畫 | 結果 |
 |------|------|
 | [ai-ingame-qa-loop](ai-ingame-qa-loop.md) | 2026-08-02 結案；Phase 0–3 與實機 QA runner 全過 |
-| [workspace-reorg](workspace-reorg.md) | 被 2026-08-02/03 的多 repo + submodule 佈局取代，不再執行 |
+| ~~workspace-reorg~~ | 2026-08-01 的佈局設計。先被 2026-08-02/03 的多 repo + submodule 佈局取代，再被 [consolidation-2026-08-23](consolidation-2026-08-23.md) 取代；2026-08-23 刪除，可從 git 歷史取回 |
 
 ## 何時不用
 

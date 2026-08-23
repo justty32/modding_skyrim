@@ -28,7 +28,7 @@
 - **RDO Final 正體中文仍需真人 runtime 驗收**（2026-08-16）：已在
   [`mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/`](mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)
   建立並部署獨立最高優先級 layer，只覆寫同名 ESP 與六個 follower 通知 PEX；部署時期只套用於
-  當時的 Dev profile，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 `Modpack-KR`）。
+  當時的 Dev profile，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 profile，2026-08-23 更名為 `modpack-main`）。
   離線 gate 證明 9,766-record topology／全部非文字 payload 相同，4,071 個 ESP zstrings 與六個 PEX
   display slots 改為正體；PEX declaration／properties／bytecode tails 逐 byte 相同。另修正 seed 唯一
   `<BribeCost>` → 官方 `<bribecost>` token-case 漂移。load order／FormLink／抽樣 PEX winner 通過；
@@ -40,7 +40,7 @@
 - **Recorder Follower 3.0 正體中文需真人對話抽查**（2026-08-20）：已在
   [`mod-library/l10n/mods/Recorder-Follower-Traditional-Chinese-3.0/`](mod-library/l10n/mods/Recorder-Follower-Traditional-Chinese-3.0/README.md)
   從官方 3.0 baseline 與同版 CHT seed 重建獨立同名 ESP 覆寫；部署時期只套用於當時的 Dev
-  profile，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 `Modpack-KR`）。離線 gate
+  profile，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 profile，2026-08-23 更名為 `modpack-main`）。離線 gate
   證明 1,380-record topology／全部非文字 payload 相同，只有 1,429 個
   玩家可見 zstring 改為正體；scoped houseCARL after-gate 全 PASS。固定 baseline runtime smoke
   3/3 PASS，精確 ESS／SKSE pair 與 state fingerprint 匹配、load epoch `0 → 1`，遊戲確實載入
@@ -59,9 +59,9 @@
   招募／一般對話、字幕、任務日誌、MCM、關係狀態與左上角通知，確認沒有方框、mojibake、空白、
   截斷或新 crash；英語配音本來就保留。
 
-- **VIGILANT 1.8.1 正體中文需真人主線／顯示抽查**（2026-08-20）：已取得 Nexus 158886
+- **VIGILANT 1.8.2 正體中文需真人主線／顯示抽查**（2026-08-20 提出，2026-08-23 更新版本）：已取得 Nexus 158886
   保留的 exact-version `VIGILANT SE (CHT)` 1.8.1；部署時期只套用於當時 Dev profile 的最高
-  優先級，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 `Modpack-KR`）。官方英文與
+  優先級，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 profile，2026-08-23 更名為 `modpack-main`）。官方英文與
   翻譯 ESM 都有 129,107 records，record identity／header／GRUP／
   subrecord topology 完全一致；7,250 個差異全部落在可本地化文字 payload，非文字差異為零。
   以現役英文 ESM 作 before baseline 的 houseCARL after-gate 4/4 PASS；固定 baseline runtime smoke
@@ -73,8 +73,10 @@
   houseCARL before/after 4/4 PASS；修正後固定 baseline runtime 亦 3/3 PASS。抽查時請至少打開一件
   「石之碎片」確認描述行也是正體。現有英／
   日語配音保留是預期行為；作者檔與私人修正都不納入公開成品或對外重發。
-  截至 **2026-08-21 01:16（Asia/Taipei）**，今晚新增的是可重建上述 45 筆私人修正的
-  exact-version 產生器；1.8.2 來源準備尚未取代現役 1.8.1 layer，因此本項 1.8.1 真人抽查仍成立。
+  **2026-08-23 更新**：上面那句「1.8.2 來源準備尚未取代現役 1.8.1 layer」寫於 2026-08-21 01:16，
+  已被同日稍晚的 `1fc1a97`（VIGILANT exact-version 群組升級到 1.8.2，通過 parity 驗證）推翻。
+  現役啟用的是 `VIGILANT SE Traditional Chinese 1.8.2`，1.8.1 layer 已停用。
+  **真人抽查本身仍未做**，只是對象改成 1.8.2；上述 45 筆 `BOOK.DESC` 私人修正同樣已升到 1.8.2。
 
 - **Scene Capture Browser：請決定未 commit ghost 的第三人稱攝影機語意**（2026-08-21）：
   placement drift 的 Armor、Editor commit 與 save/load 修正已由 AgentBridge 座標序列及
