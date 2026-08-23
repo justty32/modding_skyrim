@@ -25,7 +25,7 @@
 ## 產物
 
 已建立
-[Improved-Follower-Dialogue-Lydia-Traditional-Chinese-4.2.2](../../../mod-library/l10n/mods/Improved-Follower-Dialogue-Lydia-Traditional-Chinese-4.2.2/README.md)：
+[Improved-Follower-Dialogue-Lydia-Traditional-Chinese-4.2.2](../../../../mod-library/l10n/mods/Improved-Follower-Dialogue-Lydia-Traditional-Chinese-4.2.2/README.md)：
 
 - 只包含同名 ESP 與 `scripts/lydiaconfigscriptnew.pex`；
 - 不含三個 optional patch，也不含官方 BSA／voice／資產；

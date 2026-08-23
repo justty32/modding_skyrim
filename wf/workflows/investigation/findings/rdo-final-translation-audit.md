@@ -10,7 +10,7 @@ text-only translation seed。它不是只靠 archive 名稱判定：ESP 的 reco
 
 已建立可重現產物：
 
-[`mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/`](../../../mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)
+[`mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/`](../../../../mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)
 
 ## 鎖定來源
 

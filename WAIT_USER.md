@@ -152,7 +152,7 @@
   `/home/lorkhan/skyrim_mods/` 後通知 agent。到時以新獨立批次驗證來源、轉換 LE 資產／plugin，
   重建 NPC coverage 與 winner patch，再取代目前 JH output；未取得完整資產許可不得公開重打包。
   原相容性調查見
-  [wuxin-character-overhaul-se-ae-compatibility.md](workflows/investigation/findings/wuxin-character-overhaul-se-ae-compatibility.md)。
+  [wuxin-character-overhaul-se-ae-compatibility.md](wf/workflows/investigation/findings/wuxin-character-overhaul-se-ae-compatibility.md)。
 
 - **BG3 場景佈局實檔驗證**（2026-08-11）：桌面研究已確認 LSLib 可把 BG3
   `Levels/` 下的 `.lsf` 轉成可讀 `.lsx`，但尚未用使用者持有的遊戲資料驗證 placement

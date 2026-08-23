@@ -9,7 +9,7 @@
 截至 **2026-08-23（Asia/Taipei）**，母 repo 沒有仍在執行中的 agent 工作，也沒有 codex 線在跑；
 Skyrim／MO2 已關閉，兩個資源鎖都未持有。
 
-**2026-08-23 的主線是工作區統整**（[consolidation-2026-08-23](workflows/plans/consolidation-2026-08-23.md)）。
+**2026-08-23 的主線是工作區統整**（[consolidation-2026-08-23](wf/workflows/plans/consolidation-2026-08-23.md)）。
 日常工作現在分成四條獨立的線，各自是 private submodule：
 
 | 線 | 管什麼 |
@@ -51,6 +51,6 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
 
 | 工作流 | session-log | open 摘要 |
 |--------|-------------|----------|
-| feature-dev | [workflows/feature-dev/session-log.md](workflows/feature-dev/session-log.md) | 無 |
-| refactor | [workflows/refactor/session-log.md](workflows/refactor/session-log.md) | 無 |
-| investigation | [workflows/investigation/session-log.md](workflows/investigation/session-log.md) | 無 |
+| feature-dev | [workflows/feature-dev/session-log.md](wf/workflows/feature-dev/session-log.md) | 無 |
+| refactor | [workflows/refactor/session-log.md](wf/workflows/refactor/session-log.md) | 無 |
+| investigation | [workflows/investigation/session-log.md](wf/workflows/investigation/session-log.md) | 無 |

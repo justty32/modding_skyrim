@@ -1,6 +1,6 @@
 # testing — 測試入口
 
-把本專案所有常用驗證指令放這裡。agent 能跑的測試應自己跑；不能跑的記到 [../WAIT_USER.md](../WAIT_USER.md)。
+把本專案所有常用驗證指令放這裡。agent 能跑的測試應自己跑；不能跑的記到 [../WAIT_USER.md](../../WAIT_USER.md)。
 
 開始前寫 `Done when: <指定測試/驗證命令跑完，結果已回報>`。
 
@@ -10,8 +10,8 @@
 沒有統一 build。改文件時至少跑：
 
 ```bash
-python -m unittest discover -s tests -v
-python scripts/check_markdown_links.py
+python -m unittest discover -s tools -p "test_*.py" -v
+python tools/check_markdown_links.py
 git diff --check
 git status --short --branch
 git submodule status
@@ -38,10 +38,10 @@ git submodule update --init --recursive
 |---|---|---|
 | `ModForge` | `./scripts/test-offline.sh` | 1123 pass；排除 `RequiresSkyrim` |
 | `agent-bridge` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s client -p 'test*.py' -v` | 54 pass；stdlib-only Linux client、無需 MO2/遊戲 |
-| `game-data` | `python -m unittest discover -s tests -v` | 12 pass；fake dotnet，無需遊戲資料 |
-| `skyrim-voicegen` | `python -m unittest discover -s tests -v` | 6 pass；不載 TTS 模型 |
+| `game-data` | `python -m unittest discover -s tools -p "test_*.py" -v` | 12 pass；fake dotnet，無需遊戲資料 |
+| `skyrim-voicegen` | `python -m unittest discover -s tools -p "test_*.py" -v` | 6 pass；不載 TTS 模型 |
 | `model-converter` | `.venv/bin/python -m pytest` | 68 pass；若無 POSIX venv，依該 repo README 建環境 |
-| `darksouls-port` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v` | 系統 Python 缺 numpy 時會 skip 12 個碰撞單測 |
+| `darksouls-port` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tools -p "test_*.py" -v` | 系統 Python 缺 numpy 時會 skip 12 個碰撞單測 |
 | `godot-worldspace-editor` | `python tests/test_placements_contract.py` | source gate 必跑；缺 Godot 時 runtime 明示 skip |
 | `godot-worldspace-editor` | `python tests/test_model_fetch_contract.py` | model-converter→Godot live contract；缺 Godot時 skip |
 
@@ -71,7 +71,7 @@ file build/release-clang-cl-linux/AgentBridge.dll
 - `scene-capture-bridge`：portable CTest、MinGW contract 與 Linux clang-cl+xwin DLL build 的環境不同。
 - `my_skyrim_plugin_1`：以 README 的 CMake/CTest 與 packaging contract 為準。
 - `houseCARL`：母 repo 釘自有 fork 的 `fix/dialogue-encoding-lint`；建置與 HTTP explicit-path 驗證見
-  [`analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`](../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)。
+  [`analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`](../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)。
 - `sofia-patch`：內容／文件專案，沒有統一自動化 suite。
 
 ## 測試分類
@@ -80,7 +80,7 @@ file build/release-clang-cl-linux/AgentBridge.dll
 - `contract`：跨 sibling repo 的真實 CLI/process boundary；改 producer、consumer 或 protocol 時跑。
 - `full`：目標 repo README 指定的完整離線 suite；commit 前或大改後跑。
 - `external`：需要 Skyrim、MO2、Godot GUI、遊戲素材、模型、帳號或人工感官驗收；不能由
-  agent 代跑的項目記到 [../WAIT_USER.md](../WAIT_USER.md)。
+  agent 代跑的項目記到 [../WAIT_USER.md](../../WAIT_USER.md)。
 
 ## 已知環境條件
 
@@ -89,7 +89,7 @@ file build/release-clang-cl-linux/AgentBridge.dll
   `model-converter/.venv` 命令可跑滿 25/25。
 - ModForge 離線 suite 目前會輸出既有 nullable/xUnit analyzer warnings，但 1123 項全過。
 - 母 repo `b95ee0d` 指到三個尚未 push 的子模組 commit，recursive update 會失敗；精確 SHA
-  與修復步驟見 [../WAIT_USER.md](../WAIT_USER.md)。這是發布狀態，不要誤判成測試 regression，
+  與修復步驟見 [../WAIT_USER.md](../../WAIT_USER.md)。這是發布狀態，不要誤判成測試 regression，
   也不要把 gitlink 倒退來掩蓋。
 
 ## 何時不用

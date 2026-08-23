@@ -45,8 +45,8 @@ analysis/research → create 或 patch 或 roadmap/spec
 
 ## 跨工作流活狀態
 
-- open/in-flight 進度 → [SESSION-LOG.md](SESSION-LOG.md)
-- 等使用者親自做/驗證 → [WAIT_USER.md](WAIT_USER.md)
+- open/in-flight 進度 → [SESSION-LOG.md](../SESSION-LOG.md)
+- 等使用者親自做/驗證 → [WAIT_USER.md](../WAIT_USER.md)
 
 ## 維護
 

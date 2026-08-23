@@ -211,7 +211,7 @@ RimWorld 的 runbook 明文警告：MongoDB 那套適合「篩選查詢」，但
 
 ## 六、執行紀錄
 
-程式在 [`mod-library/db/`](../../mod-library/db/)（2026-08-23 統整前在 `~/notes/projects/modding/skyrim/tools/`）：`scan_mod_library.py`（1.1–1.2）、`cleanup_report.py`（1.5/1.7）、`quarantine.py`（1.6）；`check_dll_runtime.py`（1.3）因屬 runtime 診斷歸到 [`agentctl/tools/`](../../agentctl/tools/)。schema 文件在 [`mod-library/db/mongodb-schema.md`](../../mod-library/db/mongodb-schema.md)。
+程式在 [`mod-library/db/`](../../../mod-library/db)（2026-08-23 統整前在 `~/notes/projects/modding/skyrim/tools/`）：`scan_mod_library.py`（1.1–1.2）、`cleanup_report.py`（1.5/1.7）、`quarantine.py`（1.6）；`check_dll_runtime.py`（1.3）因屬 runtime 診斷歸到 [`agentctl/tools/`](../../../agentctl/tools)。schema 文件在 [`mod-library/db/mongodb-schema.md`](../../../mod-library/db/mongodb-schema.md)。
 
 **2026-08-11 · P1.5/P1.7 重驗完成**
 

@@ -21,7 +21,7 @@ Done when: <功能完成、測試/驗證通過、文檔/CODE_MAP 對齊的條件
 規則：
 
 - agent 自己能跑的 test/lint/build 要自己跑。
-- agent 不能代做的外部驗證記到 [../../WAIT_USER.md](../../WAIT_USER.md)。
+- agent 不能代做的外部驗證記到 [../../WAIT_USER.md](../../../WAIT_USER.md)。
 - 測試迭代期間，CODE_MAP/文檔可暫時落後。
 - commit 前，CODE_MAP + 文檔必須對齊。
 - 跨 session 時在 `session-log.md` 補 open 狀態。

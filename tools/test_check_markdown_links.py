@@ -1,10 +1,14 @@
 from pathlib import Path
 from contextlib import redirect_stdout
 import io
+import sys
 import tempfile
 import unittest
 
-from scripts.check_markdown_links import check_file, main
+# check_markdown_links.py sits beside this file; it used to be imported from a
+# scripts package that no longer exists.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from check_markdown_links import check_file, main
 
 
 class MarkdownLinkCheckerTests(unittest.TestCase):

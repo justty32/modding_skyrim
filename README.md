@@ -77,6 +77,18 @@ Skyrim SE modding 的開發、分析、部署與產物集中地。本工作區�
 | QA baseline 存檔 | `~/games/skyrim-qa-baselines`(3.1MB) | **刻意**設計成 repo 外的唯讀主檔 |
 | houseCARL MCP 建置產物 | `~/tools/housecarl/server/` | 由 `projects/houseCARL` publish 出來,不是原始碼 |
 
+## 頂層還有什麼
+
+| 路徑 | 內容 |
+|---|---|
+| [`wf/`](wf/) | 工作流骨架:7 份骨架 md(PRINCIPLES／WORKFLOWS／DEV-GUIDE／ADOPTION／MAINTENANCE／SYNC／INIT-QUESTIONS)＋ [`wf/workflows/`](wf/workflows/)(各工作流入口、plans、investigation findings、CODE_MAP) |
+| [`tools/`](tools/) | 母 repo 的文件驗證:`check_markdown_links.py` 與其測試。跑法 `python3 tools/check_markdown_links.py` |
+| [`SESSION-LOG.md`](SESSION-LOG.md) | 母 repo 的跨 session 活狀態。Skyrim 工作線自己的交接主線在 `agentctl/SESSION-LOG.md` |
+| [`WAIT_USER.md`](WAIT_USER.md) | 需要使用者親自驗證／實機／外部素材才能完成的項目 |
+| `patches/` | 針對他人 mod 的獨立修補 |
+
+> `wf/` 的命名與職責對齊 `~/repo/moddings/tome4` 與 `elin`。
+
 ## 要在這裡動手做事?
 
 先讀 [AGENTS.md](AGENTS.md)(工作規則、工作流路由)。

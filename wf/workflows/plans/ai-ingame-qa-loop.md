@@ -34,7 +34,7 @@ AgentBridge 0.6.0 完成實機驗收。現在除了 console/state 之外，AI �
 
 livingNpcs generic anchor/parley 回歸為 **31/31 PASS**；loaded actor、跨
 interior/exterior cell、延遲 actor retry 與兩種結構化 dialogue selector 也已逐項通過。
-現行 API 與完整驗收證據以 [`projects/agent-bridge/README.md`](../../projects/agent-bridge/README.md)
+現行 API 與完整驗收證據以 [`projects/agent-bridge/README.md`](../../../projects/agent-bridge/README.md)
 為準。本計畫保留歷史決策與早期分階段紀錄，不再作為 API 清單。
 
 ## 一、環境事實（2026-08-01 實查，規劃基於這些前提）
