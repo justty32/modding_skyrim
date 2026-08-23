@@ -22,11 +22,30 @@ def repo_root() -> Path:
     return Path(output.strip()).resolve()
 
 
+def _ls_files(cwd: Path, pattern: str) -> list[str]:
+    output = subprocess.check_output(["git", "ls-files", "-z", "--", pattern], cwd=cwd)
+    return [name.decode() for name in output.rstrip(b"\0").split(b"\0") if name]
+
+
 def tracked_markdown(root: Path) -> list[Path]:
-    output = subprocess.check_output(
-        ["git", "ls-files", "-z", "--", "*.md"], cwd=root
-    )
-    return [root / name.decode() for name in output.rstrip(b"\0").split(b"\0") if name]
+    """Every tracked .md, submodules included.
+
+    `git ls-files` stops at the gitlink, so a plain listing covers only the
+    parent repo. The four lines split out on 2026-08-23 carried 87 links that
+    no longer resolved and nothing was looking at them.
+    """
+    sources = [root / name for name in _ls_files(root, "*.md")]
+    for gitlink in _ls_files(root, "*"):
+        # projects/* are independent software repos with their own link
+        # conventions (line-number references that are not links at all) and
+        # their own CI. The four workspace lines are woven into this repo's
+        # docs, so they are in scope.
+        if gitlink.startswith("projects/"):
+            continue
+        sub = root / gitlink
+        if (sub / ".git").exists():
+            sources += [sub / name for name in _ls_files(sub, "*.md")]
+    return sources
 
 
 def link_target(raw: str) -> str | None:
