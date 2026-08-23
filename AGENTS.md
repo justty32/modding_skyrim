@@ -4,15 +4,15 @@
 
 ## 專案摘要
 
-- 專案一句話：Skyrim SE modding 分析工作區——引擎/mod 逆向分析（CommonLibSSE-NG C++、Papyrus）＋ houseCARL（Skyrim 讀寫用 MCP 工具）的 Linux 適配。
+- 專案一句話：Skyrim SE modding 工作區。母 repo 管開發（`projects/` 11 個軟體 submodule）與知識（`analysis/`）；部署狀態、mod 庫、整合包設計、AI 操控總控各自獨立成線（`instance/`、`mod-library/`、`modpack-design/`、`agentctl/`，2026-08-23 拆出）。
 - 主要語言/框架：分析對象為 C++（SKSE plugin / CommonLibSSE-NG）、Papyrus（`.psc`）、C#（houseCARL 用 Mutagen）；本 repo 自身主要是 Markdown 分析文件，另有 Python stdlib 文件驗證腳本，無建置產物。
-- 主要 build 指令：無（純分析 repo）。若要重跑 houseCARL 的本機建置，見 `analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`（`dotnet build housecarl.sln`／self-contained `dotnet publish -r linux-x64`）。
+- 主要 build 指令：母 repo 無（文件與索引為主，程式在各 submodule）。若要重跑 houseCARL 的本機建置，見 `analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`（`dotnet build housecarl.sln`／self-contained `dotnet publish -r linux-x64`）。
 - 主要 test 指令：`python -m unittest discover -s tests -v`、`python scripts/check_markdown_links.py`；各 submodule 測試矩陣見 `workflows/testing.md`。houseCARL 驗證方式見上述 runbook（HTTP 模式啟動 + explicit paths 測試）。
 
 ## 先讀哪裡
 
 - 使用者要你動手做某件事 → [WORKFLOWS.md](WORKFLOWS.md)：依意圖派發到對應工作流。
-- 想看 repo 結構 → 專案自己的 `INDEX.md` 或 `README.md`。
+- 想看 repo 結構 → [README.md](README.md)（本 repo 沒有獨立 `INDEX.md`，README 兼索引）；四條主線各自的 README 在 `instance/`、`mod-library/`、`modpack-design/`、`agentctl/`。
 - 碰原始碼 → 先讀 [workflows/common/conventions.md](workflows/common/conventions.md)，再讀 [CODE_MAP](workflows/common/code-map/CODE_MAP.md)。
 
 ## Always-on 鐵律
@@ -33,7 +33,7 @@
 整個 repo 是分層樹，每一層只指向下一層：
 
 ```text
-AGENTS.md → WORKFLOWS.md / INDEX.md → 各工作流入口 → 工作流內容 → 子工作流
+AGENTS.md → WORKFLOWS.md / README.md → 各工作流入口 → 工作流內容 → 子工作流
 ```
 
 - `README.md` = 初入一個資料夾先讀的入口/導引。
