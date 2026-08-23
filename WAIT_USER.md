@@ -23,7 +23,7 @@
   VIGILANT 已於 2026-08-21 升到本體／英語語音／正體／book overlay 精確同版 1.8.2；同一輪真人
   驗收再抽看 MCM 是否無方框／亂碼、兩三本有 description overlay 的書，以及字幕與語音語意即可。
   Silent Voice 缺口是已接受狀態，不需生成 TTS。逐項判準、agent 已完成的邊界與畫面見
-  [Batch 6 final smoke 結果](../../../notes/projects/modding/skyrim/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md)。
+  [Batch 6 final smoke 結果](agentctl/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md)。
 
 - **RDO Final 正體中文仍需真人 runtime 驗收**（2026-08-16）：已在
   [`mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/`](mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)
