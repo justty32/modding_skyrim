@@ -32,3 +32,15 @@
 [submodule "projects/sofia-patch"]
 	path = projects/sofia-patch
 	url = https://github.com/justty32/skyrim_sofia_patch.git
+[submodule "instance"]
+	path = instance
+	url = git@github.com:justty32/skyrim_instance.git
+[submodule "mod-library"]
+	path = mod-library
+	url = git@github.com:justty32/skyrim_mod_library.git
+[submodule "modpack-design"]
+	path = modpack-design
+	url = git@github.com:justty32/skyrim_modpack_design.git
+[submodule "agentctl"]
+	path = agentctl
+	url = git@github.com:justty32/skyrim_agentctl.git

@@ -1,5 +1,0 @@
---- RaceMenu-0.4.20.0-official/NiOverride.psc
-+++ RaceMenu-0.4.20.0-signature-patch/NiOverride.psc
-@@ GetNodeTransformScaleMode
--float Function GetNodeTransformScaleMode(ObjectReference akRef, bool firstPerson, bool isFemale, string nodeName, string key) Global Native
-+int Function GetNodeTransformScaleMode(ObjectReference akRef, bool firstPerson, bool isFemale, string nodeName, string key) Global Native

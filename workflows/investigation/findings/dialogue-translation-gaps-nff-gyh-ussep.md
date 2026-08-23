@@ -52,7 +52,7 @@ overrides were rebuilt from the exact active sources and deployed only to `Modpa
   preserved. 562 unsafe cross-version candidates with changed tokens/newlines or empty current
   sources were rejected rather than copied.
 
-Installed payloads match their `dist/mods/` artifacts byte-for-byte. Play-KR's modlist, plugins,
+Installed payloads match their `mod-library/l10n/mods/` artifacts byte-for-byte. Play-KR's modlist, plugins,
 and load order hashes remain unchanged. The Dev profile install commit is `0863778`; the two-key
 NFF runtime correction is `66e625e`. Static load
 order and parse gates passed; houseCARL also re-reported source-plugin VMAD findings and one USSEP

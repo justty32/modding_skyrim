@@ -57,7 +57,7 @@ interior/exterior cell、延遲 actor retry 與兩種結構化 dialogue selector
 | Linux cross-compile | `my_skyrim_plugin_1` 的 `release-clang-cl-linux` preset（clang-cl + lld-link + xwin）**實測產出過可用 DLL**：`build/release-clang-cl-linux/DaylightDungeon.dll`（PE32+ DLL，1.1M，2026-06-06） | `file` 輸出 |
 
 **兩個對不上的地方（未處理，留給 notes 側）**：
-- `dist/mods`、`dist/plugins` 皆為空，實際產物散在 `~/skyrim_mods/mine/`。
+- 自製產物已集中到 private 的 `mod-library/`（`l10n/mods/`、`plugins/`、`artifacts/`）；歷史散布位置仍是 `~/skyrim_mods/mine/`。
 - `~/notes/projects/modding/skyrim/` 記的已部署自製 mod 名稱，與 MO2 現場的三個 `*_backup` 資料夾對不上（notes 可能停在 2026-07-17）。部署狀態歸 notes 管，本 repo 不代改。
 
 ## 二、已定案的設計決策

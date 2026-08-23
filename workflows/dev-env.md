@@ -57,7 +57,7 @@ gitlink 倒退，也不要把本機舊 checkout 當成已同步。
 母 repo 不產生單一 release，也不代替子 repo 打包。流程是：
 
 1. 在來源子 repo 依它自己的 README/build workflow 產生並驗證 artifact。
-2. 要交付的新成品放到 [`../dist/`](../dist/README.md) 的對應分類，並附 `SOURCE.md`。
+2. 要交付的新成品放到 [`../mod-library/`](../mod-library/README.md) 的對應分類，並附 `SOURCE.md`。
 3. 部署到 MO2 前先讀 notes 側現況；部署結果也只回寫 notes。
 
 歷史成品仍留在 `~/skyrim_mods/mine/`，不因整理環境而搬動。不得在遊戲執行時覆寫已

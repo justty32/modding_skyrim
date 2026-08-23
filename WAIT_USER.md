@@ -26,7 +26,7 @@
   [Batch 6 final smoke 結果](../../../notes/projects/modding/skyrim/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md)。
 
 - **RDO Final 正體中文仍需真人 runtime 驗收**（2026-08-16）：已在
-  [`dist/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/`](dist/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)
+  [`mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/`](mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)
   建立並部署獨立最高優先級 layer，只覆寫同名 ESP 與六個 follower 通知 PEX；部署時期只套用於
   當時的 Dev profile，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 `Modpack-KR`）。
   離線 gate 證明 9,766-record topology／全部非文字 payload 相同，4,071 個 ESP zstrings 與六個 PEX
@@ -38,7 +38,7 @@
   合併不改變此項仍待驗的結論。
 
 - **Recorder Follower 3.0 正體中文需真人對話抽查**（2026-08-20）：已在
-  [`dist/mods/Recorder-Follower-Traditional-Chinese-3.0/`](dist/mods/Recorder-Follower-Traditional-Chinese-3.0/README.md)
+  [`mod-library/l10n/mods/Recorder-Follower-Traditional-Chinese-3.0/`](mod-library/l10n/mods/Recorder-Follower-Traditional-Chinese-3.0/README.md)
   從官方 3.0 baseline 與同版 CHT seed 重建獨立同名 ESP 覆寫；部署時期只套用於當時的 Dev
   profile，未納入當時的一般遊玩環境（兩者已於 2026-08-20 併入唯一 `Modpack-KR`）。離線 gate
   證明 1,380-record topology／全部非文字 payload 相同，只有 1,429 個
@@ -48,7 +48,7 @@
   任務日誌、書籍與通知，確認沒有方框、mojibake、空白、截斷或新 crash；英語配音本來就保留。
 
 - **Sofia Follower 2.51 正體中文 v2 需真人對話／MCM 抽查**（2026-08-20）：已在
-  [`dist/mods/Sofia-Follower-Traditional-Chinese-2.51-v2/`](dist/mods/Sofia-Follower-Traditional-Chinese-2.51-v2/README.md)
+  [`mod-library/l10n/mods/Sofia-Follower-Traditional-Chinese-2.51-v2/`](mod-library/l10n/mods/Sofia-Follower-Traditional-Chinese-2.51-v2/README.md)
   從官方 2.51 baseline 與 Nexus 183562 的 Traditional Chinese Localization Patch v2 重建獨立
   ESP＋8 PEX 覆寫；部署時期只套用於當時的 Dev profile，未納入當時的一般遊玩環境（兩者已於
   2026-08-20 併入唯一 `Modpack-KR`）。離線 gate 證明 1,742-record
@@ -72,7 +72,7 @@
   建私人最高優先級 text-only layer，沿用同一筆 `BOOK.FULL` 的既有正體專名補齊，45-record gate 與
   houseCARL before/after 4/4 PASS；修正後固定 baseline runtime 亦 3/3 PASS。抽查時請至少打開一件
   「石之碎片」確認描述行也是正體。現有英／
-  日語配音保留是預期行為；作者檔與私人修正都不納入公開 `dist/` 成品或對外重發。
+  日語配音保留是預期行為；作者檔與私人修正都不納入公開成品或對外重發。
   截至 **2026-08-21 01:16（Asia/Taipei）**，今晚新增的是可重建上述 45 筆私人修正的
   exact-version 產生器；1.8.2 來源準備尚未取代現役 1.8.1 layer，因此本項 1.8.1 真人抽查仍成立。
 
