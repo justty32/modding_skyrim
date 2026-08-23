@@ -2,7 +2,8 @@
 
 只列需要使用者親自做/驗證才能繼續的 open 項。完成即移除，不留完成清單。
 
-> 2026-08-20 起，MO2 只保留 `Modpack-KR`，遊玩、開發與驗收狀態改由 profile Git repo 分支管理。
+> 2026-08-20 起，MO2 只保留一個 profile（2026-08-23 更名為 `modpack-main`），遊玩、開發與驗收
+> 狀態改由 profile Git repo 分支管理。
 > 下文保留的 `Play-KR`／`Modpack-KR-Dev`／`QA` 舊名稱只描述當時的部署或驗證環境，不代表現在
 > 仍有這些 profile 可以切換。
 
@@ -24,6 +25,20 @@
   驗收再抽看 MCM 是否無方框／亂碼、兩三本有 description overlay 的書，以及字幕與語音語意即可。
   Silent Voice 缺口是已接受狀態，不需生成 TTS。逐項判準、agent 已完成的邊界與畫面見
   [Batch 6 final smoke 結果](agentctl/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md)。
+
+- **四個中文層剛修好排序，第一次真的會顯示中文，需要抽查**（2026-08-23）：
+  這四個層先前裝在本體**下方**而完全失效——檔案在、mod 也啟用著，但英文原版贏走每個衝突檔案。
+  2026-08-23 已上移並晉升 main，所以**它們是第一次真的生效，從來沒有人看過顯示結果**。
+
+  | mod | 看哪裡 |
+  |---|---|
+  | Timing is Everything SE 2.2 | MCM 的任務觸發設定頁 |
+  | The Choice is Yours 2.7 | 任務起始的接受／拒絕對話選項 |
+  | At Your Own Pace（8 個 ESP）| 主線／學院／盜賊公會等各線的推進選項 |
+  | SkyParkour 3.6.2 | UI 字串（走 `Interface/Translations`，不是 ESP）|
+
+  抽查重點是**方框、mojibake、截斷、空白**——靜態稽核只能證明勝出者對了，證明不了字有沒有正常畫出來。
+  排序稽核隨時可重跑：`python3 mod-library/l10n/tools/audit_layer_priority.py`。
 
 - **RDO Final 正體中文仍需真人 runtime 驗收**（2026-08-16）：已在
   [`mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/`](mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)
@@ -78,13 +93,18 @@
   現役啟用的是 `VIGILANT SE Traditional Chinese 1.8.2`，1.8.1 layer 已停用。
   **真人抽查本身仍未做**，只是對象改成 1.8.2；上述 45 筆 `BOOK.DESC` 私人修正同樣已升到 1.8.2。
 
-- **Scene Capture Browser：請決定未 commit ghost 的第三人稱攝影機語意**（2026-08-21）：
-  placement drift 的 Armor、Editor commit 與 save/load 修正已由 AgentBridge 座標序列及
-  `load_epoch 1 → 2` 通過，不需重做；剩下的是已確認的 camera/player-facing ray 語意選擇，並非
-  尚未診斷的漂移。請選一項：**commit 後清 ghost**（最簡單，但會破壞連續放置）、**暫停／恢復
-  follow**（保留預覽但增加狀態操作），或 **改用 rendered-camera ray**（體驗最佳、改動與相容性
-  驗證最大）。選定前 `feat/placement-drift` 的 ghost 分支維持原狀；完整證據與取捨見 notes
-  `projects/modding/skyrim/logs/scene-capture-placement-drift-2026-08-20.md`。
+- **Scene ghost rendered-camera ray：15 條實機驗收**（2026-08-21 提出，2026-08-23 更新）：
+  **攝影機語意已於 2026-08-22 裁決 = 選項 3（rendered-camera ray）**，理由是連續放置與畫面
+  瞄準最自然；**實作也已完成並推送**（`scene-capture-bridge` 的
+  `feat/ghost-camera-ray-2026-08-22@a17e460 fix: aim placements from rendered camera`）。
+  原本這條在問「請決定三選一」，已經沒有要決定的事了。
+
+  **剩下的是人眼驗收，而且必須涵蓋三種情境**——第一人稱、vanilla 第三人稱、SmoothCam，
+  **不可只驗第三人稱就宣告通過**。固定 15 條清單在
+  [`agentctl/logs/scene-ghost-camera-ray-2026-08-22.md`](agentctl/logs/scene-ghost-camera-ray-2026-08-22.md#runtime-驗收清單固定-15-條)。
+
+  > 2026-08-23 一次嘗試中斷：DLL 已部署、環境已備妥，但 log 證據只支持 2 條，
+  > 其中三條的關鍵字出現 0 次。**上次沒過，要重跑，不要當作已完成 13 條。**
 
 - **2026-08-20 新任務內容批只剩 UI／真人內容抽查**：UNSLAAD 3.0.6b、Missives
   2.03、DAc0da 1.1.0b 與 GLENMORIL 0.96.80b 的本體、英譯、正體、適用擴充及現成語音，在部署
