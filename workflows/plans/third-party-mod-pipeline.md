@@ -237,6 +237,19 @@ profile 裡除了三個 txt 還有 **`archives.txt`（BSA 啟用清單）**，`m
 
 P1 必須加明確的優先權落點參數，預設不再是 top。這與 D2 的「插入式排序」是同一件事的檔案層對應——D2 只講了 plugin 順序，漏掉 mod 檔案優先權，那是兩套獨立的排序。
 
+> **2026-08-23 後續：已實作，但預設換了一種踩法。** `mo2ctl` 現在有 `--priority`
+> （`bottom`／`top`／`before:<mod>`／`after:<mod>`），預設 `bottom`，G2 要求的「不再靜默贏過既有 mod」
+> 已達成。**但對覆蓋層而言 `bottom` 是完全相反的錯**——翻譯層的存在意義就是要贏過本體，
+> 裝在下面等於整層失效，而且**沒有任何錯誤徵兆**：檔案在磁碟上、mod 也啟用著，英文原版照樣贏。
+>
+> 實際踩到四個層（11 個檔）：Timing is Everything、The Choice is Yours、At Your Own Pace、SkyParkour。
+> 另有一個是把 `after:<本體>` 誤解成「疊在上面」——`after` = 檔案裡排在後面 = **更低**優先權。
+>
+> 所以裝覆蓋層一律要明確傳 `--priority "before:<本體 mod 名>"`，並用
+> [`mod-library/l10n/tools/audit_layer_priority.py`](../../mod-library/l10n/tools/audit_layer_priority.py)
+> 逐檔案路徑驗證勝出者。這條與 G7 的 SKSE 副本檢查是同一類問題：**檔案層的勝負無聲無息，
+> 必須主動稽核，不能靠沒報錯就當作對的。**
+
 ### G3 — 資產層完全沒檢查（D6 補強）
 
 D6 的靜態關卡只查 record／script／dialogue。但實務上第三方 mod 失效最大宗是**資產層**：缺貼圖→紫、缺模型→隱形或 CTD。現成但未使用的工具：

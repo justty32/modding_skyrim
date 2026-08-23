@@ -133,6 +133,10 @@ RimWorld 的 runbook 明文警告：MongoDB 那套適合「篩選查詢」，但
 
 ### D7：實作落點 = `~/notes/projects/modding/skyrim/`，照 RimWorld 對稱（使用者 2026-08-04 決定）
 
+> **2026-08-23 更新**：這條決定已被工作區統整取代。程式與文檔改落 `mod-library/`，
+> `~/notes/projects/modding/skyrim/` 只留不進版控的截圖與 MongoDB 快照。
+> 下文保留原決策脈絡。
+
 程式與文檔落 `~/notes/projects/modding/skyrim/{docs,tools,scripts}/`，與 `~/notes/projects/modding/rimworld/` 同構。
 
 **這是對「`~/notes/` 不主動動手」那條慣例的一次明確授權例外**，範圍限於本計畫的目錄治具。其他部署類筆記（`README.md`、`my-mods.md`、`housecarl.md`、`jackify-manjaro-plan.md`）仍不代改。
@@ -207,7 +211,7 @@ RimWorld 的 runbook 明文警告：MongoDB 那套適合「篩選查詢」，但
 
 ## 六、執行紀錄
 
-程式在 `~/notes/projects/modding/skyrim/tools/`：`scan_mod_library.py`（1.1–1.2）、`check_dll_runtime.py`（1.3）、`cleanup_report.py`（1.5/1.7）、`quarantine.py`（1.6）。schema 文件在同專案 `docs/mongodb-schema.md`。
+程式在 [`mod-library/db/`](../../mod-library/db/)（2026-08-23 統整前在 `~/notes/projects/modding/skyrim/tools/`）：`scan_mod_library.py`（1.1–1.2）、`cleanup_report.py`（1.5/1.7）、`quarantine.py`（1.6）；`check_dll_runtime.py`（1.3）因屬 runtime 診斷歸到 [`agentctl/tools/`](../../agentctl/tools/)。schema 文件在 [`mod-library/db/mongodb-schema.md`](../../mod-library/db/mongodb-schema.md)。
 
 **2026-08-11 · P1.5/P1.7 重驗完成**
 
