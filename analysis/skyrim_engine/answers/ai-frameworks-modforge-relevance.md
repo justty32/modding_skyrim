@@ -33,7 +33,7 @@
 - **SkyrimNet** 的 `decnpc(actorUUID)` state blob（推導自 `WORKFLOW_PROMPTS.md:97-135`）：另加全技能 0-100、summary/background/personality/speechStyle、四種代名詞、`relationshipRank(-4~4)`、`isVirtual/isDead/isFemale`。
 - **SkyrimNet 的行為推論**：`component_npc_state_summary.prompt` 用約 25 種家具關鍵字比對推論 NPC 在做什麼（睡覺/打鐵/祈禱），是規則式而非動畫 hook——低成本得到「NPC 正在幹嘛」。
 
-→ **用途**：當作 agent bridge `GET /state` 的 schema 藍本（見 `workflows/plans/ai-ingame-qa-loop.md`）。
+→ **用途**：當作 agent bridge `GET /state` 的 schema 藍本（見 `wf/workflows/plans/ai-ingame-qa-loop/README.md`）。
 
 ### 2. 遊戲↔外部程序的 HTTP+JSON 協定（低成本，設計層面）
 
@@ -42,7 +42,7 @@ Mantella `mantella_route.py:65-102` 是單一 endpoint dispatch（start / contin
 1. Skyrim 端（Papyrus/SKSE）可以跟本機外部程序用 HTTP JSON 雙向溝通；
 2. 這套在 Linux + Proton 下是可行的（Mantella 有 Linux 使用者）。
 
-→ **用途**：`workflows/plans/ai-ingame-qa-loop.md` 的整條路以此為前例。
+→ **用途**：`wf/workflows/plans/ai-ingame-qa-loop/README.md` 的整條路以此為前例。
 
 ### 3. 預渲染字串快取（低成本，與 ModForge 取向天然契合）
 
@@ -77,5 +77,5 @@ IntelEngine `IntelEngine_Core.psc:1918-2029` 的 `RegisterDashboardEvents()` 註
 
 ## 四、去向
 
-- 第 1、2 項 → 已展開成 `workflows/plans/ai-ingame-qa-loop.md`（AI 全自動 mod QA 迴圈）。
+- 第 1、2 項 → 已展開成 `wf/workflows/plans/ai-ingame-qa-loop/README.md`（AI 全自動 mod QA 迴圈）。
 - 第 3、4、5 項 → 尚未排程，需要時從本檔取用。

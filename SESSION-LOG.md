@@ -9,7 +9,7 @@
 截至 **2026-08-23（Asia/Taipei）**，母 repo 沒有仍在執行中的 agent 工作，也沒有 codex 線在跑；
 Skyrim／MO2 已關閉，兩個資源鎖都未持有。
 
-**2026-08-23 的主線是工作區統整**（[consolidation-2026-08-23](wf/workflows/plans/consolidation-2026-08-23.md)）。
+**2026-08-23 的主線是工作區統整**（[consolidation-2026-08-23](wf/workflows/plans/consolidation-2026-08-23/README.md)）。
 日常工作現在分成四條獨立的線，各自是 private submodule：
 
 | 線 | 管什麼 |
