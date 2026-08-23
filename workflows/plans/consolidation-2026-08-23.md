@@ -221,3 +221,71 @@ profile 稽核 `audit_overwrite.py`）大部分也歸這裡。
 **不是母 repo**。但「下載完沒歸檔」這件事本身該由第 2 條線 `mod-library` 的入庫流程管起來——
 這正是 MongoDB mod 資料庫該回答的問題：哪些下載過、哪些入庫了、哪些裝了。
 建議列為 `mod-library` 的第一個實際工作項。
+
+---
+
+## 執行結果（2026-08-23，已完成）
+
+使用者拍板：1／2／3 也升頂層（`projects/` 維持純軟體）；profiles 走 B1 symlink；
+`~/games/skyrim-qa-baselines` 不搬；`~/code/capture` 別管。
+
+### 落地佈局
+
+```
+skyrim/                    public 母 repo
+├─ instance/               private submodule  ← profiles/ (private submodule)
+├─ mod-library/            private submodule  ← 必須永遠 private
+├─ modpack-design/         private submodule
+├─ agentctl/               private submodule
+├─ projects/               11 個軟體 repo，未動
+└─ analysis/ external/ patches/ scripts/ tests/ workflows/
+```
+
+四個 repo：`skyrim_instance`、`skyrim_mod_library`、`skyrim_modpack_design`、`skyrim_agentctl`。
+**全部先開 private**，避免未審內容有任何一刻躺在公開位置。
+
+### 搬移驗證
+
+以「size + basename」對 notes 側 1047 檔逐檔比對，未落地的只有 14 個：
+
+- 10 個是**刻意排除**的 private profiles worktree 複本（`agent-archive/*/worktrees/`）
+- `README.md` → 改寫成轉址 stub
+- `CONSOLIDATION-TODO.md` → `agentctl/handoffs/superseded/`，標記已被取代
+- 2 個 `.html`/`.csv` 驗證輸出 → 補進 `agentctl/logs/`
+
+刻意留在 notes 不搬的：53 個實機截圖（66MB）、20 個 MongoDB 快照與 DLL 備份（57MB）、
+28 個 `__pycache__`。notes 側留一份轉址 README 說明每樣東西去了哪。
+
+### 順帶修掉的曝險
+
+`dist/mods/` 的 34 個資料夾**幾乎全是他人 mod 的繁中翻譯層，內含完整原始 ESP 複本**
+（`USSEP-Traditional-Chinese-4.3.8a/` 裡是 20MB 的完整 USSEP plugin），**一直躺在 public 母 repo**。
+已移到 private 的 `mod-library/l10n/mods/`。
+
+**但母 repo 的 git 歷史仍然保有它們**——HEAD 乾淨了，歷史沒有。
+
+### profiles symlink
+
+```
+modorganizer2/profiles -> /home/lorkhan/repo/moddings/skyrim/instance/profiles
+```
+
+改動當下 MO2 與 Skyrim 都沒在跑（唯一的 wineserver 屬於 appid 553850，不是 Skyrim 的 489830），
+也沒有行程開著該目錄。改完確認：透過 symlink 讀得到 290 個啟用 mod、`git status` 乾淨、
+`selected_profile=@ByteArray(Modpack-KR)` 未受影響。備份在 scratchpad。
+還原指令寫在 `instance/README.md`。
+
+### 收工狀態
+
+7 個 repo（母、四條線、profiles、notes）全部 `dirty=0 unpushed=0`；
+`check_markdown_links.py` 433 檔 595 連結全綠。
+
+## 還沒做的
+
+| # | 事項 | 為什麼還沒做 |
+|---|---|---|
+| 1 | **從 Steam 啟動一次驗證 symlink** | 只有使用者能做。這是 B1 唯一的實機驗收 |
+| 2 | `modpack-design` 與 `agentctl` 是否翻成 public | 需要逐檔審完 457 檔 archive 與 296 檔 qa 才能確定沒夾帶第三方內容 |
+| 3 | 母 repo 是否用 `git filter-repo` 清掉歷史裡的翻譯層 | 要重寫歷史並強制推送，是獨立決定 |
+| 4 | `~/Downloads` 71 個 Nexus 壓縮檔（0.8GB）歸檔 | 待使用者確認要不要進 `~/skyrim_mods/` |
+| 5 | SCB camera-ray 15 條驗收 | 中斷於統整之前，證據只支持 2 條 |
