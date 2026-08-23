@@ -295,5 +295,29 @@ modorganizer2/profiles -> /home/lorkhan/repo/moddings/skyrim/instance/profiles
 
 | # | 事項 | 狀態 |
 |---|---|---|
-| 1 | `~/Downloads` 壓縮檔歸進 `~/skyrim_mods/` | 進行中：先逐檔判斷是不是 Skyrim mod，再對既有 125GB 庫做重複比對 |
+| 1 | ~~`~/Downloads` 壓縮檔歸檔~~ | ✅ **完成**，見下 |
 | 2 | SCB camera-ray 15 條驗收 | 中斷於統整之前，證據只支持 2 條 |
+
+### Downloads 歸檔結果（2026-08-23）
+
+122 個壓縮檔逐一用 `7z l` 開來看內容判斷：
+
+| 類別 | 數量 | 處置 |
+|---|---|---|
+| Skyrim mod | 113（7.1GB） | 見下 |
+| 非 Skyrim | 9 | 留原地（兩本網路小說 txt、初音 PS2 ISO、三國志10、太閤5、遊戲素材包等） |
+
+113 個 Skyrim mod 的去向：
+
+| | 數量 | |
+|---|---|---|
+| 同檔名已在庫裡 | 47 | 移到 `~/Downloads/_已入庫-2026-08-23/`，**未刪除**，等使用者處置 |
+| 改名但 SHA-256 相同 | 5 | 同上 |
+| 全新 | 61（1.5GB） | 搬進 `~/skyrim_mods/hdd/` |
+
+**踩到一個坑**：Downloads 裡本身有瀏覽器重複下載的 `X` 與 `X (1)` 配對，兩個都不在庫裡，
+所以只比對「來源↔庫」會把兩份都收進去。搬完 `scan_mod_library.py stats` 的
+`L1 exact duplicates` 從 0 跳到 6 組才抓到，已移出 3 個重複檔。剩下的 3 組是庫裡本來就有的。
+
+**驗證**：61 個全部到位、抽查 7 個 `7z t` 完整；磁碟 1791 個 archive
+− 隱藏目錄 3 個 = **1788，與 MongoDB 索引完全對上**；快照已備份到 repo 外。
