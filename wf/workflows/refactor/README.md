@@ -35,5 +35,6 @@ Step 4  examples/assets/fixtures 若需整理 → 單獨處理 → commit
 
 | 檔案 | 內容 |
 |------|------|
+| [`moving-things.md`](moving-things.md) | **搬移與改名**：六類會斷的東西、偵測程序、改名的額外陷阱 |
 | `session-log.md` | 本工作流 open/in-flight 重構項 |
 | `archive/` | 過時重構筆記/計畫 |

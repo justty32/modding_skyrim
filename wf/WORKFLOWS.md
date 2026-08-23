@@ -4,12 +4,35 @@
 
 先讀 [PRINCIPLES.md](PRINCIPLES.md) 的跳流程規則：小改可直接做，工作流只在它能降低交接、同步或設計風險時啟用。
 
-## 你想做什麼 → 用哪個工作流
+## Skyrim 專屬工作流
+
+這幾條是從實際做過很多次的事凝結出來的，每一條都帶著踩過的坑。**先看這張表**。
+
+| 觸發 | 工作流 | 入口檔 |
+|------|--------|--------|
+| 「想找 mod，還不知道要哪個」 | mod-discovery | [workflows/mod-discovery/README.md](workflows/mod-discovery/README.md) |
+| 「要抓某個 mod 下來裝」 | nexus-intake | [workflows/nexus-intake/README.md](workflows/nexus-intake/README.md) |
+| 「做中文層／補全現有中文層」 | localization | [workflows/localization/README.md](workflows/localization/README.md) |
+| 「改 MO2 profile：裝／移除／改排序」 | profile-change | [workflows/profile-change/README.md](workflows/profile-change/README.md) |
+| 「規劃整合包要玩什麼」 | modpack-planning | [workflows/modpack-planning/README.md](workflows/modpack-planning/README.md) |
+| 「派一條 codex 線去做事」 | agent-dispatch | [workflows/agent-dispatch/README.md](workflows/agent-dispatch/README.md) |
+| 「讓 agent 操作遊戲做測試／實機驗收」 | runtime-qa | [workflows/runtime-qa/README.md](workflows/runtime-qa/README.md) |
+
+典型串接：
+
+```text
+mod-discovery → nexus-intake → localization → profile-change → runtime-qa
+                                    ↑
+                            modpack-planning 決定要哪些
+```
+
+## 通用工作流
 
 | 觸發 | 工作流 | 入口檔 |
 |------|--------|--------|
 | 「我想開發/修改某個 feature」 | feature-dev | [workflows/feature-dev/README.md](workflows/feature-dev/README.md) |
 | 「重構/拆檔/整理結構」 | refactor | [workflows/refactor/README.md](workflows/refactor/README.md) |
+| 「搬檔案/改目錄名/拆 repo」 | refactor | [workflows/refactor/moving-things.md](workflows/refactor/moving-things.md) —— 六類會斷的東西 |
 | 「調查現有系統/外部專案/可行性」 | investigation | [workflows/investigation/README.md](workflows/investigation/README.md) |
 | 「初次接觸陌生專案，建立可延續分析」 | analysis | [workflows/analysis.md](workflows/analysis.md) |
 | 「基於分析產物做獨立衍生小專案」 | create | [workflows/create/README.md](workflows/create/README.md) |

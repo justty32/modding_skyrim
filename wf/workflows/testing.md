@@ -96,3 +96,31 @@ file build/release-clang-cl-linux/AgentBridge.dll
 
 - 只是查測試指令，直接讀本檔回答。
 - 測試是 feature/refactor 的一部分，不需要另開測試工作流；在原工作流內執行即可。
+
+## 綠燈不等於有檢查
+
+**一道檢查通過，可能是因為它根本沒在檢查。** 這不是假設，2026-08-23 一天抓到四個：
+
+| 檢查 | 為什麼恆真 |
+|---|---|
+| `check_profiles.py` | 只看 profile 目錄，**不看 `ModOrganizer.ini`**。ini 曾停在 codex 線留下的 `PandoraRuntimeDefer-20260822`（一個不存在的 profile），每次都 PASS |
+| teardown 的「遊戲鎖已釋放」 | 鎖的路徑指向已被刪除的 `~/skyrim_agent_out/_lock/`——**檢查一個不可能存在的東西，永遠會過** |
+| `check_markdown_links.py` | `git ls-files` 到 gitlink 就停，四條線的 87 個壞連結它從來沒看到 |
+| 自製的 CJK 偵測 | `b.decode('utf-8', errors='ignore')` **永遠不拋錯**，所以「依序試多種編碼、成功就 break」的迴圈第一輪就結束，根本沒試過 cp936 |
+
+### 規則：新增或修改一道檢查時，要證明它能變紅
+
+```sh
+# 餵一個「應該被擋」的輸入，確認 exit != 0
+SKYRIM_MO2_INSTANCE="$fake" python3 tools/check_profiles.py; echo $?   # 應為 1
+# 再餵正確的，確認 exit == 0
+```
+
+沒做過這個雙向驗證的檢查，不要拿它的綠燈當證據。
+
+### 兩個相關的推論
+
+- **檢查器的涵蓋範圍要跟著結構走。** 拆出 submodule、搬走目錄之後，
+  要回頭確認檢查器還看得到那些地方。
+- **靜態全過不等於畫面上是對的。** 方框、mojibake、截斷、手感只有人眼看得出來；
+  這類項目記到 [WAIT_USER.md](../../WAIT_USER.md)，不要自己宣稱通過。
