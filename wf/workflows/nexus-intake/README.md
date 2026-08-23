@@ -19,7 +19,7 @@ Done when: <檔案入庫且 hash 已驗、DB 已 rescan、若安裝則 audit 通
 | 形態 | 是什麼 | 額外規則 |
 |---|---|---|
 | **A 單件** | 一個獨立 mod | 就是下面六段 |
-| **B 衛星件** | 某個已裝 mod 的擴充／patch／漢化 | 見下面「衛星件」 |
+| **B 衛星件** | 某個已裝 mod 的擴充／patch／漢化 | 見 [satellites.md](satellites.md) |
 | **C 系列／生態** | 一整套互相咬合的 mod（動作、perk、任務框架…） | 見 [series.md](series.md) |
 
 **判斷形態的方式是查 requirements，不是看名字。** 一個看起來像單件的 mod，
@@ -34,6 +34,27 @@ requirements 可能拉出一整條生態；用 `housecarl_nexus_mod` 查，不�
 
 **坑**：Nexus 頁面上的「最新版」與 files 分頁的實際檔案常常不同步。以 API 回的
 `files` 欄位為準，不要讀頁面敘述。
+
+### 手上已經有檔案、但不知道是什麼
+
+從檔案內容反查，不要從檔名猜：
+
+```sh
+curl -H "apikey: $NEXUS_API_KEY" \
+  "https://api.nexusmods.com/v1/games/skyrimspecialedition/mods/md5_search/<md5>.json"
+```
+
+回傳 `mod`（id／名稱／作者／status）與 `file_details`（上游檔名／版本／分類），
+**是比檔名可信得多的來源**。整庫批次跑用
+[`mod-library/db/resolve_legacy_md5.py`](../../../mod-library/db/resolve_legacy_md5.py)。
+
+**坑**：`Light and Shade SE-77993-2-2-....7z` 的檔名寫著 77993，md5 指向的卻是
+**82876**（簡中翻譯頁）。任何「用 regex 從檔名撈 id」的做法都要當成猜測看待。
+
+查不到（404）只代表 Nexus 不認得這個 md5——對岸站台來的、或被解壓重打包過的都會 miss，
+**不是檔案有問題**。實測 174 個舊命名檔只有 28 個 hit。
+
+`md5_search` 是 GET，不改帳號狀態，不在下面的紅線內。
 
 ## 2. 版本閘門
 
@@ -80,47 +101,13 @@ cookie 橫幅只選最保守的選項。不動 nxm handler 關聯或 Wine regist
 
 ## 衛星件：擴充／patch／漢化
 
-**一個 mod 的衛星件常常散在好幾個 Nexus 頁面**，而且各自有各自的版本節奏。
-實例：Apothecary 本體 1.3.9 ＋ Fishing Patch 1.4.1 ＋ Rare Curios Patch 1.4.0 ＋
-Saints and Seducers Patch 1.4.0，**四個版本號全不一樣**，各自還有各自的繁中層。
-
-### 抓之前先列全
-
-用 `housecarl_nexus_mod` 把本體頁的 requirements 與「相關檔案」列出來，做成一張表：
-
-| 欄位 | 為什麼要 |
-|---|---|
-| 元件名 | —— |
-| **各自的版本** | 元件版本幾乎不會跟本體一致 |
-| 是否必需 | 分「requirement」與「optional」；optional 的先不抓 |
-| 有沒有同版中文層 | 沒有就照成本規則決定，不要為了湊齊硬做 |
-| 對應的本體版本 | **patch 要同時對上兩邊** |
-
-### patch 的版本要對兩邊
-
-`Apocalypse - Ordinator Compatibility Patch 10.0.2` 同時綁 Apocalypse 與 Ordinator 兩個版本。
-只對上其中一邊就裝，等於裝了一個對另一邊無效甚至有害的 patch。
-
-### 翻譯層可能只涵蓋部分元件
-
-At Your Own Pace 有 9 個元件（版本 `2.1.0`／`2.1.0MG`／`3.0.4CP`／`1.1.1DB`／`1.1.0MS`／
-`2.1.1TG`／`1.0.1DB`／`1.0.1DG`／`1.0.4TO`），中文層只覆蓋 8 個 ESP——
-Dragonborn 元件本身就沒有 ESP。**覆蓋數少於元件數不一定是缺漏**，要逐個對，不要憑數字下結論。
-
-### 排序：衛星件在本體之上，翻譯層在最上
-
-```text
-<X> 繁中層          ← 最高
-<X> patch / 修正
-<X> 本體            ← 最低
-```
-
-裝的時候一律 `--priority "before:<下一層的 mod 名>"`，裝完跑 `audit_layer_priority.py`。
+形態 B。衛星件散在多個 Nexus 頁面、版本節奏各自獨立，patch 還要同時對上兩邊的版本；
+排序上衛星件在本體之上、翻譯層在最上。整段規則見 [satellites.md](satellites.md)。
 
 ## 4. 入庫
 
 實體庫是 `~/skyrim_mods/`（**刻意留在 repo 外**），新下載平放進 `hdd/`。
-四件事缺一不可，細節見 [`mod-library/README.md`](../../../mod-library/README.md#入庫流程2026-08-23-建立)：
+五件事缺一不可，細節見 [`mod-library/README.md`](../../../mod-library/README.md#入庫流程2026-08-23-建立)：
 
 1. **逐檔開壓縮檔看內容**判斷是不是 Skyrim mod——不能只看檔名。行為檔／BodySlide／
    SkyProc patcher 沒有頂層 `.esp`／`meshes/`，只掃副檔名會誤判成非 Skyrim。
@@ -129,6 +116,7 @@ Dragonborn 元件本身就沒有 ESP。**覆蓋數少於元件數不一定是缺
    只比對「來源↔庫」會**兩個都收進去**。這條踩過。
 4. `python3 mod-library/db/scan_mod_library.py scan` 再 `stats`，看
    `L1 exact duplicates` 是否只剩已知的既有組。
+5. 檔名沒有 Nexus id 的跑 `python3 mod-library/db/resolve_legacy_md5.py` 還原來源（見下）。
 
 ## 5. 安裝
 

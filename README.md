@@ -9,7 +9,7 @@ Skyrim SE modding 的開發、分析、部署與產物集中地。本工作區�
 
 | 線 | 管什麼 | 可見性 |
 |---|---|---|
-| [`instance/`](instance/) | **本機部署狀態**：MO2 instance、現役 profile（`Modpack-KR`）、load order、已裝 mod、profile 稽核工具 | private |
+| [`instance/`](instance/) | **本機部署狀態**：MO2 instance、現役 profile（`modpack-main`）、load order、已裝 mod、profile 稽核工具 | private |
 | [`mod-library/`](mod-library/) | **本地 mod 庫**：MongoDB 索引、自製繁中翻譯層、自製插件與修正 esp、庫稽核 | private |
 | [`modpack-design/`](modpack-design/) | **整合包設計**：想玩什麼、對應哪些 mod、六階段整包計畫、技術債、選型調查 | private（暫時） |
 | [`agentctl/`](agentctl/) | **讓 AI 操控 Skyrim 的總控**：工作流、插件編排、agent 交接、QA harness、執行證據 | private（暫時） |
