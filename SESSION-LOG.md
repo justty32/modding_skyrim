@@ -40,6 +40,12 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   與[魔法 showcase 對照](modpack-design/content-plan/youtube-magic-showcase-backlog-2026-08-24.md)：Glenny 與
   SoftGaming combat 的 MCO stacks 整體隔離；魔法影片的 Mysticism／Apocalypse／Triumvirate 已是本輪選型，
   其餘新法術全部 `DEFER-AFTER-ENAIRIM`，不擴張 Batch 1。
+  後續沉浸／legacy intake 讓總數來到 **35 個唯一 video ids**；新候選分別進
+  [沉浸第二輪](modpack-design/content-plan/youtube-immersion-showcases-round2-2026-08-24.md)與
+  [2018–2023 legacy 索引](modpack-design/content-plan/youtube-legacy-showcases-2018-2023.md)。Dynamic Things
+  Alternative 是此輪唯一由現役 profile 新確認的 enabled 項；Andromeda／CGO／Lupine／YASH 保持產品
+  NO-GO，Oldrim-only 與 description-incomplete 來源保持 HOLD。redshift 的五個魔法 immersion 候選已併入
+  既有魔法頁，不改 EnaiRim Batch 1。
 
 ## 2026-08-23 已收束
 
