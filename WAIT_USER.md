@@ -17,6 +17,16 @@
 
 ## Open
 
+- **DMK 1.5.0 人工校對版需在家中 Linux 重建、部署與 UI 驗收**（2026-08-24）：66 個字串已逐條
+  審完（38 個人工覆寫、28 個確認沿用），builder／ledger 的靜態一致性 PASS；公司端沒有官方與 CHS
+  archives／7z／OpenCC，且公司下載或產物不能帶回家，所以沒有假裝完成 archive replay。回家後用既有
+  exact archives 執行 [`build_dmk_cht_layer.py`](mod-library/l10n/tools/build_dmk_cht_layer.py)，確認新
+  offline gate 為 `human_reviewed_zh_tw`、66 reviewed、38 override、0 unresolved，再把新的單檔
+  `Data/Viny Mods/DMK/Language.json` layer 部署到唯一 profile。最後肉眼抽查一般設定、相機、PC／手把
+  按鍵與 OAR converter 警告，並做 DMK 移動 smoke；目前已部署的 `Machine-Private.7z` 仍是
+  2026-08-21 未校對機翻包。完整邊界見
+  [安裝結果](agentctl/logs/mcm-helper-dmk-cht-install-2026-08-21.md)。
+
 - **Modpack-KR Batch 6 最終 gameplay 驗收**：自動 lane 已於 2026-08-21 以 21/21 PASS、
   `load_epoch 1 → 2`、0 new crash 收束，但不得冒充真人 gameplay PASS。仍需真人做真正新遊戲、
   城市/NPC 外觀巡查、BFCO 戰鬥與移動手感、Mysticism/Adamant、CT77/AVE 換裝、隨從招募與
