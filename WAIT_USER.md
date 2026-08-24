@@ -27,6 +27,16 @@
   2026-08-21 未校對機翻包。完整邊界見
   [安裝結果](agentctl/logs/mcm-helper-dmk-cht-install-2026-08-21.md)。
 
+- **EnaiRim Batch 0：回到家後逐件取得 5 個 Nexus archives**（2026-08-24）：使用者已完成最終選型，
+  並要求公司網路一次只能查一件；本輪沒有開互動瀏覽器或下載。後續在有既有 Nexus 登入 session 的
+  Linux 環境，依 [`nexus-intake`](wf/workflows/nexus-intake/README.md) 用 headful Chrome＋CDP **一次一檔**
+  取得：① Mannaz 3.0.1 本體（mod 87219，main file id 372921）、② Mannaz CHS 3.0.1
+  （mod 98760 main）、③ Freyr 1.2.0 本體（mod 88043 main）、④ Freyr CHS 1.2.0
+  （mod 98756 main）、⑤ Audugan 1.0.0 本體（mod 169621 main）。Valravn 2.2.0 原包已在 catalog，
+  不需重抓。每檔必須逐件核對原始檔名／API version／bytes／SHA-256／manifest 後入庫；不輸入憑證、
+  不過 CAPTCHA、不改 Nexus 帳號狀態。完整現況與 rollback snapshot 見
+  [Batch 0 preflight](agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batch-0-preflight.md)。
+
 - **Modpack-KR Batch 6 最終 gameplay 驗收**：自動 lane 已於 2026-08-21 以 21/21 PASS、
   `load_epoch 1 → 2`、0 new crash 收束，但不得冒充真人 gameplay PASS。仍需真人做真正新遊戲、
   城市/NPC 外觀巡查、BFCO 戰鬥與移動手感、Mysticism/Adamant、CT77/AVE 換裝、隨從招募與
