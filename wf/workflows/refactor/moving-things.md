@@ -95,3 +95,17 @@ python3 tools/check_markdown_links.py
 - **區分「同一個東西的路徑」與「當時的紀錄」。** QA 報告、VERIFICATION.md、
   歷史 log 裡的舊路徑**不要改**——那些記的是當時實際用的路徑，改了就是竄改紀錄。
   只改「還會再跑」的東西：活工具、spec、CI、現役文件。
+
+## 推母 repo 前檢查 submodule 指標
+
+首次啟用：
+
+```sh
+git config core.hooksPath tools/hooks
+```
+
+`tools/hooks/pre-push` 只檢查本次 push 中相對 remote tip 新增或改變的 gitlink；既有、未隨本次
+push 改變的壞指標不會鎖死閘門。若新指標的 commit 本機存在、fetch 後仍無法由 submodule 的
+remote-tracking refs 走到，先照錯誤訊息列出的 `git -C <sub> push <remote> <branch>` 推送
+submodule，再重試母 repo push。未初始化或本機不存在的 commit 只警告；緊急時可用
+`git push --no-verify` 繞過。

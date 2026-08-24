@@ -38,6 +38,8 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 |---|---|
 | `tools/check_markdown_links.py` | 掃描母 repo 與非 `projects/` 工作區 submodules 的 tracked Markdown links；理解 canonical symlink 位置，並支援 CI 的 `--skip-symlinks` 邊界 |
 | `tools/test_check_markdown_links.py` | Markdown link checker 的相對路徑、broken link、fence、CLI 與 symlink 行為；Windows 缺 file-symlink privilege 時只 skip symlink-only cases |
+| `tools/check_submodule_pins.py` | pre-push 核心：只檢查本次 push ref 相對 remote tip 有變動的 gitlink；本機存在但任何 remote-tracking ref 都不可達時 fetch 後 fail closed |
+| `tools/test_check_submodule_pins.py` | 以臨時 bare remote、母 repo 與真實 submodule 驗未變／已推／未推 pin、未初始化／本機缺 commit 與刪分支邊界 |
 | `instance/tools/resolve_load_order.py` | 把唯一 profile（`modpack-main`）的 enabled `loadorder.txt` 解析成真實 plugin paths；provider precedence 是 shared `overwrite` → `modlist.txt` 最高優先 enabled mod → game `Data`，任何 enabled missing plugin 以非零 exit fail closed |
 | `instance/tools/test_resolve_load_order.py` | synthetic MO2 tree 驗 overwrite winner、named-mod priority、implicit master 與 disabled／missing plugin 行為 |
 | `mod-library/l10n/tools/build_vigilant_book_desc_overlay.py` | 以指定版本的 VIGILANT 正體 plugin 同時作結構 seed 與術語來源，只補齊精確 45 筆仍為英文的 `BOOK.DESC`；筆數、record topology 與所有非目標 payload 都 fail closed，並輸出逐筆 ledger |
