@@ -24,11 +24,22 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
 
 ## 2026-08-24 open 規劃
 
-- **Syn Gaming 2026 動畫候選池**：已把影片簡介列出的框架、非戰鬥、水域、RaySense／traversal、騎乘、
-  第一人稱、MCO 與生物動畫連結保存到
-  [`modpack-design` 候選筆記](modpack-design/content-plan/syn-gaming-animation-showcase-backlog-2026-08-24.md)。
-  全部仍是 `UNREVIEWED`／`DEFER`，不是下載清單；之後一次只查一項，按現役 Pandora／OAR／BFCO／
-  SkyParkour 基準填盤點卡。建議第一項是唯一明示 BFCO 的 Rise Of Ronin Katana Moveset。
+- **2026 YouTube mod 候選池**：已把三個使用者提供 URL 依 video id 去重；動畫專題保存在
+  [`Syn Gaming 動畫候選筆記`](modpack-design/content-plan/syn-gaming-animation-showcase-backlog-2026-08-24.md)，
+  另外兩支 gameplay／VFX／NPC／地點／UI 清單保存在
+  [`綜合候選筆記`](modpack-design/content-plan/youtube-mod-showcase-backlog-2026-08-24.md)。全部仍是
+  `UNREVIEWED`／`DEFER`，不是下載清單；之後一次只查一項，先從 BFCO 明示 moveset、Simple Dual Block、
+  RAM 或 RaySense root 擇一。Nariva 簡介的 `Nazeem Says More` 與 Gulan0 idle 共用 Nexus 165916，已標
+  `SOURCE-LINK-HOLD`，不得以疑似誤植連結繼續施工。
+  另六支後續影片已拆到[沉浸／gameplay](modpack-design/content-plan/youtube-immersion-gameplay-showcases-2026-08-24.md)
+  與[戰鬥／動畫](modpack-design/content-plan/syn-gaming-combat-animation-showcases-2026-08-24.md)兩頁；重複推薦只提高
+  盤點優先度，不算相容證據。SoftGaming 清單中的 TrueHUD、SmoothCam、Remember Lockpick Angle、
+  Dynamic Things Alternative、Biggie Traits、TDM、Better Jumping、SkyParkour、BFCO 已由現役 profile
+  證明啟用，不列為新品；Attack MCO、Blade and Blunt、Wildcat 依現役 BFCO＋Valravn 路線保持 NO-GO。
+  最新六支再收進[動畫／戰鬥補充](modpack-design/content-plan/youtube-animation-combat-showcases-addendum-2026-08-24.md)
+  與[魔法 showcase 對照](modpack-design/content-plan/youtube-magic-showcase-backlog-2026-08-24.md)：Glenny 與
+  SoftGaming combat 的 MCO stacks 整體隔離；魔法影片的 Mysticism／Apocalypse／Triumvirate 已是本輪選型，
+  其餘新法術全部 `DEFER-AFTER-ENAIRIM`，不擴張 Batch 1。
 
 ## 2026-08-23 已收束
 
