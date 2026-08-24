@@ -19,6 +19,14 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
     def tearDown(self):
         self.temp.cleanup()
 
+    def symlink_or_skip_without_windows_privilege(self, link, target):
+        try:
+            link.symlink_to(target)
+        except OSError as exc:
+            if sys.platform == "win32" and getattr(exc, "winerror", None) == 1314:
+                self.skipTest("Windows file-symlink privilege is unavailable")
+            raise
+
     def test_accepts_existing_relative_link(self):
         (self.root / "target.md").write_text("target\n", encoding="utf-8")
         source = self.root / "source.md"
@@ -61,7 +69,7 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
         link_dir = self.root / "links"
         link_dir.mkdir()
         link = link_dir / "document.md"
-        link.symlink_to(document)
+        self.symlink_or_skip_without_windows_privilege(link, document)
 
         checked, broken = check_file(link, self.root)
 
@@ -80,7 +88,7 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
     def test_cli_can_skip_markdown_symlink(self):
         missing_target = self.root / "missing.md"
         link = self.root / "link.md"
-        link.symlink_to(missing_target)
+        self.symlink_or_skip_without_windows_privilege(link, missing_target)
 
         with redirect_stdout(io.StringIO()):
             result = main(["--skip-symlinks", str(link)])
