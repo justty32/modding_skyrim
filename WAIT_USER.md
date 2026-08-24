@@ -17,6 +17,13 @@
 
 ## Open
 
+- **三個 subproject 的完整離線測試需在可補依賴的環境重跑**（2026-08-24）：公司端依照「不下載、
+  產物不能帶回家」限制只做既有環境驗證。`projects/scene-capture-bridge` 缺
+  `x64-mingw-static` 的 nlohmann-json triplet；`projects/darksouls-port` 的 35 項測試中 29 項可跑、
+  6 項因正式必要依賴 `scipy`／`shapely` 未安裝而 ERROR（不是可合理 skip 的 optional dependency）；
+  `projects/model-converter` 缺 `pytest`。回到可建立 repo-local venv／補 vcpkg triplet 的環境後，依各
+  repo README 重跑即可；本輪沒有連網安裝，也沒有改測試來掩蓋缺依賴。
+
 - **DMK 1.5.0 人工校對版需在家中 Linux 重建、部署與 UI 驗收**（2026-08-24）：66 個字串已逐條
   審完（38 個人工覆寫、28 個確認沿用），builder／ledger 的靜態一致性 PASS；公司端沒有官方與 CHS
   archives／7z／OpenCC，且公司下載或產物不能帶回家，所以沒有假裝完成 archive replay。回家後用既有
