@@ -22,6 +22,14 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
 各線自己的續行點在 [`agentctl/SESSION-LOG.md`](agentctl/SESSION-LOG.md)——那是 Skyrim 工作線的交接主線。
 **本檔只管母 repo。**
 
+## 2026-08-24 open 規劃
+
+- **Syn Gaming 2026 動畫候選池**：已把影片簡介列出的框架、非戰鬥、水域、RaySense／traversal、騎乘、
+  第一人稱、MCO 與生物動畫連結保存到
+  [`modpack-design` 候選筆記](modpack-design/content-plan/syn-gaming-animation-showcase-backlog-2026-08-24.md)。
+  全部仍是 `UNREVIEWED`／`DEFER`，不是下載清單；之後一次只查一項，按現役 Pandora／OAR／BFCO／
+  SkyParkour 基準填盤點卡。建議第一項是唯一明示 BFCO 的 Rise Of Ronin Katana Moveset。
+
 ## 2026-08-23 已收束
 
 - **工作區統整**：`~/notes/projects/modding/skyrim` 的 1047 檔依性質分流到四條線，
