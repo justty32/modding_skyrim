@@ -44,6 +44,13 @@
   不過 CAPTCHA、不改 Nexus 帳號狀態。完整現況與 rollback snapshot 見
   [Batch 0 preflight](agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batch-0-preflight.md)。
 
+- **EnaiRim Batch 7：完整終態的人眼 blocking 驗收**（等 Batch 1–6 實際施工後）：逐批自動／靜態 gate
+  不能代替畫面與手感。Promotion 前需確認 Audugan／Valravn private CHT 與其他新文字層無方框、亂碼、
+  截斷或錯誤術語；shrine／standing stone／High Hrothgar candidates 無穿插且可互動；Valravn 搭 BFCO／
+  Precision／TDM／TK Dodge／WYT 的輸入、多人節奏、武器速度、耐力與命中手感可接受；並抽查代表性
+  race／faith／spell／enchantment／shout UI。完整固定範圍與 non-blocking 長玩邊界見
+  [Batch 7 計畫](agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batch-7-integration-promotion-plan.md)。
+
 - **Modpack-KR Batch 6 最終 gameplay 驗收**：自動 lane 已於 2026-08-21 以 21/21 PASS、
   `load_epoch 1 → 2`、0 new crash 收束，但不得冒充真人 gameplay PASS。仍需真人做真正新遊戲、
   城市/NPC 外觀巡查、BFCO 戰鬥與移動手感、Mysticism/Adamant、CT77/AVE 換裝、隨從招募與
