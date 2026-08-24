@@ -37,11 +37,13 @@
 - **EnaiRim Batch 0：回到家後逐件取得 5 個 Nexus archives**（2026-08-24）：使用者已完成最終選型，
   並要求公司網路一次只能查一件；本輪沒有開互動瀏覽器或下載。後續在有既有 Nexus 登入 session 的
   Linux 環境，依 [`nexus-intake`](wf/workflows/nexus-intake/README.md) 用 headful Chrome＋CDP **一次一檔**
-  取得：① Mannaz 3.0.1 本體（mod 87219，main file id 372921）、② Mannaz CHS 3.0.1
+  取得：① Mannaz 3.0.1 本體（mod 87219，MAIN file id **406689**——原本寫的 `372921` 是錯的，那是 `OLD_VERSION` 的 Mannaz 1.1.0）、② Mannaz CHS 3.0.1
   （mod 98760 main）、③ Freyr 1.2.0 本體（mod 88043 main）、④ Freyr CHS 1.2.0
   （mod 98756 main）、⑤ Audugan 1.0.0 本體（mod 169621 main）。Valravn 2.2.0 原包已在 catalog，
   不需重抓。每檔必須逐件核對原始檔名／API version／bytes／SHA-256／manifest 後入庫；不輸入憑證、
-  不過 CAPTCHA、不改 Nexus 帳號狀態。完整現況與 rollback snapshot 見
+  不過 CAPTCHA、不改 Nexus 帳號狀態。五件的精確 `file_id`／檔名／bytes／VirusTotal hash 見
+  [Batch 0 目標表](agentctl/logs/enairim-batch0-target-table-2026-08-24/README.md)（2026-08-24 查核）。
+  完整現況與 rollback snapshot 見
   [Batch 0 preflight](agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batch-0-preflight.md)。
 
 - **EnaiRim Batch 7：完整終態的人眼 blocking 驗收**（等 Batch 1–6 實際施工後）：逐批自動／靜態 gate
