@@ -73,8 +73,11 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   `DEFER-UPSTREAM-FIX`；JellyFishFP Dagger因雙 hit附魔倍率與 runtime訊號被 SIGMA Neutral取代為 `NO-GO`；
   UAPNG 2.8因官方只列 Nemesis、Pandora／TK Dodge與 NPC-consumer CTD訊號而 `DEFER` player-only重審，其
   舊 JellyFish satellite 135235已被168108取代；First Person Dodge 1.1因新版 Pandora持續原地 dodge而
-  `DEFER-PANDORA-UPSTREAM`。下一件進第三人稱武器動畫組；不得把 `UNREVIEWED` 清零當唯一完成證據，最後仍須
-  逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
+  `DEFER-PANDORA-UPSTREAM`。第三人稱 legacy武器組再收束到134個文字命中：Leviathan Greatsword四件是
+  vanilla family，`DEFER-BFCO-CONVERSION/OWNER-HOLD`；同名94715其實是 Attack MCO-only且無授權轉 BFCO，
+  `NO-GO`；Vanargand one-handed三件與 dual-wield都是 legacy vanilla replacers，後者另改 dual power stamina／
+  Adamant perk語意，故兩列皆 `NO-GO-LEGACY-VANILLA/BFCO`。下一件查 KG Animations family；不得把
+  `UNREVIEWED` 清零當唯一完成證據，最後仍須逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
 ## 2026-08-23 已收束
 
