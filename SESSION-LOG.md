@@ -98,7 +98,10 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   魔法頁再收束到77個文字命中：Goetia、spell impacts／runes、KittyTail六件與三個 atronach overhaul依
   casting／impact／family archive／creature owner分開 `DEFER`；Frost overhaul另綁已選84568 animation的
   winner matrix。Airgetlam／Sonorum及兩套 spell lighting各自保留 audio與 lighting comparator，不在缺官方
-  metadata時選 winner。下一批從其餘來源頁接續；不得把
+  metadata時選 winner。沉浸大頁首兩批再收束到52個文字命中：睡眠、HUD／loot／bestiary、favorites、camera、
+  1P weapon check等10個小系統各自固定 comparator與來源 gate；15個 diverse clutter、parallax／architecture、
+  particles／weather與 Dogs visual逐件保留 BOS／records／placement、shader／LOD／VRAM或 skeleton驗證，沒有
+  把名稱含 mesh／texture的項目誤寫成 asset-only。下一批從其餘來源頁接續；不得把
   `UNREVIEWED` 清零當唯一完成證據，最後仍須
   逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
