@@ -62,8 +62,12 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   沒有 standalone canonical頁保持 `DEFER-NONPUBLIC`，Wade In Water Redone因非動畫 scope、額外依賴與公開
   runtime風險為 `NO-GO`。固定 owner表見
   [`youtube-water-owner-comparator-2026-08-25.md`](modpack-design/content-plan/youtube-water-owner-comparator-2026-08-25.md)。
-  下一件依動畫主池順序查 Underdog Animations 51811；不得把 `UNREVIEWED` 清零當唯一完成證據，最後仍須逐個
-  來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
+  Underdog＋第一人稱餘項再收束到146個文字命中：Underdog 3.0.2整包跨多 owner，`DEFER`到可讀 FOMOD
+  manifest時只重審 greet／quest reaction窄模組；Judgement Cut addon因未選母 ability、DAC dependency與 FPS
+  T-pose訊號為 `NO-GO`；SIGMA Dagger選157KB Neutral `GO`；SIGMA雙劍選52KB v2 lower-damage Neutral作明示
+  兩 hit gameplay `GO`；First Person Stagger只有 replacer、現役無已證 trigger，故 `DEFER-TRIGGER-HOLD`。
+  下一件依動畫主池順序查 New Creature Animation — Gargoyle 181614；不得把 `UNREVIEWED` 清零當唯一完成證據，
+  最後仍須逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
 ## 2026-08-23 已收束
 
