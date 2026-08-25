@@ -85,7 +85,12 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   `DEFER` lane，Read the Room被取代，Let Your Hair Down因跨 gameplay balance `NO-GO`，IED保持獨立 utility hold；
   Vanargand徒手三頁已校正為 non-combat locomotion／pugilism stance／MCO moveset，前兩件等 BFCO attack配套、
   MCO件排除；Dynamic Female Hand Warming選 armor-dependent OAR main `GO`，Dynamic Torch因 DLC／modded torch
-  stuck-animation訊號 `DEFER`。下一批從其餘來源頁接續；不得把 `UNREVIEWED` 清零當唯一完成證據，最後仍須
+  stuck-animation訊號 `DEFER`。弓箭／武器框架頁再收束到112個文字命中：Absolutely Average GS因被 KG取代
+  且同屬 vanilla attack owner而 `NO-GO`；Dynamic Bow與 Disable Turn分別等 IED／1P scope拆解及 current TDM
+  可重現 gap；Dynamic Dodge Shot的第二套 dodge／zoom／0.8秒 iframe排除。Rapid Bow Combo是完整弓箭 gameplay
+  product，四個展示 moveset硬綁 MCO／SCAR，Bloodskal同時撞 MCO與神器平衡，均 `NO-GO`；Spear of Skyrim只
+  保留到 BFCO-native spear class／moveset與 distribution規格完成後重提。下一批從其餘來源頁接續；不得把
+  `UNREVIEWED` 清零當唯一完成證據，最後仍須
   逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
 ## 2026-08-23 已收束
