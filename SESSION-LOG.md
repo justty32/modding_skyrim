@@ -107,8 +107,12 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   其餘大型內容固定 new-game／patch／translation／runtime gates。下一批從其餘來源頁接續；不得把
   round2最後17列已展開為 camera／crime／dialogue／NPC interactions／lighting／traversal／audio／travel／world
   等30個實際 units並全部路由；EVG CLAMBER因撞 SkyParkour traversal owner為 `NO-GO`，Bandit Lines與 Use
-  Those Blankets只引用既有結論。現在 `UNREVIEWED`文字命中為0，但不得把清零當唯一完成證據，最後仍須
-  逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
+  Those Blankets只引用既有結論。最終 coverage audit反查八份 authority頁：37個 source references去重為36個
+  source ids，其中 `NeGEp64sB8Y`重複、`nXil4z2hadk`只有時間碼而維持 `DESCRIPTION-INCOMPLETE`，故恰為35支
+  candidate-bearing影片；543個 Nexus refs／479個 unique ids加非 Nexus exceptions均有直接狀態、整段產品
+  決策或明載 inheritance，待審文字命中0。完整 unittest 13項 OK（Windows symlink privilege 3 skip）、
+  Markdown 954檔／1582 local links OK、三 repo `diff --check` OK。最終證據見
+  [`youtube-candidate-final-coverage-audit-2026-08-25.md`](modpack-design/content-plan/youtube-candidate-final-coverage-audit-2026-08-25.md)。
 
 ## 2026-08-23 已收束
 

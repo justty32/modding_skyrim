@@ -17,6 +17,12 @@
 
 ## Open
 
+- **YouTube候選的 SOURCE-HOLD若要升級，需回到有 Nexus API key／houseCARL與 archives的環境**
+  （2026-08-25）：35支有候選影片已完成 owner-level routing，公司端沒有可連線瀏覽器，Nexus HTML受
+  Cloudflare阻擋，Windows／WSL也沒有可用 API key，因此未證 current metadata／archive的項目全部 fail
+  closed成具體 HOLD。日後只在要升某一件時依[最終 coverage audit](modpack-design/content-plan/youtube-candidate-final-coverage-audit-2026-08-25.md)
+  的 reopen procedure一次查一件；未重提就不需要額外操作，也不得把 HOLD直接改成 GO。
+
 - **三個 subproject 的完整離線測試需在可補依賴的環境重跑**（2026-08-24）：公司端依照「不下載、
   產物不能帶回家」限制只做既有環境驗證。`projects/scene-capture-bridge` 缺
   `x64-mingw-static` 的 nlohmann-json triplet；`projects/darksouls-port` 的 35 項測試中 29 項可跑、

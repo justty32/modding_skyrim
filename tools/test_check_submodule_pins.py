@@ -174,7 +174,12 @@ class SubmodulePinGuardTests(unittest.TestCase):
         self.assertIn("no gitlink changes", output)
 
     def test_git_push_dry_run_triggers_configured_hook(self):
-        (self.parent / "tools").symlink_to(TOOLS_DIR, target_is_directory=True)
+        try:
+            (self.parent / "tools").symlink_to(TOOLS_DIR, target_is_directory=True)
+        except OSError as exc:
+            if getattr(exc, "winerror", None) == 1314:
+                self.skipTest("Windows file-symlink privilege is unavailable")
+            raise
         self.git(self.parent, "config", "core.hooksPath", "tools/hooks")
         self.commit_submodule(publish=False)
         (self.parent / "note.txt").write_text("parent only\n", encoding="utf-8")
