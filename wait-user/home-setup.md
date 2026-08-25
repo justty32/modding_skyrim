@@ -7,14 +7,14 @@
 [`coverage` reopen procedure](../modpack-design/content-plan/youtube-candidate-final-coverage-audit-2026-08-25.md)
 一次查一件；不得直接改成 GO。
 
-## 三個 subproject 完整離線測試
+## scene-capture-bridge 完整離線測試
 
-- `scene-capture-bridge`：portable MinGW CTest 2/2 PASS；完整 `x64-mingw-static` nlohmann-json
-  triplet 仍缺。
-- `darksouls-port`：29/35；6 項因必要的 `scipy`／`shapely` 未安裝而 ERROR。
-- `ModForge`：公司 Windows 無 `dotnet`；WSL 無 `bash` 且 repo 未掛載，1123 offline suite 未重跑。
+`scene-capture-bridge` 的 portable MinGW CTest 2/2 PASS，但完整 `x64-mingw-static` nlohmann-json
+triplet 仍缺，需要能跑 vcpkg build 的環境補上；不得改測試掩蓋缺依賴。
 
-回到可補依賴的環境後依各 repo README 重跑；不得改測試掩蓋缺依賴。
+另外兩個已於 2026-08-25 在家補完，見
+[`handoffs/done/README.md`](../agentctl/handoffs/done/README.md)：`darksouls-port` 35/35、
+`ModForge` 1190/1190，兩者都沒有測試碼變更。
 
 ## DMK 1.5.0 人工校對版
 
