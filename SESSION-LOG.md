@@ -105,7 +105,9 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   20個 gameplay／world／quest／death-effects routing，降到只剩 round2的17列：custom followers保留 NFF，
   Sentinel satellite不反向決定 root；Daedric Shrines AIO因撞現役 Wintersun shrine／world owner直接 `NO-GO`，
   其餘大型內容固定 new-game／patch／translation／runtime gates。下一批從其餘來源頁接續；不得把
-  `UNREVIEWED` 清零當唯一完成證據，最後仍須
+  round2最後17列已展開為 camera／crime／dialogue／NPC interactions／lighting／traversal／audio／travel／world
+  等30個實際 units並全部路由；EVG CLAMBER因撞 SkyParkour traversal owner為 `NO-GO`，Bandit Lines與 Use
+  Those Blankets只引用既有結論。現在 `UNREVIEWED`文字命中為0，但不得把清零當唯一完成證據，最後仍須
   逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
 ## 2026-08-23 已收束
