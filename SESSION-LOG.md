@@ -89,7 +89,10 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   且同屬 vanilla attack owner而 `NO-GO`；Dynamic Bow與 Disable Turn分別等 IED／1P scope拆解及 current TDM
   可重現 gap；Dynamic Dodge Shot的第二套 dodge／zoom／0.8秒 iframe排除。Rapid Bow Combo是完整弓箭 gameplay
   product，四個展示 moveset硬綁 MCO／SCAR，Bloodskal同時撞 MCO與神器平衡，均 `NO-GO`；Spear of Skyrim只
-  保留到 BFCO-native spear class／moveset與 distribution規格完成後重提。下一批從其餘來源頁接續；不得把
+  保留到 BFCO-native spear class／moveset與 distribution規格完成後重提。動畫 addendum再收束到101個文字
+  命中：公司端無可連線瀏覽器、Nexus HTML受 Cloudflare擋、Windows／WSL也沒有可用 API key，故不以第三方
+  摘要補造事實；11件均固定到 creature ecosystem、body／craft、NFF、locomotion、magic、sprint、NPC idle或
+  first-person comparator的具體 `SOURCE-HOLD`與恢復證據清單。下一批從其餘來源頁接續；不得把
   `UNREVIEWED` 清零當唯一完成證據，最後仍須
   逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
