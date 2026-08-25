@@ -81,8 +81,12 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   placements與最多36 perk points共同 `DEFER-WORLD/PROGRESSION-HOLD`；SkyTactics用 SkyPatcher runtime
   隨機重派80+ CSTY，會覆寫 Valravn／Ordinator styles，故 `NO-GO-CSTY-OWNER`；第三人稱 dodge選 Simple
   TKDodge Sidestep v1.0作四方向 staged `GO`，不引入 dTry Key Utils，Nier 2B則因 unarmed-only與額外 Pandora
-  patch被取代。下一批從其餘來源頁接續；不得把 `UNREVIEWED` 清零當唯一完成證據，最後仍須逐個來源頁反查
-  所有35個 video ids的候選皆有結論或明確 HOLD。
+  patch被取代。非戰鬥動畫再收束到123個文字命中：Helmet Toggle 2 3.6.2是唯一保留的 headgear
+  `DEFER` lane，Read the Room被取代，Let Your Hair Down因跨 gameplay balance `NO-GO`，IED保持獨立 utility hold；
+  Vanargand徒手三頁已校正為 non-combat locomotion／pugilism stance／MCO moveset，前兩件等 BFCO attack配套、
+  MCO件排除；Dynamic Female Hand Warming選 armor-dependent OAR main `GO`，Dynamic Torch因 DLC／modded torch
+  stuck-animation訊號 `DEFER`。下一批從其餘來源頁接續；不得把 `UNREVIEWED` 清零當唯一完成證據，最後仍須
+  逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
 ## 2026-08-23 已收束
 
