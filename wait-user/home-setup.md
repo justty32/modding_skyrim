@@ -24,18 +24,3 @@
 `Data/Viny Mods/DMK/Language.json` layer。抽查一般設定、相機、PC／手把按鍵、OAR converter 警告
 並做移動 smoke。現役 `Machine-Private.7z` 仍是未校對機翻包；證據見
 [`安裝結果`](../agentctl/logs/mcm-helper-dmk-cht-install-2026-08-21.md)。
-
-## EnaiRim Batch 0：五個 Nexus archives
-
-在已有登入 session 的 Linux 環境依 [`nexus-intake`](../wf/workflows/nexus-intake/README.md)，一次一檔
-取得並核對檔名／API version／bytes／SHA-256／manifest：
-
-1. Mannaz 3.0.1（mod 87219，main file id **406689**；`372921` 是錯的 1.1.0 old version）
-2. Mannaz CHS 3.0.1（98760 main）
-3. Freyr 1.2.0（88043 main）
-4. Freyr CHS 1.2.0（98756 main）
-5. Audugan 1.0.0（169621 main）
-
-Valravn 2.2.0 已在 catalog，不重抓；不得輸入憑證或處理 CAPTCHA。精確資料見
-[`target table`](../agentctl/logs/enairim-batch0-target-table-2026-08-24/README.md)與
-[`preflight`](../agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batch-0-preflight.md)。
