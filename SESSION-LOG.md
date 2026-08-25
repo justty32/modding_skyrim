@@ -56,8 +56,14 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   NPC ground／ledge／meditation `GO`；Barstool Exit是 `DEFER` repro-first Pandora behavior fix；固定 owner表見
   [`youtube-sitting-owner-comparator-2026-08-25.md`](modpack-design/content-plan/youtube-sitting-owner-comparator-2026-08-25.md)。
   單項報告與索引都在 [`youtube-audits/animation-combat.md`](modpack-design/content-plan/youtube-audits/animation-combat.md)。
-  下一件依動畫主池順序查 Sonder's RaySense Wall Leaning 188857；不得把 `UNREVIEWED` 清零當唯一完成證據，
-  最後仍須逐個來源頁反查所有 35 個 video ids 的候選皆有結論或明確 HOLD。
+  後續已把 Wall Leaning與水域群收束到151個文字命中：Wall Leaning是 preferred non-traversal RaySense
+  consumer，但因要求 OAR 3.2+而 `DEFER-UPGRADE-HOLD`；水域採 SDS 1.0.3 BDI lane＋Stronger Swimming
+  2.0.0 main兩階段 `GO`，Dynamic Female Swimming留作同 scope alternate，tsptds Swimming Overhaul WIP因
+  沒有 standalone canonical頁保持 `DEFER-NONPUBLIC`，Wade In Water Redone因非動畫 scope、額外依賴與公開
+  runtime風險為 `NO-GO`。固定 owner表見
+  [`youtube-water-owner-comparator-2026-08-25.md`](modpack-design/content-plan/youtube-water-owner-comparator-2026-08-25.md)。
+  下一件依動畫主池順序查 Underdog Animations 51811；不得把 `UNREVIEWED` 清零當唯一完成證據，最後仍須逐個
+  來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
 ## 2026-08-23 已收束
 
