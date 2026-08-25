@@ -51,10 +51,13 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   官方來源查核，不下載／部署。全池起始有 162 個 `UNREVIEWED` 文字命中；本輪先把 locomotion 的跨影片
   重複與第一個 sitting 候選收束到 156：Vanargand II 男女 main 為 `GO` staged visual pilot、Leviathan II
   為同 scope `DEFER-ALTERNATE`、Gulan0 mod 164743 因公司端 adult preference 為
-  `DEFER-SOURCE-HOLD`、Modern Female Sitting 2.0 OAR main 為 `GO` conditional pilot。單項報告與索引都在
-  [`youtube-audits/animation-combat.md`](modpack-design/content-plan/youtube-audits/animation-combat.md)。下一件依
-  動畫主池順序查 Simple Sit Idle，再查 Dynamic Sitting／Barstool Exit並做 sitting owner 對照；不得把
-  `UNREVIEWED` 清零當唯一完成證據，最後仍須逐個來源頁反查所有 35 個 video ids 的候選皆有結論或明確 HOLD。
+  `DEFER-SOURCE-HOLD`、Modern Female Sitting 2.0 OAR main 為 `GO` conditional pilot。其後 sitting群組亦已
+  收束到 152個文字命中：Simple Sit與 Dynamic Sitting因同 scope淘汰；Take a Seat 1.01 OAR為正交的
+  NPC ground／ledge／meditation `GO`；Barstool Exit是 `DEFER` repro-first Pandora behavior fix；固定 owner表見
+  [`youtube-sitting-owner-comparator-2026-08-25.md`](modpack-design/content-plan/youtube-sitting-owner-comparator-2026-08-25.md)。
+  單項報告與索引都在 [`youtube-audits/animation-combat.md`](modpack-design/content-plan/youtube-audits/animation-combat.md)。
+  下一件依動畫主池順序查 Sonder's RaySense Wall Leaning 188857；不得把 `UNREVIEWED` 清零當唯一完成證據，
+  最後仍須逐個來源頁反查所有 35 個 video ids 的候選皆有結論或明確 HOLD。
 
 ## 2026-08-23 已收束
 
