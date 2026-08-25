@@ -4,15 +4,31 @@
 from __future__ import annotations
 
 import argparse
+from collections import defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 import re
 import subprocess
 import sys
+import unicodedata
 from urllib.parse import unquote, urlsplit
 
 
 LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)\n]+)\)")
 FENCE_RE = re.compile(r"^\s*(`{3,}|~{3,})")
+HEADING_RE = re.compile(r"^\s{0,3}#{1,6}\s+(.+?)\s*$")
+SETEXT_RE = re.compile(r"^\s{0,3}(?:=+|-+)\s*$")
+EXPLICIT_ANCHOR_RE = re.compile(
+    r"<(?:a|span)\b[^>]*(?:id|name)\s*=\s*['\"]([^'\"]+)['\"][^>]*>",
+    re.IGNORECASE,
+)
+
+
+@dataclass(frozen=True)
+class LocalTarget:
+    display: str
+    path: str
+    fragment: str | None
 
 
 def repo_root() -> Path:
@@ -59,21 +75,83 @@ def tracked_markdown(root: Path) -> list[Path]:
     return sources
 
 
-def link_target(raw: str) -> str | None:
+def link_target(raw: str) -> LocalTarget | None:
     value = raw.strip()
     if value.startswith("<"):
         closing = value.find(">")
         if closing < 0:
-            return value
+            return LocalTarget(value, value, None)
         value = value[1:closing]
     else:
         value = value.split(maxsplit=1)[0]
     value = unquote(value)
-    if not value or value.startswith(("#", "//")):
+    if not value or value.startswith("//"):
         return None
-    if urlsplit(value).scheme:
+    parts = urlsplit(value)
+    if parts.scheme:
         return None
-    return value.split("#", 1)[0].split("?", 1)[0]
+    if not parts.path and not parts.fragment:
+        return None
+    return LocalTarget(value, parts.path, parts.fragment or None)
+
+
+def github_heading_slug(text: str) -> str:
+    """Approximate GitHub's rendered-heading slug for local Markdown links."""
+    text = re.sub(r"!\[([^]]*)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"\[([^]]+)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = text.replace("`", "").replace("*", "")
+    text = unicodedata.normalize("NFKC", text).strip().lower()
+    text = "".join(
+        char
+        for char in text
+        if (
+            (not unicodedata.category(char).startswith("P") or char in "-_")
+            and not (
+                char.isascii()
+                and not char.isalnum()
+                and not char.isspace()
+                and char not in "-_"
+            )
+        )
+    )
+    return re.sub(r"\s+", "-", text)
+
+
+def markdown_anchors(markdown: Path) -> set[str]:
+    anchors: set[str] = set()
+    duplicate_counts: dict[str, int] = defaultdict(int)
+    fence: str | None = None
+    previous_line: str | None = None
+    for line in markdown.read_text(encoding="utf-8").splitlines():
+        marker = FENCE_RE.match(line)
+        if marker:
+            current = marker.group(1)[0]
+            if fence is None:
+                fence = current
+            elif fence == current:
+                fence = None
+            previous_line = None
+            continue
+        if fence is not None:
+            continue
+        anchors.update(unquote(anchor) for anchor in EXPLICIT_ANCHOR_RE.findall(line))
+        heading = HEADING_RE.match(line)
+        if heading:
+            text = re.sub(r"\s+#+\s*$", "", heading.group(1))
+        elif previous_line and SETEXT_RE.match(line):
+            text = previous_line.strip()
+        else:
+            previous_line = line
+            continue
+        base = github_heading_slug(text)
+        if not base:
+            continue
+        count = duplicate_counts[base]
+        duplicate_counts[base] += 1
+        anchors.add(base if count == 0 else f"{base}-{count}")
+        previous_line = None
+    return anchors
 
 
 def markdown_links(markdown: Path):
@@ -110,14 +188,24 @@ def check_file(source: Path, root: Path) -> tuple[int, list[tuple[int, str, Path
     broken: list[tuple[int, str, Path]] = []
     for line_number, target in markdown_links(markdown):
         checked += 1
-        candidate = Path(target)
+        candidate = Path(target.path)
         if candidate.is_absolute():
-            resolved = root / target.lstrip("/")
+            resolved = root / target.path.lstrip("/")
+        elif not target.path:
+            resolved = markdown
         else:
             resolved = markdown.parent / candidate
         resolved = resolved.resolve()
         if not resolved.exists():
-            broken.append((line_number, target, resolved))
+            broken.append((line_number, target.display, resolved))
+            continue
+        if (
+            target.fragment
+            and resolved.is_file()
+            and resolved.suffix.lower() in {".md", ".markdown"}
+            and target.fragment not in markdown_anchors(resolved)
+        ):
+            broken.append((line_number, target.display, resolved))
     return checked, broken
 
 

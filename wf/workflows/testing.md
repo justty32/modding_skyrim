@@ -94,7 +94,7 @@ file build/release-clang-cl-linux/AgentBridge.dll
 |---|---|
 | `check_profiles.py` | 只看 profile 目錄，**不看 `ModOrganizer.ini`**。ini 曾停在 codex 線留下的 `PandoraRuntimeDefer-20260822`（一個不存在的 profile），每次都 PASS |
 | teardown 的「遊戲鎖已釋放」 | 鎖的路徑指向已被刪除的 `~/skyrim_agent_out/_lock/`——**檢查一個不可能存在的東西，永遠會過** |
-| `check_markdown_links.py` | `git ls-files` 到 gitlink 就停，四條線的 87 個壞連結它從來沒看到 |
+| `check_markdown_links.py` | `git ls-files` 到 gitlink 就停，四條線的 87 個壞連結它從來沒看到；後續也發現只驗檔案存在、沒有驗 `#anchor` |
 | 自製的 CJK 偵測 | `b.decode('utf-8', errors='ignore')` **永遠不拋錯**，所以「依序試多種編碼、成功就 break」的迴圈第一輪就結束，根本沒試過 cp936 |
 
 ### 規則：新增或修改一道檢查時，要證明它能變紅

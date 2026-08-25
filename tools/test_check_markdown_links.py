@@ -48,17 +48,93 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
         self.assertEqual(len(broken), 1)
         self.assertEqual(broken[0][1], "missing.md")
 
-    def test_ignores_fenced_code_external_urls_and_anchors(self):
+    def test_ignores_fenced_code_and_external_urls_but_checks_anchor(self):
         source = self.root / "source.md"
         source.write_text(
             "```cpp\n[fake](missing.md)\n```\n"
-            "[web](https://example.com) [section](#heading)\n",
+            "# Heading\n[web](https://example.com) [section](#heading)\n",
             encoding="utf-8",
         )
 
         checked, broken = check_file(source, self.root)
 
-        self.assertEqual(checked, 0)
+        self.assertEqual(checked, 1)
+        self.assertEqual(broken, [])
+
+    def test_reports_missing_same_file_anchor(self):
+        source = self.root / "source.md"
+        source.write_text("# Present\n[missing](#absent)\n", encoding="utf-8")
+
+        checked, broken = check_file(source, self.root)
+
+        self.assertEqual(checked, 1)
+        self.assertEqual(len(broken), 1)
+        self.assertEqual(broken[0][1], "#absent")
+
+    def test_accepts_cross_file_unicode_and_formatted_heading_anchor(self):
+        target = self.root / "target.md"
+        target.write_text("## `Batch 7`：終態驗收\n", encoding="utf-8")
+        source = self.root / "source.md"
+        source.write_text(
+            "[target](target.md#batch-7終態驗收)\n", encoding="utf-8"
+        )
+
+        checked, broken = check_file(source, self.root)
+
+        self.assertEqual(checked, 1)
+        self.assertEqual(broken, [])
+
+    def test_reports_missing_cross_file_anchor(self):
+        target = self.root / "target.md"
+        target.write_text("# Present\n", encoding="utf-8")
+        source = self.root / "source.md"
+        source.write_text("[missing](target.md#absent)\n", encoding="utf-8")
+
+        checked, broken = check_file(source, self.root)
+
+        self.assertEqual(checked, 1)
+        self.assertEqual(len(broken), 1)
+        self.assertEqual(broken[0][1], "target.md#absent")
+
+    def test_accepts_setext_heading_anchor(self):
+        source = self.root / "source.md"
+        source.write_text("Setext Heading\n==============\n[link](#setext-heading)\n", encoding="utf-8")
+
+        checked, broken = check_file(source, self.root)
+
+        self.assertEqual(checked, 1)
+        self.assertEqual(broken, [])
+
+    def test_preserves_literal_hyphens_in_heading_anchor(self):
+        source = self.root / "source.md"
+        source.write_text("# Version 1.8.1b-compatible\n[link](#version-181b-compatible)\n", encoding="utf-8")
+
+        checked, broken = check_file(source, self.root)
+
+        self.assertEqual(checked, 1)
+        self.assertEqual(broken, [])
+
+    def test_duplicate_heading_anchors_get_numeric_suffix(self):
+        source = self.root / "source.md"
+        source.write_text(
+            "# Repeat\n## Repeat\n[second](#repeat-1)\n", encoding="utf-8"
+        )
+
+        checked, broken = check_file(source, self.root)
+
+        self.assertEqual(checked, 1)
+        self.assertEqual(broken, [])
+
+    def test_accepts_explicit_html_anchor(self):
+        source = self.root / "source.md"
+        source.write_text(
+            '<a id="fixed-anchor"></a>\n[target](#fixed-anchor)\n',
+            encoding="utf-8",
+        )
+
+        checked, broken = check_file(source, self.root)
+
+        self.assertEqual(checked, 1)
         self.assertEqual(broken, [])
 
     def test_symlink_uses_canonical_document_directory(self):
