@@ -9,10 +9,11 @@ Done when: <方向已定、mod 集合已選、分批順序與每批的 rollback 
 
 ## 現役整包
 
-**Modpack-KR**，六階段（[`modpack-kr-dev-plan.md`](../../../modpack-design/modpack-kr-dev-plan.md)）：
+現役 profile 是 **`modpack-main`**；Gameplay 下一步是
+[`EnaiRim Batch 0–7`](../../../modpack-design/content-plan/enairim-final-selection-2026-08-24.md)：
 
 ```text
-Preflight → 人物基線 → NPC 外觀 → 裝備 → Perk/魔法 → 任務/隨從
+來源 intake → 種族/立石 → 信仰/吼聲 → 魔法 → 附魔 → 戰鬥 → 終態驗收
 ```
 
 每階段要有 **rollback 與完成條件**，不能只寫「裝這些」。
