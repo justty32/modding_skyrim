@@ -34,7 +34,14 @@ def tracked_markdown(root: Path) -> list[Path]:
     parent repo. The four lines split out on 2026-08-23 carried 87 links that
     no longer resolved and nothing was looking at them.
     """
-    sources = [root / name for name in _ls_files(root, "*.md")]
+    # `git ls-files` also returns tracked files deleted from a dirty worktree.
+    # They have no links left to validate and trying to read them aborts the
+    # whole check. Keep broken symlinks, though: check_file reports those.
+    sources = [
+        source
+        for name in _ls_files(root, "*.md")
+        if (source := root / name).exists() or source.is_symlink()
+    ]
     for gitlink in _ls_files(root, "*"):
         # projects/* are independent software repos with their own link
         # conventions (line-number references that are not links at all) and
@@ -44,7 +51,11 @@ def tracked_markdown(root: Path) -> list[Path]:
             continue
         sub = root / gitlink
         if (sub / ".git").exists():
-            sources += [sub / name for name in _ls_files(sub, "*.md")]
+            sources += [
+                source
+                for name in _ls_files(sub, "*.md")
+                if (source := sub / name).exists() or source.is_symlink()
+            ]
     return sources
 
 

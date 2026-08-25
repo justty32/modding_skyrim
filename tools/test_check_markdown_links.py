@@ -4,11 +4,12 @@ import io
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 # check_markdown_links.py sits beside this file; it used to be imported from a
 # scripts package that no longer exists.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from check_markdown_links import check_file, main
+from check_markdown_links import check_file, main, tracked_markdown
 
 
 class MarkdownLinkCheckerTests(unittest.TestCase):
@@ -94,6 +95,18 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
             result = main(["--skip-symlinks", str(link)])
 
         self.assertEqual(result, 0)
+
+    def test_tracked_markdown_skips_deleted_worktree_file(self):
+        existing = self.root / "existing.md"
+        existing.write_text("ok\n", encoding="utf-8")
+
+        with patch(
+            "check_markdown_links._ls_files",
+            side_effect=[["existing.md", "deleted.md"], []],
+        ):
+            sources = tracked_markdown(self.root)
+
+        self.assertEqual(sources, [existing])
 
 
 if __name__ == "__main__":

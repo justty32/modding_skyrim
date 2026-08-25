@@ -6,7 +6,7 @@
 
 ## 現役工作
 
-截至 **2026-08-23（Asia/Taipei）**，母 repo 沒有仍在執行中的 agent 工作，也沒有 codex 線在跑；
+截至 **2026-08-25（Asia/Taipei）**，母 repo 沒有仍在執行中的 agent 工作，也沒有 codex 線在跑；
 Skyrim／MO2 已關閉，兩個資源鎖都未持有。
 
 **2026-08-23 的主線是工作區統整**（[consolidation-2026-08-23](wf/workflows/plans/consolidation-2026-08-23/README.md)）。
@@ -21,98 +21,6 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
 
 各線自己的續行點在 [`agentctl/SESSION-LOG.md`](agentctl/SESSION-LOG.md)——那是 Skyrim 工作線的交接主線。
 **本檔只管母 repo。**
-
-## 2026-08-24 open 規劃
-
-- **2026 YouTube mod 候選池**：已把三個使用者提供 URL 依 video id 去重；動畫專題保存在
-  [`Syn Gaming 動畫候選筆記`](modpack-design/content-plan/syn-gaming-animation-showcase-backlog-2026-08-24.md)，
-  另外兩支 gameplay／VFX／NPC／地點／UI 清單保存在
-  [`綜合候選筆記`](modpack-design/content-plan/youtube-mod-showcase-backlog-2026-08-24.md)。全部仍是
-  `UNREVIEWED`／`DEFER`，不是下載清單；之後一次只查一項，先從 BFCO 明示 moveset、Simple Dual Block、
-  RAM 或 RaySense root 擇一。Nariva 簡介的 `Nazeem Says More` 與 Gulan0 idle 共用 Nexus 165916，已標
-  `SOURCE-LINK-HOLD`，不得以疑似誤植連結繼續施工。
-  另六支後續影片已拆到[沉浸／gameplay](modpack-design/content-plan/youtube-immersion-gameplay-showcases-2026-08-24.md)
-  與[戰鬥／動畫](modpack-design/content-plan/syn-gaming-combat-animation-showcases-2026-08-24.md)兩頁；重複推薦只提高
-  盤點優先度，不算相容證據。SoftGaming 清單中的 TrueHUD、SmoothCam、Remember Lockpick Angle、
-  Dynamic Things Alternative、Biggie Traits、TDM、Better Jumping、SkyParkour、BFCO 已由現役 profile
-  證明啟用，不列為新品；Attack MCO、Blade and Blunt、Wildcat 依現役 BFCO＋Valravn 路線保持 NO-GO。
-  最新六支再收進[動畫／戰鬥補充](modpack-design/content-plan/youtube-animation-combat-showcases-addendum-2026-08-24.md)
-  與[魔法 showcase 對照](modpack-design/content-plan/youtube-magic-showcase-backlog-2026-08-24.md)：Glenny 與
-  SoftGaming combat 的 MCO stacks 整體隔離；魔法影片的 Mysticism／Apocalypse／Triumvirate 已是本輪選型，
-  其餘新法術全部 `DEFER-AFTER-ENAIRIM`，不擴張 Batch 1。
-  後續沉浸／legacy intake 讓總數來到 **35 個唯一 video ids**；新候選分別進
-  [沉浸第二輪](modpack-design/content-plan/youtube-immersion-showcases-round2-2026-08-24.md)與
-  [2018–2023 legacy 索引](modpack-design/content-plan/youtube-legacy-showcases-2018-2023.md)。Dynamic Things
-  Alternative 是此輪唯一由現役 profile 新確認的 enabled 項；Andromeda／CGO／Lupine／YASH 保持產品
-  NO-GO，Oldrim-only 與 description-incomplete 來源保持 HOLD。redshift 的五個魔法 immersion 候選已併入
-  既有魔法頁，不改 EnaiRim Batch 1。
-
-  **2026-08-25 續行中**：使用者要求把 YouTube 候選全部研究完；公司端維持一次只查一項、只做唯讀
-  官方來源查核，不下載／部署。全池起始有 162 個 `UNREVIEWED` 文字命中；本輪先把 locomotion 的跨影片
-  重複與第一個 sitting 候選收束到 156：Vanargand II 男女 main 為 `GO` staged visual pilot、Leviathan II
-  為同 scope `DEFER-ALTERNATE`、Gulan0 mod 164743 因公司端 adult preference 為
-  `DEFER-SOURCE-HOLD`、Modern Female Sitting 2.0 OAR main 為 `GO` conditional pilot。其後 sitting群組亦已
-  收束到 152個文字命中：Simple Sit與 Dynamic Sitting因同 scope淘汰；Take a Seat 1.01 OAR為正交的
-  NPC ground／ledge／meditation `GO`；Barstool Exit是 `DEFER` repro-first Pandora behavior fix；固定 owner表見
-  [`youtube-sitting-owner-comparator-2026-08-25.md`](modpack-design/content-plan/youtube-sitting-owner-comparator-2026-08-25.md)。
-  單項報告與索引都在 [`youtube-audits/animation-combat.md`](modpack-design/content-plan/youtube-audits/animation-combat.md)。
-  後續已把 Wall Leaning與水域群收束到151個文字命中：Wall Leaning是 preferred non-traversal RaySense
-  consumer，但因要求 OAR 3.2+而 `DEFER-UPGRADE-HOLD`；水域採 SDS 1.0.3 BDI lane＋Stronger Swimming
-  2.0.0 main兩階段 `GO`，Dynamic Female Swimming留作同 scope alternate，tsptds Swimming Overhaul WIP因
-  沒有 standalone canonical頁保持 `DEFER-NONPUBLIC`，Wade In Water Redone因非動畫 scope、額外依賴與公開
-  runtime風險為 `NO-GO`。固定 owner表見
-  [`youtube-water-owner-comparator-2026-08-25.md`](modpack-design/content-plan/youtube-water-owner-comparator-2026-08-25.md)。
-  Underdog＋第一人稱餘項再收束到146個文字命中：Underdog 3.0.2整包跨多 owner，`DEFER`到可讀 FOMOD
-  manifest時只重審 greet／quest reaction窄模組；Judgement Cut addon因未選母 ability、DAC dependency與 FPS
-  T-pose訊號為 `NO-GO`；SIGMA Dagger選157KB Neutral `GO`；SIGMA雙劍選52KB v2 lower-damage Neutral作明示
-  兩 hit gameplay `GO`；First Person Stagger只有 replacer、現役無已證 trigger，故 `DEFER-TRIGGER-HOLD`。
-  生物動畫四項再收束到142個文字命中：Gargoyle v2.43 main與 Frost Atronach v1.1 sound-effect optional
-  分別作窄 creature gameplay `GO`；Troll MCO v2.0.1與 Draugr MCO v1.4.0都是 SCAR／AI／race或 archetype
-  gameplay overhaul，現役沒有 SCAR，故共同 `DEFER-SCAR-FRAMEWORK-HOLD`，不可拆動畫偷渡進 BFCO基線。
-  2025 first-person setup再收束到138個文字命中：CFPAO 1.5.1因作者明載 OAR 3.1.5異常與全域 owner衝突
-  `DEFER-UPSTREAM-FIX`；JellyFishFP Dagger因雙 hit附魔倍率與 runtime訊號被 SIGMA Neutral取代為 `NO-GO`；
-  UAPNG 2.8因官方只列 Nemesis、Pandora／TK Dodge與 NPC-consumer CTD訊號而 `DEFER` player-only重審，其
-  舊 JellyFish satellite 135235已被168108取代；First Person Dodge 1.1因新版 Pandora持續原地 dodge而
-  `DEFER-PANDORA-UPSTREAM`。第三人稱 legacy武器組再收束到134個文字命中：Leviathan Greatsword四件是
-  vanilla family，`DEFER-BFCO-CONVERSION/OWNER-HOLD`；同名94715其實是 Attack MCO-only且無授權轉 BFCO，
-  `NO-GO`；Vanargand one-handed三件與 dual-wield都是 legacy vanilla replacers，後者另改 dual power stamina／
-  Adamant perk語意，故兩列皆 `NO-GO-LEGACY-VANILLA/BFCO`。2025 third-person setup續收束到129個文字
-  命中：KG 1H／DW與2H都是 vanilla attack owner，現役 BFCO線 `NO-GO`；Skyshards 1.6.0因108個 world
-  placements與最多36 perk points共同 `DEFER-WORLD/PROGRESSION-HOLD`；SkyTactics用 SkyPatcher runtime
-  隨機重派80+ CSTY，會覆寫 Valravn／Ordinator styles，故 `NO-GO-CSTY-OWNER`；第三人稱 dodge選 Simple
-  TKDodge Sidestep v1.0作四方向 staged `GO`，不引入 dTry Key Utils，Nier 2B則因 unarmed-only與額外 Pandora
-  patch被取代。非戰鬥動畫再收束到123個文字命中：Helmet Toggle 2 3.6.2是唯一保留的 headgear
-  `DEFER` lane，Read the Room被取代，Let Your Hair Down因跨 gameplay balance `NO-GO`，IED保持獨立 utility hold；
-  Vanargand徒手三頁已校正為 non-combat locomotion／pugilism stance／MCO moveset，前兩件等 BFCO attack配套、
-  MCO件排除；Dynamic Female Hand Warming選 armor-dependent OAR main `GO`，Dynamic Torch因 DLC／modded torch
-  stuck-animation訊號 `DEFER`。弓箭／武器框架頁再收束到112個文字命中：Absolutely Average GS因被 KG取代
-  且同屬 vanilla attack owner而 `NO-GO`；Dynamic Bow與 Disable Turn分別等 IED／1P scope拆解及 current TDM
-  可重現 gap；Dynamic Dodge Shot的第二套 dodge／zoom／0.8秒 iframe排除。Rapid Bow Combo是完整弓箭 gameplay
-  product，四個展示 moveset硬綁 MCO／SCAR，Bloodskal同時撞 MCO與神器平衡，均 `NO-GO`；Spear of Skyrim只
-  保留到 BFCO-native spear class／moveset與 distribution規格完成後重提。動畫 addendum再收束到101個文字
-  命中：公司端無可連線瀏覽器、Nexus HTML受 Cloudflare擋、Windows／WSL也沒有可用 API key，故不以第三方
-  摘要補造事實；11件均固定到 creature ecosystem、body／craft、NFF、locomotion、magic、sprint、NPC idle或
-  first-person comparator的具體 `SOURCE-HOLD`與恢復證據清單。小型 legacy／綜合頁再收束到93個文字命中：
-  Animated Armoury導回使用者指定的未來武器生態 audit；Lost Grimoire因凍結第二輪魔法 scope為 `NO-GO`；
-  Kynreeve、Painful Sounds與 JS Lockpicking UI分別固定 armor、combat audio與 UI來源 HOLD。下一批從其餘
-  魔法頁再收束到77個文字命中：Goetia、spell impacts／runes、KittyTail六件與三個 atronach overhaul依
-  casting／impact／family archive／creature owner分開 `DEFER`；Frost overhaul另綁已選84568 animation的
-  winner matrix。Airgetlam／Sonorum及兩套 spell lighting各自保留 audio與 lighting comparator，不在缺官方
-  metadata時選 winner。沉浸大頁首兩批再收束到52個文字命中：睡眠、HUD／loot／bestiary、favorites、camera、
-  1P weapon check等10個小系統各自固定 comparator與來源 gate；15個 diverse clutter、parallax／architecture、
-  particles／weather與 Dogs visual逐件保留 BOS／records／placement、shader／LOD／VRAM或 skeleton驗證，沒有
-  把名稱含 mesh／texture的項目誤寫成 asset-only。大頁再完成13個 dialogue／follower／NPC／equipment與最後
-  20個 gameplay／world／quest／death-effects routing，降到只剩 round2的17列：custom followers保留 NFF，
-  Sentinel satellite不反向決定 root；Daedric Shrines AIO因撞現役 Wintersun shrine／world owner直接 `NO-GO`，
-  其餘大型內容固定 new-game／patch／translation／runtime gates。下一批從其餘來源頁接續；不得把
-  round2最後17列已展開為 camera／crime／dialogue／NPC interactions／lighting／traversal／audio／travel／world
-  等30個實際 units並全部路由；EVG CLAMBER因撞 SkyParkour traversal owner為 `NO-GO`，Bandit Lines與 Use
-  Those Blankets只引用既有結論。最終 coverage audit反查八份 authority頁：37個 source references去重為36個
-  source ids，其中 `NeGEp64sB8Y`重複、`nXil4z2hadk`只有時間碼而維持 `DESCRIPTION-INCOMPLETE`，故恰為35支
-  candidate-bearing影片；543個 Nexus refs／479個 unique ids加非 Nexus exceptions均有直接狀態、整段產品
-  決策或明載 inheritance，待審文字命中0。完整 unittest 13項 OK（Windows symlink privilege 3 skip）、
-  Markdown 954檔／1582 local links OK、三 repo `diff --check` OK。最終證據見
-  [`youtube-candidate-final-coverage-audit-2026-08-25.md`](modpack-design/content-plan/youtube-candidate-final-coverage-audit-2026-08-25.md)。
 
 ## 2026-08-23 已收束
 
