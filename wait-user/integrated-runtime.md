@@ -10,7 +10,7 @@ High Hrothgar candidates 無穿插且可互動；Valravn 搭 BFCO／Precision／
 ## Modpack-KR Batch 6 final gameplay
 
 自動 lane 21/21 PASS、`load_epoch 1 → 2`、0 new crash 不能代替真人。需驗新遊戲、城市／NPC、BFCO、
-Mysticism／Adamant、CT77／AVE、隨從及 RDO／Recorder／Sofia、VIGILANT Altano 入口／字幕／語音、
+Mysticism／Adamant、CT77／AVE、RDO、VIGILANT Altano 入口／字幕／語音、
 自然跨 worldspace、MCM 與 description overlay 書。VIGILANT 四層須同版 1.8.2；Silent Voice 缺口已
 接受、不需 TTS。證據見 [`Batch 6 RESULT`](../agentctl/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md)。
 
@@ -25,17 +25,6 @@ Mysticism／Adamant、CT77／AVE、隨從及 RDO／Recorder／Sofia、VIGILANT A
 離線 topology、文字與 script-binding gates 已過；抽查關係對話／字幕、任務／通知、賄賂金額、
 Gelebor／Isran／Valerica 等待／離隊通知，確認無方框、亂碼、空白、未替換 token、截斷、新 crash。
 範圍見 [`layer README`](../mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)。
-
-## Recorder Follower 3.0 正體中文
-
-離線 gate 與 baseline smoke 3/3 PASS；抽查招募／一般對話、字幕、任務日誌、書籍、通知。英語配音
-保留是預期；範圍見 [`layer README`](../mod-library/l10n/mods/Recorder-Follower-Traditional-Chinese-3.0/README.md)。
-
-## Sofia Follower 2.51 v2 正體中文
-
-離線 gate 與 baseline smoke 3/3 PASS；抽查招募／一般對話、字幕、任務日誌、MCM、關係狀態、左上
-通知。英語配音保留是預期；範圍見
-[`layer README`](../mod-library/l10n/mods/Sofia-Follower-Traditional-Chinese-2.51-v2/README.md)。
 
 ## VIGILANT 1.8.2 正體中文
 

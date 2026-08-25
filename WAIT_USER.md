@@ -9,6 +9,6 @@
 | 類別 | open | 清單 |
 |---|---:|---|
 | 回家下載／重建 | 4 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
-| 整包 UI／中文／任務驗收 | 8 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
+| 整包 UI／中文／任務驗收 | 6 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
 | 獨立功能驗收 | 5 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
 | 日後素材／清理決定 | 4 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
