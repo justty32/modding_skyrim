@@ -101,7 +101,10 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   metadata時選 winner。沉浸大頁首兩批再收束到52個文字命中：睡眠、HUD／loot／bestiary、favorites、camera、
   1P weapon check等10個小系統各自固定 comparator與來源 gate；15個 diverse clutter、parallax／architecture、
   particles／weather與 Dogs visual逐件保留 BOS／records／placement、shader／LOD／VRAM或 skeleton驗證，沒有
-  把名稱含 mesh／texture的項目誤寫成 asset-only。下一批從其餘來源頁接續；不得把
+  把名稱含 mesh／texture的項目誤寫成 asset-only。大頁再完成13個 dialogue／follower／NPC／equipment與最後
+  20個 gameplay／world／quest／death-effects routing，降到只剩 round2的17列：custom followers保留 NFF，
+  Sentinel satellite不反向決定 root；Daedric Shrines AIO因撞現役 Wintersun shrine／world owner直接 `NO-GO`，
+  其餘大型內容固定 new-game／patch／translation／runtime gates。下一批從其餘來源頁接續；不得把
   `UNREVIEWED` 清零當唯一完成證據，最後仍須
   逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
