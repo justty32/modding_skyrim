@@ -17,10 +17,7 @@ git status --short --branch
 git submodule status
 ```
 
-GitHub 的 `Documentation checks` 跑同一組 unittest，link checker 則加 `--skip-symlinks`：
-兩份 `.md` symlink 的 canonical 文件住在 ModForge submodule，而目前 recursive checkout 會先被
-三個未發布 gitlink 擋住。本機完整 gate 仍不跳過 symlink；submodule 發布修好後再讓 CI 初始化
-ModForge 並移除這個選項。
+GitHub 的 `Documentation checks` 跑同一組 unittest，link checker 則加 `--skip-symlinks`。
 
 `git submodule status` 行首空白代表 checkout 與母 repo gitlink 一致；`+` 代表不一致，`-` 代表
 尚未初始化。fresh clone 或母 repo gitlink 更新後再跑：
@@ -38,19 +35,14 @@ git submodule update --init --recursive
 |---|---|---|
 | `ModForge` | `./scripts/test-offline.sh` | 1123 pass；排除 `RequiresSkyrim` |
 | `agent-bridge` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s client -p 'test*.py' -v` | 54 pass；stdlib-only Linux client、無需 MO2/遊戲 |
-| `game-data` | `python -m unittest discover -s tools -p "test_*.py" -v` | 12 pass；fake dotnet，無需遊戲資料 |
-| `skyrim-voicegen` | `python -m unittest discover -s tools -p "test_*.py" -v` | 6 pass；不載 TTS 模型 |
+| `game-data` | `python -m unittest discover -s tests -v` | 12 pass；fake dotnet，無需遊戲資料 |
+| `skyrim-voicegen` | `python -m unittest discover -s tests -v` | 6 pass；不載 TTS 模型 |
 | `model-converter` | `.venv/bin/python -m pytest` | 68 pass；若無 POSIX venv，依該 repo README 建環境 |
-| `darksouls-port` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tools -p "test_*.py" -v` | 系統 Python 缺 numpy 時會 skip 12 個碰撞單測 |
+| `model-converter` (Windows) | `.venv\Scripts\python.exe -m pytest` | 68 pass；Windows 等價命令 |
+| `darksouls-port` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tools -p "test_*.py" -v` | 系統 Python 與 `model-converter/.venv` 皆 29 pass / 35；6 項因 scipy/shapely 缺失 ERROR |
+| `scene-capture-bridge` | `ctest --test-dir build/portable-tests-mingw --output-on-failure` | 2 pass；完整 x64 triplet 尚缺 |
 | `godot-worldspace-editor` | `python tests/test_placements_contract.py` | source gate 必跑；缺 Godot 時 runtime 明示 skip |
 | `godot-worldspace-editor` | `python tests/test_model_fetch_contract.py` | model-converter→Godot live contract；缺 Godot時 skip |
-
-`darksouls-port` 若同層 `model-converter/.venv` 已存在，可用它補跑完整 25 項：
-
-```bash
-PYTHONDONTWRITEBYTECODE=1 ../model-converter/.venv/bin/python \
-  -m unittest discover -s tests -v
-```
 
 `agent-bridge` 的 Windows DLL 可在家用 Manjaro 以唯一支援的 clang-cl+xwin 路線驗證，
 不部署到 MO2：
@@ -85,12 +77,9 @@ file build/release-clang-cl-linux/AgentBridge.dll
 ## 已知環境條件
 
 - 這台未安裝 Godot；兩個 Godot contract 的 source gate 會通過，runtime class 會明示 skip。
-- 系統 Python 沒有 numpy；`darksouls-port` 的 12 個碰撞單測會 skip。使用上面的
-  `model-converter/.venv` 命令可跑滿 25/25。
+- `darksouls-port` 目前系統 Python 與 `model-converter/.venv` 都是 29/35；6 項因
+  scipy/shapely 缺失而 ERROR。
 - ModForge 離線 suite 目前會輸出既有 nullable/xUnit analyzer warnings，但 1123 項全過。
-- 母 repo `b95ee0d` 指到三個尚未 push 的子模組 commit，recursive update 會失敗；精確 SHA
-  與修復步驟見 [../WAIT_USER.md](../../WAIT_USER.md)。這是發布狀態，不要誤判成測試 regression，
-  也不要把 gitlink 倒退來掩蓋。
 
 ## 何時不用
 

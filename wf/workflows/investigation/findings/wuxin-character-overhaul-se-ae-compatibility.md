@@ -26,9 +26,10 @@
 5. houseCARL 於 2026-08-13 讀到 `Women's faces`：v1.7、323 名女性 NPC、英文主檔 `NPS_Female_SE_Eng`、290.7 MB、無列出的 Nexus requirements、BSA 自包含、不改 companions；作者已停用一般直接下載，須走 Nexus mod-manager（NXM）下載：
    <https://www.nexusmods.com/skyrimspecialedition/mods/5630>
 6. `Women's faces` 沒有 SKSE DLL；就已知內容而言，Skyrim runtime `1.6.1170` 不是主要相容障礙。真正風險是它與其他 NPC record 修改的 winner／FaceGen 不一致，造成黑臉、髮型或 AI 改動被覆蓋。
-7. 目前 `Modpack-KR-Dev` 可辨識但不是 selected profile；現役人物相關 mod 有 RaceMenu、
+7. 2026-08-13 調查當時，`Modpack-KR-Dev` 可辨識但不是 selected profile；當時人物相關 mod 有 RaceMenu、
    XPMSSE／Skeleton Auto Patch、Face Discoloration Fix 與 AI Overhaul，尚無 body、skin 或 hair
-   overhaul。Face Discoloration Fix 只能兜底，不能取代正確的 NPC winner patch。
+   overhaul。這是歷史環境快照；目前唯一 profile 已更名為 `modpack-main`。Face Discoloration Fix
+   只能兜底，不能取代正確的 NPC winner patch。
 
 ## 結論
 
@@ -44,7 +45,7 @@
 1. 解包、列出 plugin masters、NPC records、FaceGeom、FaceTint、head parts 與外部資產。
 2. 用 Cathedral Assets Optimizer／等效工具把 LE mesh、texture、BSA 轉為 SSE 可讀格式；不要盲目只改 plugin header。
 3. 以 Creation Kit resave 或可驗證的等效流程把 plugin 轉為 SSE Form 44。
-4. 在 `Modpack-KR-Dev` 建獨立 MO2 mod，不覆寫 archive 原件。
+4. 在現役 `modpack-main` 依 profile-change 工作流建獨立 MO2 mod，不覆寫 archive 原件。
 5. 對目前 NPC winner 做衝突盤點。預期順序為 `AI Overhaul → 人物外觀 → 專用 conflict patch`；
    patch forward AI Overhaul 的 AI／package／faction 等非外觀欄位，同時保留目標外觀的 head
    parts、race、weight、tint 等欄位，並確保最後的 NPC record 與最後的 FaceGen 來自同一外觀來源。

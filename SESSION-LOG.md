@@ -60,10 +60,6 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   `mod-library/db/resolve_legacy_md5.py`，報告 `mod-library/audits/l4-md5-resolution.md`。
   **檔名裡的 Nexus id 不可信**——實測一筆檔名寫 77993、內容其實是 82876。
   四筆上游已下架，依 D5 保險栓標了 `never_delete`。
-- **三個 db 腳本的預設路徑在搬家後沒對過**：報告輸出指向不存在的 `mod-library/docs/`，
-  而 `BACKUP_DIR`／`LOG_DIR` 會把 MongoDB 快照 `mkdir` 進 git repo。
-  `scan_mod_library.py` 當初改對了，這三個漏了——**同一次搬遷、同一類錯、只補到一半**。
-
 ## Durable 狀態入口
 
 - 四條線的入口：各線 README；Skyrim 工作線交接主線在 `agentctl/SESSION-LOG.md`
