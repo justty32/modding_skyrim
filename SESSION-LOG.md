@@ -66,8 +66,11 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   manifest時只重審 greet／quest reaction窄模組；Judgement Cut addon因未選母 ability、DAC dependency與 FPS
   T-pose訊號為 `NO-GO`；SIGMA Dagger選157KB Neutral `GO`；SIGMA雙劍選52KB v2 lower-damage Neutral作明示
   兩 hit gameplay `GO`；First Person Stagger只有 replacer、現役無已證 trigger，故 `DEFER-TRIGGER-HOLD`。
-  下一件依動畫主池順序查 New Creature Animation — Gargoyle 181614；不得把 `UNREVIEWED` 清零當唯一完成證據，
-  最後仍須逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
+  生物動畫四項再收束到142個文字命中：Gargoyle v2.43 main與 Frost Atronach v1.1 sound-effect optional
+  分別作窄 creature gameplay `GO`；Troll MCO v2.0.1與 Draugr MCO v1.4.0都是 SCAR／AI／race或 archetype
+  gameplay overhaul，現役沒有 SCAR，故共同 `DEFER-SCAR-FRAMEWORK-HOLD`，不可拆動畫偷渡進 BFCO基線。
+  下一件須依剩餘主池重新排序；不得把 `UNREVIEWED` 清零當唯一完成證據，最後仍須逐個來源頁反查所有35個
+  video ids的候選皆有結論或明確 HOLD。
 
 ## 2026-08-23 已收束
 
