@@ -76,8 +76,13 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   `DEFER-PANDORA-UPSTREAM`。第三人稱 legacy武器組再收束到134個文字命中：Leviathan Greatsword四件是
   vanilla family，`DEFER-BFCO-CONVERSION/OWNER-HOLD`；同名94715其實是 Attack MCO-only且無授權轉 BFCO，
   `NO-GO`；Vanargand one-handed三件與 dual-wield都是 legacy vanilla replacers，後者另改 dual power stamina／
-  Adamant perk語意，故兩列皆 `NO-GO-LEGACY-VANILLA/BFCO`。下一件查 KG Animations family；不得把
-  `UNREVIEWED` 清零當唯一完成證據，最後仍須逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
+  Adamant perk語意，故兩列皆 `NO-GO-LEGACY-VANILLA/BFCO`。2025 third-person setup續收束到129個文字
+  命中：KG 1H／DW與2H都是 vanilla attack owner，現役 BFCO線 `NO-GO`；Skyshards 1.6.0因108個 world
+  placements與最多36 perk points共同 `DEFER-WORLD/PROGRESSION-HOLD`；SkyTactics用 SkyPatcher runtime
+  隨機重派80+ CSTY，會覆寫 Valravn／Ordinator styles，故 `NO-GO-CSTY-OWNER`；第三人稱 dodge選 Simple
+  TKDodge Sidestep v1.0作四方向 staged `GO`，不引入 dTry Key Utils，Nier 2B則因 unarmed-only與額外 Pandora
+  patch被取代。下一批從其餘來源頁接續；不得把 `UNREVIEWED` 清零當唯一完成證據，最後仍須逐個來源頁反查
+  所有35個 video ids的候選皆有結論或明確 HOLD。
 
 ## 2026-08-23 已收束
 
