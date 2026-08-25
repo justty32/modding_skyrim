@@ -92,7 +92,10 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   保留到 BFCO-native spear class／moveset與 distribution規格完成後重提。動畫 addendum再收束到101個文字
   命中：公司端無可連線瀏覽器、Nexus HTML受 Cloudflare擋、Windows／WSL也沒有可用 API key，故不以第三方
   摘要補造事實；11件均固定到 creature ecosystem、body／craft、NFF、locomotion、magic、sprint、NPC idle或
-  first-person comparator的具體 `SOURCE-HOLD`與恢復證據清單。下一批從其餘來源頁接續；不得把
+  first-person comparator的具體 `SOURCE-HOLD`與恢復證據清單。小型 legacy／綜合頁再收束到93個文字命中：
+  Animated Armoury導回使用者指定的未來武器生態 audit；Lost Grimoire因凍結第二輪魔法 scope為 `NO-GO`；
+  Kynreeve、Painful Sounds與 JS Lockpicking UI分別固定 armor、combat audio與 UI來源 HOLD。下一批從其餘
+  來源頁接續；不得把
   `UNREVIEWED` 清零當唯一完成證據，最後仍須
   逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
