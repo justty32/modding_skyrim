@@ -95,7 +95,10 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   first-person comparator的具體 `SOURCE-HOLD`與恢復證據清單。小型 legacy／綜合頁再收束到93個文字命中：
   Animated Armoury導回使用者指定的未來武器生態 audit；Lost Grimoire因凍結第二輪魔法 scope為 `NO-GO`；
   Kynreeve、Painful Sounds與 JS Lockpicking UI分別固定 armor、combat audio與 UI來源 HOLD。下一批從其餘
-  來源頁接續；不得把
+  魔法頁再收束到77個文字命中：Goetia、spell impacts／runes、KittyTail六件與三個 atronach overhaul依
+  casting／impact／family archive／creature owner分開 `DEFER`；Frost overhaul另綁已選84568 animation的
+  winner matrix。Airgetlam／Sonorum及兩套 spell lighting各自保留 audio與 lighting comparator，不在缺官方
+  metadata時選 winner。下一批從其餘來源頁接續；不得把
   `UNREVIEWED` 清零當唯一完成證據，最後仍須
   逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
