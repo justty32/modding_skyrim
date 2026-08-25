@@ -69,8 +69,12 @@ Skyrim／MO2 已關閉，兩個資源鎖都未持有。
   生物動畫四項再收束到142個文字命中：Gargoyle v2.43 main與 Frost Atronach v1.1 sound-effect optional
   分別作窄 creature gameplay `GO`；Troll MCO v2.0.1與 Draugr MCO v1.4.0都是 SCAR／AI／race或 archetype
   gameplay overhaul，現役沒有 SCAR，故共同 `DEFER-SCAR-FRAMEWORK-HOLD`，不可拆動畫偷渡進 BFCO基線。
-  下一件須依剩餘主池重新排序；不得把 `UNREVIEWED` 清零當唯一完成證據，最後仍須逐個來源頁反查所有35個
-  video ids的候選皆有結論或明確 HOLD。
+  2025 first-person setup再收束到138個文字命中：CFPAO 1.5.1因作者明載 OAR 3.1.5異常與全域 owner衝突
+  `DEFER-UPSTREAM-FIX`；JellyFishFP Dagger因雙 hit附魔倍率與 runtime訊號被 SIGMA Neutral取代為 `NO-GO`；
+  UAPNG 2.8因官方只列 Nemesis、Pandora／TK Dodge與 NPC-consumer CTD訊號而 `DEFER` player-only重審，其
+  舊 JellyFish satellite 135235已被168108取代；First Person Dodge 1.1因新版 Pandora持續原地 dodge而
+  `DEFER-PANDORA-UPSTREAM`。下一件進第三人稱武器動畫組；不得把 `UNREVIEWED` 清零當唯一完成證據，最後仍須
+  逐個來源頁反查所有35個 video ids的候選皆有結論或明確 HOLD。
 
 ## 2026-08-23 已收束
 
