@@ -44,6 +44,7 @@ git submodule update --init --recursive
 | `darksouls-port` | `PYTHONDONTWRITEBYTECODE=1 ./venv/bin/python -m unittest discover -s tests -p "test_*.py" -v` | 35 pass；**測試在 `tests/` 不是 `tools/`，且必須用 repo 自帶的 `venv/`**——系統 Python 缺 numpy，會變成 2 error / 19 skip |
 | `scene-capture-bridge` | `ctest --test-dir build/tests-native --output-on-failure` | 2 pass（Linux native）。`build/portable-tests-mingw` 是 **Windows MinGW** 的目錄，這台機器上不存在；完整 x64 triplet 尚缺 |
 | `my_skyrim_plugin_1` | `./scripts/test_quest_prf.sh` | 25 pass；quest PRF primitives，純 stdlib g++，不需 SKSE／CommonLib／Windows。Windows 對等物是 `scripts/test_quest_prf.ps1` |
+| `my_skyrim_plugin_1` | `./scripts/test_packaging.sh` | 6 pass；`pack.sh` 的打包契約（zip 內路徑佈局＋`--output-dir` 防護）。Windows 對等物 `test_packaging.ps1` 測的是 `pack.ps1`，兩支打包腳本各自獨立 |
 | `godot-worldspace-editor` | `python tests/test_placements_contract.py` | source gate 必跑；缺 Godot 時 runtime 明示 skip |
 | `godot-worldspace-editor` | `python tests/test_model_fetch_contract.py` | model-converter→Godot live contract；缺 Godot時 skip |
 
