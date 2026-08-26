@@ -125,6 +125,39 @@ class SubmodulePinGuardTests(unittest.TestCase):
 
         self.assertEqual(result, 0)
         self.assertIn("is available remotely", output)
+        self.assertNotIn("remote default branch", output)
+
+    def test_side_branch_pin_warns_but_allows_push(self):
+        sub_sha = self.commit_submodule(publish=False)
+        self.git(self.submodule, "push", "origin", "HEAD:side-branch")
+        self.git(self.submodule, "fetch", "origin")
+        local_sha = self.commit_parent_pin()
+
+        result, output = self.run_guard(local_sha)
+
+        self.assertEqual(result, 0)
+        self.assertIn("WARN", output)
+        self.assertIn(f"modules/demo @ {sub_sha[:12]}", output)
+        self.assertIn("origin/side-branch", output)
+        self.assertIn("remote default branch origin/main", output)
+
+    def test_missing_remote_head_skips_side_branch_warning(self):
+        self.commit_submodule(publish=False)
+        self.git(self.submodule, "push", "origin", "HEAD:side-branch")
+        self.git(self.submodule, "fetch", "origin")
+        self.git(
+            self.submodule,
+            "symbolic-ref",
+            "--delete",
+            "refs/remotes/origin/HEAD",
+        )
+        local_sha = self.commit_parent_pin()
+
+        result, output = self.run_guard(local_sha)
+
+        self.assertEqual(result, 0)
+        self.assertNotIn("WARN", output)
+        self.assertNotIn("remote default branch", output)
 
     def test_unpublished_pin_blocks_with_actionable_command(self):
         sub_sha = self.commit_submodule(publish=False)

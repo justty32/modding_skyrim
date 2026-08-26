@@ -189,6 +189,29 @@ def _reachable_from_remote(repo: Path, sha: str) -> bool:
     return False
 
 
+def _remote_branches_containing(repo: Path, sha: str) -> list[str]:
+    result = _git(
+        repo,
+        "for-each-ref",
+        f"--contains={sha}",
+        "--format=%(refname:short)",
+        "refs/remotes",
+    )
+    return [ref for ref in result.stdout.splitlines() if not ref.endswith("/HEAD")]
+
+
+def _remote_default_branch(repo: Path, remote: str) -> str | None:
+    result = _git(
+        repo,
+        "symbolic-ref",
+        "--quiet",
+        "--short",
+        f"refs/remotes/{remote}/HEAD",
+        check=False,
+    )
+    return result.stdout.strip() if result.returncode == 0 else None
+
+
 def _local_branches_containing(repo: Path, sha: str) -> list[str]:
     result = _git(
         repo,
@@ -240,6 +263,37 @@ def push_target(repo: Path, sha: str) -> tuple[str, str]:
     return remote, f"HEAD:{_default_branch(repo, remote)}"
 
 
+def warn_if_pin_depends_on_side_branch(
+    repo: Path,
+    pin: Pin,
+    output: TextIO,
+) -> None:
+    remote, _branch = push_target(repo, pin.sha)
+    default_tip = remote_default_tip(repo, remote)
+    default_branch = _remote_default_branch(repo, remote)
+    if default_tip is None or default_branch is None:
+        return
+    if _git(
+        repo,
+        "merge-base",
+        "--is-ancestor",
+        pin.sha,
+        default_tip,
+        check=False,
+    ).returncode == 0:
+        return
+
+    containing = _remote_branches_containing(repo, pin.sha)
+    branches = ", ".join(containing) if containing else "(none found)"
+    print(
+        f"WARN: {pin.path} @ {pin.sha[:12]} is available remotely, but remote "
+        f"default branch {default_branch} does not contain this pin; remote "
+        f"branches containing it: {branches}. This pin depends on those side "
+        "branches remaining available.",
+        file=output,
+    )
+
+
 def check_updates(
     repo: Path,
     remote: str,
@@ -274,6 +328,7 @@ def check_updates(
             continue
         if _reachable_from_remote(submodule, pin.sha):
             print(f"OK: {pin.path} @ {short_sha} is available remotely.", file=output)
+            warn_if_pin_depends_on_side_branch(submodule, pin, output)
             continue
 
         sub_remote, branch = push_target(submodule, pin.sha)
@@ -283,6 +338,7 @@ def check_updates(
                 f"OK: {pin.path} @ {short_sha} is available remotely after fetch.",
                 file=output,
             )
+            warn_if_pin_depends_on_side_branch(submodule, pin, output)
             continue
         if fetch.returncode != 0:
             print(
