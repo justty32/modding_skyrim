@@ -12,7 +12,13 @@
 SmoothCam 各靜置確認**不再轉、不再靠近**。
 
 **這只是症狀確認，不等於那 15 條通過**——15 條驗的是 rendered-camera ray 的落點精度，還沒跑。
-另有一個新回報待查：準星指向很遠處再移回來，ghost 會消失且不會恢復（疑為 cell mismatch 清除路徑）。
+
+「準星指向很遠處再移回來，ghost 會消失且不會恢復」這個新回報已於 2026-08-26 離線修好，
+但**尚未部署、尚未實機驗收**：修正 `21867c1`（分支 `fix/ghost-cell-clear-2026-08-26`，已推 origin），
+DLL SHA-256 `b302857681988f4930f666d41aef13c8ab9ef94486d8e746b81f1832c4a965e3`（1906688 bytes）。
+成因與修法見 [`調查記錄`](../projects/scene-capture-bridge/GHOST_CELL_CLEAR_INVESTIGATION_2026-08-26.md)
+與 [`收線記錄`](../agentctl/handoffs/done/README.md)。**要跑 15 條之前先部署這顆 DLL**，
+否則驗的還是舊行為。
 
 原始 FAIL 記錄： 使用者以部署中的 DLL
 （SHA-256 `dccc10e0…3fd67`，與文件記錄的 `a17e460` build 相同）實測：ghost 會持續自轉並持續往玩家
@@ -36,11 +42,20 @@ vanilla／AVE loot/vendor 階級比例。靜態與 smoke 不重跑；證據見
 長 session 平衡與存讀檔。既有 gate 7/7、SPID 19/19 不重跑；證據見
 [`Batch 4A RESULT`](../agentctl/logs/simonrim-batch4-4a-2026-08-16/RESULT.md)。
 
-## Simonrim Batch 4M/P
+## Simonrim Batch 4M/P（驗收對象已被遷移取代，需重新定義）
 
-以 Mysticism 2.5.0、Adamant 6.0.4 抽樣 vendor 買書→讀書→施放、代表性天賦、BFCO 輕／重／方向／
-sprint attack、長期平衡與存讀檔；證據見
+原文要求以 **Mysticism 2.5.0、Adamant 6.0.4** 抽樣 vendor 買書→讀書→施放、代表性天賦、
+BFCO 輕／重／方向／sprint attack、長期平衡與存讀檔；證據見
 [`Batch 4M/P RESULT`](../agentctl/logs/simonrim-batch4-4mp-2026-08-16/RESULT.md)。
+
+**但那兩個版本已經不是現役。** 2026-08-21 的 Simonrim→EnaiRim 遷移（Vokriinator Black 路線）把
+`modlist.txt` 的 `Adamant 6.0.4 Dev` 與 `Mysticism 2.5.0 Dev` 停用，改用
+`Mysticism 2.4.2 Vokriinator Black Pin` 與 `Adamant 5.9.2 Vokriinator Black Pin`；
+[`batches.md`](../agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batches.md) 第 9 行
+明訂「保留 Mysticism 2.4.2 作唯一 base」，是既定方向。
+
+所以照原版本號驗沒有意義。**待使用者決定**：(a) 把這條改寫成針對現役 2.4.2／5.9.2 的驗收，
+或 (b) 直接刪掉、併入 EnaiRim Batch 1 終態 gate（那個 gate 本來就要驗 Mysticism 2.4.2 base）。
 
 ## Expanded Skyrim Weaponry Batch 3A
 
