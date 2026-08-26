@@ -1,49 +1,12 @@
 # 已知的索引缺口 —— ratchet baseline，不是豁免清單
 #
-# 這裡每一行都是 2026-08-26 盤點時「存在但沒有任何索引」的工具腳本。
-# 它們保持靜默，好讓這道檢查對「新增的工具」立刻生效；但清單本身是債，
-# 不是常態。收斂方式是替該腳本補一列索引（母 CODE_MAP 或該條線的 README），
-# 然後把這裡對應的行刪掉。
+# 目前是空的。2026-08-26 盤點時有 36 支工具腳本沒有任何索引，同日全部補進
+# CODE_MAP，債已清完。
 #
-# 檢查器同時會對「檔案已不存在卻還留在這裡」的行報 STALE，所以這份清單
-# 不會腐化成永久藉口。
+# 這份檔案留著是為了下一次：真的有某支腳本無論如何不該進索引時，在這裡寫上
+# 路徑與理由，其餘一律要求補索引。檢查器同時會對「檔案已不存在卻還留在這裡」
+# 的行報 STALE，所以清單不會腐化成永久藉口。
 #
-# 為什麼會有這個缺口：instance/、mod-library/、modpack-design/、agentctl/
-# 於 2026-08-23 從母 repo 拆成獨立 repo，四條線都沒有長出自己的 CODE_MAP
-# 或 tools/README.md，而母 CODE_MAP 只留著拆分前就收錄的那幾支。
-instance/tools/audit_overwrite.py
-instance/tools/audit_profile_recovery.py
-instance/tools/backfill_profile_manifest.py
-instance/tools/build_profile_checkpoint.py
-instance/tools/reconcile_profile_sources.py
-instance/profiles/tools/profile_workflow.py
-mod-library/db/cleanup_report.py
-mod-library/db/fetch_nexus_status.py
-mod-library/db/ingest_candidates.py
-mod-library/db/l4_review.py
-mod-library/db/quarantine.py
-mod-library/db/report_upstream_status.py
-mod-library/db/review_candidates.py
-mod-library/db/test_default_paths.py
-mod-library/db/test_nexus_intake_check.py
-mod-library/l10n/tools/build_ai_overhaul_195_cht_layer.py
-mod-library/l10n/tools/build_audugan_100_cht_layer.py
-mod-library/l10n/tools/build_biggie_traits_cht_completion.py
-mod-library/l10n/tools/build_dmk_cht_layer.py
-mod-library/l10n/tools/build_new_content_cht_layers.py
-mod-library/l10n/tools/build_party_sheet_31_cht_layer.py
-mod-library/l10n/tools/build_valravn_220_cht_layer.py
-mod-library/l10n/tools/build_vokriinator_black_6153_vmad_fix.py
-mod-library/l10n/tools/enairim_cht_common.py
-mod-library/l10n/tools/inline_translation_overlay.py
-mod-library/l10n/tools/project_adamant_translation.py
-agentctl/tools/build_gallery.py
-agentctl/tools/check_dll_runtime.py
-agentctl/tools/check_enairim_offline_gates.py
-agentctl/tools/check_links.py
-agentctl/tools/mechanical_runtime_capture.py
-agentctl/tools/runtime_log_window.py
-agentctl/tools/skse_log_window.py
-agentctl/tools/test_enairim_offline_gates.py
-agentctl/tools/test_runtime_log_window.py
-agentctl/tools/test_skse_log_window.py
+# 為什麼曾經有這個缺口：instance/、mod-library/、modpack-design/、agentctl/
+# 於 2026-08-23 從母 repo 拆成獨立 repo，四條線都沒有長出自己的 CODE_MAP 或
+# tools/README.md，而母 CODE_MAP 只留著拆分前就收錄的那幾支。
