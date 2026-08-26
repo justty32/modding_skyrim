@@ -28,10 +28,19 @@ git submodule update --init --recursive
 
 ## 常用離線測試
 
-以下命令都從表中的 repo 根目錄執行。數量是 **2026-08-26** 在家用 Manjaro 實測的基線
-（前一版是 2026-08-12；實測記錄見
+以下命令都從表中的 repo 根目錄執行。表格文字不是同一天寫出的，逐列如下：
+`ModForge`、`agent-bridge`（Linux client 一列）、`darksouls-port`、
+`my_skyrim_plugin_1`（兩列）與 `scene-capture-bridge` 的**命令欄**是 **2026-08-26**
+實測後改寫的（見
 [`offline-test-matrix-2026-08-26`](../../agentctl/logs/offline-test-matrix-2026-08-26.md)）；
-之後新增測試時以 exit status 為準，不要把舊數量當上限。
+`game-data`、`skyrim-voicegen`、`model-converter`、`godot-worldspace-editor`（兩列）與
+`scene-capture-bridge` 的**通過數量**沿用 2026-08-12 的原始基線——這幾個 submodule 的
+gitlink 自 2026-08-12 起未再變動、程式碼沒改，數字本來就不會變。2026-08-26 稍晚已把這
+六列實際重跑一遍逐格核對（同一份記錄新增的「測試矩陣查證·第二輪」章節），結果與
+2026-08-12 的舊值完全一致，不是照抄舊文件。下面 `agent-bridge` 的 Windows DLL
+clang-cl+xwin 段落也是 **2026-08-26** 由另一條線複驗、本線套用文字更正
+（`VCPKG_ROOT` 路徑寫錯、`--fresh` 保留理由換了）。之後新增測試時以 exit status
+為準，不要把舊數量當上限。
 
 | repo | 命令 | 本機基線／範圍 |
 |---|---|---|
@@ -52,14 +61,24 @@ git submodule update --init --recursive
 不部署到 MO2：
 
 ```bash
-export VCPKG_ROOT="$HOME/vcpkg"
+export VCPKG_ROOT="/home/lorkhan/dev/vcpkg"
 cmake --fresh --preset build-release-clang-cl-linux
 cmake --build build/release-clang-cl-linux
 file build/release-clang-cl-linux/AgentBridge.dll
 ```
 
-2026-08-12 基線為 build 成功，輸出 `PE32+` x86-64 DLL。`--fresh` 是為清除 2026-08-02
-搬離 `ModForge/sub_projs` 前留下的絕對 source cache；不會修改原始碼或部署遊戲。
+2026-08-26 複驗：configure 1s、build 9s，輸出
+`PE32+ executable for MS Windows 6.00 (DLL), x86-64, 9 sections`。
+前提是 `~/.xwin-cache` 已 splat（`crt/` + `sdk/`，約 630M），缺了會在 configure 期
+FATAL_ERROR 並附上重建命令。
+
+`--fresh` **不可省略**：preset 以裸名 `clang-cl` 指定編譯器，CMake 入 cache 時會解析成
+絕對路徑，第二次 configure 因兩者不等而中途自毀重跑，此時 compiler probe 已失去 xwin
+toolchain 的 include／libpath，必然報「Check for working CXX compiler - broken」。
+這是 preset 的結構性問題，與任何一次目錄搬遷無關——舊文件說 `--fresh` 是為了清
+2026-08-02 搬離 `ModForge/sub_projs` 前留下的絕對路徑 cache，這個理由已經過期：
+2026-08-26 複驗現有 cache 對 `ModForge|sub_projs` 命中 0 筆，`--fresh` 仍然必留，只是
+理由換了。
 
 其他 repo 的測試入口以各自 README／工作流為準，不在母 repo 複製容易過期的命令：
 
@@ -96,9 +115,9 @@ file build/release-clang-cl-linux/AgentBridge.dll
 
 | 檢查 | 為什麼恆真 |
 |---|---|
-| `check_profiles.py` | 只看 profile 目錄，**不看 `ModOrganizer.ini`**。ini 曾停在 codex 線留下的 `PandoraRuntimeDefer-20260822`（一個不存在的 profile），每次都 PASS |
+| `check_profiles.py`（歷史） | 2026-08-23 之前只看 profile 目錄，**不看 `ModOrganizer.ini`**。ini 曾停在 codex 線留下的 `PandoraRuntimeDefer-20260822`（一個不存在的 profile），每次都 PASS。已於 2026-08-23 的 `instance/profiles` commit `241522d`（`feat(tools): validate selected_profile against the canonical name`）修正，新增 `selected_profile_errors()` 讀 `ModOrganizer.ini` 的 `selected_profile=`，與宣告的 `CANONICAL_PROFILE` 不符就擋下 |
 | teardown 的「遊戲鎖已釋放」 | 鎖的路徑指向已被刪除的 `~/skyrim_agent_out/_lock/`——**檢查一個不可能存在的東西，永遠會過** |
-| `check_markdown_links.py` | `git ls-files` 到 gitlink 就停，四條線的 87 個壞連結它從來沒看到；後續也發現只驗檔案存在、沒有驗 `#anchor` |
+| `check_markdown_links.py`（歷史） | `git ls-files` 到 gitlink 就停，四條線的 87 個壞連結它從來沒看到；後續也發現只驗檔案存在、沒有驗 `#anchor`。**兩者都已修（gitlink；anchor 於 `26dd4f7`）。2026-08-26 以突變測試複驗：實作是真的會變紅，但測試本身有四個空隙（標題內 inline link、anchor 側 fenced code、closed ATX 尾綴、一行死碼），已於 `76df55f` 補齊，13/13 突變體全殺。** |
 | 自製的 CJK 偵測 | `b.decode('utf-8', errors='ignore')` **永遠不拋錯**，所以「依序試多種編碼、成功就 break」的迴圈第一輪就結束，根本沒試過 cp936 |
 
 ### 規則：新增或修改一道檢查時，要證明它能變紅
