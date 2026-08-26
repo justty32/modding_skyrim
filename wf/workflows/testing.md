@@ -33,6 +33,9 @@ git submodule update --init --recursive
 `my_skyrim_plugin_1`（兩列）與 `scene-capture-bridge` 的**命令欄**是 **2026-08-26**
 實測後改寫的（見
 [`offline-test-matrix-2026-08-26`](../../agentctl/logs/offline-test-matrix-2026-08-26.md)）；
+工作區自己的四條工具線（母 repo `tools/`、`agentctl/tools/`、`mod-library/db/`、
+`instance/tools/`）是 **2026-08-26 晚間**新增的——在那之前這張表只涵蓋 `projects/*`，
+讀這頁的 agent 不會知道要跑它們。
 `game-data`、`skyrim-voicegen`、`model-converter`、`godot-worldspace-editor`（兩列）與
 `scene-capture-bridge` 的**通過數量**沿用 2026-08-12 的原始基線——這幾個 submodule 的
 gitlink 自 2026-08-12 起未再變動、程式碼沒改，數字本來就不會變。2026-08-26 稍晚已把這
@@ -56,6 +59,10 @@ clang-cl+xwin 段落也是 **2026-08-26** 由另一條線複驗、本線套用�
 | `my_skyrim_plugin_1` | `./scripts/test_packaging.sh` | 10 pass；`pack.sh` 的打包契約（zip 內路徑佈局、`--output-dir` 防護、CLI exit code）。Windows 對等物 `test_packaging.ps1` 測的是 `pack.ps1`，兩支打包腳本各自獨立 |
 | `godot-worldspace-editor` | `python tests/test_placements_contract.py` | source gate 必跑；缺 Godot 時 runtime 明示 skip |
 | `godot-worldspace-editor` | `python tests/test_model_fetch_contract.py` | model-converter→Godot live contract；缺 Godot時 skip |
+| 母 repo `tools/` | `python3 -m unittest discover -s tools -p 'test_*.py'` | 36 pass；工作區自己的檢查工具（submodule pin guard、markdown 連結、code-map 覆蓋率）。純 stdlib，不需 DB 也不需遊戲 |
+| `agentctl/tools/` | `python3 -m unittest discover -s agentctl/tools -p 'test_*.py'` | 46 pass（2026-08-26 從 14 增加）；離線，不連網不連 Mongo。這批測的是 agent 驅動用的判斷邏輯，紅燈代表判斷本身壞了 |
+| `mod-library/db/` | 從 `mod-library/db/` 執行 `python3 -m unittest discover -s . -p 'test_*.py'` | 36 pass；路徑契約與 intake 檢查。**必須 cd 進該目錄**，測試是用相對路徑載同目錄腳本的 |
+| `instance/tools/` | 從 `instance/tools/` 執行 `python3 -m unittest discover -s . -p 'test_*.py'` | 3 pass。`instance/profiles/tools/` 目前 **0 個測試**——那裡的 profile 結構稽核沒有任何測試，是已知缺口 |
 | `houseCARL` | `nice -n 19 taskset -c 8-13 dotnet build housecarl.sln` | exit 0；18 warning／0 error，約 4s。**沒有測試專案**——`dotnet test` 會 exit 0 並發現 0 個專案，那個綠燈沒有意義，別當閘門 |
 | `houseCARL` | `dotnet publish src/housecarl-generator -c Debug -r linux-x64 --self-contained true -o /tmp/hc-gen` ＋ `/tmp/hc-gen/housecarl-generator ci-all` | **78/97 pass、19 fail、9 self-SKIP**，約 16s。19 條全是 Linux 移植缺口（`\` 當路徑分隔 12、Windows 檔案鎖語意 4、`where.exe`／`.exe` 查找 3），非產品回歸。**必須 self-contained publish**——本機無 .NET 9／ASP.NET Core 9 runtime，framework-dependent 直接 exit 150 |
 | `houseCARL` | `/tmp/hc-gen/housecarl-generator freshness-capture-guard`（沿用上一列的 publish） | ALL PASS、exit 0。CI 刻意另開冷行程跑這條（deferral arm 計時敏感），別併進 `ci-all` |
