@@ -42,20 +42,23 @@ vanilla／AVE loot/vendor 階級比例。靜態與 smoke 不重跑；證據見
 長 session 平衡與存讀檔。既有 gate 7/7、SPID 19/19 不重跑；證據見
 [`Batch 4A RESULT`](../agentctl/logs/simonrim-batch4-4a-2026-08-16/RESULT.md)。
 
-## Simonrim Batch 4M/P（驗收對象已被遷移取代，需重新定義）
+## Simonrim Batch 4M/P
 
-原文要求以 **Mysticism 2.5.0、Adamant 6.0.4** 抽樣 vendor 買書→讀書→施放、代表性天賦、
-BFCO 輕／重／方向／sprint attack、長期平衡與存讀檔；證據見
-[`Batch 4M/P RESULT`](../agentctl/logs/simonrim-batch4-4mp-2026-08-16/RESULT.md)。
+以**現役**的 `Mysticism 2.4.2 Vokriinator Black Pin`（`modlist.txt:27`）與
+`Adamant 5.9.2 Vokriinator Black Pin`（`modlist.txt:37`）抽樣：vendor 買書→讀書→施放、
+代表性天賦、BFCO 輕／重／方向／sprint attack、長期平衡與存讀檔。
 
-**但那兩個版本已經不是現役。** 2026-08-21 的 Simonrim→EnaiRim 遷移（Vokriinator Black 路線）把
-`modlist.txt` 的 `Adamant 6.0.4 Dev` 與 `Mysticism 2.5.0 Dev` 停用，改用
-`Mysticism 2.4.2 Vokriinator Black Pin` 與 `Adamant 5.9.2 Vokriinator Black Pin`；
-[`batches.md`](../agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batches.md) 第 9 行
-明訂「保留 Mysticism 2.4.2 作唯一 base」，是既定方向。
+> **驗收對象已於 2026-08-26 改寫。** 原文寫的是 `Mysticism 2.5.0`／`Adamant 6.0.4`，
+> 那兩個版本已在 2026-08-21 的 Simonrim→EnaiRim 遷移（Vokriinator Black 路線）中停用
+> （`modlist.txt:175`、`:178` 現在是 `-`）；
+> [`batches.md`](../agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batches.md) 第 9 行
+> 明訂保留 Mysticism 2.4.2 作唯一 base，是既定方向。**抽樣清單本身沒有過期，只有版本號過期**，
+> 所以改寫而不是刪除。
 
-所以照原版本號驗沒有意義。**待使用者決定**：(a) 把這條改寫成針對現役 2.4.2／5.9.2 的驗收，
-或 (b) 直接刪掉、併入 EnaiRim Batch 1 終態 gate（那個 gate 本來就要驗 Mysticism 2.4.2 base）。
+舊版本的證據見
+[`Batch 4M/P RESULT`](../agentctl/logs/simonrim-batch4-4mp-2026-08-16/RESULT.md)——那是 2.5.0／6.0.4
+的結果，**不能直接沿用**到現役組合。EnaiRim Batch 1 終態 gate 也會驗 Mysticism 2.4.2 base；
+兩者若排在同一個驗收窗口，這份清單可以併進去一起跑，但不要因此把它從本檔移除。
 
 ## Expanded Skyrim Weaponry Batch 3A
 
