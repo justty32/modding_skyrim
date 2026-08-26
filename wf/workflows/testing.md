@@ -28,19 +28,21 @@ git submodule update --init --recursive
 
 ## 常用離線測試
 
-以下命令都從表中的 repo 根目錄執行。數量是 2026-08-12 在家用 Manjaro 的基線；之後新增
-測試時以 exit status 為準，不要把舊數量當上限。
+以下命令都從表中的 repo 根目錄執行。數量是 **2026-08-26** 在家用 Manjaro 實測的基線
+（前一版是 2026-08-12；實測記錄見
+[`offline-test-matrix-2026-08-26`](../../agentctl/logs/offline-test-matrix-2026-08-26.md)）；
+之後新增測試時以 exit status 為準，不要把舊數量當上限。
 
 | repo | 命令 | 本機基線／範圍 |
 |---|---|---|
-| `ModForge` | `./scripts/test-offline.sh` | 1123 pass；排除 `RequiresSkyrim` |
-| `agent-bridge` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s client -p 'test*.py' -v` | 54 pass；stdlib-only Linux client、無需 MO2/遊戲 |
+| `ModForge` | `./scripts/test-offline.sh` | 1190 pass；排除 `RequiresSkyrim` |
+| `agent-bridge` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s client -p 'test*.py' -v` | 88 pass；stdlib-only Linux client、無需 MO2/遊戲 |
 | `game-data` | `python -m unittest discover -s tests -v` | 12 pass；fake dotnet，無需遊戲資料 |
 | `skyrim-voicegen` | `python -m unittest discover -s tests -v` | 6 pass；不載 TTS 模型 |
 | `model-converter` | `.venv/bin/python -m pytest` | 68 pass；若無 POSIX venv，依該 repo README 建環境 |
 | `model-converter` (Windows) | `.venv\Scripts\python.exe -m pytest` | 68 pass；Windows 等價命令 |
-| `darksouls-port` | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tools -p "test_*.py" -v` | 系統 Python 與 `model-converter/.venv` 皆 29 pass / 35；6 項因 scipy/shapely 缺失 ERROR |
-| `scene-capture-bridge` | `ctest --test-dir build/portable-tests-mingw --output-on-failure` | 2 pass；完整 x64 triplet 尚缺 |
+| `darksouls-port` | `PYTHONDONTWRITEBYTECODE=1 ./venv/bin/python -m unittest discover -s tests -p "test_*.py" -v` | 35 pass；**測試在 `tests/` 不是 `tools/`，且必須用 repo 自帶的 `venv/`**——系統 Python 缺 numpy，會變成 2 error / 19 skip |
+| `scene-capture-bridge` | `ctest --test-dir build/tests-native --output-on-failure` | 2 pass（Linux native）。`build/portable-tests-mingw` 是 **Windows MinGW** 的目錄，這台機器上不存在；完整 x64 triplet 尚缺 |
 | `godot-worldspace-editor` | `python tests/test_placements_contract.py` | source gate 必跑；缺 Godot 時 runtime 明示 skip |
 | `godot-worldspace-editor` | `python tests/test_model_fetch_contract.py` | model-converter→Godot live contract；缺 Godot時 skip |
 
@@ -61,7 +63,7 @@ file build/release-clang-cl-linux/AgentBridge.dll
 
 - `agent-bridge`：上表只驗 Linux client；SKSE DLL 另依 README 走 Linux clang-cl+xwin cross-build。
 - `scene-capture-bridge`：portable CTest、MinGW contract 與 Linux clang-cl+xwin DLL build 的環境不同。
-- `my_skyrim_plugin_1`：以 README 的 CMake/CTest 與 packaging contract 為準。
+- `my_skyrim_plugin_1`：README 目前只有 Windows/MSVC 的 configure+build 與 PowerShell packaging／PRF contract 腳本，**沒有可直接執行的 CTest 入口**；Linux cross-build 目錄也沒有 `CTestTestfile.cmake`。在補上之前，這一格是 N/A，不要拿 build 成功當測試通過。
 - `houseCARL`：母 repo 釘自有 fork 的 `fix/dialogue-encoding-lint`；建置與 HTTP explicit-path 驗證見
   [`analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`](../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)。
 - `sofia-patch`：內容／文件專案，沒有統一自動化 suite。
@@ -77,9 +79,9 @@ file build/release-clang-cl-linux/AgentBridge.dll
 ## 已知環境條件
 
 - 這台未安裝 Godot；兩個 Godot contract 的 source gate 會通過，runtime class 會明示 skip。
-- `darksouls-port` 目前系統 Python 與 `model-converter/.venv` 都是 29/35；6 項因
-  scipy/shapely 缺失而 ERROR。
-- ModForge 離線 suite 目前會輸出既有 nullable/xUnit analyzer warnings，但 1123 項全過。
+- `darksouls-port` 用 repo 自帶的 `venv/` 是 35/35 全過（2026-08-26 實測）。用系統 Python 會變成
+  2 error / 19 skip（缺 numpy）——**那不是 repo 壞了，是跑錯直譯器**。
+- ModForge 離線 suite 目前會輸出既有 nullable/xUnit analyzer warnings，但 1190 項全過。
 
 ## 何時不用
 

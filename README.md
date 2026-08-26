@@ -65,7 +65,7 @@ Skyrim SE modding 的開發、分析、部署與產物集中地。本工作區�
 | `houseCARL` | Skyrim MCP 工具 fork(資料層讀寫 load order)。`Mo2LoadOrder.cs` 是 modlist 排序方向的權威依據 |
 | `my_skyrim_plugin_1` | SKSE C++ plugin 樣板 + 建置骨架(CMake/vcpkg/CI/靜態 CRT) |
 
-> 除了 ModForge／houseCARL／my_skyrim_plugin_1,其餘八個都是 **2026-08-02 從 ModForge `sub_projs/` 抽出來的**(未帶舊 commit 歷史);ModForge 原位置各留一份 stub 導引,它們的契約/spec/計畫文檔仍在 ModForge。若 recursive update 報 `not our ref`,先看 [WAIT_USER.md](WAIT_USER.md) 的未發布 submodule commit 條目,不要把 gitlink 倒退。
+> 除了 ModForge／houseCARL／my_skyrim_plugin_1,其餘八個都是 **2026-08-02 從 ModForge `sub_projs/` 抽出來的**(未帶舊 commit 歷史);ModForge 原位置各留一份 stub 導引,它們的契約/spec/計畫文檔仍在 ModForge。若 recursive update 報 `not our ref`,代表母 repo 的 gitlink 指到一個遠端拿不到的 commit(尚未 push,或它所在的分支已被刪除)。先在該 submodule `git fetch --all` 再看 `git branch -r --contains <pin>`;**不要把 gitlink 倒退**。push 端有 [`tools/check_submodule_pins.py`](tools/check_submodule_pins.py)(掛在 `tools/hooks/pre-push`)擋住推出「遠端拿不到的 pin」,但它擋不住 pin 推出後、它所在的側分支才被刪除的情況。
 
 ## 不進版控的東西
 
