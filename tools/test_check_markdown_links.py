@@ -137,6 +137,64 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
         self.assertEqual(checked, 1)
         self.assertEqual(broken, [])
 
+    def test_heading_anchor_ignores_inline_link_syntax(self):
+        # A heading that links out slugs from the link text alone; without the
+        # unwrapping step the URL bleeds into the slug as "batch-7targetmd".
+        (self.root / "target.md").write_text("target\n", encoding="utf-8")
+        source = self.root / "source.md"
+        source.write_text(
+            "## [Batch 7](target.md) 終態驗收\n[link](#batch-7-終態驗收)\n",
+            encoding="utf-8",
+        )
+
+        checked, broken = check_file(source, self.root)
+
+        # The heading's own link counts too, hence 2.
+        self.assertEqual(checked, 2)
+        self.assertEqual(broken, [])
+
+    def test_headings_inside_fenced_code_are_not_anchors(self):
+        # A shell comment in a fenced block is not a heading. If the anchor
+        # harvest ignored fences it would mint "取消部署" and wave this through.
+        source = self.root / "source.md"
+        source.write_text(
+            "```bash\n# 取消部署\n```\n[link](#取消部署)\n",
+            encoding="utf-8",
+        )
+
+        checked, broken = check_file(source, self.root)
+
+        self.assertEqual(checked, 1)
+        self.assertEqual(len(broken), 1)
+        self.assertEqual(broken[0][1], "#取消部署")
+
+    def test_closed_atx_heading_drops_trailing_hashes(self):
+        # "## 標題 ##" renders as "標題"; keeping the closing run would slug it
+        # as "標題-" and reject the correct anchor.
+        source = self.root / "source.md"
+        source.write_text("## 終態驗收 ##\n[link](#終態驗收)\n", encoding="utf-8")
+
+        checked, broken = check_file(source, self.root)
+
+        self.assertEqual(checked, 1)
+        self.assertEqual(broken, [])
+
+    def test_cli_names_the_missing_anchor(self):
+        target = self.root / "target.md"
+        target.write_text("# 有的標題\n", encoding="utf-8")
+        source = self.root / "source.md"
+        source.write_text("[x](target.md#沒有的標題)\n", encoding="utf-8")
+
+        stream = io.StringIO()
+        with redirect_stdout(stream):
+            result = main([str(source)])
+        output = stream.getvalue()
+
+        self.assertEqual(result, 1)
+        self.assertIn("source.md:1: broken anchor:", output)
+        self.assertIn('has no "#沒有的標題"', output)
+        self.assertIn("1 missing anchor(s)", output)
+
     def test_symlink_uses_canonical_document_directory(self):
         canonical = self.root / "canonical"
         canonical.mkdir()

@@ -100,7 +100,8 @@ def github_heading_slug(text: str) -> str:
     text = re.sub(r"!\[([^]]*)\]\([^)]+\)", r"\1", text)
     text = re.sub(r"\[([^]]+)\]\([^)]+\)", r"\1", text)
     text = re.sub(r"<[^>]+>", "", text)
-    text = text.replace("`", "").replace("*", "")
+    # Backticks and asterisks need no special case: the ASCII-punctuation rule
+    # below drops them like every other ASCII symbol.
     text = unicodedata.normalize("NFKC", text).strip().lower()
     text = "".join(
         char
@@ -175,17 +176,19 @@ def markdown_links(markdown: Path):
                 yield line_number, target
 
 
-def check_file(source: Path, root: Path) -> tuple[int, list[tuple[int, str, Path]]]:
+def check_file(source: Path, root: Path) -> tuple[int, list[tuple[int, str, Path, str]]]:
     if source.is_symlink():
         try:
             markdown = source.resolve(strict=True)
         except FileNotFoundError:
-            return 0, [(1, str(source.readlink()), source.resolve())]
+            return 0, [(1, str(source.readlink()), source.resolve(), "")]
     else:
         markdown = source.resolve()
 
     checked = 0
-    broken: list[tuple[int, str, Path]] = []
+    # Each entry carries the missing fragment, so an anchor failure can name the
+    # anchor instead of pointing at a file that plainly does exist.
+    broken: list[tuple[int, str, Path, str]] = []
     for line_number, target in markdown_links(markdown):
         checked += 1
         candidate = Path(target.path)
@@ -197,7 +200,7 @@ def check_file(source: Path, root: Path) -> tuple[int, list[tuple[int, str, Path
             resolved = markdown.parent / candidate
         resolved = resolved.resolve()
         if not resolved.exists():
-            broken.append((line_number, target.display, resolved))
+            broken.append((line_number, target.display, resolved, ""))
             continue
         if (
             target.fragment
@@ -205,7 +208,7 @@ def check_file(source: Path, root: Path) -> tuple[int, list[tuple[int, str, Path
             and resolved.suffix.lower() in {".md", ".markdown"}
             and target.fragment not in markdown_anchors(resolved)
         ):
-            broken.append((line_number, target.display, resolved))
+            broken.append((line_number, target.display, resolved, target.fragment))
     return checked, broken
 
 
@@ -226,7 +229,8 @@ def main(argv: list[str] | None = None) -> int:
         skipped_symlinks = sum(source.is_symlink() for source in sources)
         sources = [source for source in sources if not source.is_symlink()]
     total_links = 0
-    broken_count = 0
+    missing_files = 0
+    missing_anchors = 0
     for source in sources:
         try:
             display = source.resolve().relative_to(root)
@@ -234,12 +238,25 @@ def main(argv: list[str] | None = None) -> int:
             display = source
         checked, broken = check_file(source, root)
         total_links += checked
-        for line_number, target, resolved in broken:
-            broken_count += 1
-            print(f"{display}:{line_number}: broken local link: {target} -> {resolved}")
+        for line_number, target, resolved, fragment in broken:
+            if fragment:
+                missing_anchors += 1
+                print(
+                    f"{display}:{line_number}: broken anchor: {target} -> "
+                    f'{resolved} has no "#{fragment}"'
+                )
+            else:
+                missing_files += 1
+                print(
+                    f"{display}:{line_number}: broken local link: {target} -> {resolved}"
+                )
 
+    broken_count = missing_files + missing_anchors
     if broken_count:
-        print(f"Markdown links FAILED: {broken_count} broken local link(s)")
+        print(
+            f"Markdown links FAILED: {broken_count} broken local link(s) "
+            f"({missing_files} missing file(s), {missing_anchors} missing anchor(s))"
+        )
         return 1
     suffix = f", {skipped_symlinks} symlink(s) skipped" if skipped_symlinks else ""
     print(f"Markdown links OK: {len(sources)} file(s), {total_links} local link(s){suffix}")
