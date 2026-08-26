@@ -189,6 +189,11 @@ def _reachable_from_remote(repo: Path, sha: str) -> bool:
     return False
 
 
+def _remotes(repo: Path) -> list[str]:
+    result = _git(repo, "remote", check=False)
+    return result.stdout.split() if result.returncode == 0 else []
+
+
 def _remote_branches_containing(repo: Path, sha: str) -> list[str]:
     result = _git(
         repo,
@@ -197,7 +202,13 @@ def _remote_branches_containing(repo: Path, sha: str) -> list[str]:
         "--format=%(refname:short)",
         "refs/remotes",
     )
-    return [ref for ref in result.stdout.splitlines() if not ref.endswith("/HEAD")]
+    # `refs/remotes/<remote>/HEAD` 的 refname:short 就是 `<remote>`（沒有 `/HEAD` 後綴），
+    # 所以只濾後綴會讓它以「一個叫 fork 的分支」的樣子漏出來。真正的分支一定含 `/`。
+    return [
+        ref
+        for ref in result.stdout.splitlines()
+        if "/" in ref and not ref.endswith("/HEAD")
+    ]
 
 
 def _remote_default_branch(repo: Path, remote: str) -> str | None:
@@ -268,26 +279,34 @@ def warn_if_pin_depends_on_side_branch(
     pin: Pin,
     output: TextIO,
 ) -> None:
-    remote, _branch = push_target(repo, pin.sha)
-    default_tip = remote_default_tip(repo, remote)
-    default_branch = _remote_default_branch(repo, remote)
-    if default_tip is None or default_branch is None:
+    # 一個 submodule 可以有多個 remote（houseCARL：`origin` 是上游、`fork` 是自有 fork，
+    # pin 住的是 fork 那邊）。只看 push_target 選中的那一個，會把「在另一個 remote 的
+    # 預設分支上」誤判成「掛在側分支上」。**任何一個** remote 的預設分支含得到就夠了。
+    default_branches: list[str] = []
+    for candidate in _remotes(repo):
+        tip = remote_default_tip(repo, candidate)
+        branch = _remote_default_branch(repo, candidate)
+        if tip is None or branch is None:
+            continue
+        default_branches.append(branch)
+        if _git(
+            repo,
+            "merge-base",
+            "--is-ancestor",
+            pin.sha,
+            tip,
+            check=False,
+        ).returncode == 0:
+            return
+    if not default_branches:
         return
-    if _git(
-        repo,
-        "merge-base",
-        "--is-ancestor",
-        pin.sha,
-        default_tip,
-        check=False,
-    ).returncode == 0:
-        return
+    default_branch = ", ".join(default_branches)
 
     containing = _remote_branches_containing(repo, pin.sha)
     branches = ", ".join(containing) if containing else "(none found)"
     print(
         f"WARN: {pin.path} @ {pin.sha[:12]} is available remotely, but remote "
-        f"default branch {default_branch} does not contain this pin; remote "
+        f"default branch(es) {default_branch} do not contain this pin; remote "
         f"branches containing it: {branches}. This pin depends on those side "
         "branches remaining available.",
         file=output,

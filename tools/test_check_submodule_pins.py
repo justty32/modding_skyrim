@@ -139,7 +139,7 @@ class SubmodulePinGuardTests(unittest.TestCase):
         self.assertIn("WARN", output)
         self.assertIn(f"modules/demo @ {sub_sha[:12]}", output)
         self.assertIn("origin/side-branch", output)
-        self.assertIn("remote default branch origin/main", output)
+        self.assertIn("remote default branch(es) origin/main", output)
 
     def test_missing_remote_head_skips_side_branch_warning(self):
         self.commit_submodule(publish=False)
