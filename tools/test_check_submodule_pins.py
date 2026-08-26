@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from check_submodule_pins import main
+from check_submodule_pins import _remote_branches_containing, main
 
 
 TOOLS_DIR = Path(__file__).resolve().parent
@@ -140,6 +140,52 @@ class SubmodulePinGuardTests(unittest.TestCase):
         self.assertIn(f"modules/demo @ {sub_sha[:12]}", output)
         self.assertIn("origin/side-branch", output)
         self.assertIn("remote default branch(es) origin/main", output)
+
+    def test_pin_on_another_remotes_default_branch_does_not_warn(self):
+        """一個 submodule 可以有多個 remote（houseCARL：`origin` 是上游、`fork` 是自有 fork）。
+
+        pin 落在 `fork` 的預設分支上時不該被判成「掛在側分支」——即使呼叫 guard 時
+        傳入的是 `origin`，而 `origin/main` 並不含這個 commit。
+        """
+        fork_remote = self.root / "fork-remote.git"
+        self.git(self.root, "init", "--bare", "--initial-branch=main", str(fork_remote))
+        self.git(self.submodule, "remote", "add", "fork", str(fork_remote))
+
+        sub_sha = self.commit_submodule(publish=False)
+        # 只推到 fork 的預設分支；origin 那邊完全沒有這個 commit 的分支。
+        self.git(self.submodule, "push", "fork", "HEAD:main")
+        self.git(self.submodule, "fetch", "fork")
+        self.git(self.submodule, "remote", "set-head", "fork", "-a")
+        local_sha = self.commit_parent_pin()
+
+        result, output = self.run_guard(local_sha)
+
+        self.assertEqual(result, 0)
+        self.assertIn(f"modules/demo @ {sub_sha[:12]}", output)
+        self.assertNotIn("WARN", output)
+        self.assertNotIn("remote default branch", output)
+
+    def test_remote_head_is_not_listed_as_a_branch(self):
+        """`refs/remotes/<remote>/HEAD` 的 refname:short 就是 `<remote>`（沒有 `/HEAD` 後綴）。
+
+        只濾 `/HEAD` 後綴會讓它以「一個叫 fork 的分支」的樣子混進分支清單。
+        這裡直接測 helper——經過 `warn_if_...` 的路徑測不到它，因為修好之後
+        「某個 remote 的 HEAD 含有這個 commit」就等於「不會警告」，這條路走不到。
+        """
+        fork_remote = self.root / "fork-remote.git"
+        self.git(self.root, "init", "--bare", "--initial-branch=main", str(fork_remote))
+        self.git(self.submodule, "remote", "add", "fork", str(fork_remote))
+        sub_sha = self.commit_submodule(publish=False)
+        self.git(self.submodule, "push", "fork", "HEAD:main")
+        self.git(self.submodule, "fetch", "fork")
+        self.git(self.submodule, "remote", "set-head", "fork", "-a")
+
+        listed = _remote_branches_containing(self.submodule, sub_sha)
+
+        self.assertIn("fork/main", listed)
+        self.assertNotIn("fork", listed)   # 裸的 remote 名不可以出現
+        for name in listed:
+            self.assertIn("/", name, f"裸的 remote 名漏進分支清單：{name!r}")
 
     def test_missing_remote_head_skips_side_branch_warning(self):
         self.commit_submodule(publish=False)
