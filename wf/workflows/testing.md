@@ -64,7 +64,7 @@ file build/release-clang-cl-linux/AgentBridge.dll
 - `agent-bridge`：上表只驗 Linux client；SKSE DLL 另依 README 走 Linux clang-cl+xwin cross-build。
 - `scene-capture-bridge`：portable CTest、MinGW contract 與 Linux clang-cl+xwin DLL build 的環境不同。
 - `my_skyrim_plugin_1`：README 目前只有 Windows/MSVC 的 configure+build 與 PowerShell packaging／PRF contract 腳本，**沒有可直接執行的 CTest 入口**；Linux cross-build 目錄也沒有 `CTestTestfile.cmake`。在補上之前，這一格是 N/A，不要拿 build 成功當測試通過。
-- `houseCARL`：母 repo 釘自有 fork 的 `fix/dialogue-encoding-lint`；建置與 HTTP explicit-path 驗證見
+- `houseCARL`：只維護自有 fork、不追 upstream；建置與 HTTP explicit-path 驗證見
   [`analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`](../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)。
 - `sofia-patch`：內容／文件專案，沒有統一自動化 suite。
 
