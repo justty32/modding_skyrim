@@ -43,6 +43,7 @@ git submodule update --init --recursive
 | `model-converter` (Windows) | `.venv\Scripts\python.exe -m pytest` | 68 pass；Windows 等價命令 |
 | `darksouls-port` | `PYTHONDONTWRITEBYTECODE=1 ./venv/bin/python -m unittest discover -s tests -p "test_*.py" -v` | 35 pass；**測試在 `tests/` 不是 `tools/`，且必須用 repo 自帶的 `venv/`**——系統 Python 缺 numpy，會變成 2 error / 19 skip |
 | `scene-capture-bridge` | `ctest --test-dir build/tests-native --output-on-failure` | 2 pass（Linux native）。`build/portable-tests-mingw` 是 **Windows MinGW** 的目錄，這台機器上不存在；完整 x64 triplet 尚缺 |
+| `my_skyrim_plugin_1` | `./scripts/test_quest_prf.sh` | 25 pass；quest PRF primitives，純 stdlib g++，不需 SKSE／CommonLib／Windows。Windows 對等物是 `scripts/test_quest_prf.ps1` |
 | `godot-worldspace-editor` | `python tests/test_placements_contract.py` | source gate 必跑；缺 Godot 時 runtime 明示 skip |
 | `godot-worldspace-editor` | `python tests/test_model_fetch_contract.py` | model-converter→Godot live contract；缺 Godot時 skip |
 
@@ -63,7 +64,7 @@ file build/release-clang-cl-linux/AgentBridge.dll
 
 - `agent-bridge`：上表只驗 Linux client；SKSE DLL 另依 README 走 Linux clang-cl+xwin cross-build。
 - `scene-capture-bridge`：portable CTest、MinGW contract 與 Linux clang-cl+xwin DLL build 的環境不同。
-- `my_skyrim_plugin_1`：README 目前只有 Windows/MSVC 的 configure+build 與 PowerShell packaging／PRF contract 腳本，**沒有可直接執行的 CTest 入口**；Linux cross-build 目錄也沒有 `CTestTestfile.cmake`。在補上之前，這一格是 N/A，不要拿 build 成功當測試通過。
+- `my_skyrim_plugin_1`：**沒有 CTest 入口**（`CMakeLists.txt` 沒有 `enable_testing()`／`add_test`，Linux cross-build 目錄也沒有 `CTestTestfile.cmake`），不要拿 build 成功當測試通過。但有可直接跑的離線測試——見上表 `test_quest_prf.sh`。
 - `houseCARL`：只維護自有 fork、不追 upstream；建置與 HTTP explicit-path 驗證見
   [`analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`](../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)。
 - `sofia-patch`：內容／文件專案，沒有統一自動化 suite。
