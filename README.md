@@ -66,6 +66,18 @@ Skyrim SE modding 的開發、分析、部署與產物集中地。本工作區�
 | `my_skyrim_plugin_1` | SKSE C++ plugin 樣板 + 建置骨架(CMake/vcpkg/CI/靜態 CRT) |
 
 > 除了 ModForge／houseCARL／my_skyrim_plugin_1,其餘八個都是 **2026-08-02 從 ModForge `sub_projs/` 抽出來的**(未帶舊 commit 歷史);ModForge 原位置各留一份 stub 導引,它們的契約/spec/計畫文檔仍在 ModForge。若 recursive update 報 `not our ref`,代表母 repo 的 gitlink 指到一個遠端拿不到的 commit(尚未 push,或它所在的分支已被刪除)。先在該 submodule `git fetch --all` 再看 `git branch -r --contains <pin>`;**不要把 gitlink 倒退**。push 端有 [`tools/check_submodule_pins.py`](tools/check_submodule_pins.py)(掛在 `tools/hooks/pre-push`)擋住推出「遠端拿不到的 pin」,但它擋不住 pin 推出後、它所在的側分支才被刪除的情況。
+>
+> **一次 push 全部搞定**（建議一開始就設，這是 repo-local 設定，不進版控）：
+>
+> ```bash
+> git config push.recurseSubmodules on-demand   # 先推有變動的 submodule，再推母 repo
+> git config submodule.recurse true             # pull/checkout/switch 一併遞迴
+> git config diff.submodule log                 # diff 顯示 submodule 的 commit 訊息而非裸 hash
+> git config status.submoduleSummary true       # status 顯示各 submodule 改了什麼
+> ```
+>
+> 設了 `on-demand` 之後 pre-push 檢查會讓路（它認得這個設定），因為 git 會在同一次 push 裡
+> 把那些 commit 發布掉——擋下去等於擋掉它自己要求你手動做的事。側分支警告不受影響，照樣會出。
 
 ## 不進版控的東西
 
