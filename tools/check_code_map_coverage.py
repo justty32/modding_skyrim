@@ -51,10 +51,17 @@ TOOL_ROOTS = (
 )
 
 # Pages an entry may be indexed in. A basename mentioned in any of them counts.
+# A basename mentioned in any of these counts as indexed. Several live inside
+# private line repos on purpose: `mod-library` must stay private (it holds full
+# ESP copies of other people's mods), so even its script names do not belong in
+# the public mother repo. Naming the *directories* here is fine -- the workspace
+# layout is already public in AGENTS.md -- but the per-script index is not.
 INDEX_PAGES = (
     "wf/workflows/common/code-map/CODE_MAP.md",
     "instance/README.md",
     "mod-library/README.md",
+    "mod-library/db/README.md",
+    "mod-library/l10n/tools/README.md",
     "modpack-design/README.md",
     "agentctl/README.md",
 )
