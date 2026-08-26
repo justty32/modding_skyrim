@@ -27,7 +27,7 @@ P1 必須加明確的優先權落點參數，預設不再是 top。這與 D2 的
 > 另有一個是把 `after:<本體>` 誤解成「疊在上面」——`after` = 檔案裡排在後面 = **更低**優先權。
 >
 > 所以裝覆蓋層一律要明確傳 `--priority "before:<本體 mod 名>"`，並用
-> [`mod-library/l10n/tools/audit_layer_priority.py`](../../../../mod-library/l10n/tools/audit_layer_priority.py)
+> `mod-library/l10n/tools/` 的層優先權稽核
 > 逐檔案路徑驗證勝出者。這條與 G7 的 SKSE 副本檢查是同一類問題：**檔案層的勝負無聲無息，
 > 必須主動稽核，不能靠沒報錯就當作對的。**
 

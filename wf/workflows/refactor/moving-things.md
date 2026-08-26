@@ -22,7 +22,7 @@ Done when: <逐檔比對已落地、六類斷裂已掃、工具冒煙測試過�
 grep -rn '/home/lorkhan/<舊路徑>' --include='*.py' --include='*.sh' --include='*.json'
 ```
 
-踩過：`build_biggie_traits_cht_completion.py` 的 evidence root、13 個 QA spec 的
+踩過：某支逐 mod 補全腳本的 evidence root、13 個 QA spec 的
 `manifest` 欄位、inbox 三支腳本的 `DEFAULT_INBOX_ROOT`。
 
 ### 2. `__file__` 相對推導——**語意會變**
@@ -32,7 +32,7 @@ grep -rn '__file__' --include='*.py'
 ```
 
 最陰的一類：程式碼沒變、路徑也「還是相對的」，但**基準點變了**。
-`scan_mod_library.py` 的 `BACKUP_DIR = Path(__file__).parent.parent / "backups"`
+掃庫工具的 `BACKUP_DIR = Path(__file__).parent.parent / "backups"`
 搬進 git repo 之後，每次 `backup` 會把 3MB 的 DB dump 提交進版控。
 
 判準：`parents[n]` 指向**跟著一起搬的東西**就安全，指向**沒跟著搬的東西**就要改。

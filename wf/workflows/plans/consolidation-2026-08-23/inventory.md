@@ -22,7 +22,7 @@
 
 ### 發現二：有一個我原本不知道的元件——本機 MongoDB mod 資料庫
 
-`backups/skyrim-mongo-*.json`（54M 快照）＋ `docs/mongodb-schema.md`＋`tools/scan_mod_library.py`。
+`backups/skyrim-mongo-*.json`（54M 快照）＋ `docs/mongodb-schema.md`＋掃庫工具。
 這是**本地 mod 庫的索引資料庫**，正是第 2 條線（本地 mod 管理）的核心基礎設施，
 之前完全沒出現在母 repo 的 README 裡。`mod-library` 這條線要以它為中心，而不是只放成品檔案。
 
@@ -59,7 +59,7 @@ profile 稽核 `audit_overwrite.py`）大部分也歸這裡。
 | 新線 | 從 notes 搬什麼 |
 |---|---|
 | `instance` (private) | `README.md` `deployment-scope.md` `jackify-manjaro-plan.md`；`backups/` 的 mongo 快照（**不進版控**）；`logs/` 的部署類文字紀錄 |
-| `mod-library` (private) | **MongoDB mod 資料庫**（schema＋`scan_mod_library.py`＋快照策略）；`my-mods.md`；`artifacts/`（自製 esp 成品）；`agent-archive/PENDING-ARTIFACTS/`；漢化層建置工具與產物；母 repo 現 `dist/` |
+| `mod-library` (private) | **MongoDB mod 資料庫**（schema＋掃庫工具＋快照策略）；`my-mods.md`；`artifacts/`（自製 esp 成品）；`agent-archive/PENDING-ARTIFACTS/`；漢化層建置工具與產物；母 repo 現 `dist/` |
 | `modpack-design` (public) | `modpack-kr-dev-plan.md` `technical-debt.md`；`docs/` 的選型調查群；母 repo 現 `analysis/mod-survey/` |
 | `agentctl` (public) | `SESSION-LOG.md`（入口）；`housecarl.md`；`agents/`；`agent-archive-2026-08-22/`（清過 worktree 殘留後）；`qa/`；`tools/` 多數；母 repo 現 `inbox/` `tools/agent_inbox/` `scripts/` `tests/` |
 | **不搬，留本機** | `logs/` 的 66MB 截圖、`backups/` 的 54MB mongo 快照、所有 `__pycache__/` |

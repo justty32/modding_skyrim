@@ -54,7 +54,7 @@ diff <(git show main:modpack-main/modlist.txt | grep '^+' | sort) \
      <(grep '^+' modpack-main/modlist.txt | sort)
 ```
 
-- 裝了覆蓋層就跑 `python3 mod-library/l10n/tools/audit_layer_priority.py`
+- 裝了覆蓋層就跑 `mod-library/l10n/tools/` 的**層優先權稽核**（命令見該目錄 `README.md`）
 
 ## 排序
 

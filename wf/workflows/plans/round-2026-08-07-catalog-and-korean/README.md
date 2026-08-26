@@ -31,7 +31,7 @@
 
 | 階段 | codex | deepseek | agy |
 |---|---|---|---|
-| T0（現在，不等 key） | **A1** 寫 `fetch_nexus_status.py`（吃 Nexus API） | **A4a** 從 Mongo 拉 `is_translation=true` 清單，做檔名正規化配對，產 TSV 草稿（**不寫回 Mongo**） | **B2-recon** 列出可爬的公開站／板塊清單、各站結構與可行性，**先不正式採集** |
+| T0（現在，不等 key） | **A1** 寫 Nexus 狀態富化工具（吃 Nexus API） | **A4a** 從 Mongo 拉 `is_translation=true` 清單，做檔名正規化配對，產 TSV 草稿（**不寫回 Mongo**） | **B2-recon** 列出可爬的公開站／板塊清單、各站結構與可行性，**先不正式採集** |
 | T1（key 到手 + A1 驗收過） | **B1** `candidates` schema + ingest／link-check／gallery 三支治具 | **A2** 長跑補值 | 待 B1 定下 `meta.json` 欄位 |
 | T2 | **A3** 清理報告 + 107 筆移除 + P1.7 備份；**B3** 收斂 | **A4b** 用 codex 的 matcher 正式填 `translates_mod_id`、出版本差異矩陣 | **B2** 正式採集 |
 

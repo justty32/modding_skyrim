@@ -37,4 +37,4 @@ Dragonborn 元件本身就沒有 ESP。**覆蓋數少於元件數不一定是缺
 <X> 本體            ← 最低
 ```
 
-裝的時候一律 `--priority "before:<下一層的 mod 名>"`，裝完跑 `audit_layer_priority.py`。
+裝的時候一律 `--priority "before:<下一層的 mod 名>"`，裝完跑**層優先權稽核**。

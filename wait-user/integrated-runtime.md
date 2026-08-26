@@ -18,7 +18,7 @@ Mysticism／Adamant、CT77／AVE、RDO、VIGILANT Altano 入口／字幕／語�
 
 抽查 Timing is Everything SE 2.2 MCM、The Choice is Yours 2.7 接受／拒絕對話、At Your Own Pace
 8 ESP 推進選項、SkyParkour 3.6.2 `Interface/Translations` UI；確認無方框、mojibake、截斷、空白。
-排序稽核：`python3 mod-library/l10n/tools/audit_layer_priority.py`。
+排序稽核：`mod-library/l10n/tools/` 的層優先權稽核。
 
 ## RDO Final 正體中文
 

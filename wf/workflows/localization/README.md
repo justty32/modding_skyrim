@@ -23,12 +23,10 @@ Done when: <同版閘門通過、層內確有中文、排序在本體之上、au
 
 工具在 [`mod-library/l10n/tools/`](../../../mod-library/l10n/tools/)：
 
-| 工具 | 用途 |
-|---|---|
-| `inline_translation_overlay.py` | 行內覆蓋層產生器（核心） |
-| `build_*_cht_layer.py` | 逐 mod 的建置腳本，各自 fail-closed |
-| `match_translations.py` | 翻譯比對 |
-| `project_adamant_translation.py` | 把既有譯文投射到新版 |
+逐支職責見該目錄的 [`README.md`](../../../mod-library/l10n/tools/README.md)——**索引留在 private repo**——母 repo 是 public，`mod-library` 因含他人 mod 的完整 ESP 複本必須永遠 private，連腳本清單都不外流。
+
+分四類：**行內覆蓋層產生器**（核心引擎，被其餘多數 import）、**逐 mod 的建置腳本**
+（各自 fail-closed）、**翻譯比對**、**把既有譯文投射到新版**。
 
 **fail closed**：筆數、record topology 與所有非目標 payload 都要鎖死。
 VIGILANT `BOOK.DESC` 的例子是 45 筆一個不多一個不少，比數不對就中止。
@@ -39,9 +37,9 @@ VIGILANT `BOOK.DESC` 的例子是 45 筆一個不多一個不少，比數不對�
 
 | 型態 | 例子 | 做法 |
 |---|---|---|
-| 官方層漏了某批欄位 | VIGILANT 1.8.1／1.8.2 的正體包都原樣留下同一批 45 個召喚書／石之碎片的 `BOOK.DESC` 英文行 | 用**同一筆記錄既有的中文專名**當術語來源，只補那批欄位。`build_vigilant_book_desc_overlay.py` 是 exact-version、45-record fail-closed 的產生器 |
-| 本體升版，舊層還停在舊版 | Adamant 從 5.9.2 升上去，舊層譯文還在 | `project_adamant_translation.py`：把既有譯文**投射**到新版結構，未命中的留英文並列出清單，不要自動猜 |
-| 層存在但目標欄位根本沒翻 | Biggie Traits 層裝好、排序也對，但 trait 名稱 CJK 計數是 0 | `build_biggie_traits_cht_completion.py` 這類逐 mod 補全腳本，把缺的欄位補上 |
+| 官方層漏了某批欄位 | VIGILANT 1.8.1／1.8.2 的正體包都原樣留下同一批 45 個召喚書／石之碎片的 `BOOK.DESC` 英文行 | 用**同一筆記錄既有的中文專名**當術語來源，只補那批欄位——該 mod 有專屬的 exact-version、45-record fail-closed 產生器 |
+| 本體升版，舊層還停在舊版 | Adamant 從 5.9.2 升上去，舊層譯文還在 | 用**譯文投射器**：把既有譯文投射到新版結構，未命中的留英文並列出清單，不要自動猜 |
+| 層存在但目標欄位根本沒翻 | Biggie Traits 層裝好、排序也對，但 trait 名稱 CJK 計數是 0 | 用逐 mod 的補全腳本，把缺的欄位補上 |
 
 **補全的鐵律：**
 
@@ -82,9 +80,8 @@ mo2ctl install <archive> --priority "before:<本體 mod 名>"
 
 ## 5. 稽核
 
-```sh
-python3 mod-library/l10n/tools/audit_layer_priority.py
-```
+跑 `mod-library/l10n/tools/` 的**層優先權稽核**（命令見該目錄的
+[`README.md`](../../../mod-library/l10n/tools/README.md)）。
 
 逐檔案路徑判勝出者。2026-08-23 用它抓出 4 個失效層、11 個被英文本體贏走的檔案。
 

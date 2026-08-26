@@ -14,7 +14,7 @@
 
 ### A1（codex）：Nexus 補值治具
 
-寫 `~/notes/projects/modding/skyrim/tools/fetch_nexus_status.py`。要件：
+寫 Nexus 狀態富化工具（當時落點是 `~/notes/projects/modding/skyrim/tools/`，2026-08-23 統整後在 `mod-library/db/`）。要件：
 
 - 輸入是 `mods` collection 裡 `grouping="nexus_id"` 的 `_id`（≈1,429 筆的子集）
 - **可中斷續跑**：已有 `nexus_checked_at` 且在 N 天內的跳過
@@ -27,14 +27,14 @@
 
 ### A2（deepseek）：跑補值
 
-`python3 tools/fetch_nexus_status.py --all`，背景長跑。deepseek 的職責只有三件：跑、看 log、把「腳本掛掉／狀態判不出來」的案例整理成清單交回 codex。**不准自己改腳本**，遇到 bug 回報 codex。
+以 `--all` 背景長跑。deepseek 的職責只有三件：跑、看 log、把「腳本掛掉／狀態判不出來」的案例整理成清單交回 codex。**不准自己改腳本**，遇到 bug 回報 codex。
 
 環境：`SKYRIM_MONGO_URI=mongodb://127.0.0.1:27018`，mongod 要先手動起：
 `mongod --dbpath ~/data/mongodb --bind_ip 127.0.0.1 --port 27018 --logpath /tmp/mongod-manual.log --fork`
 
 ### A3（codex）：清理報告產生器（P1.5）+ 備份（P1.7）
 
-`tools/cleanup_report.py`——四級分類 + L2 三條例外，報告可重跑。任何寫入前先 pymongo dump 到 `backups/`。
+清理分級工具——四級分類 + L2 三條例外，報告可重跑。任何寫入前先 pymongo dump 到 `backups/`。
 L2 這一級**必須等 A2 跑完**才產得出來（判準依賴在架狀態）。
 
 ### A4（deepseek）：漢化包盤點（附錄 B 的資料層）

@@ -46,7 +46,7 @@ curl -H "apikey: $NEXUS_API_KEY" \
 
 回傳 `mod`（id／名稱／作者／status）與 `file_details`（上游檔名／版本／分類），
 **是比檔名可信得多的來源**。整庫批次跑用
-[`mod-library/db/resolve_legacy_md5.py`](../../../mod-library/db/resolve_legacy_md5.py)。
+`mod-library/db/` 的 **legacy MD5 回溯解析器**（見該目錄的 [`README.md`](../../../mod-library/db/README.md)）。
 
 **坑**：`Light and Shade SE-77993-2-2-....7z` 的檔名寫著 77993，md5 指向的卻是
 **82876**（簡中翻譯頁）。任何「用 regex 從檔名撈 id」的做法都要當成猜測看待。
@@ -114,9 +114,9 @@ cookie 橫幅只選最保守的選項。不動 nxm handler 關聯或 Wine regist
 2. 對既有庫去重：檔名 → 大小 → 大小相同者算 SHA-256 確認。
 3. **對來源自己去重**——瀏覽器重複下載會留 `X.7z` 與 `X (1).7z`，兩個都不在庫裡，
    只比對「來源↔庫」會**兩個都收進去**。這條踩過。
-4. `python3 mod-library/db/scan_mod_library.py scan` 再 `stats`，看
+4. 跑 `mod-library/db/` 的**掃庫工具** `scan` 再 `stats`，看
    `L1 exact duplicates` 是否只剩已知的既有組。
-5. 檔名沒有 Nexus id 的跑 `python3 mod-library/db/resolve_legacy_md5.py` 還原來源（見下）。
+5. 檔名沒有 Nexus id 的跑 **legacy MD5 回溯解析器**還原來源（見下）。
 
 ## 5. 安裝
 
@@ -137,7 +137,7 @@ mo2ctl install <archive> --name "<X> Traditional Chinese" --priority "before:<�
 ## 6. 稽核
 
 ```sh
-python3 mod-library/l10n/tools/audit_layer_priority.py
+# 層優先權稽核，命令見 mod-library/l10n/tools/README.md
 ```
 
 **逐檔案路徑判勝出者，不靠名字猜本體。** 名字比對會判錯——VIGILANT 的中文層在

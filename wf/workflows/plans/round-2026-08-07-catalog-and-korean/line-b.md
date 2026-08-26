@@ -16,7 +16,7 @@
 ### B1（codex）：`candidates` schema + 治具
 
 - schema 加進 `docs/mongodb-schema.md`。關鍵欄位：`_id`（來源 URL 的 hash）、`source_site`、`source_url`、`title_ko`、`title_zh`、`summary_zh`、`category`（人物美化／獨立隨從／武器裝備／地圖 porting／其他）、`screenshots[]`（本機相對路徑）、`link_status`、`link_checked_at`、**`review_state`（`pending`/`approved`/`rejected`）+ `rejected_at`**
-- `tools/ingest_candidates.py`：吃 agy 產在 `~/skyrim_mods/.candidates/<batch>/` 的原始檔（每筆一個資料夾：`page.html` + `shots/*.jpg` + `meta.json`）→ upsert 進 Mongo。**已是 `rejected` 的 `_id` 直接跳過**
+- 候選入庫工具：吃 agy 產在 `~/skyrim_mods/.candidates/<batch>/` 的原始檔（每筆一個資料夾：`page.html` + `shots/*.jpg` + `meta.json`）→ upsert 進 Mongo。**已是 `rejected` 的 `_id` 直接跳過**
 - `tools/check_links.py`：HEAD 請求填 `link_status` / `link_checked_at`
 - `tools/build_gallery.py`：出本機 HTML 圖庫（照本 repo 既有 `html-guide` 工作流形狀）
 
@@ -38,7 +38,7 @@
 
 ### B3（codex）：收斂
 
-跑 `ingest_candidates.py` + `check_links.py` + `build_gallery.py`，把圖庫路徑交給使用者審閱。
+跑候選入庫工具 + `agentctl/tools/check_links.py` + `agentctl/tools/build_gallery.py`，把圖庫路徑交給使用者審閱。
 porting 類候選另外整理一段，回饋到 `analysis/port-source-survey/README.md`；要先依頁面內容分清「地圖／場景」與「裝備／道具」，不只看 `other-game-porting` tag。
 
 ---

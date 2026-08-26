@@ -19,7 +19,7 @@ triplet 仍缺，需要能跑 vcpkg build 的環境補上；不得改測試掩�
 ## DMK 1.5.0 人工校對版
 
 用 exact official／CHS archives、7z、OpenCC 執行
-[`build_dmk_cht_layer.py`](../mod-library/l10n/tools/build_dmk_cht_layer.py)，確認 gate 為
+`mod-library/l10n/tools/` 的 DMK 繁中層建置腳本，確認 gate 為
 `human_reviewed_zh_tw`、66 reviewed、38 override、0 unresolved；部署單檔
 `Data/Viny Mods/DMK/Language.json` layer。抽查一般設定、相機、PC／手把按鍵、OAR converter 警告
 並做移動 smoke。現役 `Machine-Private.7z` 仍是未校對機翻包；證據見

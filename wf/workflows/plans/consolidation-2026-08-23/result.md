@@ -94,7 +94,7 @@ modorganizer2/profiles -> /home/lorkhan/repo/moddings/skyrim/instance/profiles
 | 全新 | 61（1.5GB） | 搬進 `~/skyrim_mods/hdd/` |
 
 **踩到一個坑**：Downloads 裡本身有瀏覽器重複下載的 `X` 與 `X (1)` 配對，兩個都不在庫裡，
-所以只比對「來源↔庫」會把兩份都收進去。搬完 `scan_mod_library.py stats` 的
+所以只比對「來源↔庫」會把兩份都收進去。搬完掃庫工具 `stats` 的
 `L1 exact duplicates` 從 0 跳到 6 組才抓到，已移出 3 個重複檔。剩下的 3 組是庫裡本來就有的。
 
 **驗證**：61 個全部到位、抽查 7 個 `7z t` 完整；磁碟 1791 個 archive
