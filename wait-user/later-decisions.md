@@ -22,3 +22,18 @@
 
 174 筆中 28 筆已用 Nexus `md5_search` 還原；剩 146 筆需判斷想留／想裝／沒興趣，不必逐行填表。
 清單見 [`l4-md5-resolution`](../mod-library/audits/l4-md5-resolution.md#仍需人工辨識146-筆)。
+
+## 16 個現役 mod 的自製來源已被清掉
+
+`~/skyrim_agent_out/`（15 筆）與 `~/notes/…/artifacts/`（1 筆）是當時 codex 線的產出目錄，
+收工自清時連著被刪；這 16 個 mod 現在**只剩 MO2 `mods/` 裡的安裝副本**，沒有獨立來源可以
+重建或校驗。內容沒有遺失，遺失的是可還原性。主要是 Vokriinator Black／Ordinator／
+Path of Sorcery／Vokrii／Adamant 的簡中修正層，加兩個 houseCARL patch。
+
+三個選項，擇一：**(a)** 把安裝副本原樣收進 `mod-library/`（連 `MANIFEST.sha256` 一起產），
+`source_path` 改指過去——可還原性補回來，代價是 private repo 變大；**(b)** 保留現狀，
+在 manifest 標明「來源即安裝副本」，接受不可重建；**(c)** 重跑當初的產生器重建來源，
+但那些腳本本身是否還在、輸入 archive 是否同版都要先查。
+
+清單與判定依據見
+[`checkpoint 紀錄`](../agentctl/logs/modpack-main-checkpoint-2026-08-26.md#仍未解決需要決定不是查得出來的)。
