@@ -56,6 +56,9 @@ clang-cl+xwin 段落也是 **2026-08-26** 由另一條線複驗、本線套用�
 | `my_skyrim_plugin_1` | `./scripts/test_packaging.sh` | 10 pass；`pack.sh` 的打包契約（zip 內路徑佈局、`--output-dir` 防護、CLI exit code）。Windows 對等物 `test_packaging.ps1` 測的是 `pack.ps1`，兩支打包腳本各自獨立 |
 | `godot-worldspace-editor` | `python tests/test_placements_contract.py` | source gate 必跑；缺 Godot 時 runtime 明示 skip |
 | `godot-worldspace-editor` | `python tests/test_model_fetch_contract.py` | model-converter→Godot live contract；缺 Godot時 skip |
+| `houseCARL` | `nice -n 19 taskset -c 8-13 dotnet build housecarl.sln` | exit 0；18 warning／0 error，約 4s。**沒有測試專案**——`dotnet test` 會 exit 0 並發現 0 個專案，那個綠燈沒有意義，別當閘門 |
+| `houseCARL` | `dotnet publish src/housecarl-generator -c Debug -r linux-x64 --self-contained true -o /tmp/hc-gen` ＋ `/tmp/hc-gen/housecarl-generator ci-all` | **78/97 pass、19 fail、9 self-SKIP**，約 16s。19 條全是 Linux 移植缺口（`\` 當路徑分隔 12、Windows 檔案鎖語意 4、`where.exe`／`.exe` 查找 3），非產品回歸。**必須 self-contained publish**——本機無 .NET 9／ASP.NET Core 9 runtime，framework-dependent 直接 exit 150 |
+| `houseCARL` | `/tmp/hc-gen/housecarl-generator freshness-capture-guard`（沿用上一列的 publish） | ALL PASS、exit 0。CI 刻意另開冷行程跑這條（deferral arm 計時敏感），別併進 `ci-all` |
 
 `agent-bridge` 的 Windows DLL 可在家用 Manjaro 以唯一支援的 clang-cl+xwin 路線驗證，
 不部署到 MO2：
@@ -85,8 +88,12 @@ toolchain 的 include／libpath，必然報「Check for working CXX compiler - b
 - `agent-bridge`：上表只驗 Linux client；SKSE DLL 另依 README 走 Linux clang-cl+xwin cross-build。
 - `scene-capture-bridge`：portable CTest、MinGW contract 與 Linux clang-cl+xwin DLL build 的環境不同。
 - `my_skyrim_plugin_1`：**沒有 CTest 入口**（`CMakeLists.txt` 沒有 `enable_testing()`／`add_test`，Linux cross-build 目錄也沒有 `CTestTestfile.cmake`），不要拿 build 成功當測試通過。但有可直接跑的離線測試——見上表 `test_quest_prf.sh`。
-- `houseCARL`：只維護自有 fork、不追 upstream；建置與 HTTP explicit-path 驗證見
-  [`analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`](../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)。
+- `houseCARL`：只維護自有 fork、不追 upstream。它的閘門**不是** `dotnet test`（沒有測試專案），
+  而是 `housecarl-generator` 的 98 條 probe（`ci-all` 97 條 ＋ `freshness-capture-guard` 1 條，
+  清單在 `src/housecarl-generator/CiAll.cs`）。Linux 上 19 條恆紅，屬已知移植缺口，
+  **基線是 78/97 而不是 97/97**；判斷回歸時比對這個數字。安裝與 explicit-path 設定見
+  [`analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`](../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)
+  （該文件有數處過期，見 2026-08-26 盤點）。
 - `sofia-patch`：內容／文件專案，沒有統一自動化 suite。
 
 ## 測試分類

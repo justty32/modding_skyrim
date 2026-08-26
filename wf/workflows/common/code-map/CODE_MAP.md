@@ -17,8 +17,8 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 | game-data | [`projects/game-data/README.md`](../../../../projects/game-data/README.md) — `extract.sh` 先做全 batch stem collision preflight，再以 sibling staging + paired backup/rollback 原子發布 gamedata/questnodes；`tests/test_extract.py` 用會真寫檔的 fake dotnet 驗 known-good 保留與零半成品 |
 | darksouls-port | [`projects/darksouls-port/README.md`](../../../../projects/darksouls-port/README.md) — `tools/p1_batch.py` 以同目錄 staging 呼 sibling production gltf2nif，失敗撤下 stale packageable target；`tests/test_model_converter_contract.py` 再用 model-converter production reader 驗 BSTriShape、材質、座標及 bhk hull |
 | sofia-patch | [`projects/sofia-patch/README.md`](../../../../projects/sofia-patch/README.md) |
-| my_skyrim_plugin_1 | [`projects/my_skyrim_plugin_1/README.md`](../../../../projects/my_skyrim_plugin_1/README.md) — DaylightDungeon SKSE plugin；`scripts/test_packaging.ps1` 以 synthetic CMake cache/DLL 驗 CI/PowerShell/bash 打包命名與 MO2 layout contract |
-| houseCARL（本機、非 submodule） | [`projects/houseCARL/README.md`](../../../../projects/houseCARL/README.md)；Linux 適配結論在 [`linux-manjaro-mo2-runbook.md`](../../../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md) |
+| my_skyrim_plugin_1 | [`projects/my_skyrim_plugin_1/README.md`](../../../../projects/my_skyrim_plugin_1/README.md) — DaylightDungeon SKSE plugin；打包與離線測試在 `scripts/`，**PowerShell 與 POSIX 各一套、彼此獨立**：`pack.ps1`／`pack.sh` 打包，`test_packaging.ps1`／`test_packaging.sh` 驗打包契約（synthetic CMake cache/DLL、zip 內 MO2 layout、`--output-dir` 防護、CLI exit code），`test_quest_prf.ps1`／`test_quest_prf.sh` 驗 quest PRF primitives（純 stdlib g++，不需 SKSE／CommonLib） |
+| houseCARL | [`projects/houseCARL/README.md`](../../../../projects/houseCARL/README.md)；Linux 適配結論在 [`linux-manjaro-mo2-runbook.md`](../../../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md) |
 
 ## agent-bridge semantic QA 快速圖
 
@@ -40,6 +40,9 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 | `tools/test_check_markdown_links.py` | Markdown link checker 的相對路徑、broken file／anchor、重複與 Setext heading、closed ATX heading、標題內含 inline link、fence（連結側與 anchor 側各一條）、CLI 與 symlink 行為；失敗訊息要指名缺哪個 anchor；Windows 缺 file-symlink privilege 時只 skip symlink-only cases |
 | `tools/check_submodule_pins.py` | pre-push 核心：只檢查本次 push ref 相對 remote tip 有變動的 gitlink；本機存在但任何 remote-tracking ref 都不可達時 fetch 後 fail closed |
 | `tools/test_check_submodule_pins.py` | 以臨時 bare remote、母 repo 與真實 submodule 驗未變／已推／未推 pin、未初始化／本機缺 commit 與刪分支邊界 |
+| `tools/check_code_map_coverage.py` | 檢查每一支工具腳本是否在某份索引頁被指名；**走訪各 submodule 自己的 git**，不靠母 repo 的 `git ls-files`（它到 gitlink 就停，正是 `check_markdown_links.py` 出過的洞）。已知缺口以 `code_map_coverage_baseline.txt` 當 ratchet：清單內靜默、清單外一律非零 exit；baseline 指到已刪除的檔案也 fail closed，清單不會腐化成永久藉口 |
+| `tools/code_map_coverage_baseline.txt` | 2026-08-23 四條線拆出母 repo 後累積的 36 支未索引工具，逐行列出。**是債不是豁免**——補一列索引就刪一行，刪光為止 |
+| `tools/test_check_code_map_coverage.py` | 以真實巢狀 submodule 的合成工作區驗已索引／未索引／submodule 內可達／baseline 靜默／baseline 不通殺／stale baseline／未追蹤檔不算數；7 條全部經突變測試證明能變紅 |
 | `instance/tools/resolve_load_order.py` | 把唯一 profile（`modpack-main`）的 enabled `loadorder.txt` 解析成真實 plugin paths；provider precedence 是 shared `overwrite` → `modlist.txt` 最高優先 enabled mod → game `Data`，任何 enabled missing plugin 以非零 exit fail closed |
 | `instance/tools/test_resolve_load_order.py` | synthetic MO2 tree 驗 overwrite winner、named-mod priority、implicit master 與 disabled／missing plugin 行為 |
 | `mod-library/l10n/tools/build_vigilant_book_desc_overlay.py` | 以指定版本的 VIGILANT 正體 plugin 同時作結構 seed 與術語來源，只補齊精確 45 筆仍為英文的 `BOOK.DESC`；筆數、record topology 與所有非目標 payload 都 fail closed，並輸出逐筆 ledger |
