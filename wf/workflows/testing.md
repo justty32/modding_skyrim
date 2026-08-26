@@ -122,7 +122,7 @@ toolchain 的 include／libpath，必然報「Check for working CXX compiler - b
 
 | 檢查 | 為什麼恆真 |
 |---|---|
-| `check_profiles.py`（歷史） | 2026-08-23 之前只看 profile 目錄，**不看 `ModOrganizer.ini`**。ini 曾停在 codex 線留下的 `PandoraRuntimeDefer-20260822`（一個不存在的 profile），每次都 PASS。已於 2026-08-23 的 `instance/profiles` commit `241522d`（`feat(tools): validate selected_profile against the canonical name`）修正，新增 `selected_profile_errors()` 讀 `ModOrganizer.ini` 的 `selected_profile=`，與宣告的 `CANONICAL_PROFILE` 不符就擋下 |
+| profile 結構稽核（歷史） | 2026-08-23 之前只看 profile 目錄，**不看 `ModOrganizer.ini`**。ini 曾停在 codex 線留下的 `PandoraRuntimeDefer-20260822`（一個不存在的 profile），每次都 PASS。已於 2026-08-23 的 `instance/profiles` commit `241522d`（`feat(tools): validate selected_profile against the canonical name`）修正，新增 `selected_profile_errors()` 讀 `ModOrganizer.ini` 的 `selected_profile=`，與宣告的 `CANONICAL_PROFILE` 不符就擋下 |
 | teardown 的「遊戲鎖已釋放」 | 鎖的路徑指向已被刪除的 `~/skyrim_agent_out/_lock/`——**檢查一個不可能存在的東西，永遠會過** |
 | `check_markdown_links.py`（歷史） | `git ls-files` 到 gitlink 就停，四條線的 87 個壞連結它從來沒看到；後續也發現只驗檔案存在、沒有驗 `#anchor`。**兩者都已修（gitlink；anchor 於 `26dd4f7`）。2026-08-26 以突變測試複驗：實作是真的會變紅，但測試本身有四個空隙（標題內 inline link、anchor 側 fenced code、closed ATX 尾綴、一行死碼），已於 `76df55f` 補齊，13/13 突變體全殺。** |
 | 自製的 CJK 偵測 | `b.decode('utf-8', errors='ignore')` **永遠不拋錯**，所以「依序試多種編碼、成功就 break」的迴圈第一輪就結束，根本沒試過 cp936 |
@@ -131,7 +131,7 @@ toolchain 的 include／libpath，必然報「Check for working CXX compiler - b
 
 ```sh
 # 餵一個「應該被擋」的輸入，確認 exit != 0
-SKYRIM_MO2_INSTANCE="$fake" python3 tools/check_profiles.py; echo $?   # 應為 1
+SKYRIM_MO2_INSTANCE="$fake" python3 <你剛改的那道檢查>; echo $?   # 應為 1
 # 再餵正確的，確認 exit == 0
 ```
 

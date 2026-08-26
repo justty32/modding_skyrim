@@ -41,9 +41,9 @@ import sys
 TOOL_ROOTS = (
     "tools",
     "instance/tools",
-    # `check_profiles.py` lives here, not in `instance/tools` -- one submodule
-    # deeper, inside `instance/profiles`. Leaving it out was this checker's own
-    # first coverage hole, found the same day it was written.
+    # The profile-structure audit lives here, not in `instance/tools` -- one
+    # submodule deeper, inside `instance/profiles`. Leaving it out was this
+    # checker's own first coverage hole, found the same day it was written.
     "instance/profiles/tools",
     "mod-library/db",
     "mod-library/l10n/tools",
@@ -59,9 +59,12 @@ TOOL_ROOTS = (
 INDEX_PAGES = (
     "wf/workflows/common/code-map/CODE_MAP.md",
     "instance/README.md",
+    "instance/tools/README.md",
+    "instance/profiles/tools/README.md",
     "mod-library/README.md",
     "mod-library/db/README.md",
     "mod-library/l10n/tools/README.md",
+    "agentctl/tools/README.md",
     "modpack-design/README.md",
     "agentctl/README.md",
 )

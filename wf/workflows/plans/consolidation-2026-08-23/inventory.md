@@ -41,8 +41,8 @@
 
 `SESSION-LOG.md`（873 行）是整條 Skyrim modding 工作線的 agent 交接主線，
 含續行點、人工測試啟動規則、Nexus 自動下載規則。它應該是 `agentctl` 的入口文件。
-`tools/` 的 32 個 Python 腳本（漢化層建置、翻譯比對、崩潰分析 `triage_crash.py`、
-profile 稽核 `audit_overwrite.py`）大部分也歸這裡。
+`tools/` 的 32 個 Python 腳本（漢化層建置、翻譯比對、崩潰分析、profile 稽核）
+大部分也歸這裡。
 
 ### 發現五：敏感掃描過關，但有一個要處理的殘留
 

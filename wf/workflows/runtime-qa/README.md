@@ -51,7 +51,7 @@ Aetheria agent 死鎖。細節見 [`agentctl/docs/resource-locks.md`](../../../a
 - 兩個鎖都釋放（`~/shared_agent_locks/` 與 `agentctl/.lock/` 應為空）
 - 沒有殘留的 `ModOrganizer.exe`／`SkyrimSE.exe`——用 `pgrep -f '[S]kyrimSE\.exe'`
   這種括號寫法，否則會匹配到執行檢查的 shell 自己
-- `python3 instance/profiles/tools/check_profiles.py` 通過
+- `instance/profiles` 的 **profile 結構稽核**通過（命令見該 repo `tools/README.md`）
 - `selected_profile` 沒被留下臨時 profile 名（codex 線做過這件事）
 - 結論寫進 `agentctl/logs/`，證據 JSON 進 `agentctl/qa/reports/`
 

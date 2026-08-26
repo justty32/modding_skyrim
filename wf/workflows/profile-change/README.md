@@ -18,15 +18,16 @@ main → feat/* → release/* → main
 **不使用 `develop`、`feature/*`、`hotfix/*`，也不以額外 MO2 profile 模擬分支。**
 狀態差異全部由 git 分支承載，磁碟上永遠只有一個 profile。
 
-```sh
-cd instance/profiles
-python3 -B tools/profile_workflow.py status
-python3 -B tools/profile_workflow.py start feat/<主題>-<日期>
-#   …改 mod…
-python3 -B tools/profile_workflow.py record -m "<一句話>" --kind feat
-python3 -B tools/profile_workflow.py start release/<版本>
-python3 -B tools/profile_workflow.py promote
-```
+分支操作一律在 `instance/profiles` 內，走 `tools/` 的 **profile workflow 腳本**
+（完整命令見該目錄的 `README.md`——腳本名留在 private 側）。子命令與順序：
+
+| 子命令 | 用途 |
+|---|---|
+| `status` | 看現況 |
+| `start feat/<主題>-<日期>` | 開工作分支 |
+| `record -m "<一句話>" --kind feat` | 改完 mod 後提交 |
+| `start release/<版本>` | 開發布分支 |
+| `promote` | 晉升回 `main` |
 
 `record` 只收 profile 目錄內的變更；同時動到工具或文檔就用一般 `git commit`。
 `start` 在工作樹不乾淨時會拒絕——那是它該有的行為，用 `git stash` 讓路，不要繞過它。
@@ -42,7 +43,7 @@ python3 -B tools/profile_workflow.py promote
 ## 晉升前必查
 
 - Skyrim 與 MO2 已完全關閉
-- `python3 tools/check_profiles.py` 通過——它現在**也會比對 `ModOrganizer.ini` 的
+- **profile 結構稽核**通過——它現在**也會比對 `ModOrganizer.ini` 的
   `selected_profile`**。加這道之前，只要目錄結構對就 PASS，即使 MO2 指向一個不存在的
   profile（實際發生過：ini 停在 codex 線留下的 `PandoraRuntimeDefer-20260822`，每次都 PASS）
 - `modlist.txt`／`plugins.txt`／`loadorder.txt`／`archives.txt` 的差異已審閱
