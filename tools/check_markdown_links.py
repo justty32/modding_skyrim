@@ -103,20 +103,20 @@ def github_heading_slug(text: str) -> str:
     # Backticks and asterisks need no special case: the ASCII-punctuation rule
     # below drops them like every other ASCII symbol.
     text = unicodedata.normalize("NFKC", text).strip().lower()
+    # github-slugger drops every punctuation AND symbol character (so "→", "✅", "+"
+    # go too, not just ASCII ones) and keeps letters/marks/numbers.
     text = "".join(
         char
         for char in text
         if (
-            (not unicodedata.category(char).startswith("P") or char in "-_")
-            and not (
-                char.isascii()
-                and not char.isalnum()
-                and not char.isspace()
-                and char not in "-_"
-            )
+            unicodedata.category(char)[0] in "LMN"
+            or char in "-_"
+            or char.isspace()
         )
     )
-    return re.sub(r"\s+", "-", text)
+    # github-slugger replaces EACH space with a "-"; it does NOT collapse runs. A title
+    # like "A — B" loses the dash and keeps both spaces, so the real anchor is "a--b".
+    return re.sub(r"\s", "-", text)
 
 
 def markdown_anchors(markdown: Path) -> set[str]:
