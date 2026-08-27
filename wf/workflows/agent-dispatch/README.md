@@ -3,7 +3,7 @@
 把整條工作線外包給同機的其他 CLI agent（`codex`／`pi`），自己當調度者。
 
 ```text
-Done when: <該線發了終局狀態、逐條對過驗收、commit 已推、鎖已釋放、交接書移到 done/>
+Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit 已核（push 需使用者確認，不代按）、鎖已釋放、交接書移到 done/>
 ```
 
 **完整流程在 [`agentctl/docs/driving-codex.md`](../../../agentctl/docs/driving-codex.md)。**
@@ -12,9 +12,22 @@ Done when: <該線發了終局狀態、逐條對過驗收、commit 已推、鎖�
 | 要什麼 | 去哪 |
 |---|---|
 | 派線的完整流程（切線、交接書契約、tmux、監看、收線七步） | [`agentctl/docs/driving-codex.md`](../../../agentctl/docs/driving-codex.md) |
+| 兩層派線的現役成員、身份聲明格式、各自領地與能答什麼 | [`agentctl/inbox/ROSTER.md`](../../../agentctl/inbox/ROSTER.md) |
 | 資源鎖與限流 | [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md) |
-| 通訊契約與五種 STATUS 語意 | [`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md) |
+| 通訊契約：四條通道（`new`／`orders`／`mail`／`topics`）、五種 STATUS 語意與輪詢義務 | [`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md) |
 | 交接書範本與已完成的範例 | [`agentctl/handoffs/`](../../../agentctl/handoffs/) |
+
+## 兩層派線結構（2026-08-27 起）
+
+大任務不再是「調度者 → 一條 codex 線」單層，而是「調度者 → Opus 主管線 → codex 子線」兩層：
+主管線自己寫交接書、派 codex 子線、核驗收；調度者退到切線、仲裁、收線與資源協調，
+簡單的事實盤點交 sonnet subagent，不占主管線的 context。**任何一層上線第一件事，都是先在
+[`agentctl/inbox/ROSTER.md`](../../../agentctl/inbox/ROSTER.md) 追加自己那一格聲明身份**——
+我是誰、對誰回報、領地在哪、答得出什麼、答不出什麼——沒聲明就開始做事，其他線只能用猜的畫邊界。
+
+**資源協調集中在調度者**：任何一層都不得自取 `~/shared_agent_locks/desktop.lock` 或
+`agentctl/.lock/game.lock`，不得開 GUI／瀏覽器／遊戲；需要就發 `NEEDS-USER` 給調度者，
+不要自己動。細節見 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md)。
 
 ## 四條最容易錯的
 
@@ -28,10 +41,25 @@ Done when: <該線發了終局狀態、逐條對過驗收、commit 已推、鎖�
    能不能拿遊戲鎖、能不能改 `modlist.txt`／load order、能不能下載、能不能碰別的 repo。
    **使用者在電腦前時，一律禁止搶焦點、送按鍵、截圖。**
 
+## 通訊：四條通道與輪詢義務
+
+除了終局回報用的 `inbox/new/`（不可被取代），2026-08-27 起還有三條：`orders/<session>.md`
+（要對方改變行為的指示，現在對所有成員開放追加，標題須帶 `from:`）、`mail/<session>/`
+（點對點情報）、`topics/<topic>/`（同主題多線共享）。選哪條看「要不要驚動調度者」
+「是不是要對方改行為」「說給一個人聽還是一群人聽」。**`mail`／`topics`／`orders` 都沒有推播**，
+每個成員在每完成一個工作步驟後都要跑一次 `inbox_poll.sh`（輪詢個人信箱＋訂閱主題＋自己的
+orders），長任務背景線改用 `--watch`。完整契約、比較表與指令見
+[`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md)。
+
 ## 多信任它
 
-給整條線的大任務，不要重算它的 hash、不要幫它決定每一步、讓它自己 push。
+給整條線的大任務，不要重算它的 hash、不要幫它決定每一步。
 **微管理會燒光 token**，而且它的自查通常比逐步驗收更有效。
+
+**「讓它自己 push」已作廢**：現行鐵律是未經使用者確認不 push（見母 repo
+[`AGENTS.md`](../../../AGENTS.md)「Always-on 鐵律」）。commit 可以留給線或收線時的調度者，
+push 一律等使用者確認才按；細節見
+[`agentctl/docs/driving-codex.md`](../../../agentctl/docs/driving-codex.md)「多信任 gpt-sol」。
 
 ## 但收線時要對證據
 

@@ -49,13 +49,13 @@ BFCO 的 behavior graph 綁定的是 `BFCO_*` 檔名；MCO 綁 `mco_*`。這是*
 | `mco_powerattackoutro*.hkx` | `BFCO_PowerAttackOutro*.hkx` |
 
 來源：converter 頁的 "What animations will be renamed?"（mod 119926，全版本適用）。
-BFCO 側的完整動畫表見 [`raws/BFCO - Attack Behavior Framework (SSE AE VR).txt`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20(SSE%20AE%20VR).txt) 第 40–75 行。
+BFCO 側的完整動畫表見 [`raws/BFCO - Attack Behavior Framework (SSE AE VR).txt`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt) 第 40–75 行。
 本機 BFCO 3.100.5 出貨的 224 個 `.hkx` 實檔命名（`BFCO_Attack1.hkx`…`BFCO_SwimAttackPower.HKX`，大小寫混用）已核對。
 
 **(b) annotation：BFCO 原生看得懂 MCO 的**
 
 - BFCO 官方頁：`Furthermore, MCO annotations can also work with BFCO.`
-  （[`raws/BFCO - ….txt:110`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20(SSE%20AE%20VR).txt)）
+  （[`raws/BFCO - ….txt:110`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt)）
 - 佐證：BFCO changelog v3.6.0（2026-02-23）`Fix the issue where MCO annotations do not take effect during
   sprinting / directional heavy attacks.`；v3.6.1（2026-02-26）`Fixed the MCO annotations issue agin.`
   ——修的是既有功能，不是新增。
@@ -92,7 +92,7 @@ BFCO 出貨的 [BDI](behavior-data-injector.md) 變數（本機 `BFCO_BDI.json` 
 ```
 
 `BFCO_iAttackVariants`（＋ `A`–`E`）**不在** BDI config 裡，它是 **behavior graph 的整數變數**，v3.2 起提供，
-v3.100 擴充成六個（[`raws/BFCO - ….txt:182`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20(SSE%20AE%20VR).txt) 與 v3.100 changelog）。
+v3.100 擴充成六個（[`raws/BFCO - ….txt:182`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt) 與 v3.100 changelog）。
 用途是「動畫用 `PIE.@SGVI|BFCO_iAttackVariants|1` 設值 → OAR 用 `CompareValues` 挑下一段動畫資料夾」。
 
 **MCO 沒有這個機制。** MCO 的分支只有 `MCO_nextattack|N`（指定下一段編號）。所以：
@@ -121,7 +121,7 @@ v3.100 擴充成六個（[`raws/BFCO - ….txt:182`](../raws/BFCO%20-%20Attack%2
 
 1. BFCO ≥ 3.3（`mco_powerattackloop/outro` 才有對應 handle）。現役 3.100.5 ✅。
 2. **MCO 與 BFCO 不可共存**（BFCO 頁 Incompatible with 明列 `Skysa/ABR/MCO`，
-   [`raws/BFCO - ….txt:259`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20(SSE%20AE%20VR).txt)）。轉換是**單向遷移**，不是相容層。
+   [`raws/BFCO - ….txt:259`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt)）。轉換是**單向遷移**，不是相容層。
 3. 原 moveset 若是 DAR-only，確認 OAR 已裝（OAR 原生讀 `DynamicAnimationReplacer\_CustomConditions\<priority>\`
    並轉成 "Legacy" replacer-mod，見 [`oar-replacer-guide-overview-planning-folders.md:74`](../oar-replacer-guide-overview-planning-folders.md)）。
 
@@ -209,7 +209,7 @@ MCO 與 BFCO 的 moveset 都放
 
 | 事實 | 版本／時間 | 來源 |
 |---|---|---|
-| BFCO 頁直接推薦 converter：`people can easily convert the MCO hkx to BFCO by using MCO To BFCO Converter` | 現行頁 | [`raws/BFCO - ….txt:259`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20(SSE%20AE%20VR).txt) |
+| BFCO 頁直接推薦 converter：`people can easily convert the MCO hkx to BFCO by using MCO To BFCO Converter` | 現行頁 | [`raws/BFCO - ….txt:259`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt) |
 | BFCO 原生吃 MCO annotation | 頁面明載；3.6.0／3.6.1 有相關 bugfix | mod 117052 頁 + changelog |
 | BFCO 保留 `MCO_AttackSpeed` 的 MCO 語意 | v3.100（2026-04-18） | mod 117052 changelog |
 | `mco_powerattackloop/outro` 有對應 handle | BFCO ≥ 3.3 | converter changelog v1.2.1 |
@@ -254,13 +254,13 @@ MCO 與 BFCO 的 moveset 都放
 | B1 | **授權** | **私人本機轉換：不阻斷**（已查證）；**再發布轉好的檔案：硬阻斷** | 見 §4.1，已由調度者用瀏覽器逐字查證 |
 | B2 | **MCO-Updated 專屬招式**（`MCO Left Attack1..10`、`MCO Normal Weapon Art`） | **無對應 handle，轉不了** | [Attack - MCO Updated, mod 181779](https://www.nexusmods.com/skyrimspecialedition/mods/181779) 是加在 MCO 之上的擴充；BFCO 只有 `BFCO_SpecialAttack`／`BFCO_PowerAttackComb` |
 | B3 | **DAR-only 舊包** | **可轉**（OAR 讀 DAR legacy），但條件表達力受限 | `oar-replacer-guide-overview-planning-folders.md:74`。DAR 的 `_conditions.txt` DSL **沒有 graph-variable 條件**，要用 `BFCO_iAttackVariants` 分支必須先把條件搬成 OAR JSON |
-| B4 | **依賴 SCAR 的 NPC 連段** | **不阻斷，但會降級** | BFCO：`Animation without SCAR-event is managed by bfcoAI, while animation with SCAR-event is still managed by scarAI`（[`raws/BFCO - ….txt:245`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20(SSE%20AE%20VR).txt)）。**現役沒裝 SCAR** → SCAR-annotated moveset 由 BFCO 自帶 AI 接管，連段品質較低。⚠️ 2026-08-27 使用者已放行引入 SCAR／SCAR AE Support／OCF，這條不再是選型阻礙，但仍是**新增三個前置**的成本 |
+| B4 | **依賴 SCAR 的 NPC 連段** | **不阻斷，但會降級** | BFCO：`Animation without SCAR-event is managed by bfcoAI, while animation with SCAR-event is still managed by scarAI`（[`raws/BFCO - ….txt:245`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt)）。**現役沒裝 SCAR** → SCAR-annotated moveset 由 BFCO 自帶 AI 接管，連段品質較低。⚠️ 2026-08-27 使用者已放行引入 SCAR／SCAR AE Support／OCF，這條不再是選型阻礙，但仍是**新增三個前置**的成本 |
 | B5 | **`SCAR_*Dummy.hkx` 標記動畫在沒有 SCAR 時的行為** | **未知，需實機驗**（推測：它替換的是 ready-idle，沒有 SCAR 時可能留下錯誤 idle pose） | [movesets-examples.md](movesets-examples.md) 記錄實檔有 `SCAR_1hmReadyDummy.hkx`；查不到「無 SCAR 時該檔行為」的官方說明 |
 | B6 | **root motion／AMR 位移** | **不阻斷** | `animmotion`／`animrotation` 是 AMR 的註釋，兩框架都硬前置 AMR，且註釋與 framework 無關（[animation-motion-revolution.md](animation-motion-revolution.md)）。⚠️ AMR 生效需 behavior 設 `bAllowRotation`／`bAnimationDriven`；BFCO 的攻擊狀態是否全部滿足——**未驗證，推測滿足**（BFCO 自帶動畫本身就依賴位移） |
 | B7 | **attack speed 手感偏移** | **不阻斷，但一定要重驗** | §1.2(d)。為 MCO DXP 節奏調過的 moveset，在 vanilla-speed BFCO 下節奏會變 |
 | B8 | **moveset 自帶 esp／Nemesis patch**（例：攻速 esp、weapon-keyword esp） | **轉換工具管不到**，要逐件人工判 | converter 只處理 `.hkx` 檔名 |
 | B9 | **Troll／Draugr 這類「生物 MCO」包** | **不是 moveset 轉換問題** | 它們是 SPID／AI／race overhaul，動畫只是其中一層；BFCO 的 NPC 連段只涵蓋人形 behavior project |
-| B10 | **MCO 與 BFCO 不可共存** | **硬性** | [`raws/BFCO - ….txt:259`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20(SSE%20AE%20VR).txt)。不能「留 MCO 當 fallback」 |
+| B10 | **MCO 與 BFCO 不可共存** | **硬性** | [`raws/BFCO - ….txt:259`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt)。不能「留 MCO 當 fallback」 |
 
 
 ### 4.1 授權：已逐字查證（2026-08-27）
@@ -361,7 +361,7 @@ FOMOD 也確實 `Choose between MCO or BFCO framework`，catalog 裡有本輪爭
 | `:56` | **DD Fighter** | `NO-GO-MCO-ONLY` | **前提不成立**：[Dragons Dogma 2 Fighter Sword and Shield Moveset - MCO and BFCO, mod 123708](https://www.nexusmods.com/skyrimspecialedition/mods/123708) 官方就出雙框架。⚠️ 若審的是舊的 [mod 77366 `ADXP I MCO Dragons Dogma Fighter`](https://www.nexusmods.com/skyrimspecialedition/mods/77366)，那個仍是 MCO-only，但收在 Diverse NPC Movesets BFCO 分支（14000） | **重新開放**，並先釐清審的是哪一個 mod id |
 | `:56` | **DA Staff** | `NO-GO-MCO-ONLY` | **前提不成立**：[BFCO Dragon Age Staff Moveset, mod 184100](https://www.nexusmods.com/skyrimspecialedition/mods/184100)（2026-07-01）是現成 BFCO 轉換層，把原 [mod 94748](https://www.nexusmods.com/skyrimspecialedition/mods/94748) 列 required。⚠️ 它另需 `For Honor Power Attack` 或同類熱鍵 mod——而 BFCO MCM 內建重擊熱鍵，**這條前置是否真的必要需驗** | **重新開放**，但把「額外熱鍵 mod 前置」列為未決 |
 | `:56` | **DD Daggers** | `NO-GO-MCO-ONLY` | **只有玩家路，且要自轉**：只有 [mod 80085](https://www.nexusmods.com/skyrimspecialedition/mods/80085)，**查無現成 BFCO 版**，且 **141893 catalog 裡也沒有它**（已查證）。授權已查完：私人轉換可，再發布不可（§4.1） | **降為 DEFER**——不是技術阻斷也不是授權阻斷，是「值不值得為它花一次自轉＋驗收」 |
-| `:57` | **Bloodskal Weapon Art** | `NO-GO-MCO/ARTIFACT-OWNER` | 判定的第二個理由（weapon art 與神器 rebalance 越界）**與框架無關**，不因本結論改變。且 BFCO 自帶 DLC2-Bloodskal Event 專用處理（[`raws/BFCO - ….txt`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20(SSE%20AE%20VR).txt) 的 `DLC2-Bloodskal Event` 段） | **確定關閉**（MCO 那半的理由失效，但 artifact-owner 那半仍然成立） |
+| `:57` | **Bloodskal Weapon Art** | `NO-GO-MCO/ARTIFACT-OWNER` | 判定的第二個理由（weapon art 與神器 rebalance 越界）**與框架無關**，不因本結論改變。且 BFCO 自帶 DLC2-Bloodskal Event 專用處理（[`raws/BFCO - ….txt`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt) 的 `DLC2-Bloodskal Event` 段） | **確定關閉**（MCO 那半的理由失效，但 artifact-owner 那半仍然成立） |
 | `:79` | **Leviathan Animations II — Greatsword 四件**（92266／88171／86183／99073 等 vanilla-replacer 家族） | `DEFER-BFCO-CONVERSION/OWNER-HOLD` | 這四件是 **vanilla replacer／locomotion／stance**，**不是 MCO moveset**——本結論**不適用**，它們沒有 `mco_*.hkx` 要改 | **維持 DEFER**（本線無新證據） |
 | `:80` | **Leviathan Animations II — Greatsword MCO 94715** | `NO-GO-MCO-ONLY；Attack MCO 硬依賴且作者未授權轉 BFCO` | **兩個前提都已被推翻**：(1) 技術上可轉；(2) **授權已逐字查證**（§4.1）——Verolevi 的 `Conversion permission` 只禁「移植到別的遊戲」，不涵蓋同遊戲內框架轉換，**私人轉換無障礙**（禁的是再發布）。**NPC 路**另有現成品：141893 priority 20000，原作者明示授權 | **重新開放**。NPC 走 141893（現成）、玩家自轉——**兩條要分開寫** |
 | `:81` | **Vanargand One Handed 三件** | `NO-GO-LEGACY-VANILLA/BFCO` | 同 `:79`：`legacy vanilla` 那半與框架無關。若其中含 MCO moveset 件，技術上可轉；Verolevi 的授權條款已查（§4.1，私人可） | **維持 NO-GO**，除非 `opus-content` 想連同 `:80` 一起重審 |
@@ -457,7 +457,7 @@ FOMOD 也確實 `Choose between MCO or BFCO framework`，catalog 裡有本輪爭
   [BFCO Dragon Age Staff Moveset 184100](https://www.nexusmods.com/skyrimspecialedition/mods/184100)、
   [DD2 Fighter MCO and BFCO 123708](https://www.nexusmods.com/skyrimspecialedition/mods/123708)、
   [BFCO NG 160505](https://www.nexusmods.com/skyrimspecialedition/mods/160505)。
-- 本 repo：[`raws/BFCO - Attack Behavior Framework (SSE AE VR).txt`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20(SSE%20AE%20VR).txt)、
+- 本 repo：[`raws/BFCO - Attack Behavior Framework (SSE AE VR).txt`](../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt)、
   [`bfco.md`](bfco.md)、[`scar.md`](scar.md)、[`movesets-examples.md`](movesets-examples.md)、
   [`payload-interpreter.md`](payload-interpreter.md)、[`behavior-data-injector.md`](behavior-data-injector.md)、
   [`animation-motion-revolution.md`](animation-motion-revolution.md)、[`../pandora.md`](../pandora.md)、
