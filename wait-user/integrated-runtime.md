@@ -41,3 +41,21 @@ Altano，抽查主線開場、對話／字幕、日誌／目標、書籍、物�
 [`final smoke`](../agentctl/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md)。
 
 所有本頁項目共同檢查：無方框、mojibake、截斷、空白或新 crash；未走過的流程不得稱 gameplay PASS。
+
+## JhNPCBeautyDev 蓋掉 NPC 中文名（2026-08-28 發現，待裁示）
+
+`JhNPCBeautyDev.esp` 在**插件層**覆蓋數個 NPC 的 `FULL`，把中文名寫成英文，已確認的有
+**Lydia**（`override_depth=4`）、Bryling、Erdi、EvetteSan。症狀是「對話中文、名字英文」。
+由 `loadorder.txt` 決定，**與 modlist 優先度無關**，2026-08-28 的順序修復管不到。
+`opus-apply-order` 與其子線各自獨立撞到同一件事。
+
+**先請確認範圍**：進遊戲看 Lydia 的名字是不是英文，並留意還有沒有別的 NPC 中文名變英文
+（上面四個是資料層查到的，不保證窮盡）。
+
+**兩條修法擇一**（dispatcher 2026-08-28 判定延後，理由是不在剛修好並 commit 的 load order 上
+疊第二次改動、且當時沒有實機驗證窗口）：
+- 調 `loadorder.txt` 把 `JhNPCBeautyDev.esp` 往前移 —— 簡單，但會讓它的**外觀**被別人蓋掉，
+  而外觀正是這個 mod 的用途，等於本末倒置。
+- 做一個小 patch plugin，把那幾筆 `NPC_` 的 `FULL` forward 回中文 —— 不動外觀，但要多一個插件名額。
+
+傾向後者，但要等實機確認範圍後再定。
