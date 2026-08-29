@@ -7,7 +7,7 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
 ```
 
 **完整流程在 [`agentctl/docs/driving-codex.md`](../../../agentctl/docs/driving-codex.md)。**
-本檔只做路由與五條最容易錯的。
+本檔只做路由與六條最容易錯的。
 
 | 要什麼 | 去哪 |
 |---|---|
@@ -28,7 +28,7 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
 `agentctl/.lock/game.lock`，不得開 GUI／瀏覽器／遊戲；需要就發 `NEEDS-USER` 給調度者，
 不要自己動。細節見 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md)。
 
-## 五條最容易錯的
+## 六條最容易錯的
 
 1. **我是調度者，不是實作者。** 自己深潛實作會吃掉主 context，後面就沒有餘裕做判斷。
    這條優先於「改碼自己來」。
@@ -47,6 +47,10 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
    交接書要明寫「Nexus 事實一律走 `housecarl_nexus_*`，不 curl 網頁」。下載是另一回事：
    調度者先用 houseCARL 把 id／fileId／版本／bytes 寫死，線只做離線收斂；下載由調度者跑 Claude in Chrome，
    或指定**唯一一條**瀏覽器線走 CDP，見 [nexus-intake 第 3 段](../nexus-intake/README.md#3-下載)。
+6. **範圍詞會被線遞移展開。** 「相關的」若只寫包含條件，線會沿依賴圖忠實展開成遞移閉包，
+   每多一跳都可能讓件數升一個數量級。交接書要用排除法界定邊界，並把容量 gate 與件數 gate 並列；
+   任一觸發就停下來問。可直接抄用的三條排除規則與雙 gate 格式見
+   [nexus-intake 的範圍樣板](../nexus-intake/README.md#派下載線前範圍樣板與雙-gate)。
 
 ## 通訊：四條通道與輪詢義務
 
