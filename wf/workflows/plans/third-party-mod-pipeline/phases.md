@@ -13,12 +13,9 @@ git repo 落在 `<MO2 instance>/profiles/`（不是 instance 根目錄——那�
 | 0.1 | 清掉 `loadorder.txt` 那 3 條 stale CC 條目 | ✅ 已清，plugin 56→53 且 53 個全部 resolve 成功，houseCARL 警告歸零 |
 | 0.2 | `housecarl_set_mo2_instance` 指向 MO2 instance | ⛔ **受阻——houseCARL 的 Linux 路徑 bug**：它把 `ModOrganizer.ini` 的 `gamePath` 當字面路徑，沒把 Wine 的 `Z:\` 翻回 Linux，接上 `/Data` 就壞。已記入 `WAIT_USER.md`。**影響有限**：explicit-paths mode 全程可用，只失去 `load_order_status(profile=...)` 的跨 profile 比對 |
 | 0.2b | `housecarl_set_tool_path` 補 `papyrus_logs` / `crash_logs` | ✅ 都設好。`papyrus_logs` = prefix 內 `Logs/Script`（有 `Papyrus.0-3.log`）；`crash_logs` = `SKSE/` 本身——CrashLogger 是把 `crash-<時間>.log` **平放在 SKSE 資料夾**，沒有 `Crash Logs` 子目錄。**現存 20 份，最新 2026-08-02**，G5 的 triage 一開始就有真實素材 |
-| 0.3 | 開 QA profile | ✅ `profiles/QA`，與 `Default` **只差 AgentBridge 那一行**，其餘檔案 byte-identical。`LocalSaves`/`LocalSettings` 維持 false 與 Default 一致——開它們能得到真正的存檔/ini 隔離，但會讓 `qa_runner` 的 baseline 複製路徑失效，該另外刻意做而不是當副作用 |
-| 0.4 | git init + 基線 commit | ✅ `.gitattributes` 設 `* -text`，實測 index 內 CRLF 原樣保留；`.mo2ctl-backups/` 與 `*.bak-*` 排除。12 檔 358 行 |
+| 0.3 | 開 QA profile（複製 `Default`），`MO2_PROFILE` 指過去 | ✅ `profiles/QA`，與 `Default` **只差 AgentBridge 那一行**，其餘檔案 byte-identical；隔離的是啟用狀態，不是 profile 共用的 `mods/`。`LocalSaves`/`LocalSettings` 維持 false 與 Default 一致——開它們能得到真正的存檔/ini 隔離，但會讓 `qa_runner` 的 baseline 複製路徑失效，該另外刻意做而不是當副作用 |
+| 0.4 | **git init + commit 現狀為 `main`**（原列 P2.1，2026-08-04 重審上移） | ✅ `.gitattributes` 設 `* -text`，實測 index 內 CRLF 原樣保留；`.mo2ctl-backups/` 與 `*.bak-*` 排除。12 檔 358 行。P1 要拿真實第三方 mod 測試，動工前必須已有 `main` 可回滾 |
 | 0.5 | AgentBridge 移出正式 profile | ✅ `Default` 停用（109→108 enabled）、`QA` 啟用 |
-| 0.3 | 開 QA profile（複製 `Default`），`MO2_PROFILE` 指過去。注意 `mods/` 是 profile 共用的——隔離的是啟用狀態，不是檔案 |
-| 0.4 | **git init + commit 現狀為 `main`**（原列 P2.1，2026-08-04 重審上移）。P1 要拿真實第三方 mod 測試，若那時還沒有 `main` 可回滾，第一次紅燈就沒有救援路徑——這是順序錯誤，不是排程偏好 |
-| 0.5 | `AgentBridge` 改為 **QA profile 啟用、`Default` 停用**（現況見附錄 G8） |
 
 ### P1 — archive + FOMOD 解析層（**優先，整條斷在這裡**）
 

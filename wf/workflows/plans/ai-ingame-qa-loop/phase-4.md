@@ -38,7 +38,7 @@
 
 #### 1.2 實測結果（2026-08-02，AgentBridge 0.3.0）
 
-**沒有照原計畫「裁剪自 Mantella / MinAI 欄位清單」**——那兩份的取向是「把數值轉成人看得懂的描述」（MinAI 的 21 級時間描述、~60+ 地點關鍵字），對 LLM 對話有用，對 QA 斷言沒用。QA 要的是**機器可斷言的事實**，所以欄位重新設計過。
+**欄位以 QA 可斷言的機器事實為準**。Mantella／MinAI 的取向是把數值轉成人看得懂的描述（MinAI 的 21 級時間描述、~60+ 地點關鍵字），適合 LLM 對話，不適合 QA 斷言。
 
 **兩層設計**（`GET /state[?include=nearby,inventory,quests][&radius=][&limit=]`）：
 

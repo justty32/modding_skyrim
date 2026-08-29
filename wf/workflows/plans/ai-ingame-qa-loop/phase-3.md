@@ -24,14 +24,10 @@
 2. **斷言必須可重試。** 遊戲對 console 指令的反應幾乎全是非同步的——`coc` 在 cell 載完前就回、actor value 要隔一幀才生效。單次斷言會把「對了但還沒到」判成失敗。`assert_state` 預設重試到 `retry_for` 秒為止，回報最後一次的實際值。
 3. **斷言 `cell_form_id`，不要斷言 `cell`。** 詳見下面那條——這是 runner 首跑抓到的真 bug。
 
-**首跑抓到的真 bug：ModForge 寫 CELL override 不保留 EDID。**
+**驗證抓到的真 bug：ModForge 寫 CELL override 不保留 EDID。**
 
-smoke 前兩輪都掛在 `player.cell == "WhiterunBanneredMare"` 回 `""`，但同一次快照裡 `interior: true`、`nearby_actors` 有 Hulda、`cell_form_id: 90206` 全對。手動 probe 完全複現不出來（2 秒就解析出名字）。
-
-變因是**測試 mod 本身**：`ModForgeNavmeshNoop.esp` override 了 `CELL 0x0001605E`（＝90206＝戰友蜜酒館；中途一次進位換算失誤讓我先誤判「這 plugin 沒碰這個 cell」），而且**沒寫 EDID subrecord**。runtime 的 cell 物件取的是勝出記錄的 EditorID，於是名字空了、其他欄位全對。
+`ModForgeNavmeshNoop.esp` 啟用時，`player.cell == "WhiterunBanneredMare"` 回 `""`，但同一次快照裡 `interior: true`、`nearby_actors` 有 Hulda、`cell_form_id: 90206` 全對；未受該 override 影響的手動 probe 會在 2 秒內解析出名字。該 mod override `CELL 0x0001605E`（＝90206＝戰友蜜酒館）卻**沒有寫 EDID subrecord**，而 runtime 的 cell 物件取勝出記錄的 EditorID，因此只有名字變空。
 
 兩個結論：
 - **schema 層面**：load order 裡任何一個 plugin 只要 override 記錄時沒把 `EDID` 帶過去，就能把 EditorID 抹掉。FormID 是引擎身分，抹不掉。所以斷言用 FormID。
-- **ModForge 層面**：這是**產生器的缺陷**，不是治具的。純 navmesh 的修改不該讓 cell 掉名字。已另開工作追。
-
-值得直說：這就是 QA 迴圈在第一次真跑時做了它該做的事——受測 mod 改動了沒人打算改的可觀察狀態，而治具抓到了。
+- **ModForge 層面**：這是**產生器的缺陷**，不是治具的。純 navmesh 修改不該讓 cell 掉名字；修正與回歸證據見 [README](README.md)。

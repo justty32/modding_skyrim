@@ -70,14 +70,6 @@ RimWorld 的 runbook 明文警告：MongoDB 那套適合「篩選查詢」，但
 
 同構搬到 Skyrim：**load order 的權威是 MO2 profile + git（姊妹計畫 D3），永遠不是 Mongo。** 流水線可以查目錄來加速決策（例如 G7 的依賴 diff），但 **mongod 沒開時流水線必須照樣能跑完**。任何讓流水線硬依賴 Mongo 的設計都是錯的。
 
-### D7：實作落點 = `~/notes/projects/modding/skyrim/`，照 RimWorld 對稱（使用者 2026-08-04 決定）
+### D7：實作落點（2026-08-23 工作區統整後）
 
-> **2026-08-23 更新**：這條決定已被工作區統整取代。程式與文檔改落 `mod-library/`，
-> `~/notes/projects/modding/skyrim/` 只留不進版控的截圖與 MongoDB 快照。
-> 下文保留原決策脈絡。
-
-程式與文檔落 `~/notes/projects/modding/skyrim/{docs,tools,scripts}/`，與 `~/notes/projects/modding/rimworld/` 同構。
-
-**這是對「`~/notes/` 不主動動手」那條慣例的一次明確授權例外**，範圍限於本計畫的目錄治具。其他部署類筆記（`README.md`、`my-mods.md`、`housecarl.md`、`jackify-manjaro-plan.md`）仍不代改。
-
-本 repo 這邊只留計畫與設計（本檔）；程式不進本 repo，避免同一份東西兩個家。
+2026-08-04 曾授權本計畫的目錄治具落在 `~/notes/projects/modding/skyrim/{docs,tools,scripts}/`，與 `~/notes/projects/modding/rimworld/` 同構；授權不含部署類筆記 `README.md`、`my-mods.md`、`housecarl.md`、`jackify-manjaro-plan.md`。2026-08-23 統整後，程式與文檔的唯一落點改為 `mod-library/`，`~/notes/projects/modding/skyrim/` 只留不進版控的截圖與 MongoDB 快照，本 repo 只留計畫與設計。

@@ -35,7 +35,7 @@ AgentBridge 0.6.0 完成實機驗收。現在除了 console/state 之外，AI �
 livingNpcs generic anchor/parley 回歸為 **31/31 PASS**；loaded actor、跨
 interior/exterior cell、延遲 actor retry 與兩種結構化 dialogue selector 也已逐項通過。
 現行 API 與完整驗收證據以 [`projects/agent-bridge/README.md`](../../../../projects/agent-bridge/README.md)
-為準。本計畫保留歷史決策與早期分階段紀錄，不再作為 API 清單。
+為準；本計畫只保留設計決策與分階段驗收證據，不重複維護 API 清單。
 
 ## 三、架構
 
@@ -67,9 +67,7 @@ Agent (Linux)
 - **無法 headless**：遊戲需要顯示輸出，這條迴圈只能在使用者的桌面 session 跑，不能背景常駐。
 - **cross-compile 的 DLL 與 MSVC 產物行為差異**：D3 已接受此風險（內部工具，非出貨物）。
 
-## 六、原始計畫結案（2026-08-02；後續 0.6.0 見頁首摘要）
-
-**Phase 0 / 1 / 2 / 3 全過，Phase 4 依 D6 只剩 handoff 而那已隨 3.2 落地。本計畫無 open 項。**
+## 六、結案證據與維護入口（2026-08-02；後續 0.6.0 見頁首摘要）
 
 程式碼與文檔的家：`projects/agent-bridge/`（子專案 README 有 Pitfall 段；`client/QA-SCHEMA.md` 是 qa.json 的權威）。原始結案 commits 為 `50cebe6` / `fb94931` / `a7c5863` / `a1e5f31`；後續已抽成獨立 repo 並 push。
 

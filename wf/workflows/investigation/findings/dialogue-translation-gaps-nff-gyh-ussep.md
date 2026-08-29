@@ -43,8 +43,8 @@ overrides were rebuilt from the exact active sources and deployed only to `Modpa
 
 - NFF: 2,917 records preserved, 467 ESP display strings translated, and 20 PEX files changed only
   in 297 existing string-table slots. Every declaration/property/bytecode tail is byte-identical.
-  The first live pass also caught two dialogue fields that displayed raw `$FF_*` keys despite the
-  translation table; those exact fields now use their audited CHT table literals.
+  Two dialogue fields that displayed raw `$FF_*` keys despite the translation table now use their
+  audited CHT table literals.
 - Glad You're Here: 1,211 records preserved, 828 stable fields translated, and every nontext
   payload preserved. Three empty current-source fields and unmatched 3.6.0 additions were not
   guessed from the older seed.
@@ -58,6 +58,6 @@ NFF runtime correction is `66e625e`. Static load
 order and parse gates passed; houseCARL also re-reported source-plugin VMAD findings and one USSEP
 dangling reference, but the canonical binary audits prove those nontext structures are identical
 to the current official sources. Live Dev acceptance passed: Lydia's NFF/GYH options, Elrindir's
-USSEP topics and response subtitles all rendered in Traditional Chinese. The first pass exposed
-two raw NFF `$FF_*` menu keys and AI Overhaul's English NPC-name winner; both were corrected and
-passed a fresh-launch retest (`Elrindir → 厄倫德`). No new crash log was created.
+  USSEP topics and response subtitles all rendered in Traditional Chinese. Two raw NFF `$FF_*` menu
+  keys and AI Overhaul's English NPC-name winner were corrected and passed a fresh-launch retest
+  (`Elrindir → 厄倫德`). No new crash log was created.

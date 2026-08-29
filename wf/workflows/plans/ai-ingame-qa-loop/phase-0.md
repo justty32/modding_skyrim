@@ -28,7 +28,7 @@ Proton 那組的關鍵佐證（排除「其實是前一個 wine 探針在回話�
 
 **結論**：pressure-vessel 預設共用 network namespace 的假設成立，`agent-bridge` 可以走 HTTP over localhost，五節風險表的「最大單點風險」解除。備援（`Z:` 共享目錄檔案投遞）不需要了。
 
-**尚未驗的部分**：上述是 console exe 自己 bind；SKSE DLL 在 Skyrim 進程內 bind 是否同樣通，要等 0.1/0.2。理論上同一個 wineserver、同一條路，但 Skyrim 進程的 winsock 初始化時機與 ENB/其他 SKSE plugin 的干擾未測。→ **0.2 已補驗，通。**
+**0.2 已驗證通過**：SKSE DLL 在 Skyrim 進程內 bind 同樣可通；這也覆蓋了 console exe 探針未涵蓋的 winsock 初始化時機與 ENB／其他 SKSE plugin 干擾風險。
 
 #### 0.1–0.3 實測結果（2026-08-02）— 一次全過
 
