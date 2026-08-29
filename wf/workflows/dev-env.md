@@ -13,7 +13,8 @@
 | GitHub／各子 repo CI | 母 repo 文件 gate；每個子 repo 自己的 workflow 與依賴 | 母 repo link/unit gate；子 repo 宣告的 build/test/package gate | 不跨 repo 建置，也不能取代實機驗收 |
 
 這是**開發能力**矩陣，不是部署現況。MO2 instance/profile/load order、已安裝 mod 與實機
-驗收一律由 `~/notes/projects/modding/skyrim/` 管；本 repo 不複製那份狀態。
+驗收一律由 `instance/`（部署狀態）與 `agentctl/`（實機驗收證據）管；本檔不複製那份狀態。
+（2026-08-23 前這些歸 `~/notes/projects/modding/skyrim/`，現在那裡只剩不進版控的截圖與 MongoDB 快照。）
 
 ## Fresh Clone
 

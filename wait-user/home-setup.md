@@ -3,7 +3,8 @@
 ## YouTube 候選 SOURCE-HOLD（可選）
 
 35 支候選影片已完成 owner routing；未重查 current metadata／archive 的項目保持 HOLD。只有要升級
-某一件時，回到有 Nexus API key／houseCARL／archives 的環境，依
+某一件時，回到有 houseCARL／archives 的環境（**不需要 Nexus API key**——houseCARL 的 keyless GraphQL
+已於 2026-08-27 實證能讀完整欄位，連 adult／age-verification 頁也不擋），依
 [`coverage` reopen procedure](../modpack-design/content-plan/youtube-candidate-final-coverage-audit-2026-08-25.md)
 一次查一件；不得直接改成 GO。
 

@@ -42,8 +42,11 @@ Done when: <候選有結論(可追/暫放/不追)、連結存活狀態已查、�
 | 風險 | 缺密碼、缺前置、LE/SE 不明、版權 port、成人內容 |
 | 建議 | 可追 / 暫放 / 不追 |
 
-**Nexus 頁面一律走 houseCARL MCP**（`housecarl_nexus_search`／`housecarl_nexus_mod`），
+**Nexus 頁面一律走 houseCARL MCP**（`housecarl_nexus_search`／`housecarl_nexus_mod`，無金鑰），
 不要開瀏覽器代勞。只有非 Nexus 的站才需要實際抓頁面。
+**codex 線沒有 houseCARL 也沒有瀏覽器**（2026-08-26 實測，見
+[`agentctl/docs/dispatch-windows.md`](../../../agentctl/docs/dispatch-windows.md)），Nexus 查證由調度者親做，
+派給 codex 的只能是「拿已寫死的 id／fileId 做離線收斂」。
 
 ## 狀態判定要寫死，不留臨場解讀空間
 

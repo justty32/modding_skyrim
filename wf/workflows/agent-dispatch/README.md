@@ -40,6 +40,10 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
 4. **禁區要明寫，沒寫就等於允許。** 至少決定：能不能開遊戲／MO2 GUI／瀏覽器、
    能不能拿遊戲鎖、能不能改 `modlist.txt`／load order、能不能下載、能不能碰別的 repo。
    **使用者在電腦前時，一律禁止搶焦點、送按鍵、截圖。**
+5. **Nexus 查證不能派給 codex 線。** 它沒有 houseCARL MCP、拿不到瀏覽器、純 HTTP 打 Nexus 回 403
+   （2026-08-26 實測）。調度者先用 houseCARL 把 id／fileId／版本／bytes 寫死進交接書，線只做離線收斂；
+   下載要嘛調度者親跑 Claude in Chrome，要嘛指定**唯一一條**瀏覽器線走 CDP，見
+   [nexus-intake 第 3 段](../nexus-intake/README.md#3-下載)。
 
 ## 通訊：四條通道與輪詢義務
 

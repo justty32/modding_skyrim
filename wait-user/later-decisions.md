@@ -37,3 +37,24 @@ Path of Sorcery／Vokrii／Adamant 的簡中修正層，加兩個 houseCARL patc
 
 清單與判定依據見
 [`checkpoint 紀錄`](../agentctl/logs/modpack-main-checkpoint-2026-08-26.md#仍未解決需要決定不是查得出來的)。
+
+## 中文層五個裁示（2026-08-27 深夜起手清單第 5 條，仍未裁）
+
+來源 [`resume-2026-08-28.md`](../agentctl/docs/resume-2026-08-28.md)（已標過期，只剩這條活著）；
+逐項細節在 [`中文層覆蓋總表`](../modpack-design/content-plan/zh-layer-coverage-master-2026-08-28.md)的
+「等使用者裁示」節：
+
+1. **Bandolier NPC 層三選一**——注意覆寫陷阱不在 `BandolierForNPC.esp`，而在其後的
+   `- No disenchant.esp`（70）與 `- Realistic Enchantements.esp`（23），forward patch 選項要照這個改設計。
+2. **Reforging 綁 SkyPatcher** 要不要接受。
+3. **AA（Armor Add-on）三個同版中文層選哪個流派**。
+4. **`sLanguage` 要不要動**——現在是 `ENGLISH` 把中文塞英文槽；只附 `_chinese` 的層會靜默失效。
+5. **Steam 2.5MB 補丁（TargetBuild 24914197）接不接受**——目前 acf 已搬出、exe 釘 1.6.1170。
+
+## CCA 中文層已建好、未安裝、未 commit
+
+`opus-selfmade-zh` 2026-08-28 做好 `Common Clothes and Armors Traditional Chinese 2.0.0`
+（ESP 檔案替換層，164 筆＝33 筆 vanilla 迴歸回復＋131 筆新增，sha256 `4dcb6c32…`），
+產物只在 [`agentctl/handoffs/opus-selfmade-zh-2026-08-28/`](../agentctl/handoffs/opus-selfmade-zh-2026-08-28/)，
+**沒進 `mod-library/l10n/mods/`、沒裝進 MO2**。請裁：(a) 入庫＋照 install-plan 安裝，(b) 只入庫不裝，(c) 丟棄。
+Bandolier 同線判定不必自製（見上一項）。

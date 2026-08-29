@@ -42,6 +42,16 @@ Altano，抽查主線開場、對話／字幕、日誌／目標、書籍、物�
 
 所有本頁項目共同檢查：無方框、mojibake、截斷、空白或新 crash；未走過的流程不得稱 gameplay PASS。
 
+## modlist 優先度修復的實機驗收（2026-08-28 套用，待驗）
+
+2026-08-28 已把 `modlist.txt` 從事故後的名稱序重建為正確優先度並 commit（377 行／318 啟用；
+winner 差異 5485→5；Pandora Output 重新壓過 TK Dodge RE；9 個被本體壓掉的中文層全回復），
+資料層由 houseCARL 實查 Ordinator 天賦、ESW 武器名、AI Overhaul NPC 名、Sofia 皆已回中文。
+**還沒進遊戲驗**。請用 `launch-mo2.sh` 開 MO2 確認 Active 318 → 進遊戲**離開存檔重進**，驗：
+第三人稱能否正常攻擊（原症狀：BFCO 行為圖被 vanilla 壓掉）、Ordinator 天賦頁是否中文、
+武器名是否中文。證據見 [`opus-apply-order`](../agentctl/handoffs/opus-apply-order-2026-08-28/)
+與 [`根因`](../agentctl/logs/modlist-priority-bug-2026-08-23.md)。
+
 ## JhNPCBeautyDev 蓋掉 NPC 中文名（2026-08-28 發現，待裁示）
 
 `JhNPCBeautyDev.esp` 在**插件層**覆蓋數個 NPC 的 `FULL`，把中文名寫成英文，已確認的有

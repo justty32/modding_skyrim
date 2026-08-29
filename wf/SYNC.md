@@ -35,7 +35,7 @@
 ## 同步流程
 
 1. 在目標 repo 先確認 git 狀態乾淨，或至少知道哪些變更是使用者的。
-2. 跑健康檢查：`scripts/check-workflow.sh <repo>`。
+2. 跑健康檢查：`scripts/check-workflow.sh <repo>`（本 repo 未帶模板的 `scripts/`，改跑 `python tools/check_markdown_links.py`）。
 3. 先更新可覆蓋類文件。
 4. 對手動 merge 類文件逐個比較，不覆蓋本地規則。
 5. 確認 `WORKFLOWS.md` 連結存在。

@@ -6,8 +6,11 @@
 
 ## 現役工作
 
-截至 **2026-08-25（Asia/Taipei）**，母 repo 沒有仍在執行中的 agent 工作，也沒有 codex 線在跑；
-Skyrim／MO2 已關閉，兩個資源鎖都未持有。
+截至 **2026-08-29 早上（Asia/Taipei）**，母 repo 本身沒有進行中的 agent 工作。Skyrim／MO2 已關閉。
+同日使用者外出期間會**遠端驅動 gpt-sol（codex）**在本工作區做上網調查／下載 mod 這類
+**不開遊戲、不開 MO2、不寫 `instance/`** 的線；線的認領、鎖與回報一律照
+[`agentctl/`](agentctl/README.md)（2026-08-27 起：Fable 頂層決策、Opus 中層管理、codex／sonnet 執行；
+先全部調查完再一次施工）。
 
 **2026-08-23 的主線是工作區統整**（[consolidation-2026-08-23](wf/workflows/plans/consolidation-2026-08-23/README.md)）。
 日常工作現在分成四條獨立的線，各自是 private submodule：

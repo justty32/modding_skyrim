@@ -27,24 +27,28 @@ requirements 可能拉出一整條生態；用 `housecarl_nexus_mod` 查，不�
 
 ## 1. 查證
 
-**一律走 houseCARL MCP，不要開瀏覽器。**
+**一律走 houseCARL MCP（無金鑰即可查 Nexus），不要開瀏覽器。**
 
 - `housecarl_nexus_search`：用名字找 mod
-- `housecarl_nexus_mod`：抓 mod 頁（requirements、建議 INI、真實最新版、完整說明），吃 id 或 URL
+- `housecarl_nexus_mod`：抓 mod 頁（requirements、建議 INI、真實最新版、完整說明），吃 id 或 URL；
+  `files=true` 給完整逐檔清單（**fileId／版本／bytes 只能從這裡抄**，不能從頁面抄）
+- `housecarl_nexus_check_updates`：批次以 `id#fileid` 查已裝檔是否過時
+
+**誰能查**：houseCARL MCP 只掛在 Claude 這邊；**codex 線既沒有 houseCARL、也拿不到瀏覽器、純 HTTP
+打 Nexus 回 403**（2026-08-26 實測，見 [`agentctl/docs/dispatch-windows.md`](../../../agentctl/docs/dispatch-windows.md)
+「Nexus 查證：派線做不到」）。所以 Nexus 查證由調度者親做，把 id／fileId／版本／bytes 寫死進交接書再派線。
+
+**已決定要裝的項目不必重查**：[`modpack-design/content-plan/install-plan-2026-08-27.md`](../../../modpack-design/content-plan/install-plan-2026-08-27.md)
+每列已寫死 id／fileId／版本／bytes 與「為什麼是這個 fileId 而不是 MAIN」；中文層看
+[`zh-layer-coverage-master-2026-08-28.md`](../../../modpack-design/content-plan/zh-layer-coverage-master-2026-08-28.md)。
 
 **坑**：Nexus 頁面上的「最新版」與 files 分頁的實際檔案常常不同步。以 API 回的
 `files` 欄位為準，不要讀頁面敘述。
 
 ### 手上已經有檔案、但不知道是什麼
 
-從檔案內容反查，不要從檔名猜：
-
-```sh
-curl -H "apikey: $NEXUS_API_KEY" \
-  "https://api.nexusmods.com/v1/games/skyrimspecialedition/mods/md5_search/<md5>.json"
-```
-
-回傳 `mod`（id／名稱／作者／status）與 `file_details`（上游檔名／版本／分類），
+從檔案內容反查，不要從檔名猜：單檔用 `housecarl_nexus_identify`（吃 MD5，無金鑰），
+回 mod（id／名稱／作者／status）與 file_details（上游檔名／版本／分類），
 **是比檔名可信得多的來源**。整庫批次跑用
 `mod-library/db/` 的 **legacy MD5 回溯解析器**（見該目錄的 [`README.md`](../../../mod-library/db/README.md)）。
 
@@ -54,7 +58,7 @@ curl -H "apikey: $NEXUS_API_KEY" \
 查不到（404）只代表 Nexus 不認得這個 md5——對岸站台來的、或被解壓重打包過的都會 miss，
 **不是檔案有問題**。實測 174 個舊命名檔只有 28 個 hit。
 
-`md5_search` 是 GET，不改帳號狀態，不在下面的紅線內。
+MD5 反查是唯讀，不改帳號狀態，不在下面的紅線內。
 
 ## 2. 版本閘門
 
@@ -75,15 +79,21 @@ record 數、record identity、header、GRUP、subrecord 結構要完全一致�
 ## 3. 下載
 
 **這個帳號非 Premium**，`download_link.json` 會回 403，所以只能走網頁的 slow download。
+**同一時間只有一條線可以開瀏覽器**，由調度者指定；沒被指定的線需要下載就發 `NEEDS-USER`。
 
-機制：**headful Chrome ＋ 使用者 Chrome profile 的暫存複本 ＋ CDP
-（`--remote-debugging-port`）**，用程式驅動頁面點
-`Files 分頁 → 目標列 → Manual download → Slow download`，檔案落到 `~/Downloads/`。
+兩條實測可用的路，都是點 `Manual download → Slow download`（左邊那顆，不碰 Premium），檔案落到 `~/Downloads/`：
+
+| 誰 | 機制 | 要點 |
+|---|---|---|
+| 調度者（Claude）親跑 | **Claude in Chrome 擴充**，用使用者已登入的瀏覽器 | 最乾淨：不開 profile 複本、不取桌面鎖。直達 URL `/mods/<id>?tab=files&file_id=<fileId>&nmm=0` 直接落在 Slow download 頁。`browser_batch` 內的 `left_click` 不會觸發下載，要獨立呼叫。實錄見 [`agentctl/logs/nexus-download-via-chrome-extension-2026-08-27.md`](../../../agentctl/logs/nexus-download-via-chrome-extension-2026-08-27.md) |
+| codex 線 | **headful Chrome ＋ 使用者 Chrome profile 的暫存複本 ＋ CDP（`--remote-debugging-port`）** | 驅動器已有：[`agentctl/handoffs/done/2026-08-27/cx-dl2/tools/cdp-download.mjs`](../../../agentctl/handoffs/done/2026-08-27/cx-dl2/tools/cdp-download.mjs)。profile 複本 4.5 GB，**放 `/tmp/<線名>-trash/`，不放 `$HOME`、不進 repo**，抓完自清 |
 
 - **headless 會撞 Cloudflare**，headful 才過。
 - 不需要 `ydotool`／`/dev/uinput`——CDP 直接驅動頁面，**不要為此去要 sudo**。
-- 用**獨立暫存 profile 複本**，不要動使用者既有的瀏覽器視窗；抓完清掉複本。
+- 用**獨立暫存 profile 複本**，不要動使用者既有的瀏覽器視窗。
 - **慢是正常的**（有等待計時器），等就好，不要為了加速找別的路徑。
+- houseCARL 回的 `note: the author disabled direct download — manager (nxm) download only` **不能當閘門**，
+  頁面上 `Manual download` 常常照樣可用；同頁多檔靠 `file_id` 認，不靠 mod id。
 
 **免費的來源驗證**：Nexus 檔案列上的 VirusTotal 連結**帶著該檔的 hash**。
 下載後跟本地 SHA-256 比對，比不上就標記為未驗證，**不要當成功**。

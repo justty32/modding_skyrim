@@ -10,10 +10,10 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 ## 0. 先確認可以拿資源
 
 **取得順序固定：先桌面 HID 鎖，再遊戲鎖。** 跑 Skyrim 一定佔螢幕，反過來拿會跟
-Aetheria agent 死鎖。細節見 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md)。
+同時持鎖的另一條我方線死鎖。細節見 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md)。
 
 **使用者在電腦前時，鍵鼠螢幕的控制權全歸他**——這時候連鎖都不要拿。
-跨 agent 的優先權是 **Aetheria 優先**，對方要用就盡快釋放，不爭論。
+（Aetheria agent 2026-08-27 起凍結，跨 agent 優先權條款停用；`desktop.lock` 現在只是我方線之間的 mutex。）
 
 **坑**：遊戲鎖曾經指向 `~/skyrim_agent_out/_lock/`，該目錄隨 agent 線封存被刪除，
 於是每次「已釋放遊戲鎖」的檢查都在檢查一個**不可能存在的路徑，恆真通過**。
