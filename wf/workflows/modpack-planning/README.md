@@ -24,6 +24,7 @@ Done when: <方向已定、mod 集合已選、分批順序與每批的 rollback 
 |---|---|
 | 現在裝了什麼 | `instance/`（**唯讀盤點**，不要憑記憶或舊快照） |
 | 有什麼可以玩 | `modpack-design/content-plan/` 的四份內容普查（主線／地城敵人／隨從戰鬥／進程結構） |
+| 使用者最近想要什麼（未查證的 Nexus URL） | [`mod-url-inbox.md`](../../../modpack-design/sources/mod-url-inbox.md)——**這是未查證素材，不是判定結論；逐件事實查證後才進 `content-plan/`** |
 | 決定要裝什麼、按什麼順序 | [`install-plan-2026-08-27.md`](../../../modpack-design/content-plan/install-plan-2026-08-27.md)（**整包唯一一份安裝計畫**，每列有 id／fileId／版本／bytes） |
 | 哪些有中文、下一步做什麼 | [`zh-layer-coverage-master-2026-08-28.md`](../../../modpack-design/content-plan/zh-layer-coverage-master-2026-08-28.md)（中文層唯一決策層） |
 | 這個 mod 技術上怎麼運作 | `analysis/mod-survey/`（136 份框架拆解）——**這不是遊玩規劃，別混在一起** |
