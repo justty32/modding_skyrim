@@ -1,6 +1,6 @@
 # INIT-QUESTIONS — 新 repo 導入問答
 
-把工作流導入新 repo 前，先回答這些問題。回答不完整也可以開始，但缺口要記到 `WAIT_USER.md` 或 `dev-env.md`。
+導入工作流前先回答以下問題；未答完也可開始，但缺口須記到 `WAIT_USER.md` 或 `dev-env.md`。
 
 ## 專案基本資訊
 
@@ -59,4 +59,3 @@ code/tests > schema/examples/fixtures > CODE_MAP > docs > generated/html
 - 哪些命令不能自動跑？
 - 哪些輸出不能 commit？
 - push/release/deploy 是否一定要使用者確認？
-

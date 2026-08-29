@@ -1,6 +1,6 @@
 # ADOPTION — 導入既有 repo
 
-不要一開始把整套全打開。按 repo 複雜度逐步導入，讓流程跟著需要長出來。
+按 repo 複雜度逐步導入，讓流程隨需要成長。
 
 ## 最小導入
 
@@ -15,7 +15,7 @@
 - `workflows/dev-env.md`
 - `workflows/` 中各入口檔
 
-說明：minimal 仍會放入 `WORKFLOWS.md` 連到的入口檔，避免產生斷鏈；只是先不放 examples、commands 實作、CI、smoke tests 等外圍資產。
+minimal 仍須放入 `WORKFLOWS.md` 連到的入口檔以免斷鏈；暫不放 examples、commands 實作、CI、smoke tests 等外圍資產。
 
 填好：
 
