@@ -40,8 +40,13 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
 4. **禁區要明寫，沒寫就等於允許。** 至少決定：能不能開遊戲／MO2 GUI／瀏覽器、
    能不能拿遊戲鎖、能不能改 `modlist.txt`／load order、能不能下載、能不能碰別的 repo。
    **使用者在電腦前時，一律禁止搶焦點、送按鍵、截圖。**
-5. **Nexus 查證不能派給 codex 線。** 它沒有 houseCARL MCP、拿不到瀏覽器、純 HTTP 打 Nexus 回 403
-   （2026-08-26 實測）。調度者先用 houseCARL 把 id／fileId／版本／bytes 寫死進交接書，線只做離線收斂；
+5. **Nexus 查證要指定走 houseCARL MCP，不能讓線自己 curl。** 純 HTTP 打 Nexus 回 403
+   （2026-08-26 實測），但**codex 端有掛 houseCARL MCP**（`~/.codex/config.toml` 的
+   `[mcp_servers.housecarl]`），走 `housecarl_nexus_*` 查得到——2026-08-29 的
+   `cx-lands`／`cx-quest`／`cx-font` 三線全程自行完成 Nexus 事實查證，含逐件 fileId、bytes
+   與翻譯層 requirements。**本條原本寫「Nexus 查證不能派給 codex 線」，那是錯的，已於
+   2026-08-29 更正。** 交接書要明寫「Nexus 事實一律走 `housecarl_nexus_*`，不 curl 網頁」。
+   下載仍是另一回事：調度者先用 houseCARL 把 id／fileId／版本／bytes 寫死進交接書，線只做離線收斂；
    下載要嘛調度者親跑 Claude in Chrome，要嘛指定**唯一一條**瀏覽器線走 CDP，見
    [nexus-intake 第 3 段](../nexus-intake/README.md#3-下載)。
 
