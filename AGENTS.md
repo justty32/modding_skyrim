@@ -13,7 +13,7 @@
 
 - 使用者要你動手做某件事 → [WORKFLOWS.md](wf/WORKFLOWS.md)：依意圖派發到對應工作流。
 - 想看 repo 結構 → [README.md](README.md)（本 repo 沒有獨立 `INDEX.md`，README 兼索引）；四條主線各自的 README 在 `instance/`、`mod-library/`、`modpack-design/`、`agentctl/`。
-- 碰原始碼 → 先讀 [workflows/common/conventions.md](wf/workflows/common/conventions.md)，再讀 [CODE_MAP](wf/workflows/common/code-map/CODE_MAP.md)。
+- 碰原始碼 → 先讀 [workflows/common/conventions.md](wf/workflows/common/conventions.md)，再讀 [CODE_MAP](wf/workflows/common/code-map/CODE_MAP.md)；兩者的索引在 [workflows/common/README.md](wf/workflows/common/README.md)。
 
 ## Always-on 鐵律
 

@@ -1,7 +1,6 @@
 # 搬移與改名
 
-檔案換位置、目錄改名、專案拆 repo。2026-08-23 一天做了三次（工作區統整、profile 改名、
-骨架收進 `wf/`），**每一次都以同一批方式壞掉**。這份是那批坑的清單與偵測程序。
+適用於檔案換位置、目錄改名與專案拆 repo；以下列出六類常見斷裂與偵測程序。
 
 ```text
 Done when: <逐檔比對已落地、六類斷裂已掃、工具冒煙測試過、連結歸零、CI 實測過>
@@ -22,7 +21,7 @@ Done when: <逐檔比對已落地、六類斷裂已掃、工具冒煙測試過�
 grep -rn '/home/lorkhan/<舊路徑>' --include='*.py' --include='*.sh' --include='*.json'
 ```
 
-踩過：某支逐 mod 補全腳本的 evidence root、13 個 QA spec 的
+常見目標包括某支逐 mod 補全腳本的 evidence root、13 個 QA spec 的
 `manifest` 欄位、inbox 三支腳本的 `DEFAULT_INBOX_ROOT`。
 
 ### 2. `__file__` 相對推導——**語意會變**
@@ -31,7 +30,7 @@ grep -rn '/home/lorkhan/<舊路徑>' --include='*.py' --include='*.sh' --include
 grep -rn '__file__' --include='*.py'
 ```
 
-最陰的一類：程式碼沒變、路徑也「還是相對的」，但**基準點變了**。
+程式碼與相對路徑文字都沒變，**基準點仍會變**。
 掃庫工具的 `BACKUP_DIR = Path(__file__).parent.parent / "backups"`
 搬進 git repo 之後，每次 `backup` 會把 3MB 的 DB dump 提交進版控。
 
@@ -43,16 +42,16 @@ grep -rn '__file__' --include='*.py'
 grep -rn '^from \|^import ' --include='test_*.py'
 ```
 
-`from scripts import x` 在 `scripts/` 消失後死掉。**兩次都是測試檔**——
-因為主程式通常自己跑得起來，只有測試靠 package 佈局。改成從自身位置推導。
+`from scripts import x` 在 `scripts/` 消失後死掉；主程式可能仍能執行，只有依賴 package 佈局的測試失敗。
+改成從自身位置推導。
 
 ### 4. 相對 markdown 連結
 
 跨 repo 拆分後**原本的兄弟變成別的 repo**。`git ls-files` **到 gitlink 就停**，
-所以檢查器預設看不到 submodule——四條線曾累積 87 個壞連結而沒人知道。
+所以檢查器預設看不到 submodule。
 
 修法：拿目標的 basename 去整個工作區找實體，再算相對路徑。
-2026-08-23 兩輪共 134 個壞連結，自動解掉 79 個，其餘是同名多候選要手工指定。
+同名多候選要手工指定。
 
 ### 5. CI 與外部設定
 
@@ -60,14 +59,14 @@ grep -rn '^from \|^import ' --include='test_*.py'
 grep -rn '<舊路徑>' .github/ *.yml *.json ~/.claude/settings*.json
 ```
 
-踩過：`.github/workflows/docs.yml` 跑的兩條指令、`hook-settings-snippet.json`。
+常見目標包括 `.github/workflows/docs.yml` 跑的兩條指令、`hook-settings-snippet.json`。
 
 ### 6. 執行期資料目錄
 
 不進版控的東西（鎖、inbox 投遞區、DB 快照）**不能跟著搬進 repo**，
 但它們的路徑常寫在跟著搬的程式裡。
 
-**最陰的變體**：路徑指向一個**已經不存在**的目錄，於是「已釋放／不存在」的檢查
+路徑指向**已經不存在**的目錄時，「已釋放／不存在」的檢查會
 **恆真通過**。遊戲鎖指著被刪掉的 `~/skyrim_agent_out/_lock/`，
 每次 teardown 檢查都在檢查一個不可能存在的路徑。
 
@@ -88,8 +87,7 @@ python3 tools/check_markdown_links.py
 
 ## 改名時額外注意
 
-- **名字會不會跟別的東西撞。** MO2 profile 一度改叫 `main`，結果它同時是分支名和目錄名，
-  `git log main` 直接報 ambiguous。加前綴解掉（`modpack-main`）。
+- **名字會不會跟別的東西撞。** MO2 profile 一度改叫 `main`，與分支名和目錄名相撞，使 `git log main` 報 ambiguous；加前綴為 `modpack-main` 解掉。
 - **所有分支都要改。** 只改現役分支的話，切回其他分支時目錄名就對不上了。
   用 worktree 在別的分支上做，現役 checkout 全程不動。
 - **區分「同一個東西的路徑」與「當時的紀錄」。** QA 報告、VERIFICATION.md、
