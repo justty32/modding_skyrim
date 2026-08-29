@@ -55,6 +55,6 @@ Path of Sorcery／Vokrii／Adamant 的簡中修正層，加兩個 houseCARL patc
 
 `opus-selfmade-zh` 2026-08-28 做好 `Common Clothes and Armors Traditional Chinese 2.0.0`
 （ESP 檔案替換層，164 筆＝33 筆 vanilla 迴歸回復＋131 筆新增，sha256 `4dcb6c32…`），
-產物只在 [`agentctl/handoffs/opus-selfmade-zh-2026-08-28/`](../agentctl/handoffs/opus-selfmade-zh-2026-08-28/)，
+產物只在 [`agentctl/handoffs/done/2026-08-28/opus-selfmade-zh/`](../agentctl/handoffs/done/2026-08-28/opus-selfmade-zh/)，
 **沒進 `mod-library/l10n/mods/`、沒裝進 MO2**。請裁：(a) 入庫＋照 install-plan 安裝，(b) 只入庫不裝，(c) 丟棄。
 Bandolier 同線判定不必自製（見上一項）。

@@ -49,7 +49,7 @@ winner 差異 5485→5；Pandora Output 重新壓過 TK Dodge RE；9 個被本�
 資料層由 houseCARL 實查 Ordinator 天賦、ESW 武器名、AI Overhaul NPC 名、Sofia 皆已回中文。
 **還沒進遊戲驗**。請用 `launch-mo2.sh` 開 MO2 確認 Active 318 → 進遊戲**離開存檔重進**，驗：
 第三人稱能否正常攻擊（原症狀：BFCO 行為圖被 vanilla 壓掉）、Ordinator 天賦頁是否中文、
-武器名是否中文。證據見 [`opus-apply-order`](../agentctl/handoffs/opus-apply-order-2026-08-28/)
+武器名是否中文。證據見 [`opus-apply-order`](../agentctl/handoffs/done/2026-08-28/opus-apply-order/)
 與 [`根因`](../agentctl/logs/modlist-priority-bug-2026-08-23.md)。
 
 ## JhNPCBeautyDev 蓋掉 NPC 中文名（2026-08-28 發現，待裁示）
