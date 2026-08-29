@@ -1,6 +1,6 @@
 # localization — 做一個中文層
 
-專案裡做過最多次的事：近 40 個自製中文層（`mod-library/l10n/mods/`）、十餘支建置工具。這條流水線的每一段都出過事。
+近 40 個自製中文層在 `mod-library/l10n/mods/`，十餘支建置工具在 `mod-library/l10n/tools/`。
 
 ```text
 Done when: <同版閘門通過、層內確有中文、排序在本體之上、audit 綠、真人抽查已排入 WAIT_USER>
@@ -23,7 +23,8 @@ Done when: <同版閘門通過、層內確有中文、排序在本體之上、au
 
 工具在 [`mod-library/l10n/tools/`](../../../mod-library/l10n/tools/)：
 
-逐支職責見該目錄的 [`README.md`](../../../mod-library/l10n/tools/README.md)——**索引留在 private repo**——母 repo 是 public，`mod-library` 因含他人 mod 的完整 ESP 複本必須永遠 private，連腳本清單都不外流。
+逐支職責見該目錄的 [`README.md`](../../../mod-library/l10n/tools/README.md)。**索引留在 private repo**：
+母 repo 是 public，`mod-library` 含他人 mod 的完整 ESP 複本，必須永遠 private，連腳本清單都不外流。
 
 分四類：**行內覆蓋層產生器**（核心引擎，被其餘多數 import）、**逐 mod 的建置腳本**
 （各自 fail-closed）、**翻譯比對**、**把既有譯文投射到新版**。
@@ -33,7 +34,7 @@ VIGILANT `BOOK.DESC` 的例子是 45 筆一個不多一個不少，比數不對�
 
 ## 2.5 補全既有中文層
 
-**最常見的情況不是「沒有中文層」，而是「有，但不完整」。** 三種型態，處理方式不同：
+既有中文層不完整時，依三種型態處理：
 
 | 型態 | 例子 | 做法 |
 |---|---|---|

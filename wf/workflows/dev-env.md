@@ -14,7 +14,7 @@
 
 這是**開發能力**矩陣，不是部署現況。MO2 instance/profile/load order、已安裝 mod 與實機
 驗收一律由 `instance/`（部署狀態）與 `agentctl/`（實機驗收證據）管；本檔不複製那份狀態。
-（2026-08-23 前這些歸 `~/notes/projects/modding/skyrim/`，現在那裡只剩不進版控的截圖與 MongoDB 快照。）
+`~/notes/projects/modding/skyrim/` 只留不進版控的截圖與 MongoDB 快照。
 
 ## Fresh Clone
 
@@ -41,8 +41,7 @@ gitlink 倒退，也不要把本機舊 checkout 當成已同步。
 
 ## 常用環境變數
 
-母 repo 本身沒有必要環境變數。常見變數屬於 producer/consumer 契約，設定與 fallback 以
-各子 repo 文件為準：
+母 repo 沒有必要環境變數。producer/consumer 契約的設定與 fallback 以各子 repo 文件為準：
 
 | 變數 | 所屬邊界 | 先讀 |
 |------|----------|------|

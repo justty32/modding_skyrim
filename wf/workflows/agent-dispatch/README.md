@@ -7,7 +7,7 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
 ```
 
 **完整流程在 [`agentctl/docs/driving-codex.md`](../../../agentctl/docs/driving-codex.md)。**
-本檔只做路由與四條最容易錯的。
+本檔只做路由與五條最容易錯的。
 
 | 要什麼 | 去哪 |
 |---|---|
@@ -19,9 +19,8 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
 
 ## 兩層派線結構（2026-08-27 起）
 
-大任務不再是「調度者 → 一條 codex 線」單層，而是「調度者 → Opus 主管線 → codex 子線」兩層：
-主管線自己寫交接書、派 codex 子線、核驗收；調度者退到切線、仲裁、收線與資源協調，
-簡單的事實盤點交 sonnet subagent，不占主管線的 context。**任何一層上線第一件事，都是先在
+大任務採「調度者 → Opus 主管線 → codex 子線」兩層：主管線寫交接書、派子線、核驗收；
+調度者負責切線、仲裁、收線與資源協調，簡單盤點交 sonnet subagent。**任何一層上線第一件事，都是先在
 [`agentctl/inbox/ROSTER.md`](../../../agentctl/inbox/ROSTER.md) 追加自己那一格聲明身份**——
 我是誰、對誰回報、領地在哪、答得出什麼、答不出什麼——沒聲明就開始做事，其他線只能用猜的畫邊界。
 
@@ -29,7 +28,7 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
 `agentctl/.lock/game.lock`，不得開 GUI／瀏覽器／遊戲；需要就發 `NEEDS-USER` 給調度者，
 不要自己動。細節見 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md)。
 
-## 四條最容易錯的
+## 五條最容易錯的
 
 1. **我是調度者，不是實作者。** 自己深潛實作會吃掉主 context，後面就沒有餘裕做判斷。
    這條優先於「改碼自己來」。
@@ -41,23 +40,20 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
    能不能拿遊戲鎖、能不能改 `modlist.txt`／load order、能不能下載、能不能碰別的 repo。
    **使用者在電腦前時，一律禁止搶焦點、送按鍵、截圖。**
 5. **Nexus 查證要指定走 houseCARL MCP，不能讓線自己 curl。** 純 HTTP 打 Nexus 回 403
-   （2026-08-26 實測），但**codex 端有掛 houseCARL MCP**（`~/.codex/config.toml` 的
-   `[mcp_servers.housecarl]`），走 `housecarl_nexus_*` 查得到——2026-08-29 的
-   `cx-lands`／`cx-quest`／`cx-font` 三線全程自行完成 Nexus 事實查證，含逐件 fileId、bytes
-   與翻譯層 requirements。**本條原本寫「Nexus 查證不能派給 codex 線」，那是錯的，已於
-   2026-08-29 更正。** 交接書要明寫「Nexus 事實一律走 `housecarl_nexus_*`，不 curl 網頁」。
-   下載仍是另一回事：調度者先用 houseCARL 把 id／fileId／版本／bytes 寫死進交接書，線只做離線收斂；
-   下載要嘛調度者親跑 Claude in Chrome，要嘛指定**唯一一條**瀏覽器線走 CDP，見
-   [nexus-intake 第 3 段](../nexus-intake/README.md#3-下載)。
+   （2026-08-26 實測）；codex 端已在 `~/.codex/config.toml` 的 `[mcp_servers.housecarl]`
+   掛上 houseCARL MCP，`housecarl_nexus_*` 查得到。2026-08-29 的 `cx-lands`／`cx-quest`／
+   `cx-font` 三線已自行查完逐件 fileId、bytes 與翻譯層 requirements。
+   （本條曾寫成「不能派給 codex 線」，2026-08-29 更正：403 是 curl 的限制，不是 codex 的限制。）
+   交接書要明寫「Nexus 事實一律走 `housecarl_nexus_*`，不 curl 網頁」。下載是另一回事：
+   調度者先用 houseCARL 把 id／fileId／版本／bytes 寫死，線只做離線收斂；下載由調度者跑 Claude in Chrome，
+   或指定**唯一一條**瀏覽器線走 CDP，見 [nexus-intake 第 3 段](../nexus-intake/README.md#3-下載)。
 
 ## 通訊：四條通道與輪詢義務
 
-除了終局回報用的 `inbox/new/`（不可被取代），2026-08-27 起還有三條：`orders/<session>.md`
-（要對方改變行為的指示，現在對所有成員開放追加，標題須帶 `from:`）、`mail/<session>/`
-（點對點情報）、`topics/<topic>/`（同主題多線共享）。選哪條看「要不要驚動調度者」
-「是不是要對方改行為」「說給一個人聽還是一群人聽」。**`mail`／`topics`／`orders` 都沒有推播**，
-每個成員在每完成一個工作步驟後都要跑一次 `inbox_poll.sh`（輪詢個人信箱＋訂閱主題＋自己的
-orders），長任務背景線改用 `--watch`。完整契約、比較表與指令見
+四條通道是終局回報 `inbox/new/`（不可被取代）、行為指示 `orders/<session>.md`（所有成員可追加，標題須帶
+`from:`）、點對點情報 `mail/<session>/`、多線共享 `topics/<topic>/`。依是否要驚動調度者、
+改變行為及收件範圍選擇。**`mail`／`topics`／`orders` 都沒有推播**，每完成一個工作步驟後跑
+`inbox_poll.sh`（個人信箱＋訂閱主題＋自己的 orders），長任務背景線用 `--watch`。完整契約見
 [`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md)。
 
 ## 多信任它
@@ -65,15 +61,14 @@ orders），長任務背景線改用 `--watch`。完整契約、比較表與指�
 給整條線的大任務，不要重算它的 hash、不要幫它決定每一步。
 **微管理會燒光 token**，而且它的自查通常比逐步驗收更有效。
 
-**「讓它自己 push」已作廢**：現行鐵律是未經使用者確認不 push（見母 repo
-[`AGENTS.md`](../../../AGENTS.md)「Always-on 鐵律」）。commit 可以留給線或收線時的調度者，
-push 一律等使用者確認才按；細節見
+**「讓它自己 push」已作廢：未經使用者確認不 push**（見母 repo
+[`AGENTS.md`](../../../AGENTS.md)「Always-on 鐵律」）；commit 可由執行線或調度者完成。細節見
 [`agentctl/docs/driving-codex.md`](../../../agentctl/docs/driving-codex.md)「多信任 gpt-sol」。
 
 ## 但收線時要對證據
 
-**「跑完了」不等於「通過了」。** 一次實例：回報全 PASS，實際 log 只有 2 個 commit、
-需要 ≥13 個，三條驗收項的關鍵字出現 0 次。**逐條對證據，不要對自我宣告。**
+**「跑完了」不等於「通過了」：曾有回報全 PASS，但 log 只有 2 個 commit、需要 ≥13 個，
+三條驗收項的關鍵字出現 0 次。逐條對證據，不要對自我宣告。**
 
 ## 何時不用
 

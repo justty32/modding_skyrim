@@ -9,8 +9,7 @@ Done when: <候選有結論(可追/暫放/不追)、連結存活狀態已查、�
 
 ## 分工：人挑頁面，AI 查頁面
 
-**不做 AI 自動採集。** 舊的 `skyrim.candidates` 自動隊列已清空、不再維護——
-自動採集出來的東西訊噪比太差，篩的成本高過自己翻。
+**不做 AI 自動採集，也不維護 `skyrim.candidates` 隊列**：訊噪比太差，篩選成本高過人工翻頁。
 
 ```text
 使用者人工翻來源索引 → 把有興趣的單頁 URL 貼進 inbox → AI 只處理 inbox 裡的 URL
@@ -28,7 +27,7 @@ Done when: <候選有結論(可追/暫放/不追)、連結存活狀態已查、�
 | `candidate-review.md` | 候選審查的判準 |
 | `mod-url-review-2026-08-12.md` | 一輪實際審查的結果 |
 
-> 韓文曾有獨立 inbox，2026-08-23 已併入 `mod-url-inbox.md`，不要再開分流。
+> 韓文也使用 `mod-url-inbox.md`，不要另開分流。
 
 ## AI 對 inbox URL 做什麼
 

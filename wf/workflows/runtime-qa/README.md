@@ -15,9 +15,8 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 **使用者在電腦前時，鍵鼠螢幕的控制權全歸他**——這時候連鎖都不要拿。
 （Aetheria agent 2026-08-27 起凍結，跨 agent 優先權條款停用；`desktop.lock` 現在只是我方線之間的 mutex。）
 
-**坑**：遊戲鎖曾經指向 `~/skyrim_agent_out/_lock/`，該目錄隨 agent 線封存被刪除，
-於是每次「已釋放遊戲鎖」的檢查都在檢查一個**不可能存在的路徑，恆真通過**。
-現在鎖在 `agentctl/.lock/`——但這個教訓要記著：**檢查一個不存在的東西永遠會過。**
+**坑**：遊戲鎖曾指向隨 agent 線封存而刪除的 `~/skyrim_agent_out/_lock/`，使「已釋放遊戲鎖」
+恆真通過；現在鎖在 `agentctl/.lock/`，**檢查一個不存在的東西永遠會過。**
 
 ## 1. 啟動
 
@@ -42,9 +41,8 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 **驗收條數要在開始前寫死。** 「以及其他你認為必要的驗證」等於讓執行線為了保險亂跑，
 燒光 token 還交不出東西。
 
-**別把「跑完了」當成「通過了」。** 一次實例：回報全 PASS，但 log 只有 2 個 commit、
-需要 ≥13 個，其中三條驗收項的關鍵字出現 **0 次**，實際活動只有 75 秒。
-**逐條對證據，不要對自我宣告。**
+**別把「跑完了」當成「通過了」：曾有回報全 PASS，但 log 只有 2 個 commit、需要 ≥13 個，
+三條驗收項的關鍵字出現 0 次，實際活動只有 75 秒。逐條對證據，不要對自我宣告。**
 
 ## 4. Teardown
 
@@ -61,11 +59,10 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 `SendInput`）、主控台與狀態查詢 ✅（AgentBridge）、截圖 ✅（`spectacle -b -n -f -o out.png`，
 **唯一可用的**）、load order 資料層 ✅（houseCARL）、**滑鼠 ✅ 有條件**。
 
-**滑鼠 2026-08-27 重測推翻了舊結論**：`xdotool mousemove`／`click` 在**有 XWayland 視窗持有
-焦點**時真的會動、真的會點，MO2／Skyrim 都屬此類，所以需要滑鼠的驗收不必再一律推給使用者。
-焦點一落到原生 Wayland 視窗指標就失控，起一個 `QT_QPA_PLATFORM=xcb konsole` 可以奪回。
-`ydotool` 仍然不用（daemon 要寫 `/dev/uinput`，sudo／改 group／改 udev 三條都是紅線），
-但那已經不是「滑鼠做不到」的理由。
+**滑鼠（2026-08-27 重測）**：`xdotool mousemove`／`click` 在**有 XWayland 視窗持有焦點**時
+可操作 MO2／Skyrim，需要滑鼠的驗收不必一律推給使用者；焦點落到原生 Wayland 視窗就失控，
+可用 `QT_QPA_PLATFORM=xcb konsole` 奪回。`ydotool` 仍然不用：daemon 要寫 `/dev/uinput`，
+sudo／改 group／改 udev 都是紅線。
 
 實測過的完整能力表與工具限制在
 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md#這台機器的-hid-實況2026-08-27-重測取代-2026-08-23-版)；
