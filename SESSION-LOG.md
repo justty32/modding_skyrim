@@ -4,6 +4,11 @@
 子專案文件與 git history 承接；需要使用者、實機、權限或外部素材的項目只放
 [WAIT_USER.md](WAIT_USER.md)。
 
+**寫入時機**：① **開始**多步驟工作前就先寫一行 open（不是做完才寫）；② 每次 commit 後更新或刪除該行；
+③ 條目格式 `- [工作流] 一句 open 狀態 → 下一步 / 連結`，完成即刪——歷史交給 git log，
+「為什麼這樣選」落到 [wf/workflows/decisions.md](wf/workflows/decisions.md)。
+某工作流長出自己的 `session-log.md` 時，在本檔加一列導流（見 [STRUCTURE](wf/STRUCTURE.md)）。
+
 ## 現役工作
 
 截至 **2026-08-29 早上（Asia/Taipei）**，母 repo 本身沒有進行中的 agent 工作。Skyrim／MO2 已關閉。
@@ -33,11 +38,3 @@
 - houseCARL Linux/MO2 技術方案：
   [linux-manjaro-mo2-runbook.md](analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)
 - 需使用者或外部環境才能完成的工作：[WAIT_USER.md](WAIT_USER.md)
-
-## 各工作流 session-log
-
-| 工作流 | session-log | open 摘要 |
-|--------|-------------|----------|
-| feature-dev | [workflows/feature-dev/session-log.md](wf/workflows/feature-dev/session-log.md) | 無 |
-| refactor | [workflows/refactor/session-log.md](wf/workflows/refactor/session-log.md) | 無 |
-| investigation | [workflows/investigation/session-log.md](wf/workflows/investigation/session-log.md) | 無 |

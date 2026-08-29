@@ -1,65 +1,29 @@
-# skyrim — Agent 專案備忘
+# skyrim — AI agent 專案備忘
 
-> Skyrim Special Edition modding 分析工作區。這份檔案是最頂層路由器，只放 always-on 規則與入口連結；細節放到各工作流。
+skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）與知識（`analysis/`），部署狀態／mod 庫／整合包設計／AI 操控總控各自獨立成線。本檔是最頂層路由器，只指向下一層；分層原則見 [STRUCTURE.md](wf/STRUCTURE.md)。
+
+## 開場與入口
+
+- 每個 session 先看 [SESSION-LOG.md](SESSION-LOG.md) 的「現役工作」段與 [WAIT_USER.md](WAIT_USER.md) 的 open 計數表；Skyrim 工作線的交接主線另在 `agentctl/SESSION-LOG.md`。
+- **碰原始碼前**：慣例與 code map → [conventions.md](wf/workflows/common/conventions.md)、[CODE_MAP.md](wf/workflows/common/code-map/CODE_MAP.md)；環境與指令 → [dev-env.md](wf/workflows/dev-env.md)。
+<!-- wf-insert:AGENTS -->
+- **要你動手做事** → [WORKFLOWS.md](wf/WORKFLOWS.md) 依意圖派發，再讀該工作流入口檔。
+- **想看結構** → [INDEX.md](wf/INDEX.md)；完整佈局在根 [README.md](README.md)——它是外來 agent 的入口，改佈局或新增產物類型時同步更新。
+- 使用者偏好與邊界 → [user.md](wf/workflows/common/user.md)。
+
+## 鐵律（always-on）
+
+1. 重構／整理**不改原意**：開發＝行為不變且驗證綠燈；非開發＝原意不變。非微小工作先寫 `Done when:`。
+2. **不可逆或對外的動作**（push、刪除、對外送出、動 DB、開新的大型工作）要有**授權來源**：使用者當場確認，或他親自登記的清單項目。都沒有就先問。
+3. **具體流程**在各工作流入口檔，不在頂層。
+4. 不 revert 使用者或其他 agent 的未確認變更；遇衝突先停下說明。
+5. 需使用者親自做／驗證的記 [WAIT_USER.md](WAIT_USER.md)；跨 session 的 open 狀態記 [SESSION-LOG.md](SESSION-LOG.md)。
+6. 引用外部程式碼或技術結論要附來源位置（`path:line`、函式名、URL、命令輸出摘要）；圖用 Mermaid／表格，不用需字元對齊的 ASCII 框線。
 
 ## 專案摘要
 
-- 專案一句話：Skyrim SE modding 工作區。母 repo 管開發（`projects/` 11 個軟體 submodule）與知識（`analysis/`）；部署狀態、mod 庫、整合包設計、AI 操控總控各自獨立成線（`instance/`、`mod-library/`、`modpack-design/`、`agentctl/`，2026-08-23 拆出）。
-- 主要語言/框架：分析對象為 C++（SKSE plugin / CommonLibSSE-NG）、Papyrus（`.psc`）、C#（houseCARL 用 Mutagen）；本 repo 自身主要是 Markdown 分析文件，另有 Python stdlib 文件驗證腳本，無建置產物。
-- 主要 build 指令：母 repo 無（文件與索引為主，程式在各 submodule）。若要重跑 houseCARL 的本機建置，見 `analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md`（`dotnet build housecarl.sln`／self-contained `dotnet publish -r linux-x64`）。
-- 主要 test 指令：`python -m unittest discover -s tools -p "test_*.py" -v`、`python tools/check_markdown_links.py`；各 submodule 測試矩陣見 `wf/workflows/testing.md`。houseCARL 驗證方式見上述 runbook（HTTP 模式啟動 + explicit paths 測試）。
+分析對象是 C++（SKSE／CommonLibSSE-NG）、Papyrus、C#（houseCARL 走 Mutagen）；本 repo 自身以 Markdown 為主，另有 Python stdlib 驗證腳本，無建置產物。
 
-## 先讀哪裡
+測試：`python -m unittest discover -s tools -p "test_*.py" -v`、`python tools/check_markdown_links.py`。子 repo 測試矩陣見 [testing.md](wf/workflows/testing.md)，環境／houseCARL 建置見 [dev-env.md](wf/workflows/dev-env.md)。
 
-- 使用者要你動手做某件事 → [WORKFLOWS.md](wf/WORKFLOWS.md)：依意圖派發到對應工作流。
-- 想看 repo 結構 → [README.md](README.md)（本 repo 沒有獨立 `INDEX.md`，README 兼索引）；四條主線各自的 README 在 `instance/`、`mod-library/`、`modpack-design/`、`agentctl/`。
-- 碰原始碼 → 先讀 [workflows/common/conventions.md](wf/workflows/common/conventions.md)，再讀 [CODE_MAP](wf/workflows/common/code-map/CODE_MAP.md)；兩者的索引在 [workflows/common/README.md](wf/workflows/common/README.md)。
-
-## Always-on 鐵律
-
-- 重構/整理必須 behavior-preserving；改完跑對應測試。
-- 未經使用者確認，不 push、不開新大型工作。
-- 不 revert 使用者或其他 agent 的未確認變更；遇到衝突先停下說明。
-- 各工作流的具體流程在自己的 README，不在本檔重複。
-- 小事可以跳流程；完整規則見 [PRINCIPLES.md](wf/PRINCIPLES.md)。
-- 非微小工作先定義 `Done when:`。
-- 需要使用者親自驗證、外部環境、權限、實機、帳號或手動操作時，記到 [WAIT_USER.md](WAIT_USER.md)。
-- 跨 session 的 open 狀態記到 [SESSION-LOG.md](SESSION-LOG.md) 或對應工作流的 `session-log.md`。
-- 引用外部專案程式碼或技術結論時，盡量附來源位置：`path/to/file:line`、函式名、URL、paper id、或命令輸出摘要。
-- 架構圖/流程圖優先用 Mermaid、表格、列點；不要用需要字元對齊的 ASCII 框線圖。
-
-## 分層思想
-
-整個 repo 是分層樹，每一層只指向下一層：
-
-```text
-AGENTS.md → WORKFLOWS.md / README.md → 各工作流入口 → 工作流內容 → 子工作流
-```
-
-- `README.md` = 初入一個資料夾先讀的入口/導引。
-- `INDEX.md` = 描述該資料夾頂層結構的索引。
-- 小資料夾可以 README 兼 index；變大後才拆出獨立 INDEX。
-- durable 知識歸到它所屬的工作流，不堆在頂層。
-
-## 本地專案規則
-
-把專案專屬規則放這裡，保持精簡；太長就移到對應工作流。
-
-- **目錄佈局**：7 份工作流骨架在 `wf/`（含 `wf/workflows/`），母 repo 文件驗證工具在 `tools/`。四條獨立主線是 `instance/`、`mod-library/`、`modpack-design/`、`agentctl/`。知識留在 `analysis/`（`analysis/skyrim_engine/`、`analysis/skyrim_mods/`、`analysis/houseCARL/`、`analysis/mod-survey/`、`analysis/tool-survey/`），`external/` 放他人框架原始碼；完整佈局見 [README.md](README.md)。
-- **根 README.md 是外來 agent 的入口**：被派來「找做好的 mod 去部署」時，它必須答得出「成品在哪」（`mod-library/`）與「現在裝了什麼」（`instance/`）；新增產物類型或改佈局時同步更新。
-- **本工作區自 2026-08-03 起是 public 母 git repo**（`justty32/modding_skyrim`），`projects/` 下 11 個獨立 repo 以 submodule 管理：ModForge、my_skyrim_plugin_1、godot-worldspace-editor、scene-capture-bridge、model-converter、agent-bridge、darksouls-port、sofia-patch、skyrim-voicegen、game-data、houseCARL。跨 repo 連結假設各 repo **同層 clone 在 `projects/` 下**。houseCARL 只維護自有 fork（`justty32/houseCARL`）、不追 upstream；決策見 [fork-maintenance-decision.md](analysis/houseCARL/answers/fork-maintenance-decision.md)。另有四份純文檔子專案在 `analysis/`（mod-survey、tool-survey、followers-patch、port-source-survey），不是獨立 repo。
-- **FormID 有兩種語境，別混用**：引擎內部二進位 `FormID` 是 32 位，前兩位是插件在 load order 的索引（`0xFF` 開頭＝runtime 動態生成物件），詳見 `analysis/skyrim_engine/architecture/Systems_TESForm_Detailed.md`。houseCARL MCP 工具對外走的是**文字格式** `XXXXXX:Plugin.esp`（6 位十六進位＋定義該記錄的 master 檔名），兩者概念相通但序列化方式不同。
-- **houseCARL 的核心心智模型**：讀取一律走「真實 load order winner」＋可選完整 conflict tree；預設寫入落在**新增的 patch plugin**（`houseCARL - <name>`），原始 plugin 不動；in-place 編輯是需一次性同意的 opt-in 車道。查 Nexus Mods 優先用 `mcp__housecarl__housecarl_nexus_search` / `housecarl_nexus_mod`，別開瀏覽器代勞。
-- **本機部署狀況歸 `instance/` 管**（取代舊的「歸 `~/notes` 管」劃分）：MO2 instance／profile／load order、已部署 mod 清單、實機驗證狀態、部署規劃（Jackify 等）全在 `instance/` 維護。`~/notes/projects/modding/skyrim/` 只留不進版控的實機截圖與 MongoDB 快照。**可見性**：母 repo 是 public，四條主線目前都是 private；`mod-library` 因含他人 mod 的完整 ESP 複本而**必須永遠 private**。
-- **houseCARL 讀 MO2 的技術限制**（分析結論，非部署事實）：MO2 的 `ModOrganizer.ini` 記的是 Wine 路徑（`Z:\home\...`），houseCARL 的 `Mo2InstanceDir` 模式讀不動，須改用 explicit `DataDir`/`ModsDir`/`ProfileDir`；本機實際路徑與註冊指令見 `agentctl/docs/housecarl.md`。
-- `TODO`: release/package 注意事項（本 repo 目前只做分析，無打包產物）。
-
-## 可選工作模式
-
-若專案需要分析外部 repo、做衍生專案、或打包 patch，可啟用：
-
-- [analysis](wf/workflows/analysis.md)：陌生專案 Level 1-6 分析。
-- [create](wf/workflows/create/README.md)：基於分析建立獨立小專案。
-- [patch](wf/workflows/patch/README.md)：建立冷啟動 agent 可套用的 patch 包。
-- [research](wf/workflows/research/README.md)：paper/長文閱讀、摘要、翻譯、索引。
-- [html-guide](wf/workflows/html-guide/README.md)：大量 `.md` 的 HTML 導覽層。
+<!-- wf-kernel v0.2 (2026-08-29) -->

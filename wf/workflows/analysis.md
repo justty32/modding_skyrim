@@ -1,6 +1,6 @@
 # analysis — 陌生專案分析入口
 
-用於初次接觸外部 repo、開源專案、舊系統或大型資料夾時，建立可延續、可搬移、可被後續 create/patch 使用的分析產物。
+用於初次接觸外部 repo、開源專案、舊系統或大型資料夾時，建立可延續、可搬移、可被後續 patch／planning 使用的分析產物。
 
 ## 產物結構
 
@@ -28,7 +28,7 @@ Done when: <Level 範圍完成、主要入口/模組/測試方式可由下一個
 2. Level 1 初始探索：README、頂層結構、依賴、入口點、build/run/test 指令。
 3. Level 2 核心模組職責：主要模組、權責劃分、耦合點、資料流。
 4. Level 3+ 依專案類型選模板深入。
-5. 將可行功能或缺口導向 roadmap/spec/plan；將可套用修改導向 patch；將獨立實作導向 create。
+5. 將可行功能或缺口導向 [planning](planning.md)；將可套用修改導向 [patch](patch/README.md)。
 
 ## Level 3+ 模板
 
@@ -47,7 +47,6 @@ Done when: <Level 範圍完成、主要入口/模組/測試方式可由下一個
 - 技術結論附來源位置：`path:line`、函式名、URL、paper id、或命令摘要。
 - 教學文件要包含：前置知識、原始碼導航、實作步驟、驗證方式。
 - 圖表用 Mermaid、表格、列點；不要用 ASCII 框線圖。
-- `.md` 多到難瀏覽時，使用 [html-guide](html-guide/README.md)。
 
 ## 何時不用
 

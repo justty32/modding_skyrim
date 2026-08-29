@@ -1,6 +1,6 @@
 # refactor — 重構整理入口
 
-behavior-preserving 的拆分、模組化、結構整理使用。結構原則見 [../../DEV-GUIDE.md](../../DEV-GUIDE.md)。
+behavior-preserving 的拆分、模組化、結構整理使用。結構原則見 [../../STRUCTURE.md](../../STRUCTURE.md)。
 
 ## 流程
 
@@ -36,5 +36,5 @@ Step 4  examples/assets/fixtures 若需整理 → 單獨處理 → commit
 | 檔案 | 內容 |
 |------|------|
 | [`moving-things.md`](moving-things.md) | **搬移與改名**：六類會斷的東西、偵測程序、改名的額外陷阱 |
-| `session-log.md` | 本工作流 open/in-flight 重構項 |
+| `session-log.md`（長出來才建）| 本工作流 open/in-flight 重構項；目前一律記在根 [SESSION-LOG.md](../../../SESSION-LOG.md) |
 | `archive/` | 過時重構筆記/計畫 |

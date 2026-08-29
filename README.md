@@ -93,13 +93,13 @@ Skyrim SE modding 的開發、分析、部署與產物集中地。本工作區�
 
 | 路徑 | 內容 |
 |---|---|
-| [`wf/`](wf/) | 工作流骨架：7 份骨架 md（[`PRINCIPLES`](wf/PRINCIPLES.md)／[`WORKFLOWS`](wf/WORKFLOWS.md)／[`DEV-GUIDE`](wf/DEV-GUIDE.md)／[`ADOPTION`](wf/ADOPTION.md)／[`MAINTENANCE`](wf/MAINTENANCE.md)／[`SYNC`](wf/SYNC.md)／[`INIT-QUESTIONS`](wf/INIT-QUESTIONS.md)）＋[`wf/workflows/`](wf/workflows/)（各工作流入口、plans、investigation findings、CODE_MAP） |
+| [`wf/`](wf/) | 工作流骨架（wf-kernel v0.2）：[`WORKFLOWS`](wf/WORKFLOWS.md)（派發）／[`INDEX`](wf/INDEX.md)（專案地圖）／[`STRUCTURE`](wf/STRUCTURE.md)（結構整理參考）＋[`wf/workflows/`](wf/workflows/)（各工作流入口、plans、investigation findings、CODE_MAP）＋[`wf/tools/wf-lint.sh`](wf/tools/wf-lint.sh)（連結／超標／殘留檢查） |
 | [`tools/`](tools/) | 母 repo 的文件驗證:`check_markdown_links.py` 與其測試。跑法 `python3 tools/check_markdown_links.py` |
 | [`SESSION-LOG.md`](SESSION-LOG.md) | 母 repo 的跨 session 活狀態。Skyrim 工作線自己的交接主線在 `agentctl/SESSION-LOG.md` |
 | [`WAIT_USER.md`](WAIT_USER.md) | 需要使用者親自驗證／實機／外部素材才能完成的項目 |
 | `patches/` | 針對他人 mod 的獨立修補 |
 
-> `wf/` 的命名與職責對齊 `~/repo/moddings/tome4` 與 `elin`。
+> `wf/` 的命名與職責對齊 `~/repo/moddings/tome4` 與 `elin`；骨架來自 `~/repo/workflows` 模板（kernel v0.2，2026-08-29）。
 
 ## 要在這裡動手做事?
 

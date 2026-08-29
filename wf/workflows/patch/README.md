@@ -72,5 +72,5 @@ Done when: <PATCH.md/APPLY.md/src/tests 完整，冷啟動 agent 可套用並驗
 ## 何時不用
 
 - 你可以直接在同一 repo 裡改 code、跑測試、commit，走 feature-dev。
-- 只是提出設計方案，不交付可套用檔案，走 specs/plans。
+- 只是提出設計方案，不交付可套用檔案，走 [planning](../planning.md)。
 - 原專案有正常 PR 流程且你會直接開 PR，使用該 repo 的既有流程。

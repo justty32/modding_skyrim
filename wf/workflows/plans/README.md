@@ -2,10 +2,10 @@
 
 真的要動工前的詳細實作規劃：精確到檔案、步驟、測試、驗證。
 
-規劃階梯：
+規劃階梯（前三段在 [planning](../planning.md)）：
 
 ```text
-idea → roadmap → spec → plan → feature-dev
+idea → roadmap → 詳規（本夾）→ feature-dev
 ```
 
 ## 規則
@@ -14,7 +14,7 @@ idea → roadmap → spec → plan → feature-dev
 - 本夾一個計畫一個項目：小計畫是 `<feature>.md`，**超過 8KB 就拆成 `<feature>/` 目錄**
   （`README.md` 當入口＋索引，其餘按自然邊界切成 ≤8KB 的部分）。
   現有五個計畫都已是目錄型；切線是「環境事實與設計決策／分階段任務／重審／附錄／執行紀錄」。
-- 對應設計方案：`specs/<feature>-design.md`。
+- 設計取捨直接寫進計畫本身；本 repo 不另設 `specs/` 夾。
 - 計畫要切成 bite-sized task，每步都有驗證。
 - 落地或被取代後，在下面的「已結案／被取代」表登記結果。**不另設 `archive/`**——計畫留原地並在表裡標明狀態；只有連歷史參考價值都沒有的才刪除，並在表裡註明可從 git 歷史取回。
 
@@ -37,5 +37,4 @@ idea → roadmap → spec → plan → feature-dev
 ## 何時不用
 
 - 小改動已能直接安全實作，走 feature-dev。
-- 設計還沒定，走 specs。
-- 只是排優先順序，走 roadmap。
+- 設計還沒定、或只是排優先順序，走 [planning](../planning.md)。

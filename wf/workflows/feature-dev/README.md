@@ -21,22 +21,22 @@ Done when: <功能完成、測試/驗證通過、文檔/CODE_MAP 對齊的條件
 規則：
 
 - agent 自己能跑的 test/lint/build 要自己跑。
-- agent 不能代做的外部驗證記到 [../../WAIT_USER.md](../../../WAIT_USER.md)。
+- agent 不能代做的外部驗證記到 [WAIT_USER.md](../../../WAIT_USER.md)。
 - 測試迭代期間，CODE_MAP/文檔可暫時落後。
 - commit 前，CODE_MAP + 文檔必須對齊。
-- 跨 session 時在 `session-log.md` 補 open 狀態。
+- 跨 session 時在根 [SESSION-LOG.md](../../../SESSION-LOG.md) 補一行 open 狀態。
 
 ## 何時不用
 
 - 單行修正、小 typo、小型內部調整，直接改並跑必要檢查即可。
-- 還在純討論設計，未決定動 code，走 specs 或 plans。
-- 只是研究外部材料，走 research 或 investigation。
+- 還在純討論設計，未決定動 code，走 [planning](../planning.md)。
+- 只是研究外部材料，走 [investigation](../investigation/README.md) 或 [analysis](../analysis.md)。
 
 ## 內容
 
 | 檔案 | 內容 |
 |------|------|
-| `session-log.md` | 本工作流 open/in-flight 進度 |
+| `session-log.md`（長出來才建）| 本工作流 open/in-flight 進度 |
 | `gotchas.md` | 功能開發踩坑，按需建立 |
 | `landed/` | 已落地功能目錄，按需建立 |
 | `archive/` | 過時或被取代的功能開發文檔 |

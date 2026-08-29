@@ -51,6 +51,5 @@ Done when: <方向已定、mod 集合已選、分批順序與每批的 rollback 
 
 ## 何時不用
 
-- 只是想記一個「之後也許要玩」的念頭 → [idea](../idea/ideas.md)。
-- 確定會做但不確定何時 → [roadmap](../roadmap/README.md)。
+- 只是想記一個「之後也許要玩」的念頭、或確定會做但不確定何時 → [planning](../planning.md)。
 - 已經要動手裝了 → [nexus-intake](../nexus-intake/README.md) ＋ [profile-change](../profile-change/README.md)。

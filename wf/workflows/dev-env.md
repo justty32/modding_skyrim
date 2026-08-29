@@ -33,7 +33,7 @@ git submodule update --init --recursive
 ```
 
 截至 2026-08-12，最新母 repo 仍引用三個尚未發布的子模組 commit，因此上述 recursive
-步驟會失敗；精確 SHA 與正確修復順序見 [../WAIT_USER.md](../../WAIT_USER.md)。不要把母 repo
+步驟會失敗；精確 SHA 與正確修復順序見 [WAIT_USER.md](../../WAIT_USER.md)。不要把母 repo
 gitlink 倒退，也不要把本機舊 checkout 當成已同步。
 
 同步成功後，依 [testing.md](testing.md) 選目標 repo 的離線測試。依賴只裝在該子 repo
@@ -63,7 +63,16 @@ gitlink 倒退，也不要把本機舊 checkout 當成已同步。
 歷史成品仍留在 `~/skyrim_mods/mine/`，不因整理環境而搬動。不得在遊戲執行時覆寫已
 載入的 DLL；具體安全部署命令由產出該 DLL 的子 repo 維護。
 
+## houseCARL（外部工具．本 repo 最常碰的那個）
+
+原本的 `tooling` 工作流是空殼，2026-08-30 併進本檔——外部工具、env var、依賴本來就是環境的一部分。
+
+- **核心心智模型**：讀取一律走「真實 load order winner」＋可選完整 conflict tree；預設寫入落在**新增的 patch plugin**（`houseCARL - <name>`），原始 plugin 不動；in-place 編輯是需一次性同意的 opt-in 車道。查 Nexus Mods 優先用 `mcp__housecarl__housecarl_nexus_search` / `housecarl_nexus_mod`，別開瀏覽器代勞。
+- **讀 MO2 的技術限制**（分析結論，非部署事實）：MO2 的 `ModOrganizer.ini` 記的是 Wine 路徑（`Z:\home\...`），houseCARL 的 `Mo2InstanceDir` 模式讀不動，須改用 explicit `DataDir`／`ModsDir`／`ProfileDir`；本機實際路徑與註冊指令見 [`agentctl/docs/housecarl.md`](../../agentctl/docs/housecarl.md)。
+- **本機建置與驗證**：`dotnet build housecarl.sln`；self-contained 用 `dotnet publish -r linux-x64`。驗證走 HTTP 模式啟動＋explicit paths 測試。完整步驟見 [linux-manjaro-mo2-runbook.md](../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)。fork 維護決策（只維護 `justty32/houseCARL`、不追 upstream）見 [fork-maintenance-decision.md](../../analysis/houseCARL/answers/fork-maintenance-decision.md)。
+- 工具版本、來源 URL、安裝路徑要可驗證；agent 無法安裝或需要帳號／授權時記到 [WAIT_USER.md](../../WAIT_USER.md)。不把大型二進位或私有資料誤 commit。
+
 ## 何時不用
 
-- 只是一次性跑 build/test，走 testing 或原工作流。
-- 是外部工具細節，走 tooling。
+- 只是一次性跑 build/test，走 [testing](testing.md) 或原工作流。
+- 工具只是某 feature 的內部實作細節，記在該 feature 的文檔／CODE_MAP 即可。
