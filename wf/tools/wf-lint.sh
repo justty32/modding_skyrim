@@ -9,7 +9,8 @@
 #         ⑤ BIGLIST：md 裡 > 1 KB 的條列式區塊（該抽成資料檔，見 workflows/common/data-files.md）；
 #            每列都有連結的當導航表印 BIGLIST-LINKS，只 warning
 #         ⑥ 資料檔（有 "contract": "wf-table/ 的 .json 與所有 .csv）的連結：跑 tabledb.py check
-# 結束碼：BROKEN > 0 → 1；--strict 時 residue / oversize / biglist > 0 也 → 1。
+#         ⑦ QUERYCMD：md 殘留的資料檔查詢指令（契約：md 不寫指令、不寫工具路徑）
+# 結束碼：BROKEN > 0 → 1；--strict 時 residue / oversize / biglist / querycmd > 0 也 → 1。
 set -u
 
 strict=0 self=0 quiet=0
@@ -28,7 +29,7 @@ tools=$(cd "$(dirname "$0")" && pwd)
 have_py=1
 command -v python3 >/dev/null 2>&1 || { have_py=0; echo "WARN python3 not found; BIGLIST/data-file checks skipped"; }
 
-total_broken=0 total_residue=0 total_oversize=0 total_biglist=0
+total_broken=0 total_residue=0 total_oversize=0 total_biglist=0 total_querycmd=0
 
 # 列出檔案裡的相對連結（去掉 fenced code block 與行內 code span 後取 ](…)）
 extract_links() {
@@ -62,7 +63,7 @@ list_md() { find "$1" -name '*.md' -not -path '*/node_modules/*' -not -path '*/.
 # 檢查一個目錄
 lint_dir() {
   local root=${1%/} label=${2:-$1}
-  local broken=0 oversize=0 ph=0 note=0 judge=0 inbox=0 biglist=0 bl_links=0
+  local broken=0 oversize=0 ph=0 note=0 judge=0 inbox=0 biglist=0 bl_links=0 querycmd=0
   local out df n rel
 
   [[ $quiet -eq 1 ]] || echo "== $label"
@@ -105,6 +106,16 @@ lint_dir() {
                -not -path '*/node_modules/*' -not -path '*/__pycache__/*' | sort)
   fi
 
+  # ⑦ QUERYCMD：md 不該教查法；免掃 archive/、wf/、AGENTS.md、契約檔
+  while IFS= read -r f; do
+    rel=${f#$root/}
+    case "$rel" in wf/*|*/wf/*|archive/*|*/archive/*) continue ;; esac
+    case "${f##*/}" in AGENTS.md|data-files.md|data-files-fmt.md|tidy.md) continue ;; esac
+    while IFS= read -r ln; do
+      echo "QUERYCMD $rel:$ln"; querycmd=$((querycmd + 1))
+    done < <(grep -nE 'tabledb\.py' "$f" | grep -E 'python3 |tools/tabledb\.py' | cut -d: -f1)
+  done < <(list_md "$root")
+
   ph=$(grep -ro '{{' --include='*.md' "$root" 2>/dev/null | wc -l | tr -d ' ')
   note=$(grep -ro '〔模板說明〕' --include='*.md' "$root" 2>/dev/null | wc -l | tr -d ' ')
   judge=$(grep -ro '〔導入判斷〕' --include='*.md' "$root" 2>/dev/null | wc -l | tr -d ' ')
@@ -114,13 +125,14 @@ lint_dir() {
   local residue=$((ph + note + judge))
 
   if [[ $quiet -eq 0 || $broken -gt 0 ]]; then
-    echo "SUMMARY $label: broken=$broken oversize=$oversize biglist=$biglist biglist_links=$bl_links residue={{=$ph 模板說明=$note 導入判斷=$judge inbox_pending=$inbox"
+    echo "SUMMARY $label: broken=$broken oversize=$oversize biglist=$biglist biglist_links=$bl_links querycmd=$querycmd residue={{=$ph 模板說明=$note 導入判斷=$judge inbox_pending=$inbox"
   fi
   total_broken=$((total_broken + broken))
   if [[ $strict -eq 1 ]]; then
     total_residue=$((total_residue + residue))
     total_oversize=$((total_oversize + oversize))
     total_biglist=$((total_biglist + biglist))
+    total_querycmd=$((total_querycmd + querycmd))
   fi
   return 0
 }
@@ -170,7 +182,7 @@ else
   for d in "${dirs[@]}"; do lint_dir "$d" "$d"; done
 fi
 
-echo "TOTAL broken=$total_broken$( [[ $strict -eq 1 ]] && echo " residue=$total_residue oversize=$total_oversize biglist=$total_biglist" )"
+echo "TOTAL broken=$total_broken$( [[ $strict -eq 1 ]] && echo " residue=$total_residue oversize=$total_oversize biglist=$total_biglist querycmd=$total_querycmd" )"
 [[ $total_broken -gt 0 ]] && exit 1
-[[ $strict -eq 1 && $((total_residue + total_oversize + total_biglist)) -gt 0 ]] && exit 1
+[[ $strict -eq 1 && $((total_residue + total_oversize + total_biglist + total_querycmd)) -gt 0 ]] && exit 1
 exit 0

@@ -4,14 +4,7 @@
 
 ## 2026-08-23 一天抓到的四個恆真檢查
 
-欄位：`檢查`／`為什麼恆真`。查法（從 `wf/workflows/testing/` 算相對路徑）：
-
-```
-python3 ../../tools/tabledb.py green-light-evidence.json
-python3 ../../tools/tabledb.py green-light-evidence.json get 0
-```
-
-共 4 筆。
+欄位：`檢查`／`為什麼恆真`。共 4 筆，已抽到 [`green-light-evidence.json`](green-light-evidence.json)。
 
 ## 兩個相關的推論
 

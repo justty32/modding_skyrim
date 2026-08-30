@@ -2,7 +2,7 @@
 """tabledb — 同質列表資料檔（.json / .csv）的統一 CRUD 與連結解析。
 
 契約 `wf-table/1`（見 workflows/common/data-files.md）：md 裡每列同一組欄位、
-超過 1 KB 的條列式區塊抽成資料檔，md 只留摘要與查法；讀寫都走這支，不整份讀進 context。
+超過 1 KB 的條列式區塊抽成資料檔，md 只留摘要（不寫查詢指令、不寫工具路徑）；讀寫都走這支，不整份讀進 context。
 
 檔案格式
   .json  {"contract": "wf-table/1", "source": "<抽出自哪份 md>", "extracted": "YYYY-MM-DD",

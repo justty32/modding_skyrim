@@ -27,4 +27,4 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 
 測試：`python -m unittest discover -s tools -p "test_*.py" -v`、`python tools/check_markdown_links.py`。子 repo 測試矩陣見 [testing.md](wf/workflows/testing.md)，環境／houseCARL 建置見 [dev-env.md](wf/workflows/dev-env.md)。
 
-<!-- wf-kernel v0.4 (2026-08-30) -->
+<!-- wf-kernel v0.4.1 (2026-08-30) -->

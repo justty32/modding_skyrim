@@ -5,14 +5,7 @@
 以下命令都從表中的 repo 根目錄執行。
 通過數量是本機基線，新增測試後以 exit status 為準，不要把舊數量當上限。
 
-欄位：`repo`／`命令`／`本機基線／範圍`。查法（從 `wf/workflows/testing/` 算相對路徑）：
-
-```
-python3 ../../tools/tabledb.py offline-matrix.json
-python3 ../../tools/tabledb.py offline-matrix.json get 0
-```
-
-共 19 筆。
+欄位：`repo`／`命令`／`本機基線／範圍`。共 19 筆，已抽到 [`offline-matrix.json`](offline-matrix.json)。
 
 ## agent-bridge 的 Windows DLL
 

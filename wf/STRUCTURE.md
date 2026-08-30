@@ -67,4 +67,4 @@
 
 ## 資料檔慣例
 
-抽成 `.json`／`.csv` 的門檻與格式契約 `wf-table/1` 在 [workflows/common/data-files.md](workflows/common/data-files.md)；讀寫走 `tools/tabledb.py`；整理流程走 [workflows/tidy.md](workflows/tidy/README.md)；json 內跨層路徑可用 `$fmt` 代號（見 [data-files-fmt](workflows/common/data-files-fmt.md)）。
+抽成 `.json`／`.csv` 的門檻與格式契約 `wf-table/1` 在 [workflows/common/data-files.md](workflows/common/data-files.md)；讀寫走 `tabledb.py`；整理流程走 [workflows/tidy.md](workflows/tidy/README.md)；json 內跨層路徑可用 `$fmt` 代號（見 [data-files-fmt](workflows/common/data-files-fmt.md)）。
