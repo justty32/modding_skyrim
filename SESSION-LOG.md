@@ -11,7 +11,7 @@
 
 ## 現役工作
 
-- [tidy] 2026-08-30 三條 Fable 管理線在跑：modpack-design 拆檔、agentctl 拆檔＋母 repo `wf/workflows/{nexus-intake,testing}` 兩檔、`~/repo/workflows` kernel v0.3（`wf-table/1` 契約、tabledb `links/check/open/resolve`、find_big_lists、fix_moved_links、wf-lint BIGLIST）。狀態檔在本 session scratchpad `state-{modpack-design,agentctl,kernel}.md` → 收線順序：核驗兩個拆檔 repo → kernel 8 條驗收 → 派升級線把 v0.3 套回母 repo／modpack-design／agentctl（母 repo `tools/{tabledb,find_big_lists,fix_moved_links}.py` 併回 `wf/tools/`）→ `python3 tools/check_markdown_links.py` 全庫 → 各 submodule commit、母 repo 推 pin → 使用者說了才 push。整理輪已 commit（母 `f133ae7`）。規則出處：[wf/workflows/tidy/README.md](wf/workflows/tidy/README.md)。
+- [tidy] 2026-08-30 整理／拆檔／kernel v0.3→v0.4 全部收線並 commit（母 repo 10、agentctl 5、modpack-design 5、instance 1、mod-library 1、kernel 3 個未 push 的 commit）→ **等使用者說 push**（母 repo `push.recurseSubmodules=on-demand` 會先推 submodule；kernel `~/repo/workflows` 另推）。之後若要用 `${instance}` 這類專案變數，在各 repo `wf/tools/fmt-vars.local.json` 加，需要新的 `how`（固定子路徑）再升 kernel。規則出處：[wf/workflows/tidy/README.md](wf/workflows/tidy/README.md)、[data-files](wf/workflows/common/data-files.md)。
 - [tidy] 2026-08-29 調查線留下 7 個裁示已落 [WAIT_USER.md](WAIT_USER.md)（later-decisions 六項、feature-runtime DSPortP2）；等使用者。
 
 截至 **2026-08-29 早上（Asia/Taipei）**，母 repo 本身沒有進行中的 agent 工作。Skyrim／MO2 已關閉。
