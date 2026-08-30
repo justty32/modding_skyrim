@@ -40,8 +40,8 @@ Path of Sorcery／Vokrii／Adamant 的簡中修正層，加兩個 houseCARL patc
 
 ## 中文層五個裁示（2026-08-27 深夜起手清單第 5 條，仍未裁）
 
-來源 [`resume-2026-08-28.md`](../agentctl/docs/resume-2026-08-28.md)（已標過期，只剩這條活著）；
-逐項細節在 [`中文層覆蓋總表`](../modpack-design/content-plan/zh-layer-coverage-master-2026-08-28.md)的
+來源是 2026-08-28 的續行清單（已封存，只剩這條活著）；
+逐項細節在 [`中文層覆蓋總表`](../modpack-design/content-plan/zh-layer/zh-layer-coverage-master-2026-08-28.md)的
 「等使用者裁示」節：
 
 1. **Bandolier NPC 層三選一**——注意覆寫陷阱不在 `BandolierForNPC.esp`，而在其後的
@@ -58,3 +58,34 @@ Path of Sorcery／Vokrii／Adamant 的簡中修正層，加兩個 houseCARL patc
 產物只在 [`agentctl/handoffs/done/2026-08-28/opus-selfmade-zh/`](../agentctl/handoffs/done/2026-08-28/opus-selfmade-zh/)，
 **沒進 `mod-library/l10n/mods/`、沒裝進 MO2**。請裁：(a) 入庫＋照 install-plan 安裝，(b) 只入庫不裝，(c) 丟棄。
 Bandolier 同線判定不必自製（見上一項）。
+
+## 2026-08-29 調查線留下的六個裁示
+
+各線的完整結論在 [`agentctl DIGEST`](../agentctl/inbox/done/2026-08-29/DIGEST.md)，報告在 `agentctl/handoffs/done/2026-08-29/<線名>/REPORT.md`。
+
+### Serana：SDA＋SDE 共存還是只裝 SDA（cx-compat／cx-serana）
+
+Nexus `184830` 可讓 SDA 與 SDE 共存（banter／Sovngarde patch＋Kerstyn revoice），但友誼弧與 Romance 的**雙 owner**
+沒解。要最大內容量就送 SDA＋SDE＋`184830` 進 intake；要單一一致的人物弧就只裝 SDA。若走共存，還要定：
+Romance 的 owner 歸誰、中文層簡中或繁中（SDA 4.1.1.3→4.3.2 有 900+ 新語音行，翻譯清單 10 項）。
+Lydia 那邊 IFD＋FDE 已證實不相容、無 patch，維持 FDE 存庫不裝，不用裁。
+
+### 隨從凍結要不要維持（cx-fdlg）
+
+Sofia／Recorder／Auri 的 dialogue 生態 GO 2／DEFER 5／NO-GO 13；Auri 技術與中文都可行，只因 follower 凍結判 NO-GO。
+三問：是否維持凍結；是否採 Sofia Hub 的選配式 preflight；是否移除 Sofia bump dialogue。
+
+### Mihail 生物要哪個方向（cx-mihail）
+
+295 件 Creatures and Mounts 裡挑出 16 件低耦合 standalone，10 件有對版中文層（9 CHS／1 CHT）。
+要定：自然環境／Morrowind／高奇幻哪個方向；hand-placed 還是 SkyPatcher topology；首批 4–6 件；接不接受 CHS。
+
+### Beyond Reach 生態 17 件 FAIL（cx-dl7）
+
+185 件已入庫（9.16 GB）。17 件作者關閉 direct download、只剩 manager (nxm)，CDP／Manual 路徑取不到
+（例 `27962#773521`、`86492#795658`、`94436#767924`）。要不要另開 nxm handler 路線，或整批放棄。
+
+### agentctl 兩則衝突（sup-agentctl `CONFLICTS.md`）
+
+- **C2** `launch-mo2.sh` 有兩份不同內容：`instance/tools/` 3.8K 現役 vs 已封存的 3.4K 交付快照。哪份是真的。
+- **C3** `agentctl/docs/dispatch-windows.md` 對 `network_access` 三處自相矛盾（第一節開、第四節必須關、第六節禁止 push）。定一個。

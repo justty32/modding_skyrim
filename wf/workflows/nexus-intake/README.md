@@ -57,9 +57,9 @@ requirements 可能拉出一整條生態；用 `housecarl_nexus_mod` 查，不�
 打 Nexus 回 403**（2026-08-26 實測，見 [`agentctl/docs/dispatch-windows.md`](../../../agentctl/docs/dispatch-windows.md)
 「Nexus 查證：派線做不到」）。所以 Nexus 查證由調度者親做，把 id／fileId／版本／bytes 寫死進交接書再派線。
 
-**已決定要裝的項目不必重查**：[`modpack-design/content-plan/install-plan-2026-08-27.md`](../../../modpack-design/content-plan/install-plan-2026-08-27.md)
+**已決定要裝的項目不必重查**：[`modpack-design/content-plan/install-plan-2026-08-27.md`](../../../modpack-design/content-plan/install/install-plan-2026-08-27.md)
 每列已寫死 id／fileId／版本／bytes 與「為什麼是這個 fileId 而不是 MAIN」；中文層看
-[`zh-layer-coverage-master-2026-08-28.md`](../../../modpack-design/content-plan/zh-layer-coverage-master-2026-08-28.md)。
+[`zh-layer-coverage-master-2026-08-28.md`](../../../modpack-design/content-plan/zh-layer/zh-layer-coverage-master-2026-08-28.md)。
 
 **坑**：Nexus 頁面上的「最新版」與 files 分頁的實際檔案常常不同步。以 API 回的
 `files` 欄位為準，不要讀頁面敘述。
