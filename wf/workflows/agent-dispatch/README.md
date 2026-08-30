@@ -38,7 +38,9 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
    燒光 token 還交不出東西。寫「回報只要這 5 條」。
 4. **禁區要明寫，沒寫就等於允許。** 至少決定：能不能開遊戲／MO2 GUI／瀏覽器、
    能不能拿遊戲鎖、能不能改 `modlist.txt`／load order、能不能下載、能不能碰別的 repo。
-   **使用者在電腦前時，一律禁止搶焦點、送按鍵、截圖。**
+   **使用者在電腦前不是禁區**（2026-08-30 裁示）：線仍可取鎖、開 MO2／Skyrim，不必先問。
+   要禁的是**搶他的輸入**（送按鍵、注入他正在用的視窗、搶回焦點）；硬禁區只有
+   「他正在玩不能暫停的遊戲」（見 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md)）。
 5. **Nexus 查證要指定走 houseCARL MCP，不能讓線自己 curl。** 純 HTTP 打 Nexus 回 403
    （2026-08-26 實測）；codex 端已在 `~/.codex/config.toml` 的 `[mcp_servers.housecarl]`
    掛上 houseCARL MCP，`housecarl_nexus_*` 查得到。2026-08-29 的 `cx-lands`／`cx-quest`／
