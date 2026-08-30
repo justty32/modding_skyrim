@@ -7,8 +7,8 @@
 欄位：`檢查`／`為什麼恆真`。查法（從 `wf/workflows/testing/` 算相對路徑）：
 
 ```
-python3 ../../../tools/tabledb.py green-light-evidence.json
-python3 ../../../tools/tabledb.py green-light-evidence.json get 0
+python3 ../../tools/tabledb.py green-light-evidence.json
+python3 ../../tools/tabledb.py green-light-evidence.json get 0
 ```
 
 共 4 筆。

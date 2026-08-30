@@ -8,8 +8,8 @@
 欄位：`repo`／`命令`／`本機基線／範圍`。查法（從 `wf/workflows/testing/` 算相對路徑）：
 
 ```
-python3 ../../../tools/tabledb.py offline-matrix.json
-python3 ../../../tools/tabledb.py offline-matrix.json get 0
+python3 ../../tools/tabledb.py offline-matrix.json
+python3 ../../tools/tabledb.py offline-matrix.json get 0
 ```
 
 共 19 筆。

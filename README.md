@@ -20,6 +20,7 @@ Skyrim SE modding 的開發、分析、部署與產物集中地。本工作區�
 
 ## 你來找什麼?
 
+<!-- wf-nav -->
 | 你要找的 | 去哪裡 |
 |---|---|
 | **做好的 mod / plugin 成品**(拿去部署、安裝) | [`mod-library/`](mod-library/) —— `l10n/mods/`(翻譯層)、`plugins/`(SKSE DLL)、`artifacts/`(修正 esp);每個成品資料夾內有 `SOURCE.md` 記來源。**歷史自製成品在 `~/skyrim_mods/mine/`**(DSPort*/ModForge*/MF* 系列,使用者決定留原地) |
@@ -91,10 +92,11 @@ Skyrim SE modding 的開發、分析、部署與產物集中地。本工作區�
 
 ## 頂層還有什麼
 
+<!-- wf-nav -->
 | 路徑 | 內容 |
 |---|---|
-| [`wf/`](wf/) | 工作流骨架（wf-kernel v0.2）：[`WORKFLOWS`](wf/WORKFLOWS.md)（派發）／[`INDEX`](wf/INDEX.md)（專案地圖）／[`STRUCTURE`](wf/STRUCTURE.md)（結構整理參考）＋[`wf/workflows/`](wf/workflows/)（各工作流入口、plans、investigation findings、CODE_MAP）＋[`wf/tools/wf-lint.sh`](wf/tools/wf-lint.sh)（連結／超標／殘留檢查） |
-| [`tools/`](tools/) | 母 repo 的文件工具與測試：`check_markdown_links.py`（全庫連結檢查，跑法 `python3 tools/check_markdown_links.py`）、`tabledb.py`（`.json`／`.csv` 資料檔的統一 CRUD）、`find_big_lists.py`（找 >1 KB 的條列式區塊）、`fix_moved_links.py`（搬檔後按 moves.tsv 重寫跨 repo 連結）——後三個歸 [tidy 工作流](wf/workflows/tidy/README.md) |
+| [`wf/`](wf/) | 工作流骨架（wf-kernel v0.3）：[`WORKFLOWS`](wf/WORKFLOWS.md)（派發）／[`INDEX`](wf/INDEX.md)（專案地圖）／[`STRUCTURE`](wf/STRUCTURE.md)（結構整理參考）＋[`wf/workflows/`](wf/workflows/)（各工作流入口、plans、investigation findings、CODE_MAP）＋[`wf/tools/`](wf/tools/)（`wf-lint.sh` 檢查＋`tabledb.py`／`find_big_lists.py`／`fix_moved_links.py` 文件整理工具） |
+| [`tools/`](tools/) | 母 repo 的文件工具與測試：`check_markdown_links.py`（全庫連結檢查，跑法 `python3 tools/check_markdown_links.py`）、`check_submodule_pins.py` 與其測試。文件整理工具已歸 `wf/tools/`（kernel v0.3），流程見 [tidy 工作流](wf/workflows/tidy/README.md) |
 | [`SESSION-LOG.md`](SESSION-LOG.md) | 母 repo 的跨 session 活狀態。Skyrim 工作線自己的交接主線在 `agentctl/SESSION-LOG.md` |
 | [`WAIT_USER.md`](WAIT_USER.md) | 需要使用者親自驗證／實機／外部素材才能完成的項目 |
 | `patches/` | 針對他人 mod 的獨立修補 |

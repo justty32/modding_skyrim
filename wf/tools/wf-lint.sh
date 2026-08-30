@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
-# wf-lint.sh — 工作流文檔的機械檢查（純 bash + grep/sed/awk/find）
+# wf-lint.sh — 工作流文檔的機械檢查（bash + grep/sed/awk/find，資料檔部分借 python3）
 #
 #   wf-lint.sh [--strict] [--quiet] <dir>...   檢查一個（導入後的）專案目錄
 #   wf-lint.sh --self                          在模板 repo 內：template/ + examples/ + 各 flavor 合併模擬
 #
 # 檢查項：① 相對連結（.md / 目錄 / 任何檔）是否存在  ② workflows/ 下單檔 > 8192 bytes
 #         ③ {{ / 〔模板說明〕 / 〔導入判斷〕 殘留  ④ inbox/ 頂層未辦信數
-# 結束碼：有 BROKEN → 1；--strict 時殘留 > 0 也 → 1。
+#         ⑤ BIGLIST：md 裡 > 1 KB 的條列式區塊（該抽成資料檔，見 workflows/common/data-files.md）；
+#            每列都有連結的當導航表印 BIGLIST-LINKS，只 warning
+#         ⑥ 資料檔（有 "contract": "wf-table/ 的 .json 與所有 .csv）的連結：跑 tabledb.py check
+# 結束碼：BROKEN > 0 → 1；--strict 時 residue / oversize / biglist > 0 也 → 1。
 set -u
 
 strict=0 self=0 quiet=0
@@ -16,12 +19,16 @@ for a in "$@"; do
     --strict) strict=1 ;;
     --self) self=1 ;;
     --quiet|-q) quiet=1 ;;
-    -h|--help) sed -n '2,10p' "$0"; exit 0 ;;
+    -h|--help) sed -n '2,15p' "$0"; exit 0 ;;
     *) dirs+=("$a") ;;
   esac
 done
 
-total_broken=0 total_residue=0
+tools=$(cd "$(dirname "$0")" && pwd)
+have_py=1
+command -v python3 >/dev/null 2>&1 || { have_py=0; echo "WARN python3 not found; BIGLIST/data-file checks skipped"; }
+
+total_broken=0 total_residue=0 total_oversize=0 total_biglist=0
 
 # 列出檔案裡的相對連結（去掉 fenced code block 與行內 code span 後取 ](…)）
 extract_links() {
@@ -55,7 +62,8 @@ list_md() { find "$1" -name '*.md' -not -path '*/node_modules/*' -not -path '*/.
 # 檢查一個目錄
 lint_dir() {
   local root=${1%/} label=${2:-$1}
-  local broken=0 oversize=0 ph=0 note=0 judge=0 inbox=0
+  local broken=0 oversize=0 ph=0 note=0 judge=0 inbox=0 biglist=0 bl_links=0
+  local out df n rel
 
   [[ $quiet -eq 1 ]] || echo "== $label"
   list_md "$root" | check_links "$root"; broken=$?
@@ -64,6 +72,38 @@ lint_dir() {
     echo "OVERSIZE ${f#$root/} ($(wc -c <"$f") bytes > 8192)"
     oversize=$((oversize + 1))
   done < <(find "$root" -path '*/workflows/*' -name '*.md' -not -path '*/archive/*' -size +8192c | sort)
+
+  if [[ $have_py -eq 1 ]]; then
+    out=$(python3 "$tools/find_big_lists.py" --min 1024 \
+            --exempt-file AGENTS.md --exempt-file WORKFLOWS.md --exempt-file INDEX.md \
+            "$root" 2>/dev/null \
+          | awk -F'\t' -v p="$root/" '{
+              loc=$2; if (substr(loc,1,length(p))==p) loc=substr(loc,length(p)+1)
+              sub(/^links=/, "", $5)
+              printf "%s %s (%s bytes, %s, %s rows, %s links)\n",
+                     ($6=="linked=all" ? "BIGLIST-LINKS" : "BIGLIST"), loc, $1, $3, $4, $5 }')
+    if [[ -n $out ]]; then
+      echo "$out"
+      biglist=$(printf '%s\n' "$out" | grep -c '^BIGLIST ')
+      bl_links=$(printf '%s\n' "$out" | grep -c '^BIGLIST-LINKS ')
+    fi
+
+    while IFS= read -r df; do
+      [[ -z $df ]] && continue
+      case "$df" in *.json) grep -q '"contract": "wf-table/' "$df" || continue ;; esac
+      out=$(python3 "$tools/tabledb.py" check "$df" 2>/dev/null)
+      n=$(printf '%s\n' "$out" | grep -c '"target"')
+      [[ $n -eq 0 ]] && continue
+      rel=${df#$root/}
+      printf '%s\n' "$out" | awk -F'"' -v f="$rel" '
+        /"index":/  { s=$3; gsub(/[^0-9]/, "", s); idx=s }
+        /"column":/ { col=$4 }
+        /"target":/ { print "BROKEN " f "[" idx "." col "] -> " $4 }'
+      broken=$((broken + n))
+    done < <(find "$root" \( -name '*.json' -o -name '*.csv' \) \
+               -not -path '*/archive/*' -not -path '*/.git/*' \
+               -not -path '*/node_modules/*' -not -path '*/__pycache__/*' | sort)
+  fi
 
   ph=$(grep -ro '{{' --include='*.md' "$root" 2>/dev/null | wc -l | tr -d ' ')
   note=$(grep -ro '〔模板說明〕' --include='*.md' "$root" 2>/dev/null | wc -l | tr -d ' ')
@@ -74,10 +114,14 @@ lint_dir() {
   local residue=$((ph + note + judge))
 
   if [[ $quiet -eq 0 || $broken -gt 0 ]]; then
-    echo "SUMMARY $label: broken=$broken oversize=$oversize residue={{=$ph 模板說明=$note 導入判斷=$judge inbox_pending=$inbox"
+    echo "SUMMARY $label: broken=$broken oversize=$oversize biglist=$biglist biglist_links=$bl_links residue={{=$ph 模板說明=$note 導入判斷=$judge inbox_pending=$inbox"
   fi
   total_broken=$((total_broken + broken))
-  [[ $strict -eq 1 ]] && total_residue=$((total_residue + residue))
+  if [[ $strict -eq 1 ]]; then
+    total_residue=$((total_residue + residue))
+    total_oversize=$((total_oversize + oversize))
+    total_biglist=$((total_biglist + biglist))
+  fi
   return 0
 }
 
@@ -93,7 +137,7 @@ if [[ $self -eq 1 ]]; then
 
   # 本 repo 規矩：任何檔都不超過 8192 bytes
   while IFS= read -r f; do echo "OVERSIZE ${f#$repo/} ($(wc -c <"$f") bytes > 8192)"; total_broken=$((total_broken + 1)); done \
-    < <(find "$repo" -type f -not -path '*/.git/*' -size +8192c | sort)
+    < <(find "$repo" -type f -not -path '*/.git/*' -not -path '*/__pycache__/*' -size +8192c | sort)
 
   lint_dir "$repo/template" template
 
@@ -126,7 +170,7 @@ else
   for d in "${dirs[@]}"; do lint_dir "$d" "$d"; done
 fi
 
-echo "TOTAL broken=$total_broken$( [[ $strict -eq 1 ]] && echo " residue=$total_residue" )"
+echo "TOTAL broken=$total_broken$( [[ $strict -eq 1 ]] && echo " residue=$total_residue oversize=$total_oversize biglist=$total_biglist" )"
 [[ $total_broken -gt 0 ]] && exit 1
-[[ $strict -eq 1 && $total_residue -gt 0 ]] && exit 1
+[[ $strict -eq 1 && $((total_residue + total_oversize + total_biglist)) -gt 0 ]] && exit 1
 exit 0

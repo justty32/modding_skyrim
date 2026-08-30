@@ -16,6 +16,8 @@ from urllib.parse import unquote, urlsplit
 
 LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)\n]+)\)")
 FENCE_RE = re.compile(r"^\s*(`{3,}|~{3,})")
+# Inline code spans are not links (CommonMark: code spans win over links).
+CODE_SPAN_RE = re.compile(r"(?<!`)(`+)(?!`).+?(?<!`)\1(?!`)")
 HEADING_RE = re.compile(r"^\s{0,3}#{1,6}\s+(.+?)\s*$")
 SETEXT_RE = re.compile(r"^\s{0,3}(?:=+|-+)\s*$")
 EXPLICIT_ANCHOR_RE = re.compile(
@@ -170,7 +172,7 @@ def markdown_links(markdown: Path):
             continue
         if fence is not None:
             continue
-        for match in LINK_RE.finditer(line):
+        for match in LINK_RE.finditer(CODE_SPAN_RE.sub("", line)):
             target = link_target(match.group(1))
             if target:
                 yield line_number, target

@@ -61,6 +61,16 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
         self.assertEqual(checked, 1)
         self.assertEqual(broken, [])
 
+    def test_ignores_links_inside_inline_code_spans(self):
+        (self.root / "doc.md").write_text(
+            "寫法 `[label](rel/path.md#anchor)` 或 ``x `[a](b.md)` y``；[ok](real.md)\n",
+            encoding="utf-8",
+        )
+        (self.root / "real.md").write_text("# real\n", encoding="utf-8")
+        checked, broken = check_file(self.root / "doc.md", self.root)
+        self.assertEqual(checked, 1)
+        self.assertEqual(broken, [])
+
     def test_reports_missing_same_file_anchor(self):
         source = self.root / "source.md"
         source.write_text("# Present\n[missing](#absent)\n", encoding="utf-8")

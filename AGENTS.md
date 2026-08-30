@@ -19,6 +19,7 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 4. 不 revert 使用者或其他 agent 的未確認變更；遇衝突先停下說明。
 5. 需使用者親自做／驗證的記 [WAIT_USER.md](WAIT_USER.md)；跨 session 的 open 狀態記 [SESSION-LOG.md](SESSION-LOG.md)。
 6. 引用外部程式碼或技術結論要附來源位置（`path:line`、函式名、URL、命令輸出摘要）；圖用 Mermaid／表格，不用需字元對齊的 ASCII 框線。
+7. **條列與連結表走資料檔**：表／清單 >1 KB 存 `.json`／`.csv`（契約 `wf-table/1`，見 [data-files.md](wf/workflows/common/data-files.md)），用 `wf/tools/tabledb.py` 讀寫，不整份讀進 context；給人導航的連結表留 md。
 
 ## 專案摘要
 
@@ -26,4 +27,4 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 
 測試：`python -m unittest discover -s tools -p "test_*.py" -v`、`python tools/check_markdown_links.py`。子 repo 測試矩陣見 [testing.md](wf/workflows/testing.md)，環境／houseCARL 建置見 [dev-env.md](wf/workflows/dev-env.md)。
 
-<!-- wf-kernel v0.2 (2026-08-29) -->
+<!-- wf-kernel v0.3 (2026-08-30) -->
