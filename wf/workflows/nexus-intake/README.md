@@ -27,22 +27,8 @@ requirements 可能拉出一整條生態；用 `housecarl_nexus_mod` 查，不�
 
 ### 派下載線前：範圍樣板與雙 gate
 
-「相關的」在依賴圖上可能被遞移展開；派線前要把排除條件與兩種停止閘門寫死。以下區塊可直接抄進交接書，
-把 `X` 與兩個上限換成該線的實際值：
-
-```text
-範圍排除：
-- 僅僅支援 X 不算——檔名或說明必須明確服務 X，才算 X 的東西。
-- 反向 requirement 只展開一跳；被展開者自己的 requirement 不再展開。
-- 同一頁多版本只取 latest；變體超過 2 個要先發 BLOCKED 問，不要自己全收。
-
-雙 gate：
-- 容量 gate：預估下載總量達 <容量上限>，立即停止並發 BLOCKED 詢問。
-- 件數 gate：預估下載件數達 <件數上限>，立即停止並發 BLOCKED 詢問。
-- 任一 gate 觸發就停下來問；另一項沒有超標也不得繼續。
-```
-
-派線端為什麼必須用排除法界定範圍，見 [agent-dispatch 的第六條防錯規則](../agent-dispatch/README.md#六條最容易錯的)。
+「相關的」在依賴圖上可能被遞移展開；派線前要把排除條件（範圍排除）與兩種停止閘門（容量 gate、件數 gate）
+寫死進交接書。可直接抄的樣板全文見 [scope-template.md](scope-template.md)。
 
 ## 1. 查證
 
@@ -64,20 +50,8 @@ requirements 可能拉出一整條生態；用 `housecarl_nexus_mod` 查，不�
 **坑**：Nexus 頁面上的「最新版」與 files 分頁的實際檔案常常不同步。以 API 回的
 `files` 欄位為準，不要讀頁面敘述。
 
-### 手上已經有檔案、但不知道是什麼
-
-從檔案內容反查，不要從檔名猜：單檔用 `housecarl_nexus_identify`（吃 MD5，無金鑰），
-回 mod（id／名稱／作者／status）與 file_details（上游檔名／版本／分類），
-**是比檔名可信得多的來源**。整庫批次跑用
-`mod-library/db/` 的 **legacy MD5 回溯解析器**（見該目錄的 [`README.md`](../../../mod-library/db/README.md)）。
-
-**坑**：`Light and Shade SE-77993-2-2-....7z` 的檔名寫著 77993，md5 指向的卻是
-**82876**（簡中翻譯頁）。任何「用 regex 從檔名撈 id」的做法都要當成猜測看待。
-
-查不到（404）只代表 Nexus 不認得這個 md5——對岸站台來的、或被解壓重打包過的都會 miss，
-**不是檔案有問題**。實測 174 個舊命名檔只有 28 個 hit。
-
-MD5 反查是唯讀，不改帳號狀態，不在下面的紅線內。
+手上已經有檔案、但不知道是什麼 → 從檔案內容（MD5）反查，不要從檔名猜，見
+[identify-unknown.md](identify-unknown.md)。
 
 ## 2. 版本閘門
 
@@ -100,19 +74,8 @@ record 數、record identity、header、GRUP、subrecord 結構要完全一致�
 **這個帳號非 Premium**，`download_link.json` 會回 403，所以只能走網頁的 slow download。
 **同一時間只有一條線可以開瀏覽器**，由調度者指定；沒被指定的線需要下載就發 `NEEDS-USER`。
 
-兩條實測可用的路，都是點 `Manual download → Slow download`（左邊那顆，不碰 Premium），檔案落到 `~/Downloads/`：
-
-| 誰 | 機制 | 要點 |
-|---|---|---|
-| 調度者（Claude）親跑 | **Claude in Chrome 擴充**，用使用者已登入的瀏覽器 | 最乾淨：不開 profile 複本、不取桌面鎖。直達 URL `/mods/<id>?tab=files&file_id=<fileId>&nmm=0` 直接落在 Slow download 頁。`browser_batch` 內的 `left_click` 不會觸發下載，要獨立呼叫。實錄見 [`agentctl/logs/nexus-download-via-chrome-extension-2026-08-27.md`](../../../agentctl/logs/nexus-download-via-chrome-extension-2026-08-27.md) |
-| codex 線 | **headful Chrome ＋ 使用者 Chrome profile 的暫存複本 ＋ CDP（`--remote-debugging-port`）** | 驅動器已有：[`agentctl/handoffs/done/2026-08-27/cx-dl2/tools/cdp-download.mjs`](../../../agentctl/handoffs/done/2026-08-27/cx-dl2/tools/cdp-download.mjs)。profile 複本 4.5 GB，**放 `/tmp/<線名>-trash/`，不放 `$HOME`、不進 repo**，抓完自清 |
-
-- **headless 會撞 Cloudflare**，headful 才過。
-- 不需要 `ydotool`／`/dev/uinput`——CDP 直接驅動頁面，**不要為此去要 sudo**。
-- 用**獨立暫存 profile 複本**，不要動使用者既有的瀏覽器視窗。
-- **慢是正常的**（有等待計時器），等就好，不要為了加速找別的路徑。
-- houseCARL 回的 `note: the author disabled direct download — manager (nxm) download only` **不能當閘門**，
-  頁面上 `Manual download` 常常照樣可用；同頁多檔靠 `file_id` 認，不靠 mod id。
+兩條實測可用的路（調度者親跑的 Chrome 擴充、codex 線的 headful Chrome ＋ CDP），
+以及各自的機制與坑，見 [download-routes.md](download-routes.md)。
 
 **免費的來源驗證**：Nexus 檔案列上的 VirusTotal 連結**帶著該檔的 hash**。
 下載後跟本地 SHA-256 比對，比不上就標記為未驗證，**不要當成功**。
@@ -145,7 +108,8 @@ cookie 橫幅只選最保守的選項。不動 nxm handler 關聯或 Wine regist
    只比對「來源↔庫」會**兩個都收進去**。這條踩過。
 4. 跑 `mod-library/db/` 的**掃庫工具** `scan` 再 `stats`，看
    `L1 exact duplicates` 是否只剩已知的既有組。
-5. 檔名沒有 Nexus id 的跑 **legacy MD5 回溯解析器**還原來源（見下）。
+5. 檔名沒有 Nexus id 的跑 **legacy MD5 回溯解析器**還原來源（見
+   [identify-unknown.md](identify-unknown.md)）。
 
 ## 5. 安裝
 
