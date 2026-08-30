@@ -10,7 +10,8 @@ submodule 自報的路徑）；old 是資料夾就當前綴搬移。ROOT 預設 
 掃描 `git ls-files -z --recurse-submodules`（不在 git 裡就退回 os.walk）的：
   *.md    行內連結 [..](target) / 圖片；fenced code block 內不動
   *.json  只有含 `"contract": "wf-table/` 的資料檔：遞迴走每個字串值裡的 [..](target)；
-          連結欄（link_columns ∪ _path/_link 後綴）的裸值整個當路徑
+          連結欄（link_columns ∪ _path/_link 後綴）的裸值整個當路徑；`$fmt` 路徑代號以舊位置
+          展開、以新位置的同一代號寫回（見 fix_moved_links_fmt.py 與 common/data-files-fmt.md）
   *.csv   每個 cell 同上；資料檔寫回用 tabledb 格式（indent=1）
 
 **本檔自己被搬**時，其內連結以舊位置解析、目標若也搬了就 remap、再以新位置重算相對路徑。
@@ -22,11 +23,12 @@ import subprocess
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import fix_moved_links_fmt as fmtx  # noqa: E402
 import tabledb  # noqa: E402
 import tabledb_links  # noqa: E402
 
-LINK = re.compile(r'(!?\[[^\]]*\]\()([^)\s]+)(\s+"[^"]*")?(\))')
-ROOT = ""
+LINK = fmtx.LINK
+ROOT, RW = "", None
 FILES, DIRS, ARCHIVED = {}, {}, []
 
 
@@ -152,36 +154,20 @@ def fix_md(path, bo, bn, edits):
 def fix_table(path, bo, bn, edits, apply):
     t = tabledb.load(path)
     lcols = tabledb_links.link_columns(t)
-
-    def walk(v, bare=False):
-        if isinstance(v, dict):
-            return {k: walk(x) for k, x in v.items()}
-        if isinstance(v, list):
-            return [walk(x) for x in v]
-        if not isinstance(v, str):
-            return v
-        if not bare:
-            return sub_md(v, bo, bn, path, edits)
-        nt = retarget(v.strip(), bo, bn, path)   # 連結欄的裸值整個當路徑
-        if nt:
-            edits.append((v.strip(), nt))
-        return nt or v
-
     for row in t.rows:
         for k in list(row):
-            v = row[k]
-            row[k] = walk(v, k in lcols and isinstance(v, str) and "](" not in v)
-    src = t.meta.get("source")  # source 也是相對本檔的路徑
-    if isinstance(src, str):
-        nt = retarget(src, bo, bn, path)
-        if nt:
-            edits.append((src, nt)); t.meta["source"] = nt
+            row[k] = RW.value(row[k], k in lcols, bo, bn, path, edits)
+    src = t.meta.get("source")  # source 也是相對本檔的路徑，可以是 $fmt 指示詞
+    if isinstance(src, str) or fmtx.is_directive(src):
+        new = RW.value(src, True, bo, bn, path, edits)
+        if new != src:
+            t.meta["source"] = new
     if edits and apply:
         t.save()
 
 
 def main():
-    global ROOT
+    global ROOT, RW
     apply, specs, prefix, root = False, [], None, None
     args = sys.argv[1:]
     if not args or args[0] in ("-h", "--help"):
@@ -197,6 +183,7 @@ def main():
         else:
             specs.append((a, prefix)); prefix = None
     ROOT = os.path.abspath(root) if root else git_root(os.getcwd())
+    RW = fmtx.Rewriter(remap, retarget, sub_md, ARCHIVED, ROOT)
     load_moves(specs)
     changed = 0
     for f in scanned():

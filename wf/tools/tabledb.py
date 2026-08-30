@@ -8,6 +8,8 @@
   .json  {"contract": "wf-table/1", "source": "<抽出自哪份 md>", "extracted": "YYYY-MM-DD",
           "columns": [...], "link_columns": [...], "rows": [{...}, ...]}
          rows 的值可以是多行字串或巢狀物件；缺的欄位視為空字串。舊檔沒有 contract 也讀得開。
+         值也可以是路徑代號 {"$fmt": "${gitRoot}/docs/x.md#錨"}：links/check/open/resolve/fmt
+         展開後才解析，get/find/grep/--slice 原樣回傳（見 common/data-files-fmt.md）。
   .csv   第一列是欄位名，其餘每列一筆；值一律字串。只適合扁平、無多行值的表；
          沒地方放 link_columns，改用欄名結尾 _path / _link 表示該欄是連結。
 
@@ -25,12 +27,15 @@ CLI（索引一律 0-based；所有輸出都是 JSON）
   tabledb.py check FILE                 同上只印壞的（exists=false）；有壞的結束碼 1
   tabledb.py open FILE I [COL]          {path, content}：該筆連結指向的檔案內容
   tabledb.py resolve FILE I [COL]       同上只印 {index, column, target, resolved, exists}
-  （後四個也接受 `tabledb.py FILE links` 這種順序。）
+  tabledb.py fmt FILE                   每個 $fmt 指示詞 [{index, column, raw, expanded}]
+  tabledb.py fmt --vars [FILE]          變數表：名字／算法／別名／來源（見 tools/fmt-vars.json）
+  （後五個也接受 `tabledb.py FILE links` 這種順序。）
 
 Python
   from tabledb import load
   t = load("x.json"); t.rows; t.columns; t.get(3); t.find(id="31472"); t.add({...}); t.update(3, status="GO"); t.delete(3); t.save()
   連結相關在 tabledb_links：entries(t) / broken(t) / pick(t, i, col) / link_columns(t)
+  $fmt 相關在 tabledb_fmt：is_directive(v) / context(dir) / expand(tpl, ctx) / expand_value(v, ctx)
 """
 import csv
 import json
@@ -38,6 +43,7 @@ import os
 import re
 import sys
 
+import tabledb_fmt
 import tabledb_links
 
 
@@ -126,7 +132,7 @@ def load(path):
     return Table.load(path)
 
 
-LINK_CMDS = ("links", "check", "open", "resolve")
+LINK_CMDS = ("links", "check", "open", "resolve", "fmt")
 
 
 # ---- CLI --------------------------------------------------------------
@@ -136,7 +142,7 @@ def _kv(args):
         if "=" not in a:
             raise SystemExit(f"expected k=v, got {a!r}")
         k, v = a.split("=", 1)
-        out[k] = v
+        out[k] = tabledb_fmt.value_of(v)
     return out
 
 
@@ -148,7 +154,9 @@ def main(argv):
     if not argv or argv[0] in ("-h", "--help"):
         print(__doc__)
         return 0
-    if argv[0] in LINK_CMDS:  # links/check/open/resolve FILE ... 的順序
+    if argv[:2] == ["fmt", "--vars"]:  # FILE 只用來決定看哪份 fmt-vars.json
+        return tabledb_fmt.vars_cli(argv[2] if len(argv) > 2 else None, _emit)
+    if argv[0] in LINK_CMDS:  # links/check/open/resolve/fmt FILE ... 的順序
         if len(argv) < 2:
             raise SystemExit(f"{argv[0]}: missing FILE")
         argv = [argv[1], argv[0]] + argv[2:]
@@ -175,28 +183,10 @@ def main(argv):
         r = t.update(int(rest[0]), **_kv(rest[1:])); t.save(); _emit(r)
     elif cmd == "delete":
         r = t.delete(int(rest[0])); t.save(); _emit(r)
-    elif cmd == "links":
-        _emit(tabledb_links.entries(t))
-    elif cmd == "check":
-        bad = tabledb_links.broken(t)
-        _emit(bad)
-        return 1 if bad else 0
-    elif cmd in ("open", "resolve"):
-        col = rest[1] if len(rest) > 1 else None
-        e = tabledb_links.pick(t, int(rest[0]), col)
-        if e is None:
-            _emit({"error": f"no link in row {rest[0]}"
-                            + (f", column {col!r}" if col else "")})
-            return 1
-        if cmd == "resolve":
-            _emit(e)
-            return 0
-        try:
-            with open(e["resolved"], encoding="utf-8") as f:
-                _emit({"path": e["resolved"], "content": f.read()})
-        except OSError as exc:
-            _emit({"error": str(exc)})
-            return 1
+    elif cmd == "fmt":
+        return tabledb_fmt.cli(t, _emit, rest)
+    elif cmd in LINK_CMDS:
+        return tabledb_links.cli(cmd, t, rest, _emit)
     else:
         raise SystemExit(f"unknown command {cmd!r}; see --help")
     return 0

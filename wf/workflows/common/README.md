@@ -12,6 +12,7 @@
 | [conventions.md](conventions.md) | 程式碼慣例 ＋ CODE_MAP 維護鏈 ＋ 真相層優先序 | 專案 |
 | [code-map/](code-map/CODE_MAP.md) | 程式碼導航 index | 專案 |
 | [data-files.md](data-files.md) | 資料檔契約 wf-table/1：>1 KB 同質記錄表抽 .json／.csv、連結表另計、tabledb 工具契約 | kernel |
+| [data-files-fmt.md](data-files-fmt.md) | json 值裡跨層路徑用 `$fmt` 代號展開，省 `../../../` | kernel |
 <!-- wf-insert:COMMON -->
 
 > 過時文檔封存進 `common/archive/`（見 [STRUCTURE](../../STRUCTURE.md)）。
