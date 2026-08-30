@@ -54,15 +54,7 @@
 
 ## 踩過的坑
 
-<!-- wf-nav -->
-- `check_markdown_links.py` 吃**檔案**路徑不吃目錄、只掃母 repo 追蹤的檔；submodule 內部用該 repo 的 `wf-lint.sh`，全庫檢查由調度者在母 repo 根不帶參數跑。
-- ```markdown 圍籬內可能刻意放「壞」連結當測試字串；改寫器與檢查都要跳過 code fence。
-- `youtube-audits/` 這種**目錄改名**會留正文引註殘留（`x.md:48` 這種），連結檢查抓不到，要另外 grep 舊目錄名。
-- 線會把「archive 不維護內部連結」讀成「archive 不能動」而卡住 `broken=0`；交接書明說：archive 內只准動「取代者」連結，`archive/README.md` 只准**追加**列。
-- 名冊（ROSTER）、領地登記（line-claims）要**把規則段留在活檔**、只搬歷史條目；「狀態」欄不可信，判準改用 `SESSION-LOG.md`／`docs/line-claims.md` 的「現役線 N 條」，證據直接寫進交接書，否則線「不敢猜」留一半。
-- 「不搬 `logs/`」與「清指向 archive 的連結」會在同一批檔上打架；驗收命令只擋 rename／delete（`git diff --cached --name-status -M logs/ | grep -v '^M'`），不擋 modify。
-- `inbox/new/` 可能有 `.`-開頭的隱藏訊息；用 `ls -A`。
-- 線報告的「NEEDS-DISPATCHER」清單要照 [WAIT_USER](../../../WAIT_USER.md) 的格式落地，不能只留在回報裡。
+見 [gotchas.md](gotchas.md)（拆檔、封存、派線、契約各一節）。
 
 ## 交接
 
