@@ -52,7 +52,7 @@ mod-discovery → nexus-intake → localization → profile-change → runtime-q
 | 「初次接觸陌生專案，建立可延續分析」 | analysis | [workflows/analysis.md](workflows/analysis.md) | 產物落在 `analysis/`；它同時是 `analysis/` 的佈局說明 |
 | 「做一包可套用到原專案的 patch」 | patch | [workflows/patch/README.md](workflows/patch/README.md) | 跨 repo、無 git、交給冷啟動 agent、或不能直接改原 repo 時才用 |
 | 「把設計方案展開成動工計畫」 | plan | [workflows/plans/README.md](workflows/plans/README.md) | [planning](workflows/planning.md) 管線的**詳規落點**；idea／roadmap 兩階段直接記在 planning.md 的表裡 |
-| 「幫我整理某個 repo / 資料夾」「封存過時文件」「這裡檔案太多」 | tidy | [workflows/tidy.md](workflows/tidy.md) | 文件層的封存／分類／清連結；碰程式碼結構走 refactor |
+| 「幫我整理某個 repo / 資料夾」「封存過時文件」「這裡檔案太多」「大於 8 KB 就拆」 | tidy | [workflows/tidy/README.md](workflows/tidy/README.md) | 文件層的封存／分類／清連結；碰程式碼結構走 refactor |
 
 外部材料管線：
 

@@ -11,6 +11,9 @@
 
 ## 現役工作
 
+- [tidy] 2026-08-30 三條 Fable 管理線在跑：modpack-design 拆檔、agentctl 拆檔＋母 repo `wf/workflows/{nexus-intake,testing}` 兩檔、`~/repo/workflows` kernel v0.3（`wf-table/1` 契約、tabledb `links/check/open/resolve`、find_big_lists、fix_moved_links、wf-lint BIGLIST）。狀態檔在本 session scratchpad `state-{modpack-design,agentctl,kernel}.md` → 收線順序：核驗兩個拆檔 repo → kernel 8 條驗收 → 派升級線把 v0.3 套回母 repo／modpack-design／agentctl（母 repo `tools/{tabledb,find_big_lists,fix_moved_links}.py` 併回 `wf/tools/`）→ `python3 tools/check_markdown_links.py` 全庫 → 各 submodule commit、母 repo 推 pin → 使用者說了才 push。整理輪已 commit（母 `f133ae7`）。規則出處：[wf/workflows/tidy/README.md](wf/workflows/tidy/README.md)。
+- [tidy] 2026-08-29 調查線留下 7 個裁示已落 [WAIT_USER.md](WAIT_USER.md)（later-decisions 六項、feature-runtime DSPortP2）；等使用者。
+
 截至 **2026-08-29 早上（Asia/Taipei）**，母 repo 本身沒有進行中的 agent 工作。Skyrim／MO2 已關閉。
 同日使用者外出期間會**遠端驅動 gpt-sol（codex）**在本工作區做上網調查／下載 mod 這類
 **不開遊戲、不開 MO2、不寫 `instance/`** 的線；線的認領、鎖與回報一律照
