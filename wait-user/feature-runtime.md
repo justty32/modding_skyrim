@@ -64,9 +64,3 @@ vanilla／AVE loot/vendor 階級比例。靜態與 smoke 不重跑；證據見
 
 以真人遊玩或錄影確認鐵製戰戟、鋼製雙刃巨劍的拔收、BFCO 普攻及動作銜接；單張截圖不能替代
 時間軸結論。靜態、模型與 runtime distribution 已完成。
-
-## DSPortP2.esp 實機驗收（sup-dsport）
-
-darksouls-port P2 整合輪離線已完成：`DSPortP2.esp`（457 statics／575 placements／1145 records）與 MO2-ready
-`out/DSPortP2/` 730 檔已打包，147 筆擺放物旋轉在 esp record 層全量驗過不符 0。**只剩實機**：清單在該專案
-`p2/P2-PLAN.md` 第十節。當時卡在 `desktop.lock`，2026-08-30 查鎖已釋放，等你放行時間即可派線。
