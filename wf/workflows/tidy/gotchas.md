@@ -14,12 +14,14 @@
 - 「不搬 `logs/`」與「清指向 archive 的連結」會在同一批檔上打架；驗收命令只擋 rename／delete（`git diff --cached --name-status -M logs/ | grep -v '^M'`），不擋 modify。
 - `inbox/new/` 可能有 `.`-開頭的隱藏訊息；用 `ls -A`。
 - 線報告的「NEEDS-DISPATCHER」清單要照 [WAIT_USER](../../../WAIT_USER.md) 的格式落地，不能只留在回報裡。
+- **搬進 `archive/` 會讓檔案自己的相對連結少算一層**，這是封存輪最大宗的斷鏈來源：2026-08-31 封存 479 個檔之後全庫 165 條斷鏈，其中 87 條（53%）在 `archive/` 內部——`../../../instance/…` 這種**往外指**的全部算錯；指向「同樣也被封存的檔」反而不會斷（兩邊鏡射）。修之前**先分兩類**：目標還活著 → 只補 `../` 層數，不改目標檔名與敘述；目標自己也被封存 → 拿掉連結改純文字，**不可以改指到 `archive/`**。`fix_moved_links.py` 的輸出不能照收（它會把第 2 類改指到 `archive/`）；也不要一律當深度問題硬湊層數，湊出來會指到別的檔，比斷鏈更糟。
+- 歷史紀錄（`handoffs/done/`、`archive/`、`logs/`）的斷鏈**只准降級成純文字**，不准刪句、不准改寫敘述——那些檔記錄「當時發生了什麼」，改內容等於竄改證據。「整句／整列刪」只能用在活文件（導覽表裡唯一目的就是連到已封存檔的那一列）。
 
 ## 拆檔與資料檔（2026-08-30 拆檔輪）
 
 <!-- wf-nav -->
 - `link_columns` 只列**整格＝相對路徑或單一 md 連結**的欄。把散文欄（`body`、`理由`、`機制`）或機外路徑欄（`Data/*.bsa`、`~/skyrim_mods/…`）列進去，v0.3 lint 會把整格當路徑驗、報幾百條假斷鏈；散文裡的 md 連結所有欄本來就會掃，不必標。
-- B 拆檔最常見的破壞是**別處的 `#錨點`**：submodule 的 wf-lint 不抓，母 repo 根 `python3 tools/check_markdown_links.py` 才抓；拆前先 `grep -rn '<檔名>#'`，被錨定的標題原文保留在入口。
+- B 拆檔最常見的破壞是**別處的 `#錨點`**：submodule 的 wf-lint 不抓，母 repo 根 `python3 tools/check_markdown_links.py` 才抓；拆前先 `grep -rn '<檔名>#'`，被錨定的標題原文保留在入口。**薄化入口檔也一樣會斷錨**：2026-08-31 把索引表抽成 `archive/index.csv`、`archive/README.md` 瘦成 286 bytes 之後，`archive/content-plan/zh-layer/README.md:27` 的 `../../README.md#目錄` 就成了 broken anchor——`missing file` 那面是 0，只有 `missing anchor` 抓得到。
 - 入口壓到 8192 邊緣（8125／8094／7979）再改一個字就爆；改字前先 `wc -c`。`wc -c … | awk '$1>8192'` 會被 total 行騙，用 `find -size +8192c`。
 - 給人讀的總覽表（README 能力表、tools 說明表）不是記錄表，抽成 json 會被退回；判準是「一列一個要去的地方／要知道的事」vs「一列一筆同構記錄」。
 - `grep -c` 接在不存在的腳本後面會印 `0` 假通過；驗收命令要在腳本所在 repo 根跑，或先 `test -f`。
@@ -33,3 +35,10 @@
 - 工人的暫存要放 scratchpad 並帶批次前綴；曾有暫存 `t3.json` 落到母 repo 根、兩個工人撞同名暫存檔。
 - 規則中途改三次（.py→json、1 KB 門檻、導航表先抽後收回）的代價是十幾個回補批；能先把契約定稿再派最省。
 - 母 repo 的 wf-lint 用 `.` 會遞迴掃進所有 submodule，數字隨別條線在動；母 repo 自己只掃 `wf`。
+
+## Windows 公司機（2026-08-31 實測）
+
+<!-- wf-nav -->
+- **codex sandbox 內整個 shell 是壞的，不只 `inbox_send.sh`**：`bash`／`sh`／`grep`／`find`／`wc` 全死在 `fatal error - CreateFileMapping <SID>.1, Win32 error 5`；PowerShell 可用但**指令一長就 `CreateProcessAsUserW failed: 5`**（實測 `env_u16_len=6454` 被拒），不能拿來當一行式替代。**唯一穩的是 `python`（`python3` 不存在）與原生 `git.exe`。** 處置：交接書裡所有 bash 管線的驗收命令（`bash wf/tools/wf-lint.sh`、`find … | wc -l`、`git status --short | grep -v …`）對 codex 工人**一律無效**，工人的自證命令全改寫成 `python`；bash 那面的驗收改由**管理線自己跑**——別拿自己測得通就推論工人也能用。驗收條數不必改，只換執行者。
+- **codex 工人拿不到 `.git/modules/<sub>/index.lock` 的寫權限，做不了 `git mv`**，它們改用 `os.rename`／`shutil.move`：2026-08-31 四個 codex 搬完後，git 看到的是 **242 個未 stage 的刪除 ＋ 242 個未追蹤新檔**，`-M` 完全偵測不到 rename，交出去像刪了 242 個檔。處置：管理線收線時用**明確路徑**補 `git add -A <該線領地> <對應的 archive 路徑>`，**不可以 `git add -A .`**（會把別隊同時在動的檔一起 stage）；補完逐筆比對 `moves.tsv`——新路徑不存在 0 筆、舊路徑還在 0 筆，才算沒弄丟東西。
+- **公司機的 `python3` 是 Microsoft Store 的假 shim，`wf-lint.sh --strict` 的綠燈會失真且不出警告。** `wf-lint.sh:22` 用 `command -v python3` 判有無——shim 在 PATH 上所以判「有」（`have_py=1`、不印 WARN），實際呼叫卻失敗（印「Python was not found…」，exit 49），而 88／104／124 行都是 `2>/dev/null`，空的 `out` 被當成「沒發現問題」。**後果：`biglist`／anchor／資料檔三項是「沒跑」不是「乾淨」，只有 `broken`／`residue`／`oversize` 三項是真的**（那三項是純 bash）。處置：公司端要驗這三項就用 `python wf/tools/find_big_lists.py`／`check_anchors.py`／`tabledb.py check` 手動跑，別拿公司端的 `--strict` 綠燈當回家後的保證。（`command -v` 只判存在、不判可執行，這是工具本身的缺陷，該改成實際執行一次再判；本輪只記坑、不改工具。）

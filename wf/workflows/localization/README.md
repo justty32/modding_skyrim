@@ -9,7 +9,7 @@ Done when: <同版閘門通過、層內確有中文、排序在本體之上、au
 ## 先決定要不要做
 
 **成本規則**：難做就維持英文，順手能做就做。
-見 [`modpack-design/sources/translation-layer-cost-policy.md`](../../../modpack-design/sources/translation-layer-cost-policy.md)。
+見 `modpack-design/sources/translation-layer-cost-policy.md`。
 **這是成本判斷，不是類別禁令**——不要因為某類 mod 難做就一律不做。
 
 **繁簡都可接受。** 要的是有中文，不是正體。**有同版簡中就直接裝，不要開 CHS→CHT 轉換層。**
