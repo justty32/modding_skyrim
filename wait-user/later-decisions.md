@@ -21,7 +21,8 @@
 ## L4 146 個 legacy 命名壓縮檔
 
 174 筆中 28 筆已用 Nexus `md5_search` 還原；剩 146 筆需判斷想留／想裝／沒興趣，不必逐行填表。
-清單見 [`l4-md5-resolution`](../mod-library/audits/l4-md5-resolution.md#仍需人工辨識146-筆)。
+清單已封存，見 `mod-library/archive/audits/l4-md5-resolution.md` 的〈仍需人工辨識 146 筆〉；
+活層的帳與指路在 `mod-library/audits/README.md`。權威值在 Mongo `archives.nexus_md5*` 欄位。
 
 ## 16 個現役 mod 的自製來源已被清掉
 

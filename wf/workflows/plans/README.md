@@ -23,7 +23,7 @@ idea → roadmap → 詳規（本夾）→ feature-dev
 | 計畫 | 出計畫日期 | 對應 spec | 狀態 |
 |------|------------|-----------|------|
 | [third-party-mod-pipeline](third-party-mod-pipeline/README.md) —— 第三方 mod 取得–安裝–驗證流水線 | 2026-08-04 | [ai-ingame-qa-loop](ai-ingame-qa-loop/README.md) | P0–P4 已完成；Bend Time Rings 端到端實機驗收通過 |
-| [mod-library-catalog](mod-library-catalog/README.md) —— mod 壓縮檔建檔與清理 | 2026-08-04 | 無 | 建檔與 L1–L3 已執行；Nexus 補值與 107 筆終態決策已完成；**僅留 L4 的 109 筆舊命名壓縮檔人工辨識**（清單在 [`mod-library/audits/l4-review-worklist.md`](../../../mod-library/audits/l4-review-worklist.md)）。工具已隨統整移到 `mod-library/db/` |
+| [mod-library-catalog](mod-library-catalog/README.md) —— mod 壓縮檔建檔與清理 | 2026-08-04 | 無 | 建檔與 L1–L3 已執行；Nexus 補值與 107 筆終態決策已完成；**僅留 L4 舊命名壓縮檔的人工辨識**（2026-08-31 對帳後範圍為 **146 筆**；2026-08-07 的 109 筆清單與 2026-08-23 的 md5 還原結果已封存進 `mod-library/archive/audits/`，活層帳在 `mod-library/audits/README.md`）。工具已隨統整移到 `mod-library/db/` |
 
 ## 已結案／被取代
 

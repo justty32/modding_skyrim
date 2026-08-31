@@ -1,4 +1,11 @@
-# schema 草案
+# schema 草案（**已被取代，不要照這份實作**）
+
+> **2026-08-31 降級。** 這是實作前草案，與現行 schema 已對不上：它列了不存在的
+> `has_esp`、不存在的 `manual` naming_pattern、不存在的 `latest_local_version`，
+> `nexus_*` 還寫「由 `housecarl_nexus_mod` 補」（實際走 Nexus v1 API，見
+> `mod-library/db/fetch_nexus_status.py`）。
+> **現行唯一 schema 權威是 `mod-library/db/mongodb-schema.md`。**
+> 本檔保留是為了看得到當初的設計意圖，不是為了照著做。
 
 > 屬於 [mod 下載庫建檔與清理（MongoDB）](README.md)。
 
