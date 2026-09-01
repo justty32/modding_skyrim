@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 from collections import defaultdict
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
 import subprocess
 import sys
@@ -75,6 +75,23 @@ def tracked_markdown(root: Path) -> list[Path]:
                 if (source := sub / name).exists() or source.is_symlink()
             ]
     return sources
+
+
+def source_is_excluded(source: Path, root: Path, patterns: list[str]) -> bool:
+    try:
+        relative = source.absolute().relative_to(root).as_posix()
+    except ValueError:
+        return False
+    for raw_pattern in patterns:
+        pattern = raw_pattern.replace("\\", "/")
+        while pattern.startswith("./"):
+            pattern = pattern[2:]
+        path_pattern = pattern.rstrip("/")
+        if relative == path_pattern or relative.startswith(f"{path_pattern}/"):
+            return True
+        if PurePosixPath(relative).match(pattern):
+            return True
+    return False
 
 
 def link_target(raw: str) -> LocalTarget | None:
@@ -221,11 +238,27 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="skip tracked Markdown symlinks whose canonical files live in submodules",
     )
+    parser.add_argument(
+        "--exclude-source",
+        action="append",
+        default=[],
+        metavar="PATH_OR_GLOB",
+        help="skip source Markdown files matching a repo-relative path or glob",
+    )
     parser.add_argument("paths", nargs="*", type=Path)
     args = parser.parse_args(argv)
 
     root = repo_root()
     sources = args.paths or tracked_markdown(root)
+    excluded_sources = sum(
+        source_is_excluded(source, root, args.exclude_source) for source in sources
+    )
+    if excluded_sources:
+        sources = [
+            source
+            for source in sources
+            if not source_is_excluded(source, root, args.exclude_source)
+        ]
     skipped_symlinks = 0
     if args.skip_symlinks:
         skipped_symlinks = sum(source.is_symlink() for source in sources)
@@ -254,13 +287,19 @@ def main(argv: list[str] | None = None) -> int:
                 )
 
     broken_count = missing_files + missing_anchors
+    suffixes = []
+    if excluded_sources:
+        suffixes.append(f"{excluded_sources} source(s) excluded")
+    if skipped_symlinks:
+        suffixes.append(f"{skipped_symlinks} symlink(s) skipped")
+    suffix = f", {', '.join(suffixes)}" if suffixes else ""
     if broken_count:
         print(
             f"Markdown links FAILED: {broken_count} broken local link(s) "
             f"({missing_files} missing file(s), {missing_anchors} missing anchor(s))"
+            f"{suffix}"
         )
         return 1
-    suffix = f", {skipped_symlinks} symlink(s) skipped" if skipped_symlinks else ""
     print(f"Markdown links OK: {len(sources)} file(s), {total_links} local link(s){suffix}")
     return 0
 

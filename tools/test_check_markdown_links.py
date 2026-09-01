@@ -225,10 +225,48 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
         source = self.root / "source.md"
         source.write_text("[missing](missing.md)\n", encoding="utf-8")
 
-        with redirect_stdout(io.StringIO()):
-            result = main([str(source)])
+        stream = io.StringIO()
+        with patch("check_markdown_links.repo_root", return_value=self.root):
+            with redirect_stdout(stream):
+                result = main([str(source)])
 
         self.assertEqual(result, 1)
+        self.assertIn("source.md:1: broken local link:", stream.getvalue())
+
+    def test_cli_excludes_source_matching_repeated_glob(self):
+        backup = self.root / "backup"
+        backup.mkdir()
+        source = backup / "source.md"
+        source.write_text("[missing](missing.md)\n", encoding="utf-8")
+
+        stream = io.StringIO()
+        with patch("check_markdown_links.repo_root", return_value=self.root):
+            with redirect_stdout(stream):
+                result = main(
+                    [
+                        "--exclude-source",
+                        "elsewhere/*.md",
+                        "--exclude-source",
+                        "backup/*.md",
+                        str(source),
+                    ]
+                )
+
+        self.assertEqual(result, 0)
+        self.assertNotIn("broken local link:", stream.getvalue())
+        self.assertIn("1 source(s) excluded", stream.getvalue())
+
+    def test_cli_ignores_nonexistent_exclude_source(self):
+        source = self.root / "source.md"
+        source.write_text("no links\n", encoding="utf-8")
+
+        with patch("check_markdown_links.repo_root", return_value=self.root):
+            with redirect_stdout(io.StringIO()):
+                result = main(
+                    ["--exclude-source", "missing-directory/", str(source)]
+                )
+
+        self.assertEqual(result, 0)
 
     def test_cli_can_skip_markdown_symlink(self):
         missing_target = self.root / "missing.md"

@@ -8,16 +8,16 @@
 
 | 類別 | open | 清單 |
 |---|---:|---|
-| 回家下載／重建 | 2 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
-| 整包 UI／中文／任務驗收 | 8 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
+| 回家下載／重建 | 5 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
+| 整包 UI／中文／任務驗收 | 10 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
 | 獨立功能驗收 | 5 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
-| 日後素材／清理決定 | 5 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
-| 版本控制收線 | 1 | [本檔下節](#push-排程) |
+| 日後素材／清理決定 | 2 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
+| 版本控制收線 | 0 | [本檔下節](#push-排程) |
 
 ## Push 排程
 
-1. **裁示：等全部現役線真正收完後一次推。** 先由 `dispatcher` 對帳各子 repo 的 commit、dirty
-   worktree 與母 repo gitlink；對帳完成後，再請使用者當場確認是否 push。
+1. ~~**裁示：等全部現役線真正收完後一次推。** 先由 `dispatcher` 對帳各子 repo 的 commit、dirty
+   worktree 與母 repo gitlink；對帳完成後，再請使用者當場確認是否 push。~~ **已完成（2026-09-01）**。
 
 `wf-lint.sh` 兩個缺陷已由使用者裁示**現在就修**，並已派 `cx-kern1` 承接（交接書
 `agentctl/handoffs/kern-2026-08-30/HANDOFF-cx-kern1.md`）；不再列為等待使用者項目。

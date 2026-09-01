@@ -1,5 +1,22 @@
 # 整包 UI／中文／任務驗收
 
+## Auri＋現役 VIGILANT 有限解凍整合
+
+**裁示：B —— follower 只有限解凍 Auri＋現役 VIGILANT，並採 Sofia 選配 preflight／No Bump。**
+（2026-09-01，使用者當場口頭裁示；見[裁示簡報](decision-briefs-2026-09-01.md)第 2 條。）回家以 Auri
+2.2 本體、exact 2.2 中文、VIGILANT commentary 0.2／tweaks 做 winner preflight 與部署；Auri 不匯入
+NFF，Sofia 的 RDO／AI Overhaul／No Bump 選配須重新核對現役 clothing binding fix winner。
+**通過**＝離線 winner／版本／中文層無回滾，再實機驗 Auri 招募與跟隨、VIGILANT commentary 條件／
+字幕、Sofia 選配及既有 VIGILANT／Sofia 行為都無新衝突；不得藉此加入第二名新 follower。
+
+## Missives `_chinese.txt` 檔名例外
+
+**裁示：A —— `sLanguage` 維持 `ENGLISH`，局部修 Missives 檔名。**（2026-09-01，使用者當場口頭裁示；
+見[裁示簡報](decision-briefs-2026-09-01.md)第 7 條。）回家把 Missives 的 `_chinese.txt` 翻譯檔改為
+同 basename 的 `_english.txt`，不改全域 `sLanguage`，也不遷移 11 個已驗 `_English.STRINGS` 層。
+**通過**＝部署 winner 只留下可由 `ENGLISH` 槽載入的正確檔名，進遊戲抽查 Missives MCM／任務文字
+確實載入中文，且既有 11 個 STRINGS 層無回歸。
+
 ## EnaiRim Batch 7 終態 gate
 
 等 Batch 1–6 施工後，確認 Audugan／Valravn private CHT 與新文字層顯示；shrine／standing stone／

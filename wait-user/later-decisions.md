@@ -13,29 +13,39 @@
 能否無損對映 ModForge placements，再決定是否開 converter/spec；沒有實檔前不宣稱 pipeline 可行。
 見 [`port-source-survey`](../analysis/port-source-survey/README.md)。
 
-## 中文層五個裁示（2026-08-27 深夜起手清單第 5 條，仍未裁）
+## 中文層五個裁示（2026-09-01 已裁示，不計 open）
 
 來源是 2026-08-28 的續行清單（已封存，只剩這條活著）；
 逐項細節在 [`中文層覆蓋總表`](../modpack-design/content-plan/zh-layer/zh-layer-coverage-master-2026-08-28.md)的
 「等使用者裁示」節：
 
-1. **Bandolier NPC 層三選一**——注意覆寫陷阱不在 `BandolierForNPC.esp`，而在其後的
-   `- No disenchant.esp`（70）與 `- Realistic Enchantements.esp`（23），forward patch 選項要照這個改設計。
-2. **Reforging 綁 SkyPatcher** 要不要接受。
-3. **AA（Armor Add-on）三個同版中文層選哪個流派**。
-4. **`sLanguage` 要不要動**——現在是 `ENGLISH` 把中文塞英文槽；只附 `_chinese` 的層會靜默失效。
-5. **Steam 2.5MB 補丁（TargetBuild 24914197）接不接受**——目前 acf 已搬出、exe 釘 1.6.1170。
+1. ~~**Bandolier NPC 層三選一**~~ **裁示：B —— 裝 NPC 層並做小型 forward patch，保留 NPC 分發與中文；
+   patch 依 realistic variant forward 83＋23 兩批。**（2026-09-01，使用者當場口頭裁示；見
+   [裁示簡報](decision-briefs-2026-09-01.md)第 4 條。）
+2. ~~**Reforging 綁 SkyPatcher**~~ **裁示：A —— 接受中文層綁定 SkyPatcher，沿用現役 7.0.0 框架。**
+   （2026-09-01，使用者當場口頭裁示；見[裁示簡報](decision-briefs-2026-09-01.md)第 5 條。）
+3. ~~**AA（Armor Add-on）三個同版中文層選哪個流派**~~ **裁示：A —— 採 `72518` 已驗 DAR 簡中 exact 層。**
+   （2026-09-01，使用者當場口頭裁示；見[裁示簡報](decision-briefs-2026-09-01.md)第 6 條。）
+4. ~~**`sLanguage` 要不要動**~~ **裁示：A —— 維持 `ENGLISH`，只局部修正 `_chinese.txt` 檔名例外。**
+   （2026-09-01，使用者當場口頭裁示；見[裁示簡報](decision-briefs-2026-09-01.md)第 7 條。）
+5. ~~**Steam 2.5MB 補丁（TargetBuild 24914197）接不接受**~~ **裁示：A —— 不收補丁，維持
+   1.6.1170 釘版與 Steam 離線。**（2026-09-01，使用者當場口頭裁示；見
+   [裁示簡報](decision-briefs-2026-09-01.md)第 8 條。）
 
 ## 2026-08-29 調查線留下的裁示
 
 各線的完整結論在 [`agentctl DIGEST`](../agentctl/inbox/done/2026-08-29/DIGEST.md)，報告在 `agentctl/handoffs/done/2026-08-29/<線名>/REPORT.md`。
 
-### 隨從凍結要不要維持（cx-fdlg）
+### ~~隨從凍結要不要維持（cx-fdlg）~~（已裁示，不計 open）
 
 Sofia／Recorder／Auri 的 dialogue 生態 GO 2／DEFER 5／NO-GO 13；Auri 技術與中文都可行，只因 follower 凍結判 NO-GO。
-三問：是否維持凍結；是否採 Sofia Hub 的選配式 preflight；是否移除 Sofia bump dialogue。
+**裁示：B —— 有限解凍，例外只開 Auri＋現役 VIGILANT，並採 Sofia Hub 選配式 preflight／No Bump，
+不順手引入第二名新 follower。**（2026-09-01，使用者當場口頭裁示；見
+[裁示簡報](decision-briefs-2026-09-01.md)第 2 條。）
 
-### Mihail 生物要哪個方向（cx-mihail）
+### ~~Mihail 生物要哪個方向（cx-mihail）~~（已裁示，不計 open）
 
 295 件 Creatures and Mounts 裡挑出 16 件低耦合 standalone，10 件有對版中文層（9 CHS／1 CHT）。
-要定：自然環境／Morrowind／高奇幻哪個方向；hand-placed 還是 SkyPatcher topology；首批 4–6 件；接不接受 CHS。
+**裁示：A —— 首批採自然核心 4–6 件、原生 hand-placed topology、接受 exact CHS，以最小可回滾批次
+先驗生態密度。**（2026-09-01，使用者當場口頭裁示；見
+[裁示簡報](decision-briefs-2026-09-01.md)第 3 條。）
