@@ -104,7 +104,9 @@ scripts／assets；對 official plugin 與簡中 plugin 比對 record totals、�
 **預估時間。** 45–90 分鐘（本單估算）；依據是兩包 inventory 加一組 plugin／script／asset 與 semantic payload 對帳，
 不是重翻 8,000+ 行（`agentctl/handoffs/done/2026-08-29/cx-serana/REPORT.md:183`）。
 
-## 4. Bandolier NPC 中文 forward patch
+## 4. Bandolier NPC 中文 forward patch（已作廢 —— 2026-09-01 使用者裁示 Bandolier 併入 clothes purge）
+
+**本節不執行，前置條件已不存在。**
 
 **前置條件。** 要有現役 Bandolier NPC 八顆 plugins、Classic 本體、CHS seed archive、現役
 `modpack-main/plugins.txt`、Python 與 7z；builder 已把這些 Linux 路徑寫死

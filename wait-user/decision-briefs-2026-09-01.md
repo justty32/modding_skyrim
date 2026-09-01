@@ -36,6 +36,8 @@
 
 ### 4. Bandolier NPC 分發與中文要怎麼兼得？
 
+**2026-09-01 撤銷：Bandolier 併入 clothes purge，第 4 節作廢。**
+
 - **要決定的是**：選擇放棄 NPC 分發、做 forward patch，或接受英文裝備名。
 - **選項**：A) 本體＋CHS，不裝 NPC 層 B) 裝 NPC 層＋106 字串 forward patch C) 全裝但接受 93 件英文
 - **各選項的代價**：A) 失去 NPC 分發；B) 失去零維護成本；C) 失去中文完整性。
@@ -115,6 +117,7 @@
 2. B — follower 有限解凍，例外鎖成 Auri ＋ 現役 VIGILANT
 3. A — Mihail 第一批走最小可回滾批次（CELL／asset／record 與 Apothecary／Enai preflight 留回家）
 4. B — Bandolier 以小型 patch 兼得 NPC 分發與中文
+   **2026-09-01 撤銷：Bandolier 併入 clothes purge，第 4 節作廢。**
 5. A — Reforging 接受中文層綁定 SkyPatcher，沿用既有框架
 6. A — Animated Armoury 用已驗 exact 層
 7. A — `sLanguage` 維持 ENGLISH，局部修掉檔名例外

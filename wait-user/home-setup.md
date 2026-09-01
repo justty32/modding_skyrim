@@ -17,14 +17,6 @@ combat style 做 Apothecary 與現役 EnaiRim 語意 preflight；不得偷換成
 **通過**＝每件都有可回滾單位、exact 中文對版與明列的 winner／patch 結論，CELL／asset／record 衝突及
 Apothecary／Enai 接觸面全數有處置，才能排入施工。
 
-## Bandolier NPC 中文 forward patch
-
-**裁示：B —— 保留 NPC 分發並做小型中文 forward patch。**（2026-09-01，使用者當場口頭裁示；見
-[裁示簡報](decision-briefs-2026-09-01.md)第 4 條。）回家以實際 archives／plugins 建 patch，把 CHS `FULL`
-forward 到 NPC 層後的 winners；依既定 realistic variant 覆蓋 83 unique＋23 變體兩批。
-**通過**＝106 個目標字串全由 patch 贏得、93 個 NPC 層 ARMO 不再顯示英文，且 NPC 分發與
-less-common／realistic variant 都保留；保存 record 對帳與 plugin gate 證據。
-
 ## scene-capture-bridge 完整離線測試
 
 `scene-capture-bridge` 的 portable MinGW CTest 2/2 PASS，但完整 `x64-mingw-static` nlohmann-json
