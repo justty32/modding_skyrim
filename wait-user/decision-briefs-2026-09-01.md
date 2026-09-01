@@ -1,6 +1,6 @@
 # 2026-09-01 單頁裁決簡報
 
-> 本檔由 cx-decide 於 2026-09-01 產出，供使用者拍板用；決定落地後請併回 WAIT_USER.md 並刪除本檔。
+> 本檔由 cx-decide 於 2026-09-01 產出，供使用者拍板用。**2026-09-01 sn-tidy 複查**：實測 `grep -rn "decision-briefs-2026-09-01" --include="*.md" .` 並過濾出真正的 markdown 連結語法（`[text](decision-briefs-2026-09-01.md)`，且限已納入 git 追蹤、會被 `.github/workflows/docs.yml` 連結檢查掃到的檔案），命中 **3 個檔案共 12 處連結**：`wait-user/home-setup.md`（3 處，第 6、14、23 行）、`wait-user/integrated-runtime.md`（2 處，第 6、15 行）、`wait-user/later-decisions.md`（7 處，第 24、26、28、30、33、44、51 行）。本檔已是這些裁示的授權憑證，刪除會造成斷鏈並使 CI 連結檢查失敗，**不可刪除**。
 
 可直接回覆：`1A 2B 3A …`；需要改條件時在該編號後補一句。
 
@@ -29,7 +29,7 @@
 - **要決定的是**：選定首批美術方向、spawn topology 與中文政策。
 - **選項**：A) 自然核心 4–6 件＋原生 hand-placed＋接受 exact CHS B) Morrowind／風格 wildcard 小批＋hand-placed C) 高奇幻／全域 SkyPatcher 分布
 - **各選項的代價**：A) 失去較強烈奇幻風格；B) 失去低接觸面，需更多 record／飛行 gate；C) 失去原作者擺位與低耦合回滾，變成全域敵人分布決策。
-- **已知事實**：菜單共 16 件，10 件有對版中文；報告建議首批自然核心 4–6 件。`agentctl/handoffs/done/2026-08-29/cx-mihail/REPORT.md:111`、`:113`
+- **已知事實**：菜單共 16 件，10 件有對版中文；報告建議首批自然核心 4–6 件。`agentctl/handoffs/done/2026-08-29/cx-mihail/REPORT.md:111`、`:112`、`:113`
 - **已知事實**：SkyPatcher 會移除 hand-placed spawns、改進 leveled lists，並非 base 必要前置。`agentctl/handoffs/done/2026-08-29/cx-mihail/REPORT.md:59`、`:63`
 - **缺什麼**：選定小批後需回家做 CELL／asset／record 與 Apothecary／Enai preflight。
 - **我的建議**：選 A，先以最小可回滾批次驗證生態密度，再決定要不要擴張風格。
@@ -69,7 +69,7 @@
 - **要決定的是**：固定全域語言槽，並指定少數 `_chinese` loose 層的處理方式。
 - **選項**：A) 維持 ENGLISH，個別改檔名 B) 改 CHINESE，全域遷移現役字串層
 - **各選項的代價**：A) 失去免維護的原檔名，遇到個案例外要改名；B) 失去 11 個已驗 `_English.STRINGS` 層並承擔全域回歸。
-- **已知事實**：核心的 English／Chinese STRINGS md5 相同，中文本來就放在 English 槽。`modpack-design/archive/content-plan/zh-layer/zh-layer-coverage/unresolved-and-rulings/rulings.md:49`、`:51`
+- **已知事實**：核心的 English／Chinese STRINGS md5 相同，中文本來就放在 English 槽。`modpack-design/archive/content-plan/zh-layer/zh-layer-coverage/unresolved-and-rulings/rulings.md:50`、`:51`
 - **已知事實**：目前已知只踩到 Missives 一件 `_chinese.txt`，改名即可；改 CHINESE 會使 11 層失效。`modpack-design/archive/content-plan/zh-layer/zh-layer-coverage/unresolved-and-rulings/rulings.md:55`、`:56`
 - **缺什麼**：無，可直接決定。
 - **我的建議**：選 A，把例外局部修掉，不為一件檔名問題翻轉全域語言槽。
@@ -90,7 +90,7 @@
 - **選項**：A) 宣告 `instance/tools/` 為唯一現役正本，保留標明用途的封存快照 B) 宣告正本並授權刪除快照
 - **各選項的代價**：A) 失去零重複，仍需維護「非正本」標示；B) 失去交付當下的可追溯實檔。
 - **已知事實**：3.8 KB 現役檔由 `instance/README.md` 指向；3.4 KB 檔是交付當下快照。`agentctl/handoffs/done/2026-08-29/doc-refactor/CONFLICTS.md:11`、`:12`
-- **已知事實**：封存說明已規劃標明現役位於 `instance/tools/launch-mo2.sh`，兩份內容皆未動。`agentctl/handoffs/done/2026-08-29/doc-refactor/CONFLICTS.md:15`、`:18`
+- **已知事實**：封存說明已規劃標明現役位於 `instance/tools/launch-mo2.sh`，兩份內容皆未動。`agentctl/handoffs/done/2026-08-29/doc-refactor/CONFLICTS.md:17`、`:18`
 - **缺什麼**：無，可直接決定；B 屬刪除授權。
 - **我的建議**：選 A，明確區分現役正本與歷史快照即可消除歧義，毋須犧牲證據。
 
@@ -99,8 +99,8 @@
 - **要決定的是**：統一 `dispatch-windows.md` 的 network access 契約。
 - **選項**：A) 固定 `network_access=false` B) 預設關閉，但另設經使用者授權的外網例外車道
 - **各選項的代價**：A) 失去 Windows 線直接執行需網路工作的能力；B) 失去單一簡明規則，需定義授權與用途邊界。
-- **已知事實**：同檔第一節以 push 為由開網路，第四節卻要求預設關閉。`agentctl/handoffs/done/2026-08-29/doc-refactor/CONFLICTS.md:45`、`:46`
-- **已知事實**：第六節又禁止 Windows 線 commit／push。`agentctl/handoffs/done/2026-08-29/doc-refactor/CONFLICTS.md:47`
+- **已知事實**：同檔第一節以 push 為由開網路，第四節卻要求預設關閉。`agentctl/handoffs/done/2026-08-29/doc-refactor/CONFLICTS.md:47`、`:48`
+- **已知事實**：第六節又禁止 Windows 線 commit／push。`agentctl/handoffs/done/2026-08-29/doc-refactor/CONFLICTS.md:49`
 - **缺什麼**：無，可直接決定。
 - **我的建議**：選 A，既然 Windows 線不得 push，原本唯一開網理由已不存在。
 
