@@ -42,3 +42,18 @@ triplet 仍缺，需要能跑 vcpkg build 的環境補上；不得改測試掩�
 `Data/Viny Mods/DMK/Language.json` layer。抽查一般設定、相機、PC／手把按鍵、OAR converter 警告
 並做移動 smoke。現役 `Machine-Private.7z` 仍是未校對機翻包；證據見
 [`安裝結果`](../agentctl/logs/mcm-helper-dmk-cht-install-2026-08-21.md)。
+
+## 現役 modlist 整合度盤點的三個待辦
+
+盤點結論見 [`modpack-design/content-plan/modlist-coverage-2026-09-01.md`](../modpack-design/content-plan/modlist-coverage-2026-09-01.md)
+（2026-09-01 公司端離線產出，未經 xEdit 與實機驗證）。回家要決／要查的三件：
+
+1. **敵人／AI／怪物多樣性要不要補**，以及是否在開新檔前補。現役只有 AI Overhaul 一個家族，
+   查無怪物池類 mod；敵人池晚加會影響已生成 encounter。**尚未裁示。**
+2. **需求／生存要不要開**（飢渴／體溫／紮營）。文件面是「尚未決」而非「決定不做」
+   （`modpack-design/content-plan/gameplay/OPEN.md:9`）。**尚未裁示。**
+3. **查 mo2ctl 為何沒追上 profile 變動**。`instance/profiles/manifest.json` 的 `updated_at` 停在
+   2026-08-30T09:52，`modlist.txt`／`plugins.txt` 已到 2026-09-01 13:15，兩者數字對不起來。
+
+另：`major-content-preflight-2026-09-01/` 的 9 件裡有 6 件其實早已安裝啟用，該批任務單與批次計畫
+的框架語意需要對現況重新校正（更正段已加在 `home-batching-plan.md` 開頭）。
