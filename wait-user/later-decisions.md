@@ -1,5 +1,29 @@
 # 日後素材／清理決定
 
+## ~~LoreRim 打底：80 件待裁決~~（2026-09-02 已裁示 9 件關鍵項，其餘 71 件預設 KEEP-OURS 生效、借用時逐件再問）
+
+LoreRim 3933 件套完三條規則（ENB／高解析度／NPC 美化）後，撞到現役已裝／已定的部分全部寫成問題進
+`modpack-design/content-plan/lorerim/data/conflicts-for-ruling.csv`（80 列，`default_action` 一律 `KEEP-OURS`）。
+**先答 4 件 `runtime-version` 與 5 件 `gameplay-core`**（AE 1.7.99 vs 釘版 1.6.1170、付費 AE 更新、158 件 1.7.99 DLL、
+Stock Game；Requiem vs EnaiRim 凍結、吸血鬼／狼人 overhaul、perk 進程層、魔法組合、Late Loaders 整體平衡），
+其餘 71 條才有意義。三隊的結論是**整包換底走不通**，可行的是把 LoreRim 當已排序的候選池，先借
+城鎮／建築／地點、對話、音效三段；展開見 `modpack-design/content-plan/lorerim/adoption-draft.md`。
+**裁示（2026-09-02 使用者當場，寫入 `conflicts-for-ruling.csv` 的 `ruling` 欄）**：① 維持 1.6.1170 釘版只借選型；
+② **買付費 AE 升級**（連帶風險見 `home-setup.md`）；③ DLL 只對要借的件逐件找 1.6.1170 版；④ 不採 Stock Game；
+⑤ 不採 Requiem；⑥ 維持不加吸血鬼／狼人 overhaul；⑦ 不換 perk 進程層；⑧ 不整組換魔法；⑨ 不採 Late Loaders。
+**高解析度門檻：2K 可、4K 以上排除**（2026-09-02 使用者當場，用於 `exclusions.csv` 的 `GRAY-HIRES` 改判）。其餘 71 件不逐件裁，預設 `KEEP-OURS` 生效；下一段做「借三段」逐件盤點時再問。不併 install-plan 直到盤點完成。
+**借用盤點已完成（同日 12:05）**：`modpack-design/content-plan/lorerim/borrow-plan.md` 第六節七題與 `cc-plan.md` 第六節四題待使用者，
+關鍵是 `Lux` 家族要不要一起借（24 件城鎮候選依賴）、patch 表 24 件 `REBUILD` 要不要投人力、AE 升級排回家哪一輪。
+
+## wf kernel v0.5.1 要不要拿（2026-09-02 通知，純重新對齊）
+
+kernel repo（`C:/code/mine/workflows`）2026-09-02 出 v0.5.1。另一個 session 實查後結論：本 repo **沒有缺任何 bug 修正**
+（三個檢查器修正都已在、percent-encoding 那條本來就是本 repo 修後回抽），這次只是 `tools/` 拆檔
+（`wf-lint-checks.sh`、`tabledb_table.py`、`tabledb_fmt_expand.py`、`fix_moved_links_scan.py`）以符合 kernel 自己的 8 KB 上限，
+行為與 API 不變；拆完彼此相依，**要拿就整包拿** `tools/`（`test_*` 除外）。同時 `AGENTS.md` 尾端版本戳仍是 v0.4.1，要一併改 v0.5.1。
+**不可覆蓋** `wf/workflows/tidy/gotchas.md`（本 repo 拆出的 `gotchas-windows.md` 會變孤兒；那兩條 kernel 新段本來就是從它回抽的）。
+判準與清單在 `C:/code/mine/workflows/docs/CHANGELOG-v0.5.1.md`。**建議**：LoreRim 調查 commit 後、或下個 session 開場時拿，拿完跑一次 strict lint 對數字。
+
 ## 夜貓－無心 3.1.0（可選精確替換）
 
 目前 JH People 1.1.3＋NPC Plugin Chooser 2 的 536 NPC patch 已滿足方向，不阻塞整包。若仍要精確
