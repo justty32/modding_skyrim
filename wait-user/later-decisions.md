@@ -18,6 +18,8 @@ Stock Game；Requiem vs EnaiRim 凍結、吸血鬼／狼人 overhaul、perk 進�
 USCCCP 樞紐順序可以、LoreRim 停用的 4 件 CC 不跟、Survival Mode CC 擱著。降版備援回家確認（使用者記得有）。
 另裁示：**一般 retexture 整批先放著**（使用者對畫面要求不高），`exclusions.csv` 的 `GRAY-HIRES` 800 餘件不追、不進借用盤點。
 裁示已寫進 `borrow-candidates.csv`／`borrow-patches.csv` 的 `ruling` 欄與兩份計畫的第七節。**本項不再 open。**
+**同日 14:35 追加裁示：改走 MCO 體系**（看過 `mco-switch-estimate.md` 後決定，推翻 backlog 的 MCO→BFCO 方向）；
+團隊 `mco` 產出回家遷移計畫 `modpack-design/content-plan/gameplay/mco-migration-plan-2026-09-02.md`，執行列回家清單。
 
 ## wf kernel v0.5.1 要不要拿（2026-09-02 通知，純重新對齊）
 

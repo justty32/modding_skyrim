@@ -1,5 +1,12 @@
 # 回家下載／重建
 
+## 改走 MCO：照遷移計畫執行（2026-09-02 裁示）
+
+使用者 2026-09-02 決定把戰鬥框架從 BFCO 移回 MCO。計畫與清單由團隊 `mco` 產出：
+`modpack-design/content-plan/gameplay/mco-migration-plan-2026-09-02.md`（七階段：備份基線→框架切換→33 件 moveset 還原→相容層→Pandora 重跑→中文→16 條實機驗收）
+與 `data/mco-{migration-steps,restore-list,framework-queue}.csv`。回家先做第一階段備份，再照 `steps.csv` 的 `status` 逐步推進；
+框架隊列的 Nexus id／版本走 houseCARL，DLL 一律找 1.6.1170 對應版。**通過**＝16 條實機驗收全過、缺 master 0、無新 crash。
+
 ## LoreRim 借用下載：465 件隊列，回家第一步是解析 Nexus id
 
 隊列 `modpack-design/content-plan/lorerim/data/download-queue.csv`（465 列，四個待回填欄全空、`status=TO-RESOLVE`），
