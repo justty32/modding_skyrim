@@ -1,5 +1,11 @@
 # 整包 UI／中文／任務驗收
 
+## MCO 遷移 P4／P7 16 條實機驗收＋字形 gate
+
+2026-09-02 已完成 MCO 遷移 P2／P3／P5／P6，尚待 P4／P7 共 16 條實機驗收與字形 gate。
+全過就 promote `instance/profiles` 的 `feat/mco-2026-09-02`；任一不過就依
+[`mco2 REPORT` 第四節](../agentctl/handoffs/home-2026-09-02/mco2/REPORT.md)回滾。
+
 ## Auri＋現役 VIGILANT 有限解凍整合
 
 **裁示：B —— follower 只有限解凍 Auri＋現役 VIGILANT，並採 Sofia 選配 preflight／No Bump。**

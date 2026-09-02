@@ -11,9 +11,8 @@
 
 ## 現役工作
 
-- [modpack-planning] **2026-09-02 公司場次已收工**：LoreRim 調查與借用隊列、改走 MCO 的遷移計畫、ModForge prefab grammar spike、
-  七個 repo 工具調查、語音隨從 project 評估，全部 commit 並 push。**回家開場照 `agentctl/handoffs/NEXT-SESSION.md`**；
-  待使用者項在 `WAIT_USER.md`（回家 10 項）。
+- [modpack-planning] **2026-09-02 家中晚場已收工**（兩段共 11 隊；MCO 遷移 P2→P6 已施工、profiles 在 feat/mco-2026-09-02 未 promote）→ 明天開場照 `agentctl/handoffs/NEXT-SESSION.md` 七項
+- [modpack-planning] 待使用者：MCO 16 條實機驗收、mo2fix 合併時機、SCAR 2 時機 → `WAIT_USER.md`
 
 截至 **2026-08-29 早上（Asia/Taipei）**，母 repo 本身沒有進行中的 agent 工作。Skyrim／MO2 已關閉。
 同日使用者外出期間會**遠端驅動 gpt-sol（codex）**在本工作區做上網調查／下載 mod 這類

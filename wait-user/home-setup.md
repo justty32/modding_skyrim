@@ -7,6 +7,8 @@
 與 `data/mco-{migration-steps,restore-list,framework-queue}.csv`。回家先做第一階段備份，再照 `steps.csv` 的 `status` 逐步推進；
 框架隊列的 Nexus id／版本走 houseCARL，DLL 一律找 1.6.1170 對應版。**通過**＝16 條實機驗收全過、缺 master 0、無新 crash。
 
+**狀態（2026-09-02 晚，mco2 隊）**：P2／P3／P5／P6 已完成，`instance/profiles` 在 `feat/mco-2026-09-02` 尚未 promote；只剩 P4／P7 16 條實機驗收＋字形 gate，任一不過依 [mco2 REPORT 第四節](../agentctl/handoffs/home-2026-09-02/mco2/REPORT.md)回滾。
+
 ## LoreRim 借用下載：465 件隊列，回家第一步是解析 Nexus id
 
 隊列 `modpack-design/content-plan/lorerim/data/download-queue.csv`（465 列，四個待回填欄全空、`status=TO-RESOLVE`），
