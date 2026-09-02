@@ -9,7 +9,7 @@
 | 類別 | open | 清單 |
 |---|---:|---|
 | 回家下載／重建 | 9 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
-| 今晚裁決簡報（2026-09-02） | 3 | [wait-user/decision-briefs-2026-09-02.md](wait-user/decision-briefs-2026-09-02.md)（12 題已裁示，落地見 [rule REPORT](agentctl/handoffs/home-2026-09-02/rule/REPORT.md)） |
+| 今晚裁決簡報（2026-09-02） | 0 | [wait-user/decision-briefs-2026-09-02.md](wait-user/decision-briefs-2026-09-02.md)（15 題全部已裁示，落地見 [rule REPORT](agentctl/handoffs/home-2026-09-02/rule/REPORT.md)） |
 | 整包 UI／中文／任務驗收 | 11 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
 | 獨立功能驗收 | 5 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
 | 日後素材／清理決定 | 2 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
