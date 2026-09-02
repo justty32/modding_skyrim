@@ -11,10 +11,9 @@
 
 ## 現役工作
 
-- [modpack-planning] **2026-09-02 公司場次**：LoreRim 打底調查四隊（`lr-src`／`lr-web`／`lr-gap`／`lr-borrow`）全部 12:05 前收線，
-  使用者九件關鍵衝突＋借用 11 題＋「2K 可、4K 以上排除」＋「retexture 整批擱置」皆已裁示並落地；產物入口
-  `modpack-design/content-plan/lorerim/README.md`，回家待辦在 `wait-user/home-setup.md`（AE 升級＋降版備援）。
-  母 repo 與 agentctl／modpack-design 已 commit **未 push** → 16:55 使用者確認後 push。
+- [modpack-planning] **2026-09-02 公司場次已收工**：LoreRim 調查與借用隊列、改走 MCO 的遷移計畫、ModForge prefab grammar spike、
+  七個 repo 工具調查、語音隨從 project 評估，全部 commit 並 push。**回家開場照 `agentctl/handoffs/NEXT-SESSION.md`**；
+  待使用者項在 `WAIT_USER.md`（回家 10 項）。
 
 截至 **2026-08-29 早上（Asia/Taipei）**，母 repo 本身沒有進行中的 agent 工作。Skyrim／MO2 已關閉。
 同日使用者外出期間會**遠端驅動 gpt-sol（codex）**在本工作區做上網調查／下載 mod 這類
