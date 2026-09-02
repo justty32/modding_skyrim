@@ -23,6 +23,8 @@
 **通過**＝CC 內容全部到位、exe 版本不變、現役 profile 可開到主選單。之後 LoreRim 的 Creation Club 段
 （`quests-and-lands.json` 的 25 件 CC 與其 patch）才能進借用盤點。
 
+**狀態（2026-09-02 晚，home 隊）**：降版前置已就緒——本機 `~/skyrim_mods/steam-build-backup/…-FULL/` 可回填 1.6.1170（三份 exe hash 相同、小備份 sha256sum -c 4/4）；wSkeever patcher 169962 本機沒有，下載單已寄 lead-lrdl。證據：[downgrade-readiness.md](../agentctl/handoffs/home-2026-09-02/home/downgrade-readiness.md)。
+
 ## Serana Dialogue Add-On 4.3.2 exact 簡中 topology gate
 
 **裁示：A —— SDA 升 4.3.2 並採 exact 簡中層。**（2026-09-01，使用者當場口頭裁示；見
@@ -30,6 +32,8 @@
 簡中 `4.3.2v1.2` exact archive，做 binary topology gate；核對 plugin／master、record 與 script／asset
 覆寫面，不能讓舊版繁中層回滾 4.3.2 修正。**通過**＝版本與 master 對版、中文層只改預期文字面、
 沒有舊版 record／script／asset 回滾；證據落檔後才可進部署。
+
+**狀態（2026-09-02 晚，home 隊）**：4.3.2 本體與 exact 簡中 archive 均已在庫、`sda-2026-08-31` 3 gates PASS 且兩層已啟用；舊 4.1.1.3 中文層（modlist 第 29 行）仍啟用，待裁示是否停用。證據：[sda-mihail-library-precheck.md](../agentctl/handoffs/home-2026-09-02/home/sda-mihail-library-precheck.md)。
 
 ## Mihail 自然核心首批 4–6 件 preflight
 
@@ -40,10 +44,14 @@ combat style 做 Apothecary 與現役 EnaiRim 語意 preflight；不得偷換成
 **通過**＝每件都有可回滾單位、exact 中文對版與明列的 winner／patch 結論，CELL／asset／record 衝突及
 Apothecary／Enai 接觸面全數有處置，才能排入施工。
 
+**狀態（2026-09-02 晚，home 隊）**：首批（`hmih-2026-09-01/targets.json`）14/14 archive 在庫且大小符合，8/8 件已有 preflight gate 證據，無需下載；但該 8 件相對裁示 3A「自然核心 4–6 件」的範圍差異待使用者裁示。證據：[sda-mihail-library-precheck.md](../agentctl/handoffs/home-2026-09-02/home/sda-mihail-library-precheck.md)。
+
 ## scene-capture-bridge 完整離線測試
 
 `scene-capture-bridge` 的 portable MinGW CTest 2/2 PASS，但完整 `x64-mingw-static` nlohmann-json
 triplet 仍缺，需要能跑 vcpkg build 的環境補上；不得改測試掩蓋缺依賴。
+
+**狀態（2026-09-02 晚，home 隊）**：已補上——本機 vcpkg `x64-mingw-static` 交叉編譯完成，CTest 2/2 PASS（含 ModForge contract），未改測試碼。證據：[scene-capture-bridge-mingw-build.md](../agentctl/handoffs/home-2026-09-02/home/scene-capture-bridge-mingw-build.md)。
 
 另外兩個已於 2026-08-25 在家補完，見
 [`handoffs/done/README.md`](../agentctl/handoffs/done/README.md)：`darksouls-port` 35/35、
@@ -69,6 +77,8 @@ triplet 仍缺，需要能跑 vcpkg build 的環境補上；不得改測試掩�
    （`modpack-design/content-plan/gameplay/OPEN.md:9`）。**尚未裁示。**
 3. **查 mo2ctl 為何沒追上 profile 變動**。`instance/profiles/manifest.json` 的 `updated_at` 停在
    2026-08-30T09:52，`modlist.txt`／`plugins.txt` 已到 2026-09-01 13:15，兩者數字對不起來。
+
+   **狀態（2026-09-02 晚，home 隊）**：已定位——`updated_at` 實為 2026-09-01T11:47Z；mo2ctl `cmd_enable/cmd_disable`、人工直寫與 MO2 關閉寫回都不更新 manifest，差集 605／488／181／64；修法建議（`commit_profile()` 收口／關 MO2 後 reconcile）見 [mo2ctl-drift-diagnosis.md](../agentctl/handoffs/home-2026-09-02/home/mo2ctl-drift-diagnosis.md)。
 
 另：`major-content-preflight-2026-09-01/` 的 9 件裡有 6 件其實早已安裝啟用，該批任務單與批次計畫
 的框架語意需要對現況重新校正（更正段已加在 `home-batching-plan.md` 開頭）。
