@@ -11,17 +11,10 @@
 
 ## 現役工作
 
-- [modpack-planning] **2026-09-02 公司場次 open**：LoreRim 打底調查三隊（`lr-src`／`lr-web`／`lr-gap`，各 Opus 領導＋codex）進行中，
-  契約 `agentctl/handoffs/lorerim-2026-09-02/SPEC.md`，產物落 `modpack-design/content-plan/lorerim/` 與
-  `modpack-design/sources/lorerim-2026-09-02/`；使用者規則：拿來打底、去掉 ENB 與高解析度、NPC 美化不動、已裝已定不覆蓋只記錄待裁決。
-  → 16:00 收線、16:55 commit／push。
-- [tidy] **已完成（2026-09-01 實查全部已 push）**：母 repo ＋15 個 submodule 全部乾淨、ahead/behind 皆 0；
-  逐個以 `git rev-list --left-right --count @{u}...HEAD` 及本地 remote-tracking ref 核對（本次未 fetch），母 repo
-  記錄的 15 個 gitlink commit 也全部存在對應 `origin/main`。附註：`agentctl` 與 `instance` 仍是 detached HEAD，
-  但 HEAD commit 已被 `origin/main` 包含，待日後 checkout 回 `main`。之後若要用 `${instance}` 這類專案變數，在各 repo
-  `wf/tools/fmt-vars.local.json` 加，需要新的 `how`（固定子路徑）再升 kernel。規則出處：
-  [wf/workflows/tidy/README.md](wf/workflows/tidy/README.md)、[data-files](wf/workflows/common/data-files.md)。
-- [tidy] 2026-08-29 調查線留下 7 個裁示已落 [WAIT_USER.md](WAIT_USER.md)（later-decisions 六項、feature-runtime DSPortP2）；等使用者。
+- [modpack-planning] **2026-09-02 公司場次**：LoreRim 打底調查四隊（`lr-src`／`lr-web`／`lr-gap`／`lr-borrow`）全部 12:05 前收線，
+  使用者九件關鍵衝突＋借用 11 題＋「2K 可、4K 以上排除」＋「retexture 整批擱置」皆已裁示並落地；產物入口
+  `modpack-design/content-plan/lorerim/README.md`，回家待辦在 `wait-user/home-setup.md`（AE 升級＋降版備援）。
+  母 repo 與 agentctl／modpack-design 已 commit **未 push** → 16:55 使用者確認後 push。
 
 截至 **2026-08-29 早上（Asia/Taipei）**，母 repo 本身沒有進行中的 agent 工作。Skyrim／MO2 已關閉。
 同日使用者外出期間會**遠端驅動 gpt-sol（codex）**在本工作區做上網調查／下載 mod 這類

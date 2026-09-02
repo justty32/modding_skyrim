@@ -1,5 +1,12 @@
 # 回家下載／重建
 
+## LoreRim 借用下載：465 件隊列，回家第一步是解析 Nexus id
+
+隊列 `modpack-design/content-plan/lorerim/data/download-queue.csv`（465 列，四個待回填欄全空、`status=TO-RESOLVE`），
+流程 `modpack-design/content-plan/lorerim/download-runbook.md`：houseCARL 逐列解析 id／版本／file id／bytes（每線 ≤60 列、每波 ≤20 GB）→
+對 mod-library 去重 → 一波一條瀏覽器線 slow download → 入庫五步；**不安裝**。第 1–4 波（419 件）不等 AE；第 5 波 CC 34 件等上一節前置。
+**通過**＝每波 `status` 全為 `RESOLVED`／`IN-LIBRARY`／`ASK`／`DROP-4K` 之一，下載件 hash 已驗、DB 已 rescan。
+
 ## 購買 AE 升級，且不得讓 Steam 把 exe 升到 1.7.99
 
 **裁示：買。**（2026-09-02 使用者當場口頭，LoreRim 調查衝突帳第 2 件。）但同場裁示 ① 維持 1.6.1170 釘版。
