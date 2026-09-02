@@ -129,6 +129,8 @@
 
 2026-08-11 查證所依據的外部來源：
 
+<!-- wf-nav -->
+
 - [Ormin/skyblivion-NIFConverter](https://github.com/Ormin/skyblivion-NIFConverter) — Oblivion→Skyrim NIF 轉換器
 - [UESP: Creating Morrowind Meshes Using New Versions of Blender](https://en.uesp.net/wiki/Morrowind_Mod:Creating_Morrowind_Meshes_Using_New_Versions_of_Blender) — NIF 版本號與「改版號無效」
 - [Norbyte/lslib](https://github.com/Norbyte/lslib) — BG3 LSF/LSX/GR2 轉換

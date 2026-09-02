@@ -40,6 +40,8 @@ Done when: <可行/不可行/缺口/下一步已明確，finding 已落檔>
 
 ### 現有 findings
 
+<!-- wf-nav -->
+
 - [dac0da-1.1.0b-cht-voice-matrix](findings/dac0da-1.1.0b-cht-voice-matrix.md) —— 可直接組成「繁中字幕＋英語 AI 語音」。
 - [dialogue-translation-gaps-nff-gyh-ussep](findings/dialogue-translation-gaps-nff-gyh-ussep.md) —— Dev runtime acceptance 看到的英文對話不是 IFD Lydia 或 RDO Final 翻譯失敗，而是三個各自不完整的翻譯表面。
 - [ifd-lydia-4.2.2-translation-audit](findings/ifd-lydia-4.2.2-translation-audit.md) —— 同版 CHS archive 可作翻譯語意種子，但不能未經驗證直接覆寫；主 ESP 與 loose PEX 都已證明為 text-only。

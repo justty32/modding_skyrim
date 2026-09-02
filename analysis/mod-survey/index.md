@@ -2,6 +2,8 @@
 
 ## 內容型
 
+<!-- wf-nav -->
+
 | Mod | Finding | Plugin | 敘事價值 | 重點 |
 | --- | --- | --- | --- | --- |
 | Follower Commentary Overhaul SE | [findings/follower-commentary-overhaul.md](findings/follower-commentary-overhaul.md) | `FCO - Follower Commentary Overhaul.esp` | 中 | generic follower ambient commentary；voice type + location/quest/player-state conditions |
@@ -14,6 +16,8 @@
 | Pirates of Skyrim - The Northern Cardinal | [findings/pirates-of-skyrim.md](findings/pirates-of-skyrim.md) | `NorthernCardinal.esp` | 中-高 | 雙海盜 quest 線 + 自訂 worldspace（Sea of Ghosts/Frostreef）；**船＝Enable/Disable 多實例靜態船的傳送樞紐**（非動畫船，FormList-of-FormList 定址）；XMarker 預置事件群 + RandomInt 重擲做輕量海戰/海域遭遇；crew=9-alias bank + morale global gate；SkyUI MCM，**無 DLL/BSA、附 .psc**；零件全已 landed，缺 `travelHub:` macro + MESG buttons[] |
 
 ## 框架型
+
+<!-- wf-nav -->
 
 | Mod | Finding | Plugin / Runtime | 參考價值 | 重點 |
 | --- | --- | --- | --- | --- |
@@ -40,6 +44,8 @@
 ## 系統 / 機制型（2026-06-14 批次）
 
 逐 mod 機制拆解 + 對 ModForge 的「可生成 / 需新支援 / 純參考」標記。共通缺口已彙整進 [roadmap](../../projects/ModForge/workflows/roadmap/README.md)「mod-survey 浮現的 record/生成缺口」。
+
+<!-- wf-nav -->
 
 | Mod | Finding | 機制重點 | ModForge 缺口 |
 | --- | --- | --- | --- |
@@ -77,6 +83,8 @@
 
 接 vendor + `settlements:` 落地後查兩個商販/服務 mod。**缺口已對 `src/` 驗證**（非推斷）。
 
+<!-- wf-nav -->
+
 | Mod | Finding | 機制重點 | ModForge 缺口 |
 | --- | --- | --- | --- |
 | Trade & Barter (kryptopyr) | [findings/trade-and-barter.md](findings/trade-and-barter.md) | MCM 可調**經濟/商販 overhaul**：barter 率、Speech 影響、商人金幣隨城市大小、地點/身份/種族/知識(Smithing→鐵匠)定價、庫存刷新——**「一串條件化 EntryPoint perk（ModBuy/SellPrices）+ 一個 MCM 腳本」近乎純 perk overhaul**，依賴 SKSE+SkyUI、無 DLL/SPID | **已驗證**：ModForge 已支援 `ModBuyPrices`/`ModSellPrices` EntryPoint（`Generator.Build.Perks.EntryPoints.cs` L31/L55）+ perk/effect CTDA + MCM + vendor faction → **條件化定價 perk + MCM 的 tweak mod 今天就能生**。**唯一硬缺口＝無 GMST/game-setting 編輯**（`src/` 證實缺）；MCM 切換→GLOB→perk 條件接線待補一例 |
@@ -87,6 +95,8 @@
 ## 動作 / 動畫系統框架（2026 完整堆疊）
 
 中樞 [action-system/README.md](action-system/README.md) 有**五層堆疊地圖**（骨架→行為引擎→行為資料注入→動畫選擇→招式框架）+ 跨層「動畫驅動狀態」鐵三角 + ModForge 生成機會。原始 mod 頁文字存 `action-system/raws/`。
+
+<!-- wf-nav -->
 
 | 層 | 框架 | 文件 | ModForge 可生成性 |
 | --- | --- | --- | --- |
@@ -111,6 +121,8 @@
 | Constellations（CSF 最高品質參考實作） | [findings/constellations.md](findings/constellations.md) | CSF 路線確認正確；MVP = JSON+PERK+GLOB+KYWD+薄 Papyrus；Fortify 附魔 native dll 超出 MVP |
 
 ## 求生 / 框架系統型（Campfire 堆疊 + PROTEUS）
+
+<!-- wf-nav -->
 
 | Mod | Finding | 機制重點 | ModForge 意義 |
 | --- | --- | --- | --- |

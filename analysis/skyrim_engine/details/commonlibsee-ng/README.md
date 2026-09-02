@@ -4,6 +4,8 @@
 
 ## 1. 基礎架構 (Architecture)
 
+<!-- wf-nav -->
+
 - [00_概覽 (Overview)](00_overview.md) - CommonLibSSE NG 的核心目標與特性。
 - [01_結構 (Structure)](01_structure.md) - 目錄佈局與關鍵文件說明。
 - [NPC 行為解析](../../answers/NPC_NPC_Behavior.md) - 深入探討 AI 進程、行為包與戰鬥系統。

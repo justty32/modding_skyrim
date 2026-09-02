@@ -128,6 +128,8 @@ transform、inventory chest FormID 與 HUD 狀態。一般 world reference 的 t
 
 ## 原始碼依據
 
+<!-- wf-nav -->
+
 - 選取／raycast：[`src/Picker.cpp`](https://github.com/QTR-Modding/SkyPlace-SKSE/blob/main/src/Picker.cpp)，
   `Cast()`、`Picker::Tick()`
 - runtime transform／放置：[`src/Placer.cpp`](https://github.com/QTR-Modding/SkyPlace-SKSE/blob/main/src/Placer.cpp)，

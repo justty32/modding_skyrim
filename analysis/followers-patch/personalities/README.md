@@ -4,6 +4,8 @@
 
 8 份隨從**性格分析 / 寫作 brief**，比照範本 [sofia-personality.md](../../../projects/sofia-patch/reference/sofia-personality.md) 的節次與深度（定位→原型→幽默風格→對玩家→背景鉤子→語言癖→情緒光譜→長篇/黑暗劇情反應→lore 寫法→寫作 checklist）。全部已產出（2026-06-14）。
 
+<!-- wf-nav -->
+
 | 隨從 | brief | 一句話定位 | 主要素材夾 |
 |---|---|---|---|
 | **Auri** | [auri-personality.md](auri-personality.md) | 木精靈女獵手，綠盟信仰 + 流亡罪疚，深情卻有界線 | `Auri_SongOfTheGreen`（EN）+ `Auri_VIGILANTpatch` |

@@ -6,6 +6,8 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 
 ## 專案入口
 
+<!-- wf-nav -->
+
 | 專案 | 程式碼／文件入口 |
 |------|------------------|
 | ModForge | [`projects/ModForge/workflows/common/code-map/CODE_MAP.md`](../../../../projects/ModForge/workflows/common/code-map/CODE_MAP.md) — generator domain、CLI、schema、tests 的完整分域索引 |
