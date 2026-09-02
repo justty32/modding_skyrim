@@ -20,6 +20,8 @@ USCCCP 樞紐順序可以、LoreRim 停用的 4 件 CC 不跟、Survival Mode CC
 裁示已寫進 `borrow-candidates.csv`／`borrow-patches.csv` 的 `ruling` 欄與兩份計畫的第七節。**本項不再 open。**
 **同日 14:35 追加裁示：改走 MCO 體系**（看過 `mco-switch-estimate.md` 後決定，推翻 backlog 的 MCO→BFCO 方向）；
 團隊 `mco` 產出回家遷移計畫 `modpack-design/content-plan/gameplay/mco-migration-plan-2026-09-02.md`，執行列回家清單。
+**15:40 六題裁示**：Q1 配 SCAR 2（前提 1.6.1170 DLL）；Q2 不走 DXP；Q3 CPR／PGC 開線查 1.6.1170 DLL；Q4 LoreRim 155 件 moveset 全借；
+Q5 11 件 `ASK` 開線查；Q6 查不到 1.6.1170 版跳過並記錄。落地在計畫第六節與 `data/mco-{moveset-queue,ask-11,dll-runtime-evidence}.csv`。
 
 ## wf kernel v0.5.1 要不要拿（2026-09-02 通知，純重新對齊）
 
