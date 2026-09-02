@@ -21,12 +21,16 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 
 ## 1. 啟動
 
-**一律從 Steam 點 Skyrim SE**，不手動開 MO2。`SkyrimSELauncher.exe` 已換成 proxy shim，
-會開出 MO2 GUI 由使用者按 Run。啟動前確認 `ModOrganizer.ini` 的
-`selected_profile` 是 `modpack-main`（該檔是 **CRLF**，用 sed 改要帶 `\r`）。
+**禁止從 Steam 啟動 Skyrim SE**：appid 489830 的「啟動時更新」會把 SkyrimSE.exe 推離
+1.6.1170，破壞 SKSE 生態。啟動前確認 `ModOrganizer.ini` 的 `selected_profile` 是
+`modpack-main`（該檔是 **CRLF**，用 sed 改要帶 `\r`）。
 
-無人值守走 `mo2ctl launch --background-active`：它暫設 profile `skyrim.ini` 的
-`bAlwaysActive=1` 讓失焦時仍能載入，`mo2ctl kill` 會以原始 bytes 還原。
+人工開 MO2 GUI 時執行 `bash instance/tools/launch-mo2.sh`，再由使用者按 Run；直接啟動
+SKSE、免按鍵則執行 `bash instance/tools/launch-mo2.sh --skse`。無人值守走
+`MO2_PROFILE=modpack-main python3 projects/agent-bridge/client/mo2ctl.py launch --background-active`：
+它現在委派同一支 `launch-mo2.sh`，不再自行走 `protontricks-launch`；同時暫設 profile
+`skyrim.ini` 的 `bAlwaysActive=1` 讓失焦時仍能載入，`mo2ctl kill` 會以原始 bytes 還原。
+三條路線不可同時執行。
 
 ## 2. 基線與證據窗
 
