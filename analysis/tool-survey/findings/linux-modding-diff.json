@@ -1,0 +1,9 @@
+{"contract": "wf-table/1", "source": "linux-modding-guide.md", "extracted": "2026-09-02",
+ "columns": ["主題", "指南怎麼做", "我們現況怎麼做", "差異評估"],
+ "rows": [
+  {"主題": "Proton", "指南怎麼做": "鎖 `3.16-4`，安裝／patch 自訂 `skyrim-proton`；不混版本", "我們現況怎麼做": "`instance/tools/launch-mo2.sh` 的 `Proton 9.0 (Beta)`，先比對 `CURRENT_PREFIX_VERSION`，並包在 `SteamLinuxRuntime_sniper`", "差異評估": "版本與啟動棧都已淘汰；只保留「prefix 與 Proton 必須一致」原則。"},
+  {"主題": "MO2", "指南怎麼做": "沒有 MO2；改用 `Data` 或 Wrye Bash", "我們現況怎麼做": "`instance/README.md`「啟動與安全」指定 MO2，`launch-mo2.sh` 以 `ModOrganizer.exe` 為入口", "差異評估": "幾乎不重疊，不能拿它維護現行 MO2 profile。"},
+  {"主題": "SKSE／工具 `.exe`", "指南怎麼做": "Steam 先開 xterm，再用同一 Proton 跑 loader／SSEEdit／Wrye Bash", "我們現況怎麼做": "`instance/README.md`「不要從 Steam 啟動」；`launch-mo2.sh`「啟動」以 `waitforexitandrun` 進 MO2", "差異評估": "舊 launch option 不可搬；「所有工具同一 Proton」仍與現況相容。"},
+  {"主題": "AppID prefix／音效", "指南怎麼做": "對 `compatdata/489830/pfx` 補 FAudio，必要時切 ALSA／PulseAudio", "我們現況怎麼做": "`launch-mo2.sh` 以 `STEAM_COMPAT_DATA_PATH` 固定同一 `489830` prefix，沒有 FAudio／winetricks 步驟", "差異評估": "prefix 接點重疊；音效修法是新增候選，但年代太舊，只宜故障時驗證。"},
+  {"主題": "檔名語意", "指南怎麼做": "提醒 Linux `textures`／`Textures` 大小寫敏感，要求一致", "我們現況怎麼做": "`linux-manjaro-mo2-runbook.md`「第二層：大小寫敏感」記 native 工具的靜默漏檔；`launch-mo2.sh`「關鍵防護」另禁止 mod 名非 ASCII", "差異評估": "互補；指南提醒資產路徑，我方已另處理 native resolver 與 MO2 codepage。"}
+ ]}

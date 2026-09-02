@@ -118,3 +118,12 @@ Event AttemptRegistration()
 無直接關係（Sofia 不碰 survival/技能樹）。間接：Campfire 的 **`_Camp_ObjectPlacementThreadManager` async 放置 + future 模式** 是「在玩家面前可靠 spawn 一組臨時物件並保證回收」的成熟範式——若日後 Sofia/follower 要做「召喚一組臨時互動物件」（如行動選單實體化），這套 RequestLock/PlaceObject-future/wait_all/distance-takedown/cell-detach-failsafe 是值得借鏡的健壯骨架。
 </content>
 </invoke>
+
+## 6. 安裝坑與 SE/AE／中文層現況（2026-09-02 補查）
+
+一句話結論：若需求／生存選 Campfire／Frostfall，Campfire 是必經基座；先剔除隨包 DLL、由現役 PapyrusUtil 覆蓋，再驗 1.6.1170。
+
+- PapyrusUtil／StorageUtil：Classic 包帶 `StorageUtil.dll`，SE 包帶 `PapyrusUtil.dll`（`analysis/tool-survey/repos/Campfire/Campfire_BuildRelease.py:87`）；Frostfall 因 Campfire 已內含而移除 PapyrusUtil（`analysis/tool-survey/repos/Campfire/readmes/Frostfall_changelog.txt:389`）。Campfire 腳本查無 `StorageUtil.` 呼叫。`modpack-design/sources/OPEN.md:15` 警告 `PapyrusUtil.dll`，此 clone 實存卻是 `StorageUtil.dll`；不可混稱，可能是不同 build／版本。
+- SSE/AE：舊證據只到 PapyrusUtil 3.4b、SKSE64 2.0.7、SSE 1.5.39（`analysis/tool-survey/repos/Campfire/readmes/Campfire_changelog.txt:20`），無 AE／1.6.1170 證據，不能判相容。
+- 中文層：`mod-library/l10n/` 與 zh-layer 清單均無 Campfire，尚無翻譯層。
+- 待裁決：只新增 DLL、中文與 1.6.1170 gate；不代決需求／生存（`modpack-design/content-plan/gameplay/OPEN.md:9`、`wait-user/home-setup.md:61`）。
