@@ -1,10 +1,12 @@
 # 整包 UI／中文／任務驗收
 
-## MCO 遷移 P4／P7 16 條實機驗收＋字形 gate
+## 天賦／Serana 中文層實機確認（promote `feat/zh-dsport-2026-09-02` 的前提）
 
-2026-09-02 已完成 MCO 遷移 P2／P3／P5／P6，尚待 P4／P7 共 16 條實機驗收與字形 gate。
-全過就 promote `instance/profiles` 的 `feat/mco-2026-09-02`；任一不過就依
-[`mco2 REPORT` 第四節](../agentctl/handoffs/home-2026-09-02/mco2/REPORT.md)回滾。
+2026-09-02 晚 MCO 遷移 16 條實機驗收已由使用者全過並 promote（`instance/profiles` main `9e188e2`）。
+之後 dispatcher 在 `feat/zh-dsport-2026-09-02` 部署了 SDA 4.3.2 補完層（插英文本體之前，舊 4.1.1.3 停用）與
+Ordinator／SPERG 天賦補完三層。請使用者進遊戲看：技能樹 perk 名稱／說明是否中文、Serana 對話是否中文；
+過了就 promote，任一不過就依 [`sda/REPORT.md`](../agentctl/handoffs/home-2026-09-02/sda/REPORT.md)、
+[`zhgap/REPORT.md`](../agentctl/handoffs/home-2026-09-02/zhgap/REPORT.md) 的 backup 覆回。
 
 ## Auri＋現役 VIGILANT 有限解凍整合
 

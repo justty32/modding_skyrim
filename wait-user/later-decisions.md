@@ -1,5 +1,14 @@
 # 日後素材／清理決定
 
+## Dev0A 基線存檔：使用者刻意刪了，規則要不要跟著改（2026-09-02 晚）
+
+使用者 2026-09-02 22:30 說「dev0a 存檔基線我確實刪掉了」（實機驗收期間在遊戲內刪）。dispatcher 因
+`instance/profiles/tools/check_profiles.py` 把它當必要檔（缺了 promote 直接 FAIL）且 QA harness／agent 開遊戲都載它
+（當晚 dsview 傳送就是 `load ModpackKRDev0A`），先從 git 覆回（`9e188e2` 之前，sha 同 README 常數），**沒有改規則**。
+要問：① 留著（維持現狀，遊戲存檔清單裡會一直看到它）；② 拿掉——要一併改 `check_profiles.py` 的 `BASELINE_SAVES`、
+`.gitignore` 白名單、`instance/profiles/README.md` 規則 4、`wf/workflows/runtime-qa/README.md` 第 2 節，並替 agent QA 另定基線存檔。
+建議 ①。
+
 ## ~~LoreRim 打底：80 件待裁決＋借用盤點 11 題~~（2026-09-02 全部已裁示，不計 open）
 
 LoreRim 3933 件套完三條規則（ENB／高解析度／NPC 美化）後，撞到現役已裝／已定的部分全部寫成問題進

@@ -11,8 +11,8 @@
 
 ## 現役工作
 
-- [modpack-planning] **2026-09-02 家中晚場已收工**（兩段共 11 隊；MCO 遷移 P2→P6 已施工、profiles 在 feat/mco-2026-09-02 未 promote）→ 明天開場照 `agentctl/handoffs/NEXT-SESSION.md` 七項
-- [modpack-planning] 待使用者：MCO 16 條實機驗收、mo2fix 合併時機、SCAR 2 時機 → `WAIT_USER.md`
+- [modpack-planning] **2026-09-02 家中晚場已收工**（三段共 18 隊；MCO 切換實機全過並 promote 到 profiles main `9e188e2`；中文層部署在 `feat/zh-dsport-2026-09-02` 未 promote）→ 明天開場照 `agentctl/handoffs/NEXT-SESSION.md` 11 項
+- [modpack-planning] 待使用者：天賦／SDA 中文層實機確認、Dev0A 基線存檔規則、GO 19 四題、mo2fix 合併時機 → `WAIT_USER.md`
 
 截至 **2026-08-29 早上（Asia/Taipei）**，母 repo 本身沒有進行中的 agent 工作。Skyrim／MO2 已關閉。
 同日使用者外出期間會**遠端驅動 gpt-sol（codex）**在本工作區做上網調查／下載 mod 這類

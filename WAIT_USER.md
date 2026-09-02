@@ -8,11 +8,11 @@
 
 | 類別 | open | 清單 |
 |---|---:|---|
-| 回家下載／重建 | 9 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
+| 回家下載／重建 | 7 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
 | 今晚裁決簡報（2026-09-02） | 0 | [wait-user/decision-briefs-2026-09-02.md](wait-user/decision-briefs-2026-09-02.md)（15 題全部已裁示並落地） |
 | 整包 UI／中文／任務驗收 | 12 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
 | 獨立功能驗收 | 5 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
-| 日後素材／清理決定 | 2 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
+| 日後素材／清理決定 | 3 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
 | 版本控制收線 | 0 | [本檔下節](#push-排程) |
 
 ## Push 排程

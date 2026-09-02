@@ -7,7 +7,7 @@
 與 `data/mco-{migration-steps,restore-list,framework-queue}.csv`。回家先做第一階段備份，再照 `steps.csv` 的 `status` 逐步推進；
 框架隊列的 Nexus id／版本走 houseCARL，DLL 一律找 1.6.1170 對應版。**通過**＝16 條實機驗收全過、缺 master 0、無新 crash。
 
-**狀態（2026-09-02 晚，mco2 隊）**：P2／P3／P5／P6 已完成，`instance/profiles` 在 `feat/mco-2026-09-02` 尚未 promote；只剩 P4／P7 16 條實機驗收＋字形 gate，任一不過依 [mco2 REPORT 第四節](../agentctl/handoffs/home-2026-09-02/mco2/REPORT.md)回滾。
+**狀態（2026-09-02 22:33，dispatcher）**：**本項完成。** P2／P3／P5／P6 由 mco2 隊施工，P4／P7 16 條＋字形 gate 使用者 22:15 實機全過，`release/2026.09.02-mco` 已 promote 到 `instance/profiles` main（`9e188e2`）並 push；回滾窗解除。只剩 SCAR 2 v2.01 安裝（V-A 已過，可裝）列在 `agentctl/handoffs/NEXT-SESSION.md` 第 8 項。
 
 ## LoreRim 借用下載：465 件隊列，回家第一步是解析 Nexus id
 
@@ -38,6 +38,7 @@
 
 **狀態（2026-09-02 晚，home 隊）**：4.3.2 本體與 exact 簡中 archive 均已在庫、`sda-2026-08-31` 3 gates PASS 且兩層已啟用；舊 4.1.1.3 中文層（modlist 第 29 行）仍啟用，待裁示是否停用。證據：[sda-mihail-library-precheck.md](../agentctl/handoffs/home-2026-09-02/home/sda-mihail-library-precheck.md)。
 **裁示（2026-09-02 晚，引文）**：home-1——先搜有無更新／更完整中文層，沒有就自製（沿用 zh-layer 自製翻譯輪）；舊 4.1.1.3 層（modlist 29）停用列入下一批 profile 變更；查證見 [zh-check](../agentctl/handoffs/home-2026-09-02/rule/zh-check.md)。
+**狀態（2026-09-02 22:34，dispatcher）**：**本項完成。** sdazh 隊自製補完層（81 欄）已入庫，sda 隊發現現役 esp 贏家其實是英文本體（中文層被遮），新層插英文本體之前、舊 4.1.1.3 停用，已套用並 record（`instance/profiles` `9eb708d`，分支 `feat/zh-dsport-2026-09-02`）。實機看 Serana 是否中文改列 [整包驗收](integrated-runtime.md)。
 
 ## Mihail 自然核心首批 4–6 件 preflight
 
