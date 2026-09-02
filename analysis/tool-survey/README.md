@@ -36,6 +36,7 @@ repos/
 | OBody | Papyrus + ESP | — | 舊版（Papyrus-based）；已被 OBody-NG 取代 |
 | [SkyrimSE-Linux-Modding](findings/linux-modding-guide.md) | 指南 | ✅ 快照調查 | 過時的 Proton 3.16-4／SKSE／FAudio 指南；與現行 Manjaro＋MO2 的可借接點與缺口 |
 | [Mundusform](findings/mundusform.md) | SKSE worldbuilding toolkit | ✅ 原始碼調查 | 可借概念，不可直接用：玩家走位粗鋪 navmesh 與 connector/bounding-box block grammar 有研究價值，但現成 DLL／export 鏈停在 1.5.97-era 且缺完整 NAVM/NAVI、跨 cell 與 1.6.1170 證據。 |
+| [Mundusform 三片段借用評估](findings/mundusform-borrow-assessment.md) | 遊戲內編輯器移植評估 | ✅ 原始碼對照 | navmesh 鋪 quad＝PORT；cell 快照＝SKIP；block 生成＝CONCEPT。 |
 | [wrye-bash](findings/wrye-bash.md) | Python mod manager + Bashed Patch generator | ✅ 原始碼調查 | 可借概念：LeveledListsPatcher 的 master-delta＋Delev/Relev 合併可補我方缺口，但現成 Bashed Patch 沒有無頭 CLI/API，且 GPL-3.0 不宜直接嵌入。 |
 
 ---
