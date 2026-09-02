@@ -1,0 +1,14 @@
+# 經濟 / 商販 / 服務型（2026-06-25 批次，使用者指定）
+
+← [mod-survey](README.md)｜[survey index](index.md)
+
+接 vendor + `settlements:` 落地後查兩個商販/服務 mod。**缺口已對 `src/` 驗證**（非推斷）。
+
+<!-- wf-nav -->
+
+| Mod | Finding | 機制重點 | ModForge 缺口 |
+| --- | --- | --- | --- |
+| Trade & Barter (kryptopyr) | [findings/trade-and-barter.md](findings/trade-and-barter.md) | MCM 可調**經濟/商販 overhaul**：barter 率、Speech 影響、商人金幣隨城市大小、地點/身份/種族/知識(Smithing→鐵匠)定價、庫存刷新——**「一串條件化 EntryPoint perk（ModBuy/SellPrices）+ 一個 MCM 腳本」近乎純 perk overhaul**，依賴 SKSE+SkyUI、無 DLL/SPID | **已驗證**：ModForge 已支援 `ModBuyPrices`/`ModSellPrices` EntryPoint（`Generator.Build.Perks.EntryPoints.cs` L31/L55）+ perk/effect CTDA + MCM + vendor faction → **條件化定價 perk + MCM 的 tweak mod 今天就能生**。**唯一硬缺口＝無 GMST/game-setting 編輯**（`src/` 證實缺）；MCM 切換→GLOB→perk 條件接線待補一例 |
+| Honed Metal（NPC 打造/附魔服務） | [findings/honed-metal.md](findings/honed-metal.md) | 付費請 NPC 鐵匠/附魔師代工（打造/強化/附魔/充能），成本隨 NPC 技能+barter；**框架型 + 原生 C++ SKSE DLL**；faction-tag NPC + 條件對話 + FormList 材料 + 「開容器→腳本開原生製作選單」核心 trick；依賴 SKSE+SkyUI | scaffolding（faction 服務對話+MCM+FormList+扣金幣 fragment+storage）**可生成**；**controller（開原生選單、成本數學、perk/技能 gate、強化套用）須 bespoke Papyrus，原生選單 trick 可能要附帶預建 DLL**；浮現 `services:` macro + 「付錢→給/改物件」交易 pattern 兩個候選 |
+| Real Estate（Nexus 14408 v3.2） | [findings/real-estate.md](findings/real-estate.md) | 玩家側**房產投資經濟**：買下 vanilla 房子→被動收租/礦產/農產→賣出。**vanilla-only（僅 SkyUI，無 DLL/PapyrusUtil/JContainers）**；機制＝每棟房外手擺一個腳本化 **Property Sign Activator**（`Owned`/`Not owned` state machine）+ 計價/收益 GLOB 組 + `RegisterForUpdateGameTime` 被動收租 + `SetActorOwner`/token-replacement 所有權 + relationship PERK + `SKI_ConfigBase` MCM + 教學 quest；告示牌＝在既有世界疊一層玩家系統的低衝突 pattern | **已驗證**：GLOB/QUST/ACTI script-attach/XOWN(`OwnershipSpec`)/PERK/RELA/MCM/收租 fragment **全已 landed**。**唯一硬缺口＝`MessageSpec` 無多按鈕選單欄位**（`Spec.Items.cs:42` 只有 EditorId/Name/Description）→ 生不出買/賣 message-box 選單（跨多互動 mod 的通用缺口，建議優先補 `buttons:[]`）。settlements macro 缺 `ownership:`/`income:` 維度（#22 收益面）|
+| Supply and Demand（Nexus 32365 v1.1） | [findings/supply-and-demand.md](findings/supply-and-demand.md) | **動態供需定價**（≠ Trade & Barter 的靜態 perk，同目標反槓桿）：12 records（2 GLOB/3 MGEF[2 Script+1 Cloak]/4 SPEL/2 QUST/Bannered Mare CELL+CONT override），**無 perk/GMST/VendorValues/SPID/DLL**。cloak spell 把 `tc_PlayerScript`(68KB controller) bootstrap 到玩家 → `OnItemAdded/Removed` + `GetGoldValue/SetGoldValue` 按 location/keyword 追交易量、存 `ValuesArray1..30` vs `OriginalValuesArray*`，`tc_MonitorScript` 依 GLOB `tc_Global_ExtinctionRatio` 隨時間回價；`SKI_ConfigBase` MCM 2 選項。⚠ 內部邏輯為 pex-strings 推斷（無 .psc、無 decompiler） | **已驗證**：record 外殼（GLOB/script-archetype MGEF·SPEL/CELL·CONT override/MCM）全可生成，且 `ScriptAttachSpec.Source`（`Spec.Dialogue.cs:231`）可編譯 user `.psc` 進 VMAD → **ModForge 是 packager、動態經濟演算法須手寫 Papyrus**。確認 GMST 缺口（S&D 不需 GMST 故非阻擋）。pattern：**「交易追蹤 controller」＝scaffold + 附帶 .psc**（同 Honed Metal/Tundra controller 類） |

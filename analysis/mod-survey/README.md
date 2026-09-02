@@ -27,6 +27,8 @@ ESM/FormID 抽取**工具參考** → [`workflows/investigation/esm-formid-acces
 ## 產出放這裡
 
 - `findings/<mod-name>.md` — 每個 mod 一份：類型 / 是否有 plugin / 關鍵記錄 / 對 Sofia 或 roadmap 的意義
-- `index.md` — 調查總表（建議按「內容型 / 框架型 / 修復型 / 美術型」分類）
+- `index.md` — 調查總表的**路由頁**：只列子表入口，逐 mod 細目在同層的 `index-<主題>.md` 九張子表
+  （內容型／框架型 runtime／框架型 tools／系統型 encounters・population・building／經濟／動作系統／技能樹）。
+  2026-09-02 由單一 31 KB 的 `index.md` 依契約分層拆出。
 
-（目前空——等 agent 開工。）
+目前已收 75 件；`修復型`／`美術型`兩類仍未調查。
