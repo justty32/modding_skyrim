@@ -9,20 +9,12 @@
 | 類別 | open | 清單 |
 |---|---:|---|
 | 回家下載／重建 | 7 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
-| 整包 UI／中文／任務驗收 | 10 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
+| 整包 UI／中文／任務驗收 | 11 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
 | 獨立功能驗收 | 5 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
-| 日後素材／清理決定 | 3 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
+| 日後素材／清理決定 | 2 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
 | 版本控制收線 | 0 | [本檔下節](#push-排程) |
 
 ## Push 排程
-
-**2026-09-01 `hvfm` 收線待推（3 個 commit，皆 fast-forward，`ahead 1`）**：
-`modpack-design` `0e4a19d`、`agentctl` `ad84670`、母 repo gitlink `dd4a5ca`。
-內容是「語音隨從改造」project 成立與盤點入檔，零施工。
-`dispatcher` 轉達使用者要推，但**轉達不等於使用者本人確認**（鐵律 2 的授權來源），
-所以本線只 commit 未 push。工作**沒有遺失風險**——三個 commit 都已落在本機 git。
-要推就三行：各 repo `git push origin main`（先兩個子 repo，再母 repo）。
-
 
 1. ~~**裁示：等全部現役線真正收完後一次推。** 先由 `dispatcher` 對帳各子 repo 的 commit、dirty
    worktree 與母 repo gitlink；對帳完成後，再請使用者當場確認是否 push。~~ **已完成（2026-09-01）**。

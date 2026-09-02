@@ -25,37 +25,22 @@
 （662 是同組的簡中層）。**不要的話單獨停用即可，不影響其他 169 件。**
 原訊息已歸檔在 [`2026-08-30 DIGEST`](../agentctl/inbox/done/2026-08-30/DIGEST.md)（`lead-modpack` 段）。
 
-## profiles 的 baseline save pair 被誤刪，要復原還是改規則
+## ~~profiles 的 baseline save pair 被誤刪，要復原還是改規則~~（已裁示並執行，不計 open）
 
-**`instance/profiles` 的 profile 分支工作流目前在 `main` 上對所有線都是壞的**——
-`profile_workflow.py` 的 `status`／`start`／`record`／`promote` 全被驗證器擋下，
-理由是 `modpack-main/saves/ModpackKRDev0A.{ess,skse}` 不存在。
+**裁示：① 復原。** 2026-09-02 使用者於公司 session 當場裁示，並已在公司這台執行：
+`instance/profiles` 自 `2b1546d`（＝`7e70ae2^`）取回
+`modpack-main/saves/ModpackKRDev0A.{ess,skse}`。兩檔實測內容 sha256 與
+`tools/check_profiles.py` 的 `BASELINE_SAVES` 常數相符（`fcd26d7d…`／`9545b19d…`），
+`check_profiles.py` 由 `FAILED: 2 validation error(s)` 轉為 `PASS`，
+`profile_workflow.py status` 亦恢復可執行。**改動仍在工作樹，尚未 commit。**
 
-**根因**：兩檔在 commit `7e70ae2`（2026-08-31 22:45，author 是你本人）被一併刪掉，
-看來是 MO2 清掉磁碟存檔後被 `commit -a` 掃進去，不是刻意決定——`.gitignore` 仍把它們列為
-白名單例外，`instance/profiles/README.md` 與 `wf/workflows/runtime-qa/README.md` 也都還當
-它們是固定基準。工作樹與 index 都沒有它們，`git status` 因此乾淨，缺陷不會自己浮出來。
+裁定依據是刪除屬意外而非決定：`.gitignore` 白名單例外、驗證器常數、
+`instance/profiles/README.md` 與 `wf/workflows/runtime-qa/README.md` 都仍當它們是固定基準；
+若為刻意刪除，這些會一併拿掉。兩檔是在 `7e70ae2`（2026-08-31 22:45）被 `commit -a` 掃進去的。
 
-**復原路徑（已查證可直接執行）**：最後一個含有它們的 commit 是 `2b1546d`（＝`7e70ae2^`）。
-兩個 blob 的內容 sha256 與 `tools/check_profiles.py` 的 `BASELINE_SAVES` 常數**逐字元相符**，
-所以復原出來的就是驗證器所定義的正典基準，沒有「塞回舊 save 破壞別人假設」的風險：
-
-| 檔 | 內容 sha256（＝驗證器常數） |
-|---|---|
-| `…/ModpackKRDev0A.ess` | `fcd26d7d2db2385f568b05db874523e2aa47f01b21746b491bcf1e71d0f88cb3` |
-| `…/ModpackKRDev0A.skse` | `9545b19dc9147982213f78603967c991b48bac2f2bbfe4ffd52df3dc1fc436f6` |
-
-```sh
-cd instance/profiles
-git checkout 2b1546d -- modpack-main/saves/ModpackKRDev0A.ess modpack-main/saves/ModpackKRDev0A.skse
-python3 -B tools/check_profiles.py    # 應回 OK
-```
-
-**三選一**：①復原（上面的指令）；②若刪除是刻意的，同步拿掉 `.gitignore` 白名單、
-改驗證器與三處文件；③放寬驗證器，缺檔只警告不阻擋。
-
-**附帶影響**：`runtime-qa` 規定用固定 baseline save 開檔，它不在磁碟上，
-所以 2026-09-01 的 DMK smoke 用的不是標準基準。
+**衍生的 open 項已另立**：2026-09-01 的 DMK smoke 當時磁碟上沒有 baseline save，
+用的不是標準基準，須回家以復原後的基準重跑——列於
+[`整包 UI／中文／任務驗收`](integrated-runtime.md)。
 
 **歷程**：`lead-hdmk` 2026-09-01 19:47 上報後依鐵律 4 未自行修；`lead-hops` 同日合併
 `feat/dmk-cht-20260901` 時亦未碰（`main` 與該分支的 validation 錯誤完全相同，合併未新增退化）。

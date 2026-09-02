@@ -9,6 +9,14 @@ NFF，Sofia 的 RDO／AI Overhaul／No Bump 選配須重新核對現役 clothing
 **通過**＝離線 winner／版本／中文層無回滾，再實機驗 Auri 招募與跟隨、VIGILANT commentary 條件／
 字幕、Sofia 選配及既有 VIGILANT／Sofia 行為都無新衝突；不得藉此加入第二名新 follower。
 
+## DMK 中文層 smoke 以標準 baseline save 重跑
+
+2026-09-01 的 DMK smoke 執行時，`instance/profiles/modpack-main/saves/ModpackKRDev0A.{ess,skse}`
+不在磁碟上（`7e70ae2` 誤刪，2026-09-02 已於公司復原；見
+[`日後素材／清理決定`](later-decisions.md)），因此當時開檔用的不是 `runtime-qa` 規定的固定基準。
+回家以復原後的 baseline save pair 重跑一次 DMK 中文層 smoke。
+**通過**＝以標準基準開檔，DMK 中文層顯示與 2026-09-01 的結論一致；若不一致，原結論作廢並重驗。
+
 ## Missives `_chinese.txt` 檔名例外
 
 **裁示：A —— `sLanguage` 維持 `ENGLISH`，局部修 Missives 檔名。**（2026-09-01，使用者當場口頭裁示；
