@@ -5,7 +5,7 @@
 **裁示：買。**（2026-09-02 使用者當場口頭，LoreRim 調查衝突帳第 2 件。）但同場裁示 ① 維持 1.6.1170 釘版。
 購買本身不動 exe；**下載 Creation Club 內容要 Steam 上線並進遊戲主選單，上線即會觸發更新到 1.7.99**
 （`AutoUpdateBehavior` 風險見 2026-09-01 裁示 8A）。回家順序：先備份現役 exe／`Data` 的 CC 相關檔與 depot manifest，
-確認有降版手段（depot 回滾或 downgrader），再上線購買與下載 CC，下載完立刻回離線並核對 exe 仍為 1.6.1170。
+確認有降版手段（depot 回滾或 downgrader；**使用者記得有，回家先找出來驗證可用**），再上線購買與下載 CC，下載完立刻回離線並核對 exe 仍為 1.6.1170。
 **通過**＝CC 內容全部到位、exe 版本不變、現役 profile 可開到主選單。之後 LoreRim 的 Creation Club 段
 （`quests-and-lands.json` 的 25 件 CC 與其 patch）才能進借用盤點。
 

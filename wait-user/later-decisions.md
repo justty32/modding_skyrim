@@ -1,6 +1,6 @@
 # 日後素材／清理決定
 
-## ~~LoreRim 打底：80 件待裁決~~（2026-09-02 已裁示 9 件關鍵項，其餘 71 件預設 KEEP-OURS 生效、借用時逐件再問）
+## ~~LoreRim 打底：80 件待裁決＋借用盤點 11 題~~（2026-09-02 全部已裁示，不計 open）
 
 LoreRim 3933 件套完三條規則（ENB／高解析度／NPC 美化）後，撞到現役已裝／已定的部分全部寫成問題進
 `modpack-design/content-plan/lorerim/data/conflicts-for-ruling.csv`（80 列，`default_action` 一律 `KEEP-OURS`）。
@@ -13,7 +13,11 @@ Stock Game；Requiem vs EnaiRim 凍結、吸血鬼／狼人 overhaul、perk 進�
 ⑤ 不採 Requiem；⑥ 維持不加吸血鬼／狼人 overhaul；⑦ 不換 perk 進程層；⑧ 不整組換魔法；⑨ 不採 Late Loaders。
 **高解析度門檻：2K 可、4K 以上排除**（2026-09-02 使用者當場，用於 `exclusions.csv` 的 `GRAY-HIRES` 改判）。其餘 71 件不逐件裁，預設 `KEEP-OURS` 生效；下一段做「借三段」逐件盤點時再問。不併 install-plan 直到盤點完成。
 **借用盤點已完成（同日 12:05）**：`modpack-design/content-plan/lorerim/borrow-plan.md` 第六節七題與 `cc-plan.md` 第六節四題待使用者，
-關鍵是 `Lux` 家族要不要一起借（24 件城鎮候選依賴）、patch 表 24 件 `REBUILD` 要不要投人力、AE 升級排回家哪一輪。
+**11 題已於同日裁示（全照調度者建議）**：灰區 12 件回家查解析度、UI 音效 2 件不要、已有同名 8 件先保留我們的、
+`Lux` 家族借本體、BOS 與 Embers XD 借、Northern Roads 不借、REBUILD 先做第一二批用到的、CC 段排 AE 升級後下一輪、
+USCCCP 樞紐順序可以、LoreRim 停用的 4 件 CC 不跟、Survival Mode CC 擱著。降版備援回家確認（使用者記得有）。
+另裁示：**一般 retexture 整批先放著**（使用者對畫面要求不高），`exclusions.csv` 的 `GRAY-HIRES` 800 餘件不追、不進借用盤點。
+裁示已寫進 `borrow-candidates.csv`／`borrow-patches.csv` 的 `ruling` 欄與兩份計畫的第七節。**本項不再 open。**
 
 ## wf kernel v0.5.1 要不要拿（2026-09-02 通知，純重新對齊）
 
