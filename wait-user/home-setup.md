@@ -24,6 +24,7 @@
 （`quests-and-lands.json` 的 25 件 CC 與其 patch）才能進借用盤點。
 
 **狀態（2026-09-02 晚，home 隊）**：降版前置已就緒——本機 `~/skyrim_mods/steam-build-backup/…-FULL/` 可回填 1.6.1170（三份 exe hash 相同、小備份 sha256sum -c 4/4）；wSkeever patcher 169962 本機沒有，下載單已寄 lead-lrdl。證據：[downgrade-readiness.md](../agentctl/handoffs/home-2026-09-02/home/downgrade-readiness.md)。
+**裁示（2026-09-02 晚，引文）**：home-4 A——降版用 FULL 回填；patcher 169962 只當第二備援。
 
 ## Serana Dialogue Add-On 4.3.2 exact 簡中 topology gate
 
@@ -34,6 +35,7 @@
 沒有舊版 record／script／asset 回滾；證據落檔後才可進部署。
 
 **狀態（2026-09-02 晚，home 隊）**：4.3.2 本體與 exact 簡中 archive 均已在庫、`sda-2026-08-31` 3 gates PASS 且兩層已啟用；舊 4.1.1.3 中文層（modlist 第 29 行）仍啟用，待裁示是否停用。證據：[sda-mihail-library-precheck.md](../agentctl/handoffs/home-2026-09-02/home/sda-mihail-library-precheck.md)。
+**裁示（2026-09-02 晚，引文）**：home-1——先搜有無更新／更完整中文層，沒有就自製（沿用 zh-layer 自製翻譯輪）；舊 4.1.1.3 層（modlist 29）停用列入下一批 profile 變更；查證見 [zh-check](../agentctl/handoffs/home-2026-09-02/rule/zh-check.md)。
 
 ## Mihail 自然核心首批 4–6 件 preflight
 
@@ -45,6 +47,7 @@ combat style 做 Apothecary 與現役 EnaiRim 語意 preflight；不得偷換成
 Apothecary／Enai 接觸面全數有處置，才能排入施工。
 
 **狀態（2026-09-02 晚，home 隊）**：首批（`hmih-2026-09-01/targets.json`）14/14 archive 在庫且大小符合，8/8 件已有 preflight gate 證據，無需下載；但該 8 件相對裁示 3A「自然核心 4–6 件」的範圍差異待使用者裁示。證據：[sda-mihail-library-precheck.md](../agentctl/handoffs/home-2026-09-02/home/sda-mihail-library-precheck.md)。
+**裁示（2026-09-02 晚，引文）**：home-2 A——`targets.json` 8 件全進，安裝排入下一批 profile 變更。
 
 ## scene-capture-bridge 完整離線測試
 
@@ -79,6 +82,7 @@ triplet 仍缺，需要能跑 vcpkg build 的環境補上；不得改測試掩�
    2026-08-30T09:52，`modlist.txt`／`plugins.txt` 已到 2026-09-01 13:15，兩者數字對不起來。
 
    **狀態（2026-09-02 晚，home 隊）**：已定位——`updated_at` 實為 2026-09-01T11:47Z；mo2ctl `cmd_enable/cmd_disable`、人工直寫與 MO2 關閉寫回都不更新 manifest，差集 605／488／181／64；修法建議（`commit_profile()` 收口／關 MO2 後 reconcile）見 [mo2ctl-drift-diagnosis.md](../agentctl/handoffs/home-2026-09-02/home/mo2ctl-drift-diagnosis.md)。
+   **裁示（2026-09-02 晚，引文）**：home-3 C——拆 provenance／live checkpoint，`mo2fix` 隊承接。
 
 另：`major-content-preflight-2026-09-01/` 的 9 件裡有 6 件其實早已安裝啟用，該批任務單與批次計畫
 的框架語意需要對現況重新校正（更正段已加在 `home-batching-plan.md` 開頭）。

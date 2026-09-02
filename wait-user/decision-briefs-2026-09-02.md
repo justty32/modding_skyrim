@@ -22,6 +22,7 @@
 - **選項與後果**：A 留舊版＝可續檔、有中文；B 換周年版＝新內容，但新周目且中文歸零。
 - **我方建議＋門檻**：選 A；只有「新周目＋周年版中文層 1 件對版」才改 B。
 > 換
+- **落地**：`../modpack-design/sources/mod-want-review-2026-09-02.json` `ruling` 欄；`../agentctl/handoffs/home-2026-09-02/rule/zh-check.md`。
 
 ### want-2　Unique Thane Weapons 還是 LOTD？
 - **問題**：`35497` 與後續 GO 的 LOTD 互斥。
@@ -29,6 +30,7 @@
 - **選項與後果**：A 留 LOTD＝大型內容方向不變；B 裝 `35497`＝放棄 LOTD 相容。
 - **我方建議＋門檻**：選 A；若 LOTD 延後至少 1 個周目才改 B。
 > 換LOTD
+- **落地**：`../modpack-design/sources/mod-want-review-2026-09-02.json` `ruling` 欄；使用者 20:40 口頭確認＝A。
 
 ### want-3　兩套魔法要不要接受平衡風險？
 - **問題**：`139953`／`145420` 是加法，但分別碰現役魔法與附魔平衡。
@@ -36,6 +38,7 @@
 - **選項與後果**：A 暫緩＝維持平衡；B 兩件都進＝內容多、調平成本高；C 逐件進＝較易回滾。
 - **我方建議＋門檻**：選 C；一次只進 1 件，未處理 record 衝突須為 0。
 >　B
+- **落地**：`../modpack-design/sources/mod-want-review-2026-09-02.json` `ruling` 欄。
 
 ### want-4　要不要建新周目候選清單？
 - **問題**：`72772` 必須新周目；`145599` 還另與現役 Alternate Start 衝突。
@@ -43,6 +46,7 @@
 - **選項與後果**：A 建清單＝集中延後；B 不建＝逐件散置；C 全放棄＝最省維護。
 - **我方建議＋門檻**：選 A；新周目限定件達 2 件即建單，`145599` 仍維持 NO-GO。
 > B
+- **落地**：`../modpack-design/sources/mod-want-review-2026-09-02.json` `ruling` 欄。
 
 ### want-5　15 件 GO 要不要開下載單？
 - **問題**：15 件已判 GO，本場尚未下載或寄單。
@@ -50,6 +54,7 @@
 - **選項與後果**：A 開單＝先入庫、不安裝；B 暫停＝零下載、延後施工。
 - **我方建議＋門檻**：選 A；15/15 的 fileId／bytes 齊全且 4K 檔為 0 才送單。
 > 開
+- **落地**：`../modpack-design/sources/mod-want-review-2026-09-02.json` `ruling` 欄。
 
 ## home
 
@@ -59,6 +64,7 @@
 - **選項與後果**：A 停用＝避免舊 record／asset 回滾；B 保留＝多一層但有版本污染風險。
 - **我方建議＋門檻**：選 A；新兩層在庫、啟用且 topology gate 3/3 PASS 即停。
 > 去搜尋看有沒有新中文，若沒有，那就我們自己做。
+- **落地**：`home-setup.md`「Serana Dialogue Add-On 4.3.2」段。
 
 ### home-2　Mihail 首批取 8 件還是自然核心 4–6 件？
 - **問題**：現清單 8 件含 Dwarven／Goblins／High Fantasy，超出原裁示語意。
@@ -66,6 +72,7 @@
 - **選項與後果**：A 8 件全進＝利用既有 gate、擴張範圍；B 重選 4–6 件＝守原裁示、較慢。
 - **我方建議＋門檻**：選 B；hand-placed 自然件最多 6 件，非自然核心為 0。
 > A
+- **落地**：`home-setup.md`「Mihail 自然核心首批」段。
 
 ### home-3　mo2ctl 漂移採哪種修法？
 - **問題**：三類 writer 不同步 manifest，現有差集為 181／64。
@@ -73,6 +80,7 @@
 - **選項與後果**：A mutation 收口＝中成本、治 mo2ctl；B 關 MO2 reconcile＝涵蓋外部寫回；C 拆 checkpoint＝最完整但高成本。
 - **我方建議＋門檻**：選 A；enable／disable／install／uninstall 4/4 共用 `commit_profile()` 且測試全綠才落地。
 > C
+- **落地**：`home-setup.md`「現役 modlist 整合度盤點」第 3 項。
 
 ### home-4　降版用 FULL 回填還是 patcher？
 - **問題**：FULL 16 GB 已在本機；patcher 尚未到庫且須精確匹配升版來源。
@@ -80,6 +88,7 @@
 - **選項與後果**：A FULL 回填＝今晚可離線做；B patcher＝較省搬檔但仍待下載；C 暫不升＝零降版風險、AE 延後。
 - **我方建議＋門檻**：選 A；Steam 離線且代表檔 12/12 hash 通過才寫回。
 > A
+- **落地**：`home-setup.md`「購買 AE 升級」段。
 
 ## mco
 
@@ -98,12 +107,15 @@
 | 83383 No Directional Power Attacks | 2.0 | 非框架且與 117275 不相容 |
 | 45378 Attack Behavior Revamp | 5.2 | 另一舊框架，無 1170 證據 |
 
+- **落地**：`../agentctl/handoffs/home-2026-09-02/mco2/`。
+
 ### mco-2　SCAR 2 接受 GitHub 手動下載？
 - **問題**：SCAR 2 v2.01 只在 GitHub，明示支援 1.6.1170；Nexus 仍是舊 v1.06b。
 - **證據**：[mco REPORT][mco-report]。
 - **選項與後果**：A 接受＝可滿足既定 SCAR 2；B 拒絕＝P2 等候；C 用 Nexus 舊版＝偏離裁示。
 - **我方建議＋門檻**：選 A；只收 1 個官方 release asset，hash 登記且版本明列 1170。
 > A
+- **落地**：`../modpack-design/content-plan/gameplay/data/mco-migration-steps.csv` P2-06 `ruling`。
 
 ### mco-3　11 件 ASK ESP 是否整批保留？
 - **問題**：11/11 只有 ESP、沒有 SKSE DLL；風險已縮成技能／效果語意。
@@ -111,6 +123,7 @@
 - **選項與後果**：A 全留＝保留原動作效果；B 全停＝最保守但功能損失；C 逐件試＝較慢。
 - **我方建議＋門檻**：選 A；11/11 各自可回滾且缺 master=0 才整批 RESTORE。
 > A
+- **落地**：`../modpack-design/content-plan/gameplay/data/mco-migration-steps.csv` P3-04 `ruling`。
 
 ## vfo
 
