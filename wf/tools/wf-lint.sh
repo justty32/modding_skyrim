@@ -31,6 +31,16 @@ extract_links() {
     | sed -E 's/^\]\(//; s/\)$//; s/ "[^"]*"$//'
 }
 
+# Markdown 連結目標裡的空白與括號必須 percent-encode，否則 ]( ) 語法會被右括號截斷。
+# 原樣比對不到時，用解碼後的路徑再試一次；解碼只用於存在性判斷，不改寫文件。
+link_exists() {
+  local target=$1 decoded esc='\x'
+  [[ -e $target ]] && return 0
+  [[ $target == *%* ]] || return 1
+  decoded=$(printf '%b' "${target//%/$esc}" 2>/dev/null) || return 1
+  [[ -n $decoded && -e $decoded ]]
+}
+
 check_links() {
   local prefix=${1%/} f d l broken=0
   while IFS= read -r f; do
@@ -40,7 +50,7 @@ check_links() {
       case $l in http://*|https://*|mailto:*|'#'*|'<'*) continue ;; esac
       l=${l%%#*}
       [[ -z $l ]] && continue
-      if [[ ! -e "$d/$l" ]]; then
+      if ! link_exists "$d/$l"; then
         echo "BROKEN ${f#$prefix/} -> $l"
         broken=$((broken + 1))
       fi
