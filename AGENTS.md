@@ -4,7 +4,7 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 
 ## 開場與入口
 
-- 每個 session 先看 [SESSION-LOG.md](SESSION-LOG.md) 的「現役工作」段與 [WAIT_USER.md](WAIT_USER.md) 的 open 計數表；Skyrim 工作線的交接主線另在 `agentctl/SESSION-LOG.md`。
+- 每個 session 先看 [SESSION-LOG.md](SESSION-LOG.md) 的「現役工作」段與 [WAIT_USER.md](WAIT_USER.md) 的 open 計數表；母 repo 這份 `SESSION-LOG.md` 只管母 repo 自己。Skyrim 工作線主線在 [`agentctl/`](agentctl/README.md)，每天現況見 `agentctl/handoffs/home-<日期>/STATE.md`（例如 [`2026-09-03`](agentctl/handoffs/home-2026-09-03/STATE.md)），跨場續行點見 [`agentctl/handoffs/NEXT-SESSION.md`](agentctl/handoffs/NEXT-SESSION.md)。
 - **碰原始碼前**：慣例與 code map → [conventions.md](wf/workflows/common/conventions.md)、[CODE_MAP.md](wf/workflows/common/code-map/CODE_MAP.md)；環境與指令 → [dev-env.md](wf/workflows/dev-env.md)。
 <!-- wf-insert:AGENTS -->
 - **要你動手做事** → [WORKFLOWS.md](wf/WORKFLOWS.md) 依意圖派發，再讀該工作流入口檔。
@@ -27,4 +27,4 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 
 測試：`python -m unittest discover -s tools -p "test_*.py" -v`、`python tools/check_markdown_links.py`。子 repo 測試矩陣見 [testing.md](wf/workflows/testing.md)，環境／houseCARL 建置見 [dev-env.md](wf/workflows/dev-env.md)。
 
-<!-- wf-kernel v0.4.1 (2026-08-30) -->
+<!-- wf-kernel v0.5 (2026-08-30) -->

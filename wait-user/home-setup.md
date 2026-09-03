@@ -1,6 +1,6 @@
 # 回家下載／重建
 
-## 改走 MCO：照遷移計畫執行（2026-09-02 裁示）
+## ~~改走 MCO：照遷移計畫執行（2026-09-02 裁示）~~（2026-09-02 由 dispatcher 完成，證據 /home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-02/mco2/REPORT.md）
 
 使用者 2026-09-02 決定把戰鬥框架從 BFCO 移回 MCO。計畫與清單由團隊 `mco` 產出：
 `modpack-design/content-plan/gameplay/mco-migration-plan-2026-09-02.md`（七階段：備份基線→框架切換→33 件 moveset 還原→相容層→Pandora 重跑→中文→16 條實機驗收）
@@ -9,14 +9,14 @@
 
 **狀態（2026-09-02 22:33，dispatcher）**：**本項完成。** P2／P3／P5／P6 由 mco2 隊施工，P4／P7 16 條＋字形 gate 使用者 22:15 實機全過，`release/2026.09.02-mco` 已 promote 到 `instance/profiles` main（`9e188e2`）並 push；回滾窗解除。只剩 SCAR 2 v2.01 安裝（V-A 已過，可裝）列在 `agentctl/handoffs/NEXT-SESSION.md` 第 8 項。
 
-## LoreRim 借用下載：465 件隊列，回家第一步是解析 Nexus id
+## LoreRim 借用後續：缺檔、中文層、master、腳本與 LOD
 
-隊列 `modpack-design/content-plan/lorerim/data/download-queue.csv`（465 列，四個待回填欄全空、`status=TO-RESOLVE`），
-流程 `modpack-design/content-plan/lorerim/download-runbook.md`：houseCARL 逐列解析 id／版本／file id／bytes（每線 ≤60 列、每波 ≤20 GB）→
-對 mod-library 去重 → 一波一條瀏覽器線 slow download → 入庫五步；**不安裝**。第 1–4 波（419 件）不等 AE；第 5 波 CC 34 件等上一節前置。
-**通過**＝每波 `status` 全為 `RESOLVED`／`IN-LIBRARY`／`ASK`／`DROP-4K` 之一，下載件 hash 已驗、DB 已 rescan。
+2026-09-03 已入庫 439 件／8.966 GB，借用段 359 件、42 個中文層與 16 個框架／解鎖件已上線。現在要裁：
+LR-0459（254.8 MB、解析度未標）收不收；LR-0220／0290／0397 是否另找來源；21 件拓撲 FAIL 是否全改自製；
+xLODGen 是否信任站外來源及 LOD 排哪個 3–6 小時桌面窗；13 個已停用 patch 所缺的八個 master 本體要不要補；
+五件 NO-PEX-UPSTREAM 留用或停用。證據在 `agentctl/handoffs/home-2026-09-03/{dl,lrzh,lrfw,lod}/REPORT.md`。
 
-## 購買 AE 升級，且不得讓 Steam 把 exe 升到 1.7.99
+## AE DLC 授權確認與 CC 第二輪
 
 **裁示：買。**（2026-09-02 使用者當場口頭，LoreRim 調查衝突帳第 2 件。）但同場裁示 ① 維持 1.6.1170 釘版。
 購買本身不動 exe；**下載 Creation Club 內容要 Steam 上線並進遊戲主選單，上線即會觸發更新到 1.7.99**
@@ -28,7 +28,17 @@
 **狀態（2026-09-02 晚，home 隊）**：降版前置已就緒——本機 `~/skyrim_mods/steam-build-backup/…-FULL/` 可回填 1.6.1170（三份 exe hash 相同、小備份 sha256sum -c 4/4）；wSkeever patcher 169962 本機沒有，下載單已寄 lead-lrdl。證據：[downgrade-readiness.md](../agentctl/handoffs/home-2026-09-02/home/downgrade-readiness.md)。
 **裁示（2026-09-02 晚，引文）**：home-4 A——降版用 FULL 回填；patcher 169962 只當第二備援。
 
-## Serana Dialogue Add-On 4.3.2 exact 簡中 topology gate
+**狀態（2026-09-03）**：Steam 升到 1.7.104 後已用 FULL 完整回填 1.6.1170，smoke PASS，但付費 CC 一個都沒下載到；
+請親自確認 Anniversary Upgrade 是否真的買了、DLC 是否勾選。若都有，A＝授權約一小時第二輪只抓 CC depot 再回填；
+B＝不跑，LoreRim `5-after-AE` 34 列繼續擋住。`pre/post-ae-2026-09-03/` 440 MB 建議等答案後再決定是否清。
+
+## GO19 剩餘幾何、moveset 與 LOD
+
+六件已安裝並通過 smoke；剩 95283／136457 的 xEdit 幾何、已安裝件的空間紀錄人眼覆核、71864 MCO moveset、
+無效但無害的 `go19x-130252-cr.esp` 與 LOD 排程。A＝開 xEdit 專線、補 moveset 並在 towns 完成後合跑 LOD；
+B＝維持目前六件與 patch 現況，延後所有視覺風險。輸入在 `agentctl/handoffs/home-2026-09-03/{go19x,inst2}/REPORT.md`。
+
+## ~~Serana Dialogue Add-On 4.3.2 exact 簡中 topology gate~~（2026-09-02 由 dispatcher 完成，證據 /home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-02/sda/REPORT.md）
 
 **裁示：A —— SDA 升 4.3.2 並採 exact 簡中層。**（2026-09-01，使用者當場口頭裁示；見
 [裁示簡報](decision-briefs-2026-09-01.md)第 1 條。）回家取得 SDA 4.3.2 official archive 與 `78511`
@@ -52,7 +62,7 @@ Apothecary／Enai 接觸面全數有處置，才能排入施工。
 **狀態（2026-09-02 晚，home 隊）**：首批（`hmih-2026-09-01/targets.json`）14/14 archive 在庫且大小符合，8/8 件已有 preflight gate 證據，無需下載；但該 8 件相對裁示 3A「自然核心 4–6 件」的範圍差異待使用者裁示。證據：[sda-mihail-library-precheck.md](../agentctl/handoffs/home-2026-09-02/home/sda-mihail-library-precheck.md)。
 **裁示（2026-09-02 晚，引文）**：home-2 A——`targets.json` 8 件全進，安裝排入下一批 profile 變更。
 
-## scene-capture-bridge 完整離線測試
+## ~~scene-capture-bridge 完整離線測試~~（2026-09-02 由 home 隊完成，證據 /home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-02/home/scene-capture-bridge-mingw-build.md）
 
 `scene-capture-bridge` 的 portable MinGW CTest 2/2 PASS，但完整 `x64-mingw-static` nlohmann-json
 triplet 仍缺，需要能跑 vcpkg build 的環境補上；不得改測試掩蓋缺依賴。

@@ -32,9 +32,8 @@ git submodule status
 git submodule update --init --recursive
 ```
 
-截至 2026-08-12，最新母 repo 仍引用三個尚未發布的子模組 commit，因此上述 recursive
-步驟會失敗；精確 SHA 與正確修復順序見 [WAIT_USER.md](../../WAIT_USER.md)。不要把母 repo
-gitlink 倒退，也不要把本機舊 checkout 當成已同步。
+若 recursive update 失敗，先依 `git submodule status` 判讀是哪個 gitlink，再看母 repo
+[`SESSION-LOG.md`](../../SESSION-LOG.md) 與 [`WAIT_USER.md`](../../WAIT_USER.md) 的現役狀態；不要把 gitlink 倒退。
 
 同步成功後，依 [testing.md](testing.md) 選目標 repo 的離線測試。依賴只裝在該子 repo
 自己的環境；母 repo 根目錄不建立共用 venv、NuGet cache 或 build tree。
@@ -58,7 +57,8 @@ gitlink 倒退，也不要把本機舊 checkout 當成已同步。
 
 1. 在來源子 repo 依它自己的 README/build workflow 產生並驗證 artifact。
 2. 要交付的新成品放到 [`../mod-library/`](../../mod-library/README.md) 的對應分類，並附 `SOURCE.md`。
-3. 部署到 MO2 前先讀 notes 側現況；部署結果也只回寫 notes。
+3. 部署到 MO2 前先讀 [`instance/`](../../instance/)；部署狀態寫回 `instance/`，實機證據寫到
+   [`agentctl/`](../../agentctl/) 的 logs／QA。
 
 歷史成品仍留在 `~/skyrim_mods/mine/`，不因整理環境而搬動。不得在遊戲執行時覆寫已
 載入的 DLL；具體安全部署命令由產出該 DLL 的子 repo 維護。
@@ -67,10 +67,10 @@ gitlink 倒退，也不要把本機舊 checkout 當成已同步。
 
 原本的 `tooling` 工作流是空殼，2026-08-30 併進本檔——外部工具、env var、依賴本來就是環境的一部分。
 
-- **核心心智模型**：讀取一律走「真實 load order winner」＋可選完整 conflict tree；預設寫入落在**新增的 patch plugin**（`houseCARL - <name>`），原始 plugin 不動；in-place 編輯是需一次性同意的 opt-in 車道。查 Nexus Mods 優先用 `mcp__housecarl__housecarl_nexus_search` / `housecarl_nexus_mod`，別開瀏覽器代勞。
-- **讀 MO2 的技術限制**（分析結論，非部署事實）：MO2 的 `ModOrganizer.ini` 記的是 Wine 路徑（`Z:\home\...`），houseCARL 的 `Mo2InstanceDir` 模式讀不動，須改用 explicit `DataDir`／`ModsDir`／`ProfileDir`；本機實際路徑與註冊指令見 [`agentctl/docs/housecarl.md`](../../agentctl/docs/housecarl.md)。
-- **本機建置與驗證**：`dotnet build housecarl.sln`；self-contained 用 `dotnet publish -r linux-x64`。驗證走 HTTP 模式啟動＋explicit paths 測試。完整步驟見 [linux-manjaro-mo2-runbook.md](../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)。fork 維護決策（只維護 `justty32/houseCARL`、不追 upstream）見 [fork-maintenance-decision.md](../../analysis/houseCARL/answers/fork-maintenance-decision.md)。
-- 工具版本、來源 URL、安裝路徑要可驗證；agent 無法安裝或需要帳號／授權時記到 [WAIT_USER.md](../../WAIT_USER.md)。不把大型二進位或私有資料誤 commit。
+本機設定、工具語意與 Nexus 陷阱只以
+[`agentctl/docs/housecarl.md`](../../agentctl/docs/housecarl.md) 為準；建置與測試命令看
+[`projects/houseCARL/README.md`](../../projects/houseCARL/README.md)。需要帳號／授權或使用者操作時記到
+[`WAIT_USER.md`](../../WAIT_USER.md)，且不得把本機路徑、憑證或私有素材寫進 public 母 repo。
 
 ## 何時不用
 

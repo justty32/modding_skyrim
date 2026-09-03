@@ -51,5 +51,5 @@ Done when: <Level 範圍完成、主要入口/模組/測試方式可由下一個
 ## 何時不用
 
 - 只需要回答一個窄問題，走 investigation 或直接回答。
-- 只是閱讀 paper/規格/文章，走 research。
+- 只是閱讀 paper／規格／文章並形成可驗證結論，走 investigation。
 - 已經在目標 repo 內實作功能，走 feature-dev。

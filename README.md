@@ -26,6 +26,7 @@ Skyrim SE modding 的開發、分析、部署與產物集中地。本工作區�
 | **做好的 mod / plugin 成品**(拿去部署、安裝) | [`mod-library/`](mod-library/) —— `l10n/mods/`(翻譯層)、`plugins/`(SKSE DLL)、`artifacts/`(修正 esp);每個成品資料夾內有 `SOURCE.md` 記來源。**歷史自製成品在 `~/skyrim_mods/mine/`**(DSPort*/ModForge*/MF* 系列,使用者決定留原地) |
 | **現在裝了什麼、load order 是什麼** | [`instance/`](instance/) |
 | **怎麼叫 AI 去玩 / 去下載 / 去驗證** | [`agentctl/`](agentctl/) |
+| **今天／最近一場的續行點與各隊報告** | [`agentctl/handoffs/NEXT-SESSION.md`](agentctl/handoffs/NEXT-SESSION.md)；今天的實例是 [`agentctl/handoffs/home-2026-09-03/STATE.md`](agentctl/handoffs/home-2026-09-03/STATE.md) |
 | 開發中的原始碼 | `projects/` —— 見下表;各自是獨立 git repo |
 | 引擎/SKSE 知識、mod 技術拆解、工具調查 | `analysis/` —— `skyrim_engine/`(CommonLibSSE-NG 引擎手冊)、`skyrim_mods/`(七個參考 mod 拆解)、`houseCARL/`(Linux 適配 runbook)、`mod-survey/`(136 份他人 mod 結構化調查)、`tool-survey/`(製作工具調查)、`followers-patch/`(8 份隨從人設 brief)、`port-source-survey/`(移植素材來源候選調查) |
 | 他人的 mod、框架、參考素材 | 實體在 **`~/skyrim_mods/`**(125G 下載庫,使用者決定留原地)。[`external/`](external/README.md) 是外部框架原始碼的落點 |
@@ -85,8 +86,8 @@ Skyrim SE modding 的開發、分析、部署與產物集中地。本工作區�
 | 東西 | 位置 | 為什麼 |
 |---|---|---|
 | mod 下載庫 | `~/skyrim_mods/`(125GB) | 體積 |
-| 實機截圖 | `~/notes/projects/modding/skyrim/logs/`(66MB) | 體積,且只是證據 |
-| MongoDB 快照 | `~/notes/projects/modding/skyrim/backups/`(54MB) | 體積 |
+| 舊場次實機截圖 | `~/notes/projects/modding/skyrim/logs/`（88MB） | 歷史證據；近期截圖在 `agentctl/handoffs/**/runtime/`，同樣不進版控 |
+| 歷史 MongoDB 快照 | `~/notes/projects/modding/skyrim/backups/`（86MB） | 歷史備份；現役部署狀態已歸 [`instance/`](instance/) |
 | QA baseline 存檔 | `~/games/skyrim-qa-baselines`(3.1MB) | **刻意**設計成 repo 外的唯讀主檔 |
 | houseCARL MCP 建置產物 | `~/tools/housecarl/server/` | 由 `projects/houseCARL` publish 出來,不是原始碼 |
 
@@ -95,13 +96,13 @@ Skyrim SE modding 的開發、分析、部署與產物集中地。本工作區�
 <!-- wf-nav -->
 | 路徑 | 內容 |
 |---|---|
-| [`wf/`](wf/) | 工作流骨架（wf-kernel v0.3）：[`WORKFLOWS`](wf/WORKFLOWS.md)（派發）／[`INDEX`](wf/INDEX.md)（專案地圖）／[`STRUCTURE`](wf/STRUCTURE.md)（結構整理參考）＋[`wf/workflows/`](wf/workflows/)（各工作流入口、plans、investigation findings、CODE_MAP）＋[`wf/tools/`](wf/tools/)（`wf-lint.sh` 檢查＋`tabledb.py`／`find_big_lists.py`／`fix_moved_links.py` 文件整理工具） |
-| [`tools/`](tools/) | 母 repo 的文件工具與測試：`check_markdown_links.py`（全庫連結檢查，跑法 `python3 tools/check_markdown_links.py`）、`check_submodule_pins.py` 與其測試。文件整理工具已歸 `wf/tools/`（kernel v0.3），流程見 [tidy 工作流](wf/workflows/tidy/README.md) |
-| [`SESSION-LOG.md`](SESSION-LOG.md) | 母 repo 的跨 session 活狀態。Skyrim 工作線自己的交接主線在 `agentctl/SESSION-LOG.md` |
+| [`wf/`](wf/) | 工作流骨架（wf-kernel v0.5）：[`WORKFLOWS`](wf/WORKFLOWS.md)（派發）／[`INDEX`](wf/INDEX.md)（專案地圖）／[`STRUCTURE`](wf/STRUCTURE.md)（結構整理參考）＋[`wf/workflows/`](wf/workflows/)（各工作流入口、plans、investigation findings、CODE_MAP）＋[`wf/tools/`](wf/tools/)（`wf-lint.sh`、`check_anchors.py`、`find_big_lists.py`、`fix_moved_links.py`／`fix_moved_links_fmt.py`、`tabledb.py`／`tabledb_fmt.py`／`tabledb_fmt_vars.py`／`tabledb_links.py`、`fmt-vars.json`） |
+| [`tools/`](tools/) | 母 repo 工具：`check_markdown_links.py`、`check_submodule_pins.py`、`check_code_map_coverage.py`，三份 `test_*.py`、`code_map_coverage_baseline.txt` 與 `hooks/`；文件整理工具在 `wf/tools/`（kernel v0.5），流程見 [tidy 工作流](wf/workflows/tidy/README.md) |
+| [`SESSION-LOG.md`](SESSION-LOG.md) | 只記母 repo 的跨 session 活狀態；Skyrim 工作線主線在 [`agentctl/SESSION-LOG.md`](agentctl/SESSION-LOG.md)，當場現況與各隊報告由 `agentctl/handoffs/` 承接 |
 | [`WAIT_USER.md`](WAIT_USER.md) | 需要使用者親自驗證／實機／外部素材才能完成的項目 |
 | `patches/` | 針對他人 mod 的獨立修補 |
 
-> `wf/` 的命名與職責對齊 `~/repo/moddings/tome4` 與 `elin`；骨架來自 `~/repo/workflows` 模板（kernel v0.2，2026-08-29）。
+> `wf/` 的命名與職責對齊 `~/repo/moddings/tome4` 與 `elin`；骨架來自 `~/repo/workflows` 模板（kernel v0.5，2026-08-30）。
 
 ## 要在這裡動手做事?
 

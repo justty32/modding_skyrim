@@ -47,6 +47,6 @@ Done when: <可行/不可行/缺口/下一步已明確，finding 已落檔>
 - [ifd-lydia-4.2.2-translation-audit](findings/ifd-lydia-4.2.2-translation-audit.md) —— 同版 CHS archive 可作翻譯語意種子，但不能未經驗證直接覆寫；主 ESP 與 loose PEX 都已證明為 text-only。
 - [mo2ctl-static-gates-asset-scope](findings/mo2ctl-static-gates-asset-scope.md) —— `mo2ctl static-gates --asset <path>` 不是只執行 asset resolver，會固定先執行四項全局檢查。
 - [mo2-moshortcut-steam-modal-2026-08-21](findings/mo2-moshortcut-steam-modal-2026-08-21.md) —— Skyrim 啟動失敗不是 DSPortP1 增加檔案使 MO2 掃描超時，實際停在 Steam 狀態檢查的 `Waiting` modal。
-- [offline-correctness-batch-2026-08-12](findings/offline-correctness-batch-2026-08-12.md) —— 下一批建議依序做 game-data 原子發布、voicegen→ModForge 真實契約、model-converter→Godot 真實契約、darksouls-port→model-converter 真實契約。
+- [offline-correctness-batch-2026-08-12](findings/offline-correctness-batch-2026-08-12.md) —— 四項建議均已落地；保留為當時的缺口與驗收依據。
 - [rdo-final-translation-audit](findings/rdo-final-translation-audit.md) —— 本機 RDO Final CHT archive 與現役官方 RDO Final 是精確結構相容的 text-only translation seed。
 - [wuxin-character-overhaul-se-ae-compatibility](findings/wuxin-character-overhaul-se-ae-compatibility.md) —— 無心人物線的原始來源、SE 替代方案、1.6.1170 相容邊界、現有 load order 衝突與下一個可執行步驟都已明確；未取得合法 archive 前不安裝未知鏡像。

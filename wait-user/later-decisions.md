@@ -1,5 +1,11 @@
 # 日後素材／清理決定
 
+## 2026-09-03 staging、coredump 與 zhmake 暫存要不要清
+
+待裁路徑：`_inst2-staging`、`/home/lorkhan/skyrim_mods/_lrinst-staging-2026-09-03/`（18 GB NVMe）、
+`/var/lib/systemd/coredump`（4.6 GB）與 `/tmp/cx-zm4-objtext-sources`（2 GB，須等 zhmake 收線）。
+A＝確認不再回滾後清掉換空間；B＝保留作除錯／回滾，繼續佔容量。未取得明確刪除授權前一律不動。
+
 ## Dev0A 基線存檔：使用者刻意刪了，規則要不要跟著改（2026-09-02 晚）
 
 使用者 2026-09-02 22:30 說「dev0a 存檔基線我確實刪掉了」（實機驗收期間在遊戲內刪）。dispatcher 因
@@ -106,7 +112,7 @@ kernel repo（`C:/code/mine/workflows`）2026-09-02 出 v0.5.1。另一個 sessi
 能否無損對映 ModForge placements，再決定是否開 converter/spec；沒有實檔前不宣稱 pipeline 可行。
 見 [`port-source-survey`](../analysis/port-source-survey/README.md)。
 
-## 中文層五個裁示（2026-09-01 已裁示，不計 open）
+## ~~中文層五個裁示（2026-09-01 已裁示，不計 open）~~
 
 來源是 2026-08-28 的續行清單（已封存，只剩這條活著）；
 逐項細節在 [`中文層覆蓋總表`](../modpack-design/content-plan/zh-layer/zh-layer-coverage-master-2026-08-28.md)的
@@ -125,7 +131,7 @@ kernel repo（`C:/code/mine/workflows`）2026-09-02 出 v0.5.1。另一個 sessi
    1.6.1170 釘版與 Steam 離線。**（2026-09-01，使用者當場口頭裁示；見
    [裁示簡報](decision-briefs-2026-09-01.md)第 8 條。）
 
-## 2026-08-29 調查線留下的裁示
+## ~~2026-08-29 調查線留下的裁示~~
 
 各線的完整結論在 [`agentctl DIGEST`](../agentctl/inbox/done/2026-08-29/DIGEST.md)，報告在 `agentctl/handoffs/done/2026-08-29/<線名>/REPORT.md`。
 

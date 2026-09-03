@@ -42,7 +42,6 @@ code/tests > schema/examples/fixtures > CODE_MAP > docs > generated/html
 
 ## 多 Agent 並行
 
-- 並行前先分互斥檔案或領域。
-- 每個 agent 必須有自己的 `Done when:`。
-- 共享 open 狀態寫 session-log。
-- 整合者負責讀產物、解衝突、跑測試、同步 CODE_MAP/文檔。
+現行三層角色與模型分級見 [`agentctl/docs/team-model.md`](../../../agentctl/docs/team-model.md)，領地與互斥範圍見
+[`agentctl/docs/line-claims.md`](../../../agentctl/docs/line-claims.md)，通訊與上游路由見
+[`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md)。

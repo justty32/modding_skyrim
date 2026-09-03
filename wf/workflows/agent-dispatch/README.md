@@ -11,22 +11,17 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
 
 | 要什麼 | 去哪 |
 |---|---|
-| 派線的完整流程（切線、交接書契約、tmux、監看、收線七步） | [`agentctl/docs/driving-codex.md`](../../../agentctl/docs/driving-codex.md) |
-| 兩層派線的現役成員、身份聲明格式、各自領地與能答什麼 | [`agentctl/inbox/ROSTER.md`](../../../agentctl/inbox/ROSTER.md) |
+| 三層角色、模型分級與選人判準 | [`agentctl/docs/team-model.md`](../../../agentctl/docs/team-model.md) |
+| 派線完整流程（交接書、tmux、送兩次 Enter、`/bin/ls`、監看與收線） | [`agentctl/docs/driving-codex.md`](../../../agentctl/docs/driving-codex.md) |
+| 現役成員、身份聲明格式、各自領地與能答什麼 | [`agentctl/inbox/ROSTER.md`](../../../agentctl/inbox/ROSTER.md) |
 | 資源鎖與限流 | [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md) |
-| 通訊契約：四條通道（`new`／`orders`／`mail`／`topics`）、五種 STATUS 語意與輪詢義務 | [`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md) |
+| 通訊契約：五通道、teams、自動上游路由與醒鐘策略 | [`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md) |
 | 交接書範本與已完成的範例 | [`agentctl/handoffs/`](../../../agentctl/handoffs/) |
 
-## 兩層派線結構（2026-08-27 起）
+## 三層派線結構
 
-大任務採「調度者 → Opus 主管線 → codex 子線」兩層：主管線寫交接書、派子線、核驗收；
-調度者負責切線、仲裁、收線與資源協調，簡單盤點交 sonnet subagent。**任何一層上線第一件事，都是先在
-[`agentctl/inbox/ROSTER.md`](../../../agentctl/inbox/ROSTER.md) 追加自己那一格聲明身份**——
-我是誰、對誰回報、領地在哪、答得出什麼、答不出什麼——沒聲明就開始做事，其他線只能用猜的畫邊界。
-
-**資源協調集中在調度者**：任何一層都不得自取 `~/shared_agent_locks/desktop.lock` 或
-`agentctl/.lock/game.lock`，不得開 GUI／瀏覽器／遊戲；需要就發 `NEEDS-USER` 給調度者，
-不要自己動。細節見 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md)。
+現行的「頂層 agent → 團隊領導 → 工人」角色、模型與資源權責只以
+[`agentctl/docs/team-model.md`](../../../agentctl/docs/team-model.md) 為準。
 
 ## 六條最容易錯的
 
@@ -54,13 +49,10 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
    任一觸發就停下來問。可直接抄用的三條排除規則與雙 gate 格式見
    [nexus-intake 的範圍樣板](../nexus-intake/README.md#派下載線前範圍樣板與雙-gate)。
 
-## 通訊：四條通道與輪詢義務
+## 通訊：五通道與輪詢義務
 
-四條通道是終局回報 `inbox/new/`（不可被取代）、行為指示 `orders/<session>.md`（所有成員可追加，標題須帶
-`from:`）、點對點情報 `mail/<session>/`、多線共享 `topics/<topic>/`。依是否要驚動調度者、
-改變行為及收件範圍選擇。**`mail`／`topics`／`orders` 都沒有推播**，每完成一個工作步驟後跑
-`inbox_poll.sh`（個人信箱＋訂閱主題＋自己的 orders），長任務背景線用 `--watch`。完整契約見
-[`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md)。
+`new`／`mail`／`teams`／`orders`／`topics` 的選擇、自動上游路由與各層醒鐘只以
+[`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md) 為準。
 
 ## 多信任它
 

@@ -78,5 +78,6 @@ analysis → patch 或 planning（roadmap / 詳規）
 | 在等誰 | 記哪裡 |
 |--------|--------|
 | 等**使用者**做 / 驗證 / 決定 | [../WAIT_USER.md](../WAIT_USER.md) |
-| 等**同 repo 另一個 session / fork** | [../SESSION-LOG.md](../SESSION-LOG.md) 一行 open |
+| 母 repo 等**另一個 session / fork** | [../SESSION-LOG.md](../SESSION-LOG.md) 一行 open |
+| Skyrim 工作線跨 session 續行 | [`agentctl/SESSION-LOG.md`](../agentctl/SESSION-LOG.md) |
 | 等**別資料夾的 agent** | 信件軸 [`agentctl/inbox/`](../agentctl/inbox/)；協議見 [`agentctl/tools/agent_inbox/PROTOCOL.md`](../agentctl/tools/agent_inbox/PROTOCOL.md)，派線走 [agent-dispatch](workflows/agent-dispatch/README.md) |

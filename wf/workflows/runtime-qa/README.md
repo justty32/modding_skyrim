@@ -22,15 +22,13 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 ## 1. 啟動
 
 **禁止從 Steam 啟動 Skyrim SE**：appid 489830 的「啟動時更新」會把 SkyrimSE.exe 推離
-1.6.1170，破壞 SKSE 生態。啟動前確認 `ModOrganizer.ini` 的 `selected_profile` 是
-`modpack-main`（該檔是 **CRLF**，用 sed 改要帶 `\r`）。
+1.6.1170，破壞 SKSE 生態。啟動前確認 `ModOrganizer.ini` 的實值是
+`selected_profile=@ByteArray(modpack-main)`（該檔是 **CRLF**）。
 
-人工開 MO2 GUI 時執行 `bash instance/tools/launch-mo2.sh`，再由使用者按 Run；直接啟動
-SKSE、免按鍵則執行 `bash instance/tools/launch-mo2.sh --skse`。無人值守走
-`MO2_PROFILE=modpack-main python3 projects/agent-bridge/client/mo2ctl.py launch --background-active`：
-它現在委派同一支 `launch-mo2.sh`，不再自行走 `protontricks-launch`；同時暫設 profile
-`skyrim.ini` 的 `bAlwaysActive=1` 讓失焦時仍能載入，`mo2ctl kill` 會以原始 bytes 還原。
-三條路線不可同時執行。
+現行唯一入口是 [`instance/tools/launch-mo2.sh`](../../../instance/tools/launch-mo2.sh)：無參數開 MO2 GUI，
+`--skse` 直接啟動 SKSE，`--shortcut <name>` 啟動其他 MO2 shortcut，`--dry-run` 只印命令；各路線不可同時執行。
+
+啟動後以 `qa_status`／`qa_state` 驗活，底層必須同時確認 `/ping` 與 `/state`；Proton 下不得用行程名稱判活。
 
 ## 2. 基線與證據窗
 
@@ -52,8 +50,8 @@ SKSE、免按鍵則執行 `bash instance/tools/launch-mo2.sh --skse`。無人值
 ## 4. Teardown
 
 - 兩個鎖都釋放（`~/shared_agent_locks/` 與 `agentctl/.lock/` 應為空）
-- 沒有殘留的 `ModOrganizer.exe`／`SkyrimSE.exe`——用 `pgrep -f '[S]kyrimSE\.exe'`
-  這種括號寫法，否則會匹配到執行檢查的 shell 自己
+- `qa_status` 確認 runtime 已停止；啟動期間則以 `qa_status`／`qa_state` 的 `/ping`＋`/state` 雙證據判活，
+  不以 `ps`／`pgrep` 的名稱比對代替 runtime 狀態
 - `instance/profiles` 的 **profile 結構稽核**通過（命令見該 repo `tools/README.md`）
 - `selected_profile` 沒被留下臨時 profile 名（codex 線做過這件事）
 - 結論寫進 `agentctl/logs/`，證據 JSON 進 `agentctl/qa/reports/`

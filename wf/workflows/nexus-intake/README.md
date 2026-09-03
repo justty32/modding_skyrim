@@ -36,16 +36,16 @@ requirements 可能拉出一整條生態；用 `housecarl_nexus_mod` 查，不�
 
 - `housecarl_nexus_search`：用名字找 mod
 - `housecarl_nexus_mod`：抓 mod 頁（requirements、建議 INI、真實最新版、完整說明），吃 id 或 URL；
-  `files=true` 給完整逐檔清單（**fileId／版本／bytes 只能從這裡抄**，不能從頁面抄）
+  `files=true` 給逐檔名稱、版本、分類與日期，但**不提供數字 fileId**
+- `housecarl_nexus_graphql`：需要數字 fileId 時查頂層 `modFiles`
 - `housecarl_nexus_check_updates`：批次以 `id#fileid` 查已裝檔是否過時
 
-**誰能查**：houseCARL MCP 只掛在 Claude 這邊；**codex 線既沒有 houseCARL、也拿不到瀏覽器、純 HTTP
-打 Nexus 回 403**（2026-08-26 實測，見 [`agentctl/docs/dispatch-windows.md`](../../../agentctl/docs/dispatch-windows.md)
-「Nexus 查證：派線做不到」）。所以 Nexus 查證由調度者親做，把 id／fileId／版本／bytes 寫死進交接書再派線。
+誰能查與怎麼派依當下環境為準，入口是
+[`agentctl/docs/housecarl.md`](../../../agentctl/docs/housecarl.md)與
+[`agentctl/docs/dispatch-windows.md`](../../../agentctl/docs/dispatch-windows.md)；不要沿用舊的「houseCARL 只掛在 Claude」假設。
 
-**已決定要裝的項目不必重查**：[`modpack-design/content-plan/install-plan-2026-08-27.md`](../../../modpack-design/content-plan/install/install-plan-2026-08-27.md)
-每列已寫死 id／fileId／版本／bytes 與「為什麼是這個 fileId 而不是 MAIN」；中文層看
-[`zh-layer-coverage-master-2026-08-28.md`](../../../modpack-design/content-plan/zh-layer/zh-layer-coverage-master-2026-08-28.md)。
+已決定項目的現行入口在 [`content-plan/`](../../../modpack-design/content-plan/)；中文層缺口與拓撲 gate 看
+[`content-plan/zh-layer/`](../../../modpack-design/content-plan/zh-layer/)。
 
 **坑**：Nexus 頁面上的「最新版」與 files 分頁的實際檔案常常不同步。以 API 回的
 `files` 欄位為準，不要讀頁面敘述。

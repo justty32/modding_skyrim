@@ -3,14 +3,15 @@
 動作系統、perk 系統、任務框架這類**互相咬合**的一整套。跟單件的差別不是數量，
 是**它們會彼此覆寫檔案、共用生成式 output、而且一次全裝就再也分不清是誰壞的**。
 
-現役實例：BFCO 動作線、Vokriinator Black perk 線、VIGILANT 任務線；目前跨生態批次見
-`EnaiRim 最終選型`（`modpack-design/content-plan/gameplay/enairim-final-selection-2026-08-24.md`）。
+現役動作系統已改走 MCO；階段與隊列見
+[`mco-migration-plan-2026-09-02.md`](../../../modpack-design/content-plan/gameplay/mco-migration-plan-2026-09-02.md)。
+下方 BFCO 內容只保留為「系列分層與生成式 output」的歷史實例，不代表現役選型。
 
 ```text
 Done when: <每層各自成批且各自驗過、生成式 output 已重跑且 hash 有記錄、DLL winner 唯一、真人矩陣已排>
 ```
 
-## 鐵律：每一層各自成批
+## 鐵律：每一層各自成批（BFCO 歷史實例）
 
 BFCO 線的實際順序：
 

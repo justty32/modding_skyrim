@@ -1,6 +1,8 @@
 # localization — 做一個中文層
 
-近 40 個自製中文層在 `mod-library/l10n/mods/`，十餘支建置工具在 `mod-library/l10n/tools/`。
+現行缺口盤點與「現成中文層先過拓撲 gate」的決策入口在
+[`modpack-design/content-plan/zh-layer/`](../../../modpack-design/content-plan/zh-layer/)；中文層實體與工具在
+[`mod-library/l10n/`](../../../mod-library/l10n/)。
 
 ```text
 Done when: <同版閘門通過、層內確有中文、排序在本體之上、audit 綠、真人抽查已排入 WAIT_USER>
@@ -8,11 +10,14 @@ Done when: <同版閘門通過、層內確有中文、排序在本體之上、au
 
 ## 先決定要不要做
 
-**成本規則**：難做就維持英文，順手能做就做。
-見 `modpack-design/sources/translation-layer-cost-policy.md`。
-**這是成本判斷，不是類別禁令**——不要因為某類 mod 難做就一律不做。
+翻譯取捨的現行規則見 [`modpack-design/README.md`](../../../modpack-design/README.md)；
+不要再把已封存的 `translation-layer-cost-policy.md` 當現役入口。
 
-**繁簡都可接受。** 要的是有中文，不是正體。**有同版簡中就直接裝，不要開 CHS→CHT 轉換層。**
+**方塊字／缺字破版不可接受；名詞不一致、繁簡混雜可接受。** 有同版簡中就直接裝，
+不要開 CHS→CHT 轉換層；遊戲的 `sLanguage` 維持 `ENGLISH`，中文放在英文槽。
+
+現行只有三種做法：現成中文層通過拓撲 gate 後部署、自製翻譯層、或為缺失的 `.pex` 補件；
+缺口與 gate 一律從 [`zh-layer/`](../../../modpack-design/content-plan/zh-layer/) 進場。
 
 ## 1. 找同版來源
 
@@ -31,6 +36,8 @@ Done when: <同版閘門通過、層內確有中文、排序在本體之上、au
 
 **fail closed**：筆數、record topology 與所有非目標 payload 都要鎖死。
 VIGILANT `BOOK.DESC` 的例子是 45 筆一個不多一個不少，比數不對就中止。
+
+houseCARL 的 `set_field` 寫中文會遺失位元組；寫中文只用 `bulk_apply` 的 CopyFrom，並以位元組 diff 驗收。
 
 ## 2.5 補全既有中文層
 

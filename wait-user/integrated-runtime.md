@@ -1,12 +1,18 @@
 # 整包 UI／中文／任務驗收
 
-## 天賦／Serana 中文層實機確認（promote `feat/zh-dsport-2026-09-02` 的前提）
+## ~~天賦／Serana 中文層實機確認（promote `feat/zh-dsport-2026-09-02` 的前提）~~（2026-09-03 由 rt1 完成，證據 /home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-03/rt1/REPORT.md）
 
 2026-09-02 晚 MCO 遷移 16 條實機驗收已由使用者全過並 promote（`instance/profiles` main `9e188e2`）。
 之後 dispatcher 在 `feat/zh-dsport-2026-09-02` 部署了 SDA 4.3.2 補完層（插英文本體之前，舊 4.1.1.3 停用）與
 Ordinator／SPERG 天賦補完三層。請使用者進遊戲看：技能樹 perk 名稱／說明是否中文、Serana 對話是否中文；
 過了就 promote，任一不過就依 [`sda/REPORT.md`](../agentctl/handoffs/home-2026-09-02/sda/REPORT.md)、
 [`zhgap/REPORT.md`](../agentctl/handoffs/home-2026-09-02/zhgap/REPORT.md) 的 backup 覆回。
+
+## GO19 新內容要不要改用新周目正式驗收
+
+ECSS 作者要求全新存檔，Gray Cowl 周年版是大改替換件，Faehaven 也建議新存檔；2026-09-03 用 Dev0A 舊存檔時第一局
+79 秒後 crash，第二局正常，且今天新增的 11 個 plugin 沒出現在 crash 現場。A＝現在開新周目，把這三件正式驗收；
+B＝繼續舊周目，但接受之後的 crash／任務狀態不能歸咎於部署。證據：`agentctl/handoffs/home-2026-09-03/inst2/REPORT.md`。
 
 ## Auri＋現役 VIGILANT 有限解凍整合
 

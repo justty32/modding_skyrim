@@ -12,6 +12,7 @@
 ```bash
 python -m unittest discover -s tools -p "test_*.py" -v
 python tools/check_markdown_links.py
+bash wf/tools/wf-lint.sh
 git diff --check
 git status --short --branch
 git submodule status

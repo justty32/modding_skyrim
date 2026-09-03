@@ -18,8 +18,9 @@ main → feat/* → release/* → main
 **不使用 `develop`、`feature/*`、`hotfix/*`，也不以額外 MO2 profile 模擬分支。**
 狀態差異全部由 git 分支承載，磁碟上永遠只有一個 profile。
 
-分支操作一律在 `instance/profiles` 內，走 `tools/` 的 **profile workflow 腳本**
-（完整命令見該目錄的 `README.md`——腳本名留在 private 側）。子命令與順序：
+分支操作一律在 `instance/profiles` 內，走
+[`tools/profile_workflow.py`](../../../instance/profiles/tools/profile_workflow.py)；完整命令見該目錄的
+[`README.md`](../../../instance/profiles/tools/README.md)。子命令與順序：
 
 | 子命令 | 用途 |
 |---|---|
@@ -30,12 +31,13 @@ main → feat/* → release/* → main
 | `promote` | 晉升回 `main` |
 
 `record` 只收 profile 目錄內的變更；同時動到工具或文檔就用一般 `git commit`。
-`start` 在工作樹不乾淨時會拒絕——那是它該有的行為，用 `git stash` 讓路，不要繞過它。
+`start` **一律從 `main` 開分支**；要從 live checkout 的尖端接下去，須在乾淨工作樹手動
+`git switch -c <新分支>`。`start` 在工作樹不乾淨時會拒絕，此時先停下審閱，不要自動 stash。
 
 ## 不可違反
 
 1. **Skyrim 或 MO2 執行期間，禁止切分支、合併、提交、還原。** 先關遊戲。
-2. `selected_profile` 永遠是 `modpack-main`。該 ini 是 **CRLF**，用 sed 改要帶 `\r`。
+2. `selected_profile` 的實值永遠是 `@ByteArray(modpack-main)`；該 ini 是 **CRLF**。
 3. `modpack-main/skyrim.ini` 的 `bAlwaysActive=1` 要維持。
 4. baseline save pair `ModpackKRDev0A.{ess,skse}` 成對且 SHA-256 不變，是唯一進 git 的存檔。
 5. **不 force-push、不自動 stash、不自動 push**；工作樹不乾淨就停。

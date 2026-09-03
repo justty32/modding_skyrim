@@ -10,6 +10,9 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | [`mod-library/`](../mod-library/) | **四條主線之一**：mod 庫——MongoDB 索引、自製繁中翻譯層、自製插件與修正 esp |
 | [`modpack-design/`](../modpack-design/) | **四條主線之一**：整合包設計——Gameplay 遷移批次、技術債、選型調查 |
 | [`agentctl/`](../agentctl/) | **四條主線之一**：AI 操控總控——派線協議、agent 交接、資源鎖、QA harness、執行證據 |
+| [`agentctl/handoffs/`](../agentctl/handoffs/) | 每場交接書與各隊 `REPORT.md` |
+| [`agentctl/inbox/`](../agentctl/inbox/) | 五通道信箱與 `ROSTER.md` 身份聲明簿 |
+| [`agentctl/docs/`](../agentctl/docs/) | 驅動 agent、資源鎖、模型分級與 houseCARL 現行文件 |
 | `projects/` | 11 個獨立軟體 repo（submodule）：ModForge、my_skyrim_plugin_1、godot-worldspace-editor、scene-capture-bridge、model-converter、agent-bridge、darksouls-port、sofia-patch、skyrim-voicegen、game-data、houseCARL。跨 repo 連結假設它們**同層 clone 在 `projects/` 下**。houseCARL 只維護自有 fork（`justty32/houseCARL`）、不追 upstream，決策見 [fork-maintenance-decision.md](../analysis/houseCARL/answers/fork-maintenance-decision.md) |
 | [`analysis/`](../analysis/) | 知識層：`skyrim_engine/`（引擎手冊）、`skyrim_mods/`、`houseCARL/`、`mod-survey/`、`tool-survey/`、`followers-patch/`、`port-source-survey/`。後四份是純文檔子專案，不是獨立 repo。佈局說明在 [workflows/analysis.md](workflows/analysis.md) |
 | [`external/`](../external/README.md) | 他人框架原始碼的落點 |

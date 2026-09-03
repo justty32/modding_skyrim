@@ -8,17 +8,22 @@
 
 | 類別 | open | 清單 |
 |---|---:|---|
-| 回家下載／重建 | 7 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
+| 回家下載／重建 | 6 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
 | 今晚裁決簡報（2026-09-02） | 0 | [wait-user/decision-briefs-2026-09-02.md](wait-user/decision-briefs-2026-09-02.md)（15 題全部已裁示並落地） |
 | 整包 UI／中文／任務驗收 | 12 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
 | 獨立功能驗收 | 5 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
-| 日後素材／清理決定 | 3 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
+| 日後素材／清理決定 | 5 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
 | 版本控制收線 | 0 | [本檔下節](#push-排程) |
+
+歷史導流：[`decision-briefs-2026-09-01.md`](wait-user/decision-briefs-2026-09-01.md) 的 10 題均已裁示；
+[`home-runbook-2026-09-01.md`](wait-user/home-runbook-2026-09-01.md) 是當日執行快照，未完事項已由上表現役清單承接，兩檔均不另計數。
 
 ## Push 排程
 
-1. ~~**裁示：等全部現役線真正收完後一次推。** 先由 `dispatcher` 對帳各子 repo 的 commit、dirty
-   worktree 與母 repo gitlink；對帳完成後，再請使用者當場確認是否 push。~~ **已完成（2026-09-01）**。
+2026-09-03 14:50 使用者已放行 promote 與 push，profiles main 已 promote，當日各 repo push 已執行；現況見
+[`agentctl/handoffs/home-2026-09-03/STATE.md`](agentctl/handoffs/home-2026-09-03/STATE.md)。
+
+歷史：2026-09-01 的一次性 push 排程已完成。
 
 `wf-lint.sh` 兩個缺陷已由使用者裁示**現在就修**，並已派 `cx-kern1` 承接（交接書
 `agentctl/handoffs/kern-2026-08-30/HANDOFF-cx-kern1.md`）；不再列為等待使用者項目。

@@ -9,25 +9,21 @@ Done when: <方向已定、mod 集合已選、分批順序與每批的 rollback 
 
 ## 現役整包
 
-現役 profile 是 **`modpack-main`**；Gameplay 下一步是
-`EnaiRim Batch 0–7`（`modpack-design/content-plan/gameplay/enairim-final-selection-2026-08-24.md`）：
-
-```text
-來源 intake → 種族/立石 → 信仰/吼聲 → 魔法 → 附魔 → 戰鬥 → 終態驗收
-```
-
-每階段要有 **rollback 與完成條件**，不能只寫「裝這些」。
+現役 profile 是 **`modpack-main`**；目前規劃入口是
+[`LoreRim 借用段`](../../../modpack-design/content-plan/lorerim/)與
+[`GO 19`](../../../modpack-design/content-plan/install-plans/go19-2026-09-02.md)。每階段都要有
+**rollback 與完成條件**，不能只寫「裝這些」。
 
 ## 四份輸入
 
 | 想知道 | 看哪裡 |
 |---|---|
 | 現在裝了什麼 | `instance/`（**唯讀盤點**，不要憑記憶或舊快照） |
-| 有什麼可以玩 | `modpack-design/content-plan/` 的四份內容普查（主線／地城敵人／隨從戰鬥／進程結構） |
-| 使用者最近想要什麼（未查證的 Nexus URL） | `mod-url-inbox.md`——**這是未查證素材，不是判定結論；逐件事實查證後才進 `content-plan/`** |
-| 決定要裝什麼、按什麼順序 | [`install-plan-2026-08-27.md`](../../../modpack-design/content-plan/install/install-plan-2026-08-27.md)（**整包唯一一份安裝計畫**，每列有 id／fileId／版本／bytes） |
-| 哪些有中文、下一步做什麼 | [`zh-layer-coverage-master-2026-08-28.md`](../../../modpack-design/content-plan/zh-layer/zh-layer-coverage-master-2026-08-28.md)（中文層唯一決策層） |
-| 這個 mod 技術上怎麼運作 | `analysis/mod-survey/`（136 份框架拆解）——**這不是遊玩規劃，別混在一起** |
+| 有什麼可以玩 | [`modpack-design/content-plan/`](../../../modpack-design/content-plan/) 的領域 OPEN 帳與現役批次 |
+| 來源與取得狀態 | [`modpack-design/sources/OPEN.md`](../../../modpack-design/sources/OPEN.md)；未查證素材不能當判定結論 |
+| 決定要裝什麼、按什麼順序 | [`content-plan/`](../../../modpack-design/content-plan/)；現役批次見 [`GO 19`](../../../modpack-design/content-plan/install-plans/go19-2026-09-02.md) 與 [`LoreRim 借用段`](../../../modpack-design/content-plan/lorerim/) |
+| 哪些有中文、下一步做什麼 | [`content-plan/zh-layer/`](../../../modpack-design/content-plan/zh-layer/)（缺口盤點與現成層拓撲 gate） |
+| 這個 mod 技術上怎麼運作 | [`analysis/mod-survey/`](../../../analysis/mod-survey/)——**這不是遊玩規劃，別混在一起** |
 | 已知的雷 | [`technical-debt.md`](../../../modpack-design/technical-debt.md)（單一權威清單） |
 
 ## 規劃時要先問的
@@ -41,13 +37,8 @@ Done when: <方向已定、mod 集合已選、分批順序與每批的 rollback 
 
 ## 遷移類規劃要特別小心
 
-整套 gameplay ecosystem 的替換（例如 Simonrim → EnaiRim）**不會一次做完**，
-中間會長期停在混合狀態。所以：
-
-- 規劃文件要寫**現在做到哪一階段**，不要只寫終局
-- 不要因為「已經在遷移了」就把舊系統的待辦當作廢——**去查 modlist**。
-  2026-08-23 查過一次：Adamant／Mysticism／Thaumaturgy／Apothecary 都還啟用著，
-  而 Apocalypse／Wintersun／Imperious 那批全是停用，遷移根本還沒過半
+Gameplay 生態遷移的現行階段與回滾只看
+[`content-plan/gameplay/`](../../../modpack-design/content-plan/gameplay/)；不要從歷史快照推論現役 `modlist.txt`。
 
 ## 何時不用
 
