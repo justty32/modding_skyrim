@@ -32,8 +32,13 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 
 ## 2. 基線與證據窗
 
-- **固定 baseline save**：`modpack-main/saves/ModpackKRDev0A.{ess,skse}`，成對且 SHA-256 不變。
+- **固定 baseline save**：`instance/profiles/baselines/ModpackKRDev0A.{ess,skse}`，成對且 SHA-256 不變。
   它是唯一由 git 追蹤的存檔，其餘存檔是執行期資料。
+- 跑會 `load ModpackKRDev0A` 的 spec 前先複製 baseline pair 回 `modpack-main/saves/`：
+
+  ```sh
+  cp instance/profiles/baselines/ModpackKRDev0A.{ess,skse} instance/profiles/modpack-main/saves/
+  ```
 - **fresh log window**：每組驗收各自開新的 log 窗，`load_epoch` 要真的遞增。
   工具是 `agentctl/tools/{runtime,skse}_log_window.py`。
 - **一次只驗一組**。D3／D4 這類各自需要獨立的 fresh window，

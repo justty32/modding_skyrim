@@ -39,8 +39,14 @@ main → feat/* → release/* → main
 1. **Skyrim 或 MO2 執行期間，禁止切分支、合併、提交、還原。** 先關遊戲。
 2. `selected_profile` 的實值永遠是 `@ByteArray(modpack-main)`；該 ini 是 **CRLF**。
 3. `modpack-main/skyrim.ini` 的 `bAlwaysActive=1` 要維持。
-4. baseline save pair `ModpackKRDev0A.{ess,skse}` 成對且 SHA-256 不變，是唯一進 git 的存檔。
+4. baseline save pair `instance/profiles/baselines/ModpackKRDev0A.{ess,skse}` 成對且 SHA-256 不變，是唯一進 git 的存檔。
 5. **不 force-push、不自動 stash、不自動 push**；工作樹不乾淨就停。
+
+跑會 `load ModpackKRDev0A` 的 spec 前先複製 baseline pair 回 `modpack-main/saves/`：
+
+```sh
+cp instance/profiles/baselines/ModpackKRDev0A.{ess,skse} instance/profiles/modpack-main/saves/
+```
 
 ## 晉升前必查
 
