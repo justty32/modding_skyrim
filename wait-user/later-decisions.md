@@ -1,12 +1,111 @@
 # 日後素材／清理決定
 
-## 2026-09-03 staging、coredump 與 zhmake 暫存要不要清
+## staging、coredump 與各線暫存要不要清（2026-09-05 重新實查後改寫）
 
-待裁路徑：`_inst2-staging`、`/home/lorkhan/skyrim_mods/_lrinst-staging-2026-09-03/`（18 GB NVMe）、
-`/var/lib/systemd/coredump`（4.6 GB）與 `/tmp/cx-zm4-objtext-sources`（2 GB，須等 zhmake 收線）。
-A＝確認不再回滾後清掉換空間；B＝保留作除錯／回滾，繼續佔容量。未取得明確刪除授權前一律不動。
+原本列的四條路徑**已有三條自己消失了**（`/tmp` 是 tmpfs，重開機即清），清單重新以實查結果重列：
 
-## Dev0A 基線存檔：使用者刻意刪了，規則要不要跟著改（2026-09-02 晚）
+**已不存在，不必再裁**（2026-09-05 實查）：
+- `/home/lorkhan/skyrim_mods/_inst2-staging` —— 不存在
+- `/home/lorkhan/skyrim_mods/_lrinst-staging-2026-09-03/`（原記 18 GB NVMe）—— 不存在
+- `/tmp/cx-zm4-objtext-sources`（原記 2 GB，要等 zhmake 收線）—— 不存在；zm4 也已於 2026-09-04 收線
+  （agentctl commit `3be7398`、母 repo commit `91912cc`）
+
+**還在、仍未裁示**（2026-09-05 實查大小）：
+- `/var/lib/systemd/coredump` —— **3.1 GB**（原記 4.6 GB，已自行縮小）。**需要 `sudo rm`，agent 做不到。**
+- `~/skyrim_mods/` 底下累積的施工暫存，實查現存這些：
+  `_lrfw-staging-2026-09-03`、`_inst5-staging`、`_cc-staging-2026-09-04`、
+  `_lod-staging-2026-09-04`、`_lod-dangling-backup-2026-09-04`、`_lod-vanilla-master-backup-2026-09-04`、
+  `_staging-2026-09-05`、`_dl-2026-09-05`。
+
+**已裁示、但本次零刪除**（2026-09-05 19:38）：todo-04 選 B，`_grow-2026-08-31` 與
+`_grow-2026-08-31-backed-out` 兩份都刪；todo-09 選 A，`_mco2bfco-2026-08-30` 與
+`_mco2bfco-trash` 兩份都刪。本線只記錄裁示，四個目錄目前仍存在，交由有權執行線處理。
+證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/STATE.md:102`。
+
+對上面**仍未裁示**的項目：A＝確認不再回滾後清掉換空間；B＝保留作除錯／回滾，繼續佔容量。
+這組字母與 status todo-04／09 各自的選項編號無關；**未取得明確刪除授權前一律不動。**
+
+**不要一次全清，這幾個有特殊理由**：
+- `_lod-vanilla-master-backup-2026-09-04` 是清理過的原版 master 備份，Steam Verify 會還原、LOD 得重跑，
+  **這是唯一的回填來源**，強烈建議留著。
+- `_staging-2026-09-05` 裡有 09-05 備好但依裁示「先不套」的 Rigmor Nyx、Sofia-Head-From-Thora、
+  六隨從停用腳本與 fx 3.7 GB 合併層——**裁決未完成前不能清**
+  （見 `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/NEXT-SESSION.md` 第 4 節與續行表第 17 項）。
+- `_dl-2026-09-05` 底下有 `lead-lib/mongo-backup-20260905T1217/`（Mongo 聚合前備份）。
+- 09-05 原先開的 `lead-lr`／`lead-mco2` 狀態已變：`lead-lr` 因 19:20 改選清單而暫停，等使用者貼回
+  localStorage 選單；MCO 下載續行改由 `lead-dl` 承接。證據：
+  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/STATE.md:97`／`:99`／`:103`。
+
+`grow` 暫存 33 GB 這一項另有一份平行筆記
+`/home/lorkhan/repo/moddings/skyrim/agentctl/status/todo/04-grow暫存33G要不要刪.md`。
+
+## wf kernel v0.5.1 要不要拿（2026-09-02 通知，純重新對齊）
+
+kernel repo（`C:/code/mine/workflows`）2026-09-02 出 v0.5.1。另一個 session 實查後結論：本 repo **沒有缺任何 bug 修正**
+（三個檢查器修正都已在、percent-encoding 那條本來就是本 repo 修後回抽），這次只是 `tools/` 拆檔
+（`wf-lint-checks.sh`、`tabledb_table.py`、`tabledb_fmt_expand.py`、`fix_moved_links_scan.py`）以符合 kernel 自己的 8 KB 上限，
+行為與 API 不變；拆完彼此相依，**要拿就整包拿** `tools/`（`test_*` 除外）。同時 `AGENTS.md` 尾端版本戳仍是 v0.4.1，要一併改 v0.5.1。
+**不可覆蓋** `wf/workflows/tidy/gotchas.md`（本 repo 拆出的 `gotchas-windows.md` 會變孤兒；那兩條 kernel 新段本來就是從它回抽的）。
+判準與清單在 `C:/code/mine/workflows/docs/CHANGELOG-v0.5.1.md`。**建議**：LoreRim 調查 commit 後、或下個 session 開場時拿，拿完跑一次 strict lint 對數字。
+
+**2026-09-05 實讀更正：仍未拿，但版本戳的描述要修正。**
+- 原文寫「`AGENTS.md` 尾端版本戳仍是 v0.4.1」——**已過期**。
+  `/home/lorkhan/repo/moddings/skyrim/AGENTS.md:30` 現在是
+  `<!-- wf-kernel v0.5 (2026-08-30) -->（上游已出 v0.5.1，純檔案拆分無 bug 修正，尚未套用；見 agentctl/SESSION-LOG.md）`。
+  要改的是 **v0.5 → v0.5.1**，不是 v0.4.1。
+- **v0.5.1 確定尚未套用**：`/home/lorkhan/repo/moddings/skyrim/wf/tools/` 底下
+  **沒有** v0.5.1 拆出的四個檔（`wf-lint-checks.sh`、`tabledb_table.py`、`tabledb_fmt_expand.py`、`fix_moved_links_scan.py`）。
+- **待確認**：kernel 上游路徑 `C:/code/mine/workflows` 是 Windows 形式，在這台 Linux 上讀不到，
+  我沒有辦法核對 `CHANGELOG-v0.5.1.md` 的實際內容，只能確認本地端「還沒拿」。
+- 同一件事另有筆記 `/home/lorkhan/repo/moddings/skyrim/agentctl/status/todo/24-wf骨架版本戳沒對齊.md`。
+
+## 夜貓－無心 3.1.0（可選精確替換）
+
+目前 JH People 1.1.3＋NPC Plugin Chooser 2 的 536 NPC patch 已滿足方向，不阻塞整包。若仍要精確
+3.1.0，只提供作者百度網盤中名稱含「人物美化」與「頭模替換」的 archive，放入既有
+`/home/lorkhan/skyrim_mods/`；未取得完整資產許可不得公開重打包。見
+[`相容性調查`](../wf/workflows/investigation/findings/wuxin-character-overhaul-se-ae-compatibility.md)。
+
+**2026-09-05 核對：仍 open，但這題現在跟「外表移植」專案綁在一起看比較划算。**
+09-05 使用者開了 `look-transplant` 子專案（8 位女性目標×84 個素材、17 組建議配對），
+選臉是審美裁決、agent 不代選；若那批配對能滿足需求，這條「精確 3.1.0」就不必再追。
+入口：`/home/lorkhan/repo/moddings/skyrim/modpack-design/content-plan/followers/voiced-follower-overhaul/look-transplant/`
+（挑選頁 `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/hd/DECISION.html`）。
+證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/STATE.md:37`／`:52`／`:56`、
+modpack-design commit `652ed91`／`dd009b8`。
+
+## BG3 場景佈局實檔驗證
+
+有合法遊戲資料時，以小型 `Levels/*.lsf` 做 `.lsf → .lsx`，記錄位置／旋轉／尺度／resource identity
+能否無損對映 ModForge placements，再決定是否開 converter/spec；沒有實檔前不宣稱 pipeline 可行。
+見 [`port-source-survey`](../analysis/port-source-survey/README.md)。
+
+**2026-09-05 核對：仍 open（擋在「有沒有合法 BG3 遊戲資料」，那是你的題，agent 跨不過）。**
+相鄰進展：09-05 的 `lead-mc` 線已完成 `model-converter` 通用格式→NIF 轉換
+（any2nif：OBJ／GLB／FBX／DAE／STL／PLY、tex2dds、材質映射）並交付 REPORT。
+它**不涵蓋 `.lsf → .lsx`**（那是 BG3 專屬容器），所以不取代本項，但之後真要做 BG3 匯入時是同一條管線的下游。
+證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/mc/REPORT.md`。
+
+## 已裁示／已完成（封存）
+
+> 以下七項不再等你動作，從 open 清單移到這裡保存歷史。其中「Dev0A 基線存檔」是 2026-09-05 這輪新判定的，
+> 其餘六項原本就已標示裁示完畢，只是還混在 open 區裡。每項附證據絕對路徑或 commit hash。
+
+### Dev0A 基線存檔：使用者刻意刪了，規則要不要跟著改（2026-09-02 晚）
+
+**判定：已裁示並執行（2026-09-04），不再等你。**
+使用者 2026-09-04 對第 10 題裁 **A**：baseline pair **留著，但搬到 `instance/profiles/baselines/`**
+——等於選了本節建議的 ①（留著），只是換了存放位置，避免它一直出現在遊戲的存檔清單裡。
+2026-09-05 實讀：`/home/lorkhan/repo/moddings/skyrim/instance/profiles/baselines/ModpackKRDev0A.ess`（2.9 MB）與
+`.../ModpackKRDev0A.skse`（6.2 KB）皆在。
+證據：`instance/profiles` commit `0f64c20`（「Dev0A 基線存檔搬到 baselines/，規則與 git 保護全留」）、
+母 repo commit `afb530d`（wf baseline save pair 路徑改指 `instance/profiles/baselines`）、
+agentctl commit `b009076`、
+`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-03/SESSION-LOG.md`（「09-04 使用者裁示」節第 10 題）。
+**注意**：`check_profiles.py` 的 `BASELINE_SAVES`、`.gitignore` 白名單、`instance/profiles/README.md` 規則 4、
+`wf/workflows/runtime-qa/README.md` 第 2 節這四處**沒有拿掉規則**（裁的是 ①，本來就不用拿掉），只有路徑跟著改。
+另：`NEXT-SESSION.md` 的注意事項寫「`ModpackKRDev0A.ess/.skse` 已留在 `modpack-main/saves/`（git 不追蹤，正本在 `baselines/`）」
+——那是遊戲啟動前要就位的執行複本，與正本不衝突。
 
 使用者 2026-09-02 22:30 說「dev0a 存檔基線我確實刪掉了」（實機驗收期間在遊戲內刪）。dispatcher 因
 `instance/profiles/tools/check_profiles.py` 把它當必要檔（缺了 promote 直接 FAIL）且 QA harness／agent 開遊戲都載它
@@ -15,7 +114,9 @@ A＝確認不再回滾後清掉換空間；B＝保留作除錯／回滾，繼續
 `.gitignore` 白名單、`instance/profiles/README.md` 規則 4、`wf/workflows/runtime-qa/README.md` 第 2 節，並替 agent QA 另定基線存檔。
 建議 ①。
 
-## ~~LoreRim 打底：80 件待裁決＋借用盤點 11 題~~（2026-09-02 全部已裁示，不計 open）
+### ~~LoreRim 打底：80 件待裁決＋借用盤點 11 題~~（2026-09-02 全部已裁示，不計 open）
+
+**判定：2026-09-02 全部已裁示（本節原本就標 不計 open），2026-09-05 核對無新增待裁。**
 
 LoreRim 3933 件套完三條規則（ENB／高解析度／NPC 美化）後，撞到現役已裝／已定的部分全部寫成問題進
 `modpack-design/content-plan/lorerim/data/conflicts-for-ruling.csv`（80 列，`default_action` 一律 `KEEP-OURS`）。
@@ -38,23 +139,9 @@ USCCCP 樞紐順序可以、LoreRim 停用的 4 件 CC 不跟、Survival Mode CC
 **15:40 六題裁示**：Q1 配 SCAR 2（前提 1.6.1170 DLL）；Q2 不走 DXP；Q3 CPR／PGC 開線查 1.6.1170 DLL；Q4 LoreRim 155 件 moveset 全借；
 Q5 11 件 `ASK` 開線查；Q6 查不到 1.6.1170 版跳過並記錄。落地在計畫第六節與 `data/mco-{moveset-queue,ask-11,dll-runtime-evidence}.csv`。
 
-## wf kernel v0.5.1 要不要拿（2026-09-02 通知，純重新對齊）
+### ~~Beyond Reach 兩件灰色地帶要不要算排除區~~（已裁示，不計 open）
 
-kernel repo（`C:/code/mine/workflows`）2026-09-02 出 v0.5.1。另一個 session 實查後結論：本 repo **沒有缺任何 bug 修正**
-（三個檢查器修正都已在、percent-encoding 那條本來就是本 repo 修後回抽），這次只是 `tools/` 拆檔
-（`wf-lint-checks.sh`、`tabledb_table.py`、`tabledb_fmt_expand.py`、`fix_moved_links_scan.py`）以符合 kernel 自己的 8 KB 上限，
-行為與 API 不變；拆完彼此相依，**要拿就整包拿** `tools/`（`test_*` 除外）。同時 `AGENTS.md` 尾端版本戳仍是 v0.4.1，要一併改 v0.5.1。
-**不可覆蓋** `wf/workflows/tidy/gotchas.md`（本 repo 拆出的 `gotchas-windows.md` 會變孤兒；那兩條 kernel 新段本來就是從它回抽的）。
-判準與清單在 `C:/code/mine/workflows/docs/CHANGELOG-v0.5.1.md`。**建議**：LoreRim 調查 commit 後、或下個 session 開場時拿，拿完跑一次 strict lint 對數字。
-
-## 夜貓－無心 3.1.0（可選精確替換）
-
-目前 JH People 1.1.3＋NPC Plugin Chooser 2 的 536 NPC patch 已滿足方向，不阻塞整包。若仍要精確
-3.1.0，只提供作者百度網盤中名稱含「人物美化」與「頭模替換」的 archive，放入既有
-`/home/lorkhan/skyrim_mods/`；未取得完整資產許可不得公開重打包。見
-[`相容性調查`](../wf/workflows/investigation/findings/wuxin-character-overhaul-se-ae-compatibility.md)。
-
-## ~~Beyond Reach 兩件灰色地帶要不要算排除區~~（已裁示，不計 open）
+**判定：已裁示（兩件都留著、維持啟用、不算排除區），2026-09-05 核對無異動。**
 
 **裁示：兩件都留著，維持啟用，不算排除區。** 2026-09-01 使用者口頭，經 `dispatcher` 轉達：
 屬**缺失資產補件**而非美化，故不落排除區。無需任何 profile 變更（兩件本來就啟用中）。
@@ -72,7 +159,9 @@ kernel repo（`C:/code/mine/workflows`）2026-09-02 出 v0.5.1。另一個 sessi
 （662 是同組的簡中層）。**不要的話單獨停用即可，不影響其他 169 件。**
 原訊息已歸檔在 [`2026-08-30 DIGEST`](../agentctl/inbox/done/2026-08-30/DIGEST.md)（`lead-modpack` 段）。
 
-## ~~profiles 的 baseline save pair 被誤刪，要復原還是改規則~~（已裁示並執行，不計 open）
+### ~~profiles 的 baseline save pair 被誤刪，要復原還是改規則~~（已裁示並執行，不計 open）
+
+**判定：已裁示並執行；且該項已被 2026-09-04 的第 10 題裁示接續（見上面「Dev0A 基線存檔」一節），存檔正本現在在 `instance/profiles/baselines/`。**
 
 **裁示：① 復原。** 2026-09-02 使用者於公司 session 當場裁示，並已在公司這台執行：
 `instance/profiles` 自 `2b1546d`（＝`7e70ae2^`）取回
@@ -92,7 +181,9 @@ kernel repo（`C:/code/mine/workflows`）2026-09-02 出 v0.5.1。另一個 sessi
 **歷程**：`lead-hdmk` 2026-09-01 19:47 上報後依鐵律 4 未自行修；`lead-hops` 同日合併
 `feat/dmk-cht-20260901` 時亦未碰（`main` 與該分支的 validation 錯誤完全相同，合併未新增退化）。
 
-## ~~53 件停用 mod 要不要刪~~（已裁示，不計 open）
+### ~~53 件停用 mod 要不要刪~~（已裁示，不計 open）
+
+**判定：已裁示（不會重跑 NPC 外觀生成 → 刪），2026-09-05 核對無異動。**
 
 `lead-disabled` 2026-08-30 21:05 問：**「你之後還會不會重跑 NPC 外觀生成？」**
 **裁示：不會 → 刪。** 記於同日 22:2x 的 `agentctl/handoffs/opus-ops-2026-08-30/STATE.md:26-27`
@@ -106,13 +197,9 @@ kernel repo（`C:/code/mine/workflows`）2026-09-02 出 v0.5.1。另一個 sessi
 還原代價：兩個 donor 的原始壓縮檔仍在 `~/skyrim_mods/hdd/manually/character-beauty-2026-08-15/`，
 **但目錄內是 CAO 轉換後資產、壓縮檔是轉換前的**，還原需重跑 CAO（540＋549 個 NIF）——這正是裁示已接受的代價。
 
-## BG3 場景佈局實檔驗證
+### ~~中文層五個裁示（2026-09-01 已裁示，不計 open）~~
 
-有合法遊戲資料時，以小型 `Levels/*.lsf` 做 `.lsf → .lsx`，記錄位置／旋轉／尺度／resource identity
-能否無損對映 ModForge placements，再決定是否開 converter/spec；沒有實檔前不宣稱 pipeline 可行。
-見 [`port-source-survey`](../analysis/port-source-survey/README.md)。
-
-## ~~中文層五個裁示（2026-09-01 已裁示，不計 open）~~
+**判定：五題 2026-09-01 全部已裁示，2026-09-05 核對無異動。**
 
 來源是 2026-08-28 的續行清單（已封存，只剩這條活著）；
 逐項細節在 [`中文層覆蓋總表`](../modpack-design/content-plan/zh-layer/zh-layer-coverage-master-2026-08-28.md)的
@@ -131,7 +218,9 @@ kernel repo（`C:/code/mine/workflows`）2026-09-02 出 v0.5.1。另一個 sessi
    1.6.1170 釘版與 Steam 離線。**（2026-09-01，使用者當場口頭裁示；見
    [裁示簡報](decision-briefs-2026-09-01.md)第 8 條。）
 
-## ~~2026-08-29 調查線留下的裁示~~
+### ~~2026-08-29 調查線留下的裁示~~
+
+**判定：三條調查線的裁示 2026-09-01 全部落地，2026-09-05 核對無異動。**
 
 各線的完整結論在 [`agentctl DIGEST`](../agentctl/inbox/done/2026-08-29/DIGEST.md)，報告在 `agentctl/handoffs/done/2026-08-29/<線名>/REPORT.md`。
 
