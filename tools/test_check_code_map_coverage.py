@@ -59,6 +59,7 @@ class CodeMapCoverageTests(unittest.TestCase):
             str(self.line_remote),
             "instance",
         )
+        self.identity(self.repo / "instance")
         self.git(self.repo, "add", ".")
         self.git(self.repo, "commit", "-m", "workspace with one line submodule")
 
