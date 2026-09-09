@@ -77,6 +77,21 @@ def tracked_markdown(root: Path) -> list[Path]:
     return sources
 
 
+def uninitialized_submodules(root: Path) -> list[Path]:
+    """Declared gitlinks absent from a public checkout, not arbitrary missing dirs."""
+    entries = subprocess.check_output(
+        ["git", "ls-files", "--stage", "-z"], cwd=root
+    ).decode().split("\0")
+    missing = []
+    for entry in entries:
+        if not entry.startswith("160000 "):
+            continue
+        path = root / entry.split("\t", 1)[1]
+        if not (path / ".git").exists():
+            missing.append(path.resolve())
+    return missing
+
+
 def source_is_excluded(source: Path, root: Path, patterns: list[str]) -> bool:
     try:
         relative = source.absolute().relative_to(root).as_posix()
@@ -245,6 +260,11 @@ def main(argv: list[str] | None = None) -> int:
         metavar="PATH_OR_GLOB",
         help="skip source Markdown files matching a repo-relative path or glob",
     )
+    parser.add_argument(
+        "--skip-uninitialized-submodules",
+        action="store_true",
+        help="report but do not fail for targets inside uninitialized gitlinks",
+    )
     parser.add_argument("paths", nargs="*", type=Path)
     args = parser.parse_args(argv)
 
@@ -263,6 +283,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.skip_symlinks:
         skipped_symlinks = sum(source.is_symlink() for source in sources)
         sources = [source for source in sources if not source.is_symlink()]
+    unavailable = uninitialized_submodules(root) if args.skip_uninitialized_submodules else []
+    skipped_targets = 0
     total_links = 0
     missing_files = 0
     missing_anchors = 0
@@ -274,6 +296,10 @@ def main(argv: list[str] | None = None) -> int:
         checked, broken = check_file(source, root)
         total_links += checked
         for line_number, target, resolved, fragment in broken:
+            if any(resolved == sub or sub in resolved.parents for sub in unavailable):
+                skipped_targets += 1
+                total_links -= 1
+                continue
             if fragment:
                 missing_anchors += 1
                 print(
@@ -292,6 +318,8 @@ def main(argv: list[str] | None = None) -> int:
         suffixes.append(f"{excluded_sources} source(s) excluded")
     if skipped_symlinks:
         suffixes.append(f"{skipped_symlinks} symlink(s) skipped")
+    if skipped_targets:
+        suffixes.append(f"{skipped_targets} target(s) not checked in uninitialized submodules")
     suffix = f", {', '.join(suffixes)}" if suffixes else ""
     if broken_count:
         print(

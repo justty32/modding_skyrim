@@ -21,4 +21,5 @@ jobs:
         # wu-2026-08-31/backup/ 是 WAIT_USER 系列檔的備份副本，其相對連結以原始位置為準；
         # 詳見 agentctl/handoffs/wu-2026-08-31/README.md。修連結會破壞備份的逐字原樣。
         # inbox 的 originals 也保留寄件時的原文與路徑，不當作現役文件維護。
-        run: python tools/check_markdown_links.py --skip-symlinks --exclude-source 'agentctl/handoffs/wu-2026-08-31/backup/' --exclude-source 'agentctl/inbox/done/*/originals/*'
+        # 公開 CI 不取得私人 submodule；本機完整 checkout 仍以嚴格模式檢查跨 repo 連結。
+        run: python tools/check_markdown_links.py --skip-uninitialized-submodules --skip-symlinks --exclude-source 'agentctl/handoffs/wu-2026-08-31/backup/' --exclude-source 'agentctl/inbox/done/*/originals/*'

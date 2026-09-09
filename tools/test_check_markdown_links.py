@@ -1,6 +1,7 @@
 from pathlib import Path
 from contextlib import redirect_stdout
 import io
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -27,6 +28,22 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
             if sys.platform == "win32" and getattr(exc, "winerror", None) == 1314:
                 self.skipTest("Windows file-symlink privilege is unavailable")
             raise
+
+    def add_fake_gitlink(self, name="private"):
+        subprocess.run(["git", "init", "-q", str(self.root)], check=True)
+        subprocess.run(
+            [
+                "git",
+                "-C",
+                str(self.root),
+                "update-index",
+                "--add",
+                "--cacheinfo",
+                "160000,1111111111111111111111111111111111111111," + name,
+            ],
+            check=True,
+        )
+        return self.root / name
 
     def test_accepts_existing_relative_link(self):
         (self.root / "target.md").write_text("target\n", encoding="utf-8")
@@ -232,6 +249,59 @@ class MarkdownLinkCheckerTests(unittest.TestCase):
 
         self.assertEqual(result, 1)
         self.assertIn("source.md:1: broken local link:", stream.getvalue())
+
+    def test_cli_skip_uninitialized_submodules_is_opt_in(self):
+        self.add_fake_gitlink()
+        source = self.root / "source.md"
+        source.write_text("[private](private/README.md)\n", encoding="utf-8")
+
+        with patch("check_markdown_links.repo_root", return_value=self.root):
+            with redirect_stdout(io.StringIO()):
+                strict_result = main([str(source)])
+            stream = io.StringIO()
+            with redirect_stdout(stream):
+                skipped_result = main(
+                    ["--skip-uninitialized-submodules", str(source)]
+                )
+
+        self.assertEqual(strict_result, 1)
+        self.assertEqual(skipped_result, 0)
+        self.assertIn("1 target(s) not checked in uninitialized submodules", stream.getvalue())
+
+    def test_cli_does_not_skip_initialized_submodule_missing_target(self):
+        submodule = self.add_fake_gitlink()
+        (submodule / ".git").mkdir(parents=True)
+        source = self.root / "source.md"
+        source.write_text("[private](private/missing.md)\n", encoding="utf-8")
+
+        stream = io.StringIO()
+        with patch("check_markdown_links.repo_root", return_value=self.root):
+            with redirect_stdout(stream):
+                result = main(
+                    ["--skip-uninitialized-submodules", str(source)]
+                )
+
+        self.assertEqual(result, 1)
+        self.assertIn("source.md:1: broken local link:", stream.getvalue())
+
+    def test_cli_skip_uninitialized_submodules_keeps_parent_repo_strict(self):
+        self.add_fake_gitlink()
+        source = self.root / "source.md"
+        source.write_text(
+            "[private](private/README.md) [parent](missing.md)\n",
+            encoding="utf-8",
+        )
+
+        stream = io.StringIO()
+        with patch("check_markdown_links.repo_root", return_value=self.root):
+            with redirect_stdout(stream):
+                result = main(
+                    ["--skip-uninitialized-submodules", str(source)]
+                )
+
+        self.assertEqual(result, 1)
+        self.assertIn("missing.md", stream.getvalue())
+        self.assertNotIn("private/README.md", stream.getvalue())
 
     def test_cli_excludes_source_matching_repeated_glob(self):
         backup = self.root / "backup"

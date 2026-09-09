@@ -18,7 +18,9 @@ git status --short --branch
 git submodule status
 ```
 
-GitHub 的 `Documentation checks` 跑同一組 unittest，link checker 另加 `--skip-symlinks` 並排除指定的原樣備份。
+GitHub 的 `Documentation checks` 跑同一組 unittest，link checker 另加 `--skip-symlinks`、`--skip-uninitialized-submodules` 並排除指定的原樣備份。
+公開 CI 沒有私人 submodule，只檢查母 repo 可取得的目標；跳過數量會列在輸出中。
+本機已初始化的完整 checkout 不加後一個旗標，跨 repo 連結仍須全數通過。
 
 `agentctl/inbox/done/*/originals/` 是必須原樣保留的寄件副本，裡面的相對路徑與家用絕對路徑
 只代表寄件當時的環境（契約見 [done/README.md](../../agentctl/inbox/done/README.md)）。
