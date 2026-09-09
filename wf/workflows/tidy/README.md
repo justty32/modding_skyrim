@@ -62,3 +62,7 @@
 
 - 完成後 → 要裁示的事 [WAIT_USER](../../../WAIT_USER.md) 一行；為什麼這樣分類 → [decisions](../decisions.md)。
 - 骨架本身要升級 → 記憶 `wf-kernel-upstream-and-upgrade`；上游 `~/repo/workflows`。
+
+## 整理紀錄
+
+已完成批次的範圍、搬移對照與驗證結果見 [reports/README.md](reports/README.md)。

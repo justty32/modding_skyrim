@@ -1,6 +1,6 @@
 # skyrim_engine —— 引擎/SKSE modding 知識庫
 
-Skyrim SE 引擎逆向分析知識庫,以 **CommonLibSSE-NG**(C++/SKSE plugin 開發)為主軸,兼及 NIF/Papyrus/record 層。2026-04-15 從舊 `project_analysis` 遷入(見 `session_log.md`)。
+Skyrim SE 引擎逆向分析知識庫,以 **CommonLibSSE-NG**(C++/SKSE plugin 開發)為主軸,兼及 NIF/Papyrus/record 層。2026-04-15 從舊 `project_analysis` 遷入。
 
 > 與隔壁 `analysis/skyrim_mods/`(七個**參考 mod** 的拆解,服務 ModForge spec 設計)不同:本目錄是**引擎本身怎麼運作、SKSE plugin 怎麼寫**的通用知識,不綁定特定 mod。
 

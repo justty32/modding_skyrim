@@ -35,7 +35,6 @@
 - `architecture/relationship-dialogue-overhaul.md` —— RDO 的 override 策略與 SM 節點
 - `details/dialogue-targeting-technique.md` —— **RDO 的對話投放技術**（condition 頻率實證）
 - `others/modforge-relevance.md` —— **綜合：ModForge 能借鏡什麼**（對照現有 spec）
-- `session_log.md` —— 操作日誌
 
 ## 一句話結論
 

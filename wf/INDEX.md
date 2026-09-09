@@ -1,6 +1,6 @@
 # INDEX — skyrim 專案地圖
 
-skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）與知識（`analysis/`），部署狀態、mod 庫、整合包設計、AI 操控總控各自獨立成線。本檔只描述**頂層**：每列一句話＋連結；**完整佈局（各線在管什麼、`projects/` 11 個 repo 的分工、不進版控的東西）見根 [README.md](../README.md)**，它兼本 repo 的完整索引。
+skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）與知識（`analysis/`），部署狀態、mod 庫、整合包設計、AI 操控總控各自獨立成線。本檔只描述**頂層**：每列一句話＋連結；**工作區入口見根 [README.md](../README.md)**；開發專案的分工見 [projects/README.md](../projects/README.md)，研究分類見 [analysis/README.md](../analysis/README.md)。
 
 ## Repo 佈局（精簡）
 
@@ -13,8 +13,8 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | [`agentctl/handoffs/`](../agentctl/handoffs/) | 每場交接書與各隊 `REPORT.md` |
 | [`agentctl/inbox/`](../agentctl/inbox/) | 五通道信箱與 `ROSTER.md` 身份聲明簿 |
 | [`agentctl/docs/`](../agentctl/docs/) | 驅動 agent、資源鎖、模型分級與 houseCARL 現行文件 |
-| `projects/` | 11 個獨立軟體 repo（submodule）：ModForge、my_skyrim_plugin_1、godot-worldspace-editor、scene-capture-bridge、model-converter、agent-bridge、darksouls-port、sofia-patch、skyrim-voicegen、game-data、houseCARL。跨 repo 連結假設它們**同層 clone 在 `projects/` 下**。houseCARL 只維護自有 fork（`justty32/houseCARL`）、不追 upstream，決策見 [fork-maintenance-decision.md](../analysis/houseCARL/answers/fork-maintenance-decision.md) |
-| [`analysis/`](../analysis/) | 知識層：`skyrim_engine/`（引擎手冊）、`skyrim_mods/`、`houseCARL/`、`mod-survey/`、`tool-survey/`、`followers-patch/`、`port-source-survey/`。後四份是純文檔子專案，不是獨立 repo。佈局說明在 [workflows/analysis.md](workflows/analysis.md) |
+| [`projects/`](../projects/README.md) | 獨立開發專案；工具、內容專案與 Git 操作說明都在這一層入口 |
+| [`analysis/`](../analysis/README.md) | 引擎、mod、工具與素材來源的研究分類；文件慣例見 [analysis 工作流](workflows/analysis.md) |
 | [`external/`](../external/README.md) | 他人框架原始碼的落點 |
 | `wf/` | 工作流骨架：派發見 [WORKFLOWS.md](WORKFLOWS.md)、結構原則見 [STRUCTURE.md](STRUCTURE.md)、共享區 [workflows/common/](workflows/common/README.md)、檢查腳本 `wf/tools/wf-lint.sh` |
 | `wf/tools/` | `wf-lint.sh`（連結／超標／BIGLIST／殘留檢查）、`tabledb.py`＋`tabledb_links.py`（`wf-table/1` 資料檔 CRUD 與連結檢查）、`find_big_lists.py`（找 >1 KB 條列區塊）、`fix_moved_links.py`（搬檔後按 moves.tsv 重寫連結）|

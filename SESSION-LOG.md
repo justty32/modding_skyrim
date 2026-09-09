@@ -11,13 +11,11 @@
 
 ## 現役工作
 
-- [modpack-planning] 2026-09-03 白天場已收工；續行 [`agentctl/handoffs/NEXT-SESSION.md`](agentctl/handoffs/NEXT-SESSION.md)
-- [modpack-planning] 待使用者：AE DLC、新周目、LoreRim／GO19 與清理裁示 → [`WAIT_USER.md`](WAIT_USER.md)
+目前沒有母 repo 自身的未完成工作。
 
-2026-08-23 工作區統整的歷史見
-[consolidation-2026-08-23](wf/workflows/plans/consolidation-2026-08-23/README.md)；四條日常主線與職責見
-[`README.md`](README.md#四條主線)。Skyrim 工作線交接主線在 [`agentctl/SESSION-LOG.md`](agentctl/SESSION-LOG.md)，
-**本檔只管母 repo**。
+母 repo 只管本身的整理與開發工作。Skyrim 工作線從
+[下次開場入口](agentctl/handoffs/NEXT-SESSION.md)接續；需要使用者親自做的事以
+[WAIT_USER.md](WAIT_USER.md)為準。
 
 ## Durable 狀態入口
 
