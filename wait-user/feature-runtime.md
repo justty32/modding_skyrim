@@ -134,4 +134,6 @@ vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據
 
 透明裁切驗收：MASK 的 alpha test flags 已依格式定義修正；舊版 MASK 模型需重轉，再看葉片／鐵網等貼圖透明區是否正確挖空。SheenChair 所有來源材質均為 OPAQUE，不能用它代替裁切驗收，也不需因此重建最新椅子包。
 
+進度（2026-09-10 22:2x，lead-chair）：SheenChair 兩包已裝進現役 `modpack-main` 並實機看到——`AssetTest-SheenChair-1024`／`-2048`／`-ESP-Dev-2026-09-10`（ESL 測試 esp，2 筆 STAT `ACSheenChair1024` 000800／`ACSheenChair2048` 000801，無 REFR）。`player.placeatme FE3BE800`／`FE3BE801` 在河木鎮外空地各擺一張，兩張都正常顯示橘色布面＋木腳、椅腳朝下、貼地。碰撞外框實測 0.826×0.570×0.686 m（期望 0.827×0.570×0.686），底面 Z=0；BSX=Havok、havok layer 1 OL_STATIC、4 個分件凸包。**尚待使用者肉眼判定**：布紋／木紋比例、法線凹凸方向、接縫黑線、遠看接縫，以及走過去是否真的被擋。截圖 `agentctl/handoffs/home-2026-09-10/chair/data/shots/`。
+
 本輪未部署至 MO2、未動現役 profile。True PBR、蒙皮與動畫不屬這次一般靜態模型驗收。
