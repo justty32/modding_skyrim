@@ -132,4 +132,6 @@ vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據
 
 頂點色驗收：PLY 頂點／面顏色已補保留，NIF 的顏色資料與 shader 標記也依格式定義修正；舊的彩色 NIF 請重新轉換，再確認紅／藍分面與顏色接縫。SheenChair 來源沒有頂點色，既有驗收批次可沿用。
 
+透明裁切驗收：MASK 的 alpha test flags 已依格式定義修正；舊版 MASK 模型需重轉，再看葉片／鐵網等貼圖透明區是否正確挖空。SheenChair 所有來源材質均為 OPAQUE，不能用它代替裁切驗收，也不需因此重建最新椅子包。
+
 本輪未部署至 MO2、未動現役 profile。True PBR、蒙皮與動畫不屬這次一般靜態模型驗收。
