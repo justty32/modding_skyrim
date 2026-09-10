@@ -130,4 +130,6 @@ vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據
 
 新增 UV 驗收：依 [真實模型試轉](../projects/model-converter/REAL-ASSETS.md) 重建 Lantern 與 LanternUV，比較貼圖重複／位移與法線照明；公司已逐頂點驗 NIF UV，但尚未看遊戲畫面。再依 [SheenChair 回家驗收](../projects/model-converter/HOME-VALIDATION.md) 產出兩版與安裝測試記錄，檢查布紋／木紋的比例、陰影、法線與極細面接縫；可比較 `--bake-size 1024` 與 `2048`。Sheen／材質 variants 不算等價支援。Lantern／Avocado 來源自帶切線資料，轉換器已補直通保留；回家同樣確認 normal 凹凸與鏡射後的打光方向，公司有實際 NIF／DDS 方向測試。 SheenChair 沒有來源 TANGENT，轉換器另補鏡射 UV 接縫拆點與逐角點法線重烘；請使用最新重建批次比較，舊包不包含這次方向修正。
 
+頂點色驗收：PLY 頂點／面顏色已補保留，NIF 的顏色資料與 shader 標記也依格式定義修正；舊的彩色 NIF 請重新轉換，再確認紅／藍分面與顏色接縫。SheenChair 來源沒有頂點色，既有驗收批次可沿用。
+
 本輪未部署至 MO2、未動現役 profile。True PBR、蒙皮與動畫不屬這次一般靜態模型驗收。
