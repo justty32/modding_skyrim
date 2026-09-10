@@ -128,4 +128,6 @@ vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據
 
 另用已分成左右柱與橫樑的門框測 `convex-mesh`：中央可通行、柱子與橫樑可阻擋。對照同一模型的 `convex` 會填滿開口。帶法線貼圖的素材再比較強度 0／0.5／2，確認表面凹凸變化合理。
 
+新增 UV 驗收：依 [真實模型試轉](../projects/model-converter/REAL-ASSETS.md) 重建 Lantern 與 LanternUV，比較貼圖重複／位移與法線照明；公司已逐頂點驗 NIF UV，但尚未看遊戲畫面。
+
 本輪未部署至 MO2、未動現役 profile。True PBR、蒙皮與動畫不屬這次一般靜態模型驗收。
