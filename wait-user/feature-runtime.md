@@ -119,3 +119,11 @@ vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據
 另註：2026-09-05 使用者已親眼驗過「六把武器名中文」PASS（
 `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/win/data/ingame-checks.csv` 第 ⑦ 項），
 但**那只驗名稱文字，沒驗拔收與動作銜接**，本節的動作驗收仍未做。
+
+## Asset converter 一鍵靜態模型整包（2026-09-10）
+
+公司 WSL 已完成一般模型、DDS 貼圖與自動 box／convex 碰撞的一鍵輸出，離線測試不能證明 Skyrim 中的外觀與站立結果。
+
+回到有 Skyrim 的機器後，用一件有 diffuse／normal 的簡單箱子或石頭，照 [轉換說明](../projects/model-converter/PACKAGE.md) 產生整包，再在測試 cell 放置：確認大小與方向正確、貼圖可見、透明／發光設定合理，並確認角色無法穿過模型、可站上頂面。各驗一次 `box` 與 `convex`；測試素材與產物雜湊由 `converter-package.json` 記錄。
+
+本輪未部署至 MO2、未動現役 profile。True PBR、蒙皮與動畫不屬這次一般靜態模型驗收。

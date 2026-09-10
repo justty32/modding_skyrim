@@ -16,7 +16,7 @@
 | 回家下載／重建 | 3 | 6 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
 | 今晚裁決簡報（2026-09-02） | 0 | 0 | [wait-user/decision-briefs-2026-09-02.md](wait-user/decision-briefs-2026-09-02.md)（15 題全部已裁示並落地） |
 | 整包 UI／中文／任務驗收 | 9 | 12 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
-| 獨立功能驗收 | 5 | 5 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
+| 獨立功能驗收 | 6 | 5 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
 | 日後素材／清理決定 | 4 | 5 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
 | 版本控制收線 | 0 | 0 | [本檔下節](#push-排程) |
 
@@ -36,6 +36,8 @@ staging 清理 4 條路徑→3 條已自行消失。
 
 歷史導流：[`decision-briefs-2026-09-01.md`](wait-user/decision-briefs-2026-09-01.md) 的 10 題均已裁示；
 [`home-runbook-2026-09-01.md`](wait-user/home-runbook-2026-09-01.md) 是當日執行快照，未完事項已由上表現役清單承接，兩檔均不另計數。
+
+2026-09-10 新增 1 件：asset converter 的一般靜態模型整包實機驗收（獨立功能驗收 5 → 6）。公司 WSL 的離線驗證與實作進度見 [converter](projects/model-converter/SESSION-LOG.md)。
 
 ## Push 排程
 
