@@ -48,3 +48,7 @@
 - /home/lorkhan/skyrim_mods/hdd/Your Market Stall Plus-92351-1-0-0-1685271150.zip
 
 - 2026-09-11 20:2x 使用者：泰拉護甲（9651）不裝，本機檔全刪。
+
+## 2026-09-11 20:3x 使用者追加 2 個本機壓縮檔
+- /home/lorkhan/skyrim_mods/hdd/SkyDecoctionCHT3.0-52242-3-0-1632249637.rar
+- /home/lorkhan/skyrim_mods/hdd/SkyWitcherOilCHT2.0-53375-2-0-1632637301.rar
