@@ -46,3 +46,5 @@
 - /home/lorkhan/skyrim_mods/hdd/Serana's Hideout_SE1.1.3-78032-1-1-3-1667976673.7z
 - /home/lorkhan/skyrim_mods/hdd/泰拉護甲2.0CBBE等系列正體中文化(含安裝).zip
 - /home/lorkhan/skyrim_mods/hdd/Your Market Stall Plus-92351-1-0-0-1685271150.zip
+
+- 2026-09-11 20:2x 使用者：泰拉護甲（9651）不裝，本機檔全刪。
