@@ -3,6 +3,8 @@
 要先調查，看一下會不會出衝突。
 沒有漢化的話我們要自己做
 
+- Spell Research：2026-09-12 使用者裁示拆除，搬到 `_rm-2026-09-12`。
+
 ## 2026-09-11 18:2x 使用者貼的 41 個本機壓縮檔（hdd/ 40＋aa/ 1）
 
 - /home/lorkhan/skyrim_mods/hdd/CBBE Tera Armors Collection - Special Edition V2.1-9651-2-1-1596648820.7z
