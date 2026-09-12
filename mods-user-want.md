@@ -3,7 +3,39 @@
 要先調查，看一下會不會出衝突。
 沒有漢化的話我們要自己做
 
-- Spell Research：2026-09-12 使用者裁示拆除，搬到 `_rm-2026-09-12`。
+09/12紀錄：
+https://www.nexusmods.com/skyrimspecialedition/mods/191402
+https://www.nexusmods.com/skyrimspecialedition/mods/171939
+https://www.nexusmods.com/skyrimspecialedition/mods/140705
+https://www.nexusmods.com/skyrimspecialedition/mods/171694
+https://www.nexusmods.com/skyrimspecialedition/mods/175270
+https://www.nexusmods.com/skyrimspecialedition/mods/186475
+https://www.nexusmods.com/skyrimspecialedition/mods/179969
+https://www.nexusmods.com/skyrimspecialedition/mods/163565
+https://www.nexusmods.com/skyrimspecialedition/mods/177130
+https://www.nexusmods.com/skyrimspecialedition/mods/182965
+https://www.nexusmods.com/skyrimspecialedition/mods/177341
+https://www.nexusmods.com/skyrimspecialedition/mods/188270
+https://www.nexusmods.com/skyrimspecialedition/mods/156721
+https://www.nexusmods.com/skyrimspecialedition/mods/163993
+https://www.nexusmods.com/skyrimspecialedition/mods/186542
+
+https://www.nexusmods.com/skyrimspecialedition/mods/163295
+https://www.nexusmods.com/skyrimspecialedition/mods/4455
+https://www.nexusmods.com/skyrimspecialedition/mods/37992
+https://www.nexusmods.com/skyrimspecialedition/mods/46867
+https://www.nexusmods.com/skyrimspecialedition/mods/33167
+https://www.nexusmods.com/skyrimspecialedition/mods/69938
+https://www.nexusmods.com/skyrimspecialedition/mods/77718
+https://www.nexusmods.com/skyrimspecialedition/mods/89643
+https://www.nexusmods.com/skyrimspecialedition/mods/96352
+https://www.nexusmods.com/skyrimspecialedition/mods/97892
+https://www.nexusmods.com/skyrimspecialedition/mods/93871
+https://www.nexusmods.com/skyrimspecialedition/mods/108499
+https://www.nexusmods.com/skyrimspecialedition/mods/111770
+https://www.nexusmods.com/skyrimspecialedition/mods/153781
+
+- Spell Research：2026-09-12 使用者裁示拆除，搬到 `_rm-2026-09-12`；09-12 下午使用者裁示裝回。
 
 ## 2026-09-11 18:2x 使用者貼的 41 個本機壓縮檔（hdd/ 40＋aa/ 1）
 
