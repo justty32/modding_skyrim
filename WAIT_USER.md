@@ -16,7 +16,7 @@
 | 回家下載／重建 | 3 | 6 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
 | 今晚裁決簡報（2026-09-02） | 0 | 0 | [wait-user/decision-briefs-2026-09-02.md](wait-user/decision-briefs-2026-09-02.md)（15 題全部已裁示並落地） |
 | 整包 UI／中文／任務驗收 | 9 | 12 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
-| 獨立功能驗收 | 6 | 5 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
+| 獨立功能驗收 | 8 | 6 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
 | 日後素材／清理決定 | 4 | 5 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
 | 版本控制收線 | 0 | 0 | [本檔下節](#push-排程) |
 
@@ -40,6 +40,8 @@ staging 清理 4 條路徑→3 條已自行消失。
 2026-09-10 新增 1 件：asset converter 的一般靜態模型整包實機驗收（獨立功能驗收 5 → 6）。公司 WSL 的離線驗證與實作進度見 [converter](projects/model-converter/SESSION-LOG.md)。
 
 2026-09-14：上述 converter 項追加特效光柱載入／透明／發光驗收，詳見 [獨立功能驗收](wait-user/feature-runtime.md#asset-converter-一鍵靜態模型整包2026-09-10)；屬同一項的追加條件，open 計數不變。
+
+2026-09-14 後續新增 2 件：DSPort P3 物件邊界與多層 navmesh 的實機 A/B 驗收（獨立功能驗收 6 → 8）；詳見 [獨立功能驗收](wait-user/feature-runtime.md)。離線檢查不代替症狀消失與尋路通過。
 
 ## Push 排程
 
