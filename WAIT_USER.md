@@ -39,6 +39,8 @@ staging 清理 4 條路徑→3 條已自行消失。
 
 2026-09-10 新增 1 件：asset converter 的一般靜態模型整包實機驗收（獨立功能驗收 5 → 6）。公司 WSL 的離線驗證與實作進度見 [converter](projects/model-converter/SESSION-LOG.md)。
 
+2026-09-14：上述 converter 項追加特效光柱載入／透明／發光驗收，詳見 [獨立功能驗收](wait-user/feature-runtime.md#asset-converter-一鍵靜態模型整包2026-09-10)；屬同一項的追加條件，open 計數不變。
+
 ## Push 排程
 
 2026-09-03 14:50 使用者已放行 promote 與 push，profiles main 已 promote，當日各 repo push 已執行；現況見
