@@ -10,12 +10,17 @@
 |------|--------|------|--------|
 | 家用 Manjaro（2026-08-12 實測） | Git、Python 3.14、.NET SDK 10、CMake、Ninja、Wine；部分 repo 自有 venv | 母 repo 維護、ModForge/Python 離線 suite、可取得 submodule 的 build/test | 目前 PATH 無 Godot/Pwsh；感官與遊戲內結果仍需人工驗收 |
 | 公司 Windows 離線工作區（2026-08-12 finding） | .NET SDK 10、Git Bash、Godot 4.6、model-converter venv；無 Skyrim | ModForge 與四條 correctness contract 的離線測試 | Skyrim/MO2 runtime、真實遊戲資料與模型驗收 |
-| 公司 WSL（2026-09-09） | Git、Python 3 | 文件、離線測試、Git | 無 MongoDB；不能照搬家用路徑或實機驗收 |
+| 公司 WSL（2026-09-14） | Git、Python、converter venv、Windows .NET（見下） | 文件、Python／ModForge 離線測試 | 無 Skyrim／MongoDB；路徑依本機核對 |
 | GitHub／各子 repo CI | 母 repo 文件 gate；每個子 repo 自己的 workflow 與依賴 | 母 repo link/unit gate；子 repo 宣告的 build/test/package gate | 不跨 repo 建置，也不能取代實機驗收 |
 
 這是**開發能力**矩陣，不是部署現況。MO2 instance/profile/load order、已安裝 mod 與實機
 驗收一律由 `instance/`（部署狀態）與 `agentctl/`（實機驗收證據）管；本檔不複製那份狀態。
 `~/notes/projects/modding/skyrim/` 只留不進版控的截圖與 MongoDB 快照。
+
+2026-09-14 公司 WSL 的 converter 使用 `.venv-wsl`。實測 Windows .NET SDK 10.0.301 可啟動，ModForge 三份 `obj/project.assets.json` 所需套件均已在快取。
+在 ModForge 目錄以 Windows `dotnet.exe` 呼叫 `wslpath -w` 轉換後的測試 csproj，帶
+`test --no-restore --filter 'Category!=RequiresSkyrim'` 可使用既有依賴；不要加 `--no-build`，舊 DLL 可能早於目前程式。
+這只記錄本次快取條件；套件參考改變後需重新核對，不能把快取存在當成測試通過。
 
 ## Fresh Clone
 
