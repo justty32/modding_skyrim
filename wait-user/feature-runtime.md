@@ -1,5 +1,9 @@
 # 獨立功能驗收
 
+## 2026-09-20：PI 啟動崩潰候選層與技能條件 crash 驗證
+
+**open（cx-crash2／lead-fde920）**：PI 合併層已建立但停用（profiles `0cd417d`）；待使用者決定啟用及冷啟動 A/B。B 型 `SkyrimSE+01D3398` 仍未定罪，待原場景動作／法師立石持有狀態確認與 CARP 單 DLL A/B。不得同時改兩型變量，不能把靜態 gate 當實機已修復。詳見 [REPORT](../agentctl/handoffs/home-2026-09-20/crash2/REPORT.md) 與 [操作步驟](../agentctl/handoffs/home-2026-09-20/crash2/FIX-AND-AB.md)。
+
 > **2026-09-05 核對結論（todo-23）**：Simonrim 時代的 Batch 4E／4A／4M/P 三節，
 > **抽樣對象逐個實讀後全部仍在啟用清單裡，三節都不作廢**——過期的是行號與框架名（BFCO→MCO），不是清單。
 > 只有 4E 的「AVE loot/vendor 階級比例」與 4M/P 的「BFCO 攻擊」兩個子條件因對象停用而作廢，已就地標註。

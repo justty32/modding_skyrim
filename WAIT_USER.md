@@ -16,7 +16,7 @@
 | 回家下載／重建 | 3 | 6 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
 | 今晚裁決簡報（2026-09-02） | 0 | 0 | [wait-user/decision-briefs-2026-09-02.md](wait-user/decision-briefs-2026-09-02.md)（15 題全部已裁示並落地） |
 | 整包 UI／中文／任務驗收 | 9 | 12 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
-| 獨立功能驗收 | 8 | 6 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
+| 獨立功能驗收 | 9 | 8 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
 | 日後素材／清理決定 | 4 | 5 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
 | 版本控制收線 | 0 | 0 | [本檔下節](#push-排程) |
 
@@ -52,3 +52,5 @@ staging 清理 4 條路徑→3 條已自行消失。
 
 `wf-lint.sh` 兩個缺陷已由使用者裁示**現在就修**，並已派 `cx-kern1` 承接（交接書
 `agentctl/handoffs/kern-2026-08-30/HANDOFF-cx-kern1.md`）；不再列為等待使用者項目。
+
+2026-09-20 新增 1 件：PI 停用合併層啟用驗證與 B 型技能條件 crash 單變量實驗（獨立功能驗收 8 → 9），詳見 [獨立功能驗收](wait-user/feature-runtime.md)。
