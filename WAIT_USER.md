@@ -55,4 +55,4 @@ staging 清理 4 條路徑→3 條已自行消失。
 
 2026-09-20 新增 1 件：PI 停用合併層啟用驗證與 B 型技能條件 crash 單變量實驗（獨立功能驗收 8 → 9），詳見 [獨立功能驗收](wait-user/feature-runtime.md)。
 
-2026-09-24：既有技能條件 crash 項追加 doom perk 補丁的使用者格擋驗證（open 計數不變）；使用者追加授權後已部署正式 profile，待本人格擋，詳見 [功能驗收](wait-user/feature-runtime.md)。
+2026-09-24：技能條件 crash（B 型 `SkyrimSE+01D3398`）**已結案** —— doom perk 補丁部署正式 profile 後，使用者實機格擋確認不再崩潰。同日新增 1 件待驗：長毛象 CTD（`SkyrimSE+02B789A`）的 SPID 老年換裝覆寫層，待使用者回到 cell grid (-6,1) 巨人營地實機確認（獨立功能驗收 9 → 9，一結一開）。詳見 [功能驗收](wait-user/feature-runtime.md)。

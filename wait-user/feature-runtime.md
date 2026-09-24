@@ -2,7 +2,11 @@
 
 ## 2026-09-20：PI 啟動崩潰候選層與技能條件 crash 驗證
 
-2026-09-24 更新：doom perk 補丁離線 1–4 通過，使用者追加授權後已部署到正式 `modpack-main`（profiles `3f5c37d`），啟動遊戲交使用者操作。09:16／09:34 是使用者格擋時崩潰，並非靜置重現。**待使用者於正式 profile 實際格擋驗證（第 6 條未完成）**；靜置不算證據，不再開測試 profile。見 [doomperk 報告](../agentctl/handoffs/home-2026-09-24/doomperk/REPORT.md)。
+2026-09-24 **結案**：doom perk 補丁（移除三顆 `doom*Perk` 的 `EPModSkillUsage_AdvanceObjectHasKeyword` 條件）已部署正式 `modpack-main`（profiles `3f5c37d`），**使用者實機格擋確認不再崩潰，第 6 條 PASS**。09:16／09:34 兩次都是使用者格擋時崩潰、並非靜置重現——靜置不算證據。見 [doomperk 報告](../agentctl/handoffs/home-2026-09-24/doomperk/REPORT.md)。
+
+## 2026-09-24：長毛象 CTD（`SkyrimSE+02B789A`）
+
+**open**：10:23 野外巨人營地（cell grid (-6,1)）CTD，崩在背景載入執行緒的 3D 掛載路徑，現場 `QueuedCharacter` / `BSFadeNode "skeleton.nif"`，RDI 是長毛象 `[ACHR:001038A9]`；崩潰前 2.4 秒 SPID Outfit Manager 對**同一個 ACHR** 做了 `Resetting inventory`。已部署覆寫層 `SPID-NoElderOutfit-2026-09-24`（profiles `f106cf3`），活體 inventory reset 由 75 降到 0。**待使用者回到該營地實機走一趟確認**；煙霧不崩不構成修復證明。見 [spid-outfit 報告](../agentctl/handoffs/home-2026-09-24/spid-outfit/REPORT.md)與 [證據鏈](../agentctl/handoffs/home-2026-09-24/block-crash2/REPORT.md)。
 
 **open（cx-crash2／lead-fde920）**：PI 合併層已建立但停用（profiles `0cd417d`）；待使用者決定啟用及冷啟動 A/B。B 型 `SkyrimSE+01D3398` 仍未定罪，待原場景動作／法師立石持有狀態確認與 CARP 單 DLL A/B。不得同時改兩型變量，不能把靜態 gate 當實機已修復。詳見 [REPORT](../agentctl/handoffs/home-2026-09-20/crash2/REPORT.md) 與 [操作步驟](../agentctl/handoffs/home-2026-09-20/crash2/FIX-AND-AB.md)。
 
