@@ -2,7 +2,7 @@
 
 ## 2026-09-20：PI 啟動崩潰候選層與技能條件 crash 驗證
 
-2026-09-24 更新：doom perk 補丁僅裝在 `crash-ab-doomperk`，離線 1–4 通過；使用者確認 09:16／09:34 是操作格擋時崩潰，並非靜置重現。**待使用者於該測試 profile 以同一 Save164 實際格擋驗證（第 6 條未完成）**；15 分鐘靜置不算證據。正式 `modpack-main` 未變、更未晉升。見 [doomperk 報告](../agentctl/handoffs/home-2026-09-24/doomperk/REPORT.md)。
+2026-09-24 更新：doom perk 補丁離線 1–4 通過，使用者追加授權後已部署到正式 `modpack-main`（profiles `3f5c37d`），啟動遊戲交使用者操作。09:16／09:34 是使用者格擋時崩潰，並非靜置重現。**待使用者於正式 profile 實際格擋驗證（第 6 條未完成）**；靜置不算證據，不再開測試 profile。見 [doomperk 報告](../agentctl/handoffs/home-2026-09-24/doomperk/REPORT.md)。
 
 **open（cx-crash2／lead-fde920）**：PI 合併層已建立但停用（profiles `0cd417d`）；待使用者決定啟用及冷啟動 A/B。B 型 `SkyrimSE+01D3398` 仍未定罪，待原場景動作／法師立石持有狀態確認與 CARP 單 DLL A/B。不得同時改兩型變量，不能把靜態 gate 當實機已修復。詳見 [REPORT](../agentctl/handoffs/home-2026-09-20/crash2/REPORT.md) 與 [操作步驟](../agentctl/handoffs/home-2026-09-20/crash2/FIX-AND-AB.md)。
 
