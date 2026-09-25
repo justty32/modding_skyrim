@@ -26,6 +26,11 @@ DLL SHA-256 `b302857681988f4930f666d41aef13c8ab9ef94486d8e746b81f1832c4a965e3`�
 與 [`收線記錄`](../../agentctl/handoffs/done/README.md)。**要跑 15 條之前先部署這顆 DLL**，
 否則驗的還是舊行為。
 
+**2026-09-25 22:2x 推進**：cx-wu-rt 實讀現役 `mods/SceneCaptureBridge/SKSE/Plugins/SceneCaptureBridge.dll`
+SHA-256 已是 `b302857681988f49…`（1,906,688 bytes），即修正 DLL 早已在位；以最新存檔 Save229
+跑 60 秒 qa_status 無 crash、SKSE log 有載入行。**剩 15 條 rendered-camera ray 精度驗收待使用者**。
+證據 `agentctl/handoffs/home-2026-09-25/wu/rt/REPORT.md`。
+
 原始 FAIL 記錄： 使用者以部署中的 DLL
 （SHA-256 `dccc10e0…3fd67`，與文件記錄的 `a17e460` build 相同）實測：ghost 會持續自轉並持續往玩家
 靠近；手完全不動仍繼續，第一人稱／vanilla 第三人稱／SmoothCam 三者皆然；按 F11 放下的真實 ref

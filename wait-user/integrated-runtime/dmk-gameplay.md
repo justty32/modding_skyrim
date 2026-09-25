@@ -13,6 +13,10 @@ agentctl commit `b009076`、`/home/lorkhan/repo/moddings/skyrim/agentctl/handoff
 **人工校對層本身已上線**（`modlist.txt:520` 啟用、`:519` 機翻層停用，詳見
 [`回家下載／重建`](../home-setup.md) 的已完成節），所以這項剩下的只有「用標準基準重跑一次 smoke」。
 
+**2026-09-25 22:2x 推進**：cx-wu-rt 已把 baseline pair 複製進 `modpack-main/saves/`（SHA 一致）
+並用 qa_console 載入（level 1、WhiterunBanneredMare）；**DMK 中文設定頁需使用者自己開 MCM 看**
+（agent 不送按鍵，拿不到畫面）。證據同上 REPORT 件 2。
+
 ## Modpack-KR Batch 6 final gameplay
 
 自動 lane 21/21 PASS、`load_epoch 1 → 2`、0 new crash 不能代替真人。需驗新遊戲、城市／NPC、~~BFCO~~

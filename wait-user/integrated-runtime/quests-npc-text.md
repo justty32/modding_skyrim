@@ -50,5 +50,11 @@ Altano，抽查主線開場、對話／字幕、日誌／目標、書籍、物�
 
 傾向後者，但要等實機確認範圍後再定。
 
+**2026-09-25 22:2x 推進**：cx-wu-off 用 houseCARL 對 536 筆 NPC 全查：**只有 1 筆**符合
+『JhNPCBeautyDev 勝出、名字英文、前層有中文』——`018FBD:Dragonborn.esm` DLC2SVEdla
+（Edla → 艾迪拉，來源 USSEP 中文層）；ESL patch 草案在
+`~/skyrim_mods/_staging-2026-09-25/off/JhNPCBeautyDev-ZH-Names-2026-09-25/`（未部署）。
+範圍比原先想的小很多，是否值得多一個插件由使用者裁。
+
 所有本頁項目共同檢查：無方框、mojibake、截斷、空白或新 crash；未走過的流程不得稱 gameplay PASS。
 

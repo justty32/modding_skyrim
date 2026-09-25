@@ -78,6 +78,12 @@
    **狀態（2026-09-02 晚，home 隊）**：已定位——`updated_at` 實為 2026-09-01T11:47Z；mo2ctl `cmd_enable/cmd_disable`、人工直寫與 MO2 關閉寫回都不更新 manifest，差集 605／488／181／64；修法建議（`commit_profile()` 收口／關 MO2 後 reconcile）見 [mo2ctl-drift-diagnosis.md](../agentctl/handoffs/home-2026-09-02/home/mo2ctl-drift-diagnosis.md)。
    **裁示（2026-09-02 晚，引文）**：home-3 C——拆 provenance／live checkpoint，`mo2fix` 隊承接。
 
+   **2026-09-25 22:2x 推進**：cx-wu-mo2 已把 install／uninstall／enable／disable 收口到
+   `commit_profile()`（ProfileEdit 記憶體 staging＋checkpoint），新增 `reconcile`
+   （預設唯讀、`--apply` 才寫、含 fail-on-drift），agent-bridge commit `3cffa0f`，122 tests 綠燈；
+   現役 profile 唯讀 reconcile 差集 modlist_enabled 1946／manifest_mods 867。
+   **`--apply` 待 dispatcher 持鎖時跑**，跑完這項即可結案。
+
 另：`major-content-preflight-2026-09-01/` 的 9 件裡有 6 件其實早已安裝啟用，該批任務單與批次計畫
 的框架語意需要對現況重新校正（更正段已加在 `home-batching-plan.md` 開頭）。
 
