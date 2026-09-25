@@ -149,5 +149,40 @@ class OversizeSubmoduleTest(unittest.TestCase):
         self.assertNotIn("ext/mod/big.txt", r.stdout)
 
 
+class VenvPruneTest(unittest.TestCase):
+    """.venv／venv（Python 虛擬環境）不下鑽：uv/venv 專案的 site-packages 不該被當成專案檔掃。"""
+
+    def setUp(self):
+        self.d = tempfile.TemporaryDirectory()
+        self.root = self.d.name
+
+    def tearDown(self):
+        self.d.cleanup()
+
+    def test_oversize_scan_skips_dot_venv_and_venv(self):
+        write(self.root, ".venv/lib/python3.13/site-packages/openai/README.md", "x" * 9000)
+        write(self.root, "venv/lib/site-packages/foo/README.md", "x" * 9000)
+        write(self.root, "own/big.txt", "x" * 9000)
+        r = subprocess.run(
+            ["bash", "-c", f'. "{CHECKS}"; list_oversize_files "{self.root}"'],
+            capture_output=True, text=True,
+        )
+        self.assertIn("own/big.txt", r.stdout)
+        self.assertNotIn(".venv", r.stdout)
+        self.assertNotIn("/venv/", r.stdout)
+
+    def test_owned_files_scan_skips_dot_venv_and_venv(self):
+        write(self.root, ".venv/lib/python3.13/site-packages/openai/README.md", "# stray\n")
+        write(self.root, "venv/lib/site-packages/foo/README.md", "# stray\n")
+        write(self.root, "notes/a.md", "# a\n")
+        r = subprocess.run(
+            ["bash", "-c", f'. "{CHECKS}"; list_md "{self.root}"'],
+            capture_output=True, text=True,
+        )
+        self.assertIn("notes/a.md", r.stdout)
+        self.assertNotIn(".venv", r.stdout)
+        self.assertNotIn("/venv/", r.stdout)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -42,7 +42,7 @@ list_owned_files() {
   local root=${1%/} _ rel
   shift
   local -a prunes=(
-    -path '*/.git' -o -path '*/node_modules' -o -path '*/__pycache__'
+    -path '*/.git' -o -path '*/node_modules' -o -path '*/.venv' -o -path '*/venv' -o -path '*/__pycache__'
     -o -path '*/archive' -o -path '*/reference' -o -path '*/references' -o -path '*/vendor'
     -o -path '*/done' -o -path '*/superseded'
     -o \( -path '*/inbox' ! -path '*/workflows/inbox' \)
@@ -59,11 +59,11 @@ list_owned_files() {
 list_md() { list_owned_files "$1" -name '*.md'; }
 list_data() { list_owned_files "$1" -name '*.json' -o -name '*.csv'; }
 
-# 全 repo 超標掃描：排除 .git／__pycache__、agent 工具的 worktree 暫存區（repo 的巢狀副本）
-# 與 .gitmodules 宣告的 submodule（上游 vendor 碼不受 8 KB 限制）。
+# 全 repo 超標掃描：排除 .git／__pycache__、.venv／venv（Python 虛擬環境）、agent 工具的
+# worktree 暫存區（repo 的巢狀副本）與 .gitmodules 宣告的 submodule（上游 vendor 碼不受 8 KB 限制）。
 list_oversize_files() {
   local root=${1%/} _ rel
-  local -a prunes=( -path '*/.git' -o -path '*/__pycache__' -o -path '*/.claude/worktrees' )
+  local -a prunes=( -path '*/.git' -o -path '*/.venv' -o -path '*/venv' -o -path '*/__pycache__' -o -path '*/.claude/worktrees' )
   while read -r _ rel; do
     [[ -n $rel ]] && prunes+=( -o -path "$root/${rel%/}" )
   done < <(git -C "$root" config --file .gitmodules --get-regexp '^submodule\..*\.path$' 2>/dev/null || true)

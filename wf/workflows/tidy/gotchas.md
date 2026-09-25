@@ -44,3 +44,9 @@
 codex 工人拿不到 gitdir 寫權做不了 `git mv`、`python3` 是 Microsoft Store 假 shim 導致
 `wf-lint.sh --strict` 的綠燈失真，以及 `MANIFEST.sha256` 釘住檔案、CRLF 讓 manifest 全紅、
 「不得封存」約束只寫在交接書裡三個個案。
+
+## 執行環境
+
+<!-- wf-nav -->
+- **`command -v` 只判存在、不判能不能跑。** `python3` 若是系統塞的假 shim，`wf-lint.sh` 會判成「有」而不印 WARN，實際呼叫失敗又被 `2>/dev/null` 吃掉——BIGLIST／錨點／資料檔三項是「沒跑」不是「乾淨」，只有 broken／residue／oversize（純 bash）算數。要驗那三項就直接手跑一次對應的 `.py`，別拿這種綠燈當證據。
+- **CRLF checkout 會同時弄壞執行與計數。** `.sh` 帶 `\r` 在 Linux／WSL 直接跑不動；`wc -c` 每行多算 1 byte，8192 上限在 Windows 工作區會誤報超標（CI 看的是 LF）。量大小用 `git show HEAD:<檔> | wc -c`，要在 WSL 跑就先複製一份 `sed -i 's/\r$//'` 過的。

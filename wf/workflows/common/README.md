@@ -8,6 +8,7 @@
 |------|------|------|
 | [gotchas.md](gotchas.md) | 共通踩坑（第二次撞到才記）| kernel |
 | [user.md](user.md) | 使用者偏好、確認邊界、分支慣例 | kernel |
+| [reply-style.md](reply-style.md) | 對話回覆風格 | kernel |
 | `glossary.md`（長出來才建）| 領域詞彙 `詞 \| 意思 \| 別名`；常猜錯的術語多才建 | kernel |
 | [conventions.md](conventions.md) | 程式碼慣例 ＋ CODE_MAP 維護鏈 ＋ 真相層優先序 | 專案 |
 | [code-map/](code-map/CODE_MAP.md) | 程式碼導航 index | 專案 |
