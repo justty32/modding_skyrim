@@ -62,3 +62,7 @@ staging 清理 4 條路徑→3 條已自行消失。
 2026-09-25 22:10 推進：使用者裁「wait user 中你能做的都做一做」，開六條線（`agentctl/handoffs/home-2026-09-25/wu/`）：mo2ctl 漂移修復、JhNPCBeautyDev 中文名 patch 草案＋crash2 A/B 對帳、DSPort P3 四個對照包、RDO 62500 下載與衝突表、光柱特效測試包實機煙霧、ghost-cell-clear DLL 部署＋DMK smoke＋AYOP 死選單清理。裁示要刪的 4 個 staging 目錄實讀已不存在（已完成）。wf kernel v0.5.1 升級排在 tidy 輪收尾後。
 
 2026-09-25 22:45 收工：推進線全部收線（`agentctl/handoffs/home-2026-09-25/STATE.md`）。新增等使用者裁示 4 件：① RDO 62500／76474 裝不裝（衝突 6,091 FormID）；② staging 的中文修正層（zhfix 10 層＋Apocalypse 重建 1 層）裝不裝；③ `instance/profiles` 工作樹 `Constellations-SorceryNullGuard-2026-09-25` 未 commit 的啟用狀態留不留；④ 光柱 P3 完整效果包（`_staging-2026-09-25/fx2/`，486 NIF）要不要換進 dsport-dev 實機看。等使用者看畫面 2 件：DMK 中文頁、AYOP 死選單（新槽 `cx-wu-rt-2026-09-25`）。光柱視覺、長毛象 CTD 已結案。
+
+2026-09-25 22:55 使用者裁示：① SorceryNullGuard 啟用**留**（profiles `1191c76` 已 commit 並 push）；② 中文修正層**裝**、③ RDO 62500／76474 **裝但要相容舊存檔**（層位由 dispatcher 定，`cx-deploy` 施工中，`agentctl/handoffs/home-2026-09-25/deploy/`）；④ 光柱完整包換進 dsport-dev「之後再說」；⑤ .pex 已改不追蹤、三個空目錄已移除、git 歷史不改寫。DMK／AYOP 畫面「之後再說」。各 repo 已 push。
+
+2026-09-25 23:12 **已部署**（profiles `6dcb0fa`）：zhfix 10 個中文修正層（含保留舊結構的 Apocalypse Combined-2026-09-25）與 RDO 62500 Final／76474，各放在舊同名層正上方，既有 plugin 一行未動；Save229 60 秒煙霧無 crash／缺 plugin，31 欄修正回讀通過。**Apocalypse 10.2.3 重建層未裝**：現役 winner 是 7934 carrier 結構（4,218 筆），重建層少 465 筆會動舊存檔，留到新周目（在 `~/skyrim_mods/_staging-2026-09-25/apoc/`）。遊戲內中文顯示尚未親眼看（qa_console 抓不到 help 的中文列），使用者下次開遊戲順手看法術／藥水說明即可。
