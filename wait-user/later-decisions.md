@@ -99,3 +99,5 @@ modpack-design commit `652ed91`／`dd009b8`。
 統計：10 項（第 10 列為 2026-09-25 自 staging 項移入的 todo-04／todo-09 暫存刪除）。
 
 2026-09-25 22:25 推進（wf kernel v0.5.1）：cx-wu-kern 試做純覆蓋升級，發現本地 `wf/tools` 已含上游 v0.5.1 之後的規則（母 repo kernel 測試 15 項中 3 項專測這些，覆蓋後轉紅），dispatcher 裁定**不降版並撤回 commit**；下次升級要對齊上游 v0.6 或更新、用 diff 合併。對照報告 `agentctl/handoffs/home-2026-09-25/wu/kern/REPORT.md`。此項改為「等上游 v0.6」，不再是可直接套的維護。
+
+2026-09-25 23:30 **wf kernel 升級結案**：`cx-wu-kern2` 三載點對齊上游 main `794d6d2`（v0.6＋lint 修正），tools 整包、kernel 段換新、本地段保留；lint 持平、上游 15 項測試綠；各 repo 已 push。此項關閉。
