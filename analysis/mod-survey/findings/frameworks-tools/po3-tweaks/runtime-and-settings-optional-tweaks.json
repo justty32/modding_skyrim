@@ -1,0 +1,115 @@
+{
+ "contract": "wf-table/1",
+ "source": "runtime-and-settings.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Key",
+  "預設值",
+  "說明",
+  "與 ModForge 的交集"
+ ],
+ "rows": [
+  {
+   "Key": "`Faction Stealing = false`",
+   "預設值": "false",
+   "說明": "在同派系友好成員面前偷竊才算偷竊",
+   "與 ModForge 的交集": "影響 ModForge 生成的 NPC 所屬 faction"
+  },
+  {
+   "Key": "`Voice Modulation = 1.0`",
+   "預設值": "1.0（無效果）",
+   "說明": "戴面甲 NPC 聲音失真；0.85-0.90 推薦值",
+   "與 ModForge 的交集": "若 ModForge NPC 戴面甲可告知設定"
+  },
+  {
+   "Key": "`Game Time Affects Sounds = false`",
+   "預設值": "false",
+   "說明": "時間減速時聲調同步降低",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Dynamic Snow Material = false`",
+   "預設值": "false",
+   "說明": "帶方向雪的靜態物件自動加雪碰撞材質",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Disable Water Ripples On Hover = false`",
+   "預設值": "false",
+   "說明": "懸浮 NPC 不觸發水面漣漪",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Screenshot Notification To Console = false`",
+   "預設值": "false",
+   "說明": "截圖通知轉為 console 輸出",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`No Attack Messages = 0`",
+   "預設值": "0",
+   "說明": "0=關，1=關暴擊訊息，2=關背刺訊息，3=全關",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Sit To Wait = false`",
+   "預設值": "false",
+   "說明": "只能坐著等待",
+   "與 ModForge 的交集": "影響 NPC/玩家互動設計"
+  },
+  {
+   "Key": "`Sit To Wait Message`",
+   "預設值": "字串",
+   "說明": "自訂提示文字",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Disable God Mode = 0`",
+   "預設值": "0",
+   "說明": "0=關，1=只關神模式，2=只關不死，3=全關",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`No Hostile Spell Absorb = false`",
+   "預設值": "false",
+   "說明": "所有非敵對/非負面法術自動加 NoAbsorb flag",
+   "與 ModForge 的交集": "若生成 buff/aura SPEL 可用"
+  },
+  {
+   "Key": "`Grabbing Is Stealing = false`",
+   "預設值": "false",
+   "說明": "拿取擁有物件算偷竊",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Load Door Activate Prompt = 0`",
+   "預設值": "0",
+   "說明": "0=關，1=替換提示文字，2=替換+出口顯示內部房名",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Enter Label / Exit Label`",
+   "預設值": "字串",
+   "說明": "配合上面的入口/出口文字",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`No Poison Prompt = 0`",
+   "預設值": "0",
+   "說明": "0=關，1=停用確認，2=通知顯示，3=兩者",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Silent Sneak Power Attacks = false`",
+   "預設值": "false",
+   "說明": "潛行蓄力攻擊時防止玩家呼喊",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Offensive Spell AI = false`",
+   "預設值": "false",
+   "說明": "NPC 裝備攻擊法術前先驗證條件有效性",
+   "與 ModForge 的交集": "若 ModForge 生成 AI 包含攻擊法術 NPC 可用"
+  }
+ ]
+}

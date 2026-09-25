@@ -8,36 +8,18 @@
 
 由 `SkyPatcher.ini` 的 `[Patcher]` 段與 config 子資料夾可列出共 **29 種 record 類型**：
 
-| Record 類型 | 子資料夾 | 主要用途 |
-|-------------|----------|---------|
-| NPC_ | `npc/` | NPC 外貌、數值、技能、裝備、法術、派系 |
-| ARMO | `armor/` | 防具屬性、biped slot、keyword |
-| WEAP | `weapon/` | 武器數值、keyword、彈藥、特效 |
-| SPEL | `spell/` | 法術屬性 |
-| MGEF | `magicEffect/` | 魔法效果屬性 |
-| LVLN/LVLI/LVSP | `leveledList/` | Leveled list 條目增刪 |
-| FLST | `formList/` | FormList 條目增刪 |
-| CONT | `container/` | 容器物品 |
-| RACE | `race/` | 種族屬性、法術、移動 |
-| FACT | `faction/` | 派系 |
-| ENCH | `enchantment/` | 附魔 |
-| PROJ | `projectile/` | 射彈 |
-| BOOK | `book/` | 書本 |
-| ALCH | `ingestible/` | 藥水/食物 |
-| INGR | `ingredient/` | 鍊金素材 |
-| MISC | `misc/` | 雜物 |
-| AMMO | `ammo/` | 弓箭彈藥 |
-| COBJ | `constructibleObject/` | 合成配方 |
-| CELL | 無子資料夾（ini 開關） | 房間/地牢格 |
-| ECZN | 無子資料夾 | Encounter Zone |
-| LCTN | 無子資料夾 | Location |
-| OTFT | `outfit/` | 套裝 |
-| MOVT | `movementType/` | 移動類型 |
-| SLGM | `soulGem/` | 靈魂石 |
-| SCRL | `scroll/` | 卷軸 |
-| OBME | `objectModification/` | Object Mod（OMOD） |
-| REFR | 無子資料夾（實驗性） | 放置物件（Reference） |
-| RACE（hook 版）| `raceHook/` | 種族 hook 版（特殊時序） |
+本表整理「2-A. 支援的 record 類型（主 ini 開關）」的逐項記錄。
+
+已抽到 [skypatcher-records-and-config-supported-record-types.json](skypatcher-records-and-config-supported-record-types.json)（28 列）。
+
+欄位「Record 類型」：保留原表的Record 類型。
+
+欄位「子資料夾」：保留原表的子資料夾。
+
+欄位「主要用途」：保留原表的主要用途。
+
+統計：28 筆記錄，3 個欄位。
+
 
 ### 2-B. ini 格式
 

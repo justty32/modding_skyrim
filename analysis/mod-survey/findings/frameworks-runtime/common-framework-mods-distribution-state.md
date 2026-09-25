@@ -4,17 +4,20 @@
 
 ## 快速表
 
-| Mod | 本地狀態 | 核心機制 | 我們可利用的點 |
-| --- | --- | --- | --- |
-| Spell Perk Item Distributor / SPID | 已解壓：`Spell Perk Item Distributor-36869-7-3-0-1778353486` | SKSE plugin；用 config 分發 spell / perk / item / shout / package / outfit / keyword / faction 到 NPC | 無 patch 標記 NPC：給 follower 加 faction/keyword/spell，讓 dialogue condition、OAR、其他系統能識別 |
-| Open Animation Replacer / OAR | 已解壓：`Open Animation Replacer-92109-3-1-5-1778597444` | SKSE animation replacer；用條件替換 animation，有 in-game editor | 讓特定 follower / faction / 狀態使用不同 idle、gesture、walk、interaction animation |
-| PapyrusUtil | 已解壓：`PapyrusUtil AE SE - Scripting Utility Functions-13048-4-6-1705639805`；另有 `PapyrusUtil` | Papyrus native utility；StorageUtil、JsonUtil、ActorUtil、MiscUtil | 存 follower memory、外部 JSON config、actor/package override、掃描 cell NPC |
-| JContainers | 已解壓：`JContainers SE`；是的，本地已經有 | JSON-based serializable data structures；array/map/form map；Lua | 複雜 dialogue state、動態資料表、外部 JSON-driven topic/state/relationship 設定 |
-| Conditional Expressions | 已解壓：`Conditional Expressions-45148-1-29-1755293339`；已抽取 game-data | ESP + magic effects + scripts；用 MFG/expression override 做玩家狀態表情 | 參考「狀態驅動表情」：喝酒、吃東西、冷、痛、疲勞、潛行、隨機表情 |
-| Base Object Swapper / BOS | 已解壓：`Base Object Swapper-60805-3-4-1-1752606013` | `_SWAP.ini` 以 base object 替換物件，可帶 chance/property overrides | 針對 follower home、scene set dressing、互動物件做無 ESP patch 的替換 |
-| AnimObject Swapper / AOS | 已解壓：`AnimObject Swapper-75167-1-1-0-1666410165` | `_ANIO.ini` 替換 idle 使用的 AnimObject，可 random/conditional | 換對話/idle animation 中手上的杯子、書、樂器、道具；適合角色化演出 |
-| I Am Walking Here | 本地未見 | SKSE plugin；防止 NPC/follower 推擠玩家或阻塞窄路 | 降低 follower 場景、走位、forcegreet 後跟隨時的碰撞干擾 |
-| I Am Talking Here | 本地未見 | SKSE plugin；玩家對話中壓住 follower idle chatter | 可作為 ambient commentary 的兼容模型：重要對話期間不要讓 follower bark 插話 |
+本表整理「快速表」的逐項記錄。
+
+已抽到 [common-framework-mods-distribution-state-framework-distribution.json](common-framework-mods-distribution-state-framework-distribution.json)（9 列）。
+
+欄位「Mod」：保留原表的Mod。
+
+欄位「本地狀態」：保留原表的本地狀態。
+
+欄位「核心機制」：保留原表的核心機制。
+
+欄位「我們可利用的點」：保留原表的我們可利用的點。
+
+統計：9 筆記錄，4 個欄位。
+
 
 ## SPID
 

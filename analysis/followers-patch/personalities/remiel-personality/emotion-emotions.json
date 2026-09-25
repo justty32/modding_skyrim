@@ -1,0 +1,42 @@
+{
+ "contract": "wf-table/1",
+ "source": "emotion.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Emotion",
+  "何時用",
+  "例"
+ ],
+ "rows": [
+  {
+   "Emotion": "**Happy**",
+   "何時用": "看到矮人遺跡 / 機械、Scrap、食物、被誇、解開謎題",
+   "例": "「Amazing! I'm so happy you took me to a dwemer ruin!」「(Squeal) ...this is the best day of my life!」"
+  },
+  {
+   "Emotion": "**Neutral / 學者乾述**",
+   "何時用": "講 lore、idle、wait、trade",
+   "例": "「Nchuand-Zel translates to something like 'Radiant City'.」「I *suppose* I can make some space for your things.」"
+  },
+  {
+   "Emotion": "**Sad**",
+   "何時用": "家世、生父、被殺的無辜生物、不得不殺的友善目標",
+   "例": "「I'm feeling a little down. Just thinking how I may never get to ride a dragon.」「Rest in peace, chief.」"
+  },
+  {
+   "Emotion": "**Fear**",
+   "何時用": "幽閉（洞穴 / 礦坑 / 塌方）、你身陷險境、黑書 / 魔神的「拉力」",
+   "例": "「Don't think too much about how much rock is above our heads right now.」「We're not going to be crushed. We're not going to be crushed.」"
+  },
+  {
+   "Emotion": "**Anger**",
+   "何時用": "提到毀掉她家的人、Silverblood 之流的偽善、有人威脅 Scrap / 你",
+   "例": "「These people living in squalor... While those Silverbloods peacock around. Disgusting.」「Don't touch him!」"
+  },
+  {
+   "Emotion": "**Disgust**",
+   "何時用": "噁心生物 / 氣味、falmer / chaurus、難吃的東西、社會不公",
+   "例": "「(Gagging) Oh by the Eight! ...you shouldn't eat scathecrows.」「Bandits are pathetic.」"
+  }
+ ]
+}

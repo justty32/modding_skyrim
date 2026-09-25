@@ -40,6 +40,7 @@
 
 對 ModForge：
 
+<!-- wf-nav -->
 - **可生成（今天就能）**：整套**靜態骨架**——資源 MiscObject、Activator + `scriptAttach` 掛 `ANNOBuildingScript` 等 controller（`Generator.Build.Scripts.cs` 已驗）、**預置 disabled REFR + enable-parent XMarker 的 Enable/Disable 建造 pattern**（placements + linkedRef/enable-parent + activator 全在能力域）、帶 respawn/surplus script 的 container、GLOB、自訂 cell/worldspace、NPC 置放。這是 survey 至今**最完整的 vanilla-Papyrus 經濟循環**，且狀態全走真實 inventory（引擎便宜、無外部 lib）。
 - **需新支援 / 硬缺口（皆為已知、再確認）**：① **`MessageSpec` 無多按鈕選單**（建造 Yes/No 用 `Message.Show()` 讀 button——與 Real Estate/Tundra/Honed Metal 同一缺口，續押「優先補 `buttons:[]`」）；② **執行期經營迴圈**（生產計時、稅收、突襲擲骰、船隻操舵）irreducibly bespoke Papyrus，須隨附 controller `.pex`（同 Tundra/S&D「scaffold + 附 .psc」判決）。**無全新缺口**。
 - **對 idea #24（遊戲內編輯器：施法擺物→快照→patch）**：AnnoRim 是「遊戲中蓋建物」的成熟出貨先例，但要點在於它蓋的是**預置好的 disabled 物件切可見**、**不是 runtime 自由 PlaceAtMe**。⇒ 它精確示範了 **#24 快照該吐出的產物格式**：disabled REFR + enable-parent XMarker + 資源/金幣 activator。#24 的「擺完快照成 patch」正好對得上這組 placement 記錄。

@@ -6,14 +6,21 @@
 
 一棵「現代（JSON 格式）」自訂技能樹由**四到六塊**拼起來。先看全貌：
 
-| # | 零件 | 放哪 | 做什麼 | 必要性 |
-|---|------|------|--------|--------|
-| A | **一個 `.esp`** | `Data/MySkills.esp` | 裝技能樹要用到的所有記錄：PERK（節點）、GLOB（等級/進度/legendary）、KYWD（升級掛鉤），可選 BOOK / MGEF | **必要** |
-| B | **技能設定檔 `<X>.json`** | `Data/SKSE/Plugins/CustomSkills/<X>.json` | 描述這棵樹：技能名/述、指向 esp 裡哪幾個 GLOB、升級曲線、每個 perk 節點的座標與連線 | **必要** |
-| C | **`SKILLS.json`**（可選之一） | `Data/SKSE/Plugins/CustomSkills/SKILLS.json` | 把你的技能**塞進原版技能選單那一頁**（最像原生）。不用它就得另開獨立選單 | 二選一 |
-| D | **init alias script** | esp 裡的 quest + 一支 `.psc`/`.pex` | 玩家首次安裝時把技能等級設成起始值、授予基礎被動 perk、做版本 gate | **建議** |
-| E | **訓練 TIF fragment**（可選） | 對話 TopicInfo 的一行 fragment | 把某個 NPC 變成你的技能訓練師（花錢練等） | 可選 |
-| F | **Fortify-技能 MGEF + `ActorValueData/*.toml`**（可選） | esp 裡的 MGEF + 一份 toml | 讓「強化 X 技能」附魔/藥水對自訂技能生效。**這條非要一個自寫的 native SKSE plugin 不可** | 進階加值 |
+對照自訂技能樹各零件的落點、功能與必要性。
+
+已抽到 [overview-planning-skill-components.json](overview-planning-skill-components.json)（6 列）。
+
+#：零件代號。
+
+零件：產物類型。
+
+放哪：產物放置位置。
+
+做什麼：該零件的職責。
+
+必要性：必要或可選的程度。
+
+統計：6 筆記錄，5 欄。
 
 **心智模型**：`perk 的效果由 esp 決定，技能的「外觀與進度」由 CSF 設定檔（JSON）決定。** CSF 框架（`CustomSkills.dll`）只提供「選單外殼 + XP/升級引擎」——它不發明新的 perk 格式，你的 perk 就是普通的 PERK record。
 

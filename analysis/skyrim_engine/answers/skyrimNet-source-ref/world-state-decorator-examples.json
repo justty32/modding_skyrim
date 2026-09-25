@@ -1,0 +1,47 @@
+{
+ "contract": "wf-table/1",
+ "source": "world-state.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/test_decorators/0100_actor_decorators.prompt`",
+   "內容": "Actor decorators 測試"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/test_decorators/0200_combat_decorators.prompt`",
+   "內容": "Combat decorators"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/test_decorators/0300_equipment_decorators.prompt`",
+   "內容": "Equipment decorators"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/test_decorators/0350_item_decorators.prompt`",
+   "內容": "Item decorators"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/test_decorators/0400_faction_relationship_decorators.prompt`",
+   "內容": "Faction/Relationship decorators"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/test_decorators/0500_magic_decorators.prompt`",
+   "內容": "Magic decorators"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/test_decorators/0600_quest_gamesystem_decorators.prompt`",
+   "內容": "Quest decorators"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/test_decorators/0700_scene_world_decorators.prompt`",
+   "內容": "Scene/World decorators"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/test_decorators/0800_omnisight_state_decorators.prompt`",
+   "內容": "OmniSight decorators"
+  }
+ ]
+}

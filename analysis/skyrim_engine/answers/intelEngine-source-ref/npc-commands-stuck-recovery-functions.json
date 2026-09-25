@@ -1,0 +1,35 @@
+{
+ "contract": "wf-table/1",
+ "source": "npc-commands.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案:行號",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:982-1011`",
+   "內容": "`CheckIfStuck()` — **卡點偵測 dispatcher**（跳過 dialogue/combat 中的 NPC；C++ CheckStuckStatus；status 0=正常, 1=soft recovery, 3=escalate）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:1013-1024`",
+   "內容": "`HandleSoftStuckRecovery()` — 軟卡點恢復（nudge + re-pathfind；第一次觸發時 narration）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:1026-1106`",
+   "內容": "`HandleLeapfrogRecovery()` — **漸進式卡點恢復**（Layer B: waypoint nav；Layer C: multi-angle leapfrog 200→500→1000→2000 單位，±30° 旋轉角度）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Core.psc:1238-1259`",
+   "內容": "`SoftStuckRecovery()` — 共享的軟卡點恢復（nudge + travel package + PathToReference）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Core.psc:1835-1877`",
+   "內容": "`TryWaypointNavigation()` — 中途地點導航（找最近的 BGSLocation marker → redirect travel；重複卡住 → teleport to waypoint）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Core.psc:1879-1899`",
+   "內容": "`CheckWaypointArrival()` — 檢查是否到達中途點"
+  }
+ ]
+}

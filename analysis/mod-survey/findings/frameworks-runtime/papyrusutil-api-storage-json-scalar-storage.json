@@ -1,0 +1,122 @@
+{
+ "contract": "wf-table/1",
+ "source": "papyrusutil-api-storage-json.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Function",
+  "簽名",
+  "說明"
+ ],
+ "rows": [
+  {
+   "Function": "`SetIntValue`",
+   "簽名": "`(Form ObjKey, string KeyName, int value) → int`",
+   "說明": "在 Form 或 global（none）存 int"
+  },
+  {
+   "Function": "`SetFloatValue`",
+   "簽名": "`(Form ObjKey, string KeyName, float value) → float`",
+   "說明": "同上，float"
+  },
+  {
+   "Function": "`SetStringValue`",
+   "簽名": "`(Form ObjKey, string KeyName, string value) → string`",
+   "說明": "同上，string"
+  },
+  {
+   "Function": "`SetFormValue`",
+   "簽名": "`(Form ObjKey, string KeyName, Form value) → Form`",
+   "說明": "同上，Form"
+  },
+  {
+   "Function": "`GetIntValue`",
+   "簽名": "`(Form ObjKey, string KeyName, int missing=0) → int`",
+   "說明": "讀取，找不到回 missing"
+  },
+  {
+   "Function": "`GetFloatValue`",
+   "簽名": "`(Form, string, float missing=0.0) → float`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`GetStringValue`",
+   "簽名": "`(Form, string, string missing=\"\") → string`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`GetFormValue`",
+   "簽名": "`(Form, string, Form missing=none) → Form`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`HasIntValue`",
+   "簽名": "`(Form, string) → bool`",
+   "說明": "是否已設定"
+  },
+  {
+   "Function": "`HasFloatValue`",
+   "簽名": "`(Form, string) → bool`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`HasStringValue`",
+   "簽名": "`(Form, string) → bool`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`HasFormValue`",
+   "簽名": "`(Form, string) → bool`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`UnsetIntValue`",
+   "簽名": "`(Form, string) → bool`",
+   "說明": "刪除，成功回 true"
+  },
+  {
+   "Function": "`UnsetFloatValue`",
+   "簽名": "`(Form, string) → bool`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`UnsetStringValue`",
+   "簽名": "`(Form, string) → bool`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`UnsetFormValue`",
+   "簽名": "`(Form, string) → bool`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`PluckIntValue`",
+   "簽名": "`(Form, string, int missing=0) → int`",
+   "說明": "讀後刪（原子 get-and-remove）"
+  },
+  {
+   "Function": "`PluckFloatValue`",
+   "簽名": "`(Form, string, float missing=0.0) → float`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`PluckStringValue`",
+   "簽名": "`(Form, string, string missing=\"\") → string`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`PluckFormValue`",
+   "簽名": "`(Form, string, Form missing=none) → Form`",
+   "說明": "同上"
+  },
+  {
+   "Function": "`AdjustIntValue`",
+   "簽名": "`(Form, string, int amount) → int`",
+   "說明": "原子 +=，key 不存在時初始化為 amount"
+  },
+  {
+   "Function": "`AdjustFloatValue`",
+   "簽名": "`(Form, string, float amount) → float`",
+   "說明": "同上"
+  }
+ ]
+}

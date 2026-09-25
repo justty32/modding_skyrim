@@ -1,0 +1,127 @@
+{
+ "contract": "wf-table/1",
+ "source": "jcontainers-api-core-containers.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Function",
+  "簽名",
+  "說明"
+ ],
+ "rows": [
+  {
+   "Function": "`object`",
+   "簽名": "`() → Int`",
+   "說明": "建立空 JArray"
+  },
+  {
+   "Function": "`objectWithSize`",
+   "簽名": "`(Int size) → Int`",
+   "說明": "建立指定大小（填 None）"
+  },
+  {
+   "Function": "`objectWithInts / Strings / Floats / Booleans / Forms`",
+   "簽名": "`(T[] values) → Int`",
+   "說明": "從 Papyrus 陣列建立"
+  },
+  {
+   "Function": "`subArray`",
+   "簽名": "`(Int object, Int start, Int end) → Int`",
+   "說明": "取子陣列 [start, end)"
+  },
+  {
+   "Function": "`addFromArray`",
+   "簽名": "`(Int object, Int source, Int insertAtIndex=-1)`",
+   "說明": "把另一個 JArray 的元素插入"
+  },
+  {
+   "Function": "`addFromFormList`",
+   "簽名": "`(Int object, FormList source, Int insertAtIndex=-1)`",
+   "說明": "從 FormList 匯入"
+  },
+  {
+   "Function": "`getInt / getFlt / getStr / getObj / getForm`",
+   "簽名": "`(Int object, Int index, T default) → T`",
+   "說明": "依 index 讀取"
+  },
+  {
+   "Function": "`setInt / setFlt / setStr / setObj / setForm`",
+   "簽名": "`(Int object, Int index, T value)`",
+   "說明": "依 index 寫入"
+  },
+  {
+   "Function": "`addInt / addFlt / addStr / addObj / addForm`",
+   "簽名": "`(Int object, T value, Int addToIndex=-1)`",
+   "說明": "插入值（-1 = 尾端）"
+  },
+  {
+   "Function": "`count`",
+   "簽名": "`(Int object) → Int`",
+   "說明": "元素數量"
+  },
+  {
+   "Function": "`clear`",
+   "簽名": "`(Int object)`",
+   "說明": "清空"
+  },
+  {
+   "Function": "`eraseIndex`",
+   "簽名": "`(Int object, Int index)`",
+   "說明": "刪除 index 處元素"
+  },
+  {
+   "Function": "`eraseRange`",
+   "簽名": "`(Int object, Int first, Int last)`",
+   "說明": "刪除 [first, last] 區間"
+  },
+  {
+   "Function": "`eraseInteger / eraseFloat / eraseString / eraseObject / eraseForm`",
+   "簽名": "`(Int object, T value) → Int`",
+   "說明": "刪除所有符合值，回刪除數量"
+  },
+  {
+   "Function": "`findInt / findFlt / findStr / findObj / findForm`",
+   "簽名": "`(Int object, T value, Int searchStartIndex=0) → Int`",
+   "說明": "搜尋，回 index 或 -1"
+  },
+  {
+   "Function": "`countInteger / countFloat / countString / countObject / countForm`",
+   "簽名": "`(Int object, T value) → Int`",
+   "說明": "計算出現次數"
+  },
+  {
+   "Function": "`valueType`",
+   "簽名": "`(Int object, Int index) → Int`",
+   "說明": "取 index 處的值型別"
+  },
+  {
+   "Function": "`swapItems`",
+   "簽名": "`(Int object, Int index1, Int index2)`",
+   "說明": "交換兩個 index"
+  },
+  {
+   "Function": "`sort`",
+   "簽名": "`(Int object) → Int`",
+   "說明": "升序排序，回 object 自身"
+  },
+  {
+   "Function": "`unique`",
+   "簽名": "`(Int object) → Int`",
+   "說明": "去重後排序（Set 語意），回 object 自身"
+  },
+  {
+   "Function": "`reverse`",
+   "簽名": "`(Int object) → Int`",
+   "說明": "反轉，回 object 自身"
+  },
+  {
+   "Function": "`asIntArray / asFloatArray / asStringArray / asFormArray`",
+   "簽名": "`(Int object) → T[]`",
+   "說明": "轉成 Papyrus 陣列"
+  },
+  {
+   "Function": "`writeToIntegerPArray / writeToFloatPArray / writeToFormPArray / writeToStringPArray`",
+   "簽名": "多參數",
+   "說明": "寫入既有 Papyrus 陣列（可指定範圍與方向）"
+  }
+ ]
+}

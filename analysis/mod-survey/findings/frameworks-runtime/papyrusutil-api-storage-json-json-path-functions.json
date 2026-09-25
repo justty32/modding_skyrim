@@ -1,0 +1,63 @@
+{
+ "contract": "wf-table/1",
+ "source": "papyrusutil-api-storage-json.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Function",
+  "說明"
+ ],
+ "rows": [
+  {
+   "Function": "`SetPathIntValue(FileName, Path, value)`",
+   "說明": "依 `.key.subkey[idx]` 路徑設值"
+  },
+  {
+   "Function": "`GetPathIntValue(FileName, Path, missing=0) → int`",
+   "說明": "依路徑讀值"
+  },
+  {
+   "Function": "`GetPathBoolValue(FileName, Path, missing=false) → bool`",
+   "說明": "便利包裝（底層是 int）"
+  },
+  {
+   "Function": "`SetRawPathValue(FileName, Path, RawJSON) → bool`",
+   "說明": "直接寫入 raw JSON 字串"
+  },
+  {
+   "Function": "`PathIntElements(FileName, Path, invalidType=0) → int[]`",
+   "說明": "把路徑指向的陣列全部取出"
+  },
+  {
+   "Function": "`FindPathIntElement(FileName, Path, toFind) → int`",
+   "說明": "在陣列中搜尋"
+  },
+  {
+   "Function": "`PathCount(FileName, Path) → int`",
+   "說明": "路徑下的元素數量"
+  },
+  {
+   "Function": "`PathMembers(FileName, Path) → string[]`",
+   "說明": "路徑下的 key 名稱列表"
+  },
+  {
+   "Function": "`CanResolvePath / IsPathString / IsPathNumber / IsPathForm / IsPathBool / IsPathArray / IsPathObject`",
+   "說明": "路徑型別檢查"
+  },
+  {
+   "Function": "`SetPathIntArray(FileName, Path, int[] arr, bool append=false)`",
+   "說明": "把 Papyrus 陣列寫入路徑"
+  },
+  {
+   "Function": "`ClearPath(FileName, Path)`",
+   "說明": "清除路徑下的值"
+  },
+  {
+   "Function": "`ClearPathIndex(FileName, Path, int Index)`",
+   "說明": "清除路徑下特定 index"
+  },
+  {
+   "Function": "`ClearAll(FileName)`",
+   "說明": "清空整個 JSON 檔案"
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "contract": "wf-table/1",
+ "source": "emotion.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Emotion",
+  "何時用",
+  "例"
+ ],
+ "rows": [
+  {
+   "Emotion": "**Neutral / 乾**（底色）",
+   "何時用": "大部分觀察、吐槽、探索評論",
+   "例": "「Dead Man's Drink. Charming name.」「I wonder what happened here.」"
+  },
+  {
+   "Emotion": "**Happy**（克制的暖）",
+   "何時用": "並肩、被接納、卸下心防",
+   "例": "「I'm glad you're here with me.」「You made the world a better place... for me.」"
+  },
+  {
+   "Emotion": "**Sad**（她最深的色）",
+   "何時用": "講到家庭、母親、孤獨",
+   "例": "「even me and my mother... we just became clutter.」「I just can't help feeling bad about... the way things are.」"
+  },
+  {
+   "Emotion": "**Anger**（冷怒，非咆哮）",
+   "何時用": "被當工具、被自以為是地論斷、戰鬥",
+   "例": "「Am I a dreadful evil who needs to be purged...?」「There you are, father!」"
+  },
+  {
+   "Emotion": "**Fear**（罕見，珍貴）",
+   "何時用": "生死關頭、面對父母",
+   "例": "「I almost thought I lost you for a bit there.」「Unh... where is... who sent you here?」（剛醒來的脆弱）"
+  },
+  {
+   "Emotion": "**Disgust**（道德性，非噁心）",
+   "何時用": "對父親的偏執、暴行",
+   "例": "「my father's not exactly a good person. Even by vampire standards.」"
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "contract": "wf-table/1",
+ "source": "world-state.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/user_final_instructions/0150_environmental_awareness.prompt`",
+   "內容": "環境感知指令"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/user_final_instructions/0160_telepathy_reception.prompt`",
+   "內容": "Telepathy 接收"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/user_final_instructions/0200_combat_status.prompt`",
+   "內容": "戰鬥狀態指令"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/user_final_instructions/0500_response_format.prompt`",
+   "內容": "回應格式"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/user_final_instructions/0650_audio_tags.prompt`",
+   "內容": "音訊標籤"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/user_final_instructions/0700_extra_instructions.prompt`",
+   "內容": "額外指令"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/user_final_instructions/0750_embedded_actions.prompt`",
+   "內容": "**嵌入 actions 格式**（對話文字先出、ACTION 行後解析）"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/user_final_instructions/0800_direct_narration.prompt`",
+   "內容": "Direct narration 格式"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/user_final_instructions/8000_recent_state_changes.prompt`",
+   "內容": "近期狀態變化"
+  }
+ ]
+}

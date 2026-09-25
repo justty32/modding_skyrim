@@ -6,24 +6,18 @@
 
 SPID（Spell Perk Item Distributor）是另一個常見的「無 esp」分發工具，兩者**部分重疊、部分互補**：
 
-| 比較面向 | SkyPatcher | SPID |
-|---------|-----------|------|
-| **核心定位** | 通用 record 欄位修改 | 專用法術/perk/道具/裝備分發給 NPC |
-| **支援 record 類型** | 28+ 種（防具、武器、種族、leveled list、container…） | NPC、Actor（透過分發） |
-| **NPC 法術分發** | ✓（`spellsToAdd`） | ✓（SPID 主打功能） |
-| **NPC perk 分發** | ✓（`perksToAdd`） | ✓ |
-| **NPC 外觀修改** | ✓（skin、copyVisualStyle、hair…） | ✗ |
-| **防具/武器欄位修改** | ✓（傷害、重量、keyword…） | ✗（只能把 item 加入 NPC 裝備，不修改 item 本身） |
-| **FormList 增刪** | ✓ | ✗（SPID 靠 FormList 過濾，但不能改 FormList 本身） |
-| **Leveled List 增刪** | ✓ | ✗ |
-| **種族屬性修改** | ✓（血量、體型、起始屬性…） | ✗ |
-| **容器物品修改** | ✓ | ✗ |
-| **NPC 等級修改** | ✓（level, levelRange, setPcLevelMult…） | ✗ |
-| **SPID 過濾語法** | 無（SkyPatcher 用 filter 欄位） | 強（`ActorBase\|Outfit\|Keyword\|…\|Level\|…`） |
-| **多對多分發（群體）** | ✓（filterByRaces/filterByKeywords） | ✓ |
-| **熱移除不留存檔** | ✓ | ✓（SPID 也不寫存檔） |
-| **執行時機** | DataLoaded（靜態）+ PostLoadGame/Load3D（NPC） | PostLoad（分發時機） |
-| **SKSE 依賴** | ✓ | ✓ |
+本表整理「三、SkyPatcher vs SPID 差異」的逐項記錄。
+
+已抽到 [skypatcher-modforge-and-strategy-spid-comparison.json](skypatcher-modforge-and-strategy-spid-comparison.json)（16 列）。
+
+欄位「比較面向」：保留原表的比較面向。
+
+欄位「SkyPatcher」：保留原表的SkyPatcher。
+
+欄位「SPID」：保留原表的SPID。
+
+統計：16 筆記錄，3 個欄位。
+
 
 **結論**：SPID 在「把東西分發給 NPC」這件事上語法更豐富（可精確篩選等級範圍、faction rank、chance%）；SkyPatcher 在「修改 record 欄位本身」這件事上更通用（武器傷害、防具評級、種族屬性等）。**兩者可並用，無需二選一。**
 
@@ -59,18 +53,18 @@ SPID（Spell Perk Item Distributor）是另一個常見的「無 esp」分發工
 
 ### 情境分析
 
-| 情境 | 建議產物 | 理由 |
-|------|---------|------|
-| **新增全新 NPC、地點、任務、對話** | **esp 不可替代** | SkyPatcher 只能修改既有 record，無法新增不存在的 record |
-| **新增全新武器、法術、技能** | **esp 不可替代** | 同上，SkyPatcher 是 patcher 不是 creator |
-| **對「多個 mod 的 NPC」加統一 keyword/perk/spell** | **SkyPatcher config 更優** | 一個 ini 行可篩選多個種族/keyword，比逐一 override esp 快，且無 esp slot 消耗 |
-| **調整 vanilla 武器/防具數值（傷害、重量）** | **SkyPatcher config 更優** | 無需 esp 衝突、可熱移除、filter 批量套用 |
-| **NPC 外觀替換（相容 patch）** | **SkyPatcher config 更優** | `copyVisualStyle` 是 SkyPatcher 最成熟的用例，已有大量 mod 採用 |
-| **Leveled List 注入新物品到現有 LVLN** | **兩者皆可**（取決於場景） | SkyPatcher `objectsToAdd` 可做；但若已有 esp（含新物品 record），直接在 esp 裡 override LVLN 較簡單，不需要多一層 SkyPatcher 依賴 |
-| **FormList 批量添加**（跨 mod 整合用） | **SkyPatcher config 更優** | 同 Leveled List 邏輯；條件性 ini（`PluginName.esp.ini`）可做到「只在某 mod 存在時才注入」 |
-| **複雜條件觸發（Story Manager、Scene）** | **esp 不可替代** | SkyPatcher 無法生成 Quest、SM、Scene、Script 等邏輯型 record |
-| **Papyrus 腳本邏輯** | **esp 不可替代** | SkyPatcher 不能 attach 腳本，只能改資料欄位 |
-| **對已發布 mod 的相容 patch** | **SkyPatcher config 更優** | 製作者提供一個小 ini 取代過去的 esp 相容 patch，使用者免 merge；符合現在社群走向 |
+本表整理「情境分析」的逐項記錄。
+
+已抽到 [skypatcher-modforge-and-strategy-output-scenarios.json](skypatcher-modforge-and-strategy-output-scenarios.json)（10 列）。
+
+欄位「情境」：保留原表的情境。
+
+欄位「建議產物」：保留原表的建議產物。
+
+欄位「理由」：保留原表的理由。
+
+統計：10 筆記錄，3 個欄位。
+
 
 ### ModForge 產物策略建議
 

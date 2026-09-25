@@ -1,0 +1,63 @@
+{
+ "contract": "wf-table/1",
+ "source": "npc-commands.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案:行號",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:64-77`",
+   "內容": "`EnsureMonitoringAlive()` — 監控 heartbeat（Schedule 的 game-time loop 呼叫，防 Papyrus VM stack dump 殺掉 update callback）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:79-97`",
+   "內容": "`RestartMonitoring()` — 遊戲載入後重新啟動監控"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:99-146`",
+   "內容": "`RecoverTravelPackage()` — 載入後恢復 travel package（linked ref + package override + stuck tracking）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:152-293`",
+   "內容": "`GoToLocation()` — **主要 API：送 NPC 去目的地**（validate → duplicate guard → confirmation prompt → destination resolve → slot allocate → package apply → stuck tracking → off-screen tracking → proximity monitor arm）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:301-312`",
+   "內容": "`ResolveDestination()` → C++ `ResolveAnyDestination()` — 目的地解析（named/semantic/fuzzy）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:318-341`",
+   "內容": "`OnUpdate()` — 監控循環（先註冊下次 update 再處理；防 crash 中斷循環）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:343-411`",
+   "內容": "`CheckTravelSlot()` — **單一 slot 的狀態檢查**（超時檢查 → 出發檢查 → 到場檢查 → 等待檢查）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:413-504`",
+   "內容": "`CheckForArrival()` — **到場偵測**（3D loaded: distance check + door teleport + floor Z verification；off-screen: same-cell interior check → HandleOffScreenTravel）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:527-551`",
+   "內容": "`OnProximityArrived()` — **C++ ProximityMonitor 150ms callback**（取代 3 秒 Papyrus poll）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:553-695`",
+   "內容": "`OnArrival()` — **到場處理**（assassination 分支、meeting 分支、regular travel 分支；sandbox 套用、deadline 計算、door redirection、player proximity 檢查）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:697-823`",
+   "內容": "`CheckWaiting()` — **等待階段**（linger phase: ProcessLingerProximity → CompleteMeeting；travel linger phase；player proximity → OnPlayerArrived；smart approach；deadline → OnWaitTimeout）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:825-921`",
+   "內容": "`OnPlayerArrived()` — **玩家到達處理**（會議模式: 精細的 lateness detection for both parties；五段 outcome → narration；StartMeetingLinger。普通旅行: 等待時間 narration + StartTravelLinger/StartStayAtDestLinger）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Travel.psc:923-976`",
+   "內容": "`OnWaitTimeout()` — **等待超時**（會議: 辨別 NPC late/timeout/player_no_show 三種情況；普通: NPC 離開通知）"
+  }
+ ]
+}

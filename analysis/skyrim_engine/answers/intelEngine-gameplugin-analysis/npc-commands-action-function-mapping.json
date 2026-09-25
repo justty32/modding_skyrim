@@ -1,0 +1,62 @@
+{
+ "contract": "wf-table/1",
+ "source": "npc-commands.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Action YAML",
+  "Papyrus Function",
+  "用途"
+ ],
+ "rows": [
+  {
+   "Action YAML": "`intel_travel.yaml`",
+   "Papyrus Function": "`GoToLocation(npc, dest, speed, waitForPlayer)`",
+   "用途": "NPC 走到指定地點"
+  },
+  {
+   "Action YAML": "`intel_changespeed.yaml`",
+   "Papyrus Function": "`ChangeTaskSpeed(npc, newSpeed)`",
+   "用途": "改變行進速度"
+  },
+  {
+   "Action YAML": "`intel_canceltask.yaml`",
+   "Papyrus Function": "`CancelCurrentTask(npc)`",
+   "用途": "取消當前任務"
+  },
+  {
+   "Action YAML": "`intel_schedulemeeting.yaml`",
+   "Papyrus Function": "`ScheduleMeeting(npc, dest, timeCondition)`",
+   "用途": "排程會議"
+  },
+  {
+   "Action YAML": "`intel_schedulefetch.yaml`",
+   "Papyrus Function": "`ScheduleFetch(npc, target, timeCondition)`",
+   "用途": "排程找人"
+  },
+  {
+   "Action YAML": "`intel_scheduledelivery.yaml`",
+   "Papyrus Function": "`ScheduleDelivery(npc, target, msg, timeCondition, meetLoc, meetTime)`",
+   "用途": "排程傳話"
+  },
+  {
+   "Action YAML": "`intel_fetchnpc.yaml`",
+   "Papyrus Function": "`FetchNPC(agent, targetName)`",
+   "用途": "去把某人找來"
+  },
+  {
+   "Action YAML": "`intel_escorttarget.yaml`",
+   "Papyrus Function": "`EscortTarget(agent, targetName, destName, shouldWait)`",
+   "用途": "護送某人到某地"
+  },
+  {
+   "Action YAML": "`intel_delivermessage.yaml`",
+   "Papyrus Function": "`DeliverMessage(agent, target, msg, meetLoc, meetTime)`",
+   "用途": "傳話給某人"
+  },
+  {
+   "Action YAML": "`intel_searchforactor.yaml`",
+   "Papyrus Function": "`SearchForActor(agent, targetName)`",
+   "用途": "一起找某人"
+  }
+ ]
+}

@@ -1,0 +1,127 @@
+{
+ "contract": "wf-table/1",
+ "source": "papyrusutil-api-storage-json.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Function",
+  "簽名（簡）",
+  "說明"
+ ],
+ "rows": [
+  {
+   "Function": "`XListAdd`",
+   "簽名（簡）": "`(Form, string, X value, bool allowDuplicate=true) → int`",
+   "說明": "尾端加入，回新 index"
+  },
+  {
+   "Function": "`XListGet`",
+   "簽名（簡）": "`(Form, string, int index) → X`",
+   "說明": "依 index 讀取"
+  },
+  {
+   "Function": "`XListSet`",
+   "簽名（簡）": "`(Form, string, int index, X value) → X`",
+   "說明": "依 index 覆寫，回舊值"
+  },
+  {
+   "Function": "`XListInsert`",
+   "簽名（簡）": "`(Form, string, int index, X value) → bool`",
+   "說明": "在 index 插入"
+  },
+  {
+   "Function": "`XListRemove`",
+   "簽名（簡）": "`(Form, string, X value, bool allInstances=false) → int`",
+   "說明": "依值刪除，回刪除數量"
+  },
+  {
+   "Function": "`XListRemoveAt`",
+   "簽名（簡）": "`(Form, string, int index) → bool`",
+   "說明": "依 index 刪除"
+  },
+  {
+   "Function": "`XListPluck`",
+   "簽名（簡）": "`(Form, string, int index, X missing) → X`",
+   "說明": "讀後刪"
+  },
+  {
+   "Function": "`XListShift`",
+   "簽名（簡）": "`(Form, string) → X`",
+   "說明": "取出並刪除第一個（queue 語意）"
+  },
+  {
+   "Function": "`XListPop`",
+   "簽名（簡）": "`(Form, string) → X`",
+   "說明": "取出並刪除最後一個（stack 語意）"
+  },
+  {
+   "Function": "`XListAdjust`",
+   "簽名（簡）": "`(Form, string, int index, X amount) → X`",
+   "說明": "依 index 原子 +=（int/float 才有）"
+  },
+  {
+   "Function": "`XListCount`",
+   "簽名（簡）": "`(Form, string) → int`",
+   "說明": "列表長度"
+  },
+  {
+   "Function": "`XListCountValue`",
+   "簽名（簡）": "`(Form, string, X value, bool exclude=false) → int`",
+   "說明": "計算特定值的出現次數"
+  },
+  {
+   "Function": "`XListFind`",
+   "簽名（簡）": "`(Form, string, X value) → int`",
+   "說明": "線性搜尋，回 index 或 -1"
+  },
+  {
+   "Function": "`XListHas`",
+   "簽名（簡）": "`(Form, string, X value) → bool`",
+   "說明": "是否包含值"
+  },
+  {
+   "Function": "`XListClear`",
+   "簽名（簡）": "`(Form, string) → int`",
+   "說明": "清空，回清除前長度"
+  },
+  {
+   "Function": "`XListSort`",
+   "簽名（簡）": "`(Form, string) → void`",
+   "說明": "升序排序"
+  },
+  {
+   "Function": "`XListSlice`",
+   "簽名（簡）": "`(Form, string, X[] slice, int startIndex=0) → void`",
+   "說明": "複製 list 到 Papyrus 陣列"
+  },
+  {
+   "Function": "`XListResize`",
+   "簽名（簡）": "`(Form, string, int toLength, X filler) → int`",
+   "說明": "調整長度（最多 500）"
+  },
+  {
+   "Function": "`XListCopy`",
+   "簽名（簡）": "`(Form, string, X[] copy) → bool`",
+   "說明": "從 Papyrus 陣列複製進 list"
+  },
+  {
+   "Function": "`XListToArray`",
+   "簽名（簡）": "`(Form, string) → X[]`",
+   "說明": "整個 list 轉成 Papyrus 陣列"
+  },
+  {
+   "Function": "`XListRandom`",
+   "簽名（簡）": "`(Form, string) → X`",
+   "說明": "隨機取一個值（mt19937）"
+  },
+  {
+   "Function": "`FormListFilterByTypes`",
+   "簽名（簡）": "`(Form, string, int[] FormTypeIDs, bool ReturnMatching=true) → Form[]`",
+   "說明": "依 form type 過濾列表"
+  },
+  {
+   "Function": "`FormListFilterByType`",
+   "簽名（簡）": "`(Form, string, int FormTypeID, bool ReturnMatching=true) → Form[]`",
+   "說明": "單 type 版便利包裝"
+  }
+ ]
+}

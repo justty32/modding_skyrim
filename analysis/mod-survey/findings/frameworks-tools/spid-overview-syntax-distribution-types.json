@@ -1,0 +1,85 @@
+{
+ "contract": "wf-table/1",
+ "source": "spid-overview-syntax.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Type 關鍵字",
+  "分發到",
+  "分發的記錄型別",
+  "備註"
+ ],
+ "rows": [
+  {
+   "Type 關鍵字": "`Spell`",
+   "分發到": "NPC actorbase",
+   "分發的記錄型別": "SPEL（Spell）",
+   "備註": "含 ability、power、lesser power"
+  },
+  {
+   "Type 關鍵字": "`Perk`",
+   "分發到": "NPC actorbase",
+   "分發的記錄型別": "PERK",
+   "備註": "NPC 的被動能力 / 行為修改"
+  },
+  {
+   "Type 關鍵字": "`Item`",
+   "分發到": "NPC inventory",
+   "分發的記錄型別": "ARMO / WEAP / MISC / ALCH / BOOK / AMMO / INGR / SLGM / SCRL",
+   "備註": "第 6 欄 = 數量（預設 1）"
+  },
+  {
+   "Type 關鍵字": "`Shout`",
+   "分發到": "NPC actorbase",
+   "分發的記錄型別": "SHOU",
+   "備註": "龍吼"
+  },
+  {
+   "Type 關鍵字": "`LevSpell`",
+   "分發到": "NPC actorbase",
+   "分發的記錄型別": "LVSP（Leveled Spell）",
+   "備註": "分發一個 leveled spell list"
+  },
+  {
+   "Type 關鍵字": "`Package`",
+   "分發到": "NPC actorbase package stack",
+   "分發的記錄型別": "PACK",
+   "備註": "第 6 欄 = PackageIdx：插入位置（0=最頂，預設 0）；若 RecordID 是 FormList 則 0-4 對應 override list 類別"
+  },
+  {
+   "Type 關鍵字": "`Outfit`",
+   "分發到": "NPC default outfit",
+   "分發的記錄型別": "OTFT",
+   "備註": "7.2+ per-actor 追蹤；第一條符合的 config 行優先，其餘跳過"
+  },
+  {
+   "Type 關鍵字": "`SleepOutfit`",
+   "分發到": "NPC sleep outfit",
+   "分發的記錄型別": "OTFT",
+   "備註": "同 Outfit 型別，但替換 sleep outfit；**必須寫 `SleepOutfit`，不能讓 SPID 自動推斷**（否則會誤判為 Outfit）"
+  },
+  {
+   "Type 關鍵字": "`Keyword`",
+   "分發到": "NPC actorbase",
+   "分發的記錄型別": "KYWD",
+   "備註": "給 NPC 本身加 keyword（非給裝備）"
+  },
+  {
+   "Type 關鍵字": "`DeathItem`",
+   "分發到": "NPC 死亡掉落",
+   "分發的記錄型別": "LVLI（Leveled Item）",
+   "備註": "NPC 死時額外掉落"
+  },
+  {
+   "Type 關鍵字": "`Faction`",
+   "分發到": "NPC faction 清單",
+   "分發的記錄型別": "FACT",
+   "備註": "讓 NPC 加入一個派系"
+  },
+  {
+   "Type 關鍵字": "`Skin`",
+   "分發到": "NPC skin override",
+   "分發的記錄型別": "ARMO",
+   "備註": "替換 NPC 的 skin（視覺模型）；**必須明確寫 `Skin`**，否則 SPID 會誤判為 Item"
+  }
+ ]
+}

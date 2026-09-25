@@ -69,13 +69,17 @@ PERK
 
 ## 五、對 ModForge 的評估
 
-| 能力 | 狀態 | 根據 |
-|---|---|---|
-| 生成 MGEF（archetype=Script、castType、targetType、flags） | **可生成** | `BuildMagicEffects()` 有完整 enum parse；`archetype=Script` 在 `MagicEffectArchetype.TypeEnum` 中 |
-| 把腳本掛到 MGEF（VMAD + ScriptEntry + typed properties） | **可生成（繞路）** | 頂層 `scripts[].targetEditorId` 指向 MGEF editorId → `AttachScripts()` 反射 MGEF 的 `VirtualMachineAdapter` property，可寫 |
-| `magicEffects[i].scripts[]` inline 寫法 | ⚠️ **不存在**（需新支援） | `MagicEffectSpec` 無 `scripts` 欄位；`Spec.Magic.cs` 確認 |
-| PERK → SPEL → MGEF 三層鏈生成 | **可生成** | `PerkSpec`、`SpellSpec`、`MagicEffectSpec` 均有對應 builder |
-| 文件化「MGEF script-attach 用頂層 scripts[]」 | ⚠️ **缺文件** | arrowblock.md 標為缺口 partial，但沒有寫明繞路方式 |
-| 生成 `.pex` 本體（OnHit/OnEffectStart 腳本邏輯） | **不支援（純參考）** | 腳本邏輯須手寫，ModForge 只生成 record 載具 |
+本表整理「五、對 ModForge 的評估」的逐項記錄。
+
+已抽到 [mgef-vmad-properties-patterns-modforge-capabilities.json](mgef-vmad-properties-patterns-modforge-capabilities.json)（6 列）。
+
+欄位「能力」：保留原表的能力。
+
+欄位「狀態」：保留原表的狀態。
+
+欄位「根據」：保留原表的根據。
+
+統計：6 筆記錄，3 個欄位。
+
 
 **總結**：MGEF VMAD 在 ModForge 屬於「可生成但需繞路」的 partial 狀態。通用 `scripts[]` 頂層 attach 已能把腳本掛到 MGEF，技術上不缺功能；真正缺的是 spec 的 `magicEffects[i].scripts[]` inline 欄位（讓 MGEF 的腳本宣告貼近 record 本身，更自然），以及對應的文件說明。

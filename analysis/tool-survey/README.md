@@ -22,6 +22,7 @@ repos/
 
 ## Findings
 
+<!-- wf-nav -->
 | 工具 | 類型 | 狀態 | 摘要 |
 |------|------|------|------|
 | [skyrim-ingame-editor](findings/skyrim-ingame-editor.md) | SKSE plugin + EspGenerator | ✅ 完整調查 | 遊戲內即時 Weather/Cell/ImageSpace/LGTM 編輯；EspGenerator 已支援 Reference（IPlacedGetter）匯出；**擴展路徑清楚**（見 roadmap generation.md #3） |

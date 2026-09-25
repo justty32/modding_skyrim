@@ -1,0 +1,73 @@
+{
+ "contract": "wf-table/1",
+ "source": "tools-and-boundaries.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "#",
+  "邊界",
+  "判定",
+  "依據"
+ ],
+ "rows": [
+  {
+   "#": "B1",
+   "邊界": "**授權**",
+   "判定": "**私人本機轉換：不阻斷**（已查證）；**再發布轉好的檔案：硬阻斷**",
+   "依據": "見 §4.1，已由調度者用瀏覽器逐字查證"
+  },
+  {
+   "#": "B2",
+   "邊界": "**MCO-Updated 專屬招式**（`MCO Left Attack1..10`、`MCO Normal Weapon Art`）",
+   "判定": "**無對應 handle，轉不了**",
+   "依據": "[Attack - MCO Updated, mod 181779](https://www.nexusmods.com/skyrimspecialedition/mods/181779) 是加在 MCO 之上的擴充；BFCO 只有 `BFCO_SpecialAttack`／`BFCO_PowerAttackComb`"
+  },
+  {
+   "#": "B3",
+   "邊界": "**DAR-only 舊包**",
+   "判定": "**可轉**（OAR 讀 DAR legacy），但條件表達力受限",
+   "依據": "`oar-replacer-guide-overview-planning-folders.md:74`。DAR 的 `_conditions.txt` DSL **沒有 graph-variable 條件**，要用 `BFCO_iAttackVariants` 分支必須先把條件搬成 OAR JSON"
+  },
+  {
+   "#": "B4",
+   "邊界": "**依賴 SCAR 的 NPC 連段**",
+   "判定": "**不阻斷，但會降級**",
+   "依據": "BFCO：`Animation without SCAR-event is managed by bfcoAI, while animation with SCAR-event is still managed by scarAI`（[`raws/BFCO - ….txt:245`](<../../raws/BFCO - Attack Behavior Framework (SSE AE VR).txt>)）。**現役沒裝 SCAR** → SCAR-annotated moveset 由 BFCO 自帶 AI 接管，連段品質較低。⚠️ 2026-08-27 使用者已放行引入 SCAR／SCAR AE Support／OCF，這條不再是選型阻礙，但仍是**新增三個前置**的成本"
+  },
+  {
+   "#": "B5",
+   "邊界": "**`SCAR_*Dummy.hkx` 標記動畫在沒有 SCAR 時的行為**",
+   "判定": "**未知，需實機驗**（推測：它替換的是 ready-idle，沒有 SCAR 時可能留下錯誤 idle pose）",
+   "依據": "[movesets-examples.md](../movesets-examples.md) 記錄實檔有 `SCAR_1hmReadyDummy.hkx`；查不到「無 SCAR 時該檔行為」的官方說明"
+  },
+  {
+   "#": "B6",
+   "邊界": "**root motion／AMR 位移**",
+   "判定": "**不阻斷**",
+   "依據": "`animmotion`／`animrotation` 是 AMR 的註釋，兩框架都硬前置 AMR，且註釋與 framework 無關（[animation-motion-revolution.md](../animation-motion-revolution.md)）。⚠️ AMR 生效需 behavior 設 `bAllowRotation`／`bAnimationDriven`；BFCO 的攻擊狀態是否全部滿足——**未驗證，推測滿足**（BFCO 自帶動畫本身就依賴位移）"
+  },
+  {
+   "#": "B7",
+   "邊界": "**attack speed 手感偏移**",
+   "判定": "**不阻斷，但一定要重驗**",
+   "依據": "§1.2(d)。為 MCO DXP 節奏調過的 moveset，在 vanilla-speed BFCO 下節奏會變"
+  },
+  {
+   "#": "B8",
+   "邊界": "**moveset 自帶 esp／Nemesis patch**（例：攻速 esp、weapon-keyword esp）",
+   "判定": "**轉換工具管不到**，要逐件人工判",
+   "依據": "converter 只處理 `.hkx` 檔名"
+  },
+  {
+   "#": "B9",
+   "邊界": "**Troll／Draugr 這類「生物 MCO」包**",
+   "判定": "**不是 moveset 轉換問題**",
+   "依據": "它們是 SPID／AI／race overhaul，動畫只是其中一層；BFCO 的 NPC 連段只涵蓋人形 behavior project"
+  },
+  {
+   "#": "B10",
+   "邊界": "**MCO 與 BFCO 不可共存**",
+   "判定": "**硬性**",
+   "依據": "[`raws/BFCO - ….txt:259`](<../../raws/BFCO - Attack Behavior Framework (SSE AE VR).txt>)。不能「留 MCO 當 fallback」"
+  }
+ ]
+}

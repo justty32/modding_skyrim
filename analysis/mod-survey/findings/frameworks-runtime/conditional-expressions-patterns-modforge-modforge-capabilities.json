@@ -1,0 +1,42 @@
+{
+ "contract": "wf-table/1",
+ "source": "conditional-expressions-patterns-modforge.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "功能",
+  "狀態",
+  "說明"
+ ],
+ "rows": [
+  {
+   "功能": "MFG API 參數表",
+   "狀態": "純參考",
+   "說明": "SetModifier/SetPhoneme/SetExpressionOverride 索引與用途已全部文件化於本檔"
+  },
+  {
+   "功能": "三段式 MFG 漸變 pattern",
+   "狀態": "純參考",
+   "說明": "可在手寫 follower 表情腳本時直接套用"
+  },
+  {
+   "功能": "Busy gate GlobalVariable 模式",
+   "狀態": "純參考",
+   "說明": "任何有「表情優先序」需求的系統都應採用"
+  },
+  {
+   "功能": "Follower dialogue 含表情 override",
+   "狀態": "需新支援（推斷）",
+   "說明": "ModForge 目前 DialogueSpec 無 expression field；若要在 INFO 播放時同步驅動 NPC 表情，需在 spec 新增 `expression` 欄位並生成對應 VMAD script"
+  },
+  {
+   "功能": "對話條件讀 CE GlobalVariable",
+   "狀態": "可生成（推斷）",
+   "說明": "`GetGlobalValue(\"CondiExp_PlayerIsDrunk\")` 可直接用在 dialogue INFO condition；ModForge 若支援 GetGlobalValue condition，即可在 spec 中標「follower 見到玩家喝醉時有特別台詞」"
+  },
+  {
+   "功能": "CE 前置依賴",
+   "狀態": "純前置參考",
+   "說明": "CE 是玩家可選安裝的外部 mod；ModForge 生成的 follower 不應 require CE，但可以「如果 CE 安裝了，condition 自動走 drunk/high 分支」"
+  }
+ ]
+}

@@ -37,18 +37,18 @@ PERK "Expert Block"(ArrowBlock 0x00639F)
 
 esp 共 17 筆，master 只有 `Skyrim.esm`，非 localized。
 
-| Record | EditorID / FormID | 角色 |
-|---|---|---|
-| PERK | `ArrowBlock` 0x00639F "Expert Block" | 主載具，下詳 |
-| MGEF (Script) | `Blocking` 0x00434B | `archetype=Script, cast=ConstantEffect, target=Self, flags=Recover/HideInUI/Painless`；掛 `Blocking.psc`（5 properties） |
-| MGEF (ValueModifier) | `BlockingWard` 0x006E69 | `av=WardPower, skill=Restoration, cast=Concentration`，帶 3 個 keyword |
-| MGEF (CurePoison) | `BlockingFX` 0x005373 "ExpertParry" | FX-only，`HideInUI/Painless` |
-| SPEL (Ability) | `Blockingmod` 0x0058D6 | → MGEF Blocking；ConstantEffect/Self；equip=EitherHand 0x013F44 |
-| SPEL (Ability) | `BlocingmodWard` 0x006E6B | → MGEF BlockingWard（mag=35） |
-| SPEL (Spell) | `BlockingmodFX` 0x00434A "Expert Parry" | → MGEF BlockingFX，FireAndForget |
-| BOOK | `BigIron` 0x009981 | 掛 `AddPerkBook.psc`，OnRead 給 perk + spell；放進 vanilla 商人箱 0x10C430 override |
-| ARTO / IPCT | `BlockFX` 0x006E6C / `Newimpact` 0x00639E | 擋箭視覺/撞擊特效 |
-| GMST × 5 | `fBloodSplatter*` | 微調 override（與擋箭主機制無關，是 mod 順手帶的調整） |
+本表整理「2. 關鍵 record 與模式（census via ModForge `dump`/`perkdiag`）」的逐項記錄。
+
+已抽到 [arrowblock-record-census.json](arrowblock-record-census.json)（10 列）。
+
+欄位「Record」：保留原表的Record。
+
+欄位「EditorID / FormID」：保留原表的EditorID / FormID。
+
+欄位「角色」：保留原表的角色。
+
+統計：10 筆記錄，3 個欄位。
+
 
 **代表性 PERK entry-point（`perkdiag 00639F` 實測）：**
 
@@ -67,6 +67,7 @@ PERK Expert Block (0x00639F), NumRanks=1, perk-level conds=0
 ## 3. 對 ModForge 的參考價值
 
 ### 可生成（ModForge 現成能做）
+<!-- wf-nav -->
 - **PERK 整個骨架**：`PerkSpec` + `PerkEffectSpec`（`kind="ability"` 與 `kind="entryPoint"`）都支援。
 - **`entryPoint` = `ModIncomingDamage`、`function="Set"`、`value=0`**：`ModIncomingDamage` **在 EntryPointTabCount 表內（值=3）**，ModForge build 會自動寫正確的 PerkConditionTabCount → **不會踩 `perk-conditiontabcount-ctd` 那個 0-tab CTD**。✅ 可生成。
 - **effect-level conditions（2 條 CTDA）**：走共用 `ConditionSpec`/`BuildCondition`，`HasKeyword`/`GetEquippedItemType` 等都支援。✅

@@ -6,21 +6,17 @@
 
 > **重要前提**：Constellations 本身**就是 CSF 框架**的使用者 mod，不是獨立框架。兩者不是競爭關係——Constellations 是「CSF 路線的最佳實作範本」。下表的「比較」是技術面的對照，而非「兩個框架的選擇」。
 
-| 面向 | Constellations（本 mod） | CSF 框架（CustomSkills.dll） |
-|------|--------------------------|------------------------------|
-| **角色** | 使用者 mod（三棵新技能樹） | 底層框架（選單外殼 + XP 引擎） |
-| **Config 格式** | JSON（v3，現代格式） | 支援 JSON（v2/v3）與舊 INI（v1）兩種 |
-| **UI 整合方式** | 覆寫 `SKILLS.json`，直接住進原版技能頁 | `SKILLS.json`（併入原版頁）或具名 `.json`（獨立選單群組）二選一 |
-| **選單機制** | 重用原版 skill perk tree UI（星座背景 + perk 節點網格） | 同左（CSF 提供的機制） |
-| **perk 格式** | 普通 PERK record，沒有特殊格式 | 同左（CSF 不發明新 perk 格式） |
-| **Papyrus API** | 使用 `CustomSkills.ShowTrainingMenu()` 等 v3 函式 | `CustomSkills.psc`（v3：10 個 native 函式 + 事件 extension scripts） |
-| **runtime 依賴** | CSF（必裝）+ 私有 `Constellations.dll`（Fortify 功能） | SKSE64 + Address Library |
-| **Fortify-技能附魔/藥水** | 有（靠 `Constellations.dll` + `ActorValueData/*.toml`） | CSF 本身不提供；需 mod 自實作 native plugin |
-| **skydome** | 自製 NIF（21 技能版星圖） | 可重用 vanilla（免自製） |
-| **XP 推進方式** | keyword（用量）+ 訓練選單（花錢）+ MGEF（附魔/藥水） | 框架支援以上三路 + `AdvanceSkill()` / `IncrementSkill()` 任意腳本推進 |
-| **節點上限** | 9 個（三棵各 9） | 127 個（schema 定義） |
-| **生成難度** | 高（含私有 dll；但 dll 是選配，不做 Fortify 則不需要） | 中（純 JSON + PERK + GLOB + KYWD，無 native code） |
-| **主要生成阻力** | `Constellations.dll` 的 native code（Fortify 功能）無法用 ModForge 生成 | 無原生阻力；JSON + esp record 全部可生成 |
+三、Constellations vs CSF 比較表的逐列資料。
+
+已抽到 [constellations-vs-csf-and-modforge-comparison.json](constellations-vs-csf-and-modforge-comparison.json)（13 列）
+
+面向：原表「面向」欄。
+
+Constellations（本 mod）：原表「Constellations（本 mod）」欄。
+
+CSF 框架（CustomSkills.dll）：原表「CSF 框架（CustomSkills.dll）」欄。
+
+統計：13 列記錄；3 欄。
 
 ### 兩代格式對比（CSF 舊 INI vs 新 JSON）
 

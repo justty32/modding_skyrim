@@ -63,19 +63,18 @@ JDB.setObj("mymod", loaded)
 
 ## 四、對 ModForge 的參考價值
 
-| 功能 | 評估 | 說明 |
-|---|---|---|
-| `JValue.readFromFile / writeToFile` | **可直接生成** | 外部 JSON 讀寫 pattern 固定，適合 config 系統 |
-| `JMap.object / getInt / setInt / nextKey` | **可直接生成** | string-keyed KV + 迭代 pattern 固定 |
-| `JArray.object / addStr / getStr / count` | **可直接生成** | 動態列表 pattern 固定 |
-| `JFormDB.solveIntSetter / solveInt` | **可直接生成**（推斷） | per-Form 嵌套狀態是最常用 pattern |
-| `JDB.setObj / solveInt` | **可直接生成**（推斷） | 全域設定/狀態，跨 mod 共享 |
-| `JValue.retain / release / addToPool / cleanPool` | **需警告生成** | 生命週期管理是最容易出錯的部分；生成時需確保成對 |
-| `JAtomic.fetchAddInt` | **純參考** | 多腳本並發計數器；Papyrus 本身單執行緒，此功能偏工具層 |
-| `JLua.evalLua*` | **純參考** | 實驗性，不建議生產環境使用 |
-| `JFormMap` 作為臨時 Form→value map | **可直接生成**（推斷） | 用於 scene 內批次 Form 處理 |
-| `JArray.unique / sort` | **可直接生成** | 去重 set 操作 pattern 固定 |
-| `JString.wrap` | **純參考** | 文字排版；Papyrus 顯示系統少用 |
+本表整理「四、對 ModForge 的參考價值」的逐項記錄。
+
+已抽到 [jcontainers-patterns-and-eval-modforge-capabilities.json](jcontainers-patterns-and-eval-modforge-capabilities.json)（11 列）。
+
+欄位「功能」：保留原表的功能。
+
+欄位「評估」：保留原表的評估。
+
+欄位「說明」：保留原表的說明。
+
+統計：11 筆記錄，3 個欄位。
+
 
 ### 與 PapyrusUtil 的選擇建議
 

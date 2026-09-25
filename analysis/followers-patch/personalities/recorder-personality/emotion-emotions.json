@@ -1,0 +1,52 @@
+{
+ "contract": "wf-table/1",
+ "source": "emotion.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "情緒狀態",
+  "何時出現",
+  "典型台詞"
+ ],
+ "rows": [
+  {
+   "情緒狀態": "**興奮 / 讚嘆**",
+   "何時出現": "新發現、甜卷、德維爾博物館",
+   "典型台詞": "「The Dwemer Museum! YES! It's pretty much two of my favorite things combined into one!」"
+  },
+  {
+   "情緒狀態": "**焦慮 / 念咒**",
+   "何時出現": "潛行、危險地點、等你回來",
+   "典型台詞": "「All this sneaking business is going to give me a heart attack from the anticipation and anxiety!」"
+  },
+  {
+   "情緒狀態": "**記錄員模式（中性職業腔）**",
+   "何時出現": "過渡 / 觀察時",
+   "典型台詞": "「Record 2E55: Dragonborn ventures on valiantly, so very heroic! Giving... no regard for his followers loudly grumbling stomach.」"
+  },
+  {
+   "情緒狀態": "**真心流露（短暫）**",
+   "何時出現": "深度對話觸發後",
+   "典型台詞": "「That's why, Dragonborn, I decided that... I would give it my all. For Skyrim, and for you. I owe you all that much.」"
+  },
+  {
+   "情緒狀態": "**嗨過頭（戰鬥）**",
+   "何時出現": "戰鬥 taunt，有點詭異",
+   "典型台詞": "「Yes, please! Do keep screaming in pain. That makes the fight that much more...fun ha ha ha!」「I don't kill because I like to. I kill because I love to mhmhmhm!」"
+  },
+  {
+   "情緒狀態": "**自我懷疑**",
+   "何時出現": "談到學院、Narcisse、Helgen",
+   "典型台詞": "「I really do just end up messing up things, like always.」"
+  },
+  {
+   "情緒狀態": "**委屈（裝沒事）**",
+   "何時出現": "被你留在危險地點",
+   "典型台詞": "「You're leaving me alone in this dark cave? Record 4B18: Dragonborn's a jerk!」"
+  },
+  {
+   "情緒狀態": "**喝醉（完全崩潰）**",
+   "何時出現": "飲酒後特殊狀態",
+   "典型台詞": "「*giggles* It's Recorder! Re-cor-deerrrrr *giggles* Got that memorized?」"
+  }
+ ]
+}

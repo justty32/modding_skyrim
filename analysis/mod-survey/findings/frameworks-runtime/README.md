@@ -4,6 +4,7 @@
 
 同層檔案導航：
 
+<!-- wf-nav -->
 - [common-framework-mods-distribution-state.md](./common-framework-mods-distribution-state.md)
 - [common-framework-mods-expression-collision.md](./common-framework-mods-expression-collision.md)
 - [common-framework-mods.md](./common-framework-mods.md)

@@ -1,0 +1,47 @@
+{
+ "contract": "wf-table/1",
+ "source": "modforge-relevance.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "能力",
+  "印證來源",
+  "說明"
+ ],
+ "rows": [
+  {
+   "能力": "Scene = phase 序列、每 phase 綁 dialog topic",
+   "印證來源": "Sofia `JJSofiaMainQuestDialogueScene`（1 actor/17 phase/17 action）",
+   "說明": "ModForge 的 ScenePhaseSpec 結構與真實隨從 mod 完全同型"
+  },
+  {
+   "能力": "scene action 三型 Dialog/Package/Timer",
+   "印證來源": "Sofia `JJSofiaDrunkScene`、`SofiaWeddingScene`（多 actor 走位+對拍）",
+   "說明": "ModForge「NPC 做動作走 Package action」的設計被 Sofia 驗證"
+  },
+  {
+   "能力": "uniqueActor alias 指向 vanilla NPC",
+   "印證來源": "Sofia 8 個 *Comment quest（`alias uniqueActor -> Skyrim.esm`）",
+   "說明": "ModForge 的 `uniqueActor:<ref>` fill 正是這個用法"
+  },
+  {
+   "能力": "GLOB 當 runtime 旗標/設定",
+   "印證來源": "Sofia 57 個 GLOB（CatchUpDistance/CommentFrequency…）",
+   "說明": "少量狀態用 GLOB 是業界常態，ModForge 方向正確"
+  },
+  {
+   "能力": "storyEvent 掛 vanilla SM 根",
+   "印證來源": "RDO override SM 節點 + 新增節點嫁接",
+   "說明": "ModForge 的 SMBN→SMQN 掛載與 RDO 手法同源"
+  },
+  {
+   "能力": "condition 投放（GetInFaction/RelationshipRank/RandomPercent）",
+   "印證來源": "RDO condition 前段（已在 ModForge `SupportedConditionFunctions`）",
+   "說明": "基礎 condition dispatch 已具備"
+  },
+  {
+   "能力": "Relationship record",
+   "印證來源": "Sofia/RDO 都用",
+   "說明": "ModForge 已有 RelationshipSpec"
+  }
+ ]
+}

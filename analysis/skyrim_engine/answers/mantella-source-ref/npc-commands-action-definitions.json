@@ -1,0 +1,115 @@
+{
+ "contract": "wf-table/1",
+ "source": "npc-commands.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案": "`data/actions/follow.json`",
+   "內容": "`Follow` action（NPC 跟隨玩家）"
+  },
+  {
+   "檔案": "`data/actions/unfollow.json`",
+   "內容": "`Unfollow` action"
+  },
+  {
+   "檔案": "`data/actions/attack.json`",
+   "內容": "`Attack` action"
+  },
+  {
+   "檔案": "`data/actions/flee.json`",
+   "內容": "`Flee` action"
+  },
+  {
+   "檔案": "`data/actions/stand_down.json`",
+   "內容": "`Stand Down` action"
+  },
+  {
+   "檔案": "`data/actions/barter.json`",
+   "內容": "`Barter` (trade) action"
+  },
+  {
+   "檔案": "`data/actions/inventory.json`",
+   "內容": "`Inventory` action"
+  },
+  {
+   "檔案": "`data/actions/wait.json`",
+   "內容": "`Wait` action"
+  },
+  {
+   "檔案": "`data/actions/move_to.json`",
+   "內容": "`Move To` action"
+  },
+  {
+   "檔案": "`data/actions/lead_to.json`",
+   "內容": "`Lead To` action"
+  },
+  {
+   "檔案": "`data/actions/travel_to.json`",
+   "內容": "`Travel To` action"
+  },
+  {
+   "檔案": "`data/actions/cancel_travel.json`",
+   "內容": "`Cancel Travel` action"
+  },
+  {
+   "檔案": "`data/actions/check_directions.json`",
+   "內容": "`Check Directions` action"
+  },
+  {
+   "檔案": "`data/actions/look.json`",
+   "內容": "`Look` action"
+  },
+  {
+   "檔案": "`data/actions/loot.json`",
+   "內容": "`Loot` action"
+  },
+  {
+   "檔案": "`data/actions/collect_ingredients.json`",
+   "內容": "`Collect Ingredients` action"
+  },
+  {
+   "檔案": "`data/actions/brawl.json`",
+   "內容": "`Brawl` action"
+  },
+  {
+   "檔案": "`data/actions/cast_spell.json`",
+   "內容": "`Cast Spell` action"
+  },
+  {
+   "檔案": "`data/actions/emote.json`",
+   "內容": "`Emote` action（idle animation）"
+  },
+  {
+   "檔案": "`data/actions/listen.json`",
+   "內容": "`Listen` action（extended STT pause）"
+  },
+  {
+   "檔案": "`data/actions/teleport.json`",
+   "內容": "`Teleport` action"
+  },
+  {
+   "檔案": "`data/actions/absolve_crime.json`",
+   "內容": "`Absolve Crime` action"
+  },
+  {
+   "檔案": "`data/actions/report_crime.json`",
+   "內容": "`Report Crime` action"
+  },
+  {
+   "檔案": "`data/actions/share_conversation.json`",
+   "內容": "`Share Conversation` action（跨 NPC 對話分享）"
+  },
+  {
+   "檔案": "`data/actions/add_to_conversation.json`",
+   "內容": "`Add To Conversation` action"
+  },
+  {
+   "檔案": "`data/actions/end_conversation.json`",
+   "內容": "`End Conversation` action"
+  }
+ ]
+}

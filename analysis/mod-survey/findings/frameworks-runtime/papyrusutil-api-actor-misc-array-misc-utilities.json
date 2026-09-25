@@ -1,0 +1,82 @@
+{
+ "contract": "wf-table/1",
+ "source": "papyrusutil-api-actor-misc-array.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Function",
+  "簽名",
+  "說明"
+ ],
+ "rows": [
+  {
+   "Function": "`ScanCellNPCs`",
+   "簽名": "`(ObjectReference CenterOn, float radius=0.0, Keyword HasKeyword=none, bool IgnoreDead=true) → Actor[]`",
+   "說明": "掃描 Cell 內活著的 Actor，radius=0 掃整個 cell"
+  },
+  {
+   "Function": "`ScanCellNPCsByFaction`",
+   "簽名": "`(Faction FindFaction, ObjectReference CenterOn, float radius=0.0, int minRank=0, int maxRank=127, bool IgnoreDead=true) → Actor[]`",
+   "說明": "依 faction 過濾"
+  },
+  {
+   "Function": "`ScanCellObjects`",
+   "簽名": "`(int formType, ObjectReference CenterOn, float radius=0.0, Keyword HasKeyword=none) → ObjectReference[]`",
+   "說明": "掃描特定 form type 的物件"
+  },
+  {
+   "Function": "`FilesInFolder`",
+   "簽名": "`(string directory, string extension=\"*\") → string[]`",
+   "說明": "列出目錄中的檔案"
+  },
+  {
+   "Function": "`FoldersInFolder`",
+   "簽名": "`(string directory) → string[]`",
+   "說明": "列出目錄中的子目錄"
+  },
+  {
+   "Function": "`FileExists`",
+   "簽名": "`(string fileName) → bool`",
+   "說明": "檔案是否存在"
+  },
+  {
+   "Function": "`ReadFromFile`",
+   "簽名": "`(string fileName) → string`",
+   "說明": "讀取檔案為字串（勿讀大檔）"
+  },
+  {
+   "Function": "`WriteToFile`",
+   "簽名": "`(string fileName, string text, bool append=true, bool timestamp=false) → bool`",
+   "說明": "寫字串到檔案"
+  },
+  {
+   "Function": "`PrintConsole`",
+   "簽名": "`(string text)`",
+   "說明": "輸出到 console"
+  },
+  {
+   "Function": "`GetRaceEditorID`",
+   "簽名": "`(Race raceForm) → string`",
+   "說明": "取得種族 EditorID"
+  },
+  {
+   "Function": "`GetActorRaceEditorID`",
+   "簽名": "`(Actor actorRef) → string`",
+   "說明": "取得 Actor 的種族 EditorID"
+  },
+  {
+   "Function": "`ToggleFreeCamera`",
+   "簽名": "`(bool stopTime=false)`",
+   "說明": "開/關自由鏡頭（TFC）"
+  },
+  {
+   "Function": "`SetFreeCameraSpeed`",
+   "簽名": "`(float speed)`",
+   "說明": "設定自由鏡頭速度"
+  },
+  {
+   "Function": "`SetFreeCameraState`",
+   "簽名": "`(bool enable, float speed=10.0)`",
+   "說明": "設定自由鏡頭狀態"
+  }
+ ]
+}

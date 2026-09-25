@@ -1,0 +1,37 @@
+{
+  "contract": "wf-table/1",
+  "source": "integrated-runtime.md",
+  "extracted": "2026-09-25",
+  "columns": [
+    "項目",
+    "關閉日期",
+    "證據路徑",
+    "內容"
+  ],
+  "rows": [
+    {
+      "項目": "~~Missives 中文層與 MCM 取捨~~（兩題並存，均已裁示）",
+      "關閉日期": "2026-09-01",
+      "證據路徑": "/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/STATE.md:102；/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/rulings/REPORT.md:13；/home/lorkhan/repo/moddings/skyrim/modpack-design/wf/wait_todo/zh-layer.md；/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/rulings/HANDOFF-lead-rulings.md；/home/lorkhan/repo/moddings/skyrim/agentctl/status/todo/19-Missives兩條裁示互相打架.md",
+      "內容": "\n**判定：這是兩題，不互相推翻。**\n\n- **(a) 中文層採 Loader 版還是原版**：沿用 2026-09-01 裁示 A；全域 `sLanguage` 維持 `ENGLISH`，\n  Missives 的 `_chinese.txt` 仍按原計畫局部改為同 basename 的 `_english.txt`。目前仍找不到已執行改名的證據，\n  所以這項保留為待部署／驗收，不因 (b) 而取消。\n- **(b) MCM 可否接受部分英文**：**2026-09-05 使用者裁 B：接受部分英文**；Settings Loader 勝出。\n  這只決定 MCM winner 與可接受的顯示結果，不撤銷 (a) 的全域語言槽與局部檔名裁示。\n\n證據：\n`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/STATE.md:102`、\n`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/rulings/REPORT.md:13`。\n\n以下保留裁示前的原始等待事項與衝突脈絡；其中「打架／待確認」是 19:38 裁示前的歷史文字，\n已由上面的 (a)／(b) 分題結論收束：\n\n**裁示：A —— `sLanguage` 維持 `ENGLISH`，局部修 Missives 檔名。**（2026-09-01，使用者當場口頭裁示；\n見[裁示簡報](decision-briefs-2026-09-01.md)第 7 條。）回家把 Missives 的 `_chinese.txt` 翻譯檔改為\n同 basename 的 `_english.txt`，不改全域 `sLanguage`，也不遷移 11 個已驗 `_English.STRINGS` 層。\n**通過**＝部署 winner 只留下可由 `ENGLISH` 槽載入的正確檔名，進遊戲抽查 Missives MCM／任務文字\n確實載入中文，且既有 11 個 STRINGS 層無回歸。\n\n**⚠ 兩條裁示打架，落地前要你再確認一次（2026-09-05 發現）**：\n- 2026-09-01 裁示 A（上面這條）＝**改檔名讓 Missives MCM 完整中文**。\n- 2026-09-05 裁示（condense cd2 第 9 題「Missives MCM 優先度」）＝**B，Settings Loader 勝出、接受部分英文**。\n  證據：`/home/lorkhan/repo/moddings/skyrim/modpack-design/wf/wait_todo/zh-layer.md`（「Missives MCM 優先度」節）、\n  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/rulings/HANDOFF-lead-rulings.md`（B 段第 12 條）。\n  兩者不完全互斥（一個講檔名、一個講誰勝出），但**合起來的淨效果是「MCM 會有幾句英文」**，\n  與 09-01 的「確實載入中文」驗收條件相衝。同一件事另有筆記\n  `/home/lorkhan/repo/moddings/skyrim/agentctl/status/todo/19-Missives兩條裁示互相打架.md`。\n- **待確認（19:38 裁示前狀態）**：我查了 09-04／09-05 兩天的 REPORT 與 profiles commit，\n  **找不到「已執行 `_chinese.txt` → `_english.txt` 改名」的證據**；現役 Missives 家族 12 個條目\n  （`modlist.txt:322-332`、`:350`）都還在啟用。這段等待狀態已由上面的 19:38 裁示終結。\n\n"
+    },
+    {
+      "項目": "~~天賦／Serana 中文層實機確認（promote `feat/zh-dsport-2026-09-02` 的前提）~~（2026-09-03 由 rt1 完成，證據 /home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-03/rt1/REPORT.md）",
+      "關閉日期": "2026-09-03",
+      "證據路徑": "",
+      "內容": "\n**判定：已完成（2026-09-03 由 rt1 實機確認，2026-09-05 核對無異動）。**\n\n2026-09-02 晚 MCO 遷移 16 條實機驗收已由使用者全過並 promote（`instance/profiles` main `9e188e2`）。\n之後 dispatcher 在 `feat/zh-dsport-2026-09-02` 部署了 SDA 4.3.2 補完層（插英文本體之前，舊 4.1.1.3 停用）與\nOrdinator／SPERG 天賦補完三層。請使用者進遊戲看：技能樹 perk 名稱／說明是否中文、Serana 對話是否中文；\n過了就 promote，任一不過就依 [`sda/REPORT.md`](../agentctl/handoffs/home-2026-09-02/sda/REPORT.md)、\n[`zhgap/REPORT.md`](../agentctl/handoffs/home-2026-09-02/zhgap/REPORT.md) 的 backup 覆回。\n\n"
+    },
+    {
+      "項目": "EnaiRim Batch 7 終態 gate",
+      "關閉日期": "2026-09-05",
+      "證據路徑": "",
+      "內容": "\n**判定：作廢——抽查對象已不在載入序（2026-09-05 核對）。**\n`Audugan` 與 `Valravn` 在現役 profile 三個檔裡**一次都沒出現**：\n`grep -ic` 對 `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt`、\n`.../plugins.txt`、`.../loadorder.txt` 三檔皆回 **0**。\n同節提到的 BFCO 也已於 2026-09-02 停用改 MCO（`modlist.txt:407` 為 `-`），\nTK Dodge／Precision／WYT 的組合條件因此不再成立。\n**這節整段的驗收前提（Batch 1–6 施工後的 EnaiRim 終態）已被 2026-09-02 的 MCO 遷移與\n2026-09-03 起的 LoreRim 借用兩輪改動覆蓋。** 若之後真要重開 EnaiRim Batch 7，\n請以當時的載入序重新產生清單，不要沿用本節。\n原始固定範圍仍在 `/home/lorkhan/repo/moddings/skyrim/agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batch-7-integration-promotion-plan.md`。\n\n等 Batch 1–6 施工後，確認 Audugan／Valravn private CHT 與新文字層顯示；shrine／standing stone／\nHigh Hrothgar candidates 無穿插且可互動；Valravn 搭 BFCO／Precision／TDM／TK Dodge／WYT 的輸入、\n多人節奏、武器速度、耐力與命中手感；抽查 race／faith／spell／enchantment／shout UI。固定範圍見\n[`Batch 7 計畫`](../agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batch-7-integration-promotion-plan.md)。\n\n"
+    },
+    {
+      "項目": "modlist 優先度修復的實機驗收（2026-08-28 套用，待驗）",
+      "關閉日期": "2026-09-05",
+      "證據路徑": "/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt；/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/win/data/ingame-checks.csv；/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/win/REPORT.md；/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/STATE.md:66；f087dda；f983f38",
+      "內容": "\n**判定：已被後續多輪覆蓋，不再單獨列 open（2026-09-05 核對）。**\n三個理由，每個都有實讀證據：\n1. **數字對象整批作廢。** 原文驗的是「377 行／318 啟用、Active 318」；\n   2026-09-05 實讀 `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt`\n   ＝**1379 行／啟用 1278**，`plugins.txt`＝874 行／啟用 851。中間經過 grow／trim／MCO 遷移／\n   LoreRim 借用／CC 全開／LOD 五輪大改，`launch-mo2.sh` 開出來不可能是 318。\n2. **BFCO 症狀不存在了。** 原文要驗「第三人稱能否正常攻擊（BFCO 行為圖被 vanilla 壓掉）」；\n   BFCO 已於 2026-09-02 停用改 MCO（`modlist.txt:407` 為 `-`、`plugins.txt:864`＝`*Attack_MCO.esp`），\n   而 MCO 遷移的 16 條實機驗收 2026-09-02 由使用者口頭全過。\n3. **中文顯示已在 2026-09-05 由使用者親眼驗過。** 當日 13:36／13:4x 六項目視全 PASS，\n   其中 ⑦ 六把武器名中文、⑥ 平民閒聊中文都通過。\n   證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/win/data/ingame-checks.csv`、\n   `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/win/REPORT.md`、\n   `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/STATE.md:66`／`:70`／`:71`、\n   agentctl commit `f087dda`／`f983f38`。\nOrdinator 天賦頁是否中文這一條，改由\n[`四個首次生效中文層`](#四個首次生效中文層--現在只剩兩個2026-09-05-核對) 之外的日常抽查涵蓋，\n不在本檔另列。\n\n2026-08-28 已把 `modlist.txt` 從事故後的名稱序重建為正確優先度並 commit（377 行／318 啟用；\nwinner 差異 5485→5；Pandora Output 重新壓過 TK Dodge RE；9 個被本體壓掉的中文層全回復），\n資料層由 houseCARL 實查 Ordinator 天賦、ESW 武器名、AI Overhaul NPC 名、Sofia 皆已回中文。\n**還沒進遊戲驗**。請用 `launch-mo2.sh` 開 MO2 確認 Active 318 → 進遊戲**離開存檔重進**，驗：\n第三人稱能否正常攻擊（原症狀：BFCO 行為圖被 vanilla 壓掉）、Ordinator 天賦頁是否中文、\n武器名是否中文。證據見 [`opus-apply-order`](../agentctl/handoffs/done/2026-08-28/opus-apply-order/)\n與 [`根因`](../agentctl/logs/modlist-priority-bug-2026-08-23.md)。\n"
+    }
+  ]
+}

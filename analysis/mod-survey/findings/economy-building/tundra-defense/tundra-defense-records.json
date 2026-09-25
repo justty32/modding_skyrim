@@ -1,0 +1,107 @@
+{
+ "contract": "wf-table/1",
+ "source": "scope-records.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "record",
+  "count",
+  "角色"
+ ],
+ "rows": [
+  {
+   "record": "**PlacedObject (REFR)**",
+   "count": "1611",
+   "角色": "預擺的 idle marker / spawn point / 核心 cell 內裝 + tutorial 佈景"
+  },
+  {
+   "record": "**Npc (base)**",
+   "count": "122",
+   "角色": "守衛各種族版 + citizen/miner/scavenger/trader + **`Raider*` 攻擊者 base**（Bandit/Draugr/Falmer/Nature/Giant/Necro/Vampire/Werewolf/Dragon…）"
+  },
+  {
+   "record": "**MagicEffect**",
+   "count": "113",
+   "角色": "**核心**：絕大多數是 `aaaFort…Effect \"Construct X\"`（script archetype，掛 spawner script）"
+  },
+  {
+   "record": "**Ingestible (ALCH)**",
+   "count": "109",
+   "角色": "**核心**：`aaaFort…Plan \"Plans: X\"`——玩家「**喝**」的建材物品（FOOD 分類），每瓶帶一個 \"Construct X\" 魔法效果"
+  },
+  {
+   "record": "**Activator (ACTI)**",
+   "count": "108",
+   "角色": "建好的**可放置物本體**（`aaaFortWaterWell`/`Barracks`/`SpikeWall`/家具/rug…，掛互動 script）"
+  },
+  {
+   "record": "**Message (MESG)**",
+   "count": "87",
+   "角色": "**整套 UI**：管理選單 / 募兵選單 / raid 難度選單 / breakdown 確認…（**無 MCM，全靠 MESG**）"
+  },
+  {
+   "record": "**Package**",
+   "count": "19",
+   "角色": "守衛巡邏/站哨 + citizen sandbox"
+  },
+  {
+   "record": "Furniture",
+   "count": "17｜**PlacedNpc (ACHR)** 12",
+   "角色": "預擺工作家具；12 個具名 NPC（Sareio 市集主、Hank、Jorane、OutpostDogmeat 等核心服務角色）"
+  },
+  {
+   "record": "Cell",
+   "count": "11",
+   "角色": "自家 interior（`aaaFortGrandEstateInterior` / `aaaFortWoodenCabinInterior` 等可建房屋內部）"
+  },
+  {
+   "record": "Container",
+   "count": "10",
+   "角色": "計畫書箱 `aaaFortPlansContainer` / 商人箱 / 礦石箱 / 守衛裝備箱 / scavenger crate"
+  },
+  {
+   "record": "FormList",
+   "count": "8",
+   "角色": "`aaaFortGuardList` / `aaaFortStationaryGuardList` / `aaaFortPatrolGuardList` / `aaaFortMarketList` / `aaaFortFarmItems`…"
+  },
+  {
+   "record": "Quest",
+   "count": "7",
+   "角色": "見 §3/§4（全是無/少文字的**控制器 quest**）"
+  },
+  {
+   "record": "LeveledNpc",
+   "count": "6",
+   "角色": "`aaaFortLCharGuardOrc/Nord/Altmer/Imp/Dunmer/Red`（守衛隨機等級池）"
+  },
+  {
+   "record": "Faction",
+   "count": "5",
+   "角色": "`aaaFortFaction`(Outpost)・`aaaFortRaiderFaction`・`aaaFortFollowPlayerFaction`・2 個 Vendor faction（市集/雜貨）"
+  },
+  {
+   "record": "Keyword",
+   "count": "7",
+   "角色": "`aaaFortGuard`/`aaaFortStationaryGuard`/`aaaFortPatrolGuard`/`aaaFortPlans`/`aaaFortObjectCloningKey`/`aaaFortDragonPerchKeyword`/`aaaFortVioletKeyword`"
+  },
+  {
+   "record": "Book",
+   "count": "7",
+   "角色": "觸發書（`aaaFortScavengerNote`/`MineNote`/`ForgeNote`/`GeneralStoreNote`…，讀了解鎖對應子系統）"
+  },
+  {
+   "record": "**Shout / WordOfPower**",
+   "count": "1 / 1",
+   "角色": "`aaaFortInputConfirmShout \"Confirm Construction\"`（建造定位時的確認輸入）"
+  },
+  {
+   "record": "Weapon",
+   "count": "1",
+   "角色": "`aaaFortObjectCloner \"Object Cloner\"`（複製已建物的工具）"
+  },
+  {
+   "record": "**GlobalVariable**",
+   "count": "**0**",
+   "角色": "**完全沒有 GLOB**——所有計數/設定都是 **Quest script property**（`CitizenCount`/`GuardCount`/`MinerCount`/`ScavengerCount`/`CurrentRaiders`/`RaidFrequency`/`raidHandicap`/`DayCount`…）"
+  }
+ ]
+}

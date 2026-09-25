@@ -1,0 +1,67 @@
+{
+ "contract": "wf-table/1",
+ "source": "sound-record-distributor-records-filters.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Target（改誰）",
+  "可設欄位",
+  "Sound 類型（Source）"
+ ],
+ "rows": [
+  {
+   "Target（改誰）": "**Weapon**（WEAP）",
+   "可設欄位": "Pick Up, Put Down, Impact Data Set, Attack, Attack 2D, Attack Loop, Attack Fail, Idle, Equip, Unequip",
+   "Sound 類型（Source）": "BGSSoundDescriptorForm（Impact Data Set 除外用 BGSImpactDataSet）"
+  },
+  {
+   "Target（改誰）": "**Armor Addon**（ARMA）",
+   "可設欄位": "Footstep",
+   "Sound 類型（Source）": "BGSFootstepSet"
+  },
+  {
+   "Target（改誰）": "**Armor**（ARMO）",
+   "可設欄位": "Pick Up, Put Down",
+   "Sound 類型（Source）": "BGSSoundDescriptorForm"
+  },
+  {
+   "Target（改誰）": "**Misc. Item**（MISC）",
+   "可設欄位": "Pick Up, Put Down",
+   "Sound 類型（Source）": "BGSSoundDescriptorForm"
+  },
+  {
+   "Target（改誰）": "**Soul Gem**（SLGM）",
+   "可設欄位": "Pick Up, Put Down",
+   "Sound 類型（Source）": "BGSSoundDescriptorForm"
+  },
+  {
+   "Target（改誰）": "**Magic Effect**（MGEF）",
+   "可設欄位": "Sheathe/Draw, Charge, Ready, Release, Cast Loop, On Hit",
+   "Sound 類型（Source）": "BGSSoundDescriptorForm"
+  },
+  {
+   "Target（改誰）": "**Projectile**（PROJ）",
+   "可設欄位": "Active, Countdown, Deactivate",
+   "Sound 類型（Source）": "BGSSoundDescriptorForm"
+  },
+  {
+   "Target（改誰）": "**Explosion**（EXPL）",
+   "可設欄位": "Interior, Exterior",
+   "Sound 類型（Source）": "BGSSoundDescriptorForm"
+  },
+  {
+   "Target（改誰）": "**Effect Shader**（EFSH）",
+   "可設欄位": "Ambient",
+   "Sound 類型（Source）": "BGSSoundDescriptorForm"
+  },
+  {
+   "Target（改誰）": "**Ingestible**（ALCH）",
+   "可設欄位": "Consume",
+   "Sound 類型（Source）": "BGSSoundDescriptorForm"
+  },
+  {
+   "Target（改誰）": "**Region**（REGN）",
+   "可設欄位": "RDSA 陣列（Sound + Flags + Chance）",
+   "Sound 類型（Source）": "BGSSoundDescriptorForm，可新增或替換"
+  }
+ ]
+}

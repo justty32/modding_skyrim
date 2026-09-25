@@ -1,0 +1,56 @@
+{
+ "contract": "wf-table/1",
+ "source": "overview-planning.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "#",
+  "零件",
+  "放哪",
+  "做什麼",
+  "必要性"
+ ],
+ "rows": [
+  {
+   "#": "A",
+   "零件": "**一個 `.esp`**",
+   "放哪": "`Data/MySkills.esp`",
+   "做什麼": "裝技能樹要用到的所有記錄：PERK（節點）、GLOB（等級/進度/legendary）、KYWD（升級掛鉤），可選 BOOK / MGEF",
+   "必要性": "**必要**"
+  },
+  {
+   "#": "B",
+   "零件": "**技能設定檔 `<X>.json`**",
+   "放哪": "`Data/SKSE/Plugins/CustomSkills/<X>.json`",
+   "做什麼": "描述這棵樹：技能名/述、指向 esp 裡哪幾個 GLOB、升級曲線、每個 perk 節點的座標與連線",
+   "必要性": "**必要**"
+  },
+  {
+   "#": "C",
+   "零件": "**`SKILLS.json`**（可選之一）",
+   "放哪": "`Data/SKSE/Plugins/CustomSkills/SKILLS.json`",
+   "做什麼": "把你的技能**塞進原版技能選單那一頁**（最像原生）。不用它就得另開獨立選單",
+   "必要性": "二選一"
+  },
+  {
+   "#": "D",
+   "零件": "**init alias script**",
+   "放哪": "esp 裡的 quest + 一支 `.psc`/`.pex`",
+   "做什麼": "玩家首次安裝時把技能等級設成起始值、授予基礎被動 perk、做版本 gate",
+   "必要性": "**建議**"
+  },
+  {
+   "#": "E",
+   "零件": "**訓練 TIF fragment**（可選）",
+   "放哪": "對話 TopicInfo 的一行 fragment",
+   "做什麼": "把某個 NPC 變成你的技能訓練師（花錢練等）",
+   "必要性": "可選"
+  },
+  {
+   "#": "F",
+   "零件": "**Fortify-技能 MGEF + `ActorValueData/*.toml`**（可選）",
+   "放哪": "esp 裡的 MGEF + 一份 toml",
+   "做什麼": "讓「強化 X 技能」附魔/藥水對自訂技能生效。**這條非要一個自寫的 native SKSE plugin 不可**",
+   "必要性": "進階加值"
+  }
+ ]
+}

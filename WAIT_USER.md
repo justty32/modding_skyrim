@@ -16,7 +16,7 @@
 | 回家下載／重建 | 3 | 6 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
 | 今晚裁決簡報（2026-09-02） | 0 | 0 | [wait-user/decision-briefs-2026-09-02.md](wait-user/decision-briefs-2026-09-02.md)（15 題全部已裁示並落地） |
 | 整包 UI／中文／任務驗收 | 9 | 12 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
-| 獨立功能驗收 | 9 | 8 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
+| 獨立功能驗收 | 9 | 9 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
 | 日後素材／清理決定 | 4 | 5 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
 | 版本控制收線 | 0 | 0 | [本檔下節](#push-排程) |
 
@@ -56,3 +56,7 @@ staging 清理 4 條路徑→3 條已自行消失。
 2026-09-20 新增 1 件：PI 停用合併層啟用驗證與 B 型技能條件 crash 單變量實驗（獨立功能驗收 8 → 9），詳見 [獨立功能驗收](wait-user/feature-runtime.md)。
 
 2026-09-24：技能條件 crash（B 型 `SkyrimSE+01D3398`）**已結案** —— doom perk 補丁部署正式 profile 後，使用者實機格擋確認不再崩潰。同日新增 1 件待驗：長毛象 CTD（`SkyrimSE+02B789A`）的 SPID 老年換裝覆寫層，待使用者回到 cell grid (-6,1) 巨人營地實機確認（獨立功能驗收 9 → 9，一結一開）。詳見 [功能驗收](wait-user/feature-runtime.md)。
+
+2026-09-25：長毛象 CTD（`SkyrimSE+02B789A`）**已結案**——SPID 老年換裝覆寫層部署後，使用者實機回到巨人營地確認不再崩潰（21:50 口頭確認；標題數仍 9，因「2026-09-20 PI 啟動崩潰候選層」標題下的 PI 合併層／crash2 段仍 open）。同日 tidy-2026-09-25 輪把 `wait-user/` 各檔的已完成節抽成 `*-closed.json`，open 項只留 md。
+
+2026-09-25 22:10 推進：使用者裁「wait user 中你能做的都做一做」，開六條線（`agentctl/handoffs/home-2026-09-25/wu/`）：mo2ctl 漂移修復、JhNPCBeautyDev 中文名 patch 草案＋crash2 A/B 對帳、DSPort P3 四個對照包、RDO 62500 下載與衝突表、光柱特效測試包實機煙霧、ghost-cell-clear DLL 部署＋DMK smoke＋AYOP 死選單清理。裁示要刪的 4 個 staging 目錄實讀已不存在（已完成）。wf kernel v0.5.1 升級排在 tidy 輪收尾後。

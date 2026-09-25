@@ -1,0 +1,67 @@
+{
+ "contract": "wf-table/1",
+ "source": "npc-commands.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案",
+  "内容"
+ ],
+ "rows": [
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/cat_travel.yaml`",
+   "内容": "Travel category"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/cat_scheduling.yaml`",
+   "内容": "Scheduling category"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/cat_communication.yaml`",
+   "内容": "Communication category"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_travel.yaml`",
+   "内容": "`GoToLocation` action"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_changespeed.yaml`",
+   "内容": "`ChangeTaskSpeed` action"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_canceltask.yaml`",
+   "内容": "`CancelCurrentTask` action"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_schedulemeeting.yaml`",
+   "内容": "`ScheduleMeeting` action（時間條件: \"at dawn\", \"in 3 hours\"）"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_schedulefetch.yaml`",
+   "内容": "`ScheduleFetch` action"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_scheduledelivery.yaml`",
+   "内容": "`ScheduleDelivery` action（可選 meeting invite）"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_fetchnpc.yaml`",
+   "内容": "`FetchNPC` action"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_escorttarget.yaml`",
+   "内容": "`EscortTarget` action"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_delivermessage.yaml`",
+   "内容": "`DeliverMessage` action"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_searchforactor.yaml`",
+   "内容": "`SearchForActor` action"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/config/actions/intel_report_player_conduct.yaml`",
+   "内容": "`ReportPlayerConduct` action"
+  }
+ ]
+}

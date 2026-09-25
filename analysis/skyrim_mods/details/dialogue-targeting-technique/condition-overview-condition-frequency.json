@@ -1,0 +1,137 @@
+{
+ "contract": "wf-table/1",
+ "source": "condition-overview.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "次數",
+  "condition function",
+  "投放維度"
+ ],
+ "rows": [
+  {
+   "次數": "9245",
+   "condition function": "GetIsVoiceType",
+   "投放維度": "身份（嗓音類別）"
+  },
+  {
+   "次數": "7224",
+   "condition function": "GetInFaction",
+   "投放維度": "身份（陣營）"
+  },
+  {
+   "次數": "3112",
+   "condition function": "GetRandomPercent",
+   "投放維度": "隨機不重複"
+  },
+  {
+   "次數": "2142",
+   "condition function": "GetPlayerTeammate",
+   "投放維度": "關係（是否現役隨從）"
+  },
+  {
+   "次數": "1811",
+   "condition function": "GetActorValue",
+   "投放維度": "關係 / 屬性（disposition、技能等）"
+  },
+  {
+   "次數": "1683",
+   "condition function": "GetRelationshipRank",
+   "投放維度": "關係（關係等級）"
+  },
+  {
+   "次數": "1476",
+   "condition function": "GetVMQuestVariable",
+   "投放維度": "狀態機（quest 變數輪替）"
+  },
+  {
+   "次數": "1396",
+   "condition function": "GetIsID",
+   "投放維度": "身份（指名單一 NPC）"
+  },
+  {
+   "次數": "1384",
+   "condition function": "LocationHasKeyword",
+   "投放維度": "情境（地點分類）"
+  },
+  {
+   "次數": "936",
+   "condition function": "IsInList",
+   "投放維度": "身份（FormList 成員）"
+  },
+  {
+   "次數": "923",
+   "condition function": "ConditionGlobal",
+   "投放維度": "開關（全域變數旗標）"
+  },
+  {
+   "次數": "817",
+   "condition function": "GetSleeping",
+   "投放維度": "情境（NPC 是否在睡）"
+  },
+  {
+   "次數": "815",
+   "condition function": "IsSneaking",
+   "投放維度": "情境（玩家潛行）"
+  },
+  {
+   "次數": "748",
+   "condition function": "GetInCurrentLoc",
+   "投放維度": "情境（當前 location）"
+  },
+  {
+   "次數": "605",
+   "condition function": "GetInWorldspace",
+   "投放維度": "情境（worldspace）"
+  },
+  {
+   "次數": "446",
+   "condition function": "GetIsRace",
+   "投放維度": "身份（種族）"
+  },
+  {
+   "次數": "389",
+   "condition function": "GetInCell",
+   "投放維度": "情境（cell）"
+  },
+  {
+   "次數": "377",
+   "condition function": "IsInCombat",
+   "投放維度": "情境（戰鬥中）"
+  },
+  {
+   "次數": "369",
+   "condition function": "IsInDialogueWithPlayer",
+   "投放維度": "情境（正在與玩家對話）"
+  },
+  {
+   "次數": "363",
+   "condition function": "GetStageDone",
+   "投放維度": "狀態機（quest 階段）"
+  },
+  {
+   "次數": "342",
+   "condition function": "GetIsPlayableRace",
+   "投放維度": "身份（可玩種族）"
+  },
+  {
+   "次數": "298",
+   "condition function": "HasKeyword",
+   "投放維度": "身份（關鍵字）"
+  },
+  {
+   "次數": "291",
+   "condition function": "GetGlobalValue",
+   "投放維度": "開關"
+  },
+  {
+   "次數": "283",
+   "condition function": "GetActorValuePercent",
+   "投放維度": "關係 / 屬性（百分比，如血量）"
+  },
+  {
+   "次數": "253",
+   "condition function": "GetStage",
+   "投放維度": "狀態機"
+  }
+ ]
+}

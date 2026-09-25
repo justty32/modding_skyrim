@@ -1,0 +1,39 @@
+{
+ "contract": "wf-table/1",
+ "source": "scope-records.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "項目",
+  "值"
+ ],
+ "rows": [
+  {
+   "項目": "Archive",
+   "值": "`~/skyrim_mods/hdd/Tundra Defense SSE v1.04-14310-1-04.zip`（英文版；另有 `…cht-14501…` 中文版，本檔用英文）"
+  },
+  {
+   "項目": "解壓",
+   "值": "`~/skyrim_mods/unzip/TundraDefense/`"
+  },
+  {
+   "項目": "Plugin",
+   "值": "`Tundra Defense SSE.esp`，485 KB，**2291 records**，master = **Skyrim.esm only**（無 USSEP、無 DLC）"
+  },
+  {
+   "項目": "隨檔",
+   "值": "`Tundra Defense SSE.bsa`（26 MB：56 個 `.pex` script + 全部 `Meshes/TundraDefense/*.nif` 自製建物模型 + 1 raid 音效 + 3 段 SpecialPlans 語音/lip）、`… - Textures.bsa`"
+  },
+  {
+   "項目": "**Source `.psc`**",
+   "值": "**無**（BSA 內只有編譯後 `.pex`，零 `.psc`）。系統無 Champollion 可反編譯 → 下列機制以「**`.pex` 字串表逆讀**（object/property/function 名 + 引用的 record editorId + Notification 字面）＋ ModForge `dump`/`questdiag`」為據。凡靠 `.pex` 字串表推得而未見原始碼者標 **(pex-strings)**；真正不確定者標 **UNVERIFIED**。"
+  },
+  {
+   "項目": "MCM / loose config",
+   "值": "**無**——BSA 內無任何 `.json`/`.ini`/`SkyUI`/`MCM-Helper` 檔。所有「設定」走遊戲內 MESG 選單（見 §5）。"
+  },
+  {
+   "項目": "EditorID 前綴",
+   "值": "一律 `aaaFort*`（mod 內部代號 = \"Fort\"/\"Outpost\"）"
+  }
+ ]
+}

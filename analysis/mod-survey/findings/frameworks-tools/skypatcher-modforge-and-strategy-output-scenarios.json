@@ -1,0 +1,62 @@
+{
+ "contract": "wf-table/1",
+ "source": "skypatcher-modforge-and-strategy.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "情境",
+  "建議產物",
+  "理由"
+ ],
+ "rows": [
+  {
+   "情境": "**新增全新 NPC、地點、任務、對話**",
+   "建議產物": "**esp 不可替代**",
+   "理由": "SkyPatcher 只能修改既有 record，無法新增不存在的 record"
+  },
+  {
+   "情境": "**新增全新武器、法術、技能**",
+   "建議產物": "**esp 不可替代**",
+   "理由": "同上，SkyPatcher 是 patcher 不是 creator"
+  },
+  {
+   "情境": "**對「多個 mod 的 NPC」加統一 keyword/perk/spell**",
+   "建議產物": "**SkyPatcher config 更優**",
+   "理由": "一個 ini 行可篩選多個種族/keyword，比逐一 override esp 快，且無 esp slot 消耗"
+  },
+  {
+   "情境": "**調整 vanilla 武器/防具數值（傷害、重量）**",
+   "建議產物": "**SkyPatcher config 更優**",
+   "理由": "無需 esp 衝突、可熱移除、filter 批量套用"
+  },
+  {
+   "情境": "**NPC 外觀替換（相容 patch）**",
+   "建議產物": "**SkyPatcher config 更優**",
+   "理由": "`copyVisualStyle` 是 SkyPatcher 最成熟的用例，已有大量 mod 採用"
+  },
+  {
+   "情境": "**Leveled List 注入新物品到現有 LVLN**",
+   "建議產物": "**兩者皆可**（取決於場景）",
+   "理由": "SkyPatcher `objectsToAdd` 可做；但若已有 esp（含新物品 record），直接在 esp 裡 override LVLN 較簡單，不需要多一層 SkyPatcher 依賴"
+  },
+  {
+   "情境": "**FormList 批量添加**（跨 mod 整合用）",
+   "建議產物": "**SkyPatcher config 更優**",
+   "理由": "同 Leveled List 邏輯；條件性 ini（`PluginName.esp.ini`）可做到「只在某 mod 存在時才注入」"
+  },
+  {
+   "情境": "**複雜條件觸發（Story Manager、Scene）**",
+   "建議產物": "**esp 不可替代**",
+   "理由": "SkyPatcher 無法生成 Quest、SM、Scene、Script 等邏輯型 record"
+  },
+  {
+   "情境": "**Papyrus 腳本邏輯**",
+   "建議產物": "**esp 不可替代**",
+   "理由": "SkyPatcher 不能 attach 腳本，只能改資料欄位"
+  },
+  {
+   "情境": "**對已發布 mod 的相容 patch**",
+   "建議產物": "**SkyPatcher config 更優**",
+   "理由": "製作者提供一個小 ini 取代過去的 esp 相容 patch，使用者免 merge；符合現在社群走向"
+  }
+ ]
+}

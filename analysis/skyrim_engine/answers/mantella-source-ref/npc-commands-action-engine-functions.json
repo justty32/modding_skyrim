@@ -1,0 +1,55 @@
+{
+ "contract": "wf-table/1",
+ "source": "npc-commands.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案:行號",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案:行號": "`src/actions/function_manager.py:14-17`",
+   "內容": "`FunctionManager` class — **action 註冊表** (`_actions` dict)"
+  },
+  {
+   "檔案:行號": "`src/actions/function_manager.py:154-218`",
+   "內容": "`load_all_actions()` — 從 `data/actions/*.json` 載入所有 actions；支援 disabled actions filter"
+  },
+  {
+   "檔案:行號": "`src/actions/function_manager.py:222-246`",
+   "內容": "`get_legacy_actions()` — 轉換為 legacy prompt-based Action 物件"
+  },
+  {
+   "檔案:行號": "`src/actions/function_manager.py:250-277`",
+   "內容": "`_load_action_file()` — 單一 JSON 載入，處理 single/array 兩種格式，prefix `mantella_`"
+  },
+  {
+   "檔案:行號": "`src/actions/function_manager.py:19-152`",
+   "內容": "`parse_function_calls()` — **解析 LLM 回應中的 function calls**（validate arguments against schema, validate entity names, resolve parameter IDs, duplicate filter, side effects）"
+  },
+  {
+   "檔案:行號": "`src/actions/function_manager.py:281-340`",
+   "內容": "`generate_context_aware_tools()` — **生成 OpenAI tools**（filter by game compatibility, conversation type, populate dynamic enums, add NPC context to parameters）"
+  },
+  {
+   "檔案:行號": "`src/actions/function_manager.py:435-460`",
+   "內容": "`_validate_arguments_against_schema()` — 過濾 LLM hallucinated 參數"
+  },
+  {
+   "檔案:行號": "`src/actions/function_manager.py:464-521`",
+   "內容": "`_validate_npc_names()` — **驗證 LLM 指定的 NPC 名稱存在於 scope 內**（支援 \"player\" alias）"
+  },
+  {
+   "檔案:行號": "`src/actions/function_manager.py:525-555`",
+   "內容": "`_populate_dynamic_enums()` — 動態填充 enum 值（如 idle names）"
+  },
+  {
+   "檔案:行號": "`src/actions/function_manager.py:559-607`",
+   "內容": "`_add_npc_context_to_parameters()` — **scope-based entity list 注入**（conversation/nearby/all_npcs + _w_player variant）"
+  },
+  {
+   "檔案:行號": "`src/actions/function_manager.py:637-680`",
+   "內容": "`_resolve_parameter_to_id()` — 參數 → 遊戲 ID 解析（idle name → FormID, NPC name → ref_id）"
+  }
+ ]
+}

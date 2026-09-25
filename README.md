@@ -52,7 +52,10 @@
 - [`tools/`](tools/) 有母 repo 的連結、submodule pin 與 code-map 檢查；完整連結檢查：`python3 tools/check_markdown_links.py`。
 - [SESSION-LOG.md](SESSION-LOG.md) 只記母 repo 的跨 session 活狀態；Skyrim 工作線的主線在 [`agentctl/SESSION-LOG.md`](agentctl/SESSION-LOG.md)，當場現況與各隊報告放在 `agentctl/handoffs/`。
 - [WAIT_USER.md](WAIT_USER.md) 列需要使用者親自驗證、實機操作或外部素材的項目。
+- [`wait-user/`](wait-user/) 是 [WAIT_USER.md](WAIT_USER.md) 各主題的子檔集合（decision-briefs／home-runbook／feature-runtime／integrated-runtime／later-decisions 等）。
 - [`patches/`](patches/README.md) 放可套用到他人 mod 的獨立修補。
+- [`.github/`](.github/) 放 GitHub Actions CI：跑 `tools/` 的 validator 測試與 Markdown 連結檢查。
+- [`.vscode/`](.vscode/) 放編輯器設定（CMake 原始目錄）。
 
 `wf/` 的命名與職責對齊 `tome4` 和 `elin`；骨架來自 `~/repo/workflows` 模板（kernel v0.5，2026-08-30）。
 

@@ -37,6 +37,7 @@ Inigo 全程**沒有一個 GlobalVariable**。所有可切換行為狀態改用*
 
 ## 關鍵架構 3：追蹤 / 尋找 / 召喚（他能「找到你」的真相）
 
+<!-- wf-nav -->
 - **Radar 掃描**：`InigoRadar`(09D37E, `InigoRadarQuestScript`) —「Search for nearby horses and inns」。`HorseSearch` 逐 cell 掃附近 actor 找可送/可換的馬，`FindLocalInnTarget` 找旅店 `MoveTo` 目標，結果 callback 回 `InigoFollowerDialogue.HorsesFound`。
 - **召喚**：`InigoSummon` SPEL → 生一個 `InigoSummonMarkerScript` marker，marker `OnLoad` 檢查 `InigoSummonableFaction` → `MoveTo(marker)` + `EvaluatePackage`。「召喚咒放個標記、標記自己把他搬過來」。
 - **哨聲**：`InigoStopFightingPower`（Whistle）+ `InigoWhistleReactionScript` — 距離判定後 `EvaluatePackage`，兼作停戰/召回。
@@ -59,5 +60,6 @@ Inigo 全程**沒有一個 GlobalVariable**。所有可切換行為狀態改用*
 
 ## 結論
 
+<!-- wf-nav -->
 - **對 ModForge**：**大部分可生成 / 局部需便利層**。整套機制的零件都在能力域內——ReferenceAlias + alias-script、FACT（含 rank）作狀態、cell-scan/MoveTo/EvaluatePackage 的 controller `.pex`（`scriptAttach` 已驗證能掛回）、TIF fragment 改 faction rank、mood-conditioned INFO、Story Manager 事件節點、召喚 SPEL→marker。**沒有任何 DLL / PapyrusUtil / JContainers / MCM 依賴**，這是 Inigo 最值得借鏡的一點：**用 faction-rank 當狀態機 + 假 AnimationEvent 當內部 message bus，純 vanilla 就疊出「有記憶會自理」的隨從**。缺口偏便利層而非硬缺：① 「alias-monitor→中央 dispatcher」與「faction-rank 狀態機」缺 spec macro（現在得手擺 alias/FACT/fragment）；② tracking/summon/radar 這類**執行期演算法仍是 bespoke Papyrus**，ModForge 是 packager、須隨附 controller `.pex`（同 Tundra/Honed Metal 類）。無新 record 死角。
 - **對 Sofia**：**高度相關**。Inigo 與 Sofia 同為 standalone unique 語音隨從，這份是 Sofia 系統面的最佳對照範本：**faction-rank 狀態機**（戰鬥風格/跟隨距離/心情，直接進 dialogue CTDA）、**假 AnimationEvent message bus**、**召喚/哨聲/地圖定位/記憶**四件套，都可平移進 Sofia patch 而不引入任何框架依賴。與 improved-follower-dialogue-lydia 互補：Lydia 那份講「對話 arc / 道德狀態機」，Inigo 這份講「行為 / 追蹤 / 自治 AI 的骨架」。

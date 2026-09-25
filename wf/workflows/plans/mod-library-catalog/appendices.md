@@ -21,6 +21,7 @@
 
 已定的形狀：
 
+<!-- wf-nav -->
 - **起點不是零**：庫裡已有大量 `- CHS` / `- CHT` / `(Chinese Translation)` 檔（實查確認，如 `Honed Metal` 一組六個變體）。本計畫的 `is_translation` / `translates_mod_id` 就是給這件事鋪路的。
 - **資料模型陷阱（2026-08-07 A4a）**：漢化包在 Nexus 上常有自己的 mod id，所以 `mods` 裡會出現純漢化包 stub（`archive_ids=[]`、`translation_archive_ids` 非空）。A4a 實掃有 255 個這種 stub。比對本體時必須排除它們，只比對 `archive_ids` 非空的真本體；否則會把漢化包配到另一個漢化包，實例是 `Beyond Skyrim - Bruma SE (CHT)` 被配到 `Beyond Skyrim Bruma - CNS`。
 - **A4a 掃出的翻譯衍生標記**（剔除誤收的 `MCM`、`CLEAN`）：`CHINESE`、`CHS`、`CHT`、`CNS`、`Chinese`、`Chinese Localisation`、`Chinese Localisation Based on WOK`、`Chinese Simple`、`Chinese Translation`、`Chinese translation`、`Chinese version`、`Simpifity Chinese`、`Simplified Chinese`、`Simplified Chinese Translation`、`Simplified Chinese translation`、`Traditional Chinese`、`Traditional Chinese Translation`、`Traditional Chinese translation`、`ZH`、`\CHS\`、`\CHT\`、`\chs\`、`\cht\`、`chinese translation`、`chs`、`cht`、`cns`、`simplified Chinese`、`simplified Chinese translation`、`traditional Chinese`、`traditional Chinese translation`、`zh`、`zh_CN`、`汉化`、`汉化补丁`。

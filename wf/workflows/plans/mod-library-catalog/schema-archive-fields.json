@@ -1,0 +1,163 @@
+{
+ "contract": "wf-table/1",
+ "source": "schema.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "欄位",
+  "型別",
+  "類別",
+  "說明"
+ ],
+ "rows": [
+  {
+   "欄位": "`_id`",
+   "型別": "string",
+   "類別": "磁碟",
+   "說明": "檔案 sha256"
+  },
+  {
+   "欄位": "`paths`",
+   "型別": "string[]",
+   "類別": "磁碟",
+   "說明": "所有出現位置（>1 即 L1 重複）"
+  },
+  {
+   "欄位": "`filename`",
+   "型別": "string",
+   "類別": "磁碟",
+   "說明": "主要檔名"
+  },
+  {
+   "欄位": "`size`",
+   "型別": "int",
+   "類別": "磁碟",
+   "說明": "bytes"
+  },
+  {
+   "欄位": "`format`",
+   "型別": "enum",
+   "類別": "磁碟",
+   "說明": "`zip`\\|`7z`\\|`rar`"
+  },
+  {
+   "欄位": "`mtime`",
+   "型別": "float",
+   "類別": "磁碟",
+   "說明": ""
+  },
+  {
+   "欄位": "`nexus_mod_id`",
+   "型別": "int\\|null",
+   "類別": "磁碟",
+   "說明": "從檔名解析"
+  },
+  {
+   "欄位": "`version_parsed`",
+   "型別": "string\\|null",
+   "類別": "磁碟",
+   "說明": "從檔名解析"
+  },
+  {
+   "欄位": "`naming_pattern`",
+   "型別": "enum",
+   "類別": "磁碟",
+   "說明": "`nexus_classic`\\|`nexus_app`\\|`legacy`\\|`manual`"
+  },
+  {
+   "欄位": "`has_fomod` / `has_skse_dll` / `has_bsa` / `has_esp`",
+   "型別": "bool",
+   "類別": "磁碟",
+   "說明": "由目錄表判定"
+  },
+  {
+   "欄位": "`plugin_names`",
+   "型別": "string[]",
+   "類別": "磁碟",
+   "說明": "內含 esp/esm/esl"
+  },
+  {
+   "欄位": "`dll_names`",
+   "型別": "string[]",
+   "類別": "磁碟",
+   "說明": ""
+  },
+  {
+   "欄位": "`top_level_shape`",
+   "型別": "enum",
+   "類別": "磁碟",
+   "說明": "`data_wrapped`\\|`numbered_folders`\\|`bare_data`\\|`other`"
+  },
+  {
+   "欄位": "`is_translation`",
+   "型別": "bool",
+   "類別": "磁碟",
+   "說明": "檔名標記 + 內容判定"
+  },
+  {
+   "欄位": "`dll_compat`",
+   "型別": "object[]\\|null",
+   "類別": "養成",
+   "說明": "每個 dll：`{name, plugin_name, version, addr_lib: bool, locked_runtimes: []}`"
+  },
+  {
+   "欄位": "`runtime_ok_1_6_1170`",
+   "型別": "bool\\|null",
+   "類別": "養成",
+   "說明": "L3 的判準欄位；null=未檢查"
+  },
+  {
+   "欄位": "`nexus_status`",
+   "型別": "enum\\|null",
+   "類別": "養成",
+   "說明": "`live`\\|`hidden`\\|`gone`\\|`unknown`"
+  },
+  {
+   "欄位": "`nexus_name` / `nexus_latest_version` / `nexus_requirements`",
+   "型別": "",
+   "類別": "養成",
+   "說明": "由 `housecarl_nexus_mod` 補"
+  },
+  {
+   "欄位": "`never_delete`",
+   "型別": "bool",
+   "類別": "養成",
+   "說明": "D5 的保險栓"
+  },
+  {
+   "欄位": "`cleanup_tier`",
+   "型別": "enum\\|null",
+   "類別": "養成",
+   "說明": "`L1`\\|`L2`\\|`L3`\\|`L4`\\|`keep`"
+  },
+  {
+   "欄位": "`cleanup_decision`",
+   "型別": "enum\\|null",
+   "類別": "養成",
+   "說明": "`pending`\\|`approved`\\|`rejected`"
+  },
+  {
+   "欄位": "`quarantined_at` / `quarantine_reason` / `original_path`",
+   "型別": "",
+   "類別": "養成",
+   "說明": "D5 的移動記錄"
+  },
+  {
+   "欄位": "`translates_mod_id`",
+   "型別": "int\\|null",
+   "類別": "養成",
+   "說明": "漢化包指向的本體（附錄 B）"
+  },
+  {
+   "欄位": "`installed_as`",
+   "型別": "string\\|null",
+   "類別": "養成",
+   "說明": "對應到 MO2 `mods/` 的哪個資料夾"
+  },
+  {
+   "欄位": "`_raw_extra`",
+   "型別": "object\\|null",
+   "類別": "",
+   "說明": ""
+  }
+ ]
+}

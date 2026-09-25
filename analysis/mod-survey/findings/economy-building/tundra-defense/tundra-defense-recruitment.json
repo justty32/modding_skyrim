@@ -1,0 +1,47 @@
+{
+ "contract": "wf-table/1",
+ "source": "recruitment-defense.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "角色",
+  "script",
+  "來源建物 / 機制"
+ ],
+ "rows": [
+  {
+   "角色": "**守衛 Guard**",
+   "script": "`aaaFortGuardScript`",
+   "來源建物 / 機制": "barracks 募；分 `NordVersion`/`OrcVersion`/`AltmerVersion`/`Redguard`/`Dunmer`/`Imp` 種族版 + `PatrolVersion`/`StationaryVersion`/`PerimeterVersion`；`ChangeGuardDialog`/`ChangeGuardRaceDialog` 付 `changeGuardCost` 換種族；`OnDeath` → `--GuardCount`；`hasMedic` 時站 medic tent `RestoreActorValue(health)` 自癒"
+  },
+  {
+   "角色": "站哨守衛 Stationary",
+   "script": "`aaaFortStationaryGuardScript`",
+   "來源建物 / 機制": "綁固定 `posx/y/z`（`SetPosition` 釘在哨點）；用 `aaaFortStationaryGuardPackages` FormList"
+  },
+  {
+   "角色": "守衛隊長 Captain",
+   "script": "`aaaFortGuardArmoryScript`",
+   "來源建物 / 機制": "`GuardCaptainDialog` 付 `changeCost` 換 `CaptainA/B/C`"
+  },
+  {
+   "角色": "**居民 Citizen**",
+   "script": "`aaaFortCitizenScript` + `aaaFortHouseScript`",
+   "來源建物 / 機制": "house OnActivate → `HouseDialog` → 付 `citizenCost` → `PlaceAtMe(Citizen)`，受 `maxCitizens` cap；居民只是「活感」人口（`OnDeath` → `--CitizenCount`）"
+  },
+  {
+   "角色": "**礦工 Miner**",
+   "script": "`aaaFortMinerScript` + `aaaFortMineExpansionScript`",
+   "來源建物 / 機制": "mine 募，產 ore 進 `MinerContainer`/`aaaFortMinerCrate`（`OreIron`/`OreSilver`/`OreEbony`… 多種 property）"
+  },
+  {
+   "角色": "**拾荒者 Scavenger**",
+   "script": "`aaaFortScavengerScript` + `aaaFortScavengerCrateScript`",
+   "來源建物 / 機制": "crate OnActivate → `ScavengerMenu` → 付 `ScavengerCost` → `PlaceAtMe(Scavenger)`；scavenger 帶物回 `ScavengerCrateRef`"
+  },
+  {
+   "角色": "市集商人 / 旅行商人",
+   "script": "`aaaForttraderchestscript` / `aaaForttravelingmerchantscript`",
+   "來源建物 / 機制": "Vendor faction `aaaFortFactionVendor`（HiddenFromPC+Vendor，sellBuyList `aaaFortMarketList`，merchantContainer `OutpostMarketRef`）；旅行商人定時 `Delete` 自己"
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "contract": "wf-table/1",
+ "source": "emotion.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Emotion",
+  "何時用",
+  "例"
+ ],
+ "rows": [
+  {
+   "Emotion": "**Happy**",
+   "何時用": "美景、玩家做對選擇、純友情、收 Aldari 的梗",
+   "例": "「Such a beautiful day!」「*giggle* I wouldn't have it any other way!」"
+  },
+  {
+   "Emotion": "**Sad**",
+   "何時用": "想家、被拋下的傷口、Dragon Heart 困惑",
+   "例": "「I wish I was back home...」「I just want to put it all behind me.」"
+  },
+  {
+   "Emotion": "**Anger**",
+   "何時用": "父親 cult、被背叛、被批評父母、戰鬥",
+   "例": "「This makes me so angry!」「How could you say that!?」「You crossed the wrong girl!」"
+  },
+  {
+   "Emotion": "**Fear**",
+   "何時用": "戰鬥怕、不祥預感、進可疑地點",
+   "例": "「He's huuuuge!!」「I'm actually really nervous... I don't know why.」「Something in my head is just telling me not to go...」"
+  },
+  {
+   "Emotion": "**Disgust**",
+   "何時用": "食人 / 殺戮 / 噁心場景 / 罪惡",
+   "例": "「This is absolutely putrid!」「You are disgusting! Vile! Rotten!」"
+  },
+  {
+   "Emotion": "**Neutral / 乾**",
+   "何時用": "大部分感知評論、wait、trade、城鎮點評",
+   "例": "「I'm not a pack mule, you know.」「Not much to say. Just... a reclusive little town.」"
+  },
+  {
+   "Emotion": "**(隱性)害羞**",
+   "何時用": "被戳到後的結巴——用 Neutral 但語氣慌",
+   "例": "「S-Shut up!」「Don't make this awkward!」"
+  }
+ ]
+}

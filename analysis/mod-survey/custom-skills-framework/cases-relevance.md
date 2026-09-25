@@ -14,28 +14,19 @@
 
 **Perk 樹**（21 節點，Node0 為隱形 root，Node1 為入口）。每節點 `PerkFile`+`PerkId`+`X`/`Y`（浮點佈局）+`GridX`/`GridY`（網格分欄）+`Links`：
 
-| # | Perk 名 (EDID) | FormId | 作用（取自 esp 描述） |
-|---|----------------|--------|------------------------|
-| 1 | Prayer (`zVigP00CriticalChance01`) | 0xD65 | 入口；暴擊機率 |
-| 2 | Exorcist (`zVigP01AUndead01`) | 0xD68 | 對亡靈額外傷害 |
-| 3 | Wolf's Bane (`zVigP02AWerewolf01`) | 0xD66 | 對狼人額外傷害（多階 6/10/15/20%） |
-| 4 | Inquisition (`zVigP02AInquisition01`) | 0xD67 | 偵訊/審判系 |
-| 5 | Daedra Banisher (`zVigP03ADaedra01`) | 0xD69 | 對魔族額外傷害 |
-| 6 | Holy Water (`zVigP01BResistUndead01`) | 0xD6A | 對亡靈抗性 |
-| 7 | Insensitivity (`zVigP02BResistGhost01`) | 0xD6C | 對幽靈抗性 |
-| 8 | Silver Powder (`zVigP02BResistWerewolf01`) | 0xD6B | 減狼人傷害（多階 6/10/15/20%） |
-| 9 | The Blessed (`zVigP03BResistDaedra01`) | 0xD6D | 對魔族抗性 |
-| 10 | Steadfast Belief (`zVigP01CCriticalDamage01`) | 0xD90 | 暴擊傷害 |
-| 11 | Merciful Forbearance (`zVigP02CCharity01`) | 0xD93 | 慈悲/施捨系 |
-| 12 | Righteous Might (`zVigP02CRigidity01`) | 0xD97 | 剛性/格擋強化 |
-| 13 | Keeper (`zVigP03CShieldRate01`) | 0xD99 | 盾牌格擋率 |
-| 14 | Share Knee Pain (`zVigP01DGuard01`) | 0xD9E | 守衛系 |
-| 15 | Long Lecture (`zVigP02CTurnUndead01`) | 0xDA5 | 驅散亡靈（Turn Undead） |
-| 16 | Creaking Gate (`zVigP02CWard01`) | 0x800 | 防護 ward |
-| 17 | Garlic (`zVigP03CResistVampDrain01`) | 0xDA0 | 抗吸血鬼吸取 |
-| 18 | Great Noon (`zVigP03CSun01`) | 0x807 | 陽光/Sun 系 |
-| 19 | Blood of ANU (`zVigP04BDaedricWeapon01`) | 0x80C | 魔族武器強化 |
-| 20 | Blood of PADOMAY (`zVigP04ADaedricArmor01`) | 0x811 | 魔族護甲強化 |
+記錄 VIGILANT 技能樹各節點的 Perk、FormId 與作用。
+
+已抽到 [cases-relevance-vigilant-perks.json](cases-relevance-vigilant-perks.json)（20 列）。
+
+#：節點編號。
+
+Perk 名 (EDID)：Perk 名稱與 EDID。
+
+FormId：本地 FormId。
+
+作用（取自 esp 描述）：原 esp 描述的作用。
+
+統計：20 筆記錄，4 欄。
 
 樹形拓撲（`Links`）：Node1 → {2,6,10,14}（四條支線：A 攻擊/B 抗性/C 信仰/D 守衛），各支線往下分岔，末端匯入 Blood of ANU/PADOMAY 等高階節點。多階 perk 在 esp 內以 02/03/04/05 後綴的 PERK record 鏈接（樹只放 01 起點）。
 

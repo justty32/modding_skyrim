@@ -1,0 +1,152 @@
+{
+ "contract": "wf-table/1",
+ "source": "skypatcher-records-and-config.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Record 類型",
+  "子資料夾",
+  "主要用途"
+ ],
+ "rows": [
+  {
+   "Record 類型": "NPC_",
+   "子資料夾": "`npc/`",
+   "主要用途": "NPC 外貌、數值、技能、裝備、法術、派系"
+  },
+  {
+   "Record 類型": "ARMO",
+   "子資料夾": "`armor/`",
+   "主要用途": "防具屬性、biped slot、keyword"
+  },
+  {
+   "Record 類型": "WEAP",
+   "子資料夾": "`weapon/`",
+   "主要用途": "武器數值、keyword、彈藥、特效"
+  },
+  {
+   "Record 類型": "SPEL",
+   "子資料夾": "`spell/`",
+   "主要用途": "法術屬性"
+  },
+  {
+   "Record 類型": "MGEF",
+   "子資料夾": "`magicEffect/`",
+   "主要用途": "魔法效果屬性"
+  },
+  {
+   "Record 類型": "LVLN/LVLI/LVSP",
+   "子資料夾": "`leveledList/`",
+   "主要用途": "Leveled list 條目增刪"
+  },
+  {
+   "Record 類型": "FLST",
+   "子資料夾": "`formList/`",
+   "主要用途": "FormList 條目增刪"
+  },
+  {
+   "Record 類型": "CONT",
+   "子資料夾": "`container/`",
+   "主要用途": "容器物品"
+  },
+  {
+   "Record 類型": "RACE",
+   "子資料夾": "`race/`",
+   "主要用途": "種族屬性、法術、移動"
+  },
+  {
+   "Record 類型": "FACT",
+   "子資料夾": "`faction/`",
+   "主要用途": "派系"
+  },
+  {
+   "Record 類型": "ENCH",
+   "子資料夾": "`enchantment/`",
+   "主要用途": "附魔"
+  },
+  {
+   "Record 類型": "PROJ",
+   "子資料夾": "`projectile/`",
+   "主要用途": "射彈"
+  },
+  {
+   "Record 類型": "BOOK",
+   "子資料夾": "`book/`",
+   "主要用途": "書本"
+  },
+  {
+   "Record 類型": "ALCH",
+   "子資料夾": "`ingestible/`",
+   "主要用途": "藥水/食物"
+  },
+  {
+   "Record 類型": "INGR",
+   "子資料夾": "`ingredient/`",
+   "主要用途": "鍊金素材"
+  },
+  {
+   "Record 類型": "MISC",
+   "子資料夾": "`misc/`",
+   "主要用途": "雜物"
+  },
+  {
+   "Record 類型": "AMMO",
+   "子資料夾": "`ammo/`",
+   "主要用途": "弓箭彈藥"
+  },
+  {
+   "Record 類型": "COBJ",
+   "子資料夾": "`constructibleObject/`",
+   "主要用途": "合成配方"
+  },
+  {
+   "Record 類型": "CELL",
+   "子資料夾": "無子資料夾（ini 開關）",
+   "主要用途": "房間/地牢格"
+  },
+  {
+   "Record 類型": "ECZN",
+   "子資料夾": "無子資料夾",
+   "主要用途": "Encounter Zone"
+  },
+  {
+   "Record 類型": "LCTN",
+   "子資料夾": "無子資料夾",
+   "主要用途": "Location"
+  },
+  {
+   "Record 類型": "OTFT",
+   "子資料夾": "`outfit/`",
+   "主要用途": "套裝"
+  },
+  {
+   "Record 類型": "MOVT",
+   "子資料夾": "`movementType/`",
+   "主要用途": "移動類型"
+  },
+  {
+   "Record 類型": "SLGM",
+   "子資料夾": "`soulGem/`",
+   "主要用途": "靈魂石"
+  },
+  {
+   "Record 類型": "SCRL",
+   "子資料夾": "`scroll/`",
+   "主要用途": "卷軸"
+  },
+  {
+   "Record 類型": "OBME",
+   "子資料夾": "`objectModification/`",
+   "主要用途": "Object Mod（OMOD）"
+  },
+  {
+   "Record 類型": "REFR",
+   "子資料夾": "無子資料夾（實驗性）",
+   "主要用途": "放置物件（Reference）"
+  },
+  {
+   "Record 類型": "RACE（hook 版）",
+   "子資料夾": "`raceHook/`",
+   "主要用途": "種族 hook 版（特殊時序）"
+  }
+ ]
+}

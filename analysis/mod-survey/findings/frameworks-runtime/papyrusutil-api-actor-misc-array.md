@@ -16,45 +16,33 @@
 
 ### 2.5 MiscUtil — 雜項 utility
 
-| Function | 簽名 | 說明 |
-|---|---|---|
-| `ScanCellNPCs` | `(ObjectReference CenterOn, float radius=0.0, Keyword HasKeyword=none, bool IgnoreDead=true) → Actor[]` | 掃描 Cell 內活著的 Actor，radius=0 掃整個 cell |
-| `ScanCellNPCsByFaction` | `(Faction FindFaction, ObjectReference CenterOn, float radius=0.0, int minRank=0, int maxRank=127, bool IgnoreDead=true) → Actor[]` | 依 faction 過濾 |
-| `ScanCellObjects` | `(int formType, ObjectReference CenterOn, float radius=0.0, Keyword HasKeyword=none) → ObjectReference[]` | 掃描特定 form type 的物件 |
-| `FilesInFolder` | `(string directory, string extension="*") → string[]` | 列出目錄中的檔案 |
-| `FoldersInFolder` | `(string directory) → string[]` | 列出目錄中的子目錄 |
-| `FileExists` | `(string fileName) → bool` | 檔案是否存在 |
-| `ReadFromFile` | `(string fileName) → string` | 讀取檔案為字串（勿讀大檔） |
-| `WriteToFile` | `(string fileName, string text, bool append=true, bool timestamp=false) → bool` | 寫字串到檔案 |
-| `PrintConsole` | `(string text)` | 輸出到 console |
-| `GetRaceEditorID` | `(Race raceForm) → string` | 取得種族 EditorID |
-| `GetActorRaceEditorID` | `(Actor actorRef) → string` | 取得 Actor 的種族 EditorID |
-| `ToggleFreeCamera` | `(bool stopTime=false)` | 開/關自由鏡頭（TFC） |
-| `SetFreeCameraSpeed` | `(float speed)` | 設定自由鏡頭速度 |
-| `SetFreeCameraState` | `(bool enable, float speed=10.0)` | 設定自由鏡頭狀態 |
+本表整理「2.5 MiscUtil — 雜項 utility」的逐項記錄。
+
+已抽到 [papyrusutil-api-actor-misc-array-misc-utilities.json](papyrusutil-api-actor-misc-array-misc-utilities.json)（14 列）。
+
+欄位「Function」：保留原表的Function。
+
+欄位「簽名」：保留原表的簽名。
+
+欄位「說明」：保留原表的說明。
+
+統計：14 筆記錄，3 個欄位。
+
 
 ### 2.6 PapyrusUtil — 陣列操作 utility
 
-| 分類 | Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias） | 說明 |
-|---|---|---|
-| 建立 | `ActorArray(int size, Actor filler=none)` | 建立指定大小的 Actor 陣列 |
-| 建立 | `ObjRefArray(int size, ObjectReference filler=none)` | 建立 ObjRef 陣列 |
-| Resize | `ResizeActorArray(Actor[], int toSize, Actor filler=none)` | 調整陣列大小 |
-| Push | `PushInt(int[], int push) → int[]` | 尾端加一個值，回新陣列 |
-| Remove | `RemoveInt(int[], int ToRemove) → int[]` | 移除所有符合的值 |
-| RemoveDupe | `RemoveDupeInt(int[]) → int[]` | 去重 |
-| Diff | `GetDiffInt(int[], int[], bool CompareBoth=false, bool IncludeDupes=false) → int[]` | 取差集 |
-| Intersect | `GetMatchingInt(int[], int[]) → int[]` | 取交集 |
-| Count | `CountInt(int[], int EqualTo) → int` | 計算符合值的數量 |
-| Merge | `MergeIntArray(int[], int[], bool RemoveDupes=false) → int[]` | 合併兩個陣列 |
-| Slice | `SliceIntArray(int[], int StartIndex, int EndIndex=-1) → int[]` | 切片 |
-| Sort | `SortIntArray(int[], bool descending=false)` | 就地排序 |
-| String | `StringSplit(string, string Delimiter=",") → string[]` | 分割字串（自動 trim 空白） |
-| String | `StringJoin(string[], string Delimiter=",") → string` | 合併字串 |
-| Math | `ClampInt(int value, int min, int max) → int` | 夾緊數值 |
-| Math | `WrapInt(int value, int end, int start=0) → int` | 環繞（適合陣列 index 繞圈） |
-| Math | `SignInt(bool doSign, int value) → int` | 有/無號轉換 |
-| Math | `AddIntValues(int[]) → int` | 陣列加總 |
+本表整理「2.6 PapyrusUtil — 陣列操作 utility」的逐項記錄。
+
+已抽到 [papyrusutil-api-actor-misc-array-array-utilities.json](papyrusutil-api-actor-misc-array-array-utilities.json)（18 列）。
+
+欄位「分類」：保留原表的分類。
+
+欄位「Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）」：保留原表的Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）。
+
+欄位「說明」：保留原表的說明。
+
+統計：18 筆記錄，3 個欄位。
+
 
 ---
 

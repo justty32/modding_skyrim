@@ -1,0 +1,42 @@
+{
+ "contract": "wf-table/1",
+ "source": "constellations-schema.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "欄位",
+  "Constellations 實況",
+  "備註"
+ ],
+ "rows": [
+  {
+   "欄位": "`version`",
+   "Constellations 實況": "**不在 skill 物件裡**，而在 `SKILLS.json` root（`version: 1`）",
+   "備註": "`version` 是 root（`CustomSkill.json`）欄位，不是 skill 欄位；schema 版本常數，非 API 版本"
+  },
+  {
+   "欄位": "`id`",
+   "Constellations 實況": "`\"HandtoHand\"`/`\"Athletics\"`/`\"Sorcery\"`",
+   "備註": "注意大小寫：JSON 裡是 `HandtoHand`，但訓練 TIF 卻呼叫 `\"HandToHand\"`（見 §6.3，疑似容錯/筆誤，仍運作）"
+  },
+  {
+   "欄位": "`name`/`description`",
+   "Constellations 實況": "`$`-key",
+   "備註": "真文字在 Translations（§6.4）"
+  },
+  {
+   "欄位": "`level`/`ratio`/`legendary`",
+   "Constellations 實況": "三個都填，連號 `00F/010/011`、`012/013/014`、`015/016/017`",
+   "備註": "**三棵樹各只用這三個 GLOB**；`showMenu`/`showLevelup`/`perkPoints`/`color`/`debugReload` **全部省略**"
+  },
+  {
+   "欄位": "`experienceFormula`",
+   "Constellations 實況": "三棵各不同（H2H useMult 0.8/useOffset 27；Athletics useMult 7.0；Sorcery useMult 1.8）",
+   "備註": "證明這組參數就是調整「練多快/升多貴」的旋鈕"
+  },
+  {
+   "欄位": "`nodes`",
+   "Constellations 實況": "H2H 9 / Athletics 9 / Sorcery 9 個",
+   "備註": "入口節點 id 慣例叫 `\"Mastery\"`；`x`/`y` 是**浮點自由佈局**（不像舊 INI 還有 `GridX`/`GridY` 整數欄）"
+  }
+ ]
+}

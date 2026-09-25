@@ -16,7 +16,7 @@ idea → roadmap → 詳規（本夾）→ feature-dev
   現有五個計畫都已是目錄型；切線是「環境事實與設計決策／分階段任務／重審／附錄／執行紀錄」。
 - 設計取捨直接寫進計畫本身；本 repo 不另設 `specs/` 夾。
 - 計畫要切成 bite-sized task，每步都有驗證。
-- 落地或被取代後，在下面的「已結案／被取代」表登記結果。**不另設 `archive/`**——計畫留原地並在表裡標明狀態；只有連歷史參考價值都沒有的才刪除，並在表裡註明可從 git 歷史取回。
+- 落地或被取代後，在下面的「已結案／被取代」表登記結果。**2026-09-25 起改照 [STRUCTURE](../../STRUCTURE.md) 的 archive 規則**：自述已結案的計畫目錄整個移到本工作流的 `archive/`（索引 `archive/README.md`，只准追加列），活文件裡指向它的連結拿掉；還在維護鏈上的留原地並在表裡標明狀態；只有連歷史參考價值都沒有的才刪除，並在表裡註明可從 git 歷史取回。
 
 ## 現役計畫
 
@@ -28,11 +28,11 @@ idea → roadmap → 詳規（本夾）→ feature-dev
 
 | 計畫 | 結果 |
 |------|------|
-| [third-party-mod-pipeline](third-party-mod-pipeline/README.md) —— 第三方 mod 取得–安裝–驗證流水線 | 2026-08-07 結案；P0–P4 已完成，Bend Time Rings 端到端實機驗收通過 |
-| [consolidation-2026-08-23](consolidation-2026-08-23/README.md) —— 工作區統整與四條新線 | 2026-08-23 執行完成；四條線落地、profile 改名、Downloads 歸檔。執行結果與使用者裁決記在同一份文件末尾 |
-| [round-2026-08-07-catalog-and-korean](round-2026-08-07-catalog-and-korean/README.md) —— 三 agent 分工：mod 庫收尾＋韓文站採集 | 2026-08-07 執行完成，是 [mod-library-catalog](mod-library-catalog/README.md) 的 P1.4／P1.5 與附錄 A／B。韓文 inbox 後已併入通用 inbox |
-| [ai-ingame-qa-loop](ai-ingame-qa-loop/README.md) | 2026-08-02 結案；Phase 0–3 與實機 QA runner 全過 |
-| ~~workspace-reorg~~ | 2026-08-01 的佈局設計。先被 2026-08-02/03 的多 repo + submodule 佈局取代，再被 [consolidation-2026-08-23](consolidation-2026-08-23/README.md) 取代；2026-08-23 刪除，可從 git 歷史取回 |
+| third-party-mod-pipeline —— 第三方 mod 取得–安裝–驗證流水線 | 2026-08-07 結案；P0–P4 已完成，Bend Time Rings 端到端實機驗收通過 |
+| consolidation-2026-08-23 —— 工作區統整與四條新線 | 2026-08-23 執行完成；四條線落地、profile 改名、Downloads 歸檔。執行結果與使用者裁決記在同一份文件末尾 |
+| round-2026-08-07-catalog-and-korean —— 三 agent 分工：mod 庫收尾＋韓文站採集 | 2026-08-07 執行完成，是 [mod-library-catalog](mod-library-catalog/README.md) 的 P1.4／P1.5 與附錄 A／B。韓文 inbox 後已併入通用 inbox |
+| ai-ingame-qa-loop | 2026-08-02 結案；Phase 0–3 與實機 QA runner 全過 |
+| ~~workspace-reorg~~ | 2026-08-01 的佈局設計。先被 2026-08-02/03 的多 repo + submodule 佈局取代，再被 consolidation-2026-08-23 取代；2026-08-23 刪除，可從 git 歷史取回 |
 
 ## 何時不用
 

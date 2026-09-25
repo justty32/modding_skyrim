@@ -1,0 +1,35 @@
+{
+ "contract": "wf-table/1",
+ "source": "world-state.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案:行號",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案:行號": "`Scripts/Source/minai_EnvironmentalAwareness.psc:32-79`",
+   "內容": "`GetDayState()` — **21 層級時間描述**（\"midnight\" → \"dead of night\" → \"just before sunrise\" → \"dawn\" → ... → \"almost midnight\"）"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_EnvironmentalAwareness.psc:81-207`",
+   "內容": "`SetFrostfallContext()` — **Frostfall 狀態收集**（temperature 9 層級、weatherSeverity、isSheltered、wetnessLevel 5 層級、exposureLevel 5 層級、baselineExposure、warmthRating 5 層級、coverageRating 5 層級）"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_EnvironmentalAwareness.psc:247-318`",
+   "內容": "`SetContext()` — **核心：所有 actor 變數寫入**（玩家: dayState, weatherClassification, moonPhase, moonCount, isNight；NPC: isBribed, isIntimidated, relationshipRank, isChild, hasFamily, sleepState, career；所有 actor: level, isSneaking, isSwimming, isOnMount, isEncumbered, sitState）"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_EnvironmentalAwareness.psc:334-393`",
+   "內容": "`GetCurrentMoonPhase()` / `GetCurrentMoonSync()` — 月相計算（0-7）／雙月同步（Masser + Secunda, 5 天週期）"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_EnvironmentalAwareness.psc:396-681`",
+   "內容": "`SetLocationData()` — **極詳細地點關鍵字收集**（~60+ LocType 檢查: city/town/village/dungeon/fort/temple/tavern/shop/house/farm/mine/camp/.../temple_of_akatosh）；也收集 currentLocation/currentHold/currentWorldspace/currentCell/isInterior/isTrespassing"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_EnvironmentalAwareness.psc:680-681`",
+   "內容": "`isTrespassing` 寫入"
+  }
+ ]
+}

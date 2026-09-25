@@ -6,19 +6,18 @@
 
 ### Target record 類型 × 可設的 sound 欄位
 
-| Target（改誰） | 可設欄位 | Sound 類型（Source） |
-| --- | --- | --- |
-| **Weapon**（WEAP） | Pick Up, Put Down, Impact Data Set, Attack, Attack 2D, Attack Loop, Attack Fail, Idle, Equip, Unequip | BGSSoundDescriptorForm（Impact Data Set 除外用 BGSImpactDataSet） |
-| **Armor Addon**（ARMA） | Footstep | BGSFootstepSet |
-| **Armor**（ARMO） | Pick Up, Put Down | BGSSoundDescriptorForm |
-| **Misc. Item**（MISC） | Pick Up, Put Down | BGSSoundDescriptorForm |
-| **Soul Gem**（SLGM） | Pick Up, Put Down | BGSSoundDescriptorForm |
-| **Magic Effect**（MGEF） | Sheathe/Draw, Charge, Ready, Release, Cast Loop, On Hit | BGSSoundDescriptorForm |
-| **Projectile**（PROJ） | Active, Countdown, Deactivate | BGSSoundDescriptorForm |
-| **Explosion**（EXPL） | Interior, Exterior | BGSSoundDescriptorForm |
-| **Effect Shader**（EFSH） | Ambient | BGSSoundDescriptorForm |
-| **Ingestible**（ALCH） | Consume | BGSSoundDescriptorForm |
-| **Region**（REGN） | RDSA 陣列（Sound + Flags + Chance）| BGSSoundDescriptorForm，可新增或替換 |
+本表整理「Target record 類型 × 可設的 sound 欄位」的逐項記錄。
+
+已抽到 [sound-record-distributor-records-filters-target-sound-fields.json](sound-record-distributor-records-filters-target-sound-fields.json)（11 列）。
+
+欄位「Target（改誰）」：保留原表的Target（改誰）。
+
+欄位「可設欄位」：保留原表的可設欄位。
+
+欄位「Sound 類型（Source）」：保留原表的Sound 類型（Source）。
+
+統計：11 筆記錄，3 個欄位。
+
 
 **不支援**（v1.5.3）：
 - NPC_（NPC 本身沒有直接 sound field，音效透過 footstep set 在 ARMA 上）

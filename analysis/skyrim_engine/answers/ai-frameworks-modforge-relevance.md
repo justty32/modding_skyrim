@@ -11,12 +11,17 @@
 
 ## 一、四者的關鍵差異（只記對 ModForge 有決策影響的部分）
 
-| 框架 | 進程模型 | 對外通道 | 原始碼可得性 |
-|---|---|---|---|
-| **SkyrimNet** | 單進程 in-process，C++ native DLL 直讀記憶體 → Inja 模板 → LLM | **無對外查詢埠**。架構圖裡的 HTTP/WS 是 out-going 呼叫 LLM/TTS 供應商，不是給外部工具連的 server | Papyrus 層有（`SkyrimNetApi.psc`），**native DLL 原始碼不在 repo** |
-| **Mantella** | **唯一真正 out-of-process**：外部 Python FastAPI ＋ 遊戲端 SKSE/Papyrus plugin | **HTTP POST `/mantella`**，JSON 雙向。實作 `src/http/routes/mantella_route.py:65-102`，欄位契約 `src/http/communication_constants.py:1-84` | 全開 |
-| **MinAI** | 純 Papyrus，無 C++ 無 Python | 只有 Papyrus `ModEvent`（仍在遊戲進程內），真正的外部連結是它橋接出去的 CHIM/Mantella | Papyrus 全開，但**已棄用**，官方導向 SkyrimNet |
-| **IntelEngine** | SkyrimNet 的社群擴充 plugin，另依賴一支效能敏感的 native DLL | PrismaUI dashboard（遊戲內嵌 Chromium overlay），是**遊戲內 UI**，不是外部 API | Papyrus 層有，native DLL 原始碼不在 repo |
+一、四者的關鍵差異（只記對 ModForge 有決策影響的部分）的記錄已抽到 [ai-frameworks-modforge-relevance-framework-comparison.json](ai-frameworks-modforge-relevance-framework-comparison.json)（4 列）。
+
+框架：保留原表「框架」欄內容。
+
+進程模型：保留原表「進程模型」欄內容。
+
+對外通道：保留原表「對外通道」欄內容。
+
+原始碼可得性：保留原表「原始碼可得性」欄內容。
+
+統計：共 4 筆記錄、4 欄。
 
 **結論**：想「從遊戲外部讀狀態、下指令」，四者裡只有 Mantella 提供了現成、文件化的協定。SkyrimNet/IntelEngine 想擴充也沒源碼可改。
 

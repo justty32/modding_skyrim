@@ -12,6 +12,7 @@
 
 ## Done when
 
+<!-- wf-nav -->
 - [x] **（2026-08-04）** `~/skyrim_mods/` 全部壓縮檔進 MongoDB，每筆有 sha256、來源解析、內容旗標。實際 1,692 個檔 → 去重後 **1,659 筆**、85.7 GiB；檔名解析 99.0%；0 個 listing 失敗；耗時 1 分 46 秒。
 - [x] **（2026-08-04）** SKSE DLL 的 runtime 相容性可查。186 個含 dll 的壓縮檔全查完：151 相容 / 9 不相容 / 26 無法判定 / 0 失敗。PE 解析器已對 houseCARL 的已裝層讀值校驗通過。
 - [x] **（2026-08-07 落地；2026-08-11 重驗）** 清理報告已分 L1–L4 + keep，每級有明確判準與例外；清理分級工具的 `--self-test` 13/13 PASS，實庫唯讀 `--verify` 6/6 PASS 且兩次分類一致。
@@ -22,36 +23,31 @@
 
 ## 一、環境事實（2026-08-04 實查）
 
-| 項目 | 事實 |
-|---|---|
-| 庫總量 | 97GB、28,469 檔 |
-| `hdd/` | **83GB / 1,441 壓縮檔** — 主體，疑似舊硬碟搬來的完整下載史 |
-| `unzip/` | 11GB / **49 個已解壓資料夾**（僅約 3% 的壓縮檔被解壓；數量與 MO2 啟用條目相近，推測是現役子集） |
-| `aa/` | 1.1GB / 11 檔 — 新版 Nexus App 命名（帶 ISO 時間戳），下載工具換過的痕跡 |
-| `mine/` | 143MB / 58 項 — 自製 `DSPort*` / `ModForge*` / `MF*` / `SofiaVigilantAct*` |
-| 根目錄散檔 | 108 檔 / 2.6GB，**其中 25 個（23%）與 `hdd/` 內 bit-identical** |
-| 格式分布 | `.7z` 818（53.2GB）· `.zip` 618（14.2GB）· `.rar` 257（25.1GB）。**zip 只佔 36%** |
-| 重複規模 | 去版本號後 **100+ 組**同名 mod 出現 2 次以上 |
-| 既存索引 | **完全沒有**。唯一命中是 `.mo2-profile-backup-20260710-123409/` 的三個 MO2 txt（不記來源/版本） |
-| 解壓工具 | `unar` / `unrar` / `7z`（**支援 rar5**）/ `bsdtar` 全部已裝 |
-| MongoDB | `~/data/mongodb`（216MB，RimWorld 那份）。**mongod 目前沒在跑**，手動啟動；系統的 `mongodb.service` 指向空的 `/var/lib/mongodb`，**不要動** |
-| pymongo | 4.17.0 |
-| 磁碟餘量 | `/` 632GB 可用 — 隔離區與暫存空間充裕 |
-| 命名 pattern | 四種：標準 Nexus（`Name-36869-7-3-0-1778353486.7z`）、無 id 舊式、新 Nexus App（`Name 159600 1.2 2026-06-21T15-09Z xxx.rar`）、**衍生標記（`- CHS` / `- CHT` / `(Chinese Translation)` / `- ESPFE`）** |
+保留 2026-08-04 實查的環境事實。
+
+已抽到 [README-environment-facts.json](README-environment-facts.json)（14 列）。
+
+項目：盤點的環境面向。
+
+事實：當時觀察、數量與限制原文。
+
+統計：14 筆環境事實。
 
 **已有大量漢化包躺在庫裡**（最後一項）——附錄 B 的起點不是零。
 
 ## 四、分階段任務
 
-| # | 任務 | 驗證 |
-|---|---|---|
-| 1.1 | 掃描器：走 `~/skyrim_mods/`，算 sha256、讀目錄表、解析檔名 → `archives`（upsert，D2 分離） | 1,693 筆全進；`--dry-run` 只印不寫；重跑一次養成欄位不變 |
-| 1.2 | `mods` 聚合 + L1 重複偵測 | 根目錄那 25 個 bit-identical 檔正確被認出 |
-| 1.3 | DLL runtime 檢查（解 dll → 解析 `SKSEPlugin_Version` → `dll_compat` / `runtime_ok_1_6_1170`） | 抽驗 `SmoothCam`（多 runtime）判為 OK；抽一個純 SE 期插件判為不 OK |
-| 1.4 | Nexus 補值：`housecarl_nexus_mod` 查在架狀態與最新版 → `nexus_status` / `never_delete` | 抽驗一個已下架 mod 正確標成 `gone` 且 `never_delete` |
-| 1.5 | 清理報告產生器（四級分類 + L2 三條例外） | 報告可重跑且結果一致；例外規則有測到 |
-| 1.6 | 隔離器（移動 + 回寫 Mongo，非刪除） | 移動後可用記錄完整還原；`--dry-run` 先出清單 |
-| 1.7 | 備份：pymongo dump 到 json（機器無 `mongodump`，同 RimWorld） | 任何清理動作前自動先 dump |
+保留分階段任務及各自的驗證要求。
+
+已抽到 [README-phase-tasks.json](README-phase-tasks.json)（7 列）。
+
+#：原任務編號。
+
+任務：該階段的工作內容。
+
+驗證：該任務的驗證要求。
+
+統計：7 項任務（1.1–1.7）。
 
 執行順序上 1.1–1.2 先跑（純磁碟、快），1.3–1.4 是慢的養成階段（解壓 + 網路），1.5 之後才碰得到檔案。
 

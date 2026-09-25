@@ -1,0 +1,52 @@
+{
+ "contract": "wf-table/1",
+ "source": "files-and-menu-records.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "FormID",
+  "Quest / 掛載腳本",
+  "用途"
+ ],
+ "rows": [
+  {
+   "FormID": "`[000E05:UIExtensions.esp] Quest UIListMenu` (腳本 `UIListMenu`)",
+   "Quest / 掛載腳本": "**捲動清單選一項**——把一串字串條目列成可上下捲的清單，回傳玩家選中的索引。最基礎、被別的 mod 用得最多的元件",
+   "用途": ""
+  },
+  {
+   "FormID": "`[000E00:UIExtensions.esp] Quest UISelectionMenu` (腳本 `UISelectionMenu`，**1 prop**)",
+   "Quest / 掛載腳本": "**自訂選擇選單**——清單選單的進階版，條目可帶圖示/分組，配合 `SelectedForms` FormList 傳遞「選了哪些 form」。是 9 record 中唯一帶 property 的，研判用來持有預設條目或回傳結果參考",
+   "用途": ""
+  },
+  {
+   "FormID": "`[000E04:UIExtensions.esp] Quest UITextEntryMenu` (腳本 `UITextEntryMenu`)",
+   "Quest / 掛載腳本": "**彈出鍵盤輸入字串**——命名自訂物品、角色、存檔標籤等場景，回傳玩家輸入的文字。原生 Papyrus 完全缺這個能力",
+   "用途": ""
+  },
+  {
+   "FormID": "`[000E01:UIExtensions.esp] Quest UIWheelMenu` (腳本 `UIWheelMenu`)",
+   "Quest / 掛載腳本": "**輪盤式（radial）快捷選單**——環狀分格的快捷選擇，常用於戰鬥/動作快捷指令（如表情、戰術指令、隨從命令）",
+   "用途": ""
+  },
+  {
+   "FormID": "`[000E02:UIExtensions.esp] Quest UIMagicMenu` (腳本 `UIMagicMenu`)",
+   "Quest / 掛載腳本": "**法術/能力面板**——以魔法欄風格列出法術或能力供選擇",
+   "用途": ""
+  },
+  {
+   "FormID": "`[000E03:UIExtensions.esp] Quest UIStatsMenu` (腳本 `UIStatsMenu`)",
+   "Quest / 掛載腳本": "**數值面板**——以角色數值表（stats sheet）風格呈現/選擇屬性",
+   "用途": ""
+  },
+  {
+   "FormID": "`[000E06:UIExtensions.esp] Quest UICosmeticMenu` (腳本 `CosmeticMenu` + `UICosmeticMenu`)",
+   "Quest / 掛載腳本": "**外觀面板**——調整角色外觀。唯一掛兩個腳本（一個 UI 層 `UICosmeticMenu`、一個邏輯/資料層 `CosmeticMenu`）",
+   "用途": ""
+  },
+  {
+   "FormID": "`[000E07:UIExtensions.esp] Quest UIDyeMenu` (腳本 `UIDyeMenu`)",
+   "Quest / 掛載腳本": "**染色面板**——裝備染色選色",
+   "用途": ""
+  }
+ ]
+}

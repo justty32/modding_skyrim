@@ -1,0 +1,82 @@
+{
+ "contract": "wf-table/1",
+ "source": "jcontainers-api-core-containers.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Function",
+  "簽名",
+  "說明"
+ ],
+ "rows": [
+  {
+   "Function": "`object`",
+   "簽名": "`() → Int`",
+   "說明": "建立空 JMap"
+  },
+  {
+   "Function": "`getInt / getFlt / getStr / getObj / getForm`",
+   "簽名": "`(Int object, String key, T default) → T`",
+   "說明": "依 key 讀取"
+  },
+  {
+   "Function": "`setInt / setFlt / setStr / setObj / setForm`",
+   "簽名": "`(Int object, String key, T value)`",
+   "說明": "依 key 寫入（key 不存在則建立）"
+  },
+  {
+   "Function": "`hasKey`",
+   "簽名": "`(Int object, String key) → Bool`",
+   "說明": "是否有此 key"
+  },
+  {
+   "Function": "`valueType`",
+   "簽名": "`(Int object, String key) → Int`",
+   "說明": "key 對應值的型別"
+  },
+  {
+   "Function": "`removeKey`",
+   "簽名": "`(Int object, String key) → Bool`",
+   "說明": "刪除 key-value pair"
+  },
+  {
+   "Function": "`count`",
+   "簽名": "`(Int object) → Int`",
+   "說明": "pair 數量"
+  },
+  {
+   "Function": "`clear`",
+   "簽名": "`(Int object)`",
+   "說明": "清空"
+  },
+  {
+   "Function": "`addPairs`",
+   "簽名": "`(Int object, Int source, Bool overrideDuplicates)`",
+   "說明": "從另一個 map 合併"
+  },
+  {
+   "Function": "`allKeys`",
+   "簽名": "`(Int object) → Int`",
+   "說明": "所有 key → JArray"
+  },
+  {
+   "Function": "`allKeysPArray`",
+   "簽名": "`(Int object) → String[]`",
+   "說明": "所有 key → Papyrus string[]"
+  },
+  {
+   "Function": "`allValues`",
+   "簽名": "`(Int object) → Int`",
+   "說明": "所有 value → JArray"
+  },
+  {
+   "Function": "`nextKey`",
+   "簽名": "`(Int object, String previousKey=\"\", String endKey=\"\") → String`",
+   "說明": "迭代用：取下一個 key"
+  },
+  {
+   "Function": "`getNthKey`",
+   "簽名": "`(Int object, Int keyIndex) → String`",
+   "說明": "取第 N 個 key（O(n/2) 複雜度）"
+  }
+ ]
+}

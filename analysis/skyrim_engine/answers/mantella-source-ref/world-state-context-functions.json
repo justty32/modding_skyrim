@@ -1,0 +1,55 @@
+{
+ "contract": "wf-table/1",
+ "source": "world-state.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案:行號",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案:行號": "`src/conversation/context.py:22-47`",
+   "內容": "`Context.__init__()` — 狀態變數初始化"
+  },
+  {
+   "檔案:行號": "`src/conversation/context.py:105-130`",
+   "內容": "`set_vision_hints()` — Vision hints（距離分類: very close/close/medium/far/very far）"
+  },
+  {
+   "檔案:行號": "`src/conversation/context.py:174-241`",
+   "內容": "`update_context()` — **核心：世界狀態更新入口**（location/time/weather/npcs_nearby/custom_events/custom_context_values 全部在這裡被更新並生成 ingame_events）"
+  },
+  {
+   "檔案:行號": "`src/conversation/context.py:244-281`",
+   "內容": "`__update_ingame_events_on_npc_change()` — **NPC 狀態變化偵測**（combat 狀態變化 → \"{name} is now in combat!\"；enemy 狀態變化 → \"{name} is attacking {player}\"；relationship 變化）"
+  },
+  {
+   "檔案:行號": "`src/conversation/context.py:283-309`",
+   "內容": "`__get_trust()` — 信任關係計算（stranger → acquaintance → friend → close friend / lover / enemy，由 relationship_rank + 對話次數共同決定）"
+  },
+  {
+   "檔案:行號": "`src/conversation/context.py:331-349`",
+   "內容": "`__get_trusts()` — 所有 NPC 的信任關係文字生成"
+  },
+  {
+   "檔案:行號": "`src/conversation/context.py:351-368`",
+   "內容": "`get_character_names_as_text()` — NPC 名字列表自然語言格式化"
+  },
+  {
+   "檔案:行號": "`src/conversation/context.py:371-383`",
+   "內容": "`__get_bios_text()` — NPC bio 聚合"
+  },
+  {
+   "檔案:行號": "`src/conversation/context.py:385-395`",
+   "內容": "`__get_npc_equipment_text()` — NPC 裝備描述聚合"
+  },
+  {
+   "檔案:行號": "`src/conversation/context.py:397-413`",
+   "內容": "`__get_action_texts()` — Legacy action prompt 文字生成"
+  },
+  {
+   "檔案:行號": "`src/conversation/context.py:416-521`",
+   "內容": "`generate_system_message()` — **核心：Prompt 變數填入**（用 Python `.format()` 填入 player_name/player_description/bios/trust/location/weather/time/language/conversation_summaries/actions 等 ~20 個變數；token limit 檢查 → 先丟 summaries 再丟 bios）"
+  }
+ ]
+}

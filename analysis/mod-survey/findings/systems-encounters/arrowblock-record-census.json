@@ -1,0 +1,62 @@
+{
+ "contract": "wf-table/1",
+ "source": "arrowblock.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Record",
+  "EditorID / FormID",
+  "角色"
+ ],
+ "rows": [
+  {
+   "Record": "PERK",
+   "EditorID / FormID": "`ArrowBlock` 0x00639F \"Expert Block\"",
+   "角色": "主載具，下詳"
+  },
+  {
+   "Record": "MGEF (Script)",
+   "EditorID / FormID": "`Blocking` 0x00434B",
+   "角色": "`archetype=Script, cast=ConstantEffect, target=Self, flags=Recover/HideInUI/Painless`；掛 `Blocking.psc`（5 properties）"
+  },
+  {
+   "Record": "MGEF (ValueModifier)",
+   "EditorID / FormID": "`BlockingWard` 0x006E69",
+   "角色": "`av=WardPower, skill=Restoration, cast=Concentration`，帶 3 個 keyword"
+  },
+  {
+   "Record": "MGEF (CurePoison)",
+   "EditorID / FormID": "`BlockingFX` 0x005373 \"ExpertParry\"",
+   "角色": "FX-only，`HideInUI/Painless`"
+  },
+  {
+   "Record": "SPEL (Ability)",
+   "EditorID / FormID": "`Blockingmod` 0x0058D6",
+   "角色": "→ MGEF Blocking；ConstantEffect/Self；equip=EitherHand 0x013F44"
+  },
+  {
+   "Record": "SPEL (Ability)",
+   "EditorID / FormID": "`BlocingmodWard` 0x006E6B",
+   "角色": "→ MGEF BlockingWard（mag=35）"
+  },
+  {
+   "Record": "SPEL (Spell)",
+   "EditorID / FormID": "`BlockingmodFX` 0x00434A \"Expert Parry\"",
+   "角色": "→ MGEF BlockingFX，FireAndForget"
+  },
+  {
+   "Record": "BOOK",
+   "EditorID / FormID": "`BigIron` 0x009981",
+   "角色": "掛 `AddPerkBook.psc`，OnRead 給 perk + spell；放進 vanilla 商人箱 0x10C430 override"
+  },
+  {
+   "Record": "ARTO / IPCT",
+   "EditorID / FormID": "`BlockFX` 0x006E6C / `Newimpact` 0x00639E",
+   "角色": "擋箭視覺/撞擊特效"
+  },
+  {
+   "Record": "GMST × 5",
+   "EditorID / FormID": "`fBloodSplatter*`",
+   "角色": "微調 override（與擋箭主機制無關，是 mod 順手帶的調整）"
+  }
+ ]
+}

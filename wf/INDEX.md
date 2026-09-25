@@ -16,10 +16,13 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | [`projects/`](../projects/README.md) | 獨立開發專案；工具、內容專案與 Git 操作說明都在這一層入口 |
 | [`analysis/`](../analysis/README.md) | 引擎、mod、工具與素材來源的研究分類；文件慣例見 [analysis 工作流](workflows/analysis.md) |
 | [`external/`](../external/README.md) | 他人框架原始碼的落點 |
+| [`patches/`](../patches/README.md) | 放給外部專案套用的獨立 patch，各資料夾附目標版本、修改原因、套用方式與驗證方法 |
 | `wf/` | 工作流骨架：派發見 [WORKFLOWS.md](WORKFLOWS.md)、結構原則見 [STRUCTURE.md](STRUCTURE.md)、共享區 [workflows/common/](workflows/common/README.md)、檢查腳本 `wf/tools/wf-lint.sh` |
 | `wf/tools/` | `wf-lint.sh`（連結／超標／BIGLIST／殘留檢查）、`tabledb.py`＋`tabledb_links.py`（`wf-table/1` 資料檔 CRUD 與連結檢查）、`find_big_lists.py`（找 >1 KB 條列區塊）、`fix_moved_links.py`（搬檔後按 moves.tsv 重寫連結）|
 | [`tools/`](../tools/) | 母 repo 的文件驗證：`check_markdown_links.py`、`check_submodule_pins.py` 與其測試 |
 | [`.claude/commands/`](../.claude/commands/) | slash 指令適配層（可選）。Claude Code 只讀專案根的這層，非侵入式佈局也留在根；沒有 slash 機制的工具忽略本目錄，直接跑 `wf/tools/wf-lint.sh` |
+| [`.github/`](../.github/) | GitHub Actions CI：`workflows/docs.yml` 跑 `tools/` 的 validator 測試與 `check_markdown_links.py` 連結檢查 |
+| [`.vscode/`](../.vscode/) | 編輯器設定：`settings.json` 指定 CMake 原始目錄 |
 <!-- wf-insert:INDEX -->
 
 ## 可見性
@@ -37,3 +40,4 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | [STRUCTURE.md](STRUCTURE.md) | 結構整理參考（被動）：分層、膨脹即拆、四級成長、archive、工作流形式 |
 | [../SESSION-LOG.md](../SESSION-LOG.md) | 母 repo 的 open 進度（Skyrim 工作線的交接主線在 `agentctl/SESSION-LOG.md`）|
 | [../WAIT_USER.md](../WAIT_USER.md) | 等使用者親自做 / 驗證的事 |
+| [../wait-user/](../wait-user/) | `../WAIT_USER.md` 各主題的子檔集合（decision-briefs／home-runbook／feature-runtime／integrated-runtime／later-decisions 等） |

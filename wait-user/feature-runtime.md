@@ -2,159 +2,41 @@
 
 ## 2026-09-20：PI 啟動崩潰候選層與技能條件 crash 驗證
 
-2026-09-24 **結案**：doom perk 補丁（移除三顆 `doom*Perk` 的 `EPModSkillUsage_AdvanceObjectHasKeyword` 條件）已部署正式 `modpack-main`（profiles `3f5c37d`），**使用者實機格擋確認不再崩潰，第 6 條 PASS**。09:16／09:34 兩次都是使用者格擋時崩潰、並非靜置重現——靜置不算證據。見 [doomperk 報告](../agentctl/handoffs/home-2026-09-24/doomperk/REPORT.md)。
+內容見 [crash-validation.md](feature-runtime/crash-validation.md)。
 
 ## 2026-09-24：長毛象 CTD（`SkyrimSE+02B789A`）
 
-**open**：10:23 野外巨人營地（cell grid (-6,1)）CTD，崩在背景載入執行緒的 3D 掛載路徑，現場 `QueuedCharacter` / `BSFadeNode "skeleton.nif"`，RDI 是長毛象 `[ACHR:001038A9]`；崩潰前 2.4 秒 SPID Outfit Manager 對**同一個 ACHR** 做了 `Resetting inventory`。已部署覆寫層 `SPID-NoElderOutfit-2026-09-24`（profiles `f106cf3`），活體 inventory reset 由 75 降到 0。**待使用者回到該營地實機走一趟確認**；煙霧不崩不構成修復證明。見 [spid-outfit 報告](../agentctl/handoffs/home-2026-09-24/spid-outfit/REPORT.md)與 [證據鏈](../agentctl/handoffs/home-2026-09-24/block-crash2/REPORT.md)。
-
-**open（cx-crash2／lead-fde920）**：PI 合併層已建立但停用（profiles `0cd417d`）；待使用者決定啟用及冷啟動 A/B。B 型 `SkyrimSE+01D3398` 仍未定罪，待原場景動作／法師立石持有狀態確認與 CARP 單 DLL A/B。不得同時改兩型變量，不能把靜態 gate 當實機已修復。詳見 [REPORT](../agentctl/handoffs/home-2026-09-20/crash2/REPORT.md) 與 [操作步驟](../agentctl/handoffs/home-2026-09-20/crash2/FIX-AND-AB.md)。
-
-> **2026-09-05 核對結論（todo-23）**：Simonrim 時代的 Batch 4E／4A／4M/P 三節，
-> **抽樣對象逐個實讀後全部仍在啟用清單裡，三節都不作廢**——過期的是行號與框架名（BFCO→MCO），不是清單。
-> 只有 4E 的「AVE loot/vendor 階級比例」與 4M/P 的「BFCO 攻擊」兩個子條件因對象停用而作廢，已就地標註。
-> 判準：`modlist.txt` 以 `+` 開頭＝啟用、`plugins.txt` 以 `*` 開頭＝啟用（檔案是 CRLF，比對前 `tr -d '\r'`）。
-> 核對來源：`/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/{modlist.txt,plugins.txt}`
-> （`instance/profiles` main `5f47044`）。
+內容見 [crash-validation.md](feature-runtime/crash-validation.md)。
 
 ## Scene ghost rendered-camera ray
 
-> **狀態（2026-09-05 16:10 更新）**：15 條仍未跑，本項仍 open。
-> 同日 `lead-scb` 線已完成 `scene-capture-bridge` 體檢並交付 REPORT，但沒有執行這裡的 15 條 runtime 驗收。
-> 排這 15 條之前先看它的交付：
-> `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/scb/`
-> （證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/scb/REPORT.md`、
-> `/home/lorkhan/repo/moddings/skyrim/agentctl/inbox/done/2026-09-05/originals/20260905T1610-cx-scb-a-DONE.md`）。
-> 本檔未改這節的技術內容——`projects/scene-capture-bridge` 是別線的領地。
-
-**2026-08-25 已修並經實機確認症狀消失；15 條仍未跑。**
-成因有兩個、互相餵養：`Physics::FreezeDeferred()` 把 `Get3D()!=nullptr` 當成凍結成功、忽略
-`SetMotionType` 回傳值，一次失敗就永久保持 dynamic（既有缺陷，來自初始匯入 `2cc87c5`，**不是**
-`75308c9`）；`a17e460` 的新 A8 collector 只拒絕 `IsPlayerRef()`、沒拒絕 ghost 自己，於是每幀 ray
-打到那個未凍結的 ghost 並把它移到新 hit point，逐幀往玩家靠近。修正 `5273576`
-（分支 `fix/ghost-ray-self-hit-2026-08-25`，已推 origin），已部署，SHA 見
-[`instance/README.md`](../instance/README.md)。使用者以物品 ghost 在第一人稱、vanilla 第三人稱、
-SmoothCam 各靜置確認**不再轉、不再靠近**。
-
-**這只是症狀確認，不等於那 15 條通過**——15 條驗的是 rendered-camera ray 的落點精度，還沒跑。
-
-「準星指向很遠處再移回來，ghost 會消失且不會恢復」這個新回報已於 2026-08-26 離線修好，
-但**尚未部署、尚未實機驗收**：修正 `21867c1`（分支 `fix/ghost-cell-clear-2026-08-26`，已推 origin），
-DLL SHA-256 `b302857681988f4930f666d41aef13c8ab9ef94486d8e746b81f1832c4a965e3`（1906688 bytes）。
-成因與修法見 [`調查記錄`](../projects/scene-capture-bridge/GHOST_CELL_CLEAR_INVESTIGATION_2026-08-26.md)
-與 [`收線記錄`](../agentctl/handoffs/done/README.md)。**要跑 15 條之前先部署這顆 DLL**，
-否則驗的還是舊行為。
-
-原始 FAIL 記錄： 使用者以部署中的 DLL
-（SHA-256 `dccc10e0…3fd67`，與文件記錄的 `a17e460` build 相同）實測：ghost 會持續自轉並持續往玩家
-靠近；手完全不動仍繼續，第一人稱／vanilla 第三人稱／SmoothCam 三者皆然；按 F11 放下的真實 ref
-不受影響。症狀與輸入無關，指向每幀重新定位 ghost 的迴圈。診斷線 `ghost-spin` 進行中。
-**修好之前跑 15 條只會全組 FAIL，是浪費實機時間。**
-
-修好後再重跑固定 15 條，涵蓋第一人稱、vanilla 第三人稱、SmoothCam；2026-08-22 的證據只支持 2 條，
-不能當作 13/15 通過。清單見
-[`固定 15 條`](../agentctl/logs/scene-ghost-camera-ray-2026-08-22.md#runtime-驗收清單固定-15-條)。
+內容見 [scene-ghost.md](feature-runtime/scene-ghost.md)。
 
 ## Simonrim Batch 4E
 
-抽樣附魔分解→學習→製作→裝備／重載／充能、Empowered Strike power-attack proc、slot restriction、
-vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據見
-[`Batch 4E RESULT`](../agentctl/logs/simonrim-batch4-4e-2026-08-16/RESULT.md)。
-
-**2026-09-05 核對：對象仍在，本節有效。**
-`/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt:458`＝`+Thaumaturgy 1.5 Dev 2026-08-16`（啟用）、
-`:453`＝`+Thaumaturgy Execute XP VMAD Fix 1.5 Dev 2026-08-16`（啟用）、
-`:455`／`:456` 兩個繁中層皆 `+`；
-`/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/plugins.txt:567`＝`*Thaumaturgy.esp`、
-`:639`＝`*ModpackKR_Thaumaturgy_ExecuteXP_VMADFixDev.esp`。
-**只有 AVE 那半作廢**：`modlist.txt:457`＝`-Thaumaturgy AVE Patch 1.1 Reference Dev 2026-08-16`（**已停用**）、
-`:620`＝`-Simonrim AVE Constellations Merge 1.5 Dev 2026-08-16`（**已停用**），
-所以 loot/vendor 階級比例只抽 vanilla 這一邊。
+內容見 [simonrim-and-weaponry.md](feature-runtime/simonrim-and-weaponry.md)。
 
 ## Simonrim Batch 4A
 
-以 Apothecary 1.3.9 等現役組合抽樣跨來源鍊金、戰鬥塗毒、vendor 庫存／價格／early-game 供應、
-長 session 平衡與存讀檔。既有 gate 7/7、SPID 19/19 不重跑；證據見
-[`Batch 4A RESULT`](../agentctl/logs/simonrim-batch4-4a-2026-08-16/RESULT.md)。
-
-**2026-09-05 核對：對象仍在且仍是 1.3.9，本節完全有效、無需改動。**
-`/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt:439`＝`+Apothecary 1.3.9 Dev 2026-08-16`（啟用），
-三個 patch `:441` Fishing 1.4.1／`:443` Saints and Seducers 1.4.0／`:445` Rare Curios 1.4.0 與各自繁中層皆 `+`，
-`:436`＝`+Apothecary Ethereal VMAD Fix 1.3.9 Dev 2026-08-16`、
-`:437`＝`+Apothecary-Traditional-Chinese-Completion-OBJTEXT-Completion-Dev-2026-09-03`；
-`/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/plugins.txt:606`＝`*Apothecary.esp`、
-`:635`／`:636`／`:637` 三個 patch esp、`:638`＝`*ApothecaryEtherealVMADFix.esp` 全部啟用。
+內容見 [simonrim-and-weaponry.md](feature-runtime/simonrim-and-weaponry.md)。
 
 ## Simonrim Batch 4M/P
 
-以**現役**的 `Mysticism 2.4.2 Vokriinator Black Pin`（`modlist.txt:277`）與
-`Adamant 5.9.2 Vokriinator Black Pin`（`modlist.txt:290`）抽樣：vendor 買書→讀書→施放、
-代表性天賦、~~BFCO~~ **MCO** 輕／重／方向／sprint attack、長期平衡與存讀檔。
-
-**2026-09-05 核對：兩個抽樣對象都仍在啟用清單，本節不作廢，只改行號與框架名。**
-- 行號從 `:27`／`:37` 更正為 **`:277`／`:290`**（modlist 從 08-26 的數百行長到 1379 行，舊行號早就失真；
-  行號會再變，比對請用 mod 名不要用行號）。實讀：
-  `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt:277`＝`+Mysticism 2.4.2 Vokriinator Black Pin 2026-08-21`、
-  同檔 `:290`＝`+Adamant 5.9.2 Vokriinator Black Pin 2026-08-21`；
-  `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/plugins.txt:569`＝`*MysticismMagic.esp`、
-  `:607`＝`*Adamant.esp`。原文說的 2.5.0／6.0.4 舊版仍是停用狀態（`modlist.txt:461`／`:462`、`:459`／`:451`／`:452` 皆 `-`），
-  與 08-26 的判斷一致。
-- **BFCO → MCO**：2026-09-02 使用者裁示戰鬥框架移回 MCO 並已施工。
-  `modlist.txt:407`＝`-BFCO - Attack Behavior Framework 3.100.5`（**停用**）、`:403` 繁中層亦 `-`；
-  現役是 `plugins.txt:864`＝`*Attack_MCO.esp`、`:865`＝`*scar-adxp-patch.esp`、`modlist.txt:404`＝`+SCAR 2.01`。
-  所以這一條抽的是 **MCO 的輕／重／方向／sprint attack**。
-  遷移證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-02/mco2/REPORT.md`、
-  `instance/profiles` main `9e188e2`。
-
-> **驗收對象已於 2026-08-26 改寫。** 原文寫的是 `Mysticism 2.5.0`／`Adamant 6.0.4`，
-> 那兩個版本已在 2026-08-21 的 Simonrim→EnaiRim 遷移（Vokriinator Black 路線）中停用
-> （`modlist.txt:175`、`:178` 現在是 `-`）；
-> [`batches.md`](../agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batches.md) 第 9 行
-> 明訂保留 Mysticism 2.4.2 作唯一 base，是既定方向。**抽樣清單本身沒有過期，只有版本號過期**，
-> 所以改寫而不是刪除。
-
-舊版本的證據見
-[`Batch 4M/P RESULT`](../agentctl/logs/simonrim-batch4-4mp-2026-08-16/RESULT.md)——那是 2.5.0／6.0.4
-的結果，**不能直接沿用**到現役組合。EnaiRim Batch 1 終態 gate 也會驗 Mysticism 2.4.2 base；
-兩者若排在同一個驗收窗口，這份清單可以併進去一起跑，但不要因此把它從本檔移除。
+內容見 [simonrim-and-weaponry.md](feature-runtime/simonrim-and-weaponry.md)。
 
 ## Expanded Skyrim Weaponry Batch 3A
 
-以真人遊玩或錄影確認鐵製戰戟、鋼製雙刃巨劍的拔收、~~BFCO~~ **MCO** 普攻及動作銜接；單張截圖不能替代
-時間軸結論。靜態、模型與 runtime distribution 已完成。
-
-**2026-09-05 核對：對象仍在，本節有效（同樣把 BFCO 改成 MCO）。**
-`/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt:598`＝`+Expanded Skyrim Weaponry 1.01 CHT`（啟用）、
-`:600`＝`+Expanded Skyrim Weaponry 1.01 NPC`（啟用）；同族簡中層 `:599` 為 `-`（停用，正常，與 CHT 二選一）。
-另註：2026-09-05 使用者已親眼驗過「六把武器名中文」PASS（
-`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/win/data/ingame-checks.csv` 第 ⑦ 項），
-但**那只驗名稱文字，沒驗拔收與動作銜接**，本節的動作驗收仍未做。
+內容見 [simonrim-and-weaponry.md](feature-runtime/simonrim-and-weaponry.md)。
 
 ## Asset converter 一鍵靜態模型整包（2026-09-10）
 
-公司 WSL 已完成一般模型、DDS 貼圖與自動 box／convex／convex-mesh 碰撞的一鍵輸出，離線測試不能證明 Skyrim 中的外觀與站立結果。
-
-回到有 Skyrim 的機器後，用一件有 diffuse／normal 的簡單箱子或石頭，照 [轉換說明](../projects/model-converter/PACKAGE.md) 產生整包，再在測試 cell 放置：確認大小與方向正確、貼圖可見、透明／發光設定合理，並確認角色無法穿過模型、可站上頂面。各驗一次 `box` 與 `convex`；測試素材與產物雜湊由 `converter-package.json` 記錄。
-
-另用已分成左右柱與橫樑的門框測 `convex-mesh`：中央可通行、柱子與橫樑可阻擋。對照同一模型的 `convex` 會填滿開口。帶法線貼圖的素材再比較強度 0／0.5／2，確認表面凹凸變化合理。
-
-新增 UV 驗收：依 [真實模型試轉](../projects/model-converter/REAL-ASSETS.md) 重建 Lantern 與 LanternUV，比較貼圖重複／位移與法線照明；公司已逐頂點驗 NIF UV，但尚未看遊戲畫面。再依 [SheenChair 回家驗收](../projects/model-converter/HOME-VALIDATION.md) 產出兩版與安裝測試記錄，檢查布紋／木紋的比例、陰影、法線與極細面接縫；可比較 `--bake-size 1024` 與 `2048`。Sheen／材質 variants 不算等價支援。Lantern／Avocado 來源自帶切線資料，轉換器已補直通保留；回家同樣確認 normal 凹凸與鏡射後的打光方向，公司有實際 NIF／DDS 方向測試。 SheenChair 沒有來源 TANGENT，轉換器另補鏡射 UV 接縫拆點與逐角點法線重烘；請使用最新重建批次比較，舊包不包含這次方向修正。
-
-頂點色驗收：PLY 頂點／面顏色已補保留，NIF 的顏色資料與 shader 標記也依格式定義修正；舊的彩色 NIF 請重新轉換，再確認紅／藍分面與顏色接縫。SheenChair 來源沒有頂點色，既有驗收批次可沿用。
-
-透明裁切驗收：MASK 的 alpha test flags 已依格式定義修正；舊版 MASK 模型需重轉，再看葉片／鐵網等貼圖透明區是否正確挖空。SheenChair 所有來源材質均為 OPAQUE，不能用它代替裁切驗收，也不需因此重建最新椅子包。
-
-進度（2026-09-10 22:2x，lead-chair）：SheenChair 兩包已裝進現役 `modpack-main` 並實機看到——`AssetTest-SheenChair-1024`／`-2048`／`-ESP-Dev-2026-09-10`（ESL 測試 esp，2 筆 STAT `ACSheenChair1024` 000800／`ACSheenChair2048` 000801，無 REFR）。`player.placeatme FE3BE800`／`FE3BE801` 在河木鎮外空地各擺一張，兩張都正常顯示橘色布面＋木腳、椅腳朝下、貼地。碰撞外框實測 0.826×0.570×0.686 m（期望 0.827×0.570×0.686），底面 Z=0；BSX=Havok、havok layer 1 OL_STATIC、4 個分件凸包。**尚待使用者肉眼判定**：布紋／木紋比例、法線凹凸方向、接縫黑線、遠看接縫，以及走過去是否真的被擋。截圖 `agentctl/handoffs/home-2026-09-10/chair/data/shots/`。
-
-2026-09-14 追加特效材質回家驗收：公司 WSL 已修正 `BSEffectShaderProperty` 的檔頭格式（converter `4631547`，完整離線測試 503 passed）；[格式證據與回歸](../projects/model-converter/EFFECT-SHADER-CTD.md)不能取代遊戲載入驗收。回家需用修正版重新產生兩種光柱（`A19_BG_shaft[Dn]_Add.mtd`、`A16_light_shaft[Dn]_Add.mtd`），在獨立測試包確認進場不 CTD、光柱可見、透明與發光正常，再決定恢復 DS 管線中的兩筆 `skip`。這輪不恢復 `skip`、不部署。原始事故與避開方式見 [dsp6 進場崩潰紀錄](../agentctl/handoffs/home-2026-09-13/dsp6/pack/REPORT.md#進-cell-ctd-與修法)；修正結果以 [converter 進度](../projects/model-converter/SESSION-LOG.md) 為準。
-
-2026-09-14 公司 WSL 未部署至 MO2、未動現役 profile；上段 09-10 家中部署紀錄仍有效。True PBR、蒙皮與動畫不屬這次一般靜態模型驗收。
-
+內容見 [asset-converter.md](feature-runtime/asset-converter.md)。
 
 ## DSPort P3 物件邊界（2026-09-14）
 
-地板／天空盒隨位置與視角消失、碰撞仍在；OBND 全零是已觀測資料，是否造成症狀仍待實機。離線修正與可重建步驟見 [OBND 調查](../projects/darksouls-port/p3/OBND-INVESTIGATION-2026-09-14.md)。回家由同一版 ModForge、同一份 P3 來源產生僅 bounds 不同的對照包，先記工具／spec／ESP 雜湊，再於原先消失位置用相同視角與距離比較地板、穹頂與天空盒；確認碰撞與可見範圍無退步。保持 navmesh 模式相同，不能同時切換多層網格後把差異都歸因於 bounds。
+內容見 [dsport-p3.md](feature-runtime/dsport-p3.md)。
 
 ## DSPort P3 多層 navmesh（2026-09-14）
 
-NAVI 的 NVMI owning-cell 座標離線修正不等於 CTD 已消失。回家使用同一版工具、同一份 source/spec/bounds，同輪產生新版 flat 與 authored 兩個測試包，只切換 `--include-navmesh`；舊正式 flat 留作回復。依 [navmesh 調查](../projects/darksouls-port/p3/NAVMESH-INVESTIGATION-2026-09-14.md) 核對 NVMI 與 CELL 座標，再於原 crash 點及兩個跨格邊界各做 60 秒敵對追擊，確認持續靠近、可跨格、無 CTD 與新 crash log。隨從跨格跟隨另外記錄，不以敵人追擊通過代替；實機通過前不恢復自訂網格為預設。
+內容見 [dsport-p3.md](feature-runtime/dsport-p3.md)。
+

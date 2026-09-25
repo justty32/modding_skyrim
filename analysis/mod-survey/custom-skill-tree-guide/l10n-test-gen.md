@@ -27,6 +27,7 @@ $BeastLore_Description	The study of beasts: how to track them, endure them, and 
 
 ## 9. Step 7 — 測試（最小煙霧測試）
 
+<!-- wf-nav -->
 1. **檔案落位檢查**（在地化、JSON、esp 都到位）：
    - `Data/MySkills.esp` 啟用、排在 CSF 之後。
    - `Data/SKSE/Plugins/CustomSkills/SKILLS.json` 與 `MySkills/BeastLore.json` 存在、是合法 JSON（拿掉教學註解！）。

@@ -1,0 +1,79 @@
+{
+ "contract": "wf-table/1",
+ "source": "restoration-mechanism.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "記錄",
+  "新增(CRF.esp)",
+  "override(masters)",
+  "角色"
+ ],
+ "rows": [
+  {
+   "記錄": "PlacedObject (REFR)",
+   "新增(CRF.esp)": "3178",
+   "override(masters)": "442",
+   "角色": "聚落建物/家具/clutter（多用 vanilla static），override 是往 vanilla cell 加東西"
+  },
+  {
+   "記錄": "PlacedNpc (ACHR)",
+   "新增(CRF.esp)": "78",
+   "override(masters)": "34",
+   "角色": "**靜態放置**的活 NPC（非 spawn marker！）"
+  },
+  {
+   "記錄": "Package",
+   "新增(CRF.esp)": "72",
+   "override(masters)": "17",
+   "角色": "**per-NPC 手刻日程**（eat/work/sandbox/sleep/chopwood…）"
+  },
+  {
+   "記錄": "Npc",
+   "新增(CRF.esp)": "33",
+   "override(masters)": "46",
+   "角色": "33 個新角色；**46 個是 override = 復活 vanilla 休眠 NPC**"
+  },
+  {
+   "記錄": "Cell",
+   "新增(CRF.esp)": "15",
+   "override(masters)": "109",
+   "角色": "15 新 interior；**109 override**＝往 vanilla cell 加人加物"
+  },
+  {
+   "記錄": "Quest",
+   "新增(CRF.esp)": "11",
+   "override(masters)": "25",
+   "角色": "見下（新 quest 多是無文字的狀態機）"
+  },
+  {
+   "記錄": "DialogTopic / DialogResponses",
+   "新增(CRF.esp)": "11 / 23",
+   "override(masters)": "60 / 120",
+   "角色": "新對白少，多是補 vanilla 已存在 topic"
+  },
+  {
+   "記錄": "Location",
+   "新增(CRF.esp)": "14",
+   "override(masters)": "23",
+   "角色": "新聚落 LCTN + 把新 cell 掛進 vanilla location"
+  },
+  {
+   "記錄": "Faction",
+   "新增(CRF.esp)": "9",
+   "override(masters)": "3",
+   "角色": "每聚落一個 Town/Services(vendor) faction（見下）"
+  },
+  {
+   "記錄": "Relationship 6・Outfit 0(用 vanilla)・Static 13・Key 6・LeveledItem 12",
+   "新增(CRF.esp)": "",
+   "override(masters)": "",
+   "角色": "角色組裝零件"
+  },
+  {
+   "記錄": "StoryManagerQuestNode",
+   "新增(CRF.esp)": "**1**（`CRFNode`）",
+   "override(masters)": "6",
+   "角色": "只加一個自家 SM 節點，其餘 additive 掛 vanilla 根"
+  }
+ ]
+}

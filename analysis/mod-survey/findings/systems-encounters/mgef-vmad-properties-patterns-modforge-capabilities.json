@@ -1,0 +1,42 @@
+{
+ "contract": "wf-table/1",
+ "source": "mgef-vmad-properties-patterns.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "能力",
+  "狀態",
+  "根據"
+ ],
+ "rows": [
+  {
+   "能力": "生成 MGEF（archetype=Script、castType、targetType、flags）",
+   "狀態": "**可生成**",
+   "根據": "`BuildMagicEffects()` 有完整 enum parse；`archetype=Script` 在 `MagicEffectArchetype.TypeEnum` 中"
+  },
+  {
+   "能力": "把腳本掛到 MGEF（VMAD + ScriptEntry + typed properties）",
+   "狀態": "**可生成（繞路）**",
+   "根據": "頂層 `scripts[].targetEditorId` 指向 MGEF editorId → `AttachScripts()` 反射 MGEF 的 `VirtualMachineAdapter` property，可寫"
+  },
+  {
+   "能力": "`magicEffects[i].scripts[]` inline 寫法",
+   "狀態": "⚠️ **不存在**（需新支援）",
+   "根據": "`MagicEffectSpec` 無 `scripts` 欄位；`Spec.Magic.cs` 確認"
+  },
+  {
+   "能力": "PERK → SPEL → MGEF 三層鏈生成",
+   "狀態": "**可生成**",
+   "根據": "`PerkSpec`、`SpellSpec`、`MagicEffectSpec` 均有對應 builder"
+  },
+  {
+   "能力": "文件化「MGEF script-attach 用頂層 scripts[]」",
+   "狀態": "⚠️ **缺文件**",
+   "根據": "arrowblock.md 標為缺口 partial，但沒有寫明繞路方式"
+  },
+  {
+   "能力": "生成 `.pex` 本體（OnHit/OnEffectStart 腳本邏輯）",
+   "狀態": "**不支援（純參考）**",
+   "根據": "腳本邏輯須手寫，ModForge 只生成 record 載具"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "contract": "wf-table/1",
+ "source": "board-and-quest-lifecycle.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "記錄類型",
+  "數量",
+  "角色"
+ ],
+ "rows": [
+  {
+   "記錄類型": "`Quest`",
+   "數量": "265",
+   "角色": "radiant 任務模板＝**9 holds × 約 7 job-family × tier** 的笛卡兒積"
+  },
+  {
+   "記錄類型": "`DialogTopic`/`DialogResponses`/`DialogBranch`",
+   "數量": "各 426",
+   "角色": "每顆 quest 一條「回報領賞」對話 topic（player line，給 radiant 填出來的 QuestGiver/Steward）"
+  },
+  {
+   "記錄類型": "`GlobalShort`",
+   "數量": "249",
+   "角色": "per-job-type × per-tier 的「目標數量 min/max」「reward 金幣」「current count」計數器"
+  },
+  {
+   "記錄類型": "`GlobalFloat`",
+   "數量": "95",
+   "角色": "刷新機率（Low/Med/High/VeryHigh chance）、refresh rate、courier 期限"
+  },
+  {
+   "記錄類型": "`Package`",
+   "數量": "28",
+   "角色": "追捕型逃犯（Thief/Vampire/Fugitive）NPC 的行為包"
+  },
+  {
+   "記錄類型": "`FormList`",
+   "數量": "38",
+   "角色": "**9 holds × 4 tier = 36 個 quest 池** + `_M_ListLocationsForbidden` + `_M_ListPeopleForbidden`"
+  },
+  {
+   "記錄類型": "`LeveledItem`",
+   "數量": "32",
+   "角色": "兩用：`_M_LItemItem*`＝採集/取物的目標物品；`_M_LItemReward*`＝結算發的獎勵"
+  },
+  {
+   "記錄類型": "`Book`",
+   "數量": "26",
+   "角色": "missive 告示本身（每 job-type 一種，標題用 alias 代入）"
+  },
+  {
+   "記錄類型": "`LeveledNpc`",
+   "數量": "3",
+   "角色": "`_M_LCharThief` / `_M_LCharVampire` / `_M_LCharFugitive`（追捕目標）"
+  },
+  {
+   "記錄類型": "`Message`",
+   "數量": "11",
+   "角色": "動態改寫任務物品的顯示名（`<Alias.ShortName=QuestGiver>'s <BaseName>`）"
+  },
+  {
+   "記錄類型": "`Activator`/`Container`",
+   "數量": "各 1",
+   "角色": "`_M_ActivatorBoard`（觸發器）＋ `_M_MissiveBoard`（裝 missive 的容器）"
+  },
+  {
+   "記錄類型": "`Cell`/`PlacedObject`/`Worldspace`",
+   "數量": "21/52/6",
+   "角色": "各城鎮放板子的擺件"
+  }
+ ]
+}

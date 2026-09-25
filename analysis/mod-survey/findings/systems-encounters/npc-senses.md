@@ -45,6 +45,7 @@ VisionCMF3 → NPCVision\NPCVision2.nif      AuraCMF3 → NPCVision\NPCAura2.nif
 DLL 執行期把這些 ACTI 當作 base，`PlaceAtMe`/attach 成節點掛到目標 NPC（符號 `VisionManager::ReattachNodes`、`SpawnedNodeData`、`visionNodes`/`auraNodes`）。esp 純粹當「幾何供應站」，零 script、零邏輯。
 
 ### DLL（純 native，不可生成）
+<!-- wf-nav -->
 - **`VisionRuleManager`**：`LoadRules()` / `SaveRules()` / `BuildDatabase()` — 從 `Rules/` 下多個 JSON 檔讀規則，建「受影響 NPC」資料庫（log：「Carregadas N 規ras de arquivos JSON separados」「Construindo banco de dados de NPCs afetados」「NPCs afetados: {}」）。規則 filter 維度由 `Manager::PopulateList<T>` 具現化推得：**`TESNPC` / `TESRace` / `BGSPerk` / `TESObjectACTI`**，加上字串欄 `FormID` / `GetFormEditorID` / `Name / EditorID` / `Race` / `col.formid`。
 - **`VisionManager`**：`InitCachedForms()` / `ReattachNodes()` / `ClearActorMap()` / `LogTriggerDebug()` — 管理節點生成、LOS 判定、進出觸發。
 - **`TriggerEventHandler::Register()`** + `MessagingInterface` / `PapyrusInterface` — 派發上述 4 個 mod event。
@@ -57,6 +58,7 @@ DLL 執行期把這些 ACTI 當作 base，`PlaceAtMe`/attach 成節點掛到目�
 
 **純參考。無新缺口。**
 
+<!-- wf-nav -->
 - **不像 SPID/SkyPatcher/EPW4NPCs 那類**：它**不分發** spell/perk/item，**不改** GMST/game setting，**沒有** ModForge 能等價生成的「spec 化」產物。功能全在 native LOS raycast / 節點 attach / mod-event 派發 / ImGui UI / JSON 規則引擎 — 這些 ModForge 一律生不出來。
 - **唯一可生成的部分**（6 個 ACTI 指向 nif）ModForge 早已支援，但脫離 DLL 毫無作用 → 不值得生成。
 - **不觸發任何 roadmap 缺口**：沒有 spec-shaped 的東西缺失；價值 100% 落在執行期 native。

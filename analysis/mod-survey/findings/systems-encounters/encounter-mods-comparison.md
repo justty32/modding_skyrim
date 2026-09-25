@@ -29,6 +29,7 @@
 
 ### ModForge 擴充優先順序
 
+<!-- wf-nav -->
 1. **alias fill from LeveledNpc（LVLN picker）**：兩個 mod 都用，IWE 更重度依賴。補上這個缺口讓 ModForge 能生成「每次演員不同」的遭遇，是 encounter generator 的核心。`Spec.Quest.cs` 的 alias fill 模式需新增 `fromLeveled` 型。
 
 2. **Package/marker target alias indirection**：IWE 的 Travel package target = quest alias 的 marker ref。EE 的 NavmeshTester 動態移動 marker alias 後，package 同樣靠 alias indirection 跟著走。需讓 `packages[].travel.place` 支援 `{ alias: "TravelMarker1" }` 語法。

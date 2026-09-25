@@ -84,6 +84,7 @@ Perk = 000A725C~Skyrim.esm|ActorTypeNPC
 
 ## 6. Roadmap 意涵
 
+<!-- wf-nav -->
 1. **可複用 pattern：「把一個 perk/spell SPID 廣播給全 NPC」**——`Perk|ActorTypeNPC`（或 `Spell|ActorTypeNPC`）是極高槓桿的零衝突全域注入手法。值得在 ModForge 文件/範例裡收一個「**global NPC ability/perk via SPID**」的 recipe（spec → `_DISTR.ini`），EPW4NPCs 是最小活範例。這條對 vendor / `settlements:` 系列也有用：要給某聚落或某 faction 的全體 NPC 掛一個被動能力時，SPID `StringFilters`/`FormFilters`（Faction/Keyword）就是無 patch 的分發層。
 2. **無新缺口**——本 mod 不浮現任何 record/生成缺口，純落在已 landed 的 SPID 輸出能力域內。
 3. **延伸候選（來自比對而非本 mod）**：真正的缺口在姊妹 mod `NPCsUsePotions` 那種「**戰鬥中主動喝藥水的 AI controller**」——那需要原生 DLL 或重 Papyrus 戰鬥決策，**不可純生成**。若 roadmap 要做「會用藥水/招式的戰鬥 NPC」，須走 shell-out 預建組件或附帶 controller 腳本，與 action-system（SCAR「NPC 連段 AI 不可生成」）同一類限制。EPW4NPCs 本身不踩這條線。

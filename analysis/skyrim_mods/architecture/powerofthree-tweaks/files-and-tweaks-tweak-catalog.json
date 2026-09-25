@@ -1,0 +1,87 @@
+{
+ "contract": "wf-table/1",
+ "source": "files-and-tweaks.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Tweak",
+  "說明（推斷）"
+ ],
+ "rows": [
+  {
+   "Tweak": "Use Furniture In Combat",
+   "說明（推斷）": "允許在戰鬥中使用家具"
+  },
+  {
+   "Tweak": "Offensive Spell AI",
+   "說明（推斷）": "改善 NPC 攻擊性法術的 AI"
+  },
+  {
+   "Tweak": "Load EditorIDs",
+   "說明（推斷）": "runtime 保留 EditorID（讓主控台可用 EditorID 定址，預設引擎只剩 FormID）"
+  },
+  {
+   "Tweak": "Breathing Sounds",
+   "說明（推斷）": "呼吸聲相關"
+  },
+  {
+   "Tweak": "Faction Stealing",
+   "說明（推斷）": "派系所屬物的偷竊判定"
+  },
+  {
+   "Tweak": "Voice Modulation",
+   "說明（推斷）": "語音調變"
+  },
+  {
+   "Tweak": "Game Time Affects Sounds",
+   "說明（推斷）": "遊戲時間流速影響音效"
+  },
+  {
+   "Tweak": "Dynamic Snow Material",
+   "說明（推斷）": "動態雪材質"
+  },
+  {
+   "Tweak": "Disable Water Ripples On Hover",
+   "說明（推斷）": "滑鼠懸停時不產生水波紋"
+  },
+  {
+   "Tweak": "Screenshot Notification To Console",
+   "說明（推斷）": "截圖通知改印到主控台"
+  },
+  {
+   "Tweak": "No Attack Messages",
+   "說明（推斷）": "抑制攻擊類訊息"
+  },
+  {
+   "Tweak": "Sit To Wait",
+   "說明（推斷）": "坐下時可等待"
+  },
+  {
+   "Tweak": "Disable God Mode",
+   "說明（推斷）": "停用無敵模式（`tgm`）"
+  },
+  {
+   "Tweak": "No Hostile Spell Absorb",
+   "說明（推斷）": "敵對法術不觸發法術吸收"
+  },
+  {
+   "Tweak": "Grabbing Is Stealing",
+   "說明（推斷）": "用 grab（Z 鍵抓取）移動他人物品視為偷竊"
+  },
+  {
+   "Tweak": "Load Door Activate Prompt",
+   "說明（推斷）": "載入門時的啟用提示"
+  },
+  {
+   "Tweak": "No Poison Prompt",
+   "說明（推斷）": "抑制塗毒確認提示"
+  },
+  {
+   "Tweak": "Silent Sneak Power Attacks",
+   "說明（推斷）": "潛行強攻不發出聲響"
+  },
+  {
+   "Tweak": "Remember Lock Pick Angle (VR only)",
+   "說明（推斷）": "記住開鎖角度（僅 VR 版）"
+  }
+ ]
+}

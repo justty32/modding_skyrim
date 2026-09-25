@@ -1,0 +1,35 @@
+{
+ "contract": "wf-table/1",
+ "source": "dialogue-control.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案:行號",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案:行號": "`Scripts/Source/minai_MainQuestController.psc:578-610`",
+   "內容": "`OnKeyDown()` — 10 個快捷鍵的 dispatch（sapience toggle, sing, narrator, narrator text, roleplay, roleplay text, diary, dungeon master, dungeon master text）"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_MainQuestController.psc:614-633`",
+   "內容": "`OnKeyUp()` — 語音錄製鍵釋放處理"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_MainQuestController.psc:636-663`",
+   "內容": "`OnSingKeyPressed()`/`OnSingKeyReleased()` — Sing 功能"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_MainQuestController.psc:666-693`",
+   "內容": "`OnNarratorKeyPressed()`/`OnNarratorKeyReleased()` — Narrator 對話"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_MainQuestController.psc:837-869`",
+   "內容": "`OnDiaryKeyPressed()` — Diary 快捷鍵（蹲下→narrator diary；看向NPC→該NPC diary；站立→所有 follower + player diary）"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_MainQuestController.psc:892-937`",
+   "內容": "`OnDungeonMasterKeyPressed()`/`OnDungeonMasterKeyReleased()` — Dungeon Master 直接提示（crosshair target 或 \"everyone\"）"
+  }
+ ]
+}

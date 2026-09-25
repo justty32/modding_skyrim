@@ -1,0 +1,75 @@
+{
+ "contract": "wf-table/1",
+ "source": "world-state.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0010_header.prompt`",
+   "內容": "基本身份"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0050_physical_activity.prompt`",
+   "內容": "身體活動狀態"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0100_summary.prompt`",
+   "內容": "手寫 summary"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0130_world_knowledge.prompt`",
+   "內容": "World knowledge 注入"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0200_background.prompt`",
+   "內容": "背景故事"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0300_personality.prompt`",
+   "內容": "性格"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0310_interject_summary.prompt`",
+   "內容": "插話摘要"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0400_appearance.prompt`",
+   "內容": "外觀"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0410_equipment.prompt`",
+   "內容": "裝備"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0500_skills.prompt`",
+   "內容": "技能"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0600_relationships.prompt`",
+   "內容": "關係"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0610_party_quests.prompt`",
+   "內容": "隊伍任務"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/0700_occupation.prompt`",
+   "內容": "職業"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/7000_memories_and_progression.prompt`",
+   "內容": "記憶與進度"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/7100_memories.prompt`",
+   "內容": "記憶（vector recall）"
+  },
+  {
+   "檔案": "`SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/9990_speech_style.prompt`",
+   "內容": "說話風格"
+  }
+ ]
+}

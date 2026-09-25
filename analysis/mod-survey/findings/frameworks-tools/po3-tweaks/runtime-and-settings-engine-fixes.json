@@ -1,0 +1,127 @@
+{
+ "contract": "wf-table/1",
+ "source": "runtime-and-settings.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Key",
+  "說明",
+  "與 ModForge 的交集"
+ ],
+ "rows": [
+  {
+   "Key": "`Distant Ref Load Crash = true`",
+   "說明": "修 distant ref 缺少 3D 時的載入 crash",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Map Marker Placement Fix = true`",
+   "說明": "允許在 fast travel 關閉時仍能放置 map marker",
+   "與 ModForge 的交集": "和 ModForge worldspace/map-marker 生成有關"
+  },
+  {
+   "Key": "`Restore 'Can't Be Taken Book' Flag = true`",
+   "說明": "恢復書本「不可取得」flag 功能",
+   "與 ModForge 的交集": "若 ModForge 生成 Book record 可利用此 flag"
+  },
+  {
+   "Key": "`Projectile Range Fix = true`",
+   "說明": "修正移動中射擊的彈道距離計算",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`CombatToNormal Dialogue Fix = true`",
+   "說明": "修 NPC 誤用 LostToNormal dialogue 取代 CombatToNormal",
+   "與 ModForge 的交集": "**直接影響 ModForge NPC dialogue**（見下）"
+  },
+  {
+   "Key": "`Cast Added Spells on Load = true`",
+   "說明": "場景載入後重新施加 AddSpell 添加的效果",
+   "與 ModForge 的交集": "若 ModForge 生成 NPC 的永久 ability SPEL 需要注意"
+  },
+  {
+   "Key": "`Cast No-Death-Dispel Spells on Load = true`",
+   "說明": "重新施加 no-death-dispel 法術效果於死亡 actor",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`IsFurnitureAnimType Fix = true`",
+   "說明": "修 IsFurnitureAnimType 條件/console 函數",
+   "與 ModForge 的交集": "和 scene/furniture 相關（ModForge SceneSpec）"
+  },
+  {
+   "Key": "`Light Attach Crash = true`",
+   "說明": "修角色未載入時光源 attach crash",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`No Conjuration Spell Absorb = true`",
+   "說明": "所有缺少 NoAbsorb flag 的召喚法術自動補上",
+   "與 ModForge 的交集": "若生成召喚系 SPEL 可不用手動設 flag"
+  },
+  {
+   "Key": "`EffectShader Z-Buffer Fix = true`",
+   "說明": "修粒子特效透視渲染",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`ToggleCollision Fix = true`",
+   "說明": "Console ToggleCollision 改為切換選取物件的碰撞",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Skinned Decal Delete = true`",
+   "說明": "即時刪除標記移除的蒙皮貼花（脫裝甲時的血跡）",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Jumping Bonus Fix = true`",
+   "說明": "跳躍高度乘以 JumpingBonus actor value 的 1%/點",
+   "與 ModForge 的交集": "若生成 perk/ability 修改 JumpingBonus 需知道"
+  },
+  {
+   "Key": "`Toggle Global AI Fix = true`",
+   "說明": "TAI/Debug.ToggleAI() 現在真正切換所有 NPC AI",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Use Furniture In Combat = 1`",
+   "說明": "`0`=關, `1`=僅玩家, `2`=玩家+NPC；允許戰鬥中使用家具",
+   "與 ModForge 的交集": "影響 ModForge SceneSpec 中家具使用的 idle"
+  },
+  {
+   "Key": "`Breathing Sounds = true`",
+   "說明": "修呼吸聲在換 cell 後持續播放",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Load EditorIDs = true`",
+   "說明": "執行期載入跳過的 form 的 editorID",
+   "與 ModForge 的交集": "對開發 debug 有用"
+  },
+  {
+   "Key": "`First Person SetAlpha Fix = true`",
+   "說明": "修 SetAlpha 讓第一人稱手隱形的 bug",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Worn Restrictions For Weapons = true`",
+   "說明": "啟用附魔的 Worn Restrictions 功能於武器",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`MagicItemFindKeywordFunctor Crash = true`",
+   "說明": "修 keyword 查找 crash（效果缺少魔法效果）",
+   "與 ModForge 的交集": "若 ModForge SPEL 有 keyword 條件需知"
+  },
+  {
+   "Key": "`Left Handed Weapon Enchantment Node Fix = true`",
+   "說明": "修左手武器附魔節點（XMPSE/HDT-SMP 環境）",
+   "與 ModForge 的交集": "-"
+  },
+  {
+   "Key": "`Validate Screenshot Location = true`",
+   "說明": "驗證截圖路徑有效性",
+   "與 ModForge 的交集": "-"
+  }
+ ]
+}

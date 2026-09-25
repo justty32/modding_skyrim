@@ -84,20 +84,20 @@ WW42GYHSofialikeFollowerDialogueFixFaction
 
 ## 三、Type 全集表
 
-| Type 關鍵字 | 分發到 | 分發的記錄型別 | 備註 |
-|---|---|---|---|
-| `Spell` | NPC actorbase | SPEL（Spell）| 含 ability、power、lesser power |
-| `Perk` | NPC actorbase | PERK | NPC 的被動能力 / 行為修改 |
-| `Item` | NPC inventory | ARMO / WEAP / MISC / ALCH / BOOK / AMMO / INGR / SLGM / SCRL | 第 6 欄 = 數量（預設 1）|
-| `Shout` | NPC actorbase | SHOU | 龍吼 |
-| `LevSpell` | NPC actorbase | LVSP（Leveled Spell）| 分發一個 leveled spell list |
-| `Package` | NPC actorbase package stack | PACK | 第 6 欄 = PackageIdx：插入位置（0=最頂，預設 0）；若 RecordID 是 FormList 則 0-4 對應 override list 類別 |
-| `Outfit` | NPC default outfit | OTFT | 7.2+ per-actor 追蹤；第一條符合的 config 行優先，其餘跳過 |
-| `SleepOutfit` | NPC sleep outfit | OTFT | 同 Outfit 型別，但替換 sleep outfit；**必須寫 `SleepOutfit`，不能讓 SPID 自動推斷**（否則會誤判為 Outfit） |
-| `Keyword` | NPC actorbase | KYWD | 給 NPC 本身加 keyword（非給裝備）|
-| `DeathItem` | NPC 死亡掉落 | LVLI（Leveled Item）| NPC 死時額外掉落 |
-| `Faction` | NPC faction 清單 | FACT | 讓 NPC 加入一個派系 |
-| `Skin` | NPC skin override | ARMO | 替換 NPC 的 skin（視覺模型）；**必須明確寫 `Skin`**，否則 SPID 會誤判為 Item |
+本表整理「三、Type 全集表」的逐項記錄。
+
+已抽到 [spid-overview-syntax-distribution-types.json](spid-overview-syntax-distribution-types.json)（12 列）。
+
+欄位「Type 關鍵字」：保留原表的Type 關鍵字。
+
+欄位「分發到」：保留原表的分發到。
+
+欄位「分發的記錄型別」：保留原表的分發的記錄型別。
+
+欄位「備註」：保留原表的備註。
+
+統計：12 筆記錄，4 個欄位。
+
 
 > `SleepOutfit` 和 `Skin` 因為底層 form 型別與 `Outfit` 和 `Item` 相同，**必須明確指定 Type**，SPID 無法自動推斷。
 

@@ -1,0 +1,62 @@
+{
+ "contract": "wf-table/1",
+ "source": "ai-mechanism.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "群組",
+  "數量",
+  "意義"
+ ],
+ "rows": [
+  {
+   "群組": "**PlacedObject (REFR)**",
+   "數量": "**3078**",
+   "意義": "大量 NPCO 自訂 **sandbox / sleep / flee 標記 ref + 家具 ref**——package 的 location/target 槽指這些"
+  },
+  {
+   "群組": "**Package**",
+   "數量": "**1497**（1404 新 + 93 override）",
+   "意義": "AI 行為包，**全部 bespoke、不是 10 個共用模板**"
+  },
+  {
+   "群組": "**Quest**",
+   "數量": "**376**",
+   "意義": "46 個新 `NPCO_AI<地點>NPCs` 分派 quest + 1 TrackingSystem + Init + ~320 vanilla `Dialogue*Scene` override"
+  },
+  {
+   "群組": "**Scene**",
+   "數量": "**260**（2 新 + 258 override）",
+   "意義": "微調 vanilla 環境閒聊 scene（配合新日程修條件）"
+  },
+  {
+   "群組": "**Cell**",
+   "數量": "**263** / **NavMesh 190** / **Landscape 15**",
+   "意義": "大量 cell override（放標記 / 改 navmesh 讓逃跑路徑通）"
+  },
+  {
+   "群組": "**IdleMarker 21 / Furniture 13**",
+   "數量": "新放置",
+   "意義": "sandbox / 工作動畫錨點"
+  },
+  {
+   "群組": "**Npc**",
+   "數量": "**6**",
+   "意義": "⚠️ 只 6 筆（5 匹馬 + 1 衛兵），**幾乎不 override NPC 記錄**"
+  },
+  {
+   "群組": "GlobalShort",
+   "數量": "35",
+   "意義": "`NPCO_AIGlobal<Hold>` / `NPCO_WeatherFactorGlobal<Hold>`——分區開關 + 天氣因子"
+  },
+  {
+   "群組": "GameSetting",
+   "數量": "8",
+   "意義": "`fSandboxSleepStart/Duration`、`fCombatDetectionLostTimeLimit`、`iAIMaxSocialDistanceToTriggerEvent`——全域調 sandbox / 戰鬥偵測手感"
+  },
+  {
+   "群組": "Faction 32 / CombatStyle 7 / Spell 15 / FormList 198",
+   "數量": "—",
+   "意義": "vendor 營業時段 faction、戰鬥風格、輔助"
+  }
+ ]
+}

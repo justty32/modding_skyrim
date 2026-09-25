@@ -1,0 +1,52 @@
+{
+ "contract": "wf-table/1",
+ "source": "record-patterns-and-modforge.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "面向",
+  "Animated Ships",
+  "Animated Carriage"
+ ],
+ "rows": [
+  {
+   "面向": "載具「動」的來源",
+   "Animated Ships": "**NIF 內嵌動畫**（船自己跑，ref 座標不變）；marker 反過來追船的 `ShipCenterNode`",
+   "Animated Carriage": "**引擎 `TranslateToRef`** 真正搬動整台 cart ref 沿節點走"
+  },
+  {
+   "面向": "路徑定義",
+   "Animated Ships": "無真正路徑，動畫即「航線」；只有 ShipMarker 同步",
+   "Animated Carriage": "**linked-ref 節點鏈**（`PlacedObject` + `linkedRef` 串接，`kwAlternativePath` 分岔），路線 = 一個 `ACLine_*.esp`"
+  },
+  {
+   "面向": "載具 ref 生命週期",
+   "Animated Ships": "靜態 placement，靠 Enable/Disable + Disable/EnableLinkChain 開關",
+   "Animated Carriage": "**動態 `PlaceAtMe` 生成、跑完 `Delete`**（radiant 臨時 ref）"
+  },
+  {
+   "面向": "觸發",
+   "Animated Ships": "`SingleShipManagerQuest` 時段 bitmask + 每日機率",
+   "Animated Carriage": "start-marker 距離觸發 + 日夜機率 → radiant 旅程 Quest"
+  },
+  {
+   "面向": "乘客綁定",
+   "Animated Ships": "只 `MoveToNode` / spline 貼節點（無 `SetVehicle`）",
+   "Animated Carriage": "`SetVehicle(CartRef)` vanilla 載具綁定 + spline 貼節點"
+  },
+  {
+   "面向": "AI Package",
+   "Animated Ships": "4 個，全 idle 模板 0x0654E2，**僅站樁**",
+   "Animated Carriage": "~29 個，多數 idle 模板 0x0654E2（applaud/wound/reveler/wedding 等情境站樁）＋ 1 個 Flee 模板"
+  },
+  {
+   "面向": "Papyrus 角色",
+   "Animated Ships": "同步 marker + 黏乘客 + 排程",
+   "Animated Carriage": "路徑遍歷 + 生成/回收 + 載具綁定 + 乘客行為"
+  },
+  {
+   "面向": "馬",
+   "Animated Ships": "無",
+   "Animated Carriage": "終點 `PlaceAtMe` 真馬 Actor + `SetOutfit` 換色 + `SetVehicle` 綁 cart"
+  }
+ ]
+}

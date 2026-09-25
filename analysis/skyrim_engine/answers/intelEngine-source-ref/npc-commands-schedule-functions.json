@@ -1,0 +1,47 @@
+{
+ "contract": "wf-table/1",
+ "source": "npc-commands.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案:行號",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Schedule.psc:1-59`",
+   "內容": "Constants — `HOUR_DAWN=5`, `HOUR_SUNRISE=6`, `HOUR_SUNSET=19` 等；`DEPARTURE_BUFFER_HOURS=2.0`"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Schedule.psc:121-187`",
+   "內容": "`ScheduleMeeting()` — **排程會議**（時間解析 → 距離基礎 departure buffer → departure hour cap → 通知玩家；取消既有 active meeting）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Schedule.psc:193-220`",
+   "內容": "`ScheduleFetch()` — 排程找人"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Schedule.psc:222-259`",
+   "內容": "`ScheduleDelivery()` — 排程傳話（可選 meeting location + time → 收件人也會被排程前往）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Schedule.psc:272-333`",
+   "內容": "`PrepareScheduleSlot()` — **共享排程腳手架**（時間解析、per-action confirmation prompt、override existing、allocate slot、persist 所有欄位到 StorageUtil）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Schedule.psc:514-539`",
+   "內容": "`OnUpdateGameTime()` / `OnUpdate()` — 雙定時器（game-time + real-time fallback）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Schedule.psc:541-627`",
+   "內容": "`ExecuteScheduledTask()` — **執行排程任務**（讀取陣列 → 清除既有任務 → 標記 dispatched → travel/fetch/deliver dispatch）"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Schedule.psc:721-738`",
+   "內容": "`CheckAndDispatchPendingTasks()` — 檢查並 dispatch 到期任務"
+  },
+  {
+   "檔案:行號": "`Source/Scripts/IntelEngine_Schedule.psc:740-787`",
+   "內容": "`RegisterForNextDispatch()` — **智能排程間隔**（計算最快將到期的任務；< 1 game hour → real-time 15s poll；>= 1 game hour → game-time timer）"
+  }
+ ]
+}

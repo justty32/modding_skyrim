@@ -8,6 +8,7 @@
 
 ## 七個 mod 的性質分類
 
+<!-- wf-nav -->
 | Mod | 類型 | 內容載體 | 對 ModForge 的價值 |
 |---|---|---|---|
 | **JContainers SE** | SKSE 資料結構 library | DLL + Lua + 12 個 `.psc` | 容器/路徑定址/持久化 DB（強但重） |

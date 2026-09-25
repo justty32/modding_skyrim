@@ -6,21 +6,7 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 
 ## 專案入口
 
-<!-- wf-nav -->
-
-| 專案 | 程式碼／文件入口 |
-|------|------------------|
-| ModForge | [`projects/ModForge/workflows/common/code-map/CODE_MAP.md`](../../../../projects/ModForge/workflows/common/code-map/CODE_MAP.md) — generator domain、CLI、schema、tests 的完整分域索引 |
-| agent-bridge | [`projects/agent-bridge/README.md`](../../../../projects/agent-bridge/README.md) — SKSE HTTP runtime；[`client/README.md`](../../../../projects/agent-bridge/client/README.md) — Linux client/MCP；[`QA-SCHEMA.md`](../../../../projects/agent-bridge/client/QA-SCHEMA.md) — qa.json contract |
-| scene-capture-bridge | [`projects/scene-capture-bridge/README.md`](../../../../projects/scene-capture-bridge/README.md) — SKSE runtime；`src/CatalogFile.*` + `tests/CatalogFileTests.cpp` 是不依賴 SKSE 的 ModForge scene-catalog v1 parser/FormKey index/provenance+runtime global-source-order gate/metadata merge；`tests/RunModForgeCatalogContract.cmake` 另以真實 ModForge CLI 串 full/light plugin→catalog exporter bytes→consumer 的 MinGW CTest，`tests/CatalogCompatibilityProbe.cpp` 可把真實 catalog／resolved path list 餵進同一 consumer gate；`Catalog.cpp` 由 `TESDataHandler::files` 取得 full/light 全域 loaded sequence，kDataLoaded 後把合格離線 EditorID/name 補進 Browser |
-| godot-worldspace-editor | [`projects/godot-worldspace-editor/README.md`](../../../../projects/godot-worldspace-editor/README.md) — `godot/placements_io.gd` 是 placements producer；`tests/test_placements_contract.py` 以 Godot headless 真實 exporter→ModForge CLI→ESP REFR 讀回；`godot/model_fetch.gd` 優先遵守 `MODFORGE_NIF2GLTF_BIN` executable hook 並 fail-closed 管理 `.gltf + .bin` cache，`tests/test_model_fetch_contract.py` 以 synthetic NIF→production converter→Godot `GLTFDocument` 驗 mesh/座標與壞輸出清理重試 |
-| model-converter | [`projects/model-converter/README.md`](../../../../projects/model-converter/README.md) — `PROTOCOL.md` 定義 nif2gltf/gltf2nif 黑盒 CLI；前者由 Godot ModelFetch live contract 消費，後者由 darksouls-port production batch live contract 消費 |
-| skyrim-voicegen | [`projects/skyrim-voicegen/README.md`](../../../../projects/skyrim-voicegen/README.md) — `voicegen.py` 是 ModForge TTS 黑盒 producer；`tests/fake_fish_engine.py` 只作 live contract 最末端 fixture，ModForge `VoiceLiveContractTests.cs` 真跨 process 驗完整 args、合法 WAV 與 failure cleanup |
-| game-data | [`projects/game-data/README.md`](../../../../projects/game-data/README.md) — `extract.sh` 先做全 batch stem collision preflight，再以 sibling staging + paired backup/rollback 原子發布 gamedata/questnodes；`tests/test_extract.py` 用會真寫檔的 fake dotnet 驗 known-good 保留與零半成品 |
-| darksouls-port | [`projects/darksouls-port/README.md`](../../../../projects/darksouls-port/README.md) — `tools/p1_batch.py` 以同目錄 staging 呼 sibling production gltf2nif，失敗撤下 stale packageable target；`tests/test_model_converter_contract.py` 再用 model-converter production reader 驗 BSTriShape、材質、座標及 bhk hull |
-| sofia-patch | [`projects/sofia-patch/README.md`](../../../../projects/sofia-patch/README.md) |
-| my_skyrim_plugin_1 | [`projects/my_skyrim_plugin_1/README.md`](../../../../projects/my_skyrim_plugin_1/README.md) — DaylightDungeon SKSE plugin；打包與離線測試在 `scripts/`，**PowerShell 與 POSIX 各一套、彼此獨立**：`pack.ps1`／`pack.sh` 打包，`test_packaging.ps1`／`test_packaging.sh` 驗打包契約（synthetic CMake cache/DLL、zip 內 MO2 layout、`--output-dir` 防護、CLI exit code），`test_quest_prf.ps1`／`test_quest_prf.sh` 驗 quest PRF primitives（純 stdlib g++，不需 SKSE／CommonLib） |
-| houseCARL | [`projects/houseCARL/README.md`](../../../../projects/houseCARL/README.md)；Linux 適配結論在 [`linux-manjaro-mo2-runbook.md`](../../../../analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md) |
+內容見 [projects.md](projects.md)。
 
 ## agent-bridge semantic QA 快速圖
 
@@ -36,12 +22,24 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 
 ## 母 repo 本機工具
 
+<!-- wf-nav -->
 | 檔案 | 職責 |
 |---|---|
 | `tools/check_markdown_links.py` | 掃描母 repo 與非 `projects/` 工作區 submodules 的 tracked Markdown links；驗證檔案與 GitHub-style heading／explicit HTML anchors，理解 canonical symlink 位置，並支援 CI 的 `--skip-symlinks` 與 `--skip-uninitialized-submodules` 邊界（後者明報未初始化 gitlink 的未檢查目標，預設仍嚴格） |
+| `tools/markdown_links/parsing.py` | 解析本機連結與 heading anchors，驗證連結目標。 |
+| `tools/markdown_links/__init__.py` | Markdown 連結解析與驗證輔助套件入口。 |
 | `tools/test_check_markdown_links.py` | Markdown link checker 的相對路徑、broken file／anchor、重複與 Setext heading、closed ATX heading、標題內含 inline link、fence（連結側與 anchor 側各一條）、CLI 與 symlink 行為；失敗訊息要指名缺哪個 anchor；Windows 缺 file-symlink privilege 時只 skip symlink-only cases |
+| `tools/test_check_markdown_links_anchors.py` | 驗證 Unicode、Setext、重複標題、HTML 與 fenced code 的 anchor 行為。 |
+| `tools/test_check_markdown_links_cli.py` | 驗證 CLI 錯誤、未初始化 submodule、來源排除與 symlink 選項。 |
+| `tools/markdown_links_testlib.py` | 提供暫存目錄、symlink 權限處理與假 gitlink 的共用測試 fixture。 |
 | `tools/check_submodule_pins.py` | pre-push 核心：只檢查本次 push ref 相對 remote tip 有變動的 gitlink；本機存在但任何 remote-tracking ref 都不可達時 fetch 後 fail closed |
+| `tools/submodule_pins/pins.py` | 解析 push updates，計算變動 gitlink 與新分支 pins。 |
+| `tools/submodule_pins/__init__.py` | gitlink pin 計算與 remote 可達性檢查套件入口。 |
+| `tools/submodule_pins/branches.py` | 檢查 remote 可達性、推導 push 目標分支並警告側分支依賴。 |
+| `tools/submodule_pins/guard.py` | 檢查變動 submodule pins，依遞迴推送模式回報推送指引。 |
 | `tools/test_check_submodule_pins.py` | 以臨時 bare remote、母 repo 與真實 submodule 驗未變／已推／未推 pin、未初始化／本機缺 commit 與刪分支邊界 |
+| `tools/test_check_submodule_pins_recurse.py` | 驗證 on-demand／only／check 遞迴推送模式的 pin 阻擋與側分支警告。 |
+| `tools/submodule_pins_testlib.py` | 提供帶真實 submodule 與暫存 remotes 的共用 pin guard 測試 fixture。 |
 | `tools/check_code_map_coverage.py` | 檢查每一支工具腳本是否在某份索引頁被指名；**走訪各 submodule 自己的 git**，不靠母 repo 的 `git ls-files`（它到 gitlink 就停，正是 `check_markdown_links.py` 出過的洞）。已知缺口以 `code_map_coverage_baseline.txt` 當 ratchet：清單內靜默、清單外一律非零 exit；baseline 指到已刪除的檔案也 fail closed，清單不會腐化成永久藉口 |
 | `tools/code_map_coverage_baseline.txt` | ratchet 的豁免清單，**目前是空的**（2026-08-26 盤點時 36 支未索引，同日全部補進本頁）。留著是為了下一次真的有不該進索引的腳本時寫上路徑與理由；**是債不是豁免**，且 stale 行會 fail closed |
 | `tools/test_check_code_map_coverage.py` | 以真實巢狀 submodule 的合成工作區驗已索引／未索引／submodule 內可達／baseline 靜默／baseline 不通殺／stale baseline／未追蹤檔不算數；7 條全部經突變測試證明能變紅 |

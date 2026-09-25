@@ -1,0 +1,87 @@
+{
+ "contract": "wf-table/1",
+ "source": "missives-modforge.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "機制",
+  "狀態",
+  "備註"
+ ],
+ "rows": [
+  {
+   "機制": "Quest stage + fragment（stage flags / StartUpStage / CompleteQuest / FailQuest）",
+   "狀態": "✅ 可生成",
+   "備註": "`Generator.Build.QuestStages.cs` + `Generator.Build.Actors.cs:BuildQuests()`"
+  },
+  {
+   "機制": "Quest objective（QOBJ / DisplayText / QSTA target alias）",
+   "狀態": "✅ 可生成",
+   "備註": "`DisplayText = o.Text`（pass-through，`<Alias=...>/<Global=...>` token 直接寫入即可）；QSTA 由 `WireObjectiveTargets()` 接 alias index"
+  },
+  {
+   "機制": "Quest alias（forced / uniqueActor / createObject / findMatching:loaded-area）",
+   "狀態": "✅ 可生成",
+   "備註": "`BuildQuestAliases()`；four fill modes already wired"
+  },
+  {
+   "機制": "FLST 建立 + 填 item",
+   "狀態": "✅ 可生成",
+   "備註": "`Generator.Build.Lists.cs:BuildFormLists()` / `WireFormLists()`"
+  },
+  {
+   "機制": "GlobalVariable 量產（Short/Float/Int type）",
+   "狀態": "✅ 可生成",
+   "備註": "`Generator.Build.Globals.cs:BuildGlobals()`"
+  },
+  {
+   "機制": "LVLN（追捕目標）+ createObject alias fill",
+   "狀態": "✅ partial",
+   "備註": "createObject 帶 LVLN base 可生成；一等 LVLN fill mode 仍是 partial"
+  },
+  {
+   "機制": "BOOK（告示）+ Model（template clone）",
+   "狀態": "✅ 可生成",
+   "備註": "`Generator.Build.Items.cs`；需 `template` 否則 crash"
+  },
+  {
+   "機制": "Message（MESG，`<Alias.ShortName=...><BaseName>` 動態命名）",
+   "狀態": "✅ 可生成",
+   "備註": "`Generator.Build.Messages.cs`；token 直寫 Description 欄"
+  },
+  {
+   "機制": "Container（CONT，裝 missive 的板子）",
+   "狀態": "✅ 可生成",
+   "備註": "`BuildContainers()`"
+  },
+  {
+   "機制": "Activator（ACTI，觸發刷新的隱形 trigger box）",
+   "狀態": "✅ 可生成",
+   "備註": "Placement + script attach"
+  },
+  {
+   "機制": "AI Package（追捕逃犯的 travel package）",
+   "狀態": "✅ 可生成",
+   "備註": "`Generator.Build.Packages.cs`"
+  },
+  {
+   "機制": "LocationAlias fill（Find Matching Location by keyword）",
+   "狀態": "❌ 缺",
+   "備註": "**roadmap #7**；所有 radiant 地點隨機化的核心，無此不能做 hold/dungeon/inn 隨機選"
+  },
+  {
+   "機制": "nested ReferenceAlias（findNearAlias：在指定 location alias 範圍內找 ref）",
+   "狀態": "❌ 缺",
+   "備註": "**roadmap #8**；Missives 的 boss/chest/questgiver alias 全靠此；不同於 findMatching loaded-area"
+  },
+  {
+   "機制": "UpdateCurrentInstanceGlobal fragment codegen",
+   "狀態": "❌ 缺",
+   "備註": "**roadmap #9**；gather 計數 `<Global=Count>/<Global=Total>` 顯示的必要呼叫"
+  },
+  {
+   "機制": "RegisterForUpdateGameTime alias script（時限任務計時器）",
+   "狀態": "⚠️ partial",
+   "備註": "腳本本身可手寫交 package，但 fragment 生成器無此模式"
+  }
+ ]
+}

@@ -53,14 +53,17 @@ Source/Scripts/CNS_*.psc                           ← Init / ModObjects / 七�
 
 逐欄位重點（對照 §2.1 的 schema 定義，這裡是「實況」）：
 
-| 欄位 | Constellations 實況 | 備註 |
-|------|----------------------|------|
-| `version` | **不在 skill 物件裡**，而在 `SKILLS.json` root（`version: 1`） | `version` 是 root（`CustomSkill.json`）欄位，不是 skill 欄位；schema 版本常數，非 API 版本 |
-| `id` | `"HandtoHand"`/`"Athletics"`/`"Sorcery"` | 注意大小寫：JSON 裡是 `HandtoHand`，但訓練 TIF 卻呼叫 `"HandToHand"`（見 §6.3，疑似容錯/筆誤，仍運作） |
-| `name`/`description` | `$`-key | 真文字在 Translations（§6.4） |
-| `level`/`ratio`/`legendary` | 三個都填，連號 `00F/010/011`、`012/013/014`、`015/016/017` | **三棵樹各只用這三個 GLOB**；`showMenu`/`showLevelup`/`perkPoints`/`color`/`debugReload` **全部省略** |
-| `experienceFormula` | 三棵各不同（H2H useMult 0.8/useOffset 27；Athletics useMult 7.0；Sorcery useMult 1.8） | 證明這組參數就是調整「練多快/升多貴」的旋鈕 |
-| `nodes` | H2H 9 / Athletics 9 / Sorcery 9 個 | 入口節點 id 慣例叫 `"Mastery"`；`x`/`y` 是**浮點自由佈局**（不像舊 INI 還有 `GridX`/`GridY` 整數欄） |
+對照各 skill 欄位在 Constellations 的實況與備註。
+
+已抽到 [constellations-schema-skill-fields.json](constellations-schema-skill-fields.json)（6 列）。
+
+欄位：schema 欄位。
+
+Constellations 實況：出貨設定的實際內容。
+
+備註：欄位解讀與注意事項。
+
+統計：6 筆記錄，3 欄。
 
 > 關鍵觀察：**現代 JSON 的 node 沒有 `GridX`/`GridY`**（那是舊 INI 的東西），只有浮點 `x`/`y` + `links`，渲染器自己排。`perk` 字串 `"ConstellationsNewSkills.esp|16F"` 即 §2.1 的 load-order 無關 `form` 格式，FormId 用 3 位 hex（`00F`）也合法。
 
@@ -85,6 +88,7 @@ Source/Scripts/CNS_*.psc                           ← Init / ModObjects / 七�
 ```
 
 要點：
+<!-- wf-nav -->
 - `skills[]` 把 **20 個原版技能（字串列舉）** 和 **3 個自訂技能（`{ "$ref": "…" }` 指向獨立檔）** 混排在同一份清單裡——**陣列順序就是選單裡的排列順序**，所以三棵新樹被插在語意相近的原版技能旁（H2H 接 Block 後、Athletics 接 Marksman 後、Sorcery 壓軸）。
 - `$ref` 機制讓每棵技能樹各自存成乾淨的 `Constellations/<Skill>.json`，`SKILLS.json` 只做組裝。命名子資料夾 `CustomSkills/Constellations/` 是慣例（避免與別的 mod 撞檔名）。
 - 自帶 `skydome.model` 指到 mod 自己的 `INTPerkSkydome.nif`（21 技能的新星圖），`cameraRightPoint: 1` = vanilla skydome 視角。

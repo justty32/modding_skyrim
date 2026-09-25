@@ -1,0 +1,92 @@
+{
+ "contract": "wf-table/1",
+ "source": "skypatcher-modforge-and-strategy.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "比較面向",
+  "SkyPatcher",
+  "SPID"
+ ],
+ "rows": [
+  {
+   "比較面向": "**核心定位**",
+   "SkyPatcher": "通用 record 欄位修改",
+   "SPID": "專用法術/perk/道具/裝備分發給 NPC"
+  },
+  {
+   "比較面向": "**支援 record 類型**",
+   "SkyPatcher": "28+ 種（防具、武器、種族、leveled list、container…）",
+   "SPID": "NPC、Actor（透過分發）"
+  },
+  {
+   "比較面向": "**NPC 法術分發**",
+   "SkyPatcher": "✓（`spellsToAdd`）",
+   "SPID": "✓（SPID 主打功能）"
+  },
+  {
+   "比較面向": "**NPC perk 分發**",
+   "SkyPatcher": "✓（`perksToAdd`）",
+   "SPID": "✓"
+  },
+  {
+   "比較面向": "**NPC 外觀修改**",
+   "SkyPatcher": "✓（skin、copyVisualStyle、hair…）",
+   "SPID": "✗"
+  },
+  {
+   "比較面向": "**防具/武器欄位修改**",
+   "SkyPatcher": "✓（傷害、重量、keyword…）",
+   "SPID": "✗（只能把 item 加入 NPC 裝備，不修改 item 本身）"
+  },
+  {
+   "比較面向": "**FormList 增刪**",
+   "SkyPatcher": "✓",
+   "SPID": "✗（SPID 靠 FormList 過濾，但不能改 FormList 本身）"
+  },
+  {
+   "比較面向": "**Leveled List 增刪**",
+   "SkyPatcher": "✓",
+   "SPID": "✗"
+  },
+  {
+   "比較面向": "**種族屬性修改**",
+   "SkyPatcher": "✓（血量、體型、起始屬性…）",
+   "SPID": "✗"
+  },
+  {
+   "比較面向": "**容器物品修改**",
+   "SkyPatcher": "✓",
+   "SPID": "✗"
+  },
+  {
+   "比較面向": "**NPC 等級修改**",
+   "SkyPatcher": "✓（level, levelRange, setPcLevelMult…）",
+   "SPID": "✗"
+  },
+  {
+   "比較面向": "**SPID 過濾語法**",
+   "SkyPatcher": "無（SkyPatcher 用 filter 欄位）",
+   "SPID": "強（`ActorBase\\|Outfit\\|Keyword\\|…\\|Level\\|…`）"
+  },
+  {
+   "比較面向": "**多對多分發（群體）**",
+   "SkyPatcher": "✓（filterByRaces/filterByKeywords）",
+   "SPID": "✓"
+  },
+  {
+   "比較面向": "**熱移除不留存檔**",
+   "SkyPatcher": "✓",
+   "SPID": "✓（SPID 也不寫存檔）"
+  },
+  {
+   "比較面向": "**執行時機**",
+   "SkyPatcher": "DataLoaded（靜態）+ PostLoadGame/Load3D（NPC）",
+   "SPID": "PostLoad（分發時機）"
+  },
+  {
+   "比較面向": "**SKSE 依賴**",
+   "SkyPatcher": "✓",
+   "SPID": "✓"
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "contract": "wf-table/1",
+ "source": "constellations-vs-csf-and-modforge.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "面向",
+  "Constellations（本 mod）",
+  "CSF 框架（CustomSkills.dll）"
+ ],
+ "rows": [
+  {
+   "面向": "**角色**",
+   "Constellations（本 mod）": "使用者 mod（三棵新技能樹）",
+   "CSF 框架（CustomSkills.dll）": "底層框架（選單外殼 + XP 引擎）"
+  },
+  {
+   "面向": "**Config 格式**",
+   "Constellations（本 mod）": "JSON（v3，現代格式）",
+   "CSF 框架（CustomSkills.dll）": "支援 JSON（v2/v3）與舊 INI（v1）兩種"
+  },
+  {
+   "面向": "**UI 整合方式**",
+   "Constellations（本 mod）": "覆寫 `SKILLS.json`，直接住進原版技能頁",
+   "CSF 框架（CustomSkills.dll）": "`SKILLS.json`（併入原版頁）或具名 `.json`（獨立選單群組）二選一"
+  },
+  {
+   "面向": "**選單機制**",
+   "Constellations（本 mod）": "重用原版 skill perk tree UI（星座背景 + perk 節點網格）",
+   "CSF 框架（CustomSkills.dll）": "同左（CSF 提供的機制）"
+  },
+  {
+   "面向": "**perk 格式**",
+   "Constellations（本 mod）": "普通 PERK record，沒有特殊格式",
+   "CSF 框架（CustomSkills.dll）": "同左（CSF 不發明新 perk 格式）"
+  },
+  {
+   "面向": "**Papyrus API**",
+   "Constellations（本 mod）": "使用 `CustomSkills.ShowTrainingMenu()` 等 v3 函式",
+   "CSF 框架（CustomSkills.dll）": "`CustomSkills.psc`（v3：10 個 native 函式 + 事件 extension scripts）"
+  },
+  {
+   "面向": "**runtime 依賴**",
+   "Constellations（本 mod）": "CSF（必裝）+ 私有 `Constellations.dll`（Fortify 功能）",
+   "CSF 框架（CustomSkills.dll）": "SKSE64 + Address Library"
+  },
+  {
+   "面向": "**Fortify-技能附魔/藥水**",
+   "Constellations（本 mod）": "有（靠 `Constellations.dll` + `ActorValueData/*.toml`）",
+   "CSF 框架（CustomSkills.dll）": "CSF 本身不提供；需 mod 自實作 native plugin"
+  },
+  {
+   "面向": "**skydome**",
+   "Constellations（本 mod）": "自製 NIF（21 技能版星圖）",
+   "CSF 框架（CustomSkills.dll）": "可重用 vanilla（免自製）"
+  },
+  {
+   "面向": "**XP 推進方式**",
+   "Constellations（本 mod）": "keyword（用量）+ 訓練選單（花錢）+ MGEF（附魔/藥水）",
+   "CSF 框架（CustomSkills.dll）": "框架支援以上三路 + `AdvanceSkill()` / `IncrementSkill()` 任意腳本推進"
+  },
+  {
+   "面向": "**節點上限**",
+   "Constellations（本 mod）": "9 個（三棵各 9）",
+   "CSF 框架（CustomSkills.dll）": "127 個（schema 定義）"
+  },
+  {
+   "面向": "**生成難度**",
+   "Constellations（本 mod）": "高（含私有 dll；但 dll 是選配，不做 Fortify 則不需要）",
+   "CSF 框架（CustomSkills.dll）": "中（純 JSON + PERK + GLOB + KYWD，無 native code）"
+  },
+  {
+   "面向": "**主要生成阻力**",
+   "Constellations（本 mod）": "`Constellations.dll` 的 native code（Fortify 功能）無法用 ModForge 生成",
+   "CSF 框架（CustomSkills.dll）": "無原生阻力；JSON + esp record 全部可生成"
+  }
+ ]
+}

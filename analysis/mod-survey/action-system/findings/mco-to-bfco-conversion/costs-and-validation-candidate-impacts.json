@@ -1,0 +1,112 @@
+{
+ "contract": "wf-table/1",
+ "source": "costs-and-validation.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "行",
+  "候選",
+  "現行結論",
+  "本線技術依據",
+  "建議"
+ ],
+ "rows": [
+  {
+   "行": "`:56`",
+   "候選": "**BDO Guardian**",
+   "現行結論": "`NO-GO-MCO-ONLY`",
+   "本線技術依據": "**前提不成立**：[BFCO I BDO Guardian Awakening, mod 135503](https://www.nexusmods.com/skyrimspecialedition/mods/135503) 是**帶授權的現成 BFCO 版**（189 endorsements / 41,973 DL）；War Axe 版另收在 Diverse NPC Movesets 的 BFCO 分支（priority 29000）",
+   "建議": "**重新開放**（改判理由：不再是 MCO-only）"
+  },
+  {
+   "行": "`:56`",
+   "候選": "**DD Fighter**",
+   "現行結論": "`NO-GO-MCO-ONLY`",
+   "本線技術依據": "**前提不成立**：[Dragons Dogma 2 Fighter Sword and Shield Moveset - MCO and BFCO, mod 123708](https://www.nexusmods.com/skyrimspecialedition/mods/123708) 官方就出雙框架。⚠️ 若審的是舊的 [mod 77366 `ADXP I MCO Dragons Dogma Fighter`](https://www.nexusmods.com/skyrimspecialedition/mods/77366)，那個仍是 MCO-only，但收在 Diverse NPC Movesets BFCO 分支（14000）",
+   "建議": "**重新開放**，並先釐清審的是哪一個 mod id"
+  },
+  {
+   "行": "`:56`",
+   "候選": "**DA Staff**",
+   "現行結論": "`NO-GO-MCO-ONLY`",
+   "本線技術依據": "**前提不成立**：[BFCO Dragon Age Staff Moveset, mod 184100](https://www.nexusmods.com/skyrimspecialedition/mods/184100)（2026-07-01）是現成 BFCO 轉換層，把原 [mod 94748](https://www.nexusmods.com/skyrimspecialedition/mods/94748) 列 required。⚠️ 它另需 `For Honor Power Attack` 或同類熱鍵 mod——而 BFCO MCM 內建重擊熱鍵，**這條前置是否真的必要需驗**",
+   "建議": "**重新開放**，但把「額外熱鍵 mod 前置」列為未決"
+  },
+  {
+   "行": "`:56`",
+   "候選": "**DD Daggers**",
+   "現行結論": "`NO-GO-MCO-ONLY`",
+   "本線技術依據": "**只有玩家路，且要自轉**：只有 [mod 80085](https://www.nexusmods.com/skyrimspecialedition/mods/80085)，**查無現成 BFCO 版**，且 **141893 catalog 裡也沒有它**（已查證）。授權已查完：私人轉換可，再發布不可（§4.1）",
+   "建議": "**降為 DEFER**——不是技術阻斷也不是授權阻斷，是「值不值得為它花一次自轉＋驗收」"
+  },
+  {
+   "行": "`:57`",
+   "候選": "**Bloodskal Weapon Art**",
+   "現行結論": "`NO-GO-MCO/ARTIFACT-OWNER`",
+   "本線技術依據": "判定的第二個理由（weapon art 與神器 rebalance 越界）**與框架無關**，不因本結論改變。且 BFCO 自帶 DLC2-Bloodskal Event 專用處理（[`raws/BFCO - ….txt`](<../../raws/BFCO - Attack Behavior Framework (SSE AE VR).txt>) 的 `DLC2-Bloodskal Event` 段）",
+   "建議": "**確定關閉**（MCO 那半的理由失效，但 artifact-owner 那半仍然成立）"
+  },
+  {
+   "行": "`:79`",
+   "候選": "**Leviathan Animations II — Greatsword 四件**（92266／88171／86183／99073 等 vanilla-replacer 家族）",
+   "現行結論": "`DEFER-BFCO-CONVERSION/OWNER-HOLD`",
+   "本線技術依據": "這四件是 **vanilla replacer／locomotion／stance**，**不是 MCO moveset**——本結論**不適用**，它們沒有 `mco_*.hkx` 要改",
+   "建議": "**維持 DEFER**（本線無新證據）"
+  },
+  {
+   "行": "`:80`",
+   "候選": "**Leviathan Animations II — Greatsword MCO 94715**",
+   "現行結論": "`NO-GO-MCO-ONLY；Attack MCO 硬依賴且作者未授權轉 BFCO`",
+   "本線技術依據": "**兩個前提都已被推翻**：(1) 技術上可轉；(2) **授權已逐字查證**（§4.1）——Verolevi 的 `Conversion permission` 只禁「移植到別的遊戲」，不涵蓋同遊戲內框架轉換，**私人轉換無障礙**（禁的是再發布）。**NPC 路**另有現成品：141893 priority 20000，原作者明示授權",
+   "建議": "**重新開放**。NPC 走 141893（現成）、玩家自轉——**兩條要分開寫**"
+  },
+  {
+   "行": "`:81`",
+   "候選": "**Vanargand One Handed 三件**",
+   "現行結論": "`NO-GO-LEGACY-VANILLA/BFCO`",
+   "本線技術依據": "同 `:79`：`legacy vanilla` 那半與框架無關。若其中含 MCO moveset 件，技術上可轉；Verolevi 的授權條款已查（§4.1，私人可）",
+   "建議": "**維持 NO-GO**，除非 `opus-content` 想連同 `:80` 一起重審"
+  },
+  {
+   "行": "`:82`",
+   "候選": "**Vanargand Dual Wield**",
+   "現行結論": "`NO-GO-LEGACY-VANILLA/BFCO`",
+   "本線技術依據": "第二理由（dual power stamina／perk 語意偏移）**與框架無關**；且 BFCO 走 vanilla 攻速反而讓 perk 語意問題**變小**",
+   "建議": "**建議重審第二理由**，但本線無足夠證據翻案"
+  },
+  {
+   "行": "`:83`",
+   "候選": "**KG Animations 1H／DW＋2H**",
+   "現行結論": "`NO-GO-VANILLA-COMBAT/BFCO`",
+   "本線技術依據": "理由是「全域 1P／3P attack owner」，與 MCO→BFCO 無關",
+   "建議": "**確定關閉**"
+  },
+  {
+   "行": "`:84`",
+   "候選": "**Vanargand II Unarmed Pugilism family**",
+   "現行結論": "`DEFER-BFCO-MOVESET-HOLD；Attack MCO 件 NO-GO`",
+   "本線技術依據": "家族拆解：`Pugilism Stance`(109684)／`Non Combat Locomotion`(105376)／`Normal And Power Attacks`(117328) 都**不是 MCO 件**；只有 [`Unarmed MCO Moveset`(110676)](https://www.nexusmods.com/skyrimspecialedition/mods/110676) 是。該件的 MCO-ONLY 前提不成立，**授權亦已查證可私人轉換**（§4.1）。**NPC 路**：141893 priority 19000（現成、授權明確）",
+   "建議": "**把「Attack MCO 件 NO-GO」改成 DEFER**；`OAR stance 不做半套` 那半維持。NPC／玩家兩條分開寫"
+  },
+  {
+   "行": "`:149`",
+   "候選": "**Troll — MCO**",
+   "現行結論": "`DEFER-SCAR-FRAMEWORK-HOLD`",
+   "本線技術依據": "**不受影響**：它是 Troll AI／race overhaul，SCAR 是獨立決策（見 B9）",
+   "建議": "**維持 DEFER**"
+  },
+  {
+   "行": "`:150`",
+   "候選": "**Draugr — MCO**",
+   "現行結論": "`DEFER-SCAR-FRAMEWORK-HOLD`",
+   "本線技術依據": "同上",
+   "建議": "**維持 DEFER**"
+  },
+  {
+   "行": "`:55`",
+   "候選": "**Spear of Skyrim**",
+   "現行結論": "`DEFER-BFCO-WEAPON-CLASS-HOLD`",
+   "本線技術依據": "**不受影響**：[mod 147277](https://www.nexusmods.com/skyrimspecialedition/mods/147277) 已是 `BFCO-OAR-SkyUI Version`，本來就沒有 MCO 轉換問題；hold 的理由是 weapon-record 語意",
+   "建議": "**維持 DEFER**"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "contract": "wf-table/1",
+ "source": "comparison-modforge.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "ICAIO 用到的能力",
+  "ModForge 現況（見 [landed/npcs.md](../../../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）"
+ ],
+ "rows": [
+  {
+   "ICAIO 用到的能力": "整疊 eat/sleep/sit/travel/sandbox（具體在前、sandbox fallback 在後）",
+   "ModForge 現況（見 [landed/npcs.md](../../../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）": "✅ 10 個 PACK 模板全有，順序已是鐵律；新 NPC 直接 `NpcSpec.Packages`"
+  },
+  {
+   "ICAIO 用到的能力": "package 綁特定 location/target ref（床、攤位、工作台）",
+   "ModForge 現況（見 [landed/npcs.md](../../../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）": "✅ placements + package target/location 槽；radiant 版支援 `alias:`/`aliasLoc:`（C組 #2）"
+  },
+  {
+   "ICAIO 用到的能力": "時段 Schedule（`hour×duration`）",
+   "ModForge 現況（見 [landed/npcs.md](../../../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）": "✅ PACK 模板帶 schedule 欄位"
+  },
+  {
+   "ICAIO 用到的能力": "預放 sandbox / idle 標記 + 家具",
+   "ModForge 現況（見 [landed/npcs.md](../../../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）": "✅ placements（IdleMarker / Furniture base 可放）"
+  },
+  {
+   "ICAIO 用到的能力": "vendor 營業時段",
+   "ModForge 現況（見 [landed/npcs.md](../../../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）": "✅ vendor faction（`ServicesWhiterunCarlotta` 類）已可生"
+  },
+  {
+   "ICAIO 用到的能力": "**逃跑 / 防禦 package（Flee-template + CombatStyle）**",
+   "ModForge 現況（見 [landed/npcs.md](../../../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）": "⚠️ **gap**：PACK 模板清單沒有 `flee` 模板；CombatStyle 可生（`cstydiag` 同款欄位）但「平民被攻擊→往安全點跑」這條沒有現成 spec。**這是 #22「被野獸/匪徒襲擊時聚落 NPC 會逃/會還手」最值得補的一塊。**"
+  },
+  {
+   "ICAIO 用到的能力": "**alias-package 分派 quest（替既有 NPC 掛包）**",
+   "ModForge 現況（見 [landed/npcs.md](../../../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）": "❌ 只在 radiant package（alias target/location）邊緣碰到；要「patch 既有 vanilla NPC」才需要——**#22 用不到**，記為他用 roadmap 點子即可"
+  },
+  {
+   "ICAIO 用到的能力": "分區 GLOB 開關 + GameSetting 手感調整",
+   "ModForge 現況（見 [landed/npcs.md](../../../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）": "△ GLOB 可生；GameSetting override 非典型 ModForge 產出（也不是 #22 必要）"
+  }
+ ]
+}

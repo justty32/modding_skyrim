@@ -1,0 +1,133 @@
+{
+ "contract": "wf-table/1",
+ "source": "cases-relevance.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "#",
+  "Perk 名 (EDID)",
+  "FormId",
+  "作用（取自 esp 描述）"
+ ],
+ "rows": [
+  {
+   "#": "1",
+   "Perk 名 (EDID)": "Prayer (`zVigP00CriticalChance01`)",
+   "FormId": "0xD65",
+   "作用（取自 esp 描述）": "入口；暴擊機率"
+  },
+  {
+   "#": "2",
+   "Perk 名 (EDID)": "Exorcist (`zVigP01AUndead01`)",
+   "FormId": "0xD68",
+   "作用（取自 esp 描述）": "對亡靈額外傷害"
+  },
+  {
+   "#": "3",
+   "Perk 名 (EDID)": "Wolf's Bane (`zVigP02AWerewolf01`)",
+   "FormId": "0xD66",
+   "作用（取自 esp 描述）": "對狼人額外傷害（多階 6/10/15/20%）"
+  },
+  {
+   "#": "4",
+   "Perk 名 (EDID)": "Inquisition (`zVigP02AInquisition01`)",
+   "FormId": "0xD67",
+   "作用（取自 esp 描述）": "偵訊/審判系"
+  },
+  {
+   "#": "5",
+   "Perk 名 (EDID)": "Daedra Banisher (`zVigP03ADaedra01`)",
+   "FormId": "0xD69",
+   "作用（取自 esp 描述）": "對魔族額外傷害"
+  },
+  {
+   "#": "6",
+   "Perk 名 (EDID)": "Holy Water (`zVigP01BResistUndead01`)",
+   "FormId": "0xD6A",
+   "作用（取自 esp 描述）": "對亡靈抗性"
+  },
+  {
+   "#": "7",
+   "Perk 名 (EDID)": "Insensitivity (`zVigP02BResistGhost01`)",
+   "FormId": "0xD6C",
+   "作用（取自 esp 描述）": "對幽靈抗性"
+  },
+  {
+   "#": "8",
+   "Perk 名 (EDID)": "Silver Powder (`zVigP02BResistWerewolf01`)",
+   "FormId": "0xD6B",
+   "作用（取自 esp 描述）": "減狼人傷害（多階 6/10/15/20%）"
+  },
+  {
+   "#": "9",
+   "Perk 名 (EDID)": "The Blessed (`zVigP03BResistDaedra01`)",
+   "FormId": "0xD6D",
+   "作用（取自 esp 描述）": "對魔族抗性"
+  },
+  {
+   "#": "10",
+   "Perk 名 (EDID)": "Steadfast Belief (`zVigP01CCriticalDamage01`)",
+   "FormId": "0xD90",
+   "作用（取自 esp 描述）": "暴擊傷害"
+  },
+  {
+   "#": "11",
+   "Perk 名 (EDID)": "Merciful Forbearance (`zVigP02CCharity01`)",
+   "FormId": "0xD93",
+   "作用（取自 esp 描述）": "慈悲/施捨系"
+  },
+  {
+   "#": "12",
+   "Perk 名 (EDID)": "Righteous Might (`zVigP02CRigidity01`)",
+   "FormId": "0xD97",
+   "作用（取自 esp 描述）": "剛性/格擋強化"
+  },
+  {
+   "#": "13",
+   "Perk 名 (EDID)": "Keeper (`zVigP03CShieldRate01`)",
+   "FormId": "0xD99",
+   "作用（取自 esp 描述）": "盾牌格擋率"
+  },
+  {
+   "#": "14",
+   "Perk 名 (EDID)": "Share Knee Pain (`zVigP01DGuard01`)",
+   "FormId": "0xD9E",
+   "作用（取自 esp 描述）": "守衛系"
+  },
+  {
+   "#": "15",
+   "Perk 名 (EDID)": "Long Lecture (`zVigP02CTurnUndead01`)",
+   "FormId": "0xDA5",
+   "作用（取自 esp 描述）": "驅散亡靈（Turn Undead）"
+  },
+  {
+   "#": "16",
+   "Perk 名 (EDID)": "Creaking Gate (`zVigP02CWard01`)",
+   "FormId": "0x800",
+   "作用（取自 esp 描述）": "防護 ward"
+  },
+  {
+   "#": "17",
+   "Perk 名 (EDID)": "Garlic (`zVigP03CResistVampDrain01`)",
+   "FormId": "0xDA0",
+   "作用（取自 esp 描述）": "抗吸血鬼吸取"
+  },
+  {
+   "#": "18",
+   "Perk 名 (EDID)": "Great Noon (`zVigP03CSun01`)",
+   "FormId": "0x807",
+   "作用（取自 esp 描述）": "陽光/Sun 系"
+  },
+  {
+   "#": "19",
+   "Perk 名 (EDID)": "Blood of ANU (`zVigP04BDaedricWeapon01`)",
+   "FormId": "0x80C",
+   "作用（取自 esp 描述）": "魔族武器強化"
+  },
+  {
+   "#": "20",
+   "Perk 名 (EDID)": "Blood of PADOMAY (`zVigP04ADaedricArmor01`)",
+   "FormId": "0x811",
+   "作用（取自 esp 描述）": "魔族護甲強化"
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "contract": "wf-table/1",
+ "source": "modforge-roadmap.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "RE 機制",
+  "ModForge 對應",
+  "狀態（核實）"
+ ],
+ "rows": [
+  {
+   "RE 機制": "計價 / 收益 / 倍率 GLOB（`RE_*Mult`/`*BasePrice`/`*Owned`）",
+   "ModForge 對應": "`GlobalSpec`（`Spec.Globals.cs`，`spec.globals[]`，含 Short/Float/Int）",
+   "狀態（核實）": "✅ landed"
+  },
+  {
+   "RE 機制": "教學 quest（stages + objectives + alias QuestObject/ForcedReference）",
+   "ModForge 對應": "QUST（`Spec.Quests.cs`，含 InstanceGlobals / GlobalWrite fragment sugar）",
+   "狀態（核實）": "✅ landed"
+  },
+  {
+   "RE 機制": "腳本化 Activator 告示牌（ACTI + 多屬性 script-attach + `OnActivate`）",
+   "ModForge 對應": "ACTI + script-attach + fragments",
+   "狀態（核實）": "✅ landed（[skillTrees](../../../../../projects/ModForge/workflows/feature-dev/landed/world.md) 的 node activator 即此 pattern）"
+  },
+  {
+   "RE 機制": "保險箱 `SetActorOwner` / 告示牌房產所有權（XOWN/owner）",
+   "ModForge 對應": "**placement `OwnershipSpec`（XOWN owner+rank）**（`Generator.Build.Placements.cs:143`、`Spec.World.cs:58`）",
+   "狀態（核實）": "✅ landed（靜態 XOWN）；**runtime `Reference.SetActorOwner` 切換**需走 script fragment（可生成，無一級 sugar）"
+  },
+  {
+   "RE 機制": "4 個 relationship PERK ±rank",
+   "ModForge 對應": "PERK（含 entry-point，[perk-entry-points](../../systems-encounters/perk-entry-points.md)）+ RELA",
+   "狀態（核實）": "✅ landed"
+  },
+  {
+   "RE 機制": "被動收租 timer（`RegisterForUpdateGameTime`）",
+   "ModForge 對應": "script-attach + fragment（任意 Papyrus 可寫進 attach script）",
+   "狀態（核實）": "✅ 可生成（非宣告式 sugar，需手寫 fragment）"
+  },
+  {
+   "RE 機制": "`RE_LedgersQuill` 總帳（quest InstanceGlobal）",
+   "ModForge 對應": "`Spec.Quests.cs` InstanceGlobals / GlobalWriteSpec",
+   "狀態（核實）": "✅ landed"
+  },
+  {
+   "RE 機制": "礦工 base（autoCalcStats+class）+ enable/disable ACHR",
+   "ModForge 對應": "NPC（[npcs](../../../../../projects/ModForge/workflows/feature-dev/landed/npcs.md)）+ placement + enableParent",
+   "狀態（核實）": "✅ landed"
+  },
+  {
+   "RE 機制": "MCM（買賣 / 倍率 / 週期 / 開關 / cheat 頁）",
+   "ModForge 對應": "**MCM 生成（`McmGen.cs`/`Generator.Build.Mcm.cs`，`Spec.Mcm.cs`）**",
+   "狀態（核實）": "✅ landed，**但生成的是 MCM-Helper `config.json` 風格**，非 RE 的 `SKI_ConfigBase` 手寫腳本（兩者最終都出 SkyUI MCM，功能等價；ModForge 走宣告式那條，見 [mcm-helper](../../frameworks-tools/mcm-helper.md)）"
+  },
+  {
+   "RE 機制": "**多按鈕 message-box 選單**（Buy / Sell / Cancel 等 22 個 MESG，買賣 UI 核心）",
+   "ModForge 對應": "**`MessageSpec` 只有 `EditorId/Name/Description`**（`Spec.Items.cs:42`）——**無 menu buttons / ITXT choices 欄位**",
+   "狀態（核實）": "⚠️ **GAP（已核實）**：ModForge 的 MESG 只能生「純文字提示框」，**生不出「多按鈕選單型 message-box」**。RE 的買/賣分支全靠這種選單。`Spec.Identity.cs` 的 `AcquireText` 是寫死的 yes/no prompt，非通用多按鈕。"
+  },
+  {
+   "RE 機制": "「一棟房子 = 一個資產」的 spec 抽象",
+   "ModForge 對應": "**settlements macro（`Spec.Settlement.cs`/`Generator.Settlements.cs`）**",
+   "狀態（核實）": "⚠️ 部分：macro 涵蓋 residents+routine+shop faction，**不涵蓋「property ownership / buyable / 收租」維度**（見 roadmap）"
+  }
+ ]
+}

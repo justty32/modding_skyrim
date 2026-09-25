@@ -22,6 +22,7 @@
 
 對照 [animated-vehicles.md](../systems-encounters/animated-vehicles.md)：vanilla 動態船是「NIF 自帶航行動畫的裝飾」，這裡**完全不同**——船是**純靜態置放**，「航行」是一次淡入淡出傳送：
 
+<!-- wf-nav -->
 - 每個港口都**預先擺一整艘船的副本**。核心資料結構 `ShipList` ＝ **FormList of FormList**，用地點 index 定址：`ShipList[loc]` 是該港的 FormList，`GetAt(0)`=要 Enable 的主船 ref、`GetAt(1)`=玩家落點 marker、`GetAt(3)`=旗幟 FormList、`GetAt(4)`=figurehead FormList。
 - `aaashiptravelquest.ShipTravel(pre, new)`：`FadeOut()` → `EnableNewShip(new)`（Enable 目的港的船＋按 `BannerIndex`/`FigureheadIndex` global 挑對應裝飾 ref）→ `Player.MoveTo(ShipList[new].GetAt(1))` → `DisablePreShip(pre)`（Disable 舊港的船）→ `MoveCrew()` → `FadeIn()`。
 - 裝飾更換（`aaaShipModel`：旗幟/figurehead/床）＝在該港 FormList 內 **Disable 舊 index ref / Enable 新 index ref**，零 record 生成、純開關預置物。
@@ -43,6 +44,7 @@
 
 對 ModForge 的可生成性標記：
 
+<!-- wf-nav -->
 - **可生成（今天就能）**：整個「船＝傳送樞紐」骨架其實**全是已 landed 的 record 能力域**——ACTI + script-attach（`aaashiptravel` 等 `ObjectReference` 腳本，`scriptAttach`/`ScriptAttachSpec.Source` 已驗證可編譯 `.psc` 進 VMAD）、FormList（**FormList-of-FormList 巢狀**，FLST 工廠已可生，見 [flst-factory.md](../systems-encounters/flst-factory.md)）、GlobalVariable 狀態、QUST + 9-alias crew bank（`ForceRefTo` alias fill 已支援）、自訂/override CELL & WRLD、MESG 多按鈕選單、SkyUI MCM（`config.json` 生成 + `SKI_ConfigBase`，見 [mcm-helper.md](../frameworks-tools/mcm-helper.md)）。**ModForge 是 packager，controller 演算法（travel/crew/海域重擲）＝隨附 `.psc`**——與 Tundra/Honed Metal/Real Estate 同類。
 - **純參考 pattern（高價值）**：**「Enable/Disable 多實例預置物做偽移動/偽程序生成」**是本 mod 的核心手法，值得記進 [runtime-selector-patterns.md](../systems-encounters/runtime-selector-patterns.md)——① 「一物多港副本 + FormList 定址 + 傳送時切換 Enable」＝可移動據點（船/馬車/浮空堡）的**零-NIF-動畫**做法，比 linkedRef 節點鏈更簡單；② 「XMarker 上預置事件群 + `RandomInt` 逐一 Enable/Disable」＝**輕量隨機遭遇**（比 SM/navmesh spawn 便宜，但事件是有限預置池，非真程序生成）。
 - **需新支援（缺口）**：無**新**硬缺口——它踩到的都是已知缺口。①「船隻旅行/裝飾/crew」若要做成 spec 便利層，缺一個 `travelHub:` / `enableDisableStateMachine:` macro（把「N 個地點 × 預置物 + FormList 定址 + 切換 fragment」宏展開），但底層零件全在；② 多按鈕 `MessageSpec buttons:[]`（`Spec.Items.cs:42` 缺欄，與 Real Estate/Tundra 同一缺口）本 mod 也大量用到，再加一票。

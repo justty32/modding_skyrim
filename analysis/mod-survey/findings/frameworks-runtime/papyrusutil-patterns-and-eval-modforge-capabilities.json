@@ -1,0 +1,77 @@
+{
+ "contract": "wf-table/1",
+ "source": "papyrusutil-patterns-and-eval.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "功能",
+  "評估",
+  "說明"
+ ],
+ "rows": [
+  {
+   "功能": "`StorageUtil` scalar 讀寫",
+   "評估": "**可直接生成**",
+   "說明": "在 QuestScript / FragmentScript 中做 per-form KV，pattern 極固定"
+  },
+  {
+   "功能": "`StorageUtil` 列表操作",
+   "評估": "**可直接生成**",
+   "說明": "ShiftList/PopList/FormListAdd 等 queue/set pattern 可模板化"
+  },
+  {
+   "功能": "`JsonUtil` scalar 讀寫",
+   "評估": "**可直接生成**",
+   "說明": "config 讀取 pattern 固定"
+  },
+  {
+   "功能": "`JsonUtil` path API",
+   "評估": "**部分生成**（推斷）",
+   "說明": "需要 spec 提供路徑表達式；嵌套結構若由 spec 定義則可生成"
+  },
+  {
+   "功能": "`ActorUtil.AddPackageOverride`",
+   "評估": "**可直接生成**",
+   "說明": "priority/flags 參數固定，適合 follower action service pattern"
+  },
+  {
+   "功能": "`ActorUtil.ClearPackageOverride`",
+   "評估": "**需警告生成**",
+   "說明": "易影響其他 mod，需在 spec 中標注風險"
+  },
+  {
+   "功能": "`MiscUtil.ScanCellNPCs`",
+   "評估": "**可直接生成**",
+   "說明": "情境觸發 pattern 固定"
+  },
+  {
+   "功能": "`MiscUtil.WriteToFile`",
+   "評估": "**可直接生成**",
+   "說明": "debug log 或 export 用途"
+  },
+  {
+   "功能": "`PapyrusUtil` 陣列操作",
+   "評估": "**可直接生成**（推斷）",
+   "說明": "大陣列操作；但要注意 Push 類頻繁呼叫有效能問題（原始碼有警告）"
+  },
+  {
+   "功能": "`PapyrusUtil.StringSplit/Join`",
+   "評估": "**可直接生成**",
+   "說明": "CSV-like inline 資料解析"
+  },
+  {
+   "功能": "`StorageUtil` prefix 掃描/清除",
+   "評估": "**純參考**",
+   "說明": "較少見；自動生成需 spec 層明確觸發"
+  },
+  {
+   "功能": "`ObjectUtil` animation replace",
+   "評估": "**不可用**",
+   "說明": "SSE 版已停用，函數體為空"
+  },
+  {
+   "功能": "`StorageUtil.File*` 系列",
+   "評估": "**已廢棄**",
+   "說明": "都是 JsonUtil 的 proxy，應直接用 JsonUtil"
+  }
+ ]
+}

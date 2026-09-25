@@ -1,0 +1,112 @@
+{
+ "contract": "wf-table/1",
+ "source": "perk-entry-points-mechanism.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "ID",
+  "EntryType 名稱",
+  "Mutagen 類別",
+  "典型場景",
+  "tab-count"
+ ],
+ "rows": [
+  {
+   "ID": "0",
+   "EntryType 名稱": "CalculateWeaponDamage",
+   "Mutagen 類別": "`PerkEntryPointModifyValue`",
+   "典型場景": "武器傷害計算",
+   "tab-count": "3"
+  },
+  {
+   "ID": "26",
+   "EntryType 名稱": "ModBashingDamage",
+   "Mutagen 類別": "`PerkEntryPointModifyValue`",
+   "典型場景": "格擋攻擊傷害",
+   "tab-count": "2"
+  },
+  {
+   "ID": "28",
+   "EntryType 名稱": "ModPowerAttackDamage",
+   "Mutagen 類別": "`PerkEntryPointModifyValue`",
+   "典型場景": "力攻傷害",
+   "tab-count": "3"
+  },
+  {
+   "ID": "29",
+   "EntryType 名稱": "ModSpellMagnitude",
+   "Mutagen 類別": "`PerkEntryPointModifyValue`",
+   "典型場景": "法術強度",
+   "tab-count": "3"
+  },
+  {
+   "ID": "35",
+   "EntryType 名稱": "ModAttackDamage",
+   "Mutagen 類別": "`PerkEntryPointModifyValue`",
+   "典型場景": "普攻傷害",
+   "tab-count": "3"
+  },
+  {
+   "ID": "36",
+   "EntryType 名稱": "ModIncomingDamage",
+   "Mutagen 類別": "`PerkEntryPointModifyValue`",
+   "典型場景": "受到傷害（可設 0 擋下）",
+   "tab-count": "3"
+  },
+  {
+   "ID": "38",
+   "EntryType 名稱": "ModSpellCost",
+   "Mutagen 類別": "`PerkEntryPointModifyValue`",
+   "典型場景": "法術消耗",
+   "tab-count": "2"
+  },
+  {
+   "ID": "51",
+   "EntryType 名稱": "ApplyCombatHitSpell",
+   "Mutagen 類別": "`PerkEntryPointSelectSpell`",
+   "典型場景": "命中時附加 spell",
+   "tab-count": "3"
+  },
+  {
+   "ID": "52",
+   "EntryType 名稱": "ApplyBashingSpell",
+   "Mutagen 類別": "`PerkEntryPointSelectSpell`",
+   "典型場景": "格擋命中附加 spell",
+   "tab-count": "2"
+  },
+  {
+   "ID": "53",
+   "EntryType 名稱": "ApplyReanimateSpell",
+   "Mutagen 類別": "`PerkEntryPointSelectSpell`",
+   "典型場景": "重生時附加 spell",
+   "tab-count": "3"
+  },
+  {
+   "ID": "61",
+   "EntryType 名稱": "CanPickpocketEquippedItem",
+   "Mutagen 類別": "`PerkEntryPointAbsoluteValue`",
+   "典型場景": "可扒穿戴物品",
+   "tab-count": "3"
+  },
+  {
+   "ID": "67",
+   "EntryType 名稱": "ApplyWeaponSwingSpell",
+   "Mutagen 類別": "`PerkEntryPointSelectSpell`",
+   "典型場景": "揮武器時附加 spell",
+   "tab-count": "3"
+  },
+  {
+   "ID": "74",
+   "EntryType 名稱": "**FilterActivation**",
+   "Mutagen 類別": "`PerkEntryPointAddActivateChoice`",
+   "典型場景": "過濾/攔截啟動動作",
+   "tab-count": "2"
+  },
+  {
+   "ID": "81",
+   "EntryType 名稱": "**SetActivateLabel**",
+   "Mutagen 類別": "`PerkEntryPointSetText`",
+   "典型場景": "覆寫啟動按鈕文字",
+   "tab-count": "2（預設）"
+  }
+ ]
+}

@@ -44,6 +44,7 @@
 
 **逐欄要點**：
 
+<!-- wf-nav -->
 - **`version` 不在這裡**。`version: 1` 是 root（`CustomSkill.json` / `SKILLS.json`）的欄位，不是 skill 物件的欄位。
 - **`id`**：給 Papyrus / 訓練選單 / console 引用。提醒：Constellations 的 JSON 寫 `"HandtoHand"`（小寫 t）但訓練 TIF 卻呼叫 `"HandToHand"`——疑似容錯/筆誤仍可運作，但**你自己務必前後一致**，別賭它。
 - **`name`/`description`**：以 `$` 開頭即翻譯 key（推薦）；不以 `$` 開頭視為直接字面值（deprecated）。

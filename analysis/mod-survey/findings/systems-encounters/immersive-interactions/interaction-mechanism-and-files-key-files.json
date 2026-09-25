@@ -1,0 +1,43 @@
+{
+ "contract": "wf-table/1",
+ "source": "interaction-mechanism-and-files.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案",
+  "角色"
+ ],
+ "rows": [
+  {
+   "檔案": "`ImmersiveInteractions.esp`",
+   "角色": "95 records：**43 GlobalShort**（`AR_*` 全是 MCM 開關 + 1 個 DAR 選擇器 `AR_DogUp`）、**35 FormList**（目標分類）、**1 Perk** `AR_AnimPerk`（33 entry-points）、**1 Quest** `AR_Quest`、3 SoundMarker、3 SoundDescriptor、2 MagicEffect + 1 Ingestible（`AR_Energized` buff）、4 Furniture override（Lever，加/改 keyword 讓拉桿可分類）、1 DialogTopic+1 INFO。master 含 DAK.esp。"
+  },
+  {
+   "檔案": "`AnimimationsReborn_Fragments.psc/.pex`",
+   "角色": "Perk fragment 派發器：~29 個 `Fragment_N`，每個一行 `Activate.fXxx(akActor, akTargetRef)`。"
+  },
+  {
+   "檔案": "`AR_QuestScript.psc/.pex`",
+   "角色": "全部互動邏輯（`fOpen`/`fTake`/`fHarvest`/`fpuzzle`/`fSearch`/`fSearchNPC`/`fPray`/`fpetdog`/`fwavehorse`/`fsalute*`/`ffriend`…）+ `OnControlUp` 撿柴滅火 + `IsPlayerIn3rd`/`Returnto1st` helper。"
+  },
+  {
+   "檔案": "`AR_Ref_AliasScript.psc/.pex`",
+   "角色": "玩家別名被動 event（裝備/移除/Wait 鍵）。"
+  },
+  {
+   "檔案": "`AR_MCMScript.pex`",
+   "角色": "SkyUI MCM 設定面板（讀寫那 43 個 global）。"
+  },
+  {
+   "檔案": "`meshes/.../ImmersiveInteractions/FNIS_..._List.txt`",
+   "角色": "FNIS 自訂動畫定義 → 產生 behavior（`FNIS_ImmersiveInteractions_Behavior.hkx`）。"
+  },
+  {
+   "檔案": "`meshes/.../DynamicAnimationReplacer/_CustomConditions/1993N/_conditions.txt` + `.hkx`",
+   "角色": "DAR 條件層：`ValueEqualTo(...esp\\|0x0000AA13, N)`，依 `AR_DogUp` 換動畫。"
+  },
+  {
+   "檔案": "`sound/fx/*.wav`, `Interface/MCM/*.dds`",
+   "角色": "音效 + MCM 圖。"
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "contract": "wf-table/1",
+ "source": "world-state.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案": "`Scripts/Source/minai_Survival.psc`",
+   "內容": "生存模組（Sunhelm hunger/thirst/fatigue、Gourmet intoxication、Requiem substance effects）"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_Sex.psc`",
+   "內容": "性愛場景模組（SexLab/OStim 狀態）"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_SexOstim.psc`",
+   "內容": "OStim 整合"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_SexSexlab.psc`",
+   "內容": "SexLab 整合"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_Arousal.psc`",
+   "內容": "Arousal 模組（level tracking + 時間衰減）"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_DeviousStuff.psc`",
+   "內容": "Devious Devices / Devious Followers 模組"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_DirtAndBlood.psc`",
+   "內容": "Dirt & Blood 整合（清潔度/血跡）"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_Relationship.psc`",
+   "內容": "關係模組"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_Followers.psc`",
+   "內容": "跟隨者模組"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_Reputation.psc`",
+   "內容": "聲望模組"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_Crime.psc`",
+   "內容": "犯罪/賞金模組"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_CombatManager.psc`",
+   "內容": "戰鬥管理模組"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_ItemCommands.psc`",
+   "內容": "物品交易模組"
+  },
+  {
+   "檔案": "`Scripts/Source/minai_FertilityMode.psc`",
+   "內容": "Fertility Mode 整合"
+  }
+ ]
+}

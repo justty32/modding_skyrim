@@ -4,6 +4,7 @@
 
 同層檔案導航：
 
+<!-- wf-nav -->
 - [animobject-swapper-conditions-examples.md](./animobject-swapper-conditions-examples.md)
 - [animobject-swapper-modforge.md](./animobject-swapper-modforge.md)
 - [animobject-swapper-overview-config.md](./animobject-swapper-overview-config.md)

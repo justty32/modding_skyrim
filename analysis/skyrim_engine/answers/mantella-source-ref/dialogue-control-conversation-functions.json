@@ -1,0 +1,59 @@
+{
+ "contract": "wf-table/1",
+ "source": "dialogue-control.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案:行號",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案:行號": "`src/conversation/conversation.py:34-80`",
+   "內容": "`Conversation.__init__()` — 對話初始化"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:112-126`",
+   "內容": "`start_conversation()` — 建立起始 greeting → 開始 LLM generation"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:128-201`",
+   "內容": "`continue_conversation()` — **主對話循環**（token check → player interruption check → sentence queue → NPCTALK/NPCACTION/PLAYERTALK/ENDCONVERSATION reply）"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:203-224`",
+   "內容": "`__interruption_enabled()` / `__interrupt_response()` — **玩家打斷機制**"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:227-314`",
+   "內容": "`process_player_input()` — **玩家輸入處理**（mic/text 輸入、silence auto-response、end keyword / dismiss NPC / action keyword 檢查、user message 建立 → LLM generation）"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:335-348`",
+   "內容": "`update_context()` — 對話中 context 更新"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:374-393`",
+   "內容": "`update_game_events()` — **ingame events 注入 user message**（將累積的世界變化事件注入到玩家輸入的前面）"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:425-444`",
+   "內容": "`retrieve_sentence_from_queue()` — blocking 取下一句"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:447-463`",
+   "內容": "`initiate_end_sequence()` — 對話結束（goodbye sentence + `ACTION_ENDCONVERSATION`）"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:480-489`",
+   "內容": "`end()` — 結束對話 + 儲存 summary"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:492-507`",
+   "內容": "`__start_generating_npc_sentences()` — 背景 thread 開始 LLM generation（含 tools generation）"
+  },
+  {
+   "檔案:行號": "`src/conversation/conversation.py:529-574`",
+   "內容": "`__save_conversation()` / `__prepare_eject_npc()` / `__initiate_reload_conversation()` / `reload_conversation()`"
+  }
+ ]
+}

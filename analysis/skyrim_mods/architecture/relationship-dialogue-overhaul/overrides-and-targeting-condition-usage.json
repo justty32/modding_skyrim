@@ -1,0 +1,72 @@
+{
+ "contract": "wf-table/1",
+ "source": "overrides-and-targeting.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "次數",
+  "condition function",
+  "投放用途"
+ ],
+ "rows": [
+  {
+   "次數": "9245",
+   "condition function": "GetIsVoiceType",
+   "投放用途": "**把台詞限定到一個語音類型**（= 一整類 NPC，如 MaleNord、FemaleEvenToned），不逐一指名"
+  },
+  {
+   "次數": "7224",
+   "condition function": "GetInFaction",
+   "投放用途": "**把台詞限定到一個陣營**（如隨從陣營、城衛兵、商人）——「一類人」的另一把刷子"
+  },
+  {
+   "次數": "3112",
+   "condition function": "GetRandomPercent",
+   "投放用途": "隨機門檻，避免同一句反覆觸發、製造變化"
+  },
+  {
+   "次數": "2142",
+   "condition function": "GetPlayerTeammate",
+   "投放用途": "是否為玩家隨從——隨「隨從狀態」切換台詞"
+  },
+  {
+   "次數": "1811",
+   "condition function": "GetActorValue",
+   "投放用途": "AV 門檻（信心、戰鬥狀態等）"
+  },
+  {
+   "次數": "1683",
+   "condition function": "GetRelationshipRank",
+   "投放用途": "**隨與玩家的關係等級變化**——mod 名所指的核心軸"
+  },
+  {
+   "次數": "1476",
+   "condition function": "GetVMQuestVariable",
+   "投放用途": "讀 quest 腳本變數（追蹤對話冷卻、進度）"
+  },
+  {
+   "次數": "1396",
+   "condition function": "GetIsID",
+   "投放用途": "指名特定 actor（如玩家 0x7、或 RDO 自家 NPC）"
+  },
+  {
+   "次數": "1384",
+   "condition function": "LocationHasKeyword",
+   "投放用途": "地點類型（城市/旅店/地城）門檻"
+  },
+  {
+   "次數": "936",
+   "condition function": "IsInList",
+   "投放用途": "**目標在某 FormList 內**——配合 RDO 的 `aaa_RDOVoices*` 名單批次投放"
+  },
+  {
+   "次數": "923",
+   "condition function": "ConditionGlobal（GlobalVariable 開關）",
+   "投放用途": "全域旗標（功能模組開/關）"
+  },
+  {
+   "次數": "817",
+   "condition function": "GetSleeping / 815 IsSneaking / 748 GetInCurrentLoc / 605 GetInWorldspace …",
+   "投放用途": "情境細分"
+  }
+ ]
+}

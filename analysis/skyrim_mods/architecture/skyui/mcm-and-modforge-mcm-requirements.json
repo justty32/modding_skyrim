@@ -1,0 +1,27 @@
+{
+ "contract": "wf-table/1",
+ "source": "mcm-and-modforge.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "需求",
+  "ModForge 現況",
+  "缺口"
+ ],
+ "rows": [
+  {
+   "需求": "(a) 生成繼承特定 base 的 Papyrus script",
+   "ModForge 現況": "**已具備雛形**：ModForge 已會生成 `extends Quest` / `extends TopicInfo` 的腳本並編譯（`Generator.QuestFragments.cs:43,86`、`Generator.WordWall.cs:41`、`Generator.Build.Scene.cs`）；改成 `extends SKI_ConfigBase` 並產生 `OnPageReset` body 是同類工作",
+   "缺口": "需 `SKI_ConfigBase` 的 header（編譯期 import），即 build 機器要有 SkyUI 的 source/header；ModForge 的 Papyrus header 機制（`MODFORGE_PAPYRUS_HEADERS`，見 ModForge CLAUDE.md 踩坑）可指過去"
+  },
+  {
+   "需求": "(b) Start Game Enabled quest 掛 script property",
+   "ModForge 現況": "**已具備**：ModForge 已能生 quest 並掛 script + property（quest stage / scene controller 都這樣做）",
+   "缺口": "需把 quest flag 設成含 Start Game Enabled（對照本檔 273/281），並把 GLOB 當 property 餵給 config script，讓控制項讀寫對得上"
+  },
+  {
+   "需求": "(c) 依賴 SkyUI",
+   "ModForge 現況": "無",
+   "缺口": "產出的 plugin 變成**硬依賴 SkyUI（且 MCM 需 SKSE）**；終端使用者必須安裝這兩者"
+  }
+ ]
+}

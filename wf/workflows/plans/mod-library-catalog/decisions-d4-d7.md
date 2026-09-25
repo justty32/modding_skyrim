@@ -56,6 +56,7 @@
 
 因此：
 
+<!-- wf-nav -->
 - 建檔階段用 Nexus API 查每個 mod **是否仍在架**。查不到 / 已隱藏 → `nexus_status: "gone" | "hidden"` → **標記為 `never_delete: true`，覆蓋所有清理判準**。
 - **2026-08-07 實測釘死 Nexus API 欄位**：`GET https://api.nexusmods.com/v1/games/skyrimspecialedition/mods/{id}.json`，header `apikey`。`status="published"` 且 `available=true` → `live`；404 → `gone`；`available=false` 或 `status` 為 `removed` / `wastebinned` 等下架狀態 → `hidden`；其他一律 `unknown`，且 `unknown` 不得觸發清理。
 - `nexus_latest_version` 不能取 mod header 的 `version`。SkyUI 12604 實測 header 是 6.9，但最新 MAIN file 是 6.11；必須另打 `/mods/{id}/files.json`，取 `category_name="MAIN"`、`category_id=1`、`is_primary=true` 的最新檔案版本。

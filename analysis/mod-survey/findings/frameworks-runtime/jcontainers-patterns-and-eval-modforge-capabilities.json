@@ -1,0 +1,67 @@
+{
+ "contract": "wf-table/1",
+ "source": "jcontainers-patterns-and-eval.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "功能",
+  "評估",
+  "說明"
+ ],
+ "rows": [
+  {
+   "功能": "`JValue.readFromFile / writeToFile`",
+   "評估": "**可直接生成**",
+   "說明": "外部 JSON 讀寫 pattern 固定，適合 config 系統"
+  },
+  {
+   "功能": "`JMap.object / getInt / setInt / nextKey`",
+   "評估": "**可直接生成**",
+   "說明": "string-keyed KV + 迭代 pattern 固定"
+  },
+  {
+   "功能": "`JArray.object / addStr / getStr / count`",
+   "評估": "**可直接生成**",
+   "說明": "動態列表 pattern 固定"
+  },
+  {
+   "功能": "`JFormDB.solveIntSetter / solveInt`",
+   "評估": "**可直接生成**（推斷）",
+   "說明": "per-Form 嵌套狀態是最常用 pattern"
+  },
+  {
+   "功能": "`JDB.setObj / solveInt`",
+   "評估": "**可直接生成**（推斷）",
+   "說明": "全域設定/狀態，跨 mod 共享"
+  },
+  {
+   "功能": "`JValue.retain / release / addToPool / cleanPool`",
+   "評估": "**需警告生成**",
+   "說明": "生命週期管理是最容易出錯的部分；生成時需確保成對"
+  },
+  {
+   "功能": "`JAtomic.fetchAddInt`",
+   "評估": "**純參考**",
+   "說明": "多腳本並發計數器；Papyrus 本身單執行緒，此功能偏工具層"
+  },
+  {
+   "功能": "`JLua.evalLua*`",
+   "評估": "**純參考**",
+   "說明": "實驗性，不建議生產環境使用"
+  },
+  {
+   "功能": "`JFormMap` 作為臨時 Form→value map",
+   "評估": "**可直接生成**（推斷）",
+   "說明": "用於 scene 內批次 Form 處理"
+  },
+  {
+   "功能": "`JArray.unique / sort`",
+   "評估": "**可直接生成**",
+   "說明": "去重 set 操作 pattern 固定"
+  },
+  {
+   "功能": "`JString.wrap`",
+   "評估": "**純參考**",
+   "說明": "文字排版；Papyrus 顯示系統少用"
+  }
+ ]
+}

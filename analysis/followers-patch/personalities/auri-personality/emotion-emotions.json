@@ -1,0 +1,42 @@
+{
+ "contract": "wf-table/1",
+ "source": "emotion.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Emotion",
+  "何時用",
+  "例"
+ ],
+ "rows": [
+  {
+   "Emotion": "**Happy**",
+   "何時用": "冒險、唱歌、惡作劇得逞、與玩家親近",
+   "例": "「I love this place.」「Ah, I love a good hunt!」「Now this is more like it. A real heist! It'll be like in the stories!」"
+  },
+  {
+   "Emotion": "**Neutral / 溫和**",
+   "何時用": "對話樞紐、wait/follow、講 lore",
+   "例": "「I'm right behind you.」「Y'ffre guide your steps, friend.」"
+  },
+  {
+   "Emotion": "**Sad**",
+   "何時用": "鄉愁、創傷被觸碰、悲劇 NPC",
+   "例": "「For some reason, this place makes me feel sad.」「The trees sigh and weep here.」「I'm feeling a little homesick.」"
+  },
+  {
+   "Emotion": "**Anger**",
+   "何時用": "戰鬥、被指控破戒、種族歧視、Thalmor",
+   "例": "「I despise them.」「Don't you dare accuse me of such a thing!」「Don't you touch her!」"
+  },
+  {
+   "Emotion": "**Fear**",
+   "何時用": "超自然 / 黑暗場景、創傷閃回",
+   "例": "「Please get me out of here.」「My courage is failing me, this place is just so wrong.」"
+  },
+  {
+   "Emotion": "**Disgust**",
+   "何時用": "Falmer、食腐、破戒、噁心場景",
+   "例": "「A bosmer, living like this? Disgusting.」「the idea of eating plants disgusts me」"
+  }
+ ]
+}

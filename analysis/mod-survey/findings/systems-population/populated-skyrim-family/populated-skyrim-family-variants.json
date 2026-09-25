@@ -1,0 +1,42 @@
+{
+ "contract": "wf-table/1",
+ "source": "population-mechanism.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "變體",
+  "base 策略",
+  "package 類型",
+  "faction / 敵我",
+  "場景"
+ ],
+ "rows": [
+  {
+   "變體": "**Cities**",
+   "base 策略": "每市民一個 unique base（乞丐/勞工/商人/僕役/旅人…），1190 個**逐時段排程 sandbox**（EditorID 編了城+活動+時刻，如 `ooooRiftenTavernBeeandBarbEAT2007`＝20:07 到 Bee&Barb 吃飯）。`Schedule: hour/minute/durationMin` + 多個 LocationTarget(radius) 串成「白天上工→旅店用餐→閒晃」",
+   "package 類型": "sandbox/eat/work/tour，build on vanilla template",
+   "faction / 敵我": "中立、不打玩家",
+   "場景": "override 旅店/商店/民居等 interior CELL"
+  },
+  {
+   "變體": "**Lands/Roads**",
+   "base 策略": "wilderness archetype 字典：`Merchant`/`WanderingKnight`/`Pilgrim`/`Adventurer(+Horse)`/`Refugee`/`Mercenary(Warrior/Missile/Wizard)`/`BountyHunter`/`VigilantOfStendarr`。大量 **LeveledNpc(138)** 撐難度，少量 unique 撐身分。ACHR 置於 **Tamriel exterior 大座標**",
+   "package 類型": "**travel/wander**（PreferredSpeed=Walk，雙 LocationTarget 走點對點路線，`*Dead` 變體用 condition gate boss-死後行為），refugee 分 day/night",
+   "faction / 敵我": "多為中立路人；BountyHunter/Assassin 有敵性 faction",
+   "場景": "荒野/道路/橋"
+  },
+  {
+   "變體": "**Dungeons**",
+   "base 策略": "只 90 base 卻 549 ACHR：少量敵性 fauna/undead base（wolf/warg/skeleton…）大量複用置放",
+   "package 類型": "follow-boss / pack（如 `…PackWolvesBossDead` boss-死後散開）",
+   "faction / 敵我": "**`iiiiIhatebandit`/`kkkkIhatePlayer`/`rrrrIhatePlayerSkeleton` 自製 aggro faction** + autoCalcStats + Aggressive/Foolhardy AI",
+   "場景": "override 洞窟/遺跡 interior"
+  },
+  {
+   "變體": "**Hell（極限）**",
+   "base 策略": "前三者聯集（3171 base / 1863 ACHR），再加 bandit/militia/prisoner 敵性人口、可雇用商人傭兵（`*HIRELING` faction + `HirelingQuest*Topic` 沿用 vanilla 雇傭對白）、Hell 風惡搞屍體 activator（`FoolishMiner…`，model=HumanSkull.nif）",
+   "package 類型": "全部",
+   "faction / 敵我": "全部 + bandit attack-player",
+   "場景": "全 Skyrim + 全 DLC"
+  }
+ ]
+}

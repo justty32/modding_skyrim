@@ -6,15 +6,15 @@
 
 ## 一、ModForge 已對齊的（參考 mod 印證設計正確）
 
-| 能力 | 印證來源 | 說明 |
-|---|---|---|
-| Scene = phase 序列、每 phase 綁 dialog topic | Sofia `JJSofiaMainQuestDialogueScene`（1 actor/17 phase/17 action） | ModForge 的 ScenePhaseSpec 結構與真實隨從 mod 完全同型 |
-| scene action 三型 Dialog/Package/Timer | Sofia `JJSofiaDrunkScene`、`SofiaWeddingScene`（多 actor 走位+對拍） | ModForge「NPC 做動作走 Package action」的設計被 Sofia 驗證 |
-| uniqueActor alias 指向 vanilla NPC | Sofia 8 個 *Comment quest（`alias uniqueActor -> Skyrim.esm`） | ModForge 的 `uniqueActor:<ref>` fill 正是這個用法 |
-| GLOB 當 runtime 旗標/設定 | Sofia 57 個 GLOB（CatchUpDistance/CommentFrequency…） | 少量狀態用 GLOB 是業界常態，ModForge 方向正確 |
-| storyEvent 掛 vanilla SM 根 | RDO override SM 節點 + 新增節點嫁接 | ModForge 的 SMBN→SMQN 掛載與 RDO 手法同源 |
-| condition 投放（GetInFaction/RelationshipRank/RandomPercent） | RDO condition 前段（已在 ModForge `SupportedConditionFunctions`） | 基礎 condition dispatch 已具備 |
-| Relationship record | Sofia/RDO 都用 | ModForge 已有 RelationshipSpec |
+本表彙整「capability-evidence」的原始記錄。已抽到 [modforge-relevance-capability-evidence.json](modforge-relevance-capability-evidence.json)（7 列）。
+
+能力：原表「能力」欄值。
+
+印證來源：原表「印證來源」欄值。
+
+說明：原表「說明」欄值。
+
+統計：7 列，3 欄。
 
 → 結論：ModForge 的**劇情演出（scene）與 SM 掛載**設計，與工業級隨從/對話 mod 高度一致，無需大改。
 

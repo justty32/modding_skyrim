@@ -1,0 +1,43 @@
+{
+ "contract": "wf-table/1",
+ "source": "dialogue-control.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "檔案:行號",
+  "內容"
+ ],
+ "rows": [
+  {
+   "檔案:行號": "`Scripts/Source/minai_Mantella.psc:18-46`",
+   "內容": "`Maintenance()` — 註冊監聽 `Mantella_ActorSpeakEvent` + `Mantella_PlayerInputEvent`；取得 MantellaConversation/formlist handles"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_Mantella.psc:55-57`",
+   "內容": "`OnActorSpeak()` → `ActionResponse()` — **攔截 Mantella 對話事件**"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_Mantella.psc:59-77`",
+   "內容": "`OnPlayerInput()` — 攔截玩家輸入（2 人對話時呼叫 UpdateEvents 初始化 context）"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_Mantella.psc:81-93`",
+   "內容": "`RegisterAction()` / `RegisterEvent()` → `mantella.AddInGameEvent()` — **注入事件到 Mantella 對話 context**"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_Mantella.psc:108-133`",
+   "內容": "`UpdateEvents()` — **核心：在每次對話時收集所有模組的狀態並注入**（devious → arousal → survival → dirtAndBlood → BuildReminderStr）"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_Mantella.psc:135-143`",
+   "內容": "`FactionInScene()` — 檢查 faction 是否在對話參與者中"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_Mantella.psc:147-179`",
+   "內容": "`BuildReminderStr()` — **動態建立 action keyword 提醒字串**（根據已安裝 mod 組合: \"Respond only with spoken dialog and defined -keywords- for your actions... trading with, spanking, molesting, kissing, hugging, feeding, serving a meal to, renting a room to, giving drugs or skooma to, vibrating, giving an orgasm to, teasing, or having sex with Lydia.\"）"
+  },
+  {
+   "檔案:行號": "`Scripts/Source/minai_Mantella.psc:189-210`",
+   "內容": "`ActionResponse()` — **對話內容匹配觸發**（各模組檢查 sayLine 是否匹配觸發條件 → 執行對應 action；模組順序: arousal → sex → survival → devious → UpdateEvents）"
+  }
+ ]
+}

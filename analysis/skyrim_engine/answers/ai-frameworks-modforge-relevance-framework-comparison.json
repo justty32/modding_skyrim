@@ -1,0 +1,37 @@
+{
+ "contract": "wf-table/1",
+ "source": "ai-frameworks-modforge-relevance.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "框架",
+  "進程模型",
+  "對外通道",
+  "原始碼可得性"
+ ],
+ "rows": [
+  {
+   "框架": "**SkyrimNet**",
+   "進程模型": "單進程 in-process，C++ native DLL 直讀記憶體 → Inja 模板 → LLM",
+   "對外通道": "**無對外查詢埠**。架構圖裡的 HTTP/WS 是 out-going 呼叫 LLM/TTS 供應商，不是給外部工具連的 server",
+   "原始碼可得性": "Papyrus 層有（`SkyrimNetApi.psc`），**native DLL 原始碼不在 repo**"
+  },
+  {
+   "框架": "**Mantella**",
+   "進程模型": "**唯一真正 out-of-process**：外部 Python FastAPI ＋ 遊戲端 SKSE/Papyrus plugin",
+   "對外通道": "**HTTP POST `/mantella`**，JSON 雙向。實作 `src/http/routes/mantella_route.py:65-102`，欄位契約 `src/http/communication_constants.py:1-84`",
+   "原始碼可得性": "全開"
+  },
+  {
+   "框架": "**MinAI**",
+   "進程模型": "純 Papyrus，無 C++ 無 Python",
+   "對外通道": "只有 Papyrus `ModEvent`（仍在遊戲進程內），真正的外部連結是它橋接出去的 CHIM/Mantella",
+   "原始碼可得性": "Papyrus 全開，但**已棄用**，官方導向 SkyrimNet"
+  },
+  {
+   "框架": "**IntelEngine**",
+   "進程模型": "SkyrimNet 的社群擴充 plugin，另依賴一支效能敏感的 native DLL",
+   "對外通道": "PrismaUI dashboard（遊戲內嵌 Chromium overlay），是**遊戲內 UI**，不是外部 API",
+   "原始碼可得性": "Papyrus 層有，native DLL 原始碼不在 repo"
+  }
+ ]
+}

@@ -4,6 +4,7 @@
 
 同層檔案導航：
 
+<!-- wf-nav -->
 - [animated-vehicles.md](./animated-vehicles.md)
 - [arrowblock.md](./arrowblock.md)
 - [encounter-mods-comparison.md](./encounter-mods-comparison.md)

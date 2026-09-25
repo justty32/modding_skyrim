@@ -8,23 +8,18 @@ Missives 是「**radiant quest 工廠**」的純粹樣本——它把本輪多�
 
 ### ModForge 可生成的部分（表格）
 
-| 機制 | 狀態 | 備註 |
-|---|---|---|
-| Quest stage + fragment（stage flags / StartUpStage / CompleteQuest / FailQuest） | ✅ 可生成 | `Generator.Build.QuestStages.cs` + `Generator.Build.Actors.cs:BuildQuests()` |
-| Quest objective（QOBJ / DisplayText / QSTA target alias） | ✅ 可生成 | `DisplayText = o.Text`（pass-through，`<Alias=...>/<Global=...>` token 直接寫入即可）；QSTA 由 `WireObjectiveTargets()` 接 alias index |
-| Quest alias（forced / uniqueActor / createObject / findMatching:loaded-area） | ✅ 可生成 | `BuildQuestAliases()`；four fill modes already wired |
-| FLST 建立 + 填 item | ✅ 可生成 | `Generator.Build.Lists.cs:BuildFormLists()` / `WireFormLists()` |
-| GlobalVariable 量產（Short/Float/Int type） | ✅ 可生成 | `Generator.Build.Globals.cs:BuildGlobals()` |
-| LVLN（追捕目標）+ createObject alias fill | ✅ partial | createObject 帶 LVLN base 可生成；一等 LVLN fill mode 仍是 partial |
-| BOOK（告示）+ Model（template clone） | ✅ 可生成 | `Generator.Build.Items.cs`；需 `template` 否則 crash |
-| Message（MESG，`<Alias.ShortName=...><BaseName>` 動態命名） | ✅ 可生成 | `Generator.Build.Messages.cs`；token 直寫 Description 欄 |
-| Container（CONT，裝 missive 的板子） | ✅ 可生成 | `BuildContainers()` |
-| Activator（ACTI，觸發刷新的隱形 trigger box） | ✅ 可生成 | Placement + script attach |
-| AI Package（追捕逃犯的 travel package） | ✅ 可生成 | `Generator.Build.Packages.cs` |
-| LocationAlias fill（Find Matching Location by keyword） | ❌ 缺 | **roadmap #7**；所有 radiant 地點隨機化的核心，無此不能做 hold/dungeon/inn 隨機選 |
-| nested ReferenceAlias（findNearAlias：在指定 location alias 範圍內找 ref） | ❌ 缺 | **roadmap #8**；Missives 的 boss/chest/questgiver alias 全靠此；不同於 findMatching loaded-area |
-| UpdateCurrentInstanceGlobal fragment codegen | ❌ 缺 | **roadmap #9**；gather 計數 `<Global=Count>/<Global=Total>` 顯示的必要呼叫 |
-| RegisterForUpdateGameTime alias script（時限任務計時器） | ⚠️ partial | 腳本本身可手寫交 package，但 fragment 生成器無此模式 |
+本表整理「ModForge 可生成的部分（表格）」的逐項記錄。
+
+已抽到 [missives-modforge-generation-capabilities.json](missives-modforge-generation-capabilities.json)（15 列）。
+
+欄位「機制」：保留原表的機制。
+
+欄位「狀態」：保留原表的狀態。
+
+欄位「備註」：保留原表的備註。
+
+統計：15 筆記錄，3 個欄位。
+
 
 ### 新缺口（附 evidence）
 
@@ -59,6 +54,7 @@ UpdateCurrentInstanceGlobal(ItemTotal)
 - **Tiered FormList 池**：`BuildFormLists()` + `WireFormLists()` 已支援。
 
 **純參考（架構啟發，不必照抄）**
+<!-- wf-nav -->
 - **「不用 SM、用 Activator 觸發 + 預生 quest 池」是一條替代路線**：Missives 證明 **radiant 不一定要 SM**——若目標地點固定（板子在城裡）、靠玩家走近觸發，純 Activator+FormList+`Quest.Start()` 更簡單。ModForge 兩條路都該支援，視內容型態選。
 - **笛卡兒積生成法**（hold × job × tier 把 265 顆模板鋪開）對 JSON-spec 生成器是天作之合：**spec 寫一個 job-family 模板 + 一張 hold/tier 矩陣，生成器展開成 N 顆 quest + 對應 FormList**，正是 ModForge「JSON → 大量 record」想要的形態。
 - **Courier 時限失敗模式**（`RegisterForUpdateGameTime` alias + `DeliveryDate` global + `GameDaysPassed` 比對）：可作為時限任務的 Papyrus 腳本模板參考。

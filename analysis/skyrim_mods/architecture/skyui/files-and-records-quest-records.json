@@ -1,0 +1,55 @@
+{
+ "contract": "wf-table/1",
+ "source": "files-and-records.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "FormID",
+  "EditorID",
+  "掛載 script",
+  "職責（script 名稱 + 公開知識）"
+ ],
+ "rows": [
+  {
+   "FormID": "`[000802:SkyUI_SE.esp]`",
+   "EditorID": "`SKI_ConfigManagerInstance`",
+   "掛載 script": "`SKI_QF_ConfigManagerInstance` (1 prop) + `SKI_ConfigManager`",
+   "職責（script 名稱 + 公開知識）": "**MCM 註冊中樞**：偵測場上所有 `extends SKI_ConfigBase` 的 config script、彙整成 MCM 左欄清單、把玩家點選分發給對應頁面"
+  },
+  {
+   "FormID": "`[00080A:SkyUI_SE.esp]`",
+   "EditorID": "`SKI_SettingsManagerInstance`",
+   "掛載 script": "`SKI_SettingsManager`",
+   "職責（script 名稱 + 公開知識）": "讀寫 SkyUI 自身偏好設定（持久化於存檔/設定檔）"
+  },
+  {
+   "FormID": "`[000814:SkyUI_SE.esp]`",
+   "EditorID": "`SKI_MainInstance`",
+   "掛載 script": "`SKI_Main`",
+   "職責（script 名稱 + 公開知識）": "啟動協調者：版本檢查、初始化各子系統、UI 注入的進入點"
+  },
+  {
+   "FormID": "`[000820:SkyUI_SE.esp]`",
+   "EditorID": "`SKI_ConfigMenuInstance`",
+   "掛載 script": "`SKI_ConfigMenu` (6 prop)",
+   "職責（script 名稱 + 公開知識）": "**設定頁渲染器**：把 ConfigManager 分發來的頁面實際畫到 MCM Flash 介面（SkyUI 自己的設定頁本身就是一個 SKI_ConfigBase 實例）"
+  },
+  {
+   "FormID": "`[000822:SkyUI_SE.esp]`",
+   "EditorID": "`SKI_ActiveEffectsWidgetInstance`",
+   "掛載 script": "`SKI_ActiveEffectsWidget` (1 prop)",
+   "職責（script 名稱 + 公開知識）": "HUD widget：在畫面顯示玩家身上的 active magic effect"
+  },
+  {
+   "FormID": "`[000824:SkyUI_SE.esp]`",
+   "EditorID": "`SKI_WidgetManagerInstance`",
+   "掛載 script": "`SKI_WidgetManager`",
+   "職責（script 名稱 + 公開知識）": "HUD widget 管理器：註冊/排版各 widget（給 widget 類 mod 用的框架）"
+  },
+  {
+   "FormID": "`[00082A:SkyUI_SE.esp]`",
+   "EditorID": "`SKI_FavoritesManagerInstance`",
+   "掛載 script": "`SKI_FavoritesManager` (1 prop)",
+   "職責（script 名稱 + 公開知識）": "收藏群組（Favorites Groups）：把武器/法術綁定到 hotkey 群組"
+  }
+ ]
+}

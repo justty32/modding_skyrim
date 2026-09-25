@@ -1,0 +1,82 @@
+{
+ "contract": "wf-table/1",
+ "source": "mechanism.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "record",
+  "count",
+  "角色"
+ ],
+ "rows": [
+  {
+   "record": "PlacedObject",
+   "count": "144",
+   "角色": "多數是 `RE_Sign_<HouseName>` 告示牌 ref（每棟可買房一個）+ 礦工/載入畫面靜物"
+  },
+  {
+   "record": "PlacedNpc (ACHR)",
+   "count": "134",
+   "角色": "礦場買下後出現的礦工 + 其他"
+  },
+  {
+   "record": "Cell",
+   "count": "122",
+   "角色": "vanilla cell override（塞告示牌 ref / 礦場內部）"
+  },
+  {
+   "record": "**Message (MESG)**",
+   "count": "22",
+   "角色": "**核心 UI**：buy/sell 選單 + 所有提示框"
+  },
+  {
+   "record": "Npc",
+   "count": "12",
+   "角色": "`RE_Miner01..` 礦工 base（autoCalcStats + class，避開死 NPC 陷阱）"
+  },
+  {
+   "record": "Quest",
+   "count": "6",
+   "角色": "`RE_Quest`(教學)、`RE_MCM`、`RE_MsgReplacements`、`RE_VendorQuest`、`RE_Thief01 \"Robbed!\"`、`RE_Arena01`"
+  },
+  {
+   "record": "Perk",
+   "count": "4",
+   "角色": "`RE_RelationshipPerk_Rival/Enemy/Ally/Friend`（租客關係修正）"
+  },
+  {
+   "record": "ModSellPrices / ModBuyPrices",
+   "count": "4 / 4",
+   "角色": "vanilla **PERK entry-point**（房產自帶買賣折扣？UNVERIFIED 細節）"
+  },
+  {
+   "record": "Activator",
+   "count": "4",
+   "角色": "`RE_PropertySign` / `RE_FarmSign` / `RE_MineSign` / `RE_MainSafeAct_Safe`（腳本化告示牌 + 假保險箱）"
+  },
+  {
+   "record": "Book",
+   "count": "2",
+   "角色": "`RE_IntroBook \"How to become a Landlord\"`、`RE_Ledger \"Landlord's Ledger\"`"
+  },
+  {
+   "record": "GlobalFloat/Short",
+   "count": "2(本 esp)",
+   "角色": "`RE_MineOreMult` / `RE_EnableRelationshipPerks`；**大量計價/收益 GLOB 住在 Core esp**"
+  },
+  {
+   "record": "Weapon",
+   "count": "5",
+   "角色": "`RE_OwnerReplacement` / `RE_LocationReplacement` / `RE_Product1..3Replacement`（**佔位 token**，見下）"
+  },
+  {
+   "record": "MiscItem",
+   "count": "1",
+   "角色": "`RE_LedgersQuill \"Ledger's Quill\"`（更新帳本的道具）"
+  },
+  {
+   "record": "Key / Container / LeveledNpc",
+   "count": "1/1/1",
+   "角色": "`RE_SafeKey` / `RE_MainSafe`(Core) / `RE_LCharMiner`"
+  }
+ ]
+}

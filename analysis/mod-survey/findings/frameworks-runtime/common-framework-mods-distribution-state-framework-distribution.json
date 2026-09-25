@@ -1,0 +1,67 @@
+{
+ "contract": "wf-table/1",
+ "source": "common-framework-mods-distribution-state.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Mod",
+  "本地狀態",
+  "核心機制",
+  "我們可利用的點"
+ ],
+ "rows": [
+  {
+   "Mod": "Spell Perk Item Distributor / SPID",
+   "本地狀態": "已解壓：`Spell Perk Item Distributor-36869-7-3-0-1778353486`",
+   "核心機制": "SKSE plugin；用 config 分發 spell / perk / item / shout / package / outfit / keyword / faction 到 NPC",
+   "我們可利用的點": "無 patch 標記 NPC：給 follower 加 faction/keyword/spell，讓 dialogue condition、OAR、其他系統能識別"
+  },
+  {
+   "Mod": "Open Animation Replacer / OAR",
+   "本地狀態": "已解壓：`Open Animation Replacer-92109-3-1-5-1778597444`",
+   "核心機制": "SKSE animation replacer；用條件替換 animation，有 in-game editor",
+   "我們可利用的點": "讓特定 follower / faction / 狀態使用不同 idle、gesture、walk、interaction animation"
+  },
+  {
+   "Mod": "PapyrusUtil",
+   "本地狀態": "已解壓：`PapyrusUtil AE SE - Scripting Utility Functions-13048-4-6-1705639805`；另有 `PapyrusUtil`",
+   "核心機制": "Papyrus native utility；StorageUtil、JsonUtil、ActorUtil、MiscUtil",
+   "我們可利用的點": "存 follower memory、外部 JSON config、actor/package override、掃描 cell NPC"
+  },
+  {
+   "Mod": "JContainers",
+   "本地狀態": "已解壓：`JContainers SE`；是的，本地已經有",
+   "核心機制": "JSON-based serializable data structures；array/map/form map；Lua",
+   "我們可利用的點": "複雜 dialogue state、動態資料表、外部 JSON-driven topic/state/relationship 設定"
+  },
+  {
+   "Mod": "Conditional Expressions",
+   "本地狀態": "已解壓：`Conditional Expressions-45148-1-29-1755293339`；已抽取 game-data",
+   "核心機制": "ESP + magic effects + scripts；用 MFG/expression override 做玩家狀態表情",
+   "我們可利用的點": "參考「狀態驅動表情」：喝酒、吃東西、冷、痛、疲勞、潛行、隨機表情"
+  },
+  {
+   "Mod": "Base Object Swapper / BOS",
+   "本地狀態": "已解壓：`Base Object Swapper-60805-3-4-1-1752606013`",
+   "核心機制": "`_SWAP.ini` 以 base object 替換物件，可帶 chance/property overrides",
+   "我們可利用的點": "針對 follower home、scene set dressing、互動物件做無 ESP patch 的替換"
+  },
+  {
+   "Mod": "AnimObject Swapper / AOS",
+   "本地狀態": "已解壓：`AnimObject Swapper-75167-1-1-0-1666410165`",
+   "核心機制": "`_ANIO.ini` 替換 idle 使用的 AnimObject，可 random/conditional",
+   "我們可利用的點": "換對話/idle animation 中手上的杯子、書、樂器、道具；適合角色化演出"
+  },
+  {
+   "Mod": "I Am Walking Here",
+   "本地狀態": "本地未見",
+   "核心機制": "SKSE plugin；防止 NPC/follower 推擠玩家或阻塞窄路",
+   "我們可利用的點": "降低 follower 場景、走位、forcegreet 後跟隨時的碰撞干擾"
+  },
+  {
+   "Mod": "I Am Talking Here",
+   "本地狀態": "本地未見",
+   "核心機制": "SKSE plugin；玩家對話中壓住 follower idle chatter",
+   "我們可利用的點": "可作為 ambient commentary 的兼容模型：重要對話期間不要讓 follower bark 插話"
+  }
+ ]
+}

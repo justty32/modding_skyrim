@@ -21,6 +21,7 @@
 
 Key records:
 
+<!-- wf-nav -->
 - Main quest: `FollowerExtension` (`0x000EFF`), priority 60, type Misc.
 - Slot scale:
   - 100 visible objectives: `<Alias=Follower000> is waiting for you.` through `<Alias=Follower099>`.

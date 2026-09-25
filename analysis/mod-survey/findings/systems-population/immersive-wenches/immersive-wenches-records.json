@@ -1,0 +1,67 @@
+{
+ "contract": "wf-table/1",
+ "source": "population-mechanism.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "記錄",
+  "數量",
+  "角色"
+ ],
+ "rows": [
+  {
+   "記錄": "Npc",
+   "數量": "646",
+   "角色": "wench 基底（按 race × 戰鬥職業 × Sultry 變體命名）"
+  },
+  {
+   "記錄": "Package",
+   "數量": "473",
+   "角色": "**per-inn × per-時段 × per-role** 的 serve/sandbox/sleep/patrol"
+  },
+  {
+   "記錄": "PlacedObject (REFR)",
+   "數量": "415",
+   "角色": "主要是 **per-inn XMarker 生怪點**（`lalawenchXMarker_<city>_<inn><n>`）"
+  },
+  {
+   "記錄": "PlacedNpc (ACHR)",
+   "數量": "146",
+   "角色": "少量靜態放置（劇情/獨特 wench、被擄者）"
+  },
+  {
+   "記錄": "Cell",
+   "數量": "91",
+   "角色": "**幾乎全是 Skyrim.esm/DLC 的 vanilla inn/dungeon override**（Bannered Mare、Bee and Barb、Winking Skeever…）"
+  },
+  {
+   "記錄": "LeveledNpc",
+   "數量": "34",
+   "角色": "`lalawench_lvl_<race>` / `_sultry_` / `_Riften` / `_randompatrons` / `_bodyguard`…（生怪來源）"
+  },
+  {
+   "記錄": "GlobalShort",
+   "數量": "27",
+   "角色": "MCM 開關 + radiant quest 計數器"
+  },
+  {
+   "記錄": "Quest",
+   "數量": "15",
+   "角色": "4 個 Scene-host + 1 MCM + Captured/Enslaved/Misc/Follower/Spouse/HomeWork radiant"
+  },
+  {
+   "記錄": "Scene",
+   "數量": "4",
+   "角色": "tavern ambient scenes（serving / cheers / request_perverts / thanks）"
+  },
+  {
+   "記錄": "StoryManager node",
+   "數量": "4",
+   "角色": "scene 觸發器（見下）"
+  },
+  {
+   "記錄": "Outfit 18・Class 14・Faction 33・Keyword 33・CombatStyle 5・Relationship 8・Perk 26",
+   "數量": "",
+   "角色": "wench 角色組裝"
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+ "contract": "wf-table/1",
+ "source": "papyrusutil-api-actor-misc-array.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "分類",
+  "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）",
+  "說明"
+ ],
+ "rows": [
+  {
+   "分類": "建立",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`ActorArray(int size, Actor filler=none)`",
+   "說明": "建立指定大小的 Actor 陣列"
+  },
+  {
+   "分類": "建立",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`ObjRefArray(int size, ObjectReference filler=none)`",
+   "說明": "建立 ObjRef 陣列"
+  },
+  {
+   "分類": "Resize",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`ResizeActorArray(Actor[], int toSize, Actor filler=none)`",
+   "說明": "調整陣列大小"
+  },
+  {
+   "分類": "Push",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`PushInt(int[], int push) → int[]`",
+   "說明": "尾端加一個值，回新陣列"
+  },
+  {
+   "分類": "Remove",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`RemoveInt(int[], int ToRemove) → int[]`",
+   "說明": "移除所有符合的值"
+  },
+  {
+   "分類": "RemoveDupe",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`RemoveDupeInt(int[]) → int[]`",
+   "說明": "去重"
+  },
+  {
+   "分類": "Diff",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`GetDiffInt(int[], int[], bool CompareBoth=false, bool IncludeDupes=false) → int[]`",
+   "說明": "取差集"
+  },
+  {
+   "分類": "Intersect",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`GetMatchingInt(int[], int[]) → int[]`",
+   "說明": "取交集"
+  },
+  {
+   "分類": "Count",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`CountInt(int[], int EqualTo) → int`",
+   "說明": "計算符合值的數量"
+  },
+  {
+   "分類": "Merge",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`MergeIntArray(int[], int[], bool RemoveDupes=false) → int[]`",
+   "說明": "合併兩個陣列"
+  },
+  {
+   "分類": "Slice",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`SliceIntArray(int[], int StartIndex, int EndIndex=-1) → int[]`",
+   "說明": "切片"
+  },
+  {
+   "分類": "Sort",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`SortIntArray(int[], bool descending=false)`",
+   "說明": "就地排序"
+  },
+  {
+   "分類": "String",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`StringSplit(string, string Delimiter=\",\") → string[]`",
+   "說明": "分割字串（自動 trim 空白）"
+  },
+  {
+   "分類": "String",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`StringJoin(string[], string Delimiter=\",\") → string`",
+   "說明": "合併字串"
+  },
+  {
+   "分類": "Math",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`ClampInt(int value, int min, int max) → int`",
+   "說明": "夾緊數值"
+  },
+  {
+   "分類": "Math",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`WrapInt(int value, int end, int start=0) → int`",
+   "說明": "環繞（適合陣列 index 繞圈）"
+  },
+  {
+   "分類": "Math",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`SignInt(bool doSign, int value) → int`",
+   "說明": "有/無號轉換"
+  },
+  {
+   "分類": "Math",
+   "Function（以 int 為例，同理 float/string/Form/Actor/ObjRef/Alias）": "`AddIntValues(int[]) → int`",
+   "說明": "陣列加總"
+  }
+ ]
+}

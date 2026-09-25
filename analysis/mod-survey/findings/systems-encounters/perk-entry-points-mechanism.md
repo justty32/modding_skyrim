@@ -38,22 +38,22 @@ PERK record
 
 下表精選與 ModForge 生成相關度較高的項目，附 vanilla tab-count（從 `Generator.Build.Perks.EntryPoints.cs` EntryPointTabCount 表讀出，unlisted = 預設 2）。
 
-| ID | EntryType 名稱 | Mutagen 類別 | 典型場景 | tab-count |
-|----|---|---|---|---|
-| 0 | CalculateWeaponDamage | `PerkEntryPointModifyValue` | 武器傷害計算 | 3 |
-| 26 | ModBashingDamage | `PerkEntryPointModifyValue` | 格擋攻擊傷害 | 2 |
-| 28 | ModPowerAttackDamage | `PerkEntryPointModifyValue` | 力攻傷害 | 3 |
-| 29 | ModSpellMagnitude | `PerkEntryPointModifyValue` | 法術強度 | 3 |
-| 35 | ModAttackDamage | `PerkEntryPointModifyValue` | 普攻傷害 | 3 |
-| 36 | ModIncomingDamage | `PerkEntryPointModifyValue` | 受到傷害（可設 0 擋下）| 3 |
-| 38 | ModSpellCost | `PerkEntryPointModifyValue` | 法術消耗 | 2 |
-| 51 | ApplyCombatHitSpell | `PerkEntryPointSelectSpell` | 命中時附加 spell | 3 |
-| 52 | ApplyBashingSpell | `PerkEntryPointSelectSpell` | 格擋命中附加 spell | 2 |
-| 53 | ApplyReanimateSpell | `PerkEntryPointSelectSpell` | 重生時附加 spell | 3 |
-| 61 | CanPickpocketEquippedItem | `PerkEntryPointAbsoluteValue` | 可扒穿戴物品 | 3 |
-| 67 | ApplyWeaponSwingSpell | `PerkEntryPointSelectSpell` | 揮武器時附加 spell | 3 |
-| 74 | **FilterActivation** | `PerkEntryPointAddActivateChoice` | 過濾/攔截啟動動作 | 2 |
-| 81 | **SetActivateLabel** | `PerkEntryPointSetText` | 覆寫啟動按鈕文字 | 2（預設）|
+本表整理「2-1 EntryType：引擎 hook 點（91 個）」的逐項記錄。
+
+已抽到 [perk-entry-points-mechanism-entry-types.json](perk-entry-points-mechanism-entry-types.json)（14 列）。
+
+欄位「ID」：保留原表的ID。
+
+欄位「EntryType 名稱」：保留原表的EntryType 名稱。
+
+欄位「Mutagen 類別」：保留原表的Mutagen 類別。
+
+欄位「典型場景」：保留原表的典型場景。
+
+欄位「tab-count」：保留原表的tab-count。
+
+統計：14 筆記錄，5 個欄位。
+
 
 完整 91 個 EntryType 見 `perkdiag entrypoints` 輸出或 Mutagen `APerkEntryPointEffect.EntryType` enum。
 

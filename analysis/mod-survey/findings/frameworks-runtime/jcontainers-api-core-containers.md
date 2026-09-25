@@ -65,50 +65,33 @@ JValue 提供所有容器型別共用的介面，所有容器都繼承這些功�
 
 key 是 index（Int），支援負數 index（從尾端算）。
 
-| Function | 簽名 | 說明 |
-|---|---|---|
-| `object` | `() → Int` | 建立空 JArray |
-| `objectWithSize` | `(Int size) → Int` | 建立指定大小（填 None） |
-| `objectWithInts / Strings / Floats / Booleans / Forms` | `(T[] values) → Int` | 從 Papyrus 陣列建立 |
-| `subArray` | `(Int object, Int start, Int end) → Int` | 取子陣列 [start, end) |
-| `addFromArray` | `(Int object, Int source, Int insertAtIndex=-1)` | 把另一個 JArray 的元素插入 |
-| `addFromFormList` | `(Int object, FormList source, Int insertAtIndex=-1)` | 從 FormList 匯入 |
-| `getInt / getFlt / getStr / getObj / getForm` | `(Int object, Int index, T default) → T` | 依 index 讀取 |
-| `setInt / setFlt / setStr / setObj / setForm` | `(Int object, Int index, T value)` | 依 index 寫入 |
-| `addInt / addFlt / addStr / addObj / addForm` | `(Int object, T value, Int addToIndex=-1)` | 插入值（-1 = 尾端） |
-| `count` | `(Int object) → Int` | 元素數量 |
-| `clear` | `(Int object)` | 清空 |
-| `eraseIndex` | `(Int object, Int index)` | 刪除 index 處元素 |
-| `eraseRange` | `(Int object, Int first, Int last)` | 刪除 [first, last] 區間 |
-| `eraseInteger / eraseFloat / eraseString / eraseObject / eraseForm` | `(Int object, T value) → Int` | 刪除所有符合值，回刪除數量 |
-| `findInt / findFlt / findStr / findObj / findForm` | `(Int object, T value, Int searchStartIndex=0) → Int` | 搜尋，回 index 或 -1 |
-| `countInteger / countFloat / countString / countObject / countForm` | `(Int object, T value) → Int` | 計算出現次數 |
-| `valueType` | `(Int object, Int index) → Int` | 取 index 處的值型別 |
-| `swapItems` | `(Int object, Int index1, Int index2)` | 交換兩個 index |
-| `sort` | `(Int object) → Int` | 升序排序，回 object 自身 |
-| `unique` | `(Int object) → Int` | 去重後排序（Set 語意），回 object 自身 |
-| `reverse` | `(Int object) → Int` | 反轉，回 object 自身 |
-| `asIntArray / asFloatArray / asStringArray / asFormArray` | `(Int object) → T[]` | 轉成 Papyrus 陣列 |
-| `writeToIntegerPArray / writeToFloatPArray / writeToFormPArray / writeToStringPArray` | 多參數 | 寫入既有 Papyrus 陣列（可指定範圍與方向） |
+本表整理「2.2 JArray — 有序集合」的逐項記錄。
+
+已抽到 [jcontainers-api-core-containers-jarray-functions.json](jcontainers-api-core-containers-jarray-functions.json)（23 列）。
+
+欄位「Function」：保留原表的Function。
+
+欄位「簽名」：保留原表的簽名。
+
+欄位「說明」：保留原表的說明。
+
+統計：23 筆記錄，3 個欄位。
+
 
 ### 2.3 JMap — string key 關聯容器
 
-| Function | 簽名 | 說明 |
-|---|---|---|
-| `object` | `() → Int` | 建立空 JMap |
-| `getInt / getFlt / getStr / getObj / getForm` | `(Int object, String key, T default) → T` | 依 key 讀取 |
-| `setInt / setFlt / setStr / setObj / setForm` | `(Int object, String key, T value)` | 依 key 寫入（key 不存在則建立） |
-| `hasKey` | `(Int object, String key) → Bool` | 是否有此 key |
-| `valueType` | `(Int object, String key) → Int` | key 對應值的型別 |
-| `removeKey` | `(Int object, String key) → Bool` | 刪除 key-value pair |
-| `count` | `(Int object) → Int` | pair 數量 |
-| `clear` | `(Int object)` | 清空 |
-| `addPairs` | `(Int object, Int source, Bool overrideDuplicates)` | 從另一個 map 合併 |
-| `allKeys` | `(Int object) → Int` | 所有 key → JArray |
-| `allKeysPArray` | `(Int object) → String[]` | 所有 key → Papyrus string[] |
-| `allValues` | `(Int object) → Int` | 所有 value → JArray |
-| `nextKey` | `(Int object, String previousKey="", String endKey="") → String` | 迭代用：取下一個 key |
-| `getNthKey` | `(Int object, Int keyIndex) → String` | 取第 N 個 key（O(n/2) 複雜度） |
+本表整理「2.3 JMap — string key 關聯容器」的逐項記錄。
+
+已抽到 [jcontainers-api-core-containers-jmap-functions.json](jcontainers-api-core-containers-jmap-functions.json)（14 列）。
+
+欄位「Function」：保留原表的Function。
+
+欄位「簽名」：保留原表的簽名。
+
+欄位「說明」：保留原表的說明。
+
+統計：14 筆記錄，3 個欄位。
+
 
 **JMap 迭代 pattern**：
 ```papyrus

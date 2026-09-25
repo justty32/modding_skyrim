@@ -22,6 +22,7 @@ SMEN（WEQuests, ScriptEvent root）
 
 要實現任意深度 SMBN 子樹，需要：
 
+<!-- wf-nav -->
 1. **spec 層面**：新增 `StoryManagerBranchNodeSpec`（帶 EditorID、parent 指向 vanilla root 或另一個 SMBN、conditions[]、子 SMQN / 子 SMBN 清單）。目前 `QuestStoryEventSpec` 只讓 quest 宣告「我要掛到某事件」，沒有獨立的 SMBN spec 類型。
 
 2. **builder 層面**：修改 `BuildStoryManager()` 的兩個地方：

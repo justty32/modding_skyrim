@@ -1,0 +1,67 @@
+{
+ "contract": "wf-table/1",
+ "source": "modforge-roadmap.md",
+ "extracted": "2026-09-25",
+ "columns": [
+  "Tundra 機制",
+  "ModForge 能否生成",
+  "證據（grep `src/ModForge.Core/`）"
+ ],
+ "rows": [
+  {
+   "Tundra 機制": "Ingestible「Plans: X」建材瓶（ALCH）",
+   "ModForge 能否生成": "**能**",
+   "證據（grep `src/ModForge.Core/`）": "`Generator.Build.Items.cs` 有 ALCH/Ingestible 生成"
+  },
+  {
+   "Tundra 機制": "MagicEffect（**script archetype**）\"Construct X\"",
+   "ModForge 能否生成": "**能**",
+   "證據（grep `src/ModForge.Core/`）": "`Generator.Build.Magic.cs` 生 MGEF（含 script archetype）"
+  },
+  {
+   "Tundra 機制": "Activator（建物本體，掛互動 script）",
+   "ModForge 能否生成": "**能**",
+   "證據（grep `src/ModForge.Core/`）": "`Generator.Build.LongTail.cs` 生 ACTI"
+  },
+  {
+   "Tundra 機制": "**把 Tundra 的 56 支 `.pex` 控制器 script 掛到 MGEF/ACTI/Quest 上（含 typed property）**",
+   "ModForge 能否生成": "**能（關鍵能力）**",
+   "證據（grep `src/ModForge.Core/`）": "`Generator.Build.Scripts.cs` `AttachScripts`→`AttachOneScript`：**反射式**，對任何有 `VirtualMachineAdapter` 的 record（MGEF/ACTI/ALCH/QUST…）掛具名 `.pex` + `FillProperties`。**前提：spec 提供 `scriptAttach` 指定 ScriptName + properties，且編譯好的 `.pex` 在 `CompiledScriptsDir`。**"
+  },
+  {
+   "Tundra 機制": "Faction（Outpost/Raider/FollowPlayer/Vendor）",
+   "ModForge 能否生成": "**能**",
+   "證據（grep `src/ModForge.Core/`）": "`Spec.Actors.cs` + Vendor faction（`Generator.Build.Vendor.cs`，見 `settlement-npc-expansions`）"
+  },
+  {
+   "Tundra 機制": "LeveledNpc（守衛池）+ Npc base（守衛/Raider 各版）",
+   "ModForge 能否生成": "**能**",
+   "證據（grep `src/ModForge.Core/`）": "`Generator.Build.Lists.cs`（LVLN）+ `npcs`"
+  },
+  {
+   "Tundra 機制": "Package（巡邏/站哨/sandbox）+ Keyword + Book（觸發書）+ Container（計畫箱/礦箱）",
+   "ModForge 能否生成": "**能**",
+   "證據（grep `src/ModForge.Core/`）": "`npcs.md` / `Generator.Build.LongTail.cs` / `items`"
+  },
+  {
+   "Tundra 機制": "Shout + WordOfPower（Confirm Construction 輸入）+ Spell（4 個建造輸入 spell）",
+   "ModForge 能否生成": "**能**",
+   "證據（grep `src/ModForge.Core/`）": "`Generator.Build.Shouts.cs` / `Generator.WordWall.cs` / `Generator.Build.Magic.cs`"
+  },
+  {
+   "Tundra 機制": "**MESG（87 個選單）— 但只能生最小 MESG（Name/Description），無 menu-button**",
+   "ModForge 能否生成": "**半能（GAP：無選單按鈕）**",
+   "證據（grep `src/ModForge.Core/`）": "`Generator.Build.Messages.cs` `mod.Messages.AddNew()` 只設 `EditorID/Name/Description`；`MessageSpec`（`Spec.Items.cs:42`）**無 MenuButtons/Buttons 欄**。Tundra 整個 UI 是多按鈕分支 MESG → **按鈕/分支需 spec + 生成器擴充**"
+  },
+  {
+   "Tundra 機制": "**GLOB 計數 / 設定**",
+   "ModForge 能否生成": "Tundra 不用 GLOB（用 quest-script property）；ModForge **有** GLOB 生成",
+   "證據（grep `src/ModForge.Core/`）": "不適用（Tundra 走 script property，那部分是 controller 內事，見下）"
+  },
+  {
+   "Tundra 機制": "**整套執行期狀態機**：放置定位（`aaaFortMainQuestScript` follow/rotate/confirm）、raid 引擎（`aaaFortPlayerQuestScript` OnUpdate spawn）、募兵（PlaceActorAtMe+faction+teammate）、持久化 counter、move/breakdown/clone",
+   "ModForge 能否生成": "**不可逐欄生成——irreducibly bespoke Papyrus**",
+   "證據（grep `src/ModForge.Core/`）": "這是 **56 支 controller `.pex` 的行為**，ModForge 不生 Papyrus 行為碼。**但能透過 `scriptAttach` 把這些 `.pex` 掛上去**（須隨 mod 一起 ship 編譯好的 controller `.pex`）。`grep PlaceAtMe src/ModForge.Core` 命中的是 spec 文檔字串，非執行期 PlaceAtMe 生成。"
+  }
+ ]
+}

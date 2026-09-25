@@ -71,21 +71,18 @@ StorageUtil.ClearAllObjPrefix(followerRef, "mymod_follower_")
 
 ## 四、對 ModForge 的參考價值
 
-| 功能 | 評估 | 說明 |
-|---|---|---|
-| `StorageUtil` scalar 讀寫 | **可直接生成** | 在 QuestScript / FragmentScript 中做 per-form KV，pattern 極固定 |
-| `StorageUtil` 列表操作 | **可直接生成** | ShiftList/PopList/FormListAdd 等 queue/set pattern 可模板化 |
-| `JsonUtil` scalar 讀寫 | **可直接生成** | config 讀取 pattern 固定 |
-| `JsonUtil` path API | **部分生成**（推斷） | 需要 spec 提供路徑表達式；嵌套結構若由 spec 定義則可生成 |
-| `ActorUtil.AddPackageOverride` | **可直接生成** | priority/flags 參數固定，適合 follower action service pattern |
-| `ActorUtil.ClearPackageOverride` | **需警告生成** | 易影響其他 mod，需在 spec 中標注風險 |
-| `MiscUtil.ScanCellNPCs` | **可直接生成** | 情境觸發 pattern 固定 |
-| `MiscUtil.WriteToFile` | **可直接生成** | debug log 或 export 用途 |
-| `PapyrusUtil` 陣列操作 | **可直接生成**（推斷） | 大陣列操作；但要注意 Push 類頻繁呼叫有效能問題（原始碼有警告） |
-| `PapyrusUtil.StringSplit/Join` | **可直接生成** | CSV-like inline 資料解析 |
-| `StorageUtil` prefix 掃描/清除 | **純參考** | 較少見；自動生成需 spec 層明確觸發 |
-| `ObjectUtil` animation replace | **不可用** | SSE 版已停用，函數體為空 |
-| `StorageUtil.File*` 系列 | **已廢棄** | 都是 JsonUtil 的 proxy，應直接用 JsonUtil |
+本表整理「四、對 ModForge 的參考價值」的逐項記錄。
+
+已抽到 [papyrusutil-patterns-and-eval-modforge-capabilities.json](papyrusutil-patterns-and-eval-modforge-capabilities.json)（13 列）。
+
+欄位「功能」：保留原表的功能。
+
+欄位「評估」：保留原表的評估。
+
+欄位「說明」：保留原表的說明。
+
+統計：13 筆記錄，3 個欄位。
+
 
 **對 ModForge 最高槓桿的生成點**：
 - `StorageUtil.SetIntValue/GetIntValue` 搭配 Quest Script 的 per-NPC 狀態追蹤
