@@ -60,3 +60,5 @@ staging 清理 4 條路徑→3 條已自行消失。
 2026-09-25：長毛象 CTD（`SkyrimSE+02B789A`）**已結案**——SPID 老年換裝覆寫層部署後，使用者實機回到巨人營地確認不再崩潰（21:50 口頭確認；標題數仍 9，因「2026-09-20 PI 啟動崩潰候選層」標題下的 PI 合併層／crash2 段仍 open）。同日 tidy-2026-09-25 輪把 `wait-user/` 各檔的已完成節抽成 `*-closed.json`，open 項只留 md。
 
 2026-09-25 22:10 推進：使用者裁「wait user 中你能做的都做一做」，開六條線（`agentctl/handoffs/home-2026-09-25/wu/`）：mo2ctl 漂移修復、JhNPCBeautyDev 中文名 patch 草案＋crash2 A/B 對帳、DSPort P3 四個對照包、RDO 62500 下載與衝突表、光柱特效測試包實機煙霧、ghost-cell-clear DLL 部署＋DMK smoke＋AYOP 死選單清理。裁示要刪的 4 個 staging 目錄實讀已不存在（已完成）。wf kernel v0.5.1 升級排在 tidy 輪收尾後。
+
+2026-09-25 22:45 收工：推進線全部收線（`agentctl/handoffs/home-2026-09-25/STATE.md`）。新增等使用者裁示 4 件：① RDO 62500／76474 裝不裝（衝突 6,091 FormID）；② staging 的中文修正層（zhfix 10 層＋Apocalypse 重建 1 層）裝不裝；③ `instance/profiles` 工作樹 `Constellations-SorceryNullGuard-2026-09-25` 未 commit 的啟用狀態留不留；④ 光柱 P3 完整效果包（`_staging-2026-09-25/fx2/`，486 NIF）要不要換進 dsport-dev 實機看。等使用者看畫面 2 件：DMK 中文頁、AYOP 死選單（新槽 `cx-wu-rt-2026-09-25`）。光柱視覺、長毛象 CTD 已結案。
