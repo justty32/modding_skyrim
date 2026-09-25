@@ -10,3 +10,6 @@ venv/
 __pycache__/
 *.pyc
 tmp/
+
+# 2026-09-25 使用者裁示：解包出來的 .pex 二進位不進版控（實體留在磁碟）
+analysis/skyrim_mods/_sofia_extract/scripts/*.pex
