@@ -10,6 +10,7 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 - **要你動手做事** → [WORKFLOWS.md](wf/WORKFLOWS.md) 依意圖派發，再讀該工作流入口檔。
 - **想看結構** → [INDEX.md](wf/INDEX.md)；完整佈局在根 [README.md](README.md)——它是外來 agent 的入口，改佈局或新增產物類型時同步更新。
 - 使用者偏好與邊界 → [user.md](wf/workflows/common/user.md)。
+- **給使用者看的頁面**（清單／審批／裁示）→ [wf/user/](wf/user/README.md)，不放 agentctl。
 
 ## 鐵律（always-on）
 
