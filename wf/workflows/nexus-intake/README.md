@@ -84,6 +84,11 @@ record 數、record identity、header、GRUP、subrecord 結構要完全一致�
 
 ### 硬性紅線（碰到就停，發 `NEEDS-USER`）
 
+**第零條：不准讓使用者現有 Chrome 的任何帳號被登出（Google 與其他所有網站）。** 寧可下載失敗也不可登出。
+profile 複本只能用 `agentctl/tools/nexus_dl/make_profile_copy.sh` 建（只留 Nexus cookie）；不准 `pkill -f chrome`；
+擴充路不點登出、不清 cookie、不關使用者的分頁。細則見 [download-routes.md 帳號保護](download-routes.md)。
+
+
 不輸入任何帳號憑證／密碼／2FA；不解 CAPTCHA 或任何 bot 偵測；不註冊、不買 Premium、
 不接受新條款；不點 endorse／track／vote／subscribe——**任何會改變使用者 Nexus 帳號狀態的事都不做**。
 cookie 橫幅只選最保守的選項。不動 nxm handler 關聯或 Wine registry（manager download 是壞的，別再繞）。
