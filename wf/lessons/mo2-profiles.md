@@ -55,18 +55,23 @@ houseCARL 鏡像跑，回報 24/24 贏家 PASS，使用者看到的仍是大媽�
 2026-09-04 lead-inst4 實測：MO2 啟動時會把 `mods/` 底下**不在 `modlist.txt` 的目錄**各自動加一行進 modlist（結尾 `_backup` 的目錄除外），關閉回寫時就落在當前 profile 分支上。houseCARL 的寫入／反編譯工具（`bsa_extract`、`decompile_script` 等）產物預設就建在 `mods/`；post5 的 `_post5-verify/`、cx-old-a 的 `houseCARL - cx-old-a-decompile/` 都是這樣留下的。
 
 **Why:** 這些目錄不在 modlist 時不影響載入，但只要有人開一次 MO2 就變成 profile 髒污，而且是別線的產物混進施工分支。
-**How to apply:** 任何線用 houseCARL 寫入或在 `mods/` 放暫存目錄，交接書要寫死「驗完立刻 `mv` 到 `/tmp/`」；持遊戲窗的隊開 MO2 前先 `find mods/ -maxdepth 1` 與 modlist 行數對照（09-04 基準：目錄 1288、modlist 1291，差的只有三個 `ModForge*_backup`）。同類：profiles repo 根的 `tests/`／`tools/`／`workflows/` 也被 MO2 當 profile 補檔，見 [[profile-restore-order-and-flags]]。
+**How to apply:** 任何線用 houseCARL 寫入或在 `mods/` 放暫存目錄，交接書要寫死「驗完立刻 `mv` 到 `/tmp/`」；持遊戲窗的隊開 MO2 前先 `find mods/ -maxdepth 1` 與 modlist 行數對照（09-04 基準：目錄 1288、modlist 1291，差的只有三個 `ModForge*_backup`）。同類：profiles repo 根的 `tests/`／`tools/`／`workflows/` 也曾被 MO2 當 profile 補檔（2026-10-03 已收進 `.repo/` 根治，見下節）。
 
 ## mo2-phantom-profile-workflows-dir
 
-> MO2 把 instance/profiles/workflows/ 當成一個 profile，啟動時在裡面生預設檔；record 前會看到未追蹤髒污（原 type: project）
+> 2026-10-03 已根治——profiles repo 的非 profile 目錄（tools/tests/workflows/baselines）收進隱藏的 `.repo/`，MO2 不再列幽靈 profile；根目錄只准放真 profile（原 type: project）
 
-2026-09-18 20:32 MO2 啟動時在 `instance/profiles/workflows/` 生了 archives/loadorder/lockedorder/modlist/plugins/settings.ini 六個預設檔
-（因為 profiles/ 目錄就是 MO2 的 profiles 根，任何子目錄都被當 profile）。yvr 套用窗因此在 record 前停手。
+**事故**：2026-09-18 20:32 MO2 在 `instance/profiles/workflows/` 生了 archives/loadorder/lockedorder/modlist/plugins/settings.ini 六個預設檔；
+2026-10-03 MO2 把 `selected_profile` 切成幽靈 profile `tests`，SKSE 用空 profile 跑成原版（usvfs 559 節點）。
+原因：`instance/profiles/` 就是 MO2 的 profiles 根（MO2 端是 symlink），根目錄下每個可見子目錄都被當 profile。
 
-**Why:** `workflows/` 是 wf 骨架放進 profiles repo 的，不是 profile。
-**How to apply:** 看到這六個未追蹤檔別 commit 也別當事故；正解是把 `workflows/` 移出 profiles 根或改 .gitignore（待 hygiene 線）。
-另：plugins.txt 在 MO2 跑過後表頭會變成「This file is used by Skyrim…」且整檔重排，啟用集合比對才算數（同 [[profile-restore-order-and-flags]]）。
+**根治**（profiles `934b24c`，報告 `agentctl/handoffs/home-2026-10-03/phantom/REPORT.md`）：四個非 profile 目錄 `git mv` 到 `.repo/`
+（`.repo/tools`、`.repo/tests`、`.repo/workflows`、`.repo/baselines`）。MO2 列 profile 不帶 `QDir::Hidden`，Wine 把點開頭目錄標 hidden，同層 `.git/` 從沒被當 profile。
+施工後開關 MO2：`selected_profile=modpack-main`、`.repo/` 沒被生預設檔、profile 檔 md5 不變。
+
+**How to apply:** 不要在 `instance/profiles/` 根新增非 profile 目錄；指令改成 `python3 -B .repo/tools/profile_workflow.py …`；
+09-03～09-18 舊 handoff 腳本寫死 `instance/profiles/tools/` 舊路徑，重跑前要改。
+另：plugins.txt 在 MO2 跑過後可能整檔重排，啟用集合比對才算數（同 [[profile-restore-order-and-flags]]）。
 
 ## dsport-dev-profile-drift
 

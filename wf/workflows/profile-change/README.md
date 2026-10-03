@@ -19,8 +19,8 @@ main → feat/* → release/* → main
 狀態差異全部由 git 分支承載，磁碟上永遠只有一個 profile。
 
 分支操作一律在 `instance/profiles` 內，走
-[`tools/profile_workflow.py`](../../../instance/profiles/tools/profile_workflow.py)；完整命令見該目錄的
-[`README.md`](../../../instance/profiles/tools/README.md)。子命令與順序：
+[`.repo/tools/profile_workflow.py`](../../../instance/profiles/.repo/tools/profile_workflow.py)；完整命令見該目錄的
+[`README.md`](../../../instance/profiles/.repo/tools/README.md)。子命令與順序：
 
 | 子命令 | 用途 |
 |---|---|
@@ -39,13 +39,13 @@ main → feat/* → release/* → main
 1. **Skyrim 或 MO2 執行期間，禁止切分支、合併、提交、還原。** 先關遊戲。
 2. `selected_profile` 的實值永遠是 `@ByteArray(modpack-main)`；該 ini 是 **CRLF**。
 3. `modpack-main/skyrim.ini` 的 `bAlwaysActive=1` 要維持。
-4. baseline save pair `instance/profiles/baselines/ModpackKRDev0A.{ess,skse}` 成對且 SHA-256 不變，是唯一進 git 的存檔。
+4. baseline save pair `instance/profiles/.repo/baselines/ModpackKRDev0A.{ess,skse}` 成對且 SHA-256 不變，是唯一進 git 的存檔。
 5. **不 force-push、不自動 stash、不自動 push**；工作樹不乾淨就停。
 
 跑會 `load ModpackKRDev0A` 的 spec 前先複製 baseline pair 回 `modpack-main/saves/`：
 
 ```sh
-cp instance/profiles/baselines/ModpackKRDev0A.{ess,skse} instance/profiles/modpack-main/saves/
+cp instance/profiles/.repo/baselines/ModpackKRDev0A.{ess,skse} instance/profiles/modpack-main/saves/
 ```
 
 ## 晉升前必查

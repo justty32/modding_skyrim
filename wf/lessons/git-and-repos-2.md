@@ -48,7 +48,7 @@ upstream」），不要寫「釘在哪條分支」。要講具體狀態就給 co
 
 > profile_workflow promote 會 switch 到 main（動 live 工作樹）；別的線還在 feat 分支施工時，用 git branch＋update-ref 快轉 main 再 push，收線後再正式 promote（原 type: memory）
 
-`instance/profiles/tools/profile_workflow.py promote` 的實作是 `update-ref main` 後 **`git switch main`**，且 `start release/*` 必須從被凍結的 feat 分支上跑。所以當另一條線正在 live checkout 的 feat 分支寫三檔時，不能跑它。
+`instance/profiles/.repo/tools/profile_workflow.py promote` 的實作是 `update-ref main` 後 **`git switch main`**，且 `start release/*` 必須從被凍結的 feat 分支上跑。所以當另一條線正在 live checkout 的 feat 分支寫三檔時，不能跑它。
 
 2026-09-03 做法（已驗證可行）：`git branch release/<日期>-<段> <feat 尖端>` ＋ `git update-ref refs/heads/main <尖端> <舊 main>`（不動工作樹）→ push main／release／feat；等那條線收線、工作樹乾淨後，再 `start release/...`＋`promote` 正式跑一次，live checkout 就回到 main。
 

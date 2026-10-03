@@ -12,12 +12,12 @@
 
 ```bash
 cd /home/lorkhan/repo/moddings/skyrim/instance/profiles
-python3 -B tools/profile_workflow.py status
-python3 -B tools/profile_workflow.py start feat/<主題>-<日期>
+python3 -B .repo/tools/profile_workflow.py status
+python3 -B .repo/tools/profile_workflow.py start feat/<主題>-<日期>
 ```
 
 `<主題>` 的本次固定名稱 repo 內未記錄，回家現場確認；指令模板與「執行期間不得切 branch」的限制見
-`instance/profiles/tools/README.md:17`、`:18`、`:19` 與 `instance/profiles/README.md:33`。用 MO2 安裝上述
+`instance/profiles/.repo/tools/README.md:17`、`:18`、`:19` 與 `instance/profiles/README.md:33`。用 MO2 安裝上述
 人工校對 archive 成獨立層，停用現役 `Directional Movement Keys Traditional Chinese 1.5.0 Machine Private 2026-08-21`，
 並讓新層位於 `Directional Movement Keys 1.5.0 Dev 2026-08-21` 之上；現役兩個名稱與優先關係見
 `instance/profiles/manifest.json:3063`、`:3080`、`:3089`。`mo2ctl install <archive> --priority

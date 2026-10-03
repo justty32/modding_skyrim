@@ -86,7 +86,7 @@
   {
    "repo": "`instance/tools/`",
    "命令": "從 `instance/tools/` 執行 `python3 -m unittest discover -s . -p 'test_*.py'`",
-   "本機基線／範圍": "3 pass。`instance/profiles/tools/` 目前 **0 個測試**——那裡的 profile 結構稽核沒有任何測試，是已知缺口"
+   "本機基線／範圍": "3 pass。`instance/profiles/.repo/tools/` 目前 **0 個測試**——那裡的 profile 結構稽核沒有任何測試，是已知缺口"
   },
   {
    "repo": "`houseCARL`",
