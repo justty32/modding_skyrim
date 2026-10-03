@@ -24,14 +24,32 @@
 >
 > **碰到 Nexus 要求重新登入**：發 `NEEDS-USER` 停手，請使用者自己登入。不要自己輸入帳密，也不要去動其他網站的登入。
 
-兩條實測可用的路，都是點 `Manual download → Slow download`（左邊那顆，不碰 Premium），檔案落到 `~/Downloads/`：
+兩條實測可用的路，都是點 `Manual download → Slow download`（左邊那顆，不碰 Premium）；擴充路落到 `~/Downloads/`，CDP 路落到 `nexus_get.sh` 的 `--out`（預設 `~/skyrim_mods/_dl-<日期>/`）：
 
 | 誰 | 機制 | 要點 |
 |---|---|---|
 | 調度者（Claude）親跑 | **Claude in Chrome 擴充**，用使用者已登入的瀏覽器 | 最乾淨：不開 profile 複本、不取桌面鎖。直達 URL `/mods/<id>?tab=files&file_id=<fileId>&nmm=0` 直接落在 Slow download 頁。`browser_batch` 內的 `left_click` 不會觸發下載，要獨立呼叫。實錄見 [`agentctl/logs/nexus-download-via-chrome-extension-2026-08-27.md`](../../../agentctl/logs/nexus-download-via-chrome-extension-2026-08-27.md) |
-| codex 線 | **headful Chrome ＋ 使用者 Chrome profile 的暫存複本 ＋ CDP（`--remote-debugging-port`）** | 驅動器已有：[`agentctl/handoffs/done/2026-08-27/cx-dl2/tools/cdp-download.mjs`](../../../agentctl/handoffs/done/2026-08-27/cx-dl2/tools/cdp-download.mjs)。profile 複本用 `make_profile_copy.sh` 建（只含 Nexus cookie，約 2 MB），**放 `/tmp/` 下，不放 `$HOME`、不進 repo**，抓完自清 |
+| codex／Claude 子代理線 | **headful Chrome（藏在私有 Xvfb）＋ profile 暫存複本 ＋ CDP** | **一條命令：[`agentctl/tools/nexus_dl/nexus_get.sh`](../../../agentctl/tools/nexus_dl/nexus_get.sh)**，見下節。不要再從舊 handoff 抄 `cdp-download.mjs` |
 
-- **headless 會撞 Cloudflare**，headful 才過。
+### CDP 路：`nexus_get.sh`（2026-10-03 kitD 收編）
+
+```sh
+agentctl/tools/nexus_dl/nexus_get.sh <modid> --file <fileId> [--out DIR] [--expect-sha256 HEX]
+agentctl/tools/nexus_dl/nexus_get.sh --batch list.txt      # 一行一個 modid#fileId，共用一個複本
+agentctl/tools/nexus_dl/nexus_get.sh <modid> --file <fileId> --dry-run   # 只查清單不開 Chrome
+```
+
+它一次做完：keyless GraphQL 查檔案與公布大小 → `make_profile_copy.sh` 建 `/tmp/nexus-get-*` 複本 →
+Xvfb 裡的 headful Chrome 開 CDP → 下載 → 比公布大小、算 sha256 → 只殺自己那棵行程樹、刪複本 →
+stdout 每檔一行 JSON。預設 `--mode xvfb` 不出可見視窗、不取 `desktop.lock`（`--mode visible` 才取，收尾自動放）。
+
+**exit `3`＝`NEEDS-USER`**（Nexus 要登入／驗證／新條款）：停手，請使用者在他自己的 Chrome 登入 Nexus 後重跑。
+多檔頁 `--main`／`--latest` 會拒絕並列出 fileId，一律用 `--file`。驅動器與已知缺口見
+[`agentctl/tools/nexus_dl/`](../../../agentctl/tools/nexus_dl/)。
+
+### 通用注意
+
+- **真 headless 會撞 Cloudflare**，headful 才過（所以預設是 Xvfb 裡的 headful）。
 - 不需要 `ydotool`／`/dev/uinput`——CDP 直接驅動頁面，**不要為此去要 sudo**。
 - 用**獨立暫存 profile 複本**，不要動使用者既有的瀏覽器視窗；收尾只殺自己開的 Chrome（見上方帳號保護）。
 - **慢是正常的**（有等待計時器），等就好，不要為了加速找別的路徑。

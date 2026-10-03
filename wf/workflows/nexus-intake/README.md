@@ -74,7 +74,7 @@ record 數、record identity、header、GRUP、subrecord 結構要完全一致�
 **這個帳號非 Premium**，`download_link.json` 會回 403，所以只能走網頁的 slow download。
 **同一時間只有一條線可以開瀏覽器**，由調度者指定；沒被指定的線需要下載就發 `NEEDS-USER`。
 
-兩條實測可用的路（調度者親跑的 Chrome 擴充、codex 線的 headful Chrome ＋ CDP），
+兩條實測可用的路（調度者親跑的 Chrome 擴充；其他線一條命令 `agentctl/tools/nexus_dl/nexus_get.sh`，headful Chrome ＋ CDP），
 以及各自的機制與坑，見 [download-routes.md](download-routes.md)。
 
 **免費的來源驗證**：Nexus 檔案列上的 VirusTotal 連結**帶著該檔的 hash**。
