@@ -2,6 +2,8 @@
 
 [lessons 索引](README.md)｜同主題：[crash-triage](crash-triage.md)、[crash-triage-2](crash-triage-2.md)
 
+**崩了先跑 snapshot 再開 MO2**：`agentctl/tools/snapshot_skse_logs.sh`（SKSE/、Skyrim.INI/SKSE/、ini、Papyrus 複製到 `~/skyrim_mods/_crash-snapshots/<時間>/`＋MANIFEST）；下一場會蓋掉各 DLL log，09-27 的就是被 10-02 蓋掉。
+
 ## custom-navm-combat-pathing-ctd
 
 > 自訂多層 exterior NAVM 在敵人對玩家做戰鬥尋路時 CTD（PathingCell 空指標）；DS 港 navmesh 第 5 項的真相（原 type: memory）
