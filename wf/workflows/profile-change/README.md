@@ -34,6 +34,31 @@ main → feat/* → release/* → main
 `start` **一律從 `main` 開分支**；要從 live checkout 的尖端接下去，須在乾淨工作樹手動
 `git switch -c <新分支>`。`start` 在工作樹不乾淨時會拒絕，此時先停下審閱，不要自動 stash。
 
+## 施工窗（改 mods／三檔的那一段）
+
+2026-10-03 起施工窗走工具，不再每條線自寫 apply／verify／revert 腳本。工具都在
+`instance/tools/`，旗標與 manifest 格式見 [該目錄 README](../../../instance/tools/README.md)
+（`--help` 也有）。使用者說「我關掉遊戲了」就是開工訊號。
+
+| 步 | 做什麼 | 工具 |
+|---|---|---|
+| 0 | 看現況：遊戲／MO2 沒在跑、鎖空、`selected_profile`、profiles 乾淨 | `envsnap.sh` |
+| 1 | 取鎖（先桌面、後遊戲，見 `agentctl/docs/resource-locks.md`） | mkdir 或 `--take-lock` |
+| 2 | 開分支 `start feat/<主題>-<日期>` | `profile_workflow.py` |
+| 3 | 寫 manifest → dry-run 審 diff → `--apply` | `layer_apply.py` |
+| 4 | MO2 開關一輪後重驗新 plugin 的 `*`（首開會掉） | `mo2_cycle_verify.sh` |
+| 5 | 要進遊戲才確認得了就跑煙霧（`launch-mo2.sh` 預檢擋 Steam／profile／exe 版本） | `skse_smoke.sh` |
+| 6 | `record` → `start release/<版本>` → `promote` | `profile_workflow.py` |
+| 7 | 反序放鎖，收工對帳（鎖、dirty／unpushed） | `envsnap.sh` |
+
+`layer_apply.py --apply` 本身就做完：確認遊戲與 MO2 沒在跑 → 確認持有 `game.lock` → 三檔必須是 CRLF
+→ 備份三檔與受影響的 mod 目錄 → 套用（保留 CRLF）→ 套用前後各跑一次 `check_masters`，出現新的缺 master
+就自動還原 → 輸出 diff → 寫 `revert.json`（`--revert-out` 另存到交接書 `data/`）。
+
+**還原**：`layer_apply.py --revert <revert.json>`。還原後三檔與套用前逐位元組相同，新增的 mod 目錄會搬進備份目錄，
+不會刪掉。三檔在套用後又被改過（例如還有較新的輪次，或 MO2 寫回過）就拒絕還原；多輪要從最新一輪往回退。
+已 `record` 的變更還原後，再 `record` 一筆 `--kind fix`。
+
 ## 不可違反
 
 1. **Skyrim 或 MO2 執行期間，禁止切分支、合併、提交、還原。** 先關遊戲。
