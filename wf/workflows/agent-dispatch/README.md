@@ -16,7 +16,9 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
 | 現役成員、身份聲明格式、各自領地與能答什麼 | [`agentctl/inbox/ROSTER.md`](../../../agentctl/inbox/ROSTER.md) |
 | 資源鎖與限流 | [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md) |
 | 通訊契約：五通道、teams、自動上游路由與醒鐘策略 | [`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md) |
-| 交接書範本與已完成的範例 | [`agentctl/handoffs/`](../../../agentctl/handoffs/) |
+| 交接書範本 | [`agentctl/templates/`](../../../agentctl/templates/README.md) |
+| 派線、監看、收工用哪支工具 | [`agentctl/docs/tool-index.md`](../../../agentctl/docs/tool-index.md) |
+| 已完成的交接書範例 | [`agentctl/handoffs/`](../../../agentctl/handoffs/) |
 
 ## 三層派線結構
 
