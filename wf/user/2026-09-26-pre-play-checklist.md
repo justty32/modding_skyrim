@@ -29,9 +29,9 @@
 - **NFF MCM 設定**（要進遊戲後，準星對著 Vilja）：System 頁的 `Import Enabled` 切成 No，就能擋掉她的 Import 選項；要全域關掉的話，改關 `Allow Import/Export Dialogue`。這是報告給的做法，保留下來；但實機顯示她已經在 ImportFac 裡，所以標**待驗**（詳見 C3）。〔vilja〕
   - NFF 有個上游 bug：用「Load Settings」讀回設定時，`Allow Import` 會變成 Steward 對話的值。所以關掉之後如果又冒出來，重新關一次就好。〔vilja §4.2〕
 - **前綴**：
-  - 已經用實機驗證過：ForgottenCity=`A4`、EMCompViljaSkyrim=`D5`、Katana=`BC`、nwsFollowerFramework=`7B`、Aniya Follower=`BB`、Yvanni Follower=`FE3A7`（light）。
-  - 還只是推算值：ccvsvsse004-beafarmer=`FE024`（light），用 C5 的第一步驗證。
-  - 這些都是 Save229 當下的值，之後改了載入順序（例如 A 裁了新 plugin）就要重新用 `help` 對一次。
+  - **2026-10-08 newsave build 後重算（新檔用這組）**：EMCompViljaSkyrim=`BB`、Katana=`A4`、nwsFollowerFramework=`6B`、Aniya Follower=`A3`、Yvanni Follower=`FE3C2`（light）、ccvsvsse004-beafarmer=`FE024`（light）、FDE Lydia=`FE360`（light）。ForgottenCity 已移除，C1 不再適用。這組是用 profiles `2cdbf1a` 的 loadorder 推算（`resolve_load_order.py`＋esplib `LoadOrder`），**還沒實機驗證**，進遊戲用 `help <名字>` 對一次。C 段指令裡的前綴仍是下面 Save229 的舊值，用在新檔時把前兩碼（light 是前五碼）換成這組。
+  - Save229 當下（09-26，已過期）：實機驗證過 ForgottenCity=`A4`、EMCompViljaSkyrim=`D5`、Katana=`BC`、nwsFollowerFramework=`7B`、Aniya Follower=`BB`、Yvanni Follower=`FE3A7`（light）；推算 ccvsvsse004-beafarmer=`FE024`（light）。
+  - 之後再改載入順序（裝／拔 plugin）就要重新用 `help` 對一次。
 
 ## C. 進遊戲後的 console 序列
 
