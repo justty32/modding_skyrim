@@ -292,6 +292,13 @@
    "version": "1.0.4",
    "self_layers": "無自製層；154926 簡中 esp 整支替換（拓撲同版、非文字差異 0）",
    "report_path": "../../agentctl/handoffs/2026-10-10/eval-154926/REPORT.md"
+  },
+  {
+   "mod": "Masareria 1.3→1.4（＋隱形牆拉桿）",
+   "nexus": "186441",
+   "version": "1.4",
+   "self_layers": "DoubleSizedWhiterun.esp 簡中層以 1.4 重建（zhport，種子＝187212 和光＋09-03 補完）；拉桿 esp 中文化",
+   "report_path": "../../agentctl/handoffs/2026-10-10/m186441/REPORT.md"
   }
  ]
 }

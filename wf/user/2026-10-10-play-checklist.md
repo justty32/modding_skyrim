@@ -7,7 +7,7 @@
 今天新裝 37 組 mod（含中文層與自製層，plugins.txt 多了 78 行）。這一頁放「開遊戲前」與總表，實測項目依地點分成四頁：
 
 - [城鎮與室內](2026-10-10-play-checklist-towns.md)：白漫、風盔、裂谷、冬堡、雪漫、配偶搬家
-- [野外與地點](2026-10-10-play-checklist-wild.md)：露營狩獵、灌木叢、交易站、獸人據點、野松會所、亨德拉海姆、靈魂石冢、軍營、第二次大戰、兜帽陌生人
+- [野外與地點](2026-10-10-play-checklist-wild.md)：露營狩獵、灌木叢、交易站、獸人據點、野松會所、亨德拉海姆、靈魂石冢、軍營、第二次大戰、兜帽陌生人、馬薩雷利亞
 - [戰鬥與系統](2026-10-10-play-checklist-combat.md)：敵人、法術、硬直、閃避、鍛造熔煉、撿雜物、生存模式
 - [隨從與人物](2026-10-10-play-checklist-followers.md)：Saya、Liz、Karin、Nell、瓦蕾莉卡、Ashe 與 Serana
 
@@ -48,7 +48,7 @@ MO2 第一次啟動會重寫 profile，新 plugin 的 `*` 可能掉、順序可�
 
 ## 2. 今天裝了什麼
 
-總表抽成資料檔：[2026-10-10-play-checklist-installed.json](2026-10-10-play-checklist-installed.json)（40 列）。欄位：`mod`＝mod 名稱、`nexus`＝Nexus 編號、`version`＝版本、`self_layers`＝我方自製的中文層／修正層／設定改動、`report_path`＝施工 REPORT。
+總表抽成資料檔：[2026-10-10-play-checklist-installed.json](2026-10-10-play-checklist-installed.json)（41 列）。欄位：`mod`＝mod 名稱、`nexus`＝Nexus 編號、`version`＝版本、`self_layers`＝我方自製的中文層／修正層／設定改動、`report_path`＝施工 REPORT。
 
 自製層大致分三類：中文覆蓋層（約 20 支，都過了方塊字檢查，缺字 0）；相容或合併層（Saya 鼠道、Nell 學院、Hendraheim 任務／門鎖／配偶任務、Missives 禁派清單、Trading Posts USSEP 回補、Smelting Plus 修正）；私有身體層（Kurone3、Soul Tomb、Nell，三組都改指 Kurone7 的身體，沒有動全域 CBBE）。
 
