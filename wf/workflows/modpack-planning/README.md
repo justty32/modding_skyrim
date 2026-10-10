@@ -10,8 +10,7 @@ Done when: <方向已定、mod 集合已選、分批順序與每批的 rollback 
 ## 現役整包
 
 現役 profile 是 **`modpack-main`**；目前規劃入口是
-[`LoreRim 借用段`](../../../modpack-design/content-plan/lorerim/)與
-[`GO 19`](../../../modpack-design/content-plan/install-plans/go19-2026-09-02.md)。每階段都要有
+[`LoreRim 借用段`](../../../modpack-design/content-plan/lorerim/)。每階段都要有
 **rollback 與完成條件**，不能只寫「裝這些」。
 
 ## 四份輸入
@@ -22,7 +21,7 @@ Done when: <方向已定、mod 集合已選、分批順序與每批的 rollback 
 | 現在裝了什麼 | `instance/`（**唯讀盤點**，不要憑記憶或舊快照） |
 | 有什麼可以玩 | [`modpack-design/content-plan/`](../../../modpack-design/content-plan/) 的領域 OPEN 帳與現役批次 |
 | 來源與取得狀態 | [`modpack-design/sources/OPEN.md`](../../../modpack-design/sources/OPEN.md)；未查證素材不能當判定結論 |
-| 決定要裝什麼、按什麼順序 | [`content-plan/`](../../../modpack-design/content-plan/)；現役批次見 [`GO 19`](../../../modpack-design/content-plan/install-plans/go19-2026-09-02.md) 與 [`LoreRim 借用段`](../../../modpack-design/content-plan/lorerim/) |
+| 決定要裝什麼、按什麼順序 | [`content-plan/`](../../../modpack-design/content-plan/)；現役批次見 [`LoreRim 借用段`](../../../modpack-design/content-plan/lorerim/) |
 | 哪些有中文、下一步做什麼 | [`content-plan/zh-layer/`](../../../modpack-design/content-plan/zh-layer/)（缺口盤點與現成層拓撲 gate） |
 | 這個 mod 技術上怎麼運作 | [`analysis/mod-survey/`](../../../analysis/mod-survey/)——**這不是遊玩規劃，別混在一起** |
 | 已知的雷 | [`technical-debt.md`](../../../modpack-design/technical-debt.md)（單一權威清單） |
