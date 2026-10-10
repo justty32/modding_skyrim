@@ -1,7 +1,7 @@
 {
  "contract": "wf-table/1",
  "source": "2026-10-10-play-checklist.md",
- "extracted": "2026-10-10（m186441 插入 Masareria Invisible Wall Removal Lever.esp 後重算行號）",
+ "extracted": "2026-10-10（m159159 插入 AnimatedArmouryUnslaadPatch.esp 後重算行號）",
  "columns": [
   "line",
   "plugin",
@@ -663,7 +663,7 @@
    "report_path": "../../agentctl/handoffs/2026-10-10/bnb-upgrade/REPORT.md"
   },
   {
-   "line": "1348",
+   "line": "1349",
    "plugin": "EngineOrder Forward 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "全檔最後一行（ESL；補回 USSEP 7 叢灌木 REFR＋USMP 狼人皮，父 CELL／WRLD 為原贏家逐位元組副本）",
@@ -687,7 +687,7 @@
    "report_path": "../../agentctl/handoffs/2026-10-10/eval-154926/REPORT.md"
   },
   {
-   "line": "1347",
+   "line": "1348",
    "plugin": "NFF Notice Corpse Patch.esp",
    "expect_star": "yes",
    "order_rule": "nwsFollowerFramework.esp 之後；EngineOrder Forward 之前（倒數第二）",
@@ -703,7 +703,7 @@
    "report_path": "../../agentctl/handoffs/2026-10-10/m152315/REPORT.md"
   },
   {
-   "line": "1346",
+   "line": "1347",
    "plugin": "TSGW Compat Merge 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "GreatWarSkyrim.esp、7 支 JKs * - Second Great War patch、它的 23 個 master 之後；NFF Notice Corpse Patch 之前",
@@ -717,6 +717,14 @@
    "order_rule": "Masareria.esp 之後（緊接一行）",
    "note": "ESL；Masareria 1.4 選配：隱形牆不消失時的拉桿（esp 已中文化）",
    "report_path": "../../agentctl/handoffs/2026-10-10/m186441/REPORT.md"
+  },
+  {
+   "line": "1346",
+   "plugin": "AnimatedArmouryUnslaadPatch.esp",
+   "expect_star": "yes",
+   "order_rule": "Unslaad.esm、NewArmoury.esp 之後（master 區之後）；TSGW Compat Merge 之前",
+   "note": "ESL；Animated Armoury Unslaad Patch 0.5，實際載入的是 159159 簡中整支替換",
+   "report_path": "../../agentctl/handoffs/2026-10-10/m159159/REPORT.md"
   }
  ]
 }

@@ -299,6 +299,13 @@
    "version": "1.4",
    "self_layers": "DoubleSizedWhiterun.esp 簡中層以 1.4 重建（zhport，種子＝187212 和光＋09-03 補完）；拉桿 esp 中文化",
    "report_path": "../../agentctl/handoffs/2026-10-10/m186441/REPORT.md"
+  },
+  {
+   "mod": "Animated Armoury Unslaad Patch（＋159159 簡中）",
+   "nexus": "89322",
+   "version": "0.5",
+   "self_layers": "無自製層；159159 簡中 esp 整支替換（拓撲同版、非文字差異 0；名稱跟現役 Unslaad 中文層一致）",
+   "report_path": "../../agentctl/handoffs/2026-10-10/m159159/REPORT.md"
   }
  ]
 }
