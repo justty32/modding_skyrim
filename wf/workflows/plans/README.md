@@ -10,6 +10,7 @@ idea → roadmap → 詳規（本夾）→ feature-dev
 
 ## 規則
 
+<!-- wf-nav -->
 - 開始前寫 `Done when: <每個 task、檔案、測試與驗證都足以直接動工>`。
 - 本夾一個計畫一個項目：小計畫是 `<feature>.md`，**超過 8KB 就拆成 `<feature>/` 目錄**
   （`README.md` 當入口＋索引，其餘按自然邊界切成 ≤8KB 的部分）。

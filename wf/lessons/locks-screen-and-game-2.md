@@ -8,6 +8,7 @@
 
 2026-09-03 AE 兩輪後的事實（原 08-28 那條「無 appmanifest 所以 Steam 入口作廢」已過時）：
 
+<!-- wf-nav -->
 - `steamapps/appmanifest_489830.acf` 已放回，`buildid`＝public（24914197）、`StateFlags 4`、`AutoUpdateBehavior=1`。**Play 不會觸發更新**（唯一問題是會開到 MO2 redirector）；**會重灌本體的是 Verify／`steam://validate`**（實測 37 分鐘、5.27 GB，限速 20000 Kbps）。
 - 本體維持 1.6.1170（exe sha `c434208894f0…`），FULL 備份在 `~/skyrim_mods/steam-build-backup/489830-1.6.1170-build24604991-FULL/`，回填流程在 `agentctl/handoffs/home-2026-09-03/ae/REPORT.md`；`post-ae-2026-09-03/` **沒有 BSA**，不能拿來拼 1.7.104。
 - **AE（appid 1746860）是「無 depot 的授權旗標 DLC」**：已買、DLC 分頁已勾，但 489830 的 13 個 depot 無一掛 dlcappid，Steam 永遠派不出 CC 檔。70 件 CC 只能由遊戲主選單 Creations 登入 Bethesda.net 下載（需使用者本人帳密）。**09-03 晚使用者已抓到 70/75 件**，但落在啟動時 cwd 的 `data/`，見 [[cc-download-lands-in-cwd-data]]；現存 `~/skyrim_mods/cc-ae-download-2026-09-03/`。runbook 在 `agentctl/handoffs/home-2026-09-03/ae2/CC-RUNBOOK.md`，depot 證據在 `ae2/depot-findings.md`。
