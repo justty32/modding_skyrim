@@ -1,0 +1,276 @@
+{
+ "contract": "wf-table/1",
+ "source": "2026-10-10-play-checklist.md",
+ "extracted": "2026-10-10",
+ "columns": [
+  "mod",
+  "nexus",
+  "version",
+  "self_layers",
+  "report_path"
+ ],
+ "link_columns": [
+  "report_path"
+ ],
+ "rows": [
+  {
+   "mod": "Skyrim Unlimited Training",
+   "nexus": "774",
+   "version": "2022-07-04（改成 ESL）",
+   "self_layers": "—",
+   "report_path": "../../agentctl/handoffs/2026-10-10/unlimited-training/REPORT.md"
+  },
+  {
+   "mod": "Dovah Rider Carriage - Reborn＋MCM SKSE First Person",
+   "nexus": "159566",
+   "version": "2.1.5／2.1.4",
+   "self_layers": "ZH DovahRiderCart Overlay（簡中，搬 164233 譯文）",
+   "report_path": "../../agentctl/handoffs/2026-10-10/camp-hunt-install/REPORT.md"
+  },
+  {
+   "mod": "Simple Hunting Overhaul＋CHS",
+   "nexus": "95943／97621",
+   "version": "1.16",
+   "self_layers": "—",
+   "report_path": "../../agentctl/handoffs/2026-10-10/camp-hunt-install/REPORT.md"
+  },
+  {
+   "mod": "Dynamic Activation Key DLL for 1.6.1170",
+   "nexus": "96273",
+   "version": "1.12（取代 1.02）",
+   "self_layers": "—",
+   "report_path": "../../agentctl/handoffs/2026-10-10/camp-hunt-install/REPORT.md"
+  },
+  {
+   "mod": "Hide in Bushes - OIF＋Object Impact Framework",
+   "nexus": "170114／149484",
+   "version": "1.06／1.6.8",
+   "self_layers": "ZH HideInBushesOIF Overlay（繁中）",
+   "report_path": "../../agentctl/handoffs/2026-10-10/hide-in-bushes/REPORT.md"
+  },
+  {
+   "mod": "Dynamic Enemy Spawns SKSE",
+   "nexus": "178556",
+   "version": "3.4",
+   "self_layers": "ini：單人倍率 1.0、屍體可搜刮；附 pdb",
+   "report_path": "../../agentctl/handoffs/2026-10-10/hide-in-bushes/REPORT.md"
+  },
+  {
+   "mod": "Artisans of Skyrim",
+   "nexus": "185212",
+   "version": "1.7",
+   "self_layers": "ZH Artisans Overlay（簡中）＋中文 toml",
+   "report_path": "../../agentctl/handoffs/2026-10-10/artisans-guard/REPORT.md"
+  },
+  {
+   "mod": "Take an Arrow - Become a Guard",
+   "nexus": "179589",
+   "version": "1.0",
+   "self_layers": "ZH TaBgBecomeGuard Overlay（繁中自譯＋腳本通知）",
+   "report_path": "../../agentctl/handoffs/2026-10-10/artisans-guard/REPORT.md"
+  },
+  {
+   "mod": "Unlootable Clutter",
+   "nexus": "191738",
+   "version": "1.3",
+   "self_layers": "ini：銀器／矮人器不限",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch-uc-has-bcd/REPORT.md"
+  },
+  {
+   "mod": "Home Auto Sort＋SkyPrompt",
+   "nexus": "183379／148703",
+   "version": "2.5／2.4.2",
+   "self_layers": "SKSE Menu Framework CJK 字型層",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch-uc-has-bcd/REPORT.md"
+  },
+  {
+   "mod": "Better Carriage Destinations＋CFTO Patch＋兩個 CHS",
+   "nexus": "164485／164718",
+   "version": "1.0.10／1.0.2",
+   "self_layers": "—",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch-uc-has-bcd/REPORT.md"
+  },
+  {
+   "mod": "Modern Stagger Lock（AE-VR）",
+   "nexus": "181084（GitHub）",
+   "version": "1.07a",
+   "self_layers": "Pandora 重跑",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch-uc-has-bcd/REPORT.md"
+  },
+  {
+   "mod": "Survival Mode Improved - SKSE＋CHS",
+   "nexus": "78244／149335",
+   "version": "1.6.6",
+   "self_layers": "SMI Dovah Survival Patch；SCP 的 Survival.json；ini 不擋快速旅行",
+   "report_path": "../../agentctl/handoffs/2026-10-10/smi/REPORT.md"
+  },
+  {
+   "mod": "Smelting Plus",
+   "nexus": "17614",
+   "version": "2.0.1",
+   "self_layers": "SmeltingPlus Fix＋清理版 moresmeltables.esp",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch2/REPORT.md"
+  },
+  {
+   "mod": "Glenmoril - Throwing Knife Improvements",
+   "nexus": "188680",
+   "version": "1.1",
+   "self_layers": "ZH 飛刀層（繁中）",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch2/REPORT.md"
+  },
+  {
+   "mod": "Dynamic Dodge Shot（原版動畫／重甲／低等級三包）",
+   "nexus": "124981",
+   "version": "v.1",
+   "self_layers": "—",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch2/REPORT.md"
+  },
+  {
+   "mod": "DAc0da - Delayed Start（Level 25）",
+   "nexus": "136031",
+   "version": "1.1",
+   "self_layers": "ZH DAc0da 延後層",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch2/REPORT.md"
+  },
+  {
+   "mod": "Perfectly Valid Wards＋MCM Addon",
+   "nexus": "153401",
+   "version": "3.0.2",
+   "self_layers": "ZH PVW 層；ini 關掉法術反彈",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch2/REPORT.md"
+  },
+  {
+   "mod": "Missives - CFTO Patch",
+   "nexus": "44498",
+   "version": "1.0",
+   "self_layers": "Missives CFTO JQF Forbidden Merge",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch2/REPORT.md"
+  },
+  {
+   "mod": "Creation Club Home Requirements＋CHS",
+   "nexus": "116032／174182",
+   "version": "2.01／1",
+   "self_layers": "—",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch3/REPORT.md"
+  },
+  {
+   "mod": "IDE Stormcloaks＋CHS",
+   "nexus": "178880／178928",
+   "version": "3.0.1",
+   "self_layers": "內戰語音複製層（322 個 fuz）",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch3/REPORT.md"
+  },
+  {
+   "mod": "Hendraheim (CrystalTower15 Edition)",
+   "nexus": "113652",
+   "version": "1.2",
+   "self_layers": "CCHR 任務合併層、繁中層、新門補鎖層、配偶任務合併層",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch3/REPORT.md"
+  },
+  {
+   "mod": "（自製）名稱改回中文",
+   "nexus": "—",
+   "version": "—",
+   "self_layers": "ZH Valerica Name Fix、ZH HallOfAttainment Name Fix",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch3/REPORT.md"
+  },
+  {
+   "mod": "Kurone Saya＋CHS＋USSEP Patch＋Visual V2＋Sandbox Tweaks",
+   "nexus": "175064／175113／177390",
+   "version": "1.2／1.1Fix／1.3／1.3t",
+   "self_layers": "Saya 相容層、Kurone3 私有身體層、兩個中文層",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch4a-kurone/REPORT.md"
+  },
+  {
+   "mod": "Kurone Liz",
+   "nexus": "172153",
+   "version": "1.3",
+   "self_layers": "ZH Liz 層（繁中）、頭髮 alpha 補",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch4a-kurone/REPORT.md"
+  },
+  {
+   "mod": "Kurone Karin＋CHS",
+   "nexus": "165313／165335",
+   "version": "1.2",
+   "self_layers": "—",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch4a-kurone/REPORT.md"
+  },
+  {
+   "mod": "Hair Colour Sync NG",
+   "nexus": "156414",
+   "version": "1.4.1",
+   "self_layers": "—",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch4a-kurone/REPORT.md"
+  },
+  {
+   "mod": "SkyTactics - Dynamic Combat Styles",
+   "nexus": "131148",
+   "version": "1.0.0",
+   "self_layers": "ini 排除隨從",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch4b/REPORT.md"
+  },
+  {
+   "mod": "Orc Strongholds AIO＋USSEP Patch＋IWE Patch",
+   "nexus": "150246／160944",
+   "version": "1.3.1／1.3.1／1.0.0",
+   "self_layers": "ZH OrcStrongholdsAIO 層（繁中）",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch4b/REPORT.md"
+  },
+  {
+   "mod": "The Nasty Pine＋Ostim＋CHS；Manguz Inn Resources＋CHS",
+   "nexus": "138504／182197／96001／182199",
+   "version": "3.9.1／4.1.1",
+   "self_layers": "腳本中文層、Manguz BodySlide 產物",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch4b/REPORT.md"
+  },
+  {
+   "mod": "NPC Spell Variance",
+   "nexus": "132097",
+   "version": "2.7.2",
+   "self_layers": "—",
+   "report_path": "../../agentctl/handoffs/2026-10-10/batch4b/REPORT.md"
+  },
+  {
+   "mod": "Skyrim Trading Posts Remastered FYX＋CHS",
+   "nexus": "23997／139543",
+   "version": "3.4",
+   "self_layers": "USSEP Forward 層",
+   "report_path": "../../agentctl/handoffs/2026-10-10/tradingposts/REPORT.md"
+  },
+  {
+   "mod": "Ashe and Serana Banter（Asherana）＋CHS",
+   "nexus": "167123／167506",
+   "version": "1.0.12（1.0.10 升級）",
+   "self_layers": "ZH Asherana Overlay",
+   "report_path": "../../agentctl/handoffs/2026-10-10/tradingposts/REPORT.md"
+  },
+  {
+   "mod": "Valerica Diabologue Add-On＋RDO Patch",
+   "nexus": "173904",
+   "version": "1.0.0.7 BSA＋1.0.0.6 esp",
+   "self_layers": "ZH ValericaDAO 層（簡中）、NFF 自動匯入排除層",
+   "report_path": "../../agentctl/handoffs/2026-10-10/vdao/REPORT.md"
+  },
+  {
+   "mod": "Kurone Soul Tomb＋Update Patch＋Teleport＋CHS",
+   "nexus": "150859／153397",
+   "version": "2.0fix9／2.0Fix15／2.1",
+   "self_layers": "LE 碰撞轉 SE 層（34 支）、私有身體層",
+   "report_path": "../../agentctl/handoffs/2026-10-10/soultomb/REPORT.md"
+  },
+  {
+   "mod": "Simple Offence Suppression",
+   "nexus": "41764",
+   "version": "2.3.1",
+   "self_layers": "—",
+   "report_path": "../../agentctl/handoffs/2026-10-10/soultomb/REPORT.md"
+  },
+  {
+   "mod": "Kurone Nell's Secret Base（No SOS）＋RaceMenu High Heels Fixes",
+   "nexus": "163945／18045",
+   "version": "2.1／1.3",
+   "self_layers": "JK-OCW 學院合併 patch、繁中層、私有身體層",
+   "report_path": "../../agentctl/handoffs/2026-10-10/nell/REPORT.md"
+  }
+ ]
+}

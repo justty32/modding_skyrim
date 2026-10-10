@@ -10,3 +10,4 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 | 檔案 | 內容 |
 |------|------|
 | [2026-09-26-pre-play-checklist.md](2026-09-26-pre-play-checklist.md) | 09-26 早場八線調查濃縮：開玩前要做的事、裁示項 |
+| [2026-10-10-play-checklist.md](2026-10-10-play-checklist.md) | 10-10 十七線施工彙整：開遊戲前、依地點分四頁的實測清單、今日安裝總表、不裝／延後 |
