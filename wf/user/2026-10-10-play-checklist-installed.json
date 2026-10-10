@@ -285,6 +285,13 @@
    "version": "1.10.1",
    "self_layers": "152315 簡中譯文搬到 1.10.1 esp（172004 補 133 欄）；TSGW Compat Merge 2026-10-10（houseCARL 相容合併補丁，ESL）",
    "report_path": "../../agentctl/handoffs/2026-10-10/m152315/REPORT.md"
+  },
+  {
+   "mod": "A Conversation - Quest Mod（＋154926 簡中）",
+   "nexus": "124431",
+   "version": "1.0.4",
+   "self_layers": "無自製層；154926 簡中 esp 整支替換（拓撲同版、非文字差異 0）",
+   "report_path": "../../agentctl/handoffs/2026-10-10/eval-154926/REPORT.md"
   }
  ]
 }
