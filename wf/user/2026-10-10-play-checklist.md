@@ -48,7 +48,7 @@ MO2 第一次啟動會重寫 profile，新 plugin 的 `*` 可能掉、順序可�
 
 ## 2. 今天裝了什麼
 
-總表抽成資料檔：[2026-10-10-play-checklist-installed.json](2026-10-10-play-checklist-installed.json)（37 列）。欄位：`mod`＝mod 名稱、`nexus`＝Nexus 編號、`version`＝版本、`self_layers`＝我方自製的中文層／修正層／設定改動、`report_path`＝施工 REPORT。
+總表抽成資料檔：[2026-10-10-play-checklist-installed.json](2026-10-10-play-checklist-installed.json)（38 列）。欄位：`mod`＝mod 名稱、`nexus`＝Nexus 編號、`version`＝版本、`self_layers`＝我方自製的中文層／修正層／設定改動、`report_path`＝施工 REPORT。
 
 自製層大致分三類：中文覆蓋層（約 20 支，都過了方塊字檢查，缺字 0）；相容或合併層（Saya 鼠道、Nell 學院、Hendraheim 任務／門鎖／配偶任務、Missives 禁派清單、Trading Posts USSEP 回補、Smelting Plus 修正）；私有身體層（Kurone3、Soul Tomb、Nell，三組都改指 Kurone7 的身體，沒有動全域 CBBE）。
 
