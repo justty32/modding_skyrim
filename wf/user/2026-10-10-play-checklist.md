@@ -1,6 +1,8 @@
 # 2026-10-10 進遊戲檢查清單
 
 > 整理線彙整 10-10 十七份報告（`agentctl/handoffs/2026-10-10/`）。內容都取自各線 REPORT 的「實機清單」與「順帶看到」，沒有另外推新結論；重複的項目已經合併。全部都還沒進遊戲驗過。
+>
+> **10-10 17:23–17:51 agent 實機兩輪（沒崩潰）**：結果逐項標在各項底下（OK／問題／留給你）。要先看的三件事：Artisans 選項只在店裡出現、AutoSEQ 報 53 支 SEQ 缺漏、MO2 每開一次都重排 master 區。詳見 [ingame-test REPORT](../../agentctl/handoffs/2026-10-10/ingame-test/REPORT.md)。
 
 今天新裝 37 組 mod（含中文層與自製層，plugins.txt 多了 78 行）。這一頁放「開遊戲前」與總表，實測項目依地點分成四頁：
 
@@ -26,15 +28,19 @@ MO2 第一次啟動會重寫 profile，新 plugin 的 `*` 可能掉、順序可�
 ### 1b. 你自己要做的：DAc0da
 
 - [ ] **先不要升到 15 級。** 讀檔後在主控台打 `getglobalvalue zDcdGStartLevel`，要回 25；如果是 15，打 `set zDcdGStartLevel to 25` 再查一次。預期 15 級時天上不出現 Numidium，25 級才開始。〔batch2〕
+  - **agent 10-10 實機**：agent 驗出問題：存檔裡目前是 **15**，還沒改，要你自己 `set zDcdGStartLevel to 25`。〔ingame-test〕
 
 ### 1c. 你自己要做的：生存模式
 
 - [ ] **Sleep to Level Up 手動改成 Always Disabled**：MCM → Survival Control Panel → Main。現有存檔一定要手動設一次（新開檔會自動讀 `Data/Survival.json`）。驗證方式：升級後不睡覺，也能直接加點。〔smi〕
+  - **agent 10-10 實機**：agent 驗不了，留給你（要開 MCM）。〔ingame-test〕
 - [ ] **生存模式開關**：設定 → 遊戲性 →「生存模式」。開著時畫面有寒冷／飢餓／疲勞指示；關掉後指示消失、需求停止。新開檔預設是開的。只想關其中一項，就在主控台 `set SMI_ColdShouldBeEnabled to 0`（飢餓用 `SMI_HungerShouldBeEnabled`、疲勞用 `SMI_ExhaustionShouldBeEnabled`），然後存檔、讀檔一次；改回 1 就恢復。〔smi〕
+  - **agent 10-10 實機**：agent 已驗 OK（開啟狀態）：四個開關 global 都是 1，寒冷／飢餓的通知是中文；切換開關留給你。〔ingame-test〕
 
 ### 1d. 進遊戲先看一眼載入
 
 - [ ] `我的文件/My Games/Skyrim Special Edition/SKSE/skse64.log` 裡，今天新增的這些 DLL 都要寫 loaded correctly：UnlootableClutter、HomeAutoSort、SkyPrompt、BetterCarriageDestinations、ModernStaggerLock、NPCSpellVariance、AutoEnemySpawn、ObjectImpactFramework、SurvivalModeImproved、ArtisansOfSkyrim、DovahRiderNative、DynamicActivationKey、PerfectlyValidWards、HairColourSyncNG、po3_SimpleOffenceSuppression。名字對不上時以 DLL 檔名為準。
+  - **agent 10-10 實機**：agent 已驗 OK：15 個全部 loaded correctly（總共 157 個），兩輪都沒崩、沒有新的 crash log。〔ingame-test〕
 
 ### 1e. 崩潰時一律這樣處理
 
