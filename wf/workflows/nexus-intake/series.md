@@ -4,7 +4,7 @@
 是**它們會彼此覆寫檔案、共用生成式 output、而且一次全裝就再也分不清是誰壞的**。
 
 現役動作系統已改走 MCO；階段與隊列見
-[`mco-migration-plan-2026-09-02.md`](../../../modpack-design/content-plan/gameplay/mco-migration-plan-2026-09-02.md)。
+[`mco-migration-plan-2026-09-02.md`](../../../modpack-design/content-plan/gameplay/migration/mco-migration-plan-2026-09-02.md)。
 下方 BFCO 內容只保留為「系列分層與生成式 output」的歷史實例，不代表現役選型。
 
 ```text
