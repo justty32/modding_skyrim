@@ -13,3 +13,7 @@ tmp/
 
 # 2026-09-25 使用者裁示：解包出來的 .pex 二進位不進版控（實體留在磁碟）
 analysis/skyrim_mods/_sofia_extract/scripts/*.pex
+
+# 2026-10-17 WP-R1：使用者私人貼板，不進版控；消化結果在 modpack-design/sources/mod-want-review-*
+/mods-user-want.md
+/play-notes.md
