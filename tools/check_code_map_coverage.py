@@ -64,6 +64,9 @@ INDEX_PAGES = (
     "mod-library/README.md",
     "mod-library/db/README.md",
     "mod-library/l10n/tools/README.md",
+    # 109+ scripts: the per-script index is a wf-table/1 data file, not a md
+    # list (iron rule 7). Only the basename text matters here.
+    "mod-library/l10n/tools/tools-index.json",
     "agentctl/tools/README.md",
     "modpack-design/README.md",
     "agentctl/README.md",
