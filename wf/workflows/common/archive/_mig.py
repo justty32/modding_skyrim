@@ -1,3 +1,4 @@
+# 封存 2026-10-17，原因：一次性記憶搬家腳本（2026-09-26 memmig），搬家已由 WP-05 以合併收尾；硬寫記憶目錄路徑，勿再執行。
 import os,re,sys,json
 M='/home/lorkhan/.claude/projects/-home-lorkhan-repo-moddings-skyrim/memory'
 OUT='/home/lorkhan/repo/moddings/skyrim/wf/lessons'

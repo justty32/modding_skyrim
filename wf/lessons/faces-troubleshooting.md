@@ -1,6 +1,6 @@
-# 臉、隨從、身體與動畫（3/4）
+# 臉與身體：排錯與升級
 
-[lessons 索引](README.md)｜同主題：[faces-followers-bodies](faces-followers-bodies.md)、[faces-followers-bodies-2](faces-followers-bodies-2.md)、[faces-followers-bodies-4](faces-followers-bodies-4.md)
+[lessons 索引](README.md)
 
 ## custom-race-blocks-facegen-load
 
@@ -73,3 +73,19 @@
 
 **How to apply:** 烤身體別指望 GUI 選預設；改 NPC 體重動 NAM7；多層覆寫同一個 NPC_ 時最後載入的那層要 forward 全部欄位。
 相關：[[look-layer-must-carry-hdpt-flst-clfm]]、[[look-transplant-workflow-and-picker]]
+
+## daegon-2212-midsave-upgrade
+
+> Daegon 2.0.5→2.2.1.2 中途升級成功；Legacy(112097/112191) 與 2.x 不可並存；NifSwap 要四路徑同 md5；Elven Princess v1.3 對 2.2（原 type: memory）
+
+2026-09-19 使用者實機確認：Daegon and Kaeserius 2.0.5→2.2.1.2 在現有存檔升級成功（profiles `b9b13f4`），跳過「先 dismiss」步驟也沒事，
+臉／名字／髮辮切換都對。組成：`Daegon-2.2.1.2`＋`Daegon-CHS-171488-2.2.1.2-ZH-2026-09-18`（171488 拓撲同版，forward 自家名詞 8 個＋補 201 欄）
+＋`Daegon-ElvenPrincess-1.3`（有角）＋`Goam-Elven-Ears-Fair-1.0`。
+
+**Why:** 2.2.1.2 只增不改（FormID 不重編、masters 不變、非 ESL），DLL 同 NG 模板。
+**How to apply:**
+- `Daegon Kaekiri 112097`／`Daegon Legacy 112191` 是 Legacy 本體，plugin 同名 `k101Daegon.esp` 但 FormID 體系不同，**不是美化、不能跟 2.x 並存**。
+- 本體 DLL `NifSwap()` 在室內外切髮型時用 CopyFileW 在 `facegeom/k101Daegon.esp/00005900{,Stock}.nif` 與 `facegeom/temp/` 之間互換：換臉層四個路徑都要放同 md5，否則切一次髮辮就變回原臉。
+- 角與 Goam 耳是烤進 facegen 的無 HDPT 多餘 shape，引擎容忍（作者出貨方式就是這樣）；補 HDPT 的備案工具在 `agentctl/handoffs/home-2026-09-18/dgn2/tools/`。
+- 升級後開機的 alias 綁不到／None 錯誤是舊存檔過渡一次性雜訊。
+相關：[[daegon-itemfinding-script-ctd]]、[[facegen-headpart-count-mismatch-discards-facegen]]

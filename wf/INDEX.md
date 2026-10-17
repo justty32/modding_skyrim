@@ -19,6 +19,7 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | [`patches/`](../patches/README.md) | 放給外部專案套用的獨立 patch，各資料夾附目標版本、修改原因、套用方式與驗證方法 |
 | `wf/` | 工作流骨架：派發見 [WORKFLOWS.md](WORKFLOWS.md)、結構原則見 [STRUCTURE.md](STRUCTURE.md)、共享區 [workflows/common/](workflows/common/README.md)、檢查腳本 `wf/tools/wf-lint.sh` |
 | [`wf/user/`](user/README.md) | 給使用者本人看的頁面（開玩前清單、審批頁、裁示單）；agent 內部報告仍留 `agentctl/handoffs/` |
+| [`wf/lessons/`](lessons/README.md) | 從 Claude 記憶搬來的教訓庫：使用者偏好、調度、版控、MO2、工具坑、臉／動畫、CTD、中文層等主題，各檔一條教訓一個 `##` 小節 |
 | `wf/tools/` | `wf-lint.sh`（連結／超標／BIGLIST／殘留檢查）、`tabledb.py`＋`tabledb_links.py`（`wf-table/1` 資料檔 CRUD 與連結檢查）、`find_big_lists.py`（找 >1 KB 條列區塊）、`fix_moved_links.py`（搬檔後按 moves.tsv 重寫連結）|
 | [`tools/`](../tools/) | 母 repo 的文件驗證：`check_markdown_links.py`、`check_submodule_pins.py` 與其測試 |
 | [`.claude/commands/`](../.claude/commands/) | slash 指令適配層（可選）。Claude Code 只讀專案根的這層，非侵入式佈局也留在根；沒有 slash 機制的工具忽略本目錄，直接跑 `wf/tools/wf-lint.sh` |

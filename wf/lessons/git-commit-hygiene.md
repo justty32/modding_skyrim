@@ -1,24 +1,6 @@
-# 版控、repo 佈局與文件整理（2/4）
+# 版控：commit、工作樹與產物衛生
 
-[lessons 索引](README.md)｜同主題：[git-and-repos](git-and-repos.md)、[git-and-repos-3](git-and-repos-3.md)、[git-and-repos-4](git-and-repos-4.md)
-
-## gitlink-is-a-commit-not-a-branch
-
-> 別在文件裡寫「某個 submodule 釘在某條分支上」；gitlink 指的是 commit，寫成分支會讓人拿錯東西對帳（原 type: feedback）
-
-2026-08-26 使用者看到 `AGENTS.md` 寫「houseCARL 釘在 `justty32/houseCARL` 的
-`fix/dialogue-encoding-lint`」，指示刪掉，理由是「pin 這個概念不應該存在」。
-
-**Why:** submodule 的 gitlink 記的是一個 **commit**，不是一條分支。把它描述成「釘在分支 X」，
-後來的人就會去對分支 X 而不是對那個 commit——實際上 houseCARL 的 gitlink 是 `fork/main` 上的
-`efe28f8`，跟文件寫的分支不同。同一晚母 repo 還有 5 個 gitlink 指向側分支上的 commit，
-一連串誤判都源自這個錯的心智模型。
-
-**How to apply:** 文件要描述 submodule 關係時，寫真正的規則（例：「只維護自有 fork、不追
-upstream」），不要寫「釘在哪條分支」。要講具體狀態就給 commit hash，並說明它從哪些遠端 ref
-可達（那才是它會不會變孤兒的判準）。這是針對**文件寫法**的指示，不是要我去清洗 repo 裡
-既有的 `chore: 推進 pin` 這類 commit 訊息用語——參見 [[dont-inflate-light-preferences]]。
-相關：[[workspace-layout-and-duties]]、[[verify-waituser-against-logs]]。
+[lessons 索引](README.md)
 
 ## commit-explicit-paths-only
 
@@ -69,3 +51,13 @@ upstream」），不要寫「釘在哪條分支」。要講具體狀態就給 co
 - 收線必跑 `hygiene_check.py tracked` → 0；每條線的交接書要寫「>1 MB 產物放 work/（gitignored）」；已追蹤的違規檔用 `git rm --cached`（留磁碟），刪實體與改歷史都要先問使用者。
 - 定期：每次收工跑 disk 子命令看 handoffs/ 各日目錄 du，>10 MB 的未追蹤目錄列 WAIT_USER 請使用者裁刪；一個月一次 tidy 輪。
 相關：[[commit-explicit-paths-only]]、[[dont-clutter-home-with-agent-output]]、[[archive-obsolete-and-unlink]]
+
+## run-tests-in-worktree-not-main-tree
+
+> 2026-09-18 modforge 隊在主工作樹跑 build/test，重建 dll 打掉 dsp-build 釘選的 ModForge 二進位 sha256；多隊共用 repo 時測試一律在 worktree 或隔離 clone（原 type: feedback）
+
+2026-09-18 事故：modforge 隊在 `projects/ModForge` 主工作樹跑 `dotnet build`＋測試，產出的 dll 覆蓋了 dsp-build 隊釘選在 `0af3188` 的二進位；dsp-build 的 sha256 閘門擋下（零污染產出），之後改用隔離 clone 重釘。
+
+**Why:** 同一 repo 的 bin/ 是共享的可變狀態；一隊的 build 就是另一隊的環境變更。
+
+**How to apply:** 交接書寫死：任何 build／test 在 `git worktree add` 或獨立 clone 裡跑；消費二進位的一方釘 commit＋sha256 並在每次使用前驗；隊間共用 repo 時在 COMMON.md 列「誰可以動主工作樹」。相關：[[commit-explicit-paths-only]]。

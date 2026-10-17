@@ -1,6 +1,6 @@
-# 版控、repo 佈局與文件整理（1/4）
+# 版控：repo 佈局、remote 與 push
 
-[lessons 索引](README.md)｜同主題：[git-and-repos-2](git-and-repos-2.md)、[git-and-repos-3](git-and-repos-3.md)、[git-and-repos-4](git-and-repos-4.md)
+[lessons 索引](README.md)
 
 ## workspace-not-a-git-repo
 
@@ -89,3 +89,21 @@ D3/D4、上游升級、整批安裝）只有本機副本。磁碟壞掉等於全
 MO2 原位置 `.../modorganizer2/profiles` 改成指過去的 **symlink**。
 git submodule 要求工作目錄真的在 submodule 路徑上，這是唯一能同時滿足兩邊的做法。
 還原方式寫在 `instance/README.md`。**尚未實機驗證**——要從 Steam 啟動一次才算過。
+
+## gitlink-is-a-commit-not-a-branch
+
+> 別在文件裡寫「某個 submodule 釘在某條分支上」；gitlink 指的是 commit，寫成分支會讓人拿錯東西對帳（原 type: feedback）
+
+2026-08-26 使用者看到 `AGENTS.md` 寫「houseCARL 釘在 `justty32/houseCARL` 的
+`fix/dialogue-encoding-lint`」，指示刪掉，理由是「pin 這個概念不應該存在」。
+
+**Why:** submodule 的 gitlink 記的是一個 **commit**，不是一條分支。把它描述成「釘在分支 X」，
+後來的人就會去對分支 X 而不是對那個 commit——實際上 houseCARL 的 gitlink 是 `fork/main` 上的
+`efe28f8`，跟文件寫的分支不同。同一晚母 repo 還有 5 個 gitlink 指向側分支上的 commit，
+一連串誤判都源自這個錯的心智模型。
+
+**How to apply:** 文件要描述 submodule 關係時，寫真正的規則（例：「只維護自有 fork、不追
+upstream」），不要寫「釘在哪條分支」。要講具體狀態就給 commit hash，並說明它從哪些遠端 ref
+可達（那才是它會不會變孤兒的判準）。這是針對**文件寫法**的指示，不是要我去清洗 repo 裡
+既有的 `chore: 推進 pin` 這類 commit 訊息用語——參見 [[dont-inflate-light-preferences]]。
+相關：[[workspace-layout-and-duties]]、[[verify-waituser-against-logs]]。

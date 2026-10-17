@@ -1,50 +1,37 @@
 # lessons — 從 Claude 記憶搬來的教訓庫
 
-## 2026-09-26 搬家中斷（未完成）
+每個 `##` 小節是一條教訓（標題＝原記憶檔名 slug，引言行＝原 description，內文保留日期與 Why／How to apply）。lessons 是知識庫不是流程文件，單檔可超過 8 KB；同主題放同一檔，超過 16 KB 才按子主題分檔（檔名語意化，不用 `-N` 編號）。
 
-- **已搬**：記憶目錄 104 個 md 以腳本原文轉成 `##` 小節（標題＝原檔名 slug，引言行＝原 description，內文保留日期與 Why／How to apply），分到下表主題檔；尚未人工合併重複、尚未去重。
-- **未搬**：`interactive-grep-is-ugrep`、`pgrep-self-match-beyond-brackets`（預定進記憶的 `this-machine.md`，尚未建）；`overnight-agent-fleet-2026-08-20`、`aetheria-agent-coexistence`（預定判過期，尚未定案）。
-- **未做**：`this-machine.md`、記憶 `MEMORY.md` 改寫、`AGENTS.md`／`wf/INDEX.md` 路由、合併同主題條目、lint 驗收。
-- **記憶目錄原檔全部仍在**（一個都沒刪）；權威來源暫時仍是記憶目錄。
-- 備份：`~/.claude/projects/-home-lorkhan-repo-moddings-skyrim/memory-backup-2026-09-26.tar.gz`（不進 repo）。
+## 搬家狀態
+
+- 2026-09-26 memmig 把記憶目錄的 md 以腳本原文轉成小節（腳本已封存到 `wf/workflows/common/archive/`）；2026-10-17 WP-05 把 `-2`…`-9` 分檔合併成下表（內容逐行保留，無重複小節）。
+- **未搬**：`interactive-grep-is-ugrep`、`pgrep-self-match-beyond-brackets`（原定進 `this-machine.md`，未建）；`overnight-agent-fleet-2026-08-20`、`aetheria-agent-coexistence`（原定判過期，未定案）；2026-09-26 之後新增的記憶條目也還沒搬。
+- **記憶目錄**：原檔全部仍在，`MEMORY.md` 尚未改成指向本目錄的指標——記憶目錄改寫由頂層處理；在那之前兩邊並存，記憶目錄較新。
 
 ## 分類表
 
+<!-- wf-nav -->
 | 檔案 | 主題 | 條數 |
 |---|---|---|
-| [user-preferences](user-preferences.md) | 使用者偏好與邊界 | 5 |
-| [user-preferences-2](user-preferences-2.md) | 使用者偏好與邊界 | 5 |
-| [dispatch-and-agents](dispatch-and-agents.md) | 調度、模型分級與交接書 | 1 |
-| [dispatch-and-agents-2](dispatch-and-agents-2.md) | 調度、模型分級與交接書 | 2 |
-| [dispatch-and-agents-3](dispatch-and-agents-3.md) | 調度、模型分級與交接書 | 1 |
-| [dispatch-and-agents-4](dispatch-and-agents-4.md) | 調度、模型分級與交接書 | 2 |
-| [dispatch-and-agents-5](dispatch-and-agents-5.md) | 調度、模型分級與交接書 | 5 |
-| [dispatch-and-agents-6](dispatch-and-agents-6.md) | 調度、模型分級與交接書 | 3 |
-| [dispatch-and-agents-7](dispatch-and-agents-7.md) | 調度、模型分級與交接書 | 1 |
-| [dispatch-and-agents-8](dispatch-and-agents-8.md) | 調度、模型分級與交接書 | 1 |
-| [dispatch-and-agents-9](dispatch-and-agents-9.md) | 調度、模型分級與交接書 | 3 |
-| [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 3 |
-| [locks-screen-and-game-2](locks-screen-and-game-2.md) | 鎖、螢幕與開遊戲 | 3 |
-| [locks-screen-and-game-3](locks-screen-and-game-3.md) | 鎖、螢幕與開遊戲 | 1 |
-| [git-and-repos](git-and-repos.md) | 版控、repo 佈局與文件整理 | 4 |
-| [git-and-repos-2](git-and-repos-2.md) | 版控、repo 佈局與文件整理 | 5 |
-| [git-and-repos-3](git-and-repos-3.md) | 版控、repo 佈局與文件整理 | 3 |
-| [git-and-repos-4](git-and-repos-4.md) | 版控、repo 佈局與文件整理 | 2 |
-| [mo2-profiles](mo2-profiles.md) | MO2 與 profile | 5 |
-| [mo2-profiles-2](mo2-profiles-2.md) | MO2 與 profile | 5 |
-| [housecarl-and-tools](housecarl-and-tools.md) | houseCARL、xEdit、DynDOLOD 等工具坑 | 5 |
-| [housecarl-and-tools-2](housecarl-and-tools-2.md) | houseCARL、xEdit、DynDOLOD 等工具坑 | 4 |
-| [faces-followers-bodies](faces-followers-bodies.md) | 臉、隨從、身體與動畫 | 4 |
-| [faces-followers-bodies-2](faces-followers-bodies-2.md) | 臉、隨從、身體與動畫 | 3 |
-| [faces-followers-bodies-3](faces-followers-bodies-3.md) | 臉、隨從、身體與動畫 | 4 |
-| [faces-followers-bodies-4](faces-followers-bodies-4.md) | 臉、隨從、身體與動畫 | 4 |
-| [crash-triage](crash-triage.md) | CTD 真因與判法 | 3 |
-| [crash-triage-2](crash-triage-2.md) | CTD 真因與判法 | 3 |
-| [crash-triage-3](crash-triage-3.md) | CTD 真因與判法 | 3 |
-| [translation-and-zh](translation-and-zh.md) | 翻譯與中文層 | 4 |
-| [translation-and-zh-2](translation-and-zh-2.md) | 翻譯與中文層 | 3 |
+| [user-preferences](user-preferences.md) | 使用者偏好與邊界 | 10 |
+| [dispatch-roles](dispatch-roles.md) | 調度：頂層角色與誰來做 | 4 |
+| [dispatch-delegation](dispatch-delegation.md) | 調度：模型分級、委派與領隊 | 7 |
+| [dispatch-handoffs](dispatch-handoffs.md) | 調度：交接書與查證 | 3 |
+| [dispatch-cli-agents](dispatch-cli-agents.md) | 調度：驅動 codex／tmux 與行程 | 5 |
+| [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 7 |
+| [repos-layout-and-remotes](repos-layout-and-remotes.md) | 版控：repo 佈局、remote 與 push | 5 |
+| [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、工作樹與產物衛生 | 5 |
+| [docs-organization](docs-organization.md) | 文件整理與 wf kernel | 4 |
+| [mo2-profiles](mo2-profiles.md) | MO2 與 profile | 10 |
+| [housecarl-and-tools](housecarl-and-tools.md) | houseCARL、xEdit、DynDOLOD 等工具坑 | 9 |
+| [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與 facegen 規則 | 7 |
+| [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：排錯與升級 | 5 |
+| [animation-oar](animation-oar.md) | 動畫與 OAR | 3 |
+| [crash-dll-and-scripts](crash-dll-and-scripts.md) | CTD：SKSE DLL 與腳本 | 5 |
+| [crash-data-and-assets](crash-data-and-assets.md) | CTD：資料層與素材 | 4 |
+| [translation-and-zh](translation-and-zh.md) | 翻譯與中文層 | 7 |
 | [project-decisions](project-decisions.md) | 專案裁示與地圖／內容限制 | 4 |
 
 ## 新增規則
 
-新教訓寫進對應主題檔的一個 `##` 小節：標題／日期／事實／Why／How to apply；主題檔 >8 KB 就拆 `-N`。
+新教訓寫進對應主題檔的一個 `##` 小節：標題／日期／事實／Why／How to apply。主題檔超過 16 KB 時按子主題拆成語意化檔名，並更新上表。
