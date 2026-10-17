@@ -53,7 +53,21 @@ list_owned_files() {
     [[ -n $rel ]] && prunes+=( -o -path "$root/${rel%/}" -o -path "*/${rel%/}" )
   done < <(git -C "${top:-$root}" config --file "${top:-$root}/.gitmodules" --get-regexp '^submodule\..*\.path$' 2>/dev/null || true)
   find "$root" \( -type d \( "${prunes[@]}" \) \) -prune \
-    -o -type f \( "$@" \) -print | sort
+    -o -type f \( "$@" \) -print | drop_ignored "$root" | sort
+}
+
+# git repo 內丟掉 .gitignore 命中的檔（他人 clone、產物）；tracked 檔不算 ignored。非 repo、或 $root 本身被 ignore（明指要掃）時照舊。
+drop_ignored() {
+  local root=$1 f
+  if ! git -C "$root" rev-parse --is-inside-work-tree >/dev/null 2>&1 || git -C "$root" check-ignore -q . 2>/dev/null; then
+    cat; return
+  fi
+  local -a files=(); local -A ign=()
+  mapfile -t files
+  [[ ${#files[@]} -eq 0 ]] && return
+  while IFS= read -r -d '' f; do ign[$f]=1; done \
+    < <(printf '%s\0' "${files[@]#"$root"/}" | git -C "$root" check-ignore -z --stdin 2>/dev/null)
+  for f in "${files[@]}"; do [[ -n ${ign[${f#"$root"/}]:-} ]] || printf '%s\n' "$f"; done
 }
 
 list_md() { list_owned_files "$1" -name '*.md'; }

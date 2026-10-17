@@ -1,5 +1,6 @@
 """wf-lint 的掃描範圍與計數：封存夾／submodule 不下鑽、BROKEN 計數不溢位。共用 helper 在 test_wf_lint。"""
 import os
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -68,6 +69,54 @@ class LinkScopeAndCountTest(unittest.TestCase):
         self.assertIn("BROKEN workflows/inbox/README.md", r.stdout)
         self.assertIn("biglist=0", r.stdout)
         self.assertIn("inbox_pending=1", r.stdout)
+
+
+class GitIgnoredScopeTest(unittest.TestCase):
+    """git repo 內 .gitignore 命中的路徑（他人 clone、產物）不掃；tracked 檔照掃；非 repo 照舊。"""
+
+    NOISE = (
+        "[gone](missing.md)\n[anchor](#absent)\n{{placeholder}}\n"
+        + "".join(f"- row {i}: {'x' * 40}\n" for i in range(30))
+    )
+
+    def setUp(self):
+        self.d = tempfile.TemporaryDirectory()
+        self.root = self.d.name
+        write(self.root, "README.md", "# ok\n")
+        write(self.root, "ext/clone/README.md", self.NOISE)
+        write(self.root, "ext/forced.md", "[forced](missing.md)\n")
+        write(self.root, ".gitignore", "ext/\n")
+
+    def tearDown(self):
+        self.d.cleanup()
+
+    def git(self, *args):
+        subprocess.run(["git", "-C", self.root, *args], check=True, capture_output=True)
+
+    def make_repo(self):
+        self.git("init", "-q")
+        self.git("add", "-f", "ext/forced.md")
+
+    def test_ignored_paths_skipped_inside_repo_but_tracked_kept(self):
+        self.make_repo()
+        r = run(self.root, "--strict")
+        self.assertNotIn("ext/clone", r.stdout)
+        self.assertIn("BROKEN ext/forced.md -> missing.md", r.stdout)
+        self.assertIn("TOTAL broken=1 residue=0 oversize=0 biglist=0", r.stdout)
+
+    def test_outside_repo_everything_scanned(self):
+        r = run(self.root, "--strict")
+        self.assertIn("BROKEN ext/clone/README.md -> missing.md", r.stdout)
+        self.assertIn("BROKEN-ANCHOR ext/clone/README.md:2", r.stdout)
+        self.assertIn("BIGLIST ext/clone/README.md", r.stdout)
+        self.assertIn("biglist=1", r.stdout)
+
+    def test_explicit_ignored_root_is_still_scanned(self):
+        self.make_repo()
+        r = run(os.path.join(self.root, "ext", "clone"), "--strict")
+        self.assertIn("BROKEN README.md -> missing.md", r.stdout)
+        self.assertIn("BROKEN-ANCHOR README.md:2", r.stdout)
+        self.assertIn("biglist=1", r.stdout)
 
 
 if __name__ == "__main__":
