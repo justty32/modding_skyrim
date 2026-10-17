@@ -21,9 +21,17 @@ MO2 第一次啟動會重寫 profile，新 plugin 的 `*` 可能掉、順序可�
 
 最容易出事的三處：
 
-- **普通 esp 不能排進 master 區**：TaBg、Kurone 系、Soul Tomb、Nell、VDAO 以前排在 USSEP 前面，但 USSEP 帶 ESM 旗標，MO2 和引擎都會把普通 esp 移到 master 類後面，所以每次開 MO2 都會「重排」。10-10 mo2-reorder 已把 record 改成合法順序（TaBg 現在在第 134 行），因 USSEP 先載而翻掉的 8 筆由 `EngineOrder Forward 2026-10-10.esp` 補回。**不要再把它們拉回 USSEP 前**；reverify 的 PARTITION gate 會抓（[mo2-reorder REPORT](../../agentctl/handoffs/2026-10-10/mo2-reorder/REPORT.md)）。
-- **第 1300～1304 行**（亨德拉海姆五支）要在 WorldFix AFull（第 1305 行）之前；**最後一行**必須是 `EngineOrder Forward 2026-10-10.esp`，倒數第二行是 `ZH HallOfAttainment Name Fix`。
-- MO2 關閉時常見的暫態回寫：把新 BSA 寫進 archives.txt（預期行為）。三條停用條目（Animated Ice Floes／Bergs、Varinia 補完 esp）的檔案不在 VFS，已在 mo2-reorder 從 record 刪掉，不會再被 MO2 丟出差異。
+#### 普通 esp 不能排進 master 區
+
+TaBg、Kurone 系、Soul Tomb、Nell、VDAO 以前排在 USSEP 前面，但 USSEP 帶 ESM 旗標，MO2 和引擎都會把普通 esp 移到 master 類後面，所以每次開 MO2 都會「重排」。10-10 mo2-reorder 已把 record 改成合法順序（TaBg 現在在第 134 行），因 USSEP 先載而翻掉的 8 筆由 `EngineOrder Forward 2026-10-10.esp` 補回。**不要再把它們拉回 USSEP 前**；reverify 的 PARTITION gate 會抓（[mo2-reorder REPORT](../../agentctl/handoffs/2026-10-10/mo2-reorder/REPORT.md)）。
+
+#### 亨德拉海姆五支與最後兩行
+
+**第 1300～1304 行**（亨德拉海姆五支）要在 WorldFix AFull（第 1305 行）之前；**最後一行**必須是 `EngineOrder Forward 2026-10-10.esp`，倒數第二行是 `ZH HallOfAttainment Name Fix`。
+
+#### MO2 關閉時的暫態回寫
+
+MO2 關閉時常見的暫態回寫：把新 BSA 寫進 archives.txt（預期行為）。三條停用條目（Animated Ice Floes／Bergs、Varinia 補完 esp）的檔案不在 VFS，已在 mo2-reorder 從 record 刪掉，不會再被 MO2 丟出差異。
 
 ### 1b. 你自己要做的：DAc0da
 
