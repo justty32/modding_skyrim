@@ -33,9 +33,29 @@
 | repo | 是什麼 |
 |---|---|
 | [`houseCARL/`](houseCARL/) | Skyrim MCP 工具 fork，從資料層讀寫 load order；`Mo2LoadOrder.cs` 是 modlist 排序方向的權威依據 |
-| [`my_skyrim_plugin_1/`](my_skyrim_plugin_1/) | SKSE C++ plugin 樣板與建置骨架（CMake、vcpkg、CI、靜態 CRT） |
+| [`my_skyrim_plugin_1/`](my_skyrim_plugin_1/) | DaylightDungeon SKSE 插件＋建置基礎設施（CMake、vcpkg、CI、靜態 CRT）；repo 名沿用舊名 |
 
 除了 ModForge、houseCARL、my_skyrim_plugin_1，其他八個專案都是 2026-08-02 從 ModForge 的 `sub_projs/` 抽出來，沒有帶舊 commit 歷史。ModForge 原位置各留一份 stub 導引；它們的契約、spec 與計畫文件仍在 ModForge。
+
+## 同層 clone 耦合群
+
+下列七個 repo 彼此用 `../<兄弟>` 路徑互指（md 連結、`extract.sh`、`repo_layout.gd`、`MODFORGE_MODEL_CONVERTER_PYTHON` 這類環境變數、symlink），必須同層 clone 在 `projects/` 下。**改名、搬移或單獨 clone 其中任何一個之前，整組都要檢查。**
+
+| 成員 | 依賴誰（→ 指向） |
+|---|---|
+| ModForge | 契約、spec 與計畫文件仍在這裡，連向其餘六個成員（sub_projs stub） |
+| model-converter | → ModForge |
+| darksouls-port | → ModForge、model-converter（`.venv-wsl`、`p3/converter-pin.json`） |
+| godot-worldspace-editor | → ModForge、model-converter、scene-capture-bridge |
+| scene-capture-bridge | → ModForge |
+| game-data | → ModForge（`extract.sh`）；被 sofia-patch 以 symlink 引用 |
+| sofia-patch | → game-data（`sofia-patch/game-data` symlink，大量引用）、ModForge（含 symlink） |
+
+## houseCARL 與 submodule URL
+
+houseCARL 是上游 `Avick3110/houseCARL` 的 fork：submodule 的 `url` 指 fork `justty32/houseCARL`，`branch = main` 指 fork 的 `main`（含本機三項修正，部署的 MCP dll 建自此）。工作樹裡 `origin` 是上游、`fork` 是我們的 fork，本機 `main` 追的是上游，不是 fork。
+
+`.gitmodules` 的 URL 混用是刻意保留的：`projects/` 下 11 個走 https，`instance`、`mod-library`、`modpack-design`、`agentctl` 四條主線走 ssh。改其中一邊時不必統一。
 
 若遞迴更新出現 `not our ref`，表示母 repo 的 gitlink 指到遠端拿不到的 commit：可能還沒 push，或所在分支已刪除。先進該 submodule 跑 `git fetch --all`，再跑 `git branch -r --contains <pin>`；不要把 gitlink 倒退。push 時 [`../tools/check_submodule_pins.py`](../tools/check_submodule_pins.py) 會檢查遠端拿不到的 pin；它掛在 `../tools/hooks/pre-push`，但無法阻止 pin 推出後所在側分支才被刪除的情況。
 

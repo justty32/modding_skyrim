@@ -13,7 +13,7 @@
 [submodule "projects/houseCARL"]
 	path = projects/houseCARL
 	url = https://github.com/justty32/houseCARL.git
-	branch = fix/dialogue-encoding-lint
+	branch = main
 [submodule "projects/model-converter"]
 	path = projects/model-converter
 	url = https://github.com/justty32/skyrim_model_converter.git
