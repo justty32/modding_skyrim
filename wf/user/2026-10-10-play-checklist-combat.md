@@ -1,6 +1,6 @@
 # 10-10 檢查清單：戰鬥與系統
 
-[回總頁](2026-10-10-play-checklist.md)｜〔〕是 `agentctl/handoffs/2026-10-10/` 下的報告目錄。崩潰的處理方式一律照總頁 1e。
+[回總頁](2026-10-10-play-checklist.md)｜〔〕是 `agentctl/handoffs/done/2026-10/home-2026-10-10/` 下的報告目錄。崩潰的處理方式一律照總頁 1e。
 
 ## 敵人數量（Dynamic Enemy Spawns）
 

@@ -17,8 +17,8 @@
   `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/plugins.txt` 的 AYOP 各行**皆無 `*` 前綴**
   （例：`:571` `At Your Own Pace - Thieves Guild.esp`、`:650` `At Your Own Pace - Main Quest.esp`）。
   施工證據：`instance/profiles` commit `98f7c5e`、agentctl commit `b49aeea`、
-  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/ayop/REPORT.md`、
-  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/STATE.md:73`／`:79`。
+  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-05/ayop/REPORT.md`、
+  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-05/STATE.md:73`／`:79`。
   **殘留待辦（不是抽查）**：進遊戲打 `setstage SKI_ConfigManagerInstance 1` 清 5 個 MCM 死選單；
   副作用是 Solstheim 造物主石柱的密拉克控制段會回來。
   **2026-09-25 22:2x 推進**：cx-wu-rt 已在 Save229 上送 `setstage SKI_ConfigManagerInstance 1`
@@ -54,10 +54,10 @@ Gelebor／Isran／Valerica 等待／離隊通知，確認無方框、亂碼、�
   （Unofficial Chinese Localisation by Reconquista Studios）是另一套全域中文化基底，
   與現役自製逐 mod 層可能打架，套用前先核對。
   證據：`/home/lorkhan/repo/moddings/skyrim/modpack-design/wf/wait_todo/gameplay-install.md`（「RDO 中文層」節）、
-  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/rulings/REPORT.md`、
+  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-05/rulings/REPORT.md`、
   `/home/lorkhan/repo/moddings/skyrim/agentctl/docs/backlog.md`。
 - **結論：這一項先不要進遊戲抽查**——`62500` 換上去之前抽查現役簡中層，換完還得再抽一次。
   等 `62500` 落地後再排。
 - **2026-09-25 22:2x 推進**：cx-wu-rdo 正在下載 62500#347829 與 76474#556503（共 38,139,442 bytes）
-  並做衝突表，結果（22:31）：兩檔已下載到 `~/skyrim_mods/_dl-2026-09-25/rdo/`、解到 `_staging-2026-09-25/rdo/{62500,76474}/`；record 身分重疊 **6,091 個 FormID、7 個自製層**（RDO Updated 自製層 5,942、ZH Misc Dialogue 89、ImprovedCompanionsBoogaloo 34、Alternate Start 11、Serana Dialogue Edit 11、Rigmor 3、SDA 1），76474 另有 210 個 loose-file 路徑重疊；安裝位置建議與完整表在 `agentctl/handoffs/home-2026-09-25/wu/rdo/REPORT.md`、`conflicts.json.gz`。**裝不裝、放哪層由使用者裁**。
+  並做衝突表，結果（22:31）：兩檔已下載到 `~/skyrim_mods/_dl-2026-09-25/rdo/`、解到 `_staging-2026-09-25/rdo/{62500,76474}/`；record 身分重疊 **6,091 個 FormID、7 個自製層**（RDO Updated 自製層 5,942、ZH Misc Dialogue 89、ImprovedCompanionsBoogaloo 34、Alternate Start 11、Serana Dialogue Edit 11、Rigmor 3、SDA 1），76474 另有 210 個 loose-file 路徑重疊；安裝位置建議與完整表在 `agentctl/handoffs/done/2026-09/home-2026-09-25/wu/rdo/REPORT.md`、`conflicts.json.gz`。**裝不裝、放哪層由使用者裁**。
 

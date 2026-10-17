@@ -68,12 +68,12 @@
 
 ## 報告
 
-- [forget/REPORT.md](../../agentctl/handoffs/home-2026-09-26/forget/REPORT.md)
-- [apoc2/REPORT.md](../../agentctl/handoffs/home-2026-09-26/apoc2/REPORT.md)
-- [vilja/REPORT.md](../../agentctl/handoffs/home-2026-09-26/vilja/REPORT.md)
-- [cassia/REPORT.md](../../agentctl/handoffs/home-2026-09-26/cassia/REPORT.md)
-- [katana/REPORT.md](../../agentctl/handoffs/home-2026-09-26/katana/REPORT.md)
-- [farm/REPORT.md](../../agentctl/handoffs/home-2026-09-26/farm/REPORT.md)
-- [yvanni/REPORT.md](../../agentctl/handoffs/home-2026-09-26/yvanni/REPORT.md)
-- [aniya/REPORT.md](../../agentctl/handoffs/home-2026-09-26/aniya/REPORT.md)
-- 實機代跑結果：[RT-QUEUE.md](../../agentctl/handoffs/home-2026-09-26/RT-QUEUE.md)（各段下方的「RT 結果」）
+- [forget/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/forget/REPORT.md)
+- [apoc2/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/apoc2/REPORT.md)
+- [vilja/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/vilja/REPORT.md)
+- [cassia/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/cassia/REPORT.md)
+- [katana/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/katana/REPORT.md)
+- [farm/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/farm/REPORT.md)
+- [yvanni/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/yvanni/REPORT.md)
+- [aniya/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/aniya/REPORT.md)
+- 實機代跑結果：[RT-QUEUE.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/RT-QUEUE.md)（各段下方的「RT 結果」）

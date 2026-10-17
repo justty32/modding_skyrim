@@ -48,5 +48,5 @@
 
 ### MGRR 雙持傷害（2026-10-14；2026-10-17 驗收通過）
 
-斯丹達爾護符觸發的 MGRR 動作缺少一般 HitFrame、依賴 Precision，當時攻擊碰撞關閉。使用者要求不依賴 Precision；已部署 HitFrame 獨立覆蓋層，10 個攻擊檔補 18 個事件。6 項離線測試、10/10 VFS winner／hash、SKSE 主選單檢查通過，Precision 攻擊碰撞已還原為關閉。2026-10-17 使用者回覆「那個 OK 了」，確認實際傷害通過；另因不喜歡動作而要求移除，當日已停用本體與補丁並解除專用護符排除。詳見 [補丁與驗證](../agentctl/handoffs/home-2026-10-14/dagger/README.md)及 [移除報告](../agentctl/handoffs/home-2026-10-17/mgrr/REPORT.md)。
+斯丹達爾護符觸發的 MGRR 動作缺少一般 HitFrame、依賴 Precision，當時攻擊碰撞關閉。使用者要求不依賴 Precision；已部署 HitFrame 獨立覆蓋層，10 個攻擊檔補 18 個事件。6 項離線測試、10/10 VFS winner／hash、SKSE 主選單檢查通過，Precision 攻擊碰撞已還原為關閉。2026-10-17 使用者回覆「那個 OK 了」，確認實際傷害通過；另因不喜歡動作而要求移除，當日已停用本體與補丁並解除專用護符排除。詳見 [補丁與驗證](../agentctl/handoffs/done/2026-10/home-2026-10-14/dagger/README.md)及 [移除報告](../agentctl/handoffs/home-2026-10-17/mgrr/REPORT.md)。
 

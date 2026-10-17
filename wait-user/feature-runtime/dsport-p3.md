@@ -5,7 +5,7 @@
 **2026-09-25 22:2x 推進**：cx-wu-dsp 已產四包到 `~/skyrim_mods/_staging-2026-09-25/dsp/`
 （bounds-A／bounds-B 除 OBND 外拓撲相同；navmesh-flat／navmesh-authored 只差 `--include-navmesh`），
 雜湊在 `manifest.json`，ModForge 主樹未動；**實機比較步驟見
-`agentctl/handoffs/home-2026-09-25/wu/dsp/REPORT.md`，待使用者**。
+`agentctl/handoffs/done/2026-09/home-2026-09-25/wu/dsp/REPORT.md`，待使用者**。
 
 ## DSPort P3 多層 navmesh（2026-09-14）
 
@@ -14,4 +14,4 @@ NAVI 的 NVMI owning-cell 座標離線修正不等於 CTD 已消失。回家使�
 **2026-09-25 22:2x 推進**：cx-wu-dsp 已產四包到 `~/skyrim_mods/_staging-2026-09-25/dsp/`
 （bounds-A／bounds-B 除 OBND 外拓撲相同；navmesh-flat／navmesh-authored 只差 `--include-navmesh`），
 雜湊在 `manifest.json`，ModForge 主樹未動；**實機比較步驟見
-`agentctl/handoffs/home-2026-09-25/wu/dsp/REPORT.md`，待使用者**。
+`agentctl/handoffs/done/2026-09/home-2026-09-25/wu/dsp/REPORT.md`，待使用者**。

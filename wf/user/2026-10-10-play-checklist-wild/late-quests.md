@@ -1,6 +1,6 @@
 # 10-10 檢查清單：野外與地點——後期與特定任務
 
-[回野外入口](../2026-10-10-play-checklist-wild.md)｜[回總頁](../2026-10-10-play-checklist.md)｜〔〕是 `agentctl/handoffs/2026-10-10/` 下的報告目錄。崩潰的處理方式一律照總頁 1e。
+[回野外入口](../2026-10-10-play-checklist-wild.md)｜[回總頁](../2026-10-10-play-checklist.md)｜〔〕是 `agentctl/handoffs/done/2026-10/home-2026-10-10/` 下的報告目錄。崩潰的處理方式一律照總頁 1e。
 
 ## 第二次大戰（The Second Great War，內戰打完才開始）
 

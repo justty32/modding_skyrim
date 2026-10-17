@@ -3,8 +3,8 @@
 > **狀態（2026-09-05 16:10 更新）**：15 條仍未跑，本項仍 open。
 > 同日 `lead-scb` 線已完成 `scene-capture-bridge` 體檢並交付 REPORT，但沒有執行這裡的 15 條 runtime 驗收。
 > 排這 15 條之前先看它的交付：
-> `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/scb/`
-> （證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/scb/REPORT.md`、
+> `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-05/scb/`
+> （證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-05/scb/REPORT.md`、
 > `/home/lorkhan/repo/moddings/skyrim/agentctl/inbox/done/2026-09-05/originals/20260905T1610-cx-scb-a-DONE.md`）。
 > 本檔未改這節的技術內容——`projects/scene-capture-bridge` 是別線的領地。
 
@@ -29,7 +29,7 @@ DLL SHA-256 `b302857681988f4930f666d41aef13c8ab9ef94486d8e746b81f1832c4a965e3`�
 **2026-09-25 22:2x 推進**：cx-wu-rt 實讀現役 `mods/SceneCaptureBridge/SKSE/Plugins/SceneCaptureBridge.dll`
 SHA-256 已是 `b302857681988f49…`（1,906,688 bytes），即修正 DLL 早已在位；以最新存檔 Save229
 跑 60 秒 qa_status 無 crash、SKSE log 有載入行。**剩 15 條 rendered-camera ray 精度驗收待使用者**。
-證據 `agentctl/handoffs/home-2026-09-25/wu/rt/REPORT.md`。
+證據 `agentctl/handoffs/done/2026-09/home-2026-09-25/wu/rt/REPORT.md`。
 
 原始 FAIL 記錄： 使用者以部署中的 DLL
 （SHA-256 `dccc10e0…3fd67`，與文件記錄的 `a17e460` build 相同）實測：ghost 會持續自轉並持續往玩家

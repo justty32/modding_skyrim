@@ -1,8 +1,8 @@
 # 2026-10-10 進遊戲檢查清單
 
-> 整理線彙整 10-10 十七份報告（`agentctl/handoffs/2026-10-10/`）。內容都取自各線 REPORT 的「實機清單」與「順帶看到」，沒有另外推新結論；重複的項目已經合併。全部都還沒進遊戲驗過。
+> 整理線彙整 10-10 十七份報告（`agentctl/handoffs/done/2026-10/home-2026-10-10/`）。內容都取自各線 REPORT 的「實機清單」與「順帶看到」，沒有另外推新結論；重複的項目已經合併。全部都還沒進遊戲驗過。
 >
-> **10-10 17:23–17:51 agent 實機兩輪（沒崩潰）**：結果逐項標在各項底下（OK／問題／留給你）。要先看的三件事：Artisans 選項只在店裡出現、AutoSEQ 報 53 支 SEQ 缺漏、MO2 每開一次都重排 master 區。詳見 [ingame-test REPORT](../../agentctl/handoffs/2026-10-10/ingame-test/REPORT.md)。
+> **10-10 17:23–17:51 agent 實機兩輪（沒崩潰）**：結果逐項標在各項底下（OK／問題／留給你）。要先看的三件事：Artisans 選項只在店裡出現、AutoSEQ 報 53 支 SEQ 缺漏、MO2 每開一次都重排 master 區。詳見 [ingame-test REPORT](../../agentctl/handoffs/done/2026-10/home-2026-10-10/ingame-test/REPORT.md)。
 
 今天新裝 37 組 mod（含中文層與自製層，plugins.txt 多了 78 行）。這一頁放「開遊戲前」與總表，實測項目依地點分成四頁：
 
@@ -23,7 +23,7 @@ MO2 第一次啟動會重寫 profile，新 plugin 的 `*` 可能掉、順序可�
 
 #### 普通 esp 不能排進 master 區
 
-TaBg、Kurone 系、Soul Tomb、Nell、VDAO 以前排在 USSEP 前面，但 USSEP 帶 ESM 旗標，MO2 和引擎都會把普通 esp 移到 master 類後面，所以每次開 MO2 都會「重排」。10-10 mo2-reorder 已把 record 改成合法順序（TaBg 現在在第 134 行），因 USSEP 先載而翻掉的 8 筆由 `EngineOrder Forward 2026-10-10.esp` 補回。**不要再把它們拉回 USSEP 前**；reverify 的 PARTITION gate 會抓（[mo2-reorder REPORT](../../agentctl/handoffs/2026-10-10/mo2-reorder/REPORT.md)）。
+TaBg、Kurone 系、Soul Tomb、Nell、VDAO 以前排在 USSEP 前面，但 USSEP 帶 ESM 旗標，MO2 和引擎都會把普通 esp 移到 master 類後面，所以每次開 MO2 都會「重排」。10-10 mo2-reorder 已把 record 改成合法順序（TaBg 現在在第 134 行），因 USSEP 先載而翻掉的 8 筆由 `EngineOrder Forward 2026-10-10.esp` 補回。**不要再把它們拉回 USSEP 前**；reverify 的 PARTITION gate 會抓（[mo2-reorder REPORT](../../agentctl/handoffs/done/2026-10/home-2026-10-10/mo2-reorder/REPORT.md)）。
 
 #### 亨德拉海姆五支與最後兩行
 
@@ -71,4 +71,4 @@ MO2 關閉時常見的暫態回寫：把新 BSA 寫進 archives.txt（預期行�
 - Frostfall（只剩你不要的寒冷系統）〔campfire-frostfall〕、Chocolate Poise（和 B&B、Elden Rim 的硬直來源重疊，4.x 剛重寫）〔chocolate-poise〕、I am not a slow walker（要排最後才生效，但會蓋掉 B&B 的跑速）〔slow-walker〕、Milandriel（和 Mixwater Mill 的 navmesh 硬衝突，另有 60 筆全域髒改）〔batch3〕。
 - Valerica Valery、Aphrodelyn、A Secret to Hide、Isekai Hero、Dynamic NPC Scaling、Gilded Road、Dynamic Armor Rating：今天在對話裡裁示不裝，沒有對應的施工報告。
 
-原始報告都在 [agentctl/handoffs/2026-10-10/](../../agentctl/handoffs/2026-10-10/)（各頁的〔〕標記就是子目錄名）。
+原始報告都在 [agentctl/handoffs/done/2026-10/home-2026-10-10/](../../agentctl/handoffs/done/2026-10/home-2026-10-10)（各頁的〔〕標記就是子目錄名）。

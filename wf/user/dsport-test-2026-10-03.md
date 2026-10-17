@@ -1,6 +1,6 @@
 # DSPort 肉眼測試清單（2026-10-03）
 
-完整報告在 `agentctl/handoffs/home-2026-10-03/dsp/REPORT.md`。
+完整報告在 `agentctl/handoffs/done/2026-10/home-2026-10-03/dsp/REPORT.md`。
 
 ## 0. 切到 dsport-dev，然後啟動
 **不要從 Steam 啟動**，也不要按 Play 或 Verify。

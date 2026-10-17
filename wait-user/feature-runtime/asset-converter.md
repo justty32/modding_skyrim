@@ -12,15 +12,15 @@
 
 透明裁切驗收：MASK 的 alpha test flags 已依格式定義修正；舊版 MASK 模型需重轉，再看葉片／鐵網等貼圖透明區是否正確挖空。SheenChair 所有來源材質均為 OPAQUE，不能用它代替裁切驗收，也不需因此重建最新椅子包。
 
-進度（2026-09-10 22:2x，lead-chair）：SheenChair 兩包已裝進現役 `modpack-main` 並實機看到——`AssetTest-SheenChair-1024`／`-2048`／`-ESP-Dev-2026-09-10`（ESL 測試 esp，2 筆 STAT `ACSheenChair1024` 000800／`ACSheenChair2048` 000801，無 REFR）。`player.placeatme FE3BE800`／`FE3BE801` 在河木鎮外空地各擺一張，兩張都正常顯示橘色布面＋木腳、椅腳朝下、貼地。碰撞外框實測 0.826×0.570×0.686 m（期望 0.827×0.570×0.686），底面 Z=0；BSX=Havok、havok layer 1 OL_STATIC、4 個分件凸包。**尚待使用者肉眼判定**：布紋／木紋比例、法線凹凸方向、接縫黑線、遠看接縫，以及走過去是否真的被擋。截圖 `agentctl/handoffs/home-2026-09-10/chair/data/shots/`。
+進度（2026-09-10 22:2x，lead-chair）：SheenChair 兩包已裝進現役 `modpack-main` 並實機看到——`AssetTest-SheenChair-1024`／`-2048`／`-ESP-Dev-2026-09-10`（ESL 測試 esp，2 筆 STAT `ACSheenChair1024` 000800／`ACSheenChair2048` 000801，無 REFR）。`player.placeatme FE3BE800`／`FE3BE801` 在河木鎮外空地各擺一張，兩張都正常顯示橘色布面＋木腳、椅腳朝下、貼地。碰撞外框實測 0.826×0.570×0.686 m（期望 0.827×0.570×0.686），底面 Z=0；BSX=Havok、havok layer 1 OL_STATIC、4 個分件凸包。**尚待使用者肉眼判定**：布紋／木紋比例、法線凹凸方向、接縫黑線、遠看接縫，以及走過去是否真的被擋。截圖 `agentctl/handoffs/done/2026-09/home-2026-09-10/chair/data/shots/`。
 
-2026-09-14 追加特效材質回家驗收：公司 WSL 已修正 `BSEffectShaderProperty` 的檔頭格式（converter `4631547`，完整離線測試 503 passed）；[格式證據與回歸](../../projects/model-converter/EFFECT-SHADER-CTD.md)不能取代遊戲載入驗收。回家需用修正版重新產生兩種光柱（`A19_BG_shaft[Dn]_Add.mtd`、`A16_light_shaft[Dn]_Add.mtd`），在獨立測試包確認進場不 CTD、光柱可見、透明與發光正常，再決定恢復 DS 管線中的兩筆 `skip`。這輪不恢復 `skip`、不部署。原始事故與避開方式見 [dsp6 進場崩潰紀錄](../../agentctl/handoffs/home-2026-09-13/dsp6/pack/REPORT.md#進-cell-ctd-與修法)；修正結果以 [converter 進度](../../projects/model-converter/SESSION-LOG.md) 為準。
+2026-09-14 追加特效材質回家驗收：公司 WSL 已修正 `BSEffectShaderProperty` 的檔頭格式（converter `4631547`，完整離線測試 503 passed）；[格式證據與回歸](../../projects/model-converter/EFFECT-SHADER-CTD.md)不能取代遊戲載入驗收。回家需用修正版重新產生兩種光柱（`A19_BG_shaft[Dn]_Add.mtd`、`A16_light_shaft[Dn]_Add.mtd`），在獨立測試包確認進場不 CTD、光柱可見、透明與發光正常，再決定恢復 DS 管線中的兩筆 `skip`。這輪不恢復 `skip`、不部署。原始事故與避開方式見 [dsp6 進場崩潰紀錄](../../agentctl/handoffs/done/2026-09/home-2026-09-13/dsp6/pack/REPORT.md#進-cell-ctd-與修法)；修正結果以 [converter 進度](../../projects/model-converter/SESSION-LOG.md) 為準。
 
 **2026-09-25 22:2x 推進**：cx-wu-fx 已用修正版 converter 重產兩種光柱（effect 7 passed、esp refscan
 PASS），獨立包 `~/skyrim_mods/_staging-2026-09-25/fx/AssetTest-LightShaft-Dev-2026-09-25/`，
 22:15 起在 `dsport-dev` profile 實機煙霧中；結果見
-`agentctl/handoffs/home-2026-09-25/wu/fx/REPORT.md`（完成後補）。
+`agentctl/handoffs/done/2026-09/home-2026-09-25/wu/fx/REPORT.md`（完成後補）。
 
 2026-09-14 公司 WSL 未部署至 MO2、未動現役 profile；上段 09-10 家中部署紀錄仍有效。True PBR、蒙皮與動畫不屬這次一般靜態模型驗收。
 
-2026-09-25 22:35 **光柱視覺 gate 結案**：使用者看過 cx-wu-fx 的 QASmoke 截圖（`agentctl/handoffs/home-2026-09-25/wu/fx/work/shaft-2.png`、`shaft-3.png`）確認正常；進場無 CTD、兩種光柱可見。剩下「恢復 DS 管線兩筆 skip 並重產」由 `cx-wu-fx2` 承接（`agentctl/handoffs/home-2026-09-25/wu/fx2/`），SheenChair 布紋／法線／接縫的肉眼判定仍 open。
+2026-09-25 22:35 **光柱視覺 gate 結案**：使用者看過 cx-wu-fx 的 QASmoke 截圖（`agentctl/handoffs/done/2026-09/home-2026-09-25/wu/fx/work/shaft-2.png`、`shaft-3.png`）確認正常；進場無 CTD、兩種光柱可見。剩下「恢復 DS 管線兩筆 skip 並重產」由 `cx-wu-fx2` 承接（`agentctl/handoffs/done/2026-09/home-2026-09-25/wu/fx2/`），SheenChair 布紋／法線／接縫的肉眼判定仍 open。

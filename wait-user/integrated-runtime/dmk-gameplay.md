@@ -9,7 +9,7 @@
 `/home/lorkhan/repo/moddings/skyrim/instance/profiles/.repo/baselines/ModpackKRDev0A.{ess,skse}`
 （2026-09-05 實讀該目錄兩檔皆在，2.9 MB／6.2 KB），**不再在 `modpack-main/saves/` 底下**。
 證據：`instance/profiles` commit `0f64c20`、母 repo commit `afb530d`（wf baseline save pair 路徑改指 `instance/profiles/baselines`；2026-10-03 再搬到 `.repo/baselines`）、
-agentctl commit `b009076`、`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-03/SESSION-LOG.md`（「09-04 使用者裁示」節第 10 題）。
+agentctl commit `b009076`、`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-03/SESSION-LOG.md`（「09-04 使用者裁示」節第 10 題）。
 **人工校對層本身已上線**（`modlist.txt:520` 啟用、`:519` 機翻層停用，詳見
 [`回家下載／重建`](../home-setup.md) 的已完成節），所以這項剩下的只有「用標準基準重跑一次 smoke」。
 

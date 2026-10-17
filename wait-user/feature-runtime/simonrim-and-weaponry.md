@@ -47,7 +47,7 @@ vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據
   `modlist.txt:407`＝`-BFCO - Attack Behavior Framework 3.100.5`（**停用**）、`:403` 繁中層亦 `-`；
   現役是 `plugins.txt:864`＝`*Attack_MCO.esp`、`:865`＝`*scar-adxp-patch.esp`、`modlist.txt:404`＝`+SCAR 2.01`。
   所以這一條抽的是 **MCO 的輕／重／方向／sprint attack**。
-  遷移證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-02/mco2/REPORT.md`、
+  遷移證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-02/mco2/REPORT.md`、
   `instance/profiles` main `9e188e2`。
 
 > **驗收對象已於 2026-08-26 改寫。** 原文寫的是 `Mysticism 2.5.0`／`Adamant 6.0.4`，
@@ -71,6 +71,6 @@ vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據
 `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt:598`＝`+Expanded Skyrim Weaponry 1.01 CHT`（啟用）、
 `:600`＝`+Expanded Skyrim Weaponry 1.01 NPC`（啟用）；同族簡中層 `:599` 為 `-`（停用，正常，與 CHT 二選一）。
 另註：2026-09-05 使用者已親眼驗過「六把武器名中文」PASS（
-`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/home-2026-09-05/win/data/ingame-checks.csv` 第 ⑦ 項），
+`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-05/win/data/ingame-checks.csv` 第 ⑦ 項），
 但**那只驗名稱文字，沒驗拔收與動作銜接**，本節的動作驗收仍未做。
 

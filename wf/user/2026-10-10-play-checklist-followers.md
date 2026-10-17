@@ -1,6 +1,6 @@
 # 10-10 檢查清單：隨從與人物
 
-[回總頁](2026-10-10-play-checklist.md)｜〔〕是 `agentctl/handoffs/2026-10-10/` 下的報告目錄。崩潰的處理方式一律照總頁 1e。
+[回總頁](2026-10-10-play-checklist.md)｜〔〕是 `agentctl/handoffs/done/2026-10/home-2026-10-10/` 下的報告目錄。崩潰的處理方式一律照總頁 1e。
 
 外觀共通檢查（下面寫「外觀」的都指這一套）：臉不黑、不灰，不是素頭（大媽臉）；對她用 `<ref>.unequipall` 看身形是 Kurone 預設、脖子與手腳接縫正常。臉不對時先試 `disable`／`enable`，再回報。
 

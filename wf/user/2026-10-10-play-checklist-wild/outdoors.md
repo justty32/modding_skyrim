@@ -1,6 +1,6 @@
 # 10-10 檢查清單：野外與地點——野外活動：露營、狩獵、灌木叢
 
-[回野外入口](../2026-10-10-play-checklist-wild.md)｜[回總頁](../2026-10-10-play-checklist.md)｜〔〕是 `agentctl/handoffs/2026-10-10/` 下的報告目錄。崩潰的處理方式一律照總頁 1e。
+[回野外入口](../2026-10-10-play-checklist-wild.md)｜[回總頁](../2026-10-10-play-checklist.md)｜〔〕是 `agentctl/handoffs/done/2026-10/home-2026-10-10/` 下的報告目錄。崩潰的處理方式一律照總頁 1e。
 
 ## 露營：Dovah 馬車與營地
 
