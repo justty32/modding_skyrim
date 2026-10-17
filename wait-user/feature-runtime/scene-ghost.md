@@ -22,7 +22,7 @@ SmoothCam 各靜置確認**不再轉、不再靠近**。
 「準星指向很遠處再移回來，ghost 會消失且不會恢復」這個新回報已於 2026-08-26 離線修好，
 但**尚未部署、尚未實機驗收**：修正 `21867c1`（分支 `fix/ghost-cell-clear-2026-08-26`，已推 origin），
 DLL SHA-256 `b302857681988f4930f666d41aef13c8ab9ef94486d8e746b81f1832c4a965e3`（1906688 bytes）。
-成因與修法見 [`調查記錄`](../../projects/scene-capture-bridge/GHOST_CELL_CLEAR_INVESTIGATION_2026-08-26.md)
+成因與修法見 [`調查記錄`](../../projects/scene-capture-bridge/docs/investigations/GHOST_CELL_CLEAR_INVESTIGATION_2026-08-26.md)
 與 [`收線記錄`](../../agentctl/handoffs/done/README.md)。**要跑 15 條之前先部署這顆 DLL**，
 否則驗的還是舊行為。
 

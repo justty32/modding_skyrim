@@ -20,15 +20,15 @@
 <!-- wf-nav -->
 | 你要找的 | 去哪裡 |
 |---|---|
-| 做好的 mod、plugin、翻譯或修正 esp | [`mod-library/`](mod-library/)：`l10n/mods/` 是翻譯層、`plugins/` 是 SKSE DLL、`artifacts/` 是修正 esp；每個成品資料夾有 `SOURCE.md` 記來源。歷史自製成品在 `~/skyrim_mods/mine/`（DSPort*/ModForge*/MF* 系列），依使用者決定留在原地。 |
+| 做好的 mod、plugin、翻譯或修正 esp | [`mod-library/`](mod-library/)：`l10n/mods/` 是翻譯層、`plugins/` 是 SKSE DLL、`artifacts/` 是修正 esp；每個成品資料夾有 `SOURCE.md` 或 `README.md` 記來源。歷史自製成品在 `~/skyrim_mods/mine/`（DSPort*/ModForge*/MF* 系列），依使用者決定留在原地。 |
 | 現在裝了什麼、load order 是什麼 | [`instance/`](instance/) |
 | 整合包要做什麼、技術債與選型 | [`modpack-design/`](modpack-design/) |
 | 叫 AI 下載、操作遊戲或做驗收 | [`agentctl/`](agentctl/) |
 | 今天或最近一場從哪裡接著做 | [`agentctl/handoffs/NEXT-SESSION.md`](agentctl/handoffs/NEXT-SESSION.md) |
-| 使用者想要、尚待調查的 mod | [`mods-user-want.md`](mods-user-want.md) |
+| 使用者想要、尚待調查的 mod | [`modpack-design/sources/`](modpack-design/sources/README.md) 的 `mod-want-review-*`（審查結果）；根目錄的 `mods-user-want.md`、`play-notes.md` 是使用者私人貼板，已不進版控 |
 | 開發中的原始碼 | [`projects/`](projects/README.md) |
 | 引擎、SKSE、mod 與工具的研究筆記 | [`analysis/`](analysis/README.md) |
-| 外部框架原始碼 | [`external/`](external/README.md)；他人的 mod、框架與參考素材實體在 `~/skyrim_mods/`（125 GB，依使用者決定留在原地）。 |
+| 外部框架原始碼 | [`external/`](external/README.md)；他人的 mod、框架與參考素材實體在 `~/skyrim_mods/`（依使用者決定留在原地，體積以 `du -sh` 為準）。 |
 
 ## `projects/` 裡有什麼
 
@@ -38,7 +38,7 @@
 
 | 東西 | 位置 | 原因 |
 |---|---|---|
-| mod 下載庫 | `~/skyrim_mods/`（125 GB） | 體積 |
+| mod 下載庫 | `~/skyrim_mods/`（百 GB 級，以 `du -sh` 為準） | 體積 |
 | 舊場次實機截圖 | `~/notes/projects/modding/skyrim/logs/`（88 MB） | 歷史證據；近期截圖在 `agentctl/handoffs/**/runtime/`，同樣不進版控 |
 | 歷史 MongoDB 快照 | `~/notes/projects/modding/skyrim/backups/`（86 MB） | 歷史備份；現役部署狀態已歸 [`instance/`](instance/) |
 | QA baseline 存檔 | `~/games/skyrim-qa-baselines`（3.1 MB） | 刻意放在 repo 外，作為唯讀主檔 |
@@ -46,18 +46,7 @@
 
 ## 頂層還有什麼
 
-<!-- wf-nav -->
-
-- [`wf/`](wf/) 是工作流骨架（wf-kernel v0.5）：從 [`WORKFLOWS`](wf/WORKFLOWS.md) 派發工作、用 [`INDEX`](wf/INDEX.md) 找結構、用 [`STRUCTURE`](wf/STRUCTURE.md) 整理資料夾；文件工具在 [`wf/tools/`](wf/tools/)。
-- [`tools/`](tools/) 有母 repo 的連結、submodule pin 與 code-map 檢查；完整連結檢查：`python3 tools/check_markdown_links.py`。
-- [SESSION-LOG.md](SESSION-LOG.md) 只記母 repo 的跨 session 活狀態；Skyrim 工作線的主線在 [`agentctl/SESSION-LOG.md`](agentctl/SESSION-LOG.md)，當場現況與各隊報告放在 `agentctl/handoffs/`。
-- [WAIT_USER.md](WAIT_USER.md) 列需要使用者親自驗證、實機操作或外部素材的項目。
-- [`wait-user/`](wait-user/) 是 [WAIT_USER.md](WAIT_USER.md) 各主題的子檔集合（decision-briefs／home-runbook／feature-runtime／integrated-runtime／later-decisions 等）。
-- [`patches/`](patches/README.md) 放可套用到他人 mod 的獨立修補。
-- [`.github/`](.github/) 放 GitHub Actions CI：跑 `tools/` 的 validator 測試與 Markdown 連結檢查。
-- [`.vscode/`](.vscode/) 放編輯器設定（CMake 原始目錄）。
-
-`wf/` 的命名與職責對齊 `tome4` 和 `elin`；骨架來自 `~/repo/workflows` 模板（kernel v0.5，2026-08-30）。
+`wf/`（工作流骨架，wf-kernel v0.6+794d6d2，骨架來自 `~/repo/workflows` 模板）、`tools/`、`wait-user/`、`patches/`、`.github/` 等其餘頂層目錄與檔案的逐列說明見 [`wf/INDEX.md`](wf/INDEX.md)——本檔只當入口，佈局細目以 INDEX 為準。
 
 ## 要在這裡動手做事?
 
