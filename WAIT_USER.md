@@ -45,6 +45,10 @@ staging 清理 4 條路徑→3 條已自行消失。
 
 ## Push 排程
 
+2026-10-17：MGRR 雙持傷害使用者確認「那個 OK 了」，實機驗收結案（獨立功能驗收 10 → 9）。使用者另因不喜歡動作要求停用，本體、補丁與專用護符排除已處理（[移除報告](agentctl/handoffs/home-2026-10-17/mgrr/REPORT.md)）；不再重開扣血待驗項。
+
+同日新增雙手鋼製太刀 idle 的實際武器辨識（9 → 10）：靜態配置原因已明確，但最新 Save76 裝備的是鐵製彎刀，未重現使用者描述的雙手刀。下次使用該刀時確認完整名稱／FormID，再按需觀察實際 idle 來源；詳見 [功能驗收](wait-user/feature-runtime.md#雙手鋼製太刀-idle-的實際武器辨識2026-10-17)。
+
 2026-09-03 14:50 使用者已放行 promote 與 push，profiles main 已 promote，當日各 repo push 已執行；現況見
 [`agentctl/handoffs/home-2026-09-03/STATE.md`](agentctl/handoffs/home-2026-09-03/STATE.md)。
 
