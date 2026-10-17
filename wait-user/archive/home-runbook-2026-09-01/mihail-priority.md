@@ -1,3 +1,5 @@
+> 封存 2026-10-17，原因：當日執行快照，未完事項已由 WAIT_USER.md 現役清單承接。
+
 ## 5. Mihail 自然核心首批 4–6 件 preflight
 
 **前置條件。** 先從自然核心候選 Pigeons、Frogs、House Cats、Ring-necked Pheasants、Crows and Ravens、Swans

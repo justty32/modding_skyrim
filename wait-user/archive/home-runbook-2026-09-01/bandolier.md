@@ -1,3 +1,5 @@
+> 封存 2026-10-17，原因：當日執行快照，未完事項已由 WAIT_USER.md 現役清單承接。
+
 ## 4. Bandolier NPC 中文 forward patch（已作廢 —— 2026-09-01 使用者裁示 Bandolier 併入 clothes purge）
 
 **本節不執行，前置條件已不存在。**

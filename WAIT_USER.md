@@ -1,72 +1,17 @@
 # WAIT_USER — 等待使用者的事
 
-只列需要使用者親自操作、實機驗收、外部環境或素材才能繼續的 open 項；判定已完成的移到各子檔末尾的
-「已完成（封存）」節並附證據路徑，**不從檔案裡刪掉**。
+只列需要使用者親自操作、實機驗收、外部環境或素材才能繼續的 open 項；子檔規則、封存方式與歷史紀錄見 [wait-user/README.md](wait-user/README.md)。
 
-> 唯一現役 MO2 profile 是 `modpack-main`。子文件中的舊 profile 名稱只描述歷史證據，不能切換或
-> 當成現行操作指令。
-
-> **數字重算／逐 hunk 稽核日期：2026-09-05**（`cx-tidy-b-close` 對照 09-04／09-05 的 logs、inbox、handoff 與實體產物重算）。
-> 對照基準：`instance/profiles` 的 `modpack-main` 內容基準 `5f47044`（repo HEAD `85d71da` 只新增 `dsport-dev`）、
-> `modlist.txt` 1379 行／啟用 1278、`plugins.txt` 874 行／啟用 851。
-> 更即時的一頁式現況見 [`agentctl/status/STATUS.html`](agentctl/status/STATUS.html)（每次 `python3 agentctl/status/build_status.py` 重跑現抓）。
+**基準**：計數 2026-09-05 逐項重算，之後每次增減在子檔與 [hub-notes-closed.json](wait-user/hub-notes-closed.json) 留紀錄；唯一現役 MO2 profile 是 `modpack-main`。
 
 | 類別 | open | 前次 | 清單 |
 |---|---:|---:|---|
 | 回家下載／重建 | 3 | 6 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
-| 今晚裁決簡報（2026-09-02） | 0 | 0 | [wait-user/decision-briefs-2026-09-02.md](wait-user/decision-briefs-2026-09-02.md)（15 題全部已裁示並落地） |
 | 整包 UI／中文／任務驗收 | 9 | 12 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
 | 獨立功能驗收 | 10 | 9 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
 | 日後素材／清理決定 | 4 | 5 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
 | 版本控制收線 | 0 | 0 | [本檔下節](#push-排程) |
 
-**2026-09-05 這輪判定為「其實已完成／已裁示」而移進封存節的十項**（每項在子檔內都附證據路徑）：
-AE DLC 授權確認與 CC 第二輪、Mihail 自然核心首批、DMK 1.5.0 人工校對版（以上在 `home-setup.md`）；
-EnaiRim Batch 7 終態 gate（抽查對象 Audugan／Valravn 已不在載入序）、modlist 優先度修復的實機驗收
-與 Missives 兩條裁示衝突（以上在 `integrated-runtime.md`）；Dev0A 基線存檔規則（`later-decisions.md`）；
-另有三項原本就標「不計 open」但仍混在 open 區的，一併歸位。
-
-**縮小範圍但仍 open 的四項**：LoreRim 借用後續 6 題→3 題、GO19 剩餘 5 項→2 項、
-四個首次生效中文層→只剩 2 個（At Your Own Pace 全套已停用、The Choice is Yours 繁中層已停用）、
-staging 清理 4 條路徑→3 條已自行消失。
-
-**注意：`wait-user/feature-runtime.md` 的 Simonrim Batch 4E／4A／4M/P 三節經逐個實讀後全部仍有效**
-（Thaumaturgy 1.5、Apothecary 1.3.9、Mysticism 2.4.2、Adamant 5.9.2 都還在啟用清單），
-過期的只有行號與框架名（BFCO→MCO），已就地更正，不是整批作廢。
-
-歷史導流：[`decision-briefs-2026-09-01.md`](wait-user/decision-briefs-2026-09-01.md) 的 10 題均已裁示；
-[`home-runbook-2026-09-01.md`](wait-user/home-runbook-2026-09-01.md) 是當日執行快照，未完事項已由上表現役清單承接，兩檔均不另計數。
-
-2026-09-10 新增 1 件：asset converter 的一般靜態模型整包實機驗收（獨立功能驗收 5 → 6）。公司 WSL 的離線驗證與實作進度見 [converter](projects/model-converter/SESSION-LOG.md)。
-
-2026-09-14：上述 converter 項追加特效光柱載入／透明／發光驗收，詳見 [獨立功能驗收](wait-user/feature-runtime.md#asset-converter-一鍵靜態模型整包2026-09-10)；屬同一項的追加條件，open 計數不變。
-
-2026-09-14 後續新增 2 件：DSPort P3 物件邊界與多層 navmesh 的實機 A/B 驗收（獨立功能驗收 6 → 8）；詳見 [獨立功能驗收](wait-user/feature-runtime.md)。離線檢查不代替症狀消失與尋路通過。
-
 ## Push 排程
 
-2026-10-17：MGRR 雙持傷害使用者確認「那個 OK 了」，實機驗收結案（獨立功能驗收 10 → 9）。使用者另因不喜歡動作要求停用，本體、補丁與專用護符排除已處理（[移除報告](agentctl/handoffs/home-2026-10-17/mgrr/REPORT.md)）；不再重開扣血待驗項。
-
-同日新增雙手鋼製太刀 idle 的實際武器辨識（9 → 10）：靜態配置原因已明確，但最新 Save76 裝備的是鐵製彎刀，未重現使用者描述的雙手刀。下次使用該刀時確認完整名稱／FormID，再按需觀察實際 idle 來源；詳見 [功能驗收](wait-user/feature-runtime.md#雙手鋼製太刀-idle-的實際武器辨識2026-10-17)。
-
-2026-09-03 14:50 使用者已放行 promote 與 push，profiles main 已 promote，當日各 repo push 已執行；現況見
-[`agentctl/handoffs/home-2026-09-03/STATE.md`](agentctl/handoffs/home-2026-09-03/STATE.md)。
-
-歷史：2026-09-01 的一次性 push 排程已完成。
-
-`wf-lint.sh` 兩個缺陷已由使用者裁示**現在就修**，並已派 `cx-kern1` 承接（交接書
-`agentctl/handoffs/kern-2026-08-30/HANDOFF-cx-kern1.md`）；不再列為等待使用者項目。
-
-2026-09-20 新增 1 件：PI 停用合併層啟用驗證與 B 型技能條件 crash 單變量實驗（獨立功能驗收 8 → 9），詳見 [獨立功能驗收](wait-user/feature-runtime.md)。
-
-2026-09-24：技能條件 crash（B 型 `SkyrimSE+01D3398`）**已結案** —— doom perk 補丁部署正式 profile 後，使用者實機格擋確認不再崩潰。同日新增 1 件待驗：長毛象 CTD（`SkyrimSE+02B789A`）的 SPID 老年換裝覆寫層，待使用者回到 cell grid (-6,1) 巨人營地實機確認（獨立功能驗收 9 → 9，一結一開）。詳見 [功能驗收](wait-user/feature-runtime.md)。
-
-2026-09-25：長毛象 CTD（`SkyrimSE+02B789A`）**已結案**——SPID 老年換裝覆寫層部署後，使用者實機回到巨人營地確認不再崩潰（21:50 口頭確認；標題數仍 9，因「2026-09-20 PI 啟動崩潰候選層」標題下的 PI 合併層／crash2 段仍 open）。同日 tidy-2026-09-25 輪把 `wait-user/` 各檔的已完成節抽成 `*-closed.json`，open 項只留 md。
-
-2026-09-25 22:10 推進：使用者裁「wait user 中你能做的都做一做」，開六條線（`agentctl/handoffs/home-2026-09-25/wu/`）：mo2ctl 漂移修復、JhNPCBeautyDev 中文名 patch 草案＋crash2 A/B 對帳、DSPort P3 四個對照包、RDO 62500 下載與衝突表、光柱特效測試包實機煙霧、ghost-cell-clear DLL 部署＋DMK smoke＋AYOP 死選單清理。裁示要刪的 4 個 staging 目錄實讀已不存在（已完成）。wf kernel v0.5.1 升級排在 tidy 輪收尾後。
-
-2026-09-25 22:45 收工：推進線全部收線（`agentctl/handoffs/home-2026-09-25/STATE.md`）。新增等使用者裁示 4 件：① RDO 62500／76474 裝不裝（衝突 6,091 FormID）；② staging 的中文修正層（zhfix 10 層＋Apocalypse 重建 1 層）裝不裝；③ `instance/profiles` 工作樹 `Constellations-SorceryNullGuard-2026-09-25` 未 commit 的啟用狀態留不留；④ 光柱 P3 完整效果包（`_staging-2026-09-25/fx2/`，486 NIF）要不要換進 dsport-dev 實機看。等使用者看畫面 2 件：DMK 中文頁、AYOP 死選單（新槽 `cx-wu-rt-2026-09-25`）。光柱視覺、長毛象 CTD 已結案。
-
-2026-09-25 22:55 使用者裁示：① SorceryNullGuard 啟用**留**（profiles `1191c76` 已 commit 並 push）；② 中文修正層**裝**、③ RDO 62500／76474 **裝但要相容舊存檔**（層位由 dispatcher 定，`cx-deploy` 施工中，`agentctl/handoffs/home-2026-09-25/deploy/`）；④ 光柱完整包換進 dsport-dev「之後再說」；⑤ .pex 已改不追蹤、三個空目錄已移除、git 歷史不改寫。DMK／AYOP 畫面「之後再說」。各 repo 已 push。
-
-2026-09-25 23:12 **已部署**（profiles `6dcb0fa`）：zhfix 10 個中文修正層（含保留舊結構的 Apocalypse Combined-2026-09-25）與 RDO 62500 Final／76474，各放在舊同名層正上方，既有 plugin 一行未動；Save229 60 秒煙霧無 crash／缺 plugin，31 欄修正回讀通過。**Apocalypse 10.2.3 重建層未裝**：現役 winner 是 7934 carrier 結構（4,218 筆），重建層少 465 筆會動舊存檔，留到新周目（在 `~/skyrim_mods/_staging-2026-09-25/apoc/`）。遊戲內中文顯示尚未親眼看（qa_console 抓不到 help 的中文列），使用者下次開遊戲順手看法術／藥水說明即可。
+目前沒有等使用者放行的 push 排程（最後一次放行 2026-09-03，已執行）。

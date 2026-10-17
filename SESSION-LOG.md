@@ -11,7 +11,7 @@
 
 ## 現役工作
 
-目前無母 repo 可主動續行的 open 工作。
+- [tidy] wf/lessons 記憶搬家 09-26 中斷 → WP-05 收尾（`agentctl/handoffs/home-2026-10-17/improve/`）
 
 母 repo 只管本身的整理與開發工作。Skyrim 工作線從
 [下次開場入口](agentctl/handoffs/NEXT-SESSION.md)接續；需要使用者親自做的事以

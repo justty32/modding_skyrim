@@ -1,3 +1,5 @@
+> 封存 2026-10-17，原因：當日執行快照，未完事項已由 WAIT_USER.md 現役清單承接。
+
 ## 1. DMK 1.5.0 人工校對版
 
 **前置條件。** 手上要有 exact official ZIP、exact CHS 7z、7z、OpenCC，以及

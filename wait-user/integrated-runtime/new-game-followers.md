@@ -7,7 +7,7 @@ B＝繼續舊周目，但接受之後的 crash／任務狀態不能歸咎於部�
 ## Auri＋現役 VIGILANT 有限解凍整合
 
 **裁示：B —— follower 只有限解凍 Auri＋現役 VIGILANT，並採 Sofia 選配 preflight／No Bump。**
-（2026-09-01，使用者當場口頭裁示；見[裁示簡報](../decision-briefs-2026-09-01.md)第 2 條。）回家以 Auri
+（2026-09-01，使用者當場口頭裁示；見2026-09-01 裁示簡報（已封存）第 2 條。）回家以 Auri
 2.2 本體、exact 2.2 中文、VIGILANT commentary 0.2／tweaks 做 winner preflight 與部署；Auri 不匯入
 NFF，Sofia 的 RDO／AI Overhaul／No Bump 選配須重新核對現役 clothing binding fix winner。
 **通過**＝離線 winner／版本／中文層無回滾，再實機驗 Auri 招募與跟隨、VIGILANT commentary 條件／

@@ -1,3 +1,5 @@
+> 封存 2026-10-17，原因：當日執行快照，未完事項已由 WAIT_USER.md 現役清單承接。
+
 ## 2. scene-capture-bridge 完整離線測試
 
 **前置條件。** 必須是能跑 Windows MinGW `x64-mingw-static` vcpkg build 的環境；Linux native 2/2 不能冒充此 gate

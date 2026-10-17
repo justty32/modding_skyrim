@@ -1,3 +1,5 @@
+> 封存 2026-10-17，原因：10 題均已裁示，裁示結果與落地證據在 wait-user 各 *-closed.json。
+
 # 2026-09-01 單頁裁決簡報
 
 > 本檔由 cx-decide 於 2026-09-01 產出，供使用者拍板用。**2026-09-01 sn-tidy 複查**：實測 `grep -rn "decision-briefs-2026-09-01" --include="*.md" .` 並過濾出真正的 markdown 連結語法（`[text](decision-briefs-2026-09-01.md)`，且限已納入 git 追蹤、會被 `.github/workflows/docs.yml` 連結檢查掃到的檔案），命中 **3 個檔案共 12 處連結**：`wait-user/home-setup.md`（3 處，第 6、14、23 行）、`wait-user/integrated-runtime.md`（2 處，第 6、15 行）、`wait-user/later-decisions.md`（7 處，第 24、26、28、30、33、44、51 行）。本檔已是這些裁示的授權憑證，刪除會造成斷鏈並使 CI 連結檢查失敗，**不可刪除**。
