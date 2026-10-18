@@ -4,7 +4,7 @@
 
 ## 搬家狀態
 
-- 2026-09-26 memmig 把記憶目錄的 md 以腳本原文轉成小節（腳本已封存到 `wf/workflows/common/archive/`）；2026-10-17 WP-05 把 `-2`…`-9` 分檔合併成下表（內容逐行保留，無重複小節）。
+- 2026-09-26 memmig 把記憶目錄的 md 以腳本原文轉成小節（腳本已封存到 `wf/workflows/common/archive/`）；2026-10-17 WP-05 把 `-2`…`-9` 分檔合併成下表（內容逐行保留，無重複小節）；2026-10-18 `mo2-profiles` 加新條會超過 16 KB，把裝／拔 mod 稽核四條原文搬到 `mod-install-audit`。
 - **未搬**：`interactive-grep-is-ugrep`、`pgrep-self-match-beyond-brackets`（原定進 `this-machine.md`，未建）；`overnight-agent-fleet-2026-08-20`、`aetheria-agent-coexistence`（原定判過期，未定案）；2026-09-26 之後新增的記憶條目也還沒搬。
 - **記憶目錄**：原檔全部仍在，`MEMORY.md` 尚未改成指向本目錄的指標——記憶目錄改寫由頂層處理；在那之前兩邊並存，記憶目錄較新。
 
@@ -22,7 +22,8 @@
 | [repos-layout-and-remotes](repos-layout-and-remotes.md) | 版控：repo 佈局、remote 與 push | 5 |
 | [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、工作樹與產物衛生 | 5 |
 | [docs-organization](docs-organization.md) | 文件整理與 wf kernel | 4 |
-| [mo2-profiles](mo2-profiles.md) | MO2 與 profile | 10 |
+| [mo2-profiles](mo2-profiles.md) | MO2 與 profile | 6 |
+| [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴） | 5 |
 | [housecarl-and-tools](housecarl-and-tools.md) | houseCARL、xEdit、DynDOLOD 等工具坑 | 9 |
 | [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與 facegen 規則 | 7 |
 | [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：排錯與升級 | 5 |
