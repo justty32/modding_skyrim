@@ -30,11 +30,11 @@ Mutagen 0.53.1 沒有公開 ArchiveListing／PluginListings override；新 Linux
 
 `agentctl` 隔離分支 `fix/2026-10-21-candidate-display`，本機 commit `32ed60a5`：換臉候選標籤優先讀既有 `Name.display`，舊回覆退回 `Name.value`，原寫回 helper 不變。修前有 2 項回歸失敗，修後與 reviewer 都 8 項通過；未執行換臉工具。
 
-consumer 修補可相容舊 houseCARL 回覆；未來整合時可先準備 consumer，再更新 houseCARL。三處程式變更都留在隔離分支，沒有 merge 或 push；部署與遊戲驗收須另獲允許，本輪不執行。
+consumer 修補可相容舊 houseCARL 回覆；未來整合時可先準備 consumer，再更新 houseCARL。三處程式變更都留在隔離分支，已依後續授權 push，沒有 merge；部署與遊戲驗收須另獲允許，本輪不執行。
 
 ## 收尾與下次續接
 
-收尾授權來源：使用者要求「按照 wf/規矩，整理收尾」。Done when: 成果有持久續接位置、母記錄完成本機提交、明確區分已驗與待驗，且保留既存變更與未推送來源副本。
+收尾授權來源：使用者要求「按照 wf/規矩，整理收尾」。Done when: 成果有持久續接位置、母記錄完成本機提交、明確區分已驗與待驗，且保留既存變更與來源副本。
 
 下表是正式續接位置，路徑相對母 repo 根目錄；原本的三個主工作樹與 gitlink 均保持原版本。
 
@@ -50,4 +50,6 @@ DSP 的 `extracted`／`venv` 是仍需使用的本機依賴連結，target 有�
 
 母 repo 盤點、修復、閱讀偏好與 WAIT 記錄一併做本機提交，僅收明確文件路徑。三個主專案保持乾淨；instance／profiles 的既存變更原樣保留。DSP 實機待驗仍在 WAIT_USER；houseCARL 未 reload 是後續可由 agent 處理的部署事項，不列為使用者必須親做。
 
-本輪沒有 push 或刪除。收線流程的 `unpushed=0` 不能取代 [使用者偏好](../workflows/common/user.md) 的「push 要使用者當場確認」；[搬移規則](../workflows/refactor/moving-things.md) 要求來源已 commit 且已 push 才清舊副本，因此保留暫存快照。後續整合與部署另行處理，不把目前狀態稱為已合併或已發布。
+2026-10-21 使用者後續明確授權「隨意 push」。本次推送 Done when: 母 repo 的收尾與狀態文件、上述三個修復分支已普通推送，逐一核對遠端 SHA 與本機相同，不留下本輪新增的未推送 commit。母 repo 推至 `origin/main`（包含 `59f90a0` 及本段狀態更新）；DSP 與 agentctl 推至各自 `origin` 同名分支；houseCARL 推至使用者 `fork` 同名分支，未推原作者 `origin`。三個修復分支的 commit 如上，均已設定對應 upstream。
+
+這是本次成果的明確授權，沒有修改 [使用者偏好](../workflows/common/user.md) 的一般確認邊界。未 force、merge、部署或刪除；暫存快照保留，沒有因推送順便清除。後續整合與部署另行處理，遊戲可見性仍待驗。
