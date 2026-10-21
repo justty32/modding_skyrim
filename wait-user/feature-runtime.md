@@ -49,7 +49,7 @@
 
 內容見 [asset-converter.md](feature-runtime/asset-converter.md)。
 
-## DSPort P3 物件邊界（2026-09-14）
+## DSPort P3 可見性候選（2026-10-21）
 
 內容見 [dsport-p3.md](feature-runtime/dsport-p3.md)。
 

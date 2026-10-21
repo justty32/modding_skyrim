@@ -1,0 +1,169 @@
+{
+ "contract": "wf-table/1",
+ "source": "subproject-priorities-2026-10-21.md",
+ "extracted": "2026-10-21",
+ "evidence_base": "除明示 projects/、agentctl/、instance/、wait-user/、wf/、mod-library/、modpack-design/ 以外，證據相對 projects/<project>/；冒號後為行號。",
+ "remote_scope": "未fetch；有upstream分支相對本機tracking為0/0，不代表今日遠端核實。",
+ "columns": [
+  "project",
+  "recommendation",
+  "head",
+  "value",
+  "next",
+  "evidence",
+  "validation",
+  "limits"
+ ],
+ "rows": [
+  {
+   "project": "darksouls-port",
+   "recommendation": "主推薦",
+   "head": "0b06fc5",
+   "value": "已有可玩 P3；使用者明確不滿地板消失。winding 候選分支未合且未實機驗證。",
+   "next": "重建固定版本的既有場景 winding 候選包，只驗消失點與基本戰鬥/跟隨。",
+   "evidence": "p3/P3-PLAN.md:5; agentctl/handoffs/done/2026-10/home-2026-10-03/dsp/REPORT-r2.md:5; branch dsp1003-winding@24b9feb",
+   "validation": "359 tests PASS；converter 真 subprocess 有覆蓋。",
+   "limits": "main 停用；舊09-25 staging不存在。現存 UNTESTED 486 NIF 非全驗。converter pin cf12ae9 相符，ModForge pin 0af3188 與當前 d222032 不同。"
+  },
+  {
+   "project": "sofia-patch",
+   "recommendation": "劇情向次選",
+   "head": "1a13c2c",
+   "value": "四幕交付已存在，Act1v2 在主 profile 啟用；README 待轉 JSON 過時。",
+   "next": "驗 Act1v2 女巫/Carene 殺放分支、四段 PlayIdle、嘴型，再決定後三幕。",
+   "evidence": "projects/ModForge/wait_todo/ingame-tests.md:24; projects/sofia-patch/vigilant-screenplay/_act1-trigger-placement-map.md:8",
+   "validation": "9 tests 與 preflight PASS；5 ZIP FUZ header 實讀。",
+   "limits": "FUZ/LIP: Act1 21/21，v2 21/20，Act2 34/0，Act3 51/0，Act4 16/0；本輪未實機。"
+  },
+  {
+   "project": "houseCARL",
+   "recommendation": "工具向次選",
+   "head": "efe28f8f",
+   "value": "當前原版 Gold001 名稱解析可重現失敗；USSEP 小麥成功但名稱亂碼。兩症狀尚未證實同根因。",
+   "next": "以 Gold001 與小麥固定案例追 localized strings / plugin-listings 路徑，限界修 fork。",
+   "evidence": "src/housecarl-mcp/LoadOrderService.cs:1660; src/housecarl-core/LoadOrderResolver.cs:265; agentctl/handoffs/home-2026-10-18/hearthfire-crops/REPORT.md:72",
+   "validation": "當前 MCP 唯讀重現 Gold001 resolve 兩次 LocalAppData exception；小麥 read/resolve/resolve_names 成功；部署檢查 exit 0。",
+   "limits": "部署/source 都標 1.8.1 不證明 SHA 同一；未跑 C# build；不連帶升上游 v2。"
+  },
+  {
+   "project": "ModForge",
+   "recommendation": "內容需求帶動",
+   "head": "d222032",
+   "value": "生成器成熟；Sofia specs 與 NPC/quest 能力已有。",
+   "next": "支援選中的一幕或場景交付，按實際缺口維護生成器。",
+   "evidence": "src/ModForge.Core/Build/Generator.Build.cs:29; wait_todo/ingame-tests.md:24",
+   "validation": "當前 source 重建 focused InstanceGlobal/BuildContext 15 passed、0 skipped。",
+   "limits": "不是完整1338 suite；InstanceGlobals runtime仍待驗；不先擴泛用API。"
+  },
+  {
+   "project": "model-converter",
+   "recommendation": "按需收尾",
+   "head": "cf12ae9",
+   "value": "已有 DSP 真 consumer；mc-1003-plugin@d420abb 有 --plugin/--test-cell 未合。",
+   "next": "需要自訂物件時驗一件模型到測試格的完整交付，再評審分支。",
+   "evidence": "README.md:15; branch mc-1003-plugin:any2nif/plugin.py:37; projects/darksouls-port/tools/p1_batch.py:50",
+   "validation": "main effect/MASK/package focused 44 PASS。",
+   "limits": "未執行未合分支；光柱9/25已人眼通過，勿重開；diffuse shim搬家沒有活躍阻塞。"
+  },
+  {
+   "project": "agent-bridge",
+   "recommendation": "用現有能力驗收",
+   "head": "15b1efb",
+   "value": "現有結構化 actor/dialogue/MessageBox API可支援內容驗收，沒有新功能痛點。",
+   "next": "替選中的內容使用既有 QA schema 建一條可重跑驗收。",
+   "evidence": "src/Routes.cpp:291; src/plugin.cpp:14; client/test_qa_runner.py:114",
+   "validation": "client suite 122 tests PASS。",
+   "limits": "未開遊戲；離線不能證當前DLL。instance已廢manifest，舊 reconcile --apply 待辦不可照做。"
+  },
+  {
+   "project": "scene-capture-bridge",
+   "recommendation": "有編輯需求再續",
+   "head": "3f754b8",
+   "value": "採集/放置/匯出/catalog/favorites已存在；catalog曾與現役載入順序不符。",
+   "next": "真要編場景時重產相符catalog，驗搜尋/放置/匯出/重載，再跑既定ghost驗收。",
+   "evidence": "src/Catalog.cpp:123; projects/ModForge/wait_todo/roadmap-features.md:9; wait-user/feature-runtime/scene-ghost.md:28",
+   "validation": "既存portable binaries catalog 13、favorites 8 case PASS。",
+   "limits": "未重建DLL、未跑跨repo contract與runtime；ghost已部署，15條精度驗收仍缺。"
+  },
+  {
+   "project": "game-data",
+   "recommendation": "按consumer補資料",
+   "head": "980fe98",
+   "value": "10 vanilla+76 mod summary 在位，Sofia preflight資料齊；quest-nodes catalog尚不存在。",
+   "next": "某幕或隨從要資料時只補該plugin，帶版本/覆蓋證據。",
+   "evidence": "extract.sh:48; tools/dump_follower_dialogue.py:317; tests/test_extract.py:39",
+   "validation": "14 tests PASS。",
+   "limits": "extract測試使用fake dotnet；不證真插件輸出；勿全量重抽。"
+  },
+  {
+   "project": "skyrim-voicegen",
+   "recommendation": "等新台詞需求",
+   "head": "a1b61a4",
+   "value": "協議與atomic WAV publish有實作，但當前TTS executable設定指向不存在檔。",
+   "next": "有確定新台詞才恢復既有引擎設定並做少量聽感樣本。",
+   "evidence": "voicegen.py:54; voicegen-f5.sh:10; PROTOCOL.md:43",
+   "validation": "6 tests PASS，engine mocked。",
+   "limits": "repo預設venv不存在；未驗音質/GPU。Sofia缺LIP不是TTS問題。"
+  },
+  {
+   "project": "godot-worldspace-editor",
+   "recommendation": "暫緩架構轉向",
+   "head": "a298604",
+   "value": "現有app與diffuse預覽可用；原生editor轉向無當前交付需求。",
+   "next": "真要造地形時先用現有app交一小區塊驗落點/旋轉。",
+   "evidence": "README.md:5; godot/model_fetch.gd:165; docs/object-texture-preview.md:62",
+   "validation": "真正headless Godot diffuse contract 4 PASS。",
+   "limits": "Godot現已安裝；不代表GUI或遊戲對照已驗。shim搬家僅維護債。"
+  },
+  {
+   "project": "my_skyrim_plugin_1",
+   "recommendation": "保留小工具暫緩quest引擎",
+   "head": "86c6a11",
+   "value": "FollowLight/AmbientBoost/NPC工具在main；QuestEngine runtime不在main。",
+   "next": "真有補光需求驗現有功能；新任務先定一個內容目標。",
+   "evidence": "src/plugin.cpp:7; cmake/sourcelist.cmake:1; research/QUEST_ENGINE_AUDIT.md:125",
+   "validation": "packaging 13檢查、PRF 25 assertions PASS。",
+   "limits": "PRF不涵蓋evaluator/co-save/runtime；不拿court-wizard歷史分支當main能力。"
+  },
+  {
+   "project": "agentctl",
+   "recommendation": "主線收線待驗收",
+   "head": "dd9e4dab",
+   "value": "inbox/new=0，10/18六線收線，SESSION無open。",
+   "next": "依選中內容安排既有驗收，不另造調度功能。",
+   "evidence": "agentctl/SESSION-LOG.md:6; agentctl/handoffs/home-2026-10-18/STATE.md:5",
+   "validation": "git/status/log/worktree與inbox唯讀核實。",
+   "limits": "沒有把歷史鎖檔當目前活進程證據。"
+  },
+  {
+   "project": "instance",
+   "recommendation": "保留現有profile變更",
+   "head": "a20064a",
+   "value": "profiles fa48d3d兩檔刪去39支已停用plugin；1291啟用集合/順序與HEAD相同，modlist bytes相同。",
+   "next": "待選中工作才安排MO2與實機驗收，不還原現有變更。",
+   "evidence": "instance/README.md:32; agentctl/handoffs/home-2026-10-18/STATE.md:36",
+   "validation": "當前檔案對HEAD語意/位元組核對。",
+   "limits": "未證完整MO2 cycle或遊戲結果；未修改profile。"
+  },
+  {
+   "project": "mod-library",
+   "recommendation": "按需求維護",
+   "head": "e7a63f4",
+   "value": "現有336翻譯目錄；L4仍有人工作業帳，無明確新開發阻塞。",
+   "next": "有具體mod或中文缺口才做，勿重啟已取消自動採集。",
+   "evidence": "mod-library/audits/README.md:38; wf/workflows/mod-discovery/README.md:12",
+   "validation": "只讀README與目錄計數。",
+   "limits": "未查MongoDB，不把文件146筆稱為即時數。"
+  },
+  {
+   "project": "modpack-design",
+   "recommendation": "等內容選擇",
+   "head": "e0fd1fa",
+   "value": "SESSION無open、技術債表無open；後續隨從/招式需指定對象。",
+   "next": "跟隨選中的玩法或內容，勿重開已結案生存需求裁示。",
+   "evidence": "modpack-design/technical-debt.md:6; modpack-design/content-plan/gameplay/selection/OPEN.md:39",
+   "validation": "git/status與較新結案文件核對。",
+   "limits": "不把09/01未施工摘要蓋過10/17後續。"
+  }
+ ]
+}

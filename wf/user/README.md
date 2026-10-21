@@ -12,6 +12,8 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 <!-- wf-nav -->
 | 檔案 | 內容 |
 |------|------|
+| [2026-10-21-offline-fixes.md](2026-10-21-offline-fixes.md) | DSP 候選包、houseCARL 名稱解析與 consumer 相容修補的離線成果及未部署界線 |
+| [2026-10-21-subproject-priorities.md](2026-10-21-subproject-priorities.md) | 11 個開發子專案盤點：主推 DSP 場景打磨，次選 Sofia 演出驗收與 houseCARL 限界修補 |
 | [2026-09-26-pre-play-checklist.md](2026-09-26-pre-play-checklist.md) | 09-26 早場八線調查濃縮：開玩前要做的事、裁示項；C／D／E 三節拆在 [子資料夾](2026-09-26-pre-play-checklist/)：[C-console](2026-09-26-pre-play-checklist/C-console.md)、[D-ingame](2026-09-26-pre-play-checklist/D-ingame.md)、[E-open](2026-09-26-pre-play-checklist/E-open.md) |
 | [dsport-test-2026-10-03.md](dsport-test-2026-10-03.md) | 10-03 DSPort 肉眼測試清單（切 dsport-dev profile 後照做） |
 | [2026-10-10-play-checklist.md](2026-10-10-play-checklist.md) | 10-10 十七線施工彙整總頁：開遊戲前、依地點分四頁的實測清單、今日安裝總表、不裝／延後 |

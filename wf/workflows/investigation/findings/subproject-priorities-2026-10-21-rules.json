@@ -1,0 +1,723 @@
+{
+ "contract": "wf-table/1",
+ "source": "subproject-priorities-2026-10-21.md",
+ "extracted": "2026-10-21",
+ "note": "母repo wf 原118份清單；87全文親讀、31排除，另有規則段/入鏈核對；路徑相對repo根。",
+ "supplemental_audit": "原排除42份的入鏈與規範段複核；新增全文親讀11份，保留排除31份。歷史文件規則不得勝過現役規則或本次使用者指示。",
+ "columns": [
+  "path",
+  "status",
+  "scope",
+  "review"
+ ],
+ "rows": [
+  {
+   "path": "wf/INDEX.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/STRUCTURE.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/WORKFLOWS.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/animation-oar.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/crash-data-and-assets.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/crash-dll-and-scripts.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/dispatch-cli-agents.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/dispatch-delegation.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/dispatch-handoffs.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/dispatch-roles.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/docs-organization.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/faces-look-transplant.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/faces-troubleshooting.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/git-commit-hygiene.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/housecarl-and-tools.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/locks-screen-and-game.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/mo2-profiles.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/mod-install-audit.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/project-decisions.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/repos-layout-and-remotes.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/translation-and-zh.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/lessons/user-preferences.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/user/2026-09-26-pre-play-checklist/C-console.md",
+   "status": "excluded",
+   "scope": "使用者驗收個案（非規矩）",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/user/2026-09-26-pre-play-checklist/D-ingame.md",
+   "status": "excluded",
+   "scope": "使用者驗收個案（非規矩）",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/user/2026-09-26-pre-play-checklist/E-open.md",
+   "status": "excluded",
+   "scope": "使用者驗收個案（非規矩）",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/user/2026-09-26-pre-play-checklist.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/user/2026-10-10-play-checklist-combat.md",
+   "status": "excluded",
+   "scope": "使用者驗收個案（非規矩）",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/user/2026-10-10-play-checklist-followers.md",
+   "status": "excluded",
+   "scope": "使用者驗收個案（非規矩）",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/user/2026-10-10-play-checklist-towns.md",
+   "status": "excluded",
+   "scope": "使用者驗收個案（非規矩）",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/user/2026-10-10-play-checklist-wild/late-quests.md",
+   "status": "excluded",
+   "scope": "使用者驗收個案（非規矩）",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/user/2026-10-10-play-checklist-wild/outdoors.md",
+   "status": "excluded",
+   "scope": "使用者驗收個案（非規矩）",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/user/2026-10-10-play-checklist-wild/settlements.md",
+   "status": "excluded",
+   "scope": "使用者驗收個案（非規矩）",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/user/2026-10-10-play-checklist-wild.md",
+   "status": "excluded",
+   "scope": "使用者驗收個案（非規矩）",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/user/2026-10-10-play-checklist.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/user/2026-10-17-patrol.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/user/2026-10-17-structure-review.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/user/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/user/dsport-test-2026-10-03.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/TEMPLATE.workflow.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/agent-dispatch/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/analysis.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/common/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/common/archive/README.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/common/code-map/CODE_MAP.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/common/code-map/projects.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/common/conventions.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/common/data-files-fmt.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/common/data-files.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/common/gotchas.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/common/reply-style.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/common/user.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/decisions.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/dev-env.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/feature-dev/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/investigation/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/investigation/findings/dac0da-1.1.0b-cht-voice-matrix.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/investigation/findings/dialogue-translation-gaps-nff-gyh-ussep.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/investigation/findings/ifd-lydia-4.2.2-translation-audit.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/investigation/findings/mo2-moshortcut-steam-modal-2026-08-21.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/investigation/findings/mo2ctl-static-gates-asset-scope.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/investigation/findings/offline-correctness-batch-2026-08-12.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/investigation/findings/rdo-final-translation-audit.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/investigation/findings/wuxin-character-overhaul-se-ae-compatibility.md",
+   "status": "read",
+   "scope": "補覆蓋：現役入口連到的案例/裁示全文親讀",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/localization/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/mod-discovery/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/modpack-planning/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/movesets/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/nexus-intake/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/nexus-intake/download-routes.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/nexus-intake/identify-unknown.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/nexus-intake/satellites.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/nexus-intake/scope-template.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/nexus-intake/series.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/patch/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/planning.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/plans/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/plans/archive/README.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/ai-ingame-qa-loop/README.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/ai-ingame-qa-loop/context.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/ai-ingame-qa-loop/phase-0.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/ai-ingame-qa-loop/phase-1-2.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/ai-ingame-qa-loop/phase-3.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/ai-ingame-qa-loop/phase-4.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/third-party-mod-pipeline/README.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/third-party-mod-pipeline/appendix-ru.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/third-party-mod-pipeline/decisions-d1-d4.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/third-party-mod-pipeline/decisions-d5-d7.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/third-party-mod-pipeline/phases.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/third-party-mod-pipeline/review-g1-g5.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/archive/third-party-mod-pipeline/review-g6-g11.md",
+   "status": "excluded",
+   "scope": "archive（封存，不作現役規矩）",
+   "review": "excluded_archive; 76已讀文件無Markdown入鏈"
+  },
+  {
+   "path": "wf/workflows/plans/consolidation-2026-08-23/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/plans/consolidation-2026-08-23/design.md",
+   "status": "excluded",
+   "scope": "已完成計畫細節",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/workflows/plans/consolidation-2026-08-23/inventory.md",
+   "status": "excluded",
+   "scope": "已完成計畫細節",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/workflows/plans/consolidation-2026-08-23/result.md",
+   "status": "excluded",
+   "scope": "已完成計畫細節",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/workflows/plans/mod-library-catalog/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/plans/mod-library-catalog/appendices.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/plans/mod-library-catalog/decisions-d1-d3.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/plans/mod-library-catalog/decisions-d4-d7.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/plans/mod-library-catalog/execution-log.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/plans/mod-library-catalog/schema.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/plans/round-2026-08-07-catalog-and-korean/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/plans/round-2026-08-07-catalog-and-korean/line-a.md",
+   "status": "excluded",
+   "scope": "已完成計畫細節",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/workflows/plans/round-2026-08-07-catalog-and-korean/line-b.md",
+   "status": "excluded",
+   "scope": "已完成計畫細節",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/workflows/profile-change/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/refactor/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/refactor/moving-things.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/runtime-qa/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/testing/environment.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/testing/green-light-evidence.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/testing/offline-matrix.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/testing.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/tidy/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/tidy/gotchas-windows.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/tidy/gotchas.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/tidy/manager-brief.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  },
+  {
+   "path": "wf/workflows/tidy/reports/2026-09-09/README.md",
+   "status": "excluded",
+   "scope": "已完成整理報告",
+   "review": "excluded_case_or_history; 已掃全部標題與規範/裁示關鍵字命中行；關鍵裁示另讀上下文"
+  },
+  {
+   "path": "wf/workflows/tidy/reports/README.md",
+   "status": "read",
+   "scope": "現役規則/教訓/流程/模板與適用決策",
+   "review": "full_read"
+  }
+ ]
+}

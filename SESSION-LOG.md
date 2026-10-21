@@ -19,6 +19,8 @@
 
 ## Durable 狀態入口
 
+- DSP／houseCARL 已完成的離線修復、三條隔離分支與續接位置：
+  [2026-10-21 離線成果與收尾](wf/user/2026-10-21-offline-fixes.md)
 - 四條線的入口：各線 README；Skyrim 工作線交接主線在 `agentctl/SESSION-LOG.md`
 - houseCARL fork 維護決策：
   [fork-maintenance-decision.md](analysis/houseCARL/answers/fork-maintenance-decision.md)

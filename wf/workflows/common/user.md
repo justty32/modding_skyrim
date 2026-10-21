@@ -20,4 +20,6 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 | 回覆風格 | 見 [reply-style](reply-style.md)；短、先結論。使用者問「**要不要**」時不要只回「不必」，附上可執行的判準（門檻數字）與後果，讓他能改數字 |
 | 時區 | Asia/Taipei |
 
+2026-10-21 使用者裁示：所有負責實質工作的 agent 必須先親自讀過適用的 `wf/` 規矩，不能只靠領隊摘要；簡單工作或雜活例外。
+
 領域詞彙常猜錯 → 開 `glossary.md`（見 [common/README](README.md)）。

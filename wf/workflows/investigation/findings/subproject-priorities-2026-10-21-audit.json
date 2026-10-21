@@ -1,0 +1,105 @@
+{
+ "contract": "wf-table/1",
+ "source": "subproject-priorities-2026-10-21.md",
+ "extracted": "2026-10-21",
+ "columns": [
+  "kind",
+  "item",
+  "status",
+  "evidence",
+  "limits"
+ ],
+ "rows": [
+  {
+   "kind": "requirement",
+   "item": "規矩通讀",
+   "status": "complete",
+   "evidence": "87份全文親讀、5789行；31份排除已核對現役入口入鏈及規則段；未發現排除而適用本輪的通用規則。",
+   "limits": "rules.json manifest；26入鏈/24目標，8 findings與3使用者頁補讀。"
+  },
+  {
+   "kind": "requirement",
+   "item": "當前狀態",
+   "status": "complete",
+   "evidence": "母repo、15subrepo及profiles git/status/log/worktree；11開發repo clean；最新STATE/inbox/profile實讀。",
+   "limits": "無fetch，僅本機tracking；保留profiles既存改動。"
+  },
+  {
+   "kind": "requirement",
+   "item": "候選比較",
+   "status": "complete",
+   "evidence": "11開發repo與4主線均有價值、成熟度、下一步、證據、限制。",
+   "limits": "主資料15列；不以測試數/commit數當投資價值。"
+  },
+  {
+   "kind": "requirement",
+   "item": "獨立覆核",
+   "status": "complete",
+   "evidence": "reviewer覆核DSP/Sofia/houseCARL與舊待辦反證，接受有條件排序。",
+   "limits": "DSP尚未實機、Sofia非草稿、houseCARL非全面故障/根因未定。"
+  },
+  {
+   "kind": "agent",
+   "item": "assessment_lead",
+   "status": "read",
+   "evidence": "AGENTS; SESSION/WAIT; wf WORKFLOWS/INDEX; common user/reply-style/data-files; investigation; tool-index; STRUCTURE/conventions/CODE_MAP/dev-env/testing/planning/decisions; agent-dispatch/team-model; agentctl AGENTS/WORKFLOWS/user",
+   "limits": "先讀後調度；負責合規記錄及總結，不做功能修改。"
+  },
+  {
+   "kind": "agent",
+   "item": "rules_audit",
+   "status": "read",
+   "evidence": "AGENTS; SESSION/WAIT; wf WORKFLOWS/INDEX; common user/reply-style/data-files; investigation; tool-index; 所有現役workflow/lessons/模板；補讀現役入口引用個案規則",
+   "limits": "87全文清單見rules.json；31排除含15archive。"
+  },
+  {
+   "kind": "agent",
+   "item": "core_tools",
+   "status": "read",
+   "evidence": "AGENTS; SESSION/WAIT; wf WORKFLOWS/INDEX; common user/reply-style/data-files; investigation; tool-index; STRUCTURE/conventions/CODE_MAP/testing/dev-env/offline-matrix/environment; ModForge AGENTS/CLAUDE/WORKFLOWS/INDEX及適用規則",
+   "limits": "其餘3repo無AGENTS/CLAUDE/wf；各README/契約/測試入口已讀。"
+  },
+  {
+   "kind": "agent",
+   "item": "content_projects",
+   "status": "read",
+   "evidence": "AGENTS; SESSION/WAIT; wf WORKFLOWS/INDEX; common user/reply-style/data-files; investigation; tool-index; STRUCTURE/conventions/CODE_MAP/testing/dev-env/offline-matrix/environment; 跨查ModForge前讀AGENTS/CLAUDE",
+   "limits": "4目標repo無AGENTS/wf，README及相關plan/source/tests已讀。"
+  },
+  {
+   "kind": "agent",
+   "item": "runtime_tools",
+   "status": "read",
+   "evidence": "AGENTS; SESSION/WAIT; wf WORKFLOWS/INDEX; common user/reply-style/data-files; investigation; tool-index; STRUCTURE/conventions/CODE_MAP/testing/dev-env; houseCARL AGENTS/CLAUDE; DaylightDungeon AGENTS",
+   "limits": "agent-bridge無AGENTS；適用測試與README已讀。"
+  },
+  {
+   "kind": "agent",
+   "item": "workspace_state",
+   "status": "read",
+   "evidence": "AGENTS; SESSION/WAIT; wf WORKFLOWS/INDEX; common user/reply-style/data-files; investigation; tool-index; agentctl與modpack-design AGENTS/適用workflow/偏好",
+   "limits": "instance/mod-library無AGENTS，沿母規則與各README。"
+  },
+  {
+   "kind": "agent",
+   "item": "independent_review",
+   "status": "read",
+   "evidence": "AGENTS; SESSION/WAIT; wf WORKFLOWS/INDEX; common user/reply-style/data-files; investigation; tool-index; conventions/CODE_MAP; projects README; project-decisions/user-preferences; 10/17裁示與STATE; DSP/Sofia/ModForge/houseCARL適用狀態",
+   "limits": "先獨立反證後核實跨線更正；全程唯讀。"
+  },
+  {
+   "kind": "limit",
+   "item": "驗證範圍",
+   "status": "explicit",
+   "evidence": "本輪沒有遊戲/MO2、DB、安裝依賴、部署、合併、push；沒有宣稱所有歷史記憶讀完。",
+   "limits": "離線/真headless/既存binary/當前MCP分類見主資料。"
+  },
+  {
+   "kind": "verification",
+   "item": "documentation",
+   "status": "pass_with_existing_link_failure",
+   "evidence": "母47unit PASS；本輪5md/40links PASS；wf-lint所有計數0；git diff --check PASS；本輪SESSION open已收掉。",
+   "limits": "完整link sweep僅1既有壞鏈：agentctl/handoffs/done/2026-09/home-2026-09-20/crash2/REPORT.md:66 -> inbox/orders/cx-crash2.md；未改該repo。"
+  }
+ ]
+}
