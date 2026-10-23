@@ -20,10 +20,12 @@
 |---|---|---|
 | [user-preferences](user-preferences.md) | 使用者偏好與邊界 | 10 |
 | [dispatch-roles](dispatch-roles.md) | 調度：頂層角色與誰來做 | 4 |
-| [dispatch-delegation](dispatch-delegation.md) | 調度：模型分級、委派與領隊 | 10 |
+| [dispatch-delegation](dispatch-delegation.md) | 調度：模型分級與委派給誰 | 6 |
+| [dispatch-leads-and-line-discipline](dispatch-leads-and-line-discipline.md) | 調度：領隊與線的運作紀律 | 4 |
 | [dispatch-handoffs](dispatch-handoffs.md) | 調度：交接書與查證 | 6 |
-| [dispatch-cli-agents](dispatch-cli-agents.md) | 調度：驅動 codex／tmux 與行程 | 7 |
-| [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 8 |
+| [dispatch-cli-agents](dispatch-cli-agents.md) | 調度：驅動 codex／tmux | 5 |
+| [process-throttling](process-throttling.md) | 行程限流與別線行程的分寸 | 2 |
+| [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 7 |
 | [repos-layout-and-remotes](repos-layout-and-remotes.md) | 版控：repo 佈局、remote 與 push | 5 |
 | [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、工作樹與產物衛生 | 9 |
 | [docs-organization](docs-organization.md) | 文件整理：封存、拆檔與頁面歸屬 | 5 |
@@ -49,7 +51,7 @@
 | [zh-tooling-and-scans](zh-tooling-and-scans.md) | 中文層工具與掃描（zhport、靜態掃描、QA checker） | 5 |
 | [project-decisions](project-decisions.md) | 專案裁示與開發／驗證流程的嚴謹度 | 6 |
 | [map-port-and-world-conflicts](map-port-and-world-conflicts.md) | 地圖移植的引擎限制與世界／內容衝突 | 5 |
-| [nexus-download-ops](nexus-download-ops.md) | Nexus 下載自動化（CDP、file_id、並行） | 3 |
+| [nexus-download-ops](nexus-download-ops.md) | Nexus 下載自動化（profile 複本、CDP、file_id、並行） | 4 |
 | [porting-and-modforge](porting-and-modforge.md) | 資產移植與 ModForge 能力邊界 | 3 |
 
 ## 新增規則
