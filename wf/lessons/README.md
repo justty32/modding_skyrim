@@ -20,7 +20,7 @@
 | [dispatch-cli-agents](dispatch-cli-agents.md) | 調度：驅動 codex／tmux 與行程 | 6 |
 | [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 7 |
 | [repos-layout-and-remotes](repos-layout-and-remotes.md) | 版控：repo 佈局、remote 與 push | 5 |
-| [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、工作樹與產物衛生 | 5 |
+| [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、工作樹與產物衛生 | 6 |
 | [docs-organization](docs-organization.md) | 文件整理與 wf kernel | 4 |
 | [mo2-profiles](mo2-profiles.md) | MO2 與 profile | 7 |
 | [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴、暫存清理的可回復性判準） | 6 |

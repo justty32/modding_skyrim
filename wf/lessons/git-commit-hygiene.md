@@ -63,3 +63,11 @@
 **Why:** 同一 repo 的 bin/ 是共享的可變狀態；一隊的 build 就是另一隊的環境變更。
 
 **How to apply:** 交接書寫死：任何 build／test 在 `git worktree add` 或獨立 clone 裡跑；消費二進位的一方釘 commit＋sha256 並在每次使用前驗；隊間共用 repo 時在 COMMON.md 列「誰可以動主工作樹」。相關：[[commit-explicit-paths-only]]。
+
+## ignored-is-not-a-deletion-policy
+
+> 「被 git ignore」不能直接當刪除理由——先 `git check-ignore -v` 查規則來源：來自版控內 `.gitignore` 的才是政策，來自 `info/exclude`／global 的只是個人本機設定。
+
+2026-10-23 T1 清理 handoffs 未追蹤實體：兩份 7.8/8.0 KB 的 HANDOFF.md（`done/2026-09/home-2026-09-16/` 的 rsrm 與 yros）被列入刪除並執行，**永久遺失**（從未進版控、無備份）。根因：清單判準把 `git ls-files --others --ignored` 的輸出一律當「政策判定可丟」，但這兩檔被 ignore 的來源是 `.git/modules/agentctl/info/exclude` 的本機個人規則——不進版控、別人 clone 看不到，且與工作區「`*.md` 一律進版控」政策直接衝突。同類 `gitignore:other` 共 138 項，餘者均為 .pyc／鎖標記／可重產物，損失未擴散，但純屬僥倖。
+
+**How to apply**：以 ignore 狀態生成刪除候選時，逐項（或逐規則）跑 `git check-ignore -v` 分流：`gitignore:policy`（來源是版控內 `.gitignore`）可列候選；`gitignore:local`（來源是 `info/exclude`、`core.excludesFile` global）**預設不列**，改列「ignore 規則與版控政策衝突」待人裁。另外 `info/exclude` 裡任何與政策衝突的規則本身就該清。工具已修：`agentctl/handoffs/home-2026-10-23/tidy/T1/tools/build_candidates.py`。
