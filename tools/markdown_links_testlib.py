@@ -21,6 +21,12 @@ class MarkdownLinkFixture(unittest.TestCase):
                 self.skipTest("Windows file-symlink privilege is unavailable")
             raise
 
+    def init_git_repo(self):
+        subprocess.run(["git", "init", "-q", str(self.root)], check=True)
+
+    def git(self, *args):
+        subprocess.run(["git", "-C", str(self.root), *args], check=True)
+
     def add_fake_gitlink(self, name="private"):
         subprocess.run(["git", "init", "-q", str(self.root)], check=True)
         subprocess.run(

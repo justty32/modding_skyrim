@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
-"""Check inline local links in the parent repo's tracked Markdown files."""
+"""Check inline local links in this workspace's Markdown files.
+
+Scope is "tracked, plus untracked-but-not-ignored" — not "tracked". Listing
+only `git ls-files` made the check lie about brand-new documents: on
+2026-10-23 the anlz line wrote four index files, ran this checker, got
+`OK: 5532 file(s)`, and none of the four had been read. They only entered the
+scan after `git add`. Ignored paths stay out either way, which is what keeps
+third-party clones (analysis/tool-survey/repos/, external/frameworks/) from
+being dragged in.
+"""
 
 from __future__ import annotations
 
@@ -27,21 +36,37 @@ def _ls_files(cwd: Path, pattern: str) -> list[str]:
     return [name.decode() for name in output.rstrip(b"\0").split(b"\0") if name]
 
 
-def tracked_markdown(root: Path) -> list[Path]:
-    """Every tracked .md, submodules included.
+def _ls_others(cwd: Path, pattern: str) -> list[str]:
+    """Untracked and not ignored. `--exclude-standard` is what keeps the
+    gitignored third-party clones and handoff scratch out of the scan."""
+    output = subprocess.check_output(
+        ["git", "ls-files", "-z", "--others", "--exclude-standard", "--", pattern],
+        cwd=cwd,
+    )
+    return [name.decode() for name in output.rstrip(b"\0").split(b"\0") if name]
 
-    `git ls-files` stops at the gitlink, so a plain listing covers only the
-    parent repo. The four lines split out on 2026-08-23 carried 87 links that
-    no longer resolved and nothing was looking at them.
-    """
+
+def _readable(base: Path, names: list[str]) -> list[Path]:
     # `git ls-files` also returns tracked files deleted from a dirty worktree.
     # They have no links left to validate and trying to read them aborts the
     # whole check. Keep broken symlinks, though: check_file reports those.
-    sources = [
+    return [
         source
-        for name in _ls_files(root, "*.md")
-        if (source := root / name).exists() or source.is_symlink()
+        for name in names
+        if (source := base / name).exists() or source.is_symlink()
     ]
+
+
+def _markdown_under(root: Path, lister) -> list[Path]:
+    """Walk the parent repo and every initialized workspace submodule.
+
+    `git ls-files` stops at the gitlink, so a plain listing covers only the
+    parent repo. The four lines split out on 2026-08-23 carried 87 links that
+    no longer resolved and nothing was looking at them. `--others` stops at a
+    nested repository too, so each submodule needs its own invocation and no
+    path is listed twice.
+    """
+    sources = _readable(root, lister(root, "*.md"))
     for gitlink in _ls_files(root, "*"):
         # projects/* are independent software repos with their own link
         # conventions (line-number references that are not links at all) and
@@ -51,12 +76,22 @@ def tracked_markdown(root: Path) -> list[Path]:
             continue
         sub = root / gitlink
         if (sub / ".git").exists():
-            sources += [
-                source
-                for name in _ls_files(sub, "*.md")
-                if (source := sub / name).exists() or source.is_symlink()
-            ]
+            sources += _readable(sub, lister(sub, "*.md"))
     return sources
+
+
+def tracked_markdown(root: Path) -> list[Path]:
+    """Every tracked .md, submodules included."""
+    return _markdown_under(root, _ls_files)
+
+
+def untracked_markdown(root: Path) -> list[Path]:
+    """Every untracked-but-not-ignored .md, submodules included.
+
+    Without this the checker goes green on files it never opened; see the
+    module docstring.
+    """
+    return _markdown_under(root, _ls_others)
 
 
 def uninitialized_submodules(root: Path) -> list[Path]:
@@ -114,7 +149,13 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     root = repo_root()
-    sources = args.paths or tracked_markdown(root)
+    if args.paths:
+        sources = args.paths
+        untracked_set: set[Path] | None = None
+    else:
+        untracked = untracked_markdown(root)
+        sources = tracked_markdown(root) + untracked
+        untracked_set = set(untracked)
     excluded_sources = sum(
         source_is_excluded(source, root, args.exclude_source) for source in sources
     )
@@ -158,6 +199,16 @@ def main(argv: list[str] | None = None) -> int:
                 )
 
     broken_count = missing_files + missing_anchors
+    # Say what was scanned, so a green run cannot be mistaken for coverage it
+    # does not have. `untracked 0` means "nothing new is sitting outside the
+    # index", not "untracked files are skipped".
+    breakdown = ""
+    if untracked_set is not None:
+        scanned_untracked = sum(source in untracked_set for source in sources)
+        breakdown = (
+            f" (tracked {len(sources) - scanned_untracked}, "
+            f"untracked {scanned_untracked})"
+        )
     suffixes = []
     if excluded_sources:
         suffixes.append(f"{excluded_sources} source(s) excluded")
@@ -170,10 +221,13 @@ def main(argv: list[str] | None = None) -> int:
         print(
             f"Markdown links FAILED: {broken_count} broken local link(s) "
             f"({missing_files} missing file(s), {missing_anchors} missing anchor(s))"
-            f"{suffix}"
+            f" in {len(sources)} file(s){breakdown}{suffix}"
         )
         return 1
-    print(f"Markdown links OK: {len(sources)} file(s), {total_links} local link(s){suffix}")
+    print(
+        f"Markdown links OK: {len(sources)} file(s){breakdown}, "
+        f"{total_links} local link(s){suffix}"
+    )
     return 0
 
 
