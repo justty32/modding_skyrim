@@ -23,7 +23,7 @@
 | [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、工作樹與產物衛生 | 5 |
 | [docs-organization](docs-organization.md) | 文件整理與 wf kernel | 4 |
 | [mo2-profiles](mo2-profiles.md) | MO2 與 profile | 7 |
-| [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴） | 5 |
+| [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴、暫存清理的可回復性判準） | 6 |
 | [housecarl-and-tools](housecarl-and-tools.md) | houseCARL、xEdit、DynDOLOD 等工具坑 | 9 |
 | [this-machine](this-machine.md) | 本機環境特性（shell、行程、工具差異） | 2 |
 | [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與 facegen 規則 | 7 |

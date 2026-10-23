@@ -74,6 +74,12 @@
    "關閉日期": "2026-09-25",
    "證據路徑": "/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-25/wu/kern/REPORT.md；/home/lorkhan/repo/moddings/skyrim/AGENTS.md:32；/home/lorkhan/repo/moddings/skyrim/wf/tools/",
    "內容": "**判定：2026-09-25 23:30 已結案**（2026-10-23 由 wu-stale 線搬進封存——\n`later-decisions.md` 文末早就自己寫了「此項關閉」，條目卻還留在 open 區，是整理漏掉）。\n\n**結局不是「拿 v0.5.1」，是直接跳到上游 v0.6。** 兩段：\n\n1. 09-25 22:25 `cx-wu-kern` 試做純覆蓋升級，發現本地 `wf/tools` 已含上游 v0.5.1 之後的規則\n   （母 repo kernel 測試 15 項中有 3 項專測這些，覆蓋後轉紅），dispatcher 裁定**不降版並撤回 commit**。\n2. 09-25 23:30 `cx-wu-kern2` 改成三載點對齊上游 main `794d6d2`（v0.6＋lint 修正）：\n   `tools/` 整包換、kernel 段換新、本地段保留；lint 持平、上游 15 項測試綠；各 repo 已 push。\n\n**2026-10-23 實讀驗證**：`/home/lorkhan/repo/moddings/skyrim/AGENTS.md:32`\n現在是 `<!-- wf-kernel v0.6+794d6d2 (2026-09-25 對齊) -->`，不再是舊文寫的 v0.5 或 v0.4.1；\n`wf/tools/` 底下 `wf-lint-checks.sh`、`tabledb_table.py`、`tabledb_fmt_expand.py`、\n`fix_moved_links_scan.py` 四個拆出檔都在。原文「v0.5.1 確定尚未套用」已失效。\n\n**對照報告**：\n`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-25/wu/kern/REPORT.md`。\n**之後的升級路徑**（不是 open 項，是作法備忘）：對齊上游 v0.6 或更新時用覆蓋＋三方 diff 合併，\n不跑 `wf-init`；**不可覆蓋** `wf/workflows/tidy/gotchas.md`。\n平行筆記 `/home/lorkhan/repo/moddings/skyrim/agentctl/status/todo/24-wf骨架版本戳沒對齊.md` 同樣已過期。"
+  },
+  {
+   "項目": "staging、coredump 與各線暫存要不要清",
+   "關閉日期": "2026-10-23",
+   "證據路徑": "agentctl/handoffs/home-2026-10-23/tidy/T2/REPORT.md; agentctl/handoffs/home-2026-10-23/tidy/T5/REPORT.md",
+   "內容": "2026-10-23 使用者裁示「全刪」並已執行：~/skyrim_mods/_* 39 夾全數刪除（31 夾由頂層、8 夾使用者自刪），釋出約 13 GB；coredump 實測僅 77 MB 不需處理。T5 查證：10-17 標 keep 的 303 個庫內唯一原檔中 300 筆（9.996 GiB）全機已無第二份，但 81.5% 經 Nexus 查證仍可重抓，真不可回復僅 2 筆 23 MB。內容比對唯一殘存紀錄在 tidy/T2/evidence/。"
   }
  ]
 }

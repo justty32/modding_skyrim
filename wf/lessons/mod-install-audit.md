@@ -70,3 +70,13 @@ fomod 線建了 `instance/tools/fomod/`（fomodlib／inspect／plan／apply／au
 （2026-10-23 補；記憶條目 `lorerim-copied-patches-soft-deps` 即本條）處置結果：38 支＋5 nif 中已停 37 支＋藏 nif；
 Snazzy 缺的 SMIM 貼圖**只抽 34 張**做成「SMIM Textures for Snazzy (extract)」，**不整包裝 SMIM**（違反 08-30 不裝全域精修的裁示）；
 Ryn's Standing Stones USSEP patch 裁留。
+
+## temp-dirs-double-as-offline-reinstall-library
+
+> 暫存目錄實際上兼任離線重裝庫；清理前要先分「可重抓／不可重抓」，不是先分「備份／下載暫存」。
+
+2026-10-23 全工作區大整理：使用者裁示 `~/skyrim_mods/_*` 39 夾（~13 GB）全刪並執行。事後 T5 查證發現，10-17 標 keep 的 303 個「庫內唯一原檔」**全部位於 `_dl-*` 下載暫存夾**，刪除後 300/303（9.996 GiB）全機已無第二份——下載暫存一直默默兼任著離線重裝庫，但沒有任何文件把它標成這個角色。實際損失比帳面小：81.5%（bytes 計）經 housecarl nexus 工具逐筆查證仍可從 Nexus 重抓，真正不可回復只有 2 筆 23 MB。
+
+**Why**：「備份 vs 下載暫存」的分類答錯了問題——下載暫存裡躺著的可能是全機唯一副本，而「備份」裡的東西反而可能處處有第二份。決定可不可以刪的軸是**可回復性**，不是目錄名。
+
+**How to apply**：清理任何暫存／下載目錄前，先對內容物回答兩個問題：(1) 全機（含 MO2 downloads、mod-library）還有沒有第二份？(2) 沒有第二份的，上游（Nexus 等）還抓不抓得到（下架／改版／登入牆）？「無第二份＋上游抓不到」的才是真不可回復，要嘛留要嘛先異地備份；其餘都可刪。查證用 housecarl_nexus_identify（md5）／housecarl_nexus_mod files=true／housecarl_nexus_search。範例查證報告：`agentctl/handoffs/home-2026-10-23/tidy/T5/REPORT.md`。
