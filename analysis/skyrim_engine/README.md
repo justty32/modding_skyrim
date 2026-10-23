@@ -4,6 +4,8 @@ Skyrim SE 引擎逆向分析知識庫,以 **CommonLibSSE-NG**(C++/SKSE plugin �
 
 > 與隔壁 `analysis/skyrim_mods/`(七個**參考 mod** 的拆解,服務 ModForge spec 設計)不同:本目錄是**引擎本身怎麼運作、SKSE plugin 怎麼寫**的通用知識,不綁定特定 mod。
 
+> **另有一份副本**：`projects/my_skyrim_plugin_1/skyrim_mod/`（該 repo 的隨身手冊，入口是它的 `INDEX.md`）。**本目錄是正本**。2026-10-23 逐份比對：168 組配對裡 163 組 sha256 完全相同（資料見 `agentctl/handoffs/home-2026-10-23/kbdiff/pair-classification.json`）。**改這裡的共有檔案時，先評估另一邊是否要同步**——同一批連結已經被兩邊各自修過一次（analysis 2026-08-12、projects 2026-10-17），索引也各建了一份。
+
 ## 目錄結構
 
 篇數為 2026-10-23 實數（`ls <dir>/*.md` 扣掉各自的 README）。
