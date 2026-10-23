@@ -80,6 +80,12 @@
    "關閉日期": "2026-10-23",
    "證據路徑": "agentctl/handoffs/home-2026-10-23/tidy/T2/REPORT.md; agentctl/handoffs/home-2026-10-23/tidy/T5/REPORT.md",
    "內容": "2026-10-23 使用者裁示「全刪」並已執行：~/skyrim_mods/_* 39 夾全數刪除（31 夾由頂層、8 夾使用者自刪），釋出約 13 GB；coredump 實測僅 77 MB 不需處理。T5 查證：10-17 標 keep 的 303 個庫內唯一原檔中 300 筆（9.996 GiB）全機已無第二份，但 81.5% 經 Nexus 查證仍可重抓，真不可回復僅 2 筆 23 MB。內容比對唯一殘存紀錄在 tidy/T2/evidence/。"
+  },
+  {
+   "項目": "MO2 關閉後 profiles 暫態收尾",
+   "關閉日期": "2026-10-23",
+   "證據路徑": "頂層 16:10 envsnap 實測；git -C instance/profiles status",
+   "內容": "2026-10-23 14:35 MO2 開啟時 archives.txt 被清成 0 bytes（416 行暫態），曾列 open 等關機後收尾。16:10 使用者關閉 MO2/SkyrimSE 後實測：暫態自行收斂，archives.txt 寫回已 commit 狀態，instance/profiles dirty=0 unpushed=0，無需任何 commit。同輪遊玩未產生新 crash log。"
   }
  ]
 }

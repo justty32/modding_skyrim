@@ -1,9 +1,5 @@
 # 日後素材／清理決定
 
-## MO2 關閉後 profiles 暫態收尾（2026-10-23 新增）
-
-你 10-23 下午開著 MO2／遊戲（envsnap 14:35 起 RUNNING），`instance/profiles/modpack-main/archives.txt` 被 MO2 清成 0 bytes（典型暫態，416 行待寫回）。**等你玩完關掉 MO2 後**，任一條線跑：確認 envsnap 顯示 MO2/Skyrim 皆停→實讀 `archives.txt` 應寫回非空→`git -C instance/profiles status` 乾淨或只剩正常寫回→commit。在那之前這筆改動**不准 commit**（lessons：MO2 開著時 profile 是暫態）。10-18 施工的實機驗收問答（feature-runtime 子檔）也等同一輪。
-
 ## 夜貓－無心 3.1.0（可選精確替換）
 
 目前 JH People 1.1.3＋NPC Plugin Chooser 2 的 536 NPC patch 已滿足方向，不阻塞整包。若仍要精確
@@ -37,7 +33,7 @@ modpack-design commit `652ed91`／`dd009b8`。
 > 「wf kernel v0.5.1」是 2026-10-23 搬進來的（09-25 23:30 就已結案，條目卻漏在 open 區）。
 > 每項附證據絕對路徑或 commit hash。
 
-已抽到 [later-decisions-closed.json](later-decisions-closed.json)（12 列）。
+已抽到 [later-decisions-closed.json](later-decisions-closed.json)（13 列）。
 
 項目：原本的三級標題。
 
@@ -47,8 +43,9 @@ modpack-design commit `652ed91`／`dd009b8`。
 
 內容：標題下的完整原文。
 
-統計：12 項（第 10 列為 2026-09-25 自 staging 項移入的 todo-04／todo-09 暫存刪除；
-第 12 列為 2026-10-23 使用者裁示全刪並執行完畢的 staging／暫存清理題，詳見該列；
+統計：13 項（第 10 列為 2026-09-25 自 staging 項移入的 todo-04／todo-09 暫存刪除；
+第 12 列為 2026-10-23 使用者裁示全刪並執行完畢的 staging／暫存清理題；
+第 13 列為同日 MO2 關閉後自行收斂的 profiles 暫態（16:10 envsnap 實測 dirty=0），開了又當天結案；
 第 11 列為 2026-10-23 移入的 wf kernel v0.5.1／v0.6 升級）。
 
 2026-09-25 22:25 推進（wf kernel v0.5.1）：cx-wu-kern 試做純覆蓋升級，發現本地 `wf/tools` 已含上游 v0.5.1 之後的規則（母 repo kernel 測試 15 項中 3 項專測這些，覆蓋後轉紅），dispatcher 裁定**不降版並撤回 commit**；下次升級要對齊上游 v0.6 或更新、用 diff 合併。對照報告 `agentctl/handoffs/done/2026-09/home-2026-09-25/wu/kern/REPORT.md`。此項改為「等上游 v0.6」，不再是可直接套的維護。
