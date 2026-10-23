@@ -69,6 +69,10 @@
 - 刪分支這種不可逆的,**先確保救援資訊已經在 remote 上**(例:my_skyrim_plugin_1 是先把記錄各分支 SHA 的 `BRANCHES.md` push 上去,才 `git push origin --delete`)。
 - 相關:[[workspace-not-a-git-repo]]
 
+2026-10-23 補：母 repo 若設了 `push.recurseSubmodules=on-demand` 與 `submodule.recurse=true`，「只推母 repo」不是安全假設——推母 repo 會連帶把有變動的子 repo 一起推上去；想只推特定 repo、不想連帶推子模組，先確認這兩個 git config 狀態，必要時 `--recurse-submodules=no` 明確關閉（`agentctl/handoffs/done/2026-09-01/hwrap-2026-09-01/REPORT.md`）。
+
+2026-10-23 補：另一種不可逆動作是改寫公開 repo 歷史——houseCARL 公開 fork 一筆 commit 的作者信箱是真實工作信箱，且被公開母 repo 的 gitlink 自 08-24 起引用；評估過的選項裡，改作者 force push 或搬私有 repo 都會讓舊 gitlink／clone 斷掉，且 GitHub object network 仍保留 SHA、需另外找 GitHub Support 處理，代價遠高於「維持現狀＋hook 防再發」。遇到公開 repo 歷史裡有敏感資訊時，先評估改歷史對下游 gitlink／clone 的連帶代價，優先選不改歷史的防再發方案，除非使用者明確接受下游斷鏈（`agentctl/handoffs/home-2026-10-17/improve/cleanup/HOUSECARL-REBASE-BRIEF.md`）。
+
 ## profiles-repo-has-remote
 
 > MO2 profiles repo 自 2026-08-22 起有 private remote，收工檢查要多看 unpushed（原 type: project）
@@ -110,3 +114,5 @@ upstream」），不要寫「釘在哪條分支」。要講具體狀態就給 co
 可達（那才是它會不會變孤兒的判準）。這是針對**文件寫法**的指示，不是要我去清洗 repo 裡
 既有的 `chore: 推進 pin` 這類 commit 訊息用語——參見 [[dont-inflate-light-preferences]]。
 相關：[[workspace-layout-and-duties]]、[[verify-waituser-against-logs]]。
+
+2026-10-23 補：這個「釘的是 commit」特性會連帶觸發消費方的 pin gate——darksouls-port 的 `verify_converter()` 要求 model-converter checkout 的 `HEAD` 必須等於 `converter-pin.json` 記錄的 commit；在 model-converter 只改文件的 commit 也會讓 `HEAD` 改變，連帶讓 DSPort 的 P3 gate 判定 converter pin mismatch。修改被其他 repo 用 commit 釘選的 repo 前，先查消費方有沒有 pin 檔案；純文件改動放獨立分支，不要直接進 main，等真要跟著重釘 pin 時再一起合併（`agentctl/handoffs/home-2026-10-17/patrol/p5-dsport-converter-godot/REPORT.md`）。

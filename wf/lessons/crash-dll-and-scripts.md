@@ -34,6 +34,8 @@ repo 若有 `.github/workflows/build.yml` 就 `gh workflow run ... --ref main`�
 
 相關：[[pepe-tls-end-crash-is-payloadinterpreter-dangling-listener]]、[[doomperk-advanceobject-block-ctd]]
 
+2026-10-23 補：SKSE DLL 有公開原始碼時，裝之前或崩潰後定位可直接 `grep LookupForm(` 找「用插件名＋FormID 查找其他 mod 記錄」的呼叫，確認有沒有對回傳值做 null／數量檢查；本機實際裝的那個 mod 版本若缺其中一筆 FormID（如只檢查第一筆就假設其餘都在）就會對 null 呼叫虛函式崩潰，esp 層 MAST 比對抓不到這類跨 plugin 的執行期假設（`agentctl/handoffs/done/2026-10/home-2026-10-10/crash-1/REPORT.md`）。
+
 ## pepe-tls-end-crash-is-payloadinterpreter-dangling-listener
 
 > 啟動 65–70 秒炸在 PerkEntryPointExtender.dll+025FA30 _tls_end 的 crash，真因是 PayloadInterpreter.dll 載入間歇失敗留下死 listener；重開 MO2 等它載完再 Run 即可（原 type: project）
@@ -67,6 +69,8 @@ Opus 唯讀查證（09-17）：PI config 全是 .ini（54 檔／40 個 MCO 動�
 
 **How to apply:** SKSE plugin 的嫌疑要用「崩潰前數秒 log 裡有沒有同一個 ACHR/FormID」來定罪，不是看 call stack 有沒有它。SPID 這類 A/B 的指標用**活體 reset**＝被 `Resetting inventory` 但沒有配對 `Resurrecting` 的 ACHR 數（有配對的是屍體復活重配，屬另一類）——本案 before 75、after 0，不吃時長。相關：[[doomperk-advanceobject-block-ctd]]、[[verify-waituser-against-logs]]。
 
+2026-10-23 補：crash log 讀法再補四招。(1) 每個 frame 標 [P]（precise）或 [S]（stack scan）——只有少數 frame（常是 frame 0）是 [P]，其餘多是 [S]，只能定位功能路徑不能當嚴格 unwind 因果鏈；排除「今天新裝的 mod 是兇手」不能只看它名字沒出現在 callstack，要查同簽章崩潰裝之前是否已發生（`agentctl/handoffs/done/2026-09/home-2026-09-20/crash/REPORT.md:17`）。(2) RIP=0（跳到空指標）時 CrashLogger 回推的 frame[0] 其實是浮點殘值不是真程式碼位址，要改讀 `[RSP+偏移]` 的真正返回位址重新起算，10-03 toolify 的 `triage_crash.py` 已補這段邏輯（`agentctl/handoffs/done/2026-10/home-2026-10-03/crash/c0928/REPORT.md`）。(3) 暫存器裡出現的插件名／FormList 字串只是「當下還留著的值」不代表是崩潰原因，要對照崩潰那一行指令實際讀寫的是哪個暫存器（`agentctl/handoffs/done/2026-10/home-2026-10-10/crash-1/REPORT.md`）。(4) 本機 .exe 被 SteamStub 加密反組譯不了時，可用 alandtse/skyrim_vr_address_library 的多份 offsets CSV（AE ID→1.6.318→se_ae_offsets→SE→1.5.97→1.5.97_comments）鏈式對照，把 crash log 匿名函式 ID 推回 SE/AE 公開名稱（`agentctl/handoffs/done/2026-10/crossbow-ctd-2026-10-09/REPORT.md`）。
+
 ## daegon-itemfinding-script-ctd
 
 > Daegon 的 k101DaegonItemFindingAliasScript 換地點時經 PO3 FindAllReferencesOfType 崩潰；2.2.1.2 也沒修，pex 要一直藏著（原 type: memory）
@@ -99,3 +103,24 @@ Opus 唯讀查證（09-17）：PI config 全是 .ini（54 檔／40 個 MCO 動�
 多層疊面。相關：[[dsport-render-constraints]]、[[achr-base-must-be-npc-not-lvln]]。
 
 **2026-09-15 更正：** 同址（SkyrimSE.exe+04D0038）崩潰在原版荒野 cell 也發生（09-08、09-15，雪狼／泥沼蟹），四次共同點是 `MaxsuCombatEscape.dll`（Better Combat Escape - NG 1.0.4）的 CellEventHandler 在 actor 換 cell 事件裡同步跑戰鬥尋路。已停用該 mod；自訂 NAVM 不再是這個位址的首要嫌犯，看到 CombatPath＋Pathing 空指標先查 SKSE DLL 的 cell 事件 hook。
+
+
+## sequential-minimal-disable-and-family-grouping-for-stacked-crashes
+
+> 多崩潰 blocker 疊一起，逐一停用最可疑一件看新崩潰點比整批回退快；同症狀家族封閉後免逐批二分
+
+2026-08-30 diag 連續「只停最可疑一件、重啟、看新訊號定下一步」剝出 dMenu→Phenderix→Midas 三層（171 件沒整批回退）。另發現多次崩潰若 stack／`relevant objects`模式相同可歸同根因家族；對可疑成因全量掃描確認家族封閉後，同族免逐批二分。`agentctl/handoffs/done/2026-08-30/diag-2026-08-30/DIAG.md`。
+
+**Why:** 新崩潰訊號比猜整批誰可疑可靠；家族封閉後繼續二分只是重複驗證。
+
+**How to apply:** 起不來先只停最可疑一件再測；多次崩潰先按特徵分族，全量掃描確認封閉後同族免二分。相關：[[achr-base-must-be-npc-not-lvln]]。
+
+## loose-files-always-override-bsa-regardless-of-mo2-priority
+
+> 同名鬆散檔永遠贏過同名 BSA 內容，與 MO2 優先度無關；SSE 只接受 BSA header version 105，Oldrim 104 會崩潰
+
+2026-08-30 VIGILANT「版本不匹配」真因：標 `TEST HARNESS` 的舊中文層殘留鬆散 `vigsafetyquestscript.pex`（回傳 172）蓋過現役 BSA 內同名腳本（回傳 182）。另案 BSA header version 104（Oldrim）在 archive 註冊階段 AV，同名不同內容 BSA 重複註冊是同家族另一種成員。`agentctl/handoffs/done/2026-08-30/vig-2026-08-30/ROOT-CAUSE.md`。
+
+**Why:** VFS 覆蓋順序與 BSA 內容版本是兩條獨立規則，單看 load order 或優先度不夠。
+
+**How to apply:** 版本對不上時額外掃鬆散檔（尤其 `scripts/*.pex`），`meta.ini` 標 TEST HARNESS 的優先懷疑；崩潰堆疊反覆同 BSA 檔名時先讀 header 版本號。

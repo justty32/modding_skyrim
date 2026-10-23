@@ -45,6 +45,8 @@
 
 **How to apply:** 使用者報「黑屏卡住」先看 `top -p <pid>` 與 `/proc/<pid>/task/*/wchan`：CPU 個位數＋全 futex＝死鎖，直接 kill，別等、別追 mod；只有在**非載入**時 alt+tab 也卡才值得派線查 SKSE DLL。判準給使用者：畫面在跑時切安全，載入／黑屏轉場時別切。相關：[[verify-game-alive-via-qa-not-ps]]。
 
+2026-10-23 補：無邊框鋪滿螢幕的視窗可能被 KWin 6.7（Wayland，NVIDIA Blackwell 驅動 610.x 已見）當成 direct scanout 候選，present 卡住時主執行緒跟著停，外觀像整個凍結，但 alt+tab／Super／PrintScreen 能讓 KWin 退出 scanout 復活——這不是真死鎖。判準：先問音樂/環境音有沒有持續播放，有就先試多次 alt+tab 而非直接 kill（`agentctl/handoffs/done/2026-10/home-2026-10-09/barter/REPORT-freeze.md`）。確認是真死鎖（alt+tab 救不回）時，關遊戲前先按 CrashLogger v1.24 的 Ctrl+Shift+F12（需 `CrashLogger.ini` 開 Thread Dump Hotkey）留下全執行緒堆疊，不要直接關掉——事後只有 futex_wait 末態快照拿不到卡住瞬間的呼叫鏈，無法定罪（`agentctl/handoffs/done/2026-10/home-2026-10-09/barter/REPORT-hang.md`）。
+
 ## agent-driven-nexus-download
 
 > agent 自己從 Nexus 下載檔案的路徑：2026-08-27 起優先用 Claude in Chrome 擴充，退路才是 CDP + 暫存 profile 複本（原 type: memory）
@@ -98,6 +100,11 @@ SHA-256 比對，等於一次來源驗證。
 收尾只殺 `--user-data-dir=/tmp/<複本>` 的 Chrome，禁 pkill／killall；擴充路不點登出、不清 cookie、不關使用者分頁。
 規則寫在 `wf/workflows/nexus-intake/download-routes.md` 頂部。
 
+2026-10-23 補：CDP profile 複本啟動後在 `/tmp`（tmpfs）會因 OptGuideOnDeviceModel 等元件執行期下載膨脹到約 4.6GB（啟動前複本只 1.7MB），等於白燒記憶體；下次用複本下載，建複本在真實磁碟或啟動時加旗標停用 optimization-guide/screen_ai/WasmTtsEngine，過程定期巡 tmpfs 用量。Nexus「Manual/Slow download」按鈕有時渲染在 shadow DOM 裡，CDP 腳本要同時查 `document` 與 `shadowRoot`、只點可見元素。頁面 load timeout／沒觸發 download start 多半是暫態網路問題，先直接重試不必假設檔案本身有問題。houseCARL 標 manager only 的 Nexus 檔案，agent 用既有慢速下載流程（Xvfb Chrome＋profile 複本）仍可能成功，不要就此放棄。Nexus 頁面版本明顯落後於社群已知相容版（如 AE 支援）時，優先查該 mod 的 GitHub repo 是否有更新 release——housecarl 與既有 CDP 工具只為 Nexus 設計，做不到 GitHub release 下載。
+source: agentctl/handoffs/done/2026-09/home-2026-09-01/hfix-2026-09-01/REPORT.md；agentctl/handoffs/done/2026-09/home-2026-09-02/lrdl/REPORT.md:65；agentctl/handoffs/done/2026-09/home-2026-09-02/mco/REPORT.md:34
+
+2026-10-23 補：GitHub release 直連下載（如 xEdit 官方 release 的 BSArch.exe）用 `curl`/`wget` 即可，不撞 Cloudflare、不需要開瀏覽器、不需要取 `desktop.lock`——這條限制只有 Nexus 下載才有，判斷要不要取桌面鎖先看來源是不是 Nexus（`agentctl/handoffs/done/2026-08-31/fixdis-2026-08-31/CX-FD1.md:53-57`）。另：`cdp-download.mjs` 對 >500 MB 檔的逐檔 timeout 要按 bytes 分級（>500MB 給 900 秒、>1GB 給 2400 秒），沿用舊版固定 420 秒會把大檔判失敗（`agentctl/handoffs/done/2026-09/home-2026-09-03/dl/REPORT.md:62`）。
+
 ## user-present-screen-is-still-usable
 
 > 2026-08-30 放寬、2026-09-09 /goal 重申：使用者在電腦前時鍵盤滑鼠螢幕歸他，但 agent 可以開遊戲／MO2／瀏覽器，他會 alt+tab 切回去；只有不能暫停的遊戲（如 Helldivers 2）才是禁區（原 type: user）
@@ -136,6 +143,8 @@ SHA-256 比對，等於一次來源驗證。
 
 **2026-09-20 補**：Skyrim 忽略 xdotool 等合成的視窗定向輸入，agent 不搶焦點就操作不了角色；需要「走路」類實機驗收時要嘛使用者自己順手做、要嘛請他給幾分鐘前景。另：領隊曾發生卡鍵（key 沒放開）讓角色自己跑，判「使用者接手」前先看 key-up 後位置是否靜止。
 
+2026-10-23 補：三份獨立記錄各自捕捉到同一類事件——線未送任何鍵鼠，角色卻位移數千單位並持續跑跳離開 cell，代表使用者已接手；即使鎖目錄是空的也不得取鎖開遊戲或部署，必須視為使用者已接手並立刻停止一切改變狀態的操作（`agentctl/handoffs/done/2026-09/home-2026-09-20/calder/REPORT.md:58`）。
+
 ## gd-libs-session-coexistence
 
 > 2026-09-18 起同機另有 gd-libs（~/repo/game_dev/gd_libs，Godot 2D 資產管線）Claude session；鍵鼠螢幕使用權以 skyrim session 為尊（原 type: memory）
@@ -163,3 +172,14 @@ SHA-256 比對，等於一次來源驗證。
 **How to apply:** 別再叫使用者從 Steam 開；啟動前確認 `ModOrganizer.ini` 的 `selected_profile=modpack-main`（CRLF 檔）；不要在 SteamLinuxRuntime 容器外直接呼 `proton`；非必要不開 MO2（它一載入就覆寫 profile，見 [[profile-restore-order-and-flags]]）。細節以 `instance/README.md`「啟動方式」為準。
 
 **09-18 補充：** `SkyrimSE.exe` 仍需要 **Steam client 常駐**（`SteamAPI_Init` 失敗＋usvfs 擋掉自拉 steam.exe → 整條鏈靜默退出，log 只有 `[S_API FAIL]`）。「不經 Steam client」只對 MO2 本身成立。安全開法：確認 `appmanifest_489830.acf` 的 `AutoUpdateBehavior=1`／`StateFlags=4`／buildid 未變，`steam -silent` 起來後輪詢守衛 2 分鐘看 StateFlags／buildid 不動；收工關 Steam 或離線。08-31 grow 線與 09-18 dsp-game 第一輪都撞過這面牆。
+
+
+## lock-lifecycle-ownership-and-broken-states
+
+> 鎖只交領導管理；鎖目錄被殘留檔卡住、或 owner 寫已釋放但目錄還在，都不是正常佔用
+
+2026-08-30 下載線忘記釋放鎖害下輪卡住，改成取得／釋放只收領導層（`agentctl/handoffs/done/2026-08-30/dl-2026-08-30/HANDOFF-cx-dl11.md:17-27`）。09-11 鎖路徑是 0 位元組普通檔，mkdir 回 `Not a directory` 非「已被佔用」（`agentctl/handoffs/done/2026-09/home-2026-09-11/body/REPORT.md:98-100`）。09-18 `game.lock/` 還在，owner 寫「released」仍擋取鎖（`agentctl/handoffs/done/2026-09/home-2026-09-18/recon/REPORT.md:10`）。
+
+**Why:** mkdir 鎖只看目錄存不存在；owner 文字與狀態可能不一致，殘留不會自己清除。
+
+**How to apply:** 多工人共用鎖只讓領導管；取鎖失敗回 `Not a directory` 或 owner 寫已釋放先核實再清除。

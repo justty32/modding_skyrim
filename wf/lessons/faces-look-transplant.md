@@ -12,6 +12,8 @@
 
 **How to apply:** 相關施工照 pipeline 模板（每隨從一個 overlay mod 資料夾）；技術基礎見 hbfco（OAR per-NPC 綁定、Sofia 零 faction 只能按個體綁）與 hnpc（頭模 copy_npc_appearance 可行、身模 per-NPC 先緩）兩份報告。相關：[[dont-inflate-light-preferences]]（但此案是使用者明說的方向，不是輕量偏好）。
 
+2026-10-23 補（E2a-239）：OAR 的 `IsActorBase` 條件可精確把動畫綁到單一 NPC（faction 為空也適用），做法：複製一份現役同武器類 OAR submod，在 conditions 加一條 `IsActorBase`（pluginName+formID），priority 設到眾數區以上，MO2 啟用新 mod，不需動 esp、不需跑 Pandora/Nemesis；用遊戲內 OAR 選單核對實際命中的 config 名稱做驗收（`agentctl/handoffs/done/2026-09-01/hbfco-2026-09-01/REPORT.md:110-225`）。
+
 ## look-transplant-workflow-and-picker
 
 > 換臉（外表移植）已有工作流與工具：agentctl/tools/look_transplant/transplant.py（一般種族）、race 線手寫路線（自訂種族素材）、挑選頁 artifact 產「【換臉變更單 LOOKS v1】」；素材端自訂種族才是硬擋，跨種族只是警告（原 type: project）
@@ -23,6 +25,16 @@
 **How to apply:** 收到「【換臉變更單 LOOKS v1】」走 wf `look-transplant`；素材若是自訂種族走 race 路線；素材 mod 更新會改 FormID（Chronicon II 2.2.5 全改號、Shiori 新號＝Mion 舊號），更新後 patch 要重做。Sofia 本體身體貼圖是 UNP 系，跟 CBBE 網格不相容，脖縫只能讓頭改吃全域膚色。相關：[[oar-copy-folder-bypasses-gates]]、[[housecarl-merge-facegen-backslash-filename]]。
 
 **2026-09-08 補**：transplant.py 與 race 路線都會**連 RACE 一起搬**（Auri 木精靈→高精靈），身高與種族天賦跟著變；使用者若在意要另出「只搬 HDPT／facegen、不動 RNAM」的選項。頭身脖縫兩種真因：貼圖不同源（頭吃素材私有皮、身吃全域皮 → 一支 ESL 把頭 TXST 指回全域皮，如 Vilja←Yuuko）與頭 nif 本身（貼圖已同源仍裂 → 重烤 facegen，如 Sofia）；先比頭四張／身四張 md5 再決定走哪條。Chronicon 私有 `textures/Chron/body/FemaleHead*.dds` 是全包共用路徑，多個層各帶副本，不能直接覆蓋。名冊 artifact <https://claude.ai/code/artifact/81af4627-99c9-4772-9f4a-2381b9234c04> 與挑選頁都有可重跑建置腳本：`agentctl/handoffs/home-2026-09-08/art/tools/build_pick.py`／`build_roster.py`（先 pick 後 roster）。
+
+2026-10-23 補（E2a-250）：facegen 頭模移植跟身模是兩套獨立機制，body mesh/skin texture 掛在 race 的 skin ArmorAddon 上不是 per-NPC；換身體要另做自訂 skin ARMO/ARMA，若 donor 是 UNP/BHUNP 或帶 3BA/SMP 物理而本機沒對應 runtime，會接縫或物理失效。頭模移植工量 1–2 小時，身模半天到一天，收到「換外觀」需求先分清是哪一種（`agentctl/handoffs/done/2026-09-01/hnpc-2026-09-01/MIXMATCH.md:29-41`）。
+
+2026-10-23 補（E2b-b4-012）：Mod 更新改版後角色 FormID 重編有機率撞號（Chronicon Pack II 更新後 Shiori 新號 000854 正好等於 Mion 舊號），若 Mion 的換臉 patch 沒跟著更新，遊戲不報錯、安靜地把 Mion 的臉換成 Shiori 的臉；mod 更新改動 FormID 後，所有引用舊 FormID 的 patch 要逐一核對新舊號是否互相撞號，不能只看「舊號還存不存在」（`agentctl/handoffs/done/2026-09/home-2026-09-07/chron/REPORT.md:26`）。
+
+2026-10-23 補（E2c-W6-10）：`agentctl/tools/look_transplant/tests` 依賴的 esp fixture 沒進版控（被 .gitignore 排除），乾淨 worktree 跑是 19 OK 變 4 errors，只有主樹才會綠；`transplant_lib/common.py` 的預設 staging 路徑 2026-10-17 清理後可能已不存在。跑測試要在主樹跑，派換臉線前先確認預設 staging 路徑存在（`agentctl/handoffs/home-2026-10-17/patrol/p1-agentctl/REPORT.md`）。
+
+2026-10-23 補（E2b-b7-001）：自訂種族把角/耳等特徵直接烤進 facegen、無獨立 HDPT nif 時，可用另一個結構同構（block 排列相同）的既有 HDPT nif 當模板，把 facegen 內該 shape 的 block 叢搬出來重編 ref 做成獨立 nif（Daegon 案例六個 block 只差 3+2+1 個 ref 位元組即可逐位元組對齊）；遇到「烤進 facegen 的特徵想拆成獨立 HDPT」先找同 mod 內結構相同的既有 HDPT nif 當模板比對位元組，不要從零寫 nif（`agentctl/handoffs/done/2026-09/home-2026-09-18/dgn2/REPORT.md:8`）。
+
+2026-10-23 補（E2bs-04）：新換臉層與既有修正層命中同一張 facegen 但服務不同角色時（kurone Frea 層 vs FreaAnnekke-FaceDetail-Fix 同時蓋 Frea 與 Annekke），不要整層停用舊層——先查舊層是否對其他角色有不可替代的修正，有就把新層疊在上面用優先權壓過，兩個角色各取所需（`agentctl/handoffs/done/2026-09/home-2026-09-11/kurone/REPORT.md:79-82`）。
 
 ## hide-donor-after-look-transplant
 
@@ -107,3 +119,14 @@ MO2 在 wine 下的 VFS 對大小寫不敏感。判準：一個「真因」若�
 3. 症狀對照：頭髮／臉型對但**無妝慘白**＝facegen 被作廢；FDF 關掉變黑臉可確認。
 4. transplant.py 應把「種族補的部件」納入 PNAM 生成（待改）。
 相關：[[outfit-hair-slot-hides-headparts]]、[[look-layer-must-carry-hdpt-flst-clfm]]、[[facegen-verify-size-md5-not-existence]]
+
+
+## look-transplant-wnam-and-skin-checks
+
+> 換臉/換種族常漏兩個欄位：`copy_npc_appearance` 會把 donor 的 WNAM 一起搬過去蓋掉目標原本皮膚（可能有 quest 依賴）；換種族時若 WNAM 指的私有皮膚 ARMA 只涵蓋舊種族，新種族脫光或穿無手套/靴子衣服時缺甲部位直接消失。
+
+09-01 hnpc：copy_npc_appearance 連 HDPT／HairColor／TintLayers／WNAM 整組都搬，donor 髮型 HDPT 若指向本機沒有的 provider 會變禿頭（`agentctl/handoffs/done/2026-09-01/hnpc-2026-09-01/MIXMATCH.md:14-27`）。10-04 aniya 線：換種族層改了 RNAM 卻沒動 WNAM，私有皮膚 ARMA 只涵蓋舊種族，22 層裡只有這層漏（`agentctl/handoffs/done/2026-10/home-2026-10-04/aniya/REPORT.md`）。
+
+**Why:** WNAM 跟 HDPT/facegen 是分開系統，換臉工具預設動 WNAM、換種族工具預設不查 WNAM，兩邊各漏一半。
+
+**How to apply:** 換臉後查目標 WNAM 是否被 quest/腳本依賴；換種族後驗收加一條：新 RNAM 要落在 WNAM 皮膚每個 ARMA 的種族清單裡，不符就改回原版 `000D64 SkinNaked`。相關：[[look-transplant-workflow-and-picker]]、[[hide-donor-after-look-transplant]]。

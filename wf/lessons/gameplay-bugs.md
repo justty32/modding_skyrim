@@ -24,6 +24,8 @@
 
 **How to apply:** 別再裝回 Unstack Stolen Items；之後若有其他 hook 物品合併／AddObjectToContainer 的 DLL 出現交易或撿物異常，先懷疑這類。
 
+2026-10-23 補：收到「賣東西／買賣沒拿到預期結果」回報，先排除原版機制再往 mod/DLL 查——`sNotEnoughVendorGold` 商人錢不夠會跳確認框、低價物品賣出本來就是 0 金，10-09 這條線花三輪才排除乾淨。最小對照實驗：記物品卡價格 P、賣前金幣 A、賣後金幣 C；C=A+P 才正常，C=A 才值得往 mod 查，不要一開始就翻 SKSE log（`agentctl/handoffs/done/2026-10/home-2026-10-09/barter/REPORT-barter.md`）。
+
 ## valhalla-block-commitment-eats-release
 
 > 精準格擋後左鍵打不出、要盾擊才解＝Valhalla Combat 1.3.3 Block Commitment 吞掉右鍵放開；MCM「开启招架」關掉即解
@@ -33,3 +35,28 @@
 **Why:** 上游 GitHub HEAD 有補 blockStop 但未發 Nexus，更新也修不到。
 
 **How to apply:** 重灌／換 overwrite 後若復發，先查這個值；報告在 `agentctl/handoffs/home-2026-10-18/block-attack-lock/REPORT.md`。
+
+
+## mod-compatibility-silent-failure-modes
+
+> conflict tree／FormID／功能名稱這類表層檢查都有盲區
+
+- FormID 不同不算衝突：各自新增不同 FormID 對話，conflict tree 不標紅但條件可能同時成立雙重觸發（`cx-serana`）。
+- 改 VoiceType 噎死別人新對話：IFD 改 Lydia VoiceType 害 FDE 上千行新對話整批靜音，疊 VoiceType 救不回（`cx-compat`）。
+- 同觸發點 perk 只一個生效：多 mod 命中附加效果 perk 掛同一 hit-trigger，其餘靜默失效（`n4batch`）。
+- 功能名稱不代表衝突：Valhalla stun 與 CPR/B&B poise 掛不同 hook（`chocolate-poise`）。
+
+**Why:** 根因各不同，共同點是表層檢查看不出來。
+
+**How to apply:** 列雙方新增內容找同時成立條件；共用資料源逐一查；框架類 mod 確認配實作；名稱像不像不算數要讀 hook 點。
+
+
+## proton-shared-nvidia-shader-cache-stutter
+
+> 多 Proton 遊戲共用同一個 NVIDIA shader 快取目錄會互擠造成卡頓
+
+2026-10-04 Skyrim 用 sniper+Proton 沒設 `__GL_SHADER_DISK_CACHE_PATH`，快取寫全機共用 `~/.cache/nvidia/GLCache/`；同日 Helldivers 2 也沒設專屬路徑寫入同快取檔，接近常見 1 GiB 上限，可能互擠已編譯 shader 致重編卡頓。沒 frametime 時 log 只證明「有這件事」非「那次卡」，靠 HUD 與 mtime 才把尖峰實錘成 shader 編譯。`agentctl/handoffs/done/2026-10/home-2026-10-04/stutter/REPORT.md`
+
+**Why:** Proton 遊戲沒有獨立快取路徑；量化證據比 log 時間更能定因果。
+
+**How to apply:** 懷疑卡頓先查 GLCache 有無其他 Proton prefix 同時段活動；單一遊戲變數改在 `launch-mo2.sh` export 後 exec，不寫全域 environment.d；沒 frametime 的結論標嫌疑非真因。

@@ -44,6 +44,8 @@
 - 領隊收線一定要放 `game.lock`（lead-chair 沒放，下一隊空等 10 分鐘）。
 相關：[[look-layer-must-carry-hdpt-flst-clfm]]、[[facegen-verify-size-md5-not-existence]]、[[rs-children-missing-esp]]
 
+2026-10-23 補（E2c-W4A-20）：可對全 VFS（啟用 mod 的 loose＋BSA）逐一查每支新裝 nif 引用的貼圖是否存在，在安裝階段主動抓出粉紫風險，並分辨「缺 diffuse/alpha（會粉紫，需補）」與「只缺法線圖（不會粉紫，可不管）」；裝新外觀/頭髮類 mod 時與其等實機看到粉紫才回頭查，不如先做一次全 VFS 貼圖引用掃描（`agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md`）。
+
 ## outfit-hair-slot-hides-headparts
 
 > 2026-09-11 Yoana 大媽臉五輪才抓到的真因：NPC 預設服裝的披風佔 biped slot 31（Hair）且 NIF 內縫假髮，引擎藏掉真頭髮；換頭部件／facegen／種族怎麼改都看不出來。臉壞先查裝備 slot 30/31/41/43/130 與 unequipall 對照（原 type: memory）
@@ -74,6 +76,12 @@
 **How to apply:** 烤身體別指望 GUI 選預設；改 NPC 體重動 NAM7；多層覆寫同一個 NPC_ 時最後載入的那層要 forward 全部欄位。
 相關：[[look-layer-must-carry-hdpt-flst-clfm]]、[[look-transplant-workflow-and-picker]]
 
+2026-10-23 補：體重滑條（0-100）改的是兩個雕好形狀之間的逐頂點內插不是整體縮放——量測同一 mod 兩個體重檔案，深度差 17.94%、寬度只差 1.15%、高度反而 −0.11%；要調整角色「整個人大小」改 NAM6（身高）欄位，體重調到滿格不會把人變大（`agentctl/handoffs/done/2026-09/home-2026-09-09/body/REPORT.md:17-27`）。
+
+2026-10-23 補（E2b-b5-008）：交接書寫死的單一欄位值可能因記錄的其他維度（種族/型別）而不同——如「MorphRace 補回去用 013748」其實依種族有四個值，照字面手改成單一值五筆裡四筆會拿到錯的種族臉形；有疑慮優先用整筆 forward 自權威來源取代手改單一值，不要信交接書寫的字面值（`agentctl/handoffs/done/2026-09/home-2026-09-09/body/REPORT.md:69-78`）。同類坑見本節 NAM6/NAM7 筆誤。
+
+2026-10-23 補（E2c-W4A-19）：若 NPC 的 ARMA 第三人稱模型欄位指向的其實是**全域** `FemaleBody_1.nif`（不是私有路徑），不需要重新烤 BodySlide，只要做一支小 ESL 把該 ARMA 的 `WorldModel[1].File` 改指向已烤好的私有 nif 即可，0 筆 NPC_ 改動，比整套重烤便宜很多；換私有身體前先檢查 ARMA 指的是全域還是私有路徑（`agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md`）。
+
 ## daegon-2212-midsave-upgrade
 
 > Daegon 2.0.5→2.2.1.2 中途升級成功；Legacy(112097/112191) 與 2.x 不可並存；NifSwap 要四路徑同 md5；Elven Princess v1.3 對 2.2（原 type: memory）
@@ -89,3 +97,18 @@
 - 角與 Goam 耳是烤進 facegen 的無 HDPT 多餘 shape，引擎容忍（作者出貨方式就是這樣）；補 HDPT 的備案工具在 `agentctl/handoffs/home-2026-09-18/dgn2/tools/`。
 - 升級後開機的 alias 綁不到／None 錯誤是舊存檔過渡一次性雜訊。
 相關：[[daegon-itemfinding-script-ctd]]、[[facegen-headpart-count-mismatch-discards-facegen]]
+
+
+## facegen-reference-path-and-tint-binding-pitfalls
+
+> 兩種「改了設定但舊參照沒跟著變」的坑：覆寫既有 NPC 的 esp 附帶的 facegen 要放在**原始定義** plugin 的資料夾下，放覆寫 esp 自己名字的資料夾形同沒裝；合併/改名 plugin 後，facegen nif 內寫死的舊 facetint 路徑不會自動更新。
+
+10-10 tradingposts 線：覆寫 esp 把 facegen 放自己名字資料夾，引擎只認 `Skyrim.esm` 資料夾，形同沒裝。同批 nell 線：facegen nif 內嵌 facetint 路徑寫死舊 plugin 名，facetint 是引擎依 plugin 名另行載入、跟 nif 路徑欄位沒同步機制（`agentctl/handoffs/done/2026-10/home-2026-10-10/tradingposts/REPORT.md`、`.../nell/REPORT.md`）。
+
+**Why:** 路徑看起來對，但引擎用的是另一條固定規則找資料夾/路徑，不是存在性問題。
+
+**How to apply:** 驗收覆寫既有 NPC 外觀要查 facegen 是否放在**原始定義 plugin** 的 `FaceGeom`/`FaceTint` 下；改名或合併含 facegen 記錄的施工要額外核對 nif 內嵌 facetint 路徑，對不上列入實機驗收。相關：[[face-bugs-check-real-actor-and-upstream-fomod]]、[[hdpt-edid-must-match-facegen-shape-names]]。
+
+2026-10-23 補（E2c-W2-04/05）：OBody NG 4.4.3 的 preset 黑名單是逐字串精確比對，不支援萬用字元/子字串（黑名單裡的「Zeroed Sliders」擋不住「CT77 Zeroed Sliders - Zap Panties」）；且只擋「之後」的新分配，已套到 NPC 身上、存進 cosave 的 preset 不會自動清除（走的是 ORefit 換裝路徑，只讀 cosave 不查黑名單）。建黑名單前先掃出全部啟用中的實際 preset 名稱逐一核對；加黑名單後對已中過的角色要額外手動重置或清 skee morph cache（`agentctl/handoffs/done/2026-10/home-2026-10-04/aniya/REPORT-fix.md`）。
+
+2026-10-23 補（E3s-003，第三方快照未實測）：若未來要對整個 modlist 做一次性 facegen 一致化重烤，可參考：Synthesis NPCs-Face-Data patcher 補 master → 產出 NPCsWithFaces.esp 設 Active File → CK 依 RAM 分段 Ctrl+F4（低於 32GB 要按種族區間分 5 批）→ 排除小孩（TRI 結構特殊會生成失敗）與 Astrid（會燒焦全部 NPC 臉）→ CAO BSA Packer 打包時 Maximum Size 須鎖 1.96，超過不會被遊戲載入（`modpack-design/sources/animonculory-modding-resources-2026-09-02/facegen-regeneration-ck.md`）。此上限也適用任何用 CAO 打包 facegen 進 BSA 的場景。

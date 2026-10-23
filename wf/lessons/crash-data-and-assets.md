@@ -36,6 +36,8 @@ entry point 都是 **`ModSkillUse`**（每次技能使用都觸發），條件�
 
 **How to apply:** `+01D3398` 且 `rcx` 每次相同 → 先用 houseCARL 把 crash log 裡的 keyword FormID 反查成 EditorID，再 `cross_plugin_query type=PERK references=<keyword>` 找出哪顆 perk 用它，讀 `Effects[*].Conditions` 看 entry point 與條件函式，**不要先怪 SKSE DLL**。驗收只能由使用者實機重現（格擋），靜置不崩不構成證據——2026-09-24 我誤判成「自動重現」害線空跑 15 分鐘。相關：[[avif-perktree-overridden-by-non-overhaul-mods]]、[[pepe-tls-end-crash-is-payloadinterpreter-dangling-listener]]、[[housecarl-setfield-cjk-byte-drop]]。
 
+2026-10-23 補：同屬「記錄欄位留空/0 不是無害、特定情境下引擎才會踩到」家族的另外兩個已定罪案例——(1) AMMO 的 Projectile 欄位留空（常見於腳本暫時替玩家裝假彈藥再拿掉），戰鬥 AI 評估彈藥速度時讀到 null 指標 CTD（`agentctl/handoffs/done/2026-10/crossbow-ctd-2026-10-09/REPORT.md`）；(2) PERK 的 FilterActivation entry-point（EntryType 74）＋AddActivateChoice，vanilla 的 `PerkConditionTabCount` 必須是 2，寫成 0 卻掛 PerkCondition 會配置 0 大小 tab 陣列再寫入，載入期直接硬崩潰（`analysis/mod-survey/findings/systems-encounters/perk-entry-points-activate-choice.md:56`）。遇到載入期/戰鬥中 CTD 牽涉自製或魔改記錄時，先查這類「欄位該有值卻是空/0」的情況。
+
 ## achr-base-must-be-npc-not-lvln
 
 > ACHR 直接用 LVLN 當 base 會在啟動載入階段 CTD（DSPortP3 09-13 實機二分定案）；原版 10,504 筆 ACHR 全 NPC_，leveled 敵人走 NPC_ 的 TPLT（原 type: project）
@@ -60,3 +62,24 @@ entry point 都是 **`ModSkillUse`**（每次技能使用都觸發），條件�
 
 **How to apply:** 需要 effect shader 前先修 `projects/model-converter/gltf2nif/nif_writer.py` 並拿原版 NIF 逐位元對照；沒修好前 blend_mode 4 一律 skip。載入期 NIF CTD 看 crash log 的 `inputFilePath` 行就能定位檔案。
 相關：[[achr-base-must-be-npc-not-lvln]]、[[dsport-render-constraints]]
+
+
+## build-green-does-not-prove-esp-content
+
+> ModForge／自製 esp 的離線 gate 全綠不代表內容或參照正確
+
+2026-09-05 dsport4：欄位加到錯的 spec 型別（exterior cell 該用 `WorldspaceCellSpec` 卻加進 `CellSpec`），JSON 靜默丟棄該欄位，esp 裡 `XCAS`／`XCLW` 全 0 但 gate 照樣綠；同輪也沒 gate 查參照 FormID 是否解析得到，進遊戲在記錄載入階段 AV（暫存器低 32 位像 FormID＝未解析訊號）。黃金回歸證據不是測試全綠，是前後各 build 一次比 SHA-256。`agentctl/handoffs/done/2026-09-05/dsport4-2026-09-05/STATE.md:53-150`。
+
+**Why:** 「records 數」是讀進幾筆不是寫對幾筆，gate 只驗自己的結構。
+
+**How to apply:** 宣告「做到」前開 esp 核對欄位值；gate 補全參照解析掃描；回歸優先比 SHA-256。相關：[[achr-base-must-be-npc-not-lvln]]。
+
+## background-cell-load-use-after-free-crash-diagnosis
+
+> 背景載入 cell 崩潰時 CrashLogger 標的 FormID=0／ParentCell=None 是假歸屬；BOS 把 STAT 換動畫 MSTT 是常見候選
+
+2026-10-09 鬼魂之海相鄰 cell 背景載入崩潰兩次，物件讀出 `FormID=0`、`ParentCell=None`——ref 已釋放或未建構，CrashLogger 掛到 Skyrim.esm 只是假歸屬。改掃 cell children GRUP 找唯一符合型別來源，消去法鎖定 Animated Ice Floes 用 BOS 把 `IceFloes01` 換成動畫 MSTT；BOS swap 執行期換 base，存檔不留痕跡，停用安全。`agentctl/handoffs/done/2026-10/home-2026-10-09/crash/REPORT-crash2.md`
+
+**Why:** FormID=0 時歸屬只是預設值，不是真讀到來源。
+
+**How to apply:** FormID=0 別信 CrashLogger 的 plugin/cell，改掃 GRUP 消去法；背景載入＋MovableStatic 優先查 BOS 換 MSTT 的 mod。

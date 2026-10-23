@@ -83,6 +83,8 @@
 
 相關：[[codex-tmux-operational-notes]]、[[driving-other-cli-agents]]、[[delegate-simple-work-to-sonnet]]
 
+2026-10-23 補：判斷密集、產出是資料表或程式的線，固定配一條不讀實作的獨立覆核線自己重跑驗收——spike 線靠這條抓到領導自己的驗收沒抓到的兩個真問題，成本遠低於把錯數字交出去（`agentctl/handoffs/done/2026-09-02/spike-2026-09-02/REPORT.md:126-143`）。
+
 ## rush-mode-parallel-opus-agent-lines
 
 > 2026-09-26 急件模式：一份 COMMON.md 交接＋Agent 工具開 8 條 Opus 平行線，15 分鐘收完八題存檔調查；一條線持遊戲鎖代跑 RT-QUEUE（原 type: memory）
@@ -92,6 +94,8 @@
 **Why:** codex tmux 線要送鍵、驗 Enter、盯 Working，起線成本高；Agent 工具的 Opus 線起線零成本、完成有通知、可平行八條，急件時快得多。使用者當天也明說「用啥模型都行」。
 
 **How to apply:** 使用者有硬時限或說「儘快」時，走這條：COMMON.md → 平行 Agent(Opus) → 單線持鎖代跑 RT-QUEUE → 整理線出清單。平常仍依 [[prefer-gpt-sol-for-all-tasks]]。注意子 agent 偶爾寫 REPORT 被 harness 擋，頂層要從完成通知代落檔；MO2 開過後 profile 三檔會漂移，收線派小線 `git checkout` 還原（見 [[mo2-first-launch-drops-new-plugin-star]]、[[mo2-auto-adds-stray-mods-dirs]]）。
+
+2026-10-23 補：要開平行線寫程式，領導先凍結可執行契約（型別/介面/schema）再切工，契約本身列進驗收，四條線才能真平行一次成功（`agentctl/handoffs/done/2026-09-02/spike-2026-09-02/REPORT.md:114-124`）。多線平行施工同一批 repo 時，每個 repo 只由一條線獨佔 commit 權，其餘線唯讀或只寫非版控輸出目錄（`agentctl/handoffs/done/2026-09-05/dsport4-2026-09-05/STATE.md:118-126`）；要同時寫 MO2 `mods/` 這類共享目錄時，後動線要先從對方 inbox 或 tmux 畫面證實對方批次已結束才能建自己的新資料夾（`agentctl/handoffs/done/2026-08-31/bgdl-2026-08-31/HANDOFF.md:14`）；兩隊各自領地但有共用權威檔時，要寫入的一隊寫成 `merge-requests-<x>.tsv` 交擁有領地那隊按信心分級併入，不直接跨領地寫（`agentctl/handoffs/done/2026-08-31/content-2026-08-31/SPEC.md:56-71`）；共用 scratchpad 清理只能動自己命名的子目錄，別對頂層跑 `rm -f`（`agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md`）。
 
 ## leads-manage-subordinate-context
 
@@ -111,6 +115,8 @@
 
 **Why:** 子代理結束回合後，佇列裡的 SendMessage 只在「下一個 tool round」送達；沒有 tool round 就永遠收不到。背景 Bash 完成的通知也不保證把它叫醒。
 **How to apply:** 交接書與 spawn prompt 明寫「等待一律用前景 Bash `until` 迴圈，每輪 `timeout 540`，沒到再跑一輪；別把結束回合當等待」。dispatcher 看到 STATE.md 超過 20 分鐘沒動、鎖空、沒 commit → 直接 TaskStop，開一個小隊接手（料通常都在 staging＋plan json）。相關：[[im-dispatcher-codex-implements]]、[[tmux-working-text-is-not-liveness]]。
+
+2026-10-23 補：等待「另一條平行線先完成」時，BRIEF 要寫死具體可驗證的完成判準（不是猜對方進度）、前景等待方式、逾時上限與逾時後回報方式，哪些步驟不受阻塞可先做也要寫清楚（`agentctl/handoffs/done/2026-10/home-2026-10-03/want-watch/rounds/20261003-1410/INSTALL-BRIEF.md`）。收到「先暫停」裁示時，即使條件已滿足也不硬做完，把已完成部分、成果位置、下一步確切指令寫成任何人都能接手的清單（`agentctl/handoffs/done/2026-10/home-2026-10-03/want-watch/rounds/20261003-1455-zh/REPORT.md`）。
 
 ## subagent-report-write-authorized
 
@@ -147,3 +153,5 @@
 **Why:** 鐵律 2 要求使用者當場確認或親自登記；子代理看不到主 session 的 AskUserQuestion 回答。
 
 **How to apply:** 破壞性步驟要讓子代理產出「可審的腳本＋目標清單＋dry-run」，頂層用 AskUserQuestion 取得確認後自己跑 `--yes`，別再把刪除指令轉派一輪。相關：[[dont-clutter-home-with-agent-output]]
+
+2026-10-23 補：大批刪除／搬移前先建一份固定欄位的刪除帳本（來源路徑、大小、憑證、可否重下、處置方式），帳本列數＝授權筆數的 gate 全過才動手；預設 `mv` 到暫存 trash，只有使用者單獨明確授權「永久刪除」才用 `rm`，容量或任何一筆對不上就整批停手（`agentctl/handoffs/done/2026-08-31/clean-2026-08-31/HANDOFF.md:51-101`）。

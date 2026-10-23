@@ -107,6 +107,8 @@ session 持有一個 houseCARL MCP 實例,**實測平均 249 MB**。昨夜開六
 
 **2026-09-25 orders 檔不是即時剎車**：cx-wu-kern 在我把「不降版、還原」的 order 追加到 `inbox/orders/cx-wu-kern.md` 三分鐘後照樣 commit 了降版（它只在「每完成一步」才讀 order，最後一步 commit 前沒再讀）。要即時攔一條 codex 線，用 `tmux send-keys -t <線> Escape` 中斷再送新指令＋兩次 Enter，或直接 kill session；order 檔只適合「下一步前要看」的補充指示。事後靠三個 repo 都沒 push，用 `reset --soft HEAD~1`＋`restore --staged --worktree -- wf AGENTS.md`＋刪新檔還原。
 
+2026-10-23 補：codex sandbox 裡 `python -c` one-liner 的引號在 cmd.exe 下極易被拆壞，自證腳本一律寫成 `.py` 檔再跑（`agentctl/handoffs/done/2026-09-02/lorerim-2026-09-02/team-src/REPORT.md:100-102`）；檢查環境變數是否設定別用 `${VAR:-no}`（已設定時會把值印出），改用 `[ -n "$VAR" ] && echo 有 || echo 無`（`agentctl/handoffs/done/2026-08-27/cx-dl/HANDOFF.md:122`）；`notify_watch.sh` 只監看 `inbox/new/`，子線回報其實路由到領導自己的 `mail/`，領導要主動對 `mail/` 跑 `--wait` 輪詢（`agentctl/handoffs/done/2026-08-30/opus-ops-2026-08-30/STATE.md:92`）；互動 shell 的裸 `ls` 是 `eza --icons --git` 別名，大目錄下近似卡死，腳本與需要可靠速度的場合用 `/bin/ls`（`agentctl/handoffs/done/2026-08-30/opus-ops-2026-08-30/STATE.md:88`）。
+
 ## codex-tmux-enter-must-be-verified
 
 > tmux 送提示詞給 codex 後 Enter 常沒送出（尤其長段中文），送完 5 秒內 capture-pane 看到「Working」才算開工，否則再送一次 Enter（原 type: memory）
@@ -132,6 +134,8 @@ session 持有一個 houseCARL MCP 實例,**實測平均 249 MB**。昨夜開六
 **Why:** 畫面不動只證明畫面不動；「stuck」與「exited」要靠行程樹分辨。
 
 **How to apply:** 判斷 codex/agent 線死活時，tmux capture-pane 之外必查 `pgrep -P <pane_pid>`（無子行程＝已退出）；監看腳本的停滯偵測要同時比對畫面與行程樹。相關：[[pgrep-self-match-beyond-brackets]]、[[verify-game-alive-via-qa-not-ps]]。
+
+2026-10-23 補：判斷另一條線死活別只憑 SESSION-LOG／line-claims 這類文件說鎖被誰持有，查文件當下可能剛好是空窗期，要 `tmux ls` 加當下鎖檔持有者同一時間點查（`agentctl/handoffs/done/2026-08-30/modpack-2026-08-30/LEAD-NOTES.md:78-81`）；`codex exec` 中途出現大量 ERROR 不代表線已死，曾有線其實繞路（借道其他 MCP）完成任務，只是比預期晚 7 分鐘交件，判死只能看最終輸出／交付物是否存在（`agentctl/handoffs/done/2026-08-31/slim-modlib-2026-08-31/team-4/REPORT.md:298-308`）。
 
 ## throttle-by-tree-not-by-name
 
@@ -165,6 +169,8 @@ GPU 與桌面 HID（螢幕鍵鼠）**全歸 skyrim**——對方 Godot 一律 he
 
 相關：[[aetheria-agent-coexistence]]
 
+2026-10-23 補：同理，收線 `kill` tmux session 要逐一指名完整 session 名稱，不要用前綴萬用字元掃描殺——當天有多隊各自用相近前綴（`cx-hp1/2/3` vs `cx-hpa/b/c/d`）會互相誤殺（`agentctl/handoffs/done/2026-09-01/hmpatch-2026-09-01/REPORT.md`）。
+
 ## dont-renice-other-sessions
 
 > 2026-10-09 使用者喊停：遊戲卡頓時不准自行 renice／限流別的 session（如 simple_tools/aos-wt）的行程，只回報來源
@@ -174,3 +180,14 @@ GPU 與桌面 HID（螢幕鍵鼠）**全歸 skyrim**——對方 Godot 一律 he
 **Why:** 別的 session 的行程是使用者自己的其他工作，優先權由他決定；擅自調整等於替他做取捨。
 
 **How to apply:** 遊戲卡頓時只查證並回報「誰在吃 CPU」（行程樹、所屬 session／repo），由使用者決定要不要停。只有我方派出的線才可以限流或停。這條修正 [[throttle-by-tree-not-by-name]] 的適用範圍：那條只適用於我方行程。
+
+
+## windows-codex-sandbox-pitfalls
+
+> codex 在 Windows 沙箱一串環境陷阱：假 python3、git mv 做不到、exec 旗標、8.3 短檔名
+
+2026-08-31 Windows `python3` 是 Store 假 shim，呼叫靜默失敗，`wf-lint.sh` 三項 python3 檢查靜默跳過卻報綠燈；同日沙箱 `git mv` 做不到要改 `os.rename`；`codex exec` 另要 `cmd /c "...< NUL"`、非 git 目錄加 `--skip-git-repo-check`、單一可寫根（`agentctl/handoffs/done/2026-08-31/slim-modlib-2026-08-31/SPEC.md`）。09-01：`-C` 遇 8.3 短檔名觸發沙箱拒跑（`agentctl/handoffs/history/session-log/2026-08-30-to-09-01.md`）。
+
+**Why:** Windows 的 codex 沙箱跟本機差異大，照搬交接書會假綠燈或拒跑。
+
+**How to apply:** 派 codex 到 Windows 前寫死：呼叫 `python`、搬檔用 `os.rename`、`-C` 用完整長路徑、`exec` 按上述坑改寫。
