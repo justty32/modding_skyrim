@@ -6,21 +6,26 @@ Skyrim SE 引擎逆向分析知識庫,以 **CommonLibSSE-NG**(C++/SKSE plugin �
 
 ## 目錄結構
 
+篇數為 2026-10-23 實數（`ls <dir>/*.md` 扣掉各自的 README）。
+
+<!-- wf-nav -->
+
 | 目錄 | 篇數 | 性質 |
 |---|---|---|
-| `architecture/` | 39 | 子系統深潛(骨骼/Biped/NIF/Shader/VFX/對話儲存架構…) |
-| `tutorial/` | 60 | 實作教學(從單一小技巧到完整系統實裝) |
-| `answers/` | 39 | 具體問題的分析解答 |
-| `others/` | 6+README | RE 命名空間 API 總覽(Events/UI/Magic/Inventory/Papyrus/Input) |
-| `details/commonlibsee-ng/` | — | CommonLibSSE-NG 專案結構與 RE 層細節、examples |
+| [`architecture/`](architecture/README.md) | 39 | 子系統深潛(骨骼/Biped/NIF/Shader/VFX/對話儲存架構…) |
+| [`tutorial/`](tutorial/README.md) | 59 ＋ [`Ultimate_Town_Challenge/`](tutorial/Ultimate_Town_Challenge/README.md) 9 | 實作教學(從單一小技巧到完整系統實裝) |
+| [`answers/`](answers/README.md) | 48(另 24 篇在同名子資料夾) | 具體問題的分析解答 |
+| [`others/`](others/README.md) | 6 | RE 命名空間 API 總覽(Events/UI/Magic/Inventory/Papyrus/Input) |
+| [`details/commonlibsee-ng/`](details/commonlibsee-ng/README.md) | 2 ＋ RE 7 ＋ examples 3 | CommonLibSSE-NG 專案結構與 RE 層細節、examples |
+| [`archive/`](archive/README.md) | — | 已封存、不在維護鏈的文件 |
 
 ## 檔名慣例
 
-`<分類>_<主題>.md`,分類前綴:`3D_Graphics` / `Dialogue_Quest` / `Items` / `Magic` / `NPC` / `Systems` / `World`。tutorial 內帶編號者(如 `Magic_05_...`)是小顆粒單題教學,帶 `Tutorial_` 者是完整系統教學。
+`<分類>_<主題>.md`,分類前綴:`3D_Graphics` / `Dialogue_Quest` / `Items` / `Magic` / `NPC` / `Save_Data` / `Systems` / `World`。tutorial 內帶編號者(如 `Magic_05_...`)是小顆粒單題教學,帶 `Tutorial_` 者是完整系統教學。各目錄索引即照這組前綴分節。
 
 ## 常用入口
 
-- FormID 二進位結構:`architecture/Systems_TESForm_Detailed.md`(AGENTS.md 有引用)
-- RE 層 API 快查:`others/README.md`
-- CommonLibSSE-NG 專案總覽:`details/commonlibsee-ng/00_overview.md`
-- AI 框架(SkyrimNet/Mantella/MinAI/IntelEngine)拆解:`answers/*-analysis.md` 四份;綜合借鏡結論見 `answers/ai-frameworks-modforge-relevance.md`
+- FormID 二進位結構:[`architecture/Systems_TESForm_Detailed.md`](architecture/Systems_TESForm_Detailed.md)(AGENTS.md 有引用)
+- RE 層 API 快查:[`others/README.md`](others/README.md)
+- CommonLibSSE-NG 專案總覽:[`details/commonlibsee-ng/00_overview.md`](details/commonlibsee-ng/00_overview.md)
+- AI 框架(SkyrimNet/Mantella/MinAI/IntelEngine)拆解:[answers 索引的「AI 框架拆解」節](answers/README.md)共 9 份;綜合借鏡結論見 [`answers/ai-frameworks-modforge-relevance.md`](answers/ai-frameworks-modforge-relevance.md)
