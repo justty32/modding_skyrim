@@ -33,8 +33,8 @@
 
 ## 現役 modlist 整合度盤點的待辦（原三件，2026-10-23 起剩兩件）
 
-盤點結論見 [`modpack-design/content-plan/modlist-coverage-2026-09-01.md`](../modpack-design/content-plan/modlist-coverage-2026-09-01.md)
-（2026-09-01 公司端離線產出，未經 xEdit 與實機驗證）。原本列三件，其中「需求／生存要不要開」
+盤點結論見 [`modpack-design/archive/content-plan/modlist-coverage-2026-09-01.md`](../modpack-design/archive/content-plan/modlist-coverage-2026-09-01.md)
+（2026-09-01 公司端離線產出，未經 xEdit 與實機驗證；該檔 2026-10-23 已封存，連結改指封存路徑，本節兩件待辦不受影響）。原本列三件，其中「需求／生存要不要開」
 **2026-10-10 已裁示**，移到本檔末尾的已完成節；還等你的是這兩件：
 
 <!-- wf-nav -->
@@ -60,7 +60,8 @@
    **`--apply` 待 dispatcher 持鎖時跑**，跑完這項即可結案。
 
 另：`major-content-preflight-2026-09-01/` 的 9 件裡有 6 件其實早已安裝啟用，該批任務單與批次計畫
-的框架語意需要對現況重新校正（更正段已加在 `home-batching-plan.md` 開頭）。
+的框架語意需要對現況重新校正（更正段已加在 `home-batching-plan.md` 開頭；該檔 2026-10-23 已封存為
+`modpack-design/archive/content-plan/quests-world/major-content-preflight-2026-09-01/home-batching-plan.md`，9 張任務單與 README 仍在原處）。
 
 ## 已完成（封存）
 
