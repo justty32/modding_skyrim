@@ -15,3 +15,4 @@
 
 | 日期 | 決定 | 未選方案與原因 | 前提（變了就重看）|
 |------|------|---------------|-----------------|
+| 2026-10-23 | `projects/houseCARL` **刻意停在分支 `fix/dialogue-encoding-lint`**（使用者原話「不管，就我們自己留着就好」）。這不是待辦，巡檢不要再把它列成異常 | 未選：T3 的 6a（本地 main FF 到 fork/main）、6b（刪同點分支名）、6c（linux-record-names 併 fork/main）——使用者裁示全部不做 | 若 houseCARL 要升版或 fork/main 大幅前進，再回頭看 `agentctl/handoffs/home-2026-10-23/tidy/T3/REPORT.md` 的方案比較 |
