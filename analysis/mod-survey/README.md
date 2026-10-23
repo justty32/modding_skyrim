@@ -1,7 +1,18 @@
 # mod-survey/ — 已下載 mod 的調查工作區
 
 > **這是給其他 AI agent 工作的工作區**，不是 ModForge 工具的一部分。
-> 主 session 在跑「大重構（拆檔門檻 300 行→4096 bytes）」期間**不碰這個資料夾**——這裡是調查 agent 的地盤。
+
+## 先去哪
+
+<!-- wf-nav -->
+
+| 入口 | 看什麼 |
+|---|---|
+| [index.md](index.md) | **調查總表的路由頁**：九張 `index-<主題>.md` 子表，逐 mod 細目在那裡 |
+| [findings/](findings/README.md) | 完整筆記本體，依七類分資料夾 |
+| [action-system/](action-system/README.md) | 動作／動畫框架五層堆疊的中樞（含 OAR 實作指南） |
+| [custom-skills-framework/](custom-skills-framework/README.md) | CSF 架構、兩代格式斷層、Constellations schema |
+| [custom-skill-tree-guide/](custom-skill-tree-guide/README.md) | 自訂技能樹的動手實作指南 |
 
 ## 目的
 
@@ -26,8 +37,8 @@ ESM/FormID 抽取**工具參考** → [`workflows/investigation/esm-formid-acces
 
 ## 產出放這裡
 
-- `findings/<mod-name>.md` — 每個 mod 一份：類型 / 是否有 plugin / 關鍵記錄 / 對 Sofia 或 roadmap 的意義
-- `index.md` — 調查總表的**路由頁**：只列子表入口，逐 mod 細目在同層的 `index-<主題>.md` 九張子表
+- [`findings/`](findings/README.md)`<mod-name>.md` — 每個 mod 一份：類型 / 是否有 plugin / 關鍵記錄 / 對 Sofia 或 roadmap 的意義
+- [`index.md`](index.md) — 調查總表的**路由頁**：只列子表入口，逐 mod 細目在同層的 `index-<主題>.md` 九張子表
   （內容型／框架型 runtime／框架型 tools／系統型 encounters・population・building／經濟／動作系統／技能樹）。
   2026-09-02 由單一 31 KB 的 `index.md` 依契約分層拆出。
 

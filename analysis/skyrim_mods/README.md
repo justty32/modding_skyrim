@@ -27,15 +27,29 @@
 
 ## 文件導覽
 
-- `architecture/jcontainers.md` —— JContainers 結構與 Papyrus API 面
-- `architecture/papyrusutil.md` —— PapyrusUtil 六模組 API（StorageUtil / JsonUtil…）
-- `architecture/powerofthree-tweaks.md` —— po3 Tweaks 的 45 項 tweak 與 FOMOD 結構
-- `architecture/skyui.md` —— SkyUI 的 7 個 SKI_* quest 與 MCM 框架
-- `architecture/uiextensions.md` —— UIExtensions 的 8 個 UI menu 元件
-- `architecture/sofia-follower.md` —— Sofia 的 record 解剖（quest×30 / scene×28 / package×54…）
-- `architecture/relationship-dialogue-overhaul.md` —— RDO 的 override 策略與 SM 節點
-- `details/dialogue-targeting-technique.md` —— **RDO 的對話投放技術**（condition 頻率實證）
-- `others/modforge-relevance.md` —— **綜合：ModForge 能借鏡什麼**（對照現有 spec）
+<!-- wf-nav -->
+
+`architecture/` —— 每個 mod 一份 record 層解剖：
+
+- [`jcontainers.md`](architecture/jcontainers.md) —— JContainers 結構與 Papyrus API 面
+- [`papyrusutil.md`](architecture/papyrusutil.md) —— PapyrusUtil 六模組 API（StorageUtil / JsonUtil…）
+- [`powerofthree-tweaks.md`](architecture/powerofthree-tweaks.md) —— po3 Tweaks 的 45 項 tweak 與 FOMOD 結構
+- [`skyui.md`](architecture/skyui.md) —— SkyUI 的 7 個 SKI_* quest 與 MCM 框架
+- [`uiextensions.md`](architecture/uiextensions.md) —— UIExtensions 的 8 個 UI menu 元件
+- [`sofia-follower.md`](architecture/sofia-follower.md) —— Sofia 的 record 解剖（quest×30 / scene×28 / package×54…）
+- [`relationship-dialogue-overhaul.md`](architecture/relationship-dialogue-overhaul.md) —— RDO 的 override 策略與 SM 節點
+
+`details/` —— 單點深入（每篇都另有同名子資料夾放細節）：
+
+- [`dialogue-targeting-technique.md`](details/dialogue-targeting-technique.md) —— **RDO 的對話投放技術**（condition 頻率實證）
+- [`rdo-formlist-mechanism.md`](details/rdo-formlist-mechanism.md) —— RDO 的 FormList 投放機制
+- [`rdo-scripts.md`](details/rdo-scripts.md) —— RDO 的 Papyrus 腳本：投放靠資料，腳本只補三件小事
+- [`sofia-scripts.md`](details/sofia-scripts.md) —— Sofia 的 Papyrus 腳本架構
+
+`others/`、`archive/`：
+
+- [`others/modforge-relevance.md`](others/modforge-relevance.md) —— **綜合：ModForge 能借鏡什麼**（對照現有 spec）
+- [`archive/`](archive/README.md) —— 已封存、不在維護鏈的文件
 
 ## 一句話結論
 
