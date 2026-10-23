@@ -72,6 +72,8 @@
 
 ### 世界與場景
 
+<!-- wf-nav -->
+
 - [04. 進階實戰：在準星位置生成床鋪](World_04_Shout_Spawn_Bed.md)
 - [07. 進階實戰：在準星位置生成房屋](World_07_Shout_Spawn_House.md)
 - [11. 技術實戰：偵測玩家所在的城鎮與區域](World_11_Locating_Player_Town.md)
