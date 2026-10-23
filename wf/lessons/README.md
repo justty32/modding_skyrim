@@ -11,6 +11,8 @@
 
 2026-10-23 tidy E4 把六條掘金線的 796 條候選去重落地：淨新 59 個小節（新建 `nexus-download-ops.md`、`porting-and-modforge.md`），就地增補 106 處既有／新小節。逐條處置表在 `agentctl/handoffs/home-2026-10-23/tidy/E4/dedup-ledger.json`。
 
+2026-10-23 tidy R2 把 E1＋E4 增補後超過 16 KB 的 10 支主題檔按子主題拆開：整節搬移、小節原文零改動，新增 12 支語意化子檔，另把 `agent-driven-nexus-download` 併進同主題的 `nexus-download-ops`；原檔路徑全部保留。小節總數拆前拆後都是 183。拆檔對映表在 `agentctl/handoffs/home-2026-10-23/tidy/R2/moves.tsv`。
+
 **記憶目錄**：原檔全部仍在，`MEMORY.md` 尚未改成指向本目錄的指標——記憶目錄改寫由頂層處理；在那之前兩邊並存，記憶目錄較新。
 
 ## 分類表
@@ -27,7 +29,8 @@
 | [process-throttling](process-throttling.md) | 行程限流與別線行程的分寸 | 2 |
 | [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 7 |
 | [repos-layout-and-remotes](repos-layout-and-remotes.md) | 版控：repo 佈局、remote 與 push | 5 |
-| [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、工作樹與產物衛生 | 9 |
+| [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、pathspec 與工作樹 | 5 |
+| [artifact-hygiene-and-ignores](artifact-hygiene-and-ignores.md) | 版控：產物衛生、.gitignore 與刪除前的掃描 | 4 |
 | [docs-organization](docs-organization.md) | 文件整理：封存、拆檔與頁面歸屬 | 5 |
 | [wf-kernel](wf-kernel.md) | wf 骨架（kernel）與工具形態 | 2 |
 | [mo2-profiles](mo2-profiles.md) | MO2 profile 三檔：還原、並行編輯與遊戲改寫 | 5 |
