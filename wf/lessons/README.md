@@ -26,8 +26,10 @@
 | [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 8 |
 | [repos-layout-and-remotes](repos-layout-and-remotes.md) | 版控：repo 佈局、remote 與 push | 5 |
 | [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、工作樹與產物衛生 | 9 |
-| [docs-organization](docs-organization.md) | 文件整理與 wf kernel | 7 |
-| [mo2-profiles](mo2-profiles.md) | MO2 與 profile | 11 |
+| [docs-organization](docs-organization.md) | 文件整理：封存、拆檔與頁面歸屬 | 5 |
+| [wf-kernel](wf-kernel.md) | wf 骨架（kernel）與工具形態 | 2 |
+| [mo2-profiles](mo2-profiles.md) | MO2 profile 三檔：還原、並行編輯與遊戲改寫 | 5 |
+| [mo2-behavior-quirks](mo2-behavior-quirks.md) | MO2 本體行為坑（首次啟動、幽靈 profile、靜默失效） | 6 |
 | [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（裝前評估、安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴） | 6 |
 | [mod-library-bookkeeping](mod-library-bookkeeping.md) | mod 庫帳務、暫存與清理安全（身分辨識、欄位可信度、破壞性動作） | 5 |
 | [asset-and-engine-loading](asset-and-engine-loading.md) | 素材存在性診斷與引擎載檔／runtime 狀態機制 | 3 |
@@ -45,7 +47,8 @@
 | [translation-and-zh](translation-and-zh.md) | 中文層部署 gate 與引擎的字串機制 | 6 |
 | [zh-policy-and-naming](zh-policy-and-naming.md) | 中文層政策：翻不翻、繁簡與命名 | 4 |
 | [zh-tooling-and-scans](zh-tooling-and-scans.md) | 中文層工具與掃描（zhport、靜態掃描、QA checker） | 5 |
-| [project-decisions](project-decisions.md) | 專案裁示與地圖／內容限制 | 11 |
+| [project-decisions](project-decisions.md) | 專案裁示與開發／驗證流程的嚴謹度 | 6 |
+| [map-port-and-world-conflicts](map-port-and-world-conflicts.md) | 地圖移植的引擎限制與世界／內容衝突 | 5 |
 | [nexus-download-ops](nexus-download-ops.md) | Nexus 下載自動化（CDP、file_id、並行） | 3 |
 | [porting-and-modforge](porting-and-modforge.md) | 資產移植與 ModForge 能力邊界 | 3 |
 
