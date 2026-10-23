@@ -1,7 +1,7 @@
 {
  "contract": "wf-table/1",
  "source": "2026-10-10-play-checklist.md",
- "extracted": "2026-10-10（m159159 插入 AnimatedArmouryUnslaadPatch.esp 後重算行號）",
+ "extracted": "2026-10-23 20:06（reverify.py --rebuild-checklist 重產；行號依 profiles c329ff4）",
  "columns": [
   "line",
   "plugin",
@@ -13,9 +13,15 @@
  "link_columns": [
   "report_path"
  ],
+ "profiles_repo": "instance/profiles",
+ "profiles_commit": "c329ff4217a1050d689392cb5239adbdc64243fc",
+ "profiles_dirty": "no",
+ "profile": "modpack-main",
+ "rebuilt": "2026-10-23 20:06",
+ "rebuilt_by": "instance/tools/reverify.py --rebuild-checklist",
  "rows": [
   {
-   "line": "137",
+   "line": "138",
    "plugin": "TaBgBecomeGuard.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -23,7 +29,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/artisans-guard/REPORT.md"
   },
   {
-   "line": "138",
+   "line": "139",
    "plugin": "moresmeltables.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -31,7 +37,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "139",
+   "line": "140",
    "plugin": "KuroneSaya.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -39,7 +45,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md"
   },
   {
-   "line": "140",
+   "line": "141",
    "plugin": "KuroneSaya_YasubeiSandbox.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -47,7 +53,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md"
   },
   {
-   "line": "141",
+   "line": "142",
    "plugin": "KuroneLiz.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -55,7 +61,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md"
   },
   {
-   "line": "142",
+   "line": "143",
    "plugin": "Kurone KarinsPartTimeJob.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -63,7 +69,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md"
   },
   {
-   "line": "143",
+   "line": "144",
    "plugin": "KuroneSoulTomb.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -71,7 +77,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/soultomb/REPORT.md"
   },
   {
-   "line": "144",
+   "line": "145",
    "plugin": "KuroneSoulTomb_EX1.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -79,7 +85,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/soultomb/REPORT.md"
   },
   {
-   "line": "145",
+   "line": "146",
    "plugin": "KuroneSoulTomb_EX2.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -87,7 +93,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/soultomb/REPORT.md"
   },
   {
-   "line": "146",
+   "line": "147",
    "plugin": "KuroneSoulTomb_EX3.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -95,7 +101,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/soultomb/REPORT.md"
   },
   {
-   "line": "147",
+   "line": "148",
    "plugin": "KuroneSoulTomb_EX4.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -103,7 +109,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/soultomb/REPORT.md"
   },
   {
-   "line": "148",
+   "line": "149",
    "plugin": "KuroneSoulTomb_Teleport_Addon.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -111,7 +117,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/soultomb/REPORT.md"
   },
   {
-   "line": "149",
+   "line": "150",
    "plugin": "KuroneNellSecretBase.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -119,7 +125,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/nell/REPORT.md"
   },
   {
-   "line": "150",
+   "line": "151",
    "plugin": "ValericaDAO.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：排在所有 master 類（ESM 旗標或 .esm/.esl）之後——MO2 與引擎的硬規則；USSEP 帶 ESM 旗標、實際一定先載。原本「USSEP 之前」在遊戲裡從未生效（見 mo2-reorder）",
@@ -127,7 +133,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/vdao/REPORT.md"
   },
   {
-   "line": "151",
+   "line": "152",
    "plugin": "SmeltingPlus Fix 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "moresmeltables.esp（它的 master）之後；原「USSEP 正後方」不可能成立（USSEP 是 master 類）",
@@ -135,7 +141,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "152",
+   "line": "153",
    "plugin": "Creation Club Home Requirements - AIO.esp",
    "expect_star": "yes",
    "order_rule": "unofficial wild horses patch.esl（USCCCP 串最後一支）之後",
@@ -143,7 +149,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch3/REPORT.md"
   },
   {
-   "line": "70",
+   "line": "71",
    "plugin": "Glenmoril Throwing Knife Improvements.esl",
    "expect_star": "yes",
    "order_rule": "Glenmoril.esm 正後方",
@@ -151,7 +157,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "153",
+   "line": "154",
    "plugin": "Skyrim Trading Posts.esp",
    "expect_star": "yes",
    "order_rule": "USSEP 之後（引擎規則自動成立）；USMP 帶 ESM 旗標、實際先於 TP，狼人皮價格由 EngineOrder Forward 補回 USMP 版",
@@ -159,7 +165,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/tradingposts/REPORT.md"
   },
   {
-   "line": "154",
+   "line": "155",
    "plugin": "Skyrim Trading Posts - USSEP Forward.esp",
    "expect_star": "yes",
    "order_rule": "Skyrim Trading Posts.esp 正後方",
@@ -167,7 +173,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/tradingposts/REPORT.md"
   },
   {
-   "line": "202",
+   "line": "203",
    "plugin": "IDE Stormcloaks.esp",
    "expect_star": "yes",
    "order_rule": "ZH IDE Thalmor Dialogue CHT 2026-09-05.esp 之後",
@@ -175,7 +181,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch3/REPORT.md"
   },
   {
-   "line": "615",
+   "line": "578",
    "plugin": "SurvivalModeImproved.esp",
    "expect_star": "yes",
    "order_rule": "SurvivalControlPanel.esp 之後、MysticismMagic.esp 正前方（在 TradeRoutes／Adamant／Vokrii／Vokriinator 之前）",
@@ -183,7 +189,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/smi/REPORT.md"
   },
   {
-   "line": "729",
+   "line": "692",
    "plugin": "Orc Strongholds - All In One.esp",
    "expect_star": "yes",
    "order_rule": "Luminosity Lighting Overhaul.esp 正前方（三支連續）",
@@ -191,7 +197,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "730",
+   "line": "693",
    "plugin": "Orc Strongholds - AIO - USSEP Patch.esp",
    "expect_star": "yes",
    "order_rule": "同上",
@@ -199,7 +205,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "731",
+   "line": "694",
    "plugin": "ZH OrcStrongholdsAIO Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "同上",
@@ -207,7 +213,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "762",
+   "line": "725",
    "plugin": "Orc Strongholds - AIO - Immersive World Encounters Patch.esp",
    "expect_star": "yes",
    "order_rule": "Immersive Encounters.esp 之後",
@@ -215,7 +221,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "1057",
+   "line": "1019",
    "plugin": "Ashe and Serana Banter Patch.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -223,7 +229,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/tradingposts/REPORT.md"
   },
   {
-   "line": "1058",
+   "line": "1020",
    "plugin": "ZH Asherana Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "Ashe and Serana Banter Patch.esp 正後方",
@@ -231,7 +237,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/tradingposts/REPORT.md"
   },
   {
-   "line": "1089",
+   "line": "1051",
    "plugin": "Dynamic Activation Key.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -239,7 +245,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/camp-hunt-install/REPORT.md"
   },
   {
-   "line": "1184",
+   "line": "1146",
    "plugin": "ZH Valerica Name Fix 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "KuroneVampValericaReplacer.esp 正後方",
@@ -247,7 +253,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch3/REPORT.md"
   },
   {
-   "line": "1262",
+   "line": "1224",
    "plugin": "DovahRiderCart.esp",
    "expect_star": "yes",
    "order_rule": "deepborn.esp（第 1282 行）與 WorldFix 之前",
@@ -255,7 +261,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/camp-hunt-install/REPORT.md"
   },
   {
-   "line": "1263",
+   "line": "1225",
    "plugin": "DovahRiderCart-SKSE-MCM-Patch.esp",
    "expect_star": "yes",
    "order_rule": "DovahRiderCart.esp 之後、deepborn.esp 之前",
@@ -263,7 +269,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/camp-hunt-install/REPORT.md"
   },
   {
-   "line": "1264",
+   "line": "1226",
    "plugin": "ZH DovahRiderCart Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "DovahRiderCart-SKSE-MCM-Patch.esp 之後、deepborn.esp 之前",
@@ -271,7 +277,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/camp-hunt-install/REPORT.md"
   },
   {
-   "line": "1265",
+   "line": "1227",
    "plugin": "Simple Hunting Overhaul.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -279,7 +285,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/camp-hunt-install/REPORT.md"
   },
   {
-   "line": "1286",
+   "line": "1248",
    "plugin": "ct15cc-HendraheimExpanded.esp",
    "expect_star": "yes",
    "order_rule": "WorldFix - Greymoor ICoS AFull.esp（第 1307 行）之前；UHP／ICoS／Ryn／HPE／WorldFix Navmesh Undelete／TGV 之後",
@@ -287,7 +293,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch3/REPORT.md"
   },
   {
-   "line": "1287",
+   "line": "1249",
    "plugin": "ZH HendraheimCT15 Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "WorldFix AFull 之前",
@@ -295,7 +301,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch3/REPORT.md"
   },
   {
-   "line": "1288",
+   "line": "1250",
    "plugin": "CCHR Hendraheim CT15 Quest Merge.esp",
    "expect_star": "yes",
    "order_rule": "WorldFix AFull 之前、CCHR 與 CT15 之後",
@@ -303,7 +309,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch3/REPORT.md"
   },
   {
-   "line": "1289",
+   "line": "1251",
    "plugin": "CT15 Hendraheim Door Lock.esp",
    "expect_star": "yes",
    "order_rule": "WorldFix AFull 之前、CT15 之後",
@@ -311,7 +317,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch3/REPORT.md"
   },
   {
-   "line": "1290",
+   "line": "1252",
    "plugin": "RelationshipMarriageFIN Merge 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "WorldFix AFull 之前，且晚於所有碰配偶任務的 plugin（AIO、OK_Followers、YoungLovers、CT15）",
@@ -319,7 +325,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch3/REPORT.md"
   },
   {
-   "line": "1297",
+   "line": "1259",
    "plugin": "Unlimited Training.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -327,7 +333,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/unlimited-training/REPORT.md"
   },
   {
-   "line": "1298",
+   "line": "1260",
    "plugin": "HideInBushesOIF.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -335,7 +341,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/hide-in-bushes/REPORT.md"
   },
   {
-   "line": "1299",
+   "line": "1261",
    "plugin": "ZH HideInBushesOIF Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -343,7 +349,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/artisans-guard/REPORT.md"
   },
   {
-   "line": "1300",
+   "line": "1262",
    "plugin": "ArtisansOfSkyrim.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -351,7 +357,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/artisans-guard/REPORT.md"
   },
   {
-   "line": "1301",
+   "line": "1263",
    "plugin": "ZH ArtisansOfSkyrim Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -359,7 +365,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/artisans-guard/REPORT.md"
   },
   {
-   "line": "1302",
+   "line": "1264",
    "plugin": "ZH TaBgBecomeGuard Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -367,7 +373,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/artisans-guard/REPORT.md"
   },
   {
-   "line": "1303",
+   "line": "1265",
    "plugin": "UnlootableClutter_MCM.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -375,7 +381,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch-uc-has-bcd/REPORT.md"
   },
   {
-   "line": "1304",
+   "line": "1266",
    "plugin": "Better Carriage Destinations.esp",
    "expect_star": "yes",
    "order_rule": "CFTO.esp、USSEP、Granite Hill - Cut Content Restoration.esp 之後",
@@ -383,7 +389,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch-uc-has-bcd/REPORT.md"
   },
   {
-   "line": "1305",
+   "line": "1267",
    "plugin": "Better Carriage Destinations - CFTO.esp",
    "expect_star": "yes",
    "order_rule": "同上",
@@ -391,7 +397,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch-uc-has-bcd/REPORT.md"
   },
   {
-   "line": "1306",
+   "line": "1268",
    "plugin": "SMI Dovah Survival Patch.esp",
    "expect_star": "yes",
    "order_rule": "ZH CC Overriders 2026-10-03.esp、ZH DovahRiderCart Overlay、TasteOfDeath_Addon_RingCurse.esp、SurvivalMode-WeaponSpeedPatch.esp 之後",
@@ -399,7 +405,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/smi/REPORT.md"
   },
   {
-   "line": "1307",
+   "line": "1269",
    "plugin": "ZH GlenmorilThrowingKnife Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -407,7 +413,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "1308",
+   "line": "1270",
    "plugin": "Dynamic Dodge Shot.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -415,7 +421,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "1309",
+   "line": "1271",
    "plugin": "Dynamic Dodge Shot regular animations.esp",
    "expect_star": "no",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -423,7 +429,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "1310",
+   "line": "1272",
    "plugin": "Dynamic Dodge Shot heavy animations.esp",
    "expect_star": "no",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -431,7 +437,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "1311",
+   "line": "1273",
    "plugin": "DAc0da - Delayed Start.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -439,7 +445,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "1312",
+   "line": "1274",
    "plugin": "ZH DAc0daDelayedStart Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -447,7 +453,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "1313",
+   "line": "1275",
    "plugin": "PerfectlyValidWards.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -455,7 +461,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "1314",
+   "line": "1276",
    "plugin": "ZH PerfectlyValidWards Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -463,7 +469,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "1315",
+   "line": "1277",
    "plugin": "Missives - Carriage and Ferry Travel Overhaul Patch.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -471,7 +477,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "1316",
+   "line": "1278",
    "plugin": "Missives CFTO JQF Forbidden Merge.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -479,7 +485,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md"
   },
   {
-   "line": "1317",
+   "line": "1279",
    "plugin": "Kurone Saya USSEP Patch.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -487,7 +493,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md"
   },
   {
-   "line": "1318",
+   "line": "1280",
    "plugin": "ZH KuroneSaya USSEP Patch Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -495,7 +501,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md"
   },
   {
-   "line": "1319",
+   "line": "1281",
    "plugin": "ZH KuroneSaya YasubeiSandbox Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -503,7 +509,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md"
   },
   {
-   "line": "1320",
+   "line": "1282",
    "plugin": "ZH KuroneLiz Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -511,7 +517,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md"
   },
   {
-   "line": "1321",
+   "line": "1283",
    "plugin": "Kurone3-PrivateBody-Dev-2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -519,7 +525,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md"
   },
   {
-   "line": "1322",
+   "line": "1284",
    "plugin": "KuroneSaya-Compat-Dev-2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -527,7 +533,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md"
   },
   {
-   "line": "1323",
+   "line": "1285",
    "plugin": "SkyTactics - Dynamic Combat Styles.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -535,7 +541,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "1324",
+   "line": "1286",
    "plugin": "ManguzInns-resources.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -543,7 +549,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "1325",
+   "line": "1287",
    "plugin": "The Nasty Pine.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -551,7 +557,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "1326",
+   "line": "1288",
    "plugin": "The Nasty Pine - Ostim.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -559,7 +565,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "1327",
+   "line": "1289",
    "plugin": "NPC Spell Variance.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -567,7 +573,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "1328",
+   "line": "1290",
    "plugin": "NPC Spell Variance Assets.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -575,7 +581,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "1329",
+   "line": "1291",
    "plugin": "NSV Spell Copies.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -583,7 +589,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md"
   },
   {
-   "line": "1330",
+   "line": "1292",
    "plugin": "VDAO-RDO-Patch.esp",
    "expect_star": "yes",
    "order_rule": "RDO Updated.esp 與 AI Overhaul - RDO Updated Patch.esp 之後",
@@ -591,7 +597,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/vdao/REPORT.md"
   },
   {
-   "line": "1331",
+   "line": "1293",
    "plugin": "ZH ValericaDAO Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -599,7 +605,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/vdao/REPORT.md"
   },
   {
-   "line": "1332",
+   "line": "1294",
    "plugin": "VDAO NFF Import Exclude.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -607,7 +613,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/vdao/REPORT.md"
   },
   {
-   "line": "1333",
+   "line": "1295",
    "plugin": "KuroneSoulTomb-PrivateBody-Dev-2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -615,7 +621,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/soultomb/REPORT.md"
   },
   {
-   "line": "1334",
+   "line": "1296",
    "plugin": "RaceMenuHH.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -623,7 +629,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/nell/REPORT.md"
   },
   {
-   "line": "1335",
+   "line": "1297",
    "plugin": "ZH KuroneNellSecretBase Overlay 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -631,7 +637,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/nell/REPORT.md"
   },
   {
-   "line": "1336",
+   "line": "1298",
    "plugin": "KuroneNell-PrivateBody-Dev-2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "無順序要求（ESL／只有自建記錄）",
@@ -639,7 +645,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/nell/REPORT.md"
   },
   {
-   "line": "1337",
+   "line": "1299",
    "plugin": "KuroneNell-JKOCW-Compat-Dev-2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "JKs CoW - OCW - ToK patch.esp 之後",
@@ -647,7 +653,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/nell/REPORT.md"
   },
   {
-   "line": "1338",
+   "line": "1300",
    "plugin": "ZH HallOfAttainment Name Fix 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "KuroneNell-JKOCW-Compat 之後；倒數第二行（最後一行是 EngineOrder Forward 2026-10-10.esp）",
@@ -655,7 +661,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/batch3/REPORT.md"
   },
   {
-   "line": "133",
+   "line": "134",
    "plugin": "LexiconSKSE.esl",
    "expect_star": "yes",
    "order_rule": "master 類（.esl）：在 master 區，MO2 會自動放",
@@ -663,7 +669,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/bnb-upgrade/REPORT.md"
   },
   {
-   "line": "1349",
+   "line": "1311",
    "plugin": "EngineOrder Forward 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "全檔最後一行（ESL；補回 USSEP 7 叢灌木 REFR＋USMP 狼人皮，父 CELL／WRLD 為原贏家逐位元組副本）",
@@ -671,7 +677,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/mo2-reorder/REPORT.md"
   },
   {
-   "line": "134",
+   "line": "135",
    "plugin": "Dynamic Follower Banter.esp",
    "expect_star": "yes",
    "order_rule": "普通 esp：master 區之後第一支（LexiconSKSE.esl 之後）；4 筆 CELL＋WRLD＋1 REFR 原版覆寫是 CK 雜訊，排前面讓後面的 mod 贏",
@@ -679,7 +685,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/m194158/REPORT.md"
   },
   {
-   "line": "135",
+   "line": "136",
    "plugin": "A Conversation - Quest Mod.esp",
    "expect_star": "yes",
    "order_rule": "ESL 旗標普通 esp：緊接 Dynamic Follower Banter.esp 之後；2 CELL＋2 LAND 原版覆寫，排前面讓 SR High Hrothgar／AI Overhaul 贏門口 CELL",
@@ -687,7 +693,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/eval-154926/REPORT.md"
   },
   {
-   "line": "1348",
+   "line": "1310",
    "plugin": "NFF Notice Corpse Patch.esp",
    "expect_star": "yes",
    "order_rule": "nwsFollowerFramework.esp 之後；EngineOrder Forward 之前（倒數第二）",
@@ -695,7 +701,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/m194158/REPORT.md"
   },
   {
-   "line": "136",
+   "line": "137",
    "plugin": "GreatWarSkyrim.esp",
    "expect_star": "yes",
    "order_rule": "master 區之後（Dynamic Follower Banter.esp 之後）；TSGW Compat Merge 之前",
@@ -703,7 +709,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/m152315/REPORT.md"
   },
   {
-   "line": "1347",
+   "line": "1309",
    "plugin": "TSGW Compat Merge 2026-10-10.esp",
    "expect_star": "yes",
    "order_rule": "GreatWarSkyrim.esp、7 支 JKs * - Second Great War patch、它的 23 個 master 之後；NFF Notice Corpse Patch 之前",
@@ -711,7 +717,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/m152315/REPORT.md"
   },
   {
-   "line": "778",
+   "line": "741",
    "plugin": "Masareria Invisible Wall Removal Lever.esp",
    "expect_star": "yes",
    "order_rule": "Masareria.esp 之後（緊接一行）",
@@ -719,7 +725,7 @@
    "report_path": "../../agentctl/handoffs/done/2026-10/home-2026-10-10/m186441/REPORT.md"
   },
   {
-   "line": "1346",
+   "line": "1308",
    "plugin": "AnimatedArmouryUnslaadPatch.esp",
    "expect_star": "yes",
    "order_rule": "Unslaad.esm、NewArmoury.esp 之後（master 區之後）；TSGW Compat Merge 之前",
