@@ -79,8 +79,12 @@ houseCARL 鏡像跑，回報 24/24 贏家 PASS，使用者看到的仍是大媽�
 施工後開關 MO2：`selected_profile=modpack-main`、`.repo/` 沒被生預設檔、profile 檔 md5 不變。
 
 **How to apply:** 不要在 `instance/profiles/` 根新增非 profile 目錄；指令改成 `python3 -B .repo/tools/profile_workflow.py …`；
-09-03～09-18 舊 handoff 腳本寫死 `instance/profiles/tools/` 舊路徑，重跑前要改。
-另：plugins.txt 在 MO2 跑過後可能整檔重排，啟用集合比對才算數（同 [[profile-restore-order-and-flags]]）。
+09-03～09-18 舊 handoff 腳本（lrfw verify.sh、dsview verify.sh、dgup/install.sh 等）寫死 `instance/profiles/tools/` 舊路徑，重跑前要改。
+另：plugins.txt 在 MO2 跑過後可能整檔重排（ESL 漂移），啟用集合比對才算數（同 [[profile-restore-order-and-flags]]）。
+
+（2026-10-23 依記憶條目補）根目錄白名單是 `modpack-main`（必備）＋`dsport-dev`（`check_profiles.py` 的 `ALLOWED_PROFILES`）；
+`crash-ab-carp`、`crash-ab-doomperk` 2026-10-03 依使用者裁示封存到 `.repo/retired/`（要再用得 `git mv` 回根並加進白名單）。
+baseline 在 `instance/profiles/.repo/baselines/`；舊的 6 個 workflows 垃圾檔收在 `~/skyrim_mods/_staging-2026-10-03/phantom/mo2-junk-workflows/`。
 
 ## dsport-dev-profile-drift
 
@@ -91,3 +95,17 @@ houseCARL 鏡像跑，回報 24/24 贏家 PASS，使用者看到的仍是大媽�
 **Why:** 在過期的測試 profile 上做實機驗收，CTD 會被錯歸因給受測物（09-13 dsp8 把 BCE 的鍋算到 navmesh 頭上）。
 
 **How to apply:** 用非 main profile 做實機前，先 diff 它跟 modpack-main 的 modlist/plugins，把「已裁示停用的 mod」列出來；crash 先看 callstack 點名哪個 SKSE DLL，再怪內容。相關：[[custom-navm-combat-pathing-ctd]]、[[profile-restore-order-and-flags]]。
+
+## game-rewrites-plugins-orphans-and-seq-bsa
+
+> 2026-10-10 MO2 load order 每次被打亂的真因是 SkyrimSE 把停用＋缺 master 的 plugin 搬到最上面；普通 esp 永遠排在 master 類後；11 個 BSA 重打包了 SEQ，mod 更新要重做
+
+2026-10-10 三層發現：
+
+1. MO2（和引擎）一律把普通 esp 排在所有 master 類（ESM 旗標或 `.esm`／`.esl`）之後；record 把 esp 夾在 USSEP 前「讓它輸」從沒生效過。houseCARL 判贏家照 `plugins.txt` 字面順序、沒套這條規則，會判錯。
+2. SkyrimSE 啟動會改寫 `plugins.txt`，把停用且缺 master 的 plugin 搬到最上面，MO2 讀回後 master 區尾段每次亂排。修法：這類孤兒 plugin 改 `.mohidden`（清單 `agentctl/handoffs/2026-10-10/post-test-fix/data/hide-orphans-manifest.json`）。
+3. 11 個 mod（arnima、USMP、SPERG、HLIORemi、VLIOVarinia 等）的 SEQ 包在 BSA 裡，已重打包；其餘 42 支用 mod `SEQ Regenerated 2026-10-10`。原 BSA 備份 `~/skyrim_mods/_seq-bsa-backup-2026-10-10/`。
+
+**Why:** 開 MO2＋遊戲後 profile 永遠 dirty、驗收規則寫了不可能成立的順序。
+
+**How to apply:** 新增 plugin 排序時 esp 不能放進 master 區；拔 mod 時連孤兒補丁一起 `.mohidden`；`reverify.py` 的 ORPHAN／SEQBSA 亮紅就照 `mod-library/artifacts/seq-bsa-repack/` 重做。驗贏家要用「引擎實際順序」（`mo2-reorder/tools/winner_diff.py`）。相關：[[mo2-first-launch-drops-new-plugin-star]]、[[copied-fomod-choices-need-soft-dependency-audit]]。

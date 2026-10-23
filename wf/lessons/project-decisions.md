@@ -35,15 +35,15 @@ dsp8 把 m9100 穹頂判成「引擎 cull 結案」，其實很可能就是這�
 
 ## bloodchill-inigo-land-dirty-edit
 
-> 2026-09-20 CC Bloodchill Manor 洞口被 Inigo.esp 的髒 LAND 009FC4 埋住；Nexus 138140 補丁會退化 navmesh 別裝；修法是只 forward Dawnguard 的 LAND，成品待部署＋xLODGen（原 type: project）
+> 2026-09-20 CC Bloodchill Manor 洞口被 Inigo.esp 的髒 LAND 009FC4 埋住；Nexus 138140 補丁會退化 navmesh 別裝；修法是只 forward Dawnguard 的 LAND，10-03 已隨 worldfix 部署（原 type: project）
 
 Tamriel cell (14,16)／東鄰格 LAND `009FC4:Skyrim.esm`：Inigo.esp 那筆與原版 Skyrim.esm VHGT 逐位元組相同（髒編輯），洗掉 Dawnguard 為 Bloodchill 洞口挖的 200 個頂點，CC 落點 Z=1906 被地面 Z=2201 埋住。
 方案 E（Nexus 58317＋138140）被 cx-bcfix 推翻：138140 把該格 navmesh 從 277 頂點/346 三角退化成 265/341。
 採用：新 ESL 只 forward Dawnguard 的 LAND（30 子記錄全同），成品在 `agentctl/handoffs/home-2026-09-20/bcfix/`，
-**2026-09-20 12:10 使用者裁「就這樣吧，那個 CC mod 我也不是很喜歡」＝擱置不部署**；若日後要做，續行步驟在 bcfix/REPORT.md；部署後要 xLODGen 地形 LOD（估 50–120 分）與五條實機驗收（走出走回＋隨從跟行，不能 tcl/coc）。
+**2026-09-20 12:10 使用者裁「就這樣吧，那個 CC mod 我也不是很喜歡」＝擱置不部署**；**後來 10-03 worldfix 已部署 `Bloodchill-Inigo-Astrid-Compat-Dev-2026-09-20`，MO2 啟用中（2026-10-17 盤點查證）**；部署後要 xLODGen 地形 LOD（估 50–120 分）與五條實機驗收（走出走回＋隨從跟行，不能 tcl/coc）。
 houseCARL 不能逐格寫 VHGT（WriteEngine.cs Array2d 限制）。
 
-**How to apply:** 開安裝窗口時第一件事先部署這個；驗收需使用者本人或前景操作（Skyrim 忽略合成輸入）。
+**How to apply:** 已部署，別再當待辦；若洞口仍有問題先查 xLODGen 地形 LOD；驗收需使用者本人或前景操作（Skyrim 忽略合成輸入）。（2026-10-23 依記憶條目更新部署狀態）
 相關：[[dyndolod-esp-masters-pin-content-mods]]
 
 ## avif-perktree-overridden-by-non-overhaul-mods
@@ -57,3 +57,41 @@ houseCARL 不能逐格寫 VHGT（WriteEngine.cs Array2d 限制）。
 **Why:** 天賦總覽 mod 的樹存在 AVIF 記錄裡，任何魔法／技能 mod 只要帶自家 perk 就會整筆覆蓋 PerkTree；自製 forward 層若拿錯底會把錯誤固化成贏家。
 
 **How to apply:** 裝或更新任何會加 perk 的 mod（法術包、Pilgrim、Midas 之類）後，刷新鏡像跑 `cross_plugin_query type=AVIF conflict_tree=true`，比 18 棵樹贏家的 perk 集合是否 ⊇ Vokriinator Black 的集合；有缺就把 Restore patch 重做（不是改 Vokriinator 本體）。自製 forward 層永遠以 Vokriinator 為底，不以「當時贏家」為底。相關：[[zh-layer-gate-base-mod-must-be-enabled]]、[[housecarl-cannot-point-real-mo2-instance]]。
+
+## new-save-plan-2026-10-04
+
+> 使用者 10-04 說要開新檔並陸續提新檔前的改動；10-08 調查＋施工完成（拔 Rigmor／FC／Spell Research／Biggie／SkyInteract、IFD Lydia→FDE、DynDOLOD 整組停用），待新檔實機確認
+
+2026-10-04 使用者說要開新檔，並開始列新檔前想做的改動，說「還有其他的，稍微等我」，但當天沒說完就收工。清單權威來源：母 repo 頂層 `play-notes.md`（使用者自己寫，10-08 內容）：刪 rigmor 兩個、spell research、forgotten city、biggie traits；Improved Follower Dialogue - Lydia 要換一個（bug／衝突多、有些台詞靜音、OOC）。
+
+**Why:** 使用者要一次說完再施工（見 [[investigate-all-then-install-once]]）。
+
+**How to apply:** 下次 session 先問使用者其餘新檔想法，收齊後整理成清單給他確認再派線；刪 mod 前查 DynDOLOD.esp／Occlusion.esp 的 master（[[dyndolod-esp-masters-pin-content-mods]]）與同概念兄弟。同日已做：OBody 隨從黑名單＋Zeroed preset 排除、Aniya 皮膚修正、launch-mo2.sh 快取變數（HUD 預設關），報告在 `agentctl/handoffs/home-2026-10-04/`。
+
+10-08 調查完成（`agentctl/handoffs/home-2026-10-08/newsave/REPORT-{quests,systems,lydia}.md`），使用者裁示：Lydia 換 FDE Lydia 1.5＋簡中（安裝包已在庫）；拔 Rigmor 後恢復原版邊境隱形牆（不補 `bBorderRegionsEnabled`）；SkyInteract 隨 Biggie 一起拔。施工要點：Rigmor 與 IFD Lydia 被 DynDOLOD／Occlusion 釘 master → 合併重跑一次 TexGen+DynDOLOD；IFD 另被 `JhNPCBeautyDev.esp`×2、Lydia-Look-From 換臉層當 master，ESLify-Overlay 內有 IFD 修正層副本。
+
+10-08 施工完成（profiles `2cdbf1a`，REPORT-build.md）：39 mod／26 plugin 停用，FDE Lydia 上線，**DynDOLOD 整組停用**（含 Resources、TexGen Fixes；使用者裁「很想停掉」遠景→以後拔 mod 不用重跑 LOD）。待使用者新檔實機確認：Lydia 語音／外觀、主選單外的實際遊玩。殘留未清：OBody 黑名單與 IGYH FLM ini 內的 IFD／Rigmor 條目（無害）。
+
+## campfire-deferred-to-next-playthrough
+
+> 2026-10-10 使用者裁「campfire 下個新檔吧」；Campfire 一族留到下一個新周目一次裝，現周目不裝
+
+2026-10-10 使用者原話「campfire下個新檔吧」。現周目只裝了 Dovah Rider Carriage＋Simple Hunting Overhaul＋DAK（profiles `c3a4321`），Campfire 不裝。
+
+下個新周目要一起評估的包：Campfire 667（排除包內舊 PapyrusUtil.dll）＋Script Optimization 149913，或改用 Campfire 2026（193929，ESL 版只能新檔，含 DAK／SHO 補丁，10-10 時太新：10/3 發布 6 天 5 版）；Survival Skills CSF（171040，接現役 CSF 選單）；可選 Skills of the Wild 37693（會拿掉羅盤）。Frostfall 不裝。調查細節：`agentctl/handoffs/2026-10-10/campfire-frostfall/REPORT.md`。
+
+**Why:** Campfire 的 ESL 版與 Survival Skills 都偏好新檔，中途加裝風險高。
+
+**How to apply:** 使用者說要開新周目時，把這包列進新檔清單一起調查施工（[[investigate-all-then-install-once]]），屆時重查 Campfire 2026 的 bug 頁與版本穩定度。
+
+## self-made-vs-repack-classification
+
+> 2026-10-10 使用者定的 mod 分類：別人 mod 的重包／改版算原作，只有自己從零做的（patch 等）才算自製；中文層另歸漢化
+
+使用者原話（2026-10-10）：「我們修改過的版本，類似這種重包的，都算原作。只有我們自己做的，包括patch等，才算自製」。
+
+**Why:** 頁面篩選「只看非漢化包和自製的」要能看到所有第三方內容；Katana Flattened 這類重包被算成自製就看不到了。
+
+**How to apply:** 分類規則（共用來源 `mod-library/viewer/content_class.py`）：重包、改條件版、修正重包 → 第三方原作；patch、相容件、合併層、overlay、換臉層、轉發層等從零自製 → 自製；中文翻譯層 → 漢化。各頁產頁腳本都要對齊這份規則。
+
+同日補充判準（使用者原話）：「只要我們動過後，那個檔案仍對標於原作檔，那就算」原作——修正層只覆蓋原作同路徑檔（如 Facegen/Mesh-Texture-Fix-Combined、SmeltingPlus-Fix、JH NPC Beauty Dev）算原作；換臉層算自製（使用者確認）。

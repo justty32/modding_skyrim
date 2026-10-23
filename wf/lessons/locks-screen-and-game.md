@@ -92,6 +92,12 @@ SHA-256 比對，等於一次來源驗證。
 
 **2026-09-03 補**：headless CDP 的 Chrome 會自己在背景下載約 4 GB 的 on-device ML 模型（optimization guide），塞爆 /tmp tmpfs 並吃 25 Mbps 頻寬；dl 隊已加啟動旗標擋掉（見 `agentctl/handoffs/home-2026-09-03/dl/` 的 Chrome 啟動參數）。profile 複本放 /tmp 要盯大小，>500 MB 就是有東西在自下載。另：CDP 下載沒有速率上限，Steam 同時在下載時別抓 >500 MB 大檔。
 
+**2026-09-30 使用者重點要求：不准讓他現有 Chrome 的任何帳號被登出（Google 與其他所有網站）。** 寧可下載失敗。
+複本改用 `agentctl/tools/nexus_dl/make_profile_copy.sh`（來源唯讀快照、只留 nexusmods.com cookie、殘留自毀），
+不再整份 cp Cookies（第二個 Chrome 共用 Google session cookie 可能觸發盜用保護把本尊登出）；
+收尾只殺 `--user-data-dir=/tmp/<複本>` 的 Chrome，禁 pkill／killall；擴充路不點登出、不清 cookie、不關使用者分頁。
+規則寫在 `wf/workflows/nexus-intake/download-routes.md` 頂部。
+
 ## user-present-screen-is-still-usable
 
 > 2026-08-30 放寬、2026-09-09 /goal 重申：使用者在電腦前時鍵盤滑鼠螢幕歸他，但 agent 可以開遊戲／MO2／瀏覽器，他會 alt+tab 切回去；只有不能暫停的遊戲（如 Helldivers 2）才是禁區（原 type: user）

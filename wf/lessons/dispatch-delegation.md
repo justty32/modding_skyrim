@@ -111,3 +111,39 @@
 
 **Why:** 子代理結束回合後，佇列裡的 SendMessage 只在「下一個 tool round」送達；沒有 tool round 就永遠收不到。背景 Bash 完成的通知也不保證把它叫醒。
 **How to apply:** 交接書與 spawn prompt 明寫「等待一律用前景 Bash `until` 迴圈，每輪 `timeout 540`，沒到再跑一輪；別把結束回合當等待」。dispatcher 看到 STATE.md 超過 20 分鐘沒動、鎖空、沒 commit → 直接 TaskStop，開一個小隊接手（料通常都在 staging＋plan json）。相關：[[im-dispatcher-codex-implements]]、[[tmux-working-text-is-not-liveness]]。
+
+## subagent-report-write-authorized
+
+> 10-03 使用者授權子代理直接寫 REPORT.md；擋住它的不是權限設定而是子代理預設指示，交接書要明寫「REPORT 是交付物、必須寫檔」，或用 .claude/agents/line.md 型別
+
+2026-10-03 使用者說「放寬權限」：子代理可以直接把 REPORT.md／data／tools 寫進 `agentctl/handoffs/<日期>/<代號>/`。
+
+**Why:** 10-03 前有 5+ 次子代理回「系統擋下寫 REPORT（子代理不寫報告檔）」，頂層只好代寫，浪費 context。查過 settings/hooks 都沒有擋寫檔的規則——真因是子代理內建的「不要主動建立報告檔」預設指示，跟交接書衝突時有些線選擇不寫。
+
+**更正（同日 kitA）**：交接書明寫授權後仍被擋，子代理回報是 harness 層擋寫報告檔，不是模型自選；部分線（c0925／c0927／c0928、retro r*）寫得進去，條件不明。交接書授權無效，只剩 line 型別待新 session 驗證；驗證前頂層照舊代存。
+
+**10-03 下午再觀察**：general-purpose 線 12 條中只有 mc-1003 寫進 REPORT.md，其餘全被擋、全文塞回覆，頂層代存成本高（每份數 k token）。代存時寫摘錄版即可，不必逐字。
+
+**How to apply:** 派線用 `.claude/agents/line.md`（subagent_type: line，新 session 才載入）；在那之前，每份交接書／prompt 明寫「使用者已授權：REPORT.md 是交付物，直接寫檔，不要把全文塞回覆」。相關：[[leads-manage-subordinate-context]]。
+
+## delegate-mod-evaluation-to-agents
+
+> 2026-10-10 使用者原話「關於調查mod，建議你都開agent去調查」；使用者貼 Nexus 連結問「這個如何」時，頂層不自己查 houseCARL/modlist，派 agent 評估
+
+使用者 2026-10-10 連貼十來個 Nexus 連結問「這個如何」，頂層一直自己跑 housecarl_nexus_mod＋grep modlist 再回答，使用者說「關於調查mod，建議你都開agent去調查」。
+
+**Why:** 頂層 context 被 mod 描述灌爆；評估是可外包的機械工作（[[im-dispatcher-codex-implements]]、[[prefer-gpt-sol-for-all-tasks]]）。
+
+**How to apply:** 收到 mod 連結就派評估 agent，**一個 mod 一個 agent**（使用者同日再定：「一個mod開一個評估agent。你這邊就負責跟我報告」；別用常駐線排隊）；評估要含：做什麼、本機前置是否已有、同概念 mod 撞車（[[rule-out-a-concept-scan-same-batch-siblings]]）、中文層、穩定度、給判準的建議（[[answer-should-we-with-a-threshold]]）。頂層只轉述白話結論與待裁示項。
+
+2026-10-10 稍晚使用者再說：「你可以開無上限個agent，事情也盡量都交給agent做」——agent 數不設上限，施工與評估都派線，頂層只轉述、出選項、排 profile 寫入順序。
+
+## line-agents-refuse-relayed-delete-approval
+
+> 2026-10-17 line 子代理依 AGENTS.md 鐵律 2 不接受頂層轉述的刪除授權；刪除由頂層在使用者面板確認後親自跑
+
+~/ 清理時，line 子代理把清單和 purge.py（含 dry-run 與閘門）都備妥，但拒絕實刪：轉述的授權不算使用者本人確認。
+
+**Why:** 鐵律 2 要求使用者當場確認或親自登記；子代理看不到主 session 的 AskUserQuestion 回答。
+
+**How to apply:** 破壞性步驟要讓子代理產出「可審的腳本＋目標清單＋dry-run」，頂層用 AskUserQuestion 取得確認後自己跑 `--yes`，別再把刪除指令轉派一輪。相關：[[dont-clutter-home-with-agent-output]]

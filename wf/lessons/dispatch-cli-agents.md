@@ -164,3 +164,13 @@ GPU 與桌面 HID（螢幕鍵鼠）**全歸 skyrim**——對方 Godot 一律 he
 完全不需要桌面，因此**要開 Skyrim 不必先寄信詢問**。
 
 相關：[[aetheria-agent-coexistence]]
+
+## dont-renice-other-sessions
+
+> 2026-10-09 使用者喊停：遊戲卡頓時不准自行 renice／限流別的 session（如 simple_tools/aos-wt）的行程，只回報來源
+
+2026-10-09 使用者玩遊戲回報卡頓，我查到負載來自另一個 Claude session 在 `simple_tools/aos-wt` 跑測試，就自行 renice 它的行程樹；使用者回「你不要調整這個=_=」。
+
+**Why:** 別的 session 的行程是使用者自己的其他工作，優先權由他決定；擅自調整等於替他做取捨。
+
+**How to apply:** 遊戲卡頓時只查證並回報「誰在吃 CPU」（行程樹、所屬 session／repo），由使用者決定要不要停。只有我方派出的線才可以限流或停。這條修正 [[throttle-by-tree-not-by-name]] 的適用範圍：那條只適用於我方行程。

@@ -66,3 +66,7 @@ fomod 線建了 `instance/tools/fomod/`（fomodlib／inspect／plan／apply／au
 - 症狀是「東西消失／紫色或沒貼圖／擺設浮空或錯位」時，先懷疑這類補丁，再懷疑存檔或本體。
 - 停用時拿掉 `*` 之外也把檔案改 `.mohidden`，免得遊戲當孤兒 plugin 重新啟用（[[game-rewrites-plugins-orphans-and-seq-bsa]]）。
 相關：[[rule-out-a-concept-scan-same-batch-siblings]]、[[missing-master-scan-mast-not-housecarl]]、[[fomod-install-tooling]]。
+
+（2026-10-23 補；記憶條目 `lorerim-copied-patches-soft-deps` 即本條）處置結果：38 支＋5 nif 中已停 37 支＋藏 nif；
+Snazzy 缺的 SMIM 貼圖**只抽 34 張**做成「SMIM Textures for Snazzy (extract)」，**不整包裝 SMIM**（違反 08-30 不裝全域精修的裁示）；
+Ryn's Standing Stones USSEP patch 裁留。

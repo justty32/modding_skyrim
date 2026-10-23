@@ -90,6 +90,9 @@ MO2 原位置 `.../modorganizer2/profiles` 改成指過去的 **symlink**。
 git submodule 要求工作目錄真的在 submodule 路徑上，這是唯一能同時滿足兩邊的做法。
 還原方式寫在 `instance/README.md`。**尚未實機驗證**——要從 Steam 啟動一次才算過。
 
+**2026-10-03 佈局補充**：實體路徑不變（仍是 `instance/profiles`），但 repo 根只放真 profile，
+工具／測試／文件／baseline 搬進隱藏的 `.repo/`（見 [[mo2-phantom-profile-workflows-dir]]）。
+
 ## gitlink-is-a-commit-not-a-branch
 
 > 別在文件裡寫「某個 submodule 釘在某條分支上」；gitlink 指的是 commit，寫成分支會讓人拿錯東西對帳（原 type: feedback）

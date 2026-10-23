@@ -16,6 +16,8 @@
 3. 誤 push 大 blob 後要瘦身只能 `git filter-repo`＋force push，要先問使用者。
 相關：[[dont-clutter-home-with-agent-output]]
 
+**10-03 補**：並行線會先 `git add` 暫存自己的改動；頂層這時用「add 明確路徑＋不帶 pathspec 的 commit」會把別線已暫存的東西一起帶走（retro `19a51bba` 吃進 toolify 15 個改名）。有並行線時一律 `git commit -- <paths>`（含 untrack 的批次例外，見 [[pathspec-commit-drops-untrack]]）。
+
 ## pathspec-commit-drops-untrack
 
 > 2026-09-25 tidy 收尾踩到：`git commit -- <paths>` 會忽略 index 裡的 `git rm --cached`，讓「改不追蹤」整批消失；多隊同 repo 要分批 commit 時只能對純內容改動用 pathspec（原 type: project）

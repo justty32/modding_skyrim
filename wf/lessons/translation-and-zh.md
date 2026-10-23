@@ -123,3 +123,13 @@
 - 「要不要改 sLanguage」是全域決定，使用者未裁示，不要順手改。
 
 相關：[[no-cht-chs-preference]]、[[translation-layer-cost-threshold]]
+
+## zhport-whitelist-gap-before-1009
+
+> 2026-10-09 前 zhport 白名單漏 INFO.RNAM／QUST.CNAM／QUST.NNAM／NPC_.SHRT，用它以本體重建的中文層這四類會退回英文
+
+2026-10-09 vf3-zhfix 線（mod-library `357bf71`）發現並修好：zhport 原本不搬玩家對話選項（`INFO.RNAM`）、任務日誌（`QUST.CNAM`）、任務目標（`QUST.NNAM`）、NPC 短名（`NPC_.SHRT`），光 KWF 一層就 160+ 欄退回英文。同次加了 `--override`。
+
+**Why:** 10-09 之前用 zhport 以新版本體重建過的中文層可能都有這個靜默退化。10-09 清查（agentctl `vf-text3/DONE-zhport-audit.md`）：178 層中 148 層 zhport 製，真退化 4 層 76 筆已修補部署；6 層種子中文包已刪無法判定（BLOCKED，要重下載）；另有 74 支 esp 2,791 欄是自譯時從沒翻過（非退化）。後兩項待使用者裁示。注意 09-11／09-12 的 zhport 層只存在 MO2 `mods/`，沒回寫 mod-library。
+
+**How to apply:** 有人回報「中文層某些選項／日誌是英文」先懷疑這條；清查要使用者點頭才開線。相關：[[zhport-editorid-fallback-and-hdpt-untranslatable]]、[[voiced-follower-makeover-project]]、[[bsa-voice-index-false-negative]]。

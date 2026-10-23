@@ -51,7 +51,9 @@ Opus 唯讀查證（09-17）：PI config 全是 .ini（54 檔／40 個 MCO 動�
 
 ## spid-outfit-manager-live-inventory-reset-ctd
 
-> 2026-09-24 長毛象 CTD +02B789A 真因是 SPID Outfit Manager 對活體 reset inventory 觸發 3D 重掛載；call stack 沒有 SKSE DLL 不代表 SKSE DLL 無關（原 type: project）
+> ⚠️10-03 推翻：+02B789A 09-27 在 NoElderOutfit 層生效下復發（巴巴斯），SPID 定罪錯、真兇未明；原 09-24 長毛象推論保留作教訓（原 type: project）
+
+**⚠️ 2026-10-03 更正**：09-27 10:51 同簽章同 call stack 復發（受害者巴巴斯 `DA03BarbasRef`），當時 `SPID-NoElderOutfit` 已生效；讀 SPID 上游源碼，`Resetting inventory` log 是記錄原版引擎自己的 reset，不是 SPID 發起；10-02 場次覆寫層在仍有上萬筆。下面「真因鏈」與「before 75／after 0」指標**不成立**，覆寫層無害但沒修到。真兇未明，見 `agentctl/handoffs/home-2026-10-03/crash/c0927/REPORT.md`。下次再崩，開 MO2 前先打包 SKSE log 目錄（各 DLL log 會被下一場蓋掉）。教訓 (1) call stack 沒 DLL≠無關 仍成立，但「log 裡出現同 FormID」也只是相關不是因果。
 
 2026-09-24 10:23 野外走路（巨人營地，cell grid `(-6,1)`）CTD，簽章 `SkyrimSE.exe+02B789A  mov rcx,[rcx+0x130]`、rcx=0，全機首見。崩在**背景載入執行緒**（frame 10-11 是 kernel32/ntdll 進入點），現場 `QueuedCharacter` / `IOManager` / `BSFadeNode "skeleton.nif"`，RDI = 長毛象 `[ACHR:001038A9]`。
 
