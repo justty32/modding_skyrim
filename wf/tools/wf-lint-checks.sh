@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # wf-lint-checks.sh — wf-lint.sh 的檢查函式；由 wf-lint.sh source，不單獨執行。
-# 用到呼叫端已設好的 $tools／$have_py／$quiet／$strict／checked_broken 與 total_* 計數。
+# 用到呼叫端已設好的 $tools／$have_py／$quiet／$strict／checked_broken、total_* 計數與 run_local_hook()。
 
 extract_links() {
   awk '/^[[:space:]]*```/{c=!c; next} !c' "$1" \
@@ -93,7 +93,7 @@ count_literal() {
 
 lint_dir() {
   local root=${1%/} label=${2:-$1}
-  local broken=0 oversize=0 ph=0 note=0 judge=0 inbox=0 biglist=0 bl_links=0 querycmd=0
+  local broken=0 oversize=0 ph=0 note=0 judge=0 inbox=0 biglist=0 bl_links=0 querycmd=0 lcl=0
   local out df n rel
   local -a md_files=()
 
@@ -164,6 +164,8 @@ lint_dir() {
     done < <(grep -nE 'tabledb\.py' "$f" | grep -E 'python3 |tools/tabledb\.py' | cut -d: -f1)
   done
 
+  run_local_hook "$root" || lcl=1
+
   ph=$(count_literal '{{' "${md_files[@]}")
   note=$(count_literal '〔模板說明〕' "${md_files[@]}")
   judge=$(count_literal '〔導入判斷〕' "${md_files[@]}")
@@ -173,7 +175,7 @@ lint_dir() {
   local residue=$((ph + note + judge))
 
   if [[ $quiet -eq 0 || $broken -gt 0 ]]; then
-    echo "SUMMARY $label: broken=$broken oversize=$oversize biglist=$biglist biglist_links=$bl_links querycmd=$querycmd residue={{=$ph 模板說明=$note 導入判斷=$judge inbox_pending=$inbox"
+    echo "SUMMARY $label: broken=$broken oversize=$oversize biglist=$biglist biglist_links=$bl_links querycmd=$querycmd local=$lcl residue={{=$ph 模板說明=$note 導入判斷=$judge inbox_pending=$inbox"
   fi
   total_broken=$((total_broken + broken))
   if [[ $strict -eq 1 ]]; then
@@ -181,6 +183,7 @@ lint_dir() {
     total_oversize=$((total_oversize + oversize))
     total_biglist=$((total_biglist + biglist))
     total_querycmd=$((total_querycmd + querycmd))
+    total_local=$((total_local + lcl))
   fi
   return 0
 }
