@@ -15,7 +15,7 @@
 <!-- wf-nav -->
 | 檔案 | 內容 | 已完成項 |
 |---|---|---|
-| [home-setup.md](home-setup.md) | 回家下載／重建 | `home-setup-closed.json` |
+| [home-setup.md](home-setup.md) | 回家下載／重建（細節在 `home-setup/`） | `home-setup-closed.json` |
 | [integrated-runtime.md](integrated-runtime.md) | 整包 UI／中文／任務驗收（細節在 `integrated-runtime/`） | `integrated-runtime-closed.json` |
 | [feature-runtime.md](feature-runtime.md) | 獨立功能驗收（細節在 `feature-runtime/`） | 檔內「已完成（封存）」節 |
 | [later-decisions.md](later-decisions.md) | 日後素材／清理決定 | `later-decisions-closed.json` |

@@ -31,33 +31,48 @@
   **找不到明確寫「停用 TCIY 繁中層」的裁示或施工紀錄**，最接近的是 09-04 那輪 zhmake redeploy
   （`instance/profiles` `4389eb3`「5 個空殼層 delist」）。若這是誤停，請說一聲，重新啟用即可恢復抽查。
 
-## RDO 中文層（抽查對象 2026-09-04 換過版本、2026-09-05 又裁了新版）
+## RDO 中文層（62500／76474 已落地，待進遊戲抽查）
 
 離線 topology、文字與 script-binding gates 已過；抽查關係對話／字幕、任務／通知、賄賂金額、
 Gelebor／Isran／Valerica 等待／離隊通知，確認無方框、亂碼、空白、未替換 token、截斷、新 crash。
-**抽查清單本身沒過期，過期的是抽查對象**，所以改寫而不是刪除：
+**抽查清單本身從來沒過期，過期的是抽查對象與「尚未落地」那句**，所以改寫而不是刪除：
 
 <!-- wf-nav -->
 - **原對象**：`RDO Final Traditional Chinese Dev 2026-08-16`（自製繁中層），範圍見
   [`layer README`](../../mod-library/l10n/mods/Relationship-Dialogue-Overhaul-Traditional-Chinese-Final/README.md)。
-  **2026-09-04 已停用**——`/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt:376`
-  ＝`-RDO Final Traditional Chinese Dev 2026-08-16`；施工證據 `instance/profiles` commit `e8c3f5c`
-  （「old 施工包：RDO 簡中主 esp 層（停舊繁中層）＋NFF 簡中 ESP-ONLY 層」）。
-- **現在實際裝的是**：`RDO Final Simplified Chinese 33398 Final`（**簡中**）——
-  同檔 `modlist.txt:375`＝`+RDO Final Simplified Chinese 33398 Final`（啟用）。
-  同族另有 `:244` `+RDO-Updated-Simplified-Chinese-FULL-Completion-Combined-Dev-2026-09-03`、
-  `:245` `+RDO - Update and MCM Simplified Chinese`。
-  本體 `plugins.txt:520`＝`*Relationship Dialogue Overhaul.esp`、`:565`＝`*RDO Updated.esp`，皆啟用。
+  **2026-09-04 已停用**——施工證據 `instance/profiles` commit `e8c3f5c`
+  （「old 施工包：RDO 簡中主 esp 層（停舊繁中層）＋NFF 簡中 ESP-ONLY 層」）；
+  2026-10-23 實讀仍是 `modlist.txt:1209`＝`-RDO Final Traditional Chinese Dev 2026-08-16`
+  （行號 09-05 時是 `:376`，中間插過很多層，引用請以現行行號為準）。
+- **整族現況**（2026-10-23 實讀 `instance/profiles/modpack-main/`）：
+  `modlist.txt:1208`＝`+RDO Final Simplified Chinese 33398 Final`、
+  `:743`＝`+RDO-Updated-Simplified-Chinese-FULL-Completion-Combined-Dev-2026-09-03`、
+  `:744`＝`+RDO - Update and MCM Simplified Chinese`；
+  本體 `plugins.txt:529`＝`*Relationship Dialogue Overhaul.esp`、`:574`＝`*RDO Updated.esp`，皆啟用。
   **所以進遊戲看到的會是簡體字，不是正體**——依「繁簡都可接受」的既定偏好，這不算 FAIL。
 - **2026-09-05 使用者裁示：RDO 中文層改採 `62500`**（照常跑中文驗收＋回退 gate）。
-  **尚未落地**，且已登記一條風險：`62500` 的 hard requirement `76474`
-  （Unofficial Chinese Localisation by Reconquista Studios）是另一套全域中文化基底，
-  與現役自製逐 mod 層可能打架，套用前先核對。
+  當時登記的風險是：`62500` 的 hard requirement `76474`
+  （Unofficial Chinese Localisation by Reconquista Studios）是另一套全域中文化基底，與現役自製逐 mod 層可能打架。
   證據：`/home/lorkhan/repo/moddings/skyrim/modpack-design/wf/wait_todo/gameplay-install.md`（「RDO 中文層」節）、
   `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-05/rulings/REPORT.md`、
   `/home/lorkhan/repo/moddings/skyrim/agentctl/docs/backlog.md`。
-- **結論：這一項先不要進遊戲抽查**——`62500` 換上去之前抽查現役簡中層，換完還得再抽一次。
-  等 `62500` 落地後再排。
-- **2026-09-25 22:2x 推進**：cx-wu-rdo 正在下載 62500#347829 與 76474#556503（共 38,139,442 bytes）
-  並做衝突表，結果（22:31）：兩檔已下載到 `~/skyrim_mods/_dl-2026-09-25/rdo/`、解到 `_staging-2026-09-25/rdo/{62500,76474}/`；record 身分重疊 **6,091 個 FormID、7 個自製層**（RDO Updated 自製層 5,942、ZH Misc Dialogue 89、ImprovedCompanionsBoogaloo 34、Alternate Start 11、Serana Dialogue Edit 11、Rigmor 3、SDA 1），76474 另有 210 個 loose-file 路徑重疊；安裝位置建議與完整表在 `agentctl/handoffs/done/2026-09/home-2026-09-25/wu/rdo/REPORT.md`、`conflicts.json.gz`。**裝不裝、放哪層由使用者裁**。
+- **2026-09-25 衝突表**：cx-wu-rdo 下載 62500#347829 與 76474#556503（共 38,139,442 bytes），
+  record 身分重疊 **6,091 個 FormID、7 個自製層**（RDO Updated 自製層 5,942、ZH Misc Dialogue 89、
+  ImprovedCompanionsBoogaloo 34、Alternate Start 11、Serana Dialogue Edit 11、Rigmor 3、SDA 1），
+  76474 另有 210 個 loose-file 路徑重疊；完整表在
+  `agentctl/handoffs/done/2026-09/home-2026-09-25/wu/rdo/REPORT.md`、`conflicts.json.gz`。
+- **2026-10-23 更正：原文寫的「`62500` 尚未落地、先不要進遊戲抽查」已經過期，這項現在是「已落地、待抽查」。**
+  09-25 22:55 使用者裁「裝，但要相容舊存檔」，`cx-deploy` 當晚 23:12 部署完成（`instance/profiles` `6dcb0fa`，
+  之後 `d051485` 只把兩個 mod 目錄改成有意義的名字、順序未動）。2026-10-23 實讀
+  `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt` 三行**全部啟用**：
+  `:1207`＝`+RDO Final Simplified Chinese 62500-2026-09-25`、
+  `:2427`＝`+Unofficial Chinese Localisation 76474-2026-09-25`、
+  `:1246`＝`+Update Strings Merge 8.20+76474 Dev 2026-09-30`（09-30 DEPLOY-0930 併入，profiles `4164393`）。
+  舊層 `:1208`＝`+RDO Final Simplified Chinese 33398 Final` 仍啟用但被壓在新層之下，
+  `:1209`＝`-RDO Final Traditional Chinese Dev 2026-08-16` 仍停用。
+  部署當晚已做 Save229 60 秒煙霧（無 crash、無缺 plugin，31 欄修正回讀通過），
+  但**遊戲內中文顯示還沒有人親眼看過**。
+- **所以現在要你做的就是本節開頭那張抽查清單**：關係對話／字幕、任務／通知、賄賂金額、
+  Gelebor／Isran／Valerica 的等待／離隊通知，確認無方框、亂碼、空白、未替換 token、截斷、新 crash。
+  會看到**簡體字**，依「繁簡都可接受」的既定偏好不算 FAIL；要盯的是缺字破版。
 

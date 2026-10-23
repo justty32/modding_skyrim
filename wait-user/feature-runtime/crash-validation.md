@@ -1,14 +1,39 @@
-## 2026-09-20：PI 啟動崩潰候選層與技能條件 crash 驗證
+## 2026-09-24：長毛象 CTD（`SkyrimSE+02B789A`）—— 2026-10-23 重新開啟
 
-2026-09-24 **結案**：doom perk 補丁（移除三顆 `doom*Perk` 的 `EPModSkillUsage_AdvanceObjectHasKeyword` 條件）已部署正式 `modpack-main`（profiles `3f5c37d`），**使用者實機格擋確認不再崩潰，第 6 條 PASS**。09:16／09:34 兩次都是使用者格擋時崩潰、並非靜置重現——靜置不算證據。見 [doomperk 報告](../../agentctl/handoffs/done/2026-09/home-2026-09-24/doomperk/REPORT.md)。
+**原文寫的「2026-09-25 結案」是誤判，本項重新 open。** 09-25 那次「實機回巨人營地沒崩」只是沒踩到，不是修好了。
 
-## 2026-09-24：長毛象 CTD（`SkyrimSE+02B789A`）
+**已排除 SPID（有實證，不必再查這條線）。** 09-27 10:51 同簽章復發，受害者換成巴巴斯
+`DA03BarbasRef [ACHR:00052535]`（荒野 cell），call stack 前 10 層與 09-24 一個不差；而當時覆寫層
+`SPID-NoElderOutfit-2026-09-24` **已啟用且壓在 CT77 之上**（profile commit `d051485`，09-25 23:11，
+是 09-27 遊玩前最後一版）——修法在位，照樣崩。更根本的是，「`Resetting inventory` ＝ SPID 動了活體」
+這個前提本身就錯：讀上游原始碼（powerof3/Spell-Perk-Item-Distributor，`SPID/src/Outfits/`，main `6e66908`），
+`ProcessResetInventory` 只是先印那行 log 再照原樣呼叫原版函式，`SetOutfit`／`ApplyOutfit` 開頭就是
+`if (!npc->defaultOutfit) return false;`，而長毛象 `EncMammothTamedNoAggro` 的 DefaultOutfit 已確認是 null，
+那行 log 記的是**原版引擎自己在 reset**。連帶地，09-24 用的「活體 reset 75 → 0」A/B 指標也站不住：
+10-02 那場覆寫層照樣生效，SPID log 仍有 20,572 次 `Resetting inventory`、牽涉 11,367 個 ACHR，
+09-24 的 `after=0` 只是短煙霧樣本太小。以上見 [c0927 報告](../../agentctl/handoffs/done/2026-10/home-2026-10-03/crash/c0927/REPORT.md)
+`:9`／`:11`／`:13`-`:16`。
 
-2026-09-25 **結案**：SPID-NoElderOutfit-2026-09-24 覆寫層部署後，使用者實機回到 cell grid (-6,1) 巨人營地確認不再崩潰（使用者 21:50 口頭確認）。
+**也排除 09-30 那批部署**：崩潰比部署早三天（同報告 `:5`）。
 
-10:23 野外巨人營地（cell grid (-6,1)）CTD，崩在背景載入執行緒的 3D 掛載路徑，現場 `QueuedCharacter` / `BSFadeNode "skeleton.nif"`，RDI 是長毛象 `[ACHR:001038A9]`；崩潰前 2.4 秒 SPID Outfit Manager 對**同一個 ACHR** 做了 `Resetting inventory`。已部署覆寫層 `SPID-NoElderOutfit-2026-09-24`（profiles `f106cf3`），活體 inventory reset 由 75 降到 0。**待使用者回到該營地實機走一趟確認**；煙霧不崩不構成修復證明。見 [spid-outfit 報告](../../agentctl/handoffs/done/2026-09/home-2026-09-24/spid-outfit/REPORT.md)與 [證據鏈](../../agentctl/handoffs/done/2026-09/home-2026-09-24/block-crash2/REPORT.md)。
+**不要跟 10-09 那兩次併案**：10-09 的 `SkyrimSE.exe+02CF964`（與同日 10:05 的 `+02BA440` 同型，
+`CellLoaderTask` 上的 MovableStatic 懸空指標，嫌疑指向被 BOS 換成動畫版的浮冰）是**不同簽章、不同函式**，
+報告已明寫「跟 +02B789A 不同址……不能當作同一個 bug」。見
+[10-09 crash2](../../agentctl/handoffs/done/2026-10/home-2026-10-09/crash/REPORT-crash2.md)`:38`、
+[10-09 crash1](../../agentctl/handoffs/done/2026-10/home-2026-10-09/crash/REPORT-crash.md)`:27`。
 
-**open（cx-crash2／lead-fde920）**：PI 合併層已建立但停用（profiles `0cd417d`）；待使用者決定啟用及冷啟動 A/B。B 型 `SkyrimSE+01D3398` 仍未定罪，待原場景動作／法師立石持有狀態確認與 CARP 單 DLL A/B。不得同時改兩型變量，不能把靜態 gate 當實機已修復。詳見 [REPORT](../../agentctl/handoffs/done/2026-09/home-2026-09-20/crash2/REPORT.md) 與 [操作步驟](../../agentctl/handoffs/done/2026-09/home-2026-09-20/crash2/FIX-AND-AB.md)。
+**真兇未明。** 目前只能說是「背景執行緒載入生物 3D 的原版碼路徑」（`QueuedCharacter`／`IOManager`／
+兩個 `BSFadeNode "skeleton.nif"`，rcx=0，讀 0x130），兩次受害者都是**野外四足生物**。
+09-27 當天各 SKSE DLL 的 log 已被 10-02 那場覆蓋、沒保存下來，所以查不下去。
+
+**覆寫層怎麼處置由你決定**：`SPID-NoElderOutfit-2026-09-24` 留著或撤掉對這個 CTD 都沒影響（撤掉＝老年 NPC 換回 CT77 衣服）。
+
+**下次再崩，這一項真正等你的兩件事**
+
+1. **開 MO2 之前**先把整個 SKSE log 目錄原樣打包一份（照 crash-1101 的 preserved 做法）。只要先開 MO2，各 DLL 的 log 就被蓋掉，等於放棄這次機會。
+2. 回報崩潰當下在做什麼：剛快速旅行落地、騎馬／衝刺跑過野外，還是剛讀檔；現場有沒有野生四足生物、有沒有正在跟隨的狗。
+
+原始推論鏈（保留作教訓，結論已推翻）見 [spid-outfit 報告](../../agentctl/handoffs/done/2026-09/home-2026-09-24/spid-outfit/REPORT.md)與 [證據鏈](../../agentctl/handoffs/done/2026-09/home-2026-09-24/block-crash2/REPORT.md)。
 
 > **2026-09-05 核對結論（todo-23）**：Simonrim 時代的 Batch 4E／4A／4M/P 三節，
 > **抽樣對象逐個實讀後全部仍在啟用清單裡，三節都不作廢**——過期的是行號與框架名（BFCO→MCO），不是清單。

@@ -20,7 +20,7 @@
 
 內容見 [localization-checks.md](integrated-runtime/localization-checks.md)。
 
-## RDO 中文層（抽查對象 2026-09-04 換過版本、2026-09-05 又裁了新版）
+## RDO 中文層（62500／76474 已落地，待進遊戲抽查）
 
 內容見 [localization-checks.md](integrated-runtime/localization-checks.md)。
 
