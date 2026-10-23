@@ -2,7 +2,7 @@
 
 [lessons 索引](README.md)
 
-**崩了先跑 snapshot 再開 MO2**：`agentctl/tools/snapshot_skse_logs.sh`（SKSE/、Skyrim.INI/SKSE/、ini、Papyrus 複製到 `~/skyrim_mods/_crash-snapshots/<時間>/`＋MANIFEST）；下一場會蓋掉各 DLL log，09-27 的就是被 10-02 蓋掉。
+**崩了先跑 snapshot 再開 MO2**：`agentctl/tools/snapshot_skse_logs.sh`（SKSE/、Skyrim.INI/SKSE/、ini、Papyrus 複製到 `~/skyrim_mods/_crash-snapshots/<時間>/`＋MANIFEST）；下一場會蓋掉各 DLL log，09-27 的就是被 10-02 蓋掉。**舊的 `_crash-snapshots` 已於 2026-10-23 依全刪裁示清空，10-13 之前的快照索引一律失效**——引用那段時間快照路徑的舊報告當它不存在；目前唯一一份是 10-23 重收的 `~/skyrim_mods/_crash-snapshots/2026-10-23/`（20 份 crash log，2026-09-22～10-13）。
 
 ## upstream-skse-dll-fix-via-fork-ci
 
