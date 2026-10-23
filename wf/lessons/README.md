@@ -30,7 +30,7 @@
 | [mo2-profiles](mo2-profiles.md) | MO2 與 profile | 11 |
 | [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴、暫存清理的可回復性判準） | 14 |
 | [housecarl-and-tools](housecarl-and-tools.md) | houseCARL、xEdit、DynDOLOD 等工具坑 | 17 |
-| [tool-portability](tool-portability.md) | 自製工具：repo 根推導與乾淨 clone 驗證 | 1 |
+| [tool-portability](tool-portability.md) | 自製工具：repo 根推導、乾淨 clone 驗證、合法輸入不喊錯 | 2 |
 | [this-machine](this-machine.md) | 本機環境特性（shell、行程、工具差異） | 3 |
 | [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與 facegen 規則 | 8 |
 | [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：排錯與升級 | 6 |
