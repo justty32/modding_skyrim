@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# 由 agentctl/tools/repo_hooks/install_hooks.sh 產生（政策：mother）。
+# 規則與門檻在 policies.json，不要改這個檔；要跳過單次 commit 用 --no-verify。
+set -euo pipefail
+ROOT="$(git rev-parse --show-toplevel)"
+GATE="$ROOT/agentctl/tools/repo_hooks/precommit_gate.py"
+if [ ! -f "$GATE" ]; then
+  # agentctl 是 private submodule，乾淨 clone 可能沒有它：缺席時放行而不是擋死 commit。
+  echo "pre-commit: 找不到 $GATE，略過大小閘門" >&2
+  exit 0
+fi
+exec python3 "$GATE" --policy mother --repo "$ROOT"
