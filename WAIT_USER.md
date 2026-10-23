@@ -9,7 +9,7 @@
 | 回家下載／重建 | 3 | 3 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
 | 整包 UI／中文／任務驗收 | 9 | 9 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
 | 獨立功能驗收 | 11 | 11 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
-| 日後素材／清理決定 | 3 | 4 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
+| 日後素材／清理決定 | 2 | 3 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
 | 版本控制收線 | 0 | 0 | [本檔下節](#push-排程) |
 
 ## Push 排程
