@@ -2,11 +2,11 @@
 
 只列需要使用者親自操作、實機驗收、外部環境或素材才能繼續的 open 項；子檔規則、封存方式與歷史紀錄見 [wait-user/README.md](wait-user/README.md)。
 
-**基準**：計數 2026-09-05 逐項重算、2026-10-23 對六處過期文字重新查證後再算一次，之後每次增減在子檔與 [hub-notes-closed.json](wait-user/hub-notes-closed.json) 留紀錄；唯一現役 MO2 profile 是 `modpack-main`。
+**基準**：計數 2026-09-05 逐項重算、2026-10-23 對六處過期文字重新查證後再算一次、2026-10-24 逐檔實數 `##` 小節複核（25 項與表一致），之後每次增減在子檔與 [hub-notes-closed.json](wait-user/hub-notes-closed.json) 留紀錄；唯一現役 MO2 profile 是 `modpack-main`。
 
 | 類別 | open | 前次 | 清單 |
 |---|---:|---:|---|
-| 回家下載／重建 | 3 | 3 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
+| 回家下載／重建 | 4 | 3 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
 | 整包 UI／中文／任務驗收 | 9 | 9 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
 | 獨立功能驗收 | 11 | 11 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
 | 日後素材／清理決定 | 2 | 3 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |

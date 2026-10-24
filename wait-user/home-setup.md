@@ -1,5 +1,19 @@
 # 回家下載／重建
 
+## 重開 Claude Code／Codex，讓 houseCARL 的 `LocalAppData` 修正生效（2026-10-24）
+
+2026-10-24 `hcpath` 線把 houseCARL 讀不到 localized 欄位的真因修掉了（上游 Mutagen 要 Windows
+環境變數 `LocalAppData`），環境變數已寫進 `~/.claude.json` 與 `~/.codex/config.toml`，
+但**既有的 housecarl-mcp 行程仍是壞的**——MCP server 是隨 CLI session 起的，不重開不會重讀設定。
+
+- 怎麼確認已生效：`instance/tools/housecarl_localappdata.sh --check`，
+  或 `instance/tools/housecarl_smoke.py`（自己另起一個 housecarl-mcp 走 MCP stdio 端到端驗）。
+- 擋住什麼：`agentctl/SESSION-LOG.md` open 段第 3 條（houseCARL 讀中文 mojibake 的查證）
+  要等這件做完才驗得了。
+- 判準與反例（不是「偶發、重試即可」）見 [`wf/lessons/housecarl-on-linux.md`](../wf/lessons/housecarl-on-linux.md)。
+- 證據：[`agentctl/handoffs/home-2026-10-24/hcpath/REPORT.md`](../agentctl/handoffs/home-2026-10-24/hcpath/REPORT.md)、
+  `instance` commit `98ab181`。
+
 ## LoreRim 借用後續：只剩三題（2026-09-05 核對後縮小）
 
 2026-09-03 已入庫 439 件／8.966 GB；原本六題，四題 09-03／09-04 已落地或裁示，剩三題還等你

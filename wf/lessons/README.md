@@ -13,6 +13,8 @@
 
 2026-10-23 tidy R2 把 E1＋E4 增補後超過 16 KB 的 10 支主題檔按子主題拆開：整節搬移、小節原文零改動，新增 12 支語意化子檔，另把 `agent-driven-nexus-download` 併進同主題的 `nexus-download-ops`；原檔路徑全部保留。小節總數拆前拆後都是 183。拆檔對映表在 `agentctl/handoffs/home-2026-10-23/tidy/R2/moves.tsv`。
 
+2026-10-24 wrapup 收今天的教訓：新增 2 個小節（`housecarl-localappdata-env-on-linux`、`silencer-changes-need-user-signoff`）、就地補 1 個小節（`doc-restructure-safety-checklist`）、更正 2 處已被推翻的舊說法（原文加刪除線保留）。`housecarl-and-tools` 加新條會超過 16 KB，照 2026-10-18 前例把三節平台相關的原文整節搬到新建的 `housecarl-on-linux`。逐條收／不收的理由在 `agentctl/handoffs/home-2026-10-24/wrapup/REPORT.md`。
+
 **記憶目錄**：原檔全部仍在，`MEMORY.md` 尚未改成指向本目錄的指標——記憶目錄改寫由頂層處理；在那之前兩邊並存，記憶目錄較新。
 
 ## 分類表
@@ -23,7 +25,7 @@
 | [user-preferences](user-preferences.md) | 使用者偏好與邊界 | 10 |
 | [dispatch-roles](dispatch-roles.md) | 調度：頂層角色與誰來做 | 4 |
 | [dispatch-delegation](dispatch-delegation.md) | 調度：模型分級與委派給誰 | 6 |
-| [dispatch-leads-and-line-discipline](dispatch-leads-and-line-discipline.md) | 調度：領隊與線的運作紀律 | 4 |
+| [dispatch-leads-and-line-discipline](dispatch-leads-and-line-discipline.md) | 調度：領隊與線的運作紀律 | 5 |
 | [dispatch-handoffs](dispatch-handoffs.md) | 調度：交接書與查證 | 6 |
 | [dispatch-cli-agents](dispatch-cli-agents.md) | 調度：驅動 codex／tmux | 5 |
 | [process-throttling](process-throttling.md) | 行程限流與別線行程的分寸 | 2 |
@@ -38,7 +40,8 @@
 | [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（裝前評估、安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴） | 6 |
 | [mod-library-bookkeeping](mod-library-bookkeeping.md) | mod 庫帳務、暫存與清理安全（身分辨識、欄位可信度、破壞性動作） | 5 |
 | [asset-and-engine-loading](asset-and-engine-loading.md) | 素材存在性診斷與引擎載檔／runtime 狀態機制 | 3 |
-| [housecarl-and-tools](housecarl-and-tools.md) | houseCARL 本體與其 Nexus／bridge 端點的坑 | 9 |
+| [housecarl-and-tools](housecarl-and-tools.md) | houseCARL 本體與其 Nexus／bridge 端點的坑 | 6 |
+| [housecarl-on-linux](housecarl-on-linux.md) | houseCARL 在 Linux 的平台坑（路徑、環境變數、鏡像、靜默錯答） | 4 |
 | [xedit-dyndolod-and-lod](xedit-dyndolod-and-lod.md) | xEdit、DynDOLOD 與 LOD 前置 | 3 |
 | [plugin-bsa-and-script-formats](plugin-bsa-and-script-formats.md) | plugin／BSA／腳本的格式事實與量測陷阱 | 5 |
 | [tool-portability](tool-portability.md) | 自製工具：repo 根推導、乾淨 clone 驗證、合法輸入不喊錯 | 2 |

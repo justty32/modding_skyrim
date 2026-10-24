@@ -66,6 +66,8 @@
 
 **How to apply:** 拆/封存/去重前固定跑這幾項檢查。來源：`agentctl/handoffs/done/2026-08-29/doc-refactor/REACHABILITY.md:59-139`。相關 [[archive-obsolete-and-unlink]]。
 
+2026-10-24 補：**可達性量測工具自己會說謊，而且總是往「乾淨」的方向說謊**，兩個機制各帶一個判準。①**symlink 去重只看路徑最後一段**：`reachability.py` 原本用 `Path.is_symlink()` 挑「哪條路徑是本體」，symlink 掛在**父目錄**上時兩個候選的最後一段都不是 symlink，雙 `False`，代表權退化成字典序——別名路徑被當成獨立檔案，走不到就進 unreached。修法必須**兩層**：`traverses_symlink()` 檢查整條路徑的每一段，**且**同一個 inode 的所有路徑共享可達性；只做前者的話代表權只是換個人當，別名路徑仍必進 unreached。判準：**凡是「同一份內容可能有多條路徑」的量測，去重鍵用 inode（或 `git ls-files -s` 的 blob），不要用路徑字串的任何判斷函式。** ②**一次性腳本把 md 路徑寫死在 `.py` 裡**：可達性規則有一條「非 md 檔裡出現完整 md 路徑＝算可達（`coderef`）」，於是為了查某批檔而寫的 scratch 腳本只要進了版控，就會把它掃過的每個檔變成「可達」，製造假乾淨。判準：**常設工具裡不准寫死被量測對象的完整路徑**——`classify_unreached.py` 的豁免常數因此刻意只存目錄字串、檔名在比對時才接上；一次性腳本若非留不可，放 `handoffs/<場次>/<線>/tools/` 並在 REPORT 註明它會污染 coderef。③附帶一條報告寫法：**「bug 修好了」與「我盯的那個數字變了」要分開寫**——修完①之後 live-gap 是 4→4 沒變（它冤枉的路徑不在 live-gap 的統計口徑裡），全庫倒是修掉 6 份假孤兒；只寫數字沒變會被讀成白做，只寫修好了會被讀成數字應該會動。來源：`agentctl/handoffs/home-2026-10-24/reachbug/REPORT.md`、`agentctl/handoffs/home-2026-10-24/orphan6/REPORT.md`、`agentctl/handoffs/home-2026-10-24/reachbug/data/false-orphans-fixed.tsv`。
+
 2026-10-23 補：另兩個同類陷阱——跨 repo markdown anchor 連結會被 lint 驗，但紅燈出現在引用端 repo，弄壞它的是被引用端改了標題文字，兩邊常非同一人在管，改標題等於改了別人的 API；兩份文件內容完全相同不能只用 `cmp` 判斷重複，可能其中一份其實是 mode `120000` 的跨 repo symlink，把它當重複副本改寫會把內容寫穿到正典檔案。改任何現役文件標題前先 `git grep -n '#<標題 slug>'`；疑似重複文件先 `git ls-files -s` 看 mode。來源：`agentctl/handoffs/done/2026-08-29/doc-refactor/REACHABILITY.md:117-133`、`agentctl/handoffs/done/2026-08-29/doc-refactor/LINEREF-FREEZE.md:89-93`。
 
 
