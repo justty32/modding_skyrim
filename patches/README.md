@@ -8,3 +8,4 @@
   - [修改內容與影響範圍](subtitles-dangling-string-fix/PATCH.md)
   - [套用、建置與回退方式](subtitles-dangling-string-fix/APPLY.md)
   - [靜態驗證腳本](subtitles-dangling-string-fix/tests/check_patch.py)
+  - [開發過程記錄](subtitles-dangling-string-fix/session_log.md)
