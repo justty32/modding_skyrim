@@ -13,7 +13,7 @@
 **How to apply:**
 - 實機驗證（rt 隊）產出 png 後，用 `SendUserFile`（status=proactive、display=render）送關鍵幾張（天賦樹、對話、新 mod），不要一次塞全部。
 - 同一畫面只送一次；有明顯變化才重送。
-- 2026-09-03 09:15 使用者補充「我現在是透過 claude code 遠端連線這電腦」並要求覆核完「產個 artifact 給我審批」：需要他拍板的大計畫（如 LoreRim 借用清單）做成 Artifact 審批頁（先載 artifact-design skill），資料來源用團隊的 summary.json／csv，不要在對話裡貼長表。
+- 2026-09-03 使用者補充「我現在是透過 claude code 遠端連線這電腦」並要求覆核完「產個 artifact 給我審批」：需要他拍板的大計畫（如 LoreRim 借用清單）做成 Artifact 審批頁（先載 artifact-design skill），資料來源用團隊的 summary.json／csv，不要在對話裡貼長表。
 - 相關：[[user-present-screen-is-still-usable]]、[[verify-game-alive-via-qa-not-ps]]
 
 ## notes-agent-minimal-contact
@@ -37,15 +37,12 @@
 
 2026-08-22 使用者說：「不要在 ~/ 亂放東西=_=」。
 
-當天我一口氣派了七八條 codex 線，每條都讓它把報告、解包出來的 archive、
-ESP 工作副本、runtime 截圖全堆在自己的 `~/skyrim_agent_out/codex-*/` 裡，
-而且沒有要求收工清理。結果 `~/skyrim_agent_out` 長到 **1.6 GB**、一天動 1,452 個檔案、
-底下攤著 19 個 `codex-*` 目錄。
+codex 線若把報告、解包出來的 archive、ESP 工作副本、runtime 截圖全堆在 `~/skyrim_agent_out/codex-*/`
+又沒被要求收工清理，一天就能長到 GB 級。
 
 **Why**：家目錄是使用者每天在看的地方，不是 agent 的暫存區。
 而且這個 repo 早就有既有慣例——報告與交付物歸 `~/notes/projects/modding/skyrim/`
-（`logs/`、`artifacts/`、`qa/`、`docs/`）。那天八條線只有 `codex-pandora`
-一條做對，把報告寫進 `notes/.../logs/` 並 push。是我沒把規則寫進交接書。
+（`logs/`、`artifacts/`、`qa/`、`docs/`）；線會照交接書做，規則沒寫進交接書就不會被遵守。
 
 **How to apply**：
 1. 交接書預設就要求：**報告與決策文件寫進 `~/notes/...`**，
@@ -63,9 +60,9 @@ ESP 工作副本、runtime 截圖全堆在自己的 `~/skyrim_agent_out/codex-*/
 
 ## check-clock-dont-estimate-time
 
-> 寫 STATE／交接書的時刻要用 date 查，不要用估的；2026-09-05 我連續兩小時把時間標快 1.5～2 小時，導致給各線的硬停與等候上限全是虛的（原 type: feedback）
+> 寫 STATE／交接書的時刻要用 date 查，不要用估的；2026-09-05 憑感覺估的時刻標快 1.5～2 小時，給各線的硬停與等候上限全是虛的（原 type: feedback）
 
-2026-09-05 家中場：我在 STATE.md 與交接書裡寫的「13:05、13:20、14:30」全是憑感覺推的，實際 `date` 只到 12:28；inbox 檔名的時間戳（`20260905T1219-…`）才是對的。
+憑感覺推的時刻會偏（2026-09-05 標快約兩小時）；inbox 檔名的時間戳（`20260905T1219-…` 這種）才是對的。
 
 **Why:** 時刻錯了，各線硬停（14:30／15:30）與「等到 13:40 為止」這種上限就失真，領隊會照字面時間空等或提早收線；事後對帳也對不上 inbox。
 **How to apply:** 每次寫時刻前跑 `date '+%H:%M'`；硬停與等候上限用「現在＋N 分鐘」算出來再寫；對帳一律以 inbox 檔名為準。相關：[[codex-tmux-operational-notes]]。
@@ -74,7 +71,7 @@ ESP 工作副本、runtime 截圖全堆在自己的 `~/skyrim_agent_out/codex-*/
 
 > 2026-09-11 實測：compact 之後或換了檔案路徑重發既有 artifact，平台會拒絕直到本 session 用 action:read 抓過線上版；小頁還要 Read 完存下來的全文（名冊 65KB≈25k token），換臉挑選頁 1.9MB 的單行 JSON 不必逐行 Read 但 read 一次就要 ~60k token。重發前先估成本。（原 type: feedback）
 
-2026-09-11 晚上重發換臉挑選頁（1.9MB）與隨從名冊（65KB）各被拒兩次才成功，多燒約 80k token。
+沒先 read 就重發會被拒，重試要多燒 token（2026-09-11 換臉挑選頁與隨從名冊各被拒兩次）。
 
 **Why：** Artifact 工具要求「本 session 看過線上版」才准用 `url` 覆蓋；compact 後這個狀態會掉，而且同一 session 內若產頁腳本輸出到**新目錄**，就不算「同檔案路徑重發」。
 
@@ -110,7 +107,7 @@ session-log）本來就全是中文寫的，回覆換成英文等於每次都要
 
 **Why**：頂層是使用者的唯一介面；聽不懂＝白花一輪；但翻譯是 token 密集的活，硬翻大產出會把頂層的 context 燒掉。
 
-**同日修正**：「使用者也挺聰明，除非他說今天很累不想動腦，不然也不需要翻譯。但私心啦，能順便翻譯成白話還是最好。」
+**同日使用者修正**（以這句為準）：「使用者也挺聰明，除非他說今天很累不想動腦，不然也不需要翻譯。但私心啦，能順便翻譯成白話還是最好。」
 
 **How to apply**：預設**不開翻譯助手、不刻意翻**——使用者讀得懂技術產出。初見的詞順手給一句白話（成本近零就做，別為此多開 agent 或多花一輪）。只有使用者明說累了／不想動腦，才啟動助手翻譯；那時若產出大到翻譯本身很貴，改列「先看 A、再看 B，各看什麼」。這是輕量偏好，照 [[dont-inflate-light-preferences]] 別放大成流程。相關：[[model-tiers-and-headcount]]、[[answer-should-we-with-a-threshold]]、[[reply-in-traditional-chinese]]
 
