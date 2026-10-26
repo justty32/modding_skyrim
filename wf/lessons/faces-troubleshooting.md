@@ -66,14 +66,21 @@ Yoana the Wanderer 的預設 outfit「小紅帽 - 披風」ARMO 佔 **slot 31（
 
 2026-09-11 Kurone 46560 私有身體（3BA 烤模）實測：
 
-- **BodySlide（wine／Proton，從 staging 直接跑）Preset 下拉永遠空**，連 CBBE 官方預設也讀不到。繞法：把 46560 預設的 slider 值直接寫進 `.osp` 專案檔的 slider 預設屬性，再 Batch Build。
-- **NPC_ 欄位**：`NAM6`＝身高、`NAM7`＝體重（交接書曾把 NAM6 寫成體重，是筆誤）。
-- 體重滑條（0-100）改的是兩個雕好形狀之間的逐頂點內插，不是整體縮放：同一 mod 兩個體重檔案深度差 17.94%、寬度只差 1.15%、高度 −0.11%；要調角色「整個人大小」改 NAM6（身高），體重調到滿格不會把人變大（2026-10-23，`agentctl/handoffs/done/2026-09/home-2026-09-09/body/REPORT.md:17-27`）。
-- **私有身體不必每人一套 ARMO**：原版 `SkinBodyFemale_1`／`DarkElf`／`WoodElf` 三個 TXST Diffuse 都是同一張 `FemaleBody_1.dds` 且帶 FaceGenTextures（膚色由 facegen tint 執行期給），共用一套 3 ARMA＋1 ARMO＋私有 nif 路徑即可，NPC_ 只改 WNAM。
-- 換私有身體前先查 ARMA 第三人稱模型指的是全域還是私有路徑：指向**全域** `FemaleBody_1.nif` 時不需重烤 BodySlide，做一支小 ESL 把該 ARMA 的 `WorldModel[1].File` 改指向已烤好的私有 nif 即可，0 筆 NPC_ 改動（2026-10-23，`agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md`）。
-- **交叉風險**：私有身體層的 NPC_ 覆寫會壓過換臉層；換臉層之後再改，必須把新贏家 forward 回身體層（或身體層載在前面、換臉層帶 WNAM）。
-- 實機看身材要先 `<ref>.unequipall`，或直接用 Outfit Studio 開 nif 看形狀不用開遊戲。
-- 交接書寫死的單一欄位值可能依記錄的其他維度（種族/型別）而不同：「MorphRace 補回去用 013748」其實依種族有四個值，照字面手改成單一值五筆裡四筆會拿到錯的種族臉形；有疑慮優先用整筆 forward 自權威來源取代手改單一值，不要信交接書的字面值（2026-10-23，`agentctl/handoffs/done/2026-09/home-2026-09-09/body/REPORT.md:69-78`）。
+**BodySlide（wine／Proton，從 staging 直接跑）Preset 下拉永遠空**，連 CBBE 官方預設也讀不到。繞法：把 46560 預設的 slider 值直接寫進 `.osp` 專案檔的 slider 預設屬性，再 Batch Build。
+
+**NPC_ 欄位**：`NAM6`＝身高、`NAM7`＝體重（交接書曾把 NAM6 寫成體重，是筆誤）。
+
+體重滑條（0-100）改的是兩個雕好形狀之間的逐頂點內插，不是整體縮放：同一 mod 兩個體重檔案深度差 17.94%、寬度只差 1.15%、高度 −0.11%；要調角色「整個人大小」改 NAM6（身高），體重調到滿格不會把人變大（2026-10-23，`agentctl/handoffs/done/2026-09/home-2026-09-09/body/REPORT.md:17-27`）。
+
+**私有身體不必每人一套 ARMO**：原版 `SkinBodyFemale_1`／`DarkElf`／`WoodElf` 三個 TXST Diffuse 都是同一張 `FemaleBody_1.dds` 且帶 FaceGenTextures（膚色由 facegen tint 執行期給），共用一套 3 ARMA＋1 ARMO＋私有 nif 路徑即可，NPC_ 只改 WNAM。
+
+換私有身體前先查 ARMA 第三人稱模型指的是全域還是私有路徑：指向**全域** `FemaleBody_1.nif` 時不需重烤 BodySlide，做一支小 ESL 把該 ARMA 的 `WorldModel[1].File` 改指向已烤好的私有 nif 即可，0 筆 NPC_ 改動（2026-10-23，`agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md`）。
+
+**交叉風險**：私有身體層的 NPC_ 覆寫會壓過換臉層；換臉層之後再改，必須把新贏家 forward 回身體層（或身體層載在前面、換臉層帶 WNAM）。
+
+實機看身材要先 `<ref>.unequipall`，或直接用 Outfit Studio 開 nif 看形狀不用開遊戲。
+
+交接書寫死的單一欄位值可能依記錄的其他維度（種族/型別）而不同：「MorphRace 補回去用 013748」其實依種族有四個值，照字面手改成單一值五筆裡四筆會拿到錯的種族臉形；有疑慮優先用整筆 forward 自權威來源取代手改單一值，不要信交接書的字面值（2026-10-23，`agentctl/handoffs/done/2026-09/home-2026-09-09/body/REPORT.md:69-78`）。
 
 **How to apply:** 烤身體別指望 GUI 選預設；改 NPC 體重動 NAM7、整體大小動 NAM6；多層覆寫同一個 NPC_ 時最後載入的那層要 forward 全部欄位。
 相關：[[look-layer-must-carry-hdpt-flst-clfm]]、[[look-transplant-workflow-and-picker]]
