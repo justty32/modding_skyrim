@@ -41,11 +41,15 @@
 **模型與啟動**（2026-09-20）：`codex` 預設模型是 `gpt-6-astra medium`（不是 gpt-sol），要 gpt-sol 得另外確認別名。`codex -m gpt-sol` 回 `The 'gpt-sol' model is not supported when using Codex with a ChatGPT account`（2026-09-08）；交接書寫「gpt-sol」沒問題（是我們的暱稱），但啟動指令別帶 `-m gpt-sol`。
 
 **gpt-sol 的行為特性**（使用者親口提醒 + 實測）：
-- 會為了「更保險」跑一大堆與正事無關的驗證測試。**交接書要寫死「驗收就是這四條，一條不多，做完就停」**，實測有效。
-- 2026-08-30 使用者心得——指揮 gpt-sol 要經常提醒它專注：「要他專注在真正重要的事情上，無關緊要的小事先別管」，否則它會一直寫測試一直驗證。這是動態手段，跟交接書「寫死驗收條數」（靜態）並列：交接書擋不住的過程漂移，靠 orders／tmux 中途提醒拉回來。逐模型指揮心得表在 agentctl/docs/team-model/speed-and-driving.md。
-- subagent 使用者的界線是：**為了推進正事可以開，為了驗證／複查／風險掃描這種周邊小事不准開**。判準寫成「那個 subagent 的產出如果不在驗收清單裡，就不該開它」。
-- 護欄遵守度高：叫它「遇到工具錯誤就停下回報」它真的會停——但它把**自己寫錯的 Python 引號**也算成工具錯誤而停工。交接書要區分「工具/環境錯誤 → 停」與「你自己的臨時腳本寫錯 → 自己修」。
-- 給精確的預期數字（檔案數、bytes、tree SHA）它會照著對，不會含糊帶過。
+會為了「更保險」跑一大堆與正事無關的驗證測試。**交接書要寫死「驗收就是這四條，一條不多，做完就停」**，實測有效。
+
+2026-08-30 使用者心得——指揮 gpt-sol 要經常提醒它專注：「要他專注在真正重要的事情上，無關緊要的小事先別管」，否則它會一直寫測試一直驗證。這是動態手段，跟交接書「寫死驗收條數」（靜態）並列：交接書擋不住的過程漂移，靠 orders／tmux 中途提醒拉回來。逐模型指揮心得表在 agentctl/docs/team-model/speed-and-driving.md。
+
+subagent 使用者的界線是：**為了推進正事可以開，為了驗證／複查／風險掃描這種周邊小事不准開**。判準寫成「那個 subagent 的產出如果不在驗收清單裡，就不該開它」。
+
+護欄遵守度高：叫它「遇到工具錯誤就停下回報」它真的會停——但它把**自己寫錯的 Python 引號**也算成工具錯誤而停工。交接書要區分「工具/環境錯誤 → 停」與「你自己的臨時腳本寫錯 → 自己修」。
+
+給精確的預期數字（檔案數、bytes、tree SHA）它會照著對，不會含糊帶過。
 
 **多線分工**：一條 MO2 live tree + profiles git、一條 submodule 原始碼、一條唯讀盤點寫 notes。同一個 git repo 有兩條線要 commit 時，交接書要寫「只准 `git add <明確路徑>`，禁止 `git add -A`，遇到 `.git/index.lock` 等幾秒重試、絕不刪 lock」。
 
@@ -62,12 +66,17 @@
 資源影響要量了再說，不要沒量就說「影響接近零」。使用者說過「不要操我的電腦」。
 
 **其他坑**：
-- `inbox_send.sh` **沒有 `--body-file` 旗標**，正文檔是第 4 個位置參數，寫成旗標會靜默從 stdin 卡住（2026-09-20）。
-- 交接書「只看 plugins.txt 帶 `*`」會漏掉隱含載入的 CC 與原版 master（1266 支＝1207 勾選＋59 隱含，2026-09-20）。
-- codex sandbox 裡 `python -c` one-liner 的引號在 cmd.exe 下極易被拆壞，自證腳本一律寫成 `.py` 檔再跑（`agentctl/handoffs/done/2026-09-02/lorerim-2026-09-02/team-src/REPORT.md:100-102`）。
-- 檢查環境變數是否設定別用 `${VAR:-no}`（已設定時會把值印出），改用 `[ -n "$VAR" ] && echo 有 || echo 無`（`agentctl/handoffs/done/2026-08-27/cx-dl/HANDOFF.md:122`）。
-- `notify_watch.sh` 只監看 `inbox/new/`，子線回報其實路由到領導自己的 `mail/`，領導要主動對 `mail/` 跑 `--wait` 輪詢（`agentctl/handoffs/done/2026-08-30/opus-ops-2026-08-30/STATE.md:92`）。
-- 互動 shell 的裸 `ls` 是 `eza --icons --git` 別名，大目錄下近似卡死，腳本與需要可靠速度的場合用 `/bin/ls`（`agentctl/handoffs/done/2026-08-30/opus-ops-2026-08-30/STATE.md:88`）。
+`inbox_send.sh` **沒有 `--body-file` 旗標**，正文檔是第 4 個位置參數，寫成旗標會靜默從 stdin 卡住（2026-09-20）。
+
+交接書「只看 plugins.txt 帶 `*`」會漏掉隱含載入的 CC 與原版 master（1266 支＝1207 勾選＋59 隱含，2026-09-20）。
+
+codex sandbox 裡 `python -c` one-liner 的引號在 cmd.exe 下極易被拆壞，自證腳本一律寫成 `.py` 檔再跑（`agentctl/handoffs/done/2026-09-02/lorerim-2026-09-02/team-src/REPORT.md:100-102`）。
+
+檢查環境變數是否設定別用 `${VAR:-no}`（已設定時會把值印出），改用 `[ -n "$VAR" ] && echo 有 || echo 無`（`agentctl/handoffs/done/2026-08-27/cx-dl/HANDOFF.md:122`）。
+
+`notify_watch.sh` 只監看 `inbox/new/`，子線回報其實路由到領導自己的 `mail/`，領導要主動對 `mail/` 跑 `--wait` 輪詢（`agentctl/handoffs/done/2026-08-30/opus-ops-2026-08-30/STATE.md:92`）。
+
+互動 shell 的裸 `ls` 是 `eza --icons --git` 別名，大目錄下近似卡死，腳本與需要可靠速度的場合用 `/bin/ls`（`agentctl/handoffs/done/2026-08-30/opus-ops-2026-08-30/STATE.md:88`）。
 
 相關：[[driving-other-cli-agents]]、[[delegate-simple-work-to-sonnet]]
 
