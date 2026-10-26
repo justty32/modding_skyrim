@@ -11,14 +11,19 @@ RS Children Overhaul 1.1.3HF1 安裝包：`00 - Core/RSkyrimChildren.esm`（種�
 只裝 Core 時素材、種族、NPC 層都「帳面正確」；placeatme 原版小孩（Braith）與 RSC 範本小孩對照 → 「兩個都有頭髮、都是大媽臉」，再對安裝包就切開。Face Discoloration Fix 讓「不符」表現成成人素頭而非黑臉。
 
 **How to apply:**
-- 任何 mod「裝了但沒效果」先對**安裝包內容 vs 實際裝了什麼**（`7z l` 列 plugin／FOMOD ModuleConfig），
-  再查記錄層；FOMOD 多步驟安裝最容易漏後面的步驟。
-- 修法（2026-09-09）：裝 `Non Playable - USSEP` 變體、放 USSEP 與 esm 之後，
-  再做 forward patch 把它的臉欄位推過 AI Overhaul 等蓋小孩的 mod；`RSC-ChildRace-Restore-B` 保留。2026-09-09 使用者親眼確認**成功**。
-- **profile 寫入的驗收要實讀 plugins.txt 那一行有沒有 `*`**（forward patch 漏 `*` 會讓驗收無效），houseCARL 鏡像的「贏家」不等於遊戲真的啟用。
-- 症狀修了但沒消失時，不能假設第一個診斷是唯一病灶，要連己方自動產生的合併包一起納入嫌疑鏈重掃（2026-09-07：晨風地圖 mod 的 BSA 帶同路徑素材，加上自產的 Facegen-Texture-Fix-Combined 合併包，以更高優先權蓋掉 RSC 的髮型貼圖）。
-- RSkyrimChildren.esm 與 RSChildren.bsa／RSChildren - Textures.bsa 檔名對不上，遊戲不會自動載入該 BSA 也不報錯；建議做成常設 gate（掃「有 BSA 但沒登記且檔名不符」的 mod）。
-- 相關 [[look-layer-must-carry-hdpt-flst-clfm]]、[[verify-waituser-against-logs]]。
+任何 mod「裝了但沒效果」先對**安裝包內容 vs 實際裝了什麼**（`7z l` 列 plugin／FOMOD ModuleConfig），
+再查記錄層；FOMOD 多步驟安裝最容易漏後面的步驟。
+
+修法（2026-09-09）：裝 `Non Playable - USSEP` 變體、放 USSEP 與 esm 之後，
+再做 forward patch 把它的臉欄位推過 AI Overhaul 等蓋小孩的 mod；`RSC-ChildRace-Restore-B` 保留。2026-09-09 使用者親眼確認**成功**。
+
+**profile 寫入的驗收要實讀 plugins.txt 那一行有沒有 `*`**（forward patch 漏 `*` 會讓驗收無效），houseCARL 鏡像的「贏家」不等於遊戲真的啟用。
+
+症狀修了但沒消失時，不能假設第一個診斷是唯一病灶，要連己方自動產生的合併包一起納入嫌疑鏈重掃（2026-09-07：晨風地圖 mod 的 BSA 帶同路徑素材，加上自產的 Facegen-Texture-Fix-Combined 合併包，以更高優先權蓋掉 RSC 的髮型貼圖）。
+
+RSkyrimChildren.esm 與 RSChildren.bsa／RSChildren - Textures.bsa 檔名對不上，遊戲不會自動載入該 BSA 也不報錯；建議做成常設 gate（掃「有 BSA 但沒登記且檔名不符」的 mod）。
+
+相關 [[look-layer-must-carry-hdpt-flst-clfm]]、[[verify-waituser-against-logs]]。
 
 source: agentctl/handoffs/done/2026-09/home-2026-09-07/rsc/REPORT.md:18,101
 
@@ -31,14 +36,21 @@ source: agentctl/handoffs/done/2026-09/home-2026-09-07/rsc/REPORT.md:18,101
 
 **Why:** Yvanni（163745）安裝時只抄 FOMOD `Base/`＋facegen，三個必選群組整組漏，身體／鎧甲全壞；Evolving Locations×3、BDS-CPM 也同型漏裝。manifest 的 `fomod_choices` 幾乎全 `unrecorded`。
 **How to apply:**
-- 交接書裡裝 FOMOD 包的步驟固定寫：`fomod_inspect` 列選項 → 選項＋理由寫進交接書給使用者拍板（推不出取 Required/Recommended，再不行照 modpack 慣例：CT77 清涼鎧甲、CBBE、有中文選中文）→ `fomod_plan` → `fomod_apply --apply`（dry-run 預設、0 覆蓋）→ 目錄留 `fomod-choices.json` → 回填 manifest。
-- 驗收用 `fomod_audit.py <archive> <mod dir>` 要 complete；base-only／partial 就是白裝。
-- 上游 FOMOD 的「Needed for textures」選配需求也要看（Yvanni 的 Anchorite／Battle Queen 貼圖在別的 mod）。
-- archive 檔名（如帶「-DXP」）不代表安裝結果，要展開 `fomod/ModuleConfig.xml` 實際看選項樹（2026-10-23）。
-- archive 內的 `d3d11.dll`/`dxgi.dll` 若躺在跟主功能無關的子目錄（如 DAR 條件夾），多半是誤塞的 ENB 檔，不要當成 SKSE DLL 依賴。
-- 帶多個可選變體的 archive，原始 conflicts_n 只是上界，要先依 fomod_choice（實際會裝的變體）narrow 過才能報告規模。
-- esp 埋在沒攤平的 FOMOD 子目錄（如 `10 Main/Follower/`）時 MO2 不會當 plugin 看待、plugins.txt 裡不會有它。
-- FOMOD apply 等依賴 0-based 索引的批次腳本要明確用 `bash` 執行，zsh 陣列 1 起算會讓目錄內容整批錯位。
+交接書裡裝 FOMOD 包的步驟固定寫：`fomod_inspect` 列選項 → 選項＋理由寫進交接書給使用者拍板（推不出取 Required/Recommended，再不行照 modpack 慣例：CT77 清涼鎧甲、CBBE、有中文選中文）→ `fomod_plan` → `fomod_apply --apply`（dry-run 預設、0 覆蓋）→ 目錄留 `fomod-choices.json` → 回填 manifest。
+
+驗收用 `fomod_audit.py <archive> <mod dir>` 要 complete；base-only／partial 就是白裝。
+
+上游 FOMOD 的「Needed for textures」選配需求也要看（Yvanni 的 Anchorite／Battle Queen 貼圖在別的 mod）。
+
+archive 檔名（如帶「-DXP」）不代表安裝結果，要展開 `fomod/ModuleConfig.xml` 實際看選項樹（2026-10-23）。
+
+archive 內的 `d3d11.dll`/`dxgi.dll` 若躺在跟主功能無關的子目錄（如 DAR 條件夾），多半是誤塞的 ENB 檔，不要當成 SKSE DLL 依賴。
+
+帶多個可選變體的 archive，原始 conflicts_n 只是上界，要先依 fomod_choice（實際會裝的變體）narrow 過才能報告規模。
+
+esp 埋在沒攤平的 FOMOD 子目錄（如 `10 Main/Follower/`）時 MO2 不會當 plugin 看待、plugins.txt 裡不會有它。
+
+FOMOD apply 等依賴 0-based 索引的批次腳本要明確用 `bash` 執行，zsh 陣列 1 起算會讓目錄內容整批錯位。
 
 相關：[[face-bugs-check-real-actor-and-upstream-fomod]]、[[investigate-all-then-install-once]]
 source: agentctl/handoffs/done/2026-09/home-2026-09-02/mco/REPORT.md:32,34,67；agentctl/handoffs/done/2026-09/home-2026-09-03/lrrev/REPORT.md:66；agentctl/handoffs/done/2026-09/home-2026-09-11/donor/REPORT.md:36；agentctl/handoffs/done/2026-10/home-2026-10-10/batch4b/REPORT.md
@@ -61,10 +73,13 @@ source: agentctl/handoffs/done/2026-09/home-2026-09-02/mco/REPORT.md:32,34,67；
 **Why:** DynDOLOD／xLODGen 輸出會覆寫內容 mod 的外景 REFR，所以把該 mod 釘進 masters；只停用內容 mod 會讓 LOD plugin 缺 master → 啟動 CTD。剛重跑過的 LOD 也照樣得再跑（36 分＋收尾）。
 
 **How to apply:**
-- 任何「停用／移除 mod」的線，交接書要先加一步 `check_masters.py --out` 再 grep 該 esp 出現在 master 欄的每一支；命中 DynDOLOD.esp／Occlusion.esp 就把「重跑 TexGen→DynDOLOD（照 want5 LOD-RUNBOOK）」列進工作量與時程，別走清 master 捷徑。裁「留哪個」時也把這條算進去（學院三改留 OCW 一部分就因為 Occlusion.esp 依賴它）。
-- DynDOLOD/TexGen 的兩個 Output 要放 modlist **最高**優先權：否則 mods/ 底下 BSA 自帶的舊 terrain/object LOD 會蓋掉新產出、整趟白跑；TexGen Fixes 的用途是蓋掉它所修的 mod，放最低等於零作用（2026-09-03）。
-- DynDOLOD 對 unresolved reference 一次只彈一筆，不能把前置靜態掃描的候選全集直接當成要逐一修的清單，要以 log 實際報出的子集逐輪收斂，否則會修到大量假陽性。
-- 外觀異常症狀混在一起時，比較 DynDOLOD／Occlusion 輸出的 mtime 與可疑 mod 的裝入時間，把「浮空/重疊城牆」（兩套內容疊在一起，靠拆分 mod 解決）跟「遠處幽靈輪廓」（LOD 比 mod 裝入早，靠重跑 LOD 解決）切開，避免重跑 LOD 卻解決不了實體重疊（2026-10-23，`agentctl/handoffs/done/2026-09/home-2026-09-09/sol/REPORT.md:30-33`）。
+任何「停用／移除 mod」的線，交接書要先加一步 `check_masters.py --out` 再 grep 該 esp 出現在 master 欄的每一支；命中 DynDOLOD.esp／Occlusion.esp 就把「重跑 TexGen→DynDOLOD（照 want5 LOD-RUNBOOK）」列進工作量與時程，別走清 master 捷徑。裁「留哪個」時也把這條算進去（學院三改留 OCW 一部分就因為 Occlusion.esp 依賴它）。
+
+DynDOLOD/TexGen 的兩個 Output 要放 modlist **最高**優先權：否則 mods/ 底下 BSA 自帶的舊 terrain/object LOD 會蓋掉新產出、整趟白跑；TexGen Fixes 的用途是蓋掉它所修的 mod，放最低等於零作用（2026-09-03）。
+
+DynDOLOD 對 unresolved reference 一次只彈一筆，不能把前置靜態掃描的候選全集直接當成要逐一修的清單，要以 log 實際報出的子集逐輪收斂，否則會修到大量假陽性。
+
+外觀異常症狀混在一起時，比較 DynDOLOD／Occlusion 輸出的 mtime 與可疑 mod 的裝入時間，把「浮空/重疊城牆」（兩套內容疊在一起，靠拆分 mod 解決）跟「遠處幽靈輪廓」（LOD 比 mod 裝入早，靠重跑 LOD 解決）切開，避免重跑 LOD 卻解決不了實體重疊（2026-10-23，`agentctl/handoffs/done/2026-09/home-2026-09-09/sol/REPORT.md:30-33`）。
 
 相關：[[dyndolod-runtime-and-traps]]、[[missing-master-scan-mast-not-housecarl]]、[[rule-out-a-concept-scan-same-batch-siblings]]。
 source: instance/docs/lod/output.md:7-24；agentctl/handoffs/done/2026-09/home-2026-09-03/SESSION-LOG.md:100
@@ -77,12 +92,17 @@ source: instance/docs/lod/output.md:7-24；agentctl/handoffs/done/2026-09/home-2
 
 **Why:** 補丁的 MAST 只列它覆寫的 plugin。為「只有 mesh／貼圖的 mod」或「要讓位給另一個大 mod」做的選項，對方根本不會出現在 MAST；照抄選項時抄的是別人的 modlist 前提。
 **How to apply:**
-- 照抄別人整合包的 FOMOD 選項／Patch Collection 後，除了 check_masters 再補三項：① 選項名、檔名提到的 mod 是否在 modlist 的 `+` 行；② 補丁自帶 loose nif 與 MODL 指到的 mesh／dds 在 VFS 是否 ABSENT；③ 對 master 原紀錄比初始停用旗標（0x800）、位移、base 改指。
-- 現成可重跑工具：`instance/tools/patch_audit.py`；單支補丁細查用 `agentctl/handoffs/home-2026-10-18/lorerim-patch-audit/tools/inspect_patch.py`（未升格）；整個 mod 的缺貼圖面用 `instance/tools/smim_scan.py`。
-- 症狀是「東西消失／紫色或沒貼圖／擺設浮空或錯位」時，先懷疑這類補丁，再懷疑存檔或本體。
-- 停用時拿掉 `*` 之外也把檔案改 `.mohidden`，免得遊戲當孤兒 plugin 重新啟用（[[game-rewrites-plugins-orphans-and-seq-bsa]]）。
-- 現況（2026-10-23；記憶條目 `lorerim-copied-patches-soft-deps` 即本條）：38 支＋5 nif 中已停 37 支＋藏 nif；Snazzy 缺的 SMIM 貼圖**只抽 34 張**做成「SMIM Textures for Snazzy (extract)」，**不整包裝 SMIM**（違反 08-30 不裝全域精修的裁示）；Ryn's Standing Stones USSEP patch 裁留。
-- 相似但不同的症狀：esp 引用作者自己沒打包進壓縮檔的 .pex 腳本，只會造成 Papyrus「Cannot open store」警告，不是裝壞也不會崩潰。新裝/裝回 mod 後新增這個錯誤，先比對該腳本是否存在於上游壓縮檔，整包本來就沒附就記成上游打包缺陷，不用當裝壞去查（2026-09-12，`agentctl/handoffs/done/2026-09/home-2026-09-12/want4/REPORT.md:96,221`）。
+照抄別人整合包的 FOMOD 選項／Patch Collection 後，除了 check_masters 再補三項：① 選項名、檔名提到的 mod 是否在 modlist 的 `+` 行；② 補丁自帶 loose nif 與 MODL 指到的 mesh／dds 在 VFS 是否 ABSENT；③ 對 master 原紀錄比初始停用旗標（0x800）、位移、base 改指。
+
+現成可重跑工具：`instance/tools/patch_audit.py`；單支補丁細查用 `agentctl/handoffs/home-2026-10-18/lorerim-patch-audit/tools/inspect_patch.py`（未升格）；整個 mod 的缺貼圖面用 `instance/tools/smim_scan.py`。
+
+症狀是「東西消失／紫色或沒貼圖／擺設浮空或錯位」時，先懷疑這類補丁，再懷疑存檔或本體。
+
+停用時拿掉 `*` 之外也把檔案改 `.mohidden`，免得遊戲當孤兒 plugin 重新啟用（[[game-rewrites-plugins-orphans-and-seq-bsa]]）。
+
+現況（2026-10-23；記憶條目 `lorerim-copied-patches-soft-deps` 即本條）：38 支＋5 nif 中已停 37 支＋藏 nif；Snazzy 缺的 SMIM 貼圖**只抽 34 張**做成「SMIM Textures for Snazzy (extract)」，**不整包裝 SMIM**（違反 08-30 不裝全域精修的裁示）；Ryn's Standing Stones USSEP patch 裁留。
+
+相似但不同的症狀：esp 引用作者自己沒打包進壓縮檔的 .pex 腳本，只會造成 Papyrus「Cannot open store」警告，不是裝壞也不會崩潰。新裝/裝回 mod 後新增這個錯誤，先比對該腳本是否存在於上游壓縮檔，整包本來就沒附就記成上游打包缺陷，不用當裝壞去查（2026-09-12，`agentctl/handoffs/done/2026-09/home-2026-09-12/want4/REPORT.md:96,221`）。
 
 相關：[[rule-out-a-concept-scan-same-batch-siblings]]、[[missing-master-scan-mast-not-housecarl]]、[[fomod-install-tooling]]。
 
