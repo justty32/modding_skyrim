@@ -15,6 +15,8 @@
 
 `mod-library` 必須永遠 private，因為翻譯層有他人 mod 的完整原始 ESP 複本。`modpack-design` 和 `agentctl` 暫時也是 private，等逐檔審查後再決定能否公開。不要從這個 public 母 repo 推論子 repo 的公開範圍。
 
+各子 repo（上表四條線與 `projects/` 下的軟體 repo）根目錄都有自己的 `AGENTS.md` 與 `wf/` 工作流骨架（2026-10-26 導入）；進子 repo 工作先讀它的 `AGENTS.md`。例外：`projects/houseCARL` 尚未導入，`projects/model-converter` 的 `wf/` 暫在 `wf-import` 分支。
+
 ## 你來找什麼?
 
 <!-- wf-nav -->

@@ -13,7 +13,7 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | [`agentctl/handoffs/`](../agentctl/handoffs/) | 每場交接書與各隊 `REPORT.md` |
 | [`agentctl/inbox/`](../agentctl/inbox/) | 五通道信箱與 `ROSTER.md` 身份聲明簿 |
 | [`agentctl/docs/`](../agentctl/docs/) | 驅動 agent、資源鎖、模型分級與 houseCARL 現行文件 |
-| [`projects/`](../projects/README.md) | 獨立開發專案；工具、內容專案與 Git 操作說明都在這一層入口 |
+| [`projects/`](../projects/README.md) | 獨立開發專案；工具、內容專案與 Git 操作說明都在這一層入口。各子 repo（含四條主線）有自己的 `AGENTS.md`＋`wf/`（2026-10-26 導入，例外見根 README）|
 | [`analysis/`](../analysis/README.md) | 引擎、mod、工具與素材來源的研究分類；文件慣例見 [analysis 工作流](workflows/analysis.md) |
 | [`external/`](../external/README.md) | 他人框架原始碼的落點 |
 | [`patches/`](../patches/README.md) | 放給外部專案套用的獨立 patch，各資料夾附目標版本、修改原因、套用方式與驗證方法 |
