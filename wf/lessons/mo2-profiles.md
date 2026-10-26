@@ -11,22 +11,33 @@
 **Why**：modlist.txt 的行序就是優先度（檔內越上越優先，MO2 左欄相反）。只看啟用數對得上就宣告還原成功，是「檢查失效時給出最令人安心的答案」的又一例。
 
 **How to apply**：
-- 還原 profile 一律以「已知正確順序的副本」為基準（git HEAD 或各線收線前的 `modlist.txt.bak`），
-  再把新 mod 插回、再套旗標；驗收要跑 loose-file winner 模擬（opus-qa-triage 的方法），
-  不能只比啟用數。
-- **MO2 開著時絕不改 profile 檔**——它退出會整份覆寫。批次啟用改走「關 MO2 → 改檔 → 重開」。
-- MO2／遊戲開著時 profile 檔是暫態（plugins.txt 會變 LF、archives.txt 變 0 bytes）：commit profile 三檔前先 `ps` 確認 MO2 已退出、`file` 確認 CRLF，否則等 MO2 退出回寫後再 commit（2026-09-16）。
-- MO2／遊戲重開造成的 profile 三檔整檔重排／換行漂移，不得跟持鎖隊自己的變更混進同一筆 commit；收線時把這類回寫漂移另立一筆、訊息標明「MO2 回寫」（09-11 裁示，`agentctl/handoffs/done/2026-09/home-2026-09-11/COMMON/03-rulings-morning.md:8`）。
-- 檔案層把 mod 改 `+` 後，MO2 認到的新插件**預設未勾**，plugins.txt 要一起補 `*`。
-- Python 改檔先讀後寫，且 `open(...,"w")` 在參數求值前就會截斷檔案——腳本炸在 join 也會留下空檔；
-  改前一律先 cp 備份。
-- 中文層在 MO2 左欄要排在本體**下面**（檔內在上面）；跟使用者講順序用「左欄」的說法。
-- Steam 若在啟動前跳更新：Downloads 暫停 → Go Offline → 再啟動；1.6.1170 備份在
-  `~/skyrim_mods/steam-build-backup/`。
-- modlist.txt 的 separator 行位於它所轄群組「之後」（歸屬＝行號大於它的第一個 separator）；plugins.txt／loadorder.txt 的優先方向與 modlist.txt 相反（modlist 越上面優先權越高；plugins/loadorder 是檔尾後載入者贏、master 必須排在依賴它的 plugin 前）。同一支腳本要同時改寫兩者不能共用一套拓撲排序，上線前先拿已知答案的樣本驗證方向（方向判錯會整批假陽性）。來源：`agentctl/handoffs/done/2026-09-02/lorerim-2026-09-02/team-src/REPORT.md:30-33`、`agentctl/handoffs/done/2026-09/home-2026-09-05/lrin/REPORT.md:78`、`agentctl/handoffs/done/2026-09-01/hzh-2026-09-01/cx-hz2/REPORT.md:1-15`。
-- 檔案優先度（中文層蓋過英文本體檔）與 plugin 記錄層的載入順序是兩套獨立機制：中文層在檔案層贏了，仍可能有以該插件為 master 的後載 ESP 在記錄層把同欄位蓋回英文，調 modlist 優先度救不了。驗收「中文層生效」要另外用 `cross_plugin_query(..., conflict_tree=true)` 追 override_depth，有後載入插件蓋掉就做 patch plugin 轉發。來源：`agentctl/handoffs/done/2026-08-28/opus-apply-order/STATE.md:207-222,273-286`。
-- 批次插入多筆 modlist 行要由檔案下方往上插（insert_order 由大到小），由上往下插會推移下面所有錨點行號。新裝帶 ESM 旗標（TES4 flags 含 0x1）的 master 不能直接附加到 plugins.txt/loadorder.txt 檔尾，要插在 DynDOLOD.esm 那一行正上方，否則 MO2/引擎會重排、星號掉掉。來源：`agentctl/handoffs/done/2026-08-28/opus-install-prep/PLAN.md:34-42`、`agentctl/handoffs/done/2026-09/home-2026-09-12/want5/REPORT.md:84`。
-- 契約寫「REMOVE-FROM-MODLIST」時，只把啟用行改成 `-`（停用）不算；真正的「移除」必須整行刪除＋搬走 mod 目錄兩步一起做，否則該行指向已移走的目錄，MO2 下次開啟會顯示異常。來源：`agentctl/handoffs/done/2026-09/home-2026-09-03/inst5/REPORT.md:59`。
+還原 profile 一律以「已知正確順序的副本」為基準（git HEAD 或各線收線前的 `modlist.txt.bak`），
+再把新 mod 插回、再套旗標；驗收要跑 loose-file winner 模擬（opus-qa-triage 的方法），
+不能只比啟用數。
+
+**MO2 開著時絕不改 profile 檔**——它退出會整份覆寫。批次啟用改走「關 MO2 → 改檔 → 重開」。
+
+MO2／遊戲開著時 profile 檔是暫態（plugins.txt 會變 LF、archives.txt 變 0 bytes）：commit profile 三檔前先 `ps` 確認 MO2 已退出、`file` 確認 CRLF，否則等 MO2 退出回寫後再 commit（2026-09-16）。
+
+MO2／遊戲重開造成的 profile 三檔整檔重排／換行漂移，不得跟持鎖隊自己的變更混進同一筆 commit；收線時把這類回寫漂移另立一筆、訊息標明「MO2 回寫」（09-11 裁示，`agentctl/handoffs/done/2026-09/home-2026-09-11/COMMON/03-rulings-morning.md:8`）。
+
+檔案層把 mod 改 `+` 後，MO2 認到的新插件**預設未勾**，plugins.txt 要一起補 `*`。
+
+Python 改檔先讀後寫，且 `open(...,"w")` 在參數求值前就會截斷檔案——腳本炸在 join 也會留下空檔；
+改前一律先 cp 備份。
+
+中文層在 MO2 左欄要排在本體**下面**（檔內在上面）；跟使用者講順序用「左欄」的說法。
+
+Steam 若在啟動前跳更新：Downloads 暫停 → Go Offline → 再啟動；1.6.1170 備份在
+`~/skyrim_mods/steam-build-backup/`。
+
+modlist.txt 的 separator 行位於它所轄群組「之後」（歸屬＝行號大於它的第一個 separator）；plugins.txt／loadorder.txt 的優先方向與 modlist.txt 相反（modlist 越上面優先權越高；plugins/loadorder 是檔尾後載入者贏、master 必須排在依賴它的 plugin 前）。同一支腳本要同時改寫兩者不能共用一套拓撲排序，上線前先拿已知答案的樣本驗證方向（方向判錯會整批假陽性）。來源：`agentctl/handoffs/done/2026-09-02/lorerim-2026-09-02/team-src/REPORT.md:30-33`、`agentctl/handoffs/done/2026-09/home-2026-09-05/lrin/REPORT.md:78`、`agentctl/handoffs/done/2026-09-01/hzh-2026-09-01/cx-hz2/REPORT.md:1-15`。
+
+檔案優先度（中文層蓋過英文本體檔）與 plugin 記錄層的載入順序是兩套獨立機制：中文層在檔案層贏了，仍可能有以該插件為 master 的後載 ESP 在記錄層把同欄位蓋回英文，調 modlist 優先度救不了。驗收「中文層生效」要另外用 `cross_plugin_query(..., conflict_tree=true)` 追 override_depth，有後載入插件蓋掉就做 patch plugin 轉發。來源：`agentctl/handoffs/done/2026-08-28/opus-apply-order/STATE.md:207-222,273-286`。
+
+批次插入多筆 modlist 行要由檔案下方往上插（insert_order 由大到小），由上往下插會推移下面所有錨點行號。新裝帶 ESM 旗標（TES4 flags 含 0x1）的 master 不能直接附加到 plugins.txt/loadorder.txt 檔尾，要插在 DynDOLOD.esm 那一行正上方，否則 MO2/引擎會重排、星號掉掉。來源：`agentctl/handoffs/done/2026-08-28/opus-install-prep/PLAN.md:34-42`、`agentctl/handoffs/done/2026-09/home-2026-09-12/want5/REPORT.md:84`。
+
+契約寫「REMOVE-FROM-MODLIST」時，只把啟用行改成 `-`（停用）不算；真正的「移除」必須整行刪除＋搬走 mod 目錄兩步一起做，否則該行指向已移走的目錄，MO2 下次開啟會顯示異常。來源：`agentctl/handoffs/done/2026-09/home-2026-09-03/inst5/REPORT.md:59`。
 
 相關：[[launch-skyrim-via-steam]]、[[verify-waituser-against-logs]]
 
@@ -48,10 +59,13 @@
 
 > 2026-10-10 MO2 load order 每次被打亂的真因是 SkyrimSE 把停用＋缺 master 的 plugin 搬到最上面；普通 esp 永遠排在 master 類後；11 個 BSA 重打包了 SEQ，mod 更新要重做
 
-1. MO2（和引擎）一律把普通 esp 排在所有 master 類（ESM 旗標或 `.esm`／`.esl`）之後；把 esp 夾在 USSEP 前「讓它輸」不會生效。MO2 2.5.2 原始碼 `fixPluginRelationships()` 每次 refresh 都把 master 類搬到所有普通 esp 前面、`setPluginPriority()` 明寫「esp 不准搬到 esm 上面」，lockedorder.txt 也鎖不住（本機長期寫在 USSEP/USMP 前的普通 esp 實測只有 8 筆 record 真的翻盤）。houseCARL 判贏家照 `plugins.txt` 字面順序、沒套這條規則，會判錯。
-2. SkyrimSE 啟動會改寫 `plugins.txt`，把停用且缺 master 的 plugin 搬到最上面，MO2 讀回後 master 區尾段每次亂排。修法：這類孤兒 plugin 改 `.mohidden`（清單 `agentctl/handoffs/2026-10-10/post-test-fix/data/hide-orphans-manifest.json`）。
-3. 11 個 mod（arnima、USMP、SPERG、HLIORemi、VLIOVarinia 等）的 SEQ 包在 BSA 裡，已重打包；其餘 42 支用 mod `SEQ Regenerated 2026-10-10`。原 BSA 備份 `~/skyrim_mods/_seq-bsa-backup-2026-10-10/`。
-4. 固定一批 ESL/ESM（Aqua、HSResources、DD_warrior、Midnight Sun、Astral、AncientBloodII、Shockwave、FalkreathShades）每次玩完都會被 MO2 回寫排序位置，是既有回寫行為，看到位移可直接 git checkout 還原不必重查。
+（1）MO2（和引擎）一律把普通 esp 排在所有 master 類（ESM 旗標或 `.esm`／`.esl`）之後；把 esp 夾在 USSEP 前「讓它輸」不會生效。MO2 2.5.2 原始碼 `fixPluginRelationships()` 每次 refresh 都把 master 類搬到所有普通 esp 前面、`setPluginPriority()` 明寫「esp 不准搬到 esm 上面」，lockedorder.txt 也鎖不住（本機長期寫在 USSEP/USMP 前的普通 esp 實測只有 8 筆 record 真的翻盤）。houseCARL 判贏家照 `plugins.txt` 字面順序、沒套這條規則，會判錯。
+
+（2）SkyrimSE 啟動會改寫 `plugins.txt`，把停用且缺 master 的 plugin 搬到最上面，MO2 讀回後 master 區尾段每次亂排。修法：這類孤兒 plugin 改 `.mohidden`（清單 `agentctl/handoffs/2026-10-10/post-test-fix/data/hide-orphans-manifest.json`）。
+
+（3）11 個 mod（arnima、USMP、SPERG、HLIORemi、VLIOVarinia 等）的 SEQ 包在 BSA 裡，已重打包；其餘 42 支用 mod `SEQ Regenerated 2026-10-10`。原 BSA 備份 `~/skyrim_mods/_seq-bsa-backup-2026-10-10/`。
+
+（4）固定一批 ESL/ESM（Aqua、HSResources、DD_warrior、Midnight Sun、Astral、AncientBloodII、Shockwave、FalkreathShades）每次玩完都會被 MO2 回寫排序位置，是既有回寫行為，看到位移可直接 git checkout 還原不必重查。
 
 來源：`agentctl/handoffs/done/2026-10/home-2026-10-10/mo2-reorder/REPORT/investigation.md`、`agentctl/handoffs/done/2026-10/home-2026-10-08/newsave/REPORT-build.md`。
 
