@@ -53,6 +53,10 @@
 
 內容見 [dsport-p3.md](feature-runtime/dsport-p3.md)。
 
+## Astrid（換 Bell 的臉）五官確認（2026-10-26，BLOCKED）
+
+face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不是素頭大媽臉），但叫出 Bell 本尊複本後相機兩次跑進牆裡，拍不到同框。靜態檢查全過（tpfix `PASS 7/7`、贏家是換臉層、Bell 已藏）。這是測不出來，不是測出壞的，現狀不動。請使用者看一眼 Astrid 的五官是不是 Bell；截圖在 `~/skyrim_mods/_staging-2026-10-26/face3/shots/astrid-face.png`（不進 git）。證據見 [face3 REPORT](../agentctl/handoffs/home-2026-10-26/face3/REPORT.md)。
+
 ## 已完成（封存）
 
 ### 2026-09-20：PI 啟動崩潰候選層與技能條件 crash 驗證（2026-09-24／2026-10-23 兩段結案）

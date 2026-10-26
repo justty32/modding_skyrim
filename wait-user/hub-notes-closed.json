@@ -158,6 +158,12 @@
    "關閉日期": "2026-10-26",
    "證據路徑": "agentctl/handoffs/home-2026-10-26/cowzh/REPORT.md",
    "內容": "**計數變動：回家下載／重建 4 → 5**，新增「自己改 ~/.zshrc 的 MODFORGE_TTS_BIN」（10-17 巡檢 #6，使用者親做；來源 tidyall/mother2 REPORT 待裁第 2 條）。**整包 UI／中文／任務驗收 9 → 10**，新增「cow 中文層人眼抽查」（cowzh REPORT 的人眼抽查節）。合計 25 → 27。"
+  },
+  {
+   "項目": "2026-10-26 新增一項（Astrid 五官確認）",
+   "關閉日期": "2026-10-26",
+   "證據路徑": "agentctl/handoffs/home-2026-10-26/face3/REPORT.md",
+   "內容": "**計數變動：獨立功能驗收 11 → 12**，新增「Astrid（換 Bell 的臉）五官確認」，face3 實機拍不到同框，BLOCKED。合計 27 → 28。"
   }
  ]
 }
