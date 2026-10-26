@@ -1,21 +1,12 @@
 # lessons — 從 Claude 記憶搬來的教訓庫
 
-每個 `##` 小節是一條教訓（標題＝原記憶檔名 slug，引言行＝原 description，內文保留日期與 Why／How to apply）。lessons 是知識庫不是流程文件，單檔可超過 8 KB；同主題放同一檔，超過 16 KB 才按子主題分檔（檔名語意化，不用 `-N` 編號）。
+每個 `##` 小節是一條教訓：標題＝原記憶檔名 slug（記憶與其他文件以 slug 引用，**不改**），引言行＝一句 description，內文只留日期、事實、Why、How to apply 與使用者原話。lessons 是知識庫不是流程文件，單檔可超過 8 KB；同主題放同一檔，超過 16 KB 才按子主題分檔（檔名語意化，不用 `-N` 編號）。
 
-## 搬家狀態
+**內容精簡**：2026-10-26 使用者裁示 lessons 也套內容精簡（[tidy 原則 5](../workflows/tidy/content-trim.md)）。事故經過的流水帳、改版經過、被推翻的舊說法（含刪除線段）直接刪，只留現行結論；刪掉的靠 `git log -p -- <檔>` 找。技術結論的來源位置（`path:line`、URL）照 AGENTS 鐵律 6 保留。
 
+## 來源
 
-2026-09-26 memmig 把記憶目錄的 md 以腳本原文轉成小節（腳本已封存到 `wf/workflows/common/archive/`）；2026-10-17 WP-05 把 `-2`…`-9` 分檔合併成下表（內容逐行保留，無重複小節）；2026-10-18 `mo2-profiles` 加新條會超過 16 KB，把裝／拔 mod 稽核四條原文搬到 `mod-install-audit`。
-
-2026-10-23 tidy E1 補搬 09-26 之後新增的條目與原先點名未搬的 4 條：新增 14 個小節（新建 `this-machine.md`、`gameplay-bugs.md`），就地更新 6 個小節。3 條判過期／流水帳不搬（`aetheria-agent-coexistence`、`overnight-agent-fleet-2026-08-20`、`install-day-2026-10-10`），1 條與既有小節同義未另開。逐條對照表在 `agentctl/handoffs/home-2026-10-23/tidy/E1/REPORT.md`。
-
-2026-10-23 tidy E4 把六條掘金線的 796 條候選去重落地：淨新 59 個小節（新建 `nexus-download-ops.md`、`porting-and-modforge.md`），就地增補 106 處既有／新小節。逐條處置表在 `agentctl/handoffs/home-2026-10-23/tidy/E4/dedup-ledger.json`。
-
-2026-10-23 tidy R2 把 E1＋E4 增補後超過 16 KB 的 10 支主題檔按子主題拆開：整節搬移、小節原文零改動，新增 12 支語意化子檔，另把 `agent-driven-nexus-download` 併進同主題的 `nexus-download-ops`；原檔路徑全部保留。小節總數拆前拆後都是 183。拆檔對映表在 `agentctl/handoffs/home-2026-10-23/tidy/R2/moves.tsv`。
-
-2026-10-24 wrapup 收今天的教訓：新增 2 個小節（`housecarl-localappdata-env-on-linux`、`silencer-changes-need-user-signoff`）、就地補 1 個小節（`doc-restructure-safety-checklist`）、更正 2 處已被推翻的舊說法（原文加刪除線保留）。`housecarl-and-tools` 加新條會超過 16 KB，照 2026-10-18 前例把三節平台相關的原文整節搬到新建的 `housecarl-on-linux`。逐條收／不收的理由在 `agentctl/handoffs/home-2026-10-24/wrapup/REPORT.md`。
-
-**記憶目錄**：原檔全部仍在，`MEMORY.md` 尚未改成指向本目錄的指標——記憶目錄改寫由頂層處理；在那之前兩邊並存，記憶目錄較新。
+小節來自 Claude 記憶目錄（`~/.claude/projects/-home-lorkhan-repo-moddings-skyrim/memory/`），之後新教訓直接寫進本目錄。**記憶目錄**：原檔全部仍在，`MEMORY.md` 尚未改成指向本目錄的指標——記憶目錄改寫由頂層處理；在那之前兩邊並存，記憶目錄較新。
 
 ## 分類表
 
@@ -62,4 +53,4 @@
 
 ## 新增規則
 
-新教訓寫進對應主題檔的一個 `##` 小節：標題／日期／事實／Why／How to apply。主題檔超過 16 KB 時按子主題拆成語意化檔名，並更新上表。
+新教訓寫進對應主題檔的一個 `##` 小節：標題／日期／事實／Why／How to apply；寫結論不寫經過。就地更正舊說法時直接改成現行結論，不留刪除線。主題檔超過 16 KB 時按子主題拆成語意化檔名，並更新上表。
