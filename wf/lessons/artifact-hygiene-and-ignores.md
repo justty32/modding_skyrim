@@ -11,12 +11,17 @@
 **Why**：線每次交付都把中間產物（掃描 csv、ledger json、存檔、截圖、dll）留在自己的 handoff 目錄然後整目錄 `git add`；.gitignore 只擋了 trash/ work/ 幾種目錄名，沒擋副檔名與大小，也沒有人在收線時檢查。
 
 **How to apply**：
-- 版控政策（在 `agentctl/handoffs/README.md`「什麼能進版控」與 `.gitignore`）：准 md、≤1 MB 的 json/tsv/csv、≤512 KB 的腳本與 txt；不准任何 >1 MB 單檔、遊戲資產與二進位副檔名、work/ trash/ tmp/ preserved-*/ artifact/ offline/ mirror/ before/ after/ bin/ obj/ .housecarl-work/ 目錄。
-- 工具：`agentctl/tools/hygiene_check.py`（`tracked`／`staged`／`disk` 三子命令）＋ `agentctl/tools/hooks/pre-commit`（`git config core.hooksPath tools/hooks`）。
-- 收線必跑 `hygiene_check.py tracked` → 0；每條線的交接書要寫「>1 MB 產物放 work/（gitignored）」；已追蹤的違規檔用 `git rm --cached`（留磁碟），刪實體與改歷史都要先問使用者。
-- 定期：每次收工跑 disk 子命令看 handoffs/ 各日目錄 du，>10 MB 的未追蹤目錄列 WAIT_USER 請使用者裁刪；一個月一次 tidy 輪。
-- 共用分析工具若從未進版控（`git status` 顯示 `??`），多線用「sha256 跑前跑後一致」當「工具沒被動過」的憑證並不成立——這個憑證本身沒有版控基礎支撐，任何人本機改過都不會被發現；多線平行使用同一支共用腳本做驗收前，先確認腳本本身是否已追蹤，未追蹤要先收進版控（2026-10-23，`agentctl/handoffs/done/2026-10/home-2026-10-09/vf-text3/DONE-merge.md`）。
-- 政策文件允許的例外若沒實作進 `hygiene_check.py` 會誤擋合規 commit（例：`handoffs/README.md` 明寫 `work/backup/**` 純文字備份要留版控）。改政策文件時要同步檢查對應工具是否已實作該例外，發現誤擋補規則＋補正負向測試一起鎖住（2026-10-23，`agentctl/handoffs/done/2026-10/home-2026-10-10/git-tidy/REPORT/git-cleanup.md`）。
+版控政策（在 `agentctl/handoffs/README.md`「什麼能進版控」與 `.gitignore`）：准 md、≤1 MB 的 json/tsv/csv、≤512 KB 的腳本與 txt；不准任何 >1 MB 單檔、遊戲資產與二進位副檔名、work/ trash/ tmp/ preserved-*/ artifact/ offline/ mirror/ before/ after/ bin/ obj/ .housecarl-work/ 目錄。
+
+工具：`agentctl/tools/hygiene_check.py`（`tracked`／`staged`／`disk` 三子命令）＋ `agentctl/tools/hooks/pre-commit`（`git config core.hooksPath tools/hooks`）。
+
+收線必跑 `hygiene_check.py tracked` → 0；每條線的交接書要寫「>1 MB 產物放 work/（gitignored）」；已追蹤的違規檔用 `git rm --cached`（留磁碟），刪實體與改歷史都要先問使用者。
+
+定期：每次收工跑 disk 子命令看 handoffs/ 各日目錄 du，>10 MB 的未追蹤目錄列 WAIT_USER 請使用者裁刪；一個月一次 tidy 輪。
+
+共用分析工具若從未進版控（`git status` 顯示 `??`），多線用「sha256 跑前跑後一致」當「工具沒被動過」的憑證並不成立——這個憑證本身沒有版控基礎支撐，任何人本機改過都不會被發現；多線平行使用同一支共用腳本做驗收前，先確認腳本本身是否已追蹤，未追蹤要先收進版控（2026-10-23，`agentctl/handoffs/done/2026-10/home-2026-10-09/vf-text3/DONE-merge.md`）。
+
+政策文件允許的例外若沒實作進 `hygiene_check.py` 會誤擋合規 commit（例：`handoffs/README.md` 明寫 `work/backup/**` 純文字備份要留版控）。改政策文件時要同步檢查對應工具是否已實作該例外，發現誤擋補規則＋補正負向測試一起鎖住（2026-10-23，`agentctl/handoffs/done/2026-10/home-2026-10-10/git-tidy/REPORT/git-cleanup.md`）。
 
 相關：[[commit-explicit-paths-only]]、[[dont-clutter-home-with-agent-output]]、[[archive-obsolete-and-unlink]]
 
