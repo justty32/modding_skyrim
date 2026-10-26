@@ -67,6 +67,8 @@ baseline 在 `instance/profiles/.repo/baselines/`；當年 workflows 生的 6 �
 
 `LocalSaves=true` 時存檔實際寫在 `profiles/<profile>/saves/`，不是 `~/Documents`；煙霧測試載入「最新存檔」前先確認 skyrim.ini 的 LocalSaves 設定（2026-10-23）。來源：`agentctl/handoffs/done/2026-09/home-2026-09-12/zhfix2/REPORT.md:92`。
 
+MO2 開關一輪也會補寫 `archives.txt`：之前裝了 BSA 卻沒登記的會被補上，CC BSA 也可能重新排序。這是 MO2 的回寫，不是本次施工的改動。驗收時對 archives.txt 比集合差異，差異只有補登記的 BSA 就單獨 commit（例：「MO2 回寫 archives」），**不要跟本次 modlist 改動混在同一個 profile commit**（2026-10-26 shell-esl 正規化 Arcane 後第一次開關，補了 `Arcane.bsa`／`Arcane - Textures.bsa`；profiles `3e4587d`，`agentctl/handoffs/home-2026-10-26/decide1026/REPORT.md` §4）。
+
 ## eslify-overlay-snapshot-goes-stale
 
 > 整包覆蓋 mod（如 ESLify-Overlay）凍結的是建立當下的贏家快照，更新同一支 plugin 的層只要排序在它之下，就會被靜默蓋掉，毫無錯誤訊息。
@@ -88,3 +90,5 @@ ESLify-Overlay 在 modlist 的位置不是固定的（2026-10-26 實讀在第 11
 **How to apply:** 啟用新 mod 前掃同名 provider／EDID；新建資料夾一律純 ASCII。來源：`agentctl/handoffs/done/2026-08-31/grow-2026-08-31/dedup_fix.py:1-7`。相關 [[profile-restore-order-and-flags]]。
 
 另兩種同類靜默失效（2026-10-23）：archive 內部路徑帶 `Data/` 前綴直接鋪成 `mods/<層>/Data/...` 會對應到遊戲 `Data/Data/...`，裝前先 `7z l` 檢查頂層再剝掉這層；純覆蓋式更新層（跟既有 mod 同一個 esp 檔名、靠 VFS 排序蓋過去）絕對不能在 plugins.txt／loadorder.txt 另外加一行，它不是新增 plugin 槽。來源：`agentctl/handoffs/done/2026-09/home-2026-09-01/hdmk-2026-09-01/HANDOFF-cx-hd1.md:19-35`、`agentctl/handoffs/done/2026-09/home-2026-09-08/face/REPORT.md:158`。
+
+同一個 mod 裡大小寫不同的重複資料夾（`textures/` 和 `Textures/` 並存，Linux 允許、Windows 不允許）也是同一類（2026-10-26，現役 22 個 mod）。內容沒衝突時 MO2 VFS 會把兩份合併，看起來正常；但 wine 下跑的 Windows 工具（ESLifier）開檔時可能挑到沒有那個檔的一邊，跑到一半崩潰。同路徑兩份內容不同的檔（例：`FOL-Recorder-Bugfix` 的 `000261ff.nif`／`000261FF.nif`），哪一份生效不確定。處理：跑 Windows 工具前先掃描並合併大小寫；內容不同的檔要人看過再決定留哪一份（`agentctl/handoffs/home-2026-10-26/eslifierpoc/REPORT.md` 步驟 3，清單 `eslifierpoc/data/case-duplicate-dirs.txt`）。

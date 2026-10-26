@@ -24,7 +24,7 @@
 
 換臉層只複製 TXST 與 NPC_ 覆寫、**沒把素材的 HDPT（頭部零件）／FLST（適用種族清單）／CLFM（髮色）記錄帶進層裡**時，`Face Discoloration Fix`／FaceGenFixes.dll 偵測 NPC 的 PNAM 與 facegen nif 的 shape 對不上，就在執行期重生成成人素頭（2026-09-09 Yoana）。正確的前例：Livia（HDPT 6＋FLST 1）與 `tools/look_transplant/transplant.py`（每對 HDPT 5–6 筆）。
 
-MO2 在 wine 下的 VFS 對目錄大小寫不敏感，facegen 目錄大小寫不一致（如 bb02yoanafollower.esp/ vs BB02YoanaFollower.esp/）不是真因——全機 488 條大小寫不一致的路徑裡包含好幾個正常運作的層。判準：一個「真因」若在其他正常案例裡也成立，它就不是真因。
+MO2 在 wine 下的 VFS 對目錄大小寫不敏感，facegen 目錄大小寫不一致（如 bb02yoanafollower.esp/ vs BB02YoanaFollower.esp/）不是真因——全機 488 條大小寫不一致的路徑裡包含好幾個正常運作的層。判準：一個「真因」若在其他正常案例裡也成立，它就不是真因。例外：同一個 mod 裡兩份大小寫不同、**內容也不同**的 facegen 並存時，哪一份生效不確定（2026-10-26 `FOL-Recorder-Bugfix`，見 [[mo2-silent-collision-failure-modes]]）。
 
 **How to apply:**
 - 換臉層驗收必加：層內 HDPT 筆數 ≥ 素材 PNAM 筆數、每個 HDPT 的 ValidRaces FLST 含目標種族、

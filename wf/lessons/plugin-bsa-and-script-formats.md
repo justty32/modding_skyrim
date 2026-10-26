@@ -40,6 +40,13 @@ TES4 flags（含 ESL 位元 `0x00000200`）正確位置是 **offset 0x08**，不
 
 **How to apply:** 手寫腳本判斷 ESL/ESPFE 一律讀 offset 0x08；任何改到 ESL 定義的 cell record 的 patch，先查覆寫方是否該標 Partial Record、暫態引用是否同時標 persistent。省 full 槽時先挑「只加旗標」的候選（`agentctl/handoffs/home-2026-10-26/shell-esl/tools/esl_candidates.py`＋`tier.py` 的 T1），旗標複本放 overlay 的排序規則見 [[eslify-overlay-snapshot-goes-stale]]。
 
+**ESLifier 在 Linux**（2026-10-26 v0.16.17 PoC，`agentctl/handoffs/home-2026-10-26/eslifierpoc/REPORT.md`）：
+- **可以跑的組合**：官方 Windows 版 exe＋system wine＋建立時就帶 `WINEDLLOVERRIDES=mscoree,mshtml=` 的乾淨 prefix，GUI 放在 Xvfb 虛擬螢幕。
+- **Proton 的 wine 不行**：Qt 載不起來。
+- **初始化被打斷的 prefix 不行**：缺 `syswow64`，BSArch 起不來，BSA 會被靜默跳過，log 照寫「Extracting」。
+- **不要改跑 Python 原始碼**：原始碼把 facegen／voice 路徑寫成反斜線字面值（`scanner.py:385-398`、`compact_form_ids.py:224`），在 Linux 下會全部漏掉。
+- 它的輸出是贏家快照，跟 overlay 一樣會過期。施工步驟見 `agentctl/docs/new-playthrough-esl-runbook.md`。
+
 ## load-order-and-asset-measurement-pitfalls
 
 > 算衝突／重複／贏家這類統計時，好幾種看起來合理的算法會系統性算錯規模
