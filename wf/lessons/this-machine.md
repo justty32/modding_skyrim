@@ -8,19 +8,19 @@
 
 > 家中機互動 shell 的 grep 綁成 ugrep（-x 容忍 CRLF 尾端 \r），腳本裡的 /usr/bin/grep 是 GNU grep 不容忍；手測過的 grep 驗收不可信
 
-2026-09-05 lead-win 複驗：`grep is a shell function`（shell snapshot）→ ugrep 7.8.4；`#!/usr/bin/env bash` 腳本解析到 `/usr/bin/grep` 3.12。MO2 的 `modlist.txt`／`plugins.txt` 全是 CRLF，`grep -Fxq '+Mod Name' modlist.txt` 互動下 rc=0、腳本裡 rc=1——cx-fx 的 verify.sh 因此在乾跑與真開窗都會掛。
+2026-09-05 實測：`grep is a shell function`（shell snapshot）→ ugrep 7.8.4；`#!/usr/bin/env bash` 腳本解析到 `/usr/bin/grep` 3.12。MO2 的 `modlist.txt`／`plugins.txt` 全是 CRLF，`grep -Fxq '+Mod Name' modlist.txt` 互動下 rc=0、腳本裡 rc=1。
 
 **Why:** 互動手測與腳本執行走不同的 grep，CRLF 檔案上結果相反；線會以為驗收過了。
 
 **How to apply:** 對 profiles 檔的精確行比對一律 `tr -d '\r' < "$F" | grep -Fxq '...'`（或 `grep -Fxq $'...\r'` 之外再比 LF）；驗收腳本用 `bash -c` 或 `/usr/bin/grep` 複驗，不在互動 shell 手測。交接書可直接寫這條。相關：[[profile-restore-order-and-flags]]、[[pgrep-self-match-beyond-brackets]]。
 
-2026-10-23 補：同一批驗收腳本也踩過子字串誤中的坑（查 "BDI" 誤中 "BDI Universal Support"、查 "Math" 誤中 "Math Plugin"）；對 modlist/plugins 單行存在性判斷一律用 `grep -x -F` 整行精確比對，不只是為了 CRLF，也順便擋掉子字串誤判。
+對 modlist/plugins 單行存在性判斷一律用 `grep -x -F` 整行精確比對，不只是為了 CRLF，也擋掉子字串誤判（2026-10-23；查 "BDI" 會誤中 "BDI Universal Support"、查 "Math" 會誤中 "Math Plugin"）。
 
 ## pgrep-self-match-beyond-brackets
 
 > 括號寫法擋不住所有 pgrep 自我匹配；命令列裡的路徑或 heredoc 也會中，要把檢查放進獨立腳本並分兩次呼叫
 
-`pgrep -af '[M]odOrganizer'` 的括號寫法只擋得住「pattern 本身」被匹配。如果同一條命令列的其他地方出現目標字串（MO2 完整路徑、heredoc 內容、MCP 設定 JSON），父 shell 的 cmdline 仍會被 `pgrep -f` 掃到，於是誤判「程式正在執行」。2026-08-21 收尾時連中三次。
+`pgrep -af '[M]odOrganizer'` 的括號寫法只擋得住「pattern 本身」被匹配。如果同一條命令列的其他地方出現目標字串（MO2 完整路徑、heredoc 內容、MCP 設定 JSON），父 shell 的 cmdline 仍會被 `pgrep -f` 掃到，於是誤判「程式正在執行」（2026-08-21）。
 
 **Why:** Bash 工具是用 `zsh -c '<整段命令>'` 執行的，整段命令（含 heredoc 內文）都在那個行程的 cmdline 裡；`pgrep -f` 掃的就是 cmdline。
 
@@ -28,12 +28,11 @@
 
 相關：[[throttle-by-tree-not-by-name]]、[[driving-other-cli-agents]]
 
-
 ## ls-is-eza-alias-use-bin-ls
 
 > 這台機器互動 shell 的 `ls` 是 `eza --icons --git` 別名，對大目錄極慢且非 tty 環境輸出為空
 
-2026-09-25 的五隊共同契約與 2026-10-17 的多條巡檢／結構審查線各自獨立踩到同一個坑：互動殼下 `ls` 是 eza 別名，對大 repo 可能卡超過 120 秒；非 tty（腳本／子代理）環境下輸出直接是空的，容易誤判「目錄是空的」（`agentctl/handoffs/home-2026-10-17/structure-review/REPORT.md`）。
+互動殼下 `ls` 是 eza 別名，對大 repo 可能卡超過 120 秒；非 tty（腳本／子代理）環境下輸出直接是空的，容易誤判「目錄是空的」（2026-09-25、2026-10-17 多線踩到，`agentctl/handoffs/home-2026-10-17/structure-review/REPORT.md`）。
 
 **Why:** 跟 [[interactive-grep-is-ugrep]] 同屬本機別名陷阱：手測看起來正常，腳本/子代理跑起來行為完全不同。
 
