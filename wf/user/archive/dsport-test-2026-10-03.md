@@ -1,3 +1,5 @@
+> 封存 2026-10-26，由 wait-user/feature-runtime/dsport-p3.md 取代（10-03 測試包已被 10-21 可見性候選取代）
+
 # DSPort 肉眼測試清單（2026-10-03）
 
 完整報告在 `agentctl/handoffs/done/2026-10/home-2026-10-03/dsp/REPORT.md`。

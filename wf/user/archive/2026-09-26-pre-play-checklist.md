@@ -1,3 +1,5 @@
+> 封存 2026-10-26，由 wf/user/2026-10-10-play-checklist.md 取代（09-26 開玩前清單；之後 10-08 新檔計畫與 10-10 施工已讓它過時）
+
 # 下次開玩前要做的事（2026-09-26 早場彙整）
 
 > 整理線 `checklist` 寫（09:25 定稿，八份報告都已收到，yvanni 線代跑的 RT 實機結果也併進來了）。內容全部來自各線 REPORT 和 `RT-QUEUE.md` 的「RT 結果」，沒有另外推新結論。報告之間有矛盾的地方標「待驗」。
@@ -68,12 +70,12 @@
 
 ## 報告
 
-- [forget/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/forget/REPORT.md)
-- [apoc2/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/apoc2/REPORT.md)
-- [vilja/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/vilja/REPORT.md)
-- [cassia/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/cassia/REPORT.md)
-- [katana/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/katana/REPORT.md)
-- [farm/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/farm/REPORT.md)
-- [yvanni/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/yvanni/REPORT.md)
-- [aniya/REPORT.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/aniya/REPORT.md)
-- 實機代跑結果：[RT-QUEUE.md](../../agentctl/handoffs/done/2026-09/home-2026-09-26/RT-QUEUE.md)（各段下方的「RT 結果」）
+- [forget/REPORT.md](../../../agentctl/handoffs/done/2026-09/home-2026-09-26/forget/REPORT.md)
+- [apoc2/REPORT.md](../../../agentctl/handoffs/done/2026-09/home-2026-09-26/apoc2/REPORT.md)
+- [vilja/REPORT.md](../../../agentctl/handoffs/done/2026-09/home-2026-09-26/vilja/REPORT.md)
+- [cassia/REPORT.md](../../../agentctl/handoffs/done/2026-09/home-2026-09-26/cassia/REPORT.md)
+- [katana/REPORT.md](../../../agentctl/handoffs/done/2026-09/home-2026-09-26/katana/REPORT.md)
+- [farm/REPORT.md](../../../agentctl/handoffs/done/2026-09/home-2026-09-26/farm/REPORT.md)
+- [yvanni/REPORT.md](../../../agentctl/handoffs/done/2026-09/home-2026-09-26/yvanni/REPORT.md)
+- [aniya/REPORT.md](../../../agentctl/handoffs/done/2026-09/home-2026-09-26/aniya/REPORT.md)
+- 實機代跑結果：[RT-QUEUE.md](../../../agentctl/handoffs/done/2026-09/home-2026-09-26/RT-QUEUE.md)（各段下方的「RT 結果」）

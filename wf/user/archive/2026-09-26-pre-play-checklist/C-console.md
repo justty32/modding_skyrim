@@ -1,3 +1,5 @@
+> 封存 2026-10-26，隨母頁 2026-09-26-pre-play-checklist.md 一起封存
+
 # 下次開玩前要做的事——C. 進遊戲後的 console 序列（2026-09-26）
 
 > 從 [2026-09-26-pre-play-checklist.md](../2026-09-26-pre-play-checklist.md) 拆出（2026-10-10 git-tidy，>8 KB 拆檔），內容未改。

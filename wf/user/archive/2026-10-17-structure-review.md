@@ -1,6 +1,8 @@
+> 封存 2026-10-26：待裁示已裁完（使用者 10-17「都按照建議做」，裁示欄已填實際結果）
+
 # 2026-10-17 工作區結構審視——裁示單
 
-你 10-17 說「讓 fable 看看整個專案的結構，給出建議，各子專案也都去看看」。結果：版控本身很乾淨（8.8 GB 磁碟有 7 GB 是被 ignore 的建置產物，全庫 md 連結零壞），問題集中在**入口文件落後現況**、**活狀態沒守只列 open**、**幾處硬路徑與 pin 失效**。55 條逐條依據與 21 個施工包在 [REPORT](../../agentctl/handoffs/home-2026-10-17/structure-review/REPORT.md)。
+你 10-17 說「讓 fable 看看整個專案的結構，給出建議，各子專案也都去看看」。結果：版控本身很乾淨（8.8 GB 磁碟有 7 GB 是被 ignore 的建置產物，全庫 md 連結零壞），問題集中在**入口文件落後現況**、**活狀態沒守只列 open**、**幾處硬路徑與 pin 失效**。55 條逐條依據與 21 個施工包在 [REPORT](../../../agentctl/handoffs/home-2026-10-17/structure-review/REPORT.md)。
 
 15:42–15:47 另一條 patrol 線已順手修了幾處文件數字與壞連結，報告裡有標。你 15:5x 說「都按照建議做」，裁示欄已改成實際結果（做了／留給頂層／不做＋理由）。前面「可直接做」的交給 Opus 線平行跑，不用你再看；「要你拍板」的才真的需要你讀。
 
@@ -47,7 +49,7 @@ my_skyrim_plugin_1 其實是 DaylightDungeon 插件——要不要改 repo 名�
 - **可重現性**：darksouls-port 補 ModForge pin 與 SoulsFormatsNEXT commit；houseCARL `.gitmodules` 改指 fork/main；modpack-design 53 份 dialogue.json 壓成 gz（69.6 MB→約 10 MB，不改歷史）。
 - **文件拆分**：instance tools/README 的 21 列表抽資料檔、scene-capture-bridge 45 KB README 拆 docs/、model-converter 根目錄 8 個 md 收攏、mod-library l10n/tools 115 支腳本做索引。
 
-裁示：**整批已做**——15 包全部完成（逐包 commit 與驗收見 [施工 REPORT](../../agentctl/handoffs/home-2026-10-17/improve/REPORT.md)）。兩處與建議不同：qa 兩張 png gzip 後仍 >1 MB，改成 untrack＋ignore；CI 新加的 coverage／wf-lint 兩步在公開 CI 因拿不到私人 submodule 而條件跳過。
+裁示：**整批已做**——15 包全部完成（逐包 commit 與驗收見 [施工 REPORT](../../../agentctl/handoffs/home-2026-10-17/improve/REPORT.md)）。兩處與建議不同：qa 兩張 png gzip 後仍 >1 MB，改成 untrack＋ignore；CI 新加的 coverage／wf-lint 兩步在公開 CI 因拿不到私人 submodule 而條件跳過。
 
 ## 三、延後或不做
 
