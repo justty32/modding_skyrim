@@ -52,15 +52,20 @@
 2026-10-03 開關 MO2 驗過：`selected_profile=modpack-main`、`.repo/` 沒被生預設檔、profile 檔 md5 不變。
 
 **How to apply:**
-- 不要在 `instance/profiles/` 根新增非 profile 目錄；指令是 `python3 -B .repo/tools/profile_workflow.py …`；
-  09-03～09-18 的 handoff 腳本（lrfw verify.sh、dsview verify.sh、dgup/install.sh 等）寫死 `instance/profiles/tools/` 路徑，重跑前要改。
-- plugins.txt 在 MO2 跑過後可能整檔重排（ESL 漂移），啟用集合比對才算數（同 [[profile-restore-order-and-flags]]）。
-- 根目錄白名單是 `modpack-main`（必備）＋`dsport-dev`（`check_profiles.py` 的 `ALLOWED_PROFILES`）；
-  `crash-ab-carp`、`crash-ab-doomperk` 2026-10-03 依使用者裁示封存到 `.repo/retired/`（要再用得 `git mv` 回根並加進白名單）。
-  baseline 在 `instance/profiles/.repo/baselines/`；當年 workflows 生的 6 個垃圾檔收在 `~/skyrim_mods/_staging-2026-10-03/phantom/mo2-junk-workflows/`。
-- `launch-mo2.sh` 寫死的 `PROFILE` 變數只用來做啟動前非 ASCII 檢查，不會切換 MO2 實際載入的 profile；`qa_status` 的 `profile` 欄位同樣釘死 `modpack-main` 不可信。真正的切換點是 `ModOrganizer.ini` 的 `selected_profile`，但它存的實際值是 `@ByteArray(modpack-main)` 不是字面字串，照字面 grep 比對的閘門會恆為失敗；要驗證載入了哪個 profile，看對應 `modlist.txt` 的 mtime 有沒有在 MO2 啟動當下被改寫（2026-10-23）。來源：`agentctl/handoffs/done/2026-09/home-2026-09-05/dsport4-2026-09-05/INGAME-PREP.md:34-39`、`agentctl/handoffs/done/2026-09/home-2026-09-03/rt1/REPORT.md:103`。
-- `profile_workflow.py start feat/*` 一律從 main 開分支（`start_branch` 寫死 base="main"），不是從目前 live checkout 繼續；在 main 分支上 `record -m` 會直接拒絕，近期多線改用對明確路徑直接 `git commit` 繞過（commit message 自己補，不套 `feat(profiles):` 前綴）。`mo2ctl install` 會在 `instance/profiles/` 落下一個未追蹤的 profile-state.json，導致 `record` 因工作樹不乾淨而拒絕，要先搬出去或加進 .gitignore（2026-10-23）。來源：`agentctl/handoffs/done/2026-09/home-2026-09-03/inst/REPORT.md:89,92`、`agentctl/handoffs/done/2026-10/home-2026-10-09/vf-text3/DONE-zhfix.md`。
-- `LocalSaves=true` 時存檔實際寫在 `profiles/<profile>/saves/`，不是 `~/Documents`；煙霧測試載入「最新存檔」前先確認 skyrim.ini 的 LocalSaves 設定（2026-10-23）。來源：`agentctl/handoffs/done/2026-09/home-2026-09-12/zhfix2/REPORT.md:92`。
+不要在 `instance/profiles/` 根新增非 profile 目錄；指令是 `python3 -B .repo/tools/profile_workflow.py …`；
+09-03～09-18 的 handoff 腳本（lrfw verify.sh、dsview verify.sh、dgup/install.sh 等）寫死 `instance/profiles/tools/` 路徑，重跑前要改。
+
+plugins.txt 在 MO2 跑過後可能整檔重排（ESL 漂移），啟用集合比對才算數（同 [[profile-restore-order-and-flags]]）。
+
+根目錄白名單是 `modpack-main`（必備）＋`dsport-dev`（`check_profiles.py` 的 `ALLOWED_PROFILES`）；
+`crash-ab-carp`、`crash-ab-doomperk` 2026-10-03 依使用者裁示封存到 `.repo/retired/`（要再用得 `git mv` 回根並加進白名單）。
+baseline 在 `instance/profiles/.repo/baselines/`；當年 workflows 生的 6 個垃圾檔收在 `~/skyrim_mods/_staging-2026-10-03/phantom/mo2-junk-workflows/`。
+
+`launch-mo2.sh` 寫死的 `PROFILE` 變數只用來做啟動前非 ASCII 檢查，不會切換 MO2 實際載入的 profile；`qa_status` 的 `profile` 欄位同樣釘死 `modpack-main` 不可信。真正的切換點是 `ModOrganizer.ini` 的 `selected_profile`，但它存的實際值是 `@ByteArray(modpack-main)` 不是字面字串，照字面 grep 比對的閘門會恆為失敗；要驗證載入了哪個 profile，看對應 `modlist.txt` 的 mtime 有沒有在 MO2 啟動當下被改寫（2026-10-23）。來源：`agentctl/handoffs/done/2026-09/home-2026-09-05/dsport4-2026-09-05/INGAME-PREP.md:34-39`、`agentctl/handoffs/done/2026-09/home-2026-09-03/rt1/REPORT.md:103`。
+
+`profile_workflow.py start feat/*` 一律從 main 開分支（`start_branch` 寫死 base="main"），不是從目前 live checkout 繼續；在 main 分支上 `record -m` 會直接拒絕，近期多線改用對明確路徑直接 `git commit` 繞過（commit message 自己補，不套 `feat(profiles):` 前綴）。`mo2ctl install` 會在 `instance/profiles/` 落下一個未追蹤的 profile-state.json，導致 `record` 因工作樹不乾淨而拒絕，要先搬出去或加進 .gitignore（2026-10-23）。來源：`agentctl/handoffs/done/2026-09/home-2026-09-03/inst/REPORT.md:89,92`、`agentctl/handoffs/done/2026-10/home-2026-10-09/vf-text3/DONE-zhfix.md`。
+
+`LocalSaves=true` 時存檔實際寫在 `profiles/<profile>/saves/`，不是 `~/Documents`；煙霧測試載入「最新存檔」前先確認 skyrim.ini 的 LocalSaves 設定（2026-10-23）。來源：`agentctl/handoffs/done/2026-09/home-2026-09-12/zhfix2/REPORT.md:92`。
 
 ## eslify-overlay-snapshot-goes-stale
 
