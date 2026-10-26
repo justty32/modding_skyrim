@@ -11,11 +11,9 @@
 
 ## 現役工作
 
-目前無**只屬於**母 repo 的 open 工作。2026-10-24 查證：積壓清單裡有兩件動到母 repo 的 `analysis/`
-——`analysis/skyrim_engine/` 全庫 API 稽核（163 份），與 `details/commonlibsee-ng/README.md`
-漏索引 2 份（`analysis/` 是正本，要與 `projects/my_skyrim_plugin_1/skyrim_mod/` 兩邊一起改）——
-但兩件都由 Skyrim 工作線承接，已登記在
-[`agentctl/SESSION-LOG.md`](agentctl/SESSION-LOG.md) 的 open 段，**本檔不重複登記**。
+目前無**只屬於**母 repo 的 open 工作。10-24 登記的兩件 `analysis/` 工作（skyrim_engine API 稽核、
+commonlibsee-ng README 漏索引）已於 2026-10-26 做完，見
+[apiaudit REPORT](agentctl/handoffs/home-2026-10-26/apiaudit/REPORT.md)。
 
 母 repo 只管本身的整理與開發工作。Skyrim 工作線從
 [下次開場入口](agentctl/handoffs/NEXT-SESSION.md)接續；需要使用者親自做的事以
