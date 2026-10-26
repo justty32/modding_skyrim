@@ -4,7 +4,7 @@
 
 ## 六、執行紀錄
 
-程式在 [`mod-library/db/`](../../../../mod-library/db)（2026-08-23 統整前在 `~/notes/projects/modding/skyrim/tools/`）：掃庫工具（1.1–1.2）、清理分級（1.5/1.7）、隔離區（1.6）——逐支見該 repo 的 `db/README.md`；DLL runtime 檢查（1.3）因屬 runtime 診斷歸到 [`agentctl/tools/`](../../../../agentctl/tools)。schema 文件在 [`mod-library/db/mongodb-schema.md`](../../../../mod-library/db/mongodb-schema.md)。
+程式在 [`mod-library/db/`](../../../../../mod-library/db)（2026-08-23 統整前在 `~/notes/projects/modding/skyrim/tools/`）：掃庫工具（1.1–1.2）、清理分級（1.5/1.7）、隔離區（1.6）——逐支見該 repo 的 `db/README.md`；DLL runtime 檢查（1.3）因屬 runtime 診斷歸到 [`agentctl/tools/`](../../../../../agentctl/tools)。schema 文件在 [`mod-library/db/mongodb-schema.md`](../../../../../mod-library/db/mongodb-schema.md)。
 
 **2026-08-11 · P1.5/P1.7 重驗完成**
 

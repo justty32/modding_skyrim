@@ -2,7 +2,7 @@
 
 # plan：本輪三 agent 分工——mod 庫收尾 + 韓文站採集
 
-出計畫日期 2026-08-07。上游計畫：[mod-library-catalog.md](../../mod-library-catalog/README.md)（本輪做它的 P1.4、P1.5 與附錄 A、附錄 B）。
+出計畫日期 2026-08-07。上游計畫：[mod-library-catalog.md](../mod-library-catalog/README.md)（本輪做它的 P1.4、P1.5 與附錄 A、附錄 B）。
 前一輪的三 agent 並行記錄見 `SESSION-LOG.md` 與 commit `dcd385b`。
 
 **本輪不碰**：`projects/darksouls-port`、`projects/houseCARL`（使用者 2026-08-07 決定先放著）。

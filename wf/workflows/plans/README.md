@@ -23,15 +23,16 @@ idea → roadmap → 詳規（本夾）→ feature-dev
 
 | 計畫 | 出計畫日期 | 對應 spec | 狀態 |
 |------|------------|-----------|------|
-| [mod-library-catalog](mod-library-catalog/README.md) —— mod 壓縮檔建檔與清理 | 2026-08-04 | 無 | 建檔與 L1–L3 已執行；Nexus 補值與 107 筆終態決策已完成；**僅留 L4 舊命名壓縮檔的人工辨識**（2026-08-31 對帳後範圍為 **146 筆**；活層帳在 `mod-library/audits/README.md`）。工具在 `mod-library/db/` |
+| （目前沒有現役計畫） | | | |
 
 ## 已結案／被取代
 
 | 計畫 | 結果 |
 |------|------|
+| mod-library-catalog —— mod 壓縮檔建檔與清理 | 2026-08-04 出計畫；建檔、L1–L3、Nexus 補值與終態決策已完成；最後的 L4（146 筆舊命名壓縮檔辨識）2026-10-26 逐筆結案：自產 56／非 Nexus 原檔但已辨識 52／Nexus 原檔改名 7／殘量 31，結論在 Mongo `archives.l4_identity`。2026-10-26 封存 |
 | third-party-mod-pipeline —— 第三方 mod 取得–安裝–驗證流水線 | 2026-08-07 結案；P0–P4 已完成，Bend Time Rings 端到端實機驗收通過 |
-| consolidation-2026-08-23 —— 工作區統整與四條新線 | 2026-08-23 執行完成；四條線落地、profile 改名、Downloads 歸檔。執行結果與使用者裁決記在同一份文件末尾 |
-| round-2026-08-07-catalog-and-korean —— 三 agent 分工：mod 庫收尾＋韓文站採集 | 2026-08-07 執行完成，是 [mod-library-catalog](mod-library-catalog/README.md) 的 P1.4／P1.5 與附錄 A／B；韓文 inbox 已併入通用 inbox。2026-10-26 封存 |
+| consolidation-2026-08-23 —— 工作區統整與四條新線 | 2026-08-23 執行完成；四條線落地、profile 改名、Downloads 歸檔。執行結果與使用者裁決記在同一份文件末尾。2026-10-26 封存 |
+| round-2026-08-07-catalog-and-korean —— 三 agent 分工：mod 庫收尾＋韓文站採集 | 2026-08-07 執行完成，是 mod-library-catalog 的 P1.4／P1.5 與附錄 A／B；韓文 inbox 已併入通用 inbox。2026-10-26 封存 |
 | ai-ingame-qa-loop | 2026-08-02 結案；Phase 0–3 與實機 QA runner 全過 |
 | workspace-reorg | 2026-08-01 的佈局設計，已被 consolidation-2026-08-23 取代並刪除，可從 git 歷史取回 |
 

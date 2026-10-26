@@ -6,7 +6,7 @@
 
 ## 線 B：韓文站採集（codex 出治具 → agy 採集 → codex 收斂）
 
-承 [mod-library-catalog.md 附錄 A](../../mod-library-catalog/README.md)。
+承 [mod-library-catalog.md 附錄 A](../mod-library-catalog/README.md)。
 
 ### Done when
 
