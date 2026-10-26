@@ -15,17 +15,21 @@
 會讀到就翻，讀不到就不值得投成本。數量多不是不做的理由，反而正是該做的理由。
 
 **How to apply:**
-- **是遊戲內容 → 做**：對話、字幕、任務日誌／目標、書籍、物品與法術名稱／描述、
-  遊戲內通知、NPC 名稱、地名。**不看字數。**
-- **不是遊戲內容 → 不做**：工具 UI、MCM 設定頁、INI 顯示值、熱鍵名稱、框架／DLL 除錯訊息、
-  安裝器文案。純動畫／純機制 tweak／SKSE DLL 通常根本沒有可翻文字，直接不列入。
-- **成本只在「做不做得到」那一層**：文字硬編在 DLL、要換官方 executable、載體結構對不上
-  → 標 `BLOCKED-載體`，那是做不到，不是不值得。OAR 換第三方 DLL 屬這類。
-- 繁簡都可（[[no-cht-chs-preference]]）；方塊字是硬 gate（[[chinese-diff-ok-but-no-tofu]]）；
-  版本對版真正的閘門是二進位拓撲比對（[[nexus-api-version-is-not-proof]]）。
+**是遊戲內容 → 做**：對話、字幕、任務日誌／目標、書籍、物品與法術名稱／描述、
+遊戲內通知、NPC 名稱、地名。**不看字數。**
 
-- MCM 那類本來就不該做，因為它不是遊戲內容。
-- 判斷「是不是遊戲內容」不能只看字串所在的函式/分組名稱猜，要實際追呼叫端：被歸類為「MCM 主畫面英文」的字串可能 MCM 根本不呼叫，玩家只在跨區域時看到一則 Notify，或只進 debug 日誌永遠看不到（2026-10-23，`agentctl/handoffs/done/2026-08-28/opus-zh-summary/SUMMARY.md:539-567,742-744`）。
+**不是遊戲內容 → 不做**：工具 UI、MCM 設定頁、INI 顯示值、熱鍵名稱、框架／DLL 除錯訊息、
+安裝器文案。純動畫／純機制 tweak／SKSE DLL 通常根本沒有可翻文字，直接不列入。
+
+**成本只在「做不做得到」那一層**：文字硬編在 DLL、要換官方 executable、載體結構對不上
+→ 標 `BLOCKED-載體`，那是做不到，不是不值得。OAR 換第三方 DLL 屬這類。
+
+繁簡都可（[[no-cht-chs-preference]]）；方塊字是硬 gate（[[chinese-diff-ok-but-no-tofu]]）；
+版本對版真正的閘門是二進位拓撲比對（[[nexus-api-version-is-not-proof]]）。
+
+MCM 那類本來就不該做，因為它不是遊戲內容。
+
+判斷「是不是遊戲內容」不能只看字串所在的函式/分組名稱猜，要實際追呼叫端：被歸類為「MCM 主畫面英文」的字串可能 MCM 根本不呼叫，玩家只在跨區域時看到一則 Notify，或只進 debug 日誌永遠看不到（2026-10-23，`agentctl/handoffs/done/2026-08-28/opus-zh-summary/SUMMARY.md:539-567,742-744`）。
 
 正本文件：`modpack-design/sources/translation-layer-cost-policy.md`。
 
