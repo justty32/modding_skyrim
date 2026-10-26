@@ -56,14 +56,21 @@
 > houseCARL／Nexus keyless API 有多個回傳欄位不可信，要交叉查證或改走別的查詢面
 
 2026-08～2026-10 多線命中：
-- `housecarl_nexus_mod(files=true)` 不回傳數字 `fileId`，要精確指定檔案版本得改走 `housecarl_nexus_graphql` 查 `modFiles`。
-- `directDownloadEnabled`／`download_route` 在 keyless 模式下對每個 mod 都回同一個常數，不能拿來判斷「作者關掉直接下載」。
-- GraphQL 的 `bytes`／`sizeInBytes` 常回 `null`（`bytes` null 改用 `nexus_identify` md5 核身分，`sizeInBytes` null 改用 `size`(KB)×1024）。
-- `nexus_search` 排序不等於按 endorsements，排行前面的可能背書數反而較低。
-- meta.ini 的 modid 可能因頁面遷移跟下載檔 id 對不上，兩個 id 都要查一次確認同一個 mod。
-- houseCARL 的 Nexus 工具讀不到作者自建外部站或 Nexus posts 分頁，這類資訊只能請人用瀏覽器讀。
-- `nexus_intake_check.py dedupe` 常把自己的 `_dl-*` 下載暫存誤判成庫內重複，是已知路徑衝突不是真重複。
-- 批量查詢（>50 件）改用免金鑰 GraphQL 端點 `api-router.nexusmods.com/graphql` 自寫節流腳本，比逐件呼叫 MCP 快一個數量級（lr 線 371 件 6 分鐘跑完）。
+`housecarl_nexus_mod(files=true)` 不回傳數字 `fileId`，要精確指定檔案版本得改走 `housecarl_nexus_graphql` 查 `modFiles`。
+
+`directDownloadEnabled`／`download_route` 在 keyless 模式下對每個 mod 都回同一個常數，不能拿來判斷「作者關掉直接下載」。
+
+GraphQL 的 `bytes`／`sizeInBytes` 常回 `null`（`bytes` null 改用 `nexus_identify` md5 核身分，`sizeInBytes` null 改用 `size`(KB)×1024）。
+
+`nexus_search` 排序不等於按 endorsements，排行前面的可能背書數反而較低。
+
+meta.ini 的 modid 可能因頁面遷移跟下載檔 id 對不上，兩個 id 都要查一次確認同一個 mod。
+
+houseCARL 的 Nexus 工具讀不到作者自建外部站或 Nexus posts 分頁，這類資訊只能請人用瀏覽器讀。
+
+`nexus_intake_check.py dedupe` 常把自己的 `_dl-*` 下載暫存誤判成庫內重複，是已知路徑衝突不是真重複。
+
+批量查詢（>50 件）改用免金鑰 GraphQL 端點 `api-router.nexusmods.com/graphql` 自寫節流腳本，比逐件呼叫 MCP 快一個數量級（lr 線 371 件 6 分鐘跑完）。
 
 **Why:** 這些欄位「看起來合理但其實是常數/null/假排序」，已在多條獨立線上重複造成誤判。
 
