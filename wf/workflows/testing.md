@@ -12,11 +12,12 @@
 ```bash
 python -m unittest discover -s tools -p "test_*.py" -v
 python tools/check_markdown_links.py --exclude-source 'agentctl/inbox/done/*/originals/*'
-bash wf/tools/wf-lint.sh
 git diff --check
 git status --short --branch
 git submodule status
 ```
+
+`wf/tools/wf-lint.sh` 是**可選**檢查：預設不跑，大量搬檔後擔心連結壞掉或使用者要求才跑（要跑就 `bash wf/tools/wf-lint.sh --strict wf`）。
 
 GitHub 的 `Documentation checks` 跑同一組 unittest，link checker 另加 `--skip-symlinks`、`--skip-uninitialized-submodules` 並排除指定的原樣備份。
 公開 CI 沒有私人 submodule，只檢查母 repo 可取得的目標；跳過數量會列在輸出中。

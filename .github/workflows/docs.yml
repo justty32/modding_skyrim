@@ -25,13 +25,12 @@ jobs:
         run: python tools/check_markdown_links.py --skip-uninitialized-submodules --skip-symlinks --exclude-source 'agentctl/handoffs/wu-2026-08-31/backup/' --exclude-source 'agentctl/inbox/done/*/originals/*'
       - name: Run wf kernel tool tests
         run: python -m unittest discover -s wf/tools -p 'test_*.py'
-      # 下面兩步要私人 submodule（agentctl 等）才有意義：code-map 檢查會逐支看
-      # agentctl/tools 的腳本，wf-lint 會解析指進 submodule 的相對連結。公開 CI
-      # 不取得私人 submodule，所以只在 checkout 帶到 agentctl 時才跑（本機完整
-      # checkout 一律要 exit 0）。兩支工具都還沒有 --skip-uninitialized-submodules。
+      # 下面這步要私人 submodule（agentctl 等）才有意義：code-map 檢查會逐支看
+      # agentctl/tools 的腳本。公開 CI 不取得私人 submodule，所以只在 checkout
+      # 帶到 agentctl 時才跑（本機完整 checkout 一律要 exit 0）。工具還沒有
+      # --skip-uninitialized-submodules。
+      # wf-lint 不在 CI：2026-10-26 起改為可選（照上游 368468a），大量搬檔後
+      # 擔心連結壞掉或使用者要求才手動跑，見 wf/workflows/testing.md。
       - name: Check code-map coverage
         if: hashFiles('agentctl/tools/README.md') != ''
         run: python3 tools/check_code_map_coverage.py
-      - name: wf-lint (strict)
-        if: hashFiles('agentctl/tools/README.md') != ''
-        run: bash wf/tools/wf-lint.sh --strict wf wait-user patches analysis

@@ -5,6 +5,10 @@ description: 跑 wf-lint 檢查文檔（壞連結 / 超標檔 / >1 KB 條列 / �
 > 本檔是 **Claude Code 的 slash 指令適配層（可選）**：其他 agent 工具沒有對應機制就忽略 `.claude/`，直接跑 `tools/wf-lint.sh`。
 
 <!-- local -->
+**可選**：wf-lint 預設不跑（很花時間）；大量搬檔後擔心連結壞掉、或使用者要求時才跑（2026-10-26 使用者裁示，語意同上游 `368468a`）。
+<!-- /local -->
+
+<!-- local -->
 找到 `wf-lint.sh`（標準 `tools/wf-lint.sh`；非侵入式 `<wf 子資料夾>/tools/wf-lint.sh`），對專案根執行：
 
 ```

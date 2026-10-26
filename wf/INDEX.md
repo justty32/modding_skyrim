@@ -23,7 +23,7 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | `wf/tools/` | `wf-lint.sh`（連結／超標／BIGLIST／殘留檢查）、`tabledb.py`＋`tabledb_links.py`（`wf-table/1` 資料檔 CRUD 與連結檢查）、`find_big_lists.py`（找 >1 KB 條列區塊）、`fix_moved_links.py`（搬檔後按 moves.tsv 重寫連結）|
 | [`tools/`](../tools/) | 母 repo 的文件驗證：`check_markdown_links.py`、`check_submodule_pins.py`、`check_code_map_coverage.py` 與其測試 |
 | [`.claude/commands/`](../.claude/commands/) | slash 指令適配層（可選）。Claude Code 只讀專案根的這層，非侵入式佈局也留在根；沒有 slash 機制的工具忽略本目錄，直接跑 `wf/tools/wf-lint.sh` |
-| [`.github/`](../.github/) | GitHub Actions CI：`workflows/docs.yml` 跑 `tools/` 與 `wf/tools/` 的單元測試、`check_markdown_links.py`、`check_code_map_coverage.py` 與 `wf-lint.sh --strict` |
+| [`.github/`](../.github/) | GitHub Actions CI：`workflows/docs.yml` 跑 `tools/` 與 `wf/tools/` 的單元測試、`check_markdown_links.py` 與 `check_code_map_coverage.py`（wf-lint 可選，不在 CI）|
 | [`.vscode/`](../.vscode/) | 編輯器設定：`settings.json` 指定 CMake 原始目錄 |
 <!-- wf-insert:INDEX -->
 
