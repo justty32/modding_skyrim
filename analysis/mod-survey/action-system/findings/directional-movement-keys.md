@@ -15,7 +15,7 @@
 
 ## 為什麼重要
 - 現代招式系統大量靠「**方向 + 動畫**」做派生（方向重擊、八向 moveset、閃避方向）。DMK 把方向變成**可被 OAR 條件比較的乾淨整數**，是 movesets 與 OAR 之間的標準輸入源。
-- 與本批次的 [BFCO](bfco.md) 方向重擊（`BFCO_PowerAttackA/B/L/R`）、DMCO 閃避同屬「方向驅動」這一類。
+- 與本批次的 BFCO 方向重擊（`BFCO_PowerAttackA/B/L/R`）、DMCO 閃避同屬「方向驅動」這一類。
 
 ## 對 ModForge（直接相關）
 - **不可生成**（SKSE DLL），但**它暴露的變數是 ModForge OAR 生成器的一等公民輸入**：

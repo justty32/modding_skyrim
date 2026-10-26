@@ -58,7 +58,7 @@ done
   裡放的正是 `BFCO_*.hkx`，證實這條路徑。
 - **要改的例外**：
   - 條件裡出現 `MCO_*` graph variable 的 `CompareValues`（少見，但存在）；
-  - 想升級成 BFCO 變體分支（新增資料夾 + `BFCO_iAttackVariants` 條件，語法見 [bfco.md](../../findings/bfco.md)）。
+  - 想升級成 BFCO 變體分支（新增資料夾 + `BFCO_iAttackVariants` 條件，語法見 `bfco.md`）。
 
 ### 2.4 資料夾／檔案結構：不變
 
@@ -108,7 +108,7 @@ MCO 與 BFCO 的 moveset 都放
   [DD2 Fighter MCO and BFCO 123708](https://www.nexusmods.com/skyrimspecialedition/mods/123708)、
   [BFCO NG 160505](https://www.nexusmods.com/skyrimspecialedition/mods/160505)。
 - 本 repo：[`raws/BFCO - Attack Behavior Framework (SSE AE VR).txt`](../../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt)、
-  [`bfco.md`](../../findings/bfco.md)、[`scar.md`](../../findings/scar.md)、[`movesets-examples.md`](../../findings/movesets-examples.md)、
+  `bfco.md`、[`scar.md`](../../findings/scar.md)、[`movesets-examples.md`](../../findings/movesets-examples.md)、
   [`payload-interpreter.md`](../../findings/payload-interpreter.md)、[`behavior-data-injector.md`](../../findings/behavior-data-injector.md)、
   [`animation-motion-revolution.md`](../../findings/animation-motion-revolution.md)、[`../pandora.md`](../../pandora.md)、
   [`../oar-replacer-guide-overview-planning-folders.md`](../../oar-replacer-guide-overview-planning-folders.md)。

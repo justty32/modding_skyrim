@@ -2,7 +2,7 @@
 
 # MCO／ADXP moveset → BFCO 轉換
 
-← [action-system 中樞](../README.md)｜相關：[BFCO](../findings/bfco.md)、[SCAR](../findings/scar.md)、[moveset 實例庫](../findings/movesets-examples.md)、[Payload Interpreter](../findings/payload-interpreter.md)、[OAR 指南](../oar-replacer-guide.md)
+← [action-system 中樞](../README.md)｜相關：BFCO、[SCAR](../findings/scar.md)、[moveset 實例庫](../findings/movesets-examples.md)、[Payload Interpreter](../findings/payload-interpreter.md)、[OAR 指南](../oar-replacer-guide.md)
 
 > **落點＝五層堆疊的第 4 層（招式框架）內部的框架遷移。** 第 0–3 層（XPMSSE／Pandora／BDI・PIE・AMR／OAR）
 > 在 MCO 與 BFCO 底下**完全共用**，所以這不是「換一套動作系統」，而是**同一批 `.hkx` 換一個 attack framework 的 handle**。

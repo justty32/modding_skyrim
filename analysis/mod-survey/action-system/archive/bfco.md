@@ -1,3 +1,5 @@
+> 封存 2026-10-26，原因：使用者裁示「現在我們都 mco 了」，BFCO 框架調查不再是現役選項（無取代者）
+
 # BFCO — Attack Behavior Framework（+ Universal Support）
 
 ← [action-system 中樞](../README.md)
@@ -7,14 +9,14 @@
 ## 核心能力
 - 動畫表：`BFCO_Attack1..20`、`BFCO_PowerAttack1..20`、方向重擊 `BFCO_PowerAttackA/B/L/R`、跳/衝刺/泳/雙持/蓄力攻擊、弓弩 `BFCO_RangeAttack1..10` + bash。
 - **vanilla 攻速 + 方向重擊** → 相容**所有技能樹大修**（Vokrii/Ordinator…），這是它對 MCO 的主賣點。
-- **NPC 連段內建**（與玩家共用派生規則），無 SCAR 也能連；有 SCAR 註釋的動畫則交給 [SCAR](scar.md)。
+- **NPC 連段內建**（與玩家共用派生規則），無 SCAR 也能連；有 SCAR 註釋的動畫則交給 [SCAR](../findings/scar.md)。
 - MCM 可配置（LMB 同 vanilla 出輕重擊 / 綁獨立重擊鍵 / 長按連輕擊…）。需 dTry's Key Utilities 做 keytrace。
 - **Universal Support**（doodlum）：recovery DLL port 到全版本——「recovery」frame 讓玩家用方向輸入提前脫離攻擊後搖。
 
 ## 派生機制 = 三層注入鏈的實戰（ModForge 重點）
 BFCO 的招式串接**全靠動畫內的自訂事件註釋**驅動，不改 esp：
 - 串接事件（hkanno 加在 hkx）：`BFCO_NextIsAttack1`（首個須在 0.0s，指定下一段 N 攻擊編號）、`BFCO_NextIsPowerAttack2`、`BFCO_NextWinStart`（攻擊窗開）、`BFCO_DIY_EndLoop`（窗關）、`BFCO_DIY_recovery`（可用移動/格擋鍵結束攻擊）。
-- 攻速：`PIE.@SGVF|BFCO_AttackSpeed|1.0`（走 [Payload Interpreter](payload-interpreter.md)）。
+- 攻速：`PIE.@SGVF|BFCO_AttackSpeed|1.0`（走 [Payload Interpreter](../findings/payload-interpreter.md)）。
 - **攻擊變體 → OAR 條件**（mod 頁記載的**作者可選範例**，v3.2 起）：行為整數變數 `BFCO_iAttackVariants`（及 `A..E`）。動畫用 `PIE.@SGVI|BFCO_iAttackVariants|1` 設值，再開一個 OAR 動畫資料夾，config 加：
   ```json
   { "condition": "CompareValues", "requiredVersion": "1.0.0.0",

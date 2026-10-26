@@ -70,7 +70,7 @@ BFCO.dll PE VERSIONINFO 寫死 0.1.0.0，實際套件 3.100.5；converter 1.2.2 
 
 **How to apply:** 轉換前核對 MO2 metadata 版本，不信 DLL PE 版本；沒映射到的 handle 判 FAILED 保留證據；批次轉換前掃目標目錄是否已有雙格式，兩者都在就跳過標 SKIPPED；寫條件以實機拆開的 config 為準。
 
-BFCO v3.100.3 自帶 21 個 OAR submod 全用 `IsEquippedType` 等裝備條件，攻擊狀態走 behavior 層；自帶 BDI 變數是 `BFCO_ComboLocked`/`LastAttack`/`NextNormal`/`NextPower`，不是 mod 頁示範的 `BFCO_iAttackVariants`（`analysis/mod-survey/action-system/findings/bfco.md:26`）。
+BFCO v3.100.3 自帶 21 個 OAR submod 全用 `IsEquippedType` 等裝備條件，攻擊狀態走 behavior 層；自帶 BDI 變數是 `BFCO_ComboLocked`/`LastAttack`/`NextNormal`/`NextPower`，不是 mod 頁示範的 `BFCO_iAttackVariants`（`analysis/mod-survey/action-system/archive/bfco.md:28`，2026-10-26 封存）。
 
 Pandora Output／Attack MCO／1hm_behavior 三個行為檔裡，`MCO_AttackSpeed` 這個 SGVF 變數只有宣告沒綁 playbackSpeed（2026-09-02 從 BFCO 換 MCO 時留下的死路）；想靠改這個值調攻速前先用 packfile 掃描工具（如 clipbind.py）確認目前框架真的有綁這個變數（`agentctl/handoffs/done/2026-10/home-2026-10-07/meleeslow/REPORT-anim.md`）。
 
