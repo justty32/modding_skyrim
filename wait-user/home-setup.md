@@ -1,18 +1,20 @@
 # 回家下載／重建
 
-## 重開 Claude Code／Codex，讓 houseCARL 的 `LocalAppData` 修正生效（2026-10-24）
+## 重開 Claude Code／Codex，讓新的 houseCARL build 生效（2026-10-24 立、10-26 改寫）
 
-2026-10-24 `hcpath` 線把 houseCARL 讀不到 localized 欄位的真因修掉了（上游 Mutagen 要 Windows
-環境變數 `LocalAppData`），環境變數已寫進 `~/.claude.json` 與 `~/.codex/config.toml`，
-但**既有的 housecarl-mcp 行程仍是壞的**——MCP server 是隨 CLI session 起的，不重開不會重讀設定。
+2026-10-26 `hcdeploy` 線已把新 build（fork `f0148dc8`，含 10-26 CJK 名稱修補：inline 中文不再
+mojibake、localized 名稱跟 MO2 VFS 的中文 strings 走）部署到 `~/tools/housecarl/server/`，
+舊 build 備份在 `~/tools/housecarl/server.bak-efe28f8f-20261026/`。10-24 的 `LocalAppData`
+環境變數也早已寫進設定。**但既有的 housecarl-mcp 行程仍是舊 build**——MCP server 隨 CLI
+session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 
-- 怎麼確認已生效：`instance/tools/housecarl_localappdata.sh --check`，
-  或 `instance/tools/housecarl_smoke.py`（自己另起一個 housecarl-mcp 走 MCP stdio 端到端驗）。
-- 擋住什麼：`agentctl/SESSION-LOG.md` open 段第 3 條（houseCARL 讀中文 mojibake 的查證）
-  要等這件做完才驗得了。
-- 判準與反例（不是「偶發、重試即可」）見 [`wf/lessons/housecarl-on-linux.md`](../wf/lessons/housecarl-on-linux.md)。
-- 證據：[`agentctl/handoffs/home-2026-10-24/hcpath/REPORT.md`](../agentctl/handoffs/home-2026-10-24/hcpath/REPORT.md)、
-  `instance` commit `98ab181`。
+- 怎麼確認已生效：重開後在 session 裡 `housecarl_resolve 00000F:Skyrim.esm` 要回 `金幣`（舊 build 回 `Gold`）。
+  不重開也能驗新檔本身：`agentctl/handoffs/home-2026-10-26/hcjk/tools/hcjk_names.py --server ~/tools/housecarl/server/housecarl-mcp`（10/10）。
+- 擋住什麼：重開之前，session 內用 houseCARL 讀中文名稱的結果都不能信（替代用 `instance/tools/whichmod.py`）。
+- 判準與反例見 [`wf/lessons/housecarl-on-linux.md`](../wf/lessons/housecarl-on-linux.md)。
+- 證據：[`agentctl/handoffs/home-2026-10-26/hcdeploy/REPORT.md`](../agentctl/handoffs/home-2026-10-26/hcdeploy/REPORT.md)、
+  [`agentctl/handoffs/home-2026-10-26/hcjk/REPORT.md`](../agentctl/handoffs/home-2026-10-26/hcjk/REPORT.md)、
+  [`agentctl/handoffs/home-2026-10-24/hcpath/REPORT.md`](../agentctl/handoffs/home-2026-10-24/hcpath/REPORT.md)。
 
 ## LoreRim 借用後續：只剩三題（2026-09-05 核對後縮小）
 

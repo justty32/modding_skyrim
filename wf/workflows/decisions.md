@@ -15,4 +15,4 @@
 
 | 日期 | 決定 | 來源（使用者原文或誰定的）| 前提（變了就重看）|
 |------|------|-------------------------|-----------------|
-| 2026-10-23 | `projects/houseCARL` **刻意停在分支 `fix/dialogue-encoding-lint`**（使用者原話「不管，就我們自己留着就好」）。這不是待辦，巡檢不要再把它列成異常 | 使用者 2026-10-23 裁示；T3 的 6a（本地 main FF 到 fork/main）、6b（刪同點分支名）、6c（linux-record-names 併 fork/main）全部不做 | 若 houseCARL 要升版或 fork/main 大幅前進，再回頭看 `agentctl/handoffs/home-2026-10-23/tidy/T3/REPORT.md` 的方案比較 |
+| 2026-10-26 | houseCARL fork 的 `main` 與 `fix/dialogue-encoding-lint` 一起 fast-forward 到 CJK 名稱修補＋wf 導入（`f0148dc8`），主 checkout 仍在 `fix/dialogue-encoding-lint`；部署 build 跟著換。取代 10-23「刻意停在 `fix/dialogue-encoding-lint`、不動」 | 使用者 2026-10-26 拍板「快轉兩分支＋換 build」；施工見 `agentctl/handoffs/home-2026-10-26/hcdeploy/REPORT.md` | 只 ff、不 merge／force；兩分支分岔時再裁 |
