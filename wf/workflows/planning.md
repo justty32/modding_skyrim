@@ -34,4 +34,4 @@
 
 ## 交接
 
-- 決定「為什麼選 A 不選 B」 → [decisions](decisions.md)。卡在使用者 → [WAIT_USER](../../WAIT_USER.md) 一行；跨 session → [SESSION-LOG](../../SESSION-LOG.md) 一行。
+- 定下的決定 → [decisions](decisions.md)。卡在使用者 → [WAIT_USER](../../WAIT_USER.md) 一行；跨 session → [SESSION-LOG](../../SESSION-LOG.md) 一行。
