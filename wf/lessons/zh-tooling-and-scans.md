@@ -14,11 +14,15 @@
 
 以下 2026-10-23 整理：
 
-- **排除範圍**還包括 pex 腳本裡靠字串比對的 3D 節點名（如 `MoveToNode(self,"FortSungard")`），翻了會讓對應功能失效（內戰地圖旗子插不到位），跑 zhport/pexstrings 前要先掃一輪這類呼叫參數（`agentctl/handoffs/done/2026-10/home-2026-10-10/m152315/REPORT.md`）。
-- 本體大版本升級（8,000+ 行等級）不必全文重翻，用舊版翻譯當 corpus 建原文 exact-key map，相同行自動投射、只把變動行與新行放進人工隊列，工作量可降一個數量級（`agentctl/handoffs/done/2026-08-29/cx-serana/REPORT.md:192-199`）。
-- 本體整支替換式舊版翻譯遇大版升級，可用 `zhport.py port --seed-match both`（carrier=新版本體、seed=舊版中文、lexicon-pair=舊版英文對舊版中文）把譯文重新映射到新版 esp，gate 用 fontgate(缺字0)+esplib stats --cmp（跟新本體 record 集合比對 same）（`agentctl/handoffs/done/2026-10/home-2026-10-08/want/REPORT-build.md`）。
-- zhport 的種子同鍵規則會把載體裡「已經是中文、來自另一層」的欄位也換成種子譯文，不是單純補缺；只想補缺欄不想動既有翻譯時，carrier 與 seed 都用英文版本，缺口欄位改用 `--override` 指定（`agentctl/handoffs/done/2026-10/home-2026-10-10/tradingposts/REPORT.md`）。
-- 舊中文層當種子搬字時，種子與載體的 master index 可能不同（例：種子 esp 該 master 前綴 05、載體 03），zhport.py 不做正規化會對不上 FormID 鍵；先核對兩邊 master 清單順序，不一致就把種子譯文轉成與 FormID 無關的 glossary（EditorID 或英文原文為鍵）再搬（`agentctl/handoffs/done/2026-09/home-2026-09-11/zhfix/REPORT.md:26-27`）。
+**排除範圍**還包括 pex 腳本裡靠字串比對的 3D 節點名（如 `MoveToNode(self,"FortSungard")`），翻了會讓對應功能失效（內戰地圖旗子插不到位），跑 zhport/pexstrings 前要先掃一輪這類呼叫參數（`agentctl/handoffs/done/2026-10/home-2026-10-10/m152315/REPORT.md`）。
+
+本體大版本升級（8,000+ 行等級）不必全文重翻，用舊版翻譯當 corpus 建原文 exact-key map，相同行自動投射、只把變動行與新行放進人工隊列，工作量可降一個數量級（`agentctl/handoffs/done/2026-08-29/cx-serana/REPORT.md:192-199`）。
+
+本體整支替換式舊版翻譯遇大版升級，可用 `zhport.py port --seed-match both`（carrier=新版本體、seed=舊版中文、lexicon-pair=舊版英文對舊版中文）把譯文重新映射到新版 esp，gate 用 fontgate(缺字0)+esplib stats --cmp（跟新本體 record 集合比對 same）（`agentctl/handoffs/done/2026-10/home-2026-10-08/want/REPORT-build.md`）。
+
+zhport 的種子同鍵規則會把載體裡「已經是中文、來自另一層」的欄位也換成種子譯文，不是單純補缺；只想補缺欄不想動既有翻譯時，carrier 與 seed 都用英文版本，缺口欄位改用 `--override` 指定（`agentctl/handoffs/done/2026-10/home-2026-10-10/tradingposts/REPORT.md`）。
+
+舊中文層當種子搬字時，種子與載體的 master index 可能不同（例：種子 esp 該 master 前綴 05、載體 03），zhport.py 不做正規化會對不上 FormID 鍵；先核對兩邊 master 清單順序，不一致就把種子譯文轉成與 FormID 無關的 glossary（EditorID 或英文原文為鍵）再搬（`agentctl/handoffs/done/2026-09/home-2026-09-11/zhfix/REPORT.md:26-27`）。
 
 相關：[[translation-layer-cost-threshold]]、[[chinese-diff-ok-but-no-tofu]]
 
