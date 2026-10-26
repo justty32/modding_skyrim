@@ -1,3 +1,5 @@
+> 封存 2026-10-26：自述 2026-08-07 執行完成（原 plans/README.md「已結案」表），無取代者；上游計畫 mod-library-catalog 仍現役
+
 # 線 A：mod 庫收尾
 
 > 屬於 [本輪三 agent 分工——mod 庫收尾 + 韓文站採集](README.md)。
