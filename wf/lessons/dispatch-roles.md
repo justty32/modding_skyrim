@@ -48,21 +48,28 @@
 **越界的標尺**（2026-08-30 頂層自己做了的）：資料檔合併（寫合併腳本、審查 md、回填來源 md）、逐隊驗收（驗證腳本、重跑 unittest、查 git ahead/behind）、調查型 diff、一整批文件撰寫。
 
 **How to apply:**
-- **開場就開助手**，不要等到自己開始寫腳本才想起來。沒指定數量就開兩個。
-- **助手優先用 codex 線**（不編團隊，終局直接進 `inbox/new/`），需要頻繁來回才用 Claude subagent。
-- **外包**：資料檔合併、驗收腳本、跑測試、查 git 狀態、把已定結論落成文字、文件格式與連結修補；交接書撰寫、tmux 發射驅動、巡線放行、inbox 轉信也外包給常駐助手 cx-ops（standing 契約在 `agentctl/handoffs/ops-2026-08-31/STANDING.md`）。
-- **留給自己**：仲裁兩隊互相矛盾的宣告、資源／鎖的分配、範圍裁定、對使用者說話、管領導 context。
-  （即使仲裁需要地面真相，探測也可以叫助手跑完回報，我只做判斷。）
-- 別過度修正成「什麼都不碰」——[[dont-inflate-light-preferences]]。判準是
-  **「這件事需要我的判斷，還是只需要有人動手」**。
-- **預設是「開一條 codex 線掛在 dispatcher 底下」**（如 `cx-ops1`／`cx-diag1`；同期純 codex 線做得跟 Opus 領隊一樣好，`cx-diag1` 定位出當天崩潰根因）：
-  寫交接書 → `tmux new-session` ＋ `send-keys 'codex'` → 它自己跑 → `inbox_send.sh` 回報。
-  **不編團隊、不配 Opus 領導。**
-- **只有同時滿足這兩條才開 Opus 領導**：① 真的需要 **3 條以上並行線同時被監看**；
-  ② 判斷內容是非機械的（要仲裁、要改判、要跨線調和）。
-  單一有界任務（改文件、查一個 mod、跑一支工具、產一份報告）**一律 codex 線**。開團隊的門檻是「要不要有人替我監看與核驗多條線」，不是「這件事重不重要」。
-- 使用者說「開團隊」時，**那是指「別自己做」，不是指「一定要配 Opus」**——
-  codex 線也是團隊的一種。若他要的是多線並行，再開領導。
+**開場就開助手**，不要等到自己開始寫腳本才想起來。沒指定數量就開兩個。
+
+**助手優先用 codex 線**（不編團隊，終局直接進 `inbox/new/`），需要頻繁來回才用 Claude subagent。
+
+**外包**：資料檔合併、驗收腳本、跑測試、查 git 狀態、把已定結論落成文字、文件格式與連結修補；交接書撰寫、tmux 發射驅動、巡線放行、inbox 轉信也外包給常駐助手 cx-ops（standing 契約在 `agentctl/handoffs/ops-2026-08-31/STANDING.md`）。
+
+**留給自己**：仲裁兩隊互相矛盾的宣告、資源／鎖的分配、範圍裁定、對使用者說話、管領導 context。
+（即使仲裁需要地面真相，探測也可以叫助手跑完回報，我只做判斷。）
+
+別過度修正成「什麼都不碰」——[[dont-inflate-light-preferences]]。判準是
+**「這件事需要我的判斷，還是只需要有人動手」**。
+
+**預設是「開一條 codex 線掛在 dispatcher 底下」**（如 `cx-ops1`／`cx-diag1`；同期純 codex 線做得跟 Opus 領隊一樣好，`cx-diag1` 定位出當天崩潰根因）：
+寫交接書 → `tmux new-session` ＋ `send-keys 'codex'` → 它自己跑 → `inbox_send.sh` 回報。
+**不編團隊、不配 Opus 領導。**
+
+**只有同時滿足這兩條才開 Opus 領導**：① 真的需要 **3 條以上並行線同時被監看**；
+② 判斷內容是非機械的（要仲裁、要改判、要跨線調和）。
+單一有界任務（改文件、查一個 mod、跑一支工具、產一份報告）**一律 codex 線**。開團隊的門檻是「要不要有人替我監看與核驗多條線」，不是「這件事重不重要」。
+
+使用者說「開團隊」時，**那是指「別自己做」，不是指「一定要配 Opus」**——
+codex 線也是團隊的一種。若他要的是多線並行，再開領導。
 
 相關：[[im-dispatcher-codex-implements]]（那條講不要深潛實作；這條補上「而且你有助手可以用」）、[[model-tiers-and-headcount]]、[[trust-gpt-sol-more]]。
 
@@ -99,19 +106,28 @@
 **Why**：Fable 每次被 inbox 訊息喚醒去讀信、巡線、收線，燒的都是最貴的 context；線管理是照契約辦事（驗收條數寫死、七步收線），不需要頂層判斷。
 
 **How to apply**：
-- 結構：**主 session（頂層決策／鎖／瀏覽器／對使用者）→ 管理線／領隊（讀 inbox、盯 tmux、
-  寫 orders、拆工、核驗收、收線、接力派線、歸檔 new/→read/）→ 工人（執行）**。交接書寫給管理線，由它自行切給工人。
-- 管理線用哪個模型看使用者當下怎麼說（Fable subagent `Agent` 工具 `model: fable`，或 Opus），別把「管理線一定是 Fable」當死規則；2026-09-05 起領隊＝Opus（`Agent` model opus），headcount 上限 10 隊×(2 Opus＋2 gpt-sol＋2 Sonnet)。
-- 工人：**預設 codex gpt-sol**（走 agentctl 的 driving-codex 流程：tmux、交接書、固定驗收條數；auto-compact 自理），**重要部分**（判斷密集、改壞了代價高的）用 **Opus**；
-  **Sonnet 不限制**（機械性：表格抽資料檔、對帳、連結修正、盤點），需要語意判斷的（散文拆段、封存判定、A/B 分類）用 Opus。gpt-sol 可以隨意指派 gpt terra／luna 當它自己的 subagent，管理線不管那一層。gpt-sol 拿一半量可以，但溝通順暢優先 Opus／Sonnet。
-- 派工模型一改，正在跑的管理線也要當場切換，不是等下一輪。
-- compact 判準＝大題目切換或 context 過半；頂層對領隊、領隊對成員都照做。
-- Fable **不掛 inbox 醒鐘**、不逐則讀信；只在管理線上呈五類事時醒：待下載清單就緒、
-  需使用者決定、需鎖或瀏覽器、管理線要交棒、全部收工戰報。
-- 管理線的 context 也有限：吃緊時寫 STATE.md 交棒，由頂層開繼任者——不硬撐。
-- 這條疊在 [[im-dispatcher-codex-implements]] 之上：那條說「實作歸 codex」，這條再把
-  「管理」也從頂層剝出去。
-- 歸檔訊息（new/→read/）是管理線職責，順帶讓頂層的 UserPromptSubmit hook 輸出瘦身。
-- 對使用者說話與給他看的文件一律大白話（2026-09-05；比 [[top-level-explain-in-plain-words]] 更強：不是「順手」，是「一律」）。
+結構：**主 session（頂層決策／鎖／瀏覽器／對使用者）→ 管理線／領隊（讀 inbox、盯 tmux、
+寫 orders、拆工、核驗收、收線、接力派線、歸檔 new/→read/）→ 工人（執行）**。交接書寫給管理線，由它自行切給工人。
+
+管理線用哪個模型看使用者當下怎麼說（Fable subagent `Agent` 工具 `model: fable`，或 Opus），別把「管理線一定是 Fable」當死規則；2026-09-05 起領隊＝Opus（`Agent` model opus），headcount 上限 10 隊×(2 Opus＋2 gpt-sol＋2 Sonnet)。
+
+工人：**預設 codex gpt-sol**（走 agentctl 的 driving-codex 流程：tmux、交接書、固定驗收條數；auto-compact 自理），**重要部分**（判斷密集、改壞了代價高的）用 **Opus**；
+**Sonnet 不限制**（機械性：表格抽資料檔、對帳、連結修正、盤點），需要語意判斷的（散文拆段、封存判定、A/B 分類）用 Opus。gpt-sol 可以隨意指派 gpt terra／luna 當它自己的 subagent，管理線不管那一層。gpt-sol 拿一半量可以，但溝通順暢優先 Opus／Sonnet。
+
+派工模型一改，正在跑的管理線也要當場切換，不是等下一輪。
+
+compact 判準＝大題目切換或 context 過半；頂層對領隊、領隊對成員都照做。
+
+Fable **不掛 inbox 醒鐘**、不逐則讀信；只在管理線上呈五類事時醒：待下載清單就緒、
+需使用者決定、需鎖或瀏覽器、管理線要交棒、全部收工戰報。
+
+管理線的 context 也有限：吃緊時寫 STATE.md 交棒，由頂層開繼任者——不硬撐。
+
+這條疊在 [[im-dispatcher-codex-implements]] 之上：那條說「實作歸 codex」，這條再把
+「管理」也從頂層剝出去。
+
+歸檔訊息（new/→read/）是管理線職責，順帶讓頂層的 UserPromptSubmit hook 輸出瘦身。
+
+對使用者說話與給他看的文件一律大白話（2026-09-05；比 [[top-level-explain-in-plain-words]] 更強：不是「順手」，是「一律」）。
 
 相關：[[delegate-simple-work-to-sonnet]]、[[driving-other-cli-agents]]、[[trust-gpt-sol-more]]
