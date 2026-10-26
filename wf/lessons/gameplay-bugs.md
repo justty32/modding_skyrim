@@ -18,13 +18,13 @@
 
 > 賣東西物品被收走但金幣沒入帳（買正常）＝Unstack Stolen Items 2.0.4 DLL；10-09 對照實驗定罪，已停用
 
-2026-10-09 使用者回報賣東西拿不到錢（每個商人、舊 41 級角色也一樣；價格顯示正常、買東西正常）。靜態掃描找不到元兇，對照實驗停用 Unstack Stolen Items（09-05 裝，hook 背包物品合併，金幣入帳正好走這步）後錢就進來了。profiles `4f5f03a` 停用；報告 `agentctl/handoffs/home-2026-10-09/barter/REPORT-barter.md`。
+2026-10-09 症狀：賣東西拿不到錢（每個商人、舊角色也一樣；價格顯示正常、買東西正常）。靜態掃描找不到元兇；Unstack Stolen Items hook 背包物品合併，金幣入帳正好走這步，對照實驗停用它後錢就進來了。profiles `4f5f03a` 停用；報告 `agentctl/handoffs/home-2026-10-09/barter/REPORT-barter.md`。
 
 **Why:** 靜態證據不足時，使用者實機一次停一個的對照最快；先看「賣價有沒有數字／買是否正常」把顯示問題與結算問題切開。
 
-**How to apply:** 別再裝回 Unstack Stolen Items；之後若有其他 hook 物品合併／AddObjectToContainer 的 DLL 出現交易或撿物異常，先懷疑這類。
-
-2026-10-23 補：收到「賣東西／買賣沒拿到預期結果」回報，先排除原版機制再往 mod/DLL 查——`sNotEnoughVendorGold` 商人錢不夠會跳確認框、低價物品賣出本來就是 0 金，10-09 這條線花三輪才排除乾淨。最小對照實驗：記物品卡價格 P、賣前金幣 A、賣後金幣 C；C=A+P 才正常，C=A 才值得往 mod 查，不要一開始就翻 SKSE log（`agentctl/handoffs/done/2026-10/home-2026-10-09/barter/REPORT-barter.md`）。
+**How to apply:**
+- 別再裝回 Unstack Stolen Items；之後若有其他 hook 物品合併／AddObjectToContainer 的 DLL 出現交易或撿物異常，先懷疑這類。
+- 收到「賣東西／買賣沒拿到預期結果」回報，先排除原版機制再往 mod/DLL 查——`sNotEnoughVendorGold` 商人錢不夠會跳確認框、低價物品賣出本來就是 0 金（2026-10-23）。最小對照實驗：記物品卡價格 P、賣前金幣 A、賣後金幣 C；C=A+P 才正常，C=A 才值得往 mod 查，不要一開始就翻 SKSE log（`agentctl/handoffs/done/2026-10/home-2026-10-09/barter/REPORT-barter.md`）。
 
 ## valhalla-block-commitment-eats-release
 
@@ -55,7 +55,7 @@
 
 > 多 Proton 遊戲共用同一個 NVIDIA shader 快取目錄會互擠造成卡頓
 
-2026-10-04 Skyrim 用 sniper+Proton 沒設 `__GL_SHADER_DISK_CACHE_PATH`，快取寫全機共用 `~/.cache/nvidia/GLCache/`；同日 Helldivers 2 也沒設專屬路徑寫入同快取檔，接近常見 1 GiB 上限，可能互擠已編譯 shader 致重編卡頓。沒 frametime 時 log 只證明「有這件事」非「那次卡」，靠 HUD 與 mtime 才把尖峰實錘成 shader 編譯。`agentctl/handoffs/done/2026-10/home-2026-10-04/stutter/REPORT.md`
+2026-10-04：Skyrim 用 sniper+Proton 沒設 `__GL_SHADER_DISK_CACHE_PATH`，快取寫全機共用 `~/.cache/nvidia/GLCache/`；同日 Helldivers 2 也沒設專屬路徑寫入同快取檔，接近常見 1 GiB 上限，可能互擠已編譯 shader 致重編卡頓。沒 frametime 時 log 只證明「有這件事」非「那次卡」，靠 HUD 與 mtime 才把尖峰實錘成 shader 編譯。`agentctl/handoffs/done/2026-10/home-2026-10-04/stutter/REPORT.md`
 
 **Why:** Proton 遊戲沒有獨立快取路徑；量化證據比 log 時間更能定因果。
 
