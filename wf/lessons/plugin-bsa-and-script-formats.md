@@ -6,16 +6,16 @@
 
 > houseCARL load_order_status 的「缺 master 0」只看 plugins.txt 勾選，證明不了 master 有裝；驗收要用全稱掃 TES4 MAST 的 check_masters.py（原 type: memory）
 
-2026-09-03 lrzh／lrfw 發現：`housecarl_load_order_status` 報「缺 master 0」時，實際有 **13 個**借用 patch 的 master 根本不在 load order（MO2 開關時會自動取消勾選，但 `git checkout --` 還原後又變回啟用）。MO2 回寫 diff 反推也不行（390 行重排只挑得出 3 筆）。
+`housecarl_load_order_status` 報「缺 master 0」時，可能有借用 patch 的 master 根本不在 load order（2026-09-03 實際有 **13 個**）（MO2 開關時會自動取消勾選，但 `git checkout --` 還原後又變回啟用）。MO2 回寫 diff 反推也不行（390 行重排只挑得出 3 筆）。
 
-**Why:** 今天 inst2／rt2／lrinst／lrzh 四隊的驗收都用了這個假數字；lrfw 全稱掃 MAST 後遊戲內 plugin 數（790）才第一次與 plugins.txt 對上。
-**How to apply:** 安裝／部署類交接書的「缺 master」驗收一律指定 `instance/tools/check_masters.py --out <csv>`（讀 TES4 MAST，`present=no` 必須 0；`--out` 必填，`--candidate` 可讀未安裝的單一 plugin；2026-09-03 晚 18:21 已從 lrfw 交接書搬進 instance，原檔仍留在 `agentctl/handoffs/home-2026-09-03/lrfw/tools/`）。可選 patch 的規則寫死「master 不在啟用集就不勾」。相關：[[verify-game-alive-via-qa-not-ps]]。
+**Why:** 用這個數字當驗收會整批假通過；全稱掃 MAST 後遊戲內 plugin 數才與 plugins.txt 對得上。
+**How to apply:** 安裝／部署類交接書的「缺 master」驗收一律指定 `instance/tools/check_masters.py --out <csv>`（讀 TES4 MAST，`present=no` 必須 0；`--out` 必填，`--candidate` 可讀未安裝的單一 plugin；`agentctl/handoffs/home-2026-09-03/lrfw/tools/` 另有一份原始副本）。可選 patch 的規則寫死「master 不在啟用集就不勾」。相關：[[verify-game-alive-via-qa-not-ps]]。
 
-2026-09-03 晚補：隱含 master 判定曾是「loadorder 前 13 行」，inst3 工人把新 plugin 塞到 loadorder 開頭就假報 44 筆；20:41 已改成「5 個原版＋`Skyrim.ccc` 中經 MO2 解析器可見的檔」（instance 9cddaef），本機是 13 個（其中 3 個 CC 小件在 `Creation Club Missing Archives (private)` mod 裡，不在遊戲 Data）。三個 profile 檔第 1 行都是 MO2 註解、loadorder 前段是隱含 master、modlist 第 1 行優先權最高——交接書寫「插最上面」一定錯。
+隱含 master 判定是「5 個原版＋`Skyrim.ccc` 中經 MO2 解析器可見的檔」，不是「loadorder 前 N 行」（新 plugin 被塞到 loadorder 開頭就會假報）；本機是 13 個（其中 3 個 CC 小件在 `Creation Club Missing Archives (private)` mod 裡，不在遊戲 Data）。三個 profile 檔第 1 行都是 MO2 註解、loadorder 前段是隱含 master、modlist 第 1 行優先權最高——交接書寫「插最上面」一定錯。
 
-2026-08-31 補：自動化「缺前置/缺 master」gate 的「缺」只是起點不是終點——grow 隊的 gate 只比對暫存候選彼此、沒比對現役已裝啟用的全部 mod，誤判了至少 3 件其實前置早已在現役 load order 裡的候選。驗收前要再用 `housecarl_read_plugin_file` 讀出候選 plugin 完整 masters 清單，逐一對現役 `plugins.txt` 比對存在且啟用（`*`），不能只信 gate 回報的第一個「缺哪一個」。source: agentctl/handoffs/done/2026-08-31/fixdis-2026-08-31/FIX-REPORT.md:43-57
+自動化「缺前置/缺 master」gate 的「缺」只是起點不是終點——gate 若只比對暫存候選彼此、沒比對現役已裝啟用的全部 mod，會把前置早已在現役 load order 裡的候選誤判成缺（2026-08-31 至少 3 件）。驗收前要再用 `housecarl_read_plugin_file` 讀出候選 plugin 完整 masters 清單，逐一對現役 `plugins.txt` 比對存在且啟用（`*`），不能只信 gate 回報的第一個「缺哪一個」。source: agentctl/handoffs/done/2026-08-31/fixdis-2026-08-31/FIX-REPORT.md:43-57
 
-2026-10-23 補：同一個「別信二手摘要，查原始紀錄」的坑還有兩個變種——active 集合只掃 plugins.txt 打星號會漏掉隱式啟用的 CC 插件（本機曾差 59 支，真實 active 集合要用 loadorder.txt 扣掉未勾選項，或信 houseCARL/qa_state 的 active 數字，`agentctl/handoffs/done/2026-09/home-2026-09-11/donor/REPORT.md:105-111`）；判斷 mod 實際機制／類別要直接讀該 mod 現役 esp 的 record 組成，不要照抄既有分析文件或 catalog 分類標籤（曾把只有 9 筆 float GMST 的 mod 誤記成天氣 overhaul）。
+同一個「別信二手摘要，查原始紀錄」的坑還有兩個變種——active 集合只掃 plugins.txt 打星號會漏掉隱式啟用的 CC 插件（本機曾差 59 支，真實 active 集合要用 loadorder.txt 扣掉未勾選項，或信 houseCARL/qa_state 的 active 數字，`agentctl/handoffs/done/2026-09/home-2026-09-11/donor/REPORT.md:105-111`）；判斷 mod 實際機制／類別要直接讀該 mod 現役 esp 的 record 組成，不要照抄既有分析文件或 catalog 分類標籤（曾把只有 9 筆 float GMST 的 mod 誤記成天氣 overhaul）。
 
 ## bsa-voice-index-false-negative
 
@@ -32,7 +32,7 @@
 
 > 手寫腳本讀寫 ESL/TES4 二進位格式的兩個關鍵位置：旗標 offset 與 cell 覆寫的 Partial Record 旗標
 
-TES4 flags（含 ESL 位元 `0x00000200`）正確位置是 **offset 0x08**，不是曾寫死在交接書裡的 0x18（0x18 讀到的其實是 HEDR 子紀錄；`agentctl/handoffs/done/2026-09/home-2026-09-07/chron/REPORT.md:68`）。另外（第三方指南轉述，未實測）：ESM-flag plugin 正確區分 persistent／temporary 並依序載入；非 ESM-flag plugin（含 ESL）全部記錄視為 persistent；ESL 新增的 cell record 若被另一 plugin 覆寫、覆寫方沒標 **Partial Record**（xEdit unknown 14 旗標），原 cell 的 temporary 引用會被整個忽略，觸發暫態引用消失 bug；要保留的引用要同時標 persistent。
+TES4 flags（含 ESL 位元 `0x00000200`）正確位置是 **offset 0x08**，不是 0x18（交接書曾寫錯；0x18 讀到的其實是 HEDR 子紀錄；`agentctl/handoffs/done/2026-09/home-2026-09-07/chron/REPORT.md:68`）。另外（第三方指南轉述，未實測）：ESM-flag plugin 正確區分 persistent／temporary 並依序載入；非 ESM-flag plugin（含 ESL）全部記錄視為 persistent；ESL 新增的 cell record 若被另一 plugin 覆寫、覆寫方沒標 **Partial Record**（xEdit unknown 14 旗標），原 cell 的 temporary 引用會被整個忽略，觸發暫態引用消失 bug；要保留的引用要同時標 persistent。
 
 **Why:** 前者已有實測錯誤前例，後者直接對應一類已知的暫態引用消失 bug，兩者都會讓手刻/手補 patch 悄悄壞掉。
 
