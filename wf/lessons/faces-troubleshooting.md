@@ -76,6 +76,8 @@ Yoana the Wanderer 的預設 outfit「小紅帽 - 披風」ARMO 佔 **slot 31（
 
 換私有身體前先查 ARMA 第三人稱模型指的是全域還是私有路徑：指向**全域** `FemaleBody_1.nif` 時不需重烤 BodySlide，做一支小 ESL 把該 ARMA 的 `WorldModel[1].File` 改指向已烤好的私有 nif 即可，0 筆 NPC_ 改動（2026-10-23，`agentctl/handoffs/done/2026-10/home-2026-10-10/batch4a-kurone/REPORT.md`）。
 
+**素材包有沒有私有身體，看裝的是哪個檔版本**：Kurone 76220 現裝的 DEFAULT 1.12（37 MB 輕量版）把種族和 SkinNaked 改回原版、不附身體 nif；MAIN 1.1（661 MB）每人附 3BA `femalebody_0/1.nif`＋`.tri`、4K 頭身膚色與 `KF_<名字>Body3BA.osp`，兩版 plugin 同名不能並存，MAIN 只能當資產來源。判 donor 有無私有身體先看 Nexus 各檔的 content preview，不要拿現裝目錄推全系列（2026-10-26，`agentctl/handoffs/home-2026-10-26/bodyswap/REPORT.md` §2c）。
+
 **交叉風險**：私有身體層的 NPC_ 覆寫會壓過換臉層；換臉層之後再改，必須把新贏家 forward 回身體層（或身體層載在前面、換臉層帶 WNAM）。
 
 實機看身材要先 `<ref>.unequipall`，或直接用 Outfit Studio 開 nif 看形狀不用開遊戲。

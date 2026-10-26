@@ -37,7 +37,8 @@
 | [plugin-bsa-and-script-formats](plugin-bsa-and-script-formats.md) | plugin／BSA／腳本的格式事實與量測陷阱 | 5 |
 | [tool-portability](tool-portability.md) | 自製工具：repo 根推導、乾淨 clone 驗證、合法輸入不喊錯 | 2 |
 | [this-machine](this-machine.md) | 本機環境特性（shell、行程、工具差異） | 3 |
-| [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與 facegen 規則 | 8 |
+| [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與工具 | 4 |
+| [faces-facegen-consistency](faces-facegen-consistency.md) | 臉：facegen 與頭部件一致性規則（大媽臉／素臉真因） | 4 |
 | [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：排錯與升級 | 6 |
 | [animation-oar](animation-oar.md) | 動畫與 OAR | 6 |
 | [crash-dll-and-scripts](crash-dll-and-scripts.md) | CTD：SKSE DLL 與腳本 | 7 |

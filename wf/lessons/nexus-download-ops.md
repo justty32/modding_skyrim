@@ -64,6 +64,8 @@ CDP 驅動的 Nexus Mods 下載自動化踩過的坑：瀏覽器 profile 複本�
 
 **交接書一定要寫死的紅線**：不准輸入任何憑證、不准解 CAPTCHA、不准接受新條款、不准點 endorse/track/vote、不准 sudo 或改 group/udev。碰到就發 `NEEDS-USER` 停下來。
 
+**成人標記 mod 要登入才看得到檔案頁**：GraphQL `mod{adultContent}` 為 true 時，guest 連 FILES 分頁都沒有。複本 cookie 只剩 `nexusmods_session_refresh`、沒有 `nexusmods_session`＝使用者登入已過期，agent 不碰帳號，記 WAIT_USER 請使用者在自己的 Chrome 開一次 Nexus。2026-10-26 起 `cdp-download.mjs` 偵測 guest 頁回 exit 3（NEEDS-USER），不再報「Files tab not found」（`agentctl/handoffs/home-2026-10-26/bodyswap2/REPORT.md` §2）。
+
 **免費驗證**：Nexus 檔案列上的 VirusTotal 連結帶著該檔 hash，可以直接跟下載檔的 SHA-256 比對，等於一次來源驗證。
 
 **頁面操作的坑**（2026-10-23）：
