@@ -13,13 +13,13 @@
 **How to apply:** 查「覆蓋/相容」類問題除了檔案路徑交集一定加 record-level 解析（houseCARL resolve/cross_plugin_query）；查「存不存在」依序跑完五層再宣告「不存在」；查「功能/UI 消失但無錯誤」先 find 全 mods 目錄同路徑資產，列優先序與內容特徵再判贏家。相關：[[missing-master-scan-mast-not-housecarl]]。
 source: agentctl/handoffs/done/2026-08-30/bikini-2026-08-30/FINDINGS.md:25-73；agentctl/handoffs/done/2026-10/home-2026-10-09/crash/REPORT-console.md
 
-2026-10-23 補（E2bs-13）：「部分部位貼圖壞但不是全部」這類局部缺失，yva 線的做法是建一次 esp→ARMO→ARMA→nif→BSShaderTextureSet 全鏈路索引（對全部啟用 mod 的 loose＋BSA），逐貼圖路徑判 WINS／BSA／ABSENT 三類，再拿原始 FOMOD 包清單核對 ABSENT 是否原本就沒附——33 條 ABSENT 全數歸因成「上游漏檔／optional 沒裝／無害執行期覆蓋」（`agentctl/handoffs/done/2026-09/home-2026-09-19/yva/REPORT.md:14-37`）。
+「部分部位貼圖壞但不是全部」這類局部缺失，做法是建一次 esp→ARMO→ARMA→nif→BSShaderTextureSet 全鏈路索引（對全部啟用 mod 的 loose＋BSA），逐貼圖路徑判 WINS／BSA／ABSENT 三類，再拿原始 FOMOD 包清單核對 ABSENT 是否原本就沒附，把每條 ABSENT 歸因成「上游漏檔／optional 沒裝／無害執行期覆蓋」之一（2026-10-23，`agentctl/handoffs/done/2026-09/home-2026-09-19/yva/REPORT.md:14-37`）。
 
 ## engine-file-loading-mechanics-not-intuitive
 
 > plugin/資產贏家判定有一串違反直覺的引擎規則，不能用副檔名、modlist 位置或檔名猜；要讀 TES4 flag／實際 conflict tree／skse64.log。
 
-2026-09～10 跨線反覆驗證：`.esl` 副檔名一律贏過所有 ESP 不管 modlist 位置多低，ESPFE（esp+ESL旗標）保留原位置不一定贏，判 light master 要讀 TES4 header `0x200` 不能猜；`Skyrim.ccc` 裡落地的 plugin 是隱含 master、不受 plugins.txt 勾選控制（70 件 CC 落地會讓隱含 master 從 13 跳到 75-80）；拔一般 esp 型 mod，Skyrim 按名字重新對應不會讓其他 plugin FormID 位移，真正留痕的是殘留腳本而非槽位；BSA 檔名若跟自己 plugin 不同名，遊戲不會自動載入也不報錯（RS Children 踩過兩輪：BSA 不同名先漏一次，修完又被另兩個 mod 更高優先權蓋掉）；「Alternate Armors」算 1 件 mod 實際是 14 個獨立 plugin，估算規模要用檔案數不是 mod 名稱數；多包一層頂層 `data/` 會讓 MO2 VFS 映射成 `Data/data/...`，整包死檔不報錯；ESLified 補丁重排 FormID，換裝後存檔寫入即不可逆，所有 addon 要全套跟著換；modlist（檔案優先權）與 plugins.txt（紀錄勝者）方向沒對齊會做出自相矛盾的混合狀態；「有沒有東西流失」才是要不要建 forward patch 的判準，不是 winner 是誰；「Plugin Replacer」只換 esp 不換 bsa，要新舊都啟用用排序贏；兩個 mod 給同名 DLL/INI 要看 skse64.log 確認載入哪個版本；評估「只改某 CELL」的 mod 常連帶覆寫 persistent ACHR 所需的 WRLD 頂層與外層 persistent CELL，是引擎結構性要求；有些原版 GMST 是引擎硬編預設值、esm 裡沒有該 record，衝突檢查要按 EditorID 不能按 FormID；navmesh 若雙方都是實質改動（非 CK ±1 頂點雜訊），排序只會讓一邊整片退化，要停工列選項給使用者裁示。
+2026-09～10 驗證：`.esl` 副檔名一律贏過所有 ESP 不管 modlist 位置多低，ESPFE（esp+ESL旗標）保留原位置不一定贏，判 light master 要讀 TES4 header `0x200` 不能猜；`Skyrim.ccc` 裡落地的 plugin 是隱含 master、不受 plugins.txt 勾選控制（70 件 CC 落地會讓隱含 master 從 13 跳到 75-80）；拔一般 esp 型 mod，Skyrim 按名字重新對應不會讓其他 plugin FormID 位移，真正留痕的是殘留腳本而非槽位；BSA 檔名若跟自己 plugin 不同名，遊戲不會自動載入也不報錯，修好同名後還要查是否被更高優先權的 mod 蓋掉（RS Children 案例）；「Alternate Armors」算 1 件 mod 實際是 14 個獨立 plugin，估算規模要用檔案數不是 mod 名稱數；多包一層頂層 `data/` 會讓 MO2 VFS 映射成 `Data/data/...`，整包死檔不報錯；ESLified 補丁重排 FormID，換裝後存檔寫入即不可逆，所有 addon 要全套跟著換；modlist（檔案優先權）與 plugins.txt（紀錄勝者）方向沒對齊會做出自相矛盾的混合狀態；「有沒有東西流失」才是要不要建 forward patch 的判準，不是 winner 是誰；「Plugin Replacer」只換 esp 不換 bsa，要新舊都啟用用排序贏；兩個 mod 給同名 DLL/INI 要看 skse64.log 確認載入哪個版本；評估「只改某 CELL」的 mod 常連帶覆寫 persistent ACHR 所需的 WRLD 頂層與外層 persistent CELL，是引擎結構性要求；有些原版 GMST 是引擎硬編預設值、esm 裡沒有該 record，衝突檢查要按 EditorID 不能按 FormID；navmesh 若雙方都是實質改動（非 CK ±1 頂點雜訊），排序只會讓一邊整片退化，要停工列選項給使用者裁示。
 
 **Why:** 這些都是「看起來應該怎樣」跟「引擎實際怎麼做」對不上的地方，要讀 TES4 flag/record 或看 houseCARL conflict tree/skse64.log 等執行期證據才知道。
 
