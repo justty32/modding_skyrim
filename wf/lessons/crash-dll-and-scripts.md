@@ -63,10 +63,13 @@ repo 若有 `.github/workflows/build.yml` 就 `gh workflow run ... --ref main`�
 (2) **`Resetting inventory` / `Resurrecting` 的總次數會被遊玩時長汙染**（長時間實玩 vs 短煙霧），不能當 A/B 指標。
 
 **How to apply:** 下次再崩，開 MO2 前先打包 SKSE log 目錄（各 DLL log 會被下一場蓋掉）。SKSE plugin 的嫌疑可以從「崩潰前數秒 DLL log 裡有沒有同一個 ACHR/FormID」找線索，但要有機制證據才算定罪。crash log 讀法：
-1. 每個 frame 標 [P]（precise）或 [S]（stack scan）——只有少數 frame（常是 frame 0）是 [P]，其餘多是 [S]，只能定位功能路徑不能當嚴格 unwind 因果鏈；排除「今天新裝的 mod 是兇手」不能只看它名字沒出現在 callstack，要查同簽章崩潰裝之前是否已發生（`agentctl/handoffs/done/2026-09/home-2026-09-20/crash/REPORT.md:17`）。
-2. RIP=0（跳到空指標）時 CrashLogger 回推的 frame[0] 其實是浮點殘值不是真程式碼位址，要改讀 `[RSP+偏移]` 的真正返回位址重新起算，`triage_crash.py` 已有這段邏輯（`agentctl/handoffs/done/2026-10/home-2026-10-03/crash/c0928/REPORT.md`）。
-3. 暫存器裡出現的插件名／FormList 字串只是「當下還留著的值」不代表是崩潰原因，要對照崩潰那一行指令實際讀寫的是哪個暫存器（`agentctl/handoffs/done/2026-10/home-2026-10-10/crash-1/REPORT.md`）。
-4. 本機 .exe 被 SteamStub 加密反組譯不了時，可用 alandtse/skyrim_vr_address_library 的多份 offsets CSV（AE ID→1.6.318→se_ae_offsets→SE→1.5.97→1.5.97_comments）鏈式對照，把 crash log 匿名函式 ID 推回 SE/AE 公開名稱（`agentctl/handoffs/done/2026-10/crossbow-ctd-2026-10-09/REPORT.md`）。
+（1）每個 frame 標 [P]（precise）或 [S]（stack scan）——只有少數 frame（常是 frame 0）是 [P]，其餘多是 [S]，只能定位功能路徑不能當嚴格 unwind 因果鏈；排除「今天新裝的 mod 是兇手」不能只看它名字沒出現在 callstack，要查同簽章崩潰裝之前是否已發生（`agentctl/handoffs/done/2026-09/home-2026-09-20/crash/REPORT.md:17`）。
+
+（2）RIP=0（跳到空指標）時 CrashLogger 回推的 frame[0] 其實是浮點殘值不是真程式碼位址，要改讀 `[RSP+偏移]` 的真正返回位址重新起算，`triage_crash.py` 已有這段邏輯（`agentctl/handoffs/done/2026-10/home-2026-10-03/crash/c0928/REPORT.md`）。
+
+（3）暫存器裡出現的插件名／FormList 字串只是「當下還留著的值」不代表是崩潰原因，要對照崩潰那一行指令實際讀寫的是哪個暫存器（`agentctl/handoffs/done/2026-10/home-2026-10-10/crash-1/REPORT.md`）。
+
+（4）本機 .exe 被 SteamStub 加密反組譯不了時，可用 alandtse/skyrim_vr_address_library 的多份 offsets CSV（AE ID→1.6.318→se_ae_offsets→SE→1.5.97→1.5.97_comments）鏈式對照，把 crash log 匿名函式 ID 推回 SE/AE 公開名稱（`agentctl/handoffs/done/2026-10/crossbow-ctd-2026-10-09/REPORT.md`）。
 
 （以上讀法 2026-10-23 整理。）相關：[[doomperk-advanceobject-block-ctd]]、[[verify-waituser-against-logs]]。
 
