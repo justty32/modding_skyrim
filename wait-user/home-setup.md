@@ -85,6 +85,17 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 來源：10-17 巡檢 #6，裁示單 [已封存](../wf/user/archive/2026-10-17-patrol.md)，登記依據見
 [`agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md`](../agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md) 待裁第 2 條。
 
+## Chrome 裡重新打開一次 Nexus，讓 agent 能再下載（2026-10-26 立）
+
+10-26 bodyswap2 要抓 Kurone 正式版 MAIN（76220，661 MB）做比對，`nexus_get.sh` 三次都拿到 **guest** 頁面：
+你 Chrome 的 nexusmods.com cookie 只剩 `nexusmods_session_refresh`（到 11-01），登入用的 `nexusmods_session` 已過期；
+76220 是成人標記，guest 連檔案頁都看不到。agent 不碰帳號，所以停在這裡。
+
+- 你要做的：在自己的 Chrome 打開 nexusmods.com，確認右上角是你的帳號（不是 Log in）。必要時自己登入。
+- 之後 agent 重跑：`agentctl/tools/nexus_dl/nexus_get.sh --batch agentctl/handoffs/home-2026-10-26/bodyswap2/data/dl-batch.txt`（MAIN＋46560＋74455 三檔）。
+- 怎麼確認已生效：上面那行回 `status: ok`；guest 時工具現在會回 exit 3（NEEDS-USER），不會再報「Files tab not found」。
+- 細節：[bodyswap2 REPORT](../agentctl/handoffs/home-2026-10-26/bodyswap2/REPORT.md) 第 2 節。
+
 ## 已完成（封存）
 
 > 以下各項判定已完成／已裁示，從 open 清單移到這裡保存歷史；每項附證據絕對路徑或 commit hash。
