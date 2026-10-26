@@ -32,6 +32,11 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 | `tools/test_check_markdown_links_anchors.py` | 驗證 Unicode、Setext、重複標題、HTML 與 fenced code 的 anchor 行為。 |
 | `tools/test_check_markdown_links_cli.py` | 驗證 CLI 錯誤、未初始化 submodule、來源排除與 symlink 選項。 |
 | `tools/markdown_links_testlib.py` | 提供暫存目錄、symlink 權限處理與假 gitlink 的共用測試 fixture。 |
+| `tools/test_check_markdown_links_scan_set.py` | 驗證掃描集合是「tracked＋未追蹤但未 ignore」：新檔未 `git add` 也會被掃、ignored 路徑不進。 |
+| `tools/waituser_count.py` | 唯讀核對 `WAIT_USER.md` hub 計數表與 `wait-user/` 子檔實際 open 條目；`--check` 不符 exit 1、解析錯 exit 2，`--json` 結構化輸出。 |
+| `tools/waituser/parsing.py` | waituser_count 的解析：標題走訪（跳過 fence）、hub 計數表、子檔與 hub 自指節的條目計數。 |
+| `tools/waituser/__init__.py` | waituser_count 內部套件入口。 |
+| `tools/test_waituser_count.py` | waituser_count 的 tempdir fixture 測試：OK／MISMATCH／ERROR、封存節不計、自指錨點、`--json`／`--fix`。 |
 | `tools/check_submodule_pins.py` | pre-push 核心：只檢查本次 push ref 相對 remote tip 有變動的 gitlink；本機存在但任何 remote-tracking ref 都不可達時 fetch 後 fail closed |
 | `tools/submodule_pins/pins.py` | 解析 push updates，計算變動 gitlink 與新分支 pins。 |
 | `tools/submodule_pins/__init__.py` | gitlink pin 計算與 remote 可達性檢查套件入口。 |
