@@ -6,18 +6,18 @@
 
 > 中文層部署前要查本體 mod 在 modlist 是否啟用，不能只看 plugins.txt；Apocalypse 案例讓 242 個 Cannot open store 躺了三天（原 type: memory）
 
-2026-09-03 post2 隊發現：Papyrus 323 個 `Cannot open store for class` 有 242 個來自 `Apocalypse - Magic of Skyrim.esp`——本體 `Apocalypse 10.2.3`（含 scripts BSA）早在 profiles 入版控（08-23）前就已停用（連 Ordinator／Vokriinator patch 一起，是刻意退役），但 08-31 22:45 的中文層部署把 `MAG-Apocalypse-Magic-of-Skyrim-CHS-MCM-7934` 啟用並在 plugins.txt 勾了同名 esp。`zh-gap-winners.csv` 把它標成 `ACTIVE-PARTIAL`，因為那張表只看 plugin 是否啟用，沒看本體 mod。
+2026-09-03 案例：本體 `Apocalypse 10.2.3`（含 scripts BSA）已刻意退役停用，中文層 `MAG-Apocalypse-Magic-of-Skyrim-CHS-MCM-7934` 卻被啟用並在 plugins.txt 勾了同名 esp，造成 242 個 `Cannot open store for class`。`zh-gap-winners.csv` 只看 plugin 是否啟用、沒看本體 mod，所以把它標成 `ACTIVE-PARTIAL`。
 
-**Why:** 中文層只帶 esp（＋少量 MCM 腳本），本體 BSA 沒載入時 esp 的 VMAD 引用全部落空；`Cannot open store` 存量 318 從 lrinst 之前就在，四隊的「新增 0」驗收都沒發現存量本身就是病。
+**Why:** 中文層只帶 esp（＋少量 MCM 腳本），本體 BSA 沒載入時 esp 的 VMAD 引用全部落空；只驗「新增 0」看不出存量本身就是病。
 **How to apply:** 中文層／覆蓋層的部署 gate 要加一條「本體 mod 在 `modlist.txt` 是 `+`」，本體停用就不部署、也不勾 esp；`Cannot open store` 的存量要按 class 歸因到來源 mod（`post2/data/cannot-open-store-by-mod.csv` 的做法：掃 BSA 名稱表＋plugin 位元組搜尋），別只比新增數。zhmake 124 層裡也有 Apocalypse 簡中層，部署前先裁本體去留。相關：[[missing-master-scan-mast-not-housecarl]]、[[slanguage-english-chinese-in-english-slot]]。
 
-2026-10-23 補：帳本標籤「READY-IN-LIBRARY」只代表中文層檔案已在庫、拓撲已驗，不代表本體已裝；曾有交接文件把兩件事併成一句話，誤判成「只差裝中文層」，實際本體都還沒裝進 MO2（Animated Armoury／Immersive Weapons 案例，`agentctl/handoffs/done/2026-08-28/opus-install-prep/PLAN.md:290-312`）。看到 READY 類標籤要額外雙向搜尋 MO2 mods/ 與 modlist 確認本體真的已裝且啟用。
+帳本標籤「READY-IN-LIBRARY」只代表中文層檔案已在庫、拓撲已驗，不代表本體已裝；兩件事併成一句話會誤判成「只差裝中文層」（2026-10-23，Animated Armoury／Immersive Weapons 案例，`agentctl/handoffs/done/2026-08-28/opus-install-prep/PLAN.md:290-312`）。看到 READY 類標籤要額外雙向搜尋 MO2 mods/ 與 modlist 確認本體真的已裝且啟用。
 
 ## apocalypse-rebuild-waits-new-playthrough
 
 > "2026-09-25 現役 Apocalypse 中文層其實是 7934 版記錄集（4,218 筆）整支換掉本體；10.2.3 英文底版重建層（staging apoc/）少 465 筆會動舊存檔，留到新周目才裝；同名覆蓋層部署要先比 record 集合"（原 type: memory）
 
-2026-09-25 cx-deploy 前檢抓到：現役 `Apocalypse - Magic of Skyrim.esp` 的 winner 是 `Apocalypse-Magic-of-Skyrim-Simplified-Chinese-FULL-Completion-Combined-Dev-2026-09-03`，它把整支 esp 換成 CHS 7934 版的記錄集（4,218 筆），本體目錄雖是 10.2.3（3,945 筆）但實際跑的是舊結構。cx-apoc 以英文 10.2.3 重建的層（`~/skyrim_mods/_staging-2026-09-25/apoc/`、mod-library `Apocalypse-Magic-of-Skyrim-10.2.3-Chinese-Rebuilt-Dev-2026-09-25`）刪 465 筆／新增 192 筆，裝上去會讓舊存檔指到不存在的 FormID。
+2026-09-25 起的現況：現役 `Apocalypse - Magic of Skyrim.esp` 的 winner 是 `Apocalypse-Magic-of-Skyrim-Simplified-Chinese-FULL-Completion-Combined-Dev-2026-09-03`，它把整支 esp 換成 CHS 7934 版的記錄集（4,218 筆），本體目錄雖是 10.2.3（3,945 筆）但實際跑的是舊結構。以英文 10.2.3 重建的層（`~/skyrim_mods/_staging-2026-09-25/apoc/`、mod-library `Apocalypse-Magic-of-Skyrim-10.2.3-Chinese-Rebuilt-Dev-2026-09-25`）刪 465 筆／新增 192 筆，裝上去會讓舊存檔指到不存在的 FormID。
 
 **Why**：同名覆蓋型中文層不是「翻譯」而是「整支替換」，版本不同就是換了本體。
 
@@ -27,7 +27,7 @@
 
 > 本包 skyrim.ini 是 sLanguage=ENGLISH，中文全塞在 *_English.STRINGS / *_english.txt 槽；只附 _chinese 檔的中文層會靜默失效（原 type: memory）
 
-2026-08-27 opus-zh-active 稽核發現：`instance/profiles/modpack-main/skyrim.ini` 是 `sLanguage=ENGLISH`，
+2026-08-27 起：`instance/profiles/modpack-main/skyrim.ini` 是 `sLanguage=ENGLISH`，
 `Skyrim Traditional Chinese 8.20 Core and Fonts` 把 `*_Chinese.*` 與 `*_English.*` 兩份 STRINGS
 都做成繁中內容。所以本包的硬規則：**引擎只讀 English 槽**——MCM 翻譯必須是 `*_english.txt`、
 外部字串必須是 `*_English.STRINGS`；只給 `_chinese` 的層裝了看起來沒錯、實機全英文、零報錯。
@@ -41,13 +41,13 @@
 
 相關：[[no-cht-chs-preference]]、[[translation-layer-cost-threshold]]
 
-2026-10-23 補：CC 官方簡中字串層初版用小寫 `strings/` 資料夾名——MO2 的 wine VFS 對路徑大小寫不敏感，但遊戲引擎讀 `Strings` 子目錄本身在 Proton 下對大小寫敏感，錯了會靜默失效；命名要逐字元比對現役已驗證生效的同類層（`agentctl/handoffs/done/2026-09/home-2026-09-03/cc/REPORT.md:47`）。
+字串層資料夾名大小寫要對（2026-10-23）：用小寫 `strings/` 時——MO2 的 wine VFS 對路徑大小寫不敏感，但遊戲引擎讀 `Strings` 子目錄本身在 Proton 下對大小寫敏感，錯了會靜默失效；命名要逐字元比對現役已驗證生效的同類層（`agentctl/handoffs/done/2026-09/home-2026-09-03/cc/REPORT.md:47`）。
 
 ## non-localized-esp-overwrites-localized-vanilla-string
 
 > non-localized 插件覆寫 vanilla localized 記錄時會把內嵌英文字串整個蓋掉中文，CELL/NPC 任何「為了改別的欄位整筆 forward」的記錄都會連帶英文化
 
-2026-08-28～09-01 多線重複踩到同一機制：`Common Clothes and Armors` 覆蓋 24 筆 vanilla ARMO 把中文名變英文（`agentctl/handoffs/done/2026-08-27/opus-qa-triage/REPORT.md:279`）；換臉 mod `KuroneYsoldaReplacer.esp` 把 NPC 名字寫死英文字面繞過字串表（`agentctl/handoffs/done/2026-09/home-2026-09-11/misc/REPORT.md:42-47`）；hcell 全機掃描抓到 237 筆 CELL FULL 因為別的欄位（Music/WaterHeight）被順手 forward 而連帶回英文，集中在前五個 winner plugin（`agentctl/handoffs/done/2026-09-01/hcell-2026-09-01/REPORT.md:80-139`）。
+2026-08-28～09-01 案例：`Common Clothes and Armors` 覆蓋 24 筆 vanilla ARMO 把中文名變英文（`agentctl/handoffs/done/2026-08-27/opus-qa-triage/REPORT.md:279`）；換臉 mod `KuroneYsoldaReplacer.esp` 把 NPC 名字寫死英文字面繞過字串表（`agentctl/handoffs/done/2026-09/home-2026-09-11/misc/REPORT.md:42-47`）；hcell 全機掃描抓到 237 筆 CELL FULL 因為別的欄位（Music/WaterHeight）被順手 forward 而連帶回英文，集中在前五個 winner plugin（`agentctl/handoffs/done/2026-09-01/hcell-2026-09-01/REPORT.md:80-139`）。
 
 **Why:** 問題出在 vanilla localized／覆寫插件 non-localized 的資料層級結構差異，不是排序錯誤，調序救不了，是反覆出現的通用迴歸成因。
 
@@ -73,4 +73,4 @@ Frozen Heart 只換 3 支 Strings 檔（ESM localized flag），本體升版腳�
 
 **How to apply:** 部署前先判定載體型態；純 Strings 型比對編號集合即可，整支替換型要走拓撲比對；補丁排在整支替換層之後又帶英文 FULL/DESC 要疊 forward 層把中文聯集加回去；覆蓋層 MO2 優先度用 `--priority before:`，`after:` 是排後面＝更低優先權，容易弄反；自帶 checksum/完整性檢查的 mod（如 OStim）覆寫前先讀原始碼找出被鎖定檔名，改完重算 checksum 附上；框架用「目錄列舉＋先讀先贏」載入翻譯檔的，只能同名覆蓋不能靠加新檔案。相關：[[slanguage-english-chinese-in-english-slot]]
 
-2026-10-23 補（E2bs-07）：現成中文包版本落後本體時（Chatty NPCs 1.51 vs 1.6.1 少 4~5 條 QUST 條件、FLST 少 LNAM、少整筆 KYWD），直接拿中文包 esp 出貨等於把 mod 降級；一律改以本體 esp 當載體、用 zhport 類工具只搬中文字串，記錄結構一個位元不動，讓完整性由「結構沒改過」保證而不靠版本號（`agentctl/handoffs/done/2026-09/home-2026-09-11/zh/REPORT.md:46-49`）。
+現成中文包版本落後本體時（Chatty NPCs 1.51 vs 1.6.1 少 4~5 條 QUST 條件、FLST 少 LNAM、少整筆 KYWD），直接拿中文包 esp 出貨等於把 mod 降級；一律改以本體 esp 當載體、用 zhport 類工具只搬中文字串，記錄結構一個位元不動，讓完整性由「結構沒改過」保證而不靠版本號（2026-10-23，`agentctl/handoffs/done/2026-09/home-2026-09-11/zh/REPORT.md:46-49`）。
