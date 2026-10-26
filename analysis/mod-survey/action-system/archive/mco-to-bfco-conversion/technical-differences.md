@@ -1,3 +1,5 @@
+> 封存 2026-10-26，隨入口 mco-to-bfco-conversion.md 一起封存
+
 # 技術差異：MCO／ADXP vs BFCO
 
 ← [mco-to-bfco-conversion](../mco-to-bfco-conversion.md)
@@ -10,10 +12,10 @@
 |---|---|---|---|---|
 | 0 骨架 | XPMSSE | 需要 | 需要 | 否 |
 | 1 behavior 引擎 | Pandora／Nemesis | 需要（[Attack - MCO 前置](https://www.nexusmods.com/skyrimspecialedition/mods/175044)） | 需要 | 否（但兩者**不可同時裝**） |
-| 2 資料注入 | [Payload Interpreter](../payload-interpreter.md) | 硬前置 | 硬前置 | 否 |
-| 2 位移 | [AMR](../animation-motion-revolution.md) | 硬前置 | 硬前置 | **否——`animmotion`／`animrotation` 註釋與框架無關** |
+| 2 資料注入 | [Payload Interpreter](../../findings/payload-interpreter.md) | 硬前置 | 硬前置 | 否 |
+| 2 位移 | [AMR](../../findings/animation-motion-revolution.md) | 硬前置 | 硬前置 | **否——`animmotion`／`animrotation` 註釋與框架無關** |
 | 3 動畫選擇 | [OAR](../../oar-replacer-guide.md) | 硬前置 | 硬前置 | 條件本身通常不用改（見 §2.3） |
-| 4 NPC AI | [SCAR](../scar.md) | 可選 | 可選（BFCO 另有自帶 AI） | 否 |
+| 4 NPC AI | [SCAR](../../findings/scar.md) | 可選 | 可選（BFCO 另有自帶 AI） | 否 |
 
 證據：BFCO 的 Nexus requirements 與 Attack - MCO 的 requirements 兩邊都列 AMR／OAR／PIE／Pandora-or-Nemesis
 （`housecarl_nexus_mod 117052` 與 `175044` 輸出）。
@@ -66,7 +68,7 @@ BFCO 側的完整動畫表見 [`raws/BFCO - Attack Behavior Framework (SSE AE VR
 
 **(c) attack chain 變數：兩套語意不同的狀態**
 
-BFCO 出貨的 [BDI](../behavior-data-injector.md) 變數（本機 `BFCO_BDI.json` 實檔核對）：
+BFCO 出貨的 [BDI](../../findings/behavior-data-injector.md) 變數（本機 `BFCO_BDI.json` 實檔核對）：
 
 ```json
 [

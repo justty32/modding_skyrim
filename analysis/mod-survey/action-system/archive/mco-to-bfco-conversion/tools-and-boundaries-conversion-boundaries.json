@@ -37,13 +37,13 @@
    "#": "B5",
    "邊界": "**`SCAR_*Dummy.hkx` 標記動畫在沒有 SCAR 時的行為**",
    "判定": "**未知，需實機驗**（推測：它替換的是 ready-idle，沒有 SCAR 時可能留下錯誤 idle pose）",
-   "依據": "[movesets-examples.md](../movesets-examples.md) 記錄實檔有 `SCAR_1hmReadyDummy.hkx`；查不到「無 SCAR 時該檔行為」的官方說明"
+   "依據": "[movesets-examples.md](../../findings/movesets-examples.md) 記錄實檔有 `SCAR_1hmReadyDummy.hkx`；查不到「無 SCAR 時該檔行為」的官方說明"
   },
   {
    "#": "B6",
    "邊界": "**root motion／AMR 位移**",
    "判定": "**不阻斷**",
-   "依據": "`animmotion`／`animrotation` 是 AMR 的註釋，兩框架都硬前置 AMR，且註釋與 framework 無關（[animation-motion-revolution.md](../animation-motion-revolution.md)）。⚠️ AMR 生效需 behavior 設 `bAllowRotation`／`bAnimationDriven`；BFCO 的攻擊狀態是否全部滿足——**未驗證，推測滿足**（BFCO 自帶動畫本身就依賴位移）"
+   "依據": "`animmotion`／`animrotation` 是 AMR 的註釋，兩框架都硬前置 AMR，且註釋與 framework 無關（[animation-motion-revolution.md](../../findings/animation-motion-revolution.md)）。⚠️ AMR 生效需 behavior 設 `bAllowRotation`／`bAnimationDriven`；BFCO 的攻擊狀態是否全部滿足——**未驗證，推測滿足**（BFCO 自帶動畫本身就依賴位移）"
   },
   {
    "#": "B7",

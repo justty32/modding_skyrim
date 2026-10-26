@@ -43,7 +43,7 @@ source: modpack-design/sources/OPEN.md:18
 
 同日補充判準（使用者原話）：「只要我們動過後，那個檔案仍對標於原作檔，那就算」原作——修正層只覆蓋原作同路徑檔（如 Facegen/Mesh-Texture-Fix-Combined、SmeltingPlus-Fix、JH NPC Beauty Dev）算原作；換臉層算自製（使用者確認）。
 
-這條分類規則不等於授權規則——動畫/moveset 格式轉換（如 MCO→BFCO）查證 Nexus 授權頁顯示「私人轉換僅供自用可以，轉換後再發布不被允許」，跟「整包分發」是兩條獨立的授權問題；任何涉及格式轉換/移植的調查，授權查證要分別寫清楚「自用轉換」vs「整包分發」各自的結論，不要用其中一個代表全部（`analysis/mod-survey/action-system/findings/mco-to-bfco-conversion/costs-and-validation.md:27,61-64,113-115`）。
+這條分類規則不等於授權規則——動畫/moveset 格式轉換（如 MCO→BFCO）查證 Nexus 授權頁顯示「私人轉換僅供自用可以，轉換後再發布不被允許」，跟「整包分發」是兩條獨立的授權問題；任何涉及格式轉換/移植的調查，授權查證要分別寫清楚「自用轉換」vs「整包分發」各自的結論，不要用其中一個代表全部（出處是 MCO→BFCO 轉換研究的授權查證；該研究 2026-10-26 依使用者裁示封存）。
 
 
 ## safe-refactor-characterization-and-extract-method

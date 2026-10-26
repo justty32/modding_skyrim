@@ -1,3 +1,5 @@
+> 封存 2026-10-26，隨入口 mco-to-bfco-conversion.md 一起封存
+
 # 成本判定、實機驗收與待處理事項
 
 ← [mco-to-bfco-conversion](../mco-to-bfco-conversion.md)

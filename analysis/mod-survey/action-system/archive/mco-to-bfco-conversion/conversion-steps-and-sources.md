@@ -1,3 +1,5 @@
+> 封存 2026-10-26，隨入口 mco-to-bfco-conversion.md 一起封存
+
 # 轉換步驟與來源
 
 ← [mco-to-bfco-conversion](../mco-to-bfco-conversion.md)
@@ -50,13 +52,13 @@ done
 ### 2.3 OAR config：**通常不用改**
 
 - moveset 的 OAR submod 條件幾乎都是裝備／種族／角色條件（`IsEquippedType`、`IsActorBase`、`IsRace`、`Random`…），
-  與 attack framework 無關——見 [movesets-examples.md](../movesets-examples.md) 的實檔拆解。
+  與 attack framework 無關——見 [movesets-examples.md](../../findings/movesets-examples.md) 的實檔拆解。
 - OAR 是**按被替換動畫的檔案路徑**做替換，所以檔名一改，OAR 自動就替換到 `BFCO_*` handle 上。
   本機 BFCO 3.100.5 自己出貨的 16 個 OAR submod（`OpenAnimationReplacer/BFCO/1hm-sword-base/` 等）
   裡放的正是 `BFCO_*.hkx`，證實這條路徑。
 - **要改的例外**：
   - 條件裡出現 `MCO_*` graph variable 的 `CompareValues`（少見，但存在）；
-  - 想升級成 BFCO 變體分支（新增資料夾 + `BFCO_iAttackVariants` 條件，語法見 [bfco.md](../bfco.md)）。
+  - 想升級成 BFCO 變體分支（新增資料夾 + `BFCO_iAttackVariants` 條件，語法見 [bfco.md](../../findings/bfco.md)）。
 
 ### 2.4 資料夾／檔案結構：不變
 
@@ -106,9 +108,9 @@ MCO 與 BFCO 的 moveset 都放
   [DD2 Fighter MCO and BFCO 123708](https://www.nexusmods.com/skyrimspecialedition/mods/123708)、
   [BFCO NG 160505](https://www.nexusmods.com/skyrimspecialedition/mods/160505)。
 - 本 repo：[`raws/BFCO - Attack Behavior Framework (SSE AE VR).txt`](../../raws/BFCO%20-%20Attack%20Behavior%20Framework%20%28SSE%20AE%20VR%29.txt)、
-  [`bfco.md`](../bfco.md)、[`scar.md`](../scar.md)、[`movesets-examples.md`](../movesets-examples.md)、
-  [`payload-interpreter.md`](../payload-interpreter.md)、[`behavior-data-injector.md`](../behavior-data-injector.md)、
-  [`animation-motion-revolution.md`](../animation-motion-revolution.md)、[`../pandora.md`](../../pandora.md)、
+  [`bfco.md`](../../findings/bfco.md)、[`scar.md`](../../findings/scar.md)、[`movesets-examples.md`](../../findings/movesets-examples.md)、
+  [`payload-interpreter.md`](../../findings/payload-interpreter.md)、[`behavior-data-injector.md`](../../findings/behavior-data-injector.md)、
+  [`animation-motion-revolution.md`](../../findings/animation-motion-revolution.md)、[`../pandora.md`](../../pandora.md)、
   [`../oar-replacer-guide-overview-planning-folders.md`](../../oar-replacer-guide-overview-planning-folders.md)。
 - 本機（唯讀）：`~/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles/modpack-main/modlist.txt`、
   `.../mods/BFCO - Attack Behavior Framework 3.100.5/`、`.../mods/Pandora Output/{Engine.log,Pandora_Engine/ActiveMods.json}`。

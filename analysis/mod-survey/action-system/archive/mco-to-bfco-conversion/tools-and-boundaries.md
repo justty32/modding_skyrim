@@ -1,3 +1,5 @@
+> 封存 2026-10-26，隨入口 mco-to-bfco-conversion.md 一起封存
+
 # 現成工具與轉換邊界
 
 ← [mco-to-bfco-conversion](../mco-to-bfco-conversion.md)
