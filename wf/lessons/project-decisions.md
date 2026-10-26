@@ -6,15 +6,15 @@
 
 > 使用者 10-04 說要開新檔並陸續提新檔前的改動；10-08 調查＋施工完成（拔 Rigmor／FC／Spell Research／Biggie／SkyInteract、IFD Lydia→FDE、DynDOLOD 整組停用），待新檔實機確認
 
-2026-10-04 使用者說要開新檔，並開始列新檔前想做的改動，說「還有其他的，稍微等我」，但當天沒說完就收工。清單權威來源：母 repo 頂層 `play-notes.md`（使用者自己寫，10-08 內容）：刪 rigmor 兩個、spell research、forgotten city、biggie traits；Improved Follower Dialogue - Lydia 要換一個（bug／衝突多、有些台詞靜音、OOC）。
+2026-10-04 使用者說要開新檔，並列新檔前想做的改動，說「還有其他的，稍微等我」。清單權威來源：母 repo 頂層 `play-notes.md`（使用者自己寫，10-08 內容）：刪 rigmor 兩個、spell research、forgotten city、biggie traits；Improved Follower Dialogue - Lydia 要換一個（bug／衝突多、有些台詞靜音、OOC）。
 
 **Why:** 使用者要一次說完再施工（見 [[investigate-all-then-install-once]]）。
 
-**How to apply:** 下次 session 先問使用者其餘新檔想法，收齊後整理成清單給他確認再派線；刪 mod 前查 DynDOLOD.esp／Occlusion.esp 的 master（[[dyndolod-esp-masters-pin-content-mods]]）與同概念兄弟。同日已做：OBody 隨從黑名單＋Zeroed preset 排除、Aniya 皮膚修正、launch-mo2.sh 快取變數（HUD 預設關），報告在 `agentctl/handoffs/home-2026-10-04/`。
+**How to apply:** 使用者還有新檔想法時先收齊、整理成清單給他確認再派線；刪 mod 前查 DynDOLOD.esp／Occlusion.esp 的 master（[[dyndolod-esp-masters-pin-content-mods]]）與同概念兄弟。10-04 已做：OBody 隨從黑名單＋Zeroed preset 排除、Aniya 皮膚修正、launch-mo2.sh 快取變數（HUD 預設關），報告在 `agentctl/handoffs/home-2026-10-04/`。
 
-10-08 調查完成（`agentctl/handoffs/home-2026-10-08/newsave/REPORT-{quests,systems,lydia}.md`），使用者裁示：Lydia 換 FDE Lydia 1.5＋簡中（安裝包已在庫）；拔 Rigmor 後恢復原版邊境隱形牆（不補 `bBorderRegionsEnabled`）；SkyInteract 隨 Biggie 一起拔。施工要點：Rigmor 與 IFD Lydia 被 DynDOLOD／Occlusion 釘 master → 合併重跑一次 TexGen+DynDOLOD；IFD 另被 `JhNPCBeautyDev.esp`×2、Lydia-Look-From 換臉層當 master，ESLify-Overlay 內有 IFD 修正層副本。
+使用者裁示（10-08，調查在 `agentctl/handoffs/home-2026-10-08/newsave/REPORT-{quests,systems,lydia}.md`）：Lydia 換 FDE Lydia 1.5＋簡中（安裝包已在庫）；拔 Rigmor 後恢復原版邊境隱形牆（不補 `bBorderRegionsEnabled`）；SkyInteract 隨 Biggie 一起拔。依賴關係：Rigmor 與 IFD Lydia 被 DynDOLOD／Occlusion 釘 master；IFD 另被 `JhNPCBeautyDev.esp`×2、Lydia-Look-From 換臉層當 master，ESLify-Overlay 內有 IFD 修正層副本。
 
-10-08 施工完成（profiles `2cdbf1a`，REPORT-build.md）：39 mod／26 plugin 停用，FDE Lydia 上線，**DynDOLOD 整組停用**（含 Resources、TexGen Fixes；使用者裁「很想停掉」遠景→以後拔 mod 不用重跑 LOD）。待使用者新檔實機確認：Lydia 語音／外觀、主選單外的實際遊玩。殘留未清：OBody 黑名單與 IGYH FLM ini 內的 IFD／Rigmor 條目（無害）。
+現況（10-08 施工完成，profiles `2cdbf1a`，REPORT-build.md）：39 mod／26 plugin 停用，FDE Lydia 上線，**DynDOLOD 整組停用**（含 Resources、TexGen Fixes；使用者裁「很想停掉」遠景→以後拔 mod 不用重跑 LOD）。待使用者新檔實機確認：Lydia 語音／外觀、主選單外的實際遊玩。殘留未清：OBody 黑名單與 IGYH FLM ini 內的 IFD／Rigmor 條目（無害）。
 
 ## campfire-deferred-to-next-playthrough
 
@@ -28,7 +28,7 @@
 
 **How to apply:** 使用者說要開新周目時，把這包列進新檔清單一起調查施工（[[investigate-all-then-install-once]]），屆時重查 Campfire 2026 的 bug 頁與版本穩定度。
 
-2026-10-18 補：Campfire 安裝包內含的 `SKSE/Plugins/PapyrusUtil.dll` 會與現役已裝版本衝突——這是非 .esp 層級的衝突，常規 esp 層面的衝突檢查會漏掉，現役雖未裝但一裝即踩。下次新周目真的要裝 Campfire（含 Campfire 2026／Survival Skills CSF）時，安裝步驟要加一條：手動排除該 mod 包裡的 PapyrusUtil.dll，不要整包覆蓋安裝。
+Campfire 安裝包內含的 `SKSE/Plugins/PapyrusUtil.dll` 會與現役已裝版本衝突——這是非 .esp 層級的衝突，常規 esp 層面的衝突檢查會漏掉，現役雖未裝但一裝即踩。下次新周目真的要裝 Campfire（含 Campfire 2026／Survival Skills CSF）時，安裝步驟要加一條：手動排除該 mod 包裡的 PapyrusUtil.dll，不要整包覆蓋安裝。
 source: modpack-design/sources/OPEN.md:18
 
 ## self-made-vs-repack-classification
@@ -43,7 +43,7 @@ source: modpack-design/sources/OPEN.md:18
 
 同日補充判準（使用者原話）：「只要我們動過後，那個檔案仍對標於原作檔，那就算」原作——修正層只覆蓋原作同路徑檔（如 Facegen/Mesh-Texture-Fix-Combined、SmeltingPlus-Fix、JH NPC Beauty Dev）算原作；換臉層算自製（使用者確認）。
 
-2026-10-23 補：這條分類規則不等於授權規則——動畫/moveset 格式轉換（如 MCO→BFCO）查證 Nexus 授權頁顯示「私人轉換僅供自用可以，轉換後再發布不被允許」，跟「整包分發」是兩條獨立的授權問題；任何涉及格式轉換/移植的調查，授權查證要分別寫清楚「自用轉換」vs「整包分發」各自的結論，不要用其中一個代表全部（`analysis/mod-survey/action-system/findings/mco-to-bfco-conversion/costs-and-validation.md:27,61-64,113-115`）。
+這條分類規則不等於授權規則——動畫/moveset 格式轉換（如 MCO→BFCO）查證 Nexus 授權頁顯示「私人轉換僅供自用可以，轉換後再發布不被允許」，跟「整包分發」是兩條獨立的授權問題；任何涉及格式轉換/移植的調查，授權查證要分別寫清楚「自用轉換」vs「整包分發」各自的結論，不要用其中一個代表全部（`analysis/mod-survey/action-system/findings/mco-to-bfco-conversion/costs-and-validation.md:27,61-64,113-115`）。
 
 
 ## safe-refactor-characterization-and-extract-method
