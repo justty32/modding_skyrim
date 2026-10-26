@@ -2,7 +2,7 @@
 
 [WORKFLOWS](../WORKFLOWS.md)｜[INDEX](../INDEX.md)
 
-從「遊戲崩了／卡死了」到「定罪＋處置」的固定流程。素材來自 2026-09～10 多輪 CTD 排查（doomperk、PEPE、Daegon、長毛象、格擋崩潰等）凝結的共同手法；單點教訓在 [lessons/crash-dll-and-scripts](../lessons/crash-dll-and-scripts.md)、[lessons/crash-data-and-assets](../lessons/crash-data-and-assets.md)。
+從「遊戲崩了／卡死了」到「定罪＋處置」的固定流程；單點教訓在 [lessons/crash-dll-and-scripts](../lessons/crash-dll-and-scripts.md)、[lessons/crash-data-and-assets](../lessons/crash-data-and-assets.md)。
 
 **何時用**：實機 CTD、啟動即崩、整個遊戲凍結、同址重複崩潰。
 **何時不用**：非崩潰的行為異常（交易金幣、攻速、對話）→ [lessons/gameplay-bugs](../lessons/gameplay-bugs.md) 的歸因手法；裝 mod 前的相容評估 → profile-change／mod-install-audit。

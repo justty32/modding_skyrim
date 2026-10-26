@@ -3,16 +3,15 @@
 動作系統、perk 系統、任務框架這類**互相咬合**的一整套。跟單件的差別不是數量，
 是**它們會彼此覆寫檔案、共用生成式 output、而且一次全裝就再也分不清是誰壞的**。
 
-現役動作系統已改走 MCO。2026-09-02 的遷移計畫與六張執行表已於 2026-10-23 封存（遷移執行完畢），
-不再是現役參考；下方 BFCO 內容只保留為「系列分層與生成式 output」的歷史實例，同樣不代表現役選型。
+現役動作系統走 MCO；下方 BFCO 內容是「系列分層與生成式 output」的實例，不代表現役選型。
 
 ```text
 Done when: <每層各自成批且各自驗過、生成式 output 已重跑且 hash 有記錄、DLL winner 唯一、真人矩陣已排>
 ```
 
-## 鐵律：每一層各自成批（BFCO 歷史實例）
+## 鐵律：每一層各自成批（BFCO 實例）
 
-BFCO 線的實際順序：
+BFCO 線的順序：
 
 ```text
 1 框架更新（BFCO 本體）
@@ -37,7 +36,7 @@ BFCO `3.100.3` → `3.100.5` 時，新版**自帶單一 `BFCO.dll`**，
 安裝器不會替你判斷條件式補丁。做法是：
 
 1. 用**舊版 archive** 重播當初的 FOMOD 選項
-2. 跟**現役安裝**逐檔比對——BFCO 那次是 **1,358／1,358 檔完全一致**
+2. 跟**現役安裝**逐檔比對，要完全一致
 3. 一致之後，才用**同一組規則** materialize 新版
 
 不一致就代表你對「當初裝了什麼」的理解是錯的，這時候升版等於在錯誤基礎上疊錯誤。
@@ -53,16 +52,13 @@ Pandora／Nemesis／FNIS 的產物放在專屬的 `Pandora Output` mod，**不�
 
 - **升版前先備份舊 output**：`pandora-output-backups/<日期>-<用途>/`
 - 重跑後記錄檔數與 `Engine.log` 的 ERROR／FATAL／WARN 數
-  （BFCO 3.100.5 那次是 224 檔／186 HKX、0 ERROR／0 FATAL／7 WARN）
 - 確認 **input tree 與 shared `overwrite` 的 hash 沒變**——生成物不該寫回來源 mod
 
-**踩過**：Pandora 4.x 的 CLI 改用 `--output:"..."`／`--tesv:"..."`，
-沿用舊參數會把 **212 個 output 寫錯地方**，還有 **11 個檔被寫回 BFCO 來源 mod**。
-錯置的那批保留在 `pandora-output-backups/20260813-2149-misdirected-bfco-3.100.5/`，
-被污染的 11 個檔用 archive 復原。
+**坑**：Pandora 4.x 的 CLI 參數是 `--output:"..."`／`--tesv:"..."`，
+用舊參數會把 output 寫錯地方，還會寫回來源 mod；被寫回污染的來源檔用 archive 復原。
 
-Nemesis／Pandora 的 patch 有 **active／inactive** 之分：Precision 的 `colis` patch
-首次 auto-run 被 cache 發現但**預設 inactive**，要明確啟用後重跑。
+Nemesis／Pandora 的 patch 有 **active／inactive** 之分：新 patch 首次 auto-run 被 cache 發現時
+**預設 inactive**（例：Precision 的 `colis` patch），要明確啟用後重跑。
 
 ## 第三方常自帶框架副本
 

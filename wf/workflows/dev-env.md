@@ -17,10 +17,9 @@
 驗收一律由 `instance/`（部署狀態）與 `agentctl/`（實機驗收證據）管；本檔不複製那份狀態。
 `~/notes/projects/modding/skyrim/` 只留不進版控的截圖與 MongoDB 快照。
 
-2026-09-14 公司 WSL 的 converter 使用 `.venv-wsl`。實測 Windows .NET SDK 10.0.301 可啟動，ModForge 三份 `obj/project.assets.json` 所需套件均已在快取。
-在 ModForge 目錄以 Windows `dotnet.exe` 呼叫 `wslpath -w` 轉換後的測試 csproj，帶
-`test --no-restore --filter 'Category!=RequiresSkyrim'` 可使用既有依賴；不要加 `--no-build`，舊 DLL 可能早於目前程式。
-這只記錄本次快取條件；套件參考改變後需重新核對，不能把快取存在當成測試通過。
+公司 WSL：converter 用 `.venv-wsl`。ModForge 測試在 ModForge 目錄以 Windows `dotnet.exe` 呼叫 `wslpath -w` 轉換後的測試 csproj，帶
+`test --no-restore --filter 'Category!=RequiresSkyrim'`，靠既有 NuGet 快取；不要加 `--no-build`，舊 DLL 可能早於目前程式。
+套件參考改變後要重新核對快取；快取存在不等於測試通過。
 
 ## Fresh Clone
 
@@ -70,8 +69,6 @@ git submodule update --init --recursive
 載入的 DLL；具體安全部署命令由產出該 DLL 的子 repo 維護。
 
 ## houseCARL（外部工具．本 repo 最常碰的那個）
-
-原本的 `tooling` 工作流是空殼，2026-08-30 併進本檔——外部工具、env var、依賴本來就是環境的一部分。
 
 本機設定、工具語意與 Nexus 陷阱只以
 [`agentctl/docs/housecarl.md`](../../agentctl/docs/housecarl.md) 為準；建置與測試命令看

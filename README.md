@@ -4,7 +4,7 @@
 
 ## 四條主線
 
-2026-08-23 統整後，日常工作分成四條獨立 repo：
+日常工作分成四條獨立 repo：
 
 | 線 | 管什麼 | 可見性 |
 |---|---|---|
@@ -15,7 +15,7 @@
 
 `mod-library` 必須永遠 private，因為翻譯層有他人 mod 的完整原始 ESP 複本。`modpack-design` 和 `agentctl` 暫時也是 private，等逐檔審查後再決定能否公開。不要從這個 public 母 repo 推論子 repo 的公開範圍。
 
-各子 repo（上表四條線與 `projects/` 下的軟體 repo）根目錄都有自己的 `AGENTS.md` 與 `wf/` 工作流骨架（2026-10-26 導入）；進子 repo 工作先讀它的 `AGENTS.md`。例外：`projects/houseCARL` 尚未導入，`projects/model-converter` 的 `wf/` 暫在 `wf-import` 分支。
+各子 repo（上表四條線與 `projects/` 下的軟體 repo）根目錄都有自己的 `AGENTS.md` 與 `wf/` 工作流骨架；進子 repo 工作先讀它的 `AGENTS.md`。例外：`projects/houseCARL` 尚未導入，`projects/model-converter` 的 `wf/` 暫在 `wf-import` 分支。
 
 ## 你來找什麼?
 
@@ -48,7 +48,7 @@
 
 ## 頂層還有什麼
 
-`wf/`（工作流骨架，wf-kernel v0.6+794d6d2，骨架來自 `~/repo/workflows` 模板）、`tools/`、`wait-user/`、`patches/`、`.github/` 等其餘頂層目錄與檔案的逐列說明見 [`wf/INDEX.md`](wf/INDEX.md)——本檔只當入口，佈局細目以 INDEX 為準。
+`wf/`（工作流骨架，來自 `~/repo/workflows` 模板；版本戳在 `AGENTS.md` 檔尾）、`tools/`、`wait-user/`、`patches/`、`.github/` 等其餘頂層目錄與檔案的逐列說明見 [`wf/INDEX.md`](wf/INDEX.md)——本檔只當入口，佈局細目以 INDEX 為準。
 
 ## 要在這裡動手做事?
 

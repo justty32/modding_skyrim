@@ -42,7 +42,7 @@ requirements 可能拉出一整條生態；用 `housecarl_nexus_mod` 查，不�
 
 誰能查與怎麼派依當下環境為準，入口是
 [`agentctl/docs/housecarl.md`](../../../agentctl/docs/housecarl.md)與
-[`agentctl/docs/dispatch-windows.md`](../../../agentctl/docs/dispatch-windows.md)；不要沿用舊的「houseCARL 只掛在 Claude」假設。
+[`agentctl/docs/dispatch-windows.md`](../../../agentctl/docs/dispatch-windows.md)。
 
 已決定項目的現行入口在 [`content-plan/`](../../../modpack-design/content-plan/)；中文層缺口與拓撲 gate 看
 [`content-plan/zh-layer/`](../../../modpack-design/content-plan/zh-layer/)。
@@ -61,8 +61,8 @@ requirements 可能拉出一整條生態；用 `housecarl_nexus_mod` 查，不�
 2. 看候選檔的 API `version` 欄位。
 3. **做二進位拓撲比對。**
 
-**坑（踩過兩次）**：**API 的 `version` 欄位只是必要不充分條件，檔名裡的版本字串更不算數。**
-Ordinator 中文層 API 標 `9.31.0`，實際內容是 `9.30.1`。真正的閘門是拓撲比對——
+**坑**：**API 的 `version` 欄位只是必要不充分條件，檔名裡的版本字串更不算數。**
+真正的閘門是拓撲比對——
 record 數、record identity、header、GRUP、subrecord 結構要完全一致，
 差異必須**全部**落在可本地化文字 payload，非文字差異為零。
 （VIGILANT 1.8.1 的合格例：129,107 records 全等，7,250 個差異全在文字 payload。）
@@ -91,9 +91,9 @@ profile 複本只能用 `agentctl/tools/nexus_dl/make_profile_copy.sh` 建（只
 
 不輸入任何帳號憑證／密碼／2FA；不解 CAPTCHA 或任何 bot 偵測；不註冊、不買 Premium、
 不接受新條款；不點 endorse／track／vote／subscribe——**任何會改變使用者 Nexus 帳號狀態的事都不做**。
-cookie 橫幅只選最保守的選項。不動 nxm handler 關聯或 Wine registry（manager download 是壞的，別再繞）。
+cookie 橫幅只選最保守的選項。不動 nxm handler 關聯或 Wine registry（manager download 是壞的，不要走）。
 
-> 一次誤報教訓：正常頁面的原始 HTML 內含**未顯示**的 Cloudflare 元件字樣。
+> 正常頁面的原始 HTML 內含**未顯示**的 Cloudflare 元件字樣。
 > 紅線判斷只看**實際可見的驗證頁／驗證文字**，不要 grep HTML 就宣稱遇到 challenge。
 
 ## 衛星件：擴充／patch／漢化
@@ -110,7 +110,7 @@ cookie 橫幅只選最保守的選項。不動 nxm handler 關聯或 Wine regist
    SkyProc patcher 沒有頂層 `.esp`／`meshes/`，只掃副檔名會誤判成非 Skyrim。
 2. 對既有庫去重：檔名 → 大小 → 大小相同者算 SHA-256 確認。
 3. **對來源自己去重**——瀏覽器重複下載會留 `X.7z` 與 `X (1).7z`，兩個都不在庫裡，
-   只比對「來源↔庫」會**兩個都收進去**。這條踩過。
+   只比對「來源↔庫」會**兩個都收進去**。
 4. 跑 `mod-library/db/` 的**掃庫工具** `scan` 再 `stats`，看
    `L1 exact duplicates` 是否只剩已知的既有組。
 5. 檔名沒有 Nexus id 的跑 **legacy MD5 回溯解析器**還原來源（見
@@ -128,7 +128,7 @@ mo2ctl install <archive> --name "<X> Traditional Chinese" --priority "before:<�
 ```
 
 **坑**：`after:<本體>` 不是「疊在上面」——`modlist.txt` 頂端才是最高優先權，
-`after` = 檔案裡排在後面 = **更低**優先權。四個層曾因此完全失效。
+`after` = 檔案裡排在後面 = **更低**優先權。
 
 改 profile 一律走 `feat → release → main`，見 [`instance/profiles/README.md`](../../../instance/profiles/README.md)。
 
@@ -139,8 +139,7 @@ mo2ctl install <archive> --name "<X> Traditional Chinese" --priority "before:<�
 ```
 
 **逐檔案路徑判勝出者，不靠名字猜本體。** 名字比對會判錯——VIGILANT 的中文層在
-`VIGILANT SE` 之上（正確）但在 `VIGILANT Missing Lines Voice` 之下，只有前者決定勝負；
-一版名稱比對報出 20 個失效層，其中 16 個是配錯。
+`VIGILANT SE` 之上（正確）但在 `VIGILANT Missing Lines Voice` 之下，只有前者決定勝負。
 
 裝了覆蓋層還要驗**內容真的有中文**，見 [localization](../localization/README.md)。
 

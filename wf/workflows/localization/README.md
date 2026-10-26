@@ -11,7 +11,7 @@ Done when: <同版閘門通過、層內確有中文、排序在本體之上、au
 ## 先決定要不要做
 
 翻譯取捨的現行規則見 [`modpack-design/README.md`](../../../modpack-design/README.md)；
-不要再把已封存的 `translation-layer-cost-policy.md` 當現役入口。
+不要把已封存的 `translation-layer-cost-policy.md` 當現役入口。
 
 **方塊字／缺字破版不可接受；名詞不一致、繁簡混雜可接受。** 有同版簡中就直接裝，
 不要開 CHS→CHT 轉換層；遊戲的 `sLanguage` 維持 `ENGLISH`，中文放在英文槽。
@@ -65,15 +65,14 @@ for enc in ('utf-8', 'utf-16-le', 'cp936', 'big5'):
     best = max(best, len(CJK.findall(b.decode(enc, errors='ignore'))))
 ```
 
-**兩個踩過的坑**：
+**兩個坑**：
 
 - `strings -a --encoding=s` 是單位元組的，對所有 AYOP 的 ESP 都回 0。
 - `b.decode('utf-8', errors='ignore')` **永遠不會拋錯**，所以「依序試多種編碼、成功就 break」
-  的迴圈第一輪就結束，根本沒試過 cp936——這讓 20 個層被誤報成「零中文」。
-  四種編碼都試之後，68 個層**全部含中文**。
+  的迴圈第一輪就結束，根本沒試過 cp936，會把有中文的層誤報成「零中文」。
 
-也要驗**目標欄位**真的被翻到。Biggie Traits 曾經層裝好了、排序也對，但 trait 名稱的
-CJK 計數是 0——層本身是空的。
+也要驗**目標欄位**真的被翻到：層裝好、排序也對，目標欄位的 CJK 計數仍可能是 0——層本身是空的
+（例：Biggie Traits 的 trait 名稱）。
 
 ## 4. 排序
 
@@ -91,7 +90,7 @@ mo2ctl install <archive> --priority "before:<本體 mod 名>"
 跑 `mod-library/l10n/tools/` 的**層優先權稽核**（命令見該目錄的
 [`README.md`](../../../mod-library/l10n/tools/README.md)）。
 
-逐檔案路徑判勝出者。2026-08-23 用它抓出 4 個失效層、11 個被英文本體贏走的檔案。
+逐檔案路徑判勝出者。
 
 ## 6. 真人抽查
 

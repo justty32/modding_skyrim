@@ -2,7 +2,7 @@
 
 [WORKFLOWS](../WORKFLOWS.md)｜[INDEX](../INDEX.md)
 
-從萌芽到動工的四階段收在**同一條管線**，不拆成四個工作流——免得卡在「這算 idea 還是 roadmap」。2026-08-30 起取代原本分開的 `idea/`、`roadmap/`、`specs/` 三個工作流。
+從萌芽到動工的四階段收在**同一條管線**，不拆成四個工作流——免得卡在「這算 idea 還是 roadmap」。
 
 **何時用**：使用者說「記個想法」「以後要做」「排進 roadmap」「幫我規劃」「把這個討論成方案」「寫動工計畫」。
 **何時不用**：三兩步的小事直接做；已有 plan 且在動工 → [feature-dev](feature-dev/README.md)；只是要調查清楚 → [investigation](investigation/README.md)。

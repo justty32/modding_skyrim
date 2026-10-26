@@ -29,9 +29,9 @@
 | 誰 | 機制 | 要點 |
 |---|---|---|
 | 調度者（Claude）親跑 | **Claude in Chrome 擴充**，用使用者已登入的瀏覽器 | 最乾淨：不開 profile 複本、不取桌面鎖。直達 URL `/mods/<id>?tab=files&file_id=<fileId>&nmm=0` 直接落在 Slow download 頁。`browser_batch` 內的 `left_click` 不會觸發下載，要獨立呼叫。實錄見 [`agentctl/logs/nexus-download-via-chrome-extension-2026-08-27.md`](../../../agentctl/logs/nexus-download-via-chrome-extension-2026-08-27.md) |
-| codex／Claude 子代理線 | **headful Chrome（藏在私有 Xvfb）＋ profile 暫存複本 ＋ CDP** | **一條命令：[`agentctl/tools/nexus_dl/nexus_get.sh`](../../../agentctl/tools/nexus_dl/nexus_get.sh)**，見下節。不要再從舊 handoff 抄 `cdp-download.mjs` |
+| codex／Claude 子代理線 | **headful Chrome（藏在私有 Xvfb）＋ profile 暫存複本 ＋ CDP** | **一條命令：[`agentctl/tools/nexus_dl/nexus_get.sh`](../../../agentctl/tools/nexus_dl/nexus_get.sh)**，見下節。不要從舊 handoff 抄 `cdp-download.mjs` |
 
-### CDP 路：`nexus_get.sh`（2026-10-03 kitD 收編）
+### CDP 路：`nexus_get.sh`
 
 ```sh
 agentctl/tools/nexus_dl/nexus_get.sh <modid> --file <fileId> [--out DIR] [--expect-sha256 HEX]

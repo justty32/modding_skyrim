@@ -39,11 +39,9 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
    **使用者在電腦前不是禁區**（2026-08-30 裁示）：線仍可取鎖、開 MO2／Skyrim，不必先問。
    要禁的是**搶他的輸入**（送按鍵、注入他正在用的視窗、搶回焦點）；硬禁區只有
    「他正在玩不能暫停的遊戲」（見 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md)）。
-5. **Nexus 查證要指定走 houseCARL MCP，不能讓線自己 curl。** 純 HTTP 打 Nexus 回 403
-   （2026-08-26 實測）；codex 端已在 `~/.codex/config.toml` 的 `[mcp_servers.housecarl]`
-   掛上 houseCARL MCP，`housecarl_nexus_*` 查得到。2026-08-29 的 `cx-lands`／`cx-quest`／
-   `cx-font` 三線已自行查完逐件 fileId、bytes 與翻譯層 requirements。
-   （本條曾寫成「不能派給 codex 線」，2026-08-29 更正：403 是 curl 的限制，不是 codex 的限制。）
+5. **Nexus 查證要指定走 houseCARL MCP，不能讓線自己 curl。** 純 HTTP 打 Nexus 回 403；
+   codex 端已在 `~/.codex/config.toml` 的 `[mcp_servers.housecarl]` 掛上 houseCARL MCP，
+   `housecarl_nexus_*` 查得到，所以 Nexus 查證可以派給 codex 線（403 是 curl 的限制，不是 codex 的限制）。
    交接書要明寫「Nexus 事實一律走 `housecarl_nexus_*`，不 curl 網頁」。下載是另一回事：
    調度者先用 houseCARL 把 id／fileId／版本／bytes 寫死，線只做離線收斂；下載由調度者跑 Claude in Chrome，
    或指定**唯一一條**瀏覽器線走 CDP，見 [nexus-intake 第 3 段](../nexus-intake/README.md#3-下載)。
@@ -62,14 +60,13 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
 給整條線的大任務，不要重算它的 hash、不要幫它決定每一步。
 **微管理會燒光 token**，而且它的自查通常比逐步驗收更有效。
 
-**「讓它自己 push」已作廢：未經使用者確認不 push**（見母 repo
+**「讓它自己 push」不適用：未經使用者確認不 push**（見母 repo
 [`AGENTS.md`](../../../AGENTS.md)「Always-on 鐵律」）；commit 可由執行線或調度者完成。細節見
 [`agentctl/docs/driving-codex.md`](../../../agentctl/docs/driving-codex.md)「多信任 gpt-sol」。
 
 ## 但收線時要對證據
 
-**「跑完了」不等於「通過了」：曾有回報全 PASS，但 log 只有 2 個 commit、需要 ≥13 個，
-三條驗收項的關鍵字出現 0 次。逐條對證據，不要對自我宣告。**
+**「跑完了」不等於「通過了」：回報全 PASS 時，log 裡的 commit 數與驗收項關鍵字仍可能對不上。逐條對證據，不要對自我宣告。**
 
 ## 何時不用
 

@@ -2,7 +2,7 @@
 
 [WORKFLOWS](../WORKFLOWS.md)｜[INDEX](../INDEX.md)
 
-把「某個已裝 mod 出新版」從查證到部署收尾走完，重點是升版後**一定要重做的衍生物清單**——多次事故（BSA 重打包漏做、zh 層被新版拖垮、FOMOD 選項漏抄）都是因為把升版當成單純換檔。
+把「某個已裝 mod 出新版」從查證到部署收尾走完，重點是升版後**一定要重做的衍生物清單**——升版不是單純換檔。
 
 **何時用**：現役 mod 要升版、或 `housecarl_update_status` 報 OUTDATED 要處理。
 **何時不用**：全新安裝 → nexus-intake；只改排序/啟停 → profile-change；一整套系列新進場 → nexus-intake/series。

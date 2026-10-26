@@ -12,12 +12,12 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 **取得順序固定：先桌面 HID 鎖，再遊戲鎖。** 跑 Skyrim 一定佔螢幕，反過來拿會跟
 同時持鎖的另一條我方線死鎖。細節見 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md)。
 
-**使用者在電腦前照樣可以取鎖、開遊戲**（2026-08-30 裁示，取代舊條文「控制權全歸他、連鎖都不要拿」）——
+**使用者在電腦前照樣可以取鎖、開遊戲**（2026-08-30 裁示）——
 他 alt+tab 就切回原本的事。不可以的是搶他的輸入；唯一硬禁區是**他正在玩不能暫停的遊戲**，不確定就問一句。
-（Aetheria agent 2026-08-27 起凍結，跨 agent 優先權條款停用；`desktop.lock` 現在只是我方線之間的 mutex。）
+（Aetheria agent 凍結中，跨 agent 優先權條款停用；`desktop.lock` 只是我方線之間的 mutex。）
 
-**坑**：遊戲鎖曾指向隨 agent 線封存而刪除的 `~/skyrim_agent_out/_lock/`，使「已釋放遊戲鎖」
-恆真通過；現在鎖在 `agentctl/.lock/`，**檢查一個不存在的東西永遠會過。**
+**坑**：遊戲鎖在 `agentctl/.lock/`；檢查鎖時先確認檢查的路徑真的存在——指向不存在的路徑會讓「已釋放遊戲鎖」
+恆真通過，**檢查一個不存在的東西永遠會過。**
 
 ## 1. 啟動
 
@@ -49,8 +49,7 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 **驗收條數要在開始前寫死。** 「以及其他你認為必要的驗證」等於讓執行線為了保險亂跑，
 燒光 token 還交不出東西。
 
-**別把「跑完了」當成「通過了」：曾有回報全 PASS，但 log 只有 2 個 commit、需要 ≥13 個，
-三條驗收項的關鍵字出現 0 次，實際活動只有 75 秒。逐條對證據，不要對自我宣告。**
+**別把「跑完了」當成「通過了」：回報全 PASS 時，log 裡的 commit 數、驗收項關鍵字與實際活動時間仍可能對不上。逐條對證據，不要對自我宣告。**
 
 ## 4. Teardown
 
@@ -58,7 +57,7 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 - `qa_status` 確認 runtime 已停止；啟動期間則以 `qa_status`／`qa_state` 的 `/ping`＋`/state` 雙證據判活，
   不以 `ps`／`pgrep` 的名稱比對代替 runtime 狀態
 - `instance/profiles` 的 **profile 結構稽核**通過（命令見該 repo `tools/README.md`）
-- `selected_profile` 沒被留下臨時 profile 名（codex 線做過這件事）
+- `selected_profile` 沒被留下臨時 profile 名
 - 結論寫進 `agentctl/logs/`，證據 JSON 進 `agentctl/qa/reports/`
 
 ## AI 能對遊戲做什麼
@@ -67,9 +66,9 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 `SendInput`）、主控台與狀態查詢 ✅（AgentBridge）、截圖 ✅（`spectacle -b -n -f -o out.png`，
 **唯一可用的**）、load order 資料層 ✅（houseCARL）、**滑鼠 ✅ 有條件**。
 
-**滑鼠（2026-08-27 重測）**：`xdotool mousemove`／`click` 在**有 XWayland 視窗持有焦點**時
+**滑鼠**：`xdotool mousemove`／`click` 在**有 XWayland 視窗持有焦點**時
 可操作 MO2／Skyrim，需要滑鼠的驗收不必一律推給使用者；焦點落到原生 Wayland 視窗就失控，
-可用 `QT_QPA_PLATFORM=xcb konsole` 奪回。`ydotool` 仍然不用：daemon 要寫 `/dev/uinput`，
+可用 `QT_QPA_PLATFORM=xcb konsole` 奪回。`ydotool` 不用：daemon 要寫 `/dev/uinput`，
 sudo／改 group／改 udev 都是紅線。
 
 實測過的完整能力表與工具限制在

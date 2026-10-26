@@ -46,7 +46,7 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 | `tools/test_check_submodule_pins_recurse.py` | 驗證 on-demand／only／check 遞迴推送模式的 pin 阻擋與側分支警告。 |
 | `tools/submodule_pins_testlib.py` | 提供帶真實 submodule 與暫存 remotes 的共用 pin guard 測試 fixture。 |
 | `tools/check_code_map_coverage.py` | 檢查每一支工具腳本是否在某份索引頁被指名；**走訪各 submodule 自己的 git**，不靠母 repo 的 `git ls-files`（它到 gitlink 就停，正是 `check_markdown_links.py` 出過的洞）。已知缺口以 `code_map_coverage_baseline.txt` 當 ratchet：清單內靜默、清單外一律非零 exit；baseline 指到已刪除的檔案也 fail closed，清單不會腐化成永久藉口 |
-| `tools/code_map_coverage_baseline.txt` | ratchet 的豁免清單，**目前是空的**（2026-08-26 盤點時 36 支未索引，同日全部補進本頁）。留著是為了下一次真的有不該進索引的腳本時寫上路徑與理由；**是債不是豁免**，且 stale 行會 fail closed |
+| `tools/code_map_coverage_baseline.txt` | ratchet 的豁免清單，**目前是空的**。留著是為了下一次真的有不該進索引的腳本時寫上路徑與理由；**是債不是豁免**，且 stale 行會 fail closed |
 | `tools/test_check_code_map_coverage.py` | 以真實巢狀 submodule 的合成工作區驗已索引／未索引／submodule 內可達／baseline 靜默／baseline 不通殺／stale baseline／未追蹤檔不算數；7 條全部經突變測試證明能變紅 |
 | `mod-library/db/*`、`mod-library/l10n/tools/*` | **索引不放這裡**——`mod-library` 是 private （含他人 mod 的完整 ESP 複本），連腳本清單都不進 public 母 repo。逐支職責見該 repo 內的 `db/README.md` 與 `l10n/tools/README.md` |
 | `instance/tools/*`、`instance/profiles/.repo/tools/*` | **索引不放這裡**——母 repo 是 public，該 repo 是 private，逐支職責見該 repo 的 `tools/README.md` 與 `profiles/.repo/tools/README.md` |

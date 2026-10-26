@@ -31,8 +31,7 @@ grep -rn '__file__' --include='*.py'
 ```
 
 程式碼與相對路徑文字都沒變，**基準點仍會變**。
-掃庫工具的 `BACKUP_DIR = Path(__file__).parent.parent / "backups"`
-搬進 git repo 之後，每次 `backup` 會把 3MB 的 DB dump 提交進版控。
+例：`BACKUP_DIR = Path(__file__).parent.parent / "backups"` 搬進 git repo 之後，`backup` 會把 DB dump 寫進版控。
 
 判準：`parents[n]` 指向**跟著一起搬的東西**就安全，指向**沒跟著搬的東西**就要改。
 
@@ -87,7 +86,7 @@ python3 tools/check_markdown_links.py
 
 ## 改名時額外注意
 
-- **名字會不會跟別的東西撞。** MO2 profile 一度改叫 `main`，與分支名和目錄名相撞，使 `git log main` 報 ambiguous；加前綴為 `modpack-main` 解掉。
+- **名字會不會跟別的東西撞。** 例：MO2 profile 叫 `main` 會與分支名、目錄名相撞，`git log main` 報 ambiguous；所以現名是 `modpack-main`。
 - **所有分支都要改。** 只改現役分支的話，切回其他分支時目錄名就對不上了。
   用 worktree 在別的分支上做，現役 checkout 全程不動。
 - **區分「同一個東西的路徑」與「當時的紀錄」。** QA 報告、VERIFICATION.md、

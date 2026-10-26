@@ -18,7 +18,7 @@ Done when: <候選有結論(可追/暫放/不追)、連結存活狀態已查、�
 ## 來源索引
 
 現行來源與取得狀態只從 [`modpack-design/sources/OPEN.md`](../../../modpack-design/sources/OPEN.md) 進場；
-已封存的來源索引與 URL inbox 不再當現役入口。
+已封存的來源索引與 URL inbox 不是現役入口。
 
 ## AI 對 inbox URL 做什麼
 
@@ -34,7 +34,7 @@ Done when: <候選有結論(可追/暫放/不追)、連結存活狀態已查、�
 
 Nexus 事實優先走 houseCARL MCP；本機設定與查詢限制見
 [`agentctl/docs/housecarl.md`](../../../agentctl/docs/housecarl.md)。派線前依執行環境讀
-[`agentctl/docs/dispatch-windows.md`](../../../agentctl/docs/dispatch-windows.md)，不要沿用舊的「codex 一律沒有 houseCARL」假設。
+[`agentctl/docs/dispatch-windows.md`](../../../agentctl/docs/dispatch-windows.md)。
 
 ## 狀態判定要寫死，不留臨場解讀空間
 

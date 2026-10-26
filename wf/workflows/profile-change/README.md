@@ -36,7 +36,7 @@ main → feat/* → release/* → main
 
 ## 施工窗（改 mods／三檔的那一段）
 
-2026-10-03 起施工窗走工具，不再每條線自寫 apply／verify／revert 腳本。工具都在
+施工窗走工具，不要每條線自寫 apply／verify／revert 腳本。工具都在
 `instance/tools/`，旗標與 manifest 格式見 [該目錄 README](../../../instance/tools/README.md)
 （`--help` 也有）。使用者說「我關掉遊戲了」就是開工訊號。
 
@@ -76,9 +76,8 @@ cp instance/profiles/.repo/baselines/ModpackKRDev0A.{ess,skse} instance/profiles
 ## 晉升前必查
 
 - Skyrim 與 MO2 已完全關閉
-- **profile 結構稽核**通過——它現在**也會比對 `ModOrganizer.ini` 的
-  `selected_profile`**。加這道之前，只要目錄結構對就 PASS，即使 MO2 指向一個不存在的
-  profile（實際發生過：ini 停在 codex 線留下的 `PandoraRuntimeDefer-20260822`，每次都 PASS）
+- **profile 結構稽核**通過——它**也會比對 `ModOrganizer.ini` 的
+  `selected_profile`**，MO2 指向不存在的 profile 時不會 PASS
 - `modlist.txt`／`plugins.txt`／`loadorder.txt`／`archives.txt` 的差異已審閱
 - **比對啟用集合而不是行數**：MO2 的 rescan 會加一堆停用項、把檔案改成自己的 CRLF 格式，
   diff 看起來很大但實際載入的內容可能一個字都沒變

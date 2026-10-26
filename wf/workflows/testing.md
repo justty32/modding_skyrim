@@ -59,9 +59,8 @@ clang-cl+xwin 驗證，以及「不在母 repo 複製命令」的 repo 清單。
 
 ## 綠燈不等於有檢查
 
-**一道檢查通過，可能是因為它根本沒在檢查。** 這不是假設，2026-08-23 一天抓到四個
-（profile 結構稽核、teardown 的「遊戲鎖已釋放」、`check_markdown_links.py`、自製 CJK 偵測），
-四個實例與由此得到的兩個推論見 [testing/green-light-evidence.md](testing/green-light-evidence.md)。
+**一道檢查通過，可能是因為它根本沒在檢查。** 實例（profile 結構稽核、teardown 的「遊戲鎖已釋放」、
+`check_markdown_links.py`、自製 CJK 偵測）與推論見 [testing/green-light-evidence.md](testing/green-light-evidence.md)。
 
 ### 規則：新增或修改一道檢查時，要證明它能變紅
 

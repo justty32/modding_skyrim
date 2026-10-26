@@ -2,7 +2,7 @@
 
 [WORKFLOWS](../WORKFLOWS.md)｜[INDEX](../INDEX.md)
 
-任何「寫 live 檔案的一次性腳本」（改 profile 三檔、批次刪除、批次部署）該帶的保險，與暫存產物從建立到清掉的規矩。2026-09-02 當晚三條線各自獨立收斂出同一套模式（soft baseline＋hard anchor＋寫後驗證回滾），之後別再每條線自創。
+任何「寫 live 檔案的一次性腳本」（改 profile 三檔、批次刪除、批次部署）該帶的保險，與暫存產物從建立到清掉的規矩。模式固定是 soft baseline＋hard anchor＋寫後驗證回滾，不要每條線自創。
 
 **何時用**：寫會動 live 狀態的套用腳本（profile 檔、mods 目錄、mod-library）；規劃批次刪除；多線備料後的一次性總控套用。
 **何時不用**：houseCARL 寫新 plugin（本來就不動原檔）；純讀取／盤點；git 層的回滾（走 git 本身）。
@@ -21,7 +21,7 @@
    - guard：`ps -eo comm=` 比對 MO2/遊戲行程（別用 pgrep -f，見 lessons/this-machine）；多線同樹時只檢查本線負責路徑乾淨。
    - 基線：目標檔 sha256 做 **soft baseline**（不符印警告不擋）＋關鍵錨列存在性做 **hard gate**（不符即 abort）——檔案會被別線或 MO2 回寫，死鎖在整檔 sha 會誤擋，完全不驗會誤寫。
    - 操作當下重讀現行狀態，不採信計畫檔裡的舊快照。
-2. **備份**：寫前備份到實體磁碟路徑（`~/skyrim_mods/_backup-*` 類），**絕不放 `/tmp`**——它是 tmpfs，重開機即消失（Bandolier 3.2 GB 事故）。備份位置與還原指令寫進 REPORT。
+2. **備份**：寫前備份到實體磁碟路徑（`~/skyrim_mods/_backup-*` 類），**絕不放 `/tmp`**——它是 tmpfs，重開機即消失。備份位置與還原指令寫進 REPORT。
 ### 套用
 
 3. 斷言與回滾：
