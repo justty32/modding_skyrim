@@ -55,8 +55,10 @@ houseCARL `merge_plugins` 會自動把 FaceGen 搬到新 plugin 名的資料夾�
 
 **`resolve_names=true`** 只在**贏家 plugin 帶 Localized 旗標**時失敗（`Could not determine plugin listings path`；原版／DLC／CC 必壞，一般 mod 的 esp 會過），重試也沒用；不是 houseCARL 的 bug，是缺環境變數，已修（2026-10-24），判準與「要重開 CLI 才生效」見 [[housecarl-localappdata-env-on-linux]]。修好之前要查人類可讀名稱改用 esplib／whichmod，這條替代路線仍然正確。
 
+**localized 字串只讀 plugin 旁邊的表、不看 MO2 VFS**（`f0148dc8` 之前的 build）：中文層的 `strings/*_english.strings` 多半是鬆散檔、裝在另一個 MO2 mod 資料夾，舊 build 照樣讀 game Data 裡原版 BSA 的英文，結果 Gold001 回 `Gold`（遊戲裡是「金幣」）、strings 在別的 mod 的 localized esp（如 `Apothecary.esp`）回空值；補了 `LocalAppData` 之後也只是從丟例外變成**靜默回英文**。`f0148dc8` 起改成照 VFS 贏家讀 strings（同 `housecarl_asset_status` 的 resolver），10 筆實資料對獨立 oracle `instance/tools/whichmod.py` 10/10，且不帶 `LocalAppData` 也對；行為副作用：forward／CopyFrom 寫出的 localized 欄位帶的是 VFS 中文，不再是原版英文（`agentctl/handoffs/home-2026-10-26/hcjk/REPORT.md` §1–3）。
+
 **判贏家照 plugins.txt 字面順序**，不套引擎「master 類（.esm/.esl/ESM旗標）排所有普通 esp 前面」的規則；候選群混有 master 類時要另外跑 `engine_winners.py` 模擬引擎實際順序交叉驗證（2026-10-10 六條線的「排序讓某 mod 輸」驗收都建立在這個會出錯的前提上，實測 8 筆翻盤；`agentctl/handoffs/done/2026-10/home-2026-10-10/mo2-reorder/REPORT.md`）。
 
 **Why:** 三類都不報錯，給出看似正常但錯誤的答案，前兩類已有多條獨立線踩過。
 
-**How to apply:** 碰到 0 DLL／resolve_names 失敗／排序判贏家，先假設是已知 bug，不要照字面信任結果；候選群混 master 類時一律跑 `engine_winners.py` 交叉驗證。
+**How to apply:** 碰到 0 DLL／resolve_names 失敗／排序判贏家，先假設是已知 bug，不要照字面信任結果；用 houseCARL 驗中文前先確認跑著的 housecarl-mcp 是 `f0148dc8` 以後的 build（換檔後要重開 Claude Code／Codex 才生效），JSON 讀 `display` 不讀 `value`（`value` 是給寫回用的原始 token，看起來仍像 mojibake）；不確定時改用 `whichmod.py` 當 oracle；候選群混 master 類時一律跑 `engine_winners.py` 交叉驗證。

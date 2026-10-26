@@ -34,9 +34,11 @@
 
 TES4 flags（含 ESL 位元 `0x00000200`）正確位置是 **offset 0x08**，不是 0x18（交接書曾寫錯；0x18 讀到的其實是 HEDR 子紀錄；`agentctl/handoffs/done/2026-09/home-2026-09-07/chron/REPORT.md:68`）。另外（第三方指南轉述，未實測）：ESM-flag plugin 正確區分 persistent／temporary 並依序載入；非 ESM-flag plugin（含 ESL）全部記錄視為 persistent；ESL 新增的 cell record 若被另一 plugin 覆寫、覆寫方沒標 **Partial Record**（xEdit unknown 14 旗標），原 cell 的 temporary 引用會被整個忽略，觸發暫態引用消失 bug；要保留的引用要同時標 persistent。
 
+**中途存檔對已有 plugin「只加 ESL 旗標」實測可行**（2026-10-26 Save132，6 支）：條件是新增記錄的 local ID 已在 0x800–0xFFF、FormID 不變。讀舊存檔時引擎與 SKSE co-save 都按檔名把 full index 重對應到 light 槽（例：803 個 alias 腳本實例從 `66000D63` 接到 `FE265D63`）；背包、裝備、任務、Papyrus 讀檔段與不加旗標的對照組 0 差異；以 light 狀態存檔、關遊戲重開再讀回也 0 差異（`agentctl/handoffs/home-2026-10-26/esltest/REPORT.md`、`eslapply/REPORT.md`）。**要 compact（改 FormID）的仍然會壞既有存檔**，只在新周目做；「已存 light 後再撤旗標」沒測過。
+
 **Why:** 前者已有實測錯誤前例，後者直接對應一類已知的暫態引用消失 bug，兩者都會讓手刻/手補 patch 悄悄壞掉。
 
-**How to apply:** 手寫腳本判斷 ESL/ESPFE 一律讀 offset 0x08；任何改到 ESL 定義的 cell record 的 patch，先查覆寫方是否該標 Partial Record、暫態引用是否同時標 persistent。
+**How to apply:** 手寫腳本判斷 ESL/ESPFE 一律讀 offset 0x08；任何改到 ESL 定義的 cell record 的 patch，先查覆寫方是否該標 Partial Record、暫態引用是否同時標 persistent。省 full 槽時先挑「只加旗標」的候選（`agentctl/handoffs/home-2026-10-26/shell-esl/tools/esl_candidates.py`＋`tier.py` 的 T1），旗標複本放 overlay 的排序規則見 [[eslify-overlay-snapshot-goes-stale]]。
 
 ## load-order-and-asset-measurement-pitfalls
 

@@ -45,10 +45,11 @@
 - 改 VoiceType 噎死別人新對話：IFD 改 Lydia VoiceType 害 FDE 上千行新對話整批靜音，疊 VoiceType 救不回（`cx-compat`）。
 - 同觸發點 perk 只一個生效：多 mod 命中附加效果 perk 掛同一 hit-trigger，其餘靜默失效（`n4batch`）。
 - 功能名稱不代表衝突：Valhalla stun 與 CPR/B&B poise 掛不同 hook（`chocolate-poise`）。
+- 外觀 replacer 會把戰鬥改造蓋回原版：replacer 以原版 NPC 為底整筆覆寫 NPC_／ARMO，排在戰鬥 mod 後面時，等級曲線、perk、法術、背包、AI 包、甚至中文名都退回原版（2026-10-26 Remiel：perk 39→5、法術 5→2、等級 ×1.0／20／無上限→×0.7／5／120；`agentctl/handoffs/home-2026-10-26/remiel/REPORT.md`）。
 
 **Why:** 根因各不同，共同點是表層檢查看不出來。
 
-**How to apply:** 列雙方新增內容找同時成立條件；共用資料源逐一查；框架類 mod 確認配實作；名稱像不像不算數要讀 hook 點。
+**How to apply:** 列雙方新增內容找同時成立條件；共用資料源逐一查；框架類 mod 確認配實作；名稱像不像不算數要讀 hook 點。NPC 有戰鬥改造又有外觀 replacer 時，用 `instance/tools/whichmod.py <FormKey> --chain` 看最後贏家；贏家是純外觀 mod 就做合併層（戰鬥欄位取戰鬥 mod、RNAM／WNAM／PNAM／tint 等外觀欄位取 replacer），實機驗 perk 前要先走到她身邊讓 3D 載入，否則 `hasperk` 一律回 0。
 
 
 ## proton-shared-nvidia-shader-cache-stutter

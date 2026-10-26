@@ -24,6 +24,10 @@ zhport 的種子同鍵規則會把載體裡「已經是中文、來自另一層�
 
 舊中文層當種子搬字時，種子與載體的 master index 可能不同（例：種子 esp 該 master 前綴 05、載體 03），zhport.py 不做正規化會對不上 FormID 鍵；先核對兩邊 master 清單順序，不一致就把種子譯文轉成與 FormID 無關的 glossary（EditorID 或英文原文為鍵）再搬（`agentctl/handoffs/done/2026-09/home-2026-09-11/zhfix/REPORT.md:26-27`）。
 
+**種子同鍵不比英文**：seed 模式只看鍵（含第幾次出現）就搬譯文，不檢查載體英文跟種子英文是否相同；補丁版改過按鈕數、樓層分法或名稱時會錯植，而且 `zhport.py verify` 抓不到（它只驗「改成報告寫的字」）。2026-10-26 JK 學院×OCW 組合補丁：MESG 刪掉一個按鈕後第 5／6 鈕序位移，seed 會把「An Archive」配成「实验室」——按下去選到的跟字面不一樣；樓層指南牌與一個 CELL 名也同型（`agentctl/handoffs/home-2026-10-26/cowzh/REPORT.md`「建層」節）。補丁類載體不給 seed，改用 `--override` 逐欄明列，自動部分只收「種子同鍵且英文逐字相同」者。
+
+**記錄數不是可翻字串數**：交接書與盤點常寫「N 筆 record」，那是 plugin 的記錄數，多數是 REFR／NAVM／CELL 配置、沒有字。2026-10-26 cow 主補丁 7,467 筆記錄只有 35 個非空可翻欄位，12 支合計 56 欄（`agentctl/handoffs/home-2026-10-26/cowzh/REPORT.md`「範圍與一個更正」）。估中文層工作量、決定要不要派 codex 前，先跑 `zhport.py scan` 數白名單欄位。
+
 相關：[[translation-layer-cost-threshold]]、[[chinese-diff-ok-but-no-tofu]]
 
 ## zhport-whitelist-gap-before-1009

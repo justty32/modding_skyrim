@@ -71,11 +71,11 @@ baseline 在 `instance/profiles/.repo/baselines/`；當年 workflows 生的 6 �
 
 > 整包覆蓋 mod（如 ESLify-Overlay）凍結的是建立當下的贏家快照，更新同一支 plugin 的層只要排序在它之下，就會被靜默蓋掉，毫無錯誤訊息。
 
-ESLify-Overlay 固定排在 modlist 第 5 行，manifest 寫「要重查 sha256」但沒工具自動做（2026-10-09 LovelyLetter 中文層沒排到其上而被蓋掉）。覆蓋同批 plugin 的新層要保留 ESL flag 並排其上，否則 FormID 槽位改變、存檔道具錯位。
+ESLify-Overlay 在 modlist 的位置不是固定的（2026-10-26 實讀在第 112 行），manifest 寫「要重查 sha256」但沒工具自動做（2026-10-09 LovelyLetter 中文層沒排到其上而被蓋掉）。覆蓋同批 plugin 的新層要保留 ESL flag 並排其上，否則 FormID 槽位改變、存檔道具錯位。反方向也成立：旗標複本放進 overlay 時，**來源 mod 若排在 overlay 上面（優先權更高），複本會被來源蓋掉、旗標不生效**；也不能為此把整個 overlay 往上搬（會反過來蓋掉刻意排在它上面的中文層），要另開一層緊貼在來源 mod 上面（2026-10-26 `NSV Spell Copies.esp` 的來源在第 49 行，改放 `ESLify-Overlay-NSV`；`agentctl/handoffs/home-2026-10-26/eslapply/REPORT.md`）。
 
 **Why:** overlay「凍結贏家」設計跟後續單獨更新同一 plugin 天生衝突，且無錯誤訊息。
 
-**How to apply:** 更新被 overlay 收錄的 plugin 要保留 ESL flag 並排其上；疑似誤停用先查 deploy-manifest，別看到停用就重啟。來源：`agentctl/handoffs/done/2026-10/home-2026-10-09/vf-text3/DONE-eslify-shadow.md`。
+**How to apply:** 更新被 overlay 收錄的 plugin 要保留 ESL flag 並排其上；往 overlay 加新複本前，先逐支查來源 mod 的 modlist 行號是否在 overlay 之下，在上面的另開緊貼層；疑似誤停用先查 deploy-manifest，別看到停用就重啟。來源：`agentctl/handoffs/done/2026-10/home-2026-10-09/vf-text3/DONE-eslify-shadow.md`。
 
 ## mo2-silent-collision-failure-modes
 

@@ -48,7 +48,7 @@ archive 內的 `d3d11.dll`/`dxgi.dll` 若躺在跟主功能無關的子目錄（
 
 帶多個可選變體的 archive，原始 conflicts_n 只是上界，要先依 fomod_choice（實際會裝的變體）narrow 過才能報告規模。
 
-esp 埋在沒攤平的 FOMOD 子目錄（如 `10 Main/Follower/`）時 MO2 不會當 plugin 看待、plugins.txt 裡不會有它。
+esp 埋在沒攤平的 FOMOD 子目錄（如 `10 Main/Follower/`）時 MO2 不會當 plugin 看待、plugins.txt 裡不會有它。整包 FOMOD 原樣倒進 mod 目錄（`fomod/` 與各選項資料夾並列在根、根層 0 個 plugin／BSA）就是白裝，2026-10-26 盤出 5 件從 08-31 起白裝；`instance/tools/check_masters.py`／`resolve_load_order.py` 用 `os.walk` 找 plugin，會把子資料夾裡的 esp 當成存在，所以這類白裝要用 `fomod_audit` 判，不能靠 check_masters（`agentctl/handoffs/home-2026-10-26/shell-esl/REPORT.md` A5 節與「順帶看到」）。
 
 FOMOD apply 等依賴 0-based 索引的批次腳本要明確用 `bash` 執行，zsh 陣列 1 起算會讓目錄內容整批錯位。
 

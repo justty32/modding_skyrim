@@ -31,15 +31,15 @@
 
 ## housecarl-setfield-cjk-byte-drop
 
-> houseCARL set_field 寫中文會靜默丟位元組（cp1252 解碼吃掉 81 8D 8F 90 9D），check_errors 驗不出；寫中文一律用 bulk_apply CopyFrom（原 type: project）
+> houseCARL set_field 直接寫中文會變 `?`，把 mojibake 顯示字串貼回去當值會掉位元組；check_errors 驗不出；寫中文一律用 bulk_apply CopyFrom（原 type: project）
 
-2026-09-01 實測：houseCARL/Mutagen 讀寫字串欄走 Windows-1252，檔案實為 UTF-8。cp1252 未定義的五個位元組（81 8D 8F 90 9D）在「讀」的階段就被靜默丟掉——「讀出中文再寫回」會毀掉多數 CJK 名稱（實測「區」E5 8D 80 → E5 80）。check_errors 驗不出（只查 FormLink/master/parse）。寫出會變 ?，讀取也會丟位元組。
+houseCARL/Mutagen 讀寫 inline 字串欄走 Windows-1252，檔案實為 UTF-8。**寫入**：`set_field` 直接給 Unicode 中文會寫成 `?`（`src/housecarl-core/WriteEngine.cs` 約 2914 行的 TranslatedString 轉換，推論自程式碼）。**讀取不丟位元組**：2026-10-26 實測 .NET 的 cp1252 對 81 8D 8F 90 9D 五個位元組可逆，舊 build 的 mojibake 輸出裡它們都還在；2026-09-01 看到的「區」E5 8D 80 → E5 80，較可能是把 mojibake 顯示字串複製回去當 `set_field` 的值、控制字元 U+008D 在傳輸／顯示層被吃掉（推論）。讀取顯示的 mojibake 已在 `f0148dc8` build 修好（`agentctl/handoffs/home-2026-10-26/hcjk/REPORT.md` §1、§7）。check_errors 驗不出這類問題（只查 FormLink/master/parse）。
 
 **Why:** 會靜默毀損所有經 set_field 轉寫的中文字串，且無工具告警。
 
 **How to apply:** houseCARL 寫中文欄一律 `bulk_apply verb=CopyFrom`（DeepCopy 位元組保真、不經顯示層）；驗收必做位元組級 diff 對正本，不能只靠 check_errors。位元組層讀 CELL FULL 可用 agentctl/handoffs/hcell-2026-09-01/tools/cellfull.py。
 
-2026-10-23：houseCARL 的 `cross_plugin_query`／raw 讀取「顯示」中文也會變 mojibake（還原公式 `x.encode('cp1252').decode('utf-8')`，但 81/8D/8F/90/9D 五個位元組在顯示層已永久丟失、無法還原，`agentctl/handoffs/done/2026-08/opus-apply-order/STATE.md:110-119`）；用寫入工具對 esp 做其他就地改寫（如補懸空引用）也有風險連帶動到 CJK 子紀錄，改完同一支 esp 要對 FULL／DESC／RNAM／EPFD 等欄位做前後字串 diff，不能只看 check_errors 的結構性數字。相關：[[chinese-diff-ok-but-no-tofu]]。
+舊 build（`f0148dc8` 之前）讀出的中文是 mojibake，還原公式 `x.encode('cp1252').decode('utf-8')`；只要沒經過會吃控制字元的顯示或複製環節，五個位元組都還在（`agentctl/handoffs/done/2026-08/opus-apply-order/STATE.md:110-119`）。用寫入工具對 esp 做其他就地改寫（如補懸空引用）也有風險連帶動到 CJK 子紀錄，改完同一支 esp 要對 FULL／DESC／RNAM／EPFD 等欄位做前後字串 diff，不能只看 check_errors 的結構性數字。相關：[[chinese-diff-ok-but-no-tofu]]。
 
 ## housecarl-copy-tools-pull-more-than-asked
 
