@@ -124,8 +124,8 @@ MO2 在 wine 下的 VFS 對目錄大小寫不敏感，facegen 目錄大小寫不
 
 > 換臉/換種族常漏兩個欄位：`copy_npc_appearance` 會把 donor 的 WNAM 一起搬過去蓋掉目標原本皮膚（可能有 quest 依賴）；換種族時若 WNAM 指的私有皮膚 ARMA 只涵蓋舊種族，新種族脫光或穿無手套/靴子衣服時缺甲部位直接消失。
 
-copy_npc_appearance 連 HDPT／HairColor／TintLayers／WNAM 整組都搬，donor 髮型 HDPT 若指向本機沒有的 provider 會變禿頭（2026-09-01，`agentctl/handoffs/done/2026-09-01/hnpc-2026-09-01/MIXMATCH.md:14-27`）。換種族層改了 RNAM 卻沒動 WNAM 時，私有皮膚 ARMA 只涵蓋舊種族（2026-10-04，`agentctl/handoffs/done/2026-10/home-2026-10-04/aniya/REPORT.md`）。
+copy_npc_appearance 連 HDPT／HairColor／TintLayers／WNAM 整組都搬，donor 髮型 HDPT 若指向本機沒有的 provider 會變禿頭（2026-09-01，`agentctl/handoffs/done/2026-09-01/hnpc-2026-09-01/MIXMATCH.md:14-27`）。換種族層改了 RNAM 卻沒動 WNAM 時，私有皮膚 ARMA 只涵蓋舊種族（2026-10-04，`agentctl/handoffs/done/2026-10/home-2026-10-04/aniya/REPORT.md`）；不只皮膚，假髮與私有衣服的 ARMA 也一樣（2026-10-26 Varinia，`agentctl/handoffs/home-2026-10-26/aniya/REPORT.md`）。
 
 **Why:** WNAM 跟 HDPT/facegen 是分開系統，換臉工具預設動 WNAM、換種族工具預設不查 WNAM，兩邊各漏一半。
 
-**How to apply:** 換臉後查目標 WNAM 是否被 quest/腳本依賴；換種族後驗收加一條：新 RNAM 要落在 WNAM 皮膚每個 ARMA 的種族清單裡，不符就改回原版 `000D64 SkinNaked`。相關：[[look-transplant-workflow-and-picker]]、[[hide-donor-after-look-transplant]]。
+**How to apply:** 換臉後查目標 WNAM 是否被 quest/腳本依賴；換種族後跑 `python3 agentctl/tools/look_transplant/race_gear.py check --layer <層名>`（exit 1＝有回歸）：它連 skin、outfit、inventory、定義 plugin 的私有裝備一起比 ARMA 種族清單，抓得到 2026-10-26 Varinia 型（假髮藏不住原髮、衣服隱形）；皮膚回歸可改回原版 `000D64 SkinNaked`，其餘補 ARMA 種族。相關：[[look-transplant-workflow-and-picker]]、[[hide-donor-after-look-transplant]]。
