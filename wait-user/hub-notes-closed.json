@@ -152,6 +152,12 @@
    "關閉日期": "2026-10-24",
    "證據路徑": "agentctl/handoffs/home-2026-10-24/wrapup/REPORT.md",
    "內容": "2026-10-24 wrapup 線先逐檔實數四份子檔的 open `##` 小節：home-setup 3／integrated-runtime 9／feature-runtime 11／later-decisions 2＝25，與 hub 表一致（10-23 wu-stale 那列寫的 26 比實數多 1，本次以實數為準，不回溯改寫該列）。\n\n**計數變動：回家下載／重建 3 → 4**，新增「重開 Claude Code／Codex，讓 houseCARL 的 LocalAppData 修正生效」。理由：環境變數已寫進 ~/.claude.json 與 ~/.codex/config.toml，但 MCP server 隨 CLI session 起，既有 housecarl-mcp 行程仍是壞的；這是使用者親做、agent 跨不過的動作，且擋住 agentctl/SESSION-LOG open 段的 houseCARL 中文 mojibake 查證。\n\n**判過不加的兩項**：① 2026-10-18 施工後實機驗收——已在 feature-runtime.md:3，不重複登記；② 今天六條線全是離線文件／工具層工作，沒有產生新的實機驗收項，其餘三類計數不動。\n\n**今天的中間產物沒有登記成清理決定項**：scratchpad 108 MB 全在 tmpfs 的 /tmp（實測 findmnt 回 tmpfs），重開機自動消失，不需要使用者裁示；工作區與 ~/skyrim_mods、~/notes 都沒有今天留下的中間產物。"
+  },
+  {
+   "項目": "2026-10-26 新增兩項（cow 抽查、zshrc）",
+   "關閉日期": "2026-10-26",
+   "證據路徑": "agentctl/handoffs/home-2026-10-26/cowzh/REPORT.md",
+   "內容": "**計數變動：回家下載／重建 4 → 5**，新增「自己改 ~/.zshrc 的 MODFORGE_TTS_BIN」（10-17 巡檢 #6，使用者親做；來源 tidyall/mother2 REPORT 待裁第 2 條）。**整包 UI／中文／任務驗收 9 → 10**，新增「cow 中文層人眼抽查」（cowzh REPORT 的人眼抽查節）。合計 25 → 27。"
   }
  ]
 }

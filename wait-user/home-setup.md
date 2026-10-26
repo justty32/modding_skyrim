@@ -79,6 +79,12 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 的框架語意需要對現況重新校正（更正段已加在 `home-batching-plan.md` 開頭；該檔 2026-10-23 已封存為
 `modpack-design/archive/content-plan/quests-world/major-content-preflight-2026-09-01/home-batching-plan.md`，9 張任務單與 README 仍在原處）。
 
+## 自己改 `~/.zshrc` 的 `MODFORGE_TTS_BIN`（2026-10-26 立）
+
+`~/.zshrc` 的 `MODFORGE_TTS_BIN` 指向不存在的路徑，f5 venv 因此找不到；只有你能改 `~/.zshrc`（agent 不碰）。
+來源：10-17 巡檢 #6，裁示單 [已封存](../wf/user/archive/2026-10-17-patrol.md)，登記依據見
+[`agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md`](../agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md) 待裁第 2 條。
+
 ## 已完成（封存）
 
 > 以下各項判定已完成／已裁示，從 open 清單移到這裡保存歷史；每項附證據絕對路徑或 commit hash。
