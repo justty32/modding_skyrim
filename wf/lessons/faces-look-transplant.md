@@ -29,7 +29,7 @@ transplant.py 與 race 路線都會**連 RACE 一起搬**（如 Auri 木精靈�
 
 頭身脖縫兩種真因：貼圖不同源（頭吃素材私有皮、身吃全域皮 → 一支 ESL 把頭 TXST 指回全域皮，如 Vilja←Yuuko）與頭 nif 本身（貼圖已同源仍裂 → 重烤 facegen，如 Sofia）；先比頭四張／身四張 md5 再決定走哪條。Sofia 本體身體貼圖是 UNP 系，跟 CBBE 網格不相容，脖縫只能讓頭改吃全域膚色。Chronicon 私有 `textures/Chron/body/FemaleHead*.dds` 是全包共用路徑，多個層各帶副本，不能直接覆蓋。
 
-名冊 artifact <https://claude.ai/code/artifact/81af4627-99c9-4772-9f4a-2381b9234c04> 與挑選頁都有可重跑建置腳本：`agentctl/handoffs/home-2026-09-08/art/tools/build_pick.py`／`build_roster.py`（先 pick 後 roster）。
+名冊 artifact <https://claude.ai/code/artifact/81af4627-99c9-4772-9f4a-2381b9234c04> 與挑選頁都有可重跑建置腳本：`agentctl/handoffs/home-2026-09-08/art/tools/build_pick.py`／`build_roster.py`（先 pick 後 roster）。2026-10-26 起重產方法（底稿改用線上版、路徑已月結到 `done/2026-09/`）見 [wf/user/2026-10-26-follower-look-pages.md](../user/2026-10-26-follower-look-pages.md)。
 
 facegen 頭模移植跟身模是兩套獨立機制：body mesh/skin texture 掛在 race 的 skin ArmorAddon 上不是 per-NPC；換身體要另做自訂 skin ARMO/ARMA，若 donor 是 UNP/BHUNP 或帶 3BA/SMP 物理而本機沒對應 runtime，會接縫或物理失效。頭模移植工量 1–2 小時，身模半天到一天，收到「換外觀」需求先分清是哪一種（`agentctl/handoffs/done/2026-09-01/hnpc-2026-09-01/MIXMATCH.md:29-41`）。
 

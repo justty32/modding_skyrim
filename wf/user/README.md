@@ -12,6 +12,7 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 <!-- wf-nav -->
 | 檔案 | 內容 |
 |------|------|
+| [2026-10-26-follower-look-pages.md](2026-10-26-follower-look-pages.md) | 隨從換頭三頁（換臉挑選／隨從名冊／素材目錄）的網址、10-26 刷新內容與重產方法 |
 | [2026-10-26-mod-library-viewer.md](2026-10-26-mod-library-viewer.md) | 天際儲藏庫（mod 資產庫頁）10-26 刷新：線上頁連結、這次更新了什麼、舊命名檔來源辨識怎麼看 |
 | [2026-10-21-offline-fixes.md](2026-10-21-offline-fixes.md) | DSP 候選包、houseCARL 名稱解析與 consumer 相容修補的離線成果及未部署界線 |
 | [2026-10-10-play-checklist.md](2026-10-10-play-checklist.md) | 10-10 十七線施工彙整總頁：開遊戲前、依地點分四頁的實測清單、今日安裝總表、不裝／延後 |
