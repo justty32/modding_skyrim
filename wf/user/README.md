@@ -23,3 +23,4 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 | ↳ [mo2-reverify.json](2026-10-10-play-checklist-mo2-reverify.json) | 資料檔（`wf-table/1`）：MO2 首開後要重驗的 plugins.txt 行（行號、該不該有 `*`、順序要求）；總頁 1a 的依據 |
 | [2026-10-17-structure-review.md](2026-10-17-structure-review.md) | 10-17 Fable 全工作區結構審查：55 條建議、21 個施工包與裁示欄 |
 | [2026-10-17-patrol.md](2026-10-17-patrol.md) | 10-17 六條 Opus 子專案巡檢：已順手修的、待裁示 11 項（含 push 授權） |
+| [2026-10-26-moveset-pages.md](2026-10-26-moveset-pages.md) | 招式五頁（姿態配置、裝備分配、總覽、MCO 挑選表、候選）10-26 現況版入口 |
