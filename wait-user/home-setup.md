@@ -89,7 +89,7 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 
 四個指定 mod 中文（其中三個為覆核修正版、Lenora r2 不變）與反射錯槽修復共十層已備妥：3019 檔、366316893 bytes，新增 3 plugin、停用 0；反射修復補正 189 筆字串。當時遊戲停在 Crafting Menu。請退出製作介面、存檔，並確認可以安全關閉遊戲與 MO2；收到確認前不動 live。詳見 [本輪現況](../agentctl/handoffs/home-2026-11-01/STATE.md)；施工入口是 `/home/lorkhan/skyrim_mods/_staging-2026-11-01-wanted/install/README-reviewfix-r2.md` 與同目錄 `manifest-combined-reviewfix-r2.json`，舊 `manifest-final` 禁止套用。
 
-完美格擋後稍等便可攻擊是短暫延遲；後續持續無姿態動作、重切才恢復是另一問題。bkar 只針對前者的離線候選，未部署，也不自動加入十層 manifest。請在下次異常且尚未重切姿態時回報，並說明格擋及攻擊實際按鍵是否涉及 X／Alt（中立姿態配置 X+Alt）；沒有 HUD 圖示不作判定。詳見 [姿態調查](../agentctl/handoffs/home-2026-11-01/block-recovery/STANCES.md)。上述安全關閉仍待確認。
+完美格擋後攻擊延遲與姿態動作異常分開調查；同盾與戰錐下再次短格擋可恢復，姿態效果相同。主線已詢問能否暫時接手 1–2 分鐘開啟 OAR 記錄，請使用者操作錯招及短擋恢復兩組對照，完成後還原記錄設定；等待答覆，不關遊戲。詳見 [姿態調查](../agentctl/handoffs/home-2026-11-01/block-recovery/STANCES.md)。這不代表同意安裝；上述安全關閉仍待確認。
 
 ## 已完成（封存）
 
