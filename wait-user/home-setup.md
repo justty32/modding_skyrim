@@ -85,20 +85,15 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 來源：10-17 巡檢 #6，裁示單 [已封存](../wf/user/archive/2026-10-17-patrol.md)，登記依據見
 [`agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md`](../agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md) 待裁第 2 條。
 
-## Chrome 裡重新打開一次 Nexus，讓 agent 能再下載（2026-10-26 立）
+## 四個指定 mod 安裝施工窗（2026-11-01 立）
 
-10-26 bodyswap2 要抓 Kurone 正式版 MAIN（76220，661 MB）做比對，`nexus_get.sh` 三次都拿到 **guest** 頁面：
-你 Chrome 的 nexusmods.com cookie 只剩 `nexusmods_session_refresh`（到 11-01），登入用的 `nexusmods_session` 已過期；
-76220 是成人標記，guest 連檔案頁都看不到。agent 不碰帳號，所以停在這裡。
-
-- 你要做的：在自己的 Chrome 打開 nexusmods.com，確認右上角是你的帳號（不是 Log in）。必要時自己登入。
-- 之後 agent 重跑：`agentctl/tools/nexus_dl/nexus_get.sh --batch agentctl/handoffs/home-2026-10-26/bodyswap2/data/dl-batch.txt`（MAIN＋46560＋74455 三檔）。
-- 怎麼確認已生效：上面那行回 `status: ok`；guest 時工具現在會回 exit 3（NEEDS-USER），不會再報「Files tab not found」。
-- 細節：[bodyswap2 REPORT](../agentctl/handoffs/home-2026-10-26/bodyswap2/REPORT.md) 第 2 節。
-
-2026-11-01：使用者已重新登入，工具確認有效；Eilgird、Lenora、Paths of the Companion、Estates of Skyrim 的下載與漢化進行中。續行見 [當日現況](../agentctl/handoffs/home-2026-11-01/STATE.md)。上列 Kurone 下載仍待處理。
+四個指定 mod 的中文與九層安裝內容已備妥；當時遊戲停在 Crafting Menu。請退出製作介面、存檔，並確認可以安全關閉遊戲與 MO2；收到確認前不動 live。詳見 [本輪現況](../agentctl/handoffs/home-2026-11-01/STATE.md)，施工就緒證據在 `/home/lorkhan/skyrim_mods/_staging-2026-11-01-wanted/install/READY.md`。
 
 ## 已完成（封存）
+
+### Chrome 裡重新打開一次 Nexus，讓 agent 能再下載（2026-10-26 立）
+
+2026-11-01 使用者已重新登入，七檔下載及 hash 驗證完成；Kurone 待下載比對已移交 agent 續行。完整原項見 [結案資料](home-setup-closed.json)。
 
 > 以下各項判定已完成／已裁示，從 open 清單移到這裡保存歷史；每項附證據絕對路徑或 commit hash。
 > 前六項是 2026-09-05 逐條對照後移入，第 7 列「需求／生存要不要開」是 2026-10-23 核出使用者 2026-10-10 已裁示而移入。

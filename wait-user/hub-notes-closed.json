@@ -170,6 +170,12 @@
    "關閉日期": "2026-10-26",
    "證據路徑": "agentctl/handoffs/home-2026-10-26/eslapply/REPORT.md",
    "內容": "**計數變動：獨立功能驗收 12 → 13**，新增「ESL 旗標 6 支的 UI 功能順路確認」（RaceMenu／BCC／換裝戒指要點 UI，agent 測不了；存讀檔已實測通過）。合計 29 → 30（表內 5＋10＋13＋2）。"
+  },
+  {
+   "項目": "2026-11-01 Nexus 登入結案與四 mod 施工窗新增",
+   "關閉日期": "2026-11-01",
+   "證據路徑": "agentctl/handoffs/home-2026-11-01/wanted/warehouse-ledger.json",
+   "內容": "回家下載／重建關閉 Nexus 登入 1 項，新增四個指定 mod 安裝施工窗 1 項，open 仍為 6。"
   }
  ]
 }
