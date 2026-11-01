@@ -12,6 +12,8 @@
 
 **How to apply:** crash log 出現 `hkpTriangleShape`＋`hkpCompressedMeshShapeShared`＋`Precision.dll` 就先查該 cell 物件的 NIF 版本（houseCARL `nif_inspect` 回「NOT an SE stream」），不要先懷疑腳本或動畫。修法：loose 覆蓋檔移走讓原版接手；BSA 內的用 SSE NIF Optimizer／CAO 轉 SE 再 loose 覆蓋；裝飾物可用 ESL patch 停 REFR。相關：[[verify-game-alive-via-qa-not-ps]]。
 
+**適用界線：** stream 83 只證 LE 格式，不能將所有 LE skeleton 定罪；capsule-only、無 compressed-triangle 的釋放鏈不可直接套上述壓縮碰撞結論。若轉換後 87 個 bhk blocks 與所有語義欄位原樣，只算版本／serializer 相容 A/B 候選，實戰未證；stream 100／unknown=0 不替代因果證據。先比歷史 probable frames，再判新修補：本次同家族 P0–15 早於最新修補已出現，仍不排除觸發條件交互。案例來源：private [素材與 Precision](../../agentctl/handoffs/home-2026-11-01/varinia-native-crash/PRECISION.md)、[歷史對照](../../agentctl/handoffs/home-2026-11-01/varinia-native-crash/HISTORY.md)、[指令與符號界線](../../agentctl/handoffs/home-2026-11-01/varinia-native-crash/SYMBOLS.md)。本段不表示此次 CTD 已修復。
+
 ## doomperk-advanceobject-block-ctd
 
 > 2026-09-24 格擋必 CTD 真因：Constellations 三顆 doom*Perk 在 ModSkillUse 掛 EPModSkillUsage_AdvanceObjectHasKeyword，非物件造成的技能推進會 deref 垃圾指標；補丁移除該條件（原 type: project）

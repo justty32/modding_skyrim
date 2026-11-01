@@ -54,6 +54,10 @@ cow 學院中文層（profiles `93261f4`）已部署、煙霧通過，剩人眼�
 
 自然戰鬥時觀察 Varinia 能否混用劍與法術，以及是否仍反覆收拔武器。修補已部署並在讀取存檔後確認本人 native equipment selection 啟用；戰鬥手感尚未驗證，見 [部署紀錄](../agentctl/handoffs/home-2026-11-01/varinia-native-combat/DEPLOY.md)。
 
+## 青蛙相關 crash 自然戰鬥復發觀察（2026-11-01 立）
+
+自然遊玩遭遇青蛙戰鬥時，留意是否再發生 crash；可與 Varinia 劍法手感同場回報。青蛙模型 Trial 層已部署，室內短窗模型載入通過，但尚未證明戰鬥中的 crash 已解決；見 [部署紀錄](../agentctl/handoffs/home-2026-11-01/varinia-native-crash/DEPLOY.md)。
+
 ## 已完成／作廢（封存）
 
 > 以下四項在 2026-09-05 逐條對照證據後判定不再需要你動作，從 open 清單移到這裡保存歷史；每項附證據絕對路徑或 commit hash。
