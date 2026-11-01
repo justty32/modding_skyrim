@@ -89,6 +89,8 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 
 四個指定 mod 中文（其中三個為覆核修正版、Lenora r2 不變）與反射錯槽修復共十層已備妥：3019 檔、366316893 bytes，新增 3 plugin、停用 0；反射修復補正 189 筆字串。當時遊戲停在 Crafting Menu。請退出製作介面、存檔，並確認可以安全關閉遊戲與 MO2；收到確認前不動 live。詳見 [本輪現況](../agentctl/handoffs/home-2026-11-01/STATE.md)；施工入口是 `/home/lorkhan/skyrim_mods/_staging-2026-11-01-wanted/install/README-reviewfix-r2.md` 與同目錄 `manifest-combined-reviewfix-r2.json`，舊 `manifest-final` 禁止套用。
 
+另請在完美格擋後放開格擋鍵、正卡住且尚未盾擊時回報「卡住了」，讓 agent 取只讀快照；之後由你盾擊恢復，再取對照。現有四項查詢的 unknown 基線均正常／非 blocking，根因未定，離線候選未部署。見 [取樣入口](../agentctl/handoffs/home-2026-11-01/block-recovery/SNAPSHOT.md)。上述安全關閉仍待確認。
+
 ## 已完成（封存）
 
 ### Chrome 裡重新打開一次 Nexus，讓 agent 能再下載（2026-10-26 立）
