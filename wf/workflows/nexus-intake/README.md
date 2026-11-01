@@ -143,6 +143,8 @@ mo2ctl install <archive> --name "<X> Traditional Chinese" --priority "before:<�
 
 裝了覆蓋層還要驗**內容真的有中文**，見 [localization](../localization/README.md)。
 
+新自訂隨從將與成長／裝備框架共用時，完成 intake 後接 [follower-combat-compat](../follower-combat-compat.md) 先做唯讀盤點；有適用證據才逐角色 opt-in，不自動全隊修補。
+
 ## 何時不用
 
 - 只是查某個 mod 是什麼、要不要裝 → 走 [investigation](../investigation/README.md)，別下載。

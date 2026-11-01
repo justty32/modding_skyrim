@@ -24,6 +24,7 @@
 | 「讓 agent 操作遊戲做測試／實機驗收」 | runtime-qa | [workflows/runtime-qa/README.md](workflows/runtime-qa/README.md) |
 | 「配置頁挑好招了／貼變更單」「要專屬裝備的招強制發動」 | movesets | [workflows/movesets/README.md](workflows/movesets/README.md) —— 模擬→閘門→排除→套用→MO2 循環→煙霧→重發頁面 |
 | 「遊戲崩了／卡死了」「同一個地方一直 CTD」 | crash-triage | [workflows/crash-triage.md](workflows/crash-triage.md) —— 凍結判別→log 鑑識→按層歸因→剝層→處置 |
+| 「新隨從反覆收拔／換法術」「保留成長技能、恢復原生劍法混用」 | follower-combat-compat | [workflows/follower-combat-compat.md](workflows/follower-combat-compat.md) —— 定位→分層歸因→單角色設定或修補→停機部署→固定驗收／回退 |
 | 「某個已裝 mod 出新版了」 | mod-update | [workflows/mod-update.md](workflows/mod-update.md) —— fileid 查證→隔離安裝→拓撲比對→後置清單（SEQ/zh 層/facegen/LOD）|
 | 「要寫一次性套用／批次刪除腳本」「暫存與備份怎麼管」 | safe-apply | [workflows/safe-apply.md](workflows/safe-apply.md) —— 三道保險＋非 tmpfs 備份＋trash 二段清除 |
 
