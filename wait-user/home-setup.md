@@ -87,7 +87,7 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 
 ## 四個指定 mod 安裝施工窗（2026-11-01 立）
 
-四個指定 mod 的中文與九層安裝內容已備妥；當時遊戲停在 Crafting Menu。請退出製作介面、存檔，並確認可以安全關閉遊戲與 MO2；收到確認前不動 live。詳見 [本輪現況](../agentctl/handoffs/home-2026-11-01/STATE.md)，施工就緒證據在 `/home/lorkhan/skyrim_mods/_staging-2026-11-01-wanted/install/READY.md`。
+四個指定 mod 中文（其中三個為覆核修正版、Lenora r2 不變）與反射錯槽修復共十層已備妥：3019 檔、366316893 bytes，新增 3 plugin、停用 0；反射修復補正 189 筆字串。當時遊戲停在 Crafting Menu。請退出製作介面、存檔，並確認可以安全關閉遊戲與 MO2；收到確認前不動 live。詳見 [本輪現況](../agentctl/handoffs/home-2026-11-01/STATE.md)；施工入口是 `/home/lorkhan/skyrim_mods/_staging-2026-11-01-wanted/install/README-reviewfix-r2.md` 與同目錄 `manifest-combined-reviewfix-r2.json`，舊 `manifest-final` 禁止套用。
 
 ## 已完成（封存）
 
