@@ -96,6 +96,8 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 - 怎麼確認已生效：上面那行回 `status: ok`；guest 時工具現在會回 exit 3（NEEDS-USER），不會再報「Files tab not found」。
 - 細節：[bodyswap2 REPORT](../agentctl/handoffs/home-2026-10-26/bodyswap2/REPORT.md) 第 2 節。
 
+2026-11-01：使用者已重新登入，工具確認有效；Eilgird、Lenora、Paths of the Companion、Estates of Skyrim 的下載與漢化進行中。續行見 [當日現況](../agentctl/handoffs/home-2026-11-01/STATE.md)。上列 Kurone 下載仍待處理。
+
 ## 已完成（封存）
 
 > 以下各項判定已完成／已裁示，從 open 清單移到這裡保存歷史；每項附證據絕對路徑或 commit hash。
