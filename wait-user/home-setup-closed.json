@@ -56,6 +56,12 @@
    "關閉日期": "2026-11-01",
    "證據路徑": "agentctl/handoffs/home-2026-11-01/wanted/warehouse-ledger.json",
    "內容": "Chrome 裡重新打開一次 Nexus，讓 agent 能再下載（2026-10-26 立）\n\n10-26 bodyswap2 要抓 Kurone 正式版 MAIN（76220，661 MB）做比對，`nexus_get.sh` 三次都拿到 **guest** 頁面：\n你 Chrome 的 nexusmods.com cookie 只剩 `nexusmods_session_refresh`（到 11-01），登入用的 `nexusmods_session` 已過期；\n76220 是成人標記，guest 連檔案頁都看不到。agent 不碰帳號，所以停在這裡。\n\n- 你要做的：在自己的 Chrome 打開 nexusmods.com，確認右上角是你的帳號（不是 Log in）。必要時自己登入。\n- 之後 agent 重跑：`agentctl/tools/nexus_dl/nexus_get.sh --batch agentctl/handoffs/home-2026-10-26/bodyswap2/data/dl-batch.txt`（MAIN＋46560＋74455 三檔）。\n- 怎麼確認已生效：上面那行回 `status: ok`；guest 時工具現在會回 exit 3（NEEDS-USER），不會再報「Files tab not found」。\n- 細節：[bodyswap2 REPORT](../agentctl/handoffs/home-2026-10-26/bodyswap2/REPORT.md) 第 2 節。\n\n2026-11-01：使用者已重新登入，工具確認有效；Eilgird、Lenora、Paths of the Companion、Estates of Skyrim 的下載與漢化進行中。續行見 [當日現況](../agentctl/handoffs/home-2026-11-01/STATE.md)。上列 Kurone 下載仍待處理。\n\n使用者已登入，七檔下載 hash 通過；Kurone 三檔待 agent 續做。"
+  },
+  {
+   "項目": "四個指定 mod 安裝施工窗（2026-11-01 立）",
+   "關閉日期": "2026-11-01",
+   "證據路徑": "agentctl/handoffs/home-2026-11-01/wanted/INSTALL-QA.md",
+   "內容": "四個指定 mod 安裝施工窗（2026-11-01 立）\n\n四個指定 mod 中文（其中三個為覆核修正版、Lenora r2 不變）與反射錯槽修復共十層已備妥：3019 檔、366316893 bytes，新增 3 plugin、停用 0；反射修復補正 189 筆字串。尚未部署；請在合適時存檔，並確認可以安全關閉遊戲與 MO2；收到確認前不動 live。使用者本次收線不代表安全關閉授權。詳見 [本輪現況](../agentctl/handoffs/home-2026-11-01/STATE.md)；施工入口是 `/home/lorkhan/skyrim_mods/_staging-2026-11-01-wanted/install/README-reviewfix-r2.md` 與同目錄 `manifest-combined-reviewfix-r2.json`，舊 `manifest-final` 禁止套用。\n\n格擋／招式問題未定因；兩候選未部署，盾斧cfg凍結。OAR最多兩組觀察的接手／暫開記錄問題未獲答覆、未操作，本線已停止，待之後使用者主動重啟再確認；不在背景持續等待或取樣。詳見 [姿態調查](../agentctl/handoffs/home-2026-11-01/block-recovery/STANCES.md)及其QA方案。此窄操作授權與上述安裝安全施工窗各自獨立。\n\n施工、必要修正驗收及 release/promote 已完成；自然遊玩另列整包驗收。"
   }
  ]
 }

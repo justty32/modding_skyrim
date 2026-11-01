@@ -31,6 +31,8 @@
 **Why:** 交接書若寫「先指回真實實例」，每條線都會白撞一次；而指到某線 session 的 scratchpad 鏡像則會隨 session 消失、profiles 快照也會過時。
 **How to apply:** 用常設鏡像 `~/.local/share/housecarl-mirror`：`ModOrganizer.ini` 的 gamePath 改 POSIX、`mods`／`Data` symlink 到真實目錄、`profiles` 用 `cp -a` **快照**（不 symlink，否則 houseCARL 寫入路徑會指回版控目錄）。刷新腳本在 `instance/tools/`（`housecarl-mirror.sh`）。相關：[[mo2-auto-adds-stray-mods-dirs]]（houseCARL 寫入產物別落在真實 mods/）。
 
+此鏡像供讀取，不能當成可寫隔離環境；製作產物須用 staging 內的實體 `mods` 目錄。寫入或複製前，同時檢查父目錄與目的檔的解析路徑都留在 staging，包含既存的檔案 symlink，避免沿連結改到真實實例。
+
 鏡像是快照，profile 剛改過（新 patch 套上）而鏡像沒刷新時，houseCARL 會高信心回報「這支 esp 不在載入順序／沒贏」，會誤判 patch 沒生效而白做一輪（2026-09-08）。**做記錄層贏家判定前先刷新鏡像的 profile 快照**，並把「鏡像時間戳 ≥ profiles 最後 commit」寫進驗收。
 
 `Could not determine plugin listings path` 不是間歇性的、跟別線刷不刷鏡像無關、重試無效——真因是環境變數 `LocalAppData`，判準見 [[housecarl-localappdata-env-on-linux]]（2026-10-24）。`cross_plugin_query` 或自寫 `resolve_load_order.py` 這類**不走 Mutagen listing 路徑**的替代算法確實可用，但那是「繞過」不是「沒壞」——繞過時讀到的 localized 欄位仍然是空的或錯的。證據：`agentctl/handoffs/home-2026-10-24/hcpath/REPORT.md`。

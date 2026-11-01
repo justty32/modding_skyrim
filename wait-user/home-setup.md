@@ -85,13 +85,11 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 來源：10-17 巡檢 #6，裁示單 [已封存](../wf/user/archive/2026-10-17-patrol.md)，登記依據見
 [`agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md`](../agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md) 待裁第 2 條。
 
-## 四個指定 mod 安裝施工窗（2026-11-01 立）
-
-四個指定 mod 中文（其中三個為覆核修正版、Lenora r2 不變）與反射錯槽修復共十層已備妥：3019 檔、366316893 bytes，新增 3 plugin、停用 0；反射修復補正 189 筆字串。尚未部署；請在合適時存檔，並確認可以安全關閉遊戲與 MO2；收到確認前不動 live。使用者本次收線不代表安全關閉授權。詳見 [本輪現況](../agentctl/handoffs/home-2026-11-01/STATE.md)；施工入口是 `/home/lorkhan/skyrim_mods/_staging-2026-11-01-wanted/install/README-reviewfix-r2.md` 與同目錄 `manifest-combined-reviewfix-r2.json`，舊 `manifest-final` 禁止套用。
-
-格擋／招式問題未定因；兩候選未部署，盾斧cfg凍結。OAR最多兩組觀察的接手／暫開記錄問題未獲答覆、未操作，本線已停止，待之後使用者主動重啟再確認；不在背景持續等待或取樣。詳見 [姿態調查](../agentctl/handoffs/home-2026-11-01/block-recovery/STANCES.md)及其QA方案。此窄操作授權與上述安裝安全施工窗各自獨立。
-
 ## 已完成（封存）
+
+### 四個指定 mod 安裝施工窗（2026-11-01 立）
+
+施工及必要修正驗收完成，詳見 [部署驗證](../agentctl/handoffs/home-2026-11-01/wanted/INSTALL-QA.md)；自然遊玩驗收另列整包項。
 
 ### Chrome 裡重新打開一次 Nexus，讓 agent 能再下載（2026-10-26 立）
 

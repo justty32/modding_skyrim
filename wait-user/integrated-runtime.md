@@ -46,6 +46,10 @@ cow 學院中文層（profiles `93261f4`）已部署、煙霧通過，剩人眼�
 
 內容取自 [`agentctl/handoffs/home-2026-10-26/cowzh/REPORT.md`](../agentctl/handoffs/home-2026-10-26/cowzh/REPORT.md)「給使用者的人眼抽查」。
 
+## 四 mod 與 Ambriel 外觀的自然遊玩驗證（2026-11-01 立）
+
+自然遊玩時抽查 Eilgird／Lenora 隨從對話、Paths 實際技能樹，以及原存檔 Ambriel 外觀快取與自然劇情人形／龍變身往返。兩個新生人形膚色、Paths 空面板中文、Estates 中文 UI 與反射 UI 已驗收；這些不代表上述自然遊玩項已通過。見 [部署驗證](../agentctl/handoffs/home-2026-11-01/wanted/INSTALL-QA.md)。
+
 ## 已完成／作廢（封存）
 
 > 以下四項在 2026-09-05 逐條對照證據後判定不再需要你動作，從 open 清單移到這裡保存歷史；每項附證據絕對路徑或 commit hash。
