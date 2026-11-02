@@ -2,9 +2,11 @@
 
 [返回入口](../minAI-analysis.md)
 
+> **2026-11-02 版本界線**：本篇是未釘原版 commit 的舊筆記；[公開延續 fork 的固定版核對](../ai-world-context/minai.md)另列。下列欄位不能當作全部後端共用契約；本輪位置是 player-only、位置不隨每 actor refresh，TTL 0 在該 fork 為立即到期，不回推歷史原版。
+
 ## 架構總覽
 
-MinAI 是一個 **純 Papyrus mod**，位於 CHIM/Mantella 等 AI 框架與 Skyrim 各種 mod 之間。它不是 AI 系統本身，而是一個**遊戲狀態聚合層 + 事件路由層 + Modder API**。
+MinAI 的遊戲端主要是 **Papyrus 聚合層**，依賴外部 native／server，位於 CHIM/Mantella 等 AI 框架與 Skyrim 各種 mod 之間。它不是 AI 系統本身，而是一個**遊戲狀態聚合層 + 事件路由層 + Modder API**。
 
 ```
 各種 Skyrim Mod (Frostfall, Sunhelm, SexLab, Dirt&Blood, etc.)
@@ -73,7 +75,7 @@ MinAI 的核心世界狀態機是 **`SetActorVariable()`** — 一個在 `minai_
 - `level`, `isSneaking`, `isSwimming`, `isOnMount`, `isEncumbered`
 - `sitState`: 坐姿狀態 raw value
 
-**位置資料** (`SetLocationData()`, `EnvironmentalAwareness.psc:396-681`)：
+**位置資料** (`SetLocationData()`, `EnvironmentalAwareness.psc:396-681`；本輪 fork 核為 player-only，不隨每 actor refresh)：
 - `currentLocation`, `currentHold`, `currentWorldspace`, `currentCell`
 - `isInterior`, `isTrespassing`
 - `locationKeywords`: 極詳細的地點關鍵字（~60+ 個 LocType 檢查：city/town/village/dungeon/fort/temple/tavern/shop/.../temple_of_akatosh）
@@ -92,7 +94,7 @@ MinAI 的核心世界狀態機是 **`SetActorVariable()`** — 一個在 `minai_
 |------|---------|------|
 | `SetContext()` | 每個 update cycle 刷新 | 持久性狀態（天氣、位置、裝備） |
 | `SetActorVariable()` | 直到被覆寫 | Actor 屬性快取 |
-| `StoreContext()` | TTL（秒），0=永久 | Mod 提供的持久上下文 |
+| `StoreContext()` | TTL 依後端／版本；本輪 fork 的 0 立即到期 | Mod 提供的 scoped 上下文 |
 | `RegisterEvent()` | 一次性 | 即時事件通知 |
 | `MinAI_SetContext` ModEvent | TTL 控制 | 外部 mod 注入的持久上下文 |
 

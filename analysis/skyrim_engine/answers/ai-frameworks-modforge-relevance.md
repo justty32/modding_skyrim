@@ -1,5 +1,7 @@
 # 綜合：四個 AI 框架（SkyrimNet / Mantella / MinAI / IntelEngine）能給 ModForge 什麼
 
+> **2026-11-02 勘誤／續篇**：[世界上下文深究](ai-world-context.md)補齊固定版本採集、刷新與缺值證據。下文保留 2026-08 的 authoring 借鏡脈絡；SkyrimNet 現有文件化 MCP，MinAI 原版當下不可公開取得，不能再將「只有 Mantella 有協定」或「官方已棄用」當本輪確證。
+
 盤點日期 2026-08-01。對照對象是同目錄下 2026-07-30 新增的四份分析與其 source-ref：
 
 - `skyrimNet-gameplugin-analysis.md` + `skyrimNet-source-ref.md`
@@ -23,7 +25,7 @@
 
 統計：共 4 筆記錄、4 欄。
 
-**結論**：想「從遊戲外部讀狀態、下指令」，四者裡只有 Mantella 提供了現成、文件化的協定。SkyrimNet/IntelEngine 想擴充也沒源碼可改。
+**版本更正**：本輪 Mantella 的 collector→HTTP→Python 可完整核對；SkyrimNet 亦有官方 MCP 讀取／執行文件，但 native server／collector 不公開。不能再說只有 Mantella 有文件化對外介面，詳見[固定版對照](ai-world-context/skyrimnet.md)。IntelEngine 不在本輪重核範圍。
 
 ## 二、可借鏡項（依 ROI 排序）
 
@@ -38,7 +40,7 @@
 - **SkyrimNet** 的 `decnpc(actorUUID)` state blob（推導自 `WORKFLOW_PROMPTS.md:97-135`）：另加全技能 0-100、summary/background/personality/speechStyle、四種代名詞、`relationshipRank(-4~4)`、`isVirtual/isDead/isFemale`。
 - **SkyrimNet 的行為推論**：`component_npc_state_summary.prompt` 用約 25 種家具關鍵字比對推論 NPC 在做什麼（睡覺/打鐵/祈禱），是規則式而非動畫 hook——低成本得到「NPC 正在幹嘛」。
 
-→ **用途**：當作 agent bridge `GET /state` 的 schema 藍本（見 `wf/workflows/plans/ai-ingame-qa-loop/README.md`）。
+→ **用途**：當作 agent bridge `GET /state` 的歷史 schema 藍本；現役能力與差距見[本輪 bridge 對照](ai-world-context/bridge-fit.md)。
 
 ### 2. 遊戲↔外部程序的 HTTP+JSON 協定（低成本，設計層面）
 
@@ -47,7 +49,7 @@ Mantella `mantella_route.py:65-102` 是單一 endpoint dispatch（start / contin
 1. Skyrim 端（Papyrus/SKSE）可以跟本機外部程序用 HTTP JSON 雙向溝通；
 2. 這套在 Linux + Proton 下是可行的（Mantella 有 Linux 使用者）。
 
-→ **用途**：`wf/workflows/plans/ai-ingame-qa-loop/README.md` 的整條路以此為前例。
+→ **用途**：既有 agent-bridge HTTP 路線的前例；目前不必再建第二套傳輸層。
 
 ### 3. 預渲染字串快取（低成本，與 ModForge 取向天然契合）
 
@@ -76,11 +78,11 @@ IntelEngine `IntelEngine_Core.psc:1918-2029` 的 `RegisterDashboardEvents()` 註
 
 ## 三、不要做的事
 
-- **不要把 MinAI 當整合對象**：已棄用，官方導向 SkyrimNet；SkyrimNet 靠 `skynet_MinAIBridge.psc:1-160` 監聽它的 5 個 ModEvent 做向後相容而已。MinAI 唯一剩餘價值是第 2.1 節那份環境欄位清單。
+- **MinAI 的整合判斷需重核來源**：本輪官方 repo 回 404，不能據此判定棄用。公開延續 fork 可研究 provider／builder、分頻和 TTL；其 CHIM／Mantella 出口並不等價，詳見[來源身分與邊界](ai-world-context/minai.md)。SkyrimNet 的相容 bridge 不代表其完整實作已搬入。
 - **不要指望擴充 SkyrimNet / IntelEngine 的 native 層**：原始碼不在 repo。
 - **不要讓 ModForge 預設依賴任何一個**：延續 `modforge-relevance.md` 第四節結論，全部 opt-in，預設維持零外部依賴。
 
 ## 四、去向
 
-- 第 1、2 項 → 已展開成 `wf/workflows/plans/ai-ingame-qa-loop/README.md`（AI 全自動 mod QA 迴圈）。
+- 第 1、2 項 → 已由現役 agent-bridge 承接；當前研究入口是[世界上下文](ai-world-context.md)。
 - 第 3、4、5 項 → 尚未排程，需要時從本檔取用。

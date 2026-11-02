@@ -2,9 +2,11 @@
 
 [返回入口](../mantella-analysis.md)
 
+> **2026-11-02 續篇**：[固定版 collector／refresh／missing 語義](../ai-world-context/mantella.md)。本篇保留舊 backend 概覽；詳細 actor 資料限參與者，附近者只 name／distance，且不是所有欄位每回合刷新。現行 Python Context 路徑是 `src/conversation/context.py`，下文舊行號不作固定版證據。
+
 ## 架構總覽
 
-Mantella 是 **外部 Python 程序**，與遊戲透過 HTTP 通訊。遊戲端是 Mantella Spell（一個 SKSE Papyrus plugin，在另一個 repo），負責讀取遊戲狀態、播放語音、執行動作，然後透過 HTTP POST 跟 Python 端交換 JSON。
+Mantella 是 **外部 Python 程序**，與遊戲透過 HTTP 通訊。遊戲端是 Mantella Spell（Papyrus 腳本加 native SKSE_HTTP 依賴，在另一個 repo），負責讀取遊戲狀態、播放語音、執行動作，然後透過 HTTP POST 跟 Python 端交換 JSON。
 
 ```
 Skyrim (SKSE Papyrus plugin: Mantella Spell)

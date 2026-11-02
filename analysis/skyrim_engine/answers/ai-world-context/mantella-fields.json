@@ -1,0 +1,179 @@
+{
+ "contract": "wf-table/1",
+ "source": "mantella.md",
+ "extracted": "2026-11-02",
+ "link_columns": [
+  "source_link"
+ ],
+ "pins": {
+  "Mantella": "c0c1ae6db01f3c2a14dbab8ec5c3e6419e4f6bac",
+  "Mantella-Spell": "0c5f8513aff61cda1f32c81a962eee36ba74fdb7"
+ },
+ "columns": [
+  "id",
+  "scope",
+  "wire_field",
+  "collector",
+  "refresh",
+  "prompt_transform",
+  "missing_stale_semantics",
+  "status",
+  "source_link"
+ ],
+ "rows": [
+  {
+   "id": "identity",
+   "scope": "player+participants",
+   "wire_field": "mantella_actor_baseid/refid/name/is_player",
+   "collector": "GetActorBase().GetFormID / Actor.GetFormID / GetActorName；同名參與者以對話faction rank附數字；玩家bool依Actor==PlayerRef",
+   "refresh": "AddActors/RemoveActors重建完整actors；每次輸入重送cached handles",
+   "prompt_transform": "load_character將ID轉hex再剝load-order prefix；Characters以name為key；bio lookup用base_id，memory path用name+ref_id",
+   "missing_stale_semantics": "不是plugin+localID穩定鍵；FE留低3hex、其他留低6，具跨plugin碰撞風險（推論）；附近NPC沒有ID",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella-Spell/blob/0c5f8513aff61cda1f32c81a962eee36ba74fdb7/Scripts/Source/MantellaConversation.psc#L992-L1011"
+  },
+  {
+   "id": "demographics",
+   "scope": "player+participants",
+   "wire_field": "mantella_actor_gender/race/voicetype",
+   "collector": "GetLeveledActorBase().GetSex / GetRace / GetVoiceType",
+   "refresh": "完整actors重建時；一般每回合不重採",
+   "prompt_transform": "race/sex寫入system prompt，voice供聲音選擇；CSV/bio template提供靜態背景",
+   "missing_stale_semantics": "必填欄位load_character try/except失敗回None，該actor略過；非live成長或外貌掃描",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella/blob/c0c1ae6db01f3c2a14dbab8ec5c3e6419e4f6bac/src/game_manager.py#L330-L361"
+  },
+  {
+   "id": "relationship",
+   "scope": "player+participants",
+   "wire_field": "mantella_actor_relationshiprank",
+   "collector": "Actor.GetRelationshipRank(PlayerRef)",
+   "refresh": "完整actors重建時；普通輸入只更新combat，relationship可舊",
+   "prompt_transform": "rank+conversation log數量→stranger/acquaintance/friend/close friend/lover/enemy；屬混合推導",
+   "missing_stale_semantics": "rank0可因對話次數變friend；source自己註記radiant也計入trust；不是引擎relationship的純翻譯",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella/blob/c0c1ae6db01f3c2a14dbab8ec5c3e6419e4f6bac/src/conversation/context.py#L301-L329"
+  },
+  {
+   "id": "combat",
+   "scope": "player+participants",
+   "wire_field": "mantella_actor_is_in_combat",
+   "collector": "Actor.IsInCombat()",
+   "refresh": "完整actors；若targetTrackingAngerState true，每次sendRequestForPlayerInput更新此bool",
+   "prompt_transform": "Context比較舊/新bool產生進/出combat自然語言event",
+   "missing_stale_semantics": "toggle關閉時保留cached bool；與其他欄位不是同時重採",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella-Spell/blob/0c5f8513aff61cda1f32c81a962eee36ba74fdb7/Scripts/Source/MantellaConversation.psc#L982-L1005"
+  },
+  {
+   "id": "enemy",
+   "scope": "player+participants",
+   "wire_field": "mantella_actor_is_enemy",
+   "collector": "Actor.GetCombatTarget()==PlayerRef",
+   "refresh": "只完整actors重建；不是UpdateNpcsInConversationArray更新項",
+   "prompt_transform": "Context變化→attacking player語句，附because enemy/player attacked first選項",
+   "missing_stale_semantics": "不是faction敵意/犯罪原因事實；理由文字屬模板推論；cached值可舊",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella/blob/c0c1ae6db01f3c2a14dbab8ec5c3e6419e4f6bac/src/conversation/context.py#L266-L281"
+  },
+  {
+   "id": "equipment",
+   "scope": "player+participants",
+   "wire_field": "mantella_equipment body/head/hands/feet/amulet/righthand/lefthand",
+   "collector": "GetEquippedArmorInSlot slots32/31/33/37/35；GetEquippedWeapon兩手；玩家/目標各7個toggle",
+   "refresh": "完整actors重建；equip/unequip另有事件，但不重建equipment snapshot",
+   "prompt_transform": "按固定slot順序自然語言wears/uses；無值不描述，不推定裸身",
+   "missing_stale_semantics": "沒裝備與關閉追蹤皆省略欄位無法區分；Python既有Character update也不更新equipment",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella-Spell/blob/0c5f8513aff61cda1f32c81a962eee36ba74fdb7/Scripts/Source/MantellaEquipmentDescriber.psc#L33-L99"
+  },
+  {
+   "id": "spells",
+   "scope": "NPC participants",
+   "wire_field": "mantella_equipment spells（Papyrus以Spells呼叫；native setter lowercase key）",
+   "collector": "GetSpellCount/GetNthSpell先Actor再ActorBase，最多20項，排除MantellaIsTalkingSpell",
+   "refresh": "完整actors重建",
+   "prompt_transform": "Equipment knows the spells字串；空字串過濾",
+   "missing_stale_semantics": "不是完整能力表；無排序/去重；cap有截斷但未附truncated標記",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella-Spell/blob/0c5f8513aff61cda1f32c81a962eee36ba74fdb7/Scripts/Source/MantellaEquipmentDescriber.psc#L103-L147"
+  },
+  {
+   "id": "location",
+   "scope": "scene/player anchor",
+   "wire_field": "mantella_location",
+   "collector": "PlayerRef.GetCurrentLocation().GetName，空名fallback Skyrim",
+   "refresh": "BuildContext(true)只在conversation start structured送；OnLocationChange另外文字事件",
+   "prompt_transform": "system location placeholder+位置事件",
+   "missing_stale_semantics": "沒有cell/worldspace/座標；移動後structured location可留初始，事件可能被最後N條裁切",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella-Spell/blob/0c5f8513aff61cda1f32c81a962eee36ba74fdb7/Scripts/Source/MantellaConversation.psc#L1028-L1046"
+  },
+  {
+   "id": "time",
+   "scope": "scene/player anchor",
+   "wire_field": "mantella_time / mantella_gamedays",
+   "collector": "GameDaysPassed拆fraction*24取floor小時；gamedays=Global.GetValue()+1",
+   "refresh": "每次BuildContext更新gamedays；hour只有start或playerTrackingOnTimeChange才更新",
+   "prompt_transform": "hourly_time選小時或時段差分事件；current_day=int(gamedays)",
+   "missing_stale_semantics": "未送hour保留舊；無real采樣時間/seq/TTL；兩次GetValue不是原子快照",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella-Spell/blob/0c5f8513aff61cda1f32c81a962eee36ba74fdb7/Scripts/Source/MantellaConversation.psc#L1042-L1046"
+  },
+  {
+   "id": "weather",
+   "scope": "scene/player anchor",
+   "wire_field": "mantella_weather id/classification",
+   "collector": "非PlayerRef.IsInInterior時Weather.GetCurrentWeather().GetFormID/GetClassification",
+   "refresh": "start或weather toggle true時BuildContext採",
+   "prompt_transform": "Skyrim weather CSV id查描述，找不到fallback分類，仍未知回空字串",
+   "missing_stale_semantics": "室內完全省略weather→Python None保留先前戶外weather；未知非None空字串會清成空",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella/blob/c0c1ae6db01f3c2a14dbab8ec5c3e6419e4f6bac/src/games/skyrim.py#L244-L257"
+  },
+  {
+   "id": "nearby",
+   "scope": "nonparticipants only",
+   "wire_field": "mantella_nearby_actors:[{name,distance}]",
+   "collector": "Listener啟停MantellaNearbyActors quest讀5 aliases；玩家GetDistance /71.0210為meters；loaded-area nearest flags，排除player/dead/conversation faction",
+   "refresh": "每次BuildContext；非每frame；無獨立nearby timer",
+   "prompt_transform": "Python distance升序；name集合變動才生nearby列表event；action enum可取得nearby names",
+   "missing_stale_semantics": "零有效時Spell省略key→Python保留舊cache；只distance/order變不發event；同名者不唯一；無LOS",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella-Spell/blob/0c5f8513aff61cda1f32c81a962eee36ba74fdb7/Scripts/Source/MantellaConversation.psc#L1059-L1094"
+  },
+  {
+   "id": "player-events",
+   "scope": "player alias only",
+   "wire_field": "mantella_ingame_events:[string]",
+   "collector": "MantellaListenerScript：items/spell/hit/location/equip/unequip/bow/sit/getup/dying，依repository toggles；只conversation.IsRunning時append",
+   "refresh": "引擎Papyrus事件累積；BuildContext或action回傳取deepcopy後立即clear",
+   "prompt_transform": "Context.extend→最後max_count_events條(預設5)→UserMessage narration包裝，再clear",
+   "missing_stale_semantics": "未附timestamp/ID/typed subject；非NPC全域事件；送前clear無ack/replay；文字不是完整狀態",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella-Spell/blob/0c5f8513aff61cda1f32c81a962eee36ba74fdb7/Scripts/Source/MantellaListenerScript.psc#L385-L549"
+  },
+  {
+   "id": "participant-events",
+   "scope": "participant aliases",
+   "wire_field": "mantella_ingame_events:[string]",
+   "collector": "MantellaTargetListenerScript：item/spell/hit/combatState/equip/sit/death，quest aliases掛script；非nearby通用listener",
+   "refresh": "事件累積；hit依上次source/aggressor與counter稀釋",
+   "prompt_transform": "inCombat搜尋/退戰文字；退戰檢查曾追蹤targets的IsDead/GetKiller推killed by group",
+   "missing_stale_semantics": "combat kill結論只player/該actor killer；不是全局事件因果；event list無一般dedup",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella-Spell/blob/0c5f8513aff61cda1f32c81a962eee36ba74fdb7/Scripts/Source/MantellaTargetListenerScript.psc#L85-L169"
+  },
+  {
+   "id": "player-description",
+   "scope": "player only",
+   "wire_field": "mantella_actor_custom_values mantella_pc_description",
+   "collector": "MCM手填description1/2，非VR；voiceplayerinput/voicemodel設定",
+   "refresh": "完整actors重建",
+   "prompt_transform": "覆蓋config.player_character_description進system prompt",
+   "missing_stale_semantics": "使用者配置文本，非遊戲觀測；描述≠檢測到的外貌",
+   "status": "已實作（靜態原始碼）",
+   "source_link": "https://github.com/art-from-the-machine/Mantella-Spell/blob/0c5f8513aff61cda1f32c81a962eee36ba74fdb7/Scripts/Source/MantellaConversation.psc#L1014-L1026"
+  }
+ ]
+}

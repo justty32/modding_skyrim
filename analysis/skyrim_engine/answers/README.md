@@ -68,6 +68,8 @@
 
 ### AI 框架拆解（SkyrimNet／Mantella／MinAI／IntelEngine）
 
+- [世界上下文深究：環境／附近 NPC／位置的採集、刷新與 AI 整理](ai-world-context.md) — 三套固定版證據、bridge 補強與 ModForge／Living 候選（2026-11-02）
+
 - [綜合：四個 AI 框架（SkyrimNet / Mantella / MinAI / IntelEngine）能給 ModForge 什麼](ai-frameworks-modforge-relevance.md)
 - [IntelEngine-GamePlugin 分析：世界狀態、NPC 指令、對話控制](intelEngine-gameplugin-analysis.md)
 - [IntelEngine-GamePlugin — 原始碼出處索引](intelEngine-source-ref.md)

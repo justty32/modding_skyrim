@@ -1,7 +1,7 @@
 # MinAI — 原始碼出處索引
 
 > 路徑根: `external/frameworks/MinAI/`
-> 注意: MinAI 是純 Papyrus mod，無 Python、無 C++。CHIM/AIFF server 端在另一個 repo（DwemerAI4Skyrim），不在此分析範圍。
+> 本索引保留舊 Papyrus 範圍，非完整 producer→prompt 證據。2026-11-02 [延續 fork 研究](ai-world-context/minai.md)另核外部 native／PHP server 邊界；不能再以「純 Papyrus」概括整條系統。
 
 ---
 

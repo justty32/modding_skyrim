@@ -30,4 +30,5 @@ Skyrim SE 引擎逆向分析知識庫,以 **CommonLibSSE-NG**(C++/SKSE plugin �
 - FormID 二進位結構:[`architecture/Systems_TESForm_Detailed.md`](architecture/Systems_TESForm_Detailed.md)(AGENTS.md 有引用)
 - RE 層 API 快查:[`others/README.md`](others/README.md)
 - CommonLibSSE-NG 專案總覽:[`details/commonlibsee-ng/00_overview.md`](details/commonlibsee-ng/00_overview.md)
+- [世界上下文深究](answers/ai-world-context.md)：環境／附近 NPC／位置的固定版採集、刷新、缺值、bridge 與未來 Living 玩法邊界。
 - AI 框架(SkyrimNet/Mantella/MinAI/IntelEngine)拆解:[answers 索引的「AI 框架拆解」節](answers/README.md)共 9 份;綜合借鏡結論見 [`answers/ai-frameworks-modforge-relevance.md`](answers/ai-frameworks-modforge-relevance.md)

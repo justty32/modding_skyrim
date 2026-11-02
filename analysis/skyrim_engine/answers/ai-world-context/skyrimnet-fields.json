@@ -1,0 +1,218 @@
+{
+ "contract": "wf-table/1",
+ "source": "skyrimnet.md",
+ "extracted": "2026-11-02",
+ "commit": "0194eeb1c09bab423601c2fb7a8abf1df59fd15b",
+ "link_columns": [
+  "source_link"
+ ],
+ "columns": [
+  "id",
+  "fields",
+  "producer",
+  "source_position",
+  "limits",
+  "source_link",
+  "evidence"
+ ],
+ "rows": [
+  {
+   "id": "place",
+   "fields": "location; get_location(UUID); is_indoors",
+   "producer": "native context/decorator; 實際 RE 函式不公開",
+   "source_position": "scene_context:6,9,31,49; WORKFLOW_PROMPTS:808-809",
+   "limits": "speaker location 可用、indoors 是 player 全域值；非原子快照；missing contract未知",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/components/context/scene_context.prompt#L1-L59",
+   "evidence": "template-consumed"
+  },
+  {
+   "id": "named_place",
+   "fields": "cell/worldspace; radius; ±200 vertical; smallest containing",
+   "producer": "API native 文件；不是Papyrus內部實作",
+   "source_position": "SkyrimNetApi:999-1009",
+   "limits": "標記位置 defaults350 indoors/1500 outdoors; clamp50-5000；不代表NPC掃描半徑",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/Source/Scripts/SkyrimNetApi.psc#L999-L1009",
+   "evidence": "native-interface-comment"
+  },
+  {
+   "id": "time",
+   "fields": "gameTime; gameTimeJson.hour; gameTimeNumeric; currentTime",
+   "producer": "native context；game date與system clock分開",
+   "source_position": "scene_context:33-44; decorators.html:2275-2320",
+   "limits": "無每欄sample timestamp；history用gameTimeNumeric秒差",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/components/context/scene_context.prompt#L33-L44",
+   "evidence": "template-consumed"
+  },
+  {
+   "id": "weather",
+   "fields": "currentWeather.name/isRaining/isSnowing/windSpeed",
+   "producer": "native context；未公開RE Sky/GetCurrentWeather呼叫",
+   "source_position": "scene_context:47-58; decorators.html:2338",
+   "limits": "windSpeed>0.5推論strong wind；示例Unknown/formID0不是完整null contract",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/components/context/scene_context.prompt#L47-L58",
+   "evidence": "template-consumed"
+  },
+  {
+   "id": "nearby",
+   "fields": "id; UUID; name; distance; isFollowing; furniture",
+   "producer": "get_nearby_npc_list(sourceEntity.UUID or player.UUID)",
+   "source_position": "scene_context:1-26; component_npc_state_summary:1-16",
+   "limits": "距離units→units_to_meters；半徑/排序/LOS/cap內部未知；無結果輸出No one else nearby",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/components/context/scene_context.prompt#L1-L26",
+   "evidence": "template-consumed"
+  },
+  {
+   "id": "actor_identity",
+   "fields": "UUID;name;firstName;lastName;gender;sex;race;class;level;isFemale;isChild",
+   "producer": "decnpc native；測試模板列出預期欄位",
+   "source_position": "0100_actor_decorators:14-25",
+   "limits": "本輪未runtime跑測試，不能說每個欄位每次都有",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/submodules/test_decorators/0100_actor_decorators.prompt#L14-L25",
+   "evidence": "test-template-contract"
+  },
+  {
+   "id": "actor_vitals",
+   "fields": "health/maxHealth;magicka/maxMagicka;stamina/maxStamina;weight;goldCount",
+   "producer": "decnpc native；測試模板預期",
+   "source_position": "0100_actor_decorators:34-39",
+   "limits": "未知值/比例/atomicity/native讀取API均未證",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/submodules/test_decorators/0100_actor_decorators.prompt#L34-L39",
+   "evidence": "test-template-contract"
+  },
+  {
+   "id": "actor_status",
+   "fields": "isDead;isEssential;isGuard;isHostile;isInCombat;isBusy;isCapableOfSpeech;distanceToPlayer;paralysis;brainCondition",
+   "producer": "decnpc native；測試模板預期",
+   "source_position": "0100_actor_decorators:41-53",
+   "limits": "isBusy/brainCondition可能混runtime衍生狀態；非一概引擎直接flag",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/submodules/test_decorators/0100_actor_decorators.prompt#L41-L53",
+   "evidence": "test-template-contract"
+  },
+  {
+   "id": "physical_activity",
+   "fields": "is_unconscious;is_sneaking;is_walking;is_sprinting;is_swimming;is_knocked_down;is_mounted;get_mount_race;get_furniture",
+   "producer": "native decorators→優先序if/elif",
+   "source_position": "0050_physical_activity:1-33",
+   "limits": "knocked_down→badly wounded kneeling、else→standing able to move等為模板語意推論，沒有unknown分支",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/submodules/character_bio/0050_physical_activity.prompt#L1-L33",
+   "evidence": "template-consumed"
+  },
+  {
+   "id": "furniture_inference",
+   "fields": "npc.furniture string→lower→substring categories",
+   "producer": "component_npc_state_summary模板運算",
+   "source_position": "component_npc_state_summary:14-62",
+   "limits": "bed→lying down；forge/smelter/tanning rack→sharpening a sword；英文字匹配，模組命名/中文化敏感；not exact job truth",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/components/context/component_npc_state_summary.prompt#L14-L62",
+   "evidence": "template-heuristic"
+  },
+  {
+   "id": "relationship",
+   "fields": "is_summoned;is_reanimated;is_hostile_to_actor;isVirtual;isVirtualPrivate",
+   "producer": "native decorators/decnpc",
+   "source_position": "scene_context:16-21",
+   "limits": "nonhostile summon文字直接說serving player；不是owner欄位驗證；virtual不顯示物理距離",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/components/context/scene_context.prompt#L16-L21",
+   "evidence": "template-consumed"
+  },
+  {
+   "id": "los",
+   "fields": "has_line_of_sight(actorUUID,npc.UUID);get_visible_npc_list(player.UUID)",
+   "producer": "native decorators；測試模板描述gaze/FOV/raycast",
+   "source_position": "0100_actor_decorators:139-148;0800_omnisight:77-83",
+   "limits": "這些API存在不證明get_nearby_npc_list經過LOS過濾；native演算法未公開",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/submodules/test_decorators/0100_actor_decorators.prompt#L139-L148",
+   "evidence": "test-template-contract"
+  },
+  {
+   "id": "world_refs",
+   "fields": "name;type;subtype;formID;position.meters/cardinalDirection/direction;locked",
+   "producer": "get_nearby_references(1500), get_nearby_references_for_entity",
+   "source_position": "0700_scene_world:279-293,408",
+   "limits": "只證測試/能力契約；不是預設scene_context自動包含；15列是輸出裁切非native cap",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/submodules/test_decorators/0700_scene_world_decorators.prompt#L279-L293",
+   "evidence": "test-template-contract"
+  },
+  {
+   "id": "container",
+   "fields": "error;name;locked;lockLevel;itemCount;items[name,count,type,value,weight]",
+   "producer": "get_container_contents(firstContainer.formID)",
+   "source_position": "0700_scene_world:355-379",
+   "limits": "error分支存在；10 items是測試模板裁切，不是engine inventory limit",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/submodules/test_decorators/0700_scene_world_decorators.prompt#L355-L379",
+   "evidence": "test-template-contract"
+  },
+  {
+   "id": "short_events",
+   "fields": "scene.short_lived_events;source_uuid;type;format_event(event,recent_events)",
+   "producer": "native event store→template",
+   "source_position": "component_recent_events:4-14; API:72-82",
+   "limits": "需可decnpc解析source；只排除gamemaster_dialogue；TTLms與eventId覆蓋契約",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/components/context/component_recent_events.prompt#L4-L14",
+   "evidence": "template-consumed"
+  },
+  {
+   "id": "history",
+   "fields": "id;type;gameTime;gameTimeStr;gameTimeEnd;location;originatingActor;targetActor;data.speaker",
+   "producer": "C++ events context 或 get_recent_events(count,filter)",
+   "source_position": "event_history:1-5,46-53,105-128",
+   "limits": "gameTimeEnd優先表示最後時間；spell/hit/combat排除；只最新GM；validity guards可省略名字",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/components/event_history.prompt#L1-L53",
+   "evidence": "template-consumed"
+  },
+  {
+   "id": "minai_context",
+   "fields": "modName;eventKey;eventValue;ttl→eventId,data,ttlMs",
+   "producer": "Papyrus ModEvent MinAI_SetContext handler",
+   "source_position": "skynet_MinAIBridge:52-78",
+   "limits": "ttl*1000;<=0變100ms; source一律player；外部文字eventValue不是引擎驗證事實",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/Source/Scripts/skynet_MinAIBridge.psc#L52-L78",
+   "evidence": "implemented-papyrus"
+  },
+  {
+   "id": "runtime_uuid",
+   "fields": "GetEntityUUID(Actor);GetActorByUUID;GetVirtualNPCUUID",
+   "producer": "Global Native API contract",
+   "source_position": "SkyrimNetApi:404-409,579-590",
+   "limits": "loaded actor invalid→empty；virtual name-derived stable across sessions；actor crosscell/reset mapping未公開",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/Source/Scripts/SkyrimNetApi.psc#L404-L409",
+   "evidence": "native-interface-comment"
+  },
+  {
+   "id": "omnisight",
+   "fields": "visibleNPCs;relative camera distance/meters/angle/pan/direction/cardinalDirection;imageDataUrl",
+   "producer": "native selected IDs + image→vision prompt",
+   "source_position": "omnisight/describe_scene:10-20,35-39,60-80",
+   "limits": "輸出是模型描述；名字只允許authoritative list；無結果不證實世界無人；TTL未證",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/omnisight/describe_scene.prompt#L10-L39",
+   "evidence": "template-consumed"
+  },
+  {
+   "id": "speaker_selection",
+   "fields": "decision_pairs;decision_speakers;conversationParticipants;sceneDirection;crosshairTarget;lastSpeaker;lastDialogueTarget",
+   "producer": "native context→decisions template",
+   "source_position": "scene_speaker_selector:1-13,43-61",
+   "limits": "per-request短key非穩定identity；伴侶只是可選標籤；native legal pair filtering未公開",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/plugins/skyrimnet/base/prompts/decisions/scene_speaker_selector.prompt#L1-L15",
+   "evidence": "template-consumed"
+  },
+  {
+   "id": "event_source_catalog",
+   "fields": "spell_cast;active_effect;hit;combat;death;activation;equip;sleep_start/stop;book_read;quest_stage;quest_start_stop;location_change;container_changed;enter_bleedout;animation_event;mod_event;crime;cell_attach_detach;scene/scene_action/scene_phase",
+   "producer": "native event hooks，公開只有官方schema docs",
+   "source_position": "WORKFLOW_TRIGGERS.md:248-285",
+   "limits": "不能把catalog當已驗native sink hook；同event envelope也含AI生成dialogue/thoughts/narration；需看type/provenance",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/docs/modding/WORKFLOW_TRIGGERS.md#L248-L285",
+   "evidence": "documented-native-contract"
+  },
+  {
+   "id": "mcp_read_surface",
+   "fields": "get_player_info;get_nearby_actors;get_quest_property_value;get_monitored_events;get_decorators",
+   "producer": "official MCP docs method names，未附handler source",
+   "source_position": "WORKFLOW_MOD_INTEGRATION:417-444;WORKFLOW_TRIGGERS:52-67",
+   "limits": "server port8889同時含execute_quest_function與console；無公開read-only scope/schema/auth/cache contract",
+   "source_link": "https://github.com/MinLL/SkyrimNet-GamePlugin/blob/0194eeb1c09bab423601c2fb7a8abf1df59fd15b/docs/modding/WORKFLOW_MOD_INTEGRATION.md#L411-L444",
+   "evidence": "documented-native-contract"
+  }
+ ]
+}

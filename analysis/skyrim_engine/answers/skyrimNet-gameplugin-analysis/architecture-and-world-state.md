@@ -2,9 +2,11 @@
 
 [返回入口](../skyrimNet-gameplugin-analysis.md)
 
+> **2026-11-02 校正**：本篇其餘檔名／欄位是未釘 commit 的舊筆記；當前固定版 `0194eeb1` 的採集確定度、視角、事件壽命與模板差異見[世界上下文續篇](../ai-world-context/skyrimnet.md)。公開介面可核，native producer 不可核。
+
 ## 架構總覽
 
-SkyrimNet 是一個 **單一 SKSE native DLL**（C++）＋ Papyrus 腳本層的架構。核心 C++ DLL 不含在本 repo（本 repo 只有 Papyrus 原始碼、prompt 模板、UI 資源），但可以從 Papyrus API 和 prompt 模板反向推導出完整設計。
+SkyrimNet 是一個 **單一 SKSE native DLL**（C++）＋ Papyrus 腳本層的架構。核心 C++ DLL 不含在本 repo（本 repo 只有 Papyrus 原始碼、prompt 模板、UI 資源），可從 Papyrus API 和 prompt 模板確認公開介面與組合方式，無法由此還原完整 native 設計。
 
 關鍵分層：
 ```
@@ -29,11 +31,11 @@ SkyrimNet 是一個 **單一 SKSE native DLL**（C++）＋ Papyrus 腳本層的�
 
 ### 1.1 核心機制：Decorator 函數 + Inja 模板
 
-世界狀態是透過 **decorator functions** 從記憶體即時讀取，然後在 prompt 渲染時注入。**不經過序列化到檔案的中間層**，而是 C++ 端直接讀遊戲記憶體後轉成 JSON 給模板引擎。
+公開模板透過 **decorator functions** 取得狀態並注入 prompt。先前「即時讀記憶體、沒有序列化中間層」的斷言撤回：native producer 未公開，實際讀取、cache、thread 與 snapshot 一致性不能從模板推定。
 
 ### 1.2 關鍵 Decorator: `decnpc(actorUUID)`
 
-`decnpc()` 是單一最核心的 decorator，對一個 actor 回傳完整 state blob（`Source/Scripts/SkyrimNetApi.psc` 無此函數定義證明它是 pure C++ native decorator）：
+`decnpc()` 是單一最核心的 decorator，對一個 actor 回傳完整 state blob（公開 built-in decorator 契約；不在 Papyrus 宣告中，不能據此證明內部 producer 細節）：
 
 從 `WORKFLOW_PROMPTS.md:97-135` 可推導其回傳結構：
 ```
@@ -51,10 +53,10 @@ universalTranslatorSpeechPattern
 
 `SKSE/Plugins/SkyrimNet/prompts/components/context/scene_context_full.prompt` 定義場景上下文的五大區塊：
 
-1. **Scene Information** — 當前場景摘要（由 GameMaster/LLM 生成）
+1. **Scene Information** — 舊文概稱場景摘要；本輪版本是 location／gameTime／hour 的固定模板，另有 GM planner
 2. **Weather** — 天氣描述
 3. **Nearby People** — 附近 NPC 清單（距離、在做什麼、跟隨狀態）
-4. **Recent Events** — 近期事件（過濾掉 spell/hit/combat 等高頻事件）
+4. **Recent Events** — 短期事件；本輪 spell/hit/combat 過濾在持久 history 模板，不能混稱同一集合
 5. **Scene Summary / NPC State Summary** — 每個 NPC 的行為狀態
 
 ### 1.4 NPC 行為狀態偵測 (`component_npc_state_summary.prompt`)

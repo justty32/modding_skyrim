@@ -2,7 +2,7 @@
 
 > 來源: `external/frameworks/MinAI/` (clone from https://github.com/MinLL/MinAI)
 > 分析日期: 2026-07-30
-> 狀態: **已棄用**（官方建議改用 SkyrimNet）
+> 2026-11-02：撤回未釘來源的「官方已棄用」現況斷言；本輪官方 repo 不可公開取得，只能證明 404。來源身分與公開延續 fork 的固定版研究見[世界上下文續篇](ai-world-context/minai.md)。
 > 關注範圍: 世界狀態總結機制、NPC 下令、對話改變（排除 TTS/STT/AI 截圖等）
 
 ---

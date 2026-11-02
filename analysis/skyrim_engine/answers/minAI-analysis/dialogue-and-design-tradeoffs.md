@@ -100,5 +100,5 @@ MinAI 定義了五個 ModEvent 作為外部 mod 的 API (`ModdersGuide.md`)：
 
 - **MinAI 是 CHIM 的擴充**：CHIM 提供 AI framework（HTTP server + agent management），MinAI 提供遊戲狀態收集 + mod 整合
 - **MinAI 與 Mantella 的關係**：`minai_Mantella.psc` 是 MinAI→Mantella 的橋接層。當 Mantella 安裝時，MinAI 監聽 Mantella 的對話事件，注入額外的 mod context
-- **MinAI 與 SkyrimNet 的關係**：MinAI 已被棄用，官方建議改用 SkyrimNet。SkyrimNet 的 `skynet_MinAIBridge.psc` 複製了 MinAI 的五個 ModEvent API（MinAI_RegisterEvent/SetContext/RequestResponse/RequestResponseDialogue），保持向後相容
+- **MinAI 與 SkyrimNet 的關係**：本輪未能重核原作者的棄用聲明；官方 repo 404 不證原因，版本界線見[固定版研究](../ai-world-context/minai.md)。SkyrimNet 的 `skynet_MinAIBridge.psc` 複製了 MinAI 的五個 ModEvent API（MinAI_RegisterEvent/SetContext/RequestResponse/RequestResponseDialogue），保持向後相容
 - **CHIM (DwemerAI4Skyrim)**：MinAI 依賴的 AI 框架，PHP-based，不在本次分析的四個 repo 中
