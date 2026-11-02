@@ -37,6 +37,7 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 | `tools/waituser/parsing.py` | waituser_count 的解析：標題走訪（跳過 fence）、hub 計數表、子檔與 hub 自指節的條目計數。 |
 | `tools/waituser/__init__.py` | waituser_count 內部套件入口。 |
 | `tools/test_waituser_count.py` | waituser_count 的 tempdir fixture 測試：OK／MISMATCH／ERROR、封存節不計、自指錨點、`--json`／`--fix`。 |
+| `tools/test_hook_checkout.py` | 以真實 fresh checkout 驗 pre-commit 在 autocrlf=true／false／input 均為 LF、普通檔保留原換行設定，並由 Git commit 驗 gate 缺席放行與拒擋傳遞。 |
 | `tools/check_submodule_pins.py` | pre-push 核心：只檢查本次 push ref 相對 remote tip 有變動的 gitlink；本機存在但任何 remote-tracking ref 都不可達時 fetch 後 fail closed |
 | `tools/submodule_pins/pins.py` | 解析 push updates，計算變動 gitlink 與新分支 pins。 |
 | `tools/submodule_pins/__init__.py` | gitlink pin 計算與 remote 可達性檢查套件入口。 |

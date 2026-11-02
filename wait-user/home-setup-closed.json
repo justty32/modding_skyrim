@@ -62,6 +62,12 @@
    "關閉日期": "2026-11-01",
    "證據路徑": "agentctl/handoffs/home-2026-11-01/wanted/INSTALL-QA.md",
    "內容": "四個指定 mod 安裝施工窗（2026-11-01 立）\n\n四個指定 mod 中文（其中三個為覆核修正版、Lenora r2 不變）與反射錯槽修復共十層已備妥：3019 檔、366316893 bytes，新增 3 plugin、停用 0；反射修復補正 189 筆字串。尚未部署；請在合適時存檔，並確認可以安全關閉遊戲與 MO2；收到確認前不動 live。使用者本次收線不代表安全關閉授權。詳見 [本輪現況](../agentctl/handoffs/home-2026-11-01/STATE.md)；施工入口是 `/home/lorkhan/skyrim_mods/_staging-2026-11-01-wanted/install/README-reviewfix-r2.md` 與同目錄 `manifest-combined-reviewfix-r2.json`，舊 `manifest-final` 禁止套用。\n\n格擋／招式問題未定因；兩候選未部署，盾斧cfg凍結。OAR最多兩組觀察的接手／暫開記錄問題未獲答覆、未操作，本線已停止，待之後使用者主動重啟再確認；不在背景持續等待或取樣。詳見 [姿態調查](../agentctl/handoffs/home-2026-11-01/block-recovery/STANCES.md)及其QA方案。此窄操作授權與上述安裝安全施工窗各自獨立。\n\n施工、必要修正驗收及 release/promote 已完成；自然遊玩另列整包驗收。"
+  },
+  {
+   "項目": "mo2ctl manifest 漂移：退役帳本不再 reconcile",
+   "關閉日期": "2026-11-02",
+   "證據路徑": "[現行來源契約](../instance/README.md#mod-來源查哪裡)；instance commit b90155eea6e20664de21f94ea1aa148f1462364e；[10-17 使用者裁示落地](../agentctl/handoffs/home-2026-10-17/STATE.md)",
+   "內容": "2026-10-17 使用者「都按照建議做」後，巡檢 #7 已宣告 manifest 帳本及 checkpoint 五件組廢止；instance b90155e 明示 reconcile --apply 不要再跑。2026-11-02 依使用者小批維護授權移除過時子項，不代表重新修復或重建帳本。同段敵人／怪物多樣性仍待決，保留 open，hub 總數不變。\n\n原文逐字保留：\n\n2. **查 mo2ctl 為何沒追上 profile 變動**。**2026-09-05 實讀仍然對不上**：\n   `/home/lorkhan/repo/moddings/skyrim/instance/profiles/manifest.json` 的 `updated_at`＝`2026-09-03T05:20:04Z`，\n   而 `instance/profiles` main 已到 `5f47044`（2026-09-05）、`modlist.txt` 啟用 1278／`plugins.txt` 啟用 851。\n   原文寫的「停在 2026-08-30T09:52」已過期，但**漂移本身沒修好**。同一件事在\n   `/home/lorkhan/repo/moddings/skyrim/agentctl/status/todo/06-manifest數字對不上.md` 另有一份筆記。\n\n   **狀態（2026-09-02 晚，home 隊）**：已定位——`updated_at` 實為 2026-09-01T11:47Z；mo2ctl `cmd_enable/cmd_disable`、人工直寫與 MO2 關閉寫回都不更新 manifest，差集 605／488／181／64；修法建議（`commit_profile()` 收口／關 MO2 後 reconcile）見 [mo2ctl-drift-diagnosis.md](../agentctl/handoffs/done/2026-09/home-2026-09-02/home/mo2ctl-drift-diagnosis.md)。\n   **裁示（2026-09-02 晚，引文）**：home-3 C——拆 provenance／live checkpoint，`mo2fix` 隊承接。\n\n   **2026-09-25 22:2x 推進**：cx-wu-mo2 已把 install／uninstall／enable／disable 收口到\n   `commit_profile()`（ProfileEdit 記憶體 staging＋checkpoint），新增 `reconcile`\n   （預設唯讀、`--apply` 才寫、含 fail-on-drift），agent-bridge commit `3cffa0f`，122 tests 綠燈；\n   現役 profile 唯讀 reconcile 差集 modlist_enabled 1946／manifest_mods 867。\n   **`--apply` 待 dispatcher 持鎖時跑**，跑完這項即可結案。\n"
   }
  ]
 }

@@ -43,6 +43,10 @@ git submodule update --init --recursive
 同步成功後，依 [testing.md](testing.md) 選目標 repo 的離線測試。依賴只裝在該子 repo
 自己的環境；母 repo 根目錄不建立共用 venv、NuGet cache 或 build tree。
 
+## Git hook 換行
+
+母 repo 的 `.gitattributes` 僅將 `tools/hooks/pre-commit` 固定為 LF，避免 Windows checkout 的 CRLF 讓 WSL 將 shebang 解讀成 `bash\r`。它不改全域 `core.autocrlf`、其他文字檔或 submodule；Git for Windows 也能執行 LF shell hook。既有 checkout 更新後可用 `git check-attr eol -- tools/hooks/pre-commit` 核對為 `lf`。hook 的大小／垃圾政策仍由 private agentctl gate 管理，未初始化該 submodule 時保留原本提示後放行的契約。
+
 ## 常用環境變數
 
 母 repo 沒有必要環境變數。producer/consumer 契約的設定與 fallback 以各子 repo 文件為準：

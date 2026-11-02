@@ -12,6 +12,7 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 <!-- wf-nav -->
 | 檔案 | 內容 |
 |------|------|
+| [2026-11-02-follower-options.md](2026-11-02-follower-options.md) | 當前隨從可點名方向、五位優先候選與結案排除；附 29 列選項資料 |
 | [2026-10-26-follower-stats-gear.md](2026-10-26-follower-stats-gear.md) | 語音隨從能力值／裝備審批頁（59 人逐人勾選、產 VFSTATS 變更單）與重產方法 |
 | [2026-10-26-follower-look-pages.md](2026-10-26-follower-look-pages.md) | 隨從換頭三頁（換臉挑選／隨從名冊／素材目錄）的網址、10-26 刷新內容與重產方法 |
 | [2026-10-26-mod-library-viewer.md](2026-10-26-mod-library-viewer.md) | 天際儲藏庫（mod 資產庫頁）10-26 刷新：線上頁連結、這次更新了什麼、舊命名檔來源辨識怎麼看 |

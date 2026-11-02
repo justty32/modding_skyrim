@@ -1,0 +1,2 @@
+# Git executes this tracked shell hook on both WSL and Git for Windows.
+/tools/hooks/pre-commit text eol=lf
