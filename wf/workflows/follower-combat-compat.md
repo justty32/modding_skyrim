@@ -40,11 +40,11 @@
 
 已有經 source／實測證明符合目標的單角色設定，就用設定。不能把「Mage」「固定武器 pool」當成劍法混用已完成，也不能以全域關閉限制代替單角色方案。
 
-需要 code 時在隔離 source/build 目錄改最小入口，review 跳過哪些 loadout／style 分支、是否清除舊 cache／battle lock，以及哪些 ability 仍保留。採多 NPC **明列白名單、逐角色 opt-in**，預設空集合，不自動加入新隨從或全隊；每個新增角色都重跑本流程。explicit pool、特殊硬裝備角色或不支援 host 的衝突須拒啟並記 log，不默默忽略玩家選擇。
+需要 code 時在隔離 source/build 目錄改最小入口，review 跳過哪些 loadout／style 分支、是否清除舊 cache／battle lock，以及哪些 ability 仍保留。未有全隊授權時，採多 NPC **明列白名單、逐角色 opt-in**，預設空集合；不因單人成功自動擴全隊。使用者若明確要求受管隨從全員預設，依授權改共同 policy，寫清受管範圍、手動配裝／戰鬥鎖／特殊職業例外及關閉方式，不能外推為所有世界 NPC 相容。explicit pool、特殊硬裝備角色或不支援 host 的衝突須拒啟並記 log，不默默忽略玩家選擇。
 
 配置的檔名、section、key、分隔符、重複／無效值處理及生效時機以交付 source／測試為準，寫進成品 SOURCE／用法；不得猜設定名稱。只支援 startup/fresh-load 的設定不做 runtime 熱切換。
 
-Paths 1.2 本案修補的契約是獨立 `SKSE/Plugins/FightWithMePaths_NativeCombat.ini`，`[NativeCombat]` 下 `sActorBases=`，值為分號分隔的 `Plugin.esp|十六進位localID`，最多 16 個唯一 NPC base。空值停用；無效／找不到／非 NPC 項警告略過、重複去重、不支援 wildcard；整值超過 4094 UTF-16 code units 截斷時整值拒絕。於 DataLoaded 讀取，修改後須完整重啟，不支援舊單數 key。確切核准名單與凍結版本見私有交付證據，不把示例角色當成已授權對象。
+Paths 1.2 的 r1／r2 是逐 NPC 白名單；2026-11-02 使用者另授權 r3 受管隨從全員預設。版本設定、生效時機與 legacy fallback 見 [NativeCombat 設定契約](follower-combat-config.md)，不可混用版本的預設或人數上限。
 
 離線驗證至少涵蓋：白名單命中／未命中、多角色／空集合／壞值、explicit pool 拒啟、原 host／特殊角色不變、成長與 ability 保留。檢查器餵壞輸入證明能紅；matching toolchain 產出真正 PE DLL，portable harness 不能冒充 DLL build。凍結 patch、review、命令／exit、source parent、依賴與 artifact hashes。
 

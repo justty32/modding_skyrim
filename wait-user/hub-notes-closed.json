@@ -224,6 +224,12 @@
    "關閉日期": "2026-11-02",
    "證據路徑": "../agentctl/handoffs/home-2026-11-02/deploy-live/REPORT.md",
    "內容": "使用者關閉遊戲MO2後部署r2及bridge獨立覆蓋層；profile main2773b7f，fresh load/Varinia opt-in/單NPC schema1快照通過。原一項縮為待實戰選裝/治療圈/Volley；未新增或結案，計數仍6/12/13/2/0共33。Windows Rules仍未執行完成，Papyrus警告未歸因。"
+  },
+  {
+   "項目": "NativeCombat r3 全員預設部署承接既有待驗",
+   "關閉日期": "2026-11-02",
+   "證據路徑": "../agentctl/handoffs/home-2026-11-02/nativecombat-default-deploy/REPORT.md",
+   "內容": "使用者明確要求全員預設，r3已部署至profile main4857a8c；六名native enabled、特殊role拒啟及兩名非Varinia診斷通過，原r2一項由r3承接實戰選裝/治療圈/Volley未驗。未新增或結案，計數仍6/12/13/2/0共33。"
   }
  ]
 }

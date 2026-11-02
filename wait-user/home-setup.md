@@ -71,13 +71,13 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 來源：10-17 巡檢 #6，裁示單 [已封存](../wf/user/archive/2026-10-17-patrol.md)，登記依據見
 [`agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md`](../agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md) 待裁第 2 條。
 
-## Paths NativeCombat r2：已部署，待實戰選裝／治療圈／Volley 驗收（2026-11-02 立、家中更新）
+## Paths NativeCombat r3 全員預設：已部署，待實戰選裝／治療圈／Volley 驗收（2026-11-02 立、家中更新）
 
-公司 source candidate 已在家中完成 Windows DLL／Rules EXE 編譯、八組 host 測試與 PE／PDB／hash／review，並於使用者關閉遊戲及 MO2 後部署獨立覆蓋層。fresh load 已確認新 DLL 載入及 Varinia 本人 native enabled，bridge 單 NPC 裝備／法術／CSTY 快照合法；這只證非戰鬥時點，不證實戰選裝。實際層、備份／回退、profile `2773b7f` 與限制見 [部署驗收](../agentctl/handoffs/home-2026-11-02/deploy-live/REPORT.md)。
+使用者明確要求「直接改全員預設」後，新 r3 已完成八組 host／九個 mutation／獨立 review／真 Windows DLL 與 PE／PDB／hash，並停機部署獨立覆蓋層。fresh load 全員模式生效，六名受管角色 native enabled（五名非 Varinia）、一名特殊 role 自然拒啟及兩名非 Varinia 的 bridge 快照合法；這只證非戰鬥時點與政策路由，不證全隊實戰相容。實際層、備份／回退、profile `4857a8c` 與限制見 [r3 部署驗收](../agentctl/handoffs/home-2026-11-02/nativecombat-default-deploy/REPORT.md)。
 
-尚待自然實戰觀察原生選裝、治療圈及 Volley 能力引導；不強行改角色、引戰或擴配其他隨從。Wine Rules EXE 仍只有編譯通過，先前 Mono Installer 已精確停止，不當作執行通過。
+尚待自然實戰觀察原生選裝、治療圈及 Volley 能力引導；受管隨從已預設適用，不需逐人加入名單，也不為驗收強行改角色或引戰。Wine Rules EXE 未執行通過，先前 Mono Installer 已精確停止，不當作執行通過。
 
-這是新的 r2 後續，Varinia r1 已由使用者確認解決、維持結案；原 r1 層保留作回退來源。不能把載入／opt-in 或非戰鬥快照視為三項實戰驗收。
+本項承接原 r2 未驗能力，沒有新增一件重複待辦。Varinia r1 已由使用者確認解決、維持結案；r1／r2 原層保留作回退來源。不能把載入／native enabled 或非戰鬥快照視為三項實戰驗收。
 
 ## 已完成（封存）
 
