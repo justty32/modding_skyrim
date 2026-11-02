@@ -85,6 +85,12 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 來源：10-17 巡檢 #6，裁示單 [已封存](../wf/user/archive/2026-10-17-patrol.md)，登記依據見
 [`agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md`](../agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md) 待裁第 2 條。
 
+## Paths NativeCombat r2：回家 Windows DLL build／PE 驗證及新 r2 驗收（2026-11-02 立）
+
+公司 WSL 缺 Windows C++ toolchain／SDK，這輪僅交付 source candidate，沒有新 DLL，也未部署。回家需先依 [r2 交接](../agentctl/handoffs/home-2026-11-02/paths-nativecombat-r2/REPORT.md) 在具備工具鏈的環境建置，通過 PE／匯出／hash 檢查，再以可回退覆蓋層驗證原生選裝、治療圈及 Volley 能力引導；其他自訂隨從只能逐一加入白名單並驗證腳本互動。
+
+這是新的 r2 後續，Varinia r1 已由使用者確認解決、維持結案。建置與實機驗收完成前保留現役 r1，不可直接拿昨日 DLL 當 r2，不能把 Linux host 測試視為 DLL 或遊戲驗收。
+
 ## 已完成（封存）
 
 ### 四個指定 mod 安裝施工窗（2026-11-01 立）

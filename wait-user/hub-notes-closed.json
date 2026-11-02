@@ -200,6 +200,12 @@
    "關閉日期": "2026-11-02",
    "證據路徑": "[本輪驗收](../agentctl/handoffs/home-2026-11-02/paths-equipment/REPORT.md)",
    "內容": "使用者確認既有 patch 已解決 Varinia。整包 UI／中文／任務驗收 open 13→12，全表總計 33→32；青蛙 crash 等其他事項保留。"
+  },
+  {
+   "項目": "2026-11-02 Paths NativeCombat r2 家中建置與驗收",
+   "關閉日期": "2026-11-02",
+   "證據路徑": "[r2 交接](../agentctl/handoffs/home-2026-11-02/paths-nativecombat-r2/REPORT.md)",
+   "內容": "新增獨立 r2 source candidate 的回家 Windows DLL build／PE 驗證及實機驗收，回家下載／重建 open 5→6，全表總計 32→33；Varinia r1 既有驗收保持結案。"
   }
  ]
 }
