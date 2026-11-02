@@ -43,14 +43,7 @@ flowchart LR
 
 ## 閱讀路由與逐欄證據
 
-<!-- wf-nav -->
-
-- [Mantella：局部對話包、實際 collector、刷新與裁切](ai-world-context/mantella.md)
-- [SkyrimNet：公開模板能證明什麼、native 未知與 MCP 邊界](ai-world-context/skyrimnet.md)
-- [MinAI：延續 fork 的 provider、位置、分頻與兩種後端](ai-world-context/minai.md)
-- [共同語義：觀測／推論、identity、freshness、empty／unknown、預算](ai-world-context/context-semantics.md)
-- [agent-bridge：現有欄位與最小 observer 切片](ai-world-context/bridge-fit.md)
-- [ModForge／Living：有限玩法候選、成本與驗收](ai-world-context/modforge-living-fit.md)
+分篇閱讀與逐欄資料入口見[分篇索引](ai-world-context/README.md)。
 
 三份欄位資料共 **53 組**：Mantella 14、SkyrimNet 22、MinAI fork 17。
 它們記錄 producer／consumer、刷新、missing／stale 語義與固定 source links，分篇有資料導航；
