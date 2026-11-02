@@ -13,3 +13,7 @@
 | skills-survival | 技能／求生 | [skills-survival/README.md](skills-survival/README.md) |
 
 回到 [mod-survey index](../index.md)。
+
+## 獨立 mod 專題
+
+- [Path of the Companions](path-of-the-companions/README.md)：隨從技能／職業、普通裝備控制、ABI／存檔與擴充接點。

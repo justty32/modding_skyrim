@@ -10,6 +10,10 @@
 | 實作指南（動手教學） | [custom-skill-tree-guide/README.md](custom-skill-tree-guide/README.md) | 自訂技能樹分析 + 實作指南（roadmap 功能項） |
 | Constellations（CSF 最高品質參考實作） | [findings/constellations.md](findings/skills-survival/constellations.md) | CSF 路線確認正確；MVP = JSON+PERK+GLOB+KYWD+薄 Papyrus；Fortify 附魔 native dll 超出 MVP |
 
+## 隨從技能與職業
+
+[Path of the Companions（POTC）](findings/path-of-the-companions/README.md)：編譯期 C++ 技能樹、角色成長、普通裝備控制與新技能／職業擴充接點；與上述 CSF 或 Campfire 註冊機制分開研究。
+
 ## 求生 / 框架系統型（Campfire 堆疊 + PROTEUS）
 
 <!-- wf-nav -->

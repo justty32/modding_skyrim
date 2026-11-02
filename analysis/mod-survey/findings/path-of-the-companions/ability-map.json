@@ -1,0 +1,146 @@
+{
+ "contract": "wf-table/1",
+ "source": "ABILITIES.md",
+ "extracted": "2026-11-02",
+ "link_columns": [
+  "source_url"
+ ],
+ "columns": [
+  "layer",
+  "entry",
+  "implementation",
+  "notes",
+  "verification",
+  "source_url"
+ ],
+ "rows": [
+  {
+   "layer": "穩定識別",
+   "entry": "include/FWM/Paths.h:23,129; Orders.h:66; PathsLink.h:53",
+   "implementation": "C++ enum與mask",
+   "notes": "Ability/Perk append-only；AUTO uint32接近上限，retired ID保留",
+   "verification": "新增與舊ID、AUTO mask、cooldown key界線",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/include/FWM/Paths.h#L23"
+  },
+  {
+   "layer": "樹定義與學習",
+   "entry": "include/FWM/Paths.h:260,277,300,321; src/Paths.cpp:535,586",
+   "implementation": "C++ constexpr資料＋規則",
+   "notes": "Kind區分Ability/Branch/Trait；15格、4主動、3被動；tier/most/cost/step/capstone",
+   "verification": "等級／點數／parent／capstone／退款／Repair",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/include/FWM/Paths.h#L260"
+  },
+  {
+   "layer": "數值與說明",
+   "entry": "src/Paths.cpp:134,1123,1153,1204,1374; include/FWM/Paths.h:723",
+   "implementation": "C++ switch/constant",
+   "notes": "Primary/Secondary/Third與Value供runtime、Measure/Describe供UI；Cooldown無新增case會回0",
+   "verification": "三rank顯示與效果一致；有效冷卻；格式placeholder",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Paths.cpp#L1153"
+  },
+  {
+   "layer": "兩個攜帶slot",
+   "entry": "src/Paths.cpp:91,662; src/PathsLink.cpp:141,197",
+   "implementation": "C++共用服務",
+   "notes": "FillSlots／Equip檢查已學與重複；Kit::Carries按當前role的slots",
+   "verification": "未學不得施放、換slot/role後舊request清掉",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/PathsLink.cpp#L141"
+  },
+  {
+   "layer": "手動命令",
+   "entry": "src/Battle.cpp:1540; src/Arts.cpp:1747,1820",
+   "implementation": "C++命令分派",
+   "notes": "Taunt/Heal/Rejuvenate專用flags；SpecialFor或Arts::Request是其他路徑",
+   "verification": "未攜帶／非戰鬥／busy timeout／失敗不扣費",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Battle.cpp#L1540"
+  },
+  {
+   "layer": "自動決策與節奏",
+   "entry": "src/AbilityAuto.cpp:28,101; src/AbilityPolicy.cpp:8,99",
+   "implementation": "C++ engine Context＋純policy",
+   "notes": "AUTO並非只看cooldown；目標、健康、視線、有效需求及party pacing均需有意義",
+   "verification": "正例／無需求／目標死亡／敵我／距離；同幀不得連發",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/AbilityPolicy.cpp#L8"
+  },
+  {
+   "layer": "資源成本",
+   "entry": "include/FWM/AbilityResource.h:6; src/Abilities.cpp:113,121,134",
+   "implementation": "C++共用policy",
+   "notes": "目前依role挑magicka/stamina，rank成本10/15/20%最大值；成功才Used",
+   "verification": "零/NaN/不足資源、成功扣一次、失敗不扣、hybrid職業策略",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Abilities.cpp#L113"
+  },
+  {
+   "layer": "效果執行與時計",
+   "entry": "src/Arts.cpp:1585,1721,1807,1889; src/Abilities.cpp:977; src/Battle.cpp:2117,2183,2285",
+   "implementation": "C++多入口",
+   "notes": "一般新能力常走Arts::Run，部分舊能力在Abilities/Specials；frame tick與planning tick分開",
+   "verification": "正確clock、時間暫停/快轉、請求重入、離戰/disabled/load清理",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Arts.cpp#L1807"
+  },
+  {
+   "layer": "增益與撤除",
+   "entry": "src/Abilities.cpp:1213,1228,1243,1264,1289,1319; src/Arts.cpp:1492",
+   "implementation": "C++可重用Lift/Keep",
+   "notes": "source perk區分同ActorValue的多來源；LoadBoosts後扣回save temporary modifier",
+   "verification": "刷新不疊加、不同來源分開、到期/卸載/讀檔不留永久值",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Abilities.cpp#L1213"
+  },
+  {
+   "layer": "傷害與分支",
+   "entry": "src/Blasts.cpp:257,406; src/PartyBalance.cpp:76",
+   "implementation": "C++engine adapter",
+   "notes": "元素/魔抗手動套用，PartyBalance統一倍率；先初擊後Searing，火burn另tick",
+   "verification": "友軍排除、抗性/距離/高度、倍率不重算、舊目標失效",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Blasts.cpp#L257"
+  },
+  {
+   "layer": "範圍與移動",
+   "entry": "include/FWM/HealCircle.h:30,82; src/Circles.cpp:237,339,367,387,407",
+   "implementation": "純數學＋C++world state",
+   "notes": "效果tick和PullFor能力移動要求分層；marker/effect/audio皆有Finish",
+   "verification": "多圈、expiry、離戰/離隊/死亡、導航及no-ability負對照",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Circles.cpp#L339"
+  },
+  {
+   "layer": "動畫手勢與引擎forms",
+   "entry": "src/Abilities.cpp:67,94,107; src/Forms.cpp:81,100,114",
+   "implementation": "C++調既有idle/forms",
+   "notes": "CastGesture可失敗，不需強制換手；如新SPELL/MGEF才另評ESP與FormID",
+   "verification": "拒絕idle時不卡圖；native手上無法術仍不強制配裝",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Abilities.cpp#L94"
+  },
+  {
+   "layer": "模型VFX與聲音",
+   "entry": "include/FWM/Blast.h:8; src/Effects.cpp:1169,1203,1255; src/Surges.cpp:62,72; tools/blast/BuildBlast.js",
+   "implementation": "素材檔＋C++node/姿態契約",
+   "notes": "既有路徑的素材可換；全新node/特效型態需註冊與tick/clear，非只放NIF",
+   "verification": "視覺關閉/缺asset/3D卸載不改數值；效能與退場",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Effects.cpp#L1203"
+  },
+  {
+   "layer": "UI/翻譯/打包",
+   "entry": "src/Menu.cpp:353,415,3250,5138; src/Text.cpp:127,154,179; tools/Strings.ps1:110",
+   "implementation": "部分純資料；布局C++",
+   "notes": "完整英文句作翻譯key；新private glyph有白名單；第五主動需改layout/navigation",
+   "verification": "中文placeholder/字型、滑鼠/手把、tooltip、資產打包",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Menu.cpp#L5138"
+  },
+  {
+   "layer": "存檔與API",
+   "entry": "src/Paths.cpp:780,809,862,1095; src/Save.cpp:113,252; include/FightWithMePathsAPI.h:13,102",
+   "implementation": "版本化C++codec與ABI",
+   "notes": "PATH v5、UNLM快照、AUTO v1、COOL不同記錄；API v6固定7×15×2，不提供Register",
+   "verification": "舊存檔載入/退款/讀檔再存、未知ID、雙DLLsignature拒接",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Paths.cpp#L809"
+  },
+  {
+   "layer": "可用測試接點",
+   "entry": "tests/PathsTests.cpp:43,614,837,932; tests/AbilityPolicyTests.cpp; tests/RulesTests.cpp:1029,1648; tests/ArcaneSurgeTests.cpp",
+   "implementation": "現有host tests；本輪未執行",
+   "notes": "先純規則再engine boundary、Windows DLL/PE與實機分開；測試須能攔截壞實作",
+   "verification": "mutation：AUTO失去guard/免費連發/永久buff/誤傷友軍等對應功能",
+   "source_url": "https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/tests/PathsTests.cpp#L43"
+  }
+ ]
+}
