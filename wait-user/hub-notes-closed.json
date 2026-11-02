@@ -218,6 +218,12 @@
    "關閉日期": "2026-11-02",
    "證據路徑": "../agentctl/handoffs/home-2026-11-02/home-offline/REPORT.md",
    "內容": "家中已產真 Windows DLL 並完成八組 host／PE／PDB／hash 與 review；原 home-setup 一項縮為待停機部署及三項實機驗收，未新增或結案。Wine Rules 測試觸發 Mono Installer 後已精確停止，未安裝、未執行通過。open 計數仍為 6／12／13／2／0，共 33。"
+  },
+  {
+   "項目": "NativeCombat r2 已部署與有限 live QA",
+   "關閉日期": "2026-11-02",
+   "證據路徑": "../agentctl/handoffs/home-2026-11-02/deploy-live/REPORT.md",
+   "內容": "使用者關閉遊戲MO2後部署r2及bridge獨立覆蓋層；profile main2773b7f，fresh load/Varinia opt-in/單NPC schema1快照通過。原一項縮為待實戰選裝/治療圈/Volley；未新增或結案，計數仍6/12/13/2/0共33。Windows Rules仍未執行完成，Papyrus警告未歸因。"
   }
  ]
 }

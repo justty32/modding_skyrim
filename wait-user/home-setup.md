@@ -71,11 +71,13 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 來源：10-17 巡檢 #6，裁示單 [已封存](../wf/user/archive/2026-10-17-patrol.md)，登記依據見
 [`agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md`](../agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md) 待裁第 2 條。
 
-## Paths NativeCombat r2：候選已建置，待停機部署及新 r2 驗收（2026-11-02 立、家中更新）
+## Paths NativeCombat r2：已部署，待實戰選裝／治療圈／Volley 驗收（2026-11-02 立、家中更新）
 
-公司交付 source candidate 後，家中已完成隔離 Windows DLL／Rules EXE 編譯、八組 host 測試、PE／匯出／PDB／hash 核對與獨立 review，見 [家中建置](../mod-library/plugins/Path-Of-The-Companions-NativeCombat-1.2-r2-2026-11-02/HOME-BUILD.md)。使用者正在遊玩，未部署或做 live QA；新 Wine prefix 測試曾跳出 Mono Installer，已精確停止，Rules EXE 未執行通過。接下來待遊戲與 MO2 停止，再以可回退覆蓋層部署並驗原生選裝、治療圈及 Volley 能力引導；其他自訂隨從不自動擴配。
+公司 source candidate 已在家中完成 Windows DLL／Rules EXE 編譯、八組 host 測試與 PE／PDB／hash／review，並於使用者關閉遊戲及 MO2 後部署獨立覆蓋層。fresh load 已確認新 DLL 載入及 Varinia 本人 native enabled，bridge 單 NPC 裝備／法術／CSTY 快照合法；這只證非戰鬥時點，不證實戰選裝。實際層、備份／回退、profile `2773b7f` 與限制見 [部署驗收](../agentctl/handoffs/home-2026-11-02/deploy-live/REPORT.md)。
 
-這是新的 r2 後續，Varinia r1 已由使用者確認解決、維持結案。新候選部署與實機驗收前保留現役 r1，不能把 DLL 編譯或 host 測試視為遊戲驗收。
+尚待自然實戰觀察原生選裝、治療圈及 Volley 能力引導；不強行改角色、引戰或擴配其他隨從。Wine Rules EXE 仍只有編譯通過，先前 Mono Installer 已精確停止，不當作執行通過。
+
+這是新的 r2 後續，Varinia r1 已由使用者確認解決、維持結案；原 r1 層保留作回退來源。不能把載入／opt-in 或非戰鬥快照視為三項實戰驗收。
 
 ## 已完成（封存）
 
