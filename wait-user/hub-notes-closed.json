@@ -212,6 +212,12 @@
    "關閉日期": "2026-11-02",
    "證據路徑": "[現行來源契約](../instance/README.md#mod-來源查哪裡)；[原待辦與結案證據](home-setup-closed.json)",
    "內容": "核對 2026-10-17 退役裁示與 instance b90155e 後，只關閉 home-setup「現役 modlist 整合度盤點」中的 manifest reconcile 子項；敵人／AI／怪物多樣性仍 open，該 ## 小節保留。hub 仍為 6／12／13／2／0，合計 33。未執行 reconcile、未動 profile 或 DB。"
+  },
+  {
+   "項目": "NativeCombat r2 家中建置與待驗範圍更新",
+   "關閉日期": "2026-11-02",
+   "證據路徑": "../agentctl/handoffs/home-2026-11-02/home-offline/REPORT.md",
+   "內容": "家中已產真 Windows DLL 並完成八組 host／PE／PDB／hash 與 review；原 home-setup 一項縮為待停機部署及三項實機驗收，未新增或結案。Wine Rules 測試觸發 Mono Installer 後已精確停止，未安裝、未執行通過。open 計數仍為 6／12／13／2／0，共 33。"
   }
  ]
 }
