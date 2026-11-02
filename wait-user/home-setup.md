@@ -1,21 +1,5 @@
 # 回家下載／重建
 
-## 重開 Claude Code／Codex，讓新的 houseCARL build 生效（2026-10-24 立、10-26 改寫）
-
-2026-10-26 `hcdeploy` 線已把新 build（fork `f0148dc8`，含 10-26 CJK 名稱修補：inline 中文不再
-mojibake、localized 名稱跟 MO2 VFS 的中文 strings 走）部署到 `~/tools/housecarl/server/`，
-舊 build 備份在 `~/tools/housecarl/server.bak-efe28f8f-20261026/`。10-24 的 `LocalAppData`
-環境變數也早已寫進設定。**但既有的 housecarl-mcp 行程仍是舊 build**——MCP server 隨 CLI
-session 起，換檔不會重載，所以要重開 Claude Code／Codex。
-
-- 怎麼確認已生效：重開後在 session 裡 `housecarl_resolve 00000F:Skyrim.esm` 要回 `金幣`（舊 build 回 `Gold`）。
-  不重開也能驗新檔本身：`agentctl/handoffs/home-2026-10-26/hcjk/tools/hcjk_names.py --server ~/tools/housecarl/server/housecarl-mcp`（10/10）。
-- 擋住什麼：重開之前，session 內用 houseCARL 讀中文名稱的結果都不能信（替代用 `instance/tools/whichmod.py`）。
-- 判準與反例見 [`wf/lessons/housecarl-on-linux.md`](../wf/lessons/housecarl-on-linux.md)。
-- 證據：[`agentctl/handoffs/home-2026-10-26/hcdeploy/REPORT.md`](../agentctl/handoffs/home-2026-10-26/hcdeploy/REPORT.md)、
-  [`agentctl/handoffs/home-2026-10-26/hcjk/REPORT.md`](../agentctl/handoffs/home-2026-10-26/hcjk/REPORT.md)、
-  [`agentctl/handoffs/home-2026-10-24/hcpath/REPORT.md`](../agentctl/handoffs/home-2026-10-24/hcpath/REPORT.md)。
-
 ## LoreRim 借用後續：只剩三題（2026-09-05 核對後縮小）
 
 2026-09-03 已入庫 439 件／8.966 GB；原本六題，四題 09-03／09-04 已落地或裁示，剩三題還等你
@@ -92,7 +76,7 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 > 以下各項判定已完成／已裁示，從 open 清單移到這裡保存歷史；每項附證據絕對路徑或 commit hash。
 > 前六項是 2026-09-05 逐條對照後移入，第 7 列「需求／生存要不要開」是 2026-10-23 核出使用者 2026-10-10 已裁示而移入。
 
-已抽到 [home-setup-closed.json](home-setup-closed.json)（10 列）。
+已抽到 [home-setup-closed.json](home-setup-closed.json)（11 列）。
 
 項目：原本的三級標題。
 
@@ -102,7 +86,7 @@ session 起，換檔不會重載，所以要重開 Claude Code／Codex。
 
 內容：標題下的完整原文。
 
-統計：10 項。本輪新增 1 筆 manifest 退役結案；原資料已有 9 筆，原摘要「7 項」一併校正。
+統計：11 項；各項關閉依據保留於資料檔，本次新增當前session中文讀回驗證。
 
 ### AE DLC 授權確認與 CC 第二輪
 

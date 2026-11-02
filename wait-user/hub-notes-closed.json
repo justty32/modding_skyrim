@@ -230,6 +230,12 @@
    "關閉日期": "2026-11-02",
    "證據路徑": "../agentctl/handoffs/home-2026-11-02/nativecombat-default-deploy/REPORT.md",
    "內容": "使用者明確要求全員預設，r3已部署至profile main4857a8c；六名native enabled、特殊role拒啟及兩名非Varinia診斷通過，原r2一項由r3承接實戰選裝/治療圈/Volley未驗。未新增或結案，計數仍6/12/13/2/0共33。"
+  },
+  {
+   "項目": "當前houseCARL中文讀回驗證結案",
+   "關閉日期": "2026-11-02",
+   "證據路徑": "../agentctl/handoffs/home-2026-11-02/shower-window/housecarl-gold.json",
+   "內容": "當前session實際MCP resolve Gold001回金幣，通過原重開build待辦判準；home-setup該一項完整原文移closed.json，open6→5，總33→32，其他類12/13/2/0不變。Kurone登入舊項先前已結案，不重複減計數。"
   }
  ]
 }
