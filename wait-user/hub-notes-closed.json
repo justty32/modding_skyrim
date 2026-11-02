@@ -194,6 +194,12 @@
    "關閉日期": "2026-11-01",
    "證據路徑": "integrated-runtime.md",
    "內容": "整包 UI／中文／任務驗收 open 12→13；Trial 模型載入通過，戰鬥 crash 是否復發待自然遊玩觀察。"
+  },
+  {
+   "項目": "2026-11-02 Varinia 劍法混用驗收結案",
+   "關閉日期": "2026-11-02",
+   "證據路徑": "[本輪驗收](../agentctl/handoffs/home-2026-11-02/paths-equipment/REPORT.md)",
+   "內容": "使用者確認既有 patch 已解決 Varinia。整包 UI／中文／任務驗收 open 13→12，全表總計 33→32；青蛙 crash 等其他事項保留。"
   }
  ]
 }

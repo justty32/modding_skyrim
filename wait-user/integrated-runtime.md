@@ -50,13 +50,9 @@ cow 學院中文層（profiles `93261f4`）已部署、煙霧通過，剩人眼�
 
 自然遊玩時抽查 Eilgird／Lenora 隨從對話、Paths 實際技能樹，以及原存檔 Ambriel 外觀快取與自然劇情人形／龍變身往返。Paths 技能效果、解鎖條件及自動施展說明請確認換行、右邊不超框、下方不重疊；r4 已部署但尚未實機驗收，見 [Paths 斷詞部署紀錄](../agentctl/handoffs/home-2026-11-01/paths-wrap/REPORT.md)。兩個新生人形膚色、Paths 空面板中文、Estates 中文 UI 與反射 UI 已驗收；這些不代表上述自然遊玩項已通過。見 [部署驗證](../agentctl/handoffs/home-2026-11-01/wanted/INSTALL-QA.md)。
 
-## Varinia 劍法混用自然戰鬥驗證（2026-11-01 立）
-
-自然戰鬥時觀察 Varinia 能否混用劍與法術，以及是否仍反覆收拔武器。修補已部署並在讀取存檔後確認本人 native equipment selection 啟用；戰鬥手感尚未驗證，見 [部署紀錄](../agentctl/handoffs/home-2026-11-01/varinia-native-combat/DEPLOY.md)。
-
 ## 青蛙相關 crash 自然戰鬥復發觀察（2026-11-01 立）
 
-自然遊玩遭遇青蛙戰鬥時，留意是否再發生 crash；可與 Varinia 劍法手感同場回報。青蛙模型 Trial 層已部署，室內短窗模型載入通過，但尚未證明戰鬥中的 crash 已解決；見 [部署紀錄](../agentctl/handoffs/home-2026-11-01/varinia-native-crash/DEPLOY.md)。
+自然遊玩遭遇青蛙戰鬥時，留意是否再發生 crash。青蛙模型 Trial 層已部署，室內短窗模型載入通過，但尚未證明戰鬥中的 crash 已解決；見 [部署紀錄](../agentctl/handoffs/home-2026-11-01/varinia-native-crash/DEPLOY.md)。
 
 ## 已完成／作廢（封存）
 
