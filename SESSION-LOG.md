@@ -11,7 +11,9 @@
 
 ## 現役工作
 
-目前無**只屬於**母 repo 的 open 工作。10-24 登記的兩件 `analysis/` 工作（skyrim_engine API 稽核、
+目前無**只屬於**母 repo 的 open 工作。今日知識歸層、bridge 行為不變拆檔與交接整理的結果由 [本場 STATE](agentctl/handoffs/home-2026-11-02/STATE.md)承接，不自動續行暫緩工作。
+
+10-24 登記的兩件 `analysis/` 工作（skyrim_engine API 稽核、
 commonlibsee-ng README 漏索引）已於 2026-10-26 做完，見
 [apiaudit REPORT](agentctl/handoffs/home-2026-10-26/apiaudit/REPORT.md)。
 

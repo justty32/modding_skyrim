@@ -5,6 +5,7 @@
 同層檔案導航：
 
 - [civil-war-lines-expansion.md](./civil-war-lines-expansion.md)
+- [FDE Jenassa：approval 靜態接點](follower-dialogue-expansion-jenassa.md)
 - [follower-commentary-overhaul.md](./follower-commentary-overhaul.md)
 - [im-glad-youre-here.md](./im-glad-youre-here.md)
 - [immersive-patrols.md](./immersive-patrols.md)

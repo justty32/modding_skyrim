@@ -30,7 +30,7 @@
 | [mo2-behavior-quirks](mo2-behavior-quirks.md) | MO2 本體行為坑（首次啟動、幽靈 profile、靜默失效） | 6 |
 | [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（裝前評估、安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴） | 6 |
 | [mod-library-bookkeeping](mod-library-bookkeeping.md) | mod 庫帳務、暫存與清理安全（身分辨識、欄位可信度、破壞性動作） | 5 |
-| [asset-and-engine-loading](asset-and-engine-loading.md) | 素材存在性診斷與引擎載檔／runtime 狀態機制 | 3 |
+| [asset-and-engine-loading](asset-and-engine-loading.md) | 素材存在性診斷與引擎載檔／runtime 狀態機制 | 4 |
 | [housecarl-and-tools](housecarl-and-tools.md) | houseCARL 本體與其 Nexus／bridge 端點的坑 | 6 |
 | [housecarl-on-linux](housecarl-on-linux.md) | houseCARL 在 Linux 的平台坑（路徑、環境變數、鏡像、靜默錯答） | 4 |
 | [xedit-dyndolod-and-lod](xedit-dyndolod-and-lod.md) | xEdit、DynDOLOD 與 LOD 前置 | 3 |
@@ -38,10 +38,10 @@
 | [tool-portability](tool-portability.md) | 自製工具：repo 根推導、乾淨 clone 驗證、合法輸入不喊錯 | 2 |
 | [this-machine](this-machine.md) | 本機環境特性（shell、行程、工具差異） | 3 |
 | [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與工具 | 4 |
-| [faces-facegen-consistency](faces-facegen-consistency.md) | 臉：facegen 與頭部件一致性規則（大媽臉／素臉真因） | 4 |
+| [faces-facegen-consistency](faces-facegen-consistency.md) | 臉：facegen 與頭部件一致性規則（大媽臉／素臉真因） | 5 |
 | [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：排錯與升級 | 6 |
 | [animation-oar](animation-oar.md) | 動畫與 OAR | 6 |
-| [crash-dll-and-scripts](crash-dll-and-scripts.md) | CTD：SKSE DLL 與腳本 | 7 |
+| [crash-dll-and-scripts](crash-dll-and-scripts.md) | CTD：SKSE DLL 與腳本 | 8 |
 | [crash-data-and-assets](crash-data-and-assets.md) | CTD：資料層與素材 | 6 |
 | [gameplay-bugs](gameplay-bugs.md) | 遊戲行為異常（非崩潰）的歸因 | 5 |
 | [translation-and-zh](translation-and-zh.md) | 中文層部署 gate 與引擎的字串機制 | 6 |

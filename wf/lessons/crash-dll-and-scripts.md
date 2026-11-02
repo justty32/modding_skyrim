@@ -115,3 +115,15 @@ repo 若有 `.github/workflows/build.yml` 就 `gh workflow run ... --ref main`�
 **Why:** VFS 覆蓋順序與 BSA 內容版本是兩條獨立規則，單看 load order 或優先度不夠。
 
 **How to apply:** 版本對不上時額外掃鬆散檔（尤其 `scripts/*.pex`），`meta.ini` 標 TEST HARNESS 的優先懷疑；崩潰堆疊反覆同 BSA 檔名時先讀 header 版本號。
+
+## papyrus-line-count-is-not-missing-file-count-or-causation
+
+> Papyrus 警告行數、去重 signature、缺 PEX、型別契約錯誤與執行期因果必須分開。
+
+2026-11-02。同一缺 store 可連鎖產生多次 binding 失敗；property 初始化失敗也不能算成同數量缺 PEX。腳本存在於當前 loose／BSA 目錄而歷史 log 綁定失敗時，應查 alias／base 型別與 PEX 契約，不能直接補同名檔。VMAD 名稱命中可支持引用證據，但若未完整解析 alias／fragment，不擴稱已解出所有掛接語義。
+
+**Why:** 當前 provider 不是歷史 VFS 快照，BSA 目錄有成員也不證當時已掛載。沒有同條件前後對照，不能將警告歸咎最近一次部署；沒有影響驗證，也不能宣稱無害。
+
+**How to apply:** 先固定歷史 log 的 hash／時窗，按明確規則分類去重，再核對當前 PEX provider 與相關 plugin VMAD。未找到 provider 且 VMAD 有引用只能先列部署缺件候選，仍須比對原 archive／版本／FOMOD；只有 log、沒有現役引用時，不直接判成 save 殘留或清理存檔。
+
+來源：private `agentctl/handoffs/home-2026-11-02/papyrus-attribution/REPORT.md:13–41`（完整歷史窗分類、provider 與 VMAD 歸因）；既有工具 `instance/tools/papyrus_missing_stores.py`、`agentctl/tools/runtime_log_window.py:inspect_papyrus`。

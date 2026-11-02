@@ -65,3 +65,15 @@ MO2 在 wine 下的 VFS 對目錄大小寫不敏感，facegen 目錄大小寫不
 3. 症狀對照：頭髮／臉型對但**無妝慘白**＝facegen 被作廢；FDF 關掉變黑臉可確認。
 4. transplant.py 應把「種族補的部件」納入 PNAM 生成（待改）。
 相關：[[outfit-hair-slot-hides-headparts]]、[[look-layer-must-carry-hdpt-flst-clfm]]、[[facegen-verify-size-md5-not-existence]]
+
+## nif-positions-topology-and-tri-are-separate-evidence
+
+> 比較身形要分開驗 positions、頂點索引與三角連接；同頂點數、檔案大小或 slider 名稱不構成 TRI 相容證據。
+
+2026-11-02。NIF 同頂點數、同三角數，甚至 NiSkinPartition vertex map 相同，三角連接仍可能不同。位置 hash 能證明座標陣列相同／不同；同索引 RMS 位移沒有解剖標誌對照時，只是陣列差異。bbox 能證幾何範圍差異，不能換算成視覺好壞。OSP 的 small／big 值是輸入，省略不等於已烘焙的零，也不能據此認定成品就是某個公開 preset。
+
+**Why:** 頂點數、座標、連接與 morph 對應是不同問題；包內附 `.tri` 只證存在，不能推成可接另一身體。
+
+**How to apply:** 分別驗證位置與三角連接（排除三角列次序／繞序差異），標明索引對應是否已證；TRI 未驗就保持未證，不直接移接。不要以 NIF 大小推形狀，也不要以內嵌貼圖路徑代替 ARMA／TXST 的皮膚解析。
+
+來源：private `agentctl/handoffs/home-2026-11-02/kurone-intake/REPORT.md:28–40`（既有 NIF、OSP、TRI 與 record 離線比較）。

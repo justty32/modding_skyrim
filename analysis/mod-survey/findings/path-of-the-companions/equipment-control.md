@@ -6,6 +6,8 @@
 
 `Host.h:12–33` 在 Paths build 設 Abilities=true、Orders=false，但 standalone 時 `Steers()` 仍為 true。故「未安裝完整 Fight With Me」不代表普通裝備接管消失。[Host 原始碼](https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/include/FWM/Host.h#L12)
 
+本文的「未找到官方設定」及接管行為均指上述固定上游版本。本機 NativeCombat fork 的 r3 另有 `bDefaultNative=1` 全員預設模式，保留 explicit pool／battle lock／hard-role 等拒啟界線；不能把本篇上游限制套成現役 fork 的設定結論，也不能將離線例外測試當成所有角色的 runtime 驗收。該 fork 的具體成品與部署證據保留於 private `agentctl/handoffs/home-2026-11-02/nativecombat-default-deploy/REPORT.md:21–25`，不改寫這份上游原始碼研究的適用版本。
+
 ## 實際運作
 
 ```mermaid

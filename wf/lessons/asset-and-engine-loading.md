@@ -36,3 +36,15 @@ source: agentctl/handoffs/done/2026-09/home-2026-09-03/ae2/REPORT.md:104；agent
 
 **How to apply:** 收到「改某設定/排除某類 NPC」需求前，先確認目標是存在 ini/esp（可覆寫層）還是存檔內 Papyrus 屬性/GLOBAL（只能進遊戲或主控台改）；用 SkyPatcher/SPID 類工具做排除清單時要在交接書寫明「無法涵蓋執行期才轉換身份的對象」，不要承諾完全涵蓋。
 source: agentctl/handoffs/done/2026-10/home-2026-10-10/batch2/REPORT.md；agentctl/handoffs/done/2026-10/home-2026-10-03/obodykey/REPORT.md
+
+## casefold-first-match-is-not-runtime-file-selection
+
+> 靜態 resolver 的第一個大小寫匹配只能證它自己的選擇，不能證 Wine／USVFS 實際開了哪個檔。
+
+2026-11-02。同一 Linux mod 目錄可留有僅大小寫不同、內容也不同的兩個實體。`instance/tools/whichmod_vfs.py:54–61` 的 `ci_child` 取第一個匹配；`projects/houseCARL/src/housecarl-core/AssetResolver.cs:527–546` 用 `map.TryAdd` 保留首次列舉項。兩者可支持層間優先判斷，不能由此解決層內碰撞，也不能把兩個 resolver 一致當成 runtime 觀測。
+
+**Why:** 檔案枚舉與實際遊戲開檔是不同證據。原包相同 hash 可證來源成員；若多個 FOMOD 選項含同一成員，不能反推當初選項。
+
+**How to apply:** 保留每個實體的 hash／來源，碰撞標未決。要證實際選檔需可信角色首次載入的 open／mmap 等事件，對回實體 inode／hash；沒有觀察到 fd 不代表未載入。NIF 可列印貼圖字串也不等於完整 shader block 解析或畫面一定採用。
+
+來源：private `agentctl/handoffs/home-2026-11-02/recorder-facegen/REPORT.md:9–11,26,36–42`；`agentctl/handoffs/home-2026-11-02/shower-runtime/REPORT.md:35`（未取得首次載入觀測，故維持未證）。
