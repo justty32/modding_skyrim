@@ -16,6 +16,12 @@
 
 「真正新增第八個 Role」最符合現有架構的擴充方向，但涉及 UI、裝備／法術、成長、AI、技能資格及 ABI 多處接點；只在 enum 與樹陣列補一項不完整。新增職業若只是沿用既有戰術行為，仍要明確填入對應政策，不能依賴 default 分支。
 
+## 查看道路與切換角色
+
+在 Paths standalone 模式，技能樹下拉選單或 Q/E 只切換正在查看的道路；按「Follow this path」才透過 Retask 改 active role，戰鬥中禁止變更。不能把看到另一棵樹當成已換職業。[Menu.cpp:5390–5455](https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Menu.cpp#L5390)
+
+Retask 只改 role 及仍為預設值的 focus／position；SetOrders 不會退點或重設 Paths Book。各路 ranks、slots、bonus 分開保存，所以切路後原路投點保留、暫不作為 active kit 生效，也不會自動變成新路可用點。若要移轉點數，才另行使用退款功能。[Orders.h:219–231](https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/include/FWM/Orders.h#L219)、[Battle.cpp:1375–1408](https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Battle.cpp#L1375)、[Paths.h:523–527](https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/include/FWM/Paths.h#L523)
+
 ## 必須審查的接點
 
 完整內容見 [同名子節](CLASSES/README.md#必須審查的接點)。

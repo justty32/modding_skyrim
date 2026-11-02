@@ -1,6 +1,6 @@
 # plugin／BSA／腳本的格式事實與量測陷阱
 
-[lessons 索引](README.md)
+[lessons 索引](README.md)｜[存檔體積、身份解析與清理證據](plugin-bsa-and-script-formats/README.md)
 
 ## missing-master-scan-mast-not-housecarl
 

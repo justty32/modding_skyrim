@@ -1,6 +1,6 @@
 # 動畫與 OAR
 
-[lessons 索引](README.md)
+[lessons 索引](README.md)｜[clip／replacement 取證與 handedness](animation-oar/README.md)
 
 ## oar-copy-folder-bypasses-gates
 

@@ -17,3 +17,4 @@
 ## 獨立 mod 專題
 
 - [Path of the Companions](path-of-the-companions/README.md)：隨從技能／職業、普通裝備控制、ABI／存檔與擴充接點。
+- [Save & Load Accelerator for SKSE Cosaves](save-load-accelerator-for-skse-cosaves.md)：v1.3.2 的版本、緩衝 I/O、磁碟格式與驗證界線。

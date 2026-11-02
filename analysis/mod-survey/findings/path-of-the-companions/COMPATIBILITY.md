@@ -8,6 +8,8 @@
 
 新增技能或職業不只是修改 addon 入口；必須維持共用定義、樹簽章、跨 DLL Record 與 host ownership 一致。paired 模式與 standalone 的支援範圍應先界定，不能因能單獨編出 Paths DLL 就推論它能和任何 FWM 版本互通。[ABI 詳查](CLASSES.md#fwm-配對與-abi)
 
+公開的另一個 [fatalCMD/potc 快照](https://github.com/fatalCMD/potc/tree/17d50320367192defc8c9966e2b7f6993874aa21) 是 1.0 initial release；其 [SOURCE-MANIFEST](https://github.com/fatalCMD/potc/blob/17d50320367192defc8c9966e2b7f6993874aa21/SOURCE-MANIFEST.json) 標記 FWM 0.5.0／Paths 1.0.0、來源 revision `6a5f5ce254f7878ef258d7ad9b655d7e2a2773d9` 且包含 working tree。它可用來研究該快照，但不能當成本頁 paired 1.2 來源；名稱相近、README 相同或 API 看似接近，都不足以證明版本可互換。
+
 ## 普通控制與能力需求
 
 原版 Role 同時決定成長、kit、普通裝備資格與戰鬥偏好。為了與自訂隨從相容，可以研究把普通戰鬥控制與能力暫時需求分開；這是候選設計方向，不是上游已提供的任意技能／職業註冊介面。[普通裝備接管](equipment-control.md)

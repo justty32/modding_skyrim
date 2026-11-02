@@ -27,6 +27,8 @@ flowchart TD
 
 `DecideAlone` 仍做 magicka recovery、caster/noMelee、skills/role style 及治療圈／Volley 引導；`Styles::Apply` 會把 controller 指向疊層 style。把 styleWeight 設零或只關 `bRoleWeapons`，沒有關閉這些入口，也沒有取消前述 invalidSpell 判定。**未找到官方逐 NPC「保留成長／技能、停普通配裝」設定。** 選 Mage、指定固定武器池可讓部分角色遵循單一打法，但不等於保留角色原生劍法混用。[DecideAlone](https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Battle.cpp#L1261)、[Styles](https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Styles.cpp#L139)
 
+Mage 也不是任意原生法術的通行證：Rules 只允許非 healing 法術，已學治療法術仍可能被其 pool 排除。這與是否保留已學法術是兩件事；切 role 的投點／槽位語意另見[道路切換](CLASSES.md#查看道路與切換角色)。[Rules.cpp:81–87](https://github.com/fatalCMD/Fight-With-Me/blob/971b8b5aba0c34c649e70307cebdaa4aaa7bf4de/src/Rules.cpp#L81)
+
 ## 可行方向與限制
 
 若角色本來就要純法師或固定武器，可研究官方角色／明確 pools；這仍由 Paths 控制，不能當成原生自由選裝。若要保留隨從普通戰鬥與成長能力，則需另研究逐 NPC opt-in 的相容修補，尊重 explicit pools、battle lock 與硬裝備職業，並分開普通配裝、style 與能力暫時引導。
