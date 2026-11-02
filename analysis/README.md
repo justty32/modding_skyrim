@@ -9,6 +9,7 @@
 | [`houseCARL/`](houseCARL/) | houseCARL 的 Linux 適配 runbook 與相關結論 |
 | [`mod-survey/`](mod-survey/) | 他人 mod 的結構化調查 |
 | [`tool-survey/`](tool-survey/) | Skyrim 製作工具調查 |
+| [`chim/`](chim/README.md) | CHIM headless plugin/save 工具與 ModForge 借鑑研究 |
 | [`followers-patch/`](followers-patch/) | 八份隨從人設 brief |
 | [`port-source-survey/`](port-source-survey/) | 移植素材來源候選調查 |
 
