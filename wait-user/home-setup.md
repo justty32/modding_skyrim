@@ -70,6 +70,19 @@
 回家用既有固定依賴做真正 Windows build／PE／版本核對，才安排停機備份與另行部署驗收。重點是舊投點／PATH／UNLM、Role on/off 普通原生 AI 與技能條件、PoE 每級5點／免費 reset／Debug 只繞點數仍守連線、unit-v1 +1、低血離隊與反覆存讀；UI／中文／手把未驗。詳見候選 [BUILD](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.1-dev-2026-11-03/BUILD.md)。目前59整節點支持、只有2個可沿路購買，三屬性仍待設計；不當作全星盤已可玩。
 
 
+## POTC IndependentSkills 1.2.3：回家部署與實機驗收（2026-11-03）
+
+第一波工程 S15 離線驗證通過；Windows DLL／PE 1.2.3.0 已隔離建置，ESL 與 AVG 已裝 API 3 配置納入候選。候選仍在封存中，尚未部署；停機、備份及部署另行授權。保留上方 1.2.1 原待驗項。
+
+1. 核對候選 DLL／PE 與 ESL／AVG 配置，依授權後的部署流程停機備份並部署。
+2. 驗證已知舊 tag 免費 reset、POEC ownership 與存讀；點數和既有 PATH／UNLM 不漂移。
+3. 四類增傷 MGEF 靜態已讀，其 PowerModifier 對應原版煉金；驗證隨從實際 AV 與增傷。
+4. 實測護甲、抗性、回復、減耗、移速與攻速（含 CARP）是否符合 UI 有效值。
+5. 驗證四類 Functional AV／PERK、AVG／ESL 缺席時安全行為及角色 unloaded 後返載。
+6. 實測 SKILL 對 POTC 技能持續時間、半徑與冷卻的引擎效果。
+7. 玩家入口與零 companion 路徑已補 source；實測玩家星盤與原版 perk 疊加。
+8. B&B 真實 GMST 的 75／.15／0 與 Experience.ini 已讀，原校準計算已重跑但未讀取 GMST；實測傷害減免與 XP，必要時重跑校準，不預先改既定每份值。
+
 ## 已完成（封存）
 
 ### 四個指定 mod 安裝施工窗（2026-11-01 立）

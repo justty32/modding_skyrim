@@ -37,6 +37,10 @@ modpack-design commit `652ed91`／`dd009b8`。
 你說「這些自創規則啥的，我們可以後續慢慢更新加上，不急著做」。9 個自創案、Supreme Ego（待重新設計）與 Vaal Pact 的「吸血鬼之約」備案，等你有空時逐個討論；在那之前用 5 份通用加成佔位，不擋施工。見
 [`poe-skyrim-mapping` keystones](../wf/workflows/plans/poe-skyrim-mapping/keystones.md#延後的-10-個)。
 
+## PoE 星盤：進階效果數值過目與高級候選（2026-11-03）
+
+請看[效果單位候選過目頁](../wf/user/2026-11-03-perk-units.md)：10 項進階數值與 10 項高級能力，混合效果拆開列。新進階效果及混合效果的數值部分須經你過目確認；高級候選尚未選定。全部尚未採用，不需重新確認既定基本數值。研究來源與證據見[報告](../agentctl/handoffs/home-2026-11-03/installed-perks/REPORT.md)。
+
 ## 已裁示／已完成（封存）
 
 > 以下各項不再等你動作，從 open 清單移到這裡保存歷史。「Dev0A 基線存檔」是 2026-09-05 這輪新判定的，

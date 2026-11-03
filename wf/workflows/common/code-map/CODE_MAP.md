@@ -25,6 +25,7 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 <!-- wf-nav -->
 | 檔案 | 職責 |
 |---|---|
+| `wf/user/2026-11-03-perk-units/render.py` | 從 private 研究表重產公開資料摘錄與離線效果單位過目頁。 |
 | `tools/check_markdown_links.py` | 掃描母 repo 與非 `projects/` 工作區 submodules 的 tracked Markdown links；驗證檔案與 GitHub-style heading／explicit HTML anchors，理解 canonical symlink 位置，並支援 CI 的 `--skip-symlinks` 與 `--skip-uninitialized-submodules` 邊界（後者明報未初始化 gitlink 的未檢查目標，預設仍嚴格） |
 | `tools/markdown_links/parsing.py` | 解析本機連結與 heading anchors，驗證連結目標。 |
 | `tools/markdown_links/__init__.py` | Markdown 連結解析與驗證輔助套件入口。 |

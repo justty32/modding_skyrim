@@ -35,7 +35,7 @@ converter 的份數、輸出與檢查：
 - golden：用 poe-calib 的節點解析（同一 data.json SHA）從計畫資料產生逐節點 atom 份額，存成新包的 test fixture。
 - `tests/run_poe_graph.py:15-19` 的期望值改成新份額。
 
-Done when: converter report 的 `supported`＝1993、`reachableSupported`＝1993；逐節點份額與 golden diff 為空；設計檢查印出移速 26.2、攻速 48.9 並 exit 0，速度超標的反例 fixture exit 非 0；`run_poe_graph.py` exit 0。
+Done when: converter report 的 `supported`＝1993、`reachableSupported`＝1993；逐節點份額與依正式暫代規則產生的獨立 golden 相符；設計檢查印出移速 26.4625、攻速 47.1625，通過全圖 30%／50% 與單點 5% gate 並 exit 0，速度超標的反例 fixture exit 非 0；`run_poe_graph.py` exit 0。舊的 26.2／48.9 是 [design](design.md) 的原逐 stat 校準口徑，不要求暫代輸出硬對齊。
 
 ## S3 unit-v1 擴充為 atom runtime
 

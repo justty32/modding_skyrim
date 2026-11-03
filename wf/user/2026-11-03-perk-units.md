@@ -1,0 +1,13 @@
+# 星盤效果單位：候選過目
+
+[使用者頁面索引](README.md)｜[星盤計畫](../workflows/plans/poe-skyrim-mapping/README.md)
+
+[開啟離線過目頁](2026-11-03-perk-units/index.html)：10 個進階數值候選、10 個高級能力候選，可篩選類型與需另裁示的項目。每項列出來源原值與提案、觸發和疊加、例子及風險；技術證據可展開。
+
+這些都是調查提案，**尚未採用**。進階效果的數值與混合效果的數值部分需請你過目確認；高級能力也尚未選定。M3、M6、A5、MA06、MA05 涉及額外原則或限制，頁面特別標為「另裁示」。已安裝但未勝出的天賦樹也可參考。
+
+完整研究與證據見 [private 研究報告](../../agentctl/handoffs/home-2026-11-03/installed-perks/REPORT.md)。離線頁及 [公開用資料摘錄](2026-11-03-perk-units/review-data.json) 可由研究表重產；來源 SHA-256 顯示於頁尾。重產命令從母 repo 執行：
+
+```sh
+python wf/user/2026-11-03-perk-units/render.py agentctl/handoffs/home-2026-11-03/installed-perks
+```
