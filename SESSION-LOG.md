@@ -11,7 +11,7 @@
 
 ## 現役工作
 
-目前無**只屬於**母 repo 的 open 工作。今日知識歸層、bridge 行為不變拆檔與交接整理的結果由 [本場 STATE](agentctl/handoffs/home-2026-11-02/STATE.md)承接，不自動續行暫緩工作。
+- [plan] poe-skyrim-mapping：使用者 11-03 對 5 題提出傾向（未定案），與現行設計衝突 → 下次開工照傾向重算 atoms／family-rules、重跑 build 對照，再請使用者定案；見 [計畫現行狀態](wf/workflows/plans/poe-skyrim-mapping/README.md#現行狀態open)。
 
 10-24 登記的兩件 `analysis/` 工作（skyrim_engine API 稽核、
 commonlibsee-ng README 漏索引）已於 2026-10-26 做完，見

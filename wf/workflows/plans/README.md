@@ -23,7 +23,7 @@ idea → roadmap → 詳規（本夾）→ feature-dev
 
 | 計畫 | 出計畫日期 | 對應 spec | 狀態 |
 |------|------------|-----------|------|
-| [poe-skyrim-mapping](poe-skyrim-mapping/README.md) —— PoE 星盤效果落地 Skyrim | 2026-11-03 | 設計寫在計畫內 | 設計定案、未動工；5 題待裁示 |
+| [poe-skyrim-mapping](poe-skyrim-mapping/README.md) —— PoE 星盤效果落地 Skyrim | 2026-11-03 | 設計寫在計畫內 | 設計初版、未動工；使用者已提傾向（未定案），待照傾向重算後再定案 |
 
 ## 已結案／被取代
 

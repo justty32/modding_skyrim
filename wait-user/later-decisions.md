@@ -27,6 +27,11 @@ modpack-design commit `652ed91`／`dd009b8`。
 它**不涵蓋 `.lsf → .lsx`**（那是 BG3 專屬容器），所以不取代本項，但之後真要做 BG3 匯入時是同一條管線的下游。
 證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-05/mc/REPORT.md`。
 
+## PoE 星盤平衡傾向定案（2026-11-03）
+
+你 11-03 對 PoE 星盤落地計畫 5 題的回覆是「我要再考慮考慮」，目前只記成傾向：速度全圖約 50%／57%（或 100%）、單點 ≤5%，大點與 keystone 高於小點，50 點總加成約等於原版 L50，三屬性 (a)，上限 L50 後脫鉤到 +100%，點數 1×L。agent 下一步會照傾向重算並重跑 build 對照，算完要請你看結果、正式定案後才施工。原話、傾向與衝突見
+[`poe-skyrim-mapping`](../wf/workflows/plans/poe-skyrim-mapping/README.md#使用者傾向2026-11-03未定案)。
+
 ## 已裁示／已完成（封存）
 
 > 以下各項不再等你動作，從 open 清單移到這裡保存歷史。「Dev0A 基線存檔」是 2026-09-05 這輪新判定的，
