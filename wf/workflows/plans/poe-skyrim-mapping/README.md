@@ -1,10 +1,10 @@
 # poe-skyrim-mapping：PoE 星盤效果落地 Skyrim（定案設計＋施工計畫）
 
-[plans](../README.md)｜出計畫 2026-11-03｜狀態：**設計已定案，未動工**
+[plans](../README.md)｜出計畫 2026-11-03｜狀態：**第一波部分施工中**
 
 把 POTC IndependentSkills 1.2.1-dev 候選包的 PoE1 主圖，從 `unit-v1`（59 節點可實作、2 節點可買）改成全主圖 1,993 個節點都能買的版本：每級 1 點，小點／大點／keystone 各值 1／3／5 份，每份換成固定的 Skyrim 數值，不設上限。對不上 Skyrim 的效果改成小加成，可以拆到 2–3 個數值上；能量護盾、異常、charge、召喚物、藥瓶、投射物與 38 個 keystone 分批做成真機制。
 
-Done when: 每個施工切片都列出要動的檔案（附 path:line）、依賴、可派給哪類線，以及只用可觀察條件寫的 `Done when:`；映射規則、每份數值與 keystone 表都存成資料檔；50 份校準的 L50 驗證結果寫進 design。本計畫到這一步為止，不含施工。
+Done when: 每個施工切片都列出要動的檔案（附 path:line）、依賴、可派給哪類線，以及只用可觀察條件寫的 `Done when:`；映射規則、每份數值與 keystone 表都存成資料檔；50 份校準的 L50 驗證結果寫進 design。設計計畫已完成；施工狀態另見下方。
 
 ## 文件
 
@@ -20,6 +20,8 @@ Done when: 每個施工切片都列出要動的檔案（附 path:line）、依�
 
 ## 現行狀態（open）
 
-- 可以依 [phases](phases.md) 開始施工，先做離線 source 改動（第一波 S1–S7）。
+- 第一波部分施工中：[1.2.2 候選](../../../../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.2-dev-2026-11-03/REPORT.md)以離線 source 為主、尚未部署；1.2.1 凍結。S1–S3 已整合，fresh-parent 重套後全套離線驗證通過（71＋5 canonical snapshots、MANIFEST 115 檔核符，mod-library commit `42e326d354f96cf5a8d8ae5cb0c77ec6b0c4d668`）；隔離 Windows 真 build 與 PE 1.2.2.0 驗證通過。S7 調查完成；S6 僅定位 Arts／PathsLink 的 actor-context，尚未接線；S4、S5 未完成。carrier 四類 UI disabled 且不寫 AV，SKILL pending。
+- S2 keystone 暫代的實作速度結果為 26.4625／47.1625，單點 2.0／0.6；原設計校準 26.2125／48.9125 保留原口徑。暫代的裁量與證據見候選報告及 agentctl 報告。
+- 下一步：續做 S4–S6，再完成第一波 S15。S15 完整後才依 [S16](phases.md#s16-回家-buildqa-登記-wait_user) 登記回家 QA；既有 1.2.1 待驗項保留。
 - 等使用者：提供施法速度的參考 mod；延後的 10 個 keystone（9 個自創＋Supreme Ego）之後逐個討論。兩項登記在母 repo `wait-user/later-decisions.md`。
 - 施工中還要請使用者定的：能量護盾規格（S9）、藥瓶門檻與冷卻（S13）、新機制 atom 的每份數值。

@@ -7,7 +7,7 @@ source 正本是 `mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1
 ## 共通規則
 
 - **不設上限**：舊計畫的依等級夾值、caps 表、UI「已達上限」一律不做。速度 30%／50%／單點 5% 只在 converter 的離線設計檢查擋。
-- **派線**：「普通線」派 Opus（C++／Python 施工、調查）；「雜活線」派 Sonnet（文字同步、登記）；「家中」是需要 Windows build、Mutagen／houseCARL 寫記錄或實機的工作。開工的線先讀適用的 `wf/` 規矩。
+- **派線**：「普通線」負責 C++／Python 施工、調查；「雜活線」負責文字同步、登記；模型依 [使用者現行偏好](../../common/user.md) 分派。「家中」是需要 Windows build、Mutagen／houseCARL 寫記錄或實機的工作；除簡單工作與雜活外，開工的線先讀適用的 `wf/` 規矩。
 - 每片的 `Done when:` 只寫可觀察條件；測試一律在 worktree 或隔離目錄跑，不在主工作樹 build。
 
 ## 分波
