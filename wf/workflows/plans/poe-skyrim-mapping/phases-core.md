@@ -46,19 +46,20 @@ Done when: converter report 的 `supported`＝1993、`reachableSupported`＝1993
 - `src/PoeRuntime.cpp:24-37`：固定 6 個 AV 的陣列改成依 atom 表彙總，值＝份數 × `per_share`，四類增傷合併各來源，**不夾值**。`:42` 沿用 `PoeOverlay::Amount`；`:47`、`:54` 的資源保比例擴到 Stamina；`:78` 的 pin 改成新 profile 與 convertedHash。
 - `include/FWM/PoeOverlay.h:5-9`：WeaponSpeedMult 基值 0 視為 1.0，另寫專用函式。
 - `src/Menu.cpp:8703`、`:8737`：UI 顯示各 atom 的有效值。
+- 玩家路徑：無 companion 時仍可在 PoE 專用 selector 選玩家；主線 snapshot／queue 套用效果，直接疊加原 perk，不將玩家加入 PartyAI。
 - 測試：`tests/PoeRuntimeTests.cpp`、`run_poe_runtime.py` 用 doubles 驗寫入值。
 
-Done when: `run_poe_runtime.py` exit 0，新案例通過：混合節點的 AV 寫入值＝份數 × 每份值；notable 寫入值是小點的 3 倍；50 份 DMG_2H 寫入 +150% 不被夾；ATKSPD 基值 0→1.0；Stamina 降上限時不致死。
+Done when: `run_poe_runtime.py` exit 0，新案例通過：混合節點的 AV 寫入值＝份數 × 每份值；notable 寫入值是小點的 3 倍；50 份 DMG_2H 寫入 +150% 不被夾；ATKSPD 基值 0→1.0；Stamina 降上限時不致死；零 companion 可選玩家購點，玩家 snapshot／queue 與原 perk 疊加路徑通過，且不加入 PartyAI。
 
 ## S4 新 ESL＋carrier perk
 
-依賴：S3。派給：DLL 接線給普通線；ESL 記錄本體要有 Mutagen／houseCARL 的環境（家中）。規模 M。
+依賴：S3。派給：普通線。規模 M。
 
-- 新增 `PathOfTheCompanions_PoeStar.esl`，規格見 [mechanics](mechanics.md#共用系統)：CRIT、CRITDMG、STAGGER、BLOCK 四個 PERK，各一個 entry point，用 `Add AV Mult` 或 `Multiply 1+AV Mult` 讀各自的 carrier AV；預留 S8–S14 的 MGEF／SPEL FormID 區段。
-- 施工前對照 <https://ck.uesp.net/wiki/Perk_Entry_Point> 核實 entry 名稱。
-- DLL：`src/PoeRuntime.cpp` 的 Apply 在 atom>0 時 `AddPerk`、=0 時 `RemovePerk`；FormID 由 `TESDataHandler::LookupForm(localId, esl名)` 取得；ESL 不在就停用這 4 個 atom 並在 UI 註明。
+- 原五個原生 AV 候選及擴充候選已查出被 plugin／PEX／config 使用，不能當作零衝突方案。保留零衝突意圖，改用現役已裝 AVG 2.3.6 API 3 的四個 POTC 專用 Functional AV、plugin-scoped remap，以及磁碟係數為 0 的四個 PERK；不安裝新 framework、不變更每份值。
+- 主線以 immutable snapshot 提供 callback；載入空快照，actor 未載入時回 0。POEC 僅存 owned mask，不保存 runtime ID。framework／ESL／格式失敗時四類中性退化，22 個普通 AV 仍持續生效。
+- 候選的 [REPORT](../../../../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.3-dev-2026-11-03/REPORT.md) 與 [S4 調查](../../../../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.3-dev-2026-11-03/research/S4-carriers.md) 記載原生候選排除及實作證據；最終候選已封存。
 
-Done when: 以 houseCARL 掃整合包，5 個 carrier 候選的引用結果有留檔並選定 4 個零引用的 AV；`instance/tools/check_masters.py` 對新 ESL 的 `present=no` 為 0；`python3 -m esplib header` 顯示 ESL flag 與 4 筆 PERK；ESL 缺席時的停用路徑有測試且通過。
+Done when: 四個專名 Functional AV 無衝突、aliases 與 API 全就緒；ESL 有四個 PERK 且 masters 齊全；缺席、損壞、未載入與 ownership 的 TU 反例均通過，四類中性且 22 個普通 AV 持續；POEC 不保存 runtime ID。
 
 ## S5 受傷管線與施法扣耗 hook
 
@@ -67,7 +68,7 @@ Done when: 以 houseCARL 掃整合包，5 個 carrier 候選的引用結果有�
 - 進傷害 hook：在扣 HP 之前呼叫一條 handler 鏈，K1 keystone 與 S9 護盾都掛在這條鏈上。hook 位置由本片先查（CommonLibSSE-NG 的命中／傷害路徑），結論寫進新包 CODE_MAP。
 - 施法扣耗 hook：與 Skald `CastTimer` 同區（`src/Skald.cpp:915` 起），給 Blood Magic、Eldritch Battery 用；要蓋住 AI 施法前的魔力檢查。
 
-Done when: 離線測試以 doubles 驗：沒有 handler 時傷害不變；掛上「40% 先扣魔力」handler 時 HP 扣 60%、MP 扣 40%；handler 拋例外時原傷害照常扣；施法扣耗改扣 HP 的 handler 生效、未掛時耗魔不變。
+Done when: 離線測試以 doubles 驗：沒有 handler 時傷害不變；掛上「40% 先扣魔力」handler 時 HP 扣 60%、MP 扣 40%；handler 拋例外時原傷害照常扣；施法扣耗改扣 HP 的 handler 生效、未掛時耗魔不變；midcast route 使用既定 snapshot，切換或失敗時退款守恆。
 
 ## S6 POTC 技能倍率
 

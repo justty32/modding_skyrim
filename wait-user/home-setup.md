@@ -63,16 +63,15 @@
 
 本項承接原 r2 未驗能力，沒有新增一件重複待辦。Varinia r1 已由使用者確認解決、維持結案；r1／r2 原層保留作回退來源。不能把載入／native enabled 或非戰鬥快照視為三項實戰驗收。
 
-## POTC IndependentSkills 1.2.1：回家建 DLL／實機驗收（2026-11-03）
+## POTC IndependentSkills 1.2.1：歷史候選的未驗功能（2026-11-03）
 
-公司已完成 [source-only 候選](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.1-dev-2026-11-03/README.md)與固定離線驗收，沒有 matching Windows C++ 工具鏈，**未建 DLL、未部署**；現役仍為 NativeCombat r3、profiles `4857a8c`。
+[1.2.1 source-only 候選](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.1-dev-2026-11-03/README.md)未部署，現在凍結；每級 5 點、unit-v1 與舊 build 要求是來源歷史，不要求部署舊包或驗舊 5 點。實際後續候選為下方 1.2.3。
 
-回家用既有固定依賴做真正 Windows build／PE／版本核對，才安排停機備份與另行部署驗收。重點是舊投點／PATH／UNLM、Role on/off 普通原生 AI 與技能條件、PoE 每級5點／免費 reset／Debug 只繞點數仍守連線、unit-v1 +1、低血離隊與反覆存讀；UI／中文／手把未驗。詳見候選 [BUILD](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.1-dev-2026-11-03/BUILD.md)。目前59整節點支持、只有2個可沿路購買，三屬性仍待設計；不當作全星盤已可玩。
-
+Role on/off 的普通原生 AI 與技能條件、隨從獨立身分、低血離隊、反覆存讀及 UI／中文／手把等尚未實機驗證，應由 1.2.3 承接；舊投點、PATH／UNLM 與 reset 仍需核對。
 
 ## POTC IndependentSkills 1.2.3：回家部署與實機驗收（2026-11-03）
 
-第一波工程 S15 離線驗證通過；Windows DLL／PE 1.2.3.0 已隔離建置，ESL 與 AVG 已裝 API 3 配置納入候選。候選仍在封存中，尚未部署；停機、備份及部署另行授權。保留上方 1.2.1 原待驗項。
+第一波工程 S15 離線驗證通過；Windows DLL／PE 1.2.3.0 已隔離建置，ESL 與 AVG 已裝 API 3 配置納入候選。候選已完成離線封存，尚未部署；停機、備份及部署另行授權。保留上方 1.2.1 原待驗項。
 
 1. 核對候選 DLL／PE 與 ESL／AVG 配置，依授權後的部署流程停機備份並部署。
 2. 驗證已知舊 tag 免費 reset、POEC ownership 與存讀；點數和既有 PATH／UNLM 不漂移。

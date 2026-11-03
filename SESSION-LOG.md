@@ -11,9 +11,7 @@
 
 ## 現役工作
 
-- [investigation] 調查已安裝天賦樹以提取進階／高級效果單位及評估玩家／隨從可移植性 → 等候調查報告與候選頁；新進階數值待使用者過目確認。
-
-- [plan] poe-skyrim-mapping：in-flight：POTC 1.2.3 新候選離線續做 S4–S6，尚未部署；1.2.1／1.2.2 凍結，S1–S3 已整合、S7 調查完成 → 驗證 S4–S6 並依 [phases](wf/workflows/plans/poe-skyrim-mapping/phases.md) 完成 S15；見 [計畫現行狀態](wf/workflows/plans/poe-skyrim-mapping/README.md#現行狀態open)。
+目前無母 repo 可主動推進的 open 工作。
 
 10-24 登記的兩件 `analysis/` 工作（skyrim_engine API 稽核、
 commonlibsee-ng README 漏索引）已於 2026-10-26 做完，見

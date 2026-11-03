@@ -22,7 +22,7 @@
 ## 共用系統
 
 - **新 ESL**（S4）：暫名 `PathOfTheCompanions_PoeStar.esl`，只放 POTC 自有記錄，不 master 任何整合包 mod。第一版放 CRIT、CRITDMG、STAGGER、BLOCK 四個 PERK，並預留 MGEF／SPEL 的 FormID 區段給 S8–S14。
-- **carrier AV**：候選 `FavorsPerDay`、`FavorsPerDayTimer`、`FavorPointsBonus`、`LastFlattered`、`LastBribedIntimidated`。條件是整合包內任何 plugin 的 CTDA／MGEF／PERK 都沒有引用。
+- **carrier AV**：原五個原生候選及擴充候選被 plugin／PEX／config 占用而排除；為保零衝突意圖，採現役 AVG 2.3.6 API 3 的四個 POTC 專用 Functional AV、plugin-scoped remap 與四個磁碟係數 0 PERK。主線 immutable snapshot、空載入與 unloaded 0；POEC 只存 owned mask，失敗時四類中性、22 個普通 AV 繼續。詳見 [1.2.3 S4 調查](../../../../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.3-dev-2026-11-03/research/S4-carriers.md)；不安裝新 framework、不變更每份值。
 - **受傷管線 hook**（S5）：一個進傷害的 handler 鏈，第一批 keystone（Mind Over Matter、Wind Dancer 等）和護盾共用。施法扣耗 hook 給 Blood Magic、Eldritch Battery 共用。
 - 使用者裁示的施工先後：先做 ESL＋受傷管線 hook，再做護盾。
 

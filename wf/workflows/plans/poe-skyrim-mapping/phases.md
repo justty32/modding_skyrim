@@ -12,6 +12,8 @@ source 正本是 `mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1
 
 ## 分波
 
+第一波 S1–S7（含 S7 調查）與 S15 已離線完成；S16 已登記、未部署且實機待驗。第二波 S8–S14 尚未施工，仍待各機制規格與新數值裁示。
+
 - **第一波（核心星盤）**：S1–S6，加上 S7 調查，以 S15、S16 收尾。完成後星盤全圖可買、數值生效、舊存檔免費重置。
 - **第二波起（機制與 keystone）**：S8–S14，每個機制與它的 keystone 段一起出包，每包都再跑一次 S15、S16。
 
