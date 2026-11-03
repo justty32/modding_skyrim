@@ -11,7 +11,7 @@
 
 ## 現役工作
 
-- [plan] poe-skyrim-mapping：設計已定案、未動工 → 依 [phases](wf/workflows/plans/poe-skyrim-mapping/phases.md) 開始施工（先離線 source 改動）；見 [計畫現行狀態](wf/workflows/plans/poe-skyrim-mapping/README.md#現行狀態open)。
+- [plan] poe-skyrim-mapping：in-flight：以 mod-library 的 POTC 1.2.2 新候選施工，1.2.1 凍結；先做離線 source 改動，尚未部署 → 依 [phases](wf/workflows/plans/poe-skyrim-mapping/phases.md) 推進；見 [計畫現行狀態](wf/workflows/plans/poe-skyrim-mapping/README.md#現行狀態open)。
 
 10-24 登記的兩件 `analysis/` 工作（skyrim_engine API 稽核、
 commonlibsee-ng README 漏索引）已於 2026-10-26 做完，見
