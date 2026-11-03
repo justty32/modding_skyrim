@@ -1,0 +1,457 @@
+{
+ "contract": "wf-table/1",
+ "source": "../design.md",
+ "extracted": "2026-11-03",
+ "columns": [
+  "order",
+  "family",
+  "match_regex",
+  "components",
+  "grade",
+  "origin",
+  "note"
+ ],
+ "rows": [
+  {
+   "order": "1",
+   "family": "jewel_socket",
+   "match_regex": "^\\(Jewel Socket node\\)$",
+   "components": "HP:0.4;SP:0.3;AR:0.3",
+   "grade": "通路",
+   "origin": "使用者已定（鑲嵌忽略）",
+   "note": "鑲嵌不做；節點保留當通路，給預設小加成"
+  },
+  {
+   "order": "2",
+   "family": "no_stats",
+   "match_regex": "^\\(no stats\\)$",
+   "components": "HP:0.4;SP:0.3;AR:0.3",
+   "grade": "通路",
+   "origin": "設計",
+   "note": "無描述的普通節點"
+  },
+  {
+   "order": "3",
+   "family": "attribute",
+   "match_regex": "\\b(Strength|Dexterity|Intelligence|Attributes)\\b",
+   "components": "ATTR@:1",
+   "grade": "候選",
+   "origin": "暫用 poe-attrs 候選 A",
+   "note": "Str→HP0.5+SP0.5；Dex→AR0.5+SP0.5；Int→MP0.7+DMG_DESTR0.3；多屬性平分；見待裁示"
+  },
+  {
+   "order": "4",
+   "family": "minion",
+   "match_regex": "\\bMinions?\\b|Skeleton|Zombie|Spectre|Golem|Raging Spirit|Animate|Summoned|Companion|Offering",
+   "components": "DMG_DESTR:0.5;MP:0.5",
+   "grade": "C→小加成",
+   "origin": "使用者已定（2026-11-03）：召喚先不做",
+   "note": "召喚身分→法術"
+  },
+  {
+   "order": "5",
+   "family": "energy_shield",
+   "match_regex": "Energy Shield",
+   "components": "MP:0.5;AR:0.5",
+   "grade": "C→小加成",
+   "origin": "使用者已定（2026-11-03）：ES→魔力或護甲",
+   "note": ""
+  },
+  {
+   "order": "6",
+   "family": "accuracy",
+   "match_regex": "Accuracy",
+   "components": "AR:1",
+   "grade": "裁示",
+   "origin": "使用者已定：命中→護甲",
+   "note": ""
+  },
+  {
+   "order": "7",
+   "family": "evasion",
+   "match_regex": "Evasion|Evade",
+   "components": "AR:0.85;ATKSPD:0.15",
+   "grade": "裁示",
+   "origin": "使用者已定：閃避→護甲＋一點攻速",
+   "note": "使用者原話例：閃避可以變成護甲加成+一點點攻速"
+  },
+  {
+   "order": "8",
+   "family": "cast_speed",
+   "match_regex": "Cast Speed",
+   "components": "DMG_DESTR:0.6;COST:0.4",
+   "grade": "C→小加成",
+   "origin": "使用者已定（2026-11-03）：施速→傷害／耗能減免",
+   "note": "含 Attack and Cast Speed"
+  },
+  {
+   "order": "9",
+   "family": "attack_speed",
+   "match_regex": "Attack Speed|Attack and Cast Speed",
+   "components": "DMG@:0.7;SPREGEN:0.3",
+   "grade": "C→小加成",
+   "origin": "使用者已定（2026-11-03）：攻速→傷害／耗能減免",
+   "note": ""
+  },
+  {
+   "order": "10",
+   "family": "move_speed",
+   "match_regex": "Movement Speed",
+   "components": "MOVSPD:0.4;SP:0.6",
+   "grade": "C→小加成",
+   "origin": "使用者已定：移速壓低",
+   "note": "全圖 MOVSPD 加總受 ≤10% 靜態驗"
+  },
+  {
+   "order": "11",
+   "family": "leech",
+   "match_regex": "Leech",
+   "components": "HPREGEN:0.6;DMG@:0.4",
+   "grade": "A",
+   "origin": "設計",
+   "note": "靜態近似；HitSink 版延到 B 後"
+  },
+  {
+   "order": "12",
+   "family": "on_hit_kill",
+   "match_regex": "Recoup|per Enemy (Hit|Killed)|on Kill|on Hit|when you Kill|Killed Recently",
+   "components": "HPREGEN:0.5;MPREGEN:0.25;SPREGEN:0.25",
+   "grade": "A",
+   "origin": "設計",
+   "note": "靜態近似，不掛事件"
+  },
+  {
+   "order": "13",
+   "family": "life_regen",
+   "match_regex": "Regenerat\\w* .*Life|Life Regeneration|Life Recovery",
+   "components": "HPREGEN:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "14",
+   "family": "mana_regen",
+   "match_regex": "Regenerat\\w* .*Mana|Mana Regeneration|Mana Recovery",
+   "components": "MPREGEN:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "15",
+   "family": "cost",
+   "match_regex": "Mana Cost|Cost Efficiency|Cost of Skills|\\bCosts?\\b",
+   "components": "COST:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "16",
+   "family": "crit_multi",
+   "match_regex": "Critical Strike Multiplier|Critical Damage",
+   "components": "CRITDMG:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": "ESL perk"
+  },
+  {
+   "order": "17",
+   "family": "crit_chance",
+   "match_regex": "Critical Strike Chance|Critical Strikes?",
+   "components": "CRIT:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": "ESL perk"
+  },
+  {
+   "order": "18",
+   "family": "stun",
+   "match_regex": "Stun",
+   "components": "STAGGER:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": "ESL perk"
+  },
+  {
+   "order": "19",
+   "family": "block_spell",
+   "match_regex": "Block Spell|Suppress",
+   "components": "RES_MAGIC:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": "壓制＝期望半傷→魔抗"
+  },
+  {
+   "order": "20",
+   "family": "block",
+   "match_regex": "\\bBlock",
+   "components": "BLOCK:0.6;AR:0.4",
+   "grade": "A",
+   "origin": "設計",
+   "note": "ESL perk"
+  },
+  {
+   "order": "21",
+   "family": "fortify",
+   "match_regex": "Fortif",
+   "components": "AR:0.6;HP:0.4",
+   "grade": "C→小加成",
+   "origin": "設計",
+   "note": "比照命中閃避改護甲"
+  },
+  {
+   "order": "22",
+   "family": "res_all",
+   "match_regex": "all Elemental Resistances|Elemental Resistance",
+   "components": "RES_FIRE:0.34;RES_FROST:0.33;RES_SHOCK:0.33",
+   "grade": "A",
+   "origin": "設計",
+   "note": "含 maximum 變體"
+  },
+  {
+   "order": "23",
+   "family": "res_fire",
+   "match_regex": "Fire Resistance",
+   "components": "RES_FIRE:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "24",
+   "family": "res_cold",
+   "match_regex": "Cold Resistance",
+   "components": "RES_FROST:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "25",
+   "family": "res_light",
+   "match_regex": "Lightning Resistance",
+   "components": "RES_SHOCK:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "26",
+   "family": "res_chaos",
+   "match_regex": "Chaos Resistance",
+   "components": "RES_POISON:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "27",
+   "family": "damage_hits",
+   "match_regex": "Damage with Hits and Ailments|Strike Range",
+   "components": "DMG@:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": "PoE 常見「命中與異常」增傷＝一般增傷；近戰觸及→傷害"
+  },
+  {
+   "order": "28",
+   "family": "ailment_fire",
+   "match_regex": "Ignite|Burning",
+   "components": "DMG_DESTR:0.6;MP:0.4",
+   "grade": "B→暫代",
+   "origin": "設計",
+   "note": "B 類異常載具上線前的暫代"
+  },
+  {
+   "order": "29",
+   "family": "ailment_elem",
+   "match_regex": "Shock|Chill|Freez|Frozen|Brittle|Sap\\b|Scorch",
+   "components": "DMG_DESTR:0.6;MP:0.4",
+   "grade": "B→暫代",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "30",
+   "family": "ailment_phys",
+   "match_regex": "Bleed|Impale|Poison|Maim|Hinder|Blind",
+   "components": "DMG@:0.6;SP:0.4",
+   "grade": "B→暫代",
+   "origin": "設計",
+   "note": "DMG@ 預設全物理"
+  },
+  {
+   "order": "31",
+   "family": "ailment_dot",
+   "match_regex": "Ailment|Damage over Time|Damage Over Time|Wither",
+   "components": "DMG_ALL:0.6;HP:0.4",
+   "grade": "B→暫代",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "32",
+   "family": "charge_endurance",
+   "match_regex": "Endurance Charge",
+   "components": "AR:0.5;HP:0.5",
+   "grade": "B→暫代",
+   "origin": "設計",
+   "note": "charge 框架上線前"
+  },
+  {
+   "order": "33",
+   "family": "charge_frenzy",
+   "match_regex": "Frenzy Charge",
+   "components": "DMG@:0.6;SP:0.4",
+   "grade": "B→暫代",
+   "origin": "設計",
+   "note": "原給速度，改傷害"
+  },
+  {
+   "order": "34",
+   "family": "charge_power",
+   "match_regex": "Power Charge",
+   "components": "CRIT:0.5;DMG@:0.5",
+   "grade": "B→暫代",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "35",
+   "family": "rage",
+   "match_regex": "\\bRage\\b",
+   "components": "DMG_MELEE:0.6;SP:0.4",
+   "grade": "B→暫代",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "36",
+   "family": "charge_other",
+   "match_regex": "Charges?\\b",
+   "components": "DMG_ALL:0.5;HP:0.5",
+   "grade": "B→暫代",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "37",
+   "family": "skill_mult",
+   "match_regex": "Skill Effect Duration|Area of Effect|Area Damage|Cooldown|Warcr|Exert|\\bAuras?\\b|Aura Effect|Duration",
+   "components": "SKILL:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": "POTC 技能倍率介面"
+  },
+  {
+   "order": "38",
+   "family": "reservation",
+   "match_regex": "Herald|Reserv|Banner|Valour",
+   "components": "MP:0.5;SKILL:0.5",
+   "grade": "C→小加成",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "39",
+   "family": "totem_trap",
+   "match_regex": "Totems?|Traps?\\b|Mines?\\b|Brands?\\b",
+   "components": "DMG_ALL:0.6;HP:0.4",
+   "grade": "C→小加成",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "40",
+   "family": "curse",
+   "match_regex": "Curses?|\\bHex|Marks?\\b|Marked",
+   "components": "DMG_DESTR:0.5;RES_MAGIC:0.5",
+   "grade": "C→小加成",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "41",
+   "family": "flask",
+   "match_regex": "Flask|Tincture",
+   "components": "HPREGEN:0.6;HP:0.4",
+   "grade": "C→小加成",
+   "origin": "設計",
+   "note": "隨從不喝藥"
+  },
+  {
+   "order": "42",
+   "family": "projectile",
+   "match_regex": "Projectile|Pierce|Chain|Fork",
+   "components": "DMG_BOW:0.6;DMG_DESTR:0.4",
+   "grade": "C→小加成",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "43",
+   "family": "buff_state",
+   "match_regex": "Onslaught|Tailwind|Elusive|Phasing|Adrenaline|Arcane Surge|Unholy Might|Fanatic",
+   "components": "DMG_ALL:0.5;AR:0.5",
+   "grade": "C→小加成",
+   "origin": "設計",
+   "note": "原多為速度"
+  },
+  {
+   "order": "44",
+   "family": "exposure_pen",
+   "match_regex": "Exposure|Penetrat|Extra|Convert|converted",
+   "components": "DMG@:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": "異常載具前以傷害近似"
+  },
+  {
+   "order": "45",
+   "family": "armour",
+   "match_regex": "Armour|Defences",
+   "components": "AR:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "46",
+   "family": "life",
+   "match_regex": "Maximum Life|maximum Life|\\bLife\\b",
+   "components": "HP:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "47",
+   "family": "mana",
+   "match_regex": "Maximum Mana|\\bMana\\b",
+   "components": "MP:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": ""
+  },
+  {
+   "order": "48",
+   "family": "damage",
+   "match_regex": "Damage",
+   "components": "DMG@:1",
+   "grade": "A",
+   "origin": "設計",
+   "note": "依原句武器／元素詞決定類別"
+  },
+  {
+   "order": "49",
+   "family": "fallback",
+   "match_regex": ".",
+   "components": "HP:0.4;SP:0.3;AR:0.3",
+   "grade": "通路",
+   "origin": "設計",
+   "note": "規則型 keystone 與雜項"
+  }
+ ]
+}
