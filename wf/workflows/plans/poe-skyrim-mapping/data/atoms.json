@@ -5,11 +5,10 @@
  "columns": [
   "atom",
   "skyrim_target",
-  "per_unit",
+  "per_share",
   "unit",
   "route",
-  "cap_rule",
-  "cap_max",
+  "calib_ref_L50",
   "phase",
   "note"
  ],
@@ -17,299 +16,272 @@
   {
    "atom": "HP",
    "skyrim_target": "Health（AV，現有 Kind HealthFlat）",
-   "per_unit": "10",
+   "per_share": "5",
    "unit": "點",
    "route": "AV overlay",
-   "cap_rule": "none",
-   "cap_max": "",
-   "phase": "P2",
-   "note": "與升級同價；不設上限"
+   "calib_ref_L50": "",
+   "phase": "S3",
+   "note": "與升級屬性同價（升級 L1→L50 合計 +490）"
   },
   {
    "atom": "MP",
    "skyrim_target": "Magicka（AV，現有 Kind MagickaFlat）",
-   "per_unit": "10",
+   "per_share": "5",
    "unit": "點",
    "route": "AV overlay",
-   "cap_rule": "none",
-   "cap_max": "",
-   "phase": "P2",
-   "note": ""
+   "calib_ref_L50": "",
+   "phase": "S3",
+   "note": "同 HP"
   },
   {
    "atom": "SP",
    "skyrim_target": "Stamina（AV，新 Kind）",
-   "per_unit": "10",
+   "per_share": "5",
    "unit": "點",
    "route": "AV overlay",
-   "cap_rule": "none",
-   "cap_max": "",
-   "phase": "P2",
-   "note": ""
+   "calib_ref_L50": "",
+   "phase": "S3",
+   "note": "同 HP"
   },
   {
    "atom": "AR",
    "skyrim_target": "DamageResist（AV，現有 Kind ArmourFlat）",
-   "per_unit": "20",
+   "per_share": "6",
    "unit": "AR",
    "route": "AV overlay",
-   "cap_rule": "baseline_ar",
-   "cap_max": "",
-   "phase": "P2",
-   "note": "L25 參考值；上限＝level-baseline 重甲 perk 增量；總 DR 仍受引擎 80%"
+   "calib_ref_L50": "321",
+   "phase": "S3",
+   "note": "每份約 0.72 個 DR 百分點；總 DR 受引擎 80% 封頂（使用者接受）"
   },
   {
    "atom": "RES_FIRE",
    "skyrim_target": "ResistFire（AV，現有）",
-   "per_unit": "10",
+   "per_share": "2",
    "unit": "百分點",
    "route": "AV overlay",
-   "cap_rule": "linear",
-   "cap_max": "75",
-   "phase": "P2",
-   "note": "point-budget 元素抗性"
+   "calib_ref_L50": "85",
+   "phase": "S3",
+   "note": "引擎抗性 85% 封頂（使用者接受）"
   },
   {
    "atom": "RES_FROST",
    "skyrim_target": "ResistFrost（AV，現有）",
-   "per_unit": "10",
+   "per_share": "2",
    "unit": "百分點",
    "route": "AV overlay",
-   "cap_rule": "linear",
-   "cap_max": "75",
-   "phase": "P2",
-   "note": ""
+   "calib_ref_L50": "85",
+   "phase": "S3",
+   "note": "同火抗"
   },
   {
    "atom": "RES_SHOCK",
    "skyrim_target": "ResistShock（AV，現有）",
-   "per_unit": "10",
+   "per_share": "2",
    "unit": "百分點",
    "route": "AV overlay",
-   "cap_rule": "linear",
-   "cap_max": "75",
-   "phase": "P2",
-   "note": ""
+   "calib_ref_L50": "85",
+   "phase": "S3",
+   "note": "同火抗"
   },
   {
    "atom": "RES_POISON",
    "skyrim_target": "PoisonResist（AV，新 Kind）",
-   "per_unit": "10",
+   "per_share": "2",
    "unit": "百分點",
    "route": "AV overlay",
-   "cap_rule": "linear",
-   "cap_max": "75",
-   "phase": "P2",
-   "note": "PoE Chaos 抗性"
+   "calib_ref_L50": "85",
+   "phase": "S3",
+   "note": "PoE Chaos 抗性；引擎 85% 封頂"
   },
   {
    "atom": "RES_MAGIC",
    "skyrim_target": "ResistMagic（AV，新 Kind）",
-   "per_unit": "5",
+   "per_share": "2",
    "unit": "百分點",
    "route": "AV overlay",
-   "cap_rule": "linear",
-   "cap_max": "30",
-   "phase": "P2",
-   "note": "涵蓋全部法術，取元素抗性一半"
+   "calib_ref_L50": "85",
+   "phase": "S3",
+   "note": "涵蓋全部法術；引擎 85% 封頂"
   },
   {
    "atom": "DMG_1H",
    "skyrim_target": "OneHanded 傷害倍率 AV（名稱回家核 MGEF）",
-   "per_unit": "20",
+   "per_share": "3",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "baseline_1h",
-   "cap_max": "",
-   "phase": "P2",
-   "note": "窄域：Armsman 一階"
+   "calib_ref_L50": "100",
+   "phase": "S3",
+   "note": "Armsman；寬鬆版，×50＝150% 超過原版 +100%，不夾值"
   },
   {
    "atom": "DMG_2H",
    "skyrim_target": "TwoHanded 傷害倍率 AV",
-   "per_unit": "20",
+   "per_share": "3",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "baseline_2h",
-   "cap_max": "",
-   "phase": "P2",
-   "note": "窄域：Barbarian 一階"
+   "calib_ref_L50": "100",
+   "phase": "S3",
+   "note": "Barbarian；同 1H"
   },
   {
    "atom": "DMG_BOW",
    "skyrim_target": "Marksman 傷害倍率 AV",
-   "per_unit": "20",
+   "per_share": "3",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "baseline_bow",
-   "cap_max": "",
-   "phase": "P2",
-   "note": "窄域：Overdraw 一階"
+   "calib_ref_L50": "100",
+   "phase": "S3",
+   "note": "Overdraw；同 1H"
   },
   {
    "atom": "DMG_DESTR",
    "skyrim_target": "DestructionPowerModifier（毀滅法術強度）",
-   "per_unit": "20",
+   "per_share": "2",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "baseline_destr",
-   "cap_max": "",
-   "phase": "P2",
-   "note": "法師的「武器類」；元素別不分"
+   "calib_ref_L50": "50",
+   "phase": "S3",
+   "note": "法師的「武器類」，元素不分；×50＝100%，高於原版 Augmented +50%（使用者接受）"
   },
   {
    "atom": "DMG_MELEE",
-   "skyrim_target": "1H＋2H 各 +15%",
-   "per_unit": "15",
+   "skyrim_target": "1H＋2H 各 +2%",
+   "per_share": "2",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "per_class",
-   "cap_max": "",
-   "phase": "P2",
-   "note": "兩類：介於窄域與廣域"
+   "calib_ref_L50": "100",
+   "phase": "S3",
+   "note": "範圍越廣，每份 ≤ 窄的那類"
   },
   {
    "atom": "DMG_WEAPON",
-   "skyrim_target": "1H＋2H＋弓 各 +10%",
-   "per_unit": "10",
+   "skyrim_target": "1H＋2H＋弓 各 +2%",
+   "per_share": "2",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "per_class",
-   "cap_max": "",
-   "phase": "P2",
-   "note": "廣域（全物理）"
+   "calib_ref_L50": "100",
+   "phase": "S3",
+   "note": "全物理；與近戰兩類同值"
   },
   {
    "atom": "DMG_ALL",
-   "skyrim_target": "1H＋2H＋弓＋毀滅 各 +10%",
-   "per_unit": "10",
+   "skyrim_target": "1H＋2H＋弓＋毀滅 各 +1%",
+   "per_share": "1",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "per_class",
-   "cap_max": "",
-   "phase": "P2",
-   "note": "廣域（全傷害）"
+   "calib_ref_L50": "100",
+   "phase": "S3",
+   "note": "全傷害"
   },
   {
    "atom": "HPREGEN",
    "skyrim_target": "HealRateMult",
-   "per_unit": "25",
+   "per_share": "5",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "linear",
-   "cap_max": "100",
-   "phase": "P2",
-   "note": "Recovery 類一階"
+   "calib_ref_L50": "",
+   "phase": "S3",
+   "note": "SP／MP 回復的一半"
   },
   {
    "atom": "MPREGEN",
    "skyrim_target": "MagickaRateMult",
-   "per_unit": "25",
+   "per_share": "10",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "linear",
-   "cap_max": "100",
-   "phase": "P2",
+   "calib_ref_L50": "",
+   "phase": "S3",
    "note": ""
   },
   {
    "atom": "SPREGEN",
    "skyrim_target": "StaminaRateMult",
-   "per_unit": "25",
+   "per_share": "10",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "linear",
-   "cap_max": "100",
-   "phase": "P2",
+   "calib_ref_L50": "",
+   "phase": "S3",
    "note": "攻擊耗能減免的近似"
   },
   {
    "atom": "COST",
    "skyrim_target": "五系 *Modifier（減耗）",
-   "per_unit": "5",
+   "per_share": "1",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "linear",
-   "cap_max": "50",
-   "phase": "P2",
-   "note": "負向：耗能 −5%"
+   "calib_ref_L50": "50",
+   "phase": "S3",
+   "note": "負向：每份耗能 −1%；與 perk、附魔疊乘可能接近 0 耗（使用者接受）"
   },
   {
    "atom": "MOVSPD",
    "skyrim_target": "SpeedMult",
-   "per_unit": "1",
+   "per_share": "1",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "speed",
-   "cap_max": "10",
-   "phase": "P2",
-   "note": "全圖加總 ≤10%（靜態驗）"
+   "calib_ref_L50": "30",
+   "phase": "S3",
+   "note": "全圖靜態加總 ≤30%、單點 ≤5% 是設計檢查，不在 runtime 夾值"
   },
   {
    "atom": "ATKSPD",
    "skyrim_target": "WeaponSpeedMult／LeftWeaponSpeedMultiply",
-   "per_unit": "1",
+   "per_share": "1",
    "unit": "%",
    "route": "AV overlay",
-   "cap_rule": "speed",
-   "cap_max": "10",
-   "phase": "P2",
-   "note": "基值 0 視為 1.0；全圖加總 ≤10%"
+   "calib_ref_L50": "50",
+   "phase": "S3",
+   "note": "基值 0 視為 1.0；全圖靜態加總 ≤50%、單點 ≤5% 是設計檢查；新增帶攻速的 rule 要重跑這項檢查"
   },
   {
    "atom": "CRIT",
    "skyrim_target": "暴擊率（ESL perk：Calculate My Critical Hit Chance，Add AV Mult）",
-   "per_unit": "5",
+   "per_share": "2",
    "unit": "百分點",
    "route": "ESL perk＋carrier AV",
-   "cap_rule": "linear",
-   "cap_max": "25",
-   "phase": "P3",
-   "note": "Bladesman 10–20%"
+   "calib_ref_L50": "100",
+   "phase": "S4",
+   "note": "NPC 暴擊行為待實機"
   },
   {
    "atom": "CRITDMG",
    "skyrim_target": "暴擊傷害（ESL perk：Calculate My Critical Hit Damage，Multiply 1+AV Mult）",
-   "per_unit": "25",
+   "per_share": "4",
    "unit": "%",
    "route": "ESL perk＋carrier AV",
-   "cap_rule": "linear",
-   "cap_max": "100",
-   "phase": "P3",
+   "calib_ref_L50": "200",
+   "phase": "S4",
    "note": "NPC 暴擊行為待實機"
   },
   {
    "atom": "STAGGER",
    "skyrim_target": "對敵硬直（ESL perk：Mod Target Stagger）",
-   "per_unit": "10",
+   "per_share": "1",
    "unit": "%",
    "route": "ESL perk＋carrier AV",
-   "cap_rule": "linear",
-   "cap_max": "50",
-   "phase": "P3",
+   "calib_ref_L50": "50",
+   "phase": "S4",
    "note": ""
   },
   {
    "atom": "BLOCK",
    "skyrim_target": "格擋減傷（ESL perk：Mod Percent Blocked）",
-   "per_unit": "5",
+   "per_share": "1",
    "unit": "百分點",
    "route": "ESL perk＋carrier AV",
-   "cap_rule": "linear",
-   "cap_max": "25",
-   "phase": "P3",
-   "note": "與 Valhalla／B&B 疊乘，實機看"
+   "calib_ref_L50": "40",
+   "phase": "S4",
+   "note": "×50＝50% 超過 Shield Wall 40%（不夾值）；與 Valhalla／B&B 疊乘，實機看"
   },
   {
    "atom": "SKILL",
-   "skyrim_target": "POTC 技能倍率：持續＋5%、半徑＋5%、冷卻 −5%",
-   "per_unit": "5",
+   "skyrim_target": "POTC 技能倍率：持續、半徑 +1%，冷卻 −1%（每份）",
+   "per_share": "1",
    "unit": "%",
    "route": "POTC Abilities 介面",
-   "cap_rule": "linear",
-   "cap_max": "25",
-   "phase": "P4",
-   "note": "duration／area／cooldown／warcry／aura 的近似"
+   "calib_ref_L50": "50",
+   "phase": "S6",
+   "note": "duration／area／cooldown／warcry／aura 的近似；冷卻乘數不低於 ×0.5（防負值）"
   }
  ]
 }

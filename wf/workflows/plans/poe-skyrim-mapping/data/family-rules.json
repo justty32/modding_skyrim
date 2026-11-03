@@ -45,8 +45,8 @@
    "match_regex": "\\bMinions?\\b|Skeleton|Zombie|Spectre|Golem|Raging Spirit|Animate|Summoned|Companion|Offering",
    "components": "DMG_DESTR:0.5;MP:0.5",
    "grade": "C→小加成",
-   "origin": "使用者已定（2026-11-03）：召喚先不做",
-   "note": "召喚身分→法術"
+   "origin": "使用者已定（2026-11-03）：召喚物要做",
+   "note": "召喚身分→法術；召喚物系統（phases S12）落地前的暫代"
   },
   {
    "order": "5",
@@ -54,8 +54,8 @@
    "match_regex": "Energy Shield",
    "components": "MP:0.5;AR:0.5",
    "grade": "C→小加成",
-   "origin": "使用者已定（2026-11-03）：ES→魔力或護甲",
-   "note": ""
+   "origin": "使用者已定（2026-11-03）：能量護盾要做",
+   "note": "護盾系統（phases S9）落地前的暫代，份額照舊"
   },
   {
    "order": "6",
@@ -70,10 +70,10 @@
    "order": "7",
    "family": "evasion",
    "match_regex": "Evasion|Evade",
-   "components": "AR:0.85;ATKSPD:0.15",
+   "components": "AR:0.7;ATKSPD:0.15;MOVSPD:0.15",
    "grade": "裁示",
    "origin": "使用者已定：閃避→護甲＋一點攻速",
-   "note": "使用者原話例：閃避可以變成護甲加成+一點點攻速"
+   "note": "使用者原話例：閃避可以變成護甲加成+一點點攻速；速度回分（poe-calib 定案）"
   },
   {
    "order": "8",
@@ -88,19 +88,19 @@
    "order": "9",
    "family": "attack_speed",
    "match_regex": "Attack Speed|Attack and Cast Speed",
-   "components": "DMG@:0.7;SPREGEN:0.3",
+   "components": "ATKSPD:0.4;DMG@:0.4;SPREGEN:0.2",
    "grade": "C→小加成",
-   "origin": "使用者已定（2026-11-03）：攻速→傷害／耗能減免",
-   "note": ""
+   "origin": "使用者已定（2026-11-03）：攻速全圖 ≤50%、單點 ≤5%、攻速份額 0.4",
+   "note": "攻速份額 0.4 使用者已定；全圖 ATKSPD 靜態加總 48.9%（設計檢查 ≤50%）"
   },
   {
    "order": "10",
    "family": "move_speed",
    "match_regex": "Movement Speed",
-   "components": "MOVSPD:0.4;SP:0.6",
+   "components": "MOVSPD:0.8;SP:0.2",
    "grade": "C→小加成",
-   "origin": "使用者已定：移速壓低",
-   "note": "全圖 MOVSPD 加總受 ≤10% 靜態驗"
+   "origin": "使用者已定：移速全圖 ≤30%、單點 ≤5%",
+   "note": "全圖 MOVSPD 靜態加總 26.2%（設計檢查 ≤30%）"
   },
   {
    "order": "11",
@@ -262,7 +262,7 @@
    "components": "DMG_DESTR:0.6;MP:0.4",
    "grade": "B→暫代",
    "origin": "設計",
-   "note": "B 類異常載具上線前的暫代"
+   "note": "B 類異常載具（phases S10）上線前的暫代"
   },
   {
    "order": "29",
@@ -271,7 +271,7 @@
    "components": "DMG_DESTR:0.6;MP:0.4",
    "grade": "B→暫代",
    "origin": "設計",
-   "note": ""
+   "note": "異常載具（phases S10）落地前的暫代"
   },
   {
    "order": "30",
@@ -280,7 +280,7 @@
    "components": "DMG@:0.6;SP:0.4",
    "grade": "B→暫代",
    "origin": "設計",
-   "note": "DMG@ 預設全物理"
+   "note": "DMG@ 預設全物理；異常載具（phases S10）落地前的暫代"
   },
   {
    "order": "31",
@@ -289,7 +289,7 @@
    "components": "DMG_ALL:0.6;HP:0.4",
    "grade": "B→暫代",
    "origin": "設計",
-   "note": ""
+   "note": "異常載具（phases S10）落地前的暫代"
   },
   {
    "order": "32",
@@ -298,7 +298,7 @@
    "components": "AR:0.5;HP:0.5",
    "grade": "B→暫代",
    "origin": "設計",
-   "note": "charge 框架上線前"
+   "note": "charge 框架（phases S11）上線前"
   },
   {
    "order": "33",
@@ -307,7 +307,7 @@
    "components": "DMG@:0.6;SP:0.4",
    "grade": "B→暫代",
    "origin": "設計",
-   "note": "原給速度，改傷害"
+   "note": "原給速度，改傷害；charge（phases S11）落地前的暫代"
   },
   {
    "order": "34",
@@ -316,7 +316,7 @@
    "components": "CRIT:0.5;DMG@:0.5",
    "grade": "B→暫代",
    "origin": "設計",
-   "note": ""
+   "note": "charge（phases S11）落地前的暫代"
   },
   {
    "order": "35",
@@ -325,7 +325,7 @@
    "components": "DMG_MELEE:0.6;SP:0.4",
    "grade": "B→暫代",
    "origin": "設計",
-   "note": ""
+   "note": "charge（phases S11）落地前的暫代"
   },
   {
    "order": "36",
@@ -334,7 +334,7 @@
    "components": "DMG_ALL:0.5;HP:0.5",
    "grade": "B→暫代",
    "origin": "設計",
-   "note": ""
+   "note": "charge（phases S11）落地前的暫代"
   },
   {
    "order": "37",
@@ -378,8 +378,8 @@
    "match_regex": "Flask|Tincture",
    "components": "HPREGEN:0.6;HP:0.4",
    "grade": "C→小加成",
-   "origin": "設計",
-   "note": "隨從不喝藥"
+   "origin": "使用者已定（2026-11-03）：藥瓶做成低血自動回復 buff",
+   "note": "藥瓶 buff（phases S13）落地前的暫代"
   },
   {
    "order": "42",
@@ -387,8 +387,8 @@
    "match_regex": "Projectile|Pierce|Chain|Fork",
    "components": "DMG_BOW:0.6;DMG_DESTR:0.4",
    "grade": "C→小加成",
-   "origin": "設計",
-   "note": ""
+   "origin": "使用者已定（2026-11-03）：投射物關聯箭矢、弩矢、法術投射物；速度忽略",
+   "note": "投射物關聯（phases S8）落地前的暫代"
   },
   {
    "order": "43",
@@ -451,7 +451,7 @@
    "components": "HP:0.4;SP:0.3;AR:0.3",
    "grade": "通路",
    "origin": "設計",
-   "note": "規則型 keystone 與雜項"
+   "note": "規則型 keystone 與雜項；第一批 keystone 在真規則上線前走本條，延後的 10 個改用 keystones.json 的「佔位」"
   }
  ]
 }

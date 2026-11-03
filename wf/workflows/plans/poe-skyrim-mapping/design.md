@@ -1,90 +1,67 @@
-# 定案設計：映射規則、預算與近似法
+# 數值設計：預算、拆分規則與驗證
 
-[README](README.md)｜[phases](phases.md)
+[README](README.md)｜[decisions](decisions.md)｜[mechanics](mechanics.md)｜[phases](phases.md)
 
-依據：[poe-attrs](../../../../agentctl/handoffs/home-2026-11-03/poe-attrs/REPORT.md)（效果統計）、[poe-balance](../../../../agentctl/handoffs/home-2026-11-03/poe-balance/REPORT.md)（基準與每點預算）、[poe-mechanics](../../../../agentctl/handoffs/home-2026-11-03/poe-mechanics/REPORT.md)（A／B／C 分級）。使用者裁示見 [README](README.md#使用者裁示2026-11-03)。
+依據：[poe-attrs](../../../../agentctl/handoffs/home-2026-11-03/poe-attrs/REPORT.md)（效果統計）、[poe-mechanics](../../../../agentctl/handoffs/home-2026-11-03/poe-mechanics/REPORT.md)（A／B／C 分級）、[poe-calib](../../../../agentctl/handoffs/home-2026-11-03/poe-calib/REPORT.md)（每份數值與 L50 驗證）。裁示見 [decisions](decisions.md)。
 
 ## 1. 預算模型
 
-- **每點＝1 單位（舊，已被 README 的 1/3/5 份取代）**。點數 `earned = 1 × 最高觀察等級`。
-- **1 單位的價值**取 point-budget 的「perk 半份」，也就是 POTC 隨從每級已拿 10 H/M/S 之外、相當於一個 perk 階的那一半。27 種 atom 的每單位值、落地路線、上限規則都在 [atoms.json](data/atoms.json)。舊值（H／M／S +10、AR +20、單類增傷 +20% 等）都在 atoms.json，每份數值重算前以 README 的表為起點。
-- **節點效果的算法**：把節點的每一行 stat 平分這 1 單位，每行再依規則拆到 atom 上。實際值＝單位數 × 每單位值。每個節點加總固定是 1，腳本對全部 1,993 個節點都做了斷言。
-- **上限按等級走**（施工時在 runtime 夾住，不擋購買，UI 顯示「已達上限」）：
-  - 單類增傷上限：level-baseline 的「含 perk ÷ 不含 perk」比值減 1，四類分別取劍、大劍、弓、毀滅欄，中間等級線性內插。
-  - AR 上限：重甲含 perk 減不含 perk 的差值。
-  - 其他 `linear` 類 atom：`max(每單位值, cap_max × min(1, L/50))`。
-  - H／M／S：不設上限，因為它和升級屬性同價。
-  - 速度：舊算法每種 ≤ 10%，已被 README 的 30%／50% 取代。
-  - 各級實際上限值見交接目錄的 `caps-by-level.json`。
+- 點數 `earned = 1 × 最高觀察等級`。
+- 每個節點的份數依層級固定：小點與鑲嵌座 1、notable 3、keystone 5。
+- 節點的每一行 stat 平分該節點的份數，每行再依規則拆到 atom 上。實際值＝份數 × 該 atom 的每份數值。每個節點的份數加總等於它的層級權重。
+- **不設上限、不夾值**。速度的 30%／50%／單點 5% 只在離線設計檢查用。
 
-## 2. 拆分小加成的規則
+[atoms.json](data/atoms.json) 共 27 列，每列一種 Skyrim 落地效果（atom）。欄位：
 
-規則表 [family-rules.json](data/family-rules.json)：依 `order` 比對（先把原句數字換成 `N`），第一條命中的生效。`components` 欄寫成 `atom:份額;…`，份額加總必須是 1。有兩個代號：
+- `atom`：代號。
+- `skyrim_target`：落地的 AV、perk entry 或介面。
+- `per_share`：每份數值（整數）。
+- `unit`：點、AR、百分點或 %。
+- `route`：AV overlay、ESL perk＋carrier AV，或 POTC Abilities 介面。
+- `calib_ref_L50`：反推每份數值用的 L50 基準，**不是 runtime 上限**；H／M／S 與回復沒有基準。
+- `phase`：哪一個施工切片上線（見 [phases](phases.md)）。
+- `note`：補充。
+
+統計：AV overlay 22 種（S3）、ESL perk 4 種（S4）、POTC 技能倍率 1 種（S6）。
+
+## 2. 拆分規則
+
+[family-rules.json](data/family-rules.json) 共 49 條。依 `order` 比對（先把原句數字換成 `N`），第一條命中的生效。`components` 欄寫成 `atom:份額;…`，份額加總必須是 1。兩個代號：
 
 - `DMG@`：依原句裡的詞決定增傷類別。順序是 弓／投射物 → 毀滅（法術、元素、混沌、法杖類 Wand）→ 2H（雙手、長杖）→ 1H（單手、匕首、爪、雙持、盾）→ 近戰（劍、斧、錘）→ 全物理（物理、攻擊、武器）→ 都沒命中就算全傷害。
-- `ATTR@`：屬性依暫用的候選 A 換算。Str→HP 0.5＋SP 0.5；Dex→AR 0.5＋SP 0.5；Int→MP 0.7＋毀滅 0.3。一行有多個屬性時平分。
+- `ATTR@`：Str→HP 0.5＋SP 0.5；Dex→AR 0.5＋SP 0.5；Int→MP 0.7＋毀滅 0.3。一行有多個屬性時平分。
 
-`grade` 欄分布（依行計）已抽到 [grade-dist.csv](data/grade-dist.csv)。
+速度只出現在三條規則：閃避（AR 0.7＋攻速 0.15＋移速 0.15）、移速（移速 0.8＋SP 0.2）、攻速（攻速 0.4＋`DMG@` 0.4＋SP 回復 0.2）。
 
-1,993 個節點中，有 1,526 個會拆到兩個以上的 atom。速度只出現在三個地方：閃避、移速 rule（MOVSPD 0.4＋SP 0.6），以及攻速 rule（改成傷害 0.7＋SPREGEN 0.3，不給攻速）。keystone 的負面效果一律不帶過來，它的規則留到 B 之後逐個重做。
+能量護盾、召喚物、藥瓶、投射物、異常、charge 的規則目前是「真機制落地前的暫代」，各自的施工切片上線時改指新 atom（見 [mechanics](mechanics.md)）。規則型 keystone 的處理見 [keystones](keystones.md)。
 
-## 3. A 類機制近似法
+`grade` 欄分布（依行計）在 [grade-dist.csv](data/grade-dist.csv)。
 
-| 機制 | 近似 | 路線 |
-|---|---|---|
-| 暴擊率／暴擊傷害 | CRIT +5 百分點、CRITDMG +25% | ESL perk entry＋carrier AV |
-| 回復、擊中／擊殺觸發、吸血 | 靜態 HealRate／MagickaRate／StaminaRate Mult；吸血是 HPREGEN 0.6＋增傷 0.4 | AV overlay，不掛事件 |
-| 消耗 | 五系減耗 −5% | AV overlay |
-| 法術壓制、格擋法術 | 魔抗 +5 百分點 | AV overlay |
-| 格擋 | BLOCK 0.6＋AR 0.4 | ESL perk Mod Percent Blocked |
-| 暈眩 | STAGGER +10% | ESL perk Mod Target Stagger |
-| 武器類別 | 四類增傷 AV，由 `DMG@` 選類 | AV overlay |
-| 持續、範圍、冷卻、戰吼、光環 | SKILL：POTC 技能持續 +5%、半徑 +5%、冷卻 −5% | POTC Abilities 倍率介面 |
-| 曝露、穿透、轉換、額外傷害 | 視為增傷（`DMG@`） | AV overlay，等異常載具上線後再改 |
+## 3. A 類機制近似
 
-ESL 的 perk 用 `Multiply 1+AV Mult`／`Add AV Mult`，讀 carrier AV；carrier AV 的數值由 DLL 沿用 0xF100 overlay 寫入。carrier AV 的候選與排除條件見 phases 的 S5。
+- 暴擊率、暴擊傷害：CRIT、CRITDMG，走 ESL perk＋carrier AV。
+- 回復、擊中／擊殺觸發：靜態 HealRate／MagickaRate／StaminaRate Mult，不掛事件；吸血是 HP 回復 0.6＋增傷 0.4。
+- 消耗：五系減耗。法術壓制、格擋法術：魔抗。
+- 格擋：BLOCK 0.6＋AR 0.4；暈眩：STAGGER。兩者都走 ESL perk。
+- 武器類別：四類增傷 AV，由 `DMG@` 選類。
+- 持續、範圍、冷卻、戰吼、光環：SKILL，POTC 技能的持續與半徑 ×(1+x)、冷卻 ×(1−x)。
+- 曝露、穿透、轉換、額外傷害：視為增傷（`DMG@`），異常載具上線後再改。
 
-## 4. B 類（後續階段，不在本計畫施工）
+ESL 的 perk 用 `Multiply 1+AV Mult`／`Add AV Mult` 讀 carrier AV；carrier AV 的值由 DLL 沿用 0xF100 overlay 寫入。
 
-- 命中附加異常的載具：點燃、感電、冰緩／冰凍、流血、中毒、DoT 倍率。
-- charge 框架：耐力球、狂怒球、暴擊球、Rage、其他。
+## 4. 驗證結果（2026-11-03，腳本實算）
 
-這兩項上線時，對應的 `B→暫代` 規則會改成真機制。能力集一變，存檔 tag 就跟著換，舊存檔走 S4 的免費重置。召喚物原先不做，已被機制裁示取代（見第 7 節）。
+- **可達性**：可購 1,993 個節點（small 1,476、notable 454、keystone 48、鑲嵌座 15）。七個起點各自都能到達全部 1,993 個，最遠 23–33 步。可達性只看圖的連線，與數值無關。
+- **速度設計檢查**：全圖全買時移速 26.2%（≤30）、攻速 48.9%（≤50）；單點最大 1.2%／0.75%（≤5）。
+- **L50 build**（貪婪最佳化、七起點取最佳、不夾值）：純近戰 2H 主類 +96%、純弓 +90%、純法毀滅 +116%、混合 1H＋毀滅 1H 專攻 +104%。武器類落在原版 L50 的 90–104%。50 點實際拿到 80–90 份。
+- 抗性、暴擊、回復在 50 點內湊不滿基準（例如火抗最多約 30%、暴擊率約 70%），使用者接受。
 
-## 5. 平衡驗證（腳本實算）
+逐 atom 的每份值、×50、基準、L50 最多可湊份數，以及 4 種 build 的明細，在 poe-calib 的 `data/per-share.json`、`data/builds-l50.json`。用本計畫目前的 atoms／family-rules 重跑 poe-calib 的 `poe_calib.py`，per-share 與 builds 兩表逐列相同，速度加總也相同。
 
-可購節點 1,993 個（small 1,476、notable 454、keystone 48、鑲嵌座 15），**七個起點各自都能到達全部 1,993 個**，最遠的節點在 23–33 步內。原本的 59 個可實作、2 個可達，變成全部可實作、全部可達。
+重跑法：
 
-四種 build 由貪婪最佳化器挑選：每輪選「每點分數最高的路徑」，七個起點都試過後取最好的。
+```sh
+python3 agentctl/handoffs/home-2026-11-03/poe-calib/tools/poe_calib.py <核准的 data.json> wf/workflows/plans/poe-skyrim-mapping/data <輸出目錄>
+```
 
-已抽到 [build-check-old.csv](data/build-check-old.csv)（4 種 build × L10／25／50 的主類倍率／基準、AR、HP、MP、SP；舊算法，重算後作廢）。
-
-結論（舊算法）：12 組 `over_budget` 都是 `none`，主類倍率與 AR 不超原版，速度最高 0.21%，H／M／S 增量不超過同級升級屬性。
-
-## 6. 與使用者傾向衝突、待重算
-
-傾向原話見 [README](README.md#使用者傾向2026-11-03未定案)。衝突只登記、這輪不重算；重算前 1–5 節仍是現行數字。
-
-**速度**：現行每點 ≤ +1%、全圖 ≤ 10%（第 1 節），攻速 rule 不給攻速（第 2 節）。使用者已定：全圖移速 30%、攻速 50%、單點 ≤ +5%（原話「單點最多5%...定下吧」）。速度 atom 每單位值、單點夾值、攻速 rule 都要重定，裁示 3「壓低」是否被取代請使用者確認。
-
-**速度的分配方向**：使用者說「你看，我們設成50%之後，數值就有餘裕了。一些反映到skyrim的數值後，可以稍微分配進來」。原本因舊上限被改成傷害或耗能的攻速、移速效果（攻速 rule、閃避拆出的速度份額），重算時可分一部分回速度，不超過 30%／50%／單點 5%。比例留待重算時定。
-
-**節點分層**：已定，見 [README](README.md#使用者已定2026-11-03)。重算時以 1／3／5 份為準，每節點加總斷言改成該份數。
-
-**上限形式**：現行依等級走，L50 之後停在 L50 的值，法師增傷到 +50% 為止（第 1 節）。傾向 L50 前跟原版、L50 後脫鉤到最高 +100%，需要新增 L50 之後的上限曲線，`caps-by-level.json` 與 phases S3 的上限案例（例如 L10 夾到 36.4%）要重算。
-
-**機制真落地的暫代**：重算時，原本換成小加成的能量護盾、藥瓶、投射物、召喚物、異常狀態、三球規則，改為「真機制落地前的暫代」，暫代份額照舊（見第 7 節）。
-
-**驗證方式**：已定，見 [README](README.md#使用者已定2026-11-03)。重算時以 50 份檢核為準，取代每級 build 對照。
-
-### 38 份試算（舊，已改用 50 份）
-
-逐項結果與頂層建議（使用者未回應，重算時提請確認）移到 [check-38-notes.md](check-38-notes.md)；結果表在 [check-38.csv](data/check-38.csv)。重算時以 50 份檢核反推每份數值，由使用者看結果定案。
-
-## 7. 機制裁示（2026-11-03）
-
-使用者對評估報告（[poe-mechanics](../../../../agentctl/handoffs/home-2026-11-03/poe-mechanics/REPORT.md)）中 C 級與 B 級機制的裁示，原話為 [user-words 的原話六](user-words-2026-11-03.md)。取代 README 已定第 10 條「召喚物先不做；能量護盾換成魔力或護甲」。
-
-星盤玩家也能用、直接疊加在 perk 上，所以評估報告「隨從不會操作，因此價值低」不再是剔除理由。
-
-逐機制處理已抽到 [mechanic-decisions.csv](data/mechanic-decisions.csv)（11 列）。欄位：`機制`、`狀態`、`規格`。統計：要做 6、待調查／待討論 3、擱置 1、使用者未提 1（規則型 keystone 歸入待討論）。
+腳本會先核對 data.json 的 SHA `7e9f…1122`。

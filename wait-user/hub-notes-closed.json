@@ -248,6 +248,12 @@
    "關閉日期": "",
    "證據路徑": "later-decisions.md",
    "內容": "使用者對 poe-skyrim-mapping 5 題回覆「我要再考慮考慮」，新增 1 個 later-decisions open（等使用者看重算結果後定案），2→3；其餘類別 6/12/13/0 不變、總 open 33→34。計畫 phases S8 的 7 項未施工，不登記。"
+  },
+  {
+   "項目": "2026-11-03 PoE 星盤定案結案 1、新增 2／計數",
+   "關閉日期": "2026-11-03",
+   "證據路徑": "later-decisions.md",
+   "內容": "「PoE 星盤平衡傾向定案」由使用者定案，原文移 later-decisions-closed.json；新增「提供施法速度參考 mod」「延後的 10 個 keystone 逐個討論」兩項。later-decisions 3→4，其餘 6/12/13/0 不變，總 open 34→35。計畫 phases S16 的回家 QA 項待 S15 全綠才登記。"
   }
  ]
 }

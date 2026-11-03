@@ -27,10 +27,15 @@ modpack-design commit `652ed91`／`dd009b8`。
 它**不涵蓋 `.lsf → .lsx`**（那是 BG3 專屬容器），所以不取代本項，但之後真要做 BG3 匯入時是同一條管線的下游。
 證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-05/mc/REPORT.md`。
 
-## PoE 星盤平衡傾向定案（2026-11-03）
+## PoE 星盤：提供施法速度參考 mod（2026-11-03）
 
-你 11-03 對 PoE 星盤落地計畫 5 題的回覆是「我要再考慮考慮」，目前只記成傾向：速度全圖約 50%／57%（或 100%）、單點 ≤5%，大點與 keystone 高於小點，50 點總加成約等於原版 L50，三屬性 (a)，上限 L50 後脫鉤到 +100%，點數 1×L。agent 下一步會照傾向重算並重跑 build 對照，算完要請你看結果、正式定案後才施工。原話、傾向與衝突見
-[`poe-skyrim-mapping`](../wf/workflows/plans/poe-skyrim-mapping/README.md#使用者傾向2026-11-03未定案)。
+你 11-03 對星盤機制的裁示說「施法速度我之後找個mod給你參考」。在你提供之前，施法速度的節點照舊轉成毀滅增傷＋減耗，不做真的施法速度。給 mod 名稱或 Nexus 連結即可，agent 再評估落地方式。見
+[`poe-skyrim-mapping` mechanics](../wf/workflows/plans/poe-skyrim-mapping/mechanics.md#要做的機制與切片)。
+
+## PoE 星盤：延後的 10 個 keystone 逐個討論（2026-11-03）
+
+你說「這些自創規則啥的，我們可以後續慢慢更新加上，不急著做」。9 個自創案、Supreme Ego（待重新設計）與 Vaal Pact 的「吸血鬼之約」備案，等你有空時逐個討論；在那之前用 5 份通用加成佔位，不擋施工。見
+[`poe-skyrim-mapping` keystones](../wf/workflows/plans/poe-skyrim-mapping/keystones.md#延後的-10-個)。
 
 ## 已裁示／已完成（封存）
 
@@ -38,7 +43,7 @@ modpack-design commit `652ed91`／`dd009b8`。
 > 「wf kernel v0.5.1」是 2026-10-23 搬進來的（09-25 23:30 就已結案，條目卻漏在 open 區）。
 > 每項附證據絕對路徑或 commit hash。
 
-已抽到 [later-decisions-closed.json](later-decisions-closed.json)（13 列）。
+已抽到 [later-decisions-closed.json](later-decisions-closed.json)（14 列）。
 
 項目：原本的三級標題。
 
@@ -48,7 +53,7 @@ modpack-design commit `652ed91`／`dd009b8`。
 
 內容：標題下的完整原文。
 
-統計：13 項（第 10 列為 2026-09-25 自 staging 項移入的 todo-04／todo-09 暫存刪除；
+統計：14 項（第 14 列為 2026-11-03 使用者定案的 PoE 星盤平衡傾向；第 10 列為 2026-09-25 自 staging 項移入的 todo-04／todo-09 暫存刪除；
 第 12 列為 2026-10-23 使用者裁示全刪並執行完畢的 staging／暫存清理題；
 第 13 列為同日 MO2 關閉後自行收斂的 profiles 暫態（16:10 envsnap 實測 dirty=0），開了又當天結案；
 第 11 列為 2026-10-23 移入的 wf kernel v0.5.1／v0.6 升級）。
