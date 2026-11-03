@@ -11,7 +11,7 @@
 
 ## 現役工作
 
-目前無母 repo 可主動推進的 open 工作。
+- [investigation] 全量提取已安裝天賦來源的進階／高級效果單位，不設件數上限；涵蓋 nonwinning、disabled、hidden 與依賴，按 PERK entry 建覆蓋台帳 → 完成全集調查與可搜尋過目頁，新數值待使用者確認。
 
 10-24 登記的兩件 `analysis/` 工作（skyrim_engine API 稽核、
 commonlibsee-ng README 漏索引）已於 2026-10-26 做完，見
