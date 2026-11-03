@@ -35,7 +35,8 @@
     "advanced-units.json": "6f7c3d4235f113300d186be8760b2e72096af7cf3f0f22a5391a508f5812bd30",
     "high-units.json": "1601ca2b5ac2277f1787f842dd68b0c4e9f56d7ba7236a8e0758c553b727bacb"
   },
-  "sample_scope": "初步抽樣，非完整清單；進階與高級全集調查中",
+  "sample_caveat": "原樣本的非戰鬥或新增互動項不採用、不繼續深入；H3 全速能力待證",
+  "sample_scope": "初步抽樣，非完整清單；進階與高級戰鬥效果全集調查中；新增互動選項暫緩、非戰鬥效果排除",
   "rows": [
     {
       "id": "M1",

@@ -85,7 +85,7 @@ def main():
             rows.append(row)
     data = {'contract': 'wf-table/1', 'source': '../2026-11-03-perk-units.md',
             'extracted': '2026-11-03', 'columns': list(rows[0]), 'link_columns': [],
-            'source_sha256': hashes, 'sample_scope': '初步抽樣，非完整清單；進階與高級全集調查中', 'rows': rows}
+            'source_sha256': hashes, 'sample_caveat': '原樣本的非戰鬥或新增互動項不採用、不繼續深入；H3 全速能力待證', 'sample_scope': '初步抽樣，非完整清單；進階與高級戰鬥效果全集調查中；新增互動選項暫緩、非戰鬥效果排除', 'rows': rows}
     (HERE / 'review-data.json').write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
     cards = []
     esc = lambda x: html.escape(display(x))
@@ -109,6 +109,8 @@ def main():
             ('source_formkey', 'FormKey'), ('source_version', '來源版本'), ('current_winner_status', '目前勝出'),
             ('source_original_values', '來源原始記錄'), ('record_evidence', '記錄證據'), ('dependency_chain', '來源依賴鏈'),
             ('implementation_dependencies', '移植依賴'), ('validation', '驗證')])
+        if row['id'] == 'H3':
+            fields = '<p class="special">格擋走位的全速能力仍待證，不算已確定的高級效果。</p>' + fields
         badge = f'<strong class="special">另裁示：{esc(row["special_review"])}</strong>' if row['special_review'] else ''
         cards.append(f'<article data-tier="{esc(row["tier"])}" data-special="{bool(row["special_review"])!s}">'
                      f'<h2>{esc(row["id"])} · {esc(row["name"])}</h2><p>{esc(row["tier"])} · 待過目 {badge}</p>'
@@ -117,7 +119,7 @@ def main():
     hash_text = html.escape('；'.join(f'{k}: {v}' for k, v in hashes.items()))
     page = '''<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>星盤效果單位｜初步抽樣</title><style>body{font:16px/1.65 system-ui,sans-serif;max-width:1050px;margin:auto;padding:1.5rem;color:#202934;background:#f5f4ef}h1{line-height:1.2}article{min-width:0;overflow-wrap:anywhere;background:white;border:1px solid #d8dedb;border-radius:12px;padding:1.2rem;margin:1rem 0}h2{font-size:1.25rem;margin:.2rem 0}dl{display:grid;grid-template-columns:minmax(0,12rem) minmax(0,1fr);gap:.35rem 1rem}dt{font-weight:700}dd{min-width:0;overflow-wrap:anywhere;margin:0;white-space:pre-wrap}details{min-width:0;overflow-wrap:anywhere}.special{color:#973c17}select{font:inherit;padding:.35rem}details{border-top:1px solid #ddd;padding-top:.7rem}footer{overflow-wrap:anywhere;font-size:.85rem}@media(max-width:650px){dl{display:block}dd{margin:0 0 .8rem}body{padding:.8rem}}</style>
-<h1>星盤效果單位：初步抽樣</h1><p><strong>這 20 項是初步抽樣，非完整清單；進階與高級全集調查中。</strong></p><p>全部是未採用的研究提案。進階數值須經你確認；高級能力也尚未選。來源原值與提案分開列出，例子不代表一定能實際取得該配點。</p><p>混合效果的規則能力與數值分開審閱；另裁示標記指出需要額外決定的原則差異。資料涵蓋已安裝但未勝出的樹。</p>
+<h1>星盤效果單位：初步抽樣</h1><p><strong>這 20 項是原初步抽樣，非完整清單；進階與高級戰鬥效果全集調查中。新增互動選項暫緩、非戰鬥效果排除；原樣本中屬這兩類者目前不採用、不繼續深入。</strong></p><p>全部是未採用的研究提案。進階數值須經你確認；高級能力也尚未選。來源原值與提案分開列出，例子不代表一定能實際取得該配點。</p><p>混合效果的規則能力與數值分開審閱；另裁示標記指出需要額外決定的原則差異。資料涵蓋已安裝但未勝出的樹。</p>
 <label>篩選類型 <select id="tier"><option value="">全部</option><option>進階</option><option>高級</option></select></label>　<label>裁示狀態 <select id="status"><option value="">全部待過目</option><option value="special">需另裁示</option><option value="other">其他待過目</option></select></label><p id="count"></p>
 ''' + body + '''<footer><p>來源表 SHA-256：''' + hash_text + '''</p><p>由本目錄 render.py 從 private installed-perks 研究表重產；完整研究與證據見入口頁。</p></footer><script>function filter(){let t=document.querySelector('#tier').value,s=document.querySelector('#status').value,n=0;document.querySelectorAll('article').forEach(c=>{let show=(!t||c.dataset.tier===t)&&(!s||(s==='special')===(c.dataset.special==='True'));c.hidden=!show;if(show)n++});document.querySelector('#count').textContent='顯示 '+n+' 項'}document.querySelectorAll('select').forEach(e=>e.addEventListener('change',filter));filter()</script></html>'''
     (HERE / 'index.html').write_text(page)
