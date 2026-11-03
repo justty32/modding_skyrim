@@ -236,6 +236,12 @@
    "關閉日期": "2026-11-02",
    "證據路徑": "../agentctl/handoffs/home-2026-11-02/shower-window/housecarl-gold.json",
    "內容": "當前session實際MCP resolve Gold001回金幣，通過原重開build待辦判準；home-setup該一項完整原文移closed.json，open6→5，總33→32，其他類12/13/2/0不變。Kurone登入舊項先前已結案，不重複減計數。"
+  },
+  {
+   "項目": "2026-11-03 POTC source-only 待驗新增／計數",
+   "關閉日期": "",
+   "證據路徑": "home-setup.md",
+   "內容": "新增1個 home-setup open，5→6；其餘類別不變、總open 32→33。僅記新增與計數，並非待驗結案。候選1.2.1未建DLL／未部署，需home build與live QA。"
   }
  ]
 }

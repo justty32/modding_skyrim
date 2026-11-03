@@ -63,6 +63,13 @@
 
 本項承接原 r2 未驗能力，沒有新增一件重複待辦。Varinia r1 已由使用者確認解決、維持結案；r1／r2 原層保留作回退來源。不能把載入／native enabled 或非戰鬥快照視為三項實戰驗收。
 
+## POTC IndependentSkills 1.2.1：回家建 DLL／實機驗收（2026-11-03）
+
+公司已完成 [source-only 候選](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.1-dev-2026-11-03/README.md)與固定離線驗收，沒有 matching Windows C++ 工具鏈，**未建 DLL、未部署**；現役仍為 NativeCombat r3、profiles `4857a8c`。
+
+回家用既有固定依賴做真正 Windows build／PE／版本核對，才安排停機備份與另行部署驗收。重點是舊投點／PATH／UNLM、Role on/off 普通原生 AI 與技能條件、PoE 每級5點／免費 reset／Debug 只繞點數仍守連線、unit-v1 +1、低血離隊與反覆存讀；UI／中文／手把未驗。詳見候選 [BUILD](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.1-dev-2026-11-03/BUILD.md)。目前59整節點支持、只有2個可沿路購買，三屬性仍待設計；不當作全星盤已可玩。
+
+
 ## 已完成（封存）
 
 ### 四個指定 mod 安裝施工窗（2026-11-01 立）
