@@ -1,0 +1,80 @@
+{
+ "contract": "wf-table/1",
+ "source": "native-first-review.md",
+ "extracted": "2026-11-04",
+ "subtype": "mana_erosion_alternative_not_selected",
+ "not_placed": true,
+ "scope": "Short alternative review only. Not a replacement of17 real candidate nodes/24catalog. Three advanced and two high uniqueness claims not yet reviewed against sibling subtypes. No FormID/EDID binding because vanilla records unavailable.",
+ "columns": [
+  "rule_id",
+  "tier",
+  "name",
+  "scope_claim",
+  "native_input",
+  "proposed_effect",
+  "extra_logic",
+  "status"
+ ],
+ "rows": [
+  {
+   "rule_id": "EA1",
+   "tier": "advanced",
+   "name": "磨魔",
+   "scope_claim": "subtype_unique_candidate",
+   "native_input": "實際SpellItem CastingType=Concentration，敵向可歸因HP傷害effect；需查archetype/primary或secondaryAV/hostile/detrimental",
+   "proposed_effect": "把該次一部分HP傷改成MP傷，示例30%；不是額外白送",
+   "extra_logic": "要可拆傷害交易、不能單靠裝備或OnSpellCast視為命中",
+   "status": "alternative_candidate_not_selected_not_placed"
+  },
+  {
+   "rule_id": "EA2",
+   "tier": "advanced",
+   "name": "破池",
+   "scope_claim": "subtype_unique_candidate",
+   "native_input": "FireAndForget且此次確有MP傷來源或明確改道；不是所有攻擊spell自帶MP傷",
+   "proposed_effect": "超過敵剩MP、未能實扣的MP傷一部轉HP，示例50%",
+   "extra_logic": "需記傷前敵MP/實扣/溢出，結算順序仍待審；合成轉傷不能再反覆轉",
+   "status": "alternative_candidate_not_selected_not_placed"
+  },
+  {
+   "rule_id": "EA3",
+   "tier": "advanced",
+   "name": "枯魔牽制",
+   "scope_claim": "subtype_shared_candidate",
+   "native_input": "敵當刻MP/最終maxMP<25%，max>0，正在對本人造成可歸因傷害",
+   "proposed_effect": "該敵對本人傷害*0.9，無可累疊debuff",
+   "extra_logic": "需來源與受害者快照；不是把無MPmax生物一律當枯竭",
+   "status": "alternative_candidate_not_selected_not_placed"
+  },
+  {
+   "rule_id": "EA4",
+   "tier": "advanced",
+   "name": "奪魔續流",
+   "scope_claim": "subtype_unique_candidate",
+   "native_input": "本人Concentration法術實際削敵MP，實扣>0",
+   "proposed_effect": "回本人實扣敵MP的一部分，示例25%；抽乾/未命中無收益",
+   "extra_logic": "需actual debit與source ownership，不用requested magnitude當有效量",
+   "status": "alternative_candidate_not_selected_not_placed"
+  },
+  {
+   "rule_id": "EH1",
+   "tier": "high_pure_rule",
+   "name": "以魔作命",
+   "scope_claim": "subtype_unique_candidate",
+   "native_input": "本人既有傷害法術的HP/MP結算",
+   "proposed_effect": "先讓原生MP傷作用，再把原HP傷優先用於扣敵尚有MP；不足部分才扣HP",
+   "extra_logic": "得破法能力、失有MP敵即時削血；同份傷害不能雙扣；無MP敵照傷HP，須新順序交易",
+   "status": "alternative_candidate_not_selected_not_placed"
+  },
+  {
+   "rule_id": "EH2",
+   "tier": "high_pure_numeric_exchange",
+   "name": "斷血逐魔",
+   "scope_claim": "subtype_unique_candidate",
+   "native_input": "常駐本人法術傷害類別交換，無手別/低血/新操作條件",
+   "proposed_effect": "示例MP傷*4、HP傷*0.25，極端破法/削血交換",
+   "extra_logic": "無MP敵殺得慢；與EH1/轉換的先後要另審，不能同筆先MP增幅再冒稱HP增幅",
+   "status": "alternative_candidate_not_selected_not_placed"
+  }
+ ]
+}
