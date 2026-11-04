@@ -22,9 +22,9 @@
    "value_kind": "native_actual_mp_debit_before_explicit_refund",
    "ratio_per_share": 0.2,
    "snapshot": "Capture accepted native cast MP debit before seal_base/topup/remote/synthetic fees. No theoretical CalculateMagickaCost or whole-frame MP difference. CH1 retains original cast transaction.",
-   "formula": "extra=native_paid*0.20*n; P=10+extra; B=2P",
+   "formula": "extra=native_paid*0.20*n belongs to future IA1 only; IH0 has no extra payment or P/B/D. Any old fixed base10 is an explicit IA1 pending proposal, not approved hidden carrier cost.",
    "rounding": "建議帳本保留小數計算，不逐筆取整；顯示可到兩位，具體精度待實作核定",
-   "status": "denominator_user_approved_precision_proposed"
+   "status": "denominator_user_approved_IA1_runtime_pending"
   },
   {
    "rule_id": "IA4",
@@ -32,10 +32,10 @@
    "recipient": "enemy MP debit",
    "value_kind": "final_max_mp_after_all_legal_modifiers",
    "ratio_per_share": 0.05,
-   "snapshot": "At active single-seal settlement read caster final maxMP once after CH2 effects. It is not currentMP, enemyMP, or pre-CH2 base.",
+   "snapshot": "At H0-mark second native hit, reference caster final maxMP once after all legal modifiers; actual targetCasting observation and native event bridge require validation. No paid A1 prerequisite.",
    "formula": "enemy_mp_damage=caster_final_max_mp*0.05*n",
    "rounding": "同一帳務精度；實際扣敵MP受引擎合法資源處理，不靠UI四捨五入反算",
-   "status": "denominator_user_approved_precision_proposed"
+   "status": "denominator_user_approved_native_bridge_candidate_in_progress"
   }
  ]
 }

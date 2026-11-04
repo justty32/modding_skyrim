@@ -1,63 +1,43 @@
-# 術師通用與刻印的真星盤樣板
+# 術師通用與刻印 NativeBridge候選
 
-**待修：原生法術觸發整合未定，不作已核可範本。** 使用者指出正常遊玩使用的是原生法術；本案未說清選點後哪些原生法術、事件與狀態能直接啟動規則。原生樣板盤點只是技術附錄，不代表這套刻印已接入遊玩。比例修訂保留，14規則暫留供重審，未批准擴填。
+[使用者頁](../../../../../user/2026-11-04-inscription-sample.md)｜[共同範本要求](../template-requirements.md)｜[原生法術技術附錄](../../../../../user/2026-11-04-native-spell-templates.md)
 
-[可審人頁](../../../../../user/2026-11-04-inscription-sample.md)｜[共同數量與分類要求](../template-requirements.md)｜[八職業總覽](../README.md)
+使用者新裁示：擊中附印本身是高階能力，先點亮後才有後續印規則資格。本輪已獲授權隔離source與公司離線驗證，刻印回主線；蝕魔暫緩。狀態native_bridge_candidate_in_progress，不是live或整套已核可範本。16:50前收尾進度在private交接，不以中途切片結束active goal。
 
-本輪只做術師class-common與刻印一個子型，狀態needs_revision_native_spell_binding。原始來源是已授權[GGG3.29.1 data.json](https://raw.githubusercontent.com/grindinggear/skilltree-export/3.29.1/data.json)，SHA256為7e9f755e33152129ebf36c2ebdad639c527e4ad70d274b1fefb860f30ca01122；原圖完整資料不搬入本候選。
+Done when: 真17候選點保ID/邊/座標/type/weight；H0先解鎖、圖連通AND規則前置ANDcompiled capability；整actor免費Reset保高水位且清debug快照，不靜默丟點；source/patch從固定parent可重套，離線邊界具證，家中未驗明列。
 
-Done when: 真區域與17候選點ID、類型、權重、位置、內外連線可核；刻印6進階（4獨特）＋2高階（2獨特）、職業通用4進階＋2高階分層；逐條規則與試算可供使用者過目，未批准不擴其他子型或全圖。
+## 真圖與兩層
 
-## 原生優先的短重審
+[region.json](region.json)保存20原點：17候選與3保護（Mastery40439、Runebinder42343、DivineFervour30693）；[SVG](region.svg)另畫7個真一跳外接。原來源為授權[GGG3.29.1](https://raw.githubusercontent.com/grindinggear/skilltree-export/3.29.1/data.json)，SHA7e9f755e33152129ebf36c2ebdad639c527e4ad70d274b1fefb860f30ca01122；不搬整份dump進public。
 
-[短對照與蝕魔備選](native-first-review.md)先說正常SpellItem如何接規則；舊刻印若保留需新被動橋，不要求玩家另學印記spell。蝕魔以既有HP/MP與集中/瞬發操作為中心，但只是未選、未落點替代，不能把6條候選當原樣板已修好。
+H0=原notable61308 Amplify，58402→59728兩普通點可直接抵達，不會先買進階才到H0。21389留爆破transform候選；活印傳承移[未落變體](unplaced-variants.json)，不充第三個High。不改原48keystone／38先做10延後裁示。
 
-## 原生法術先查哪些
+只有IH0/IA4可測的probe切片中，原IA4位59070被其他pending規則擋住，故只交換IA4／IA5綁定：40927為斷咒、59070為回流。原type/weight/位置/邊不改。全ready設計closure與排除pending的真start路徑分開驗證，不能從58402假設已得點或開pending繞路。普通外接路仍合法，通用區可經58402→10575→21262而不被刻印核心鎖住。
 
-使用者要求先看Skyrim現成載具，見[原生法術樣板盤點](../../../../../user/2026-11-04-native-spell-templates.md)。目前只核固定原碼與Papyrus API：47個有名Archetype是枚舉，不保證47種都能任意做玩家法術。限時附敵MGEF/keyword/視效已有底座，這不代表P/B/D帳務或攔原傷已存在；載具是否換成更小原生狀態型要等使用者看過，不自行改掉本提案。
+## 單一資料契約
 
-## 資料與圖
+- [candidates.json](candidates.json)：17點原型／新名／rule refs／requires／待審預算。
+- [rules.json](rules.json)：14規則，共通4A2H與刻印6A2H，scope/unique/High前後打法及代價分開。
+- [native-bridge-bindings.json](native-bridge-bindings.json)：wf-table/1＋poe-native-bindings/1，14 typed bindings。rank1是一次解鎖，不是原node.weight或已校準n；原1/3份仍保留。
+- [比例輸入](proportional-values.json)：IA1本次原生實付MP20%、IA4自身final maxMP5%，actor/recipient/快照明確。
+- [實作難點](feasibility.md)：現有底座／新增交易與原生事件限制；[native-first對照](native-first-review.md)是此前待修原因與未採替代，不再推蝕魔。
 
-- [region.json](region.json)：20個真原點，含17候選與3保護；保留原label/type/weight/group/orbit/x/y/完整鄰接、入口與最短原圖路徑。
-- [candidates.json](candidates.json)：每個真點的候選名稱、層級、效果、規則引用與待審整點預算。
-- [比例輸入](proportional-values.json)：使用者定A1原生實付MP20%、A4自身最終最大MP5%，分開參考actor與受影響者。
-- [rules.json](rules.json)：14條規則的條件、試算函數、付款、生命週期、相容性、scope/unique比較及High的選前／後與代價。
-- [region.svg](region.svg)：依原座標與連線畫出的局部圖；青色刻印、紫色通用、灰色保護，7個一跳外接空心點僅供邊界導航，不另填。
+Bindings不准自稱engine ready；未知schema/rule或非法前置須拒絕。14rule-node的原GGG numeric payload由候選取代／清空，不偷偷附送原數值。三普通由numericOverrides明確輸出：58402 MP1份+5、40776 DMG_DESTR1份+2%、59728 MPREGEN1份+10%，不改27atom/per_share或node.weight。無overlay時仍應輸出byte-identical原POET3，有overlay才POET4/share-rule-v1並把機械資料納hash與compiled identity。
 
-## 真區域與點位限制
+## H0不是免費附送的付費庫
 
-Runesmith群171的六點環經58402／59728連到Amplify群230三點；再經40927—44799連到group218通用區。17候選由13個原小點與4個原notable組成。高階掛notable只是本次候選placement，原type仍notable且weight3；不是增加或重定義keystone。Mastery40439、Runebinder42343與Divine Fervour30693保護不填。Runebinder仍依既有48表的延後方案，不挪作刻印新高階。
+IH0只讓買點者的正常既有傷害SpellItem命中後，被動加owner-target限時狀態；不教新法術、不加隱含10MP、P/B/D或爆傷。六A全需61308；IA2/IA5/IA6另需53018的IA1付費印。IA3/IA4只讀免費H0狀態，不加假IA1依賴。
 
-外接邊一律保留。通用區亦可由58402→外接10575→21262進入，不必先拿活印傳承；區域連通不等於要求一次買滿，更不能用隱藏前置補拓撲。原圖Templar61525到58402最短五邊，途經63965、14151、27564、17735；本輪只以58402起列局部選點，不改職業起點或替玩家自動選路。
+IA1未來須自己包含付款→基本兌現，不能變成花錢但必須再買IA2才有效的空點。原生實付20%裁示保留；舊固定10只移A1顯式待審，不藏回H0。本輪首slice不做完整P/B/D，因此IA1及相關未接線能力不可購。進階rule＋數值與High多純規則的分類、刻印至少3獨特A／2獨特H、class-common另計，依共同範本要求保留；不能用接口就緒充遊戲性已驗。
 
-## 預算與基礎載具
+## 購點與退款
 
-三普通點沿既定atom：58402 MP1份最大MP+5；40776 DMG_DESTR1份毀滅傷害+2%；59728 MPREGEN1份回魔+10%。這是候選取代原同點映射的overlay，不與原converter效果再相加；並未改全表per_share。
+購買與載入／debug恢復都要驗依賴。Debug只繞點數，不繞連通／核心／capability。已買高階不等於未實作進階可先花點；編譯adapter未ready必須顯示原因並拒買。
 
-其餘小點各保原1份、notable各3份，整點提案包含共同載具及主規則，但兩者如何拆份與新係數尚未核定，不能宣稱已完成50份校準或能力免費。不為規則另造新點數。
+既有只有免費整actor Reset，沒有單點refund，本輪沿用：清allocation、debug.beforeDebug，保highestGrantedLevel，所有點回池，並清該actor附印等暫態。不能只移除H0保住依存、不能退出debug又復活舊依存；未知舊tag記錄須明確隔離或遷移，不把原同ID舊效果無聲升級成新High。
 
-任一刻印規則首次解鎖皆帶同一最小布印／解印載具（不重複乘算），解決原圖可先到高階／任一分支的可玩性，不偷加必須先點IA1的假依賴。載具：原生單體直接傷害白名單法術S，右單施命中未印敵時在原MP外付P=10、產B=2P，期限8秒；既有印預設主動集中兌現。數字只是試算基準，IA1的n1按本次原生實付MP20%加碼；試例原生10→加碼2→總本金12、B24；人頁只用這一組已含IA1的例子。
+## 公司證據與未驗
 
-## 記帳與相容性
+公司可證fixed-parent來源／逐snapshot SHA、POET3回歸與POET4 effective payload、真start可達＋順序Spend、requires／capability／save-debug-reset、owner印交易及callback重入、A4 max100→5／300→15。source core曾抓到清理callback重貼的P1及TTL同型，修後由獨立固定blob復核；這不提升native ready。
 
-印鍵為owner＋敵人＋實例，P是額外實付MP、B是印值、D是爆破法則延後的原生法術載荷。B/D與剩餘期限各有帳；D保留傷害型別及本人輸出加成，敵防只在最後實際釋放套一次。H1舊印再擊只追加已付原生D，不收第二筆P、不增B、不延壽。
-
-H2的持續支出按餘期限比例消耗B/D，P隨B同比減。已付出的餘額不能再回魔、治療或再爆；A6只轉餘B，清該印全部D。到期、owner離戰／死亡的暫態清理是本輪提案，不留跨場免費存量。退款只回自身額外本金的一部分，不退原生費、遠端費或D。
-
-IA2/IA4綁主動單印結算：基線右單施或H1雙施僅1印時可用，多印群爆不吃。H2禁主動爆，因此IA2/IA4/IA5路線被放棄，這是選高階的構築代價，不寫成全部同時生效。IA3及IA6仍能用剩餘印。
-
-CH1使所有傷害施法（連H1雙施引爆命令）先備咒，再用原生近戰命中交付。先清待觸槽才執行，保留原右／左／雙施分類，不重扣原生費、不再當新施法或自觸自己；恢復／防護照原入口。只有此明確授權交付可進布／解印載具，一般proc或tick不得冒充原生施法。
-
-## 完成範圍
-
-離線實核原ID/完整鄰接/位置/type/weight不變、17點相連、入口路徑、無重複、規則引用、common/unique實數與欄位。這證明候選完整性，不能用schema通過冒充遊戲平衡、High的gamechanger實質或引擎可行。High3條pure-rule與1條極端常駐pure-numeric已由設計顧問依最新分類重審，仍等使用者看稿。
-
-原生法術載荷攔截與保型、左右手／雙施辨識、近戰送達、友軍治療、被動印tick、死亡殘印、最終屬性倍率等都尚未實作／驗證。未改source、凍結1.2.3、真實發布樹、instance/DB或既有keystone；原每級1點、1／3／5份、27atoms／49映射／1993分母與無runtime caps裁示保持。
-
-## 比例修訂與可行性
-
-使用者已定：IA1加碼按本次原生實付MP的20%（每份），不是自身最大／當前MP；基礎載具10MP仍另收，因此native10的總印本金為12，不是只投2。原生實付指本次已接受施法真正扣到的MP、在顯式退款之前，排除印本金／加碼／遠端費／合成費／HP支付。取消交易不建印，CH1交付沿用原備咒付款，不重算。
-
-IA4削的是敵人MP，參考值卻是施術者自己的最終最大MP5%（每份）；含CH2等已套用修正後只讀一次，不再乘3。最大MP100削5、300削15，與當前剩多少MP無關。50%可加碼門檻、B=2P、集中10%及其他強度未改。新比例帳務建議保留小數，UI顯示才格式化；這不改既定普通atom的整數per_share。
-
-輕量核查結論見[實作難點](feasibility.md)：購點/座標/AV底座可沿用，真正風險是實付交易快照、保型且可取消的原傷邊界、備咒交付及印帳／可見狀態。這輪只讀source，不授權完整runtime實作。
+原生命中歸因、marker ActiveEffect存活／可見、真MP debit、Windows ABI與家中實際操作仍待驗。靜態501-byte Script/noVMAD MGEF/SPEL只是candidate carrier，無visual；normal ready不可因檔存在就自動打開。明確opt-in hidden probe若有，需與正常tag/readiness分流並標needs-live，不能稱一般功能已完成。未改凍結1.2.3、r3部署、DB/profile或安依賴。

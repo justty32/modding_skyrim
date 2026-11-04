@@ -14,7 +14,8 @@
   "rule_refs",
   "scope",
   "budget_proposal",
-  "status"
+  "status",
+  "requires_nodes"
  ],
  "rows": [
   {
@@ -30,7 +31,8 @@
    ],
    "scope": "class_common",
    "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "node_id": 15365,
@@ -45,7 +47,11 @@
    ],
    "scope": "subtype_unique",
    "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308,
+    53018
+   ]
   },
   {
    "node_id": 15973,
@@ -60,7 +66,11 @@
    ],
    "scope": "subtype_unique",
    "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308,
+    53018
+   ]
   },
   {
    "node_id": 19679,
@@ -75,7 +85,10 @@
    ],
    "scope": "class_shared_candidate",
    "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308
+   ]
   },
   {
    "node_id": 21262,
@@ -90,7 +103,8 @@
    ],
    "scope": "class_common",
    "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "node_id": 21389,
@@ -105,7 +119,10 @@
    ],
    "scope": "subtype_unique",
    "budget_proposal": "原3份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308
+   ]
   },
   {
    "node_id": 33435,
@@ -120,7 +137,8 @@
    ],
    "scope": "class_common",
    "budget_proposal": "原3份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "node_id": 40776,
@@ -133,7 +151,8 @@
    "rule_refs": [],
    "scope": "subtype_foundation",
    "budget_proposal": "既定atom1份",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "node_id": 40927,
@@ -141,14 +160,17 @@
    "original_type": "normal",
    "original_weight": 1,
    "design_tier": "advanced",
-   "candidate_name": "終筆回流",
-   "effect": "見IA5",
+   "candidate_name": "斷咒窗口",
+   "effect": "見IA4",
    "rule_refs": [
-    "IA5"
+    "IA4"
    ],
-   "scope": "subtype_unique",
+   "scope": "class_shared_candidate",
    "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308
+   ]
   },
   {
    "node_id": 44799,
@@ -163,7 +185,8 @@
    ],
    "scope": "class_common",
    "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "node_id": 53018,
@@ -178,7 +201,10 @@
    ],
    "scope": "subtype_unique",
    "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308
+   ]
   },
   {
    "node_id": 54694,
@@ -193,7 +219,8 @@
    ],
    "scope": "class_common",
    "budget_proposal": "原3份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "node_id": 58402,
@@ -206,7 +233,8 @@
    "rule_refs": [],
    "scope": "subtype_foundation",
    "budget_proposal": "既定atom1份",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "node_id": 58453,
@@ -221,7 +249,8 @@
    ],
    "scope": "class_common",
    "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "node_id": 59070,
@@ -229,14 +258,18 @@
    "original_type": "normal",
    "original_weight": 1,
    "design_tier": "advanced",
-   "candidate_name": "斷咒窗口",
-   "effect": "見IA4",
+   "candidate_name": "終筆回流",
+   "effect": "見IA5",
    "rule_refs": [
-    "IA4"
+    "IA5"
    ],
-   "scope": "class_shared_candidate",
+   "scope": "subtype_unique",
    "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308,
+    53018
+   ]
   },
   {
    "node_id": 59728,
@@ -249,7 +282,8 @@
    "rule_refs": [],
    "scope": "subtype_foundation",
    "budget_proposal": "既定atom1份",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "node_id": 61308,
@@ -257,14 +291,15 @@
    "original_type": "notable",
    "original_weight": 3,
    "design_tier": "high",
-   "candidate_name": "活印傳承",
-   "effect": "見IH2",
+   "candidate_name": "原生附印",
+   "effect": "先買高階IH0才可原生命中附印；不帶P/B/D",
    "rule_refs": [
-    "IH2"
+    "IH0"
    ],
    "scope": "subtype_unique",
    "budget_proposal": "原3份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   }
  ]
 }

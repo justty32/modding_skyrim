@@ -1,0 +1,61 @@
+{
+ "contract": "wf-table/1",
+ "source": "README.md",
+ "extracted": "2026-11-04",
+ "scope": "Not counted in active subtype totals; no node placement or source capability promised.",
+ "columns": [
+  "rule_id",
+  "name",
+  "tier",
+  "scope",
+  "owner_class",
+  "owner_subtype",
+  "shared_with",
+  "unique_against",
+  "mechanic_reason",
+  "trigger_condition",
+  "effect_formula",
+  "cost_timing",
+  "lifecycle",
+  "compatibility",
+  "capability",
+  "high_kind",
+  "before_play",
+  "after_play",
+  "gain",
+  "loss",
+  "build_change",
+  "counterplay_risk",
+  "status"
+ ],
+ "rows": [
+  {
+   "rule_id": "IH2",
+   "name": "活印傳承",
+   "tier": "high",
+   "scope": "subtype_unique",
+   "owner_class": "C_caster",
+   "owner_subtype": "C3_inscription",
+   "shared_with": [],
+   "unique_against": [
+    "C1_energy",
+    "C2_conduction"
+   ],
+   "mechanic_reason": "從瞬時爆破變附敵持續侵蝕與死後餘額傳承，非活法術改首靶或自己屯魔",
+   "trigger_condition": "有效附敵印改按原剩餘期限逐步兌現；敵死可用左手單施命中新敵移殘印",
+   "effect_formula": "B/D各按原餘期限比例流出；P隨B同比減；移交保原餘P/B/D與原expire_at；無自帶增幅",
+   "cost_timing": "仍付款建立印，移家不退款/複製/延壽，新敵已有本人印不合併",
+   "lifecycle": "所有active explosion停用；死後按最早到期殘印一次搬移，沒有庫外免費自存咒",
+   "compatibility": "IA2/IA4/IA5主動路線失效；IA3耗盡結束；IA6只改餘B並丟餘D；與IH1合用仍不可手動爆",
+   "capability": "new_runtime_capability_required",
+   "high_kind": "pure_rule",
+   "before_play": "保留機會到主動消印收尾",
+   "after_play": "分散養印、避傷拖戰、移交尚未耗完詛咒",
+   "gain": "付費餘額持續輸出，敵死可接下一敵而不複製存量",
+   "loss": "失去瞬爆/集中/斷咒/主動擊殺回流路線；不能搶同一時間把全部印值打出",
+   "build_change": "改變輸出節奏與死亡後歸屬，倍率無法代替強制放棄主動爆破",
+   "counterplay_risk": "flow tick/離戰清理/死因歸屬待驗；已支出額不可再治療/退款/第二次爆",
+   "status": "unplaced_variant_not_implemented"
+  }
+ ]
+}

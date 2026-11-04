@@ -2,14 +2,14 @@
  "contract": "wf-table/1",
  "source": "README.md",
  "extracted": "2026-11-04",
- "review_status": "needs_revision_native_spell_binding",
+ "review_status": "native_bridge_candidate_in_progress",
  "numeric_scope": "All new coefficients are illustrative proposals, not current atoms. Existing 1/3 node weights retained; carrier+main-effect budget split not approved.",
  "baseline_carrier": {
-  "input": "Right-hand single white-listed native direct-damage spell S, or authorized CH1 delivery preserving original hand/cast class",
-  "unmarked": "After native MP payment, extra paid P=10 MP creates B=2P=20 pre-defense damage, expires after8s; no hidden free native spell",
-  "marked": "Default right-hand single native hit commits its native damage, then actively settles only this seal; no stacking/refresh",
-  "key": "owner+enemy; exact seal instance transaction; unrelated synthetic effects cannot create/settle seals",
-  "balance": "Any inscription rule unlocks same carrier once; no duplicate carrier strength, no original converter atoms stacked on same replacement node. Entire rule-point 1/3 budget including carrier remains a proposal, split unapproved."
+  "unlock_requires_node": 61308,
+  "native_input": "Existing SpellItem + native hit attribution; no new player spell",
+  "H0_only": "owner-target-duration observable state; no implicit fixed cost or P/B/D",
+  "IA1_future": "extra native_paid20% explicitly belongs to IA1; paid ledger/settlement is a later capability, not free H0",
+  "respec": "existing free whole-actor Reset; clear allocations and debug snapshot so dependencies cannot resurrect; no new per-node refund"
  },
  "columns": [
   "rule_id",
@@ -34,7 +34,8 @@
   "loss",
   "build_change",
   "counterplay_risk",
-  "status"
+  "status",
+  "requires_nodes"
  ],
  "rows": [
   {
@@ -50,11 +51,11 @@
     "C2_conduction"
    ],
    "mechanic_reason": "額外實付MP鎖到特定敵人，不是蓄能的self reservoir或導流的活法術轉靶",
-   "trigger_condition": "新印建立時，原生MP扣款後current MP>=max MP50%，且額外付款足額",
-   "effect_formula": "再投入native_paid*0.20*n MP入P，B=2P；n1原生實付10→加碼2→總P12/B24",
-   "cost_timing": "native_paid為本次已接受原生施法實際MP扣款，任何顯式退款前快照；不含基礎印P10、加碼、遠端費/其他合成費或HP支付。保留原生扣款後current MP>=final maxMP50%條件；額外總付款全足額才提交",
+   "trigger_condition": "已買H0與IA1、原生命中新建印；native_paid為本次原生實付MP，門檻仍原生扣費後current>=final max50%",
+   "effect_formula": "加碼=native_paid*0.20*n；付款建立付費印，IA1本身含下次正常spell基本兌現。舊固定10MP只保為A1顯式待審成本，絕不藏H0；首slice不做P/B庫",
+   "cost_timing": "本次首slice尚未支援IA1則compiled capability拒絕購買；未來付款全額/取消/退款另驗。額外原生實付20%裁示保留，是否有額外base10仍待核",
    "lifecycle": "同印不重複增P/B、不刷新期限；H1再擊只加已付原生載荷D",
-   "compatibility": "native_paid=0則加碼0，基礎印P10仍照原提案；負值/未知/取消交易不加碼。CH1保留準備施法的原生扣款交易，不在交付重算",
+   "compatibility": "A1不是空付費點：未來單獨有基本兌現；A2/A5/A6才強化/改用付費印。H0免費狀態不當P/B",
    "capability": "new_runtime_capability_required",
    "high_kind": "",
    "before_play": "",
@@ -63,7 +64,10 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308
+   ]
   },
   {
    "rule_id": "IA2",
@@ -78,11 +82,11 @@
     "C2_conduction"
    ],
    "mechanic_reason": "毀掉自己附敵存量換單點兌現，與即時導流/自持蓄咒不同",
-   "trigger_condition": "主動結算集合恰1枚本人印：基線右單施，或IH1雙施命令僅選到1印",
+   "trigger_condition": "已買H0+IA1+IA2，付費印的基本兌現只結算1枚；可用原生施法觸發，具體高階命令組合仍待實作",
    "effect_formula": "該印B*(1+0.10n)+D；n1 B24→26.4，D不再乘",
-   "cost_timing": "原法術/命令正常付款；不增新印本金",
+   "cost_timing": "不增新本金；需IA1的真付費印，未ready不可購，不用free H0印算B",
    "lifecycle": "成功結算消該印，保留其他敵人的印",
-   "compatibility": "群爆多印不適用；IH2禁主動結算，故放棄本分支；不偷偷把倍率掛tick",
+   "compatibility": "需H0+IA1付費印，不能用免費H0印憑空算P/B；此切片未支援時capability拒絕購買；詳細舊稿數值僅待審",
    "capability": "new_runtime_capability_required",
    "high_kind": "",
    "before_play": "",
@@ -91,7 +95,11 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308,
+    53018
+   ]
   },
   {
    "rule_id": "IA3",
@@ -106,11 +114,11 @@
    ],
    "unique_against": [],
    "mechanic_reason": "持狀態削輸出可供其他術師子型重用；不灌刻印unique",
-   "trigger_condition": "敵事件前仍持本人有效且有餘額印，正在對本人造成合資格傷害",
+   "trigger_condition": "已買H0與IA3，敵事件前仍有本人有效H0印（不需P/B/餘額），正在對本人造成可歸因合資格傷害",
    "effect_formula": "incoming/(1+0.10n)，n1約少9.1%",
    "cost_timing": "無新付款提案；不改對其他人的傷害",
-   "lifecycle": "印耗盡/移除/到期便失去牽制",
-   "compatibility": "IH2逐步花完後結束；不把受傷再次存回B/D",
+   "lifecycle": "消印/到期/撤能力即失去牽制；H0免費狀態也成立，不能額外要求IA1",
+   "compatibility": "只需H0免費狀態，不需要IA1付費庫；數值按已買規則n，來源/受害者快照待驗",
    "capability": "new_runtime_capability_required",
    "high_kind": "",
    "before_play": "",
@@ -119,7 +127,10 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308
+   ]
   },
   {
    "rule_id": "IA4",
@@ -134,11 +145,11 @@
    ],
    "unique_against": [],
    "mechanic_reason": "施法窗口削資源可供兄弟子型重用；與CA3低MP加傷不同",
-   "trigger_condition": "主動單印結算時敵事件前正在施法，MP讀值有效",
-   "effect_formula": "另削caster_final_max_mp*0.05*n，n1最大MP100削5、最大MP300削15；不是固定沉默/中斷",
-   "cost_timing": "主動單印結算快照施術者final maxMP（已含CH2等合法修正，只讀一次不再乘3）；受影響者仍是敵人。非當前MP或敵方MP；max<=0/未知不觸發",
-   "lifecycle": "同結算只一次，不按每傷害子段反覆觸發",
-   "compatibility": "IH1多印群爆不觸發；IH2沒有主動結算所以放棄此路線",
+   "trigger_condition": "已買H0和IA4，正常本人原生SpellItem第二次命中；事件前已有本人有效印且敵當刻正在施法",
+   "effect_formula": "削敵MP=caster_final_max_mp*0.05*n；不需付費印/右手/dual；不是沉默或中斷保證",
+   "cost_timing": "讀自身final maxMP一次（含合法CH2），受影響仍敵MP；成功交易消印，不額外付P",
+   "lifecycle": "首擊不能吃當擊新印；同hit消印後不重貼。expiry/無效來源/重複事件拒絕",
+   "compatibility": "只需H0，不加假IA1前置；原native_paid20%只屬未來IA1。不採舊主動P/B解印/右手專用輸入",
    "capability": "new_runtime_capability_required",
    "high_kind": "",
    "before_play": "",
@@ -147,7 +158,10 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308
+   ]
   },
   {
    "rule_id": "IA5",
@@ -166,7 +180,7 @@
    "effect_formula": "退該印尚存額外本金P*n/(n+3)，n1 P12→3MP",
    "cost_timing": "只返額外P，不退原生施法MP、命令成本或D的來源成本",
    "lifecycle": "B耗用比例同步減P；退款後清帳，不重複索回",
-   "compatibility": "IH1群爆逐印核自身擊殺；IH2禁主動解印，故無本分支；精度待定",
+   "compatibility": "需H0+IA1付費印，不能用免費H0印憑空算P/B；此切片未支援時capability拒絕購買；詳細舊稿數值僅待審",
    "capability": "new_runtime_capability_required",
    "high_kind": "",
    "before_play": "",
@@ -175,7 +189,11 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308,
+    53018
+   ]
   },
   {
    "rule_id": "IA6",
@@ -194,7 +212,7 @@
    "effect_formula": "僅餘B*(1+0.10n)轉本次額外治療；n1 B24→26.4，原生治療另算",
    "cost_timing": "原生恢復照付MP；0有效增益不吞印",
    "lifecycle": "消該印並丟棄同印全部D/爆傷/牽制/回流；不對已支出部分重用",
-   "compatibility": "可用IH2尚未流出的B；不得把D再變治療；改寫不是active explosion",
+   "compatibility": "需H0+IA1付費印，不能用免費H0印憑空算P/B；此切片未支援時capability拒絕購買；詳細舊稿數值僅待審",
    "capability": "new_runtime_capability_required",
    "high_kind": "",
    "before_play": "",
@@ -203,7 +221,11 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308,
+    53018
+   ]
   },
   {
    "rule_id": "IH1",
@@ -219,8 +241,8 @@
    ],
    "mechanic_reason": "多人事先付費附敵的存量一起兌現，非導流跳無印活法術/非蓄能自己存咒",
    "trigger_condition": "本人合資格攻擊施法：右單施只存；雙重攻擊施法是引爆命令，不另寫本次D",
-   "effect_formula": "原應即時法傷改延後D，保類型；主動命令消範圍已有本人印，對各附敵結算各自B+D；無自帶倍率",
-   "cost_timing": "原生施法成本先付；新印額外P，舊印只追加新已付原生D，不重收P/增B/延壽；遠端每枚5MP、半徑8m僅試算參數",
+   "effect_formula": "原應即時法傷延後D，保型；命令消已有本人印各附敵結算D，加B僅限另有IA1真付費庫；無自帶倍率",
+   "cost_timing": "原生成本照付；H0無P/B，H1本身可只存D而不依賴IA1。若另買IA1，額外20%付款/基本結算由IA1自己負責；舊遠端費屬待審參數，首slice不實作D",
    "lifecycle": "D取已套本人輸出、未套敵防的載荷；釋放只套敵防一次；印到期或A6改寫會丟D",
    "compatibility": "IH2不准主動爆傷優先；CH1連命令也須先備再近戰交付；只有單印命令可吃IA2/IA4",
    "capability": "new_runtime_capability_required",
@@ -231,11 +253,14 @@
    "loss": "失去本人合資格法術即時傷與右單施自動兌印；未及時爆/印過期會丟付過的輸出",
    "build_change": "把逐發法師改成布場爆破手，不能以普通增傷取代時序重路由",
    "counterplay_risk": "保存/分類/防禦只套一次均待證；群爆不匯主靶不跳無印，不能命令同次存又爆",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": [
+    61308
+   ]
   },
   {
-   "rule_id": "IH2",
-   "name": "活印傳承",
+   "rule_id": "IH0",
+   "name": "原生附印",
    "tier": "high",
    "scope": "subtype_unique",
    "owner_class": "C_caster",
@@ -245,21 +270,22 @@
     "C1_energy",
     "C2_conduction"
    ],
-   "mechanic_reason": "從瞬時爆破變附敵持續侵蝕與死後餘額傳承，非活法術改首靶或自己屯魔",
-   "trigger_condition": "有效附敵印改按原剩餘期限逐步兌現；敵死可用左手單施命中新敵移殘印",
-   "effect_formula": "B/D各按原餘期限比例流出；P隨B同比減；移交保原餘P/B/D與原expire_at；無自帶增幅",
-   "cost_timing": "仍付款建立印，移家不退款/複製/延壽，新敵已有本人印不合併",
-   "lifecycle": "所有active explosion停用；死後按最早到期殘印一次搬移，沒有庫外免費自存咒",
-   "compatibility": "IA2/IA4/IA5主動路線失效；IA3耗盡結束；IA6只改餘B並丟餘D；與IH1合用仍不可手動爆",
+   "mechanic_reason": "使原生法術被動附帶本人可辨識狀態，才開後續刻印條件；非導流換靶或self蓄咒",
+   "trigger_condition": "已買61308且compiled native bridge ready；本人既有SpellItem經原生命中/來源歸因判定，命中敵人後附印",
+   "effect_formula": "只加caster-owned target限時狀態及可觀察標記；原法傷/原生成本照常，不內建10MP/P/B/D/爆傷",
+   "cost_timing": "H0無新MP付款；未買H0任何刻印進階不可購/不可生效；首slice優先IH0→IA4",
+   "lifecycle": "事件前讀既有印，後提交；首擊不自吃，IA4同擊消印後不由H0重貼；expiry/reset/respec/load統一清理",
+   "compatibility": "H0是所有刻印A及IH1的明確前置；不gate普通或class-common。A2/A5/A6還需IA1，H0不白送付費庫",
    "capability": "new_runtime_capability_required",
    "high_kind": "pure_rule",
-   "before_play": "保留機會到主動消印收尾",
-   "after_play": "分散養印、避傷拖戰、移交尚未耗完詛咒",
-   "gain": "付費餘額持續輸出，敵死可接下一敵而不複製存量",
-   "loss": "失去瞬爆/集中/斷咒/主動擊殺回流路線；不能搶同一時間把全部印值打出",
-   "build_change": "改變輸出節奏與死亡後歸屬，倍率無法代替強制放棄主動爆破",
-   "counterplay_risk": "flow tick/離戰清理/死因歸屬待驗；已支出額不可再治療/退款/第二次爆",
-   "status": "needs_revision_native_spell_binding"
+   "before_play": "原生法術只走原傷/原效果，無此刻印狀態及後續點資格",
+   "after_play": "照施既有法術即可被動附印，再決定印條件路線",
+   "gain": "一個原生命中可讀的owner-target狀態入口及後續規則資格",
+   "loss": "花高階選點；不獲免費額外傷害/魔力本金，進階仍要另投",
+   "build_change": "從純原傷法術轉為原生命中驅動的狀態子型入口，不能用加傷倍率代替啟用狀態與前置",
+   "counterplay_risk": "需真來源/目標/native分類及可見性橋；未ready不得讓config自稱可用",
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "rule_id": "CA1",
@@ -284,7 +310,8 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "rule_id": "CA2",
@@ -309,7 +336,8 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "rule_id": "CA3",
@@ -334,7 +362,8 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "rule_id": "CA4",
@@ -359,7 +388,8 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "rule_id": "CH1",
@@ -384,7 +414,8 @@
    "loss": "傷害法術失去安全距離直接送達；空揮無效，替換付費咒會損失舊成本",
    "build_change": "從遠程施法者改成需近身交付的咒刃，普通傷害倍率不能代替交付方式",
    "counterplay_risk": "法術實例/手別/取消/目標重綁待驗，不能自己刀傷→咒→proc→再次觸法循環",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   },
   {
    "rule_id": "CH2",
@@ -409,7 +440,8 @@
    "loss": "最終最大HP剩四分之一",
    "build_change": "少數純數值High以極端常駐交換迫使整體生存/資源配點改變，不假稱pure-rule",
    "counterplay_risk": "3份整點交換預算未核；不改27atoms或舊keystone，不是夾值cap",
-   "status": "needs_revision_native_spell_binding"
+   "status": "native_bridge_candidate_in_progress",
+   "requires_nodes": []
   }
  ]
 }

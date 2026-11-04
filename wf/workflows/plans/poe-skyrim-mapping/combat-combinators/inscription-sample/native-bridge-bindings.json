@@ -1,0 +1,166 @@
+{
+ "contract": "wf-table/1",
+ "schema": "poe-native-bindings/1",
+ "source": "README.md",
+ "extracted": "2026-11-04",
+ "rank_semantics": "one purchased-node unlock; not original node.weight or approved numeric share budget. Original weight1/3 remains separately preserved. All sample advanced nodes are original normal weight1.",
+ "capabilities": "Compiled registry/adapter decides ready; this config cannot claim engine implementation. Unknown schema/rule reject. Numeric original effects of bound nodes are replaced, never secretly stacked.",
+ "probe_placement_note": "IA4 at40927 adjacentIH0=61308; IA5 at59070. Original source IDs/geometry/type/weight unchanged. Needed because all other rule nodes stay pending in first probe slice.",
+ "numericOverrides": [
+  {
+   "nodeId": 58402,
+   "atom": "MP",
+   "shares": 1
+  },
+  {
+   "nodeId": 40776,
+   "atom": "DMG_DESTR",
+   "shares": 1
+  },
+  {
+   "nodeId": 59728,
+   "atom": "MPREGEN",
+   "shares": 1
+  }
+ ],
+ "numeric_override_semantics": "Only these original normal weight1 candidate nodes replace baseline numeric payload. Keep27 atom kinds/per_share and all topology/type/weights; no rule overlap. Canonical overrides belong to native mechanical hash and compiled identity. No-overlay POET3 must stay byte-identical.",
+ "columns": [
+  "nodeId",
+  "ruleId",
+  "rank",
+  "requiresNodes",
+  "tier",
+  "scope"
+ ],
+ "rows": [
+  {
+   "nodeId": 12536,
+   "ruleId": "CA4",
+   "rank": 1,
+   "requiresNodes": [],
+   "tier": "advanced",
+   "scope": "class_common"
+  },
+  {
+   "nodeId": 15365,
+   "ruleId": "IA6",
+   "rank": 1,
+   "requiresNodes": [
+    61308,
+    53018
+   ],
+   "tier": "advanced",
+   "scope": "subtype_unique"
+  },
+  {
+   "nodeId": 15973,
+   "ruleId": "IA2",
+   "rank": 1,
+   "requiresNodes": [
+    61308,
+    53018
+   ],
+   "tier": "advanced",
+   "scope": "subtype_unique"
+  },
+  {
+   "nodeId": 19679,
+   "ruleId": "IA3",
+   "rank": 1,
+   "requiresNodes": [
+    61308
+   ],
+   "tier": "advanced",
+   "scope": "class_shared_candidate"
+  },
+  {
+   "nodeId": 21262,
+   "ruleId": "CA3",
+   "rank": 1,
+   "requiresNodes": [],
+   "tier": "advanced",
+   "scope": "class_common"
+  },
+  {
+   "nodeId": 21389,
+   "ruleId": "IH1",
+   "rank": 1,
+   "requiresNodes": [
+    61308
+   ],
+   "tier": "high",
+   "scope": "subtype_unique"
+  },
+  {
+   "nodeId": 33435,
+   "ruleId": "CH1",
+   "rank": 1,
+   "requiresNodes": [],
+   "tier": "high",
+   "scope": "class_common"
+  },
+  {
+   "nodeId": 40927,
+   "ruleId": "IA4",
+   "rank": 1,
+   "requiresNodes": [
+    61308
+   ],
+   "tier": "advanced",
+   "scope": "class_shared_candidate"
+  },
+  {
+   "nodeId": 44799,
+   "ruleId": "CA1",
+   "rank": 1,
+   "requiresNodes": [],
+   "tier": "advanced",
+   "scope": "class_common"
+  },
+  {
+   "nodeId": 53018,
+   "ruleId": "IA1",
+   "rank": 1,
+   "requiresNodes": [
+    61308
+   ],
+   "tier": "advanced",
+   "scope": "subtype_unique"
+  },
+  {
+   "nodeId": 54694,
+   "ruleId": "CH2",
+   "rank": 1,
+   "requiresNodes": [],
+   "tier": "high",
+   "scope": "class_common"
+  },
+  {
+   "nodeId": 58453,
+   "ruleId": "CA2",
+   "rank": 1,
+   "requiresNodes": [],
+   "tier": "advanced",
+   "scope": "class_common"
+  },
+  {
+   "nodeId": 59070,
+   "ruleId": "IA5",
+   "rank": 1,
+   "requiresNodes": [
+    61308,
+    53018
+   ],
+   "tier": "advanced",
+   "scope": "subtype_unique"
+  },
+  {
+   "nodeId": 61308,
+   "ruleId": "IH0",
+   "rank": 1,
+   "requiresNodes": [],
+   "tier": "high",
+   "scope": "subtype_unique"
+  }
+ ]
+}

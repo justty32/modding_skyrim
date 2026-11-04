@@ -11,7 +11,7 @@
 
 ## 現役工作
 
-- [planning] 戰鬥效果組合子：依使用者校正展開八職業×每類三子類的24玩法總覽；劍盾僅局部案例，24案已完成；依新授權先做術師刻印真區域樣板（6進階/2高階，含unique比對），真圖17點與14規則已過目；依新指示修付魔/削魔比例並輕量核查實作困難，分母已定原生實付20%/自身最大MP5%；待修：原生法術觸發整合未定，不作已核可範本；比例/技術附錄保留，native-first重審中，不擴填，不改既定數值或source → [設計入口](wf/workflows/plans/poe-skyrim-mapping/combat-combinators/README.md)。
+- [feature-dev] native-bridge隔離候選：先買61308高階附印→原生法術命中掛狀態→進階AND前置；公司離線施工／驗證中，16:25開始收尾、16:50前推送交接停長行程，不部署 → [樣板與當前範圍](wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/README.md)。
 
 - [investigation] 全量提取已安裝天賦來源的戰鬥相關進階／高級效果單位，不設件數上限；涵蓋 nonwinning、disabled、hidden 與依賴，按 PERK entry 記覆蓋及範圍理由；新增啟用／對話／互動選項暫緩，非戰鬥效果排除 → 收工停線、尚未完成；備份複製中，續行與核驗狀態見 [private 交接](agentctl/handoffs/NEXT-SESSION.md)。恢復後完成全集調查與可搜尋過目頁，再請使用者確認新數值。
 
