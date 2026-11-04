@@ -23,6 +23,8 @@ commonlibsee-ng README 漏索引）已於 2026-10-26 做完，見
 [下次開場入口](agentctl/handoffs/NEXT-SESSION.md)接續；需要使用者親自做的事以
 [WAIT_USER.md](WAIT_USER.md)為準。
 
+- [planning] 近衛common＋G1「浪潮鬥士」19真點候選待使用者過目；命名理由「一浪接一浪」。4common A/2H與6sub A/2H分計、前置AND圖連通，runtime=0、不進術師registry。見[人頁](wf/user/2026-11-04-guard-double-beat-sample.md)，本場仍16:25收尾／16:50保存。
+
 ## Durable 狀態入口
 
 - DSP／houseCARL 已完成的離線修復、三條隔離分支與續接位置：

@@ -8,10 +8,11 @@ Done when: 八上層定位、24核心循環、四組跨類混搭與共用模型�
 
 **最新：使用者裁示先買高階H0才讓原生法術被動附印，進階AND前置；刻印回主線作隔離native-bridge候選。** 不再各A附送印，不另學印記法術；source/公司離線驗證進行中，未宣稱live，蝕魔暫緩。
 
-使用者批准先從單一子型看範本後再擴填：當前是[術師通用＋刻印真區域](inscription-sample/README.md)，不是現在把24案全套全樹。每子型／職業通用的數量、獨特性與普通/進階/高階分類，依[今日共同範本要求](template-requirements.md)沿用；本輪共17真點候選、3保護點，待使用者過目。
+使用者已授權下一職業，當前新增[近衛通用＋浪潮鬥士真區域](double-beat-sample/README.md)，19點純設計待過目；[術師通用＋刻印](inscription-sample/README.md)已另存source-only候選，normal未開。仍逐型看，不把24案全套全樹。每子型／職業通用的數量、獨特性與普通/進階/高階分類，依[今日共同範本要求](template-requirements.md)沿用；刻印17點與浪潮19點分案；原keystone政策不變。
 
 ## 閱讀入口
 
+- [近衛通用＋浪潮鬥士過目](../../../../user/2026-11-04-guard-double-beat-sample.md)：19真點、通用4A2H、浪潮6A2H；不接runtime。
 - [先看刻印填圖樣板](../../../../user/2026-11-04-inscription-sample.md)：普通3、通用4A+2H、刻印6A+2H逐條內容與真圖。
 - [八職業24案主頁](../../../../user/2026-11-04-combat-playstyles.md)：先看全貌、法術與遠程、醫療輔助和跨類混搭。
 - [24案資料](roster.json)／[四組混搭](mixes.json)／[原作分支參考](class-reference.json)：玩法原創、來源機制與轉化限制分開。

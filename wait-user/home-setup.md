@@ -82,6 +82,12 @@ Role on/off 的普通原生 AI 與技能條件、隨從獨立身分、低血離�
 7. 玩家入口與零 companion 路徑已補 source；實測玩家星盤與原版 perk 疊加。
 8. B&B 真實 GMST 的 75／.15／0 與 Experience.ini 已讀，原校準計算已重跑但未讀取 GMST；實測傷害減免與 XP，必要時重跑校準，不預先改既定每份值。
 
+## POTC NativeBridge1.2.4：matching build與隔離live證據（2026-11-04）
+
+[source-only候選](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.4-dev-2026-11-04-NativeBridge/README.md)已存source／離線證據與private PoE輸入備份，normal刻印能力仍關閉，PE NOT BUILT，未部署；不要求再帶公司raw JSON或17GB研究樹。[還原入口](../agentctl/handoffs/home-2026-11-04/native-bridge/REBUILD.md)區分Git可恢復與固定parent／SDK工具鏈。
+
+回家有matching clang-cl／Ninja／xwin／已核靜態依賴及固定headers後才能建PE；若要驗explicit experimental hidden probe，須另行確認隔離build／部署、備份與測試存檔。重點是原生施法時序／來源、marker真實例壽命與刷新、正HP傷／MP實扣、真catalog與SKSE存讀；無可見符文，不把SDK doubles PASS當實機通過。舊1.2.3 S16項保留，不以此替代。
+
 ## 已完成（封存）
 
 ### 四個指定 mod 安裝施工窗（2026-11-01 立）

@@ -1,0 +1,1422 @@
+{
+ "contract": "wf-table/1",
+ "source": "offline candidate geometry",
+ "extracted": "2026-11-04",
+ "sourceSha256": "7e9f755e33152129ebf36c2ebdad639c527e4ad70d274b1fefb860f30ca01122",
+ "converter": "frozen1.2.3/source/tools/convert_poe_graph.py",
+ "protectedPolicy": "local one-hop boundary only; global raw/policy protected counts verified without copying rows",
+ "globalRawKeystones": 57,
+ "globalPolicyKeystones": 48,
+ "globalPolicyUnchanged": true,
+ "subtype_display_name": "浪潮鬥士",
+ "naming_reason": "2026-11-04 使用者命名：一浪接一浪；stable IDs/path不變",
+ "columns": [
+  "id",
+  "label",
+  "scope",
+  "status",
+  "type",
+  "weight",
+  "group",
+  "orbit",
+  "orbitIndex",
+  "position",
+  "neighbors",
+  "source_in",
+  "source_out",
+  "original_type_flags",
+  "effects"
+ ],
+ "rows": [
+  {
+   "id": 476,
+   "label": "Strength",
+   "scope": "ordinary",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 395,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -1235.43,
+    4563.27
+   ],
+   "neighbors": [
+    24865,
+    30691,
+    34009,
+    40867
+   ],
+   "source_in": [
+    "30691",
+    "34009",
+    "40867"
+   ],
+   "source_out": [
+    "24865"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 5612,
+   "label": "Physical Attack Damage",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 422,
+   "orbit": 2,
+   "orbitIndex": 1,
+   "position": [
+    -393.595,
+    3940.813884586921
+   ],
+   "neighbors": [
+    35568,
+    39211,
+    47389
+   ],
+   "source_in": [
+    "47389"
+   ],
+   "source_out": [
+    "39211",
+    "35568"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     18,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 6580,
+   "label": "Dexterity",
+   "scope": "commonA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 484,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    1172.56,
+    4529.27
+   ],
+   "neighbors": [
+    11651,
+    19711,
+    48807,
+    49806
+   ],
+   "source_in": [
+    "49806",
+    "48807",
+    "11651"
+   ],
+   "source_out": [
+    "19711"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 11651,
+   "label": "Intelligence",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 504,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    1734.19,
+    4298.82
+   ],
+   "neighbors": [
+    5408,
+    6580,
+    58214
+   ],
+   "source_in": [],
+   "source_out": [
+    "5408",
+    "6580",
+    "58214"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     2,
+     0.7
+    ],
+    [
+     16,
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": 12236,
+   "label": "Attack Damage with Shield",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 425,
+   "orbit": 2,
+   "orbitIndex": 15,
+   "position": [
+    -398.9262985522207,
+    5099.178701447779
+   ],
+   "neighbors": [
+    34009,
+    46730,
+    49538
+   ],
+   "source_in": [
+    "49538"
+   ],
+   "source_out": [
+    "46730",
+    "34009"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     13,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 18302,
+   "label": "Life",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 438,
+   "orbit": 2,
+   "orbitIndex": 11,
+   "position": [
+    -137.88111541307902,
+    4813.29
+   ],
+   "neighbors": [
+    34009,
+    48438
+   ],
+   "source_in": [
+    "34009",
+    "48438"
+   ],
+   "source_out": [],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 19711,
+   "label": "Dexterity",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 495,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    1479.76,
+    5870.29
+   ],
+   "neighbors": [
+    6580,
+    8410,
+    17201,
+    20010,
+    50041,
+    60529
+   ],
+   "source_in": [
+    "6580",
+    "50041"
+   ],
+   "source_out": [
+    "20010",
+    "17201",
+    "60529",
+    "8410"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 19782,
+   "label": "Defences with Shield",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 425,
+   "orbit": 2,
+   "orbitIndex": 7,
+   "position": [
+    -203.375,
+    5354.0261154130785
+   ],
+   "neighbors": [
+    25324,
+    49538
+   ],
+   "source_in": [
+    "25324"
+   ],
+   "source_out": [
+    "49538"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 24377,
+   "label": "Attack Speed",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 454,
+   "orbit": 2,
+   "orbitIndex": 15,
+   "position": [
+    367.90370144777927,
+    3991.29870144778
+   ],
+   "neighbors": [
+    35568,
+    39725,
+    56803
+   ],
+   "source_in": [
+    "39725"
+   ],
+   "source_out": [
+    "35568",
+    "56803"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     18,
+     0.4
+    ],
+    [
+     22,
+     0.2
+    ],
+    [
+     25,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": 24641,
+   "label": "Dual Wield Damage",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 451,
+   "orbit": 2,
+   "orbitIndex": 1,
+   "position": [
+    367.365,
+    5073.433884586921
+   ],
+   "neighbors": [
+    3009,
+    25456,
+    48807
+   ],
+   "source_in": [
+    "3009"
+   ],
+   "source_out": [
+    "25456",
+    "48807"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     13,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 24865,
+   "label": "Strength",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 380,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -1545.59,
+    5867.8
+   ],
+   "neighbors": [
+    476,
+    6741,
+    8904,
+    34031,
+    50515,
+    56920
+   ],
+   "source_in": [
+    "476"
+   ],
+   "source_out": [
+    "6741",
+    "34031",
+    "50515",
+    "56920",
+    "8904"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 25324,
+   "label": "Attack Damage with Shield",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 425,
+   "orbit": 2,
+   "orbitIndex": 9,
+   "position": [
+    -365.375,
+    5354.0261154130785
+   ],
+   "neighbors": [
+    19782,
+    34031,
+    46730
+   ],
+   "source_in": [
+    "46730"
+   ],
+   "source_out": [
+    "19782",
+    "34031"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     13,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 25933,
+   "label": "Life",
+   "scope": "commonA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 438,
+   "orbit": 2,
+   "orbitIndex": 5,
+   "position": [
+    142.71111541307906,
+    4813.29
+   ],
+   "neighbors": [
+    48438,
+    48807
+   ],
+   "source_in": [
+    "48438",
+    "48807"
+   ],
+   "source_out": [],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 28265,
+   "label": "Mana and Mana Regeneration",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 438,
+   "orbit": 2,
+   "orbitIndex": 3,
+   "position": [
+    142.71111541307906,
+    4651.29
+   ],
+   "neighbors": [
+    48807,
+    54776
+   ],
+   "source_in": [],
+   "source_out": [
+    "48807",
+    "54776"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     2,
+     0.5
+    ],
+    [
+     21,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 30155,
+   "label": "Projectile Damage",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 470,
+   "orbit": 2,
+   "orbitIndex": 15,
+   "position": [
+    615.1737014477793,
+    5277.158701447779
+   ],
+   "neighbors": [
+    47030,
+    48807,
+    60002
+   ],
+   "source_in": [
+    "47030"
+   ],
+   "source_out": [
+    "60002",
+    "48807"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     15,
+     0.6
+    ],
+    [
+     16,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": 30691,
+   "label": "Intelligence",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 371,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -1834.27,
+    4378.42
+   ],
+   "neighbors": [
+    476,
+    28498,
+    42086,
+    43374
+   ],
+   "source_in": [
+    "43374"
+   ],
+   "source_out": [
+    "476",
+    "28498",
+    "42086"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     2,
+     0.7
+    ],
+    [
+     16,
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": 34009,
+   "label": "Master of the Arena",
+   "scope": "subH0",
+   "status": "pending",
+   "type": "notable",
+   "weight": 3,
+   "group": 413,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -647.025,
+    4732.29
+   ],
+   "neighbors": [
+    476,
+    12236,
+    18302,
+    43412,
+    50360,
+    51856
+   ],
+   "source_in": [
+    "43412",
+    "12236"
+   ],
+   "source_out": [
+    "51856",
+    "50360",
+    "18302",
+    "476"
+   ],
+   "original_type_flags": {
+    "isNotable": true
+   },
+   "effects": [
+    [
+     1,
+     0.375
+    ],
+    [
+     10,
+     0.375
+    ],
+    [
+     17,
+     1.5
+    ],
+    [
+     20,
+     0.75
+    ]
+   ]
+  },
+  {
+   "id": 39725,
+   "label": "Attack Speed and Accuracy",
+   "scope": "ordinary",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 439,
+   "orbit": 3,
+   "orbitIndex": 7,
+   "position": [
+    170.16499999999996,
+    3478.5085102677867
+   ],
+   "neighbors": [
+    24377,
+    50986,
+    63357,
+    63649
+   ],
+   "source_in": [
+    "63357",
+    "50986"
+   ],
+   "source_out": [
+    "63649",
+    "24377"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     0.5
+    ],
+    [
+     18,
+     0.2
+    ],
+    [
+     22,
+     0.1
+    ],
+    [
+     25,
+     0.2
+    ]
+   ]
+  },
+  {
+   "id": 40867,
+   "label": "Strength",
+   "scope": "ordinary",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 416,
+   "orbit": 4,
+   "orbitIndex": 33,
+   "position": [
+    -1041.0512164248653,
+    3747.6926836284038
+   ],
+   "neighbors": [
+    476,
+    42911
+   ],
+   "source_in": [
+    "42911"
+   ],
+   "source_out": [
+    "476"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 42911,
+   "label": "Strength",
+   "scope": "ordinary",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 416,
+   "orbit": 4,
+   "orbitIndex": 0,
+   "position": [
+    -601.785,
+    3478.51
+   ],
+   "neighbors": [
+    40867,
+    47389
+   ],
+   "source_in": [
+    "47389"
+   ],
+   "source_out": [
+    "40867"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 43412,
+   "label": "Two Handed Melee Damage",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 409,
+   "orbit": 2,
+   "orbitIndex": 1,
+   "position": [
+    -645.985,
+    5251.413884586921
+   ],
+   "neighbors": [
+    30842,
+    34009,
+    34666
+   ],
+   "source_in": [
+    "30842"
+   ],
+   "source_out": [
+    "34666",
+    "34009"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.2
+    ],
+    [
+     14,
+     0.5
+    ],
+    [
+     19,
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": 45227,
+   "label": "Attack Speed",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 454,
+   "orbit": 2,
+   "orbitIndex": 9,
+   "position": [
+    401.455,
+    4246.146115413079
+   ],
+   "neighbors": [
+    48807,
+    50306,
+    62694
+   ],
+   "source_in": [
+    "62694",
+    "48807"
+   ],
+   "source_out": [
+    "50306"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     18,
+     0.4
+    ],
+    [
+     22,
+     0.2
+    ],
+    [
+     25,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": 46730,
+   "label": "Attack Damage with Shield",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 425,
+   "orbit": 2,
+   "orbitIndex": 12,
+   "position": [
+    -446.375,
+    5213.73
+   ],
+   "neighbors": [
+    12236,
+    25324
+   ],
+   "source_in": [
+    "12236"
+   ],
+   "source_out": [
+    "25324"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     13,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 47389,
+   "label": "Physical Attack Damage and Life",
+   "scope": "ordinary",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 439,
+   "orbit": 3,
+   "orbitIndex": 9,
+   "position": [
+    -164.83500000000004,
+    3478.5085102677867
+   ],
+   "neighbors": [
+    5612,
+    42911,
+    50986,
+    63357
+   ],
+   "source_in": [
+    "63357"
+   ],
+   "source_out": [
+    "50986",
+    "42911",
+    "5612"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     18,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 48438,
+   "label": "Bravery",
+   "scope": "commonH",
+   "status": "pending",
+   "type": "notable",
+   "weight": 3,
+   "group": 438,
+   "orbit": 2,
+   "orbitIndex": 8,
+   "position": [
+    2.41500000000002,
+    4894.29
+   ],
+   "neighbors": [
+    18302,
+    25933
+   ],
+   "source_in": [],
+   "source_out": [
+    "25933",
+    "18302"
+   ],
+   "original_type_flags": {
+    "isNotable": true
+   },
+   "effects": [
+    [
+     1,
+     1.5
+    ],
+    [
+     3,
+     1.0499999999999998
+    ],
+    [
+     24,
+     0.22499999999999998
+    ],
+    [
+     25,
+     0.22499999999999998
+    ]
+   ]
+  },
+  {
+   "id": 48513,
+   "label": "Physical Attack Damage",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 422,
+   "orbit": 2,
+   "orbitIndex": 9,
+   "position": [
+    -555.595,
+    4221.4061154130795
+   ],
+   "neighbors": [
+    39211,
+    51856
+   ],
+   "source_in": [
+    "51856"
+   ],
+   "source_out": [
+    "39211"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     18,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 48807,
+   "label": "Art of the Gladiator",
+   "scope": "commonH",
+   "status": "pending",
+   "type": "notable",
+   "weight": 3,
+   "group": 465,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    652.555,
+    4732.29
+   ],
+   "neighbors": [
+    6580,
+    24641,
+    25933,
+    28265,
+    30155,
+    45227
+   ],
+   "source_in": [
+    "28265",
+    "24641",
+    "30155"
+   ],
+   "source_out": [
+    "45227",
+    "25933",
+    "6580"
+   ],
+   "original_type_flags": {
+    "isNotable": true
+   },
+   "effects": [
+    [
+     3,
+     1.875
+    ],
+    [
+     10,
+     0.375
+    ],
+    [
+     18,
+     0.30000000000000004
+    ],
+    [
+     22,
+     0.15000000000000002
+    ],
+    [
+     25,
+     0.30000000000000004
+    ]
+   ]
+  },
+  {
+   "id": 49538,
+   "label": "Defiance",
+   "scope": "subH1",
+   "status": "pending",
+   "type": "notable",
+   "weight": 3,
+   "group": 425,
+   "orbit": 2,
+   "orbitIndex": 4,
+   "position": [
+    -122.375,
+    5213.73
+   ],
+   "neighbors": [
+    12236,
+    19782
+   ],
+   "source_in": [
+    "19782"
+   ],
+   "source_out": [
+    "12236"
+   ],
+   "original_type_flags": {
+    "isNotable": true
+   },
+   "effects": [
+    [
+     3,
+     1.4000000000000001
+    ],
+    [
+     13,
+     1.0
+    ],
+    [
+     29,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": 49806,
+   "label": "Dexterity",
+   "scope": "commonA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 458,
+   "orbit": 4,
+   "orbitIndex": 7,
+   "position": [
+    989.2912164248653,
+    3747.6926836284038
+   ],
+   "neighbors": [
+    6580,
+    63649
+   ],
+   "source_in": [
+    "63649"
+   ],
+   "source_out": [
+    "6580"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 50360,
+   "label": "Mana and Mana Regeneration",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 438,
+   "orbit": 2,
+   "orbitIndex": 13,
+   "position": [
+    -154.0649838588291,
+    4690.361314693391
+   ],
+   "neighbors": [
+    34009,
+    54776
+   ],
+   "source_in": [
+    "34009",
+    "54776"
+   ],
+   "source_out": [],
+   "original_type_flags": {},
+   "effects": [
+    [
+     2,
+     0.5
+    ],
+    [
+     21,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 50986,
+   "label": "DUELIST",
+   "scope": "boundary",
+   "status": "context",
+   "type": "start",
+   "weight": 0,
+   "group": 439,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    2.665,
+    3188.39
+   ],
+   "neighbors": [
+    24984,
+    32730,
+    33795,
+    39725,
+    47389
+   ],
+   "source_in": [
+    "47389"
+   ],
+   "source_out": [
+    "39725",
+    "32730",
+    "24984",
+    "33795"
+   ],
+   "original_type_flags": {
+    "classStartIndex": 4
+   },
+   "effects": []
+  },
+  {
+   "id": 51856,
+   "label": "Physical Attack Damage",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 422,
+   "orbit": 2,
+   "orbitIndex": 7,
+   "position": [
+    -393.595,
+    4221.4061154130795
+   ],
+   "neighbors": [
+    34009,
+    48513,
+    59718
+   ],
+   "source_in": [
+    "34009"
+   ],
+   "source_out": [
+    "59718",
+    "48513"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     18,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 54776,
+   "label": "Mana Flows",
+   "scope": "boundary",
+   "status": "context",
+   "type": "notable",
+   "weight": 3,
+   "group": 438,
+   "orbit": 2,
+   "orbitIndex": 0,
+   "position": [
+    2.415,
+    4570.29
+   ],
+   "neighbors": [
+    28265,
+    50360
+   ],
+   "source_in": [
+    "28265"
+   ],
+   "source_out": [
+    "50360"
+   ],
+   "original_type_flags": {
+    "isNotable": true
+   },
+   "effects": [
+    [
+     2,
+     1.6999999999999997
+    ],
+    [
+     16,
+     0.3
+    ],
+    [
+     21,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 59718,
+   "label": "Armour, Evasion and Life",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 440,
+   "orbit": 1,
+   "orbitIndex": 4,
+   "position": [
+    -68.34908311032395,
+    4157.94
+   ],
+   "neighbors": [
+    35568,
+    51856
+   ],
+   "source_in": [
+    "51856",
+    "35568"
+   ],
+   "source_out": [],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     3,
+     0.35
+    ],
+    [
+     24,
+     0.075
+    ],
+    [
+     25,
+     0.075
+    ]
+   ]
+  },
+  {
+   "id": 63357,
+   "label": "Path of the Duelist",
+   "scope": "boundary",
+   "status": "context",
+   "type": "ascendancy",
+   "weight": 0,
+   "group": 74,
+   "orbit": 2,
+   "orbitIndex": 5,
+   "position": [
+    -8486.033884586921,
+    8957.97
+   ],
+   "neighbors": [
+    17445,
+    39725,
+    47389
+   ],
+   "source_in": [
+    "17445"
+   ],
+   "source_out": [
+    "47389",
+    "39725"
+   ],
+   "original_type_flags": {
+    "isNotable": true,
+    "ascendancyName": "Ascendant"
+   },
+   "effects": []
+  },
+  {
+   "id": 63649,
+   "label": "Dexterity",
+   "scope": "commonA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 458,
+   "orbit": 4,
+   "orbitIndex": 0,
+   "position": [
+    550.025,
+    3478.51
+   ],
+   "neighbors": [
+    39725,
+    49806
+   ],
+   "source_in": [
+    "39725"
+   ],
+   "source_out": [
+    "49806"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  }
+ ]
+}

@@ -271,7 +271,7 @@
     "C2_conduction"
    ],
    "mechanic_reason": "使原生法術被動附帶本人可辨識狀態，才開後續刻印條件；非導流換靶或self蓄咒",
-   "trigger_condition": "已買61308且compiled native bridge ready；本人既有SpellItem經原生命中/來源歸因判定，命中敵人後附印",
+   "trigger_condition": "已買61308且compiled native bridge ready；本人既有SpellItem經原生命中/來源歸因判定，命中對caster呈敵對的target actor後附印；MGEF hostile+detrimental旗標另驗，不能代替actor敵對判定。首probe在queued處理時重查，命中當刻時序待驗",
    "effect_formula": "只加caster-owned target限時狀態及可觀察標記；原法傷/原生成本照常，不內建10MP/P/B/D/爆傷",
    "cost_timing": "H0無新MP付款；未買H0任何刻印進階不可購/不可生效；首slice優先IH0→IA4",
    "lifecycle": "事件前讀既有印，後提交；首擊不自吃，IA4同擊消印後不由H0重貼；expiry/reset/respec/load統一清理",

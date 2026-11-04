@@ -3,6 +3,8 @@
  "source": "../../../../user/2026-11-04-combat-playstyles.md",
  "extracted": "2026-11-04",
  "scope": "Eight role families with three original proposals each. Not mutually exclusive classes, not an exhaustive Arknights taxonomy, not implemented. All numbers/costs/durations unapproved.",
+ "G1_display_name_decision": "2026-11-04 user: 浪潮鬥士，一浪接一浪",
+ "D1_display_name_decision": "2026-11-04 user explicitly renamed 守衛者; stable D1 unchanged",
  "columns": [
   "id",
   "class",
@@ -51,7 +53,7 @@
   {
    "id": "G1",
    "class": "近衛",
-   "name": "雙拍劍士",
+   "name": "浪潮鬥士",
    "fantasy": "第一拍試探，第二拍選傷口",
    "loop": "普擊短節奏→下一劍同敵深化破綻或盾擊改打斷→重擊兌現重置",
    "decision": "連打傷害、打斷危險招或提前收招",
@@ -84,13 +86,13 @@
   {
    "id": "D1",
    "class": "重裝",
-   "name": "守線者",
-   "fantasy": "這一片由我守",
-   "loop": "真格擋立錨→圈內持盾護己友→出圈/重擊撤守追擊",
-   "decision": "護身後隊友或處理圈外威脅",
+   "name": "守衛者",
+   "fantasy": "我的盾替隊友接住壓力，護援授出後可跟著他們走",
+   "loop": "真格擋→給一名合法近友限時護援→離授予距離仍保留→選反攻撤援或持盾維持",
+   "decision": "先支援誰、自己何時放下盾換反攻，不要求隊友站固定圈",
    "reference_branch": "鐵衛",
-   "boundary": "作用友軍的防護非實體代擋/轉傷，不照搬阻擋三人",
-   "status": "proposal_not_implemented"
+   "boundary": "portable support candidate；真格擋/lease未接，舊圈非current、不強加Courage",
+   "status": "design_candidate_pending_no_runtime"
   },
   {
    "id": "D2",

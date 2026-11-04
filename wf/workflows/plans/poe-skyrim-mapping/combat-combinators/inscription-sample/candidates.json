@@ -292,7 +292,7 @@
    "original_weight": 3,
    "design_tier": "high",
    "candidate_name": "原生附印",
-   "effect": "先買高階IH0才可原生命中附印；不帶P/B/D",
+   "effect": "先買高階IH0才可原生命中敵對actor後附印；MGEF敵向旗標與actor敵對各自檢查；不帶P/B/D",
    "rule_refs": [
     "IH0"
    ],

@@ -2,13 +2,15 @@
 
 本輪依你的新裁示實作隔離候選：**附印本身是高階能力，買了才有刻印進階資格。** 不再每個進階附送一套印，也不是另外學一招印記法術。你照用已有法術；附印、歸因與後續效果由買點啟用的被動橋處理。source／公司離線驗證在進行，尚非live功能。
 
-公司現已重建隔離1.2.4 source候選，baseline及兩項審閱修正已通過公司離線驗證，施法來源→購點規則→附印→削魔的跨模組整合測試也已通過。**正常模式仍關閉刻印能力**；明確實驗模式只探測「原生附印→斷咒窗口」，限瞬發、單效果、單手、無範圍的敵向傷害法術；不代表所有原版法術都接好了。印目前沒有可見特效，沒有新Windows DLL或遊戲驗收。
+公司現已重建隔離1.2.4 source候選，baseline及兩項審閱修正已通過公司離線驗證，施法來源→購點規則→附印→削魔的跨模組整合測試也已通過。**正常模式仍關閉刻印能力**；明確實驗模式只探測「原生附印→斷咒窗口」，限瞬發、單效果、單手、效果範圍欄為0的敵向傷害法術；不代表所有原版法術都接好了。印目前沒有可見特效，沒有新Windows DLL或遊戲驗收。
 
 ## 先走到核心
 
 ![真PoE局部圖](../workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/region.svg)
 
 [單獨開圖](../workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/region.svg)：青是刻印、紫是術師通用、灰保護不填、空心原圖外接。17候選的原ID／邊／位置／小大點類型不變。
+
+全圖Witch起點實際購點路徑為 `54447→57264→37569→36542→4397→31875→60398→13009→17735→58402→59728→61308→40927`；已用真正Book逐點買過，沒有借pending規則通路。圖中綠框只有H0／IA4的hidden probe，虛線其餘12條規則仍不可購；normal模式兩者也未開。
 
 58402→59728兩個普通點就到61308高階「原生附印」，避免被自己鎖住。首個進階「斷咒窗口」移40927，真鄰接H0；原59070改放「終筆回流」，只是兩個候選綁定交換。其餘pending規則不會為了通路而假開。
 
@@ -36,7 +38,9 @@ Mastery40439、Runebinder42343、Divine Fervour30693不改。四個高階都放�
 
 ## 核心高階 原生附印
 
-買61308後，本人正常既有傷害SpellItem的可歸因命中，才可被動留下owner＋target＋期限狀態。**H0本身不多收MP，不藏固定10MP，不內建付費本金／儲傷／爆傷。** 原法術原傷與原成本照常。未買H0，不能買或套用以下刻印進階。
+買61308後，本人正常既有傷害SpellItem命中對本人呈敵對的目標，經來源歸因判定後，才可被動留下owner＋target＋期限狀態。**H0本身不多收MP，不藏固定10MP，不內建付費本金／儲傷／爆傷。** 原法術原傷與原成本照常。未買H0，不能買或套用以下刻印進階。
+
+probe另分別檢查「法術效果有hostile＋detrimental旗標」及「目標actor對caster敵對」，不是用前者猜後者；目前於佇列處理時重查，命中瞬間的敵我／施法時序仍待實機。
 
 目前靜態marker候選沒有visual，原生命中／實際effect存活尚未實機驗；不能因有一個ESL就宣稱可見印或normal ready。normal與明確opt-in hidden probe必須分流；未ready時UI應拒絕購買，不讓你先花點買空效果。
 
@@ -72,4 +76,4 @@ A1原生實付指這次真正扣的MP，不含刻印本金／加碼／遠端費�
 
 真正條件是圖連通AND已買規則前置ANDcompiled adapter readyAND正常點池；Debug只繞點數。整actor免費Reset保最高等級、所有點回池，清allocation及debug快照／暫態；不能只拿掉H0仍保進階，也不能退出debug又復活依存。沒有新增單點退款。
 
-本輪優先驗「買H0→原生命中附狀態→第二次命中觸發A4」，原法傷／原生施法操作不換成另一套spell。原生歸因、可見性、真MP扣除、Windows ABI與家中操作仍未驗；source/adapter測試不能冒稱live。細節與當前證據界線見[候選入口](../workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/README.md)。此前[原生樣板目錄](2026-11-04-native-spell-templates.md)只是技術附錄，[蝕魔對照](../workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/native-first-review.md)暫緩不推。
+本輪優先驗「買H0→原生命中附狀態→第二次命中觸發A4」，原法傷／原生施法操作不換成另一套spell。原生歸因、可見性、真MP扣除、Windows ABI與家中操作仍未驗；source/adapter測試不能冒稱live；目前probe收的是效果套用通知，還不能當成已驗證的正傷命中。細節與當前證據界線見[候選入口](../workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/README.md)。此前[原生樣板目錄](2026-11-04-native-spell-templates.md)只是技術附錄，[蝕魔對照](../workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/native-first-review.md)暫緩不推。

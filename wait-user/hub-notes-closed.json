@@ -272,6 +272,18 @@
    "關閉日期": "2026-11-03",
    "證據路徑": "later-decisions-closed.json",
    "內容": "使用者要求全集，尚未備齊；撤回樣本過目等待，非核准或驗完。later-decisions 5→4，總 open 37→36；全集完成後再正式呈審。"
+  },
+  {
+   "項目": "2026-11-04 source-only1.2.4與浪潮設計過目新增",
+   "關閉日期": "2026-11-04",
+   "證據路徑": "home-setup.md；later-decisions.md",
+   "內容": "新增matching build/隔離live外部環境項及浪潮19點玩法過目項；顯示名已定不重問。home7→8，later4→5，總open36→38。PoE raw已有private Git gzip，不列缺資料阻擋；未授權部署/近衛source。"
+  },
+  {
+   "項目": "2026-11-04 浪潮過目完成／繼續守衛者",
+   "關閉日期": "2026-11-04",
+   "證據路徑": "later-decisions-closed.json",
+   "內容": "使用者已看浪潮樣板、正式更名並指定下一重裝守衛者設計；關閉過目動作而非核准數值/runtime。later5→4，總open38→37；home NativeBridge外部build/live8仍保留。"
   }
  ]
 }

@@ -1,0 +1,393 @@
+{
+ "contract": "wf-table/1",
+ "source": "README.md",
+ "extracted": "2026-11-04",
+ "compiled_runtime": false,
+ "runtime_namespace": "not in caster14 rule registry",
+ "subtype_display_name": "浪潮鬥士",
+ "naming_reason": "2026-11-04 使用者命名：一浪接一浪；stable IDs/path不變",
+ "columns": [
+  "node_id",
+  "original_label",
+  "original_type",
+  "original_weight",
+  "design_tier",
+  "candidate_name",
+  "effect",
+  "rule_refs",
+  "scope",
+  "budget_proposal",
+  "status",
+  "requires_nodes",
+  "normal_atom",
+  "normal_shares",
+  "normal_per_share"
+ ],
+ "rows": [
+  {
+   "node_id": 476,
+   "original_label": "Strength",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "調息",
+   "effect": "SPREGEN 1share=10%",
+   "rule_refs": [],
+   "scope": "ordinary",
+   "budget_proposal": "fixed approved atom/per_share; replace original GGG mapping, no new coefficient",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": "SPREGEN",
+   "normal_shares": 1,
+   "normal_per_share": 10.0
+  },
+  {
+   "node_id": 6580,
+   "original_label": "Dexterity",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "弱敵壓制",
+   "effect": "本次原生stagger係數*(1+0.10*n)；非固定暈眩/中斷",
+   "rule_refs": [
+    "GCA3"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 12236,
+   "original_label": "Attack Damage with Shield",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "雙拍切口",
+   "effect": "該次原生武器傷害*(1+0.15*n)",
+   "rule_refs": [
+    "DBA1"
+   ],
+   "scope": "subtype",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [
+    34009
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 18302,
+   "original_label": "Life",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "斷架重擊",
+   "effect": "額外削敵SP=本人final maxSP*0.05*n（新試案，非術師MP裁示）",
+   "rule_refs": [
+    "DBA2"
+   ],
+   "scope": "subtype",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [
+    34009
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 19782,
+   "original_label": "Defences with Shield",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "二拍回息",
+   "effect": "恢復本人final maxSP*0.02*n",
+   "rule_refs": [
+    "DBA5"
+   ],
+   "scope": "subtype",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [
+    34009
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 25933,
+   "original_label": "Life",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "卸力回息",
+   "effect": "返本次格擋原生實付SP*n/(n+4)；n1=20%",
+   "rule_refs": [
+    "GCA4"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 28265,
+   "original_label": "Mana and Mana Regeneration",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "換鋒脫困",
+   "effect": "消A機會；A對本人的合格輸出/(1+0.15*n)，示範3秒",
+   "rule_refs": [
+    "DBA3"
+   ],
+   "scope": "subtype",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [
+    34009
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 34009,
+   "original_label": "Master of the Arena",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "接拍",
+   "effect": "每owner僅一個當前focus_target+expires+首擊來源；後續原生操作按已購A選分支，不白送傷害/回復",
+   "rule_refs": [
+    "DBH0"
+   ],
+   "scope": "subtype",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 39725,
+   "original_label": "Attack Speed and Accuracy",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "護身",
+   "effect": "AR 1share=6AR",
+   "rule_refs": [],
+   "scope": "ordinary",
+   "budget_proposal": "fixed approved atom/per_share; replace original GGG mapping, no new coefficient",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": "AR",
+   "normal_shares": 1,
+   "normal_per_share": 6.0
+  },
+  {
+   "node_id": 40867,
+   "original_label": "Strength",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "續命",
+   "effect": "HP 1share=5點",
+   "rule_refs": [],
+   "scope": "ordinary",
+   "budget_proposal": "fixed approved atom/per_share; replace original GGG mapping, no new coefficient",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": "HP",
+   "normal_shares": 1,
+   "normal_per_share": 5.0
+  },
+  {
+   "node_id": 42911,
+   "original_label": "Strength",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "續步",
+   "effect": "SP 1share=5點",
+   "rule_refs": [],
+   "scope": "ordinary",
+   "budget_proposal": "fixed approved atom/per_share; replace original GGG mapping, no new coefficient",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": "SP",
+   "normal_shares": 1,
+   "normal_per_share": 5.0
+  },
+  {
+   "node_id": 47389,
+   "original_label": "Physical Attack Damage and Life",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "立身",
+   "effect": "HP 1share=5點",
+   "rule_refs": [],
+   "scope": "ordinary",
+   "budget_proposal": "fixed approved atom/per_share; replace original GGG mapping, no new coefficient",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": "HP",
+   "normal_shares": 1,
+   "normal_per_share": 5.0
+  },
+  {
+   "node_id": 48438,
+   "original_label": "Bravery",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "破守契約",
+   "effect": "本人近戰攻擊不可被格擋；本人不能格擋",
+   "rule_refs": [
+    "GCH2"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 48807,
+   "original_label": "Art of the Gladiator",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "互不打斷",
+   "effect": "本人近戰不再造成stagger；本人也不受敵原生近戰武器stagger",
+   "rule_refs": [
+    "GCH1"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 49538,
+   "original_label": "Defiance",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "以拍代力",
+   "effect": "重擊以接拍機會取代本次原生重擊SP付款；無機會不能重擊",
+   "rule_refs": [
+    "DBH1"
+   ],
+   "scope": "subtype",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [
+    34009
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 49806,
+   "original_label": "Dexterity",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "穩架承壓",
+   "effect": "本次格擋後合格傷害/(1+0.10*n)",
+   "rule_refs": [
+    "GCA2"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 50360,
+   "original_label": "Mana and Mana Regeneration",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "轉守留步",
+   "effect": "消接拍換守步：下一筆確有正HP傷提交的敵向原生近戰武器傷害/(1+0.20*n)；不含法術/箭矢/DoT/環境/自傷",
+   "rule_refs": [
+    "DBA4"
+   ],
+   "scope": "subtype",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [
+    34009
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 51856,
+   "original_label": "Physical Attack Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "破擋再接",
+   "effect": "自動額外支付本人final maxSP*0.05/n，足額保留同一機會到原expires；份數越多只降成本、不增次數/期限",
+   "rule_refs": [
+    "DBA6"
+   ],
+   "scope": "subtype",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [
+    34009
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  },
+  {
+   "node_id": 63649,
+   "original_label": "Dexterity",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "蓄力有餘",
+   "effect": "本次原生武器傷害*(1+0.10*n)",
+   "rule_refs": [
+    "GCA1"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "candidate replaces original node effects; no retained original numeric bonus; new rule budget not approved",
+   "status": "prototype_pending_user_review_not_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null
+  }
+ ]
+}
