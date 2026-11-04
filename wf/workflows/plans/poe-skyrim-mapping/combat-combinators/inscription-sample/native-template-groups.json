@@ -1,0 +1,153 @@
+{
+ "contract": "wf-table/1",
+ "source": "../../../../../user/2026-11-04-native-spell-templates.md",
+ "extracted": "2026-11-04",
+ "evidence_scope": "Fixed CommonLib declarations and original/SKSE Papyrus APIs. Grouping is an explanatory classification, not a guarantee every archetype works as a player spell. CK pages403; no local vanilla record bytes.",
+ "columns": [
+  "group_id",
+  "category",
+  "archetypes",
+  "existing_support",
+  "boundary",
+  "source"
+ ],
+ "rows": [
+  {
+   "group_id": "N1",
+   "category": "數值與資源",
+   "archetypes": [
+    "ValueModifier",
+    "DualValueModifier",
+    "PeakValueModifier",
+    "Absorb"
+   ],
+   "existing_support": "有ActorValue修改/雙值權重/吸取與effect生命週期底座",
+   "boundary": "不保證PVM同keyword只留最大，精確疊加待record/runtime",
+   "source": "https://raw.githubusercontent.com/CharmedBaryon/CommonLibSSE-NG/7a60f4de794095d7b0f8928d1b930a52e9a7da83/include/RE/V/ValueModifierEffect.h"
+  },
+  {
+   "group_id": "N2",
+   "category": "心智與行動控制",
+   "archetypes": [
+    "Calm",
+    "Demoralize",
+    "Frenzy",
+    "Rally",
+    "Paralysis",
+    "Stagger",
+    "Disarm",
+    "TurnUndead",
+    "Banish"
+   ],
+   "existing_support": "存在原生控制效果種類",
+   "boundary": "等級/抗性/種族限制未逐項核，不猜倍率公式",
+   "source": "https://raw.githubusercontent.com/CharmedBaryon/CommonLibSSE-NG/7a60f4de794095d7b0f8928d1b930a52e9a7da83/include/RE/E/EffectArchetypes.h"
+  },
+  {
+   "group_id": "N3",
+   "category": "召喚與使役",
+   "archetypes": [
+    "SummonCreature",
+    "Reanimate",
+    "CommandSummoned"
+   ],
+   "existing_support": "有召喚位置、commandedActor及Start/Finish/Save/Load",
+   "boundary": "不等於可任意轉移召喚owner",
+   "source": "https://raw.githubusercontent.com/CharmedBaryon/CommonLibSSE-NG/7a60f4de794095d7b0f8928d1b930a52e9a7da83/include/RE/S/SummonCreatureEffect.h"
+  },
+  {
+   "group_id": "N4",
+   "category": "召喚與強化裝備",
+   "archetypes": [
+    "BoundWeapon",
+    "EnhanceWeapon"
+   ],
+   "existing_support": "有BoundItem生命週期與inventory事件",
+   "boundary": "自動收武器/收鞘限制未核",
+   "source": "https://raw.githubusercontent.com/CharmedBaryon/CommonLibSSE-NG/7a60f4de794095d7b0f8928d1b930a52e9a7da83/include/RE/B/BoundItemEffect.h"
+  },
+  {
+   "group_id": "N5",
+   "category": "隱蔽 感知與照明",
+   "archetypes": [
+    "Invisibility",
+    "DetectLife",
+    "NightEye",
+    "Light",
+    "Darkness"
+   ],
+   "existing_support": "有對應原生效果ID",
+   "boundary": "Darkness等冷僻項只確認枚舉，不推薦當已證可用載具",
+   "source": "https://raw.githubusercontent.com/CharmedBaryon/CommonLibSSE-NG/7a60f4de794095d7b0f8928d1b930a52e9a7da83/include/RE/E/EffectArchetypes.h"
+  },
+  {
+   "group_id": "N6",
+   "category": "清除與治癒狀態",
+   "archetypes": [
+    "Dispel",
+    "CureDisease",
+    "CurePoison",
+    "CureParalysis",
+    "CureAddiction"
+   ],
+   "existing_support": "有狀態清除種類；Papyrus另有Dispel/DispelSpell/DispelAllSpells",
+   "boundary": "清effect/spell不是任意扣除自訂本金，精確白名單另定",
+   "source": "https://raw.githubusercontent.com/ianpatt/skse64/master/scripts/vanilla/Actor.psc"
+  },
+  {
+   "group_id": "N7",
+   "category": "近身光環",
+   "archetypes": [
+    "Cloak"
+   ],
+   "existing_support": "CloakEffect有Update與nextTargetCheck",
+   "boundary": "半徑/目標/tick細節待record，不自動完成owner印遷移",
+   "source": "https://raw.githubusercontent.com/CharmedBaryon/CommonLibSSE-NG/7a60f4de794095d7b0f8928d1b930a52e9a7da83/include/RE/C/CloakEffect.h"
+  },
+  {
+   "group_id": "N8",
+   "category": "地面與物理互動",
+   "archetypes": [
+    "SpawnHazard",
+    "Telekinesis",
+    "GrabActor"
+   ],
+   "existing_support": "有Hazard handle/ActorCause與抓物/拋物狀態",
+   "boundary": "抓物不等於任意拉NPC；碰撞/體型/免疫仍待驗",
+   "source": "https://raw.githubusercontent.com/CharmedBaryon/CommonLibSSE-NG/7a60f4de794095d7b0f8928d1b930a52e9a7da83/include/RE/S/SpawnHazardEffect.h"
+  },
+  {
+   "group_id": "N9",
+   "category": "時間 變身與特殊狀態",
+   "archetypes": [
+    "SlowTime",
+    "Etherealize",
+    "Werewolf",
+    "VampireLord",
+    "Disguise"
+   ],
+   "existing_support": "有名原生效果ID",
+   "boundary": "全世界/單目標及具體限制未逐項核",
+   "source": "https://raw.githubusercontent.com/CharmedBaryon/CommonLibSSE-NG/7a60f4de794095d7b0f8928d1b930a52e9a7da83/include/RE/E/EffectArchetypes.h"
+  },
+  {
+   "group_id": "N10",
+   "category": "靈魂 腳本與其他",
+   "archetypes": [
+    "SoulTrap",
+    "Script",
+    "SpawnScriptedRef",
+    "Guide",
+    "WerewolfFeed",
+    "Concussion",
+    "ValueAndParts",
+    "AccumulateMagnitude",
+    "Lock",
+    "Open"
+   ],
+   "existing_support": "有SoulTrap/ScriptEffect生命週期與script locals",
+   "boundary": "Script不是已存在印庫；Guide/Lock/Open等冷僻ID只記存在",
+   "source": "https://raw.githubusercontent.com/CharmedBaryon/CommonLibSSE-NG/7a60f4de794095d7b0f8928d1b930a52e9a7da83/include/RE/S/ScriptEffect.h"
+  }
+ ]
+}

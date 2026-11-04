@@ -1,0 +1,347 @@
+{
+ "contract": "wf-table/1",
+ "source": "native-template-groups.json",
+ "extracted": "2026-11-04",
+ "source_url": "https://raw.githubusercontent.com/CharmedBaryon/CommonLibSSE-NG/7a60f4de794095d7b0f8928d1b930a52e9a7da83/include/RE/E/EffectArchetypes.h",
+ "source_lines": "9-56",
+ "none_sentinel": -1,
+ "scope": "47 named IDs0-46, plus None=-1; enumeration presence is not runtime verification. No named Rune or Mark archetype.",
+ "columns": [
+  "id",
+  "native_name",
+  "group_id",
+  "evidence",
+  "availability"
+ ],
+ "rows": [
+  {
+   "id": 0,
+   "native_name": "ValueModifier",
+   "group_id": "N1",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 1,
+   "native_name": "Script",
+   "group_id": "N10",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 2,
+   "native_name": "Dispel",
+   "group_id": "N6",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 3,
+   "native_name": "CureDisease",
+   "group_id": "N6",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 4,
+   "native_name": "Absorb",
+   "group_id": "N1",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 5,
+   "native_name": "DualValueModifier",
+   "group_id": "N1",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 6,
+   "native_name": "Calm",
+   "group_id": "N2",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 7,
+   "native_name": "Demoralize",
+   "group_id": "N2",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 8,
+   "native_name": "Frenzy",
+   "group_id": "N2",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 9,
+   "native_name": "Disarm",
+   "group_id": "N2",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 10,
+   "native_name": "CommandSummoned",
+   "group_id": "N3",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 11,
+   "native_name": "Invisibility",
+   "group_id": "N5",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 12,
+   "native_name": "Light",
+   "group_id": "N5",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 13,
+   "native_name": "Darkness",
+   "group_id": "N5",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 14,
+   "native_name": "NightEye",
+   "group_id": "N5",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 15,
+   "native_name": "Lock",
+   "group_id": "N10",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 16,
+   "native_name": "Open",
+   "group_id": "N10",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 17,
+   "native_name": "BoundWeapon",
+   "group_id": "N4",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 18,
+   "native_name": "SummonCreature",
+   "group_id": "N3",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 19,
+   "native_name": "DetectLife",
+   "group_id": "N5",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 20,
+   "native_name": "Telekinesis",
+   "group_id": "N8",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 21,
+   "native_name": "Paralysis",
+   "group_id": "N2",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 22,
+   "native_name": "Reanimate",
+   "group_id": "N3",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 23,
+   "native_name": "SoulTrap",
+   "group_id": "N10",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 24,
+   "native_name": "TurnUndead",
+   "group_id": "N2",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 25,
+   "native_name": "Guide",
+   "group_id": "N10",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 26,
+   "native_name": "WerewolfFeed",
+   "group_id": "N10",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 27,
+   "native_name": "CureParalysis",
+   "group_id": "N6",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 28,
+   "native_name": "CureAddiction",
+   "group_id": "N6",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 29,
+   "native_name": "CurePoison",
+   "group_id": "N6",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 30,
+   "native_name": "Concussion",
+   "group_id": "N10",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 31,
+   "native_name": "ValueAndParts",
+   "group_id": "N10",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 32,
+   "native_name": "AccumulateMagnitude",
+   "group_id": "N10",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 33,
+   "native_name": "Stagger",
+   "group_id": "N2",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 34,
+   "native_name": "PeakValueModifier",
+   "group_id": "N1",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 35,
+   "native_name": "Cloak",
+   "group_id": "N7",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 36,
+   "native_name": "Werewolf",
+   "group_id": "N9",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 37,
+   "native_name": "SlowTime",
+   "group_id": "N9",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 38,
+   "native_name": "Rally",
+   "group_id": "N2",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 39,
+   "native_name": "EnhanceWeapon",
+   "group_id": "N4",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 40,
+   "native_name": "SpawnHazard",
+   "group_id": "N8",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 41,
+   "native_name": "Etherealize",
+   "group_id": "N9",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 42,
+   "native_name": "Banish",
+   "group_id": "N2",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 43,
+   "native_name": "SpawnScriptedRef",
+   "group_id": "N10",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 44,
+   "native_name": "Disguise",
+   "group_id": "N9",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 45,
+   "native_name": "GrabActor",
+   "group_id": "N8",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  },
+  {
+   "id": 46,
+   "native_name": "VampireLord",
+   "group_id": "N9",
+   "evidence": "fixed CommonLib enum declaration",
+   "availability": "declared; detailed configuration/runtime limits not individually verified"
+  }
+ ]
+}
