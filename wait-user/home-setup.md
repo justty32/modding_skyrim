@@ -84,9 +84,9 @@ Role on/off 的普通原生 AI 與技能條件、隨從獨立身分、低血離�
 
 ## POTC NativeBridge1.2.4：matching build與隔離live證據（2026-11-04）
 
-[source-only候選](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.4-dev-2026-11-04-NativeBridge/README.md)已存source／離線證據與private PoE輸入備份，normal刻印能力仍關閉，PE NOT BUILT，未部署；不要求再帶公司raw JSON或17GB研究樹。[還原入口](../agentctl/handoffs/home-2026-11-04/native-bridge/REBUILD.md)區分Git可恢復與固定parent／SDK工具鏈。
+[source-only候選](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.4-dev-2026-11-04-NativeBridge/README.md)的f510來源已於11-04家中隔離建成matching Windows x64 DLL 1.2.4.0，153 source SHA、原PoE輸入及重生圖全符，見[build證據](../agentctl/handoffs/home-2026-11-04/evening-recovery/native/REPORT.md)。normal刻印能力仍關閉，未部署；公司封存包的PE NOT BUILT是原交付時點，不覆寫凍結包。不要求再帶公司raw JSON或17GB研究樹。[還原入口](../agentctl/handoffs/home-2026-11-04/native-bridge/REBUILD.md)區分Git可恢復與固定parent／SDK工具鏈。
 
-回家有matching clang-cl／Ninja／xwin／已核靜態依賴及固定headers後才能建PE；若要驗explicit experimental hidden probe，須另行確認隔離build／部署、備份與測試存檔。重點是原生施法時序／來源、marker真實例壽命與刷新、正HP傷／MP實扣、真catalog與SKSE存讀；無可見符文，不把SDK doubles PASS當實機通過。舊1.2.3 S16項保留，不以此替代。
+matching工具鏈與依賴已在家中核符；本輪只編譯normal OFF，未執行DLL或Rules EXE。若要驗explicit experimental hidden probe，仍須另行確認隔離build／部署、備份與測試存檔。重點是原生施法時序／來源、marker真實例壽命與刷新、正HP傷／MP實扣、真catalog與SKSE存讀；無可見符文，不把SDK doubles PASS或PE link當實機通過。舊1.2.3 S16項保留，不以此替代。
 
 ## 已完成（封存）
 
