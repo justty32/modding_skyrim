@@ -1,0 +1,43 @@
+{
+ "contract": "wf-table/1",
+ "source": "RUBRIC.md",
+ "extracted": "2026-11-04",
+ "link_columns": [],
+ "columns": [
+  "id",
+  "acceptance",
+  "fixed_check",
+  "observable_evidence",
+  "issue_policy"
+ ],
+ "rows": [
+  {
+   "id": "1",
+   "acceptance": "池/unique/High玩法",
+   "fixed_check": "每職單一common4A2H；每子型6A2H；每子型至少3真uniqueA/2uniqueH；common/subtype-shared/unique分帳。High選前後、得到付出與非純倍率差異可說明。",
+   "observable_evidence": "30 rows/class; 3 subtype rows; concrete mechanics against sibling/legacy rules, not names or coefficients.",
+   "issue_policy": "Only concrete changed-play issue; max3/class. Not an excuse to add new requirements."
+  },
+  {
+   "id": "2",
+   "acceptance": "legacy/canonical/owner交易生命週期",
+   "fixed_check": "原42 legacy payload不改；C3 IA1 native_paid20%/IA4 own finalmaxMP5%；G1 single focus/DBA6/n；D1 portable giver lease/multi-giver sum/current consume ordering。共用canonical混買不雙乘，owner/target/payment/commit/consume/expiry/cleanup可追。",
+   "observable_evidence": "Row SHA exact reference; canonical proposal/requires/compatibility and positive/negative event scenario.",
+   "issue_policy": "Do not apply model draft earliest-expiry behavior over current D1; do not invent a new universal stack/timeout rule."
+  },
+  {
+   "id": "3",
+   "acceptance": "parameter/能力/份數truth boundary",
+   "fixed_check": "新參數pending_review；新draft compiled=false/runtime0；具名未證能力不稱ready。普通27atom與1/3/5原值不改；notable weight3不三倍機制。",
+   "observable_evidence": "parameters/feasibility/status plus references; partial C3 source probe/build cannot authorize new rules.",
+   "issue_policy": "Pending capability is permitted in creative draft; only flag unsupported readiness or a mechanism contradiction, not lack of implementation alone."
+  },
+  {
+   "id": "4",
+   "acceptance": "混買/原圖/AND gate",
+   "fixed_check": "無新增職業鎖或新menu；跨職混買保明確互動。幾何真邊可達、requires AND compiled分層，未ready不宣可買；原55/保護/普通權重由single geometry owner守。",
+   "observable_evidence": "requires_slots and compatibility; later reservation/geometry verification; no fabricated node IDs/bridges.",
+   "issue_policy": "Do not block semantic drafts awaiting geometry; geometry cannot substitute for prerequisites or readiness."
+  }
+ ]
+}

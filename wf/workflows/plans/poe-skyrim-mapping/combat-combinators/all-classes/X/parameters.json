@@ -1,0 +1,56 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "parameter_family",
+  "meaning",
+  "value",
+  "status",
+  "normal_invariant"
+ ],
+ "rows": [
+  {
+   "parameter_family": "F_*",
+   "meaning": "每rule條件強度、實移函數、提前引爆payload係數與份數作用，禁止默認新係數",
+   "value": "pending_review",
+   "status": "pending_review",
+   "normal_invariant": "atoms/per-share/1-3-5不變"
+  },
+  {
+   "parameter_family": "R_*",
+   "meaning": "恢復量與原生實付/缺失資源的函數；無實付不得虛造本金",
+   "value": "pending_review",
+   "status": "pending_review",
+   "normal_invariant": "atoms/per-share/1-3-5不變"
+  },
+  {
+   "parameter_family": "Q_*",
+   "meaning": "只對後續指定原生交易的成本抵減函數與份數合併",
+   "value": "pending_review",
+   "status": "pending_review",
+   "normal_invariant": "atoms/per-share/1-3-5不變"
+  },
+  {
+   "parameter_family": "C_*",
+   "meaning": "各規則新增付款資源/公式/結算精度，未審不得採用",
+   "value": "pending_review",
+   "status": "pending_review",
+   "normal_invariant": "atoms/per-share/1-3-5不變"
+  },
+  {
+   "parameter_family": "T_*及expiry",
+   "meaning": "武裝期、錨/憑證/回流扣留期限與刷新語義，沿原生可證期限或待審",
+   "value": "pending_review",
+   "status": "pending_review",
+   "normal_invariant": "atoms/per-share/1-3-5不變"
+  },
+  {
+   "parameter_family": "P_risk及幾何",
+   "meaning": "資源門檻、朝向/接觸/陣區判定與合法距離，量綱與快照待審",
+   "value": "pending_review",
+   "status": "pending_review",
+   "normal_invariant": "atoms/per-share/1-3-5不變"
+  }
+ ]
+}

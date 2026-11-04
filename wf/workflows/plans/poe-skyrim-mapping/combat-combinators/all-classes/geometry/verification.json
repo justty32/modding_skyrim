@@ -1,0 +1,122 @@
+{
+ "source_sha256": "7e9f755e33152129ebf36c2ebdad639c527e4ad70d274b1fefb860f30ca01122",
+ "native_graph_sha256": "116bf5073503c4c87b9c4b57d726652053789c0af9dcdd81eb7b9f801f8b519b",
+ "rules_total": 240,
+ "new_rules": 198,
+ "new_advanced": 146,
+ "new_high": 52,
+ "legacy55_exact_preserved": true,
+ "legacy42_rule_ids_requires_placement_unchanged": true,
+ "legacy13_ordinary_preserved": true,
+ "class_common_pools": 8,
+ "subtypes": 24,
+ "connector_unique": 180,
+ "cross_class_connector_shared": 24,
+ "protected_ids": [
+  30693,
+  40439,
+  42343
+ ],
+ "policy48_count": 48,
+ "policy48_sha256": "11bfaefc3056c8a661301dfe41376ed35505fc9cfccadfbbf87ec3ebc7da234d",
+ "new_rule_collisions": 0,
+ "raw_special_or_keystone_rule_occupations": 0,
+ "all_24_design_closures_pass": true,
+ "all_8_common_independent_closures_pass": true,
+ "every_H0_explicit_pure_normal_path_pass": true,
+ "graph_AND_requires_validated": true,
+ "compiled_normal_new_rule_ready": false,
+ "H0_warning_count": 3,
+ "warning_subtypes": [
+  "G2",
+  "D3",
+  "S2"
+ ],
+ "class_regions": [
+  {
+   "class": "V",
+   "selected": 97,
+   "boundary": 127,
+   "SVG": "XML/coordinate/true-edge verified; visual layout not reviewed"
+  },
+  {
+   "class": "G",
+   "selected": 54,
+   "boundary": 75,
+   "SVG": "XML/coordinate/true-edge verified; visual layout not reviewed"
+  },
+  {
+   "class": "D",
+   "selected": 51,
+   "boundary": 63,
+   "SVG": "XML/coordinate/true-edge verified; visual layout not reviewed"
+  },
+  {
+   "class": "R",
+   "selected": 56,
+   "boundary": 81,
+   "SVG": "XML/coordinate/true-edge verified; visual layout not reviewed"
+  },
+  {
+   "class": "C",
+   "selected": 60,
+   "boundary": 68,
+   "SVG": "XML/coordinate/true-edge verified; visual layout not reviewed"
+  },
+  {
+   "class": "M",
+   "selected": 68,
+   "boundary": 73,
+   "SVG": "XML/coordinate/true-edge verified; visual layout not reviewed"
+  },
+  {
+   "class": "S",
+   "selected": 59,
+   "boundary": 79,
+   "SVG": "XML/coordinate/true-edge verified; visual layout not reviewed"
+  },
+  {
+   "class": "X",
+   "selected": 59,
+   "boundary": 78,
+   "SVG": "XML/coordinate/true-edge verified; visual layout not reviewed"
+  }
+ ],
+ "legacy_file_sha256": {
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/candidates.json": "db4206fbf78a875066a3f725bd54ff55a277f9588240dc9dc34346864425985b",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json": "bc6efd2858d0327965b7355d1737a205e5513a9ab07300aa7c91e2adb470888b",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/region.json": "f7e3969fdbc6bce6b787c2e91a865389f1a3eb4f77cacc64ffe46b3f529bbb6a",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/candidates.json": "481f57ae6ad622f3f804caa8c939ca1f35498e2ce512cf3464a12193c8a2ffb6",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json": "8820e7d79e445316a56a282bff9fe406159fcca766d56e63df8f84726cfc3309",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/region.json": "61ba6337bb3a879eb944f58f2391516b7c179f4226608d966d420865b9edc5e8",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/candidates.json": "18d77438531b32afc6c709d5fee30470845b1f5c5de06dbe06065267bc995bef",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json": "80e4bca216b39b7f1e43a30daf490fc80cfe179dfa0473092770cae313b28fa6",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/region.json": "9361b176fb18a17ff27f8a4a93d2f147d03f3a80d2a1d1145724b98b9e58903f"
+ },
+ "visual_renderer_used": false,
+ "design_requires_files_sha256": {
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/V/rules.json": "ceb85744dbf5891d6fedba6a8450b05828d44c25bb0a693b2f0e2d615c4d7343",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/G/rules.json": "befa5eb8f4f9d8c9d8fbe03d024d22b810dfa46711d412b61402b44453638154",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/D/rules.json": "285b46c47b113dcd453ec3eb19998de90699f694cf502b395dcfe4854f5638de",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/R/rules.json": "7465383d4891247131718886adb1bf0d3d3cb8ca634bf889cafea5a753cab18d",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/C/rules.json": "214c62f3545872ed7c9e8864495d4aa4389b83c3d055964eb4e7cec2c8e15b3c",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/M/rules.json": "55c2ee8b45fc2295bb0820d0dff04fbdca50ac6326888bad9cb1fd7fac1c0427",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/S/rules.json": "16c4b6f6ac1ad6ee1171dcef6312fdb204699e614f8c627c8fa7ea5ba02485e8",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/X/rules.json": "8d1852846ed9393bd1f4b49e6d9d39f2f3bcb5558b5689f8634d92a247ae8406"
+ },
+ "stronger_requires_mapped": [
+  "V1A6",
+  "V2A2",
+  "V2A4",
+  "R1A4",
+  "C1A6",
+  "C2A6",
+  "M1A5",
+  "M2A5",
+  "M3A4",
+  "S3A5",
+  "X3A5"
+ ],
+ "draft_full_requires_alignment_pass": true,
+ "publication_note": "Input file SHA values identify original working drafts before path-locator normalization; immutable legacy row hashes and rule payloads unchanged. Publication manifest records original and normalized file SHA separately."
+}

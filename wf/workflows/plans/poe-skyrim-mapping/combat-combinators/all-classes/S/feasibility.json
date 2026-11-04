@@ -1,0 +1,119 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "scope",
+  "kind",
+  "finding",
+  "rejected",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "event_transactions",
+   "scope": "all",
+   "kind": "缺primitive",
+   "finding": "原生施法accepted/命中/有效HP恢復/防護實阻/channel tick及取消要獨立token；多target cast不充多次施法",
+   "rejected": "不得把動畫/after-hit補血當precommit防護",
+   "status": "pending",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "control_owner",
+   "scope": "S1",
+   "kind": "缺primitive",
+   "finding": "控制免疫與衰減是enemy全局、giver還是spell owner尚未證；須先有仲裁契約",
+   "rejected": "未證不提交控制；不造永久停機、不新增全局cap",
+   "status": "pending",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "current_guard",
+   "scope": "SCA4/S2A3/S2A6/S3A1/S3H1",
+   "kind": "跨職canonical proposal",
+   "finding": "提議後續防護同canonical各giver+recipient lease保留授予payload/原expiry並合係數一次；交主管仲裁，不改全局",
+   "rejected": "model最早到期舊提案不得蓋D1 current；各rule消耗predicate另列",
+   "status": "proposal_to_supervisor",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "consume_predicates",
+   "scope": "S2H1 vs SCA4/S3H1",
+   "kind": "互動",
+   "finding": "S2H1最終正HP實扣後才消HP救援；普通防護護援前正HP待扣即消，即使終抵零",
+   "rejected": "不能用同一consume predicate；S2H1不可假裝precommit盾",
+   "status": "pending",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "self_donation",
+   "scope": "SCH1/SCH2",
+   "kind": "互動",
+   "finding": "SCH1合成本人副本帶origin，SCH2只改原生自補recipient；不得把副本再轉贈或當SCA3換手",
+   "rejected": "SCH2不改敵方吸血或第三方恢復；無recipient回原生自補",
+   "status": "pending",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "mode_conflicts",
+   "scope": "S1H1/S3H1",
+   "kind": "互動",
+   "finding": "S1殘縛不能當完整控制續窗；S3印帶direction且H1清舊印，反向不兌現A1/A2/A4；A5需H1",
+   "rejected": "無雙向同擊自產消；混買無職業鎖但模式本身改適用條件",
+   "status": "pending",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "channel_variants",
+   "scope": "S2H0/S2H1",
+   "kind": "互動",
+   "finding": "H1保留原生支援本體，關閉的是額外療域HP恢復；有效原生實補建立救援資格，停唱發lease",
+   "rejected": "H1期間A1/A2/A5/A6僅對真有域HP tick可用；關閉的域tick不虛構overheal/連續收益",
+   "status": "pending",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "summon_instance",
+   "scope": "S3",
+   "kind": "缺primitive",
+   "finding": "召喚owner、召喚實例消失/替換、第三方與受控資格未證；同owner多召喚重上需固定原summon_instance",
+   "rejected": "不得新召喚繼承舊HP/防護資格，不新增AI命令/選單",
+   "status": "pending",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "other_classes",
+   "scope": "S2/V2; S3/V3; S1/C3",
+   "kind": "對照",
+   "finding": "S2只有HP/防護；V2 SP/MP推進。S3本人法術→召喚護或召喚→本人法術削弱；V3召援→本人近戰。S1控制窗而非C3付費P/B/D",
+   "rejected": "C3 IA1原生實付20%及IA4自身final maxMP5%不挪用、不改payload",
+   "status": "design_boundary",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "readiness",
+   "scope": "all",
+   "kind": "否決",
+   "finding": "全部design_candidate、compiled=false/runtime0；圖連通AND requires AND capability皆證前不允許購買；此處無source/runtime驗收",
+   "rejected": "不改1993圖、48keystone/38+10、55legacy IDs或保護40439/42343/30693",
+   "status": "pending",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

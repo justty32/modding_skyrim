@@ -1,0 +1,89 @@
+{
+ "contract": "wf-table/1",
+ "source": "RUBRIC.md",
+ "extracted": "2026-11-04",
+ "link_columns": [],
+ "columns": [
+  "class",
+  "status",
+  "rules_expected",
+  "subtypes_expected",
+  "max_play_changing_issues",
+  "audit_file",
+  "source_writer"
+ ],
+ "rows": [
+  {
+   "class": "V",
+   "status": "design_semantics_pass_after_bounded_review",
+   "rules_expected": 30,
+   "subtypes_expected": 3,
+   "max_play_changing_issues": 3,
+   "audit_file": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/audit/V-review.md",
+   "source_writer": "manager/worker only; auditor readonly"
+  },
+  {
+   "class": "G",
+   "status": "design_semantics_pass_after_bounded_review",
+   "rules_expected": 30,
+   "subtypes_expected": 3,
+   "max_play_changing_issues": 3,
+   "audit_file": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/audit/G-review.md",
+   "source_writer": "manager/worker only; auditor readonly"
+  },
+  {
+   "class": "D",
+   "status": "design_semantics_pass_after_bounded_review",
+   "rules_expected": 30,
+   "subtypes_expected": 3,
+   "max_play_changing_issues": 3,
+   "audit_file": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/audit/D-review.md",
+   "source_writer": "manager/worker only; auditor readonly"
+  },
+  {
+   "class": "R",
+   "status": "design_semantics_pass_after_bounded_review",
+   "rules_expected": 30,
+   "subtypes_expected": 3,
+   "max_play_changing_issues": 3,
+   "audit_file": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/audit/R-review.md",
+   "source_writer": "manager/worker only; auditor readonly"
+  },
+  {
+   "class": "C",
+   "status": "design_semantics_pass_after_bounded_review",
+   "rules_expected": 30,
+   "subtypes_expected": 3,
+   "max_play_changing_issues": 3,
+   "audit_file": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/audit/C-review.md",
+   "source_writer": "manager/worker only; auditor readonly"
+  },
+  {
+   "class": "M",
+   "status": "design_semantics_pass_after_bounded_review",
+   "rules_expected": 30,
+   "subtypes_expected": 3,
+   "max_play_changing_issues": 3,
+   "audit_file": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/audit/M-review.md",
+   "source_writer": "manager/worker only; auditor readonly"
+  },
+  {
+   "class": "S",
+   "status": "design_semantics_pass_after_bounded_review",
+   "rules_expected": 30,
+   "subtypes_expected": 3,
+   "max_play_changing_issues": 3,
+   "audit_file": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/audit/S-review.md",
+   "source_writer": "manager/worker only; auditor readonly"
+  },
+  {
+   "class": "X",
+   "status": "design_semantics_pass_after_bounded_review",
+   "rules_expected": 30,
+   "subtypes_expected": 3,
+   "max_play_changing_issues": 3,
+   "audit_file": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/audit/X-review.md",
+   "source_writer": "manager/worker only; auditor readonly"
+  }
+ ]
+}

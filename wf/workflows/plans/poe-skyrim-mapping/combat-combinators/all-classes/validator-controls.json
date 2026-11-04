@@ -1,0 +1,31 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "case",
+  "expected",
+  "actual",
+  "result"
+ ],
+ "rows": [
+  {
+   "case": "correct240+full geometry",
+   "expected": "exit0",
+   "actual": "exit0",
+   "result": "PASS"
+  },
+  {
+   "case": "duplicate V rule ID",
+   "expected": "nonzero",
+   "actual": "exit1; duplicate rule IDs/coverage reported",
+   "result": "PASS"
+  },
+  {
+   "case": "V1A6 missing existing strong AND prerequisite",
+   "expected": "nonzero",
+   "actual": "exit1;missing/extra strong AND prerequisite",
+   "result": "PASS"
+  }
+ ]
+}

@@ -1,0 +1,410 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "status": "design_candidate_pending_review",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "parameter",
+  "rule_id",
+  "status",
+  "value",
+  "units",
+  "approval",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "parameter": "D_far",
+   "rule_id": "RCA1",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_far",
+   "rule_id": "RCA1",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "Q_breath",
+   "rule_id": "RCA2",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_breath",
+   "rule_id": "RCA2",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_pressure",
+   "rule_id": "RCA3",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_pressure",
+   "rule_id": "RCA3",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_miss",
+   "rule_id": "RCA4",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_focus",
+   "rule_id": "R1H0",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_open",
+   "rule_id": "R1A1",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C_silence",
+   "rule_id": "R1A2",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "A_weak",
+   "rule_id": "R1A3",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_weak",
+   "rule_id": "R1A3",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_interrupt",
+   "rule_id": "R1A4",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_wound",
+   "rule_id": "R1A5",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_finish",
+   "rule_id": "R1A6",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_anchor",
+   "rule_id": "R2H0",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "R_anchor",
+   "rule_id": "R2H0",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_cluster",
+   "rule_id": "R2H0",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "N_dense",
+   "rule_id": "R2A1",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_dense",
+   "rule_id": "R2A1",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_slow",
+   "rule_id": "R2A2",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "S_slow",
+   "rule_id": "R2A2",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_control",
+   "rule_id": "R2A3",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "D_relocate",
+   "rule_id": "R2A5",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_relocate",
+   "rule_id": "R2A5",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_breach",
+   "rule_id": "R2A6",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "W_lane",
+   "rule_id": "R2H1",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_ready",
+   "rule_id": "R3H0",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_reserve",
+   "rule_id": "R3H0",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_prepared",
+   "rule_id": "R3A1",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "D_close",
+   "rule_id": "R3A2",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C_push",
+   "rule_id": "R3A2",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_reload",
+   "rule_id": "R3A3",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_retaliate",
+   "rule_id": "R3A4",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "R_cover",
+   "rule_id": "R3A5",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "K_cover",
+   "rule_id": "R3A5",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "Q_low",
+   "rule_id": "R3A6",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_last",
+   "rule_id": "R3A6",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "依rule公式；距離/期限/比例/人數型別須由review明定，未知不代入",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_intercept",
+   "rule_id": "R3H0",
+   "status": "pending_review",
+   "value": "pending_review",
+   "units": "期限，待review核單位與強度",
+   "approval": "none",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

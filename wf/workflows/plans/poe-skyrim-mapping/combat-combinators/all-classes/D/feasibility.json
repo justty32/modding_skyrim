@@ -1,0 +1,115 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "category",
+  "rules",
+  "finding",
+  "evidence",
+  "decision"
+ ],
+ "rows": [
+  {
+   "id": "F1",
+   "category": "primitive_gap",
+   "rules": [
+    "D2H0",
+    "D3H0",
+    "D3A2",
+    "D3A3"
+   ],
+   "finding": "需native ward實際攔截/敵source/負荷型別/MP實付，不能拿持ward姿態代實際壓力",
+   "evidence": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md Gate1-3；model.md事件與交易",
+   "decision": "pending_capability_no_runtime"
+  },
+  {
+   "id": "F2",
+   "category": "primitive_gap",
+   "rules": [
+    "D2A1",
+    "D2A3",
+    "D2A6",
+    "D2H1"
+   ],
+   "finding": "需原生主動恢復target及有效HP恢復、合成隔離、原子MP或非致死HP付款；native-first不代表所有heal已接",
+   "evidence": "model.md事件快照/合法友軍；readiness Gate3/5",
+   "decision": "pending_capability_no_runtime"
+  },
+  {
+   "id": "F3",
+   "category": "rejected_substitute",
+   "rules": [
+    "D2A2",
+    "D3A1",
+    "D3A3",
+    "D3A6"
+   ],
+   "finding": "否決after-hit補血/補傷模擬precommit；否決空ward自養、合成再觸發與未知source補猜",
+   "evidence": "readiness Gate2",
+   "decision": "reject_substitute_keep_pending"
+  },
+  {
+   "id": "F4",
+   "category": "primitive_gap",
+   "rules": [
+    "D3H1"
+   ],
+   "finding": "原生ward continuation及accepted cast token未證；不得自動新增施法冒充接續，不新增法術選單",
+   "evidence": "readiness Gate1/3/5",
+   "decision": "pending_capability_no_runtime"
+  },
+  {
+   "id": "F5",
+   "category": "interaction",
+   "rules": [
+    "WDH0",
+    "WDH1",
+    "D2H0",
+    "D3H0"
+   ],
+   "finding": "同真block可建不同owner狀態；新狀態不能同交易消。D3離守先使WDH1撤本人lease；回ward不重授。D2主動施法不能旁路原生動作限制",
+   "evidence": "warden-sample/README.md 可攜狀態與結算",
+   "decision": "candidate_semantics_review"
+  },
+  {
+   "id": "F6",
+   "category": "canonical_proposal",
+   "rules": [
+    "DCA1",
+    "GCA2"
+   ],
+   "finding": "沿用MELEE_BLOCK_HIGH_SP_DAMAGE_DIV同canonical合n判一次除一次；WDA1是recipient lease另一canonical，絕不套model舊最早到期份算法",
+   "evidence": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md current身份；warden-sample/README.md",
+   "decision": "preserve_current_no_global_edit"
+  },
+  {
+   "id": "F7",
+   "category": "canonical_proposal",
+   "rules": [
+    "D2A5",
+    "DCA2",
+    "D3A2",
+    "D3A5"
+   ],
+   "finding": "D2A5與DCA2作用同block cost但條件/狀態不同，提案DCA2後D2A5，禁止各自以原成本退款；D3A2是ward MP，D3A5僅額外反攻MP，不合併SP canonical",
+   "evidence": "本候選cost_timing；readiness Gate3",
+   "decision": "submit_to_supervisor_pending_no_global_edit"
+  },
+  {
+   "id": "F8",
+   "category": "canonical_proposal",
+   "rules": [
+    "D3A1",
+    "D3A4",
+    "D2A1"
+   ],
+   "finding": "與C3原生命中/實付可能共事件但不共收益；合成反攻/附加治療不可變第二native event、不可另造paid印P/B",
+   "evidence": "WORKER-BRIEF.md C3保護；model.md合成origin",
+   "decision": "submit_to_supervisor_pending_no_global_edit"
+  }
+ ]
+}

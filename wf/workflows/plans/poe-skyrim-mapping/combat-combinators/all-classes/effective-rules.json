@@ -1,0 +1,2826 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "class_id",
+  "rule_id",
+  "tier",
+  "effective_scope",
+  "stable_subtype",
+  "payload_sha256",
+  "legacy_reference",
+  "draft_path",
+  "draft_rule_id"
+ ],
+ "rows": [
+  {
+   "class_id": "V",
+   "rule_id": "VCA1",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "ce1fa22cce322b1392e4c9a109e90b9db529aafb9062c44ff46b6a9253fad063",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "VCA1"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "VCA2",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "14a990b2723023c3f993cf8a5223aaec3b931214fc26cc0986999e720d4bb8ed",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "VCA2"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "VCA3",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "3445319cffc7c2063534727d2ee5541469427b25708d3ff31891cb5b39da84f9",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "VCA3"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "VCA4",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "0bcf0ad0de289bf0d3f21182222fad50f5bfbba763d25667c127643c29b63fc9",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "VCA4"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "VCH1",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "57dafbc777bb0294f5674b431dd85f3f423d30c93ba7ed3a3b943f7945eaf1b4",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "VCH1"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "VCH2",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "670cec49b5d0ce9dda829efbf6a73390e86d952f8d5e539cfb2d208291495f99",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "VCH2"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V1H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "V1",
+   "payload_sha256": "b9f4c0369c48dd99994e2a707a67b20adc361c9d1d1e1292266cabfb4fbedc05",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V1H0"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V1H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "V1",
+   "payload_sha256": "0d58854bc74c1ac825687c8e5b25f84c118dc74577ffb29f2e2c4871bda7ce63",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V1H1"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V1A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V1",
+   "payload_sha256": "ea78f883a2cf8e29a92492321a379f508035cb8b7396bf002b37ccc77b507017",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V1A1"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V1A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V1",
+   "payload_sha256": "afe037b4df476f489496cdbdb02dc8a45751931aacbba6dca526f70adf0700e7",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V1A2"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V1A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V1",
+   "payload_sha256": "876bb34d4fddc511b48c0d39f198ab5eeef97d655c876753a940091465a455d4",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V1A3"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V1A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V1",
+   "payload_sha256": "2eb664096cf9fab3f21cdbc973bac89bdcfc4d71d58e34c21f1bc5c715d470ab",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V1A4"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V1A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V1",
+   "payload_sha256": "afff71097aa1938c9bc824cde42afb98bafcd45520a7663be961604876ef0258",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V1A5"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V1A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V1",
+   "payload_sha256": "9707518996d9833405773b3ba2a0b26a5532556324acce6c596e7363496ded7d",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V1A6"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V2H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "V2",
+   "payload_sha256": "f6c09241f732d2ea650ad9b60a45ec7fe81b10aa3405d8b87a50b2c280fdb106",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V2H0"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V2H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "V2",
+   "payload_sha256": "4973724106bb555211a96d187f9eba0bf8643a26719547d9fb7576bb701b7915",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V2H1"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V2A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V2",
+   "payload_sha256": "28c46285710408e2c6fd279a65752cc5c682b0a76aeba99f56392d6ff177fca6",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V2A1"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V2A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V2",
+   "payload_sha256": "30bcd41b2aa11a1aafe9d1d53a4476ecbd46267bcdaf12059815a287f5a55554",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V2A2"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V2A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V2",
+   "payload_sha256": "e95d1b2621c0ce0fbed98948922a91c8864634e4c3bdec581ae7dc62a7fed4c2",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V2A3"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V2A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V2",
+   "payload_sha256": "adcd237c5b412d24b397817a41e5765d369a1dcfaa82fb38be0d9aa0a79923b1",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V2A4"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V2A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V2",
+   "payload_sha256": "2fae32e911298419d2af204e853566e42e0fbdc9d3a991367952e9762b51a895",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V2A5"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V2A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V2",
+   "payload_sha256": "2f4e9ce9352e0a17cec0519b0e012aeb97c5f09a3d8b21fc2e044c419273386a",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V2A6"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V3H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "V3",
+   "payload_sha256": "1fd86cf99770b0c25f3ad9ccc04e110fde6735860204900b1e322a8f7d726093",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V3H0"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V3H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "V3",
+   "payload_sha256": "555f515f03c34cf587f57bcdd11231ed44d28de7a913bcf495a24ed5894e4e7c",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V3H1"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V3A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V3",
+   "payload_sha256": "c38aa759063552a762220dd67404712dbe8fd3d7083b28ec5c352f2dc4061019",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V3A1"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V3A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V3",
+   "payload_sha256": "4eac9b525483afad9d0de46e3470b2795782830dab9c5cd69c5847db5a0bf1ad",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V3A2"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V3A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V3",
+   "payload_sha256": "94d9c12545d48311b1db4e6c15ca24922ca702d14a56fda9f922ac116d39c115",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V3A3"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V3A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V3",
+   "payload_sha256": "9d271a24b2164c24fe82ff252342735e294e374f39a00d47b74739c226704cdd",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V3A4"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V3A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V3",
+   "payload_sha256": "0801cf6116dfe7bf01f1a1ac5d80f6fd686206d1a75ed277cae3188ac5b64413",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V3A5"
+  },
+  {
+   "class_id": "V",
+   "rule_id": "V3A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "V3",
+   "payload_sha256": "04c0d0613e39f3bea179d4d24a422c7710852493ed687a5afab451dc3f64adac",
+   "legacy_reference": null,
+   "draft_path": "V/rules.json",
+   "draft_rule_id": "V3A6"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "GCA1",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "87f34669b1959786ed1d2ffbca29a09999ee6ed2bef76eec77997b2f0921a1fa",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "GCA1",
+    "source_rule_sha256": "87f34669b1959786ed1d2ffbca29a09999ee6ed2bef76eec77997b2f0921a1fa"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "GCA1"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "GCA2",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "a57f1cd5961608df8f9eac041281154e2c94b05978d90a3265b4a89ba8319fc6",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "GCA2",
+    "source_rule_sha256": "a57f1cd5961608df8f9eac041281154e2c94b05978d90a3265b4a89ba8319fc6"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "GCA2"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "GCA3",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "e543c1a1fa112daba4573bf5e2bc6496429c3145bdd1d51efa44dab68734db09",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "GCA3",
+    "source_rule_sha256": "e543c1a1fa112daba4573bf5e2bc6496429c3145bdd1d51efa44dab68734db09"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "GCA3"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "GCA4",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "ae99737c5e41840cd95aad3d00bd11da638db06f27ead5092beabca5db7c98ce",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "GCA4",
+    "source_rule_sha256": "ae99737c5e41840cd95aad3d00bd11da638db06f27ead5092beabca5db7c98ce"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "GCA4"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "GCH1",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "807ee02895a36918f85106c412a7826f79e2174068d15791c593eb02a7bff3bd",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "GCH1",
+    "source_rule_sha256": "807ee02895a36918f85106c412a7826f79e2174068d15791c593eb02a7bff3bd"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "GCH1"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "GCH2",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "2a36376fea1e5c1aca9b6503e4450c82c18da0485a139a7baa012e836ab117f5",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "GCH2",
+    "source_rule_sha256": "2a36376fea1e5c1aca9b6503e4450c82c18da0485a139a7baa012e836ab117f5"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "GCH2"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "DBH0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "G1",
+   "payload_sha256": "f94b6e2e1c120a6fee76d000f7e124ce03a406456bc3267ac4fa2ba94d241017",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "DBH0",
+    "source_rule_sha256": "f94b6e2e1c120a6fee76d000f7e124ce03a406456bc3267ac4fa2ba94d241017"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "DBH0"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "DBH1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "G1",
+   "payload_sha256": "fb768172e6a748be7f51d1c21f4264240f04586885d774a7b665463cc2748a6c",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "DBH1",
+    "source_rule_sha256": "fb768172e6a748be7f51d1c21f4264240f04586885d774a7b665463cc2748a6c"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "DBH1"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "DBA1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G1",
+   "payload_sha256": "40ac24b2e33e44377bd0eab7843eb6c90aaa0495d0225cfc54b1e559f9ef6235",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "DBA1",
+    "source_rule_sha256": "40ac24b2e33e44377bd0eab7843eb6c90aaa0495d0225cfc54b1e559f9ef6235"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "DBA1"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "DBA2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G1",
+   "payload_sha256": "276d4bba0a9b44f93a84ed685cb04fbe6c1f5d60c34e7adfedc02f1b92f3e727",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "DBA2",
+    "source_rule_sha256": "276d4bba0a9b44f93a84ed685cb04fbe6c1f5d60c34e7adfedc02f1b92f3e727"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "DBA2"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "DBA3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G1",
+   "payload_sha256": "0d302b9ec6881a6b8d6022ad2dbc212b3b001221e84cdfc0f4c2604ec302792e",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "DBA3",
+    "source_rule_sha256": "0d302b9ec6881a6b8d6022ad2dbc212b3b001221e84cdfc0f4c2604ec302792e"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "DBA3"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "DBA4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G1",
+   "payload_sha256": "929aebc7e12bfe404a01dead86d0487caace243e22f19b2e329f0ac83c887bc5",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "DBA4",
+    "source_rule_sha256": "929aebc7e12bfe404a01dead86d0487caace243e22f19b2e329f0ac83c887bc5"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "DBA4"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "DBA5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G1",
+   "payload_sha256": "774c24c83ebbb2f18ed55979324e4c466e0b543a51faba05c3a2b6a506576a74",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "DBA5",
+    "source_rule_sha256": "774c24c83ebbb2f18ed55979324e4c466e0b543a51faba05c3a2b6a506576a74"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "DBA5"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "DBA6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G1",
+   "payload_sha256": "196f5aa399ab7fcaa7964bc7b94e04d52764030c5768e79d8e964fbe59eed55e",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json",
+    "source_rule_id": "DBA6",
+    "source_rule_sha256": "196f5aa399ab7fcaa7964bc7b94e04d52764030c5768e79d8e964fbe59eed55e"
+   },
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "DBA6"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G2H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "G2",
+   "payload_sha256": "da3ede13750bc2dda8059dc4fff3c3dcd27fdedea8c9322e788a30be38951291",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G2H0"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G2H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "G2",
+   "payload_sha256": "b50a85cd47807dc36b4e59dce0194603fc355d82f1c1f01f0c8cab6c27e5416a",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G2H1"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G2A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G2",
+   "payload_sha256": "739cfcf4d63327b85e1795f62a57315689bdb0b161d23756854e977ae1bb97ac",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G2A1"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G2A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G2",
+   "payload_sha256": "f92e6eff63b61426c48f5f0ccbe9f64f1e2aab2533f736cd759df32cd1f54945",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G2A2"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G2A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G2",
+   "payload_sha256": "d4708e791331a168107d6ee5d35a61da653af2c84806aadc7156e92c57c5498b",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G2A3"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G2A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G2",
+   "payload_sha256": "972426ad006254aec0cb62be455978a752cad8544f348c20b0cccd58ee5583d5",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G2A4"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G2A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G2",
+   "payload_sha256": "d1248b5bbf121fa28bfe87bb0eacca7dc0c28133c2c54060947fbeab50e18d02",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G2A5"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G2A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G2",
+   "payload_sha256": "184bac6fdc75a4b230c4eebe9970c956a19f4b85cbc7ac325d7fa9a09c1b4750",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G2A6"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G3H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "G3",
+   "payload_sha256": "dd39ad92de87e68eaeb5f491ac2829f9b183029fab2e63239885f74aa85e100e",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G3H0"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G3H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "G3",
+   "payload_sha256": "f39f0a9a9b2d2dfc73a5a600d4684e3a2f0791552ab93ebab5e68e40fc9c437e",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G3H1"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G3A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G3",
+   "payload_sha256": "7ae5fb31b208da19e67db58f6a3521c4499df4cd0e729d6c2e70a02f2e86af8c",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G3A1"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G3A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G3",
+   "payload_sha256": "5ed662833498390e61329fcb30b30eff23f6937fa6cd436a4ab11520100b6d8d",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G3A2"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G3A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G3",
+   "payload_sha256": "bf02e725c084bda0f742b6d4fd55a177a1b58482a3cd122d5a63f49ffcb136b2",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G3A3"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G3A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G3",
+   "payload_sha256": "288237a094be1779d573c651a7b91090700d82e1e07a2300120fcd0e6bd118c0",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G3A4"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G3A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G3",
+   "payload_sha256": "1da5788e35212fa48a87a142cf9bb7a2433cf23f5dc937cde7ca202c0bad5611",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G3A5"
+  },
+  {
+   "class_id": "G",
+   "rule_id": "G3A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "G3",
+   "payload_sha256": "ef2c9888469dd35e49f9f18a0e0fc8e3b0230caa09f68b2500669682725747d4",
+   "legacy_reference": null,
+   "draft_path": "G/rules.json",
+   "draft_rule_id": "G3A6"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "DCA1",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "43432d49cb6f5037d3f1f446a583127da6716f9c0bbb01ac8f8b89469de0403a",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "DCA1",
+    "source_rule_sha256": "43432d49cb6f5037d3f1f446a583127da6716f9c0bbb01ac8f8b89469de0403a"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "DCA1"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "DCA2",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "fc79bfa8d02be6a758b2767ba5d2fdd00e7c282261b2f5f940c364ce2491189c",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "DCA2",
+    "source_rule_sha256": "fc79bfa8d02be6a758b2767ba5d2fdd00e7c282261b2f5f940c364ce2491189c"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "DCA2"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "DCA3",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "4c1010ede345ff9b705f324609b9ac9d68c38eca503578d31c25433db4ad2b38",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "DCA3",
+    "source_rule_sha256": "4c1010ede345ff9b705f324609b9ac9d68c38eca503578d31c25433db4ad2b38"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "DCA3"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "DCA4",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "c81b687e82f2abf09ca07b4b564e9390aa8fcf66fa8555749ef003cb493377e3",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "DCA4",
+    "source_rule_sha256": "c81b687e82f2abf09ca07b4b564e9390aa8fcf66fa8555749ef003cb493377e3"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "DCA4"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "DCH1",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "6e7a79aa1902d6b076d97f7c94fe99a32b36f815fca98593afe10610913f33a6",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "DCH1",
+    "source_rule_sha256": "6e7a79aa1902d6b076d97f7c94fe99a32b36f815fca98593afe10610913f33a6"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "DCH1"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "DCH2",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "9c6cdb468274816ac4883b3405a517d507eb8d0260d221815ca4899d34905396",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "DCH2",
+    "source_rule_sha256": "9c6cdb468274816ac4883b3405a517d507eb8d0260d221815ca4899d34905396"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "DCH2"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "WDH0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "D1",
+   "payload_sha256": "5898109280c62cde7a2f4e56f7e58dbfb04ca583f591f3e98bcc4ef2cc5a8bc9",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "WDH0",
+    "source_rule_sha256": "5898109280c62cde7a2f4e56f7e58dbfb04ca583f591f3e98bcc4ef2cc5a8bc9"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "WDH0"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "WDH1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "D1",
+   "payload_sha256": "39a2b99ad81bd6a2e7fb40511e912aec20c2f397c5bcd6e050c4c1f79ea9473b",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "WDH1",
+    "source_rule_sha256": "39a2b99ad81bd6a2e7fb40511e912aec20c2f397c5bcd6e050c4c1f79ea9473b"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "WDH1"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "WDA1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D1",
+   "payload_sha256": "29a2164453206680fad1d9b1365e41c46c92a9d41beb192e4905c9ada1df6141",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "WDA1",
+    "source_rule_sha256": "29a2164453206680fad1d9b1365e41c46c92a9d41beb192e4905c9ada1df6141"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "WDA1"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "WDA2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D1",
+   "payload_sha256": "4ba634af02ae0f52aa5375973d2e54b3cf222a42cf6ae71b8a7e7aa259e79b6f",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "WDA2",
+    "source_rule_sha256": "4ba634af02ae0f52aa5375973d2e54b3cf222a42cf6ae71b8a7e7aa259e79b6f"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "WDA2"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "WDA3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D1",
+   "payload_sha256": "b9079d16ab648c98a9384240bd00c5d5a95f0dd32a04de83d08d70706a270620",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "WDA3",
+    "source_rule_sha256": "b9079d16ab648c98a9384240bd00c5d5a95f0dd32a04de83d08d70706a270620"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "WDA3"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "WDA4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D1",
+   "payload_sha256": "d697333f977420e5cfd09412b75778180c4b025b3c23b130428c4408da1d8f93",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "WDA4",
+    "source_rule_sha256": "d697333f977420e5cfd09412b75778180c4b025b3c23b130428c4408da1d8f93"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "WDA4"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "WDA5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D1",
+   "payload_sha256": "a7282c4f166b13223129875d61d8f0444b267e0882a95f706c52478c6cd79612",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "WDA5",
+    "source_rule_sha256": "a7282c4f166b13223129875d61d8f0444b267e0882a95f706c52478c6cd79612"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "WDA5"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "WDA6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D1",
+   "payload_sha256": "cffc4f0a2a0d8596e9467aa5fdb32a95ce987f4bd415a3ec3e6e2bc45bfcb727",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json",
+    "source_rule_id": "WDA6",
+    "source_rule_sha256": "cffc4f0a2a0d8596e9467aa5fdb32a95ce987f4bd415a3ec3e6e2bc45bfcb727"
+   },
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "WDA6"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D2H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "D2",
+   "payload_sha256": "15fcb01ef185ad9743c4628d5192aadffd585156440f951d7f8526d91c1aa4f1",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D2H0"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D2A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D2",
+   "payload_sha256": "3c3d77d24cd8908260dc13e190d5ec0d2f4f7ccec3971a05ef478722497f0b59",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D2A1"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D2A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D2",
+   "payload_sha256": "8b1b7b52b69149c72150beee1a0be226a7fbc934f70fd407498396228f1295f6",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D2A2"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D2A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D2",
+   "payload_sha256": "ec56e00e19d77009fb5118b189b5861c8d2aeca6584b7b878746a8271ba32b2a",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D2A3"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D2A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D2",
+   "payload_sha256": "8dedb9a9a788762ac4693a5a778b51b5e45c148e132503f8f4e38d3e761cba14",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D2A4"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D2A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D2",
+   "payload_sha256": "7b8ff4685aded1db0528d58a6bd3f82440804be5c39fe36471fa6adf26370baf",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D2A5"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D2A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D2",
+   "payload_sha256": "1bcad5d8b67ee0d098b4ac1f8dfb77948f5ef1b20002fe2c1a92765f162cc804",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D2A6"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D2H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "D2",
+   "payload_sha256": "090b259ee1849c50022ee2feb6be103131ab4de2b608be337ca9c4e9915525b1",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D2H1"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D3H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "D3",
+   "payload_sha256": "eb343074f0e945343467a104f66ab047dc11ab9f65097f2cf52a62f9f8505b3e",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D3H0"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D3A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D3",
+   "payload_sha256": "c02cd994a15e1951780f0a534d7d28d4d4772fa4ab11c4bcfa92ae62633d20f5",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D3A1"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D3A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D3",
+   "payload_sha256": "7a1755fec9f1a7284ac0c3c741d5a7b8c062a39295a6f751c1993d68b6340406",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D3A2"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D3A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D3",
+   "payload_sha256": "799db81affe62fea228ee2f81de178747a9def66ead650eb5c26556a94bcb357",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D3A3"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D3A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D3",
+   "payload_sha256": "8e6e8f0511fb9deaf0aba42c166047d0686e2a9b155ba5a1b419db99d40c7d91",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D3A4"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D3A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D3",
+   "payload_sha256": "89d72ee5bb85d491c851fb9abf0b5c493e938b287ccde317c7cf4321da7216be",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D3A5"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D3A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "D3",
+   "payload_sha256": "cd74572f678a457128b1661a4941b92ae3264fd04888d5ad7db18ed90fb06b5a",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D3A6"
+  },
+  {
+   "class_id": "D",
+   "rule_id": "D3H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "D3",
+   "payload_sha256": "47a16b0d776acc89890550bbf8f24209ad0e17057a6f219611d877e830d7cf27",
+   "legacy_reference": null,
+   "draft_path": "D/rules.json",
+   "draft_rule_id": "D3H1"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "RCA1",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "c96b7b38b46ab286b643476c21e67956515c00526df9ae93bae045624d98411f",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "RCA1"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "RCA2",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "451fb433b43cc5f396e4e71d5fa1c56c00b3daec8c0df25a1e3eb4cd5b125947",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "RCA2"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "RCA3",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "1ba3a92728de742e6ec286d5716a1057d5389f7c4a4ebf975bfc5c517ff1f418",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "RCA3"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "RCA4",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "1b6966c904b115a467d81c8962fc98a3305a56706c727cb336c3c5bb1ea0ee7d",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "RCA4"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "RCH1",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "54ef099547a8a9106639a057f5545f32b37eeef982a580e6afb6b2f875245048",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "RCH1"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "RCH2",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "d87f0a0f9c73b1311653834fa952c5a492393e50a52fafba807ea635b637ef45",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "RCH2"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R1H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "R1",
+   "payload_sha256": "ed4102d895e2bb34494abd8f1534cd6d4e83ab3afcdf35d6e84004c3c0f73867",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R1H0"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R1A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R1",
+   "payload_sha256": "d70dfdafecf3c4e1982bbf79c8cbae79a42928bb0ec1faf0ff37b230ad21c12a",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R1A1"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R1A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R1",
+   "payload_sha256": "3b4a742817df07ae6760dc469cf10db49bd722ce44624e9226def2b4da5e483f",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R1A2"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R1A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R1",
+   "payload_sha256": "bdca440a44fc427aed44e7848a42edb409c30661ce04084d9372204da32d5885",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R1A3"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R1A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R1",
+   "payload_sha256": "e27a6f2a01ff8c774cf4a0b529d74231f03883c45aaad2880191940f502a1dfa",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R1A4"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R1A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R1",
+   "payload_sha256": "3849e5c33290a8db4e7dc42710cfdecfdcae4c402b89a4c0c66ad68606eec0a8",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R1A5"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R1A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R1",
+   "payload_sha256": "535957d732c3324a86804af6a8bf4025761ba2d3d8179602d271915d5617b8bb",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R1A6"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R1H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "R1",
+   "payload_sha256": "e2f4e82671476742bcd4593c65d5f43cf39c23c3528903cc8fb65dfff3bf4a21",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R1H1"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R2H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "R2",
+   "payload_sha256": "81893dd00a120b3b326519bfbca65e2e823b3f8926389f677273a18a4958edb2",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R2H0"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R2A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R2",
+   "payload_sha256": "930c11f2f66acf8d78ae0defd9b1403490a8f10de112f73e33bb4310796419c0",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R2A1"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R2A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R2",
+   "payload_sha256": "0668b52c528691a385cc7db02c7eacc5ff2601a43fddf7e0ede5b4eacbb53795",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R2A2"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R2A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R2",
+   "payload_sha256": "fa8dea3769a1337d15091280698f9bc238e660a4ce57f4fef66c69340174fe67",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R2A3"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R2A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R2",
+   "payload_sha256": "a6395d5afc06869aee7b01f2eb24b2547d7c35cd9163e50069fda21f5ad2706c",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R2A4"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R2A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R2",
+   "payload_sha256": "c2ae6f35f750966a0fbcf567c1d1106e9a4fde27ec3284bdc00eec3aebe9afe9",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R2A5"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R2A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R2",
+   "payload_sha256": "ec0dab806dda5929a5321e03b3b9caa2ae6a3f050e7667010536070c0289f605",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R2A6"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R2H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "R2",
+   "payload_sha256": "66445cbbfaa50265a18927d6fc9e20bfe2ecc822f8c126adfac0662befebb713",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R2H1"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R3H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "R3",
+   "payload_sha256": "3b5a848d57a57f847a90e9d7e192c27eea63b28de085a8bb6c2ebe99664d09cc",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R3H0"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R3A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R3",
+   "payload_sha256": "90d1e021ff456669918b462e9f47da1e9f2f0796475d86ac037c962a970c4659",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R3A1"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R3A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R3",
+   "payload_sha256": "bdb4b3595fe87ef34df65e8df82afcd628f10da9020e266419f781167ca17ba8",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R3A2"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R3A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R3",
+   "payload_sha256": "2d42d5d0282ee237a8ce1f5f48a6aacbada103edb8af77a526625cf655c24109",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R3A3"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R3A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R3",
+   "payload_sha256": "2a8a3d8b916c2925251845ddf8adee6c20598daf1e39fc8b26bf44dba223d226",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R3A4"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R3A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R3",
+   "payload_sha256": "e5fc181a4044355b251f3de41e8b6254919910f00e424be1e375f2e2be1c4e19",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R3A5"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R3A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "R3",
+   "payload_sha256": "2d635bfaab5664e5da1e3961c4e7c92df4601798f20e9b8e4d1c201ae7e3087a",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R3A6"
+  },
+  {
+   "class_id": "R",
+   "rule_id": "R3H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "R3",
+   "payload_sha256": "c4318e1dcec450ce38d47969f9852f3161760b633863359c7e3e672ce59cdd05",
+   "legacy_reference": null,
+   "draft_path": "R/rules.json",
+   "draft_rule_id": "R3H1"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "IA1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C3",
+   "payload_sha256": "d16e1e3ef9973555069c61ddd1bf905d646d3bbd6b4f53bd8e56eba61a737013",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "IA1",
+    "source_rule_sha256": "d16e1e3ef9973555069c61ddd1bf905d646d3bbd6b4f53bd8e56eba61a737013"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "IA1"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "IA2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C3",
+   "payload_sha256": "e09cda757308776548e19655ce087abb09f4673107f9c851bd1ea8a9cbf5399f",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "IA2",
+    "source_rule_sha256": "e09cda757308776548e19655ce087abb09f4673107f9c851bd1ea8a9cbf5399f"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "IA2"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "IA3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C3",
+   "payload_sha256": "cbded2cd8fe8fabadda81e78f68f0a8f5284d413aa2dd69dce62781a7c0fc851",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "IA3",
+    "source_rule_sha256": "cbded2cd8fe8fabadda81e78f68f0a8f5284d413aa2dd69dce62781a7c0fc851"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "IA3"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "IA4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C3",
+   "payload_sha256": "4b6e72377f00a2ed10a10c1da9acead70f7604e705639c83044938b5c4136563",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "IA4",
+    "source_rule_sha256": "4b6e72377f00a2ed10a10c1da9acead70f7604e705639c83044938b5c4136563"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "IA4"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "IA5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C3",
+   "payload_sha256": "38ebb194b745107134c50a6aabc41b9d5ce98d35e572a437ccbc35a1b7cca6e7",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "IA5",
+    "source_rule_sha256": "38ebb194b745107134c50a6aabc41b9d5ce98d35e572a437ccbc35a1b7cca6e7"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "IA5"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "IA6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C3",
+   "payload_sha256": "6ed703ab7e6af86717e59402cc4384f8507a2ef0b1261ab3771f89fc0e0e6aee",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "IA6",
+    "source_rule_sha256": "6ed703ab7e6af86717e59402cc4384f8507a2ef0b1261ab3771f89fc0e0e6aee"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "IA6"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "IH1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "C3",
+   "payload_sha256": "66255c4ef94911a8ac956115a33a16c1edec81fb739659dd80437b01de10de3a",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "IH1",
+    "source_rule_sha256": "66255c4ef94911a8ac956115a33a16c1edec81fb739659dd80437b01de10de3a"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "IH1"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "IH0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "C3",
+   "payload_sha256": "2d082aeaf2885c41492943b6b7ae3cebfed9d58261b4956e8e3543ad888b83ff",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "IH0",
+    "source_rule_sha256": "2d082aeaf2885c41492943b6b7ae3cebfed9d58261b4956e8e3543ad888b83ff"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "IH0"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "CA1",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "2964aa677f0c41931fafc18bd6c2a14b52fb94cf3287bc33796cf8755804298b",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "CA1",
+    "source_rule_sha256": "2964aa677f0c41931fafc18bd6c2a14b52fb94cf3287bc33796cf8755804298b"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "CA1"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "CA2",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "133ddda4e6c0433115f0ddcbecfd7bc73ab0c36a9f612271b96385cf2842aa46",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "CA2",
+    "source_rule_sha256": "133ddda4e6c0433115f0ddcbecfd7bc73ab0c36a9f612271b96385cf2842aa46"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "CA2"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "CA3",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "711393cbed3ef58ceb0d2e212316aad652f939be5e28bac8abe4761c84aab10d",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "CA3",
+    "source_rule_sha256": "711393cbed3ef58ceb0d2e212316aad652f939be5e28bac8abe4761c84aab10d"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "CA3"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "CA4",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "3318fa12d75cbe7f0263a58cf7773192d65339e1910c39b3667a33510e5ae0d7",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "CA4",
+    "source_rule_sha256": "3318fa12d75cbe7f0263a58cf7773192d65339e1910c39b3667a33510e5ae0d7"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "CA4"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "CH1",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "1a1fbee78537a31c95139687d59a136a86b90cd639cb832c0e361ac9dcb86141",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "CH1",
+    "source_rule_sha256": "1a1fbee78537a31c95139687d59a136a86b90cd639cb832c0e361ac9dcb86141"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "CH1"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "CH2",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "e224249907a7368d2751939399f620bd9fec07fb1de85d9975826885f0e8187c",
+   "legacy_reference": {
+    "source_path": "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json",
+    "source_rule_id": "CH2",
+    "source_rule_sha256": "e224249907a7368d2751939399f620bd9fec07fb1de85d9975826885f0e8187c"
+   },
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "CH2"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C1H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "C1",
+   "payload_sha256": "089ef5ae55648a672b972ccbd2eed8acd123e05e62c0f7773a6e00c688c83a14",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C1H0"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C1H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "C1",
+   "payload_sha256": "47cea880dcbf851a051d89ab272fe4acfe67ab8da7d0738dd8d0b12dfa10958e",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C1H1"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C1A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C1",
+   "payload_sha256": "32561447a573ebadaa9ad5251080353d8c1340e0aaffe716e1ca56bf0c34d6d5",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C1A1"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C1A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C1",
+   "payload_sha256": "4b002b72ba9b9e73ea2137f589a33503874ed33ed381999de54d5a7593847755",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C1A2"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C1A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C1",
+   "payload_sha256": "e47e961a7d1424664f8b0a3222159595b1be2e8361d022ce2442bd0b9d22e2ee",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C1A3"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C1A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C1",
+   "payload_sha256": "53b610a6b418f53f949abf7b3a52e2a3fc5e1269b2b6ad8aba14fc4b84e64d79",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C1A4"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C1A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C1",
+   "payload_sha256": "cfface8744cd0f40c69add1eb3dd2a8c03eb411bf315e4e38f2a5193154abd7f",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C1A5"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C1A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C1",
+   "payload_sha256": "a065e906befbd0cb428e110eeb832898c5f581932ccd0796bdb2eea2d1f990cc",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C1A6"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C2H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "C2",
+   "payload_sha256": "3f42705b2d1fab28698298473a74d85ebd5a5d8c2a891d7b4691b8698f143acf",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C2H0"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C2H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "C2",
+   "payload_sha256": "366fbd7eea17be1669d014459c217f2847fdf4809e73eabf30739ed488ca7800",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C2H1"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C2A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C2",
+   "payload_sha256": "82d8afc7ef0ebdaa657dafda1b81abdedc5c92defa14b27132c71d546ad7e2c6",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C2A1"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C2A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C2",
+   "payload_sha256": "a475cb18cd29d420038841f4fe80276fab57ddff6565d9a9669fc93a188cd0b8",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C2A2"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C2A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C2",
+   "payload_sha256": "289c1aa934fa9f8d6f7b113854341db913598a91cbe33ea71a0ae0ac3f0d3b77",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C2A3"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C2A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C2",
+   "payload_sha256": "7b6c652cd1347e7f22412a6875550932bf1562edd2d3a8ac873f1c6f96f0663c",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C2A4"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C2A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C2",
+   "payload_sha256": "5e124681de0ea333a4019db6cc62998ce9300e5a06b5765b61658b777d28188c",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C2A5"
+  },
+  {
+   "class_id": "C",
+   "rule_id": "C2A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "C2",
+   "payload_sha256": "6b666d2873e3531d308b8bcc8772f81c961cef7e274b7893f9c6a1a0b62ea699",
+   "legacy_reference": null,
+   "draft_path": "C/rules.json",
+   "draft_rule_id": "C2A6"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "MCA1",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "1a89a10057f3d08e97a93c83c96e0729425f2b991e4511908463a79d49d45a3e",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "MCA1"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "MCA2",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "bd092402ec9daea4cb130da5db8181de9afb602e1d39d5542964843e1fe9e7f4",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "MCA2"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "MCA3",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "523a0d9e91befff71fcffad9cbd13de2552d604aae5a66602704594cba3c7d7a",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "MCA3"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "MCA4",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "bfa9cb816167d80f22231dc25742df0176d32dbf42b42a607c88e342ab813ec4",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "MCA4"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "MCH1",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "e0c837c46e744dc528b83dbeafba565928761fb5266551241041c80b52f84fe3",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "MCH1"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "MCH2",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "63e7dcc6277533a1b4d94bb9136d6525d73db148f2c8500997b1b411a90ef0b4",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "MCH2"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M1H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "M1",
+   "payload_sha256": "1d8232a454d223f6ac94fbe0be9ed89210d6cd46bd196bfea19494f6f0897d13",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M1H0"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M1H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "M1",
+   "payload_sha256": "37fd8d000934cb18c29a7c4ef5dedfc7afc19d46034256f43378c8009b36f0b3",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M1H1"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M1A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M1",
+   "payload_sha256": "f895b057eb9db2e9dcefb72cad5f892ba5fc3908137f835cd4dcc29532bb2f8c",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M1A1"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M1A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M1",
+   "payload_sha256": "92464aa6841c9316fa9f3b3a4d34d50d7e69d065f3262acfd4e1b793dfa74855",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M1A2"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M1A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M1",
+   "payload_sha256": "a6875a9c32c12dbc3f489a43e964c6ff2ff8253f970813432e3ed00c81ccb13f",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M1A3"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M1A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M1",
+   "payload_sha256": "6fe79d6f90f794a34afcc697f4c233eb23eaafacdc0637acb216adf996221448",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M1A4"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M1A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M1",
+   "payload_sha256": "f5b1988990afe7e35a7fd16ca75aedb50924612cd2700effb26c14033ce7c7ea",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M1A5"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M1A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M1",
+   "payload_sha256": "b32ca26b1619d9df737e625e69ab39a83268bd4df9f6c490502f05c9e19e5a65",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M1A6"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M2H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "M2",
+   "payload_sha256": "ba3f2270514ff8edfdee18b24ef60e46d741c96550f2aed9a3b8039749373272",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M2H0"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M2H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "M2",
+   "payload_sha256": "ec0eaececc8846ec2f54ded51e680ecae22d553dfcd8685af95e68d3ee3c04c7",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M2H1"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M2A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M2",
+   "payload_sha256": "2c7a05744754371a9cd6885c946b4167ddaae4382a7331bad89421bdd9242925",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M2A1"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M2A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M2",
+   "payload_sha256": "5f7acfe953572d0cc8f33ab059d3a0ce7ce96ddb11b0f5cfbea8e1c2972ec218",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M2A2"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M2A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M2",
+   "payload_sha256": "a73ee79e9fd7f5f9357b15264c9353e8cdc46f69b79fa6dec95e0b775c0312bd",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M2A3"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M2A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M2",
+   "payload_sha256": "66960b1c40ac227bccf130dee7e73daff1fa9bf5802c34e1c5955b56ebd04b92",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M2A4"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M2A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M2",
+   "payload_sha256": "d7d894701d6da964232708c6e6d23a7aaf8874c738a16c4e281553df5bb60be3",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M2A5"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M2A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M2",
+   "payload_sha256": "c5824f9ac99806e856376f2ddfc862335fa4a5a824590ac2ab255e164ed44d28",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M2A6"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M3H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "M3",
+   "payload_sha256": "cba277553d46ea092b2d405d7cf7306f42cc0a58cf67f0c6557dd1181e4f1bd0",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M3H0"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M3H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "M3",
+   "payload_sha256": "c1f65bff0af99c824a3ac28f5a3bfd8c2d5ff1d40eb8a6abdea0ce4815d0f1e4",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M3H1"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M3A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M3",
+   "payload_sha256": "90121ccf48af0fe1b95f8bb1a6ad628ec3fd651bb1cb6f4960f61d9f9a8186d1",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M3A1"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M3A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M3",
+   "payload_sha256": "eb762a3f69d2a02e1ff26bfe8e57220d888821a3e39ff406dfe350df063d5ac0",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M3A2"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M3A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M3",
+   "payload_sha256": "6797b139b3e3ba20923469faabfcd2f876add4e17908d245e7f20746b0ca8048",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M3A3"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M3A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M3",
+   "payload_sha256": "0bf80eee886f11f06809423ed246957f3f3e800d37bcf0872d5263f1bcddbe54",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M3A4"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M3A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M3",
+   "payload_sha256": "04daf2956387f58672fd5bae827645b17a6af896f264cb065326e2f176fb8b04",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M3A5"
+  },
+  {
+   "class_id": "M",
+   "rule_id": "M3A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "M3",
+   "payload_sha256": "58e636aecb749aeddde7515affb98c7ff0ba52dbfa8429f8b7200f2e8638c8a5",
+   "legacy_reference": null,
+   "draft_path": "M/rules.json",
+   "draft_rule_id": "M3A6"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "SCA1",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "230eb007b0a44ff0794ef745f85512afd9afc6c9ff850384a706ac0686af3fe6",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "SCA1"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "SCA2",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "b6ddb68ce9e8037060446d5e0e87a32eaa2aff872728839718c40552943eaf1e",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "SCA2"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "SCA3",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "27c74a29b6c8e3915f5ceaf5418eac2a7b50a00c2cbbd88b73bc24d27dcad0ce",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "SCA3"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "SCA4",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "b3a249ac8d513e21596cda449da5b31eb05e68464c8f6ba6127cca79e73605d9",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "SCA4"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "SCH1",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "1fd3eb7864111e236aff18e79717b1adc1740c8817fa0449ea6e9667a0a02fb3",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "SCH1"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "SCH2",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "ff121b6ad51d7bca77af776011a0cc059ceb82a02c60cc0791e32f8b7e718719",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "SCH2"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S1H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "S1",
+   "payload_sha256": "fb900dfc211dab09f69489b4fb7465fca696396674893dddb3402c4bacae10ba",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S1H0"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S1A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S1",
+   "payload_sha256": "84e0a858eee54dbbaf35c3d6f6962d213e5868d6b3b8361f3e8eebebbfbee8b8",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S1A1"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S1A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S1",
+   "payload_sha256": "cdc18e5027d8ffa2110c75dd57229e78a54f957767bbc803c21a5d0c3c730f83",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S1A2"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S1A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S1",
+   "payload_sha256": "c9e58fbe33ff61b25a51b076a8fbaf81c455a48b1c16d3eb7fe635ab5230582d",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S1A3"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S1A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S1",
+   "payload_sha256": "60438b1848677e1f3856a9be1f4ce69c37915342c549b43c98c79a45b1800eff",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S1A4"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S1A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S1",
+   "payload_sha256": "27d0455d2ed4b01bd28776c0af4fc1b9cac90c7f586bbc544f5fb9e954b1e028",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S1A5"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S1A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S1",
+   "payload_sha256": "43623e3994839ab9bbb8400cd405ddd1ae07857e3391b2e8a71598a3bdaae03e",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S1A6"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S1H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "S1",
+   "payload_sha256": "dbfc8890e030240f3536fe0afdaffefce8be46e7522aa7c48ed766676e1d1360",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S1H1"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S2H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "S2",
+   "payload_sha256": "1b7bd331d4cb3019400419b5cf2aedd53a0d386efc04697594779ea763f0d6ae",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S2H0"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S2A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S2",
+   "payload_sha256": "13eefccef67a03ad51a433b9e69444a0b32a600fecc868670f5ea29651bb5334",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S2A1"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S2A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S2",
+   "payload_sha256": "8316da7b688db771db10d9162fac973421587860888a73026208316788e6895b",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S2A2"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S2A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S2",
+   "payload_sha256": "af585ed526e172ebd6cc31d7162d28ed2f8cd638583f8887b4015043bea9abc1",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S2A3"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S2A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S2",
+   "payload_sha256": "b0616b1671ce94c20321ef2f4c9a47246f82c2ed243d5902c334f5fac87f6920",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S2A4"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S2A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S2",
+   "payload_sha256": "002d659620b5291ec8bd061a55e9a37ea4c8477190daf6e2f767ae610236f5ba",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S2A5"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S2A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S2",
+   "payload_sha256": "9526572f3861625123bcc1ea39cf52684575539f0826d7324e206f75aa693ce6",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S2A6"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S2H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "S2",
+   "payload_sha256": "254cfbeb98ade01c127d4934391506fe2e3d125fd7ccfc79db5b28cd4932dae9",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S2H1"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S3H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "S3",
+   "payload_sha256": "2b0811a0047a9e440004b0c5cf668d8da2daea77a22735577d252c2c76da9a84",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S3H0"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S3A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S3",
+   "payload_sha256": "66fb5c780a6e636d2172980c864b618041eb44423eb698707a91db3a095ae797",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S3A1"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S3A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S3",
+   "payload_sha256": "e9aaf4ec624d05f85622a213ea44e81d079b851d829f1ae28bd0b0e21d122015",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S3A2"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S3A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S3",
+   "payload_sha256": "d00e14dd862204e07a52553f6fd973fb61bb0f4fd39962c2b5a39fb110e4b880",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S3A3"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S3A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S3",
+   "payload_sha256": "325a07fee5f6925a53f3eb781850d654c111a06cc76176d976b1a304d221a3c5",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S3A4"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S3A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S3",
+   "payload_sha256": "8e9bc0a0d8b74edf9b40350a8ee1934797c3a2cb7aa38b3660e3de411e566ef1",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S3A5"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S3A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "S3",
+   "payload_sha256": "9ff6a3364399730928586ee9a8ecc1851c7ea215c1244fa57e8dea7b23da83c0",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S3A6"
+  },
+  {
+   "class_id": "S",
+   "rule_id": "S3H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "S3",
+   "payload_sha256": "1033de6e1995936ad25e19955de20caf4407a699bb3225a21488fca9b02aaad5",
+   "legacy_reference": null,
+   "draft_path": "S/rules.json",
+   "draft_rule_id": "S3H1"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "XCA1",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "456aba5a0d23505aac2ae9d31e4e8bbb9e2a3831f55874409adc339b801fd9e0",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "XCA1"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "XCA2",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "cb37b8c53952f00f559350adca4ff0b54183b659ef96dbf2b621a5f3043e6fe5",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "XCA2"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "XCA3",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "9d9d7ae8c1bbb263a4dcdaf15f93de0c4ba679b1d817ab5f5eff926b8ecd1b00",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "XCA3"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "XCA4",
+   "tier": "advanced",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "a436d2c928c2ccf354a0e2b601ce3630f0450cadc973645783079919bbcdbc15",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "XCA4"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "XCH1",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "01cac8792fca9f556c5162cf6f2545c30e8b5f62b7b6656fd9c8b5c5f20400c3",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "XCH1"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "XCH2",
+   "tier": "high",
+   "effective_scope": "class_common",
+   "stable_subtype": null,
+   "payload_sha256": "b845ce456fed258f9fff2d6727e1e576449928161e7b3c428d0c1946b89f70d1",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "XCH2"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X1A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X1",
+   "payload_sha256": "117422fefeb6f8d9c173e5a0c1154e8e28d21a62a62426e00d75b957b35d0ee8",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X1A1"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X1A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X1",
+   "payload_sha256": "9067b25fab6123a0cf88873b0982105939cd81e00c0399d461adff52a3befb86",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X1A2"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X1A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X1",
+   "payload_sha256": "98ea87d5916e53706ed2ccc7ae2b147aff66278508d0d37e6524605dac2de150",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X1A3"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X1A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X1",
+   "payload_sha256": "902e92ab17409f1b74b1c593740154ee54dbd85576e465e80bc3e726d583b5d9",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X1A4"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X1A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X1",
+   "payload_sha256": "227ef42cf15fee6bb9ede88ea758e08f0fa6086df7b7f23e3842d7b9de98dcd3",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X1A5"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X1A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X1",
+   "payload_sha256": "26bb883977f54155483b6f57c07a3b8754e138cd8f3caeb29b1d2cf718a4648b",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X1A6"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X1H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "X1",
+   "payload_sha256": "5cd84ef5a82dc765edb28ae0f63bf636b5b175c2c4b60f993a44296e4153cf39",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X1H0"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X1H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "X1",
+   "payload_sha256": "ce4c1be3243bab5aa335f069a90d7958f842446708a6a0af893a03e99f443801",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X1H1"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X2A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X2",
+   "payload_sha256": "301f3fcda00560fe570f949394dda4298655723a6e2b76d344780e9b75563c86",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X2A1"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X2A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X2",
+   "payload_sha256": "0e4fd98a66452c170fa3e76cd77c63ac17283b7048f6a8f69e56017ef7e6c892",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X2A2"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X2A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X2",
+   "payload_sha256": "02e11af8f9317936bc814362f30bbc8f8dd7788cfc2804bcdee1aef3854c6ce9",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X2A3"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X2A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X2",
+   "payload_sha256": "3c9d5b2636562515711ba74ef4d972ae6135f414cf6b94c2a937841344e0925b",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X2A4"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X2A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X2",
+   "payload_sha256": "f69a2279c97f00e90c3de98ba9f10afecb99c70b1fc32f2911d7802f414f0537",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X2A5"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X2A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X2",
+   "payload_sha256": "0118e3092093cf8b49c301b3047e30149285157dba2c09a7e69da50b3c571b23",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X2A6"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X2H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "X2",
+   "payload_sha256": "4fc8f74e8d2714f17e02e71d66c27e022a83266775b9ee8e77eae9f27aa6444e",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X2H0"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X2H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "X2",
+   "payload_sha256": "4a0b992380da62e63454260d1b928d8a78c7632c60dd5d8ca330ec66b6d97377",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X2H1"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X3A1",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X3",
+   "payload_sha256": "25a46520aaa06a26904952339aa714942fb65ea6f5f24b5f9b2207573cc98ad9",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X3A1"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X3A2",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X3",
+   "payload_sha256": "fee255175d2d7922225e9ee67b06633dd220f453c41fb70474f3d2dc71fa206f",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X3A2"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X3A3",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X3",
+   "payload_sha256": "5b658b1e04391a34ed430a641b8247730c2a0576ab103789e57696f9b1242fbe",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X3A3"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X3A4",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X3",
+   "payload_sha256": "bd3881ccccb4e21106dc897c4ae030e8cae8cdead19f562fc021dbf5c6d9e65d",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X3A4"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X3A5",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X3",
+   "payload_sha256": "23998555bf9a6e874fbec81bb54d805721b4564484239f1e7841bafe7f0c220f",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X3A5"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X3A6",
+   "tier": "advanced",
+   "effective_scope": "subtype",
+   "stable_subtype": "X3",
+   "payload_sha256": "d7cc1f33326c5a268dfcd72fce3080b99d9cb5e873d8968cfd906451782f749a",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X3A6"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X3H0",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "X3",
+   "payload_sha256": "d8645dd3b529c6cf6e510c7c014d91aa3be4e8632f86c84597470adc066b7e4c",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X3H0"
+  },
+  {
+   "class_id": "X",
+   "rule_id": "X3H1",
+   "tier": "high",
+   "effective_scope": "subtype",
+   "stable_subtype": "X3",
+   "payload_sha256": "ee00b9b44ea904081694f82f23b0bf72dc0dd03077eb9182886a08bdac409e4b",
+   "legacy_reference": null,
+   "draft_path": "X/rules.json",
+   "draft_rule_id": "X3H1"
+  }
+ ]
+}

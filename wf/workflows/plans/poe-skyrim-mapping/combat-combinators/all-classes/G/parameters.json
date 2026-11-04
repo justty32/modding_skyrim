@@ -1,0 +1,112 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "normal_policy": "unchanged approved atoms/per-share/1-3-5; legacy numbers remain immutable, no new numbers approved",
+ "columns": [
+  "id",
+  "status",
+  "value",
+  "meaning"
+ ],
+ "rows": [
+  {
+   "id": "F_excess",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "G2H1未分流未恢復帳額轉SP函數，不與A5重算"
+  },
+  {
+   "id": "T_G2",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "傷帳/資格有限期限"
+  },
+  {
+   "id": "T_G3",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "勢有限總期限"
+  },
+  {
+   "id": "T_hold",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "同戰鬥停手成熟時間"
+  },
+  {
+   "id": "R_recover",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "由凍結實傷帳計可兌額B，不先乘missingHP；非負不超帳"
+  },
+  {
+   "id": "K_wound/K_counter",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "傷帳減傷/重擊增傷函數"
+  },
+  {
+   "id": "K_exit/T_exit",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "退路削弱強度與期限"
+  },
+  {
+   "id": "F_breath",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "precommit從可分HP份額P取D的函數；非負不超P"
+  },
+  {
+   "id": "F_breath_SP",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "D轉SP函數，與H1的E互斥來源，總SP受missingSP限制"
+  },
+  {
+   "id": "C_reopen/T_reopen",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "再戰付款及憑據期限"
+  },
+  {
+   "id": "T_intercept",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "一次攔截資格期限"
+  },
+  {
+   "id": "K_hold/F_turn",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "成熟勢增傷/護甲處理函數"
+  },
+  {
+   "id": "C_break/K_break",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "破SP費及收益"
+  },
+  {
+   "id": "K_patience",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "未成熟勢防禦函數"
+  },
+  {
+   "id": "R_rest",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "原生實付SP退款函數"
+  },
+  {
+   "id": "C_keep",
+   "status": "pending_review",
+   "value": null,
+   "meaning": "保勢額外付款函數"
+  }
+ ]
+}

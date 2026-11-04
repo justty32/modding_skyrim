@@ -1,0 +1,3753 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "class",
+  "pool",
+  "slot",
+  "node_id",
+  "tier",
+  "scope",
+  "requires_nodes",
+  "legacy_preserved",
+  "compiled_normal_ready",
+  "status",
+  "requires_slots"
+ ],
+ "rows": [
+  {
+   "class": "C",
+   "pool": "Ccommon",
+   "slot": "CA4",
+   "node_id": 12536,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "C3",
+   "slot": "IA6",
+   "node_id": 15365,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    61308,
+    53018
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "C3",
+   "slot": "IA2",
+   "node_id": 15973,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    61308,
+    53018
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "C3",
+   "slot": "IA3",
+   "node_id": 19679,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    61308
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "Ccommon",
+   "slot": "CA3",
+   "node_id": 21262,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "C3",
+   "slot": "IH1",
+   "node_id": 21389,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    61308
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "Ccommon",
+   "slot": "CH1",
+   "node_id": 33435,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "C3",
+   "slot": "IA4",
+   "node_id": 40927,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    61308
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "Ccommon",
+   "slot": "CA1",
+   "node_id": 44799,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "C3",
+   "slot": "IA1",
+   "node_id": 53018,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    61308
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "Ccommon",
+   "slot": "CH2",
+   "node_id": 54694,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "Ccommon",
+   "slot": "CA2",
+   "node_id": 58453,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "C3",
+   "slot": "IA5",
+   "node_id": 59070,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    61308,
+    53018
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "C3",
+   "slot": "IH0",
+   "node_id": 61308,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "Gcommon",
+   "slot": "GCA3",
+   "node_id": 6580,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "G1",
+   "slot": "DBA1",
+   "node_id": 12236,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34009
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "G1",
+   "slot": "DBA2",
+   "node_id": 18302,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34009
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "G1",
+   "slot": "DBA5",
+   "node_id": 19782,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34009
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "Gcommon",
+   "slot": "GCA4",
+   "node_id": 25933,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "G1",
+   "slot": "DBA3",
+   "node_id": 28265,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34009
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "G1",
+   "slot": "DBH0",
+   "node_id": 34009,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "Gcommon",
+   "slot": "GCH2",
+   "node_id": 48438,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "Gcommon",
+   "slot": "GCH1",
+   "node_id": 48807,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "G1",
+   "slot": "DBH1",
+   "node_id": 49538,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34009
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "Gcommon",
+   "slot": "GCA2",
+   "node_id": 49806,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "G1",
+   "slot": "DBA4",
+   "node_id": 50360,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34009
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "G1",
+   "slot": "DBA6",
+   "node_id": 51856,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34009
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "G",
+   "pool": "Gcommon",
+   "slot": "GCA1",
+   "node_id": 63649,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "Dcommon",
+   "slot": "DCA2",
+   "node_id": 6981,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "D1",
+   "slot": "WDA3",
+   "node_id": 7828,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    58449
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "D1",
+   "slot": "WDA6",
+   "node_id": 20551,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    58449
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "Dcommon",
+   "slot": "DCH1",
+   "node_id": 24383,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "D1",
+   "slot": "WDA4",
+   "node_id": 30335,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    58449
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "D1",
+   "slot": "WDA5",
+   "node_id": 32480,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    58449
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "Dcommon",
+   "slot": "DCA3",
+   "node_id": 36543,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "D1",
+   "slot": "WDA1",
+   "node_id": 38777,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    58449
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "D1",
+   "slot": "WDA2",
+   "node_id": 40535,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    58449
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "Dcommon",
+   "slot": "DCA4",
+   "node_id": 49412,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "Dcommon",
+   "slot": "DCA1",
+   "node_id": 50904,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "D1",
+   "slot": "WDH0",
+   "node_id": 58449,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "D1",
+   "slot": "WDH1",
+   "node_id": 61198,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    58449
+   ],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "D",
+   "pool": "Dcommon",
+   "slot": "DCH2",
+   "node_id": 65308,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": true,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime"
+  },
+  {
+   "class": "C",
+   "pool": "C1",
+   "slot": "C1A1",
+   "node_id": 53677,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    43689
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C1H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C1",
+   "slot": "C1A2",
+   "node_id": 1609,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    43689
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C1H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C1",
+   "slot": "C1A3",
+   "node_id": 13009,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    43689
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C1H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C1",
+   "slot": "C1A4",
+   "node_id": 55563,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    43689
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C1H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C1",
+   "slot": "C1A5",
+   "node_id": 24824,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    43689
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C1H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C1",
+   "slot": "C1A6",
+   "node_id": 9505,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    43689,
+    36915
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C1H0",
+    "C1H1"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C1",
+   "slot": "C1H0",
+   "node_id": 43689,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "C",
+   "pool": "C1",
+   "slot": "C1H1",
+   "node_id": 36915,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    43689
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C1H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C2",
+   "slot": "C2A1",
+   "node_id": 63963,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45657
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C2H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C2",
+   "slot": "C2A2",
+   "node_id": 19919,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45657
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C2H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C2",
+   "slot": "C2A3",
+   "node_id": 14057,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45657
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C2H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C2",
+   "slot": "C2A4",
+   "node_id": 26070,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45657
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C2H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C2",
+   "slot": "C2A5",
+   "node_id": 885,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45657
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C2H0"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C2",
+   "slot": "C2A6",
+   "node_id": 18239,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45657,
+    32455
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C2H0",
+    "C2H1"
+   ]
+  },
+  {
+   "class": "C",
+   "pool": "C2",
+   "slot": "C2H0",
+   "node_id": 45657,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "C",
+   "pool": "C2",
+   "slot": "C2H1",
+   "node_id": 32455,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45657
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "C2H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G2",
+   "slot": "G2A1",
+   "node_id": 24641,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    25456
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G2H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G2",
+   "slot": "G2A2",
+   "node_id": 30155,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    25456
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G2H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G2",
+   "slot": "G2A3",
+   "node_id": 11859,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    25456
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G2H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G2",
+   "slot": "G2A4",
+   "node_id": 29185,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    25456
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G2H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G2",
+   "slot": "G2A5",
+   "node_id": 17383,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    25456
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G2H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G2",
+   "slot": "G2A6",
+   "node_id": 19711,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    25456
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G2H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G2",
+   "slot": "G2H0",
+   "node_id": 25456,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "G",
+   "pool": "G2",
+   "slot": "G2H1",
+   "node_id": 60002,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    25456
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G2H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G3",
+   "slot": "G3A1",
+   "node_id": 43412,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34666
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G3H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G3",
+   "slot": "G3A2",
+   "node_id": 20402,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34666
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G3H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G3",
+   "slot": "G3A3",
+   "node_id": 8904,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34666
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G3H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G3",
+   "slot": "G3A4",
+   "node_id": 56920,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34666
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G3H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G3",
+   "slot": "G3A5",
+   "node_id": 50515,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34666
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G3H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G3",
+   "slot": "G3A6",
+   "node_id": 6741,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34666
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G3H0"
+   ]
+  },
+  {
+   "class": "G",
+   "pool": "G3",
+   "slot": "G3H0",
+   "node_id": 34666,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "G",
+   "pool": "G3",
+   "slot": "G3H1",
+   "node_id": 27422,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    34666
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "G3H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D2",
+   "slot": "D2A1",
+   "node_id": 10282,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    35663
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D2H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D2",
+   "slot": "D2A2",
+   "node_id": 2454,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    35663
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D2H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D2",
+   "slot": "D2A3",
+   "node_id": 27166,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    35663
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D2H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D2",
+   "slot": "D2A4",
+   "node_id": 45163,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    35663
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D2H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D2",
+   "slot": "D2A5",
+   "node_id": 44429,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    35663
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D2H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D2",
+   "slot": "D2A6",
+   "node_id": 60169,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    35663
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D2H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D2",
+   "slot": "D2H0",
+   "node_id": 35663,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "D",
+   "pool": "D2",
+   "slot": "D2H1",
+   "node_id": 64077,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    35663
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D2H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D3",
+   "slot": "D3A1",
+   "node_id": 61868,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    10542
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D3H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D3",
+   "slot": "D3A2",
+   "node_id": 59861,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    10542
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D3H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D3",
+   "slot": "D3A3",
+   "node_id": 62363,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    10542
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D3H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D3",
+   "slot": "D3A4",
+   "node_id": 38508,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    10542
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D3H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D3",
+   "slot": "D3A5",
+   "node_id": 40653,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    10542
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D3H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D3",
+   "slot": "D3A6",
+   "node_id": 63027,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    10542
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D3H0"
+   ]
+  },
+  {
+   "class": "D",
+   "pool": "D3",
+   "slot": "D3H0",
+   "node_id": 10542,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "D",
+   "pool": "D3",
+   "slot": "D3H1",
+   "node_id": 31033,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    10542
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "D3H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "Vcommon",
+   "slot": "VCA1",
+   "node_id": 60204,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "V",
+   "pool": "Vcommon",
+   "slot": "VCA2",
+   "node_id": 8348,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "V",
+   "pool": "Vcommon",
+   "slot": "VCA3",
+   "node_id": 62103,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "V",
+   "pool": "Vcommon",
+   "slot": "VCA4",
+   "node_id": 55373,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "V",
+   "pool": "Vcommon",
+   "slot": "VCH1",
+   "node_id": 19506,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "V",
+   "pool": "Vcommon",
+   "slot": "VCH2",
+   "node_id": 4207,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "V",
+   "pool": "V1",
+   "slot": "V1A1",
+   "node_id": 24643,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    33545
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V1H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V1",
+   "slot": "V1A2",
+   "node_id": 28574,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    33545
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V1H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V1",
+   "slot": "V1A3",
+   "node_id": 63845,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    33545
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V1H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V1",
+   "slot": "V1A4",
+   "node_id": 17849,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    33545
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V1H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V1",
+   "slot": "V1A5",
+   "node_id": 34907,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    33545
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V1H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V1",
+   "slot": "V1A6",
+   "node_id": 60090,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    33545,
+    65097
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V1H0",
+    "V1H1"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V1",
+   "slot": "V1H0",
+   "node_id": 33545,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "V",
+   "pool": "V1",
+   "slot": "V1H1",
+   "node_id": 65097,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    33545
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V1H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V2",
+   "slot": "V2A1",
+   "node_id": 42731,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37078
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V2H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V2",
+   "slot": "V2A2",
+   "node_id": 14182,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37078,
+    3452
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V2H0",
+    "V2H1"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V2",
+   "slot": "V2A3",
+   "node_id": 5560,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37078
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V2H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V2",
+   "slot": "V2A4",
+   "node_id": 37690,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37078,
+    3452
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V2H0",
+    "V2H1"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V2",
+   "slot": "V2A5",
+   "node_id": 33479,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37078
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V2H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V2",
+   "slot": "V2A6",
+   "node_id": 18359,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37078
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V2H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V2",
+   "slot": "V2H0",
+   "node_id": 37078,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "V",
+   "pool": "V2",
+   "slot": "V2H1",
+   "node_id": 3452,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37078
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V2H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V3",
+   "slot": "V3A1",
+   "node_id": 19939,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    12702
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V3H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V3",
+   "slot": "V3A2",
+   "node_id": 15073,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    12702
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V3H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V3",
+   "slot": "V3A3",
+   "node_id": 35190,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    12702
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V3H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V3",
+   "slot": "V3A4",
+   "node_id": 45887,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    12702
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V3H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V3",
+   "slot": "V3A5",
+   "node_id": 33508,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    12702
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V3H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V3",
+   "slot": "V3A6",
+   "node_id": 17674,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    12702
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V3H0"
+   ]
+  },
+  {
+   "class": "V",
+   "pool": "V3",
+   "slot": "V3H0",
+   "node_id": 12702,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "V",
+   "pool": "V3",
+   "slot": "V3H1",
+   "node_id": 15400,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    12702
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "V3H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "Rcommon",
+   "slot": "RCA1",
+   "node_id": 56149,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "R",
+   "pool": "Rcommon",
+   "slot": "RCA2",
+   "node_id": 94,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "R",
+   "pool": "Rcommon",
+   "slot": "RCA3",
+   "node_id": 9373,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "R",
+   "pool": "Rcommon",
+   "slot": "RCA4",
+   "node_id": 32117,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "R",
+   "pool": "Rcommon",
+   "slot": "RCH1",
+   "node_id": 54142,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "R",
+   "pool": "Rcommon",
+   "slot": "RCH2",
+   "node_id": 50338,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "R",
+   "pool": "R1",
+   "slot": "R1A1",
+   "node_id": 23438,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    41137
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R1H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R1",
+   "slot": "R1A2",
+   "node_id": 29104,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    41137
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R1H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R1",
+   "slot": "R1A3",
+   "node_id": 2094,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    41137
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R1H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R1",
+   "slot": "R1A4",
+   "node_id": 720,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    41137,
+    29104
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R1H0",
+    "R1A2"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R1",
+   "slot": "R1A5",
+   "node_id": 60803,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    41137
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R1H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R1",
+   "slot": "R1A6",
+   "node_id": 29870,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    41137
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R1H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R1",
+   "slot": "R1H0",
+   "node_id": 41137,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "R",
+   "pool": "R1",
+   "slot": "R1H1",
+   "node_id": 51440,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    41137
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R1H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R2",
+   "slot": "R2A1",
+   "node_id": 45491,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37504
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R2H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R2",
+   "slot": "R2A2",
+   "node_id": 903,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37504
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R2H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R2",
+   "slot": "R2A3",
+   "node_id": 18670,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37504
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R2H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R2",
+   "slot": "R2A4",
+   "node_id": 32555,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37504
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R2H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R2",
+   "slot": "R2A5",
+   "node_id": 63843,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37504
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R2H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R2",
+   "slot": "R2A6",
+   "node_id": 9206,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37504
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R2H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R2",
+   "slot": "R2H0",
+   "node_id": 37504,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "R",
+   "pool": "R2",
+   "slot": "R2H1",
+   "node_id": 43385,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    37504
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R2H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R3",
+   "slot": "R3A1",
+   "node_id": 3362,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    529
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R3H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R3",
+   "slot": "R3A2",
+   "node_id": 32802,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    529
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R3H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R3",
+   "slot": "R3A3",
+   "node_id": 50734,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    529
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R3H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R3",
+   "slot": "R3A4",
+   "node_id": 3469,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    529
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R3H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R3",
+   "slot": "R3A5",
+   "node_id": 25766,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    529
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R3H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R3",
+   "slot": "R3A6",
+   "node_id": 13965,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    529
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R3H0"
+   ]
+  },
+  {
+   "class": "R",
+   "pool": "R3",
+   "slot": "R3H0",
+   "node_id": 529,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "R",
+   "pool": "R3",
+   "slot": "R3H1",
+   "node_id": 30974,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    529
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "R3H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "Mcommon",
+   "slot": "MCA1",
+   "node_id": 7335,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "M",
+   "pool": "Mcommon",
+   "slot": "MCA2",
+   "node_id": 19261,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "M",
+   "pool": "Mcommon",
+   "slot": "MCA3",
+   "node_id": 64181,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "M",
+   "pool": "Mcommon",
+   "slot": "MCA4",
+   "node_id": 43833,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "M",
+   "pool": "Mcommon",
+   "slot": "MCH1",
+   "node_id": 55002,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "M",
+   "pool": "Mcommon",
+   "slot": "MCH2",
+   "node_id": 21413,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "M",
+   "pool": "M1",
+   "slot": "M1A1",
+   "node_id": 49698,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    36859
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M1H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M1",
+   "slot": "M1A2",
+   "node_id": 31819,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    36859
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M1H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M1",
+   "slot": "M1A3",
+   "node_id": 46726,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    36859
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M1H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M1",
+   "slot": "M1A4",
+   "node_id": 63306,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    36859
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M1H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M1",
+   "slot": "M1A5",
+   "node_id": 44967,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    36859,
+    38516
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M1H0",
+    "M1H1"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M1",
+   "slot": "M1A6",
+   "node_id": 55926,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    36859
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M1H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M1",
+   "slot": "M1H0",
+   "node_id": 36859,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "M",
+   "pool": "M1",
+   "slot": "M1H1",
+   "node_id": 38516,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    36859
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M1H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M2",
+   "slot": "M2A1",
+   "node_id": 62214,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    20832
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M2H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M2",
+   "slot": "M2A2",
+   "node_id": 25168,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    20832
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M2H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M2",
+   "slot": "M2A3",
+   "node_id": 54396,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    20832
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M2H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M2",
+   "slot": "M2A4",
+   "node_id": 24155,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    20832
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M2H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M2",
+   "slot": "M2A5",
+   "node_id": 27195,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    20832,
+    32245
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M2H0",
+    "M2H1"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M2",
+   "slot": "M2A6",
+   "node_id": 50570,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    20832
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M2H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M2",
+   "slot": "M2H0",
+   "node_id": 20832,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "M",
+   "pool": "M2",
+   "slot": "M2H1",
+   "node_id": 32245,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    20832
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M2H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M3",
+   "slot": "M3A1",
+   "node_id": 30148,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45350
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M3H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M3",
+   "slot": "M3A2",
+   "node_id": 17352,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45350
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M3H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M3",
+   "slot": "M3A3",
+   "node_id": 29005,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45350
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M3H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M3",
+   "slot": "M3A4",
+   "node_id": 23456,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45350,
+    27308
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M3H0",
+    "M3H1"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M3",
+   "slot": "M3A5",
+   "node_id": 39631,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45350
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M3H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M3",
+   "slot": "M3A6",
+   "node_id": 42837,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45350
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M3H0"
+   ]
+  },
+  {
+   "class": "M",
+   "pool": "M3",
+   "slot": "M3H0",
+   "node_id": 45350,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "M",
+   "pool": "M3",
+   "slot": "M3H1",
+   "node_id": 27308,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    45350
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "M3H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "Scommon",
+   "slot": "SCA1",
+   "node_id": 32024,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "S",
+   "pool": "Scommon",
+   "slot": "SCA2",
+   "node_id": 60554,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "S",
+   "pool": "Scommon",
+   "slot": "SCA3",
+   "node_id": 4184,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "S",
+   "pool": "Scommon",
+   "slot": "SCA4",
+   "node_id": 27659,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "S",
+   "pool": "Scommon",
+   "slot": "SCH1",
+   "node_id": 27611,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "S",
+   "pool": "Scommon",
+   "slot": "SCH2",
+   "node_id": 44955,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "S",
+   "pool": "S1",
+   "slot": "S1A1",
+   "node_id": 65203,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27163
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S1H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S1",
+   "slot": "S1A2",
+   "node_id": 15452,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27163
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S1H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S1",
+   "slot": "S1A3",
+   "node_id": 29171,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27163
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S1H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S1",
+   "slot": "S1A4",
+   "node_id": 49651,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27163
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S1H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S1",
+   "slot": "S1A5",
+   "node_id": 43000,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27163
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S1H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S1",
+   "slot": "S1A6",
+   "node_id": 50472,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27163
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S1H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S1",
+   "slot": "S1H0",
+   "node_id": 27163,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "S",
+   "pool": "S1",
+   "slot": "S1H1",
+   "node_id": 15711,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27163
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S1H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S2",
+   "slot": "S2A1",
+   "node_id": 1346,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    53493
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S2H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S2",
+   "slot": "S2A2",
+   "node_id": 18866,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    53493
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S2H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S2",
+   "slot": "S2A3",
+   "node_id": 48362,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    53493
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S2H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S2",
+   "slot": "S2A4",
+   "node_id": 11128,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    53493
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S2H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S2",
+   "slot": "S2A5",
+   "node_id": 21934,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    53493
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S2H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S2",
+   "slot": "S2A6",
+   "node_id": 40075,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    53493
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S2H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S2",
+   "slot": "S2H0",
+   "node_id": 53493,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "S",
+   "pool": "S2",
+   "slot": "S2H1",
+   "node_id": 11420,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    53493
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S2H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S3",
+   "slot": "S3A1",
+   "node_id": 40637,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27929
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S3H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S3",
+   "slot": "S3A2",
+   "node_id": 55643,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27929
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S3H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S3",
+   "slot": "S3A3",
+   "node_id": 7503,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27929
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S3H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S3",
+   "slot": "S3A4",
+   "node_id": 11659,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27929
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S3H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S3",
+   "slot": "S3A5",
+   "node_id": 2292,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27929,
+    42795
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S3H0",
+    "S3H1"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S3",
+   "slot": "S3A6",
+   "node_id": 38900,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27929
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S3H0"
+   ]
+  },
+  {
+   "class": "S",
+   "pool": "S3",
+   "slot": "S3H0",
+   "node_id": 27929,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "S",
+   "pool": "S3",
+   "slot": "S3H1",
+   "node_id": 42795,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    27929
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "S3H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "Xcommon",
+   "slot": "XCA1",
+   "node_id": 21835,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "X",
+   "pool": "Xcommon",
+   "slot": "XCA2",
+   "node_id": 1891,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "X",
+   "pool": "Xcommon",
+   "slot": "XCA3",
+   "node_id": 35283,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "X",
+   "pool": "Xcommon",
+   "slot": "XCA4",
+   "node_id": 21575,
+   "tier": "advanced",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "X",
+   "pool": "Xcommon",
+   "slot": "XCH1",
+   "node_id": 35894,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "X",
+   "pool": "Xcommon",
+   "slot": "XCH2",
+   "node_id": 56276,
+   "tier": "high",
+   "scope": "class_common",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "X",
+   "pool": "X1",
+   "slot": "X1A1",
+   "node_id": 9877,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    5823
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X1H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X1",
+   "slot": "X1A2",
+   "node_id": 59009,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    5823
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X1H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X1",
+   "slot": "X1A3",
+   "node_id": 30205,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    5823
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X1H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X1",
+   "slot": "X1A4",
+   "node_id": 27276,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    5823
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X1H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X1",
+   "slot": "X1A5",
+   "node_id": 48477,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    5823
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X1H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X1",
+   "slot": "X1A6",
+   "node_id": 46289,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    5823
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X1H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X1",
+   "slot": "X1H0",
+   "node_id": 5823,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "X",
+   "pool": "X1",
+   "slot": "X1H1",
+   "node_id": 32227,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    5823
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X1H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X2",
+   "slot": "X2A1",
+   "node_id": 47321,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    56648
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X2H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X2",
+   "slot": "X2A2",
+   "node_id": 11716,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    56648
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X2H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X2",
+   "slot": "X2A3",
+   "node_id": 31371,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    56648
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X2H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X2",
+   "slot": "X2A4",
+   "node_id": 27962,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    56648
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X2H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X2",
+   "slot": "X2A5",
+   "node_id": 58244,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    56648
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X2H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X2",
+   "slot": "X2A6",
+   "node_id": 46896,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    56648
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X2H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X2",
+   "slot": "X2H0",
+   "node_id": 56648,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "X",
+   "pool": "X2",
+   "slot": "X2H1",
+   "node_id": 45608,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    56648
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X2H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X3",
+   "slot": "X3A1",
+   "node_id": 1767,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    24050
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X3H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X3",
+   "slot": "X3A2",
+   "node_id": 40644,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    24050
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X3H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X3",
+   "slot": "X3A3",
+   "node_id": 10763,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    24050
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X3H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X3",
+   "slot": "X3A4",
+   "node_id": 59252,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    24050
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X3H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X3",
+   "slot": "X3A5",
+   "node_id": 7112,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    24050,
+    41989
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X3H0",
+    "X3H1"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X3",
+   "slot": "X3A6",
+   "node_id": 40362,
+   "tier": "advanced",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    24050
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X3H0"
+   ]
+  },
+  {
+   "class": "X",
+   "pool": "X3",
+   "slot": "X3H0",
+   "node_id": 24050,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": []
+  },
+  {
+   "class": "X",
+   "pool": "X3",
+   "slot": "X3H1",
+   "node_id": 41989,
+   "tier": "high",
+   "scope": "subtype_rule",
+   "requires_nodes": [
+    24050
+   ],
+   "legacy_preserved": false,
+   "compiled_normal_ready": false,
+   "status": "design_only_no_new_source_or_runtime",
+   "requires_slots": [
+    "X3H0"
+   ]
+  }
+ ]
+}

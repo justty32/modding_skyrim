@@ -1,0 +1,1365 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "rule_id",
+  "name",
+  "tier",
+  "scope",
+  "owner_class",
+  "owner_subtype",
+  "shared_with",
+  "unique_against",
+  "mechanic_reason",
+  "trigger_condition",
+  "actor_source",
+  "target_selector",
+  "state_owner",
+  "state_refresh_consume",
+  "effect_formula",
+  "cost_timing",
+  "lifecycle",
+  "invalid_cases",
+  "compatibility",
+  "positive_example",
+  "negative_example",
+  "high_before",
+  "high_after",
+  "high_gain",
+  "high_cost",
+  "high_not_numeric",
+  "parameters",
+  "requires_slots",
+  "canonical_proposal",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "rule_id": "MCA1",
+   "name": "危傷辨識",
+   "tier": "advanced",
+   "scope": "class_common",
+   "owner_class": "M",
+   "owner_subtype": null,
+   "shared_with": [],
+   "unique_against": [],
+   "mechanic_reason": "以施法主目標前快照決定本cast預算",
+   "trigger_condition": "主動恢復交易前，主目標HP/maxHP低於H_critical",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "none",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "本筆預算加成=原生B*k_critical(n)；不得逐recipient重算；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "分流中第二名較低HP不能再次觸發增額；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "先瞄準重傷隊友施法，集中取得同一筆增額後才決定分流",
+   "negative_example": "分流中第二名較低HP不能再次觸發增額",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "H_critical",
+    "k_critical"
+   ],
+   "requires_slots": [],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "MCA2",
+   "name": "餘力調度",
+   "tier": "advanced",
+   "scope": "class_common",
+   "owner_class": "M",
+   "owner_subtype": null,
+   "shared_with": [],
+   "unique_against": [],
+   "mechanic_reason": "以施法前MP儲量換施法續航",
+   "trigger_condition": "主動恢復交易前owner MP/maxMP高於H_reserve",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "none",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "本筆原生MP成本減免函數d_reserve(n)，B不因減免另增；MCH2改HP付款後停用；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "導血機會或護印釋放不是原生恢復，不再省一次；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。與MCH2成本替代互斥於本筆；不能把免去MP誤當實付MP。",
+   "positive_example": "法力充足時急救較省原生成本",
+   "negative_example": "導血機會或護印釋放不是原生恢復，不再省一次",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "H_reserve",
+    "d_reserve"
+   ],
+   "requires_slots": [],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "MCA3",
+   "name": "同伴接診",
+   "tier": "advanced",
+   "scope": "class_common",
+   "owner_class": "M",
+   "owner_subtype": null,
+   "shared_with": [],
+   "unique_against": [],
+   "mechanic_reason": "主動改瞄對象的施法節奏，不獎黑箱掃血量",
+   "trigger_condition": "本筆主動治療主目標與owner上一次成功主動治療主目標不同",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+MCA3上一主目標",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。成功主動治療提交後記錄主目標；同筆分流不重寫，記錄期限T_rotation；失敗不換人。",
+   "effect_formula": "本筆預算加成=原生B*k_rotation(n)；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "一次群療觸及A/B不算兩次主動換人；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "先治A再主動改瞄B取得接診加成",
+   "negative_example": "一次群療觸及A/B不算兩次主動換人",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "k_rotation",
+    "T_rotation"
+   ],
+   "requires_slots": [],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "MCA4",
+   "name": "定點續援",
+   "tier": "advanced",
+   "scope": "class_common",
+   "owner_class": "M",
+   "owner_subtype": null,
+   "shared_with": [],
+   "unique_against": [],
+   "mechanic_reason": "連續主動選同一人與換人接診兩種節奏",
+   "trigger_condition": "連續成功主動治療同一合法主目標，既有接診記錄未過期",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+MCA4主目標/前次時間",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。成功後刷新T_continuity；改目標清舊記錄，不累層。",
+   "effect_formula": "本筆原生B*k_continuity(n)為額外治療預算；與MCA3依前快照互斥；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "首筆剛登記不能立刻吃續援加成；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "持續救同一前排，第二次治療才獲增額",
+   "negative_example": "首筆剛登記不能立刻吃續援加成",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "k_continuity",
+    "T_continuity"
+   ],
+   "requires_slots": [],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "MCH1",
+   "name": "向外伸手",
+   "tier": "high",
+   "scope": "class_common",
+   "owner_class": "M",
+   "owner_subtype": null,
+   "shared_with": [],
+   "unique_against": [],
+   "mechanic_reason": "以原生self施法加瞄準提供救人載具",
+   "trigger_condition": "owner原生self-only主動HP恢復施法被accepted且瞄準合法友軍",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "none",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "該self恢復整筆預算改給瞄準友軍，owner不再領同筆；無合格友軍維持原生self；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "瞄敵人/死亡友軍不轉移、不自動找最近者；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。M2可由此合法主目標登記受援者；M1以此為主目標；M3由此可存印。",
+   "positive_example": "自療法術瞄準隊友而將整筆救命額交出",
+   "negative_example": "瞄敵人/死亡友軍不轉移、不自動找最近者",
+   "high_before": "self-only法術只能救自己",
+   "high_after": "用既有瞄準把本次self療效整筆交給友軍",
+   "high_gain": "無需新選單以self法術執行外援",
+   "high_cost": "合格瞄準時放棄自己的整筆恢復，會暴露本人",
+   "high_not_numeric": "改變合法recipient與原生self效果去向，倍率無法將self變成友軍治療",
+   "parameters": [],
+   "requires_slots": [],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "MCH2",
+   "name": "血作醫資",
+   "tier": "high",
+   "scope": "class_common",
+   "owner_class": "M",
+   "owner_subtype": null,
+   "shared_with": [],
+   "unique_against": [],
+   "mechanic_reason": "改施法資源交易與救援風險",
+   "trigger_condition": "合法主動HP恢復施法原生MP付款前",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "none",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "將本筆原生MP支付替換為C_blood(nativeMP,owner快照)之HP付款；須付款後owner仍存活；B_native不因付款替代改值，合法候選加成仍依預算契約；不由傷己生成治療機會；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "必須在accepted與原生MP扣款前完成替代；HP不可致死且不足拒絕本次替代施法，不先付MP後退款",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "低HP不足不能先施法再讓自己死亡或由護印代付；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。MCA2於替代筆停用；M2不將自付HP算敵擊；M3不以護印吸收付款；HP付款不計外來傷害。",
+   "positive_example": "缺MP但有可安全支付HP時，用自身生命完成一次外援",
+   "negative_example": "低HP不足不能先施法再讓自己死亡或由護印代付",
+   "high_before": "以MP限制救援施法",
+   "high_after": "每次主動恢復改以不可致死HP實付",
+   "high_gain": "在MP短缺時仍可執行主動救援",
+   "high_cost": "本人失血且不能用護印免付；原生MP節省分支失效",
+   "high_not_numeric": "改付款resource與施法接受資格，非治療倍率",
+   "parameters": [
+    "C_blood"
+   ],
+   "requires_slots": [],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M1H0",
+   "name": "分診法脈",
+   "tier": "high",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M1",
+   "shared_with": [],
+   "unique_against": [
+    "M2",
+    "M3"
+   ],
+   "mechanic_reason": "將單次治療的分配決策取代逐人施法",
+   "trigger_condition": "對合法主目標accepted主動恢復交易",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+cast分配帳",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。只持本cast分配清單/預算；每recipient提交前重驗，失效額只返本cast未分餘額，不能再發已付額。",
+   "effect_formula": "保留p_primary*B給主目標；其餘B按同場景/R_split/可見合法傷友距主目標近至遠的穩定排序，以缺HP逐人分配；主目標與各友總額<=B，無候選剩額回主目標缺HP後捨棄；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "滿血路人不入選；多來一人不多一份B；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "A欠血且旁有B/C，一次施法分同一份B救多人",
+   "negative_example": "滿血路人不入選；多來一人不多一份B",
+   "high_before": "單次施法預算只到原生主目標",
+   "high_after": "主目標保留額與附近合法傷者分享一筆預算",
+   "high_gain": "一個主動施法動作覆蓋多人",
+   "high_cost": "主目標收到較少且不可複製原生療效",
+   "high_not_numeric": "改多recipient與預算路由，非每目標增幅",
+   "parameters": [
+    "p_primary",
+    "R_split"
+   ],
+   "requires_slots": [],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M1H1",
+   "name": "接力分診",
+   "tier": "high",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M1",
+   "shared_with": [],
+   "unique_against": [
+    "M2",
+    "M3"
+   ],
+   "mechanic_reason": "把群療換成需持續施法維持的待發接力",
+   "trigger_condition": "M1H0已分配到非主目標的預算，且owner保持原生channel施法",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+cast待發queue",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。queue每次提交先摘額再送；不跨channel/不轉移到新cast；到T_queue或channel中斷清未送額。",
+   "effect_formula": "旁支不即時群發，改按原生channel後續accepted ticks順序發送已保留份額；H0本應捨棄的未用額亦保留本cast，供後續tick重新檢合法傷友分配；每tick新增原生預算另記，不能重算舊B；中斷丟棄未送餘額；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "放手後不能靠舊queue自動持續救人；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "保持既有治療channel，旁支依序獲先前保留額",
+   "negative_example": "放手後不能靠舊queue自動持續救人",
+   "high_before": "分診本筆各目標立即收額",
+   "high_after": "主目標先救，旁支由持續channel逐筆兌現",
+   "high_gain": "本來過量捨棄的額能留待channel後續傷勢，由繼續施法兌現",
+   "high_cost": "旁支延遲且斷施法丟失已付未發額",
+   "high_not_numeric": "改效果提交時間、interrupt風險與待發帳生命週期",
+   "parameters": [
+    "T_queue"
+   ],
+   "requires_slots": [
+    "M1H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M1A1",
+   "name": "主診保留",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M1",
+   "shared_with": [],
+   "unique_against": [
+    "M2",
+    "M3"
+   ],
+   "mechanic_reason": "用主目標危急條件改分流比例",
+   "trigger_condition": "M1H0分配時主目標低於H_primary",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+cast",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "p_primary改為p_critical(n)；只重分同B，不新增額；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "主目標滿血不能用此憑空多治療；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "重傷主目標先保住，其餘才外送",
+   "negative_example": "主目標滿血不能用此憑空多治療",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "H_primary",
+    "p_critical"
+   ],
+   "requires_slots": [
+    "M1H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M1A2",
+   "name": "近傷優先",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M1",
+   "shared_with": [],
+   "unique_against": [
+    "M2",
+    "M3"
+   ],
+   "mechanic_reason": "可藉主動選施法落點控制內外傷者排序",
+   "trigger_condition": "M1H0排旁支候選時",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+cast候選快照",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "先按距主目標<=R_inner分內外組，各組仍距離/穩定key排序；內組份額權重w_inner(n)，總預算歸一不變；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "外圈隊友多不使總額成倍；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "靠近施法主目標的受傷隊友先分較大份",
+   "negative_example": "外圈隊友多不使總額成倍",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "R_inner",
+    "w_inner"
+   ],
+   "requires_slots": [
+    "M1H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M1A3",
+   "name": "失效回診",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M1",
+   "shared_with": [],
+   "unique_against": [
+    "M2",
+    "M3"
+   ],
+   "mechanic_reason": "對同cast失效recipient做可追帳回流",
+   "trigger_condition": "M1H0旁支提交前對象失去資格",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+cast未發額",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "失效旁支額中的q_return(n)改回主目標缺HP，其他仍原排序；已發額不搬回；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "B已得到的治療不回收再給A；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "B在提交前變敵對，未送額回到仍受傷A",
+   "negative_example": "B已得到的治療不回收再給A",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "q_return"
+   ],
+   "requires_slots": [
+    "M1H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M1A4",
+   "name": "分流節費",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M1",
+   "shared_with": [],
+   "unique_against": [
+    "M2",
+    "M3"
+   ],
+   "mechanic_reason": "以真正分流完成證據節省本筆MP而非按人頭返",
+   "trigger_condition": "M1H0前快照有不同合法傷者，且實際至少有主/旁支正額提交",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+cast成本票",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "完成該筆合法分流後返原生實付MP*d_split(n)，不超過該筆原生實付；MCH2付款筆不返HP；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "原生MP先實付；分流提交後一次退款，隔離外來MP變化。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "只有主目標缺血不能假列滿血隊友退款；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "兩名傷友實收正額，原支付中一部分回MP",
+   "negative_example": "只有主目標缺血不能假列滿血隊友退款",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "d_split"
+   ],
+   "requires_slots": [
+    "M1H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M1A5",
+   "name": "接力重排",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M1",
+   "shared_with": [],
+   "unique_against": [
+    "M2",
+    "M3"
+   ],
+   "mechanic_reason": "主動維持channel期間可重配待發額",
+   "trigger_condition": "M1H1後續accepted tick前，queue還有未發份且目標傷勢/資格變化",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+cast queue",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。重排只消耗/重置未發分配帳，不生成額；仍隨channel停止清除。",
+   "effect_formula": "按本tick合法候選距主目標排序重配未發額的q_reassign(n)；不動已付額、不得延原expiry；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "已發給B的額不能抽回再發C；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "舊旁支已被別人救滿，尚未發額改給附近傷友",
+   "negative_example": "已發給B的額不能抽回再發C",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "q_reassign"
+   ],
+   "requires_slots": [
+    "M1H0",
+    "M1H1"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M1A6",
+   "name": "收束救急",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M1",
+   "shared_with": [],
+   "unique_against": [
+    "M2",
+    "M3"
+   ],
+   "mechanic_reason": "按分流入口前快照區分集中與群援，不靠人頭給倍數",
+   "trigger_condition": "M1H0主動施法前快照旁支候選皆不合法或皆滿血",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "none",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "本筆B_native*k_isolated(n)增額只給主目標；若前快照有合法缺血旁支則不啟用；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "旁支在提交中才失效不觸發本筆增額；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "孤立前排無其他傷友時集中救急",
+   "negative_example": "旁支在提交中才失效不觸發本筆增額",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "k_isolated"
+   ],
+   "requires_slots": [
+    "M1H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M2H0",
+   "name": "受援繫血",
+   "tier": "high",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M2",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M3"
+   ],
+   "mechanic_reason": "必須手選受援者並在攻守間切換，不是吸血",
+   "trigger_condition": "主動恢復/合法原生支援法術成功指定友軍後，owner原生武器/攻擊法術命中合法存活敵Actor",
+   "actor_source": {
+    "register_or_handoff": "owner本人accepted且實付成功、以合法友軍為原生主目標的主動恢復/支援法術；只有此階段登記/交接。",
+    "opportunity_attack": "owner本人原生武器或攻擊法術命中相對owner合法存活敵Actor；須可歸因且同攻擊交易去重，排自傷/友傷/合成/被動DoT。",
+    "redeem_restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。原生主目標必須為本人已登記援者。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+M2單一受援者與機會帳",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。換受援者棄舊機會；同攻擊交易多target只建立一次機會，重命中刷新T_opportunity不疊次；原生主動恢復主目標需同一人，成功後消耗；新登記同txn不能被用。",
+   "effect_formula": "先由主動支援登記單一受援者；之後敵擊只建救援機會，不直接補HP；下次主動恢復原生主目標為該受援者才消耗機會並以另付C_opportunity獲新增治療預算B_opportunity(n)；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "登記沿原生法術成本；敵擊保留原生成本；兌現時額外C_opportunity與原生恢復一併足額才提交增額，不能用敵傷量免費複製療效。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "砍隊友/自己/合成DoT不能供機會；分流碰到B不登記B；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "先治A、打敵、再主動治A才兌現一份額外預算",
+   "negative_example": "砍隊友/自己/合成DoT不能供機會；分流碰到B不登記B",
+   "high_before": "進攻與治療互不相連",
+   "high_after": "先選援者再攻敵，下次主動治同人兌現",
+   "high_gain": "以進攻成功取得特定援者治療入口",
+   "high_cost": "需要攻擊暴露與額外實付；換援者會失機會",
+   "high_not_numeric": "新增owner單援者、攻敵機會與手動施法兌現序列",
+   "parameters": [
+    "C_opportunity",
+    "B_opportunity",
+    "T_opportunity"
+   ],
+   "requires_slots": [],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M2H1",
+   "name": "轉援斷契",
+   "tier": "high",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M2",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M3"
+   ],
+   "mechanic_reason": "轉援需要重新面對指定敵人，改單援者機會的切換路徑",
+   "trigger_condition": "M2H0有舊受援者及有效機會，主動支援成功指定另一合法友軍",
+   "actor_source": {
+    "register_or_handoff": "owner本人accepted且實付成功、以合法友軍為原生主目標的主動恢復/支援法術；只有此階段登記/交接。",
+    "opportunity_attack": "owner本人原生武器或攻擊法術命中相對owner合法存活敵Actor；須可歸因且同攻擊交易去重，排自傷/友傷/合成/被動DoT。",
+    "redeem_restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。原生主目標必須為本人已登記援者。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+M2受援者/待交接票",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。交接票綁新援者+觸發舊機會的敵Actor；再換友/敵死/超T_handoff即丟；命中成功先摘票後造機會。",
+   "effect_formula": "不把舊機會搬給新友；舊機會及其建立時增額資格payload改為一次交接票，新援者須owner下一次不同原生攻擊交易命中同一被登記敵人才轉成可兌現機會；保留舊payload取代新擊payload不疊加，原新增成本仍需實付；票存在時舊援者不可兌現；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "改援B後不能直接拿A的救援機會治B；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "從A改救B，必須重打先前敵人後才能治B兌現",
+   "negative_example": "改援B後不能直接拿A的救援機會治B",
+   "high_before": "換援者直接棄機會，重新任意攻敵建立",
+   "high_after": "換援留交接票但綁舊敵；攻舊敵才可兌現",
+   "high_gain": "轉援後能保留原機會的條件增額資格，而非全部重新取得",
+   "high_cost": "交接期間無人可兌現且受指定敵人限制",
+   "high_not_numeric": "改換援狀態機、敵人綁定及兌現資格",
+   "parameters": [
+    "T_handoff"
+   ],
+   "requires_slots": [
+    "M2H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M2A1",
+   "name": "護傷追擊",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M2",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M3"
+   ],
+   "mechanic_reason": "由建立機會時的援者危急狀態決定後續可付預算",
+   "trigger_condition": "已有受援者且前快照其HP/maxHP低於H_aid，owner原生敵擊建立機會",
+   "actor_source": {
+    "register_or_handoff": "owner本人accepted且實付成功、以合法友軍為原生主目標的主動恢復/支援法術；只有此階段登記/交接。",
+    "opportunity_attack": "owner本人原生武器或攻擊法術命中相對owner合法存活敵Actor；須可歸因且同攻擊交易去重，排自傷/友傷/合成/被動DoT。",
+    "redeem_restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。原生主目標必須為本人已登記援者。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+M2機會payload",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。機會payload記建立時門檻結果；刷新時覆寫不累加，仍一次兌現。",
+   "effect_formula": "該次機會可兌現額外預算增加B_wounded(n)，兌現另付對應C_wounded；不是每次命中累積；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "A之後才掉低血不追溯把舊機會升級；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "A已重傷時攻敵，後續治A可另付換較強救援",
+   "negative_example": "A之後才掉低血不追溯把舊機會升級",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "H_aid",
+    "B_wounded",
+    "C_wounded"
+   ],
+   "requires_slots": [
+    "M2H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M2A2",
+   "name": "斷敵救援",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M2",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M3"
+   ],
+   "mechanic_reason": "明確反擊威脅來源而非泛攻敵補血",
+   "trigger_condition": "owner原生敵擊對象恰是前一合格傷害交易傷到本人受援者的敵人",
+   "actor_source": {
+    "register_or_handoff": "owner本人accepted且實付成功、以合法友軍為原生主目標的主動恢復/支援法術；只有此階段登記/交接。",
+    "opportunity_attack": "owner本人原生武器或攻擊法術命中相對owner合法存活敵Actor；須可歸因且同攻擊交易去重，排自傷/友傷/合成/被動DoT。",
+    "redeem_restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。原生主目標必須為本人已登記援者。",
+    "observe_threat": "相對owner合法敵Actor傷害已登記援者之原生交易，提交後只記最後傷害來源；不在觀測階段產生HP。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+援者最後傷害來源/時間",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。合法敵傷提交後記source到T_threat；環境/自己不登記；不反擊自動打人。",
+   "effect_formula": "建立機會時記B_revenge(n)增額與C_revenge成本；只於下次治援者兌現；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "打旁邊無關敵F不算同來源救援；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "A被E打，owner手動命中E後治A",
+   "negative_example": "打旁邊無關敵F不算同來源救援",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "B_revenge",
+    "C_revenge",
+    "T_threat"
+   ],
+   "requires_slots": [
+    "M2H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M2A3",
+   "name": "近援通路",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M2",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M3"
+   ],
+   "mechanic_reason": "兌現站位影響附加實付而非自動尋人",
+   "trigger_condition": "兌現M2機會時援者與owner距離<=R_aid且可見",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "none",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "本筆額外C_opportunity成本乘d_near(n)，新增預算不變；不改原生恢復施距；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "援者遠離只能付原定成本，不能穿牆治療；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "靠近手選援者施法節省機會兌現成本",
+   "negative_example": "援者遠離只能付原定成本，不能穿牆治療",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "R_aid",
+    "d_near"
+   ],
+   "requires_slots": [
+    "M2H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M2A4",
+   "name": "援者餘裕",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M2",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M3"
+   ],
+   "mechanic_reason": "增額浪費轉成單援者成本票，非跨隊友免費治療",
+   "trigger_condition": "M2兌現成功後原生施法主目標已滿血仍有未分增額",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+本次兌現帳",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。折抵票綁同owner+援者；下次同援者主動施法成功花一次，僅減新增療效所需成本且不能超其實付；轉援清。",
+   "effect_formula": "只把未用新增額中q_credit(n)記作此援者下一次主動恢復折抵額；期限T_credit，不供M1分流、不退款/不新造機會；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "已分給M1旁支的額不能再存折抵；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "A差少量HP，已付新增額餘量留作下次同人兌現成本折抵",
+   "negative_example": "已分給M1旁支的額不能再存折抵",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "q_credit",
+    "T_credit"
+   ],
+   "requires_slots": [
+    "M2H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M2A5",
+   "name": "交接追索",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M2",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M3"
+   ],
+   "mechanic_reason": "交接綁敵承諾有對應付費兌現價值",
+   "trigger_condition": "M2H1交接票已存在，owner下一原生敵擊成功命中票上敵人",
+   "actor_source": {
+    "register_or_handoff": "owner本人accepted且實付成功、以合法友軍為原生主目標的主動恢復/支援法術；只有此階段登記/交接。",
+    "opportunity_attack": "owner本人原生武器或攻擊法術命中相對owner合法存活敵Actor；須可歸因且同攻擊交易去重，排自傷/友傷/合成/被動DoT。",
+    "redeem_restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。原生主目標必須為本人已登記援者。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+交接票",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。摘票成功才附payload；同一命中不能再走M2H0建立第二機會。",
+   "effect_formula": "本次轉成機會時附加B_handoff(n)可付增額及C_handoff，仍只一機會；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "打錯敵人不花票也不拿交接增額；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "轉援B後冒險追打E，下一次治B可另付增額",
+   "negative_example": "打錯敵人不花票也不拿交接增額",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "B_handoff",
+    "C_handoff"
+   ],
+   "requires_slots": [
+    "M2H0",
+    "M2H1"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M2A6",
+   "name": "穩定護送",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M2",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M3"
+   ],
+   "mechanic_reason": "固定援者的跨攻守完整循環節費",
+   "trigger_condition": "同一援者前次兌現後，owner再經不同敵擊交易建立新機會",
+   "actor_source": {
+    "register_or_handoff": "owner本人accepted且實付成功、以合法友軍為原生主目標的主動恢復/支援法術；只有此階段登記/交接。",
+    "opportunity_attack": "owner本人原生武器或攻擊法術命中相對owner合法存活敵Actor；須可歸因且同攻擊交易去重，排自傷/友傷/合成/被動DoT。",
+    "redeem_restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。原生主目標必須為本人已登記援者。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+援者上次成功兌現記錄",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。成功兌現才記T_escort；換援清；敵擊刷新不增加折扣層。",
+   "effect_formula": "本次新機會兌現C_opportunity減免d_escort(n)，但機會數不累積；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "一直治A卻不再攻敵不能再次兌現；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "連續護送A時每輪仍需攻敵/再主動治療",
+   "negative_example": "一直治A卻不再攻敵不能再次兌現",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "d_escort",
+    "T_escort"
+   ],
+   "requires_slots": [
+    "M2H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M3H0",
+   "name": "預付續生印",
+   "tier": "high",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M3",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M2"
+   ],
+   "mechanic_reason": "將已實付主動治療額換事前傷害預算，不自動復活",
+   "trigger_condition": "owner主動恢復主目標合法且前快照未持本人續生印",
+   "actor_source": {
+    "create_seal": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。原生主目標建印，保留付款溯源。",
+    "consume_seal": "可歸因之敵Actor對recipient的原生正HP傷害交易；在原生防護及守衛current護援後、HP提交前讀殘傷，排資源付款/環境/自傷/合成傷害。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+recipient+M3H0預付池",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。未持本人印才建立；已有印則本筆不另存且走即時恢復，禁止刷新白補池；T_seal由建立時計算。",
+   "effect_formula": "本筆p_seal*B不立即恢復，存作該recipient預付護印；其餘照常即時恢復。之後合法敵向正HP待扣在原生防護/守衛current護援後以min(剩印額,待扣HP)抵消並等額減池；池耗盡撤印，不補已死者；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "A已死不能施印/觸發/復活；印抵不完的致死剩傷正常致死；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。多giver各池依建立時間/穩定giver排序消耗至殘傷為零即停，僅醫療預付池提案；不覆寫守衛current合係數lease；傷害付款非敵傷不吸收。",
+   "positive_example": "先對仍活著A施法犧牲部分即時回血，稍後敵傷耗印額",
+   "negative_example": "A已死不能施印/觸發/復活；印抵不完的致死剩傷正常致死",
+   "high_before": "傷後主動治療，滿血部分浪費",
+   "high_after": "先主動施法把部分恢復預付成可耗護印",
+   "high_gain": "在未受傷時花施法時間布置後續保護",
+   "high_cost": "同筆立即回血縮減，印可到期浪費，不能挽回死亡",
+   "high_not_numeric": "改主動預付/後續傷害消耗的生命週期及提交階段",
+   "parameters": [
+    "p_seal",
+    "T_seal"
+   ],
+   "requires_slots": [],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M3H1",
+   "name": "手動解印",
+   "tier": "high",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M3",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M2"
+   ],
+   "mechanic_reason": "由主動治療與既有低血條件將事前防護改救急",
+   "trigger_condition": "owner對持本人有效續生印recipient施原生主動恢復，且前快照HP/maxHP低於H_break",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+recipient既有印",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。成功主動治療交易才摘印；失敗不摘；需前快照既有印，不能本筆造了立刻解。",
+   "effect_formula": "在本次治療提交先摘本人剩印，將其全部餘額與本筆即時B合成恢復；本筆不得新建印，失去後續預防；滿血溢出捨棄；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "A死亡不解印回血；其他giver印不被吃掉；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "A已重傷，主動再治A將剩印立即兌現",
+   "negative_example": "A死亡不解印回血；其他giver印不被吃掉",
+   "high_before": "印額只能等將來敵傷逐次抵消",
+   "high_after": "危急時再主動施法可一次解本人印救急",
+   "high_gain": "能選施法時機提早兌現預付保護",
+   "high_cost": "失去剩印的未來防護，本筆不能重建印",
+   "high_not_numeric": "改預付池釋放事件與去向，非更高倍率",
+   "parameters": [
+    "H_break"
+   ],
+   "requires_slots": [
+    "M3H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M3A1",
+   "name": "危前存額",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M3",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M2"
+   ],
+   "mechanic_reason": "以recipient當下安全度改預防與即救比例",
+   "trigger_condition": "M3H0建印時主目標HP/maxHP高於H_prepare",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+recipient印payload",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "本筆存額比例改p_prepare(n)，即時額相應減少，B守恆；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "重傷者不會因這條把更多救命額強扣存印；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "健康前排在進戰前被主動預布更大預付池",
+   "negative_example": "重傷者不會因這條把更多救命額強扣存印",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "H_prepare",
+    "p_prepare"
+   ],
+   "requires_slots": [
+    "M3H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M3A2",
+   "name": "續診延印",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M3",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M2"
+   ],
+   "mechanic_reason": "續療延期限但不補額，與建印/解印清楚區分",
+   "trigger_condition": "已有本人未耗盡印且主動對同recipient治療實際正HP恢復",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+recipient印expiry",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。每次成功實付延印只改expiry；滿血零恢復不能延，無限續期須持續施法實付。",
+   "effect_formula": "支付額外C_extend(n)使expiry改為本次時間+T_extend(n)，不補回任何已耗池額；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "原生成本照付；C_extend與本筆成功正HP恢復原子提交；M3H1本筆解印時本分支不付不延。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "只對滿血A刷法術不能白續期/白補池；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "A殘印少但仍在承傷，主動治療並實付延長保護",
+   "negative_example": "只對滿血A刷法術不能白續期/白補池",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "C_extend",
+    "T_extend"
+   ],
+   "requires_slots": [
+    "M3H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M3A3",
+   "name": "明傷留印",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M3",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M2"
+   ],
+   "mechanic_reason": "限定敵傷類型的預付池交換效率",
+   "trigger_condition": "本人印面對可確認敵原生近戰WEAP正HP待扣，非bash/projectile/魔法",
+   "actor_source": {
+    "create_seal": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。原生主目標建印，保留付款溯源。",
+    "consume_seal": "可歸因之敵Actor對recipient的原生正HP傷害交易；在原生防護及守衛current護援後、HP提交前讀殘傷，排資源付款/環境/自傷/合成傷害。另限近戰WEAP，排bash/projectile/法術。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+recipient印池",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "只對這類待扣額按k_melee(n)減少印額消耗；實際抵扣不得超過池額/k_melee，k_melee需正；抵扣與消耗同txn記帳；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "箭/法術不得冒充近戰套折耗；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "預付印遇合格敵刀傷，同樣池額可抵較多",
+   "negative_example": "箭/法術不得冒充近戰套折耗",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "k_melee"
+   ],
+   "requires_slots": [
+    "M3H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M3A4",
+   "name": "解印回診",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M3",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M2"
+   ],
+   "mechanic_reason": "手動解印的付費救急分支",
+   "trigger_condition": "M3H1成功手動解印且recipient仍有缺HP",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+本次解印票",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。本筆解印commit一次，餘印本體與新增額分帳；未解本人印不啟用。",
+   "effect_formula": "本筆額外B_release(n)須另付C_release；不根據其他giver池/隊友人數生成增額；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "額外C_release與摘印/本筆恢復一併實付提交；不足則不加此可選增額，不吞其額外成本。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "只原生治療無印可解不能吃增額；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "A危急解本人印時另付資源取得額外急救",
+   "negative_example": "只原生治療無印可解不能吃增額",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "B_release",
+    "C_release"
+   ],
+   "requires_slots": [
+    "M3H0",
+    "M3H1"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M3A5",
+   "name": "殘印診讀",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M3",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M2"
+   ],
+   "mechanic_reason": "依已耗預付池決定後續主動治療力度",
+   "trigger_condition": "前快照本人印剩額/建立原始額低於H_depleted，主動同人恢復且未解印",
+   "actor_source": {
+    "restore": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+recipient印pool原始額",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。無持久狀態；none。成功提交一次，失敗不消耗。",
+   "effect_formula": "本筆即時恢復預算加原生B*k_depleted(n)；該增額不能存入舊印，不刷新期限；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "保留原生法術付款時點與原成本；附加交易與路由須可原子提交，失敗不提交附加效果，不追補原生扣款。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "原始額未知/零或本筆先耗到低門檻不成立；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "A印幾乎耗盡時改用主動治療補HP",
+   "negative_example": "原始額未知/零或本筆先耗到低門檻不成立",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "H_depleted",
+    "k_depleted"
+   ],
+   "requires_slots": [
+    "M3H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "M3A6",
+   "name": "盡印回息",
+   "tier": "advanced",
+   "scope": "subtype",
+   "owner_class": "M",
+   "owner_subtype": "M3",
+   "shared_with": [],
+   "unique_against": [
+    "M1",
+    "M2"
+   ],
+   "mechanic_reason": "預防額真正消耗並成功存活才回原分攤成本",
+   "trigger_condition": "本人印被合法敵傷真正耗到零且recipient該次傷害提交後仍存活",
+   "actor_source": {
+    "create_seal": "owner本人accepted且實付成功的原生主動HP恢復法術；排再生/藥水/合成/他人施法。原生主目標建印，保留付款溯源。",
+    "consume_seal": "可歸因之敵Actor對recipient的原生正HP傷害交易；在原生防護及守衛current護援後、HP提交前讀殘傷，排資源付款/環境/自傷/合成傷害。",
+    "refund": "同筆耗盡印池且HP傷害提交後recipient仍存活，據原建印實付票一次退款；退款不再觸發來源。",
+    "origin_guard": "各階段只觸發該階段條件；合成輸出及轉帳不再觸發任何原生來源。"
+   },
+   "target_selector": "recipient須存活、同戰鬥場景、合法可恢復HP的本人或明確隊友；受控召喚須證歸屬及可治療，排敵/路人/死亡/未知歸屬。主目標由原生瞄準/原生self決定；額外對象只按本rule明述候選與排序，不黑箱掃最低HP。資格每次提交重驗；無合法對象不fallback。",
+   "state_owner": "owner+被耗盡印付款溯源",
+   "state_refresh_consume": "事件前讀已有狀態；本事件新狀態不得同事件使用。印耗盡先摘且鎖退款票再回MP；到期/Reset/手動解印/recipient死亡均不返。",
+   "effect_formula": "返owner原建印法術實付MP中d_exhaust(n)部分；只按實際存印比例分攤成本，不超原實付，MCH2血付印不返HP；B_native=本筆唯一cast/tick原生恢復預算，多目標/effect辨識後僅入帳一次。B_effective=B_native+合法已購候選加成（MCA1/3/4、M1A6、M3A5依各條前快照及互斥條件；各項基底B_native，不遞迴）+本筆另付成功新增額。prior_paid轉入只可來自M1H1舊queue或M3H1本人舊印，須先摘原帳相同額、保留來源ID，不重算加成/不當新付款。L=B_effective+本筆合法prior_paid轉入；即時HP+新待發額+新存印額+捨棄額<=L，每份來源只分配一次。舊文一般B指當階段可分配餘額，原生B指B_native；未特別保留之滿血溢出捨棄，原生主效果替換不另疊。",
+   "cost_timing": "建印原生成本先實付；耗盡且受援者仍活才延後退款，非從外來MP差值猜。",
+   "lifecycle": "owner死亡/離戰/Reset/load清本人暫態；recipient死亡/離場/敵對/不再合法清該recipient狀態；t>=expiry失效，無退款。只撤本人狀態；合成輸出不生成原生施法/命中來源。",
+   "invalid_cases": "印到期沒用/致死溢傷導致A死亡不退款；付款不足/來源不明/非法recipient/分母非正/過期/重入皆拒絕附加規則。",
+   "compatibility": "MCH2先決定成本來源→MCA調整一次可分配預算→M2已存機會兌現一次→M3決定存印/解印分配→M1路由剩餘額；同一recipient同筆最多一個HP提交，來源逐項記帳。各H0解鎖只約束自身A/H1，無職業鎖；守衛current portable lease不改。",
+   "positive_example": "A靠印接住最後一擊且活著，owner回部分原MP",
+   "negative_example": "印到期沒用/致死溢傷導致A死亡不退款",
+   "high_before": "",
+   "high_after": "",
+   "high_gain": "",
+   "high_cost": "",
+   "high_not_numeric": "",
+   "parameters": [
+    "d_exhaust"
+   ],
+   "requires_slots": [
+    "M3H0"
+   ],
+   "canonical_proposal": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING（提案送主管；未註冊）",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

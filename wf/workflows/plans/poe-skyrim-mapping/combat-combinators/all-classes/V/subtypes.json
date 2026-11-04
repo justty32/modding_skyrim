@@ -1,0 +1,164 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "name",
+  "summary",
+  "advanced",
+  "high",
+  "unique_advanced",
+  "unique_high",
+  "shared",
+  "common_counted",
+  "slots",
+  "requires",
+  "geometry"
+ ],
+ "rows": [
+  {
+   "id": "V1",
+   "name": "突入獵手",
+   "summary": "單target約戰→有效戰果→轉敵；助攻非尾刀",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": 6,
+   "unique_high": 2,
+   "shared": 0,
+   "common_counted": false,
+   "slots": [
+    "V1H0",
+    "V1H1",
+    "V1A1",
+    "V1A2",
+    "V1A3",
+    "V1A4",
+    "V1A5",
+    "V1A6"
+   ],
+   "requires": {
+    "V1H0": [],
+    "V1H1": [
+     "V1H0"
+    ],
+    "V1A1": [
+     "V1H0"
+    ],
+    "V1A2": [
+     "V1H0"
+    ],
+    "V1A3": [
+     "V1H0"
+    ],
+    "V1A4": [
+     "V1H0"
+    ],
+    "V1A5": [
+     "V1H0"
+    ],
+    "V1A6": [
+     "V1H0",
+     "V1H1"
+    ]
+   },
+   "geometry": "root single owner；未配置PoE ID"
+  },
+  {
+   "id": "V2",
+   "name": "戰旗詠唱者",
+   "summary": "停攻且真MP付費換近友SP/MP，排HP與防護",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": 6,
+   "unique_high": 2,
+   "shared": 0,
+   "common_counted": false,
+   "slots": [
+    "V2H0",
+    "V2H1",
+    "V2A1",
+    "V2A2",
+    "V2A3",
+    "V2A4",
+    "V2A5",
+    "V2A6"
+   ],
+   "requires": {
+    "V2H0": [],
+    "V2H1": [
+     "V2H0"
+    ],
+    "V2A1": [
+     "V2H0"
+    ],
+    "V2A2": [
+     "V2H0",
+     "V2H1"
+    ],
+    "V2A3": [
+     "V2H0"
+    ],
+    "V2A4": [
+     "V2H0",
+     "V2H1"
+    ],
+    "V2A5": [
+     "V2H0"
+    ],
+    "V2A6": [
+     "V2H0"
+    ]
+   },
+   "geometry": "root single owner；未配置PoE ID"
+  },
+  {
+   "id": "V3",
+   "name": "召援斥候",
+   "summary": "同召援命中→本人近戰→同召援命中，排本人法術契印",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": 6,
+   "unique_high": 2,
+   "shared": 0,
+   "common_counted": false,
+   "slots": [
+    "V3H0",
+    "V3H1",
+    "V3A1",
+    "V3A2",
+    "V3A3",
+    "V3A4",
+    "V3A5",
+    "V3A6"
+   ],
+   "requires": {
+    "V3H0": [],
+    "V3H1": [
+     "V3H0"
+    ],
+    "V3A1": [
+     "V3H0"
+    ],
+    "V3A2": [
+     "V3H0"
+    ],
+    "V3A3": [
+     "V3H0"
+    ],
+    "V3A4": [
+     "V3H0"
+    ],
+    "V3A5": [
+     "V3H0"
+    ],
+    "V3A6": [
+     "V3H0"
+    ]
+   },
+   "geometry": "root single owner；未配置PoE ID"
+  }
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "subtype",
+  "name",
+  "advanced_count",
+  "high_count",
+  "unique_advanced",
+  "unique_high",
+  "class_common_pool",
+  "subtype_shared",
+  "requires",
+  "summary",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "subtype": "X1",
+   "name": "閃入術士",
+   "advanced_count": 6,
+   "high_count": 2,
+   "unique_advanced": [
+    "X1A1",
+    "X1A2",
+    "X1A3",
+    "X1A4",
+    "X1A5",
+    "X1A6"
+   ],
+   "unique_high": [
+    "X1H0",
+    "X1H1"
+   ],
+   "class_common_pool": [
+    "XCA1",
+    "XCA2",
+    "XCA3",
+    "XCA4",
+    "XCH1",
+    "XCH2"
+   ],
+   "subtype_shared": [],
+   "requires": {
+    "X1A1": [
+     "X1H0"
+    ],
+    "X1A2": [
+     "X1H0"
+    ],
+    "X1A3": [
+     "X1H0"
+    ],
+    "X1A4": [
+     "X1H0"
+    ],
+    "X1A5": [
+     "X1H0"
+    ],
+    "X1A6": [
+     "X1H0"
+    ],
+    "X1H0": [],
+    "X1H1": [
+     "X1H0"
+    ]
+   },
+   "summary": "切入留返程、押注打斷後取消返程",
+   "status": "design_candidate",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "subtype": "X2",
+   "name": "牽引術士",
+   "advanced_count": 6,
+   "high_count": 2,
+   "unique_advanced": [
+    "X2A1",
+    "X2A2",
+    "X2A3",
+    "X2A4",
+    "X2A5",
+    "X2A6"
+   ],
+   "unique_high": [
+    "X2H0",
+    "X2H1"
+   ],
+   "class_common_pool": [
+    "XCA1",
+    "XCA2",
+    "XCA3",
+    "XCA4",
+    "XCH1",
+    "XCH2"
+   ],
+   "subtype_shared": [],
+   "requires": {
+    "X2A1": [
+     "X2H0"
+    ],
+    "X2A2": [
+     "X2H0"
+    ],
+    "X2A3": [
+     "X2H0"
+    ],
+    "X2A4": [
+     "X2H0"
+    ],
+    "X2A5": [
+     "X2H0"
+    ],
+    "X2A6": [
+     "X2H0"
+    ],
+    "X2H0": [],
+    "X2H1": [
+     "X2H0"
+    ]
+   },
+   "summary": "拉推敵人、救援方向與向另一敵交接",
+   "status": "design_candidate",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "subtype": "X3",
+   "name": "符陣機關師",
+   "advanced_count": 6,
+   "high_count": 2,
+   "unique_advanced": [
+    "X3A1",
+    "X3A2",
+    "X3A3",
+    "X3A4",
+    "X3A5",
+    "X3A6"
+   ],
+   "unique_high": [
+    "X3H0",
+    "X3H1"
+   ],
+   "class_common_pool": [
+    "XCA1",
+    "XCA2",
+    "XCA3",
+    "XCA4",
+    "XCH1",
+    "XCH2"
+   ],
+   "subtype_shared": [],
+   "requires": {
+    "X3A1": [
+     "X3H0"
+    ],
+    "X3A2": [
+     "X3H0"
+    ],
+    "X3A3": [
+     "X3H0"
+    ],
+    "X3A4": [
+     "X3H0"
+    ],
+    "X3A5": [
+     "X3H0",
+     "X3H1"
+    ],
+    "X3A6": [
+     "X3H0"
+    ],
+    "X3H0": [],
+    "X3H1": [
+     "X3H0"
+    ]
+   },
+   "summary": "先標獵物再布只為其觸發的原生獵物陣；雜兵不耗陣，重施可犧牲指定觸發換區域提前爆",
+   "status": "design_candidate",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

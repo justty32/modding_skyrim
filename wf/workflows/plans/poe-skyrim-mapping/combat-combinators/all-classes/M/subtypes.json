@@ -1,0 +1,173 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "subtype",
+  "name",
+  "loop",
+  "advanced",
+  "high",
+  "unique_advanced",
+  "unique_high",
+  "class_common_pool",
+  "subtype_shared",
+  "requires_slots",
+  "geometry",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "subtype": "M1",
+   "name": "急救師",
+   "loop": "主動選主目標→同筆B分流；channel接力需持施法",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": [
+    "M1A1",
+    "M1A2",
+    "M1A3",
+    "M1A4",
+    "M1A5",
+    "M1A6"
+   ],
+   "unique_high": [
+    "M1H0",
+    "M1H1"
+   ],
+   "class_common_pool": "MCA1-4/MCH1-2；全M僅一池，不計子型unique",
+   "subtype_shared": [],
+   "requires_slots": {
+    "M1H0": [],
+    "M1H1": [
+     "M1H0"
+    ],
+    "M1A1": [
+     "M1H0"
+    ],
+    "M1A2": [
+     "M1H0"
+    ],
+    "M1A3": [
+     "M1H0"
+    ],
+    "M1A4": [
+     "M1H0"
+    ],
+    "M1A5": [
+     "M1H0",
+     "M1H1"
+    ],
+    "M1A6": [
+     "M1H0"
+    ]
+   },
+   "geometry": "pending_single_owner_no_PoE_ID",
+   "status": "design_candidate",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "subtype": "M2",
+   "name": "戰地導血者",
+   "loop": "主動登記援者→原生攻敵→再主動治同人付費兌現",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": [
+    "M2A1",
+    "M2A2",
+    "M2A3",
+    "M2A4",
+    "M2A5",
+    "M2A6"
+   ],
+   "unique_high": [
+    "M2H0",
+    "M2H1"
+   ],
+   "class_common_pool": "MCA1-4/MCH1-2；全M僅一池，不計子型unique",
+   "subtype_shared": [],
+   "requires_slots": {
+    "M2H0": [],
+    "M2H1": [
+     "M2H0"
+    ],
+    "M2A1": [
+     "M2H0"
+    ],
+    "M2A2": [
+     "M2H0"
+    ],
+    "M2A3": [
+     "M2H0"
+    ],
+    "M2A4": [
+     "M2H0"
+    ],
+    "M2A5": [
+     "M2H0",
+     "M2H1"
+    ],
+    "M2A6": [
+     "M2H0"
+    ]
+   },
+   "geometry": "pending_single_owner_no_PoE_ID",
+   "status": "design_candidate",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "subtype": "M3",
+   "name": "續療師",
+   "loop": "主動預付印→抵未來敵傷；危急再主動解印",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": [
+    "M3A1",
+    "M3A2",
+    "M3A3",
+    "M3A4",
+    "M3A5",
+    "M3A6"
+   ],
+   "unique_high": [
+    "M3H0",
+    "M3H1"
+   ],
+   "class_common_pool": "MCA1-4/MCH1-2；全M僅一池，不計子型unique",
+   "subtype_shared": [],
+   "requires_slots": {
+    "M3H0": [],
+    "M3H1": [
+     "M3H0"
+    ],
+    "M3A1": [
+     "M3H0"
+    ],
+    "M3A2": [
+     "M3H0"
+    ],
+    "M3A3": [
+     "M3H0"
+    ],
+    "M3A4": [
+     "M3H0",
+     "M3H1"
+    ],
+    "M3A5": [
+     "M3H0"
+    ],
+    "M3A6": [
+     "M3H0"
+    ]
+   },
+   "geometry": "pending_single_owner_no_PoE_ID",
+   "status": "design_candidate",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

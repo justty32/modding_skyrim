@@ -1,0 +1,97 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "id",
+  "kind",
+  "rules",
+  "finding",
+  "rejection",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "active_heal_txn",
+   "kind": "primitive_gap",
+   "rules": "all",
+   "finding": "需辨識accepted原生主動恢復、caster/recipient/cast與channel tick、多effect原預算、原生HP替換/實付commit；現有readiness不證恢復collector",
+   "rejection": "不能after-heal再補全額旁支、不能靠觀測HP差猜原生預算",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "qualification",
+   "kind": "primitive_gap",
+   "rules": "all",
+   "finding": "需同戰鬥場景/可見/明確隊友與受控召喚歸屬、原生可治療HP/存活資格",
+   "rejection": "非敵對路人與owner召喚不自動合格；死亡不治不復活",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "resource_substitution",
+   "kind": "primitive_gap",
+   "rules": "MCH2/MCA2/M1A4/M2*/M3A2/M3A6",
+   "finding": "原生MP前替代HP、原實付/增額付款/退款分帳及取消回滾未證；C3 native支付證據不得冒充通用恢復支持",
+   "rejection": "禁止事後MP退款冒充原生替代付款；HP付款不被護印代付",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "prepaid_pool",
+   "kind": "primitive_gap",
+   "rules": "M3*",
+   "finding": "需原生防護及守衛current護援後的正HP precommit、每giver預付池及一次消耗；印池不保存跨load",
+   "rejection": "不得用受傷後補血/死亡重置代替預扣抵傷",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "m1_m3",
+   "kind": "interaction",
+   "rules": "M1H0/M1H1/M3H0/M3H1",
+   "finding": "M3只在原生主目標存/解本人印；M1旁支合成輸出不能造新印。存印扣除後剩即時額才分流；解印餘額本筆可分但不能再存；queue不跨cast",
+   "rejection": "不得每分流人各存p*原B，亦不得解別giver印",
+   "status": "proposal_for_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "m2_m1",
+   "kind": "interaction",
+   "rules": "M2H0/M1H0",
+   "finding": "M2以原生主目標判單受援者，旁支不登記不兌現；另付新增額合入同cast後只路由一次。M2A4折抵僅處理未分配新增額，與已外送額互斥",
+   "rejection": "同cast打多敵或治多人都不多份機會",
+   "status": "proposal_for_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "medical_canonical",
+   "kind": "canonical_proposal",
+   "rules": "all",
+   "finding": "MEDICAL_ACTIVE_HP_BUDGET_ROUTING僅交主管仲裁：將直接恢復/預付池/待發queue/新增付費/未用額分來源記帳；原生主效果替換一次，重入拒絕；跨職合成恢復不觸發本線原生來源；預算以B_native→合法候選加成及另付新增額後B_effective→prior_paid摘原帳轉入L，來源唯一，原生/加成/舊印/舊queue不得重入。來源按登記/攻敵/恢復/敵傷消池/退款階段獨立判斷，非heal-only。",
+   "rejection": "不寫全局canonical；model最早到期舊提案不得覆蓋守衛current合係數portable lease",
+   "status": "proposal_for_parent_only",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "normal_geometry",
+   "kind": "boundary",
+   "rules": "all",
+   "finding": "normal既定atoms/per-share與1/3/5份不變；只stable rule slots/requires，無新數值/新選單/職業鎖；保留原55 IDs/48 keystone38/10與40439/42343/30693",
+   "rejection": "未證能力不可compiled-ready；不猜PoE placement",
+   "status": "design_only",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

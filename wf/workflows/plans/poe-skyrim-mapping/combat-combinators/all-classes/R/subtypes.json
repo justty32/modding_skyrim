@@ -1,0 +1,196 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "status": "design_candidate_pending_review",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "name",
+  "loop",
+  "unique_advanced",
+  "unique_high",
+  "unique_counts",
+  "class_common_pool",
+  "subtype_shared",
+  "requires",
+  "slot_requires",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "R1",
+   "name": "弱點獵手",
+   "loop": "試探一敵→追其起手→必要時危險轉標",
+   "unique_advanced": [
+    "R1A1",
+    "R1A2",
+    "R1A3",
+    "R1A4",
+    "R1A5",
+    "R1A6"
+   ],
+   "unique_high": [
+    "R1H0",
+    "R1H1"
+   ],
+   "unique_counts": {
+    "advanced": 6,
+    "high": 2
+   },
+   "class_common_pool": [
+    "RCA1",
+    "RCA2",
+    "RCA3",
+    "RCA4",
+    "RCH1",
+    "RCH2"
+   ],
+   "subtype_shared": [],
+   "requires": {
+    "R1H0": [],
+    "R1A1": [
+     "R1H0"
+    ],
+    "R1A2": [
+     "R1H0"
+    ],
+    "R1A3": [
+     "R1H0"
+    ],
+    "R1A4": [
+     "R1H0",
+     "R1A2"
+    ],
+    "R1A5": [
+     "R1H0"
+    ],
+    "R1A6": [
+     "R1H0"
+    ],
+    "R1H1": [
+     "R1H0"
+    ]
+   },
+   "slot_requires": "每A與H1需本型H0；額外R1A4需R1A2。僅stable rule slots，幾何由主管處理。",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "R2",
+   "name": "破群射手",
+   "loop": "設位置錨→等聚群/移位→區域或線廊兌現",
+   "unique_advanced": [
+    "R2A1",
+    "R2A2",
+    "R2A3",
+    "R2A4",
+    "R2A5",
+    "R2A6"
+   ],
+   "unique_high": [
+    "R2H0",
+    "R2H1"
+   ],
+   "unique_counts": {
+    "advanced": 6,
+    "high": 2
+   },
+   "class_common_pool": [
+    "RCA1",
+    "RCA2",
+    "RCA3",
+    "RCA4",
+    "RCH1",
+    "RCH2"
+   ],
+   "subtype_shared": [],
+   "requires": {
+    "R2H0": [],
+    "R2A1": [
+     "R2H0"
+    ],
+    "R2A2": [
+     "R2H0"
+    ],
+    "R2A3": [
+     "R2H0"
+    ],
+    "R2A4": [
+     "R2H0"
+    ],
+    "R2A5": [
+     "R2H0"
+    ],
+    "R2A6": [
+     "R2H0"
+    ],
+    "R2H1": [
+     "R2H0"
+    ]
+   },
+   "slot_requires": "每A與H1需本型H0；額外R1A4需R1A2。僅stable rule slots，幾何由主管處理。",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "R3",
+   "name": "蓄彈弩手",
+   "loop": "真裝填→站定待射→移位射擊或花準備bash退路",
+   "unique_advanced": [
+    "R3A1",
+    "R3A2",
+    "R3A3",
+    "R3A4",
+    "R3A5",
+    "R3A6"
+   ],
+   "unique_high": [
+    "R3H0",
+    "R3H1"
+   ],
+   "unique_counts": {
+    "advanced": 6,
+    "high": 2
+   },
+   "class_common_pool": [
+    "RCA1",
+    "RCA2",
+    "RCA3",
+    "RCA4",
+    "RCH1",
+    "RCH2"
+   ],
+   "subtype_shared": [],
+   "requires": {
+    "R3H0": [],
+    "R3A1": [
+     "R3H0"
+    ],
+    "R3A2": [
+     "R3H0"
+    ],
+    "R3A3": [
+     "R3H0"
+    ],
+    "R3A4": [
+     "R3H0"
+    ],
+    "R3A5": [
+     "R3H0"
+    ],
+    "R3A6": [
+     "R3H0"
+    ],
+    "R3H1": [
+     "R3H0"
+    ]
+   },
+   "slot_requires": "每A與H1需本型H0；額外R1A4需R1A2。僅stable rule slots，幾何由主管處理。",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

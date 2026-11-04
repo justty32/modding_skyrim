@@ -1,0 +1,11 @@
+{
+ "source_sha256": "7e9f755e33152129ebf36c2ebdad639c527e4ad70d274b1fefb860f30ca01122",
+ "rules": 240,
+ "unique_rule_ids": 240,
+ "legacy55": 55,
+ "ordinary_unique": 180,
+ "subtypes": 24,
+ "all_checks_pass": true,
+ "errors": [],
+ "scope": "independent fixed payload / legacy / draft AND / native-edge purchase-order / H0 / compiled checks; no runtime proof or SVG visual claim"
+}

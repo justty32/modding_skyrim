@@ -1,0 +1,77 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "id",
+  "capability_gap",
+  "rejected_substitutes",
+  "interaction_or_proposal",
+  "source",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "native_event",
+   "capability_gap": "原生accepted起手/完成/取消/打斷、eventID、實付與移動歸因皆需證",
+   "rejected_substitutes": "不以hit事件猜成功打斷；synthetic不觸發",
+   "interaction_or_proposal": "X1H1取消序列不連到浪潮DBH1代付，付款模式分開",
+   "source": "roster.json X1/X2/X3 boundary；model.md 事件快照/狀態生命週期；inscription-sample/README.md H0前置",
+   "status": "design_candidate_capability_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "self_displacement",
+   "capability_gap": "owner自移動、合法地面、碰撞/門/高度、同類施法返程改寫待證",
+   "rejected_substitutes": "不得穿牆、落崖、無敵、復活；返程無效不吞錨附加交易",
+   "interaction_or_proposal": "X1A2回流受XCH1扣留；X1A6主動放棄不能與同次返程都成功",
+   "source": "roster.json X1/X2/X3 boundary；model.md 事件快照/狀態生命週期；inscription-sample/README.md H0前置",
+   "status": "design_candidate_capability_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "enemy_displacement",
+   "capability_gap": "敵體型/免疫/劇情保護/實移/朝向、推拉終點及碰撞待證",
+   "rejected_substitutes": "不可搬任意敵；不可把碰撞當傷害；未知拒絕非明確免疫",
+   "interaction_or_proposal": "X2A2救援推離與X2H1轉交同筆方向衝突則不執行附加方向，不用優先選單",
+   "source": "roster.json X1/X2/X3 boundary；model.md 事件快照/狀態生命週期；inscription-sample/README.md H0前置",
+   "status": "design_candidate_capability_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "rune_instance",
+   "capability_gap": "原生陣owner/instance、獵物限定觸發filter與消耗、地面合法性、自然消耗及重施替代引爆均待證",
+   "rejected_substitutes": "不讓一次性耗陣變持續區；不得引爆他人陣，友傷按原生",
+   "interaction_or_proposal": "X2搬敵入X3陣可走原生觸發但不給X3A3自行步入獎勵；X3A6撤陣與H1爆同筆衝突拒附加",
+   "source": "roster.json X1/X2/X3 boundary；model.md 事件快照/狀態生命週期；inscription-sample/README.md H0前置",
+   "status": "design_candidate_capability_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "canonical",
+   "capability_gap": "跨職相似側翼/退出回氣/打斷/原生陣體需要主管比對",
+   "rejected_substitutes": "只提案不改全局canonical；model最早到期舊提案不蓋D1 current",
+   "interaction_or_proposal": "proposal: NATIVE_SELF_MOVE、DISPLACEMENT_RESULT、OWNED_RUNE_INSTANCE可共primitive；不同owner與消耗條件不得合狀態",
+   "source": "roster.json X1/X2/X3 boundary；model.md 事件快照/狀態生命週期；inscription-sample/README.md H0前置",
+   "status": "design_candidate_capability_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "lifecycle",
+   "capability_gap": "owner-target與原生instance清理/Reset/load/重入及多來源待證",
+   "rejected_substitutes": "不動全局、不改既有G/D/C legacy，不延長或搬別人lease",
+   "interaction_or_proposal": "XCH2僅移自身下一擊target資格，不搬C3付費印、不偷D1護援",
+   "source": "roster.json X1/X2/X3 boundary；model.md 事件快照/狀態生命週期；inscription-sample/README.md H0前置",
+   "status": "design_candidate_capability_unproven",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

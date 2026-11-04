@@ -1,0 +1,120 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "status": "design_candidate_pending_review",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "rules",
+  "classification",
+  "need",
+  "rejection",
+  "evidence",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "native_ranged_transaction",
+   "rules": "all",
+   "classification": "missing_primitive",
+   "need": "弓蓄力/發射accepted、彈體owner/weapon快照、reload accepted/completed、bash、命中/射空/取消需同交易識別；TESHitEvent不自動等於唯一attackID。",
+   "rejection": "不得用CD猜transaction、不得把裝填狀態當真彈匣；RCA4/R3A3/6零原生SP付款即無回復。",
+   "evidence": "本場WORKER-BRIEF；combat-combinators/model.md事件快照/生命週期；roster.json R1/R2/R3 boundary；wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md Gates1-5僅提供缺證類比，未證遠程能力",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "owner_states",
+   "rules": "R1/R2/R3",
+   "classification": "missing_primitive",
+   "need": "owner單focus、固定位置錨、待射與發射收據的不同生命週期，Reset/load/失效/重入一次消耗均待證。",
+   "rejection": "R1H1只轉剩餘期限；R2位置不跟敵；R3待射在accepted消，三者不得合成一種命中後標記。",
+   "evidence": "本場WORKER-BRIEF；combat-combinators/model.md事件快照/生命週期；roster.json R1/R2/R3 boundary；wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md Gates1-5僅提供缺證類比，未證遠程能力",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "native_action_control",
+   "rules": "RCH1/R1A2/R3A2/R3H1",
+   "classification": "missing_primitive",
+   "need": "瞄準/站定、一般受擊中斷與硬控分類、原生不可打斷cast、可抗踉蹌請求及起手資格限制待證。",
+   "rejection": "不將after-hit補傷/強制取消全部施法當作已支持的可打斷窗口。",
+   "evidence": "本場WORKER-BRIEF；combat-combinators/model.md事件快照/生命週期；roster.json R1/R2/R3 boundary；wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md Gates1-5僅提供缺證類比，未證遠程能力",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "spatial_recipients",
+   "rules": "R2H0/R2H1",
+   "classification": "missing_primitive",
+   "need": "固定world/cell錨、逐recipient LOS、走廊與友軍截斷待證；先快照recipient集合後一次結算。",
+   "rejection": "不宣稱現成爆炸箭/貫穿箭支持；不穿牆不友傷，不用遊戲畫面猜命中幾何。",
+   "evidence": "本場WORKER-BRIEF；combat-combinators/model.md事件快照/生命週期；roster.json R1/R2/R3 boundary；wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md Gates1-5僅提供缺證類比，未證遠程能力",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "payment_and_damage_commit",
+   "rules": "RCA4/R1A2/R2A6/R3A3",
+   "classification": "missing_primitive",
+   "need": "原生實付SP與額外SP/退款隔離，block後正HP precommit、死亡歸因待證。",
+   "rejection": "零原生實付不得獲按付款回復；現有MP付款不是SP bridge已完成。",
+   "evidence": "本場WORKER-BRIEF；combat-combinators/model.md事件快照/生命週期；roster.json R1/R2/R3 boundary；wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md Gates1-5僅提供缺證類比，未證遠程能力",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "canonical_ranged_snapshot",
+   "rules": "RCH2",
+   "classification": "cross_class_canonical_proposal",
+   "need": "提主管：NATIVE_PROJECTILE_LAUNCH_SNAPSHOT保持全體發射值守恆；RCH2另是UN-EQUIP_PROJECTILE_DELIVERY_EXCEPTION候選，只保已射封包交付，不保focus/錨/待射。",
+   "rejection": "無H卸遠程裝備會清R交付資格；有H只豁免已射封包，Reset/死亡/離戰/存讀照清。若其他規則仍需活owner focus/錨不可憑封包復活。",
+   "evidence": "本場WORKER-BRIEF；combat-combinators/model.md事件快照/生命週期；roster.json R1/R2/R3 boundary；wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md Gates1-5僅提供缺證類比，未證遠程能力",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "canonical_native_interrupt",
+   "rules": "R1A2/R3A2/R3H1",
+   "classification": "cross_class_canonical_proposal",
+   "need": "提主管：INTERRUPT_CAST_WINDOW與STAGGER_REQUEST分canonical，target immunity不可通稱控制成功。",
+   "rejection": "不得與近戰/術師打斷規則同交易多次請求；跨職合併順序未定保持pending。",
+   "evidence": "本場WORKER-BRIEF；combat-combinators/model.md事件快照/生命週期；roster.json R1/R2/R3 boundary；wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md Gates1-5僅提供缺證類比，未證遠程能力",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "canonical_movement_slow",
+   "rules": "R2A2",
+   "classification": "cross_class_canonical_proposal",
+   "need": "提主管：OWNER_TARGET_NATIVE_MOVE_MOD，須核其他職減速疊加；本人刷新非加強。",
+   "rejection": "model舊多giver最早到期不適用守衛current portable lease，本線不改D1。",
+   "evidence": "本場WORKER-BRIEF；combat-combinators/model.md事件快照/生命週期；roster.json R1/R2/R3 boundary；wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md Gates1-5僅提供缺證類比，未證遠程能力",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "readiness_boundary",
+   "rules": "all",
+   "classification": "not_ready",
+   "need": "每能力compiled=false/runtime=0；所有新參數pending_review；不加選單/職業鎖、不動source/atoms/DB/原圖。",
+   "rejection": "RCH2明訂卸裝保留projectile交付資格例外；R3H1在GCH1下先停附加分支再談消耗，原native bash照常，R3A2箭stagger不擴禁。全部仍未ready。",
+   "evidence": "本場WORKER-BRIEF；combat-combinators/model.md事件快照/生命週期；roster.json R1/R2/R3 boundary；wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/implementation-readiness.md Gates1-5僅提供缺證類比，未證遠程能力",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "deferred_melee_intercept",
+   "rules": "R3H0",
+   "classification": "missing_primitive",
+   "need": "必須能證敵人朝owner的accepted可中斷原生近戰起手及一次取消成功；不能只看動畫、用after-hit減傷/補血替代。多owner券同一敵action只成功消一份。",
+   "rejection": "R3H0單獨已有延遲撤退攔截收益；若原生accepted取消不可行維持pending，不偷換成純增傷或空載具。",
+   "evidence": "roster.json R3退路母題；model.md accepted/交易及owner state；本場readiness Gate1/2僅類比缺證",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

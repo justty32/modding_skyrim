@@ -25,6 +25,9 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 <!-- wf-nav -->
 | 檔案 | 職責 |
 |---|---|
+| `wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/tools/collect.py` | 核八職240規則、common/subtype分層、42 legacy reference原row SHA及完整requires→真ID AND；產輕量索引，duplicate ID／缺strong AND反例須拒絕。 |
+| `wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/tools/render.py` | 從規則、legacy reference與幾何資料重產24型離線HTML；四層進度與技術詳情分開，不改設計或遊戲。 |
+| `wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/tools/render-regions.py` | 只讀已核region／reservation／subtypes資料，重產8職局部SVG；裁切外部context，不改原座標、邊或配置。 |
 | `wf/user/2026-11-03-perk-units/render.py` | 從 private 研究表重產公開資料摘錄與離線效果單位過目頁。 |
 | `tools/check_markdown_links.py` | 掃描母 repo 與非 `projects/` 工作區 submodules 的 tracked Markdown links；驗證檔案與 GitHub-style heading／explicit HTML anchors，理解 canonical symlink 位置，並支援 CI 的 `--skip-symlinks` 與 `--skip-uninitialized-submodules` 邊界（後者明報未初始化 gitlink 的未檢查目標，預設仍嚴格） |
 | `tools/markdown_links/parsing.py` | 解析本機連結與 heading anchors，驗證連結目標。 |

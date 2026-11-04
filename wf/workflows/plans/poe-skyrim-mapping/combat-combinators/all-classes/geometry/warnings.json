@@ -1,0 +1,79 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "subtype",
+  "H0",
+  "ordinary_count",
+  "review_threshold_only",
+  "unadopted_shorter_H0_id",
+  "unadopted_shorter_path",
+  "geometry_distance_from_current_H0",
+  "status"
+ ],
+ "rows": [
+  {
+   "subtype": "G2",
+   "H0": 25456,
+   "ordinary_count": 10,
+   "review_threshold_only": 8,
+   "unadopted_shorter_H0_id": 63727,
+   "unadopted_shorter_path": [
+    50459,
+    39821,
+    52904,
+    444,
+    61306,
+    63139,
+    5408,
+    29359,
+    17934,
+    63727
+   ],
+   "geometry_distance_from_current_H0": 1983.7237034567586,
+   "status": "review_warning; alternative not reserved and whole-cluster relocation not validated"
+  },
+  {
+   "subtype": "D3",
+   "H0": 10542,
+   "ordinary_count": 10,
+   "review_threshold_only": 8,
+   "unadopted_shorter_H0_id": 50197,
+   "unadopted_shorter_path": [
+    61525,
+    20228,
+    39916,
+    35556,
+    44908,
+    2913,
+    50862,
+    50422,
+    50197
+   ],
+   "geometry_distance_from_current_H0": 2558.6000989457107,
+   "status": "review_warning; alternative not reserved and whole-cluster relocation not validated"
+  },
+  {
+   "subtype": "S2",
+   "H0": 53493,
+   "ordinary_count": 9,
+   "review_threshold_only": 8,
+   "unadopted_shorter_H0_id": 30225,
+   "unadopted_shorter_path": [
+    54447,
+    57264,
+    37569,
+    36542,
+    4397,
+    7938,
+    1031,
+    12852,
+    58604,
+    30225
+   ],
+   "geometry_distance_from_current_H0": 724.7872018859831,
+   "status": "review_warning; alternative not reserved and whole-cluster relocation not validated"
+  }
+ ]
+}

@@ -6,6 +6,8 @@ Done when: 八上層定位、24核心循環、四組跨類混搭與共用模型�
 
 ## 當前樣板範圍
 
+**11-04家中最新指示「所有職業都做一做」**：本輪依既有八職×三子類補齊[24型設計樣板](all-classes/README.md)，承接刻印／浪潮鬥士／守衛者。這更新前場先逐型停線的設計範圍；source、compiled與runtime仍逐項記證，不把補稿視作實作。
+
 **最新：使用者裁示先買高階H0才讓原生法術被動附印，進階AND前置；刻印回主線作隔離native-bridge候選。** 不再各A附送印，不另學印記法術；source/公司離線驗證進行中，未宣稱live，蝕魔暫緩。
 
 使用者已授權下一職業，當前新增[近衛通用＋浪潮鬥士真區域](double-beat-sample/README.md)，19點純設計待過目；[術師通用＋刻印](inscription-sample/README.md)已另存source-only候選，normal未開。仍逐型看，不把24案全套全樹。每子型／職業通用的數量、獨特性與普通/進階/高階分類，依[今日共同範本要求](template-requirements.md)沿用；刻印17點與浪潮19點分案；原keystone政策不變。

@@ -1,0 +1,97 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "kind",
+  "detail",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "attack_identity",
+   "kind": "primitive_gap",
+   "detail": "accepted起手/取消/揮空/不同attack及多hit去重。G1/DBH1既有待證不改。",
+   "status": "pending_review_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "damage_commit",
+   "kind": "primitive_gap",
+   "detail": "需來源/blocked/護甲後precommit及final HP實扣；G2帳不能從TESHit推估。G3H1需可撤銷原生傷害，事後補血否決。",
+   "status": "pending_review_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "healing_commit",
+   "kind": "primitive_gap",
+   "detail": "辨外援actor、synthetic origin及正HP實回順序；A1/A5/H1必須single precommit計B/P/D/E、HP與SP後原子提交；不可事後撤HP。H1滿HP仍可E轉SP；外援實回正HP後清帳不變。",
+   "status": "pending_review_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "action_control",
+   "kind": "primitive_gap",
+   "detail": "G3H1持資格禁重擊，需原生accepted門檻且與DBH1 AND，不可僅動畫攔截。",
+   "status": "pending_review_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "state_lifecycle",
+   "kind": "primitive_gap",
+   "detail": "三套owner狀態獨立；G1單focus不變，G2單當前傷源帳，G3最近交鋒勢；snapshot/consume後同txn不得重建。",
+   "status": "pending_review_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "shared_declarations",
+   "kind": "interaction",
+   "detail": "legacy DBA4/5共享標記保留但只有原rule及DBH0前置，G2/G3不重造同名共享版本，不拿共享充unique；G2/G3新六A皆獨特。",
+   "status": "pending_review_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "common_interaction",
+   "kind": "interaction",
+   "detail": "GCH2使G3雙端格擋無來源；GCH1不抹去G2A4未宣稱stagger的削弱；GCA2 canonical與DCA1同份只算一次，提主管不動全局。",
+   "status": "pending_review_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "counter_exchange",
+   "kind": "canonical_proposal",
+   "detail": "G2A1實傷回收與其他職自療僅primitive可共用，不和DBA5/支援治療合併canonical；G3A3與DBA2都削SP但前置/消費不同不可換名合併。",
+   "status": "pending_review_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "portable_guard",
+   "kind": "rejection",
+   "detail": "不採model舊最早expiry遮蓋D1 current portable multi-giver合份；本線不新增護援池或修改D1。",
+   "status": "pending_review_unproven",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "numeric_budget",
+   "kind": "rejection",
+   "detail": "不添新normal atom/倍率/成本/期限數字、不以High weight給狀態份數；新參數皆pending_review。",
+   "status": "pending_review_unproven",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

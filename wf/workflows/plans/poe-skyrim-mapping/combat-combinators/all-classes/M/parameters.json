@@ -1,0 +1,577 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "parameter",
+  "value",
+  "status",
+  "consumers",
+  "constraint",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "parameter": "B_handoff",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A5"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "B_opportunity",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2H0"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "B_release",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3A4"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "B_revenge",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A2"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "B_wounded",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C_blood",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "MCH2"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C_extend",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3A2"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C_handoff",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A5"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C_opportunity",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2H0"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C_release",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3A4"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C_revenge",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A2"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C_wounded",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "H_aid",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "H_break",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3H1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "H_critical",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "MCA1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "H_depleted",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3A5"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "H_prepare",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3A1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "H_primary",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1A1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "H_reserve",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "MCA2"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "R_aid",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A3"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "R_inner",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1A2"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "R_split",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1H0"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_continuity",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "MCA4"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_credit",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A4"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_escort",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A6"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_extend",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3A2"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_handoff",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2H1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_opportunity",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2H0"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_queue",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1H1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_rotation",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "MCA3"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_seal",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3H0"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_threat",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A2"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "d_escort",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A6"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "d_exhaust",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3A6"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "d_near",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A3"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "d_reserve",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "MCA2"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "d_split",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1A4"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "k_continuity",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "MCA4"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "k_critical",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "MCA1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "k_depleted",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3A5"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "k_isolated",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1A6"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "k_melee",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3A3"
+   ],
+   "constraint": "0<k_melee且非零；是否小於1與強度待審",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "k_rotation",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "MCA3"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "p_critical",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1A1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "p_prepare",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3A1"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "p_primary",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1H0"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "p_seal",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M3H0"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "q_credit",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M2A4"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "q_reassign",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1A5"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "q_return",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1A3"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "w_inner",
+   "value": null,
+   "status": "pending_review",
+   "consumers": [
+    "M1A2"
+   ],
+   "constraint": "比例/成本/期限/距離/增額各依型別審核；不得任意套normal份數；成本非負、分母正、預算守恆，任何新值未採用",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2050.0925083983648 -6712.94 5229.982508398365 3763.0499999999997" role="img"><title>Class S: local window; original node coordinates and edges; context clipped</title><defs><clipPath id="window"><rect x="-2050.0925083983648" y="-6712.94" width="5229.982508398365" height="3763.0499999999997"/></clipPath></defs><rect x="-2050.0925083983648" y="-6712.94" width="5229.982508398365" height="3763.0499999999997" fill="#101723"/><g clip-path="url(#window)">
+<line x1="1718.8787014477793" y1="-4036.3412985522205" x2="1752.43" y2="-4352.09" stroke="#536475" stroke-width="9" data-edge="127-27659"/>
+<line x1="-577.3638173052982" y1="-4170.31" x2="-643.4978970033632" y2="-4329.971792142132" stroke="#536475" stroke-width="9" data-edge="739-18866"/>
+<line x1="-1071.71" y1="-6040.67" x2="-1830.092508398365" y2="-6038.56" stroke="#536475" stroke-width="9" data-edge="1031-7938"/>
+<line x1="-1071.71" y1="-6040.67" x2="-1072.84" y2="-5696.29" stroke="#536475" stroke-width="9" data-edge="1031-12852"/>
+<line x1="-1071.71" y1="-6040.67" x2="-4.055" y2="-6039.94" stroke="#536475" stroke-width="9" data-edge="1031-19635"/>
+<line x1="-1071.71" y1="-6040.67" x2="-1351.78" y2="-6605.07" stroke="#536475" stroke-width="9" data-edge="1031-33755"/>
+<line x1="-1071.71" y1="-6040.67" x2="-812.165" y2="-6605.07" stroke="#536475" stroke-width="9" data-edge="1031-60388"/>
+<line x1="-547.8533177948125" y1="-5149.383598878656" x2="-850.055" y2="-4501.31" stroke="#536475" stroke-width="9" data-edge="1346-11420"/>
+<line x1="-547.8533177948125" y1="-5149.383598878656" x2="-383.76260086439277" y2="-5043.5886533193125" stroke="#536475" stroke-width="9" data-edge="1346-16790"/>
+<line x1="-547.8533177948125" y1="-5149.383598878656" x2="-361.59004943263153" y2="-5268.0463878330065" stroke="#536475" stroke-width="9" data-edge="1346-44723"/>
+<line x1="136.24111541307906" y1="-4582.31" x2="-4.055" y2="-4663.31" stroke="#536475" stroke-width="9" data-edge="2292-27203"/>
+<line x1="136.24111541307906" y1="-4582.31" x2="841.945" y2="-4501.31" stroke="#536475" stroke-width="9" data-edge="2292-27929"/>
+<line x1="-1072.84" y1="-5026.29" x2="-850.055" y2="-4501.31" stroke="#536475" stroke-width="9" data-edge="4184-11420"/>
+<line x1="-1072.84" y1="-5026.29" x2="-1072.84" y2="-5361.29" stroke="#536475" stroke-width="9" data-edge="4184-30225"/>
+<line x1="-1072.84" y1="-5026.29" x2="-1407.84" y2="-5361.29" stroke="#536475" stroke-width="9" data-edge="4184-34661"/>
+<line x1="-1072.84" y1="-5026.29" x2="-737.8399999999999" y2="-5361.29" stroke="#536475" stroke-width="9" data-edge="4184-44955"/>
+<line x1="-1378.34" y1="-4501.31" x2="-1830.092508398365" y2="-6038.56" stroke="#536475" stroke-width="9" data-edge="4397-7938"/>
+<line x1="-1378.34" y1="-4501.31" x2="-850.055" y2="-4501.31" stroke="#536475" stroke-width="9" data-edge="4397-11420"/>
+<line x1="-1378.34" y1="-4501.31" x2="-1780.16" y2="-4359.11" stroke="#536475" stroke-width="9" data-edge="4397-31875"/>
+<line x1="-1378.34" y1="-4501.31" x2="-1277.8449571848787" y2="-4150.130958746484" stroke="#536475" stroke-width="9" data-edge="4397-36542"/>
+<line x1="1232.23" y1="-5071.171489732213" x2="1064.73" y2="-5026.29" stroke="#536475" stroke-width="9" data-edge="4432-7503"/>
+<line x1="1232.23" y1="-5071.171489732213" x2="1399.73" y2="-5361.29" stroke="#536475" stroke-width="9" data-edge="4432-42795"/>
+<line x1="2537.2399999999993" y1="-7490.307491601635" x2="2529.89" y2="-6462.94" stroke="#536475" stroke-width="9" data-edge="5296-49651"/>
+<line x1="569.2538173052985" y1="-4170.31" x2="635.3878970033633" y2="-4329.971792142132" stroke="#536475" stroke-width="9" data-edge="6949-55643"/>
+<line x1="1064.73" y1="-5026.29" x2="841.945" y2="-4501.31" stroke="#536475" stroke-width="9" data-edge="7503-27929"/>
+<line x1="1064.73" y1="-5026.29" x2="897.23" y2="-5071.171489732213" stroke="#536475" stroke-width="9" data-edge="7503-65203"/>
+<line x1="2413.596115413079" y1="-6753.73" x2="2529.89" y2="-6462.94" stroke="#536475" stroke-width="9" data-edge="7641-49651"/>
+<line x1="-1830.092508398365" y1="-6038.56" x2="-2562.75" y2="-6461.56" stroke="#536475" stroke-width="9" data-edge="7938-14021"/>
+<line x1="-1830.092508398365" y1="-6038.56" x2="-1984.8400000000001" y2="-5814.876115413079" stroke="#536475" stroke-width="9" data-edge="7938-33779"/>
+<line x1="-1830.092508398365" y1="-6038.56" x2="-1718.17" y2="-6202.433884586921" stroke="#536475" stroke-width="9" data-edge="7938-34157"/>
+<line x1="-4.05499999999998" y1="-4339.31" x2="-144.35111541307901" y2="-4420.31" stroke="#536475" stroke-width="9" data-edge="8135-11128"/>
+<line x1="-4.05499999999998" y1="-4339.31" x2="136.24111541307906" y2="-4420.31" stroke="#536475" stroke-width="9" data-edge="8135-11659"/>
+<line x1="-85.17500000000001" y1="-6626.773884586921" x2="-4.055" y2="-6039.94" stroke="#536475" stroke-width="9" data-edge="8302-19635"/>
+<line x1="1370.46" y1="-4501.31" x2="1752.43" y2="-4352.09" stroke="#536475" stroke-width="9" data-edge="8948-27659"/>
+<line x1="1370.46" y1="-4501.31" x2="841.945" y2="-4501.31" stroke="#536475" stroke-width="9" data-edge="8948-27929"/>
+<line x1="1370.46" y1="-4501.31" x2="1274.5049571848785" y2="-4150.130958746484" stroke="#536475" stroke-width="9" data-edge="8948-32210"/>
+<line x1="1370.46" y1="-4501.31" x2="1797.2325083983649" y2="-6039.94" stroke="#536475" stroke-width="9" data-edge="8948-38176"/>
+<line x1="668.851115413079" y1="-6426.12" x2="668.851115413079" y2="-6264.12" stroke="#536475" stroke-width="9" data-edge="10115-43000"/>
+<line x1="-144.35111541307901" y1="-4420.31" x2="-850.055" y2="-4501.31" stroke="#536475" stroke-width="9" data-edge="11128-11420"/>
+<line x1="-850.055" y1="-4501.31" x2="-643.4978970033632" y2="-4329.971792142132" stroke="#536475" stroke-width="9" data-edge="11420-18866"/>
+<line x1="-850.055" y1="-4501.31" x2="-821.2282490405518" y2="-4282.349087843268" stroke="#536475" stroke-width="9" data-edge="11420-21934"/>
+<line x1="-850.055" y1="-4501.31" x2="-160.5349838588291" y2="-4543.238685306609" stroke="#536475" stroke-width="9" data-edge="11420-48362"/>
+<line x1="-850.055" y1="-4501.31" x2="-156.40037822684917" y2="-4970.180862533511" stroke="#536475" stroke-width="9" data-edge="11420-60554"/>
+<line x1="1063.6" y1="-6040.36" x2="-4.055" y2="-6039.94" stroke="#536475" stroke-width="9" data-edge="11551-19635"/>
+<line x1="1063.6" y1="-6040.36" x2="1064.73" y2="-5696.29" stroke="#536475" stroke-width="9" data-edge="11551-22315"/>
+<line x1="1063.6" y1="-6040.36" x2="1797.2325083983649" y2="-6039.94" stroke="#536475" stroke-width="9" data-edge="11551-38176"/>
+<line x1="1063.6" y1="-6040.36" x2="668.851115413079" y2="-6264.12" stroke="#536475" stroke-width="9" data-edge="11551-43000"/>
+<line x1="1063.6" y1="-6040.36" x2="1065.06" y2="-6264.123884586921" stroke="#536475" stroke-width="9" data-edge="11551-50472"/>
+<line x1="136.24111541307906" y1="-4420.31" x2="841.945" y2="-4501.31" stroke="#536475" stroke-width="9" data-edge="11659-27929"/>
+<line x1="2054.09" y1="-6532.62" x2="2529.89" y2="-6462.94" stroke="#536475" stroke-width="9" data-edge="12032-49651"/>
+<line x1="-1072.84" y1="-5696.29" x2="-905.3399999999999" y2="-5651.408510267787" stroke="#536475" stroke-width="9" data-edge="12852-38148"/>
+<line x1="-1072.84" y1="-5696.29" x2="-1309.7207716974933" y2="-5598.170771697493" stroke="#536475" stroke-width="9" data-edge="12852-44983"/>
+<line x1="-1072.84" y1="-5696.29" x2="-1072.84" y2="-5523.29" stroke="#536475" stroke-width="9" data-edge="12852-58604"/>
+<line x1="528.555" y1="-6183.12" x2="668.851115413079" y2="-6264.12" stroke="#536475" stroke-width="9" data-edge="12913-43000"/>
+<line x1="1232.23" y1="-5651.408510267787" x2="1064.73" y2="-5696.29" stroke="#536475" stroke-width="9" data-edge="13753-22315"/>
+<line x1="1232.23" y1="-5651.408510267787" x2="1399.73" y2="-5361.29" stroke="#536475" stroke-width="9" data-edge="13753-42795"/>
+<line x1="1893.0687014477792" y1="-5616.821298552221" x2="1797.2325083983649" y2="-6039.94" stroke="#536475" stroke-width="9" data-edge="15452-38176"/>
+<line x1="1893.0687014477792" y1="-5616.821298552221" x2="2088.62" y2="-5642.566115413079" stroke="#536475" stroke-width="9" data-edge="15452-47085"/>
+<line x1="1893.0687014477792" y1="-5616.821298552221" x2="1926.62" y2="-5361.9738845869215" stroke="#536475" stroke-width="9" data-edge="15452-50082"/>
+<line x1="569.2538173052984" y1="-4832.31" x2="375.65260086439247" y2="-5043.588653319313" stroke="#536475" stroke-width="9" data-edge="15711-21075"/>
+<line x1="-140.875" y1="-10537.2" x2="-4.055" y2="-3179.89" stroke="#536475" stroke-width="9" data-edge="16023-54447"/>
+<line x1="-383.76260086439277" y1="-5043.5886533193125" x2="-361.59004943263153" y2="-5268.0463878330065" stroke="#536475" stroke-width="9" data-edge="16790-44723"/>
+<line x1="-383.76260086439277" y1="-5043.5886533193125" x2="-577.3638173052983" y2="-4832.31" stroke="#536475" stroke-width="9" data-edge="16790-53493"/>
+<line x1="-736.7124916016348" y1="-4078.31" x2="-821.2282490405518" y2="-4282.349087843268" stroke="#536475" stroke-width="9" data-edge="17579-21934"/>
+<line x1="-1908.32" y1="-10461.0" x2="-4.055" y2="-3179.89" stroke="#536475" stroke-width="9" data-edge="18378-54447"/>
+<line x1="1596.8" y1="-6341.4" x2="1797.2325083983649" y2="-6039.94" stroke="#536475" stroke-width="9" data-edge="18663-38176"/>
+<line x1="-4.055" y1="-6039.94" x2="-4.055" y2="-5347.31" stroke="#536475" stroke-width="9" data-edge="19635-27611"/>
+<line x1="-4.055" y1="-6039.94" x2="353.48004943263174" y2="-5268.0463878330065" stroke="#536475" stroke-width="9" data-edge="19635-38805"/>
+<line x1="-4.055" y1="-6039.94" x2="-279.14888458692093" y2="-6264.12" stroke="#536475" stroke-width="9" data-edge="19635-40075"/>
+<line x1="-4.055" y1="-6039.94" x2="-361.59004943263153" y2="-5268.0463878330065" stroke="#536475" stroke-width="9" data-edge="19635-44723"/>
+<line x1="-4.055" y1="-6039.94" x2="388.25888458692094" y2="-6264.12" stroke="#536475" stroke-width="9" data-edge="19635-50826"/>
+<line x1="-4.055" y1="-6039.94" x2="76.82499999999999" y2="-6626.773884586921" stroke="#536475" stroke-width="9" data-edge="19635-53279"/>
+<line x1="375.65260086439247" y1="-5043.588653319313" x2="353.48004943263174" y2="-5268.0463878330065" stroke="#536475" stroke-width="9" data-edge="21075-38805"/>
+<line x1="375.65260086439247" y1="-5043.588653319313" x2="539.7433177948122" y2="-5149.383598878656" stroke="#536475" stroke-width="9" data-edge="21075-38900"/>
+<line x1="902.5249999999999" y1="-3706.8225083983643" x2="1274.5049571848785" y2="-4150.130958746484" stroke="#536475" stroke-width="9" data-edge="21678-32210"/>
+<line x1="902.5249999999999" y1="-3706.8225083983643" x2="163.44499999999996" y2="-3470.0085102677867" stroke="#536475" stroke-width="9" data-edge="21678-57226"/>
+<line x1="1064.73" y1="-5696.29" x2="827.8492283025065" y2="-5598.170771697493" stroke="#536475" stroke-width="9" data-edge="22315-48514"/>
+<line x1="2529.85" y1="-6130.73" x2="2529.89" y2="-6462.94" stroke="#536475" stroke-width="9" data-edge="23950-49651"/>
+<line x1="728.6024916016352" y1="-4078.3100000000004" x2="813.1182490405519" y2="-4282.349087843268" stroke="#536475" stroke-width="9" data-edge="25222-40637"/>
+<line x1="729.73" y1="-5361.29" x2="827.8492283025065" y2="-5598.170771697493" stroke="#536475" stroke-width="9" data-edge="27163-48514"/>
+<line x1="729.73" y1="-5361.29" x2="897.23" y2="-5071.171489732213" stroke="#536475" stroke-width="9" data-edge="27163-65203"/>
+<line x1="-4.055" y1="-4663.31" x2="-160.5349838588291" y2="-4543.238685306609" stroke="#536475" stroke-width="9" data-edge="27203-48362"/>
+<line x1="-4.055" y1="-5347.31" x2="148.29037822684907" y2="-4970.180862533511" stroke="#536475" stroke-width="9" data-edge="27611-32024"/>
+<line x1="-4.055" y1="-5347.31" x2="-156.40037822684917" y2="-4970.180862533511" stroke="#536475" stroke-width="9" data-edge="27611-60554"/>
+<line x1="1752.43" y1="-4352.09" x2="2405.51" y2="-4102.42" stroke="#536475" stroke-width="9" data-edge="27659-37671"/>
+<line x1="1752.43" y1="-4352.09" x2="1752.43" y2="-4642.103884586921" stroke="#536475" stroke-width="9" data-edge="27659-51517"/>
+<line x1="2779.54" y1="-6694.433884586921" x2="2529.89" y2="-6462.94" stroke="#536475" stroke-width="9" data-edge="27709-49651"/>
+<line x1="841.945" y1="-4501.31" x2="148.29037822684907" y2="-4970.180862533511" stroke="#536475" stroke-width="9" data-edge="27929-32024"/>
+<line x1="841.945" y1="-4501.31" x2="539.7433177948122" y2="-5149.383598878656" stroke="#536475" stroke-width="9" data-edge="27929-38900"/>
+<line x1="841.945" y1="-4501.31" x2="813.1182490405519" y2="-4282.349087843268" stroke="#536475" stroke-width="9" data-edge="27929-40637"/>
+<line x1="841.945" y1="-4501.31" x2="635.3878970033633" y2="-4329.971792142132" stroke="#536475" stroke-width="9" data-edge="27929-55643"/>
+<line x1="2019.340016141171" y1="-6000.868685306608" x2="2035.5238845869212" y2="-5877.94" stroke="#536475" stroke-width="9" data-edge="29171-30658"/>
+<line x1="2019.340016141171" y1="-6000.868685306608" x2="2316.116115413079" y2="-6039.94" stroke="#536475" stroke-width="9" data-edge="29171-31103"/>
+<line x1="2019.340016141171" y1="-6000.868685306608" x2="1797.2325083983649" y2="-6039.94" stroke="#536475" stroke-width="9" data-edge="29171-38176"/>
+<line x1="148.29037822684907" y1="-4970.180862533511" x2="-156.40037822684917" y2="-4970.180862533511" stroke="#536475" stroke-width="9" data-edge="32024-60554"/>
+<line x1="-427.0550000000001" y1="-3768.652508398365" x2="-240.9357716974935" y2="-3416.7707716974933" stroke="#536475" stroke-width="9" data-edge="33296-57264"/>
+<line x1="-1277.8449571848787" y1="-4150.130958746484" x2="-905.8650000000001" y2="-3706.8225083983643" stroke="#536475" stroke-width="9" data-edge="36542-37569"/>
+<line x1="-905.8650000000001" y1="-3706.8225083983643" x2="-240.9357716974935" y2="-3416.7707716974933" stroke="#536475" stroke-width="9" data-edge="37569-57264"/>
+<line x1="-905.3399999999999" y1="-5651.408510267787" x2="-737.8399999999999" y2="-5361.29" stroke="#536475" stroke-width="9" data-edge="38148-44955"/>
+<line x1="1797.2325083983649" y1="-6039.94" x2="2529.89" y2="-6462.94" stroke="#536475" stroke-width="9" data-edge="38176-49651"/>
+<line x1="353.48004943263174" y1="-5268.0463878330065" x2="539.7433177948122" y2="-5149.383598878656" stroke="#536475" stroke-width="9" data-edge="38805-38900"/>
+<line x1="-279.14888458692093" y1="-6264.12" x2="-500.445" y2="-6204.823884586921" stroke="#536475" stroke-width="9" data-edge="40075-42485"/>
+<line x1="-279.14888458692093" y1="-6264.12" x2="-338.445" y2="-6485.416115413079" stroke="#536475" stroke-width="9" data-edge="40075-49534"/>
+<line x1="3128.102336883819" y1="-6215.152336883819" x2="2529.89" y2="-6462.94" stroke="#536475" stroke-width="9" data-edge="41635-49651"/>
+<line x1="1065.06" y1="-6264.123884586921" x2="1227.06" y2="-6264.123884586921" stroke="#536475" stroke-width="9" data-edge="50472-63067"/>
+<line x1="-4.055" y1="-3179.89" x2="163.44499999999996" y2="-3470.0085102677867" stroke="#536475" stroke-width="9" data-edge="54447-57226"/>
+<line x1="-4.055" y1="-3179.89" x2="-240.9357716974935" y2="-3416.7707716974933" stroke="#536475" stroke-width="9" data-edge="54447-57264"/>
+<line x1="-4.055" y1="-3179.89" x2="1643.43" y2="-10689.8" stroke="#536475" stroke-width="9" data-edge="54447-60791"/>
+<line x1="-8781.65998385883" y1="7983.051314693391" x2="163.44499999999996" y2="-3470.0085102677867" stroke="#536475" stroke-width="9" data-edge="56722-57226"/>
+<line x1="-8781.65998385883" y1="7983.051314693391" x2="-240.9357716974935" y2="-3416.7707716974933" stroke="#536475" stroke-width="9" data-edge="56722-57264"/>
+<line x1="163.44499999999996" y1="-3470.0085102677867" x2="418.94499999999994" y2="-3768.652508398365" stroke="#536475" stroke-width="9" data-edge="57226-59650"/>
+<g data-node="127" data-selected="false"><circle cx="1718.8787014477793" cy="-4036.3412985522205" r="21" fill="#364252"/><text x="1753.8787014477793" y="-4043.3412985522205" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">127</text></g>
+<g data-node="739" data-selected="false"><circle cx="-577.3638173052982" cy="-4170.31" r="21" fill="#364252"/><text x="-542.3638173052982" y="-4177.31" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">739</text></g>
+<g data-node="1031" data-selected="true"><circle cx="-1071.71" cy="-6040.67" r="21" fill="#90a6bd"/><text x="-1036.71" y="-6047.67" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">1031</text></g>
+<g data-node="1346" data-selected="true"><circle cx="-547.8533177948125" cy="-5149.383598878656" r="21" fill="#59d1ae"/><text x="-512.8533177948125" y="-5156.383598878656" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S2A1</text></g>
+<g data-node="2292" data-selected="true"><circle cx="136.24111541307906" cy="-4582.31" r="21" fill="#59d1ae"/><text x="171.24111541307906" y="-4589.31" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S3A5</text></g>
+<g data-node="4184" data-selected="true"><circle cx="-1072.84" cy="-5026.29" r="21" fill="#59d1ae"/><text x="-1037.84" y="-5033.29" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">SCA3</text></g>
+<g data-node="4397" data-selected="true"><circle cx="-1378.34" cy="-4501.31" r="21" fill="#90a6bd"/><text x="-1343.34" y="-4508.31" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">4397</text></g>
+<g data-node="4432" data-selected="false"><circle cx="1232.23" cy="-5071.171489732213" r="21" fill="#364252"/><text x="1267.23" y="-5078.171489732213" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">4432</text></g>
+<g data-node="6949" data-selected="false"><circle cx="569.2538173052985" cy="-4170.31" r="21" fill="#364252"/><text x="604.2538173052985" y="-4177.31" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">6949</text></g>
+<g data-node="7503" data-selected="true"><circle cx="1064.73" cy="-5026.29" r="21" fill="#59d1ae"/><text x="1099.73" y="-5033.29" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S3A3</text></g>
+<g data-node="7938" data-selected="true"><circle cx="-1830.092508398365" cy="-6038.56" r="21" fill="#90a6bd"/><text x="-1795.092508398365" y="-6045.56" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">7938</text></g>
+<g data-node="8135" data-selected="false"><circle cx="-4.05499999999998" cy="-4339.31" r="21" fill="#364252"/><text x="30.94500000000002" y="-4346.31" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">8135</text></g>
+<g data-node="8302" data-selected="false"><circle cx="-85.17500000000001" cy="-6626.773884586921" r="21" fill="#364252"/><text x="-50.17500000000001" y="-6633.773884586921" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">8302</text></g>
+<g data-node="8948" data-selected="true"><circle cx="1370.46" cy="-4501.31" r="21" fill="#90a6bd"/><text x="1405.46" y="-4508.31" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">8948</text></g>
+<g data-node="10115" data-selected="false"><circle cx="668.851115413079" cy="-6426.12" r="21" fill="#364252"/><text x="703.851115413079" y="-6433.12" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">10115</text></g>
+<g data-node="11128" data-selected="true"><circle cx="-144.35111541307901" cy="-4420.31" r="21" fill="#59d1ae"/><text x="-109.35111541307901" y="-4427.31" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S2A4</text></g>
+<g data-node="11420" data-selected="true"><circle cx="-850.055" cy="-4501.31" r="38" fill="#f3c355"/><text x="-815.055" y="-4508.31" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S2H1</text></g>
+<g data-node="11551" data-selected="true"><circle cx="1063.6" cy="-6040.36" r="21" fill="#90a6bd"/><text x="1098.6" y="-6047.36" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">11551</text></g>
+<g data-node="11659" data-selected="true"><circle cx="136.24111541307906" cy="-4420.31" r="21" fill="#59d1ae"/><text x="171.24111541307906" y="-4427.31" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S3A4</text></g>
+<g data-node="12032" data-selected="false"><circle cx="2054.09" cy="-6532.62" r="21" fill="#364252"/><text x="2089.09" y="-6539.62" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">12032</text></g>
+<g data-node="12852" data-selected="true"><circle cx="-1072.84" cy="-5696.29" r="21" fill="#90a6bd"/><text x="-1037.84" y="-5703.29" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">12852</text></g>
+<g data-node="12913" data-selected="false"><circle cx="528.555" cy="-6183.12" r="21" fill="#364252"/><text x="563.555" y="-6190.12" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">12913</text></g>
+<g data-node="13753" data-selected="true"><circle cx="1232.23" cy="-5651.408510267787" r="21" fill="#90a6bd"/><text x="1267.23" y="-5658.408510267787" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">13753</text></g>
+<g data-node="15452" data-selected="true"><circle cx="1893.0687014477792" cy="-5616.821298552221" r="21" fill="#59d1ae"/><text x="1928.0687014477792" y="-5623.821298552221" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S1A2</text></g>
+<g data-node="15711" data-selected="true"><circle cx="569.2538173052984" cy="-4832.31" r="38" fill="#f3c355"/><text x="604.2538173052984" y="-4839.31" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S1H1</text></g>
+<g data-node="16790" data-selected="true"><circle cx="-383.76260086439277" cy="-5043.5886533193125" r="21" fill="#90a6bd"/><text x="-348.76260086439277" y="-5050.5886533193125" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">16790</text></g>
+<g data-node="17579" data-selected="false"><circle cx="-736.7124916016348" cy="-4078.31" r="21" fill="#364252"/><text x="-701.7124916016348" y="-4085.31" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">17579</text></g>
+<g data-node="18663" data-selected="false"><circle cx="1596.8" cy="-6341.4" r="21" fill="#364252"/><text x="1631.8" y="-6348.4" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">18663</text></g>
+<g data-node="18866" data-selected="true"><circle cx="-643.4978970033632" cy="-4329.971792142132" r="21" fill="#59d1ae"/><text x="-608.4978970033632" y="-4336.971792142132" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S2A2</text></g>
+<g data-node="19635" data-selected="true"><circle cx="-4.055" cy="-6039.94" r="21" fill="#90a6bd"/><text x="30.945" y="-6046.94" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">19635</text></g>
+<g data-node="21075" data-selected="true"><circle cx="375.65260086439247" cy="-5043.588653319313" r="21" fill="#90a6bd"/><text x="410.65260086439247" y="-5050.588653319313" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">21075</text></g>
+<g data-node="21678" data-selected="true"><circle cx="902.5249999999999" cy="-3706.8225083983643" r="21" fill="#90a6bd"/><text x="937.5249999999999" y="-3713.8225083983643" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">21678</text></g>
+<g data-node="21934" data-selected="true"><circle cx="-821.2282490405518" cy="-4282.349087843268" r="21" fill="#59d1ae"/><text x="-786.2282490405518" y="-4289.349087843268" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S2A5</text></g>
+<g data-node="22315" data-selected="true"><circle cx="1064.73" cy="-5696.29" r="21" fill="#90a6bd"/><text x="1099.73" y="-5703.29" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">22315</text></g>
+<g data-node="23950" data-selected="false"><circle cx="2529.85" cy="-6130.73" r="21" fill="#364252"/><text x="2564.85" y="-6137.73" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">23950</text></g>
+<g data-node="25222" data-selected="false"><circle cx="728.6024916016352" cy="-4078.3100000000004" r="21" fill="#364252"/><text x="763.6024916016352" y="-4085.3100000000004" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">25222</text></g>
+<g data-node="27163" data-selected="true"><circle cx="729.73" cy="-5361.29" r="38" fill="#f3c355"/><text x="764.73" y="-5368.29" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S1H0</text></g>
+<g data-node="27203" data-selected="false"><circle cx="-4.055" cy="-4663.31" r="21" fill="#364252"/><text x="30.945" y="-4670.31" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">27203</text></g>
+<g data-node="27611" data-selected="true"><circle cx="-4.055" cy="-5347.31" r="38" fill="#f3c355"/><text x="30.945" y="-5354.31" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">SCH1</text></g>
+<g data-node="27659" data-selected="true"><circle cx="1752.43" cy="-4352.09" r="21" fill="#59d1ae"/><text x="1787.43" y="-4359.09" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">SCA4</text></g>
+<g data-node="27709" data-selected="false"><circle cx="2779.54" cy="-6694.433884586921" r="21" fill="#364252"/><text x="2814.54" y="-6701.433884586921" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">27709</text></g>
+<g data-node="27929" data-selected="true"><circle cx="841.945" cy="-4501.31" r="38" fill="#f3c355"/><text x="876.945" y="-4508.31" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S3H0</text></g>
+<g data-node="29171" data-selected="true"><circle cx="2019.340016141171" cy="-6000.868685306608" r="21" fill="#59d1ae"/><text x="2054.340016141171" y="-6007.868685306608" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S1A3</text></g>
+<g data-node="30225" data-selected="false"><circle cx="-1072.84" cy="-5361.29" r="21" fill="#364252"/><text x="-1037.84" y="-5368.29" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">30225</text></g>
+<g data-node="30658" data-selected="false"><circle cx="2035.5238845869212" cy="-5877.94" r="21" fill="#364252"/><text x="2070.523884586921" y="-5884.94" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">30658</text></g>
+<g data-node="31103" data-selected="false"><circle cx="2316.116115413079" cy="-6039.94" r="21" fill="#364252"/><text x="2351.116115413079" y="-6046.94" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">31103</text></g>
+<g data-node="31875" data-selected="false"><circle cx="-1780.16" cy="-4359.11" r="21" fill="#364252"/><text x="-1745.16" y="-4366.11" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">31875</text></g>
+<g data-node="32024" data-selected="true"><circle cx="148.29037822684907" cy="-4970.180862533511" r="21" fill="#59d1ae"/><text x="183.29037822684907" y="-4977.180862533511" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">SCA1</text></g>
+<g data-node="32210" data-selected="true"><circle cx="1274.5049571848785" cy="-4150.130958746484" r="21" fill="#90a6bd"/><text x="1309.5049571848785" y="-4157.130958746484" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">32210</text></g>
+<g data-node="33296" data-selected="false"><circle cx="-427.0550000000001" cy="-3768.652508398365" r="21" fill="#364252"/><text x="-392.0550000000001" y="-3775.652508398365" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">33296</text></g>
+<g data-node="33755" data-selected="false"><circle cx="-1351.78" cy="-6605.07" r="21" fill="#364252"/><text x="-1316.78" y="-6612.07" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">33755</text></g>
+<g data-node="33779" data-selected="false"><circle cx="-1984.8400000000001" cy="-5814.876115413079" r="21" fill="#364252"/><text x="-1949.8400000000001" y="-5821.876115413079" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">33779</text></g>
+<g data-node="34157" data-selected="false"><circle cx="-1718.17" cy="-6202.433884586921" r="21" fill="#364252"/><text x="-1683.17" y="-6209.433884586921" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">34157</text></g>
+<g data-node="34661" data-selected="false"><circle cx="-1407.84" cy="-5361.29" r="21" fill="#364252"/><text x="-1372.84" y="-5368.29" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">34661</text></g>
+<g data-node="36542" data-selected="true"><circle cx="-1277.8449571848787" cy="-4150.130958746484" r="21" fill="#90a6bd"/><text x="-1242.8449571848787" y="-4157.130958746484" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">36542</text></g>
+<g data-node="37569" data-selected="true"><circle cx="-905.8650000000001" cy="-3706.8225083983643" r="21" fill="#90a6bd"/><text x="-870.8650000000001" y="-3713.8225083983643" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">37569</text></g>
+<g data-node="37671" data-selected="false"><circle cx="2405.51" cy="-4102.42" r="21" fill="#364252"/><text x="2440.51" y="-4109.42" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">37671</text></g>
+<g data-node="38148" data-selected="true"><circle cx="-905.3399999999999" cy="-5651.408510267787" r="21" fill="#90a6bd"/><text x="-870.3399999999999" y="-5658.408510267787" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">38148</text></g>
+<g data-node="38176" data-selected="true"><circle cx="1797.2325083983649" cy="-6039.94" r="21" fill="#90a6bd"/><text x="1832.2325083983649" y="-6046.94" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">38176</text></g>
+<g data-node="38805" data-selected="true"><circle cx="353.48004943263174" cy="-5268.0463878330065" r="21" fill="#90a6bd"/><text x="388.48004943263174" y="-5275.0463878330065" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">38805</text></g>
+<g data-node="38900" data-selected="true"><circle cx="539.7433177948122" cy="-5149.383598878656" r="21" fill="#59d1ae"/><text x="574.7433177948122" y="-5156.383598878656" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S3A6</text></g>
+<g data-node="40075" data-selected="true"><circle cx="-279.14888458692093" cy="-6264.12" r="21" fill="#59d1ae"/><text x="-244.14888458692093" y="-6271.12" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S2A6</text></g>
+<g data-node="40637" data-selected="true"><circle cx="813.1182490405519" cy="-4282.349087843268" r="21" fill="#59d1ae"/><text x="848.1182490405519" y="-4289.349087843268" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S3A1</text></g>
+<g data-node="41635" data-selected="false"><circle cx="3128.102336883819" cy="-6215.152336883819" r="21" fill="#364252"/><text x="3163.102336883819" y="-6222.152336883819" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">41635</text></g>
+<g data-node="42485" data-selected="false"><circle cx="-500.445" cy="-6204.823884586921" r="21" fill="#364252"/><text x="-465.445" y="-6211.823884586921" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">42485</text></g>
+<g data-node="42795" data-selected="true"><circle cx="1399.73" cy="-5361.29" r="38" fill="#f3c355"/><text x="1434.73" y="-5368.29" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S3H1</text></g>
+<g data-node="43000" data-selected="true"><circle cx="668.851115413079" cy="-6264.12" r="21" fill="#59d1ae"/><text x="703.851115413079" y="-6271.12" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S1A5</text></g>
+<g data-node="44723" data-selected="true"><circle cx="-361.59004943263153" cy="-5268.0463878330065" r="21" fill="#90a6bd"/><text x="-326.59004943263153" y="-5275.0463878330065" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">44723</text></g>
+<g data-node="44955" data-selected="true"><circle cx="-737.8399999999999" cy="-5361.29" r="38" fill="#f3c355"/><text x="-702.8399999999999" y="-5368.29" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">SCH2</text></g>
+<g data-node="44983" data-selected="false"><circle cx="-1309.7207716974933" cy="-5598.170771697493" r="21" fill="#364252"/><text x="-1274.7207716974933" y="-5605.170771697493" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">44983</text></g>
+<g data-node="47085" data-selected="false"><circle cx="2088.62" cy="-5642.566115413079" r="21" fill="#364252"/><text x="2123.62" y="-5649.566115413079" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">47085</text></g>
+<g data-node="48362" data-selected="true"><circle cx="-160.5349838588291" cy="-4543.238685306609" r="21" fill="#59d1ae"/><text x="-125.5349838588291" y="-4550.238685306609" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S2A3</text></g>
+<g data-node="48514" data-selected="true"><circle cx="827.8492283025065" cy="-5598.170771697493" r="21" fill="#90a6bd"/><text x="862.8492283025065" y="-5605.170771697493" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">48514</text></g>
+<g data-node="49534" data-selected="false"><circle cx="-338.445" cy="-6485.416115413079" r="21" fill="#364252"/><text x="-303.445" y="-6492.416115413079" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">49534</text></g>
+<g data-node="49651" data-selected="true"><circle cx="2529.89" cy="-6462.94" r="21" fill="#59d1ae"/><text x="2564.89" y="-6469.94" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S1A4</text></g>
+<g data-node="50082" data-selected="false"><circle cx="1926.62" cy="-5361.9738845869215" r="21" fill="#364252"/><text x="1961.62" y="-5368.9738845869215" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">50082</text></g>
+<g data-node="50472" data-selected="true"><circle cx="1065.06" cy="-6264.123884586921" r="21" fill="#59d1ae"/><text x="1100.06" y="-6271.123884586921" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S1A6</text></g>
+<g data-node="50826" data-selected="false"><circle cx="388.25888458692094" cy="-6264.12" r="21" fill="#364252"/><text x="423.25888458692094" y="-6271.12" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">50826</text></g>
+<g data-node="51517" data-selected="false"><circle cx="1752.43" cy="-4642.103884586921" r="21" fill="#364252"/><text x="1787.43" y="-4649.103884586921" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">51517</text></g>
+<g data-node="53279" data-selected="false"><circle cx="76.82499999999999" cy="-6626.773884586921" r="21" fill="#364252"/><text x="111.82499999999999" y="-6633.773884586921" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">53279</text></g>
+<g data-node="53493" data-selected="true"><circle cx="-577.3638173052983" cy="-4832.31" r="38" fill="#f3c355"/><text x="-542.3638173052983" y="-4839.31" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S2H0</text></g>
+<g data-node="54447" data-selected="true"><circle cx="-4.055" cy="-3179.89" r="21" fill="#d6deea"/><text x="30.945" y="-3186.89" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">54447</text></g>
+<g data-node="55643" data-selected="true"><circle cx="635.3878970033633" cy="-4329.971792142132" r="21" fill="#59d1ae"/><text x="670.3878970033633" y="-4336.971792142132" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S3A2</text></g>
+<g data-node="57226" data-selected="true"><circle cx="163.44499999999996" cy="-3470.0085102677867" r="21" fill="#90a6bd"/><text x="198.44499999999996" y="-3477.0085102677867" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">57226</text></g>
+<g data-node="57264" data-selected="true"><circle cx="-240.9357716974935" cy="-3416.7707716974933" r="21" fill="#90a6bd"/><text x="-205.9357716974935" y="-3423.7707716974933" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">57264</text></g>
+<g data-node="58604" data-selected="false"><circle cx="-1072.84" cy="-5523.29" r="21" fill="#364252"/><text x="-1037.84" y="-5530.29" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">58604</text></g>
+<g data-node="59650" data-selected="false"><circle cx="418.94499999999994" cy="-3768.652508398365" r="21" fill="#364252"/><text x="453.94499999999994" y="-3775.652508398365" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">59650</text></g>
+<g data-node="60388" data-selected="false"><circle cx="-812.165" cy="-6605.07" r="21" fill="#364252"/><text x="-777.165" y="-6612.07" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">60388</text></g>
+<g data-node="60554" data-selected="true"><circle cx="-156.40037822684917" cy="-4970.180862533511" r="21" fill="#59d1ae"/><text x="-121.40037822684917" y="-4977.180862533511" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">SCA2</text></g>
+<g data-node="63067" data-selected="false"><circle cx="1227.06" cy="-6264.123884586921" r="21" fill="#364252"/><text x="1262.06" y="-6271.123884586921" font-size="43" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">63067</text></g>
+<g data-node="65203" data-selected="true"><circle cx="897.23" cy="-5071.171489732213" r="21" fill="#59d1ae"/><text x="932.23" y="-5078.171489732213" font-size="60" fill="#e7edf5" paint-order="stroke" stroke="#101723" stroke-width="5">S1A1</text></g>
+</g><rect x="-2050.0925083983648" y="-6712.94" width="5229.982508398365" height="140" fill="#101723"/><text x="-2020.0925083983648" y="-6637.94" font-size="55" fill="#e7edf5">Class S | local window | 30 rules | 22 ordinary | context clipped</text></svg>

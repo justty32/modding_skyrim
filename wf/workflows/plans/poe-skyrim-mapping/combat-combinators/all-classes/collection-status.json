@@ -1,0 +1,85 @@
+{
+  "contract": "wf-table/1",
+  "source": "REPORT.md",
+  "extracted": "2026-11-04",
+  "columns": [
+    "class",
+    "state",
+    "rules",
+    "bytes",
+    "legacy_refs",
+    "errors"
+  ],
+  "rows": [
+    {
+      "class": "V",
+      "state": "checked",
+      "rules": 30,
+      "bytes": 105166,
+      "legacy_refs": 0,
+      "errors": []
+    },
+    {
+      "class": "G",
+      "state": "checked",
+      "rules": 30,
+      "bytes": 71079,
+      "legacy_refs": 14,
+      "errors": []
+    },
+    {
+      "class": "D",
+      "state": "checked",
+      "rules": 30,
+      "bytes": 71820,
+      "legacy_refs": 14,
+      "errors": []
+    },
+    {
+      "class": "R",
+      "state": "checked",
+      "rules": 30,
+      "bytes": 102411,
+      "legacy_refs": 0,
+      "errors": []
+    },
+    {
+      "class": "C",
+      "state": "checked",
+      "rules": 30,
+      "bytes": 86067,
+      "legacy_refs": 14,
+      "errors": []
+    },
+    {
+      "class": "M",
+      "state": "checked",
+      "rules": 30,
+      "bytes": 136311,
+      "legacy_refs": 0,
+      "errors": []
+    },
+    {
+      "class": "S",
+      "state": "checked",
+      "rules": 30,
+      "bytes": 92294,
+      "legacy_refs": 0,
+      "errors": []
+    },
+    {
+      "class": "X",
+      "state": "checked",
+      "rules": 30,
+      "bytes": 91865,
+      "legacy_refs": 0,
+      "errors": []
+    },
+    {
+      "class": "geometry_join",
+      "state": "checked",
+      "rules": 240,
+      "errors": []
+    }
+  ]
+}

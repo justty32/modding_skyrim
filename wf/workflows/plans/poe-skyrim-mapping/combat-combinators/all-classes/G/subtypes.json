@@ -1,0 +1,163 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "name",
+  "advanced",
+  "high",
+  "unique_advanced",
+  "unique_high",
+  "unique_rule_ids",
+  "common_pool",
+  "shared_accounting",
+  "requires_slots",
+  "geometry",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "G1",
+   "name": "浪潮鬥士",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": 4,
+   "unique_high": 2,
+   "unique_rule_ids": [
+    "DBH0",
+    "DBH1",
+    "DBA1",
+    "DBA2",
+    "DBA3",
+    "DBA6"
+   ],
+   "common_pool": "GCA1-4/GCH1-2 only one pool; excluded subtype counts",
+   "shared_accounting": "DBA4 shared G3; DBA5 shared G2/G3 immutable declaration. Optional mixed-buy references only; require DBH0, not cloned or counted as new sibling six.",
+   "requires_slots": {
+    "DBH0": [],
+    "DBH1": [
+     34009
+    ],
+    "DBA1": [
+     34009
+    ],
+    "DBA2": [
+     34009
+    ],
+    "DBA3": [
+     34009
+    ],
+    "DBA4": [
+     34009
+    ],
+    "DBA5": [
+     34009
+    ],
+    "DBA6": [
+     34009
+    ]
+   },
+   "geometry": "stable rule slots only, no new PoE IDs",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "G2",
+   "name": "浴血決鬥者",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": 6,
+   "unique_high": 2,
+   "unique_rule_ids": [
+    "G2H0",
+    "G2H1",
+    "G2A1",
+    "G2A2",
+    "G2A3",
+    "G2A4",
+    "G2A5",
+    "G2A6"
+   ],
+   "common_pool": "GCA1-4/GCH1-2 only one pool; excluded subtype counts",
+   "shared_accounting": "DBA4 shared G3; DBA5 shared G2/G3 immutable declaration. Optional mixed-buy references only; require DBH0, not cloned or counted as new sibling six.",
+   "requires_slots": {
+    "G2H0": [],
+    "G2H1": [
+     "G2H0"
+    ],
+    "G2A1": [
+     "G2H0"
+    ],
+    "G2A2": [
+     "G2H0"
+    ],
+    "G2A3": [
+     "G2H0"
+    ],
+    "G2A4": [
+     "G2H0"
+    ],
+    "G2A5": [
+     "G2H0"
+    ],
+    "G2A6": [
+     "G2H0"
+    ]
+   },
+   "geometry": "stable rule slots only, no new PoE IDs",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "G3",
+   "name": "藏鋒者",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": 6,
+   "unique_high": 2,
+   "unique_rule_ids": [
+    "G3H0",
+    "G3H1",
+    "G3A1",
+    "G3A2",
+    "G3A3",
+    "G3A4",
+    "G3A5",
+    "G3A6"
+   ],
+   "common_pool": "GCA1-4/GCH1-2 only one pool; excluded subtype counts",
+   "shared_accounting": "DBA4 shared G3; DBA5 shared G2/G3 immutable declaration. Optional mixed-buy references only; require DBH0, not cloned or counted as new sibling six.",
+   "requires_slots": {
+    "G3H0": [],
+    "G3H1": [
+     "G3H0"
+    ],
+    "G3A1": [
+     "G3H0"
+    ],
+    "G3A2": [
+     "G3H0"
+    ],
+    "G3A3": [
+     "G3H0"
+    ],
+    "G3A4": [
+     "G3H0"
+    ],
+    "G3A5": [
+     "G3H0"
+    ],
+    "G3A6": [
+     "G3H0"
+    ]
+   },
+   "geometry": "stable rule slots only, no new PoE IDs",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

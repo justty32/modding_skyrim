@@ -1,0 +1,167 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "kind",
+  "rules",
+  "requirement",
+  "verdict",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "P_C1_NATIVE_PREP",
+   "kind": "primitive_gap",
+   "rules": [
+    "C1H0",
+    "C1H1"
+   ],
+   "requirement": "accepted cast與真原生MP debit到未送達payload的原子分流；須區分取消/命令與prepare，不能只after-hit儲傷。",
+   "verdict": "缺source/runtime證；不可宣稱已有ready。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "P_C1_CA3_BOUNDARY",
+   "kind": "primitive_gap",
+   "rules": [
+    "C1H0",
+    "C1H1",
+    "CA3",
+    "IH1"
+   ],
+   "requirement": "無target lot只保存owner側載荷與CA3=pending_target；合法實際交付敵prehit讀敵MP/maxMP，按原CA3契約一次計入，IH1存D前完成並記判定recipient/transaction。",
+   "verdict": "原CA3值與門檻不改；IH1釋放不重判，轉治療/防禦無合法敵prehit則不得預套CA3。缺精確prehit→存D邊界仍pending，不得ready。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "P_C1_LEDGER",
+   "kind": "primitive_gap",
+   "rules": [
+    "C1H0",
+    "C1H1",
+    "C1A1",
+    "C1A4",
+    "C1A5"
+   ],
+   "requirement": "owner FIFO lot保原生支付、載荷單位/傷害類型與獨立expiry；先摘再callback；存讀/Reset/debug清理。",
+   "verdict": "不可空等生MP、不可退款再保留可傷payload、不可after-hit補血替代防禦。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "P_C2_ROUTE",
+   "kind": "primitive_gap",
+   "rules": [
+    "C2H0",
+    "C2H1"
+   ],
+   "requirement": "root precommit可取得同cast有限載荷，逐跳可視/敵友/visited/typed mitigation只一次；固定序失效與重建。",
+   "verdict": "不得用普通TESHitEvent當唯一castID；不可每跳clone整份傷害或重啟native規則。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "P_NATIVE_MIX",
+   "kind": "interaction",
+   "rules": [
+    "C1H0",
+    "C2H0",
+    "CH1",
+    "IH0",
+    "IH1"
+   ],
+   "requirement": "路由優先提案：C1準備先截未送達；CH1只承接後續交付命令；實際root若IH1存D則C2無即時relay。native-origin與prepare-cast identity必須精確一次。",
+   "verdict": "順序待跨型review；三套均未ready，不能聲稱config已阻止衝突。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "P_SHARED_ALIASES",
+   "kind": "alias",
+   "rules": [
+    "IA3",
+    "IA4"
+   ],
+   "requirement": "C1_energy→C1、C2_conduction→C2僅報告alias；不改legacy。可選共享同一ID仍需IH0免費印，不需要IA1。",
+   "verdict": "不把IA3/IA4複製新ID、不把self lot或route當印；不灌common或本輪新型6A。",
+   "status": "reference_only",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "P_CANON_HOSTILE_OUTPUT",
+   "kind": "canonical_proposal",
+   "rules": [
+    "C2A2",
+    "IA3"
+   ],
+   "requirement": "提主管比較incoming hostile→owner weakening；建議同canonical有效份合一次，不能兩層除數/同事件自吃。",
+   "verdict": "proposal_only；IA3 payload不改；與D current護援不是同recipient/同canonical。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "P_DEFENSE_ORDER",
+   "kind": "canonical_proposal",
+   "rules": [
+    "C1A5"
+   ],
+   "requirement": "與D current portable giver+recipient lease及其他防禦須共用原生後precommit單一交易，再裁消耗順序。",
+   "verdict": "不採model多giver最早到期覆蓋current；不把C1庫視為giver護援。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "P_LEGACY_WITNESS",
+   "kind": "evidence",
+   "rules": [
+    "IA1",
+    "IA4",
+    "IH0"
+   ],
+   "requirement": "原rules.json14列逐row SHA固定；來源README H0不是付費庫；IA1原生實付20%、IA4自身final maxMP5%。",
+   "verdict": "legacy statuses與原illustrative舊值原封保留，不代表新數值獲採用。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "P_GEOMETRY",
+   "kind": "boundary",
+   "rules": [
+    "C1H0",
+    "C2H0"
+   ],
+   "requirement": "只stable slot requires；圖ID/位置/type/weight/edges由single owner另處理；原C3 17、保護40439/42343/30693與48keystone38/10不動。",
+   "verdict": "未給新PoE IDs；compiled=false/runtime0；不得以幾何驗證推論可玩。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "P_NORMAL",
+   "kind": "boundary",
+   "rules": [],
+   "requirement": "normal仍既定atoms/per-share/1-3-5份；沒有職業鎖、新選單、新玩家法術、依賴安裝、source/runtime施工。",
+   "verdict": "所有新強度/期限/成本parameters pending_review。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

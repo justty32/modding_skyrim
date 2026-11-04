@@ -1,0 +1,130 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "subtype_id",
+  "name",
+  "loop",
+  "advanced_count",
+  "high_count",
+  "unique_advanced_count",
+  "unique_high_count",
+  "unique_rules",
+  "class_common_pool",
+  "subtype_shared_count",
+  "shared_rules",
+  "shared_semantics",
+  "slots_requires",
+  "compiled",
+  "runtime",
+  "status"
+ ],
+ "rows": [
+  {
+   "subtype_id": "D1",
+   "name": "守衛者",
+   "loop": "真格擋→他者可攜lease→反攻撤援或持盾維持",
+   "advanced_count": 6,
+   "high_count": 2,
+   "unique_advanced_count": 3,
+   "unique_high_count": 2,
+   "unique_rules": [
+    "WDA3",
+    "WDA4",
+    "WDA5",
+    "WDH0",
+    "WDH1"
+   ],
+   "class_common_pool": [
+    "DCA1",
+    "DCA2",
+    "DCA3",
+    "DCA4",
+    "DCH1",
+    "DCH2"
+   ],
+   "subtype_shared_count": 3,
+   "shared_rules": [
+    "WDA1",
+    "WDA2",
+    "WDA6"
+   ],
+   "shared_semantics": "legacy shared_with D2/D3保留可混買語義；不在兄弟6A內重計。D1三條shared仍須WDH0，不移作common。",
+   "slots_requires": "D1原19點完全不動，WDA1-6/WDH1須原58449；D2/D3用stable rule IDs與H0 dependency，placement未定不猜PoEID",
+   "compiled": false,
+   "runtime": 0,
+   "status": "design_candidate_pending_review"
+  },
+  {
+   "subtype_id": "D2",
+   "name": "聖療護衛",
+   "loop": "承壓→準備→主動恢復指定人或留自身防禦",
+   "advanced_count": 6,
+   "high_count": 2,
+   "unique_advanced_count": 6,
+   "unique_high_count": 2,
+   "unique_rules": [
+    "D2A1",
+    "D2A2",
+    "D2A3",
+    "D2A4",
+    "D2A5",
+    "D2A6",
+    "D2H0",
+    "D2H1"
+   ],
+   "class_common_pool": [
+    "DCA1",
+    "DCA2",
+    "DCA3",
+    "DCA4",
+    "DCH1",
+    "DCH2"
+   ],
+   "subtype_shared_count": 0,
+   "shared_rules": [],
+   "shared_semantics": "legacy shared_with D2/D3保留可混買語義；不在兄弟6A內重計。D1三條shared仍須WDH0，不移作common。",
+   "slots_requires": "D1原19點完全不動，WDA1-6/WDH1須原58449；D2/D3用stable rule IDs與H0 dependency，placement未定不猜PoEID",
+   "compiled": false,
+   "runtime": 0,
+   "status": "design_candidate_pending_review"
+  },
+  {
+   "subtype_id": "D3",
+   "name": "秘法重衛",
+   "loop": "承壓記敵源→留魔防護或離守主動法術反攻",
+   "advanced_count": 6,
+   "high_count": 2,
+   "unique_advanced_count": 6,
+   "unique_high_count": 2,
+   "unique_rules": [
+    "D3A1",
+    "D3A2",
+    "D3A3",
+    "D3A4",
+    "D3A5",
+    "D3A6",
+    "D3H0",
+    "D3H1"
+   ],
+   "class_common_pool": [
+    "DCA1",
+    "DCA2",
+    "DCA3",
+    "DCA4",
+    "DCH1",
+    "DCH2"
+   ],
+   "subtype_shared_count": 0,
+   "shared_rules": [],
+   "shared_semantics": "legacy shared_with D2/D3保留可混買語義；不在兄弟6A內重計。D1三條shared仍須WDH0，不移作common。",
+   "slots_requires": "D1原19點完全不動，WDA1-6/WDH1須原58449；D2/D3用stable rule IDs與H0 dependency，placement未定不猜PoEID",
+   "compiled": false,
+   "runtime": 0,
+   "status": "design_candidate_pending_review"
+  }
+ ]
+}

@@ -1,0 +1,5104 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "node_id",
+  "category",
+  "original_type",
+  "weight",
+  "original_label",
+  "fixed_numeric_payload",
+  "numeric_source_identity",
+  "used_by_pools",
+  "intentional_shared_classes",
+  "purchase_effect_count_once"
+ ],
+ "rows": [
+  {
+   "node_id": 238,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 265,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Claw Critical Strike Chance",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      26,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X2"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 444,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R1",
+    "R2",
+    "R3",
+    "Rcommon",
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "R",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 476,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 476,
+     "original_label": "Strength",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "調息",
+     "effect": "SPREGEN 1share=10%",
+     "rule_refs": [],
+     "scope": "ordinary",
+     "budget_proposal": "fixed approved atom/per_share; replace original GGG mapping, no new coefficient",
+     "status": "prototype_pending_user_review_not_runtime",
+     "requires_nodes": [],
+     "normal_atom": "SPREGEN",
+     "normal_shares": 1,
+     "normal_per_share": 10.0
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2",
+    "G3",
+    "Glegacy"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 1031,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 1593,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Shield Block and Elemental Resistances with a Shield",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.2
+     ],
+     [
+      4,
+      0.17
+     ],
+     [
+      5,
+      0.165
+     ],
+     [
+      6,
+      0.165
+     ],
+     [
+      29,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M2"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 1761,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Staff Damage and Armour",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      14,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M1"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 2151,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Mana Regeneration and Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.35
+     ],
+     [
+      16,
+      0.15
+     ],
+     [
+      21,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 2913,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M3",
+    "Mcommon"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 3167,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Life Regeneration",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      20,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Mcommon"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 3656,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X2",
+    "X3"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 3863,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dagger Critical Strike Multiplier and Poison Duration",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      10,
+      0.2
+     ],
+     [
+      18,
+      0.3
+     ],
+     [
+      27,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X1"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 4011,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X1",
+    "X3"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 4397,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S2",
+    "Scommon",
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "S",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 4565,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dual Wield Attack Speed",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      13,
+      0.4
+     ],
+     [
+      22,
+      0.2
+     ],
+     [
+      25,
+      0.4
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 5408,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 6359,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Armour and Life",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      3,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Mcommon"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 6446,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D2",
+    "D3",
+    "M2"
+   ],
+   "intentional_shared_classes": [
+    "D",
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 6718,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Elemental Resistances",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 6718,
+     "original_label": "Elemental Resistances",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "厚命",
+     "effect": "HP 1share=5.0",
+     "rule_refs": [],
+     "scope": "ordinary",
+     "status": "design_candidate_pending_no_runtime",
+     "requires_nodes": [],
+     "normal_atom": "HP",
+     "normal_shares": 1,
+     "normal_per_share": 5.0,
+     "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Dlegacy"
+   ],
+   "intentional_shared_classes": [
+    "D"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 6764,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C2"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 7153,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Lightning Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C2"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 7388,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 7594,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Reservation Efficiency",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.5
+     ],
+     [
+      30,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 7938,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 8640,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X1",
+    "X3"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 8643,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Cast Speed",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      0.6
+     ],
+     [
+      23,
+      0.4
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 8948,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1",
+    "S2",
+    "S3",
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 9009,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Movement Speed",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      10,
+      0.2
+     ],
+     [
+      24,
+      0.8
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 9355,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X1"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 9511,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 9511,
+     "original_label": "Strength",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "續守",
+     "effect": "SP 1share=5.0",
+     "rule_refs": [],
+     "scope": "ordinary",
+     "status": "design_candidate_pending_no_runtime",
+     "requires_nodes": [],
+     "normal_atom": "SP",
+     "normal_shares": 1,
+     "normal_per_share": 5.0,
+     "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D2",
+    "D3",
+    "Dlegacy",
+    "M2",
+    "Mcommon",
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "D",
+    "M",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 9933,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Mark Effect",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      12,
+      0.5
+     ],
+     [
+      16,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R3"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 10221,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M2"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 10490,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 10575,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C3"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 10829,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 10904,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Minion Life",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.5
+     ],
+     [
+      16,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C1"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 11334,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1",
+    "X2",
+    "X3",
+    "Xcommon"
+   ],
+   "intentional_shared_classes": [
+    "V",
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 11497,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 11551,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1",
+    "S2",
+    "S3",
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 11688,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Spell Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 12852,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Elemental Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 13753,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Energy Shield",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.5
+     ],
+     [
+      3,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S3"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 13782,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Physical Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      18,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 13885,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X3"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 14090,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Reduced Skill Duration",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      30,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 14151,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 14157,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dagger Critical Strike Chance",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      26,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Xcommon"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 15064,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C3"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 15144,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Attack Speed and Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.25
+     ],
+     [
+      10,
+      0.25
+     ],
+     [
+      18,
+      0.2
+     ],
+     [
+      22,
+      0.1
+     ],
+     [
+      25,
+      0.2
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 15405,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 15549,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1",
+    "X2",
+    "X3",
+    "Xcommon"
+   ],
+   "intentional_shared_classes": [
+    "V",
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 15631,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M1",
+    "M2"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 15880,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Attack Area of Effect and Accuracy",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      30,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M3"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 16167,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 16602,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Life Flasks and Flask Duration",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      20,
+      0.5
+     ],
+     [
+      30,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R1"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 16775,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 16790,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Spell Critical Strike Chance",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      26,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S2"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 17201,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 17421,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Mana and Flask Charges Gained",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.25
+     ],
+     [
+      2,
+      0.5
+     ],
+     [
+      19,
+      0.25
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R1"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 17735,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 18033,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 19228,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Claw Ailment Damage and Poison Chance",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.2
+     ],
+     [
+      19,
+      0.3
+     ],
+     [
+      20,
+      0.25
+     ],
+     [
+      21,
+      0.125
+     ],
+     [
+      22,
+      0.125
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R3"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 19635,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1",
+    "S2",
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 20228,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Mana Regeneration and Life",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      21,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C3",
+    "M1",
+    "M2",
+    "M3",
+    "Mcommon"
+   ],
+   "intentional_shared_classes": [
+    "C",
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 20546,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1",
+    "X2",
+    "X3",
+    "Xcommon"
+   ],
+   "intentional_shared_classes": [
+    "V",
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 21075,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Area of Effect Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      30,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 21301,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 21678,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1",
+    "S2",
+    "S3",
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 22285,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D3"
+   ],
+   "intentional_shared_classes": [
+    "D"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 22315,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Mana Regeneration",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      21,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1",
+    "S3"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 22423,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dual Wield Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      13,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 22473,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Energy Shield",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.5
+     ],
+     [
+      3,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 22497,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Cast Speed",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      0.6
+     ],
+     [
+      23,
+      0.4
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 23185,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Chaos Resistance and Minion Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.25
+     ],
+     [
+      11,
+      0.5
+     ],
+     [
+      16,
+      0.25
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M3"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 23881,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 23881,
+     "original_label": "Strength",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "甲護",
+     "effect": "AR 1share=6.0",
+     "rule_refs": [],
+     "scope": "ordinary",
+     "status": "design_candidate_pending_no_runtime",
+     "requires_nodes": [],
+     "normal_atom": "AR",
+     "normal_shares": 1,
+     "normal_per_share": 6.0,
+     "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D2",
+    "D3",
+    "Dlegacy",
+    "M2",
+    "Mcommon",
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "D",
+    "M",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 24865,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2",
+    "G3"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 25431,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Curse Mana Cost Efficiency",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      23,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 25959,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Hex Area of Effect",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      30,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 26523,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 26523,
+     "original_label": "Strength",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "調息",
+     "effect": "SPREGEN 1share=10.0",
+     "rule_refs": [],
+     "scope": "ordinary",
+     "status": "design_candidate_pending_no_runtime",
+     "requires_nodes": [],
+     "normal_atom": "SPREGEN",
+     "normal_shares": 1,
+     "normal_per_share": 10.0,
+     "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D2",
+    "D3",
+    "Dlegacy",
+    "M2",
+    "Mcommon",
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "D",
+    "M",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 27564,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 28012,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X3"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 29472,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Stun Recovery",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      28,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C2"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 30691,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G3"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 31628,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Melee Damage and Life",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 31628,
+     "original_label": "Melee Damage and Life",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "立身",
+     "effect": "HP 1share=5.0",
+     "rule_refs": [],
+     "scope": "ordinary",
+     "status": "design_candidate_pending_no_runtime",
+     "requires_nodes": [],
+     "normal_atom": "HP",
+     "normal_shares": 1,
+     "normal_per_share": 5.0,
+     "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D2",
+    "D3",
+    "Dlegacy",
+    "M2",
+    "Mcommon",
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "D",
+    "M",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 31875,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 31928,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Armour",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D3"
+   ],
+   "intentional_shared_classes": [
+    "D"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 31931,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C3",
+    "M1",
+    "M2"
+   ],
+   "intentional_shared_classes": [
+    "C",
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 32210,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1",
+    "S2",
+    "S3",
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 32482,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Life Regeneration",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      20,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D3"
+   ],
+   "intentional_shared_classes": [
+    "D"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 33196,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Cold Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R2"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 33740,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 33783,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X2"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 34031,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2",
+    "G3"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 34130,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Melee Attack Speed",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      17,
+      0.4
+     ],
+     [
+      22,
+      0.2
+     ],
+     [
+      25,
+      0.4
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D2"
+   ],
+   "intentional_shared_classes": [
+    "D"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 34660,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Mark Effect",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      12,
+      0.5
+     ],
+     [
+      16,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R3"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 34880,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Minion Life",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.5
+     ],
+     [
+      16,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C1"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 35179,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Movement Speed",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      10,
+      0.2
+     ],
+     [
+      24,
+      0.8
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 35192,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Melee Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      17,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Mcommon"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 35556,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C3",
+    "M1",
+    "M2",
+    "M3",
+    "Mcommon"
+   ],
+   "intentional_shared_classes": [
+    "C",
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 36222,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Projectile Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      15,
+      0.6
+     ],
+     [
+      16,
+      0.4
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 36542,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S2",
+    "Scommon",
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "S",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 36801,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Claw Ailment Damage and Poison Duration",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.2
+     ],
+     [
+      10,
+      0.2
+     ],
+     [
+      18,
+      0.3
+     ],
+     [
+      19,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R3"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 36972,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Two Handed Attack Speed",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      14,
+      0.4
+     ],
+     [
+      22,
+      0.2
+     ],
+     [
+      25,
+      0.4
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G3"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 37569,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S2",
+    "Scommon",
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "S",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 37671,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 37884,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Elemental Resistances",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      4,
+      0.34
+     ],
+     [
+      5,
+      0.33
+     ],
+     [
+      6,
+      0.33
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D3"
+   ],
+   "intentional_shared_classes": [
+    "D"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 38129,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Damage and Energy Shield",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.25
+     ],
+     [
+      3,
+      0.25
+     ],
+     [
+      19,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1",
+    "X2",
+    "X3",
+    "Xcommon"
+   ],
+   "intentional_shared_classes": [
+    "V",
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 38148,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Cold Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 38176,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1",
+    "S2",
+    "S3",
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 38520,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Claw Critical Strike Multiplier",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      27,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X2"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 38662,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Rcommon"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 38805,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Area of Effect",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      30,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 39443,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dagger Critical Strike Chance and Leech",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      18,
+      0.2
+     ],
+     [
+      20,
+      0.3
+     ],
+     [
+      26,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Xcommon"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 39725,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Attack Speed and Accuracy",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 39725,
+     "original_label": "Attack Speed and Accuracy",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "護身",
+     "effect": "AR 1share=6AR",
+     "rule_refs": [],
+     "scope": "ordinary",
+     "budget_proposal": "fixed approved atom/per_share; replace original GGG mapping, no new coefficient",
+     "status": "prototype_pending_user_review_not_runtime",
+     "requires_nodes": [],
+     "normal_atom": "AR",
+     "normal_shares": 1,
+     "normal_per_share": 6.0
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Glegacy"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 39786,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "One Handed Melee Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.2
+     ],
+     [
+      13,
+      0.5
+     ],
+     [
+      19,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D2"
+   ],
+   "intentional_shared_classes": [
+    "D"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 39821,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Evasion and Life",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      3,
+      0.35
+     ],
+     [
+      24,
+      0.075
+     ],
+     [
+      25,
+      0.075
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R1",
+    "R2",
+    "R3",
+    "Rcommon",
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "R",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 39916,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C3",
+    "M1",
+    "M2",
+    "M3",
+    "Mcommon"
+   ],
+   "intentional_shared_classes": [
+    "C",
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 40366,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C2"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 40776,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Brand Damage",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 40776,
+     "original_label": "Brand Damage",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "術式根基",
+     "effect": "DMG_DESTR 1份=毀滅傷害+2%",
+     "rule_refs": [],
+     "scope": "subtype_foundation",
+     "budget_proposal": "既定atom1份",
+     "status": "native_bridge_candidate_in_progress",
+     "requires_nodes": []
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Clegacy"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 40867,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 40867,
+     "original_label": "Strength",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "續命",
+     "effect": "HP 1share=5點",
+     "rule_refs": [],
+     "scope": "ordinary",
+     "budget_proposal": "fixed approved atom/per_share; replace original GGG mapping, no new coefficient",
+     "status": "prototype_pending_user_review_not_runtime",
+     "requires_nodes": [],
+     "normal_atom": "HP",
+     "normal_shares": 1,
+     "normal_per_share": 5.0
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2",
+    "G3",
+    "Glegacy"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 41599,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Staff Damage and Block",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.2
+     ],
+     [
+      14,
+      0.5
+     ],
+     [
+      29,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M1"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 41866,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R2"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 42086,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Attack Cost Efficiency",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      23,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G3"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 42668,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Minion Attack and Cast Speed",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.5
+     ],
+     [
+      16,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C1"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 42744,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Mine Critical Strike Chance and Multiplier",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      26,
+      0.5
+     ],
+     [
+      27,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X2"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 42911,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 42911,
+     "original_label": "Strength",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "續步",
+     "effect": "SP 1share=5點",
+     "rule_refs": [],
+     "scope": "ordinary",
+     "budget_proposal": "fixed approved atom/per_share; replace original GGG mapping, no new coefficient",
+     "status": "prototype_pending_user_review_not_runtime",
+     "requires_nodes": [],
+     "normal_atom": "SP",
+     "normal_shares": 1,
+     "normal_per_share": 5.0
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2",
+    "G3",
+    "Glegacy"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 43133,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Chaos Resistance and Minion Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.25
+     ],
+     [
+      11,
+      0.5
+     ],
+     [
+      16,
+      0.25
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M3"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 43303,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Two Handed Melee Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.2
+     ],
+     [
+      14,
+      0.5
+     ],
+     [
+      19,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G3"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 44465,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Stun Recovery",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      28,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C2"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 44606,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Mcommon",
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "M",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 44723,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Spell Critical Strike Chance",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      26,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S2"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 44908,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C3",
+    "M1",
+    "M2",
+    "M3",
+    "Mcommon"
+   ],
+   "intentional_shared_classes": [
+    "C",
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 45035,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Projectile Damage and Accuracy",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      15,
+      0.3
+     ],
+     [
+      16,
+      0.2
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Rcommon"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 45272,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Physical and Chaos Damage and Life",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.3333333333333333
+     ],
+     [
+      16,
+      0.3333333333333333
+     ],
+     [
+      18,
+      0.3333333333333333
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X1",
+    "X3"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 45456,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Spell Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 45646,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Melee Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      17,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Mcommon"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 45838,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X1",
+    "X3"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 46092,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 46910,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 47062,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Spell Damage and Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.35
+     ],
+     [
+      16,
+      0.65
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 47251,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 47362,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Life and Energy Shield on Kill",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.25
+     ],
+     [
+      3,
+      0.25
+     ],
+     [
+      20,
+      0.25
+     ],
+     [
+      21,
+      0.125
+     ],
+     [
+      22,
+      0.125
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X3"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 47389,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Physical Attack Damage and Life",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 47389,
+     "original_label": "Physical Attack Damage and Life",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "立身",
+     "effect": "HP 1share=5點",
+     "rule_refs": [],
+     "scope": "ordinary",
+     "budget_proposal": "fixed approved atom/per_share; replace original GGG mapping, no new coefficient",
+     "status": "prototype_pending_user_review_not_runtime",
+     "requires_nodes": [],
+     "normal_atom": "HP",
+     "normal_shares": 1,
+     "normal_per_share": 5.0
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2",
+    "G3",
+    "Glegacy"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 48514,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Mana and Mana Regeneration",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.5
+     ],
+     [
+      21,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 48778,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 48828,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Physical Damage and Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.25
+     ],
+     [
+      10,
+      0.25
+     ],
+     [
+      18,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 50422,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M2"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 50862,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Mcommon",
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "M",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 51923,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 52099,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Reduced Skill Duration",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      30,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 52522,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Mine Critical Strike Chance",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      26,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X2"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 52632,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Accuracy",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 52904,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R1",
+    "R2",
+    "R3",
+    "Rcommon",
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "R",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 53793,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D3"
+   ],
+   "intentional_shared_classes": [
+    "D"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 54267,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Chaos Resistance and Minion Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.25
+     ],
+     [
+      11,
+      0.5
+     ],
+     [
+      16,
+      0.25
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M3"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 55649,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "D2",
+    "D3"
+   ],
+   "intentional_shared_classes": [
+    "D"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 55913,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Melee Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      17,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Mcommon"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 56001,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "G2"
+   ],
+   "intentional_shared_classes": [
+    "G"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 56153,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Spell Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 57226,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Energy Shield and Mana",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.75
+     ],
+     [
+      3,
+      0.25
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S1",
+    "S2",
+    "S3",
+    "Scommon"
+   ],
+   "intentional_shared_classes": [
+    "S"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 57264,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Spell Damage and Mana",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.5
+     ],
+     [
+      16,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "S2",
+    "Scommon",
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "S",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 57736,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Aura Effect",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      30,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V1"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 58402,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 58402,
+     "original_label": "Intelligence",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "蓄墨",
+     "effect": "MP 1份=最大MP+5",
+     "rule_refs": [],
+     "scope": "subtype_foundation",
+     "budget_proposal": "既定atom1份",
+     "status": "native_bridge_candidate_in_progress",
+     "requires_nodes": []
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C2",
+    "Clegacy"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 58474,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Physical Damage as Extra Cold Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R2"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 58763,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Cold and Lightning Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      16,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C2"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 59370,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Rcommon"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 59728,
+   "category": "legacy_ordinary_preserved",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Area of Effect Damage",
+   "fixed_numeric_payload": {
+    "legacy_candidate_exact": {
+     "node_id": 59728,
+     "original_label": "Area of Effect Damage",
+     "original_type": "normal",
+     "original_weight": 1,
+     "design_tier": "normal",
+     "candidate_name": "回魔底盤",
+     "effect": "MPREGEN 1份=回魔+10%",
+     "rule_refs": [],
+     "scope": "subtype_foundation",
+     "budget_proposal": "既定atom1份",
+     "status": "native_bridge_candidate_in_progress",
+     "requires_nodes": []
+    }
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Clegacy"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 60398,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Intelligence",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.7
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V2"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 60942,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R2",
+    "R3"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 61007,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Accuracy",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M3"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 61306,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R1",
+    "R2",
+    "R3",
+    "Rcommon",
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "R",
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 62303,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Mana and Mana Cost Efficiency",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.5
+     ],
+     [
+      23,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M1"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 62480,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Curse Mana Cost Efficiency",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      23,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 62662,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Physical Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      18,
+      1.0
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "V3"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 63139,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Strength",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Vcommon"
+   ],
+   "intentional_shared_classes": [
+    "V"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 63795,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "Rcommon"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 63965,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Damage and Mana",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      2,
+      0.5
+     ],
+     [
+      19,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "intentional_shared_classes": [
+    "C"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 64426,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Elemental Resistances with a Shield",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      4,
+      0.34
+     ],
+     [
+      5,
+      0.33
+     ],
+     [
+      6,
+      0.33
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "M2"
+   ],
+   "intentional_shared_classes": [
+    "M"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 64509,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dagger Ailment Damage",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      1,
+      0.4
+     ],
+     [
+      19,
+      0.6
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "X1"
+   ],
+   "intentional_shared_classes": [
+    "X"
+   ],
+   "purchase_effect_count_once": true
+  },
+  {
+   "node_id": 64709,
+   "category": "shared_connector",
+   "original_type": "normal",
+   "weight": 1,
+   "original_label": "Dexterity",
+   "fixed_numeric_payload": {
+    "base_converter_effects": [
+     [
+      3,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   "numeric_source_identity": "numeric-source-identity.json",
+   "used_by_pools": [
+    "R3"
+   ],
+   "intentional_shared_classes": [
+    "R"
+   ],
+   "purchase_effect_count_once": true
+  }
+ ]
+}

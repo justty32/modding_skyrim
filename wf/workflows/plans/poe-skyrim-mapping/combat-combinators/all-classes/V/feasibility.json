@@ -1,0 +1,105 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "kind",
+  "detail",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "F1",
+   "kind": "primitive_gap",
+   "detail": "accepted attack transaction/實付SP/完成揮空/助攻death receipt/同戰鬥episode未證；不以hit event或CD猜。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "F2",
+   "kind": "primitive_gap",
+   "detail": "持續原生支援施法真MP receipt、雙手模式與禁止普重bash資格未證；無既有合格支援施法則V2不可購，不教新spell。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "F3",
+   "kind": "primitive_gap",
+   "detail": "召喚owner+instance、原生命中/失援分類、attack target與移動起訖未證；未知失效拒絕收益。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "F4",
+   "kind": "interaction",
+   "detail": "V2與S2：V2只SP/MP推進且payer不收MP；S2 HP/防護另canonical。禁止把V2脈衝偽裝S2常駐域。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "F5",
+   "kind": "interaction",
+   "detail": "V3與S3：V3本人近戰與指定召援實擊順序，獎勵追擊/SP；S3本人法術消印弱敵或召喚護援。混買可並存不同owner-rule，不以V3合作當S3契印。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "F6",
+   "kind": "interaction",
+   "detail": "守衛current portable lease保原duration/離距不撤/giver獨立；V2回聲是原生已付款後回復，不能用守衛受擊consume predicate。model多giver最早到期不得覆蓋current。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "F7",
+   "kind": "interaction",
+   "detail": "刻印IH0/IA1/IA4保持native-first及原20%/final maxMP5%；V3本人法術不啟動夾擊，V2 MP回復不得算IA1新原生實付；退款與synthetic不作觸發。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "F8",
+   "kind": "rejected",
+   "detail": "拒絕新增衝刺/傳送、AI命令、部署費、旗幟選單、職業鎖、新source/atoms；沒有觀測能力就保pending。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "F9",
+   "kind": "canonical_proposal",
+   "detail": "V2 SP/MP事後原生實付回復可提RESOURCE_NATIVE_PAID_REBATE，跨職若語義逐欄相同才主管仲裁合份；目前不同recipient/origin/排除/consume不得先合池。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "F10",
+   "kind": "interaction",
+   "detail": "VCH2會限制本人的V1/V3附加連攻；搬移僅可搬本人可轉移target狀態，指定召援身份與V1有效貢獻不可捏造，死亡receipt/完整夾擊不搬；V2 recipient leases不搬。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "F11",
+   "kind": "gate",
+   "detail": "requires slots只規則前置；compiled=false，runtime0；geometry/PoE ID/root start由主管整合；局部設計完整不代表engine可買。",
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

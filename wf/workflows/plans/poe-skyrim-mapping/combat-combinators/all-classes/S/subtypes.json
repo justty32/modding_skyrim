@@ -1,0 +1,173 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "name",
+  "advanced",
+  "high",
+  "unique_advanced",
+  "unique_high",
+  "common_pool",
+  "subtype_shared",
+  "requires",
+  "geometry",
+  "boundary",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "S1",
+   "name": "咒縛編織者",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": [
+    "S1A1",
+    "S1A2",
+    "S1A3",
+    "S1A4",
+    "S1A5",
+    "S1A6"
+   ],
+   "unique_high": [
+    "S1H0",
+    "S1H1"
+   ],
+   "common_pool": "SCA1-4/SCH1-2 only; 不計入子型unique",
+   "subtype_shared": [],
+   "requires": {
+    "S1H0": [],
+    "S1A1": [
+     "S1H0"
+    ],
+    "S1A2": [
+     "S1H0"
+    ],
+    "S1A3": [
+     "S1H0"
+    ],
+    "S1A4": [
+     "S1H0"
+    ],
+    "S1A5": [
+     "S1H0"
+    ],
+    "S1A6": [
+     "S1H0"
+    ],
+    "S1H1": [
+     "S1H0"
+    ]
+   },
+   "geometry": "stable slots only; placement pending single owner; no PoE IDs",
+   "boundary": "控制衰減owner與免疫待證；不暗加cap",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "S2",
+   "name": "領域詠唱者",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": [
+    "S2A1",
+    "S2A2",
+    "S2A3",
+    "S2A4",
+    "S2A5",
+    "S2A6"
+   ],
+   "unique_high": [
+    "S2H0",
+    "S2H1"
+   ],
+   "common_pool": "SCA1-4/SCH1-2 only; 不計入子型unique",
+   "subtype_shared": [],
+   "requires": {
+    "S2H0": [],
+    "S2A1": [
+     "S2H0"
+    ],
+    "S2A2": [
+     "S2H0"
+    ],
+    "S2A3": [
+     "S2H0"
+    ],
+    "S2A4": [
+     "S2H0"
+    ],
+    "S2A5": [
+     "S2H0"
+    ],
+    "S2A6": [
+     "S2H0"
+    ],
+    "S2H1": [
+     "S2H0"
+    ]
+   },
+   "geometry": "stable slots only; placement pending single owner; no PoE IDs",
+   "boundary": "僅HP恢復/防護，不做V2 SP/MP推進",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "S3",
+   "name": "契靈指揮者",
+   "advanced": 6,
+   "high": 2,
+   "unique_advanced": [
+    "S3A1",
+    "S3A2",
+    "S3A3",
+    "S3A4",
+    "S3A5",
+    "S3A6"
+   ],
+   "unique_high": [
+    "S3H0",
+    "S3H1"
+   ],
+   "common_pool": "SCA1-4/SCH1-2 only; 不計入子型unique",
+   "subtype_shared": [],
+   "requires": {
+    "S3H0": [],
+    "S3A1": [
+     "S3H0"
+    ],
+    "S3A2": [
+     "S3H0"
+    ],
+    "S3A3": [
+     "S3H0"
+    ],
+    "S3A4": [
+     "S3H0"
+    ],
+    "S3A5": [
+     "S3H0",
+     "S3H1"
+    ],
+    "S3A6": [
+     "S3H0"
+    ],
+    "S3H1": [
+     "S3H0"
+    ]
+   },
+   "geometry": "stable slots only; placement pending single owner; no PoE IDs",
+   "boundary": "本人原生法術與召喚合作，排V3本人近戰交替",
+   "status": "design_candidate_pending_review",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

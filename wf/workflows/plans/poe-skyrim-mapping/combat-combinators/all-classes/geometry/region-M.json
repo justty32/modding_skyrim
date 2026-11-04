@@ -1,0 +1,2759 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "id",
+  "label",
+  "type",
+  "weight",
+  "position",
+  "neighbors",
+  "source_group",
+  "source_orbit",
+  "source_orbit_index",
+  "role"
+ ],
+ "rows": [
+  {
+   "id": 224,
+   "label": "Warcry Cooldown Recovery",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4912.09,
+    546.555
+   ],
+   "neighbors": [
+    43833,
+    49445
+   ],
+   "source_group": 238,
+   "source_orbit": 2,
+   "source_orbit_index": 12,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 409,
+   "label": "Guardian",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -11162.0,
+    -4709.71
+   ],
+   "neighbors": [
+    5929,
+    32364,
+    32992,
+    37419,
+    40010,
+    46952,
+    61525
+   ],
+   "source_group": 29,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 494,
+   "label": "Retaliation Skill Damage and Shield Block",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5833.21,
+    -1100.35
+   ],
+   "neighbors": [
+    59976,
+    63306
+   ],
+   "source_group": 183,
+   "source_orbit": 2,
+   "source_orbit_index": 4,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 1593,
+   "label": "Shield Block and Elemental Resistances with a Shield",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5404.616115413079,
+    -503.84499999999997
+   ],
+   "neighbors": [
+    20832,
+    64426
+   ],
+   "source_group": 217,
+   "source_orbit": 2,
+   "source_orbit_index": 11,
+   "role": "selected_connector"
+  },
+  {
+   "id": 1761,
+   "label": "Staff Damage and Armour",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5124.023884586921,
+    -959.8399999999999
+   ],
+   "neighbors": [
+    36859,
+    41599
+   ],
+   "source_group": 216,
+   "source_orbit": 2,
+   "source_orbit_index": 5,
+   "role": "selected_connector"
+  },
+  {
+   "id": 2151,
+   "label": "Mana Regeneration and Intelligence",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -233.44577169749348,
+    -230.06577169749337
+   ],
+   "neighbors": [
+    5560,
+    22497,
+    37690,
+    58833
+   ],
+   "source_group": 445,
+   "source_orbit": 3,
+   "source_orbit_index": 15,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 2550,
+   "label": "Arsonist",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -5160.52,
+    686.851115413079
+   ],
+   "neighbors": [
+    1550,
+    48267,
+    54396
+   ],
+   "source_group": 219,
+   "source_orbit": 2,
+   "source_orbit_index": 7,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 2913,
+   "label": "Dexterity",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4435.9,
+    -709.355
+   ],
+   "neighbors": [
+    44908,
+    50862,
+    54267,
+    55913,
+    61007
+   ],
+   "source_group": 250,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 3167,
+   "label": "Life Regeneration",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4655.79,
+    -189.34888458692092
+   ],
+   "neighbors": [
+    6359,
+    7335,
+    50862
+   ],
+   "source_group": 239,
+   "source_orbit": 2,
+   "source_orbit_index": 7,
+   "role": "selected_connector"
+  },
+  {
+   "id": 5430,
+   "label": "Magmatic Strikes",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -5356.071298552221,
+    432.0037014477793
+   ],
+   "neighbors": [
+    1550,
+    25168,
+    48267
+   ],
+   "source_group": 219,
+   "source_orbit": 2,
+   "source_orbit_index": 15,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 6359,
+   "label": "Armour and Life",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4655.79,
+    -469.94111541307905
+   ],
+   "neighbors": [
+    3167,
+    21413
+   ],
+   "source_group": 239,
+   "source_orbit": 2,
+   "source_orbit_index": 1,
+   "role": "selected_connector"
+  },
+  {
+   "id": 6446,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5659.23,
+    1302.43
+   ],
+   "neighbors": [
+    10221,
+    26523,
+    27166,
+    55649
+   ],
+   "source_group": 197,
+   "source_orbit": 4,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 6968,
+   "label": "Staff Mastery",
+   "type": "mastery",
+   "weight": 0,
+   "position": [
+    -5264.32,
+    -1040.84
+   ],
+   "neighbors": [
+    36859
+   ],
+   "source_group": 216,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 7335,
+   "label": "Armour and Life Regeneration",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4817.79,
+    -189.34888458692092
+   ],
+   "neighbors": [
+    3167,
+    21413
+   ],
+   "source_group": 239,
+   "source_orbit": 2,
+   "source_orbit_index": 9,
+   "role": "rule"
+  },
+  {
+   "id": 7374,
+   "label": "Life and Cost Efficiency",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5935.233884586921,
+    -381.175
+   ],
+   "neighbors": [
+    11088,
+    44967
+   ],
+   "source_group": 179,
+   "source_orbit": 2,
+   "source_orbit_index": 3,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 7399,
+   "label": "Lightning Resistance",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -6519.4151518068375,
+    383.0006198906557
+   ],
+   "neighbors": [
+    15522,
+    50570
+   ],
+   "source_group": 173,
+   "source_orbit": 3,
+   "source_orbit_index": 13,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 9511,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3505.1326836284034,
+    1356.1637835751346
+   ],
+   "neighbors": [
+    23881,
+    31628
+   ],
+   "source_group": 293,
+   "source_orbit": 4,
+   "source_orbit_index": 3,
+   "role": "selected_connector"
+  },
+  {
+   "id": 10108,
+   "label": "Reliquarian",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -7993.98,
+    10308.3
+   ],
+   "neighbors": [
+    35936,
+    58833
+   ],
+   "source_group": 108,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 10221,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5659.23,
+    686.855
+   ],
+   "neighbors": [
+    6446,
+    24155,
+    25168,
+    44941,
+    50422,
+    54396
+   ],
+   "source_group": 196,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 10245,
+   "label": "Attack Mastery",
+   "type": "mastery",
+   "weight": 0,
+   "position": [
+    -4777.5,
+    -871.355
+   ],
+   "neighbors": [
+    55002
+   ],
+   "source_group": 236,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 15064,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -6152.23,
+    -1897.57
+   ],
+   "neighbors": [
+    10031,
+    12536,
+    29199,
+    31931
+   ],
+   "source_group": 192,
+   "source_orbit": 4,
+   "source_orbit_index": 30,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 15086,
+   "label": "Mace Damage and Critical Strike Chance",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5160.52,
+    883.6238845869209
+   ],
+   "neighbors": [
+    24155,
+    55772
+   ],
+   "source_group": 220,
+   "source_orbit": 2,
+   "source_orbit_index": 1,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 15144,
+   "label": "Attack Speed and Dexterity",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    338.435,
+    6.81499999999998
+   ],
+   "neighbors": [
+    918,
+    3992,
+    35179,
+    58833
+   ],
+   "source_group": 445,
+   "source_orbit": 3,
+   "source_orbit_index": 4,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 15405,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3935.566115413079,
+    6.815000000000069
+   ],
+   "neighbors": [
+    33631,
+    33740,
+    50862
+   ],
+   "source_group": 290,
+   "source_orbit": 2,
+   "source_orbit_index": 11,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 15631,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5659.23,
+    -812.845
+   ],
+   "neighbors": [
+    31931,
+    39713,
+    41599,
+    44967,
+    63306,
+    64426
+   ],
+   "source_group": 193,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 15726,
+   "label": "Luminary",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -9616.87,
+    10291.6
+   ],
+   "neighbors": [
+    35877,
+    58833
+   ],
+   "source_group": 49,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 15880,
+   "label": "Attack Area of Effect and Accuracy",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4064.92,
+    -839.7488845869209
+   ],
+   "neighbors": [
+    45350,
+    61007
+   ],
+   "source_group": 275,
+   "source_orbit": 2,
+   "source_orbit_index": 7,
+   "role": "selected_connector"
+  },
+  {
+   "id": 16023,
+   "label": "Elementalist",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -140.875,
+    -10537.2
+   ],
+   "neighbors": [
+    6052,
+    12475,
+    12738,
+    37114,
+    47873,
+    54279,
+    54447,
+    58998
+   ],
+   "source_group": 426,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 17251,
+   "label": "Armour and Energy Shield",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3942.306115413079,
+    -1733.02
+   ],
+   "neighbors": [
+    26866,
+    39631
+   ],
+   "source_group": 289,
+   "source_orbit": 2,
+   "source_orbit_index": 11,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 17352,
+   "label": "Mana and Life",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3464.58,
+    -1816.16
+   ],
+   "neighbors": [
+    20228,
+    23456,
+    29005
+   ],
+   "source_group": 305,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "rule"
+  },
+  {
+   "id": 17765,
+   "label": "Juggernaut",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -10856.3,
+    4826.25
+   ],
+   "neighbors": [
+    16093,
+    32115,
+    47175,
+    49153,
+    51998,
+    63417
+   ],
+   "source_group": 35,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 18378,
+   "label": "Occultist",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -1908.32,
+    -10461.0
+   ],
+   "neighbors": [
+    6728,
+    17018,
+    31984,
+    32417,
+    48124,
+    54447
+   ],
+   "source_group": 367,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 18635,
+   "label": "Saboteur",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    11352.8,
+    -1818.33
+   ],
+   "neighbors": [
+    869,
+    16212,
+    25167,
+    41081,
+    44683,
+    62067,
+    64785,
+    64842
+   ],
+   "source_group": 795,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 19261,
+   "label": "Warcry Cooldown Recovery",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4669.09,
+    686.851115413079
+   ],
+   "neighbors": [
+    43833,
+    44606,
+    64181
+   ],
+   "source_group": 238,
+   "source_orbit": 2,
+   "source_orbit_index": 7,
+   "role": "rule"
+  },
+  {
+   "id": 20228,
+   "label": "Mana Regeneration and Life",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3172.03,
+    -1629.01
+   ],
+   "neighbors": [
+    17352,
+    39916,
+    54877,
+    61525
+   ],
+   "source_group": 329,
+   "source_orbit": 3,
+   "source_orbit_index": 12,
+   "role": "selected_connector"
+  },
+  {
+   "id": 20832,
+   "label": "Sanctuary",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -5124.023884586921,
+    -503.8450000000001
+   ],
+   "neighbors": [
+    1593,
+    25535,
+    62214
+   ],
+   "source_group": 217,
+   "source_orbit": 2,
+   "source_orbit_index": 5,
+   "role": "rule"
+  },
+  {
+   "id": 21413,
+   "label": "Combat Stamina",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -4851.341298552221,
+    -444.19629855222064
+   ],
+   "neighbors": [
+    6359,
+    7335,
+    52462
+   ],
+   "source_group": 239,
+   "source_orbit": 2,
+   "source_orbit_index": 15,
+   "role": "rule"
+  },
+  {
+   "id": 21650,
+   "label": "Eternal Youth",
+   "type": "keystone",
+   "weight": 5,
+   "position": [
+    -4173.53,
+    270.545
+   ],
+   "neighbors": [
+    50862
+   ],
+   "source_group": 273,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 23185,
+   "label": "Chaos Resistance and Minion Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4202.026115413079,
+    -413.75499999999994
+   ],
+   "neighbors": [
+    43133,
+    54267
+   ],
+   "source_group": 279,
+   "source_orbit": 2,
+   "source_orbit_index": 11,
+   "role": "selected_connector"
+  },
+  {
+   "id": 23456,
+   "label": "Mana and Life Regeneration",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3661.7138845869213,
+    -1895.02
+   ],
+   "neighbors": [
+    17352,
+    42837
+   ],
+   "source_group": 289,
+   "source_orbit": 2,
+   "source_orbit_index": 3,
+   "role": "rule"
+  },
+  {
+   "id": 23881,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3728.95,
+    1302.43
+   ],
+   "neighbors": [
+    9511,
+    26523
+   ],
+   "source_group": 293,
+   "source_orbit": 4,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 24155,
+   "label": "Mace Critical Strike Chance",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5356.071298552221,
+    909.3687014477792
+   ],
+   "neighbors": [
+    10221,
+    15086,
+    50225
+   ],
+   "source_group": 220,
+   "source_orbit": 2,
+   "source_orbit_index": 15,
+   "role": "rule"
+  },
+  {
+   "id": 24704,
+   "label": "Chieftain",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -10722.5,
+    2056.0
+   ],
+   "neighbors": [
+    5643,
+    6028,
+    9971,
+    10238,
+    14996,
+    47175
+   ],
+   "source_group": 38,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 24755,
+   "label": "Path of the Marauder",
+   "type": "notable",
+   "weight": 0,
+   "position": [
+    -8994.88,
+    8826.64
+   ],
+   "neighbors": [
+    30690,
+    31628,
+    50904
+   ],
+   "source_group": 65,
+   "source_orbit": 2,
+   "source_orbit_index": 8,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 24984,
+   "label": "Champion",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -54.435,
+    10023.8
+   ],
+   "neighbors": [
+    6982,
+    25111,
+    41433,
+    43725,
+    50986,
+    60508
+   ],
+   "source_group": 427,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 25168,
+   "label": "Physical Damage as Extra Fire Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5403.52,
+    546.555
+   ],
+   "neighbors": [
+    5430,
+    10221
+   ],
+   "source_group": 219,
+   "source_orbit": 2,
+   "source_orbit_index": 12,
+   "role": "rule"
+  },
+  {
+   "id": 25535,
+   "label": "Shield Mastery",
+   "type": "mastery",
+   "weight": 0,
+   "position": [
+    -5264.32,
+    -584.845
+   ],
+   "neighbors": [
+    20832
+   ],
+   "source_group": 217,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 26523,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4435.88,
+    1302.43
+   ],
+   "neighbors": [
+    6446,
+    23881,
+    44606,
+    58449
+   ],
+   "source_group": 257,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 26866,
+   "label": "Sanctity",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -4435.9,
+    -1816.16
+   ],
+   "neighbors": [
+    15599,
+    17251,
+    31758,
+    31819,
+    44908,
+    61471
+   ],
+   "source_group": 248,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 27166,
+   "label": "Fire Resistance",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -6195.83,
+    962.7049999999999
+   ],
+   "neighbors": [
+    6446,
+    48929
+   ],
+   "source_group": 173,
+   "source_orbit": 4,
+   "source_orbit_index": 20,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 27195,
+   "label": "Cold Resistance",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5905.711489732213,
+    302.2049999999999
+   ],
+   "neighbors": [
+    34917,
+    50422
+   ],
+   "source_group": 173,
+   "source_orbit": 3,
+   "source_orbit_index": 3,
+   "role": "rule"
+  },
+  {
+   "id": 27308,
+   "label": "Gravepact",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -3921.433884586921,
+    -413.75500000000005
+   ],
+   "neighbors": [
+    43133,
+    61992
+   ],
+   "source_group": 279,
+   "source_orbit": 2,
+   "source_orbit_index": 5,
+   "role": "rule"
+  },
+  {
+   "id": 29005,
+   "label": "Armour and Energy Shield",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3661.7138845869213,
+    -1733.02
+   ],
+   "neighbors": [
+    17352,
+    39631
+   ],
+   "source_group": 289,
+   "source_orbit": 2,
+   "source_orbit_index": 5,
+   "role": "rule"
+  },
+  {
+   "id": 29294,
+   "label": "Berserker",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -11294.2,
+    3798.7
+   ],
+   "neighbors": [
+    5865,
+    8592,
+    47175,
+    50024,
+    63583,
+    63673
+   ],
+   "source_group": 28,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 29353,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -7671.71,
+    6.815
+   ],
+   "neighbors": [
+    11431,
+    35288,
+    44202,
+    50570,
+    63282
+   ],
+   "source_group": 123,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 30148,
+   "label": "Accuracy",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4302.399983858829,
+    -1021.9736853066082
+   ],
+   "neighbors": [
+    45350,
+    61007
+   ],
+   "source_group": 275,
+   "source_orbit": 2,
+   "source_orbit_index": 13,
+   "role": "rule"
+  },
+  {
+   "id": 30940,
+   "label": "Hierophant",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -10740.6,
+    -3165.47
+   ],
+   "neighbors": [
+    11046,
+    22637,
+    26714,
+    38387,
+    44797,
+    61525
+   ],
+   "source_group": 37,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 31628,
+   "label": "Melee Damage and Life",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3159.29,
+    1642.43
+   ],
+   "neighbors": [
+    9511,
+    24755,
+    33988,
+    47175
+   ],
+   "source_group": 330,
+   "source_orbit": 3,
+   "source_orbit_index": 12,
+   "role": "selected_connector"
+  },
+  {
+   "id": 31758,
+   "label": "Mana and Life Regeneration",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3958.4899838588294,
+    -1855.9486853066082
+   ],
+   "neighbors": [
+    26866,
+    42837
+   ],
+   "source_group": 289,
+   "source_orbit": 2,
+   "source_orbit_index": 13,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 31819,
+   "label": "Mana and Mana Cost Efficiency",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4712.19,
+    -1816.16
+   ],
+   "neighbors": [
+    26866,
+    38516,
+    46726
+   ],
+   "source_group": 231,
+   "source_orbit": 2,
+   "source_orbit_index": 4,
+   "role": "rule"
+  },
+  {
+   "id": 31931,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5659.23,
+    -1404.57
+   ],
+   "neighbors": [
+    15064,
+    15631,
+    44908,
+    62303
+   ],
+   "source_group": 192,
+   "source_orbit": 4,
+   "source_orbit_index": 20,
+   "role": "selected_connector"
+  },
+  {
+   "id": 32245,
+   "label": "Expertise",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -5370.94,
+    -159.685
+   ],
+   "neighbors": [
+    50422
+   ],
+   "source_group": 211,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "rule"
+  },
+  {
+   "id": 32730,
+   "label": "Gladiator",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -2365.45,
+    9506.97
+   ],
+   "neighbors": [
+    1675,
+    3651,
+    14726,
+    37623,
+    48760,
+    50986
+   ],
+   "source_group": 351,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 33795,
+   "label": "Slayer",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    2077.88,
+    9526.54
+   ],
+   "neighbors": [
+    20954,
+    42293,
+    45696,
+    50845,
+    50986,
+    61393
+   ],
+   "source_group": 517,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 33988,
+   "label": "Melee Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3452.99,
+    1795.43
+   ],
+   "neighbors": [
+    31628,
+    32480
+   ],
+   "source_group": 306,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 34917,
+   "label": "Maximum Cold Resistance",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -6033.83,
+    469.705
+   ],
+   "neighbors": [
+    25989,
+    27195
+   ],
+   "source_group": 173,
+   "source_orbit": 2,
+   "source_orbit_index": 4,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 35192,
+   "label": "Melee Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4777.5,
+    -1033.355
+   ],
+   "neighbors": [
+    45646,
+    55002
+   ],
+   "source_group": 236,
+   "source_orbit": 2,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 35556,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3704.96,
+    -1404.57
+   ],
+   "neighbors": [
+    39916,
+    44908
+   ],
+   "source_group": 295,
+   "source_orbit": 4,
+   "source_orbit_index": 20,
+   "role": "selected_connector"
+  },
+  {
+   "id": 35754,
+   "label": "Ascendant",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -8626.33,
+    8450.97
+   ],
+   "neighbors": [
+    193,
+    607,
+    22551,
+    31598,
+    45403,
+    58029,
+    58833
+   ],
+   "source_group": 73,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 36859,
+   "label": "Steelwood Stance",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -5124.023884586921,
+    -1121.84
+   ],
+   "neighbors": [
+    1761,
+    6968,
+    49698
+   ],
+   "source_group": 216,
+   "source_orbit": 2,
+   "source_orbit_index": 3,
+   "role": "rule"
+  },
+  {
+   "id": 38129,
+   "label": "Damage and Energy Shield",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    3052.59,
+    -1855.96
+   ],
+   "neighbors": [
+    11334,
+    44683,
+    53992,
+    63639
+   ],
+   "source_group": 557,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 38516,
+   "label": "Righteous Decree",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -4955.19,
+    -1675.863884586921
+   ],
+   "neighbors": [
+    31819,
+    46726,
+    62303
+   ],
+   "source_group": 231,
+   "source_orbit": 2,
+   "source_orbit_index": 9,
+   "role": "rule"
+  },
+  {
+   "id": 38595,
+   "label": "Accuracy Mastery",
+   "type": "mastery",
+   "weight": 0,
+   "position": [
+    -4145.92,
+    -980.045
+   ],
+   "neighbors": [
+    45350
+   ],
+   "source_group": 275,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 38906,
+   "label": "Armour and Energy Shield",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -6747.96,
+    -594.3288845869209
+   ],
+   "neighbors": [
+    46636,
+    50570
+   ],
+   "source_group": 153,
+   "source_orbit": 2,
+   "source_orbit_index": 7,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 39631,
+   "label": "Armour and Energy Shield",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3802.01,
+    -1652.02
+   ],
+   "neighbors": [
+    17251,
+    29005
+   ],
+   "source_group": 289,
+   "source_orbit": 2,
+   "source_orbit_index": 8,
+   "role": "rule"
+  },
+  {
+   "id": 39713,
+   "label": "Glancing Blows",
+   "type": "keystone",
+   "weight": 5,
+   "position": [
+    -5913.84,
+    -665.845
+   ],
+   "neighbors": [
+    15631
+   ],
+   "source_group": 185,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 39725,
+   "label": "Attack Speed and Accuracy",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    170.16499999999996,
+    3478.5085102677867
+   ],
+   "neighbors": [
+    24377,
+    50986,
+    63357,
+    63649
+   ],
+   "source_group": 439,
+   "source_orbit": 3,
+   "source_orbit_index": 7,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 39821,
+   "label": "Evasion and Life",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    3011.67,
+    1932.5485102677872
+   ],
+   "neighbors": [
+    2094,
+    7618,
+    50459,
+    52904
+   ],
+   "source_group": 549,
+   "source_orbit": 3,
+   "source_orbit_index": 7,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 39916,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3481.1426836284036,
+    -1458.3037835751347
+   ],
+   "neighbors": [
+    20228,
+    35556
+   ],
+   "source_group": 295,
+   "source_orbit": 4,
+   "source_orbit_index": 17,
+   "role": "selected_connector"
+  },
+  {
+   "id": 41599,
+   "label": "Staff Damage and Block",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5404.616115413079,
+    -959.8399999999998
+   ],
+   "neighbors": [
+    1761,
+    15631,
+    55926
+   ],
+   "source_group": 216,
+   "source_orbit": 2,
+   "source_orbit_index": 11,
+   "role": "selected_connector"
+  },
+  {
+   "id": 42837,
+   "label": "Mana and Life Regeneration",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3802.01,
+    -1976.02
+   ],
+   "neighbors": [
+    23456,
+    31758
+   ],
+   "source_group": 289,
+   "source_orbit": 2,
+   "source_orbit_index": 0,
+   "role": "rule"
+  },
+  {
+   "id": 43133,
+   "label": "Chaos Resistance and Minion Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4061.73,
+    -332.755
+   ],
+   "neighbors": [
+    23185,
+    27308
+   ],
+   "source_group": 279,
+   "source_orbit": 2,
+   "source_orbit_index": 8,
+   "role": "selected_connector"
+  },
+  {
+   "id": 43833,
+   "label": "Warcry Cooldown Recovery",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4831.09,
+    686.851115413079
+   ],
+   "neighbors": [
+    224,
+    19261
+   ],
+   "source_group": 238,
+   "source_orbit": 2,
+   "source_orbit_index": 9,
+   "role": "rule"
+  },
+  {
+   "id": 44606,
+   "label": "Intelligence",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4435.88,
+    686.855
+   ],
+   "neighbors": [
+    19261,
+    26523,
+    50862
+   ],
+   "source_group": 256,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 44683,
+   "label": "SIX",
+   "type": "start",
+   "weight": 0,
+   "position": [
+    2844.17,
+    -1627.81
+   ],
+   "neighbors": [
+    18635,
+    38129,
+    45272,
+    55236,
+    58229
+   ],
+   "source_group": 548,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "free_anchor"
+  },
+  {
+   "id": 44908,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4435.9,
+    -1404.57
+   ],
+   "neighbors": [
+    2913,
+    26866,
+    31931,
+    35556
+   ],
+   "source_group": 249,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 44941,
+   "label": "Avatar of Fire",
+   "type": "keystone",
+   "weight": 5,
+   "position": [
+    -5928.13,
+    849.435
+   ],
+   "neighbors": [
+    10221
+   ],
+   "source_group": 184,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 44967,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5659.23,
+    -381.175
+   ],
+   "neighbors": [
+    7374,
+    15631,
+    50422
+   ],
+   "source_group": 195,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "rule"
+  },
+  {
+   "id": 45035,
+   "label": "Projectile Damage and Accuracy",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    3179.17,
+    1642.43
+   ],
+   "neighbors": [
+    465,
+    7618,
+    50459,
+    59370
+   ],
+   "source_group": 549,
+   "source_orbit": 3,
+   "source_orbit_index": 4,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 45272,
+   "label": "Physical and Chaos Damage and Life",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    3134.66,
+    -1604.45
+   ],
+   "neighbors": [
+    8640,
+    41689,
+    44683,
+    53992
+   ],
+   "source_group": 580,
+   "source_orbit": 4,
+   "source_orbit_index": 30,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 45350,
+   "label": "Glory of Command",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -4031.3687014477796,
+    -1094.5962985522206
+   ],
+   "neighbors": [
+    15880,
+    30148,
+    38595
+   ],
+   "source_group": 275,
+   "source_orbit": 2,
+   "source_orbit_index": 2,
+   "role": "rule"
+  },
+  {
+   "id": 45646,
+   "label": "Melee Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4939.5,
+    -871.355
+   ],
+   "neighbors": [
+    35192,
+    55913
+   ],
+   "source_group": 236,
+   "source_orbit": 2,
+   "source_orbit_index": 12,
+   "role": "selected_connector"
+  },
+  {
+   "id": 46726,
+   "label": "Mana and Mana Cost Efficiency",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4988.7412985522205,
+    -1930.7112985522208
+   ],
+   "neighbors": [
+    31819,
+    38516,
+    58453
+   ],
+   "source_group": 231,
+   "source_orbit": 2,
+   "source_orbit_index": 15,
+   "role": "rule"
+  },
+  {
+   "id": 47062,
+   "label": "Spell Damage and Intelligence",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    170.93499999999997,
+    -283.303510267787
+   ],
+   "neighbors": [
+    56153,
+    58833,
+    63845
+   ],
+   "source_group": 445,
+   "source_orbit": 3,
+   "source_orbit_index": 1,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 47175,
+   "label": "MARAUDER",
+   "type": "start",
+   "weight": 0,
+   "position": [
+    -2824.29,
+    1642.43
+   ],
+   "neighbors": [
+    17765,
+    24704,
+    29294,
+    31628,
+    50904
+   ],
+   "source_group": 330,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "free_anchor"
+  },
+  {
+   "id": 47389,
+   "label": "Physical Attack Damage and Life",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -164.83500000000004,
+    3478.5085102677867
+   ],
+   "neighbors": [
+    5612,
+    42911,
+    50986,
+    63357
+   ],
+   "source_group": 439,
+   "source_orbit": 3,
+   "source_orbit_index": 9,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 48828,
+   "label": "Physical Damage and Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -164.06500000000003,
+    296.9335102677869
+   ],
+   "neighbors": [
+    33508,
+    45887,
+    58833,
+    62662
+   ],
+   "source_group": 445,
+   "source_orbit": 3,
+   "source_orbit_index": 9,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 49445,
+   "label": "Deep Breaths",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -4864.641298552221,
+    432.0037014477793
+   ],
+   "neighbors": [
+    224,
+    8460,
+    64181
+   ],
+   "source_group": 238,
+   "source_orbit": 2,
+   "source_orbit_index": 15,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 49698,
+   "label": "Staff Block",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5264.32,
+    -1202.84
+   ],
+   "neighbors": [
+    36859,
+    55926
+   ],
+   "source_group": 216,
+   "source_orbit": 2,
+   "source_orbit_index": 0,
+   "role": "rule"
+  },
+  {
+   "id": 50197,
+   "label": "Ancestral Knowledge",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -5370.94,
+    173.315
+   ],
+   "neighbors": [
+    50422
+   ],
+   "source_group": 212,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 50225,
+   "label": "Mace Critical Strike Multiplier",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5322.52,
+    1164.216115413079
+   ],
+   "neighbors": [
+    24155,
+    55772
+   ],
+   "source_group": 220,
+   "source_orbit": 2,
+   "source_orbit_index": 9,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 50422,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5659.23,
+    6.814999999999998
+   ],
+   "neighbors": [
+    10221,
+    27195,
+    32245,
+    44967,
+    50197,
+    50570,
+    50862
+   ],
+   "source_group": 194,
+   "source_orbit": 4,
+   "source_orbit_index": 20,
+   "role": "selected_connector"
+  },
+  {
+   "id": 50459,
+   "label": "RANGER",
+   "type": "start",
+   "weight": 0,
+   "position": [
+    2844.17,
+    1642.43
+   ],
+   "neighbors": [
+    39821,
+    45035,
+    56856,
+    58427,
+    64111
+   ],
+   "source_group": 549,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "free_anchor"
+  },
+  {
+   "id": 50570,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -6747.96,
+    6.815
+   ],
+   "neighbors": [
+    7399,
+    29353,
+    38906,
+    50422,
+    55854
+   ],
+   "source_group": 157,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "rule"
+  },
+  {
+   "id": 50862,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4435.9,
+    6.815
+   ],
+   "neighbors": [
+    2913,
+    3167,
+    15405,
+    21650,
+    44606,
+    50422
+   ],
+   "source_group": 251,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 50904,
+   "label": "Life and Armour",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -2991.79,
+    1932.548510267787
+   ],
+   "neighbors": [
+    6981,
+    22627,
+    24755,
+    47175
+   ],
+   "source_group": 330,
+   "source_orbit": 3,
+   "source_orbit_index": 9,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 50986,
+   "label": "DUELIST",
+   "type": "start",
+   "weight": 0,
+   "position": [
+    2.665,
+    3188.39
+   ],
+   "neighbors": [
+    24984,
+    32730,
+    33795,
+    39725,
+    47389
+   ],
+   "source_group": 439,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "free_anchor"
+  },
+  {
+   "id": 52462,
+   "label": "Armour Mastery",
+   "type": "mastery",
+   "weight": 0,
+   "position": [
+    -4736.79,
+    -329.645
+   ],
+   "neighbors": [
+    21413
+   ],
+   "source_group": 239,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 54267,
+   "label": "Chaos Resistance and Minion Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4218.209983858829,
+    -536.6836853066083
+   ],
+   "neighbors": [
+    2913,
+    23185
+   ],
+   "source_group": 279,
+   "source_orbit": 2,
+   "source_orbit_index": 13,
+   "role": "selected_connector"
+  },
+  {
+   "id": 54396,
+   "label": "Burning Damage Multiplier",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5322.52,
+    686.851115413079
+   ],
+   "neighbors": [
+    2550,
+    10221
+   ],
+   "source_group": 219,
+   "source_orbit": 2,
+   "source_orbit_index": 9,
+   "role": "rule"
+  },
+  {
+   "id": 54447,
+   "label": "WITCH",
+   "type": "start",
+   "weight": 0,
+   "position": [
+    -4.055,
+    -3179.89
+   ],
+   "neighbors": [
+    16023,
+    18378,
+    57226,
+    57264,
+    60791
+   ],
+   "source_group": 434,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "free_anchor"
+  },
+  {
+   "id": 54877,
+   "label": "Path of the Templar",
+   "type": "notable",
+   "weight": 0,
+   "position": [
+    -9136.33611541308,
+    8320.33
+   ],
+   "neighbors": [
+    20228,
+    57429,
+    63965
+   ],
+   "source_group": 64,
+   "source_orbit": 2,
+   "source_orbit_index": 11,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 55002,
+   "label": "Righteous Fury",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -4615.5,
+    -871.355
+   ],
+   "neighbors": [
+    10245,
+    35192
+   ],
+   "source_group": 236,
+   "source_orbit": 2,
+   "source_orbit_index": 4,
+   "role": "rule"
+  },
+  {
+   "id": 55236,
+   "label": "Trickster",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    11032.0,
+    -3721.64
+   ],
+   "neighbors": [
+    13219,
+    19587,
+    35598,
+    37191,
+    44683,
+    63908
+   ],
+   "source_group": 794,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 55373,
+   "label": "Life and Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -331.565,
+    6.815000000000062
+   ],
+   "neighbors": [
+    17674,
+    38048,
+    58833
+   ],
+   "source_group": 445,
+   "source_orbit": 3,
+   "source_orbit_index": 12,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 55649,
+   "label": "Strength",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -6152.23,
+    1795.43
+   ],
+   "neighbors": [
+    6446,
+    22285,
+    34130,
+    44429,
+    45163
+   ],
+   "source_group": 197,
+   "source_orbit": 4,
+   "source_orbit_index": 30,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 55854,
+   "label": "Physical Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -6748.04,
+    307.705
+   ],
+   "neighbors": [
+    1572,
+    38538,
+    50570
+   ],
+   "source_group": 156,
+   "source_orbit": 2,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 55913,
+   "label": "Melee Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4777.5,
+    -709.355
+   ],
+   "neighbors": [
+    2913,
+    45646
+   ],
+   "source_group": 236,
+   "source_orbit": 2,
+   "source_orbit_index": 8,
+   "role": "selected_connector"
+  },
+  {
+   "id": 55926,
+   "label": "Staff Block",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5420.799983858828,
+    -1082.7686853066082
+   ],
+   "neighbors": [
+    41599,
+    49698
+   ],
+   "source_group": 216,
+   "source_orbit": 2,
+   "source_orbit_index": 13,
+   "role": "rule"
+  },
+  {
+   "id": 56856,
+   "label": "Deadeye",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    12430.9,
+    2653.38
+   ],
+   "neighbors": [
+    1729,
+    5082,
+    28995,
+    50459,
+    53086,
+    55985,
+    59837
+   ],
+   "source_group": 797,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 57226,
+   "label": "Energy Shield and Mana",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    163.44499999999996,
+    -3470.0085102677867
+   ],
+   "neighbors": [
+    21678,
+    54447,
+    56722,
+    59650
+   ],
+   "source_group": 434,
+   "source_orbit": 3,
+   "source_orbit_index": 1,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 57264,
+   "label": "Spell Damage and Mana",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -240.9357716974935,
+    -3416.7707716974933
+   ],
+   "neighbors": [
+    33296,
+    37569,
+    54447,
+    56722
+   ],
+   "source_group": 434,
+   "source_orbit": 3,
+   "source_orbit_index": 15,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 58229,
+   "label": "Assassin",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    10840.6,
+    -5107.4
+   ],
+   "neighbors": [
+    6064,
+    12850,
+    23024,
+    43215,
+    44683,
+    51402
+   ],
+   "source_group": 792,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 58427,
+   "label": "Warden",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    11985.8,
+    4324.77
+   ],
+   "neighbors": [
+    2060,
+    5926,
+    24214,
+    24432,
+    27536,
+    50459,
+    53421
+   ],
+   "source_group": 796,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 58449,
+   "label": "Born to Fight",
+   "type": "notable",
+   "weight": 3,
+   "position": [
+    -4435.9,
+    1795.43
+   ],
+   "neighbors": [
+    20551,
+    26523,
+    38777,
+    39768,
+    40535
+   ],
+   "source_group": 252,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 58453,
+   "label": "Elemental Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4955.381489732213,
+    -2251.33
+   ],
+   "neighbors": [
+    30693,
+    33435,
+    41472,
+    46726
+   ],
+   "source_group": 218,
+   "source_orbit": 3,
+   "source_orbit_index": 5,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 58833,
+   "label": "Seven",
+   "type": "start",
+   "weight": 0,
+   "position": [
+    3.435,
+    6.815
+   ],
+   "neighbors": [
+    2151,
+    10108,
+    15144,
+    15726,
+    35754,
+    47062,
+    48828,
+    55373,
+    62103
+   ],
+   "source_group": 445,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "free_anchor"
+  },
+  {
+   "id": 60791,
+   "label": "Necromancer",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    1643.43,
+    -10689.8
+   ],
+   "neighbors": [
+    5415,
+    18309,
+    18574,
+    26298,
+    54447,
+    60547
+   ],
+   "source_group": 499,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 61007,
+   "label": "Accuracy",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4260.471298552221,
+    -865.4937014477792
+   ],
+   "neighbors": [
+    2913,
+    15880,
+    30148
+   ],
+   "source_group": 275,
+   "source_orbit": 2,
+   "source_orbit_index": 10,
+   "role": "selected_connector"
+  },
+  {
+   "id": 61525,
+   "label": "TEMPLAR",
+   "type": "start",
+   "weight": 0,
+   "position": [
+    -2837.03,
+    -1629.01
+   ],
+   "neighbors": [
+    409,
+    20228,
+    30940,
+    61871,
+    63965
+   ],
+   "source_group": 329,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "free_anchor"
+  },
+  {
+   "id": 61871,
+   "label": "Inquisitor",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    -10501.4,
+    -2113.2
+   ],
+   "neighbors": [
+    662,
+    10635,
+    43193,
+    60769,
+    61525
+   ],
+   "source_group": 40,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 61992,
+   "label": "Minion Offence Mastery",
+   "type": "mastery",
+   "weight": 0,
+   "position": [
+    -4061.73,
+    -494.755
+   ],
+   "neighbors": [
+    27308
+   ],
+   "source_group": 279,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 62103,
+   "label": "Projectile Damage and Dexterity",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    170.93499999999997,
+    296.93351026778697
+   ],
+   "neighbors": [
+    39773,
+    58833,
+    60532
+   ],
+   "source_group": 445,
+   "source_orbit": 3,
+   "source_orbit_index": 7,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 62214,
+   "label": "Shield Spell Block and Elemental Resistances with a Shield",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5124.023884586921,
+    -665.845
+   ],
+   "neighbors": [
+    20832,
+    64426
+   ],
+   "source_group": 217,
+   "source_orbit": 2,
+   "source_orbit_index": 3,
+   "role": "rule"
+  },
+  {
+   "id": 62303,
+   "label": "Mana and Mana Cost Efficiency",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5465.32,
+    -1675.85
+   ],
+   "neighbors": [
+    31931,
+    38516
+   ],
+   "source_group": 205,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "selected_connector"
+  },
+  {
+   "id": 62879,
+   "label": "Retaliation Skill Speed and Shield Spell Block",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -6076.21,
+    -960.0538845869208
+   ],
+   "neighbors": [
+    59976,
+    63306
+   ],
+   "source_group": 183,
+   "source_orbit": 2,
+   "source_orbit_index": 9,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 63306,
+   "label": "Retaliation Skill Damage",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5914.21,
+    -960.0538845869208
+   ],
+   "neighbors": [
+    494,
+    15631,
+    62879
+   ],
+   "source_group": 183,
+   "source_orbit": 2,
+   "source_orbit_index": 7,
+   "role": "rule"
+  },
+  {
+   "id": 63965,
+   "label": "Damage and Mana",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -3073.9107716974936,
+    -1865.8907716974934
+   ],
+   "neighbors": [
+    14151,
+    35724,
+    54877,
+    61525
+   ],
+   "source_group": 329,
+   "source_orbit": 3,
+   "source_orbit_index": 15,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 64111,
+   "label": "Pathfinder",
+   "type": "normal",
+   "weight": 0,
+   "position": [
+    10975.2,
+    2859.09
+   ],
+   "neighbors": [
+    14156,
+    20480,
+    32640,
+    32662,
+    50459,
+    59800
+   ],
+   "source_group": 793,
+   "source_orbit": 0,
+   "source_orbit_index": 0,
+   "role": "boundary_context_not_selected"
+  },
+  {
+   "id": 64181,
+   "label": "Warcry Area of Effect",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -4609.793884586921,
+    465.55499999999995
+   ],
+   "neighbors": [
+    19261,
+    49445
+   ],
+   "source_group": 238,
+   "source_orbit": 2,
+   "source_orbit_index": 3,
+   "role": "rule"
+  },
+  {
+   "id": 64426,
+   "label": "Elemental Resistances with a Shield",
+   "type": "normal",
+   "weight": 1,
+   "position": [
+    -5420.799983858828,
+    -626.7736853066083
+   ],
+   "neighbors": [
+    1593,
+    15631,
+    62214
+   ],
+   "source_group": 217,
+   "source_orbit": 2,
+   "source_orbit_index": 13,
+   "role": "selected_connector"
+  }
+ ]
+}

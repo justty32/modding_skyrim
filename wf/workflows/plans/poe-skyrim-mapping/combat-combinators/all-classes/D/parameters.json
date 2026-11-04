@@ -1,0 +1,318 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "normal_contract": "既定atoms/per-share與1/3/5份全不改；legacy公式不重寫；n取實配canonical份數未知/非正停用",
+ "columns": [
+  "parameter",
+  "rule_id",
+  "value",
+  "units",
+  "status"
+ ],
+ "rows": [
+  {
+   "parameter": "D2H0_duration",
+   "rule_id": "D2H0",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A1_strength",
+   "rule_id": "D2A1",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A1_cost",
+   "rule_id": "D2A1",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A1_duration",
+   "rule_id": "D2A1",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A2_strength",
+   "rule_id": "D2A2",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A2_cost",
+   "rule_id": "D2A2",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A2_duration",
+   "rule_id": "D2A2",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A3_strength",
+   "rule_id": "D2A3",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A3_cost",
+   "rule_id": "D2A3",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A3_duration",
+   "rule_id": "D2A3",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A4_strength",
+   "rule_id": "D2A4",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A4_cost",
+   "rule_id": "D2A4",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A4_duration",
+   "rule_id": "D2A4",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A4_threshold",
+   "rule_id": "D2A4",
+   "value": "pending_review",
+   "units": "事件前recipient HP/maxHP",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A5_strength",
+   "rule_id": "D2A5",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A5_cost",
+   "rule_id": "D2A5",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A5_duration",
+   "rule_id": "D2A5",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A6_strength",
+   "rule_id": "D2A6",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A6_cost",
+   "rule_id": "D2A6",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2A6_duration",
+   "rule_id": "D2A6",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "R_relay",
+   "rule_id": "D2A6",
+   "value": "pending_review",
+   "units": "施救提交時距離",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2H1_duration",
+   "rule_id": "D2H1",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D2H1_budget",
+   "rule_id": "D2H1",
+   "value": "pending_review",
+   "units": "owner非致死實付HP與recipient實回HP換算",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3H0_duration",
+   "rule_id": "D3H0",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A1_strength",
+   "rule_id": "D3A1",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A1_cost",
+   "rule_id": "D3A1",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A1_duration",
+   "rule_id": "D3A1",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A2_strength",
+   "rule_id": "D3A2",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A2_cost",
+   "rule_id": "D3A2",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A2_duration",
+   "rule_id": "D3A2",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A3_strength",
+   "rule_id": "D3A3",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A3_cost",
+   "rule_id": "D3A3",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A3_duration",
+   "rule_id": "D3A3",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A4_strength",
+   "rule_id": "D3A4",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A4_cost",
+   "rule_id": "D3A4",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A4_duration",
+   "rule_id": "D3A4",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A5_strength",
+   "rule_id": "D3A5",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A5_cost",
+   "rule_id": "D3A5",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A5_duration",
+   "rule_id": "D3A5",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A6_strength",
+   "rule_id": "D3A6",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A6_cost",
+   "rule_id": "D3A6",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3A6_duration",
+   "rule_id": "D3A6",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  },
+  {
+   "parameter": "D3H1_duration",
+   "rule_id": "D3H1",
+   "value": "pending_review",
+   "units": "由效果語義及交易證據決定；未配置新數字",
+   "status": "pending_review"
+  }
+ ]
+}

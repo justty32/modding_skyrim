@@ -1,0 +1,327 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "parameter",
+  "value",
+  "unit",
+  "used_by",
+  "status",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "parameter": "T_C1_lot",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C1H0",
+    "C1H1"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C_C1_A1",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C1A1"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C1_A1",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C1A1"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "L_C1_A2",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C1A2"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C1_A2",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C1A2"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C1_A3",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C1A3"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C1_A4",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C1A4"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C1_A5",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C1A5"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "ORDER_C1_DEFENSE",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C1A5"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C1_A6",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C1A6"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "R_C2",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2H0"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C2_root",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2H0"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C2_relay",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2H0"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C2_step",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2H0"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_C2_route",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2H1"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C2_A1",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A1"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C2_A2",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A2"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_C2_A2",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A2"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "CANON_CASTER_HOSTILE_OUTPUT",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A2"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C2_A3",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A3"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C2_DAMAGE_TO_MP_UNITS",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A3"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C2_A4",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A4"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C2_REFUND_AGGREGATION",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A4"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C2_A5",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A5"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "T_C2_A5",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A5"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "F_C2_A6",
+   "value": "pending_review",
+   "unit": "待審；見使用rule的型別/成本/期限語義",
+   "used_by": [
+    "C2A6"
+   ],
+   "status": "pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C3_FIXED_NATIVE_PAID",
+   "value": "IA1: native_paid*0.20*n (immutable reference only)",
+   "unit": "MP實付；不得挪入H0或兄弟成本",
+   "used_by": [
+    "IA1"
+   ],
+   "status": "immutable_legacy_reference",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "parameter": "C3_FIXED_FINAL_MAX_MP",
+   "value": "IA4: caster_final_max_mp*0.05*n (immutable reference only)",
+   "unit": "削敵MP；自身final maxMP快照",
+   "used_by": [
+    "IA4"
+   ],
+   "status": "immutable_legacy_reference",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

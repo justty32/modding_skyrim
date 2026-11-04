@@ -1,0 +1,27 @@
+{
+ "fixed_numeric_payload_policy": "One ID one effective numeric payload. Preserve legacy ordinary13 candidate exact/numericOverrides; every other ordinary connector uses pinned converter policy numeric output once. No per-class rename/rebalance or extra GGG bonus stacking.",
+ "source_files": {
+  "fixed-f510-source/tools/convert_poe_graph.py": "298f6165793cab8f3d43df74622c7e676f3a9e88b9af717cece9703029678bd1",
+  "fixed-f510-source/tools/poe_share.py": "8a8fa57024f1e4190a8ac33d2a982af3e57df809df46adc71fd360c0755446a4",
+  "fixed-f510-source/tools/poe-share/atoms.json": "d2f815b8d29bf0a38aaba174d83bbfdf74d1e4fb2dfdd4c57cc8494b2eb210d3",
+  "fixed-f510-source/tools/poe-share/capabilities.json": "d530042a530c88ba4c586ae9d6cc12276eef6ceea04e068232de099bbe35f6bb",
+  "fixed-f510-source/tools/poe-share/carrier-bindings.json": "ac583e54f758d8f7bd823152d88eb39b2d4fefb0c5c61d6e0168d0e42b193bac",
+  "fixed-f510-source/tools/poe-share/family-rules.json": "80f4c22f4f2287c5cc9615d7ab262083296d0e148791993fbcdc3e26ac08e447",
+  "fixed-f510-source/tools/poe-share/keystones.json": "11bfaefc3056c8a661301dfe41376ed35505fc9cfccadfbbf87ec3ebc7da234d",
+  "fixed-f510-source/tools/poe-share/provenance.json": "3a8dcbf0d92a6074e9aa5aca005742a5f2581b1d16c99a97ec1bafec99e28125",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/native-bridge-bindings.json": "74cc44d05742e9bff410637e467cccd524cfcc8890bc1d93c0b52cfc0a755c6b"
+ },
+ "legacy_candidate_sources": {
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/candidates.json": "db4206fbf78a875066a3f725bd54ff55a277f9588240dc9dc34346864425985b",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/rules.json": "bc6efd2858d0327965b7355d1737a205e5513a9ab07300aa7c91e2adb470888b",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/inscription-sample/region.json": "f7e3969fdbc6bce6b787c2e91a865389f1a3eb4f77cacc64ffe46b3f529bbb6a",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/candidates.json": "481f57ae6ad622f3f804caa8c939ca1f35498e2ce512cf3464a12193c8a2ffb6",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/rules.json": "8820e7d79e445316a56a282bff9fe406159fcca766d56e63df8f84726cfc3309",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/double-beat-sample/region.json": "61ba6337bb3a879eb944f58f2391516b7c179f4226608d966d420865b9edc5e8",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/candidates.json": "18d77438531b32afc6c709d5fee30470845b1f5c5de06dbe06065267bc995bef",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/rules.json": "80e4bca216b39b7f1e43a30daf490fc80cfe179dfa0473092770cae313b28fa6",
+  "wf/workflows/plans/poe-skyrim-mapping/combat-combinators/warden-sample/region.json": "9361b176fb18a17ff27f8a4a93d2f147d03f3a80d2a1d1145724b98b9e58903f"
+ },
+ "atoms": "f510 tools/poe-share/atoms.json; perShare/route unchanged",
+ "new_rules": "replace old GGG effect semantics only when future handler authorized; current design-only, normal compiled false"
+}

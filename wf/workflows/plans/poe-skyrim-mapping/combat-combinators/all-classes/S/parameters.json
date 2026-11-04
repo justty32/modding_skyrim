@@ -1,0 +1,439 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "rule_id",
+  "symbols",
+  "meaning",
+  "value",
+  "normal_atoms",
+  "additional",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "rule_id": "SCA1",
+   "symbols": [
+    "K_SCA1",
+    "C_SCA1",
+    "T_SCA1"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "H_low/合法受益範圍 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "SCA2",
+   "symbols": [
+    "K_SCA2",
+    "C_SCA2",
+    "T_SCA2"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "H_low/合法受益範圍 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "SCA3",
+   "symbols": [
+    "K_SCA3",
+    "C_SCA3",
+    "T_SCA3"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "H_low/合法受益範圍 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "SCA4",
+   "symbols": [
+    "K_SCA4",
+    "C_SCA4",
+    "T_SCA4"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "H_low/合法受益範圍 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "SCH1",
+   "symbols": [
+    "K_SCH1",
+    "C_SCH1",
+    "T_SCH1"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "H_low/合法受益範圍 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "SCH2",
+   "symbols": [
+    "K_SCH2",
+    "C_SCH2",
+    "T_SCH2"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "H_low/合法受益範圍 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S1H0",
+   "symbols": [
+    "K_S1H0",
+    "C_S1H0",
+    "T_S1H0"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "控制類型/免疫/衰減owner/衰減算法 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S1A1",
+   "symbols": [
+    "K_S1A1",
+    "C_S1A1",
+    "T_S1A1"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "控制類型/免疫/衰減owner/衰減算法 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S1A2",
+   "symbols": [
+    "K_S1A2",
+    "C_S1A2",
+    "T_S1A2"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "控制類型/免疫/衰減owner/衰減算法 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S1A3",
+   "symbols": [
+    "K_S1A3",
+    "C_S1A3",
+    "T_S1A3"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "控制類型/免疫/衰減owner/衰減算法 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S1A4",
+   "symbols": [
+    "K_S1A4",
+    "C_S1A4",
+    "T_S1A4"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "控制類型/免疫/衰減owner/衰減算法 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S1A5",
+   "symbols": [
+    "K_S1A5",
+    "C_S1A5",
+    "T_S1A5"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "控制類型/免疫/衰減owner/衰減算法 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S1A6",
+   "symbols": [
+    "K_S1A6",
+    "C_S1A6",
+    "T_S1A6"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "控制類型/免疫/衰減owner/衰減算法 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S1H1",
+   "symbols": [
+    "K_S1H1",
+    "C_S1H1",
+    "T_S1H1"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "控制類型/免疫/衰減owner/衰減算法 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S2H0",
+   "symbols": [
+    "K_S2H0",
+    "C_S2H0",
+    "T_S2H0"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "R_S2、H_low、是否自用、channel樣本及tick辨識 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S2A1",
+   "symbols": [
+    "K_S2A1",
+    "C_S2A1",
+    "T_S2A1"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "R_S2、H_low、是否自用、channel樣本及tick辨識 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S2A2",
+   "symbols": [
+    "K_S2A2",
+    "C_S2A2",
+    "T_S2A2"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "R_S2、H_low、是否自用、channel樣本及tick辨識 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S2A3",
+   "symbols": [
+    "K_S2A3",
+    "C_S2A3",
+    "T_S2A3"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "R_S2、H_low、是否自用、channel樣本及tick辨識 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S2A4",
+   "symbols": [
+    "K_S2A4",
+    "C_S2A4",
+    "T_S2A4"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "R_S2、H_low、是否自用、channel樣本及tick辨識 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S2A5",
+   "symbols": [
+    "K_S2A5",
+    "C_S2A5",
+    "T_S2A5"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "R_S2、H_low、是否自用、channel樣本及tick辨識 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S2A6",
+   "symbols": [
+    "K_S2A6",
+    "C_S2A6",
+    "T_S2A6"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "R_S2、H_low、是否自用、channel樣本及tick辨識 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S2H1",
+   "symbols": [
+    "K_S2H1",
+    "C_S2H1",
+    "T_S2H1"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "R_S2、H_low、是否自用、channel樣本及tick辨識 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S3H0",
+   "symbols": [
+    "K_S3H0",
+    "C_S3H0",
+    "T_S3H0"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "召喚實例歸屬/距離區間/多召喚來源資格 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S3A1",
+   "symbols": [
+    "K_S3A1",
+    "C_S3A1",
+    "T_S3A1"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "召喚實例歸屬/距離區間/多召喚來源資格 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S3A2",
+   "symbols": [
+    "K_S3A2",
+    "C_S3A2",
+    "T_S3A2"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "召喚實例歸屬/距離區間/多召喚來源資格 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S3A3",
+   "symbols": [
+    "K_S3A3",
+    "C_S3A3",
+    "T_S3A3"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "召喚實例歸屬/距離區間/多召喚來源資格 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S3A4",
+   "symbols": [
+    "K_S3A4",
+    "C_S3A4",
+    "T_S3A4"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "召喚實例歸屬/距離區間/多召喚來源資格 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S3A5",
+   "symbols": [
+    "K_S3A5",
+    "C_S3A5",
+    "T_S3A5"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "召喚實例歸屬/距離區間/多召喚來源資格 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S3A6",
+   "symbols": [
+    "K_S3A6",
+    "C_S3A6",
+    "T_S3A6"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "召喚實例歸屬/距離區間/多召喚來源資格 pending_review",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "rule_id": "S3H1",
+   "symbols": [
+    "K_S3H1",
+    "C_S3H1",
+    "T_S3H1"
+   ],
+   "meaning": "K=效果強度函數；C=新效果成本/付款精度；T=期限/持續/刷新，均未定；不表示已採用CD",
+   "value": "pending_review",
+   "normal_atoms": "27 atoms/per-share與原1/3/5份不改；不新增數值或runtime cap",
+   "additional": "召喚實例歸屬/距離區間/多召喚來源資格 pending_review",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

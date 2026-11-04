@@ -1,0 +1,213 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "compiled": false,
+ "runtime": 0,
+ "columns": [
+  "id",
+  "name",
+  "legacy_alias",
+  "advanced_count",
+  "high_count",
+  "unique_advanced",
+  "unique_high",
+  "shared_advanced_count",
+  "shared_candidate_references",
+  "shared_reference_policy",
+  "common_refs",
+  "common_policy",
+  "requires",
+  "slot_policy",
+  "compiled",
+  "runtime"
+ ],
+ "rows": [
+  {
+   "id": "C1",
+   "name": "蓄能術師",
+   "legacy_alias": "C1_energy",
+   "advanced_count": 6,
+   "high_count": 2,
+   "unique_advanced": [
+    "C1A1",
+    "C1A2",
+    "C1A3",
+    "C1A4",
+    "C1A5",
+    "C1A6"
+   ],
+   "unique_high": [
+    "C1H0",
+    "C1H1"
+   ],
+   "shared_advanced_count": 0,
+   "shared_candidate_references": [
+    "IA3",
+    "IA4"
+   ],
+   "shared_reference_policy": "IA3/IA4只可承接同一legacy ID；前置仍IH0與本人印；C1/C2列外可混買引用，不額外計6A，不改為class_common。C3的兩條計入本型6A但不算unique。",
+   "common_refs": [
+    "CA1",
+    "CA2",
+    "CA3",
+    "CA4",
+    "CH1",
+    "CH2"
+   ],
+   "common_policy": "單一legacy common池，不計子型6A2H。",
+   "requires": {
+    "C1H0": [],
+    "C1H1": [
+     "C1H0"
+    ],
+    "C1A1": [
+     "C1H0"
+    ],
+    "C1A2": [
+     "C1H0"
+    ],
+    "C1A3": [
+     "C1H0"
+    ],
+    "C1A4": [
+     "C1H0"
+    ],
+    "C1A5": [
+     "C1H0"
+    ],
+    "C1A6": [
+     "C1H0",
+     "C1H1"
+    ]
+   },
+   "slot_policy": "stable rule ID作slot；新型不指派PoE ID；原C3 17點與保護節點不動",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "C2",
+   "name": "導流術師",
+   "legacy_alias": "C2_conduction",
+   "advanced_count": 6,
+   "high_count": 2,
+   "unique_advanced": [
+    "C2A1",
+    "C2A2",
+    "C2A3",
+    "C2A4",
+    "C2A5",
+    "C2A6"
+   ],
+   "unique_high": [
+    "C2H0",
+    "C2H1"
+   ],
+   "shared_advanced_count": 0,
+   "shared_candidate_references": [
+    "IA3",
+    "IA4"
+   ],
+   "shared_reference_policy": "IA3/IA4只可承接同一legacy ID；前置仍IH0與本人印；C1/C2列外可混買引用，不額外計6A，不改為class_common。C3的兩條計入本型6A但不算unique。",
+   "common_refs": [
+    "CA1",
+    "CA2",
+    "CA3",
+    "CA4",
+    "CH1",
+    "CH2"
+   ],
+   "common_policy": "單一legacy common池，不計子型6A2H。",
+   "requires": {
+    "C2H0": [],
+    "C2H1": [
+     "C2H0"
+    ],
+    "C2A1": [
+     "C2H0"
+    ],
+    "C2A2": [
+     "C2H0"
+    ],
+    "C2A3": [
+     "C2H0"
+    ],
+    "C2A4": [
+     "C2H0"
+    ],
+    "C2A5": [
+     "C2H0"
+    ],
+    "C2A6": [
+     "C2H0",
+     "C2H1"
+    ]
+   },
+   "slot_policy": "stable rule ID作slot；新型不指派PoE ID；原C3 17點與保護節點不動",
+   "compiled": false,
+   "runtime": 0
+  },
+  {
+   "id": "C3",
+   "name": "刻印術師",
+   "legacy_alias": "C3_inscription",
+   "advanced_count": 6,
+   "high_count": 2,
+   "unique_advanced": [
+    "IA1",
+    "IA2",
+    "IA5",
+    "IA6"
+   ],
+   "unique_high": [
+    "IH0",
+    "IH1"
+   ],
+   "shared_advanced_count": 2,
+   "shared_candidate_references": [
+    "IA3",
+    "IA4"
+   ],
+   "shared_reference_policy": "IA3/IA4只可承接同一legacy ID；前置仍IH0與本人印；C1/C2列外可混買引用，不額外計6A，不改為class_common。C3的兩條計入本型6A但不算unique。",
+   "common_refs": [
+    "CA1",
+    "CA2",
+    "CA3",
+    "CA4",
+    "CH1",
+    "CH2"
+   ],
+   "common_policy": "單一legacy common池，不計子型6A2H。",
+   "requires": {
+    "IA1": [
+     61308
+    ],
+    "IA2": [
+     61308,
+     53018
+    ],
+    "IA3": [
+     61308
+    ],
+    "IA4": [
+     61308
+    ],
+    "IA5": [
+     61308,
+     53018
+    ],
+    "IA6": [
+     61308,
+     53018
+    ],
+    "IH1": [
+     61308
+    ],
+    "IH0": []
+   },
+   "slot_policy": "stable rule ID作slot；新型不指派PoE ID；原C3 17點與保護節點不動",
+   "compiled": false,
+   "runtime": 0
+  }
+ ]
+}

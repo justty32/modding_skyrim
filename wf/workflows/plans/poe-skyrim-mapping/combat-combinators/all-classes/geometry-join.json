@@ -1,0 +1,32 @@
+{
+ "contract": "wf-table/1",
+ "source": "REPORT.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "check",
+  "result",
+  "detail"
+ ],
+ "rows": [
+  {
+   "check": "slot coverage",
+   "result": "PASS",
+   "detail": "240 exact rule IDs:42 immutable legacy+198 new"
+  },
+  {
+   "check": "draft requires_slots to geometry AND",
+   "result": "PASS",
+   "detail": "all198 new mapped exactly;11 stronger prereqs included,0 mismatches"
+  },
+  {
+   "check": "geometry validation source",
+   "result": "producer+independent join",
+   "detail": "24closures/8common paths from geometry verification; supervisor independently matched current rule dependencies"
+  },
+  {
+   "check": "legacy placement/protected occupancy",
+   "result": "PASS",
+   "detail": "42 original rule refs map to same nodes;55 legacy IDs reserved;198 new node IDs unique and disjoint from55 and40439/42343/30693"
+  }
+ ]
+}
