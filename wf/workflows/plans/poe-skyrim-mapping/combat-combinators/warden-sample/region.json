@@ -1,0 +1,1478 @@
+{
+ "contract": "wf-table/1",
+ "source": "offline candidate geometry",
+ "extracted": "2026-11-04",
+ "sourceSha256": "7e9f755e33152129ebf36c2ebdad639c527e4ad70d274b1fefb860f30ca01122",
+ "converter": "frozen1.2.3/source/tools/convert_poe_graph.py",
+ "protectedPolicy": "local one-hop boundary only; global raw/policy protected counts verified without copying rows",
+ "globalRawKeystones": 57,
+ "globalPolicyKeystones": 48,
+ "globalPolicyUnchanged": true,
+ "blockedCandidateOverlap": [],
+ "subtype_display_name": "守衛者",
+ "current_design": "portable buff; geometry retained from superseded circle draft",
+ "compiled_runtime": false,
+ "connected_with_original_start": true,
+ "selected_components_without_start": 2,
+ "start_is_context_not_filled": true,
+ "columns": [
+  "id",
+  "label",
+  "scope",
+  "status",
+  "type",
+  "weight",
+  "group",
+  "orbit",
+  "orbitIndex",
+  "position",
+  "neighbors",
+  "source_in",
+  "source_out",
+  "original_type_flags",
+  "effects"
+ ],
+ "rows": [
+  {
+   "id": 2454,
+   "label": "Two Handed Melee Damage",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 213,
+   "orbit": 3,
+   "orbitIndex": 3,
+   "position": [
+    -5072.031489732212,
+    1627.93
+   ],
+   "neighbors": [
+    14606,
+    38777,
+    64077
+   ],
+   "source_in": [
+    "14606",
+    "64077"
+   ],
+   "source_out": [
+    "38777"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.2
+    ],
+    [
+     14,
+     0.5
+    ],
+    [
+     19,
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": 5152,
+   "label": "Life",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 253,
+   "orbit": 2,
+   "orbitIndex": 7,
+   "position": [
+    -4354.9,
+    2564.176115413079
+   ],
+   "neighbors": [
+    24383,
+    61198
+   ],
+   "source_in": [
+    "24383"
+   ],
+   "source_out": [
+    "61198"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 6446,
+   "label": "Strength",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 197,
+   "orbit": 4,
+   "orbitIndex": 0,
+   "position": [
+    -5659.23,
+    1302.43
+   ],
+   "neighbors": [
+    10221,
+    26523,
+    27166,
+    55649
+   ],
+   "source_in": [
+    "27166",
+    "10221",
+    "26523"
+   ],
+   "source_out": [
+    "55649"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 6718,
+   "label": "Elemental Resistances",
+   "scope": "ordinary",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 214,
+   "orbit": 3,
+   "orbitIndex": 4,
+   "position": [
+    -5027.15,
+    3066.9
+   ],
+   "neighbors": [
+    24383,
+    59861,
+    61868,
+    65308
+   ],
+   "source_in": [],
+   "source_out": [
+    "59861",
+    "24383",
+    "61868",
+    "65308"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     4,
+     0.34
+    ],
+    [
+     5,
+     0.33
+    ],
+    [
+     6,
+     0.33
+    ]
+   ]
+  },
+  {
+   "id": 6981,
+   "label": "Strength",
+   "scope": "commonA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 303,
+   "orbit": 4,
+   "orbitIndex": 10,
+   "position": [
+    -2991.79,
+    3066.9
+   ],
+   "neighbors": [
+    36543,
+    50904
+   ],
+   "source_in": [
+    "50904"
+   ],
+   "source_out": [
+    "36543"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 7828,
+   "label": "Melee Attack Speed",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 286,
+   "orbit": 2,
+   "orbitIndex": 8,
+   "position": [
+    -3815.85,
+    1957.43
+   ],
+   "neighbors": [
+    32480,
+    40535
+   ],
+   "source_in": [
+    "40535"
+   ],
+   "source_out": [
+    "32480"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     17,
+     0.4
+    ],
+    [
+     22,
+     0.2
+    ],
+    [
+     25,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": 9511,
+   "label": "Strength",
+   "scope": "ordinary",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 293,
+   "orbit": 4,
+   "orbitIndex": 3,
+   "position": [
+    -3505.1326836284034,
+    1356.1637835751346
+   ],
+   "neighbors": [
+    23881,
+    31628
+   ],
+   "source_in": [
+    "31628"
+   ],
+   "source_out": [
+    "23881"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 10282,
+   "label": "One Handed Melee Damage",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 213,
+   "orbit": 3,
+   "orbitIndex": 5,
+   "position": [
+    -5072.031489732212,
+    1962.93
+   ],
+   "neighbors": [
+    35663,
+    38777,
+    64077
+   ],
+   "source_in": [
+    "64077",
+    "38777"
+   ],
+   "source_out": [
+    "35663"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.2
+    ],
+    [
+     13,
+     0.5
+    ],
+    [
+     19,
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": 15438,
+   "label": "Two Handed Melee Damage and Stun Duration",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 271,
+   "orbit": 2,
+   "orbitIndex": 15,
+   "position": [
+    -4328.401298552221,
+    3829.7287014477797
+   ],
+   "neighbors": [
+    8426,
+    28728,
+    49412
+   ],
+   "source_in": [],
+   "source_out": [
+    "49412",
+    "8426",
+    "28728"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.13333333333333333
+    ],
+    [
+     14,
+     0.3333333333333333
+    ],
+    [
+     19,
+     0.19999999999999998
+    ],
+    [
+     28,
+     0.3333333333333333
+    ]
+   ]
+  },
+  {
+   "id": 20551,
+   "label": "Life",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 253,
+   "orbit": 2,
+   "orbitIndex": 1,
+   "position": [
+    -4354.9,
+    2283.583884586921
+   ],
+   "neighbors": [
+    58449,
+    61198
+   ],
+   "source_in": [
+    "61198"
+   ],
+   "source_out": [
+    "58449"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 22627,
+   "label": "Life and Armour",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 314,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -3303.02,
+    2466.05
+   ],
+   "neighbors": [
+    15868,
+    50904
+   ],
+   "source_in": [
+    "15868"
+   ],
+   "source_out": [
+    "50904"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     3,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 23881,
+   "label": "Strength",
+   "scope": "ordinary",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 293,
+   "orbit": 4,
+   "orbitIndex": 0,
+   "position": [
+    -3728.95,
+    1302.43
+   ],
+   "neighbors": [
+    9511,
+    26523
+   ],
+   "source_in": [
+    "9511"
+   ],
+   "source_out": [
+    "26523"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 24383,
+   "label": "Warrior's Blood",
+   "scope": "commonH",
+   "status": "pending",
+   "type": "notable",
+   "weight": 3,
+   "group": 254,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -4435.9,
+    3066.9
+   ],
+   "neighbors": [
+    5152,
+    6718,
+    32739,
+    49412,
+    63048
+   ],
+   "source_in": [
+    "6718",
+    "32739",
+    "63048"
+   ],
+   "source_out": [
+    "49412",
+    "5152"
+   ],
+   "original_type_flags": {
+    "isNotable": true
+   },
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ],
+    [
+     20,
+     1.0
+    ],
+    [
+     28,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 24755,
+   "label": "Path of the Marauder",
+   "scope": "protected",
+   "status": "protected",
+   "type": "ascendancy",
+   "weight": 0,
+   "group": 65,
+   "orbit": 2,
+   "orbitIndex": 8,
+   "position": [
+    -8994.88,
+    8826.64
+   ],
+   "neighbors": [
+    30690,
+    31628,
+    50904
+   ],
+   "source_in": [
+    "30690"
+   ],
+   "source_out": [
+    "31628",
+    "50904"
+   ],
+   "original_type_flags": {
+    "isNotable": true,
+    "ascendancyName": "Ascendant"
+   },
+   "effects": []
+  },
+  {
+   "id": 26523,
+   "label": "Strength",
+   "scope": "ordinary",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 257,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -4435.88,
+    1302.43
+   ],
+   "neighbors": [
+    6446,
+    23881,
+    44606,
+    58449
+   ],
+   "source_in": [
+    "58449",
+    "44606",
+    "23881"
+   ],
+   "source_out": [
+    "6446"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 30335,
+   "label": "Melee Damage",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 286,
+   "orbit": 2,
+   "orbitIndex": 0,
+   "position": [
+    -3815.85,
+    1633.43
+   ],
+   "neighbors": [
+    32480,
+    40535
+   ],
+   "source_in": [
+    "32480"
+   ],
+   "source_out": [
+    "40535"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     17,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 31080,
+   "label": "Dexterity",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 327,
+   "orbit": 4,
+   "orbitIndex": 23,
+   "position": [
+    -3122.0273163715965,
+    3979.8462164248654
+   ],
+   "neighbors": [
+    43374,
+    49412,
+    50340
+   ],
+   "source_in": [
+    "49412",
+    "50340"
+   ],
+   "source_out": [
+    "43374"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 31628,
+   "label": "Melee Damage and Life",
+   "scope": "ordinary",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 330,
+   "orbit": 3,
+   "orbitIndex": 12,
+   "position": [
+    -3159.29,
+    1642.43
+   ],
+   "neighbors": [
+    9511,
+    24755,
+    33988,
+    47175
+   ],
+   "source_in": [
+    "24755",
+    "33988",
+    "47175"
+   ],
+   "source_out": [
+    "9511"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     17,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 31928,
+   "label": "Armour",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 214,
+   "orbit": 3,
+   "orbitIndex": 13,
+   "position": [
+    -5685.735151806837,
+    2980.195619890656
+   ],
+   "neighbors": [
+    10542,
+    37884,
+    65308
+   ],
+   "source_in": [
+    "65308"
+   ],
+   "source_out": [
+    "10542",
+    "37884"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 32480,
+   "label": "Melee Damage",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 286,
+   "orbit": 2,
+   "orbitIndex": 4,
+   "position": [
+    -3653.85,
+    1795.43
+   ],
+   "neighbors": [
+    7828,
+    30335,
+    33988
+   ],
+   "source_in": [
+    "7828"
+   ],
+   "source_out": [
+    "30335",
+    "33988"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     17,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 32482,
+   "label": "Life Regeneration",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 214,
+   "orbit": 3,
+   "orbitIndex": 11,
+   "position": [
+    -5652.268510267786,
+    3234.4
+   ],
+   "neighbors": [
+    31033,
+    37884,
+    65308
+   ],
+   "source_in": [
+    "31033",
+    "65308"
+   ],
+   "source_out": [
+    "37884"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     20,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 32739,
+   "label": "Accuracy",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 253,
+   "orbit": 2,
+   "orbitIndex": 9,
+   "position": [
+    -4516.9,
+    2564.176115413079
+   ],
+   "neighbors": [
+    12795,
+    24383
+   ],
+   "source_in": [
+    "12795"
+   ],
+   "source_out": [
+    "24383"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 33988,
+   "label": "Melee Damage",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 306,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -3452.99,
+    1795.43
+   ],
+   "neighbors": [
+    31628,
+    32480
+   ],
+   "source_in": [
+    "32480"
+   ],
+   "source_out": [
+    "31628"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     17,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 36543,
+   "label": "Strength",
+   "scope": "commonA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 303,
+   "orbit": 4,
+   "orbitIndex": 20,
+   "position": [
+    -3484.79,
+    3559.9
+   ],
+   "neighbors": [
+    6981,
+    49412
+   ],
+   "source_in": [
+    "6981"
+   ],
+   "source_out": [
+    "49412"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 38777,
+   "label": "Melee Damage",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 213,
+   "orbit": 3,
+   "orbitIndex": 4,
+   "position": [
+    -5027.15,
+    1795.43
+   ],
+   "neighbors": [
+    2454,
+    10282,
+    58449
+   ],
+   "source_in": [
+    "2454"
+   ],
+   "source_out": [
+    "10282",
+    "58449"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.2
+    ],
+    [
+     17,
+     0.5
+    ],
+    [
+     19,
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": 39768,
+   "label": "Accuracy",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 253,
+   "orbit": 2,
+   "orbitIndex": 15,
+   "position": [
+    -4550.451298552221,
+    2309.3287014477796
+   ],
+   "neighbors": [
+    12795,
+    58449
+   ],
+   "source_in": [
+    "58449"
+   ],
+   "source_out": [
+    "12795"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 40535,
+   "label": "Melee Damage",
+   "scope": "subA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 286,
+   "orbit": 2,
+   "orbitIndex": 12,
+   "position": [
+    -3977.85,
+    1795.43
+   ],
+   "neighbors": [
+    7828,
+    30335,
+    58449
+   ],
+   "source_in": [
+    "30335"
+   ],
+   "source_out": [
+    "7828",
+    "58449"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     17,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 40653,
+   "label": "Strength",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 198,
+   "orbit": 4,
+   "orbitIndex": 20,
+   "position": [
+    -5659.23,
+    3559.9
+   ],
+   "neighbors": [
+    9052,
+    33098,
+    42800,
+    49412,
+    53793,
+    62108
+   ],
+   "source_in": [
+    "62108",
+    "53793",
+    "33098",
+    "49412"
+   ],
+   "source_out": [
+    "42800",
+    "9052"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 44606,
+   "label": "Intelligence",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 256,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -4435.88,
+    686.855
+   ],
+   "neighbors": [
+    19261,
+    26523,
+    50862
+   ],
+   "source_in": [
+    "19261",
+    "50862"
+   ],
+   "source_out": [
+    "26523"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     2,
+     0.7
+    ],
+    [
+     16,
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": 47175,
+   "label": "MARAUDER",
+   "scope": "boundary",
+   "status": "context",
+   "type": "start",
+   "weight": 0,
+   "group": 330,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -2824.29,
+    1642.43
+   ],
+   "neighbors": [
+    17765,
+    24704,
+    29294,
+    31628,
+    50904
+   ],
+   "source_in": [],
+   "source_out": [
+    "31628",
+    "50904",
+    "17765",
+    "24704",
+    "29294"
+   ],
+   "original_type_flags": {
+    "classStartIndex": 1
+   },
+   "effects": []
+  },
+  {
+   "id": 49412,
+   "label": "Strength",
+   "scope": "commonA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 255,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -4435.9,
+    3559.9
+   ],
+   "neighbors": [
+    15438,
+    24383,
+    31080,
+    36543,
+    40653
+   ],
+   "source_in": [
+    "24383",
+    "15438",
+    "36543"
+   ],
+   "source_out": [
+    "31080",
+    "40653"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 50904,
+   "label": "Life and Armour",
+   "scope": "commonA",
+   "status": "pending",
+   "type": "normal",
+   "weight": 1,
+   "group": 330,
+   "orbit": 3,
+   "orbitIndex": 9,
+   "position": [
+    -2991.79,
+    1932.548510267787
+   ],
+   "neighbors": [
+    6981,
+    22627,
+    24755,
+    47175
+   ],
+   "source_in": [
+    "24755",
+    "22627",
+    "47175"
+   ],
+   "source_out": [
+    "6981"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     3,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 58449,
+   "label": "Born to Fight",
+   "scope": "subH0",
+   "status": "pending",
+   "type": "notable",
+   "weight": 3,
+   "group": 252,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -4435.9,
+    1795.43
+   ],
+   "neighbors": [
+    20551,
+    26523,
+    38777,
+    39768,
+    40535
+   ],
+   "source_in": [
+    "38777",
+    "20551",
+    "40535"
+   ],
+   "source_out": [
+    "26523",
+    "39768"
+   ],
+   "original_type_flags": {
+    "isNotable": true
+   },
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     10,
+     0.5
+    ],
+    [
+     18,
+     1.4000000000000001
+    ],
+    [
+     22,
+     0.20000000000000004
+    ],
+    [
+     25,
+     0.4000000000000001
+    ]
+   ]
+  },
+  {
+   "id": 59861,
+   "label": "Life Regeneration",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 214,
+   "orbit": 3,
+   "orbitIndex": 5,
+   "position": [
+    -5072.031489732212,
+    3234.4
+   ],
+   "neighbors": [
+    6718,
+    31033
+   ],
+   "source_in": [
+    "6718",
+    "31033"
+   ],
+   "source_out": [],
+   "original_type_flags": {},
+   "effects": [
+    [
+     20,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 61198,
+   "label": "Heart of the Warrior",
+   "scope": "subH1",
+   "status": "pending",
+   "type": "notable",
+   "weight": 3,
+   "group": 253,
+   "orbit": 2,
+   "orbitIndex": 4,
+   "position": [
+    -4273.9,
+    2423.88
+   ],
+   "neighbors": [
+    5152,
+    20551
+   ],
+   "source_in": [
+    "5152"
+   ],
+   "source_out": [
+    "20551"
+   ],
+   "original_type_flags": {
+    "isNotable": true
+   },
+   "effects": [
+    [
+     1,
+     2.5
+    ],
+    [
+     10,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 61868,
+   "label": "Armour",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 214,
+   "orbit": 3,
+   "orbitIndex": 3,
+   "position": [
+    -5072.031489732212,
+    2899.4
+   ],
+   "neighbors": [
+    6718,
+    10542
+   ],
+   "source_in": [
+    "6718"
+   ],
+   "source_out": [
+    "10542"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     3,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": 63048,
+   "label": "Life and Armour",
+   "scope": "boundary",
+   "status": "context",
+   "type": "normal",
+   "weight": 1,
+   "group": 287,
+   "orbit": 2,
+   "orbitIndex": 12,
+   "position": [
+    -3977.85,
+    3066.9
+   ],
+   "neighbors": [
+    24383,
+    36047,
+    50264
+   ],
+   "source_in": [
+    "36047"
+   ],
+   "source_out": [
+    "50264",
+    "24383"
+   ],
+   "original_type_flags": {},
+   "effects": [
+    [
+     1,
+     0.5
+    ],
+    [
+     3,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": 65308,
+   "label": "Diamond Skin",
+   "scope": "commonH",
+   "status": "pending",
+   "type": "notable",
+   "weight": 3,
+   "group": 214,
+   "orbit": 0,
+   "orbitIndex": 0,
+   "position": [
+    -5362.15,
+    3066.9
+   ],
+   "neighbors": [
+    6718,
+    31928,
+    32482
+   ],
+   "source_in": [
+    "6718"
+   ],
+   "source_out": [
+    "31928",
+    "32482"
+   ],
+   "original_type_flags": {
+    "isNotable": true
+   },
+   "effects": [
+    [
+     4,
+     1.02
+    ],
+    [
+     5,
+     0.99
+    ],
+    [
+     6,
+     0.99
+    ]
+   ]
+  }
+ ]
+}

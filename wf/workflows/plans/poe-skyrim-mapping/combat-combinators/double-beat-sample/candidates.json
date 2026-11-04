@@ -276,7 +276,7 @@
    "original_weight": 3,
    "design_tier": "high",
    "candidate_name": "互不打斷",
-   "effect": "本人近戰不再造成stagger；本人也不受敵原生近戰武器stagger",
+   "effect": "本人原生近戰及盾/武器bash不再造成stagger；本人也不受敵人此類stagger，法術/箭矢不擴",
    "rule_refs": [
     "GCH1"
    ],
@@ -316,7 +316,7 @@
    "original_weight": 1,
    "design_tier": "advanced",
    "candidate_name": "穩架承壓",
-   "effect": "本次格擋後合格傷害/(1+0.10*n)",
+   "effect": "本次原生格擋/護甲後合格敵向近戰HP傷/(1+0.10*n)；n合本actor同canonical有效份數，同交易只除一次",
    "rule_refs": [
     "GCA2"
    ],

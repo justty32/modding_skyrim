@@ -25,6 +25,8 @@ commonlibsee-ng README 漏索引）已於 2026-10-26 做完，見
 
 - [planning] 近衛common＋G1「浪潮鬥士」19真點候選待使用者過目；命名理由「一浪接一浪」。4common A/2H與6sub A/2H分計、前置AND圖連通，runtime=0、不進術師registry。見[人頁](wf/user/2026-11-04-guard-double-beat-sample.md)，本場仍16:25收尾／16:50保存。
 
+- [planning] 重裝D1「守衛者」19真點可攜護援候選已落，common4A2H/sub6A2H，runtime=0；固定圈草案非current，七原start為免費錨點、未實跑新rule購點。見[人頁](wf/user/2026-11-04-heavy-warden-sample.md)；16:10已停加設計，僅保存/交接。
+
 ## Durable 狀態入口
 
 - DSP／houseCARL 已完成的離線修復、三條隔離分支與續接位置：

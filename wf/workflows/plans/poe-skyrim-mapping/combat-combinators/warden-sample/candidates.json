@@ -1,0 +1,392 @@
+{
+ "contract": "wf-table/1",
+ "source": "README.md",
+ "extracted": "2026-11-04",
+ "compiled_runtime": false,
+ "subtype_display_name": "守衛者",
+ "current_design": "portable buff, no anchor/circle requirement",
+ "columns": [
+  "node_id",
+  "original_label",
+  "original_type",
+  "original_weight",
+  "design_tier",
+  "candidate_name",
+  "effect",
+  "rule_refs",
+  "scope",
+  "status",
+  "requires_nodes",
+  "normal_atom",
+  "normal_shares",
+  "normal_per_share",
+  "budget_proposal"
+ ],
+ "rows": [
+  {
+   "node_id": 6718,
+   "original_label": "Elemental Resistances",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "厚命",
+   "effect": "HP 1share=5.0",
+   "rule_refs": [],
+   "scope": "ordinary",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": "HP",
+   "normal_shares": 1,
+   "normal_per_share": 5.0,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 6981,
+   "original_label": "Strength",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "危局節力",
+   "effect": "本次原生近戰格擋SP成本/(1+0.15*n)",
+   "rule_refs": [
+    "DCA2"
+   ],
+   "scope": "class_common",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 7828,
+   "original_label": "Melee Attack Speed",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "逆鋒制敵",
+   "effect": "削實際攻擊者SP=sum(各giver授予快照final maxSP*0.03*n_i)",
+   "rule_refs": [
+    "WDA3"
+   ],
+   "scope": "subtype",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [
+    58449
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 9511,
+   "original_label": "Strength",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "續守",
+   "effect": "SP 1share=5.0",
+   "rule_refs": [],
+   "scope": "ordinary",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": "SP",
+   "normal_shares": 1,
+   "normal_per_share": 5.0,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 20551,
+   "original_label": "Life",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "軍心振奮",
+   "effect": "只該recipient回其final maxSP*0.02*n",
+   "rule_refs": [
+    "WDA6"
+   ],
+   "scope": "subtype",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [
+    58449
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 23881,
+   "original_label": "Strength",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "甲護",
+   "effect": "AR 1share=6.0",
+   "rule_refs": [],
+   "scope": "ordinary",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": "AR",
+   "normal_shares": 1,
+   "normal_per_share": 6.0,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 24383,
+   "original_label": "Warrior's Blood",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "耐力護體",
+   "effect": "原生block費先付；原生block/armor/已符合防護後殘HP傷，先以付款後剩SP按1:1支付，不足才扣HP",
+   "rule_refs": [
+    "DCH1"
+   ],
+   "scope": "class_common",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 26523,
+   "original_label": "Strength",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "調息",
+   "effect": "SPREGEN 1share=10.0",
+   "rule_refs": [],
+   "scope": "ordinary",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": "SPREGEN",
+   "normal_shares": 1,
+   "normal_per_share": 10.0,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 30335,
+   "original_label": "Melee Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "摧軍反攻",
+   "effect": "撤全部本人有效外送lease，該次原生bash stagger*(1+0.50*n)",
+   "rule_refs": [
+    "WDA4"
+   ],
+   "scope": "subtype",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [
+    58449
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 31628,
+   "original_label": "Melee Damage and Life",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "立身",
+   "effect": "HP 1share=5.0",
+   "rule_refs": [],
+   "scope": "ordinary",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": "HP",
+   "normal_shares": 1,
+   "normal_per_share": 5.0,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 32480,
+   "original_label": "Melee Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "戰意回湧",
+   "effect": "一次withdraw後回giver final maxSP*0.02*n*avg(每份被撤lease remaining/originalDuration)",
+   "rule_refs": [
+    "WDA5"
+   ],
+   "scope": "subtype",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [
+    58449
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 36543,
+   "original_label": "Strength",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "擋重破勢",
+   "effect": "額外削敵SP=本人final maxSP*0.03*n",
+   "rule_refs": [
+    "DCA3"
+   ],
+   "scope": "class_common",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 38777,
+   "original_label": "Melee Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "磐石之軀",
+   "effect": "待扣HP/(1+0.10*sum(n_i))；同canonical所有合法giver係數合一次",
+   "rule_refs": [
+    "WDA1"
+   ],
+   "scope": "subtype",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [
+    58449
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 40535,
+   "original_label": "Melee Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "城垣壁障",
+   "effect": "WDA1後再抵sum(10*n_i)HP，不倒補HP",
+   "rule_refs": [
+    "WDA2"
+   ],
+   "scope": "subtype",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [
+    58449
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 49412,
+   "original_label": "Strength",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "疲守保命",
+   "effect": "該次HP傷/(1+0.10*n)",
+   "rule_refs": [
+    "DCA4"
+   ],
+   "scope": "class_common",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 50904,
+   "original_label": "Life and Armour",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "穩架承壓",
+   "effect": "本次原生格擋/護甲後合格敵向近戰HP傷/(1+0.10*n)；n合本actor同canonical有效份數，同交易只除一次",
+   "rule_refs": [
+    "DCA1"
+   ],
+   "scope": "class_common",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 58449,
+   "original_label": "Born to Fight",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "鐵衛之誓",
+   "effect": "真格擋後向同戰鬥場景/R_apply內可見合法存活隊友派一份giver+recipient護援；優先最近尚無本人援者，全有才刷新本人最早到期一份，穩定key破平手",
+   "rule_refs": [
+    "WDH0"
+   ],
+   "scope": "subtype",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 61198,
+   "original_label": "Heart of the Warrior",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "長城意志",
+   "effect": "護援不因一次受傷消耗，改在每份原expires內持續；giver維持期間不能普/重/bash",
+   "rule_refs": [
+    "WDH1"
+   ],
+   "scope": "subtype",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [
+    58449
+   ],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  },
+  {
+   "node_id": 65308,
+   "original_label": "Diamond Skin",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "厚甲薄力",
+   "effect": "final maxHP*2；final maxSP*0.25（試案），不改MP",
+   "rule_refs": [
+    "DCH2"
+   ],
+   "scope": "class_common",
+   "status": "design_candidate_pending_no_runtime",
+   "requires_nodes": [],
+   "normal_atom": null,
+   "normal_shares": null,
+   "normal_per_share": null,
+   "budget_proposal": "replace original effects; no old GGG numeric bonus retained; rule budget pending"
+  }
+ ]
+}

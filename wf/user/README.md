@@ -12,6 +12,7 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 <!-- wf-nav -->
 | 檔案 | 內容 |
 |------|------|
+| [2026-11-04-heavy-warden-sample.md](2026-11-04-heavy-warden-sample.md) | 重裝通用＋守衛者：19真點、可攜隊友護援／持盾承諾，純設計無runtime |
 | [2026-11-04-guard-double-beat-sample.md](2026-11-04-guard-double-beat-sample.md) | 近衛通用＋浪潮鬥士：19真點、14條規則與原生操作情境；命名一浪接一浪，純設計待過目 |
 | [2026-11-04-native-spell-templates.md](2026-11-04-native-spell-templates.md) | Skyrim原生法術三層、10組效果與47有名ID，分清原生配置／腳本／新hook |
 | [2026-11-04-inscription-sample.md](2026-11-04-inscription-sample.md) | 術師通用＋刻印：17真點／14候選規則，H0→A4隔離source離線通過，normal未開／未live |

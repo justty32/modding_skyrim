@@ -9,6 +9,15 @@
  "naming_reason": "2026-11-04 使用者命名：一浪接一浪；stable IDs/path不變",
  "n_definition": "effective shares allocated to this exact advanced rule; current A normal weight1=>n1; not High rank/weight or other rules; n<=0/unknown disabled; thresholds/TTL/state counts do not auto-scale",
  "focus_actor_selector": "At creation and every focus branch: alive eligible Actor != owner and hostile relative to owner; non-Actor/self/ally events do not create/refresh/redeem or punish-clear an otherwise valid focus. Original focus expiry/death/invalidity still clears.",
+ "shared_block_canonical": {
+  "id": "MELEE_BLOCK_HIGH_SP_DAMAGE_DIV",
+  "aliases": [
+   "GCA2",
+   "DCA1"
+  ],
+  "selector": "本人為target，attacker是存活/非本人/相對owner敵對Actor，source可確認原生近戰WEAP且HitBlocked；排projectile/箭/法術/bash/環境/自傷；同一交易開始SP/maxSP>=50%快照",
+  "share_aggregation": "same actor sum canonical shares once; one pre-event SP ratio snapshot; not repeated multipliers"
+ },
  "columns": [
   "rule_id",
   "name",
@@ -70,9 +79,9 @@
    "shared_with": [],
    "unique_against": [],
    "mechanic_reason": "",
-   "trigger_condition": "本人為target，本次原生武器hit有HitBlocked，事件前SP/maxSP>=50%",
-   "effect_formula": "本次格擋後合格傷害/(1+0.10*n)",
-   "cost_timing": "本次原生結算前；非完美格擋/非吸收量",
+   "trigger_condition": "本人為target，attacker是存活/非本人/相對owner敵對Actor，source可確認原生近戰WEAP且HitBlocked；排projectile/箭/法術/bash/環境/自傷；同一交易開始SP/maxSP>=50%快照",
+   "effect_formula": "本次原生格擋/護甲後合格敵向近戰HP傷/(1+0.10*n)；n合本actor同canonical有效份數，同交易只除一次",
+   "cost_timing": "MELEE_BLOCK_HIGH_SP_DAMAGE_DIV；本actor兩placement合n、事件前snapshot判一次、同交易只除一次",
    "lifecycle": "只本次傷害",
    "compatibility": "GCH2本人不能格擋時無觸發",
    "capability": "需帶攻擊者/blocked分類的原生傷害結算",
@@ -145,11 +154,11 @@
    "shared_with": [],
    "unique_against": [],
    "mechanic_reason": "",
-   "trigger_condition": "常駐改寫本人造成/承受的原生近戰武器stagger路徑",
-   "effect_formula": "本人近戰不再造成stagger；本人也不受敵原生近戰武器stagger",
+   "trigger_condition": "常駐改寫本人造成/承受的原生近戰武器及盾/武器bash失衡路徑",
+   "effect_formula": "本人原生近戰及盾/武器bash不再造成stagger；本人也不受敵人此類stagger，法術/箭矢不擴",
    "cost_timing": "不改HP/SP傷害；只該來源類別",
    "lifecycle": "非全場免控、非抗性倍率",
-   "compatibility": "GCA3被禁止；法術/箭矢硬直照常",
+   "compatibility": "GCA3被禁止；法術/箭矢硬直照常；禁止失衡優先使守衛WDA4分支停用，不因普通bash白撤援護",
    "capability": "需可分來源且可控制原生stagger；未實作",
    "high_kind": "pure-rule",
    "before_play": "靠互相打斷搶出手",
