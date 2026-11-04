@@ -1,0 +1,52 @@
+{
+ "contract": "wf-table/1",
+ "source": "README.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "id",
+  "name",
+  "build_ids",
+  "sequence",
+  "decision",
+  "shared_semantics",
+  "boundary"
+ ],
+ "rows": [
+  {
+   "id": "MX1",
+   "name": "符印咒刃",
+   "build_ids": "G1+C3",
+   "sequence": "法術刻印A→第一劍試探→第二劍消印收招或改盾擊斷招留印",
+   "decision": "輸出兌現或控制救急",
+   "shared_semantics": "owner狀態可由另一類武器/法術消耗；跨事件原子交易",
+   "boundary": "不要求一擊多事件已存在；消印與斷招不得同免費取得"
+  },
+  {
+   "id": "MX2",
+   "name": "契靈獵隊",
+   "build_ids": "V3+S3+R1",
+   "sequence": "召喚命中A→本人遠程弱點/契印→召喚接棒護援或本人射擊收招轉B",
+   "decision": "自己兌現或讓夥伴接棒",
+   "shared_semantics": "第三方原生命中/owner/target與一次消耗",
+   "boundary": "同份印不花兩次；擊殺/助攻歸屬與分配未定"
+  },
+  {
+   "id": "MX3",
+   "name": "移動救護線",
+   "build_ids": "D1+M3+S2",
+   "sequence": "前排復甦印→近身接戰立守勢→持續支援；轉火後留守或停詠撤守移位急救",
+   "decision": "保住既有位置或救另一處",
+   "shared_semantics": "空間錨、友軍範圍、狀態消耗",
+   "boundary": "三筆成本獨立，不一開全自動全圖保護"
+  },
+  {
+   "id": "MX4",
+   "name": "牽引爆陣",
+   "build_ids": "X2+X3+C1",
+   "sequence": "布陣並付MP存咒→牽敵至陣邊→等聚群引爆/放咒或提前推敵救人",
+   "decision": "爆發效率或即時救援",
+   "shared_semantics": "位置、準備與區域觸發，合成事件排遞迴",
+   "boundary": "拉推/落點/引爆均未證，不借此承諾引擎可行"
+  }
+ ]
+}

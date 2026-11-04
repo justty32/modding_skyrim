@@ -1,0 +1,283 @@
+{
+ "contract": "wf-table/1",
+ "source": "../../../../user/2026-11-04-combat-playstyles.md",
+ "extracted": "2026-11-04",
+ "scope": "Eight role families with three original proposals each. Not mutually exclusive classes, not an exhaustive Arknights taxonomy, not implemented. All numbers/costs/durations unapproved.",
+ "columns": [
+  "id",
+  "class",
+  "name",
+  "fantasy",
+  "loop",
+  "decision",
+  "reference_branch",
+  "boundary",
+  "status"
+ ],
+ "rows": [
+  {
+   "id": "V1",
+   "class": "先鋒",
+   "name": "突入獵手",
+   "fantasy": "先撕開第一個缺口",
+   "loop": "標近敵→投入耐力突入/近戰→有效擊殺或助攻取得下一敵續戰機會",
+   "decision": "打脆敵穩續戰或花成本打高危核心",
+   "reference_branch": "衝鋒手",
+   "boundary": "助攻資格、擊殺歸屬與移動載具待驗，不默認必須搶尾刀",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "V2",
+   "class": "先鋒",
+   "name": "戰旗詠唱者",
+   "fantasy": "我暫停輸出換全隊推進",
+   "loop": "正常接戰→持續支援施法給近友耐力/魔力續戰→停止詠唱回攻擊",
+   "decision": "當下缺自己一刀，或同伴下一輪施法",
+   "reference_branch": "執旗手",
+   "boundary": "不用部署費/旗幟選單；與輔助領域以SP/MP推進資源區分",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "V3",
+   "class": "先鋒",
+   "name": "召援斥候",
+   "fantasy": "我和召喚夥伴夾出突破口",
+   "loop": "召援有效命中A→本人打A建立合作標→援軍再命中兌現追擊/續戰",
+   "decision": "集中破一敵或拆遠程保夥伴",
+   "reference_branch": "戰術家",
+   "boundary": "只用已觀察命中，不讀方舟阻擋或假定AI命令",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "G1",
+   "class": "近衛",
+   "name": "雙拍劍士",
+   "fantasy": "第一拍試探，第二拍選傷口",
+   "loop": "普擊短節奏→下一劍同敵深化破綻或盾擊改打斷→重擊兌現重置",
+   "decision": "連打傷害、打斷危險招或提前收招",
+   "reference_branch": "劍豪",
+   "boundary": "連段不等於原生一擊兩段；傷害/打斷類型待定",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "G2",
+   "class": "近衛",
+   "name": "浴血決鬥者",
+   "fantasy": "我必須打出退路",
+   "loop": "承受傷勢→近戰命中取自救機會→再擊恢復，或撤離受外援放棄進攻收益",
+   "decision": "近身賭續航或退開保命",
+   "reference_branch": "武者",
+   "boundary": "一般治療限制僅可選代價，不默認封禁一切外援或加攻速",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "G3",
+   "class": "近衛",
+   "name": "藏鋒者",
+   "fantasy": "忍住出手直到值得的一擊",
+   "loop": "真格擋/交鋒成勢→暫不揮劍→下一擊釋放或提前救急；新壓力替換舊勢",
+   "decision": "保留機會等窗口或現在干預",
+   "reference_branch": "解放者",
+   "boundary": "不按戰外等待無限累積；最近有效交鋒函數/重置待定",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "D1",
+   "class": "重裝",
+   "name": "守線者",
+   "fantasy": "這一片由我守",
+   "loop": "真格擋立錨→圈內持盾護己友→出圈/重擊撤守追擊",
+   "decision": "護身後隊友或處理圈外威脅",
+   "reference_branch": "鐵衛",
+   "boundary": "作用友軍的防護非實體代擋/轉傷，不照搬阻擋三人",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "D2",
+   "class": "重裝",
+   "name": "聖療護衛",
+   "fantasy": "防禦替隊友爭到施救片刻",
+   "loop": "盾/防護法術承壓→取得援護準備→主動恢復指定友，或留給自己下次防護",
+   "decision": "救誰及是否犧牲自身保命",
+   "reference_branch": "守護者",
+   "boundary": "明確主動施法，非自動低血跳奶；敵對分類待驗",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "D3",
+   "class": "重裝",
+   "name": "秘法重衛",
+   "fantasy": "壓在風暴中心也能反攻",
+   "loop": "防護/盾接真攻擊→存反攻機會→留MP維持防護或解守勢施反擊法術",
+   "decision": "繼續掩護或暴露自己搶輸出",
+   "reference_branch": "決戰者",
+   "boundary": "壓力事件與反擊付款另定，不把方舟技力當魔力",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "R1",
+   "class": "狙擊",
+   "name": "弱點獵手",
+   "fantasy": "挑隊伍最值得先少掉的敵人",
+   "loop": "遠程命中試探→標記弱點→追該敵收招或換標高危施法者",
+   "decision": "脆敵效率或阻止危險招",
+   "reference_branch": "神射手",
+   "boundary": "不自動替玩家選低防；弱點條件與打斷範圍待定",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "R2",
+   "class": "狙擊",
+   "name": "破群射手",
+   "fantasy": "等敵人擠進同一個缺口",
+   "loop": "遠程標記/友軍控場→聚群時射擊兌現局部範圍傷→移位找新射線",
+   "decision": "提前救急或等更多敵聚攏",
+   "reference_branch": "炮手",
+   "boundary": "不必爆炸箭；攻擊載具、友傷、遮蔽待驗",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "R3",
+   "class": "狙擊",
+   "name": "蓄彈弩手",
+   "fantasy": "每輪齊射後都要找裝填退路",
+   "loop": "弩擊花準備→停射換位/裝填→滿準備齊射或提前射阻追兵",
+   "decision": "當下火力或下一輪安全",
+   "reference_branch": "獵手",
+   "boundary": "原生彈匣API未證，可先候選待射狀態，不偽造真彈藥",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "C1",
+   "class": "術師",
+   "name": "蓄能術師",
+   "fantasy": "把魔力留到最值得的一刻",
+   "loop": "準備施法支付MP存咒能→移位找窗口→整筆或部分釋放救急",
+   "decision": "存多少與何時出手",
+   "reference_branch": "秘術師",
+   "boundary": "失效/取消退款需定，不以空等生免費魔力；部分釋放待驗",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "C2",
+   "class": "術師",
+   "name": "導流術師",
+   "fantasy": "決定法術繼續咬住誰",
+   "loop": "首敵命中建立導流→後續施法沿鄰敵傳遞牽制→集中原敵或改首靶換方向",
+   "decision": "覆蓋敵群或壓制核心",
+   "reference_branch": "鏈術師",
+   "boundary": "跳躍、遮蔽、重複命中與遞迴排除待驗，不只是換元素皮膚",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "C3",
+   "class": "術師",
+   "name": "刻印術師",
+   "fantasy": "先把戰場寫好，再選在哪裡撕開",
+   "loop": "法術分別布印→單敵集中觸發或消耗鄰敵印連鎖→留剩印給隊友/下一輪",
+   "decision": "分散控場或集中收掉核心",
+   "reference_branch": "原創布印/消耗；不要求對應單一方舟分支",
+   "boundary": "合成引爆不得重新布印；連鎖消耗/重複命中/隊友權限待定",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "M1",
+   "class": "醫療",
+   "name": "急救師",
+   "fantasy": "一份救命法力分給幾人",
+   "loop": "恢復法術選一友→本次預算分給附近傷者→下一輪改集中或分流",
+   "decision": "單人救回安全線或全隊止跌",
+   "reference_branch": "群癒師",
+   "boundary": "不按人頭倍增總治療，也不照搬固定三人",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "M2",
+   "class": "醫療",
+   "name": "戰地導血者",
+   "fantasy": "把攻敵機會換成同伴續命",
+   "loop": "恢復/支援法術指定受援者→攻擊法術/武器命中取救援機會→下次治療兌現或換援者棄舊",
+   "decision": "進攻時機與持續支援誰",
+   "reference_branch": "咒癒師",
+   "boundary": "不打友軍、不黑箱掃最低血；不是現有吸血法術能力承諾",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "M3",
+   "class": "醫療",
+   "name": "續療師",
+   "fantasy": "先接住下一次倒下的危險",
+   "loop": "主動對友施復甦印→後續治療維持或現在消印急救→消耗後重新布置",
+   "decision": "花施法時間預防或留MP救急",
+   "reference_branch": "醫療損傷處理定位；復甦印為原創",
+   "boundary": "不是死亡自動復活；合法負面淨化只留後續變體，效力/持續/續印規則未定",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "S1",
+   "class": "輔助",
+   "name": "咒縛編織者",
+   "fantasy": "替隊友爭一次出手機會",
+   "loop": "危險敵縛印→集中延長失勢或改目標分弱縛→友軍趁窗輸出",
+   "decision": "鎖核心或拆人海",
+   "reference_branch": "凝滯師",
+   "boundary": "持續控制與衰減未定，不默認永久停機或新增全局cap",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "S2",
+   "class": "輔助",
+   "name": "領域詠唱者",
+   "fantasy": "我停攻讓身邊人撐下去",
+   "loop": "支援施法成跟身域→續詠/走位送HP恢復或防護→停詠自己攻擊",
+   "decision": "站誰身邊或放支援親自解題",
+   "reference_branch": "吟遊者",
+   "boundary": "戰中HP/防護定位，非先鋒SP/MP推進重複；範圍/自用另定",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "S3",
+   "class": "輔助",
+   "name": "契靈指揮者",
+   "fantasy": "法術與召喚各打半套",
+   "loop": "召喚命中契印→本人法術消印弱敵；或本人布印→召喚兌現護援",
+   "decision": "印用於哪種合作與夥伴位置",
+   "reference_branch": "召喚師",
+   "boundary": "不用新增AI命令選單，召喚owner與第三方命中仍待驗",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "X1",
+   "class": "特種",
+   "name": "閃入術士",
+   "fantasy": "進去處理一人但留路退出",
+   "loop": "機動/短位移施法切入標威脅→短窗攻擊/打斷→保留SP/MP撤離或把退路押收招",
+   "decision": "穩退或搏殺",
+   "reference_branch": "處決者",
+   "boundary": "短位移/取消/落點待驗，不等同重部署、無敵或復活",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "X2",
+   "class": "特種",
+   "name": "牽引術士",
+   "fantasy": "讓那把刀碰不到隊友",
+   "loop": "牽引法術標敵→拉近交近戰、推離友軍或拉入已布區→換位接後續",
+   "decision": "救援位置或擊殺位置",
+   "reference_branch": "鉤索師",
+   "boundary": "體型/免疫/碰撞與拉推效果待驗，不承諾所有敵可搬",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "X3",
+   "class": "特種",
+   "name": "符陣機關師",
+   "fantasy": "在敵人走進前決定戰場",
+   "loop": "符文式施法布陣→走位/遠程誘敵→進區觸發或提前引爆換即時較小收益",
+   "decision": "路口、觸發時機及保留資源",
+   "reference_branch": "陷阱師",
+   "boundary": "引爆入口/友傷/地面合法性待驗，不新增互動選單",
+   "status": "proposal_not_implemented"
+  }
+ ]
+}

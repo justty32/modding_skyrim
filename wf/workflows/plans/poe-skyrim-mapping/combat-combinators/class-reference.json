@@ -1,0 +1,208 @@
+{
+ "contract": "wf-table/1",
+ "source": "README.md",
+ "extracted": "2026-11-04",
+ "evidence_scope": "PRTS community branch reference browsed 2026-11-04. Three branches per class selected for this proposal, not an exhaustive classification. Original mechanics are references, not adopted Skyrim behavior.",
+ "columns": [
+  "class",
+  "role",
+  "branch",
+  "original_mechanic",
+  "translation_boundary",
+  "source"
+ ],
+ "rows": [
+  {
+   "class": "先鋒",
+   "role": "接戰先手／資源節奏",
+   "branch": "衝鋒手",
+   "original_mechanic": "以擊殺獲部署資源，撤退返還初始費用",
+   "translation_boundary": "部署費非MP/SP，擊殺歸屬另定",
+   "source": "https://prts.wiki/w/分支一览#先锋"
+  },
+  {
+   "class": "先鋒",
+   "role": "接戰先手／資源節奏",
+   "branch": "執旗手",
+   "original_mechanic": "技能期放棄阻擋",
+   "translation_boundary": "不等於免仇恨或無敵，支援轉態是原創",
+   "source": "https://prts.wiki/w/分支一览#先锋"
+  },
+  {
+   "class": "先鋒",
+   "role": "接戰先手／資源節奏",
+   "branch": "戰術家",
+   "original_mechanic": "部署援軍，攻援軍正在阻擋的敵人有額外收益",
+   "translation_boundary": "原作阻擋關係不能直接當AI追打或隊友先命中",
+   "source": "https://prts.wiki/w/分支一览#先锋"
+  },
+  {
+   "class": "近衛",
+   "role": "近距離持續與爆發",
+   "branch": "劍豪",
+   "original_mechanic": "普通攻擊連續造成兩段傷害",
+   "translation_boundary": "不照搬雙倍傷害，本案連段為原創",
+   "source": "https://prts.wiki/w/分支一览#近卫"
+  },
+  {
+   "class": "近衛",
+   "role": "近距離持續與爆發",
+   "branch": "武者",
+   "original_mechanic": "攻敵恢復自身，一般外部治療受限制",
+   "translation_boundary": "不說禁絕所有回復，也不默認禁療代價",
+   "source": "https://prts.wiki/w/分支一览#近卫"
+  },
+  {
+   "class": "近衛",
+   "role": "近距離持續與爆發",
+   "branch": "解放者",
+   "original_mechanic": "準備期停止攻擊並蓄勢，技能結束清除準備",
+   "translation_boundary": "不照搬等待倍率或上限；真交鋒版本另設",
+   "source": "https://prts.wiki/w/分支一览#近卫"
+  },
+  {
+   "class": "重裝",
+   "role": "承壓與維持戰線",
+   "branch": "鐵衛",
+   "original_mechanic": "可同時阻擋三敵",
+   "translation_boundary": "Skyrim無格子阻擋，護圈不是替人格擋",
+   "source": "https://prts.wiki/w/分支一览#重装"
+  },
+  {
+   "class": "重裝",
+   "role": "承壓與維持戰線",
+   "branch": "守護者",
+   "original_mechanic": "技能可恢復友軍生命",
+   "translation_boundary": "不等於全部攻擊自動治友，個人技能需分開",
+   "source": "https://prts.wiki/w/分支一览#重装"
+  },
+  {
+   "class": "重裝",
+   "role": "承壓與維持戰線",
+   "branch": "決戰者",
+   "original_mechanic": "在阻擋狀態才恢復技力",
+   "translation_boundary": "格擋事件不是方舟阻擋，技力不直接換MP",
+   "source": "https://prts.wiki/w/分支一览#重装"
+  },
+  {
+   "class": "狙擊",
+   "role": "遠程物理與射擊節奏",
+   "branch": "神射手",
+   "original_mechanic": "目標優先序傾向低防禦者",
+   "translation_boundary": "優先序不代表Skyrim已有自動選敵",
+   "source": "https://prts.wiki/w/分支一览#狙击"
+  },
+  {
+   "class": "狙擊",
+   "role": "遠程物理與射擊節奏",
+   "branch": "炮手",
+   "original_mechanic": "物理攻擊作用一群目標",
+   "translation_boundary": "本案穿透/壓制需另驗，不承諾爆炸資產",
+   "source": "https://prts.wiki/w/分支一览#狙击"
+  },
+  {
+   "class": "狙擊",
+   "role": "遠程物理與射擊節奏",
+   "branch": "獵手",
+   "original_mechanic": "彈藥有限，停止攻擊時逐漸裝填",
+   "translation_boundary": "原作彈藥機制非遊戲已有弓弩重裝介面",
+   "source": "https://prts.wiki/w/分支一览#狙击"
+  },
+  {
+   "class": "術師",
+   "role": "法術傷害與施法結構",
+   "branch": "秘術師",
+   "original_mechanic": "暫無可攻擊目標時可儲存攻擊再齊射",
+   "translation_boundary": "本案施法蓄能與投入/退款另定",
+   "source": "https://prts.wiki/w/分支一览#术师"
+  },
+  {
+   "class": "術師",
+   "role": "法術傷害與施法結構",
+   "branch": "鏈術師",
+   "original_mechanic": "法術傷害可在目標間傳遞並造成短促停頓",
+   "translation_boundary": "彈射友敵/重複命中/衰減是待選語義",
+   "source": "https://prts.wiki/w/分支一览#术师"
+  },
+  {
+   "class": "術師",
+   "role": "法術傷害與施法結構",
+   "branch": "陣法術師",
+   "original_mechanic": "平時停攻獲較高防護，技能期改範圍法傷",
+   "translation_boundary": "不照搬固定雙抗，場域為候選引擎要求",
+   "source": "https://prts.wiki/w/分支一览#术师"
+  },
+  {
+   "class": "醫療",
+   "role": "恢復與損傷處理",
+   "branch": "群癒師",
+   "original_mechanic": "一次可治療多名友軍",
+   "translation_boundary": "治療分配與同時目標數不照搬固定三人",
+   "source": "https://prts.wiki/w/分支一览#医疗"
+  },
+  {
+   "class": "醫療",
+   "role": "恢復與損傷處理",
+   "branch": "咒癒師",
+   "original_mechanic": "攻擊敵人後依傷害回復友軍",
+   "translation_boundary": "受益者/傷害基數/轉換係數不默認已定",
+   "source": "https://prts.wiki/w/分支一览#医疗"
+  },
+  {
+   "class": "醫療",
+   "role": "恢復與損傷處理",
+   "branch": "行醫",
+   "original_mechanic": "恢復HP並修復元素損傷",
+   "translation_boundary": "方舟元素損傷不是Skyrim抗性或全部異常，需逐類選擇",
+   "source": "https://prts.wiki/w/分支一览#医疗"
+  },
+  {
+   "class": "輔助",
+   "role": "控制／召喚與團隊支援",
+   "branch": "凝滯師",
+   "original_mechanic": "法術傷害伴隨短暫延緩",
+   "translation_boundary": "不默認減速或定身可無限連鎖",
+   "source": "https://prts.wiki/w/分支一览#辅助"
+  },
+  {
+   "class": "輔助",
+   "role": "控制／召喚與團隊支援",
+   "branch": "吟遊者",
+   "original_mechanic": "停止攻擊，範圍友軍持續回復生命；自身不受鼓舞",
+   "translation_boundary": "固定部署範圍非移動光環，自用資格另定",
+   "source": "https://prts.wiki/w/分支一览#辅助"
+  },
+  {
+   "class": "輔助",
+   "role": "控制／召喚與團隊支援",
+   "branch": "召喚師",
+   "original_mechanic": "法術攻擊且可召出協戰單位",
+   "translation_boundary": "不默認召喚物擊殺歸主人或無限數量",
+   "source": "https://prts.wiki/w/分支一览#辅助"
+  },
+  {
+   "class": "特種",
+   "role": "位移／機關與切入戰術",
+   "branch": "處決者",
+   "original_mechanic": "退場到再次可部署的間隔較短",
+   "translation_boundary": "不等同瞬移無敵、免費重置或復活",
+   "source": "https://prts.wiki/w/分支一览#特种"
+  },
+  {
+   "class": "特種",
+   "role": "位移／機關與切入戰術",
+   "branch": "鉤索師",
+   "original_mechanic": "技能可讓敵人位移",
+   "translation_boundary": "Boss/大型/免疫者與碰撞必須另驗",
+   "source": "https://prts.wiki/w/分支一览#特种"
+  },
+  {
+   "class": "特種",
+   "role": "位移／機關與切入戰術",
+   "branch": "陷阱師",
+   "original_mechanic": "可預設陷阱，不能直接放在敵人已占的位置",
+   "translation_boundary": "既有放置行為/可用地面需驗，不擴成新互動選單",
+   "source": "https://prts.wiki/w/分支一览#特种"
+  }
+ ]
+}
