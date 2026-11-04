@@ -1,0 +1,270 @@
+{
+ "contract": "wf-table/1",
+ "source": "README.md",
+ "extracted": "2026-11-04",
+ "not_applied": "Isolated design overlay only, no replacement of live/frozen graph. High at notable is placement proposal, original type/weight unchanged.",
+ "columns": [
+  "node_id",
+  "original_label",
+  "original_type",
+  "original_weight",
+  "design_tier",
+  "candidate_name",
+  "effect",
+  "rule_refs",
+  "scope",
+  "budget_proposal",
+  "status"
+ ],
+ "rows": [
+  {
+   "node_id": 12536,
+   "original_label": "Elemental Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "危急護持",
+   "effect": "見CA4",
+   "rule_refs": [
+    "CA4"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 15365,
+   "original_label": "Area of Effect",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "護援改寫",
+   "effect": "見IA6",
+   "rule_refs": [
+    "IA6"
+   ],
+   "scope": "subtype_unique",
+   "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 15973,
+   "original_label": "Brand Damage and Duration",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "集中解印",
+   "effect": "見IA2",
+   "rule_refs": [
+    "IA2"
+   ],
+   "scope": "subtype_unique",
+   "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 19679,
+   "original_label": "Brand Range and Brand Recall Cooldown Recovery",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "留印牽制",
+   "effect": "見IA3",
+   "rule_refs": [
+    "IA3"
+   ],
+   "scope": "class_shared_candidate",
+   "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 21262,
+   "original_label": "Elemental Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "破法追擊",
+   "effect": "見CA3",
+   "rule_refs": [
+    "CA3"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 21389,
+   "original_label": "Runesmith",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "爆破法則",
+   "effect": "見IH1",
+   "rule_refs": [
+    "IH1"
+   ],
+   "scope": "subtype_unique",
+   "budget_proposal": "原3份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 33435,
+   "original_label": "Holy Dominion",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "觸法之刃",
+   "effect": "見CH1",
+   "rule_refs": [
+    "CH1"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "原3份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 40776,
+   "original_label": "Brand Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "術式根基",
+   "effect": "DMG_DESTR 1份=毀滅傷害+2%",
+   "rule_refs": [],
+   "scope": "subtype_foundation",
+   "budget_proposal": "既定atom1份",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 40927,
+   "original_label": "Area of Effect",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "終筆回流",
+   "effect": "見IA5",
+   "rule_refs": [
+    "IA5"
+   ],
+   "scope": "subtype_unique",
+   "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 44799,
+   "original_label": "Elemental Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "守後反吟",
+   "effect": "見CA1",
+   "rule_refs": [
+    "CA1"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 53018,
+   "original_label": "Brand Damage and Duration",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "付魔刻印",
+   "effect": "見IA1",
+   "rule_refs": [
+    "IA1"
+   ],
+   "scope": "subtype_unique",
+   "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 54694,
+   "original_label": "Light of Divinity",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "脆弱魔池",
+   "effect": "見CH2",
+   "rule_refs": [
+    "CH2"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "原3份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 58402,
+   "original_label": "Intelligence",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "蓄墨",
+   "effect": "MP 1份=最大MP+5",
+   "rule_refs": [],
+   "scope": "subtype_foundation",
+   "budget_proposal": "既定atom1份",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 58453,
+   "original_label": "Elemental Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "異系接續",
+   "effect": "見CA2",
+   "rule_refs": [
+    "CA2"
+   ],
+   "scope": "class_common",
+   "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 59070,
+   "original_label": "Brand Range and Brand Recall Cooldown Recovery",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "advanced",
+   "candidate_name": "斷咒窗口",
+   "effect": "見IA4",
+   "rule_refs": [
+    "IA4"
+   ],
+   "scope": "class_shared_candidate",
+   "budget_proposal": "原1份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 59728,
+   "original_label": "Area of Effect Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "design_tier": "normal",
+   "candidate_name": "回魔底盤",
+   "effect": "MPREGEN 1份=回魔+10%",
+   "rule_refs": [],
+   "scope": "subtype_foundation",
+   "budget_proposal": "既定atom1份",
+   "status": "prototype_pending_user_review"
+  },
+  {
+   "node_id": 61308,
+   "original_label": "Amplify",
+   "original_type": "notable",
+   "original_weight": 3,
+   "design_tier": "high",
+   "candidate_name": "活印傳承",
+   "effect": "見IH2",
+   "rule_refs": [
+    "IH2"
+   ],
+   "scope": "subtype_unique",
+   "budget_proposal": "原3份整點候選含載具/主效；兩者份額拆分與新係數尚未核定，不再加原converter同點數值",
+   "status": "prototype_pending_user_review"
+  }
+ ]
+}

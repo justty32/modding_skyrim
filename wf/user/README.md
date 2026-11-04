@@ -12,6 +12,7 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 <!-- wf-nav -->
 | 檔案 | 內容 |
 |------|------|
+| [2026-11-04-inscription-sample.md](2026-11-04-inscription-sample.md) | 術師通用＋刻印第一真圖樣板：17候選點、14規則、試算與保護邊界，待過目 |
 | [2026-11-04-combat-playstyles.md](2026-11-04-combat-playstyles.md) | 八職業×三子類的24原創玩法全貌，含法術遠程恢復召喚及四跨類混搭 |
 | [2026-11-04-sword-shield-design.md](2026-11-04-sword-shield-design.md) | 戰鬥組合子與劍盾攻防輔三條可混搭循環提案，數值未定 |
 | [2026-11-03-perk-units.md](2026-11-03-perk-units.md) | 星盤效果候選初步抽樣（非完整清單；戰鬥效果全集調查中、皆未採用） |

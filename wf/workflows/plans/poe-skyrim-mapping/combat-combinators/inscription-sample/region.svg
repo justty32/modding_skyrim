@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6547.44 -4756.152191264833 2261.54 3008.5821912648335" role="img" aria-labelledby="title desc">
+<title id="title">術師通用與刻印樣板的真實PoE節點位置</title>
+<desc id="desc">青色刻印，紫色術師通用，灰色保護節點，空心為外接邊界。座標及邊來自3.29.1原圖，未改拓撲。</desc>
+<rect x="-6547.44" y="-4756.152191264833" width="2261.54" height="3008.5821912648335" fill="#111827"/>
+<line x1="-5256.310351913403" y1="-4606.152191264833" x2="-5650.53" y2="-3443.04" stroke="#64748b" stroke-width="7" stroke-dasharray="15 12"/>
+<line x1="-6143.53" y1="-2950.04" x2="-5569.0851518068375" y2="-2505.534380109344" stroke="#64748b" stroke-width="7" stroke-dasharray="15 12"/>
+<line x1="-6143.53" y1="-2950.04" x2="-5650.53" y2="-3443.04" stroke="#64748b" stroke-width="7" stroke-dasharray="15 12"/>
+<line x1="-5535.618510267786" y1="-2251.33" x2="-6152.23" y2="-1897.57" stroke="#64748b" stroke-width="7" stroke-dasharray="15 12"/>
+<line x1="-5535.618510267786" y1="-2251.33" x2="-5245.5" y2="-2083.83" stroke="#64748b" stroke-width="7"/>
+<line x1="-5535.618510267786" y1="-2251.33" x2="-5245.5" y2="-2418.83" stroke="#64748b" stroke-width="7"/>
+<line x1="-4712.44" y1="-2998.88" x2="-4955.44" y2="-2858.583884586921" stroke="#64748b" stroke-width="7"/>
+<line x1="-4712.44" y1="-2998.88" x2="-4435.9" y2="-2998.88" stroke="#64748b" stroke-width="7" stroke-dasharray="15 12"/>
+<line x1="-4712.44" y1="-2998.88" x2="-4988.9912985522205" y2="-3113.4312985522206" stroke="#64748b" stroke-width="7"/>
+<line x1="-6397.44" y1="-3583.34" x2="-6349.9912985522205" y2="-3697.8912985522206" stroke="#64748b" stroke-width="7"/>
+<line x1="-6397.44" y1="-3583.34" x2="-6316.44" y2="-3443.043884586921" stroke="#64748b" stroke-width="7"/>
+<line x1="-4435.9" y1="-3443.04" x2="-5650.53" y2="-3443.04" stroke="#64748b" stroke-width="7" stroke-dasharray="15 12"/>
+<line x1="-6073.44" y1="-3583.34" x2="-6154.44" y2="-3443.043884586921" stroke="#64748b" stroke-width="7"/>
+<line x1="-6073.44" y1="-3583.34" x2="-6154.44" y2="-3723.636115413079" stroke="#64748b" stroke-width="7"/>
+<line x1="-5569.0851518068375" y1="-2505.534380109344" x2="-5245.5" y2="-2418.83" stroke="#64748b" stroke-width="7"/>
+<line x1="-5569.0851518068375" y1="-2505.534380109344" x2="-5245.5" y2="-2753.83" stroke="#64748b" stroke-width="7"/>
+<line x1="-6349.9912985522205" y1="-3697.8912985522206" x2="-6235.44" y2="-3583.34" stroke="#64748b" stroke-width="7"/>
+<line x1="-6349.9912985522205" y1="-3697.8912985522206" x2="-6154.44" y2="-3723.636115413079" stroke="#64748b" stroke-width="7"/>
+<line x1="-5245.5" y1="-2083.83" x2="-4955.381489732213" y2="-2251.33" stroke="#64748b" stroke-width="7"/>
+<line x1="-5245.5" y1="-2418.83" x2="-4955.381489732213" y2="-2586.33" stroke="#64748b" stroke-width="7"/>
+<line x1="-5245.5" y1="-2418.83" x2="-4955.381489732213" y2="-2251.33" stroke="#64748b" stroke-width="7"/>
+<line x1="-6154.44" y1="-3443.043884586921" x2="-6316.44" y2="-3443.043884586921" stroke="#64748b" stroke-width="7"/>
+<line x1="-6154.44" y1="-3443.043884586921" x2="-5650.53" y2="-3443.04" stroke="#64748b" stroke-width="7"/>
+<line x1="-4955.44" y1="-2858.583884586921" x2="-4955.381489732213" y2="-2586.33" stroke="#64748b" stroke-width="7"/>
+<line x1="-4955.44" y1="-2858.583884586921" x2="-4988.9912985522205" y2="-3113.4312985522206" stroke="#64748b" stroke-width="7"/>
+<line x1="-4770.9" y1="-2418.83" x2="-4955.381489732213" y2="-2586.33" stroke="#64748b" stroke-width="7" stroke-dasharray="15 12"/>
+<line x1="-4770.9" y1="-2418.83" x2="-4955.381489732213" y2="-2251.33" stroke="#64748b" stroke-width="7" stroke-dasharray="15 12"/>
+<line x1="-5843.81" y1="-3755.02" x2="-5650.53" y2="-3443.04" stroke="#64748b" stroke-width="7"/>
+<line x1="-4955.381489732213" y1="-2586.33" x2="-5245.5" y2="-2753.83" stroke="#64748b" stroke-width="7"/>
+<line x1="-4988.7412985522205" y1="-1930.7112985522208" x2="-4955.381489732213" y2="-2251.33" stroke="#64748b" stroke-width="7" stroke-dasharray="15 12"/>
+<line x1="-5650.53" y1="-3443.04" x2="-5465.32" y2="-3139.18" stroke="#64748b" stroke-width="7"/>
+<line x1="-5465.32" y1="-3139.18" x2="-4988.9912985522205" y2="-3113.4312985522206" stroke="#64748b" stroke-width="7"/>
+<circle cx="-5256.310351913403" cy="-4606.152191264833" r="31" fill="#111827" stroke="#94a3b8" stroke-width="6"/>
+<text x="-5256.310351913403" y="-4539.152191264833" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">6764</text>
+<title>6764 Intelligence</title>
+<circle cx="-6143.53" cy="-2950.04" r="31" fill="#111827" stroke="#94a3b8" stroke-width="6"/>
+<text x="-6143.53" y="-2883.04" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">10575</text>
+<title>10575 Intelligence</title>
+<circle cx="-5535.618510267786" cy="-2251.33" r="31" fill="#c084fc" stroke="#c084fc" stroke-width="6"/>
+<text x="-5535.618510267786" y="-2184.33" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">12536</text>
+<title>12536 Elemental Damage</title>
+<circle cx="-6152.23" cy="-1897.57" r="31" fill="#111827" stroke="#94a3b8" stroke-width="6"/>
+<text x="-6152.23" y="-1830.57" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">15064</text>
+<title>15064 Strength</title>
+<circle cx="-4712.44" cy="-2998.88" r="31" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-4712.44" y="-2931.88" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">15365</text>
+<title>15365 Area of Effect</title>
+<circle cx="-6397.44" cy="-3583.34" r="31" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-6397.44" y="-3516.34" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">15973</text>
+<title>15973 Brand Damage and Duration</title>
+<circle cx="-4435.9" cy="-3443.04" r="31" fill="#111827" stroke="#94a3b8" stroke-width="6"/>
+<text x="-4435.9" y="-3376.04" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">17735</text>
+<title>17735 Intelligence</title>
+<circle cx="-6073.44" cy="-3583.34" r="31" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-6073.44" y="-3516.34" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">19679</text>
+<title>19679 Brand Range and Brand Recall Cooldown Recovery</title>
+<circle cx="-5569.0851518068375" cy="-2505.534380109344" r="31" fill="#c084fc" stroke="#c084fc" stroke-width="6"/>
+<text x="-5569.0851518068375" y="-2438.534380109344" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">21262</text>
+<title>21262 Elemental Damage</title>
+<circle cx="-6349.9912985522205" cy="-3697.8912985522206" r="43" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-6349.9912985522205" y="-3618.8912985522206" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">21389</text>
+<title>21389 Runesmith</title>
+<circle cx="-5245.5" cy="-2083.83" r="43" fill="#94a3b8" stroke="#94a3b8" stroke-width="6"/>
+<text x="-5245.5" y="-2004.83" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">30693</text>
+<title>30693 Divine Fervour</title>
+<circle cx="-5245.5" cy="-2418.83" r="43" fill="#c084fc" stroke="#c084fc" stroke-width="6"/>
+<text x="-5245.5" y="-2339.83" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">33435</text>
+<title>33435 Holy Dominion</title>
+<circle cx="-6235.44" cy="-3583.34" r="31" fill="#94a3b8" stroke="#94a3b8" stroke-width="6"/>
+<text x="-6235.44" y="-3516.34" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">40439</text>
+<title>40439 Brand Mastery</title>
+<circle cx="-6154.44" cy="-3443.043884586921" r="31" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-6154.44" y="-3376.043884586921" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">40776</text>
+<title>40776 Brand Damage</title>
+<circle cx="-4955.44" cy="-2858.583884586921" r="31" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-4955.44" y="-2791.583884586921" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">40927</text>
+<title>40927 Area of Effect</title>
+<circle cx="-4770.9" cy="-2418.83" r="43" fill="#111827" stroke="#94a3b8" stroke-width="6"/>
+<text x="-4770.9" y="-2339.83" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">41472</text>
+<title>41472 Discipline and Training</title>
+<path d="M -5843.81 -3800.02 L -5798.81 -3755.02 L -5843.81 -3710.02 L -5888.81 -3755.02 Z" fill="#94a3b8" stroke="#94a3b8" stroke-width="6"/>
+<text x="-5843.81" y="-3688.02" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">42343</text>
+<title>42343 Runebinder</title>
+<circle cx="-4955.381489732213" cy="-2586.33" r="31" fill="#c084fc" stroke="#c084fc" stroke-width="6"/>
+<text x="-4955.381489732213" y="-2519.33" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">44799</text>
+<title>44799 Elemental Damage</title>
+<circle cx="-4988.7412985522205" cy="-1930.7112985522208" r="31" fill="#111827" stroke="#94a3b8" stroke-width="6"/>
+<text x="-4988.7412985522205" y="-1863.7112985522208" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">46726</text>
+<title>46726 Mana and Mana Cost Efficiency</title>
+<circle cx="-4435.9" cy="-2998.88" r="43" fill="#111827" stroke="#94a3b8" stroke-width="6"/>
+<text x="-4435.9" y="-2919.88" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">49254</text>
+<title>49254 Retribution</title>
+<circle cx="-6316.44" cy="-3443.043884586921" r="31" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-6316.44" y="-3376.043884586921" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">53018</text>
+<title>53018 Brand Damage and Duration</title>
+<circle cx="-5245.5" cy="-2753.83" r="43" fill="#c084fc" stroke="#c084fc" stroke-width="6"/>
+<text x="-5245.5" y="-2674.83" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">54694</text>
+<title>54694 Light of Divinity</title>
+<circle cx="-5650.53" cy="-3443.04" r="31" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-5650.53" y="-3376.04" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">58402</text>
+<title>58402 Intelligence</title>
+<circle cx="-4955.381489732213" cy="-2251.33" r="31" fill="#c084fc" stroke="#c084fc" stroke-width="6"/>
+<text x="-4955.381489732213" y="-2184.33" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">58453</text>
+<title>58453 Elemental Damage</title>
+<circle cx="-6154.44" cy="-3723.636115413079" r="31" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-6154.44" y="-3656.636115413079" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">59070</text>
+<title>59070 Brand Range and Brand Recall Cooldown Recovery</title>
+<circle cx="-5465.32" cy="-3139.18" r="31" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-5465.32" y="-3072.18" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">59728</text>
+<title>59728 Area of Effect Damage</title>
+<circle cx="-4988.9912985522205" cy="-3113.4312985522206" r="43" fill="#22d3ee" stroke="#22d3ee" stroke-width="6"/>
+<text x="-4988.9912985522205" y="-3034.4312985522206" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="30">61308</text>
+<title>61308 Amplify</title>
+</svg>

@@ -1,0 +1,419 @@
+{
+ "contract": "wf-table/1",
+ "source": "README.md",
+ "extracted": "2026-11-04",
+ "source_url": "https://raw.githubusercontent.com/grindinggear/skilltree-export/3.29.1/data.json",
+ "source_sha256": "7e9f755e33152129ebf36c2ebdad639c527e4ad70d274b1fefb860f30ca01122",
+ "geometry": "Original group/orbit coordinates, using existing frozen converter position semantics; no layout edits",
+ "entry_node": 58402,
+ "selected_ids": [
+  12536,
+  15365,
+  15973,
+  19679,
+  21262,
+  21389,
+  33435,
+  40776,
+  40927,
+  44799,
+  53018,
+  54694,
+  58402,
+  58453,
+  59070,
+  59728,
+  61308
+ ],
+ "protected_ids": [
+  40439,
+  42343,
+  30693
+ ],
+ "closest_class_start": {
+  "index": 5,
+  "name": "Templar",
+  "id": 61525,
+  "path_to_entry": [
+   61525,
+   63965,
+   14151,
+   27564,
+   17735,
+   58402
+  ]
+ },
+ "candidate_subsets": {
+  "subtype_C3": [
+   15365,
+   15973,
+   19679,
+   21389,
+   40776,
+   40927,
+   53018,
+   58402,
+   59070,
+   59728,
+   61308
+  ],
+  "class_common_C": [
+   44799,
+   58453,
+   21262,
+   12536,
+   33435,
+   54694
+  ]
+ },
+ "columns": [
+  "node_id",
+  "original_label",
+  "original_type",
+  "original_weight",
+  "group",
+  "orbit",
+  "orbit_index",
+  "x",
+  "y",
+  "original_neighbors",
+  "region_role"
+ ],
+ "rows": [
+  {
+   "node_id": 12536,
+   "original_label": "Elemental Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 218,
+   "orbit": 3,
+   "orbit_index": 11,
+   "x": -5535.618510267786,
+   "y": -2251.33,
+   "original_neighbors": [
+    15064,
+    30693,
+    33435
+   ],
+   "region_role": "class_common_candidate"
+  },
+  {
+   "node_id": 15365,
+   "original_label": "Area of Effect",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 230,
+   "orbit": 2,
+   "orbit_index": 4,
+   "x": -4712.44,
+   "y": -2998.88,
+   "original_neighbors": [
+    40927,
+    49254,
+    61308
+   ],
+   "region_role": "subtype_candidate"
+  },
+  {
+   "node_id": 15973,
+   "original_label": "Brand Damage and Duration",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 171,
+   "orbit": 2,
+   "orbit_index": 12,
+   "x": -6397.44,
+   "y": -3583.34,
+   "original_neighbors": [
+    21389,
+    53018
+   ],
+   "region_role": "subtype_candidate"
+  },
+  {
+   "node_id": 19679,
+   "original_label": "Brand Range and Brand Recall Cooldown Recovery",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 171,
+   "orbit": 2,
+   "orbit_index": 4,
+   "x": -6073.44,
+   "y": -3583.34,
+   "original_neighbors": [
+    40776,
+    59070
+   ],
+   "region_role": "subtype_candidate"
+  },
+  {
+   "node_id": 21262,
+   "original_label": "Elemental Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 218,
+   "orbit": 3,
+   "orbit_index": 13,
+   "x": -5569.0851518068375,
+   "y": -2505.534380109344,
+   "original_neighbors": [
+    10575,
+    33435,
+    54694
+   ],
+   "region_role": "class_common_candidate"
+  },
+  {
+   "node_id": 21389,
+   "original_label": "Runesmith",
+   "original_type": "notable",
+   "original_weight": 3,
+   "group": 171,
+   "orbit": 2,
+   "orbit_index": 15,
+   "x": -6349.9912985522205,
+   "y": -3697.8912985522206,
+   "original_neighbors": [
+    15973,
+    40439,
+    59070
+   ],
+   "region_role": "subtype_candidate"
+  },
+  {
+   "node_id": 30693,
+   "original_label": "Divine Fervour",
+   "original_type": "notable",
+   "original_weight": 3,
+   "group": 218,
+   "orbit": 3,
+   "orbit_index": 8,
+   "x": -5245.5,
+   "y": -2083.83,
+   "original_neighbors": [
+    12536,
+    58453
+   ],
+   "region_role": "protected_unchanged"
+  },
+  {
+   "node_id": 33435,
+   "original_label": "Holy Dominion",
+   "original_type": "notable",
+   "original_weight": 3,
+   "group": 218,
+   "orbit": 0,
+   "orbit_index": 0,
+   "x": -5245.5,
+   "y": -2418.83,
+   "original_neighbors": [
+    12536,
+    21262,
+    44799,
+    58453
+   ],
+   "region_role": "class_common_candidate"
+  },
+  {
+   "node_id": 40439,
+   "original_label": "Brand Mastery",
+   "original_type": "mastery",
+   "original_weight": 0,
+   "group": 171,
+   "orbit": 0,
+   "orbit_index": 0,
+   "x": -6235.44,
+   "y": -3583.34,
+   "original_neighbors": [
+    21389
+   ],
+   "region_role": "protected_unchanged"
+  },
+  {
+   "node_id": 40776,
+   "original_label": "Brand Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 171,
+   "orbit": 2,
+   "orbit_index": 7,
+   "x": -6154.44,
+   "y": -3443.043884586921,
+   "original_neighbors": [
+    19679,
+    53018,
+    58402
+   ],
+   "region_role": "subtype_candidate"
+  },
+  {
+   "node_id": 40927,
+   "original_label": "Area of Effect",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 230,
+   "orbit": 2,
+   "orbit_index": 9,
+   "x": -4955.44,
+   "y": -2858.583884586921,
+   "original_neighbors": [
+    15365,
+    44799,
+    61308
+   ],
+   "region_role": "subtype_candidate"
+  },
+  {
+   "node_id": 42343,
+   "original_label": "Runebinder",
+   "original_type": "keystone",
+   "original_weight": 5,
+   "group": 187,
+   "orbit": 0,
+   "orbit_index": 0,
+   "x": -5843.81,
+   "y": -3755.02,
+   "original_neighbors": [
+    58402
+   ],
+   "region_role": "protected_unchanged"
+  },
+  {
+   "node_id": 44799,
+   "original_label": "Elemental Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 218,
+   "orbit": 3,
+   "orbit_index": 3,
+   "x": -4955.381489732213,
+   "y": -2586.33,
+   "original_neighbors": [
+    33435,
+    40927,
+    41472,
+    54694
+   ],
+   "region_role": "class_common_candidate"
+  },
+  {
+   "node_id": 53018,
+   "original_label": "Brand Damage and Duration",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 171,
+   "orbit": 2,
+   "orbit_index": 9,
+   "x": -6316.44,
+   "y": -3443.043884586921,
+   "original_neighbors": [
+    15973,
+    40776
+   ],
+   "region_role": "subtype_candidate"
+  },
+  {
+   "node_id": 54694,
+   "original_label": "Light of Divinity",
+   "original_type": "notable",
+   "original_weight": 3,
+   "group": 218,
+   "orbit": 3,
+   "orbit_index": 0,
+   "x": -5245.5,
+   "y": -2753.83,
+   "original_neighbors": [
+    21262,
+    44799
+   ],
+   "region_role": "class_common_candidate"
+  },
+  {
+   "node_id": 58402,
+   "original_label": "Intelligence",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 200,
+   "orbit": 4,
+   "orbit_index": 0,
+   "x": -5650.53,
+   "y": -3443.04,
+   "original_neighbors": [
+    6764,
+    10575,
+    17735,
+    40776,
+    42343,
+    59728
+   ],
+   "region_role": "subtype_candidate"
+  },
+  {
+   "node_id": 58453,
+   "original_label": "Elemental Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 218,
+   "orbit": 3,
+   "orbit_index": 5,
+   "x": -4955.381489732213,
+   "y": -2251.33,
+   "original_neighbors": [
+    30693,
+    33435,
+    41472,
+    46726
+   ],
+   "region_role": "class_common_candidate"
+  },
+  {
+   "node_id": 59070,
+   "original_label": "Brand Range and Brand Recall Cooldown Recovery",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 171,
+   "orbit": 2,
+   "orbit_index": 1,
+   "x": -6154.44,
+   "y": -3723.636115413079,
+   "original_neighbors": [
+    19679,
+    21389
+   ],
+   "region_role": "subtype_candidate"
+  },
+  {
+   "node_id": 59728,
+   "original_label": "Area of Effect Damage",
+   "original_type": "normal",
+   "original_weight": 1,
+   "group": 204,
+   "orbit": 0,
+   "orbit_index": 0,
+   "x": -5465.32,
+   "y": -3139.18,
+   "original_neighbors": [
+    58402,
+    61308
+   ],
+   "region_role": "subtype_candidate"
+  },
+  {
+   "node_id": 61308,
+   "original_label": "Amplify",
+   "original_type": "notable",
+   "original_weight": 3,
+   "group": 230,
+   "orbit": 2,
+   "orbit_index": 15,
+   "x": -4988.9912985522205,
+   "y": -3113.4312985522206,
+   "original_neighbors": [
+    15365,
+    40927,
+    59728
+   ],
+   "region_role": "subtype_candidate"
+  }
+ ]
+}
