@@ -1,8 +1,10 @@
 # 術師通用與刻印的真星盤樣板
 
+**待修：原生法術觸發整合未定，不作已核可範本。** 使用者指出正常遊玩使用的是原生法術；本案未說清選點後哪些原生法術、事件與狀態能直接啟動規則。原生樣板盤點只是技術附錄，不代表這套刻印已接入遊玩。比例修訂保留，14規則暫留供重審，未批准擴填。
+
 [可審人頁](../../../../../user/2026-11-04-inscription-sample.md)｜[共同數量與分類要求](../template-requirements.md)｜[八職業總覽](../README.md)
 
-本輪只做術師class-common與刻印一個子型，狀態prototype_pending_user_review。原始來源是已授權[GGG3.29.1 data.json](https://raw.githubusercontent.com/grindinggear/skilltree-export/3.29.1/data.json)，SHA256為7e9f755e33152129ebf36c2ebdad639c527e4ad70d274b1fefb860f30ca01122；原圖完整資料不搬入本候選。
+本輪只做術師class-common與刻印一個子型，狀態needs_revision_native_spell_binding。原始來源是已授權[GGG3.29.1 data.json](https://raw.githubusercontent.com/grindinggear/skilltree-export/3.29.1/data.json)，SHA256為7e9f755e33152129ebf36c2ebdad639c527e4ad70d274b1fefb860f30ca01122；原圖完整資料不搬入本候選。
 
 Done when: 真區域與17候選點ID、類型、權重、位置、內外連線可核；刻印6進階（4獨特）＋2高階（2獨特）、職業通用4進階＋2高階分層；逐條規則與試算可供使用者過目，未批准不擴其他子型或全圖。
 

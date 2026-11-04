@@ -2,7 +2,7 @@
  "contract": "wf-table/1",
  "source": "README.md",
  "extracted": "2026-11-04",
- "review_status": "prototype_pending_user_review",
+ "review_status": "needs_revision_native_spell_binding",
  "numeric_scope": "All new coefficients are illustrative proposals, not current atoms. Existing 1/3 node weights retained; carrier+main-effect budget split not approved.",
  "baseline_carrier": {
   "input": "Right-hand single white-listed native direct-damage spell S, or authorized CH1 delivery preserving original hand/cast class",
@@ -63,7 +63,7 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "IA2",
@@ -91,7 +91,7 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "IA3",
@@ -119,7 +119,7 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "IA4",
@@ -147,7 +147,7 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "IA5",
@@ -175,7 +175,7 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "IA6",
@@ -203,7 +203,7 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "IH1",
@@ -231,7 +231,7 @@
    "loss": "失去本人合資格法術即時傷與右單施自動兌印；未及時爆/印過期會丟付過的輸出",
    "build_change": "把逐發法師改成布場爆破手，不能以普通增傷取代時序重路由",
    "counterplay_risk": "保存/分類/防禦只套一次均待證；群爆不匯主靶不跳無印，不能命令同次存又爆",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "IH2",
@@ -259,7 +259,7 @@
    "loss": "失去瞬爆/集中/斷咒/主動擊殺回流路線；不能搶同一時間把全部印值打出",
    "build_change": "改變輸出節奏與死亡後歸屬，倍率無法代替強制放棄主動爆破",
    "counterplay_risk": "flow tick/離戰清理/死因歸屬待驗；已支出額不可再治療/退款/第二次爆",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "CA1",
@@ -284,7 +284,7 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "CA2",
@@ -309,7 +309,7 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "CA3",
@@ -334,7 +334,7 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "CA4",
@@ -359,7 +359,7 @@
    "loss": "",
    "build_change": "",
    "counterplay_risk": "",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "CH1",
@@ -384,7 +384,7 @@
    "loss": "傷害法術失去安全距離直接送達；空揮無效，替換付費咒會損失舊成本",
    "build_change": "從遠程施法者改成需近身交付的咒刃，普通傷害倍率不能代替交付方式",
    "counterplay_risk": "法術實例/手別/取消/目標重綁待驗，不能自己刀傷→咒→proc→再次觸法循環",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   },
   {
    "rule_id": "CH2",
@@ -409,7 +409,7 @@
    "loss": "最終最大HP剩四分之一",
    "build_change": "少數純數值High以極端常駐交換迫使整體生存/資源配點改變，不假稱pure-rule",
    "counterplay_risk": "3份整點交換預算未核；不改27atoms或舊keystone，不是夾值cap",
-   "status": "prototype_pending_user_review"
+   "status": "needs_revision_native_spell_binding"
   }
  ]
 }
