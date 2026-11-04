@@ -1,0 +1,112 @@
+{
+ "contract": "wf-table/1",
+ "source": "playstyles.md",
+ "extracted": "2026-11-04",
+ "evidence_scope": "PRTS community reference, browsed 2026-11-04; not an official complete branch specification. Branch traits and named operator talents/skills distinguished. All adaptations are unapproved proposals.",
+ "columns": [
+  "id",
+  "branch",
+  "reference_mechanic",
+  "skyrim_inspiration",
+  "boundary",
+  "sources"
+ ],
+ "rows": [
+  {
+   "id": "AK01",
+   "branch": "解放者／近衛",
+   "reference_mechanic": "非技能期不攻擊、阻擋0並隨時間蓄攻，技能結束重置",
+   "skyrim_inspiration": "防守準備期→主動釋放窗口",
+   "boundary": "不照搬阻擋0成無敵/免仇恨；蓄勢上限與倍率不移植",
+   "sources": "https://prts.wiki/w/玛恩纳#特性"
+  },
+  {
+   "id": "AK02",
+   "branch": "決戰者／重裝",
+   "reference_mechanic": "僅阻擋時回技力，部分模組改限制",
+   "skyrim_inspiration": "承壓才可建立反擊資源",
+   "boundary": "方舟阻擋不同於Skyrim格擋；技力不是MP/SP",
+   "sources": "https://prts.wiki/w/森蚺#特性"
+  },
+  {
+   "id": "AK03",
+   "branch": "守護者／重裝",
+   "reference_mechanic": "分支技能可治友；瑕光S3個人技能在攻擊時另治其他友軍",
+   "skyrim_inspiration": "攻敵救隊友但個人續航另解",
+   "boundary": "攻擊治療是瑕光個人技能例，不是全分支通則；不證Skyrim自選友軍已可行",
+   "sources": "https://prts.wiki/w/瑕光#技能"
+  },
+  {
+   "id": "AK04",
+   "branch": "不屈者／重裝",
+   "reference_mechanic": "不受一般友方治療；泥岩個人天賦定時盾、破盾自回",
+   "skyrim_inspiration": "自立防護循環換少依賴隊醫",
+   "boundary": "仍有生命回復速度例外，不說一切外部回血皆禁；damage intercept待驗",
+   "sources": "https://prts.wiki/w/泥岩#特性 ; https://prts.wiki/w/泥岩#天赋"
+  },
+  {
+   "id": "AK05",
+   "branch": "武者／近衛",
+   "reference_mechanic": "不能作一般他人治療目標且攻敵自回；赫拉格個人天賦失血加攻速",
+   "skyrim_inspiration": "壓低血線進攻續航或退守",
+   "boundary": "禁療有例外；失血攻速非全分支特性，不改既有全圖速度檢查",
+   "sources": "https://prts.wiki/w/赫拉格#特性 ; https://prts.wiki/w/赫拉格#天赋"
+  },
+  {
+   "id": "AK06",
+   "branch": "教官／近衛",
+   "reference_mechanic": "攻自己未阻擋之敵時增強",
+   "skyrim_inspiration": "協同扛線與助攻分工",
+   "boundary": "自己未阻擋不代表一定有隊友阻擋；不移植不可靠仇恨假設",
+   "sources": "https://prts.wiki/w/帕拉斯#特性"
+  },
+  {
+   "id": "AK07",
+   "branch": "要塞／重裝",
+   "reference_mechanic": "未阻擋優先遠程群傷，阻擋優先近戰",
+   "skyrim_inspiration": "近守/離身壓制兩態",
+   "boundary": "格子射程與炮擊優先不能直接等同盾擊事件",
+   "sources": "https://prts.wiki/w/号角#特性"
+  },
+  {
+   "id": "AK08",
+   "branch": "衝鋒手／先鋒",
+   "reference_mechanic": "擊殺回部署費、撤退返初始費",
+   "skyrim_inspiration": "擊殺轉戰鬥資源再追下一敵",
+   "boundary": "部署費非MP/SP；不默認召喚物擊殺歸玩家",
+   "sources": "https://prts.wiki/w/风笛#特性"
+  },
+  {
+   "id": "AK09",
+   "branch": "執旗手／先鋒",
+   "reference_mechanic": "技能期阻擋0；琴柳S1停攻回費，S2另援低血友軍",
+   "skyrim_inspiration": "少輸出換隊伍資源或護援",
+   "boundary": "個人技能分清；停止阻擋不免攻擊，部署費不直接改成MP",
+   "sources": "https://prts.wiki/w/琴柳#特性 ; https://prts.wiki/w/琴柳#技能"
+  },
+  {
+   "id": "AK10",
+   "branch": "戰術家／先鋒",
+   "reference_mechanic": "設戰術點召援軍，攻援軍阻擋之敵時增強",
+   "skyrim_inspiration": "召喚物與本人鎖同敵的協作",
+   "boundary": "原作阻擋關係不是友方先命中，後者屬本案新提案；固定部署不可硬搬",
+   "sources": "https://prts.wiki/w/豆苗#特性"
+  },
+  {
+   "id": "AK11",
+   "branch": "吟遊者／輔助",
+   "reference_mechanic": "不攻擊，範圍友軍持續生命回復，自身不受鼓舞",
+   "skyrim_inspiration": "停劍持盾換持續支援",
+   "boundary": "原作固定部署範圍非移動光環；會員資格與持續重算另定",
+   "sources": "https://prts.wiki/w/浊心斯卡蒂#特性"
+  },
+  {
+   "id": "AK12",
+   "branch": "護佑者／輔助",
+   "reference_mechanic": "平時法傷，技能期改治療；月禾個人天賦護低血友軍",
+   "skyrim_inspiration": "攻防救援轉態、低血門檻保護",
+   "boundary": "月禾低血庇護非全分支特性；友方減傷非代吃傷害或替人格擋",
+   "sources": "https://prts.wiki/w/月禾#特性 ; https://prts.wiki/w/月禾#天赋"
+  }
+ ]
+}

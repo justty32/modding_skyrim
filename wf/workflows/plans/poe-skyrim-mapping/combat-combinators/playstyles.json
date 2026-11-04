@@ -1,0 +1,91 @@
+{
+ "contract": "wf-table/1",
+ "source": "playstyles.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "id",
+  "direction",
+  "fantasy",
+  "loop",
+  "decision",
+  "visible_cue",
+  "solo",
+  "shared_candidate_requirements",
+  "source_boundary",
+  "status"
+ ],
+ "rows": [
+  {
+   "id": "P-A1",
+   "direction": "攻擊",
+   "fantasy": "轉鋒：收掉同敵或帶勢轉敵",
+   "loop": "普劍A→盾擊A生成source=A劍勢→重擊A兌現，或普劍B搬勢不加強度",
+   "decision": "集中殺一人或替下一敵開路；轉敵放棄A收招",
+   "visible_cue": "一份劍勢提示＋當前敵標；提示資產待驗",
+   "solo": "完整可玩；敵A死亡只保剩餘轉敵窗口，不再從屍體取勢",
+   "shared_candidate_requirements": "原生命中分類、owner/source target歸屬、原子consume+move、death判定",
+   "source_boundary": "Cross Cut同目標窗口靈感；移勢為新提案，非來源已驗能力",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "P-A2",
+   "direction": "攻擊",
+   "fantasy": "藏鋒：放棄當下輸出換釋放期",
+   "loop": "真格擋危險攻擊形成勢→持盾暫不揮劍→新真格擋用最近有效交鋒壓力替換舊勢→下一次劍擊整筆兌現或提前出手救急；停止接戰失去來源，不按時間累積",
+   "decision": "讀敵節奏繼續忍或現在出手；不是戰外等免費爆發",
+   "visible_cue": "盾/劍狀態提示；不用新計量表",
+   "solo": "可；壓力事件與戰外重置均待證",
+   "shared_candidate_requirements": "native dangerous block event、recent encounter snapshot、sword hit phase、atomic replace/consume、encounter cleanup",
+   "source_boundary": "AK01解放者準備/釋放時序靈感；原作隨時間蓄攻，本案改為真交鋒形成與替換，非照搬或默定蓄勢cap",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "P-D1",
+   "direction": "防禦",
+   "fantasy": "守線者：選戰場而非等仇恨",
+   "loop": "真格擋立一錨→圈內持盾護己友→出圈/重擊撤守→下次真格擋重立清舊",
+   "decision": "留後排守位置或離圈追遠程",
+   "visible_cue": "可見腳下淡圈；位置資產待驗",
+   "solo": "留地抗壓/出圈追擊仍成立",
+   "shared_candidate_requirements": "anchor position、radius membership、shield state、owner cleanup、friend filter",
+   "source_boundary": "方舟護佑/吟遊支援限制靈感；移動世界護圈是新提案，不是代人格擋",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "P-D2",
+   "direction": "防禦",
+   "fantasy": "決鬥盾：真正接過招才了解對手",
+   "loop": "格擋A記focus=A→對A防護→盾擊/追擊B放棄focus→重新接招",
+   "decision": "專防強敵或放下專注處理包圍",
+   "visible_cue": "當前focus敵標；非嘲諷指示",
+   "solo": "完整單挑循環",
+   "shared_candidate_requirements": "source actor event、focus state、target change、cleanup",
+   "source_boundary": "AK02決戰者限制換回報靈感；不宣稱可靠可控仇恨",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "P-S1",
+   "direction": "輔助",
+   "fantasy": "開門人：收益交給真跟上的人",
+   "loop": "盾擊A標援攻→己普攻牽制→隊友/召喚首筆有效命中恢復其一種資源；己重擊可提前收招放棄支援",
+   "decision": "指定哪個敵讓隊友接棒；自己收招或轉敵",
+   "visible_cue": "敵上短亮標；滿資源不吞標也不付款，付款時點待定",
+   "solo": "明示個人重擊退路或帶隊專精，不暗給同額自補",
+   "shared_candidate_requirements": "third-party hit actor、team/ownership判斷、effective restore、原子first consumer、origin exclusion",
+   "source_boundary": "AK06教官/AK10戰術家協作及AK03瑕光攻敵救友靈感；友方先命中交棒本案原創",
+   "status": "proposal_not_implemented"
+  },
+  {
+   "id": "P-S2",
+   "direction": "輔助",
+   "fantasy": "戰地救護：停劍才開始救人",
+   "loop": "攻敵備救護→收劍持盾接近隊友救護→重新拔劍中止",
+   "decision": "持續輸出或暫停進攻維持救護",
+   "visible_cue": "既有收放武器動作+救護提示；動作可靠性待驗",
+   "solo": "本人能否受益待選，不保證solo全能",
+   "shared_candidate_requirements": "native action stance辨識、state phase、radius friend filter、payment lifecycle",
+   "source_boundary": "AK12護佑者轉態/AK11吟遊少攻換支援靈感；不借對話或新互動選單",
+   "status": "proposal_not_implemented"
+  }
+ ]
+}
