@@ -18,6 +18,10 @@ Done when: 每個施工切片都列出要動的檔案（附 path:line）、依�
 - 資料檔：[atoms.json](data/atoms.json)（27 種 atom 與每份數值）、[family-rules.json](data/family-rules.json)（49 條拆分規則）、[keystones.json](data/keystones.json)（48 列）、[mechanic-decisions.csv](data/mechanic-decisions.csv)（11 列）、[grade-dist.csv](data/grade-dist.csv)。
 - 被取代的舊算法、舊切片與 38 份試算在本計畫的 `archive/`。
 
+## 戰鬥玩法設計
+
+2026-11-04 使用者授權以劍盾目標設計[戰鬥效果組合子](combat-combinators/README.md)：攻擊、防禦、輔助可混搭循環；新數值與實作尚未定，不改既定atoms／映射。
+
 ## 現行狀態（open）
 
 - 已完成初步抽樣；[20 項候選過目頁](../../../user/2026-11-03-perk-units.md)非完整清單；進階與高級戰鬥效果全集調查收工停線、尚未完成，備份複製中，續行見 [private 交接](../../../../agentctl/handoffs/NEXT-SESSION.md)；涵蓋 nonwinning、disabled、hidden 與依賴，按 PERK entry 記覆蓋及範圍理由，不設件數上限。新增啟用／對話／互動選項標為 `deferred_by_user`；非戰鬥製作、買賣、採集、開鎖、社交等排除。攻防、施法、回復、控制、召喚、走位、資源與潛行戰鬥均納入，含武器附魔與法杖效果，不按技能樹名稱整棵排除。新進階／混合數值待使用者確認，高級能力尚未選，均未採用。基本效果是純數值，進階含規則與可量化數值，高級是補能力缺口的純規則；混合效果可拆。既定基礎值不重問。

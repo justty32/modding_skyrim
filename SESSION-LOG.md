@@ -11,6 +11,8 @@
 
 ## 現役工作
 
+- [planning] 戰鬥效果組合子：劍盾攻防輔設計提案已完成；下一步依使用者回饋調整循環與未定參數，不改既定數值或source → [設計入口](wf/workflows/plans/poe-skyrim-mapping/combat-combinators/README.md)。
+
 - [investigation] 全量提取已安裝天賦來源的戰鬥相關進階／高級效果單位，不設件數上限；涵蓋 nonwinning、disabled、hidden 與依賴，按 PERK entry 記覆蓋及範圍理由；新增啟用／對話／互動選項暫緩，非戰鬥效果排除 → 收工停線、尚未完成；備份複製中，續行與核驗狀態見 [private 交接](agentctl/handoffs/NEXT-SESSION.md)。恢復後完成全集調查與可搜尋過目頁，再請使用者確認新數值。
 
 10-24 登記的兩件 `analysis/` 工作（skyrim_engine API 稽核、

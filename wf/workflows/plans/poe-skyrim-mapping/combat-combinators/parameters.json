@@ -1,0 +1,79 @@
+{
+ "contract": "wf-table/1",
+ "source": "model.md",
+ "extracted": "2026-11-04",
+ "columns": [
+  "id",
+  "dimension",
+  "definition",
+  "choice_pending"
+ ],
+ "rows": [
+  {
+   "id": "n",
+   "dimension": "份",
+   "definition": "待分配的新規則份數；不直接等同現行27atoms",
+   "choice_pending": "是否要把數值和能力解鎖分開購買；未排節點"
+  },
+  {
+   "id": "T_mark/T_ready/T_open/T_weaken/T_ward",
+   "dimension": "秒",
+   "definition": "破綻／防禦準備／收招／削弱／護援有效時間，彼此獨立",
+   "choice_pending": "各值未定；刷新/一次消耗方案也待選"
+  },
+  {
+   "id": "C_A/C_D",
+   "dimension": "SP點",
+   "definition": "額外銜接／壓制付款，與原生盾擊成本分開",
+   "choice_pending": "是否額外收費及公式未定；不能反覆雙扣"
+  },
+  {
+   "id": "C_S1/C_S2",
+   "dimension": "MP點",
+   "definition": "護援生成與救援治療成本",
+   "choice_pending": "是否兩段都付款或改一次付款待選；無有效效果不付款"
+  },
+  {
+   "id": "CD_A/CD_D/CD_S1/CD_S2",
+   "dimension": "秒",
+   "definition": "每owner+rule獨立冷卻；效果成功提交後才起算",
+   "choice_pending": "是否使用與時長均未定；不得默填固定值"
+  },
+  {
+   "id": "F_attack",
+   "dimension": "無因次增傷",
+   "definition": "候選k(n)×SP_current/SP_max或k(n)×SP_current/資源尺度；二選一",
+   "choice_pending": "k及模型未定；不冒用DMG_1H每份3%；不加runtime cap"
+  },
+  {
+   "id": "F_guard",
+   "dimension": "無因次防護強度",
+   "definition": "防禦候選g(n)×SP比；輔助使用獨立h(n)，不偷取recipient SP；damage/(1+strength)",
+   "choice_pending": "g/h、各來源先後與原生block結算次序未定"
+  },
+  {
+   "id": "F_weaken",
+   "dimension": "無因次削弱強度",
+   "definition": "候選w(n)>=0；target attack damage/(1+w)",
+   "choice_pending": "與其他削弱疊加、適用攻擊分類未定；未照抄原10%"
+  },
+  {
+   "id": "F_heal",
+   "dimension": "HP點",
+   "definition": "候選q(n)；有效治療由引擎缺血量決定，溢補不儲存",
+   "choice_pending": "q及自己/召喚物效能差異未定，不先折扣"
+  },
+  {
+   "id": "H_low",
+   "dimension": "HP比例",
+   "definition": "S1低血門檻；當前/最大HP的事件快照",
+   "choice_pending": "門檻未定；最大HP<=0或未知不可作用"
+  },
+  {
+   "id": "R_support",
+   "dimension": "距離",
+   "definition": "S1/S2選取合資格recipient距離範圍，明確世界單位",
+   "choice_pending": "半徑未定；不暗承諾穿牆/視線限制不存在"
+  }
+ ]
+}
