@@ -24,3 +24,5 @@ rules.json是規則真相；legacy reference的source_path用gitRoot代號定位
 ## 重現工具
 
 collect.py檢查240身份/分層、42legacySHA、資料契約/容量及完整較強requires映射；duplicate ID與缺strong AND反例已證會紅。render.py從資料產生離線HTML，不修改設計或遊戲。工具採明確data-root/repo-root/output/geometry-root參數；wrapper路徑可由gitRoot展開。細節見主管報告與validator-controls。
+
+工具責任分開：CLI 入口仍是 [collect.py](tools/collect.py)、[render.py](tools/render.py) 與 [render-regions.py](tools/render-regions.py)；collector 驗證在 [collection.py](tools/collection.py)，HTML 規則視圖與顯示欄位在 [review_content.py](tools/review_content.py)／[review_fields.py](tools/review_fields.py)，模板內嵌在 [review_page.py](tools/review_page.py)。[assets](tools/assets/) 保存 HTML 模板、CSS 與 JS；來源換行只供閱讀，生成時移除後內嵌，正式 HTML 仍可單檔離線讀取。複製工具時須一併保留同層模組與 assets。
