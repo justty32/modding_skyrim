@@ -1,5 +1,9 @@
 # 獨立功能驗收
 
+## AgentBridge 0.10.0 截圖：補充實機邊界（2026-11-05）
+
+基本截圖已部署並通過本輪有限實測：兩次場景畫面由使用者確認相符，主選單20次連拍、client中斷後存活與恢復後新圖均通過；這些不重驗。補充邊界留待日後有合適情境再測：真正無frame時有界失敗與恢復、resize／重建、開啟SMF等overlay的包含順序，以及長時間GPU資源觀察。這次切出後仍有新render，不能當無frame timeout已驗；目前不要求使用者繼續操作。見[本輪結果](../wf/user/2026-11-05-agent-bridge-screenshot.md)與[五項驗收狀態](../agentctl/handoffs/home-2026-11-05/agent-bridge-screenshot/runtime-checks.json)。
+
 ## 2026-10-18 施工後實機驗收
 
 當天三批施工都只改 profile／mod 目錄，沒有開 MO2 或遊戲（profiles `fa48d3d`），以下只能玩的時候順路看。逐項證據見 當日現況（已刪：`agentctl/handoffs/home-2026-10-18/STATE.md`）。

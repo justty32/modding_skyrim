@@ -12,6 +12,7 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 <!-- wf-nav -->
 | 檔案 | 內容 |
 |------|------|
+| [2026-11-05-agent-bridge-screenshot.md](2026-11-05-agent-bridge-screenshot.md) | AgentBridge 0.10.0已部署：雙鏡頭目視、20次連拍與切出恢復結果，補充未驗邊界 |
 | [2026-11-04-all-classes.md](2026-11-04-all-classes.md) | 八職×三子類24設計樣板：240規則、真圖與High正負情境，可離線過目；新能力未實作／未部署 |
 | [2026-11-04-heavy-warden-sample.md](2026-11-04-heavy-warden-sample.md) | 重裝通用＋守衛者：19真點、可攜隊友護援／持盾承諾，純設計無runtime |
 | [2026-11-04-guard-double-beat-sample.md](2026-11-04-guard-double-beat-sample.md) | 近衛通用＋浪潮鬥士：19真點、14條規則與原生操作情境；命名一浪接一浪，純設計待過目 |
