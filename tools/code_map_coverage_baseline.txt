@@ -47,5 +47,4 @@ agentctl/tools/test_esplib.py                                                   
 agentctl/tools/test_hygiene_check.py                                             # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_look_transplant_staging.py                                   # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_runtime_log_window.py                                        # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
-agentctl/tools/test_skse_log_window.py                                           # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_triage_crash_types.py                                        # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README

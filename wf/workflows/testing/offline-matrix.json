@@ -26,7 +26,7 @@
   {
    "repo": "`skyrim-voicegen`",
    "命令": "`python -m unittest discover -s tests -v`",
-   "本機基線／範圍": "6 pass；不載 TTS 模型"
+   "本機基線／範圍": "4 pass（2026-11-05 刪 test_wrappers 後）；不載 TTS 模型"
   },
   {
    "repo": "`model-converter`",
@@ -41,7 +41,7 @@
   {
    "repo": "`darksouls-port`",
    "命令": "`PYTHONDONTWRITEBYTECODE=1 ./venv/bin/python -m unittest discover -s tests -p \"test_*.py\" -v`",
-   "本機基線／範圍": "35 pass；**測試在 `tests/` 不是 `tools/`，且必須用 repo 自帶的 `venv/`**——系統 Python 缺 numpy，會變成 2 error / 19 skip"
+   "本機基線／範圍": "2026-11-05 刪 16 支 P2/P3 測試後 80 tests、7 error 皆環境（缺 shapely／soulstruct／DS 抽取資料）；**測試在 `tests/` 不是 `tools/`，且必須用 repo 自帶的 `venv/`**——系統 Python 缺 numpy，會變成 2 error / 19 skip"
   },
   {
    "repo": "`scene-capture-bridge`",

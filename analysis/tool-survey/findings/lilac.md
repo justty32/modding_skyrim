@@ -44,7 +44,7 @@ Lilac repo 自己有完整 self-test：`lilac_test extends Lilac`，`TestSuites(
 
 Campfire/Frostfall **有實際使用**，不是只有文件：`_Frost_ClothingSystem_SEtest` 繼承 Lilac、取得真實 system、宣告 suites/cases，並用 Papyrus state 做 mock seam（`analysis/tool-survey/repos/Campfire/Scripts/Source/_Frost_ClothingSystem_SEtest.psc:1`、`analysis/tool-survey/repos/Campfire/Scripts/Source/_Frost_ClothingSystem_SEtest.psc:29`、`analysis/tool-survey/repos/Campfire/Scripts/Source/_Frost_ArmorProtectionDatastoreHandler.psc:1591`）。另有 SE end-to-end suite 會啟動 Frostfall、脫裝並警告具破壞性（`analysis/tool-survey/repos/Campfire/Scripts/Source/_Frost_SETest_e2e_ClothingScript.psc:80`），證明這是遊戲內 integration test，不是純 VM unit test。
 
-Python 遞迴盤點目前 `projects/sofia-patch/` 的 `.psc` 為 **0**；已有自動化痕跡是 Python contract/preflight tests（`projects/sofia-patch/README.md:45`、`projects/sofia-patch/tests/test_contracts.py:21`），並非 Papyrus runtime tests。因此 Lilac 現在不能直接覆蓋 Sofia script 回歸；翻譯層若只改字串仍應走靜態文字 gate，只有真的改 Papyrus 行為且保有 PSC／fixture 時才適合加 Lilac case。
+Python 遞迴盤點目前 `projects/sofia-patch/` 的 `.psc` 為 **0**；已有自動化痕跡是 Python contract/preflight tests（`projects/sofia-patch/README.md:45`；contract test 2026-11-05 已刪），並非 Papyrus runtime tests。因此 Lilac 現在不能直接覆蓋 Sofia script 回歸；翻譯層若只改字串仍應走靜態文字 gate，只有真的改 Papyrus 行為且保有 PSC／fixture 時才適合加 Lilac case。
 
 ## 7. 可借的概念／可行的下一步；沒查到／需驗證
 

@@ -19,17 +19,10 @@
    git apply /path/to/subtitles-dangling-string-fix/src/SubtitleManager.cpp.patch
    ```
 
-2. 執行靜態驗證：
-
-   ```sh
-   python /path/to/subtitles-dangling-string-fix/tests/check_patch.py \
-     src/SubtitleManager.cpp
-   ```
-
-3. 使用目標專案既有的 Windows MSVC preset 編譯，或依下方已驗證的 Linux
+2. 使用目標專案既有的 Windows MSVC preset 編譯，或依下方已驗證的 Linux
    clang-cl/xwin 說明建置。
 
-4. 確認成品是 x86-64 PE DLL，且仍匯出 `SKSEPlugin_Load`、
+3. 確認成品是 x86-64 PE DLL，且仍匯出 `SKSEPlugin_Load`、
    `SKSEPlugin_Query`、`SKSEPlugin_Version`。
 
 ## Linux clang-cl/xwin 建置備註
