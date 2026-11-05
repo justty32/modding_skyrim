@@ -23,7 +23,7 @@
 - NativeBridge f510已隔離build matching Windows x64 1.2.4.0，normal未開、未部署；[本輪證據](agentctl/handoffs/home-2026-11-04/evening-recovery/README.md)與[WAIT_USER](WAIT_USER.md)承接實機gate。
 - DSP／houseCARL 已完成的離線修復、三條隔離分支與續接位置：
   [2026-10-21 離線成果與收尾](wf/user/2026-10-21-offline-fixes.md)
-- 四條線的入口：各線 README；Skyrim 工作線交接主線在 `agentctl/SESSION-LOG.md`
+- 四條線的入口：各線 README；Skyrim 工作線最新為[11-05公司收線](agentctl/handoffs/home-2026-11-05/STATE.md)，活狀態見[agentctl SESSION](agentctl/SESSION-LOG.md)
 - houseCARL fork 維護決策：
   [fork-maintenance-decision.md](analysis/houseCARL/answers/fork-maintenance-decision.md)
 - houseCARL Linux/MO2 技術方案：

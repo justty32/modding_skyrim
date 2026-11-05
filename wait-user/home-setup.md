@@ -59,7 +59,7 @@
 
 使用者明確要求「直接改全員預設」後，新 r3 已完成八組 host／九個 mutation／獨立 review／真 Windows DLL 與 PE／PDB／hash，並停機部署獨立覆蓋層。fresh load 全員模式生效，六名受管角色 native enabled（五名非 Varinia）、一名特殊 role 自然拒啟及兩名非 Varinia 的 bridge 快照合法；這只證非戰鬥時點與政策路由，不證全隊實戰相容。實際層、備份／回退、profile `4857a8c` 與限制見 [r3 部署驗收](../agentctl/handoffs/home-2026-11-02/nativecombat-default-deploy/REPORT.md)。
 
-尚待自然實戰觀察原生選裝、治療圈及 Volley 能力引導；受管隨從已預設適用，不需逐人加入名單，也不為驗收強行改角色或引戰。Wine Rules EXE 未執行通過，先前 Mono Installer 已精確停止，不當作執行通過。
+11-05已完成[回家準備指南](../wf/user/2026-11-05-nativecombat-r3-home-check.md)，沒有新增驗收項或實機PASS。尚待自然實戰觀察原生選裝、治療圈及 Volley 能力引導；受管隨從已預設適用，不需逐人加入名單，也不為驗收強行改角色或引戰。Wine Rules EXE 未執行通過，先前 Mono Installer 已精確停止，不當作執行通過。
 
 本項承接原 r2 未驗能力，沒有新增一件重複待辦。Varinia r1 已由使用者確認解決、維持結案；r1／r2 原層保留作回退來源。不能把載入／native enabled 或非戰鬥快照視為三項實戰驗收。
 
