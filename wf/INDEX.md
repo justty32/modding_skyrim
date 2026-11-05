@@ -10,8 +10,8 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | [`mod-library/`](../mod-library/) | **四條主線之一**：mod 庫——MongoDB 索引、自製繁中翻譯層、自製插件與修正 esp |
 | [`modpack-design/`](../modpack-design/) | **四條主線之一**：整合包設計——Gameplay 遷移批次、技術債、選型調查 |
 | [`agentctl/`](../agentctl/) | **四條主線之一**：AI 操控總控——派線協議、agent 交接、資源鎖、QA harness、執行證據 |
-| [`agentctl/handoffs/`](../agentctl/handoffs/) | 每場交接書與各隊 `REPORT.md` |
-| [`agentctl/inbox/`](../agentctl/inbox/) | 五通道信箱與 `ROSTER.md` 身份聲明簿 |
+| [`agentctl/handoffs/`](../agentctl/handoffs/) | 每場交接書與各隊 `REPORT.md`；場次夾 30 天或最近 5 場，到期即刪（不再月結搬 `done/`） |
+| [`agentctl/inbox/`](../agentctl/inbox/) | 五通道信箱與 `ROSTER.md` 身份聲明簿；信件 ack 後刪 |
 | [`agentctl/docs/`](../agentctl/docs/) | 驅動 agent、資源鎖、模型分級與 houseCARL 現行文件 |
 | [`projects/`](../projects/README.md) | 獨立開發專案；工具、內容專案與 Git 操作說明都在這一層入口。各子 repo（含四條主線）有自己的 `AGENTS.md`＋`wf/`（例外見根 README）|
 | [`analysis/`](../analysis/README.md) | 引擎、mod、工具與素材來源的研究分類；文件慣例見 [analysis 工作流](workflows/analysis.md) |
@@ -43,4 +43,4 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | [STRUCTURE.md](STRUCTURE.md) | 結構整理參考（被動）：分層、膨脹即拆、四級成長、archive、工作流形式 |
 | [../SESSION-LOG.md](../SESSION-LOG.md) | 母 repo 的 open 進度（Skyrim 工作線的交接主線在 `agentctl/SESSION-LOG.md`）|
 | [../WAIT_USER.md](../WAIT_USER.md) | 等使用者親自做 / 驗證的事 |
-| [../wait-user/](../wait-user/) | `../WAIT_USER.md` 各主題的子檔集合（feature-runtime／integrated-runtime／later-decisions／home-setup，索引見 [README](../wait-user/README.md)） |
+| [../wait-user/](../wait-user/) | `../WAIT_USER.md` 各主題的子檔集合（feature-runtime／integrated-runtime／later-decisions／home-setup，索引見 [README](../wait-user/README.md)；結案項直接刪） |

@@ -6,4 +6,4 @@
 - [fork 維護決策與已驗證的 branch 狀態](answers/fork-maintenance-decision.md)
 - 需要使用者權限的發布與 submodule 納管步驟：[根 WAIT_USER.md](../../WAIT_USER.md)
 
-目前沒有 agent 可主動推進的 in-flight 工作；完成歷史保留在 git history。過時文件見 [archive/](archive/README.md)。
+目前沒有 agent 可主動推進的 in-flight 工作；完成歷史與過時文件都在 git history。

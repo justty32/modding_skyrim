@@ -1,6 +1,6 @@
 # 八職業二十四型設計樣板
 
-[可瀏覽審閱頁](../../../../../user/2026-11-04-all-classes/index.html)｜[主管驗收](REPORT.md)｜[語義審核](audit/REPORT.md)｜[幾何核驗](geometry/REPORT.md)
+審閱頁 HTML 不進版控，由 `tools/render.py --output <路徑>` 重產｜[主管驗收](REPORT.md)｜[語義審核](audit/REPORT.md)｜[幾何核驗](geometry/REPORT.md)
 
 使用者明確選24設計樣板。每職common4A2H與三型各6A2H，共240規則；42原樣板精確reference、198新設計。所有新參數待過目；這輪沒有source/runtime施工。刻印局部source及normal OFF build不代表正常能力開放。
 

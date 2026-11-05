@@ -17,3 +17,6 @@ analysis/skyrim_mods/_sofia_extract/scripts/*.pex
 # 2026-10-17 WP-R1：使用者私人貼板，不進版控；消化結果在 modpack-design/sources/mod-want-review-*
 /mods-user-want.md
 /play-notes.md
+
+# 2026-11-05 slim 決策 7：wf/user 產頁輸出的 HTML 不進版控（只留產頁腳本與資料）
+wf/user/**/*.html

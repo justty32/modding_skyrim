@@ -19,7 +19,6 @@ Skyrim SE 引擎逆向分析知識庫,以 **CommonLibSSE-NG**(C++/SKSE plugin �
 | [`answers/`](answers/README.md) | 48(另 24 篇在同名子資料夾) | 具體問題的分析解答 |
 | [`others/`](others/README.md) | 6 | RE 命名空間 API 總覽(Events/UI/Magic/Inventory/Papyrus/Input) |
 | [`details/commonlibsee-ng/`](details/commonlibsee-ng/README.md) | 2 ＋ RE 7 ＋ examples 3 | CommonLibSSE-NG 專案結構與 RE 層細節、examples |
-| [`archive/`](archive/README.md) | — | 已封存、不在維護鏈的文件 |
 
 ## 檔名慣例
 

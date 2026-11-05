@@ -36,7 +36,6 @@ Done when: <可行/不可行/缺口/下一步已明確，finding 已落檔>
 | `findings/` | 調查結果，按需建立 |
 | `gotchas.md` | 調查踩坑，按需建立 |
 | `session-log.md`（長出來才建）| 本工作流 open/in-flight 調查；目前一律記在根 [SESSION-LOG.md](../../../SESSION-LOG.md) |
-| [`archive/`](archive/README.md) | 過時調查文檔 |
 
 ### 現有 findings
 

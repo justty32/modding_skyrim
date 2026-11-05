@@ -13,8 +13,7 @@ from typing import Iterator, NamedTuple, Sequence
 HUB_RELPATH = "WAIT_USER.md"
 
 # 子檔中「已完成／已裁示（封存）」節的辨識字串；命中後該層之後都不算 open。
-# 出處：wait-user/README.md「## 子檔」表 feature-runtime 列「檔內『已完成（封存）』節」，
-# 四個子檔實際用的是「已完成（封存）」「已裁示／已完成（封存）」「已完成／作廢（封存）」。
+# 2026-11-05 起已完成項直接刪、子檔不再有這種節；保留辨識以防舊格式殘留。
 ARCHIVE_MARKERS = ("封存",)
 
 # 條目標題比容器標題深一層（見模組 docstring）。

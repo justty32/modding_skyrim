@@ -16,16 +16,3 @@
 ## 暫凍（非現役）
 
 使用者2026-11-05暫時凍結 PoE 星盤，等重新指示，不自動研究／設計／實作／部署／驗收。範圍含本輪星盤 IndependentSkills 1.2.x／NativeBridge 候選、24型設計（刻印／浪潮鬥士／守衛者等）及直接服務星盤的全量戰鬥效果研究；不視為取消或完成，不刪資料、不撤既有部署。未確認獨立用途的研究分支保守暫停；一般戰鬥 mod、共用工具及非PoE工作不因此凍結。 續接證據見 [NEXT](agentctl/handoffs/NEXT-SESSION.md)。
-
-## Durable 狀態入口
-
-- 八職×三子類24設計樣板已補齊並通過語義／真圖核驗：[過目頁](wf/user/2026-11-04-all-classes.md)；新參數過目在WAIT_USER，沒有新source/runtime施工。
-- NativeBridge f510已隔離build matching Windows x64 1.2.4.0，normal未開、未部署；[本輪證據](agentctl/handoffs/home-2026-11-04/evening-recovery/README.md)與[WAIT_USER](WAIT_USER.md)承接實機gate。
-- DSP／houseCARL 已完成的離線修復、三條隔離分支與續接位置：
-  [2026-10-21 離線成果與收尾](wf/user/2026-10-21-offline-fixes.md)
-- 四條線的入口：各線 README；Skyrim 工作線最新為[11-05公司收線](agentctl/handoffs/home-2026-11-05/STATE.md)，活狀態見[agentctl SESSION](agentctl/SESSION-LOG.md)
-- houseCARL fork 維護決策：
-  [fork-maintenance-decision.md](analysis/houseCARL/answers/fork-maintenance-decision.md)
-- houseCARL Linux/MO2 技術方案：
-  [linux-manjaro-mo2-runbook.md](analysis/houseCARL/answers/linux-manjaro-mo2-runbook.md)
-- 需使用者或外部環境才能完成的工作：[WAIT_USER.md](WAIT_USER.md)

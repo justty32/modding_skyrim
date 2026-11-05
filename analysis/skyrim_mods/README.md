@@ -49,7 +49,6 @@
 `others/`、`archive/`：
 
 - [`others/modforge-relevance.md`](others/modforge-relevance.md) —— **綜合：ModForge 能借鏡什麼**（對照現有 spec）
-- [`archive/`](archive/README.md) —— 已封存、不在維護鏈的文件
 
 ## 一句話結論
 

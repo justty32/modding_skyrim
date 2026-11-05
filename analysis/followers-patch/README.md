@@ -1,5 +1,7 @@
 # followers-patch — 多隨從性格分析與擴充
 
+> 專案暫緩（2026-11-05），本夾凍結不更新；研究保留為知識正本。
+
 ← [sub_projs](../) ｜ 姊妹專案：[sofia-patch](../../projects/sofia-patch/)（Sofia × VIGILANT，已跑通的範本）
 
 ## 這是什麼

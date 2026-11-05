@@ -4,10 +4,10 @@
 判準出處：`wait-user/README.md`，本模組不自行發明規則。
 
 - README「## 規則」：`WAIT_USER.md` 是 hub、**只放計數表**，各類 open 項的內容在
-  `wait-user/` 子檔；hub 的計數變動敘述寫進 `hub-notes-closed.json`。
+  `wait-user/` 子檔。
   → 所以 hub 那欄只能拿來跟子檔實數比對，hub 本身不是真相來源。
-- README「## 規則」：「判定已完成的項目從 md 移到同名 `*-closed.json`……**不直接刪掉**」，
-  而 README「## 子檔」表把 feature-runtime 的已完成項記為「檔內『已完成（封存）』節」。
+- README「## 規則」：已完成項直接從子檔刪掉（2026-11-05 起）；舊版子檔若仍留標題含
+  「封存」的已完成節，保守處理：
   → 子檔裡標題含「封存」的那一節（及其後所有內容）一律**不計入 open**；
     其餘同層標題每個算一條 open 條目。見 ARCHIVE_MARKERS。
 - 子檔的版面是「`#` 檔名標題 + 每條 open 項一個 `##` 標題」，

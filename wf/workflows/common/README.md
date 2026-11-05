@@ -16,4 +16,4 @@
 | [data-files-fmt.md](data-files-fmt.md) | json 值裡跨層路徑用 `$fmt` 代號展開，省 `../../../` | kernel |
 <!-- wf-insert:COMMON -->
 
-> 過時文檔封存進 `common/archive/`（見 [STRUCTURE](../../STRUCTURE.md)）。
+> 過時文檔直接刪（見 [STRUCTURE](../../STRUCTURE.md) local 段「過時即刪」）。

@@ -53,19 +53,3 @@ cow 學院中文層（profiles `93261f4`）已部署、煙霧通過，剩人眼�
 ## 青蛙相關 crash 自然戰鬥復發觀察（2026-11-01 立）
 
 自然遊玩遭遇青蛙戰鬥時，留意是否再發生 crash。青蛙模型 Trial 層已部署，室內短窗模型載入通過，但尚未證明戰鬥中的 crash 已解決；見 [部署紀錄](../agentctl/handoffs/home-2026-11-01/varinia-native-crash/DEPLOY.md)。
-
-## 已完成／作廢（封存）
-
-> 以下四項在 2026-09-05 逐條對照證據後判定不再需要你動作，從 open 清單移到這裡保存歷史；每項附證據絕對路徑或 commit hash。
-
-已抽到 [integrated-runtime-closed.json](integrated-runtime-closed.json)（4 列）。
-
-項目：原本的三級標題。
-
-關閉日期：文中的關閉或裁示日期。
-
-證據路徑：原文所列的證據。
-
-內容：標題下的完整原文。
-
-統計：4 項。

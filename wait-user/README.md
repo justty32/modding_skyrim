@@ -8,15 +8,14 @@
 - 判定已完成的項目**直接從子檔刪掉**（2026-11-05 起，見 STRUCTURE local 段「過時即刪」），不再搬 `*-closed.json`；追溯靠 git log。
 - hub 只有計數表，不寫敘述、不留「前次」欄；增減後開場跑 `tools/waituser_count.py --check` 核對。
 - 唯一現役 MO2 profile 是 `modpack-main`；子檔中的舊 profile 名稱只描述歷史證據，不能切換或當成現行操作指令。
-- 已全部裁示、只剩歷史價值的整份文件移進 [archive/](archive/README.md)，活文件不連進去。
+- 已全部裁示的整份文件直接刪。
 
 ## 子檔
 
 <!-- wf-nav -->
-| 檔案 | 內容 | 已完成項 |
-|---|---|---|
-| [home-setup.md](home-setup.md) | 回家下載／重建（細節在 `home-setup/`） | `home-setup-closed.json` |
-| [integrated-runtime.md](integrated-runtime.md) | 整包 UI／中文／任務驗收（細節在 `integrated-runtime/`） | `integrated-runtime-closed.json` |
-| [feature-runtime.md](feature-runtime.md) | 獨立功能驗收（細節在 `feature-runtime/`） | 檔內「已完成（封存）」節 |
-| [later-decisions.md](later-decisions.md) | 日後素材／清理決定 | `later-decisions-closed.json` |
-| [hub-notes-closed.json](hub-notes-closed.json) | hub 的增減紀錄與 2026-09-05 重算說明 | — |
+| 檔案 | 內容 |
+|---|---|
+| [home-setup.md](home-setup.md) | 回家下載／重建（細節在 `home-setup/`） |
+| [integrated-runtime.md](integrated-runtime.md) | 整包 UI／中文／任務驗收（細節在 `integrated-runtime/`） |
+| [feature-runtime.md](feature-runtime.md) | 獨立功能驗收（細節在 `feature-runtime/`） |
+| [later-decisions.md](later-decisions.md) | 日後素材／清理決定 |

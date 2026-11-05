@@ -33,9 +33,9 @@
 
 ## 現役 modlist 整合度盤點：敵人／怪物多樣性待決
 
-盤點結論見 [`modpack-design/archive/content-plan/modlist-coverage-2026-09-01.md`](../modpack-design/archive/content-plan/modlist-coverage-2026-09-01.md)
-（2026-09-01 公司端離線產出，未經 xEdit 與實機驗證；該檔 2026-10-23 已封存，連結改指封存路徑，本節尚未裁示的敵人／怪物多樣性問題不受影響）。原本列三件，其中「需求／生存要不要開」
-**2026-10-10 已裁示**；manifest 帳本於 2026-10-17 退役，相關舊要求已移入 [結案紀錄](home-setup-closed.json)。仍待你決定的是：
+盤點結論原在 `modpack-design/archive/content-plan/modlist-coverage-2026-09-01.md`（2026-11-05 已刪，`git -C modpack-design log --all -- <該路徑>` 可取回）
+（2026-09-01 公司端離線產出，未經 xEdit 與實機驗證；該檔已刪，本節尚未裁示的敵人／怪物多樣性問題不受影響）。原本列三件，其中「需求／生存要不要開」
+**2026-10-10 已裁示**；manifest 帳本於 2026-10-17 退役，相關舊要求已結案刪除（git 歷史可查）。仍待你決定的是：
 
 <!-- wf-nav -->
 - **敵人／AI／怪物多樣性要不要補**，以及是否在開新檔前補。現役只有 AI Overhaul 一個家族，
@@ -46,13 +46,13 @@
    `/home/lorkhan/repo/moddings/skyrim/modpack-design/content-plan/lorerim/gameplay-quest/`。）
 
 另：`major-content-preflight-2026-09-01/` 的 9 件裡有 6 件其實早已安裝啟用，該批任務單與批次計畫
-的框架語意需要對現況重新校正（更正段已加在 `home-batching-plan.md` 開頭；該檔 2026-10-23 已封存為
-`modpack-design/archive/content-plan/quests-world/major-content-preflight-2026-09-01/home-batching-plan.md`，9 張任務單與 README 仍在原處）。
+的框架語意需要對現況重新校正（更正段已加在 `home-batching-plan.md` 開頭；該檔原路徑
+`modpack-design/archive/content-plan/quests-world/major-content-preflight-2026-09-01/home-batching-plan.md`，2026-11-05 已刪、git 歷史可取回；9 張任務單與 README 仍在原處）。
 
 ## 自己改 `~/.zshrc` 的 `MODFORGE_TTS_BIN`（2026-10-26 立）
 
 `~/.zshrc` 的 `MODFORGE_TTS_BIN` 指向不存在的路徑，f5 venv 因此找不到；只有你能改 `~/.zshrc`（agent 不碰）。
-來源：10-17 巡檢 #6，裁示單 [已封存](../wf/user/archive/2026-10-17-patrol.md)，登記依據見
+來源：10-17 巡檢 #6，裁示單 `wf/user/archive/2026-10-17-patrol.md`（已刪，git 歷史可取回），登記依據見
 [`agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md`](../agentctl/handoffs/home-2026-10-26/tidyall/mother2/REPORT.md) 待裁第 2 條。
 
 ## Paths NativeCombat r3 全員預設：已部署，待實戰選裝／治療圈／Volley 驗收（2026-11-02 立、家中更新）
@@ -87,32 +87,3 @@ Role on/off 的普通原生 AI 與技能條件、隨從獨立身分、低血離�
 [source-only候選](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.4-dev-2026-11-04-NativeBridge/README.md)的f510來源已於11-04家中隔離建成matching Windows x64 DLL 1.2.4.0，153 source SHA、原PoE輸入及重生圖全符，見[build證據](../agentctl/handoffs/home-2026-11-04/evening-recovery/native/REPORT.md)。normal刻印能力仍關閉，未部署；公司封存包的PE NOT BUILT是原交付時點，不覆寫凍結包。不要求再帶公司raw JSON或17GB研究樹。[還原入口](../agentctl/handoffs/home-2026-11-04/native-bridge/REBUILD.md)區分Git可恢復與固定parent／SDK工具鏈。
 
 matching工具鏈與依賴已在家中核符；本輪只編譯normal OFF，未執行DLL或Rules EXE。若要驗explicit experimental hidden probe，仍須另行確認隔離build／部署、備份與測試存檔。重點是原生施法時序／來源、marker真實例壽命與刷新、正HP傷／MP實扣、真catalog與SKSE存讀；無可見符文，不把SDK doubles PASS或PE link當實機通過。舊1.2.3 S16項保留，不以此替代。
-
-## 已完成（封存）
-
-### 四個指定 mod 安裝施工窗（2026-11-01 立）
-
-施工及必要修正驗收完成，詳見 [部署驗證](../agentctl/handoffs/home-2026-11-01/wanted/INSTALL-QA.md)；自然遊玩驗收另列整包項。
-
-### Chrome 裡重新打開一次 Nexus，讓 agent 能再下載（2026-10-26 立）
-
-2026-11-01 使用者已重新登入，七檔下載及 hash 驗證完成；Kurone 待下載比對已移交 agent 續行。完整原項見 [結案資料](home-setup-closed.json)。
-
-> 以下各項判定已完成／已裁示，從 open 清單移到這裡保存歷史；每項附證據絕對路徑或 commit hash。
-> 前六項是 2026-09-05 逐條對照後移入，第 7 列「需求／生存要不要開」是 2026-10-23 核出使用者 2026-10-10 已裁示而移入。
-
-已抽到 [home-setup-closed.json](home-setup-closed.json)（11 列）。
-
-項目：原本的三級標題。
-
-關閉日期：文中的關閉或裁示日期。
-
-證據路徑：原文所列的證據。
-
-內容：標題下的完整原文。
-
-統計：11 項；各項關閉依據保留於資料檔，本次新增當前session中文讀回驗證。
-
-### AE DLC 授權確認與 CC 第二輪
-
-內容已抽到 closed.json 第 2 列。

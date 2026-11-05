@@ -1,5 +1,7 @@
 # port-source-survey — 移植素材來源候選調查
 
+> 專案暫緩（2026-11-05），本夾凍結不更新；研究保留為知識正本。
+
 ← [README.md](../../README.md)
 
 調查「除了 Dark Souls Remastered 之外，還有哪些遊戲適合抽資產移植進 Skyrim」的候選清單。起點是 [darksouls-port](../../projects/darksouls-port/) 的技術棧（SoulsFormatsNEXT 解 FromSoft 容器格式、`collision_hulls.py` 做引擎無關的碰撞後處理、glTF 當中介格式刻意不做座標轉換以利換引擎）。

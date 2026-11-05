@@ -1,5 +1,7 @@
 # CHIM — headless plugin/save 工具研究
 
+> 專案暫緩（2026-11-05），本夾凍結不更新；研究保留為知識正本。
+
 研究對象是 [mojibake-dev/chim](https://github.com/mojibake-dev/chim)，不是同名 AI NPC 專案。它提供 Python library、MCP 與 Bethesda plugin/save 的位元組操作；本次只評估對 ModForge 的借鑑，不啟動整合或功能開發。
 
 Done when: 已釘來源版本、以實作區分已有能力與缺口，列出可驗收的最小切片及不採納的範圍。

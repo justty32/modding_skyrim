@@ -28,14 +28,16 @@ idea → roadmap → 詳規（本夾）→ feature-dev
 
 ## 已結案／被取代
 
-| 計畫 | 結果 |
-|---|---|
-| mod-library-catalog —— mod 壓縮檔建檔與清理 | 建檔、L1–L3、Nexus 補值與終態決策已完成；L4（146 筆舊命名壓縮檔辨識）2026-10-26 結案，結論在 Mongo `archives.l4_identity`。2026-10-26 封存 |
-| third-party-mod-pipeline —— 第三方 mod 取得–安裝–驗證流水線 | 2026-08-07 結案；P0–P4 完成，Bend Time Rings 端到端實機驗過 |
-| consolidation-2026-08-23 —— 工作區統整與四條新線 | 2026-08-23 執行完成；四條線落地、profile 改名、Downloads 歸檔。2026-10-26 封存 |
-| round-2026-08-07-catalog-and-korean —— 三 agent 分工：mod 庫收尾＋韓文站採集 | 2026-08-07 執行完成（mod-library-catalog 的 P1.4／P1.5）；韓文 inbox 已併入通用 inbox。2026-10-26 封存 |
-| ai-ingame-qa-loop | 2026-08-02 結案；Phase 0–3 與實機 QA runner 通過 |
-| workspace-reorg | 2026-08-01 的佈局設計，被 consolidation-2026-08-23 取代並刪除，git 歷史可取回 |
+計畫檔已刪；`git show <hash>:wf/workflows/plans/archive/<計畫名>/README.md`（或 `.md`）取回。只留最近 10 列。
+
+| 計畫 | 結果 | 最後所在 commit |
+|---|---|---|
+| mod-library-catalog —— mod 壓縮檔建檔與清理 | L1–L4 完成，2026-10-26 結案；結論在 Mongo `archives.l4_identity` | `944fc45` |
+| third-party-mod-pipeline —— 第三方 mod 取得–安裝–驗證流水線 | 2026-08-07 結案；P0–P4 完成，Bend Time Rings 端到端實機驗過 | `944fc45` |
+| consolidation-2026-08-23 —— 工作區統整與四條新線 | 2026-08-23 執行完成；四條線落地、profile 改名、Downloads 歸檔 | `944fc45` |
+| round-2026-08-07-catalog-and-korean —— mod 庫收尾＋韓文站採集 | 2026-08-07 執行完成；韓文 inbox 已併入通用 inbox | `944fc45` |
+| ai-ingame-qa-loop | 2026-08-02 結案；Phase 0–3 與實機 QA runner 通過 | `944fc45` |
+| workspace-reorg | 被 consolidation-2026-08-23 取代並刪除 | — |
 
 ## 何時不用
 
