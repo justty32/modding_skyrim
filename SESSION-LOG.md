@@ -11,7 +11,11 @@
 
 ## 現役工作
 
-- [investigation] 戰鬥進階／高級效果全集調查尚未完成；家中持久17GB checkpoint已找回，45個具名原檔SHA全符，正續universe／scope有界閉合。今日Git PoE輸入不是全集包；[恢復實核](agentctl/handoffs/home-2026-11-04/evening-recovery/research/REPORT.md)與[NEXT](agentctl/handoffs/NEXT-SESSION.md)保留各族未完語義與來源身份。
+目前沒有已授權主動續行的工作。
+
+## 暫凍（非現役）
+
+使用者2026-11-05暫時凍結 PoE 星盤，等重新指示，不自動研究／設計／實作／部署／驗收。範圍含本輪星盤 IndependentSkills 1.2.x／NativeBridge 候選、24型設計（刻印／浪潮鬥士／守衛者等）及直接服務星盤的全量戰鬥效果研究；不視為取消或完成，不刪資料、不撤既有部署。未確認獨立用途的研究分支保守暫停；一般戰鬥 mod、共用工具及非PoE工作不因此凍結。 續接證據見 [NEXT](agentctl/handoffs/NEXT-SESSION.md)。
 
 ## Durable 狀態入口
 
