@@ -1,5 +1,9 @@
 # 獨立功能驗收
 
+## AgentBridge 0.11.0 原生 keyboard tap（2026-11-05）
+
+0.11.0 已部署並完成有限實測：唯一一次空格請求被 environment guard 取消，down／up 均 false，未重試；跳躍與成功派送尚未驗。先釐清 guard 的 menu／foreground／snapshot 原因，再安排受控實測；其他 guard 與 release debt 亦待驗，現在不需要使用者操作。詳見[實機報告](../agentctl/handoffs/home-2026-11-05/agent-bridge-input/RUNTIME-REPORT.md)與[輸入契約](../projects/agent-bridge/docs/input.md)。
+
 ## AgentBridge 0.10.0 截圖：補充實機邊界（2026-11-05）
 
 基本截圖已部署並通過本輪有限實測：兩次場景畫面由使用者確認相符，主選單20次連拍、client中斷後存活與恢復後新圖均通過；這些不重驗。補充邊界留待日後有合適情境再測：真正無frame時有界失敗與恢復、resize／重建、開啟SMF等overlay的包含順序，以及長時間GPU資源觀察。這次切出後仍有新render，不能當無frame timeout已驗；目前不要求使用者繼續操作。見[本輪結果](../wf/user/2026-11-05-agent-bridge-screenshot.md)與[五項驗收狀態](../agentctl/handoffs/home-2026-11-05/agent-bridge-screenshot/runtime-checks.json)。

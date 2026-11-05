@@ -2,7 +2,7 @@
 
 ## model-converter：wf-import 分支與 DSP pin 的整合時機（2026-11-05 家中）
 
-既有裁示是等 DSP 重新 pin 時才把 `wf-import` fast-forward 回 `main`；家中同步後兩分支已分叉，`main`／`wf-import` 各有 6／3 個獨有 commit，不能再直接快進。真正的規矩檔只在 `wf-import`，因此本輪未在 `main` 另造一套，也未修改暫緩中的 DSP。下次恢復這條整合時，需一併決定分支整合與重新 pin 的順序；目前受釘 Python 來源 hash 仍相符，只有既有 commit pin 漂移。見[家中實核](../agentctl/handoffs/home-2026-11-05/evening-maintenance/REPORT.md)。
+既有裁示是等 DSP 重新 pin 時才把 `wf-import` fast-forward 回 `main`；兩分支已分叉，不能再直接快進。真正的規矩檔只在 `wf-import`，本輪未在 `main` 另造一套，也未修改暫緩中的 DSP。晚段 converter 主線 `96037bc` 已加入 strip／fan 三角化，受釘 Python hash變為 `21c3118f0b62b53f5154c488a2c0bf19c32f0c0440e624918901ac1e9dfe862d`，不再符合DSP原pin的 `dc8dad833d110ffa904bebb40ec1e9cc05828b48e68ca31c01782333aea7e902`；現在是commit與source雙漂移。下次恢復此整合，需一併決定分支整合與重新pin順序；不讓DSP直接採用新轉換器。見[晚段實核](../agentctl/handoffs/home-2026-11-05/converter-next/REPORT.md)；[較早實核](../agentctl/handoffs/home-2026-11-05/evening-maintenance/REPORT.md)的「hash相同」只代表其來源時點。
 
 ## 夜貓－無心 3.1.0（可選精確替換）
 
