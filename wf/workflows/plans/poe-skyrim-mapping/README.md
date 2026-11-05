@@ -30,3 +30,4 @@ Done when: 每個施工切片都列出要動的檔案（附 path:line）、依�
 - 第二波 S8–S14 尚未施工；依各機制的規格與新數值裁示繼續，不表示整個計畫完成。
 - 等使用者：提供施法速度的參考 mod；延後的 10 個 keystone（9 個自創＋Supreme Ego）之後逐個討論。兩項登記在母 repo `wait-user/later-decisions.md`。
 - 施工中還要請使用者定的：能量護盾規格（S9）、藥瓶門檻與冷卻（S13）、新機制 atom 的每份數值。
+- 2026-11-05 Fable 只讀審查（PoE 仍暫凍，解凍前待辦參考）：[review-2026-11-05/](review-2026-11-05/README.md)

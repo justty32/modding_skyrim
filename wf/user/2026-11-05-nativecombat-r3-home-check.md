@@ -12,4 +12,4 @@ r3已部署，三項實戰仍未驗。回家照原本方式玩一段就好，先
 
 若出現反覆收拔、卡住不攻擊、圈結束還走不開、崩潰或卡死，先停下，記角色、時間、當時能力與目標，留畫面或簡短具體描述；讓agent保存當次log，別急著重開蓋掉證據。測試結束不要覆寫原存檔，也不要自行撤層或改設定。
 
-操作與機器可填清單見[回家準備](../../agentctl/handoffs/home-2026-11-05/nativecombat-r3-ready/README.md)；已部署及原有未驗界線見11-02報告（已刪：`agentctl/handoffs/home-2026-11-02/nativecombat-default-deploy/REPORT.md`）。這是回家指南，沒有宣稱實機通過。
+操作與機器可填清單見[回家準備](../../agentctl/handoffs/home-2026-11-05/nativecombat-r3-ready/README.md)；已部署及原有未驗界線見11-02報告（已刪，取回：`git -C agentctl show 3db1b772:handoffs/home-2026-11-02/nativecombat-default-deploy/REPORT.md`）。這是回家指南，沒有宣稱實機通過。
