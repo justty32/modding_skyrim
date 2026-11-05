@@ -3,7 +3,7 @@
 把整條工作線外包給同機的其他 CLI agent（`codex`／`pi`），自己當調度者。
 
 ```text
-Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit 已核（push 需使用者確認，不代按）、鎖已釋放、交接書移到 done/>
+Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit 已核（push 需使用者確認，不代按）、鎖已釋放、交接書與證據留在場次夾，依保留期到期清理>
 ```
 
 **完整流程在 [`agentctl/docs/driving-codex.md`](../../../agentctl/docs/driving-codex.md)。**

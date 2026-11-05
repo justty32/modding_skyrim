@@ -11,7 +11,7 @@
 
 ## 現役工作
 
-目前沒有已授權主動續行的工作。
+母 repo 無在途工作；已授權的子專案續行見 [agentctl SESSION](agentctl/SESSION-LOG.md)。
 
 ## 暫凍（非現役）
 

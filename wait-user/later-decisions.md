@@ -1,5 +1,9 @@
 # 日後素材／清理決定
 
+## model-converter：wf-import 分支與 DSP pin 的整合時機（2026-11-05 家中）
+
+既有裁示是等 DSP 重新 pin 時才把 `wf-import` fast-forward 回 `main`；家中同步後兩分支已分叉，`main`／`wf-import` 各有 6／3 個獨有 commit，不能再直接快進。真正的規矩檔只在 `wf-import`，因此本輪未在 `main` 另造一套，也未修改暫緩中的 DSP。下次恢復這條整合時，需一併決定分支整合與重新 pin 的順序；目前受釘 Python 來源 hash 仍相符，只有既有 commit pin 漂移。見[家中實核](../agentctl/handoffs/home-2026-11-05/evening-maintenance/REPORT.md)。
+
 ## 夜貓－無心 3.1.0（可選精確替換）
 
 目前 JH People 1.1.3＋NPC Plugin Chooser 2 的 536 NPC patch 已滿足方向，不阻塞整包。若仍要精確
