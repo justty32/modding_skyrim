@@ -68,6 +68,12 @@
 - `archive/` 內**只有 `README.md` 索引**（可省略；一列一檔：檔名、封存日期、取代者或原因；**只准追加列**），是唯一可以連進 `archive/` 的地方；不套大小門檻、不維護內部連結。
 - 工作流若依協議用 `done/`／`superseded/` 分層（如 dispatch 的 handoff），同樣視為封存、不套門檻、lint 不下鑽；放信的 `inbox/`（含 `done/`）是寄件原文、比照處理（`workflows/inbox/` 是工作流文件，照掃）。
 
+<!-- local -->
+**本地覆寫（2026-11-05 起，取代上段）：過時即刪。** 過時／被取代／已結案的文件與紀錄直接 `git rm`，不再建 `archive/`、`done/`、`superseded/`、`history/`，追溯靠 `git log --all -- <路徑>`。刪前把仍被引用的結論吸收進活文件、連結改純文字；commit 訊息寫「刪除：<理由>」。例外：成品（mod-library `l10n/mods/`、`plugins/`）與被 hash／manifest 釘住的檔。
+
+保留期：場次夾 30 天或最近 5 場（取較多）；`SESSION-LOG.md` ≤ 2 KB、`NEXT-SESSION.md` ≤ 4 KB、`STATE.md` ≤ 8 KB；信件 ack 後、結案項即刪；`wf/user/` 頁用畢 30 天刪、HTML 不進版控；`qa/reports/`、`tidy/reports/` 留最近 2 批。`wf/tools/wf-lint-local.sh` 報 `ARCHIVE-DIR`／`STALE-SESSION`／`HUB-OVERSIZE`。
+<!-- /local -->
+
 ## 日誌寫法
 
 專案若記日誌（`session_logs/`），它只記「哪天做了什麼」，**不是第二份知識庫**：

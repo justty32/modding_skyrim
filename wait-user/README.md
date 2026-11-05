@@ -5,8 +5,8 @@
 ## 規則
 
 - 只收需要使用者親自操作、實機驗收、外部環境或素材才能繼續的 open 項。
-- 判定已完成的項目從 md 移到同名 `*-closed.json`（契約 `wf-table/1`），附關閉日期與證據路徑，**不直接刪掉**。
-- hub 的計數變動與敘述（新增／結案／重算說明）寫進 `hub-notes-closed.json`，hub 本身不寫敘述。
+- 判定已完成的項目**直接從子檔刪掉**（2026-11-05 起，見 STRUCTURE local 段「過時即刪」），不再搬 `*-closed.json`；追溯靠 git log。
+- hub 只有計數表，不寫敘述、不留「前次」欄；增減後開場跑 `tools/waituser_count.py --check` 核對。
 - 唯一現役 MO2 profile 是 `modpack-main`；子檔中的舊 profile 名稱只描述歷史證據，不能切換或當成現行操作指令。
 - 已全部裁示、只剩歷史價值的整份文件移進 [archive/](archive/README.md)，活文件不連進去。
 

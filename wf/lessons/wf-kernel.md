@@ -30,6 +30,8 @@
 
 **kernel 工具內容**：`tabledb.py`(+`tabledb_links.py`) 資料檔 CRUD 與 `links/check/open/resolve`、`find_big_lists.py`（>1 KB 條列、>10 連結）、`fix_moved_links.py`（跨 repo 搬檔連結重寫，含資料檔內、同 `$fmt` 代號重寫）、wf-lint 掃 BIGLIST 與資料檔斷鏈（`--strict` 時 oversize 也算失敗）；`workflows/common/data-files.md` 是 `wf-table/1` 契約唯一出處；AGENTS 鐵律「條列走資料檔、導航留 md」。json 內路徑變數 `$fmt`：`{"$fmt": "${gitRoot}/x.md#a"}` 物件形式、純字串永不展開；變數由 `tools/fmt-vars.json` 定義（`wf-fmt-vars/1`：name／how／aliases；專案用 `fmt-vars.local.json` 追加），解析器只實作 file-dir／git-self／git-parent／git-top／env；`tabledb.py fmt [--vars]`；契約在 `workflows/common/data-files-fmt.md`。
 
+**archive 規則本地覆寫為過時即刪（2026-11-05）**：STRUCTURE「archive 規則」kernel 段照舊，覆寫寫在其後的 `<!-- local -->` 段（四載點同文），保留期檢查 `wf/tools/wf-lint-retention.sh` 由各 `wf-lint-local.sh` 呼叫；升級時 kernel 段照抄、local 段與這兩支 project-owned 檔保留。
+
 **local hook 契約**：wf-lint 掃某 dir 時若存在 `<dir>/wf/tools/wf-lint-local.sh` 就以 `bash <它> <dir> <strict>` 執行，finding 平時 warning、`--strict` 才算失敗；`*-local.sh` 是 project-owned，升級整包覆蓋時**不得刪除載點多出的 project-owned 檔**。
 
 **How to apply（升級流程）:** 目標＝上游 main HEAD；tools 整包覆蓋；kernel-owned md（`STRUCTURE.md`、`TEMPLATE.workflow.md` 等）三方 diff（上游舊版／新版／本地）只換 kernel 段、本地段（如 tidy/README「本工作區的實際跑法」）保留；project-owned 只套 CHANGELOG「既有專案要跟」那幾行；lint 只准持平或下降。本地 wf/tools 可能已含上游某版之後的規則（2026-09-25 試升 v0.5.1 時純覆蓋會倒退、測試紅），所以要對齊上游 HEAD、用 diff 合併不盲目覆蓋舊版（對照報告 agentctl/handoffs/home-2026-09-25/wu/kern/REPORT.md）。版本戳 `grep wf-kernel AGENTS.md`。`wf-init.sh` 遇既有 `AGENTS.md` 會拒絕，升級不能直接跑它。驗收命令要加 `--include='*.md'`，否則會命中 `wf-lint.sh` 自己的 pattern 字串。相關：[[workspace-layout-and-duties]]

@@ -3,7 +3,7 @@
 這裡放**濃縮結果**：開玩前清單、審批頁、裁示單——使用者要親自讀、親自裁示的東西。
 Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留在 [`agentctl/handoffs/`](../../agentctl/handoffs/)；本目錄的檔案只做摘要，連結要連回原始報告。
 
-檔名格式：`YYYY-MM-DD-<主題>.md`。已用完或過時的頁照 [STRUCTURE archive 規則](../STRUCTURE.md#archive-規則)封存到 [archive/](archive/README.md)；還被 WAIT_USER open 項或 open 驗收清單引用的頁不封存。
+檔名格式：`YYYY-MM-DD-<主題>.md`。已用完或過時的頁**用畢 30 天直接刪**（[STRUCTURE](../STRUCTURE.md) local 段「過時即刪」）；還被 WAIT_USER open 項或 open 驗收清單引用的頁不刪。產頁腳本產出的 HTML **不進版控**（`.gitignore`），只留腳本與資料。
 
 **門檻**：單頁 ≤ 8 KB，超過就按主題／地點拆子資料夾、原路徑留入口頁；長清單用小節（`###`）切開，不用一張大表。
 
