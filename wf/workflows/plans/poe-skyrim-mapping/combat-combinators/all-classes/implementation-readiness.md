@@ -2,7 +2,7 @@
 
 Done when: current樣板、rule身份與共享canonical不混版；最多五個可行性gate逐一分清既有證據及缺證；下一次使用者review能作精確決策，沒有代批engine。
 
-本輪只讀母repo660761e、agentctl c312537f、mod-library e07dd32內f510快照；不重建工程、不執行runtime、不改source/atoms/數值。下文S=`mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.4-dev-2026-11-04-NativeBridge/source`；D=`wf/workflows/plans/poe-skyrim-mapping/combat-combinators`；H=`agentctl/handoffs/home-2026-11-04`。
+本輪只讀母repo660761e、agentctl c312537f、mod-library e07dd32內f510快照；不重建工程、不執行runtime、不改source/atoms/數值。下文S=`mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.4-dev-2026-11-04-NativeBridge/source`；D=`wf/workflows/plans/poe-skyrim-mapping/combat-combinators`；H=`agentctl/handoffs/home-2026-11-04`（已刪，取回：`git -C agentctl show bf38e9c9e017:handoffs/home-2026-11-04/<路徑>`）。
 
 ## current身份
 

@@ -2,7 +2,7 @@
 
 [README](README.md)｜[decisions](decisions.md)｜[mechanics](mechanics.md)｜[phases](phases.md)
 
-48 個 keystone 中，第一批施工 38 個（真規則 29、近似 9）；自創 9 個加上 Supreme Ego 共 10 個延後，上線前用 5 份通用加成佔位。討論稿與分組推薦在 [poe-keystones](../../../../agentctl/handoffs/home-2026-11-03/poe-keystones/REPORT.md)。
+48 個 keystone 中，第一批施工 38 個（真規則 29、近似 9）；自創 9 個加上 Supreme Ego 共 10 個延後，上線前用 5 份通用加成佔位。討論稿與分組推薦在 poe-keystones（已刪，取回：`git -C agentctl show bf38e9c9e017:handoffs/home-2026-11-03/poe-keystones/REPORT.md`）。
 
 ## 資料檔
 

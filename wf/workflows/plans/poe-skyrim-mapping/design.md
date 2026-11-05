@@ -2,7 +2,7 @@
 
 [README](README.md)｜[decisions](decisions.md)｜[mechanics](mechanics.md)｜[phases](phases.md)
 
-依據：[poe-attrs](../../../../agentctl/handoffs/home-2026-11-03/poe-attrs/REPORT.md)（效果統計）、[poe-mechanics](../../../../agentctl/handoffs/home-2026-11-03/poe-mechanics/REPORT.md)（A／B／C 分級）、[poe-calib](../../../../agentctl/handoffs/home-2026-11-03/poe-calib/REPORT.md)（每份數值與 L50 驗證）。裁示見 [decisions](decisions.md)。
+依據：poe-attrs（已刪，取回：`git -C agentctl show bf38e9c9e017:handoffs/home-2026-11-03/poe-attrs/REPORT.md`）（效果統計）、poe-mechanics（已刪，取回：`git -C agentctl show bf38e9c9e017:handoffs/home-2026-11-03/poe-mechanics/REPORT.md`）（A／B／C 分級）、poe-calib（已刪，取回：`git -C agentctl show bf38e9c9e017:handoffs/home-2026-11-03/poe-calib/REPORT.md`）（每份數值與 L50 驗證）。裁示見 [decisions](decisions.md)。
 
 ## 1. 預算模型
 
@@ -58,10 +58,11 @@ ESL 的 perk 用 `Multiply 1+AV Mult`／`Add AV Mult` 讀 carrier AV；carrier A
 
 逐 atom 的每份值、×50、基準、L50 最多可湊份數，以及 4 種 build 的明細，在 poe-calib 的 `data/per-share.json`、`data/builds-l50.json`。用本計畫目前的 atoms／family-rules 重跑 poe-calib 的 `poe_calib.py`，per-share 與 builds 兩表逐列相同，速度加總也相同。
 
-重跑法：
+重跑法（poe-calib 夾已刪，先從 git 取回到暫存目錄 `$T`）：
 
 ```sh
-python3 agentctl/handoffs/home-2026-11-03/poe-calib/tools/poe_calib.py <核准的 data.json> wf/workflows/plans/poe-skyrim-mapping/data <輸出目錄>
+git -C agentctl archive bf38e9c9e017 handoffs/home-2026-11-03/poe-calib | tar -x -C "$T"
+python3 "$T"/handoffs/home-2026-11-03/poe-calib/tools/poe_calib.py <核准的 data.json> wf/workflows/plans/poe-skyrim-mapping/data <輸出目錄>
 ```
 
 腳本會先核對 data.json 的 SHA `7e9f…1122`。

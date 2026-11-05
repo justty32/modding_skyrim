@@ -8,8 +8,9 @@
 
 這些都是調查提案，**尚未採用**。進階效果的數值與混合效果的數值部分需請你過目確認；高級能力也尚未選定。M3、M6、A5、MA06、MA05 涉及額外原則或限制，頁面特別標為「另裁示」。已安裝但未勝出的天賦樹也可參考。
 
-初步研究與證據見 [private 研究報告](../../agentctl/handoffs/home-2026-11-03/installed-perks/REPORT.md)。離線頁及 [公開用資料摘錄](2026-11-03-perk-units/review-data.json) 可由研究表重產；來源 SHA-256 顯示於頁尾。重產命令從母 repo 執行：
+初步研究與證據見 private 研究報告（已刪，取回：`git -C agentctl show bf38e9c9e017:handoffs/home-2026-11-03/installed-perks/REPORT.md`）。離線頁及 [公開用資料摘錄](2026-11-03-perk-units/review-data.json) 可由研究表重產；來源 SHA-256 顯示於頁尾。研究表已隨場次夾刪除，重產前先從 git 取回到暫存目錄 `$T`，再從母 repo 執行：
 
 ```sh
-python wf/user/2026-11-03-perk-units/render.py agentctl/handoffs/home-2026-11-03/installed-perks
+git -C agentctl archive bf38e9c9e017 handoffs/home-2026-11-03/installed-perks | tar -x -C "$T"
+python wf/user/2026-11-03-perk-units/render.py "$T"/handoffs/home-2026-11-03/installed-perks
 ```

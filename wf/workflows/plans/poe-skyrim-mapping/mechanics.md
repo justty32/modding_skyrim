@@ -2,7 +2,7 @@
 
 [README](README.md)｜[decisions](decisions.md)｜[design](design.md)｜[phases](phases.md)
 
-使用者對評估報告（[poe-mechanics](../../../../agentctl/handoffs/home-2026-11-03/poe-mechanics/REPORT.md)）中 C 級與 B 級機制的裁示，原話是 [user-words 的原話六](user-words-2026-11-03.md)。星盤玩家也用、直接疊加在 perk 上，所以「隨從不會操作，因此價值低」不是剔除理由。
+使用者對評估報告（poe-mechanics（已刪，取回：`git -C agentctl show bf38e9c9e017:handoffs/home-2026-11-03/poe-mechanics/REPORT.md`））中 C 級與 B 級機制的裁示，原話是 [user-words 的原話六](user-words-2026-11-03.md)。星盤玩家也用、直接疊加在 perk 上，所以「隨從不會操作，因此價值低」不是剔除理由。
 
 ## 逐機制裁示
 

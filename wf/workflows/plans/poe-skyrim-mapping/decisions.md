@@ -18,7 +18,7 @@
 
 ## 3. 數值
 
-- 每份數值寫在 [atoms.json](data/atoms.json) 的 `per_share` 欄，一律整數。原話：「有小數點的，都四捨五入」（.5 進位；[poe-calib](../../../../agentctl/handoffs/home-2026-11-03/poe-calib/REPORT.md)）。
+- 每份數值寫在 [atoms.json](data/atoms.json) 的 `per_share` 欄，一律整數。原話：「有小數點的，都四捨五入」（.5 進位；poe-calib（已刪，取回：`git -C agentctl show bf38e9c9e017:handoffs/home-2026-11-03/poe-calib/REPORT.md`））。
 - **50 份校準**：L50 共 50 點。每份數值以「50 份全灌同一效果 ≈ 原版 L50 或使用者給的基準」反推。基準只用來反推每份數值。原話：「40...改50吧，這樣更舒服」；實際 50 點拿到 80–90 份、多數效果湊不滿 50 份，使用者接受：「50份只是理想，我覺得現在這樣就OK」。
 - 數值以原版護甲等級和傷害為參考；武器傷害以該等級的弓、單手劍、雙手劍為基礎。
 
