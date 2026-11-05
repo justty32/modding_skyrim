@@ -7,9 +7,13 @@
 | 回家下載／重建 | 8 | [`wait-user/home-setup.md`](wait-user/home-setup.md) |
 | 整包 UI／中文／任務驗收 | 12 | [`wait-user/integrated-runtime.md`](wait-user/integrated-runtime.md) |
 | 獨立功能驗收 | 13 | [`wait-user/feature-runtime.md`](wait-user/feature-runtime.md) |
-| 日後素材／清理決定 | 6 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
-| 版本控制收線 | 0 | [本檔下節](#push-排程) |
+| 日後素材／清理決定 | 7 | [`wait-user/later-decisions.md`](wait-user/later-decisions.md) |
+| 版本控制收線 | 1 | [本檔下節](#push-排程) |
 
 ## Push 排程
 
-目前沒有等使用者放行的 push 排程。2026-10-21 使用者已放行母 repo 與 DSP／houseCARL／agentctl 三個修復分支；範圍與結果見 [離線成果與收尾](wf/user/2026-10-21-offline-fixes.md#收尾與下次續接)。
+2026-10-21 使用者已放行母 repo 與 DSP／houseCARL／agentctl 三個修復分支；範圍與結果見 [離線成果與收尾](wf/user/2026-10-21-offline-fixes.md#收尾與下次續接)。
+
+### 2026-11-05 tidy 收線待 push
+
+只 commit 未 push：母 repo、agentctl、instance 與 projects 下 ModForge／my_skyrim_plugin_1／sofia-patch／darksouls-port／scene-capture-bridge／agent-bridge／godot-worldspace-editor；放行後內到外推（子 repo 先、母 repo 後）。

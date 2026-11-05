@@ -46,7 +46,7 @@ SkyrimIngameEditor repo 本次不可得，僅依既有 finding：其 EspGenerato
 
 ### 片段一：navmesh 鋪 quad — PORT
 
-值得移植「走位取樣、格點去重、polygon preview」而非 Pascal exporter。第一步候選：在 bridge 做最小 `sc nav` registry，將採樣結果輸出為真正 `navPatches[]`，先只接受現有 ModForge interior convex-polygon contract；bridge 目前確實沒有 producer（`projects/ModForge/workflows/investigation/ingame-editor-status-audit-2026-08-25.md:145-149`）。
+值得移植「走位取樣、格點去重、polygon preview」而非 Pascal exporter。第一步候選：在 bridge 做最小 `sc nav` registry，將採樣結果輸出為真正 `navPatches[]`，先只接受現有 ModForge interior convex-polygon contract；bridge 目前確實沒有 producer（`projects/ModForge/workflows/investigation/ingame-editor-status-audit-2026-08-25.md:145-149`，已刪，取回：`git -C projects/ModForge show 509170c^:workflows/investigation/ingame-editor-status-audit-2026-08-25.md`；現行追蹤在 ModForge `workflows/plans/scene-capture-bridge/backlog.md`）。
 
 ### 片段二：cell 快照 — SKIP
 
