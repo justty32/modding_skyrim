@@ -15,6 +15,8 @@
 
 | 日期 | 決定 | 來源（使用者原文或誰定的）| 前提（變了就重看）|
 |------|------|-------------------------|-----------------|
+| 2026-11-05 | **暫緩**：projects/darksouls-port、projects/sofia-patch、projects/godot-worldspace-editor（自 10-26 實質閒置）、chim／AI 世界相關研究；不刪資料，等使用者重新指示 | 使用者先前「dark souls, sofia, chim/ai世界都暫緩」；2026-11-05「godot-worldspace-editor也暫緩。」 | 使用者重新指示時重看；原只寫在 NEXT-SESSION（會被覆寫），此為正本 |
+| 2026-11-05 | **恢復主動推進**：agent-bridge 實作 `/screenshot`、`/input` 端點（原未實作、無人追）；model-converter、scene-capture-bridge 同步推進。下場開線才定第一個切片，本日不實作 | 使用者 2026-11-05「agent-bridge的截圖、按鍵功能得做。model-converter,scene-capture-bridge都該同步推進。」 | 下場先讀各 repo README／SESSION-LOG |
 | 2026-11-05 | **過時即刪**取代「搬 archive/、不刪」：封存／done／superseded／history 目錄廢除，場次夾、hub、信件、結案項各有保留期（STRUCTURE local 段） | 使用者 2026-11-05「封存的其實也可以刪掉了。該來把整個repo做瘦身」，照計畫 2026-11-05-slim 建議勾選 | git history 仍完整可取回（不改寫歷史、不 gc）；要改寫歷史縮 pack 時重看 |
 | 2026-10-26 | Tomebound、Spellforge、Dragons Keep **不裝**：modlist 改 `-`，mod 目錄保留（profiles `6784720`） | 使用者 2026-10-26 裁示；施工 `agentctl/handoffs/home-2026-10-26/decide1026/REPORT.md` | 想重裝其中任一件時另開評估線（法術覆寫順序、槽位、中文層） |
 | 2026-10-26 | OBody 黑名單收齊所有 Kurone7 私有身體隨從：Aniya、Melana 補進 `OBody-PrivateBody-Blacklist-2026-10-04` | 使用者 2026-10-26 裁示；同上 | 有人換成帶 `.tri`／要 OBody 形變的身體時重看 |

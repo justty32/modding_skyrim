@@ -12,4 +12,4 @@
 
 ## 怎麼重產（給 agent）
 
-`python3 -I agentctl/handoffs/home-2026-10-26/vfstats/tools/scan_vf_stats.py --out-dir <目錄>` 重掃現況（約 1 分鐘），判斷表在同目錄 `tools/proposals_src.py`，`tools/build_proposals.py` 併出 `data/vf-proposals.tsv` 與頁面；用同一個檔案路徑或 url 重發，重發前先 `read` 線上版。頁面的選擇存在頁面資料庫 `picks/main`（ArtifactData 可讀）。
+先從 git 取回 vfstats 夾（刪除前最後版本 `dc4b66e3^`，例：`git -C agentctl show dc4b66e3^:handoffs/home-2026-10-26/vfstats/tools/scan_vf_stats.py`，其餘檔同法），再跑 `python3 -I <取回路徑>/scan_vf_stats.py --out-dir <目錄>` 重掃現況（約 1 分鐘），判斷表在同目錄 `tools/proposals_src.py`，`tools/build_proposals.py` 併出 `data/vf-proposals.tsv` 與頁面；用同一個檔案路徑或 url 重發，重發前先 `read` 線上版。頁面的選擇存在頁面資料庫 `picks/main`（ArtifactData 可讀）。
