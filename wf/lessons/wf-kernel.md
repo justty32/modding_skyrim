@@ -30,7 +30,7 @@
 
 **kernel 工具內容**：`tabledb.py`(+`tabledb_links.py`) 資料檔 CRUD 與 `links/check/open/resolve`、`find_big_lists.py`（>1 KB 條列、>10 連結）、`fix_moved_links.py`（跨 repo 搬檔連結重寫，含資料檔內、同 `$fmt` 代號重寫）、wf-lint 掃 BIGLIST 與資料檔斷鏈（`--strict` 時 oversize 也算失敗）；`workflows/common/data-files.md` 是 `wf-table/1` 契約唯一出處；AGENTS 鐵律「條列走資料檔、導航留 md」。json 內路徑變數 `$fmt`：`{"$fmt": "${gitRoot}/x.md#a"}` 物件形式、純字串永不展開；變數由 `tools/fmt-vars.json` 定義（`wf-fmt-vars/1`：name／how／aliases；專案用 `fmt-vars.local.json` 追加），解析器只實作 file-dir／git-self／git-parent／git-top／env；`tabledb.py fmt [--vars]`；契約在 `workflows/common/data-files-fmt.md`。
 
-**archive 規則本地覆寫為過時即刪（2026-11-05）**：STRUCTURE「archive 規則」kernel 段照舊，覆寫寫在其後的 `<!-- local -->` 段（四載點同文），保留期檢查 `wf/tools/wf-lint-retention.sh` 由各 `wf-lint-local.sh` 呼叫；升級時 kernel 段照抄、local 段與這兩支 project-owned 檔保留。
+**archive 規則本地覆寫為過時即刪（2026-11-05）**：STRUCTURE「archive 規則」kernel 段照舊，覆寫寫在其後的 `<!-- local -->` 段（四載點同文），保留期檢查 `wf/tools/wf-lint-retention.sh` 由各 `wf-lint-local.sh` 呼叫；升級時 kernel 段照抄、local 段與這兩支 project-owned 檔保留。**同步排除（2026-11-05 使用者裁示）**：agentctl 與 modpack-design 的 `wf/tools/` 已刪 9 支 kernel 測試（`test_check_anchors`／`test_find_big_lists`／`test_fix_moved_links`／`test_tabledb`／`test_tabledb_fmt`／`test_tabledb_fmt_vars`／`test_wf_lint`／`test_wf_lint_local`／`test_wf_lint_scope`，母 repo 同名檔逐 byte 副本，母 repo 保留；agentctl 刪於 `5c3d6d88`）；同步沒有腳本（手動「tools 整包覆蓋」），所以排除寫在流程：覆蓋 agentctl／modpack-design 的 `wf/tools/` 時**只複製非 `test_*` 檔**（例：`rsync -a --exclude='test_*' <來源>/tools/ <repo>/wf/tools/`），覆蓋完 `git status` 不得出現 `test_*.py` 新增；mod-library 與子 repo 若另有刪除照同樣處理。
 
 **local hook 契約**：wf-lint 掃某 dir 時若存在 `<dir>/wf/tools/wf-lint-local.sh` 就以 `bash <它> <dir> <strict>` 執行，finding 平時 warning、`--strict` 才算失敗；`*-local.sh` 是 project-owned，升級整包覆蓋時**不得刪除載點多出的 project-owned 檔**。
 

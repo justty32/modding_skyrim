@@ -45,6 +45,6 @@ modpack-design commit `652ed91`／`dd009b8`。
 
 使用者 2026-10-24「這些都記下來，我下次做」留下的積壓：`MEMORY.md` 改成指向 `wf/lessons/` 的指標——memmig 搬家本體已做完（183 個小節、原檔全在），唯一剩的就是這個動作，`wf/lessons/README.md` 已寫明由頂層處理；在那之前兩邊並存、記憶目錄較新。
 
-## 瘦身殘項裁示（2026-11-05）
+## PoE 凍結成品 10 條壞鏈：解凍重發時一起修（2026-11-05 裁示）
 
-全 repo 瘦身後留下三件需你定方向的事（細節見 [11-05 STATE](../agentctl/handoffs/home-2026-11-05/STATE.md#claude-code-場瘦身與-tidy)）：① mod-library `l10n/tools/per-layer/build_zhmake_combined_layers.py` 的輸入已刪，要刪掉這支一次性腳本，還是要用時從 git `b13d4ca^` 取回輸入；② 下次 wf kernel 同步會把已刪的 `wf/tools` 測試副本帶回 agentctl／modpack-design，要不要在同步時固定排除；③ PoE 凍結成品被 MANIFEST 鎖住的 10 條壞鏈，是否在解凍重發成品時一併修。
+PoE 凍結成品內 6 檔與 NativeCombat r2 `source/README.md` 4 條壞鏈被 MANIFEST hash 鎖住，現在不改；你 2026-11-05 說「都按照建議」，建議為解凍重發成品時一併修（重算 MANIFEST），在那之前不單獨動。細節見 [11-05 STATE](../agentctl/handoffs/home-2026-11-05/STATE.md#claude-code-場瘦身與-tidy)。

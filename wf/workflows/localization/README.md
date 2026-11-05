@@ -11,7 +11,7 @@ Done when: <同版閘門通過、層內確有中文、排序在本體之上、au
 ## 先決定要不要做
 
 翻譯取捨的現行規則見 [`modpack-design/README.md`](../../../modpack-design/README.md)；
-不要把已封存的 `translation-layer-cost-policy.md` 當現役入口。
+`translation-layer-cost-policy.md` 已刪，不是現役入口。
 
 **方塊字／缺字破版不可接受；名詞不一致、繁簡混雜可接受。** 有同版簡中就直接裝，
 不要開 CHS→CHT 轉換層；遊戲的 `sLanguage` 維持 `ENGLISH`，中文放在英文槽。

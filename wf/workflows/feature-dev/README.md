@@ -39,4 +39,3 @@ Done when: <功能完成、測試/驗證通過、文檔/CODE_MAP 對齊的條件
 | `session-log.md`（長出來才建）| 本工作流 open/in-flight 進度 |
 | `gotchas.md` | 功能開發踩坑，按需建立 |
 | `landed/` | 已落地功能目錄，按需建立 |
-| `archive/` | 過時或被取代的功能開發文檔 |

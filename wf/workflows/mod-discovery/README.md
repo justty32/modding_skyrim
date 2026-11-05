@@ -18,7 +18,7 @@ Done when: <候選有結論(可追/暫放/不追)、連結存活狀態已查、�
 ## 來源索引
 
 現行來源與取得狀態只從 [`modpack-design/sources/OPEN.md`](../../../modpack-design/sources/OPEN.md) 進場；
-已封存的來源索引與 URL inbox 不是現役入口。
+來源索引與 URL inbox 的舊版已刪，不是現役入口。
 
 ## AI 對 inbox URL 做什麼
 
