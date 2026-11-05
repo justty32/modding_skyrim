@@ -19,5 +19,4 @@ NFF，Sofia 的 RDO／AI Overhaul／No Bump 選配須重新核對現役 clothing
 VIGILANT 1.8.2 四層仍啟用（`modlist.txt:357`／`:358`／`:360`／`:421`）；
 Sofia 的 clothing binding fix winner 仍在（`modlist.txt:417`／`:418`、`plugins.txt:599`＝`*SofiaClothingBindingFixDev.esp`）。
 **還沒做的是實機那一段**（Auri 招募／跟隨、VIGILANT commentary 條件與字幕、Sofia 選配無新衝突）。
-另註：`/home/lorkhan/repo/moddings/skyrim/agentctl/status/todo/20-Auri到底還做不做.md` 有一份平行筆記，兩處講同一件事。
 

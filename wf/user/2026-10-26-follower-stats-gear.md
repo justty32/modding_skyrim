@@ -8,7 +8,7 @@
 
 這輪只調查，沒有改任何 esp 或 profile。結論一句話：多數隨從作者都設計過，推薦以不動為主；真的有毛病、推薦要改的是 Remiel（第三方戰鬥改造被外觀 mod 蓋回原版）、Secunda（等級倍率 ×10）、Cheryl／Sela（作者的衣服在背包、預設穿原版衣服）、Fastred（等級上限 40）、Rosetta（作者講的水系魔法沒實裝）；另有 8 人推薦「遊戲內自己給裝備」就好。
 
-詳情與逐人理由：[vfstats REPORT](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)。
+詳情與逐人理由：vfstats REPORT（已刪：`agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md`）。
 
 ## 怎麼重產（給 agent）
 

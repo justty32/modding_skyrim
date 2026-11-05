@@ -2,7 +2,7 @@
 
 抽樣附魔分解→學習→製作→裝備／重載／充能、Empowered Strike power-attack proc、slot restriction、
 vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據見
-[`Batch 4E RESULT`](../../agentctl/logs/simonrim-batch4-4e-2026-08-16/RESULT.md)。
+`Batch 4E RESULT`（已刪：`agentctl/logs/simonrim-batch4-4e-2026-08-16/RESULT.md`）。
 
 **2026-09-05 核對：對象仍在，本節有效。**
 `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt:458`＝`+Thaumaturgy 1.5 Dev 2026-08-16`（啟用）、
@@ -18,7 +18,7 @@ vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據
 
 以 Apothecary 1.3.9 等現役組合抽樣跨來源鍊金、戰鬥塗毒、vendor 庫存／價格／early-game 供應、
 長 session 平衡與存讀檔。既有 gate 7/7、SPID 19/19 不重跑；證據見
-[`Batch 4A RESULT`](../../agentctl/logs/simonrim-batch4-4a-2026-08-16/RESULT.md)。
+`Batch 4A RESULT`（已刪：`agentctl/logs/simonrim-batch4-4a-2026-08-16/RESULT.md`）。
 
 **2026-09-05 核對：對象仍在且仍是 1.3.9，本節完全有效、無需改動。**
 `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt:439`＝`+Apothecary 1.3.9 Dev 2026-08-16`（啟用），
@@ -53,12 +53,12 @@ vanilla ~~／AVE~~ loot/vendor 階級比例。靜態與 smoke 不重跑；證據
 > **驗收對象已於 2026-08-26 改寫。** 原文寫的是 `Mysticism 2.5.0`／`Adamant 6.0.4`，
 > 那兩個版本已在 2026-08-21 的 Simonrim→EnaiRim 遷移（Vokriinator Black 路線）中停用
 > （`modlist.txt:175`、`:178` 現在是 `-`）；
-> [`batches.md`](../../agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batches.md) 第 9 行
+> `batches.md`（已刪：`agentctl/logs/simonrim-to-enairim-final-selection-2026-08-24/batches.md`） 第 9 行
 > 明訂保留 Mysticism 2.4.2 作唯一 base，是既定方向。**抽樣清單本身沒有過期，只有版本號過期**，
 > 所以改寫而不是刪除。
 
 舊版本的證據見
-[`Batch 4M/P RESULT`](../../agentctl/logs/simonrim-batch4-4mp-2026-08-16/RESULT.md)——那是 2.5.0／6.0.4
+`Batch 4M/P RESULT`（已刪：`agentctl/logs/simonrim-batch4-4mp-2026-08-16/RESULT.md`）——那是 2.5.0／6.0.4
 的結果，**不能直接沿用**到現役組合。EnaiRim Batch 1 終態 gate 也會驗 Mysticism 2.4.2 base；
 兩者若排在同一個驗收窗口，這份清單可以併進去一起跑，但不要因此把它從本檔移除。
 

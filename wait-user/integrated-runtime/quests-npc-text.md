@@ -9,8 +9,8 @@ Altano，抽查主線開場、對話／字幕、日誌／目標、書籍、物�
 抽查 UNSLAAD 3.0.6b、Missives 2.03、DAc0da 1.1.0b、GLENMORIL 0.96.80b 的 MCM／任務入口、
 ~~正體~~**中文**日誌／對話／字幕、語音與跨 worldspace。GLENMORIL 語音覆蓋 3,653/4,792，UNSLAAD 英語語音
 只涵蓋 Act 1；Silent Voice 是接受狀態。證據見
-[`quest batch`](../../agentctl/logs/quest-content-batch-2026-08-20.md)與
-[`final smoke`](../../agentctl/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md)。
+`quest batch`（已刪：`agentctl/logs/quest-content-batch-2026-08-20.md`）與
+`final smoke`（已刪：`agentctl/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md`）。
 
 **對象更正（2026-09-05 實讀，四件都還在，但兩件的中文層從繁中換成簡中）**：
 - **UNSLAAD**：`modlist.txt:356`＝`+Unslaad SE 3.0.6b Dev 2026-08-20`（本體啟用），
@@ -40,7 +40,6 @@ Altano，抽查主線開場、對話／字幕、日誌／目標、書籍、物�
 `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/loadorder.txt:688`＝`JhNPCBeautyDev.esp`。
 注意它**不在 `modlist.txt` 裡**（`grep -i JhNPC` 對 modlist 零命中）——這是 MO2 mod 名與 plugin 名不同名造成的，
 不是它沒安裝；查它要查 `plugins.txt`／`loadorder.txt`，別只查 modlist。
-同一件事另有筆記 `/home/lorkhan/repo/moddings/skyrim/agentctl/status/todo/22-JhNPCBeautyDev帳本對不上.md`。
 
 **兩條修法擇一**（dispatcher 2026-08-28 判定延後，理由是不在剛修好並 commit 的 load order 上
 疊第二次改動、且當時沒有實機驗證窗口）：

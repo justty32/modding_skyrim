@@ -8,7 +8,7 @@
 | 隨從名冊 | <https://claude.ai/artifact/H1p9Y7YyXf8xmUsL7AcEtT> | 現在裝著的隨從 mod、臉是誰的、有沒有中文 |
 | 換頭換身素材目錄 | <https://claude.ai/artifact/CmyAr9aceVnDKQRupkcPLg> | 09-05 的素材目錄與建議配對，10-26 起標上現況 |
 
-10-26 這輪的實際變化：Varinia 換臉後「戴假髮就光頭、洋裝隱形」已修（新層 `Varinia-WoodElf-ARMA-Races-Dev-2026-10-26`）；名冊補上 Varinia／Yoana 漏掉的「外觀」行；素材目錄加了現況欄。其餘資料跟 10-10 版一樣（10-10 之後沒有新的換臉層）。詳情：[face3 REPORT](../../agentctl/handoffs/home-2026-10-26/face3/REPORT.md)。
+10-26 這輪的實際變化：Varinia 換臉後「戴假髮就光頭、洋裝隱形」已修（新層 `Varinia-WoodElf-ARMA-Races-Dev-2026-10-26`）；名冊補上 Varinia／Yoana 漏掉的「外觀」行；素材目錄加了現況欄。其餘資料跟 10-10 版一樣（10-10 之後沒有新的換臉層）。詳情：face3 REPORT（已刪：`agentctl/handoffs/home-2026-10-26/face3/REPORT.md`）。
 
 ## 怎麼重產（給 agent）
 

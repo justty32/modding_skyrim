@@ -22,7 +22,7 @@ agentctl commit `b009076`、`/home/lorkhan/repo/moddings/skyrim/agentctl/handoff
 自動 lane 21/21 PASS、`load_epoch 1 → 2`、0 new crash 不能代替真人。需驗新遊戲、城市／NPC、~~BFCO~~
 **MCO**、Mysticism／Adamant、CT77／~~AVE~~、RDO、VIGILANT Altano 入口／字幕／語音、
 自然跨 worldspace、MCM 與 description overlay 書。VIGILANT 四層須同版 1.8.2；Silent Voice 缺口已
-接受、不需 TTS。證據見 [`Batch 6 RESULT`](../../agentctl/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md)。
+接受、不需 TTS。證據見 `Batch 6 RESULT`（已刪：`agentctl/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md`）。
 
 **對象更正（2026-09-05 實讀，清單不刪只改名）**：
 - **BFCO → MCO**：2026-09-02 使用者裁示戰鬥框架從 BFCO 移回 MCO 並已施工。

@@ -14,4 +14,4 @@
 
 10-03 之後的招架（Valhalla）、攻速（CARP）、閃避（TK Dodge）、BnB 4.0.2 調整都不影響配招；太刀 idle 只調查沒改。
 
-產頁腳本與證據：[mvpages REPORT](../../agentctl/handoffs/home-2026-10-26/mvpages/REPORT.md)；姿態工具在 agentctl `tools/movesets/`，挑選表／候選的腳本在 [npc-moveset-binding](../../modpack-design/content-plan/gameplay/npc-moveset-binding/README.md)。
+產頁腳本與證據：mvpages REPORT（已刪：`agentctl/handoffs/home-2026-10-26/mvpages/REPORT.md`）；姿態工具在 agentctl `tools/movesets/`，挑選表／候選的腳本在 [npc-moveset-binding](../../modpack-design/content-plan/gameplay/npc-moveset-binding/README.md)。

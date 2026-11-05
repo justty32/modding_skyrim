@@ -22,4 +22,4 @@
 ## 細節在哪
 
 - 146 筆逐筆結論與統計：[mod-library/audits/README.md](../../mod-library/audits/README.md)（明細資料檔在同目錄）。
-- 這條線的內部報告：[agentctl/handoffs/home-2026-10-26/mlib/REPORT.md](../../agentctl/handoffs/home-2026-10-26/mlib/REPORT.md)。
+- 這條線的內部報告：`agentctl/handoffs/home-2026-10-26/mlib/REPORT.md`（已刪）。

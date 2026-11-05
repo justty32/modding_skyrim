@@ -27,7 +27,7 @@
    "certainty": "新部署/驗收/裁示優先於舊建議表。",
    "home_check": "本輪不重開",
    "status": "排除",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/remiel/REPORT.md)；[REPORT.md](../../agentctl/handoffs/home-2026-10-26/decide1026/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/remiel/REPORT.md；agentctl/handoffs/home-2026-10-26/decide1026/REPORT.md",
    "source_locator": "REPORT.md:3；REPORT.md:88"
   },
   {
@@ -39,7 +39,7 @@
    "certainty": "倍率欄位已證；是否不合理是平衡取捨，未證作者寫錯。",
    "home_check": "施工前重核現役 winner/分發與 Paths 等後續改動；家中驗收。公司只可準備規格/來源候選。",
    "status": "供使用者點名，未授權施工",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:16；原表name=赛库达"
   },
   {
@@ -51,7 +51,7 @@
    "certainty": "靜態欄位已證，實穿未驗，不能稱現役穿錯。",
    "home_check": "施工前重核現役 winner/分發與 Paths 等後續改動；家中驗收。公司只可準備規格/來源候選。",
    "status": "供使用者點名，未授權施工",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:17；原表name=谢丽尔"
   },
   {
@@ -63,7 +63,7 @@
    "certainty": "靜態欄位已證，實穿未驗，不能稱現役穿錯。",
    "home_check": "施工前重核現役 winner/分發與 Paths 等後續改動；家中驗收。公司只可準備規格/來源候選。",
    "status": "供使用者點名，未授權施工",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:18；原表name=塞拉"
   },
   {
@@ -75,7 +75,7 @@
    "certainty": "作者現成設定已證，是強化選項，不是已證故障。",
    "home_check": "施工前重核現役 winner/分發與 Paths 等後續改動；家中驗收。公司只可準備規格/來源候選。",
    "status": "供使用者點名，未授權施工",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:19；原表name=法斯蕾德"
   },
   {
@@ -87,7 +87,7 @@
    "certainty": "描述/法術表差異已證；屬主題整合，不證原mod壞或作者漏做。",
    "home_check": "施工前重核現役 winner/分發與 Paths 等後續改動；家中驗收。公司只可準備規格/來源候選。",
    "status": "供使用者點名，未授權施工",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:20；原表name=萝赛塔"
   },
   {
@@ -195,7 +195,7 @@
    "certainty": "舊調查推薦屬偏好/低成本升級，不是已證整合故障。",
    "home_check": "家中遊戲；不要引入作者禁止的框架。",
    "status": "可選但非施工優先",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:71；原表name=安伯莉艾尔"
   },
   {
@@ -207,7 +207,7 @@
    "certainty": "舊調查推薦屬偏好/低成本升級，不是已證整合故障。",
    "home_check": "家中遊戲；不要引入作者禁止的框架。",
    "status": "可選但非施工優先",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:71；原表name=阿泰爾"
   },
   {
@@ -219,7 +219,7 @@
    "certainty": "舊調查推薦屬偏好/低成本升級，不是已證整合故障。",
    "home_check": "家中遊戲；不要引入作者禁止的框架。",
    "status": "可選但非施工優先",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:71；原表name=比凯"
   },
   {
@@ -231,7 +231,7 @@
    "certainty": "舊調查推薦屬偏好/低成本升級，不是已證整合故障。",
    "home_check": "家中遊戲；不要引入作者禁止的框架。",
    "status": "可選但非施工優先",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:71；原表name=纳纳克"
   },
   {
@@ -243,7 +243,7 @@
    "certainty": "舊調查推薦屬偏好/低成本升級，不是已證整合故障。",
    "home_check": "家中遊戲；不要引入作者禁止的框架。",
    "status": "可選但非施工優先",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:71；原表name=斯'阿里克"
   },
   {
@@ -255,7 +255,7 @@
    "certainty": "舊調查推薦屬偏好/低成本升級，不是已證整合故障。",
    "home_check": "家中遊戲；不要引入作者禁止的框架。",
    "status": "可選但非施工優先",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:71；原表name=玛卡拉"
   },
   {
@@ -267,7 +267,7 @@
    "certainty": "舊調查推薦屬偏好/低成本升級，不是已證整合故障。",
    "home_check": "家中遊戲；不要引入作者禁止的框架。",
    "status": "可選但非施工優先",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/REPORT.md",
    "source_locator": "REPORT.md:71；原表name=玛琳"
   },
   {
@@ -291,7 +291,7 @@
    "certainty": "11-02確認結案。",
    "home_check": "r2另需家中",
    "status": "r1排除",
-   "source_path": "[STATE.md](../../agentctl/handoffs/home-2026-11-02/STATE.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-11-02/STATE.md",
    "source_locator": "STATE.md:9"
   },
   {
@@ -303,7 +303,7 @@
    "certainty": "以原報末段後續裁示為準；裝備、Paths pool 與固定劍均非未完成項。",
    "home_check": "本輪不重開",
    "status": "排除當前待做",
-   "source_path": "[REPORT.md](../../agentctl/handoffs/home-2026-11-01/camilla-single/REPORT.md)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-11-01/camilla-single/REPORT.md",
    "source_locator": "REPORT.md:7"
   },
   {
@@ -315,7 +315,7 @@
    "certainty": "原調查推薦S0保留；不是故障，不是預設改造。",
    "home_check": "選中後先重核來源/現役分發；家中驗收。",
    "status": "使用者明確想調定位/強度才選",
-   "source_path": "[vf-proposals.tsv](../../agentctl/handoffs/home-2026-10-26/vfstats/data/vf-proposals.tsv)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/data/vf-proposals.tsv",
    "source_locator": "name=安妮亚"
   },
   {
@@ -327,7 +327,7 @@
    "certainty": "原調查推薦S0保留；不是故障，不是預設改造。",
    "home_check": "選中後先重核來源/現役分發；家中驗收。",
    "status": "使用者明確想調定位/強度才選",
-   "source_path": "[vf-proposals.tsv](../../agentctl/handoffs/home-2026-10-26/vfstats/data/vf-proposals.tsv)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/data/vf-proposals.tsv",
    "source_locator": "name=摩格茵"
   },
   {
@@ -339,7 +339,7 @@
    "certainty": "原調查推薦S0保留；不是故障，不是預設改造。",
    "home_check": "選中後先重核來源/現役分發；家中驗收。",
    "status": "使用者明確想調定位/強度才選",
-   "source_path": "[vf-proposals.tsv](../../agentctl/handoffs/home-2026-10-26/vfstats/data/vf-proposals.tsv)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/data/vf-proposals.tsv",
    "source_locator": "name=維耶魯希娜"
   },
   {
@@ -351,7 +351,7 @@
    "certainty": "原調查推薦S0保留；不是故障，不是預設改造。",
    "home_check": "選中後先重核來源/現役分發；家中驗收。",
    "status": "使用者明確想調定位/強度才選",
-   "source_path": "[vf-proposals.tsv](../../agentctl/handoffs/home-2026-10-26/vfstats/data/vf-proposals.tsv)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/data/vf-proposals.tsv",
    "source_locator": "name=莉特莉娜"
   },
   {
@@ -363,7 +363,7 @@
    "certainty": "原調查推薦S0保留；不是故障，不是預設改造。",
    "home_check": "選中後先重核來源/現役分發；家中驗收。",
    "status": "使用者明確想調定位/強度才選",
-   "source_path": "[vf-proposals.tsv](../../agentctl/handoffs/home-2026-10-26/vfstats/data/vf-proposals.tsv)",
+   "source_path": "deleted:agentctl/handoffs/home-2026-10-26/vfstats/data/vf-proposals.tsv",
    "source_locator": "name=伊露妮娜"
   }
  ]

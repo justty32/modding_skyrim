@@ -14,4 +14,4 @@
 
 放寬武器／盾條件前，另驗原動畫的 handedness。原為雙手武器或雙持設計的 clip，即使條件模擬能命中持盾角色，也可能錯握盾手或揮不存在的第二把武器；沒有 block／bash 檔不等於它天然適盾。
 
-方法來源：[格擋調查 REPORT](../../../agentctl/handoffs/home-2026-11-01/block-recovery/REPORT.md)、[STANCES](../../../agentctl/handoffs/home-2026-11-01/block-recovery/STANCES.md)、[QA 邊界](../../../agentctl/handoffs/home-2026-11-01/block-recovery/QA.md)。這些保留原始案例證據；本頁不改其未定因、候選凍結、觀察未執行的狀態，也不啟動新 runtime 工作。
+方法來源：格擋調查 REPORT（已刪：`agentctl/handoffs/home-2026-11-01/block-recovery/REPORT.md`）、STANCES（已刪：`agentctl/handoffs/home-2026-11-01/block-recovery/STANCES.md`）、QA 邊界（已刪：`agentctl/handoffs/home-2026-11-01/block-recovery/QA.md`）。這些保留原始案例證據；本頁不改其未定因、候選凍結、觀察未執行的狀態，也不啟動新 runtime 工作。

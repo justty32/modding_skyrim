@@ -23,7 +23,7 @@ SmoothCam 各靜置確認**不再轉、不再靠近**。
 但**尚未部署、尚未實機驗收**：修正 `21867c1`（分支 `fix/ghost-cell-clear-2026-08-26`，已推 origin），
 DLL SHA-256 `b302857681988f4930f666d41aef13c8ab9ef94486d8e746b81f1832c4a965e3`（1906688 bytes）。
 成因與修法見 [`調查記錄`](../../projects/scene-capture-bridge/docs/investigations/GHOST_CELL_CLEAR_INVESTIGATION_2026-08-26.md)
-與 [`收線記錄`](../../agentctl/handoffs/done/README.md)。**要跑 15 條之前先部署這顆 DLL**，
+與 `收線記錄`（已刪：`agentctl/handoffs/done/README.md`）。**要跑 15 條之前先部署這顆 DLL**，
 否則驗的還是舊行為。
 
 **2026-09-25 22:2x 推進**：cx-wu-rt 實讀現役 `mods/SceneCaptureBridge/SKSE/Plugins/SceneCaptureBridge.dll`
@@ -39,5 +39,5 @@ SHA-256 已是 `b302857681988f49…`（1,906,688 bytes），即修正 DLL 早已
 
 修好後再重跑固定 15 條，涵蓋第一人稱、vanilla 第三人稱、SmoothCam；2026-08-22 的證據只支持 2 條，
 不能當作 13/15 通過。清單見
-[`固定 15 條`](../../agentctl/logs/scene-ghost-camera-ray-2026-08-22.md#runtime-驗收清單固定-15-條)。
+`固定 15 條`（已刪：`agentctl/logs/scene-ghost-camera-ray-2026-08-22.md`）。
 

@@ -14,9 +14,6 @@
 # tools/README.md，而母 CODE_MAP 只留著拆分前就收錄的那幾支。
 
 agentctl/tools/agent_inbox/tests/test_inbox.sh                                   # 測試檔；agent_inbox/README.md 管
-agentctl/tools/archive/test_check_links.py                                       # 封存工具（agentctl/tools/archive/README.md 有列），不維護
-agentctl/tools/archive/test_enairim_offline_gates.py                             # 封存工具（agentctl/tools/archive/README.md 有列），不維護
-agentctl/tools/archive/youtube_scan/scan.sh                                      # 封存工具（agentctl/tools/archive/README.md 有列），不維護
 agentctl/tools/crash_triage/commands.py                                          # 套件內部模組；README 以目錄列（triage_crash.py）
 agentctl/tools/crash_triage/known.py                                             # 套件內部模組；README 以目錄列（triage_crash.py）
 agentctl/tools/dll_runtime/archive.py                                            # 套件內部模組；README 以目錄列（check_dll_runtime.py）
@@ -31,9 +28,6 @@ agentctl/tools/gallery/commands.py                                              
 agentctl/tools/gallery/config.py                                                 # 套件內部模組；README 以目錄列（build_gallery.py）
 agentctl/tools/gallery/render.py                                                 # 套件內部模組；README 以目錄列（build_gallery.py）
 agentctl/tools/look_transplant/tests/test_hdpt_shape_gate.py                     # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
-agentctl/tools/look_transplant/tests/test_transplant_characterization.py         # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
-agentctl/tools/look_transplant/tests/test_transplant_characterization_plugin.py  # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
-agentctl/tools/look_transplant/tests/test_transplant_characterization_pure.py    # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/look_transplant/transplant_lib/assets.py                          # 套件內部模組；README 以目錄列（look_transplant/transplant.py）
 agentctl/tools/look_transplant/transplant_lib/body.py                            # 套件內部模組；README 以目錄列（look_transplant/transplant.py）
 agentctl/tools/look_transplant/transplant_lib/body_fields.py                     # 套件內部模組；README 以目錄列（look_transplant/transplant.py）
@@ -47,14 +41,11 @@ agentctl/tools/movesets/_fixture.py                                             
 agentctl/tools/movesets/test_force.py                                            # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/movesets/test_keytrace_order.py                                   # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/movesets/test_scan_eval.py                                        # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
-agentctl/tools/test_build_gallery.py                                             # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_check_dll_runtime.py                                         # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_check_housecarl_deployed.py                                  # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
-agentctl/tools/test_dll_runtime_cli.py                                           # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_esplib.py                                                    # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_hygiene_check.py                                             # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_look_transplant_staging.py                                   # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_runtime_log_window.py                                        # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_skse_log_window.py                                           # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
-agentctl/tools/test_triage_crash.py                                              # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README
 agentctl/tools/test_triage_crash_types.py                                        # 測試檔；守備範圍見 agentctl/tools/TESTS.md 或所屬子目錄 README

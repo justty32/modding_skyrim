@@ -24,7 +24,7 @@ GitHub 的 `Documentation checks` 跑同一組 unittest，link checker 另加 `-
 本機已初始化的完整 checkout 不加後一個旗標，跨 repo 連結仍須全數通過。
 
 `agentctl/inbox/done/*/originals/` 是必須原樣保留的寄件副本，裡面的相對路徑與家用絕對路徑
-只代表寄件當時的環境（契約見 [done/README.md](../../agentctl/inbox/done/README.md)）。
+只代表寄件當時的環境（契約見 done/README.md（已刪：`agentctl/inbox/done/README.md`））。
 上面的排除只涵蓋這些副本；正式報告、現役文件和其他子 repo 仍照常檢查。
 不帶參數可做完整盤點，但應將這類歷史原件的壞鏈與現役文件分開判讀。
 

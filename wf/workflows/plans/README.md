@@ -23,7 +23,6 @@ idea → roadmap → 詳規（本夾）→ feature-dev
 
 | 計畫 | 出計畫日期 | 對應 spec | 狀態 |
 |------|------------|-----------|------|
-| [2026-11-05-slim](2026-11-05-slim/README.md) —— 全 repo 瘦身（刪封存、止增長、拆檔＋tidy） | 2026-11-05 | 設計寫在計畫內 | 使用者 2026-11-05 照建議勾選，執行中 |
 | [poe-skyrim-mapping](poe-skyrim-mapping/README.md) —— PoE 星盤效果落地 Skyrim | 2026-11-03 | 設計寫在計畫內 | 核心第一波source已有離線交付；八職24設計樣板已補齊待過目，source／部署／實機各自記證 |
 
 ## 已結案／被取代
@@ -32,6 +31,7 @@ idea → roadmap → 詳規（本夾）→ feature-dev
 
 | 計畫 | 結果 | 最後所在 commit |
 |---|---|---|
+| [2026-11-05-slim](2026-11-05-slim/README.md) —— 全 repo 瘦身 | 2026-11-05 執行完；C3／C4 驗證未過未刪、測試待議 52 列與 push 待使用者，計畫檔暫留到這些裁定後刪 | 本列所在 commit |
 | mod-library-catalog —— mod 壓縮檔建檔與清理 | L1–L4 完成，2026-10-26 結案；結論在 Mongo `archives.l4_identity` | `944fc45` |
 | third-party-mod-pipeline —— 第三方 mod 取得–安裝–驗證流水線 | 2026-08-07 結案；P0–P4 完成，Bend Time Rings 端到端實機驗過 | `944fc45` |
 | consolidation-2026-08-23 —— 工作區統整與四條新線 | 2026-08-23 執行完成；四條線落地、profile 改名、Downloads 歸檔 | `944fc45` |

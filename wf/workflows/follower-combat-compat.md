@@ -66,6 +66,6 @@ REPORT 寫確切備份及 `layer_apply.py --revert` 所需 manifest；多輪反�
 
 ## 交接
 
-案件可參考 private 的 [Paths 歸因](../../agentctl/handoffs/home-2026-11-01/varinia-paths/PATHS.md)、[混用方案與版本核對](../../agentctl/handoffs/home-2026-11-01/varinia-paths/MIXED.md)、[原隨從腳本調查](../../agentctl/handoffs/home-2026-11-01/varinia-paths/VARINIA.md)、[部署與驗收界線](../../agentctl/handoffs/home-2026-11-01/varinia-native-combat/DEPLOY.md)；它們是個案證據，不是新角色的預設配置。
+案件可參考 private 的 Paths 歸因（已刪：`agentctl/handoffs/home-2026-11-01/varinia-paths/PATHS.md`）、混用方案與版本核對（已刪：`agentctl/handoffs/home-2026-11-01/varinia-paths/MIXED.md`）、原隨從腳本調查（已刪：`agentctl/handoffs/home-2026-11-01/varinia-paths/VARINIA.md`）、部署與驗收界線（已刪：`agentctl/handoffs/home-2026-11-01/varinia-native-combat/DEPLOY.md`）；它們是個案證據，不是新角色的預設配置。
 
 待人眼驗收記 [WAIT_USER](../../WAIT_USER.md)；Skyrim 跨場續行記 private agentctl 的現役交接入口。修補完成不自動擴至其他角色。
