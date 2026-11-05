@@ -4,9 +4,16 @@
 原本六題，**四題已在 09-03／09-04 落地或裁示**（搬到本檔末尾的已完成節），剩下這三題還等你：
 
 <!-- wf-nav -->
-1. **21 件中文層拓撲 FAIL 是否全改自製。** 09-03 `lrzh` 契約寫死不碰，至今沒動；
-   `lrrev` 已逐件記 `fail_reason`。證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-03/lrzh/REPORT.md:128`
-   （「沒做：FAIL 21 件」）、同檔 `:155`。
+1. **舊21件中文層FAIL：回家補最小winner證據，再決定是否需補包。** 2026-11-05已逐列對照現役：
+   21列皆有啟用mod，20列有確定啟用plugin，另1列為待拆分的JK patch集合；17列有已核實中文內容的庫存成品
+   （16個ESP＋Guard的DSD JSON），其餘4列是兩個Falmer addon、Skybound與JK集合的目標本體／識別證據。
+   **尚缺現役實際file／record／DSD winner，不能把舊FAIL當真缺譯，也不應全改自製。**
+   回家依[本輪核實報告](../../modpack-design/content-plan/zh-layer/audit-2026-11-05/REPORT.md)收小manifest與必要欄位證據，
+   確認最終勝出仍英文且玩家可見才排最小補包，不需搬完整mods。
+   歷史時點：09-03 `lrzh` 契約不碰FAIL 21件，`lrrev`曾逐件記`fail_reason`；本輪已核實後續庫存成品與現役宣告，
+   因此舊「至今沒動」不再適用。原證據保留：
+   `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-03/lrzh/REPORT.md:128`
+   （「沒做：FAIL 21 件」）、同檔`:155`。
 2. **五件 `NO-PEX-UPSTREAM` 借用件（CFTO 以外）留著還是停用。** 三處（archive／Nexus／BSA）都沒有 `.pex`，
    Papyrus `Cannot open store` 剩的 5 筆正是它們。逐件表：
    `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-03/lrzh/REPORT.md:56-60`
