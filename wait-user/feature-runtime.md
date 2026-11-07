@@ -1,5 +1,9 @@
 # 獨立功能驗收
 
+## Sofia DLC 對話擴充 1.0（2026-11-07）
+
+Sofia 已新增黎明守衛18句、龍裔8句與原版隨從31句中文評論。這版只有字幕、沒有語音包。帶 Sofia 推進兩個 DLC 主線時，確認中文沒有方框、亂碼或截斷；與 Lydia、Serana、Aela 等原版隨從同行並靠近 Sofia 時，順路確認評論可出現。隨從評論每次條件檢查20%機率、每句只觸發一次，不以短時間沒觸發判失效；部分黎明守衛字幕停留偏久為作者已知現象。確認既有 Sofia／SofiaVigilantAct 對話仍可正常使用。來源與主選單載入證據見 [REPORT](../agentctl/handoffs/home-2026-11-07/nexus-198176/REPORT.md)。
+
 ## kurone 身體與移除換臉後的外觀（2026-11-07）
 
 請在遊玩時看以下 23 個 NPC：Aela、Camilla、Brelyna、Illia、Uthgerd、Ysolda、Elisif、Mjoll、Valerica、Jenassa、Frea、Jordis、Delphine、Rin、Vilja、Morgaine、Katana、Katana Shade、Megara、Varinia、Yoana、Aniya、Melana。卸下衣物後確認作者 3BA 身形、頭身膚色、脖子與手腳接縫；穿回衣服後確認沒有缺失部位、假髮與對話正常。衣服仍使用各自網格，請以卸裝外觀判斷身體。移除的素材換臉目標回到本體外觀，不另找替代。靜態證據及煙霧結果見 [REPORT](../agentctl/handoffs/home-2026-11-07/chronicon-kurone/REPORT.md)。
