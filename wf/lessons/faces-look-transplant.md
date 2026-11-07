@@ -20,7 +20,7 @@ OAR 的 `IsActorBase` 條件可精確把動畫綁到單一 NPC（faction 為空�
 
 > 換臉（外表移植）已有工作流與工具：agentctl/tools/look_transplant/transplant.py（一般種族）、race 線手寫路線（自訂種族素材）、挑選頁 artifact 產「【換臉變更單 LOOKS v1】」；素材端自訂種族才是硬擋，跨種族只是警告（原 type: project）
 
-工具鏈（2026-09-07 建）：`agentctl/tools/housecarl_call.py`（腳本呼叫 houseCARL MCP）＋`tools/look_transplant/transplant.py`（pairs.csv → staging overlay，ESL patch、facegen 改名、VERIFY.txt）；自訂種族素材（Chronicon／Diana／YoRHa A2）工具拒收，改走 `handoffs/home-2026-09-07/race/` 的手寫覆蓋（複製 HDPT 加目標種族、facegen 整包搬）。使用者用 artifact「換臉挑選」<https://claude.ai/code/artifact/5856df2c-5b95-4ff3-a912-e9ee39a40b67> 改主意，貼變更單即可；流程 `agentctl/docs/look-swap-runbook.md`。
+工具鏈（2026-09-07 建）：`agentctl/tools/housecarl_call.py`（腳本呼叫 houseCARL MCP）＋`tools/look_transplant/transplant.py`（pairs.csv → staging overlay，ESL patch、facegen 改名、VERIFY.txt）；自訂種族素材（Diana／YoRHa A2）工具拒收，改走 `handoffs/home-2026-09-07/race/` 的手寫覆蓋（複製 HDPT 加目標種族、facegen 整包搬）。使用者用 artifact「換臉挑選」<https://claude.ai/code/artifact/5856df2c-5b95-4ff3-a912-e9ee39a40b67> 改主意，貼變更單即可；流程 `agentctl/docs/look-swap-runbook.md`。
 
 **Why:** 使用者會反覆改主意（2026-09-07 一晚七次），逐條口頭轉達成本高；頁面＋變更單把「選」和「做」分開。
 
@@ -29,13 +29,13 @@ OAR 的 `IsActorBase` 條件可精確把動畫綁到單一 NPC（faction 為空�
 
 transplant.py 與 race 路線都會**連 RACE 一起搬**（如 Auri 木精靈→高精靈），身高與種族天賦跟著變；使用者若在意要另出「只搬 HDPT／facegen、不動 RNAM」的選項（2026-09-08）。
 
-頭身脖縫兩種真因：貼圖不同源（頭吃素材私有皮、身吃全域皮 → 一支 ESL 把頭 TXST 指回全域皮，如 Vilja←Yuuko）與頭 nif 本身（貼圖已同源仍裂 → 重烤 facegen，如 Sofia）；先比頭四張／身四張 md5 再決定走哪條。Sofia 本體身體貼圖是 UNP 系，跟 CBBE 網格不相容，脖縫只能讓頭改吃全域膚色。Chronicon 私有 `textures/Chron/body/FemaleHead*.dds` 是全包共用路徑，多個層各帶副本，不能直接覆蓋。
+頭身脖縫兩種真因：貼圖不同源（頭吃素材私有皮、身吃全域皮 → 一支 ESL 把頭 TXST 指回全域皮）與頭 nif 本身（貼圖已同源仍裂 → 重烤 facegen，如 Sofia）；先比頭四張／身四張 md5 再決定走哪條。Sofia 本體身體貼圖是 UNP 系，跟 CBBE 網格不相容，脖縫只能讓頭改吃全域膚色。素材私有頭部貼圖若是全包共用路徑，多個層各帶副本時不能直接覆蓋。
 
 名冊 artifact <https://claude.ai/code/artifact/81af4627-99c9-4772-9f4a-2381b9234c04> 與挑選頁都有可重跑建置腳本：`agentctl/handoffs/home-2026-09-08/art/tools/build_pick.py`／`build_roster.py`（先 pick 後 roster）。2026-10-26 起重產方法（底稿改用線上版、路徑已月結到 `done/2026-09/`）見 [wf/user/2026-10-26-follower-look-pages.md](../user/2026-10-26-follower-look-pages.md)。
 
 facegen 頭模移植跟身模是兩套獨立機制：body mesh/skin texture 掛在 race 的 skin ArmorAddon 上不是 per-NPC；換身體要另做自訂 skin ARMO/ARMA，若 donor 是 UNP/BHUNP 或帶 3BA/SMP 物理而本機沒對應 runtime，會接縫或物理失效。頭模移植工量 1–2 小時，身模半天到一天，收到「換外觀」需求先分清是哪一種（`agentctl/handoffs/done/2026-09-01/hnpc-2026-09-01/MIXMATCH.md:29-41`）。
 
-素材 mod 更新會改 FormID（Chronicon II 2.2.5 全改號），更新後 patch 要重做；改號可能撞號（Shiori 新號 000854＝Mion 舊號），Mion 的換臉 patch 沒跟著更新時遊戲不報錯、安靜地把 Mion 的臉換成 Shiori 的臉。mod 更新改動 FormID 後，所有引用舊 FormID 的 patch 要逐一核對新舊號是否互相撞號，不能只看「舊號還存不存在」（`agentctl/handoffs/done/2026-09/home-2026-09-07/chron/REPORT.md:26`）。
+素材 mod 更新會改 FormID，更新後 patch 要重做；新舊號若撞號，舊 patch 可能安靜地指到別人。所有引用舊 FormID 的 patch 都要逐一核對新舊號是否互相撞號，不能只看「舊號還存不存在」。
 
 `agentctl/tools/look_transplant/tests` 依賴的 esp fixture 沒進版控（被 .gitignore 排除），乾淨 worktree 跑會 4 errors，只有主樹才會綠；`transplant_lib/common.py` 的預設 staging 路徑在 2026-10-17 清理後可能已不存在。跑測試要在主樹跑，派換臉線前先確認預設 staging 路徑存在（`agentctl/handoffs/home-2026-10-17/patrol/p1-agentctl/REPORT.md`）。
 

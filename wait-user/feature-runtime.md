@@ -1,5 +1,9 @@
 # 獨立功能驗收
 
+## kurone 身體與移除換臉後的外觀（2026-11-07）
+
+請在遊玩時看以下 23 個 NPC：Aela、Camilla、Brelyna、Illia、Uthgerd、Ysolda、Elisif、Mjoll、Valerica、Jenassa、Frea、Jordis、Delphine、Rin、Vilja、Morgaine、Katana、Katana Shade、Megara、Varinia、Yoana、Aniya、Melana。卸下衣物後確認作者 3BA 身形、頭身膚色、脖子與手腳接縫；穿回衣服後確認沒有缺失部位、假髮與對話正常。衣服仍使用各自網格，請以卸裝外觀判斷身體。移除的素材換臉目標回到本體外觀，不另找替代。靜態證據及煙霧結果見 [REPORT](../agentctl/handoffs/home-2026-11-07/chronicon-kurone/REPORT.md)。
+
 ## AgentBridge 0.11.0 原生 keyboard tap（2026-11-05）
 
 0.11.0 已部署並完成有限實測：唯一一次空格請求被 environment guard 取消，down／up 均 false，未重試；跳躍與成功派送尚未驗。先釐清 guard 的 menu／foreground／snapshot 原因，再安排受控實測；其他 guard 與 release debt 亦待驗，現在不需要使用者操作。詳見[實機報告](../agentctl/handoffs/home-2026-11-05/agent-bridge-input/RUNTIME-REPORT.md)與[輸入契約](../projects/agent-bridge/docs/input.md)。

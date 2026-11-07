@@ -25,15 +25,14 @@
 
 ## face-bugs-check-real-actor-and-upstream-fomod
 
-> 2026-09-10 三張臉壞的三種真因：placeatme 複本正常但真身壞＝存檔臉快取（disable/enable 刷新）；上游 FOMOD 可能漏裝某人的 facegen nif（Chronicon Pack II 2.2.5 的 Ryoko）；facegen nif 指到不存在的 detail 貼圖＝粉紫臉（原 type: memory）
+> 2026-09-10 三張臉壞的三種真因：placeatme 複本正常但真身壞＝存檔臉快取（disable/enable 刷新）；上游 FOMOD 可能漏裝某人的 facegen nif；facegen nif 指到不存在的 detail 貼圖＝粉紫臉（原 type: memory）
 
 三種真因都不是換臉層本身（2026-09-10）：
 
 1. **Yoana「大媽臉」**：層資料全對、facegen md5 是素材真臉，`placeatme` 的複本正常、真身壞
    → **存檔快取了舊臉**（存檔比層重建早）。修法：遊戲內對真身 `disable` → `enable`（或 setnpcweight）強制重載，不改任何檔。
-2. **Ryoko Ukita（Chronicon Pack II 2.2.5）**：上游 FOMOD 把她的臉 nif 放在 `02 Hair Style/Ryoko/<髮型>/`，
-   但 ModuleConfig.xml 沒有 Ryoko 的髮型 group → 照 XML 安裝永遠沒有她的臉（1.8.6 臉在 Core）。
-   修法：從壓縮檔抽對應髮型資料夾做成獨立層（沒有 esp）。
+2. **上游 FOMOD 漏裝 facegen**：臉 nif 放在可選髮型資料夾，但 `ModuleConfig.xml` 沒有對應選項時，照 XML 安裝仍會漏臉。
+   修法：核對壓縮檔內容，抽出對應髮型資料夾做成獨立層（沒有 esp）。
 3. **Frea／Annekke 粉紫臉**：JH NPC Beauty 的 facegen nif tex[3] 指到全機不存在的 `femaleheaddetail_frekles2.dds`（525 顆臉只有這兩顆）。
    粉紫＝缺貼圖。修法：修正層改 nif 貼圖路徑。
 
