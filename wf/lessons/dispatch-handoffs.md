@@ -55,10 +55,10 @@
 
 ## verify-waituser-against-logs
 
-> WAIT_USER/SESSION-LOG 會落後於實際進度;派線前先查 agentctl/logs/ 與 inbox/done/ 有沒有同名線做過（原 type: feedback）
+> WAIT_USER/SESSION-LOG 會落後於進度；派線前先核完成證據，過期路徑由 git history 取回（原 type: feedback）
 
 `WAIT_USER.md`／`wait-user/*.md`／`SESSION-LOG.md` 標的 open 項可能已經被前一條線做完但沒清。
-派線前先掃 `agentctl/logs/`、`agentctl/inbox/done/`、`agentctl/handoffs/done/` 有沒有同名或同主題的線，
+派線前先掃現役 inbox／handoffs 與 git history 有沒有同名或同主題的線，
 再看實體產物（檔案是否真的在 `~/skyrim_mods/hdd/`、bytes 對不對），才決定要不要派。
 
 **Why:** 2026-08-25 依 WAIT_USER 規劃了「EnaiRim Batch 0 五件 Nexus 下載」整條線，前一天的線其實早就做完；差一步就整晚重跑已完成的工作，而且是使用者稀缺的在家時段。
@@ -77,7 +77,7 @@
 
 **Why:** 自報天生帶偏差，謊報誤報不會自動被攔下。
 
-**How to apply:** 能重算的一律重算（連結、資產內化、批次統計），不能重算的查可驗證來源；見 [[verify-waituser-against-logs]]。
+**How to apply:** 逐條對可查證來源與驗收；缺證據、有矛盾或高風險才補算／派獨立覆核，不每步重做。見 [[verify-waituser-against-logs]] 與 [[trust-gpt-sol-more]]。
 
 
 ## cite-by-anchor-not-line-number

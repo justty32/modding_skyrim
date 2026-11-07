@@ -2,6 +2,8 @@
 
 [lessons 索引](README.md)
 
+角色與現行選型以 [team-model](../../agentctl/docs/team-model.md) 為準；下列使用者原話保留，舊場次隊數／模型路由不當今日配額。
+
 ## im-dispatcher-codex-implements
 
 > 我是調度者，實作交給 codex gpt-sol；不要自己把整條線的查證與改碼做完（原 type: feedback）
@@ -84,7 +86,7 @@ codex 線也是團隊的一種。若他要的是多線並行，再開領導。
 
 **How to apply:**
 - 頂層預設只做：調度、鎖、對使用者說話、artifact 發布——和**唯一一件最難的任務**（例如別隊卡死的真因診斷、跨隊衝突仲裁）。
-- 開場先把待辦按難度排，最難的一件留給自己（或在別隊卡住時接手），其餘全派出去：普通→Opus 領隊、簡單→Sonnet、量大呆板→codex gpt-sol（可自開 terra／luna）。
+- 開場先把待辦按難度排，最難的一件留給自己（或在別隊卡住時接手），其餘依現行平台選型派出去，不沿用當時的普通／呆板模型分法。
 - 「最難」的判準：需要跨多個 mod／層／工具鏈的推理、前一輪已經失敗過一次以上、或後果不可逆。不是「我順手就能做」。
 - 這條**加強**而不是取代 [[im-dispatcher-codex-implements]] 與 [[dispatcher-must-use-own-assistants]]。
 
@@ -109,24 +111,20 @@ codex 線也是團隊的一種。若他要的是多線並行，再開領導。
 結構：**主 session（頂層決策／鎖／瀏覽器／對使用者）→ 管理線／領隊（讀 inbox、盯 tmux、
 寫 orders、拆工、核驗收、收線、接力派線、歸檔 new/→read/）→ 工人（執行）**。交接書寫給管理線，由它自行切給工人。
 
-管理線用哪個模型看使用者當下怎麼說（Fable subagent `Agent` 工具 `model: fable`，或 Opus），別把「管理線一定是 Fable」當死規則；2026-09-05 起領隊＝Opus（`Agent` model opus），headcount 上限 10 隊×(2 Opus＋2 gpt-sol＋2 Sonnet)。
-
-工人：**預設 codex gpt-sol**（走 agentctl 的 driving-codex 流程：tmux、交接書、固定驗收條數；auto-compact 自理），**重要部分**（判斷密集、改壞了代價高的）用 **Opus**；
-**Sonnet 不限制**（機械性：表格抽資料檔、對帳、連結修正、盤點），需要語意判斷的（散文拆段、封存判定、A/B 分類）用 Opus。gpt-sol 可以隨意指派 gpt terra／luna 當它自己的 subagent，管理線不管那一層。gpt-sol 拿一半量可以，但溝通順暢優先 Opus／Sonnet。
+管理線用哪個模型看使用者當下怎麼說（Fable subagent `Agent` 工具 `model: fable`，或 Opus），別把「管理線一定是 Fable」當死規則；歷史 headcount 只限當場，今日按使用者直接配額與 codex 子 agent 無上限規則。
 
 派工模型一改，正在跑的管理線也要當場切換，不是等下一輪。
 
 compact 判準＝大題目切換或 context 過半；頂層對領隊、領隊對成員都照做。
 
-Fable **不掛 inbox 醒鐘**、不逐則讀信；只在管理線上呈五類事時醒：待下載清單就緒、
-需使用者決定、需鎖或瀏覽器、管理線要交棒、全部收工戰報。
+頂層依現行每 ≤20 分鐘巡檢責任盯 inbox／pane；例行細節由領導彙總，需裁示與阻塞即時上呈。
 
 管理線的 context 也有限：吃緊時寫 STATE.md 交棒，由頂層開繼任者——不硬撐。
 
 這條疊在 [[im-dispatcher-codex-implements]] 之上：那條說「實作歸 codex」，這條再把
 「管理」也從頂層剝出去。
 
-歸檔訊息（new/→read/）是管理線職責，順帶讓頂層的 UserPromptSubmit hook 輸出瘦身。
+訊息 ack 與保留依現役工具／inbox 協議處理，不照抄歷史 new/→read/ 路徑。
 
 對使用者說話與給他看的文件一律大白話（2026-09-05；比 [[top-level-explain-in-plain-words]] 更強：不是「順手」，是「一律」）。
 
