@@ -2,7 +2,7 @@
 
 [lessons 索引](README.md)
 
-現行選型、子 agent 無上限、親讀 wf 與 `/goal` 以 [team-model](../../agentctl/docs/team-model.md)／
+現行選型、子 agent 數量上限、親讀 wf 與 `/goal` 以 [team-model](../../agentctl/docs/team-model.md)／
 [派線流程](../../agentctl/docs/driving-codex.md) 為準；歷史型號不當預設。每步且至少每 20 分鐘發 PROGRESS，頂層 ≤20 分鐘巡檢。
 
 ## driving-other-cli-agents
@@ -46,7 +46,7 @@
 
 2026-08-30 使用者心得——指揮 gpt-sol 要經常提醒它專注：「要他專注在真正重要的事情上，無關緊要的小事先別管」，否則它會一直寫測試一直驗證。這是動態手段，跟交接書「寫死驗收條數」（靜態）並列：交接書擋不住的過程漂移，靠 orders／tmux 中途提醒拉回來。逐模型指揮心得表在 agentctl/docs/team-model/speed-and-driving.md。
 
-子 agent 可無上限派、模型隨意；產出須直接服務固定驗收，不展開無關複查／掃描。
+家機每隊最多一個外部 codex，與同程序子 agent 分開計數；每線 BRIEF 必寫子 agent 數量上限，配額往下不倍增，模型隨意；產出須直接服務固定驗收，不展開無關複查／掃描。
 
 護欄遵守度高：叫它「遇到工具錯誤就停下回報」它真的會停——但它把**自己寫錯的 Python 引號**也算成工具錯誤而停工。交接書要區分「工具/環境錯誤 → 停」與「你自己的臨時腳本寫錯 → 自己修」。
 

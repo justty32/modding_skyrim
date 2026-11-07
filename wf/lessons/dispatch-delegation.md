@@ -10,9 +10,9 @@
 
 2026-08-30 使用者定調「依用途分配團隊與角色」的模型，正式文件在 agentctl/docs/（team-model.md 第二／五／七節、team-model/plans.md、team-model/speed-and-driving.md）。使用者說**不用上網查方案**。
 
-2026-09-25 使用者當場說的「隊伍無上限」只限那一輪，並明說不要記成通則；隊伍配額與 11-07 的子 agent 無上限不同。
+2026-09-25 使用者當場說的「隊伍無上限」只限那一輪，並明說不要記成通則；今日子 agent 數量依每線 BRIEF 上限，配額往下不倍增。
 
-**角色三層**：頂層 agent（接指令、開團隊、傳達、協調使用者也會用的資源——HID／螢幕／CPU／硬碟／網路；資源使用權源頭是使用者）**通常 Opus 就夠**，某些情況 Sonnet 也行——頂層只轉達調度，比領導笨是正常的；頂層**可以有自己的輔助者 agent**（例如 Sonnet 查資料／盤點／事實查證），不經團隊領導、不算團隊 headcount，數量使用者指定，沒指定默認兩個。團隊領導＝計畫制定者，依難度用 **Fable 或 Opus**，**不建議 gpt-sol**（另一套體系、跟頂層溝通不便）；領導負擔重（計畫＋指揮＋匯報）所以 Opus 是最低標準，但若「制定計畫」分給某個成員，領導 Sonnet 也可；codex 可管理自己的子 agent，角色與跨體系成本依現行 team-model。工人依難度、內容、**使用者給的 headcount** 開，便宜 AI（gpt-sol／terra／luna）在這層大量用，但要算溝通成本（inbox 協議也有摩擦）與**領導的管理上限**（開太多管不動）；子 agent 無上限與本機程序／直屬配額分開記。
+**角色三層**：頂層 agent（接指令、開團隊、傳達、協調使用者也會用的資源——HID／螢幕／CPU／硬碟／網路；資源使用權源頭是使用者）**通常 Opus 就夠**，某些情況 Sonnet 也行——頂層只轉達調度，比領導笨是正常的；頂層**可以有自己的輔助者 agent**（例如 Sonnet 查資料／盤點／事實查證），不經團隊領導、不算團隊 headcount，數量使用者指定，沒指定默認兩個。團隊領導＝計畫制定者，依難度用 **Fable 或 Opus**，**不建議 gpt-sol**（另一套體系、跟頂層溝通不便）；領導負擔重（計畫＋指揮＋匯報）所以 Opus 是最低標準，但若「制定計畫」分給某個成員，領導 Sonnet 也可；codex 可管理自己的子 agent，角色與跨體系成本依現行 team-model。工人依難度、內容、**使用者給的 headcount** 開，便宜 AI（gpt-sol／terra／luna）在這層大量用，但要算溝通成本（inbox 協議也有摩擦）與**領導的管理上限**（開太多管不動）；每線 BRIEF 必寫子 agent 數量上限，與本機程序／直屬配額分開記，配額往下不倍增。
 
 **聰明度（總分，之後會按用途細分）**：S＝Fable；A＝Opus（軟體工程）、gpt-sol（各方面，軟體工程算 B+）；B＝Opus（軟體工程之外）；C＝gpt-terra、Sonnet；D＝gpt-luna。分級以 Claude 收費為基準，往下補 E/F 很正常（terra/luna 消耗 E/F；DeepSeek 更低）。
 **消耗速度**：Claude 系列與聰明度成正比；GPT 系列整體下移兩級——gpt-sol A 級腦、C 級消耗，「性價比之神」。
@@ -52,7 +52,7 @@
 
 **Why:** 這類工作不需要主 context，丟出去可以並行，也不會把大量原始輸出灌進主對話。
 
-**How to apply:** `Agent` + `model: "sonnet"`，背景跑，同時我繼續做需要判斷的部分。指派時把「不要改檔案、回傳簡潔事實 + 出處」寫清楚——sonnet 會照做。動到程式碼與整條線的實作要開 codex gpt-sol 線，不是自己來（2026-08-21），見 [[im-dispatcher-codex-implements]]。這條 feedback 與後續無上限裁示是本專案的委派授權。相關：[[push-and-remote-actions]]
+**How to apply:** `Agent` + `model: "sonnet"`，背景跑，同時我繼續做需要判斷的部分。指派時把「不要改檔案、回傳簡潔事實 + 出處」寫清楚——sonnet 會照做。動到程式碼與整條線的實作要開 codex gpt-sol 線，不是自己來（2026-08-21），見 [[im-dispatcher-codex-implements]]。這條 feedback 是本專案的委派授權，數量仍依每線 BRIEF 上限，配額往下不倍增。相關：[[push-and-remote-actions]]
 
 ## trust-gpt-sol-more
 
@@ -86,7 +86,7 @@
 
 **Why:** 頂層 context 被 mod 描述灌爆；評估是可外包的機械工作（[[im-dispatcher-codex-implements]]、[[prefer-gpt-sol-for-all-tasks]]）。
 
-**How to apply:** 收到 mod 連結就派評估 agent，**一個 mod 一個 agent**（別用常駐線排隊）；評估要含：做什麼、本機前置是否已有、同概念 mod 撞車（[[rule-out-a-concept-scan-same-batch-siblings]]）、中文層、穩定度、給判準的建議（[[answer-should-we-with-a-threshold]]）。頂層只轉述白話結論與待裁示項。agent 數不設上限，施工與評估都派線，頂層只轉述、出選項、排 profile 寫入順序。
+**How to apply:** 收到 mod 連結就派評估 agent，**一個 mod 一個 agent**（別用常駐線排隊）；評估要含：做什麼、本機前置是否已有、同概念 mod 撞車（[[rule-out-a-concept-scan-same-batch-siblings]]）、中文層、穩定度、給判準的建議（[[answer-should-we-with-a-threshold]]）。頂層只轉述白話結論與待裁示項。今日 agent 數量依每線 BRIEF 上限，配額往下不倍增；家機每隊最多一個外部 codex，與同程序子 agent 分開計數。施工與評估都派線，頂層只轉述、出選項、排 profile 寫入順序。
 
 ## line-agents-refuse-relayed-delete-approval
 

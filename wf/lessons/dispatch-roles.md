@@ -111,7 +111,7 @@ codex 線也是團隊的一種。若他要的是多線並行，再開領導。
 結構：**主 session（頂層決策／鎖／瀏覽器／對使用者）→ 管理線／領隊（讀 inbox、盯 tmux、
 寫 orders、拆工、核驗收、收線、接力派線、歸檔 new/→read/）→ 工人（執行）**。交接書寫給管理線，由它自行切給工人。
 
-管理線用哪個模型看使用者當下怎麼說（Fable subagent `Agent` 工具 `model: fable`，或 Opus），別把「管理線一定是 Fable」當死規則；歷史 headcount 只限當場，今日按使用者直接配額與 codex 子 agent 無上限規則。
+管理線用哪個模型看使用者當下怎麼說（Fable subagent `Agent` 工具 `model: fable`，或 Opus），別把「管理線一定是 Fable」當死規則；歷史 headcount 只限當場，今日按使用者直接配額與每線 BRIEF 的子 agent 數量上限，配額往下不倍增。家機每隊最多一個外部 codex，與同程序子 agent 分開計數；選人做設計決策／架構規劃時，GPT 的優先級較低，並非禁止使用。
 
 派工模型一改，正在跑的管理線也要當場切換，不是等下一輪。
 
