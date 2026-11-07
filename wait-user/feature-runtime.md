@@ -1,5 +1,9 @@
 # 獨立功能驗收
 
+## Baan Malur 渡船（2026-11-07）
+
+內容見 [baan-malur.md](feature-runtime/baan-malur.md)。
+
 ## Sofia DLC 對話擴充 1.0（2026-11-07）
 
 Sofia 已新增黎明守衛18句、龍裔8句與原版隨從31句中文評論。這版只有字幕、沒有語音包。帶 Sofia 推進兩個 DLC 主線時，確認中文沒有方框、亂碼或截斷；與 Lydia、Serana、Aela 等原版隨從同行並靠近 Sofia 時，順路確認評論可出現。隨從評論每次條件檢查20%機率、每句只觸發一次，不以短時間沒觸發判失效；部分黎明守衛字幕停留偏久為作者已知現象。確認既有 Sofia／SofiaVigilantAct 對話仍可正常使用。來源與主選單載入證據見 [REPORT](../agentctl/handoffs/home-2026-11-07/nexus-198176/REPORT.md)。
