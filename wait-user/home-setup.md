@@ -1,53 +1,10 @@
 # 回家下載／重建
 
-## LoreRim 借用後續：只剩三題（2026-09-05 核對後縮小）
+## LoreRim 借用後續：只剩兩題（2026-11-14 再縮小）
 
-2026-09-03 已入庫 439 件／8.966 GB；原本六題，四題 09-03／09-04 已落地或裁示，剩三題還等你
-（中文層拓撲 FAIL、`NO-PEX-UPSTREAM` 借用件、地形 LOD）。
+2026-09-03 已入庫 439 件／8.966 GB；原本六題，四題 09-03／09-04 已落地或裁示；地形 LOD 2026-11-14 裁「不跑」已移除。
+剩兩題：中文層拓撲 FAIL（待回家補證）、`NO-PEX-UPSTREAM` 借用件（已裁停用，等施工）。
 內容見 [lorerim-leftovers.md](home-setup/lorerim-leftovers.md)。
-
-## GO19 剩餘幾何：只剩兩件（2026-09-05 核對後縮小）
-
-原文五項裡**三項已落地**（見本節末），還等你的只有幾何覆核這一段：
-
-- **95283 The Tempest Isle（13 筆）與 136457 Pride of the Niben（38 筆）的 xEdit 幾何覆核由誰做**，
-  以及**已安裝件的空間紀錄人眼覆核**。
-  A＝開 xEdit 專線逐區看完（`cx-go19x2` 已把 136457 按 worldspace／grid 象限分成 ≤12 組，一區一次看得完）；
-  B＝維持現況，延後所有視覺風險。
-  證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-03/go19x/REPORT.md:110`／`:112`、
-  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-03/inst2/REPORT.md:126-127`／`:141`
-  （dispatcher 依使用者「隨便」的裁示決定今天不裝、留日後 xEdit 專線）。
-
-**已落地、不再列 open 的三項**（2026-09-05 實讀證據）：
-
-- **71864 MCO moveset 已裝**——`/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt:594`
-  ＝`+GO19-71864-ER-Twinblade-MCO`（啟用）；施工紀錄
-  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-03/inst3/REPORT.md:23`／`:74`
-  （`instance/profiles` commit `34d1809`）。
-- **`go19x-130252-cr.esp` 已停用**——同上 `modlist.txt:819`＝`-houseCARL - go19x-130252-cr`。
-- **LOD 排程已完成**——2026-09-04 DynDOLOD 首跑成功（TexGen 1:24／DynDOLOD 35:38），
-  `DynDOLOD_Output` 已裝成 mod，profiles promote 到 `ff1a09a`。證據：
-  `/home/lorkhan/repo/moddings/skyrim/agentctl/logs/lod-run-2026-09-04.md`、
-  `/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-03/lod/REPORT-run.md`、
-  `instance/profiles` commit `ff1a09a`。
-
-## 現役 modlist 整合度盤點：敵人／怪物多樣性待決
-
-盤點結論原在 `modpack-design/archive/content-plan/modlist-coverage-2026-09-01.md`（2026-11-05 已刪，`git -C modpack-design log --all -- <該路徑>` 可取回）
-（2026-09-01 公司端離線產出，未經 xEdit 與實機驗證；該檔已刪，本節尚未裁示的敵人／怪物多樣性問題不受影響）。原本列三件，其中「需求／生存要不要開」
-**2026-10-10 已裁示**；manifest 帳本於 2026-10-17 退役，相關舊要求已結案刪除（git 歷史可查）。仍待你決定的是：
-
-<!-- wf-nav -->
-- **敵人／AI／怪物多樣性要不要補**，以及是否在開新檔前補。現役只有 AI Overhaul 一個家族，
-   查無怪物池類 mod；敵人池晚加會影響已生成 encounter。**仍未裁示。**
-   （2026-09-05 相關進展：`lead-lrgq` 已把 LoreRim 的 creature 102 件逐件盤完並出 `DECISION.html`，
-   同日使用者裁「LoreRim 的東西全都要」371 件——那批**可能覆蓋一部分怪物池**，但不等於本題已答。
-   證據：`/home/lorkhan/repo/moddings/skyrim/agentctl/handoffs/done/2026-09/home-2026-09-05/STATE.md:68`／`:73`、
-   `/home/lorkhan/repo/moddings/skyrim/modpack-design/content-plan/lorerim/gameplay-quest/`。）
-
-另：`major-content-preflight-2026-09-01/` 的 9 件裡有 6 件其實早已安裝啟用，該批任務單與批次計畫
-的框架語意需要對現況重新校正（更正段已加在 `home-batching-plan.md` 開頭；該檔原路徑
-`modpack-design/archive/content-plan/quests-world/major-content-preflight-2026-09-01/home-batching-plan.md`，2026-11-05 已刪、git 歷史可取回；9 張任務單與 README 仍在原處）。
 
 ## 自己改 `~/.zshrc` 的 `MODFORGE_TTS_BIN`（2026-10-26 立）
 
@@ -63,15 +20,9 @@
 
 本項承接原 r2 未驗能力，沒有新增一件重複待辦。Varinia r1 已由使用者確認解決、維持結案；r1／r2 原層保留作回退來源。不能把載入／native enabled 或非戰鬥快照視為三項實戰驗收。
 
-## POTC IndependentSkills 1.2.1：歷史候選的未驗功能（2026-11-03）
-
-[1.2.1 source-only 候選](../mod-library/plugins/Path-Of-The-Companions-IndependentSkills-1.2.1-dev-2026-11-03/README.md)未部署，現在凍結；每級 5 點、unit-v1 與舊 build 要求是來源歷史，不要求部署舊包或驗舊 5 點。實際後續候選為下方 1.2.3。
-
-Role on/off 的普通原生 AI 與技能條件、隨從獨立身分、低血離隊、反覆存讀及 UI／中文／手把等尚未實機驗證，應由 1.2.3 承接；舊投點、PATH／UNLM 與 reset 仍需核對。
-
 ## POTC IndependentSkills 1.2.3：回家部署與實機驗收（2026-11-03）
 
-第一波工程 S15 離線驗證通過；Windows DLL／PE 1.2.3.0 已隔離建置，ESL 與 AVG 已裝 API 3 配置納入候選。候選已完成離線封存，尚未部署；停機、備份及部署另行授權。保留上方 1.2.1 原待驗項。
+第一波工程 S15 離線驗證通過；Windows DLL／PE 1.2.3.0 已隔離建置，ESL 與 AVG 已裝 API 3 配置納入候選。候選已完成離線封存，尚未部署；停機、備份及部署另行授權。另承接已移除的 1.2.1 條目（2026-11-14 結案，1.2.1 不部署）留下的未驗功能：Role on/off 的普通原生 AI 與技能條件、隨從獨立身分、低血離隊、反覆存讀及 UI／中文／手把；舊投點、PATH／UNLM 與 reset 仍需核對。
 
 1. 核對候選 DLL／PE 與 ESL／AVG 配置，依授權後的部署流程停機備份並部署。
 2. 驗證已知舊 tag 免費 reset、POEC ownership 與存讀；點數和既有 PATH／UNLM 不漂移。

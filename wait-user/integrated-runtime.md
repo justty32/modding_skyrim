@@ -1,9 +1,5 @@
 # 整包 UI／中文／任務驗收
 
-## GO19 新內容要不要改用新周目正式驗收
-
-內容見 [new-game-followers.md](integrated-runtime/new-game-followers.md)。
-
 ## Auri＋現役 VIGILANT 有限解凍整合
 
 內容見 [new-game-followers.md](integrated-runtime/new-game-followers.md)。
@@ -29,10 +25,6 @@
 內容見 [quests-npc-text.md](integrated-runtime/quests-npc-text.md)。
 
 ## 2026-08-20 任務內容批
-
-內容見 [quests-npc-text.md](integrated-runtime/quests-npc-text.md)。
-
-## JhNPCBeautyDev 蓋掉 NPC 中文名（2026-08-28 發現，待裁示）
 
 內容見 [quests-npc-text.md](integrated-runtime/quests-npc-text.md)。
 

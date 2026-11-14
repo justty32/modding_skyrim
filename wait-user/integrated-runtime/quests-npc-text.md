@@ -25,35 +25,4 @@ Altano，抽查主線開場、對話／字幕、日誌／目標、書籍、物�
 所以「正體日誌／對話／字幕」這個條件對 UNSLAAD／DAc0da 已不適用，改按
 「有中文、無方框破版」判（繁簡都可接受）。
 
-## JhNPCBeautyDev 蓋掉 NPC 中文名（2026-08-28 發現，待裁示）
-
-`JhNPCBeautyDev.esp` 在**插件層**覆蓋數個 NPC 的 `FULL`，把中文名寫成英文，已確認的有
-**Lydia**（`override_depth=4`）、Bryling、Erdi、EvetteSan。症狀是「對話中文、名字英文」。
-由 `loadorder.txt` 決定，**與 modlist 優先度無關**，2026-08-28 的順序修復管不到。
-`opus-apply-order` 與其子線各自獨立撞到同一件事。
-
-**先請確認範圍**：進遊戲看 Lydia 的名字是不是英文，並留意還有沒有別的 NPC 中文名變英文
-（上面四個是資料層查到的，不保證窮盡）。
-
-**2026-09-05 實讀：本項仍然有效、對象還在。**
-`/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/plugins.txt:629`＝`*JhNPCBeautyDev.esp`（**啟用**）、
-`/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/loadorder.txt:688`＝`JhNPCBeautyDev.esp`。
-注意它**不在 `modlist.txt` 裡**（`grep -i JhNPC` 對 modlist 零命中）——這是 MO2 mod 名與 plugin 名不同名造成的，
-不是它沒安裝；查它要查 `plugins.txt`／`loadorder.txt`，別只查 modlist。
-
-**兩條修法擇一**（dispatcher 2026-08-28 判定延後，理由是不在剛修好並 commit 的 load order 上
-疊第二次改動、且當時沒有實機驗證窗口）：
-- 調 `loadorder.txt` 把 `JhNPCBeautyDev.esp` 往前移 —— 簡單，但會讓它的**外觀**被別人蓋掉，
-  而外觀正是這個 mod 的用途，等於本末倒置。
-- 做一個小 patch plugin，把那幾筆 `NPC_` 的 `FULL` forward 回中文 —— 不動外觀，但要多一個插件名額。
-
-傾向後者，但要等實機確認範圍後再定。
-
-**2026-09-25 22:2x 推進**：cx-wu-off 用 houseCARL 對 536 筆 NPC 全查：**只有 1 筆**符合
-『JhNPCBeautyDev 勝出、名字英文、前層有中文』——`018FBD:Dragonborn.esm` DLC2SVEdla
-（Edla → 艾迪拉，來源 USSEP 中文層）；ESL patch 草案在
-`~/skyrim_mods/_staging-2026-09-25/off/JhNPCBeautyDev-ZH-Names-2026-09-25/`（未部署）。
-範圍比原先想的小很多，是否值得多一個插件由使用者裁。
-
 所有本頁項目共同檢查：無方框、mojibake、截斷、空白或新 crash；未走過的流程不得稱 gameplay PASS。
-

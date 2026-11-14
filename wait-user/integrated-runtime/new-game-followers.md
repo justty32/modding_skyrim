@@ -1,9 +1,3 @@
-## GO19 新內容要不要改用新周目正式驗收
-
-ECSS 作者要求全新存檔，Gray Cowl 周年版是大改替換件，Faehaven 也建議新存檔；2026-09-03 用 Dev0A 舊存檔時第一局
-79 秒後 crash，第二局正常，且今天新增的 11 個 plugin 沒出現在 crash 現場。A＝現在開新周目，把這三件正式驗收；
-B＝繼續舊周目，但接受之後的 crash／任務狀態不能歸咎於部署。證據：`agentctl/handoffs/done/2026-09/home-2026-09-03/inst2/REPORT.md`。
-
 ## Auri＋現役 VIGILANT 有限解凍整合
 
 **裁示：B —— follower 只有限解凍 Auri＋現役 VIGILANT，並採 Sofia 選配 preflight／No Bump。**
