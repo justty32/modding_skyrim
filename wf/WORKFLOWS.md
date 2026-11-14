@@ -21,6 +21,7 @@
 | 「改 MO2 profile：裝／移除／改排序」 | profile-change | [workflows/profile-change/README.md](workflows/profile-change/README.md) |
 | 「規劃整合包要玩什麼」 | modpack-planning | [workflows/modpack-planning/README.md](workflows/modpack-planning/README.md) |
 | 「派一條 codex 線去做事」 | agent-dispatch | [workflows/agent-dispatch/README.md](workflows/agent-dispatch/README.md) |
+| 「在 aos 樹裡派線（skyrim-agent 底下）」 | aos | [workflows/aos.md](workflows/aos.md) —— 樹與命名、起樹收樹、打架點聽誰的 |
 | 「讓 agent 操作遊戲做測試／實機驗收」 | runtime-qa | [workflows/runtime-qa/README.md](workflows/runtime-qa/README.md) |
 | 「配置頁挑好招了／貼變更單」「要專屬裝備的招強制發動」 | movesets | [workflows/movesets/README.md](workflows/movesets/README.md) —— 模擬→閘門→排除→套用→MO2 循環→煙霧→重發頁面 |
 | 「遊戲崩了／卡死了」「同一個地方一直 CTD」 | crash-triage | [workflows/crash-triage.md](workflows/crash-triage.md) —— 凍結判別→log 鑑識→按層歸因→剝層→處置 |
