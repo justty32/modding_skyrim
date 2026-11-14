@@ -12,7 +12,7 @@
 ## 現役工作
 
 - [aos] 第 1、2 期已落地（[aos.md](wf/workflows/aos.md)）；第 3～5 期未做 → 下一場由 skyrim-agent 排
-- [aos] LoreRim NO-PEX 5 件已裁停用 → 等使用者當場說才動 instance（[WAIT_USER](WAIT_USER.md)）
+- [aos] 下一場：開唯讀調查線查 Apocalypse 中文層 69 筆 Cannot open store（instance 主導；起點 `instance/tmp/aos/skyrim-agent-instance/out/report.md` 補記節與 `out/pms-log0/`）
 - [aos] 舊記憶夾收尾 3 件（補約 3 條 lessons、MEMORY.md 改指回、刪原檔另問）→ 第 5 期
 - [aos] `tmp/aos-skyrim-agent/` 測試暫存夾 → 等使用者說要不要清
 
