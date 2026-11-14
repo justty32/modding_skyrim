@@ -1,0 +1,38 @@
+{
+  "ModForge": {
+    "description": "JSON spec 轉 Skyrim .esp／.esl 的 AI 友善製作工具鏈；生態核心，要生成 esp 時進來"
+  },
+  "README.md": {
+    "description": "projects 入口：各專案分工與依賴關係；要找某個工具或 plugin 時先讀"
+  },
+  "agent-bridge": {
+    "description": "SKSE plugin，在遊戲行程內開 localhost HTTP 讓 agent 讀遊戲狀態與執行 console；實機驗收時用"
+  },
+  "darksouls-port": {
+    "description": "把 Dark Souls 地圖移植成 Skyrim worldspace，用 ModForge spec 出 esp；做地圖移植時進來"
+  },
+  "game-data": {
+    "description": "抽取出的全遊戲文本與清單，唯讀的 agent 參考資料；做 mod 調查時查"
+  },
+  "godot-worldspace-editor": {
+    "description": "用 Godot 4 離線做地形與場景編輯並匯出給 ModForge；做 worldspace 編輯時進來"
+  },
+  "houseCARL": {
+    "description": "本機 MCP server，用 Mutagen 讓 AI 以載入順序贏家讀 plugin 記錄與衝突；查 esp 資料時用"
+  },
+  "model-converter": {
+    "description": "Skyrim nif 與 glTF／FBX／OBJ 的雙向模型轉換工具；轉模型素材時進來"
+  },
+  "my_skyrim_plugin_1": {
+    "description": "基於 CommonLibSSE-NG 的 SKSE 插件專案（DaylightDungeon）；開發該插件時進來"
+  },
+  "scene-capture-bridge": {
+    "description": "遊戲內採集 cell 擺放資料並序列化成 scene.json 的 SKSE DLL；做遊戲內場景匯出時進來"
+  },
+  "skyrim-voicegen": {
+    "description": "語音合成基石工具：收臺詞、情緒與參考嗓音，輸出 wav；做配音時進來"
+  },
+  "sofia-patch": {
+    "description": "Sofia 擴充內容專案，把 ModForge 當工具生成 esp；改造該隨從時進來"
+  }
+}

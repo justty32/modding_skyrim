@@ -1,0 +1,125 @@
+{
+  "README.md": {
+    "description": "教訓庫入口：分類表與新增規則；新增或查找教訓時先讀"
+  },
+  "animation-oar": {
+    "description": "動畫取證：clip、替換與握持契約的分篇；從上層動畫與 OAR 教訓連進來看細節"
+  },
+  "animation-oar.md": {
+    "description": "動畫與 OAR 教訓：clip、替換、握持與 OAR 條件判斷；動畫異常或裝動畫 mod 時進來"
+  },
+  "artifact-hygiene-and-ignores.md": {
+    "description": "版控的產物衛生、.gitignore 與刪除前的掃描；清產物或加 ignore 前進來"
+  },
+  "asset-and-engine-loading.md": {
+    "description": "素材存在性診斷與引擎載檔、runtime 狀態機制；素材沒生效時進來"
+  },
+  "crash-data-and-assets.md": {
+    "description": "CTD 的資料層與素材成因；崩潰疑似 esp 或 nif 問題時進來"
+  },
+  "crash-dll-and-scripts.md": {
+    "description": "CTD 的 SKSE DLL 與腳本成因；崩潰疑似 DLL 或 Papyrus 時進來"
+  },
+  "dispatch-cli-agents.md": {
+    "description": "調度：驅動 codex／tmux 的實務；派 CLI agent 前進來"
+  },
+  "dispatch-delegation.md": {
+    "description": "調度：模型分級與委派給誰；決定誰來做事時進來"
+  },
+  "dispatch-handoffs.md": {
+    "description": "調度：交接書寫法與查證；寫或審交接書時進來"
+  },
+  "dispatch-leads-and-line-discipline.md": {
+    "description": "調度：領隊與線的運作紀律；帶線、收線時進來"
+  },
+  "dispatch-roles.md": {
+    "description": "調度：頂層角色與誰來做什麼；判斷頂層該自己做還是外包時進來"
+  },
+  "docs-organization.md": {
+    "description": "文件整理：封存、拆檔與頁面歸屬；整理文檔時進來"
+  },
+  "faces-facegen-consistency.md": {
+    "description": "facegen 與頭部件一致性規則（大媽臉、素臉真因）；臉異常時進來"
+  },
+  "faces-look-transplant.md": {
+    "description": "換臉流程與工具；要把素材角色的臉移到隨從時進來"
+  },
+  "faces-troubleshooting.md": {
+    "description": "臉與身體的排錯與升級；臉或身體顯示異常時進來"
+  },
+  "gameplay-bugs.md": {
+    "description": "非崩潰的遊戲行為異常歸因；遊戲內行為怪怪的時進來"
+  },
+  "git-commit-hygiene.md": {
+    "description": "版控的 commit、pathspec 與工作樹注意事項；commit 前進來"
+  },
+  "housecarl-and-tools.md": {
+    "description": "houseCARL 本體與其 Nexus／bridge 端點的坑；用 houseCARL 查資料時進來"
+  },
+  "housecarl-on-linux.md": {
+    "description": "houseCARL 在 Linux 的平台坑：路徑、環境變數、鏡像、靜默錯答；houseCARL 答案可疑時進來"
+  },
+  "locks-screen-and-game.md": {
+    "description": "鎖、螢幕與開遊戲的規矩；要取鎖、用螢幕或開遊戲前進來"
+  },
+  "map-port-and-world-conflicts.md": {
+    "description": "地圖移植的引擎限制與世界／內容衝突；做地圖移植時進來"
+  },
+  "mo2-behavior-quirks.md": {
+    "description": "MO2 本體行為坑：首次啟動、幽靈 profile、靜默失效；MO2 行為怪時進來"
+  },
+  "mo2-profiles.md": {
+    "description": "MO2 profile 三檔的還原、並行編輯與遊戲改寫；改 profile 前進來"
+  },
+  "mod-install-audit.md": {
+    "description": "裝／拔 mod 的稽核：裝前評估、安裝包對帳、FOMOD、LOD master；裝或拔 mod 前進來"
+  },
+  "mod-library-bookkeeping.md": {
+    "description": "mod 庫帳務、暫存與清理安全；動 mod 庫或清暫存前進來"
+  },
+  "nexus-download-ops.md": {
+    "description": "Nexus 下載自動化：profile 複本、CDP、file_id、並行；自動下載前進來"
+  },
+  "plugin-bsa-and-script-formats": {
+    "description": "存檔體積、身份解析與清理證據的分篇；從上層格式教訓連進來看細節"
+  },
+  "plugin-bsa-and-script-formats.md": {
+    "description": "plugin、BSA 與腳本的格式事實及量測陷阱；解析或量測這類檔案時進來"
+  },
+  "porting-and-modforge.md": {
+    "description": "資產移植與 ModForge 的能力邊界；做移植或用 ModForge 生 esp 時進來"
+  },
+  "process-throttling.md": {
+    "description": "行程限流與別線行程的分寸；機器卡頓或要限流時進來"
+  },
+  "project-decisions.md": {
+    "description": "專案裁示與開發／驗證流程的嚴謹度；查使用者定過什麼時進來"
+  },
+  "repos-layout-and-remotes.md": {
+    "description": "版控：repo 佈局、remote 與 push 規矩；push 或動 submodule 前進來"
+  },
+  "this-machine.md": {
+    "description": "本機環境特性：shell、行程、工具差異；工具行為與預期不符時進來"
+  },
+  "tool-portability.md": {
+    "description": "自製工具：repo 根推導、乾淨 clone 驗證、合法輸入不喊錯；寫新工具時進來"
+  },
+  "translation-and-zh.md": {
+    "description": "中文層部署 gate 與引擎字串機制；部署中文層前進來"
+  },
+  "user-preferences.md": {
+    "description": "使用者偏好與邊界；與使用者互動前進來"
+  },
+  "wf-kernel.md": {
+    "description": "wf 骨架（kernel）與工具形態；升級或使用 wf 工具時進來"
+  },
+  "xedit-dyndolod-and-lod.md": {
+    "description": "xEdit、DynDOLOD 與 LOD 前置；跑 xEdit 或 LOD 工具前進來"
+  },
+  "zh-policy-and-naming.md": {
+    "description": "中文層政策：翻不翻、繁簡與命名；決定翻譯範圍時進來"
+  },
+  "zh-tooling-and-scans.md": {
+    "description": "中文層工具與掃描：zhport、靜態掃描、QA checker；做中文層驗收時進來"
+  }
+}

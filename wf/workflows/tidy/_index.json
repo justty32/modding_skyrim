@@ -1,0 +1,20 @@
+{
+  "README.md": {
+    "description": "tidy 入口：刪過時、分類雜亂、抽資料檔、內容精簡；整理文檔時先讀"
+  },
+  "content-trim.md": {
+    "description": "內容精簡原則：檔內只留現行結論；精簡文檔或教訓時進來"
+  },
+  "gotchas-windows.md": {
+    "description": "Windows 公司機上整理與拆檔的實測踩坑；在 Windows 機整理時進來"
+  },
+  "gotchas.md": {
+    "description": "這個工作區整理與拆檔踩過的坑；動手整理前進來"
+  },
+  "manager-brief.md": {
+    "description": "管理線簡報；派整理管理線時進來"
+  },
+  "reports": {
+    "description": "整理工作的報告存放夾；查舊整理結論時進來"
+  }
+}

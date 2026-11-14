@@ -1,0 +1,29 @@
+{
+  "README.md": {
+    "description": "analysis 入口：各研究分類一句話；要找技術背景筆記時先讀"
+  },
+  "chim": {
+    "description": "CHIM headless plugin／save 工具與 ModForge 借鑑研究"
+  },
+  "followers-patch": {
+    "description": "隨從人設 brief 與相關分析；做隨從改造時進來"
+  },
+  "houseCARL": {
+    "description": "houseCARL 的 Linux 適配 runbook 與相關結論；在 Linux 用 houseCARL 時進來"
+  },
+  "mod-survey": {
+    "description": "他人 mod 的結構化調查：動作系統、自訂技能框架、ESM FormID 存取等；研究某類 mod 機制時進來"
+  },
+  "port-source-survey": {
+    "description": "移植素材來源候選調查；選移植素材時進來"
+  },
+  "skyrim_engine": {
+    "description": "CommonLibSSE-NG 引擎手冊與 Skyrim 引擎研究；寫 SKSE 插件或查引擎行為時進來"
+  },
+  "skyrim_mods": {
+    "description": "參考 mod 的拆解分析；想了解既有 mod 如何實作時進來"
+  },
+  "tool-survey": {
+    "description": "Skyrim 製作工具調查；選或評估工具時進來"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "TEMPLATE.workflow.md": {
+    "description": "新工作流入口檔的範本；新增工作流時進來"
+  },
+  "agent-dispatch": {
+    "description": "指揮 codex 或其他 coding agent 的工作流入口；要派線、驅動 CLI agent 時進來"
+  },
+  "analysis.md": {
+    "description": "陌生專案分析入口：初次接觸外部 repo、舊系統或大型資料夾時進來"
+  },
+  "common": {
+    "description": "跨工作流共享：使用者偏好、慣例與 code map、資料檔契約、共通踩坑、回覆風格",
+    "index": "common/_index.json"
+  },
+  "crash-triage.md": {
+    "description": "遊戲崩潰／凍結的歸因流程：凍結判別、log 鑑識、按層歸因、剝層；CTD 或卡死時進來"
+  },
+  "decisions.md": {
+    "description": "決策記錄：定了什麼、前提是什麼；想知道為什麼這樣選時進來"
+  },
+  "dev-env.md": {
+    "description": "開發環境入口：各機器能做什麼、fresh clone 後要做的事、houseCARL 建置；環境問題時進來"
+  },
+  "feature-dev": {
+    "description": "功能開發工作流入口；開發新功能時進來"
+  },
+  "follower-combat-compat.md": {
+    "description": "自訂隨從與戰鬥框架相容修補工作流；隨從反覆收拔武器、換法術時進來"
+  },
+  "follower-combat-config.md": {
+    "description": "NativeCombat 設定契約；調隨從原生劍法混用的設定時進來"
+  },
+  "investigation": {
+    "description": "調查／解碼工作流入口與調查結論（findings/）；做技術調查或查舊調查時進來"
+  },
+  "localization": {
+    "description": "做一個中文層的工作流入口；補全或新建中文層時進來"
+  },
+  "mod-discovery": {
+    "description": "上網找 mod 的工作流入口；還不知道要哪個 mod 時進來"
+  },
+  "mod-update.md": {
+    "description": "已裝 mod 升版的比對與後置清單；某個 mod 出新版時進來"
+  },
+  "modpack-planning": {
+    "description": "整合包規劃工作流入口；規劃要玩什麼、選哪些 mod 時進來"
+  },
+  "movesets": {
+    "description": "招式配置工作流：從挑招到進遊戲生效；配置頁貼變更單或套用招式時進來"
+  },
+  "nexus-intake": {
+    "description": "從 Nexus 取得 mod 到可用的工作流：下載路線、不明檔辨識、衛星件、系列；要抓 mod 時進來",
+    "index": "nexus-intake/_index.json"
+  },
+  "patch": {
+    "description": "獨立 patch 小專案工作流入口；要做可套用的外部修補時進來"
+  },
+  "planning.md": {
+    "description": "想法成熟管線：idea、roadmap、詳規到執行；想法要往下走時進來"
+  },
+  "plans": {
+    "description": "實作規劃入口與各項詳規；要規劃或查既有規劃時進來"
+  },
+  "profile-change": {
+    "description": "改 MO2 profile（裝、移除、改排序）的工作流入口；動 profile 前進來"
+  },
+  "refactor": {
+    "description": "重構整理工作流入口與搬移注意事項；搬檔或重構時進來"
+  },
+  "runtime-qa": {
+    "description": "實機驗收工作流入口；讓 agent 操作遊戲測試時進來"
+  },
+  "safe-apply.md": {
+    "description": "一次性套用／批次刪除腳本與暫存備份的生命週期；寫套用腳本前進來"
+  },
+  "testing": {
+    "description": "測試分檔：已知環境條件、離線測試矩陣、綠燈證據；入口是上層 testing.md"
+  },
+  "testing.md": {
+    "description": "測試入口：常用驗證指令；要跑或新增測試時進來"
+  },
+  "tidy": {
+    "description": "文件整理工作流：刪過時、分類、抽資料檔、內容精簡；整理文檔時進來",
+    "index": "tidy/_index.json"
+  }
+}

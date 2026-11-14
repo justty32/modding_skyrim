@@ -1,0 +1,65 @@
+{
+  "/home/lorkhan/.codex/config.toml": {
+    "description": "codex CLI 的設定檔；派 codex 線調模型或權限時查"
+  },
+  "/home/lorkhan/.local/share/Steam/steamapps/common/Skyrim Special Edition": {
+    "description": "Skyrim SE 遊戲本體目錄（含 Data、SKSE log）；查遊戲檔或 log 時進來，不要直接改本體"
+  },
+  "/home/lorkhan/.local/share/housecarl": {
+    "description": "houseCARL 的本機資料夾；排查 houseCARL 行為時進來"
+  },
+  "/home/lorkhan/.local/share/housecarl-localappdata": {
+    "description": "houseCARL 讀 localized 欄位所需的 LocalAppData 環境夾；houseCARL 讀中文異常時查"
+  },
+  "/home/lorkhan/.local/share/housecarl-mirror": {
+    "description": "houseCARL 用的 POSIX 鏡像（plugins、profile 快照）；判贏家前要先刷新，舊快照會假陰性"
+  },
+  "/home/lorkhan/games/mod-organizer-2-skyrimspecialedition": {
+    "description": "MO2 安裝根：含實例夾與 variables.sh；找 MO2 實例時進來"
+  },
+  "/home/lorkhan/games/mod-organizer-2-skyrimspecialedition/modorganizer2": {
+    "description": "MO2 實例本體：ModOrganizer.ini、mods、profiles、downloads、logs；MO2 開著時不改 profile 檔"
+  },
+  "/home/lorkhan/games/mod-organizer-2-skyrimspecialedition/modorganizer2/ModOrganizer.ini": {
+    "description": "MO2 設定檔：選中 profile、gamePath 等；查 MO2 設定時讀，啟動前確認選中的 profile"
+  },
+  "/home/lorkhan/games/mod-organizer-2-skyrimspecialedition/modorganizer2/downloads": {
+    "description": "MO2 下載夾；Nexus 下載落地處，找下載檔時進來"
+  },
+  "/home/lorkhan/games/mod-organizer-2-skyrimspecialedition/modorganizer2/mods": {
+    "description": "MO2 已安裝 mod 的實體目錄；稽核或改 mod 內容時進來，MO2 開著時別增刪夾"
+  },
+  "/home/lorkhan/games/mod-organizer-2-skyrimspecialedition/modorganizer2/profiles": {
+    "description": "MO2 profile 實體位置；寫入與驗證規矩見 instance 線，不要在這裡放工具或暫存"
+  },
+  "/home/lorkhan/games/mod-organizer-2-skyrimspecialedition/variables.sh": {
+    "description": "MO2 啟動腳本共用的環境變數；寫啟動或 wine 相關腳本時參考"
+  },
+  "/home/lorkhan/games/skyrim-qa-baselines": {
+    "description": "實機驗收的基準存檔與快照；做 QA 比對前進來"
+  },
+  "/home/lorkhan/notes/projects/modding/skyrim": {
+    "description": "不進版控的截圖與 MongoDB 快照；找舊截圖或 DB 快照時進來"
+  },
+  "/home/lorkhan/repo/game_dev/gd_libs": {
+    "description": "相鄰的 gd-libs 專案；兩邊協調鍵鼠螢幕時知道它在這裡"
+  },
+  "/home/lorkhan/shared_agent_locks": {
+    "description": "跨 session 共用鎖夾：desktop.lock 鎖鍵鼠螢幕，mkdir 語意取鎖；用桌面前先看 README"
+  },
+  "/home/lorkhan/skyrim_mods": {
+    "description": "mod 與素材的實體庫：下載、暫存、備份、自製成品；找 mod 檔或清暫存時進來（體積大，勿整夾掃）"
+  },
+  "/home/lorkhan/skyrim_mods/mine": {
+    "description": "自製 mod 成品與打包檔的放處；要找或發佈自製成品時進來"
+  },
+  "/home/lorkhan/skyrim_mods/steam-build-backup": {
+    "description": "遊戲本體 build 的備份；Steam 驗證或更新弄壞本體時還原用"
+  },
+  "/home/lorkhan/tools/housecarl/server": {
+    "description": "houseCARL MCP server 的實際部署目錄；換版或排錯時進來"
+  },
+  "/home/lorkhan/tools/papyrus-compiler": {
+    "description": "Papyrus 編譯器；編譯 .psc 腳本時用"
+  }
+}

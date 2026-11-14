@@ -1,0 +1,20 @@
+{
+  "README.md": {
+    "description": "nexus-intake 入口：從 Nexus 取得 mod 到可用的流程；要抓 mod 時先讀"
+  },
+  "download-routes.md": {
+    "description": "兩條實測可用的下載路徑；實際下載檔案時進來"
+  },
+  "identify-unknown.md": {
+    "description": "手上已有檔案但不知是什麼時的辨識流程"
+  },
+  "satellites.md": {
+    "description": "衛星件（擴充、patch、漢化）的取得與安裝；主件之外還要抓附屬件時進來"
+  },
+  "scope-template.md": {
+    "description": "派下載線的範圍樣板全文；寫下載交接書時進來"
+  },
+  "series.md": {
+    "description": "一整套系列或生態的取得與安裝；整批抓動作、perk、任務框架時進來"
+  }
+}

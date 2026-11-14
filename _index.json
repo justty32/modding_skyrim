@@ -1,0 +1,57 @@
+{
+  "AGENTS.md": {
+    "description": "最頂層路由器與鐵律；每個 session 先讀"
+  },
+  "CLAUDE.md": {
+    "description": "Claude Code 的入口，只指向 AGENTS.md"
+  },
+  "README.md": {
+    "description": "工作區入口：四條主線與佈局總覽，給外來 agent 與新讀者"
+  },
+  "SESSION-LOG.md": {
+    "description": "母 repo 的進度日誌 hub，只放還沒完成、agent 仍能推進的活狀態；開場先看"
+  },
+  "WAIT_USER.md": {
+    "description": "等使用者親自操作／驗收的 open 項計數表與子檔導流；開場先看"
+  },
+  "agentctl": {
+    "description": "AI 操控總控：派線協議、agent 交接、資源鎖、QA harness；要派線、取鎖、收工時進來",
+    "index": "agentctl/_index.json"
+  },
+  "analysis": {
+    "description": "Skyrim 研究與分析筆記：引擎、SKSE、mod 拆解、工具與素材來源調查；要查技術背景時進來",
+    "index": "analysis/_index.json"
+  },
+  "external": {
+    "description": "他人 mod、框架與參考素材的存放區（唯讀參考、多數不進版控）；不在此鋪 index，要找時看夾內 README"
+  },
+  "instance": {
+    "description": "本機 Skyrim 部署狀態：MO2 instance、現役 profile、load order、已裝 mod；要查或改部署時進來（private repo）",
+    "index": "instance/_index.json"
+  },
+  "mod-library": {
+    "description": "本地 mod 庫：mod 索引、自製中文翻譯層、自製插件與修正 esp；要查庫存或做中文層時進來（private repo）",
+    "index": "mod-library/_index.json"
+  },
+  "modpack-design": {
+    "description": "整合包設計：想玩什麼、對應哪些 mod、怎麼分批裝；規劃與選型時進來（只放設計）",
+    "index": "modpack-design/_index.json"
+  },
+  "patches": {
+    "description": "給外部專案套用的獨立 patch，每個子夾說明目標版本、套用與驗證；要查或套外部修補時進來"
+  },
+  "projects": {
+    "description": "純軟體開發專案的容器（各自獨立 repo 以 submodule 掛入）；要找工具或 plugin 原始碼時進來",
+    "index": "projects/_index.json"
+  },
+  "tools": {
+    "description": "母 repo 自己的檢查腳本與測試：連結檢查、submodule pin 檢查、WAIT_USER 計數、index 檢查；收工驗證時進來"
+  },
+  "wait-user": {
+    "description": "WAIT_USER.md 各類等使用者項目的子檔；要看或增減 open 項時進來"
+  },
+  "wf": {
+    "description": "工作流與知識：工作流入口、教訓庫、給使用者看的頁面、wf 工具；要動手做事或查既有教訓時進來",
+    "index": "wf/_index.json"
+  }
+}
