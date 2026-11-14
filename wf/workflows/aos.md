@@ -62,6 +62,10 @@ graph TD
   - 不用 commit-request，那是 aos repo 的工具。
 - **第 8 條**（原文）：「叫真模型測試時只給它真的小工作；不編理由、不繞它講明的限制。」
 
+skyrim 隊另加兩條（skyrim-agent 2026-11-14 定）：
+- **不寫整份環境**：不把整份環境變數寫進檔、印進 log 或放進信（`env`、`printenv`、`/proc/*/environ` 都算）；要看只列變數名或 `AOS_*`。
+- **暫存也不刪**：暫存檔、暫存夾一律不刪；要重來就換新夾名。
+
 ## 4. 打架點聽誰的
 
 | 打架點 | 定案 | 出處 |
@@ -86,3 +90,9 @@ graph TD
 - **回覆風格**（第 14 行）：「先結論、短、**大白話**……問「要不要」時附**可執行判準**（門檻數字）與後果。……**問他的題目寄進使用者專區（`aos-user send --kind decide`），會出現在全景頁上**」。
 - **問題寄專區**（同一行）：「問我的問題你直接放全景網頁，我現在大多在看那邊」（11-14 午）。
 - **需求不清先發想**（`user/03-討論紀錄與規劃.md` 第 36 行起）：「需求還不清楚時，不急著出實作計劃、架構、待裁題、門檻數字、階段；先發散（點子清單＋可丟棄的小實驗），等需求在使用中浮出來再規劃。」
+
+## 6. 信箱、鎖、gate
+
+- **信箱**：md 信箱已凍結，見 [agentctl/inbox/FROZEN.md](../../agentctl/inbox/FROZEN.md)。樹外的 session 要寄信進樹，用 `aos-post send` 寄到該區主導的 mailbox。
+- **遊戲／桌面鎖**：照舊用 agentctl 的 [lock.sh](../../agentctl/tools/lock.sh)。要鎖先寄 REQUEST 給 skyrim-agent，回信點名你才取。不用 aos-lock（實驗見 [lock-exp/](../../agentctl/handoffs/home-2026-11-14/lock-exp/)）。
+- **gate 處理程式**：[agentctl/aos/gate/gate_hold.py](../../agentctl/aos/gate/gate_hold.py)。

@@ -11,7 +11,12 @@
 
 ## 現役工作
 
-母 repo 無在途工作；已授權的子專案續行見 [agentctl SESSION](agentctl/SESSION-LOG.md)。
+- [aos] 第 1、2 期已落地（[aos.md](wf/workflows/aos.md)）；第 3～5 期未做 → 下一場由 skyrim-agent 排
+- [aos] LoreRim NO-PEX 5 件已裁停用 → 等使用者當場說才動 instance（[WAIT_USER](WAIT_USER.md)）
+- [aos] 舊記憶夾收尾 3 件（補約 3 條 lessons、MEMORY.md 改指回、刪原檔另問）→ 第 5 期
+- [aos] `tmp/aos-skyrim-agent/` 測試暫存夾 → 等使用者說要不要清
+
+子專案續行見 [agentctl SESSION](agentctl/SESSION-LOG.md)。
 
 ## 暫凍（非現役）
 
