@@ -26,7 +26,7 @@ graph TD
 - **主導** `skyrim-agent-<區>`：工作區＝該 submodule 根，是它唯一的 commit 者；用到才起。instance 第 1、2 期配 opus。
 - **母 repo**：沒有專屬主導，寫入、commit、wrap 由頂層臨時掛的 opus 短工做。
 - **工人** `<上游名>-<角色>-<MMDD><序>`：名字不重用（同名會接上舊對話），做完由上游 rm。
-- **工人工作區**：子 repo 用該 submodule 已忽略的 `tmp/aos/<名>/`；母 repo 層與還沒忽略 `tmp/` 的 instance、mod-library 用 `S/tmp/aos/<名>/`。
+- **工人工作區**：四個子 repo（agentctl、instance、mod-library、modpack-design）都用自己已忽略的 `tmp/aos/<名>/`；母 repo 層用 `S/tmp/aos/<名>/`。
 - **掛子 agent** 一律帶 `AOS_KERNEL`＝skyrim-agent 的 gate 信箱（記在 `S/tmp/aos-skyrim-agent/p1/gate.md`）。定義在 [agentctl/aos/defs/](../../agentctl/aos/defs/)。
 
 ## 2. 起樹與收樹（用到才起）
