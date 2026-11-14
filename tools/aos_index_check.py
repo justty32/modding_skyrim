@@ -18,7 +18,7 @@ Warnings (exit 0):
   LONG-DESC     description longer than max_description_chars
   NO-LINK       a child folder has its own _index.json but the parent entry has no "index"
   ORPHAN        an _index.json that no parent _index.json links to
-  OUTSIDE-GONE  an extra table key (absolute path) does not exist right now
+  OUTSIDE-GONE  an extra table key (absolute or ~/ path) does not exist right now
 """
 import argparse
 import json
@@ -85,11 +85,11 @@ def check_table(path, data, cfg, out, keys_are_abs=False):
             out.append(("E", "BAD-VALUE", where, "missing or empty description"))
         elif len(desc) > maxc:
             out.append(("W", "LONG-DESC", where, "%d chars > %d" % (len(desc), maxc)))
-        target = key if keys_are_abs else os.path.join(folder, key)
+        target = os.path.join(folder, key)
         if keys_are_abs:
-            if not os.path.isabs(key):
-                out.append(("E", "MISSING-KEY", where, "key must be an absolute path"))
-            elif not os.path.exists(key):
+            if not (os.path.isabs(key) or key == "~" or key.startswith("~/")):
+                out.append(("E", "MISSING-KEY", where, "key must be an absolute or ~/ path"))
+            elif not os.path.exists(os.path.expanduser(key)):
                 out.append(("W", "OUTSIDE-GONE", where, "path does not exist now"))
         elif not os.path.lexists(target):
             out.append(("E", "MISSING-KEY", where, "no such file or folder"))

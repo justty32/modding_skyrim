@@ -1,5 +1,5 @@
 {
-  "_description": "Settings for tools/aos_index_check.py: where _index.json files must not exist, which folders are only partly indexed, size limit, and extra tables keyed by absolute path.",
+  "_description": "Settings for tools/aos_index_check.py: where _index.json files must not exist, which folders are only partly indexed, size limit, and extra tables keyed by absolute or ~/ path.",
   "max_bytes": 8192,
   "max_description_chars": 120,
   "forbidden_dirs": [
