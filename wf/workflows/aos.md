@@ -9,6 +9,8 @@
 
 定案出處：使用者 2026-11-14 13:45 的專區回信（6 題，已 verify），以及 skyrim-agent 當天 05:51 的裁定。
 
+經驗、已知毛病與繞法：[wf/lessons/aos-tree-onboarding-and-leading.md](../lessons/aos-tree-onboarding-and-leading.md)。
+
 ## 1. 樹長怎樣、怎麼命名
 
 ```mermaid
@@ -76,7 +78,7 @@ skyrim 隊另加兩條（skyrim-agent 2026-11-14 定）：
 | 授權 | 專區回信只認普通工作與 push；刪檔、instance、DB、開遊戲仍要當場說 | 專區 q3 |
 | sol 槽 | 全樹同時最多 1 隻 | 專區 q5 |
 
-- **記憶細節**：定義的 `cli.json` 帶 `autoMemoryEnabled: false`；教訓用 `index_view` 找。舊夾 `~/.claude/projects/-home-lorkhan-repo-moddings-skyrim/memory/` 不寫不改，刪原檔另外問。
+- **記憶細節**：定義的 `cli.json` 帶 `autoMemoryEnabled: false`；教訓用 `index_view` 找。舊夾（`~/.claude/projects/` 底下 skyrim 根那一夾的 `memory/`）不寫不改，刪原檔另外問。
 - **保留期清理**：hygiene 出清單 → 寄專區通知（附清單）→ 使用者當場說 → 頂層派短工刪。
 - **授權**對應 [AGENTS](../../AGENTS.md) 鐵律 2 的「授權來源」；改寫使用者規範不派 sonnet。
 

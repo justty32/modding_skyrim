@@ -51,6 +51,7 @@
 | [map-port-and-world-conflicts](map-port-and-world-conflicts.md) | 地圖移植的引擎限制與世界／內容衝突 | 5 |
 | [nexus-download-ops](nexus-download-ops.md) | Nexus 下載自動化（profile 複本、CDP、file_id、並行） | 4 |
 | [porting-and-modforge](porting-and-modforge.md) | 資產移植與 ModForge 能力邊界 | 3 |
+| [aos-tree-onboarding-and-leading](aos-tree-onboarding-and-leading.md) | aos 樹：接入與帶隊（gate、信、定義、sol、pin 與 push） | 13 |
 
 ## 新增規則
 

@@ -8,6 +8,9 @@
   "animation-oar.md": {
     "description": "動畫與 OAR 教訓：clip、替換、握持與 OAR 條件判斷；動畫異常或裝動畫 mod 時進來"
   },
+  "aos-tree-onboarding-and-leading.md": {
+    "description": "aos 樹接入與帶隊的經驗：gate 逾時、信交錯、定義寫法、sol 限制、收工 pin；在 aos 樹裡帶隊前讀"
+  },
   "artifact-hygiene-and-ignores.md": {
     "description": "版控的產物衛生、.gitignore 與刪除前的掃描；清產物或加 ignore 前進來"
   },
