@@ -94,5 +94,5 @@ skyrim 隊另加兩條（skyrim-agent 2026-11-14 定）：
 ## 6. 信箱、鎖、gate
 
 - **信箱**：md 信箱已凍結，見 [agentctl/inbox/FROZEN.md](../../agentctl/inbox/FROZEN.md)。樹外的 session 要寄信進樹，用 `aos-post send` 寄到該區主導的 mailbox。
-- **遊戲／桌面鎖**：照舊用 agentctl 的 [lock.sh](../../agentctl/tools/lock.sh)。要鎖先寄 REQUEST 給 skyrim-agent，回信點名你才取。不用 aos-lock（實驗見 [lock-exp/](../../agentctl/handoffs/home-2026-11-14/lock-exp/)）。
+- **遊戲／桌面鎖**：照舊用 agentctl 的 [lock.sh](../../agentctl/tools/lock.sh)。要鎖先寄 REQUEST 給 skyrim-agent，回信點名你才取（細節見 [agentctl/docs/resource-locks/aos-tree.md](../../agentctl/docs/resource-locks/aos-tree.md)）。不用 aos-lock（實驗見 [lock-exp/](../../agentctl/handoffs/home-2026-11-14/lock-exp/)）。
 - **gate 處理程式**：[agentctl/aos/gate/gate_hold.py](../../agentctl/aos/gate/gate_hold.py)。
