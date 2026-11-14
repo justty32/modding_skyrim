@@ -20,7 +20,7 @@
 | 「做中文層／補全現有中文層」 | localization | [workflows/localization/README.md](workflows/localization/README.md) |
 | 「改 MO2 profile：裝／移除／改排序」 | profile-change | [workflows/profile-change/README.md](workflows/profile-change/README.md) |
 | 「規劃整合包要玩什麼」 | modpack-planning | [workflows/modpack-planning/README.md](workflows/modpack-planning/README.md) |
-| 「派一條 codex 線去做事」 | agent-dispatch | [workflows/agent-dispatch/README.md](workflows/agent-dispatch/README.md) |
+| 「派一條 codex 線去做事」 | agent-dispatch | [workflows/agent-dispatch/README.md](workflows/agent-dispatch/README.md)（aos 樹裡不走 codex，見 [workflows/aos.md](workflows/aos.md)；本列第 5 期退役） |
 | 「在 aos 樹裡派線（skyrim-agent 底下）」 | aos | [workflows/aos.md](workflows/aos.md) —— 樹與命名、起樹收樹、打架點聽誰的 |
 | 「讓 agent 操作遊戲做測試／實機驗收」 | runtime-qa | [workflows/runtime-qa/README.md](workflows/runtime-qa/README.md) |
 | 「配置頁挑好招了／貼變更單」「要專屬裝備的招強制發動」 | movesets | [workflows/movesets/README.md](workflows/movesets/README.md) —— 模擬→閘門→排除→套用→MO2 循環→煙霧→重發頁面 |
@@ -86,4 +86,4 @@ analysis → patch 或 planning（roadmap / 詳規）
 | 等**使用者**做 / 驗證 / 決定 | [../WAIT_USER.md](../WAIT_USER.md) |
 | 母 repo 等**另一個 session / fork** | [../SESSION-LOG.md](../SESSION-LOG.md) 一行 open |
 | Skyrim 工作線跨 session 續行 | [`agentctl/SESSION-LOG.md`](../agentctl/SESSION-LOG.md) |
-| 等**別資料夾的 agent** | 信件軸 [`agentctl/inbox/`](../agentctl/inbox/)；協議見 [`agentctl/tools/agent_inbox/PROTOCOL.md`](../agentctl/tools/agent_inbox/PROTOCOL.md)，派線走 [agent-dispatch](workflows/agent-dispatch/README.md) |
+| 等**別資料夾的 agent** | 信件軸 [`agentctl/inbox/`](../agentctl/inbox/)；協議見 [`agentctl/tools/agent_inbox/PROTOCOL.md`](../agentctl/tools/agent_inbox/PROTOCOL.md)，派線走 [agent-dispatch](workflows/agent-dispatch/README.md)。md 信箱 2026-11-14 凍結；樹裡用 aos 信箱，見 [workflows/aos.md](workflows/aos.md) 第 6 節 |

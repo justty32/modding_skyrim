@@ -73,6 +73,8 @@
 <!-- local -->
 **本地覆寫（2026-11-05 起，取代上段）：過時即刪。** 過時／被取代／已結案的文件與紀錄直接 `git rm`，不再建 `archive/`、`done/`、`superseded/`、`history/`，追溯靠 `git log --all -- <路徑>`。刪前把仍被引用的結論吸收進活文件、連結改純文字；commit 訊息寫「刪除：<理由>」。例外：成品（mod-library `l10n/mods/`、`plugins/`）與被 hash／manifest 釘住的檔。
 
+> 註：2026-11-14 使用者裁（專區 q3）：刪檔要他在對話裡當場說；清理照 [agentctl/handoffs/README](../agentctl/handoffs/README.md) 的四步。
+
 保留期：場次夾 30 天或最近 5 場（取較多）；`SESSION-LOG.md` ≤ 2 KB、`NEXT-SESSION.md` ≤ 4 KB、`STATE.md` ≤ 8 KB；信件 ack 後、結案項即刪；`wf/user/` 頁用畢 30 天刪、HTML 不進版控；`qa/reports/`、`tidy/reports/` 留最近 2 批。`wf/tools/wf-lint-local.sh` 報 `ARCHIVE-DIR`／`STALE-SESSION`／`HUB-OVERSIZE`。
 <!-- /local -->
 
