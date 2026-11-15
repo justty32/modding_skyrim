@@ -106,3 +106,12 @@ face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不�
 - **崩潰／怪狀**：此 plugin 覆寫原版 Tamriel 的 WRLD、一個 CELL 與 NAVI（全域 navmesh 索引，載入序裡另有百來個 plugin 也覆寫它）；法爾克瑞斯一帶 NPC 走路卡住、地圖名稱變中文「天际」、或進城崩潰，就記下來。
 
 還原：持 game.lock、MO2 關著，跑 `python3 instance/tools/layer_apply.py --revert /tmp/skyrim-alt-modinstall/20261115-197666/revert.json`（在 `/tmp`，重開機會消失；消失時手動刪 modlist 兩行與 plugins／loadorder 的 `FalkreathShop.esp`，mod 資料夾停用不刪）。
+
+## VIGILANT 設定載入器 MCM 繁中＋停用 Falmer 重複中文層（2026-11-15）
+
+已改 `modpack-main`（profiles `a363e2c`）：新增 `VIGILANT SE - Settings Loader Traditional Chinese 1.2.0 Dev 2026-11-15`，排在 Settings Loader 上面（mod-library `l10n/mods/VIGILANT-Settings-Loader-Traditional-Chinese-1.2.0`，30 句：10 句沿用 VIGILANT 繁中、2 句重譯、18 句新譯）；停用被完全蓋住的 `Falmer-Servant-Lines-Expansion-Traditional-Chinese-Dev-2026-09-03b`（不刪，遊戲內容不變，生效的仍是 `ZH-LR-LR-0069`）。只動 modlist，plugins 不變；缺 master 0、字型缺字 0，沒開過遊戲。玩的時候看：
+
+- **MCM**：MCM 裡「Vigilant」的兩頁（一般／維護）標題、選項與下方說明都是繁中，沒有方塊字，也沒有 `$Vig...`、`$LoadSettings` 這類原始鍵名；選項改了能存。
+- **Falmer**：遇到伐默僕從（Falmer Servant）時，戰鬥台詞字幕仍是繁中（例如「為了伐默！」）。
+
+還原：持 game.lock、MO2 關著，跑 `python3 instance/tools/layer_apply.py --revert ~/skyrim_mods/_layer-apply/l10n-vigloader-falmer-r1-20261115T161650/revert.json`。
