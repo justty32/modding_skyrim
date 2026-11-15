@@ -115,3 +115,14 @@ face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不�
 - **Falmer**：遇到伐默僕從（Falmer Servant）時，戰鬥台詞字幕仍是繁中（例如「為了伐默！」）。
 
 還原：持 game.lock、MO2 關著，跑 `python3 instance/tools/layer_apply.py --revert ~/skyrim_mods/_layer-apply/l10n-vigloader-falmer-r1-20261115T161650/revert.json`。
+
+## Estates of Skyrim 0.1.8→0.1.21 更新後確認（2026-11-15）
+
+profiles `7def9b0`：新資料夾 `Estates-Of-Skyrim-196696-0.1.21`（Nexus 196696 file 837519）啟用；舊 `Estates-Of-Skyrim-196696-0.1.8` 與過期的自製繁中層 `Estates-Of-Skyrim-196696-ZH-0.1.8-r2` 停用（資料夾留著）。esm 598→771 筆、沒刪記錄，changelog 每版寫「Safe to update mid-game」。**繁中層重做前 Estates 是英文**（skyrim-alt-l10n 處理中），使用者已說接受不穩定。玩的時候看：
+
+- **舊存檔讀得進來**：讀一個有 Estates 進度的存檔，Estates 畫面（Tab 選單或按鍵）打得開、你的莊園、國庫和工人都還在。
+- **新功能**：Build Mode（MCM 的 Quick build 鍵，預設 G）出現半透明預覽、R 轉向、左鍵放置；雇人（Hire Position）照常。
+- **Falkreath Shop**：灰松货行在 Estates 畫面上還在、還能賣東西（它以 Estates 為 master）。
+- **崩潰**：讀檔或開 Estates 畫面崩潰就記下來。
+
+還原：持 game.lock、MO2 關著，`python3 instance/tools/layer_apply.py --revert /tmp/skyrim-alt-modinstall/20261115-196696/revert.json`（在 `/tmp`，重開機會消失；消失時手動把 modlist 的 0.1.21 改 `-`、0.1.8 與 ZH-0.1.8-r2 改回 `+`）。新版存過的檔退回舊版不保證能讀。
