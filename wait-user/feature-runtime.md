@@ -118,11 +118,12 @@ face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不�
 
 ## Estates of Skyrim 0.1.8→0.1.21 更新後確認（2026-11-15）
 
-profiles `7def9b0`：新資料夾 `Estates-Of-Skyrim-196696-0.1.21`（Nexus 196696 file 837519）啟用；舊 `Estates-Of-Skyrim-196696-0.1.8` 與過期的自製繁中層 `Estates-Of-Skyrim-196696-ZH-0.1.8-r2` 停用（資料夾留著）。esm 598→771 筆、沒刪記錄，changelog 每版寫「Safe to update mid-game」。**繁中層重做前 Estates 是英文**（skyrim-alt-l10n 處理中），使用者已說接受不穩定。玩的時候看：
+profiles `7def9b0`：新資料夾 `Estates-Of-Skyrim-196696-0.1.21`（Nexus 196696 file 837519）啟用；舊 `Estates-Of-Skyrim-196696-0.1.8` 與過期的自製繁中層 `Estates-Of-Skyrim-196696-ZH-0.1.8-r2` 停用（資料夾留著）。esm 598→771 筆、沒刪記錄，changelog 每版寫「Safe to update mid-game」。繁中層已重做並疊在上面：`Estates-Of-Skyrim-196696-ZH-0.1.21-2026-11-15`（profiles `c2b46d9`，mod-library `6a8bf85`，35 檔逐檔勝出）。使用者已說接受不穩定。玩的時候看：
 
 - **舊存檔讀得進來**：讀一個有 Estates 進度的存檔，Estates 畫面（Tab 選單或按鍵）打得開、你的莊園、國庫和工人都還在。
 - **新功能**：Build Mode（MCM 的 Quick build 鍵，預設 G）出現半透明預覽、R 轉向、左鍵放置；雇人（Hire Position）照常。
 - **Falkreath Shop**：灰松货行在 Estates 畫面上還在、還能賣東西（它以 Estates 為 master）。
+- **中文**：天際領地畫面各分頁（總覽、工人、倉儲、升級）、建造列與快速建造選單、拆除兩段確認、尋找工人；MCM 新項目（快速建造按鍵、貨車遇襲）；聘任新職業的對話。看有沒有方框字、截斷、重疊。
 - **崩潰**：讀檔或開 Estates 畫面崩潰就記下來。
 
-還原：持 game.lock、MO2 關著，`python3 instance/tools/layer_apply.py --revert /tmp/skyrim-alt-modinstall/20261115-196696/revert.json`（在 `/tmp`，重開機會消失；消失時手動把 modlist 的 0.1.21 改 `-`、0.1.8 與 ZH-0.1.8-r2 改回 `+`）。新版存過的檔退回舊版不保證能讀。
+還原：持 game.lock、MO2 關著，`python3 instance/tools/layer_apply.py --revert /tmp/skyrim-alt-modinstall/20261115-196696/revert.json`（在 `/tmp`，重開機會消失；先退中文層 `revert-zh.json` 再退本體；消失時手動把 modlist 的 ZH-0.1.21 與 0.1.21 改 `-`、0.1.8 與 ZH-0.1.8-r2 改回 `+`）。新版存過的檔退回舊版不保證能讀。
