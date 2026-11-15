@@ -96,3 +96,13 @@ face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不�
 - **MCM**：MCM 裡「光辉弓MCM设置」三頁都是中文；特別看新補的 6 句（箭矢／激光「飞行时间（秒）」、敵人偵測範圍）。
 
 還原：持 game.lock、MO2 關著，從新到舊跑 `python3 instance/tools/layer_apply.py --revert <revert.json>`：先中文層 `/tmp/skyrim-alt-modinstall/20261115-198877/revert-zh.json`，再本體 `revert-base.json`（在 `/tmp`，重開機會消失；消失時改為手動刪 modlist 兩行、plugins／loadorder 的 `RadiantBow.esp`，mod 資料夾停用不刪）。
+
+## Falkreath Shop 1.0.6＋簡中 進遊戲確認（2026-11-15）
+
+已裝進 `modpack-main`（profiles `b42766c`）：本體 `Falkreath Shop-196703-1.0.6`（Nexus 196703 file 829471，依賴 Estates of Skyrim 0.1.8，同日發布），上面疊 `Falkreath Shop - CHS-197666-1.0.6`（Nexus 197666 file 831126，同版 gate 過：759 筆記錄全等、差異只在文字；字型缺字 0）。靜態全過，沒開過遊戲。使用者已說接受不穩定（「狠狠 crash」）。玩的時候看：
+
+- **能不能用**：到法爾克瑞斯「灰松货行」（Gray Pine Goods）找 Solaf，對話能買店（5000 金）、選掌櫃；放貨上架後有客人進來買。
+- **中文**：Solaf／Bolund 對話、MCM 設定頁、Estates 畫面上這間店（名稱「灰松货行」、類型「商店」）與提示訊息是中文、沒方塊字。Estates 畫面是 PrismaUI 網頁字型，跟遊戲字型不同，要特別看。
+- **崩潰／怪狀**：此 plugin 覆寫原版 Tamriel 的 WRLD、一個 CELL 與 NAVI（全域 navmesh 索引，載入序裡另有百來個 plugin 也覆寫它）；法爾克瑞斯一帶 NPC 走路卡住、地圖名稱變中文「天际」、或進城崩潰，就記下來。
+
+還原：持 game.lock、MO2 關著，跑 `python3 instance/tools/layer_apply.py --revert /tmp/skyrim-alt-modinstall/20261115-197666/revert.json`（在 `/tmp`，重開機會消失；消失時手動刪 modlist 兩行與 plugins／loadorder 的 `FalkreathShop.esp`，mod 資料夾停用不刪）。
