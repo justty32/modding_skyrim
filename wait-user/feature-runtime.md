@@ -86,3 +86,13 @@ face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不�
 - **換裝戒指（Dudestia Outfit Changer）**：對隨從用一次，換得上去。
 
 還原：持 game.lock、MO2 關著，先取回 revert 檔 `git -C agentctl show 3db1b772:handoffs/home-2026-10-26/eslapply/data/layer-revert.json > /tmp/eslapply-layer-revert.json`，再跑 `python3 instance/tools/layer_apply.py --revert /tmp/eslapply-layer-revert.json`。它把 modlist 蓋回套用前、把舊 ESLify-Overlay 從 `~/skyrim_mods/_layer-apply/eslapply-r1-20261026T110518/mods/` 搬回、ESLify-Overlay-NSV 搬進備份（不刪），再 profiles `record --kind fix`。revert 沒有 dry-run；三檔被別線改過會拒絕，屆時手動刪 `+ESLify-Overlay-NSV` 那行、把 ESLify-Overlay 目錄換回備份。已用新 light 存檔再撤旗標的反向路徑沒測過，先拿存檔複本試；revert json 內若寫死來源路徑，執行前先確認（原 REPORT `agentctl/handoffs/home-2026-10-26/eslapply/REPORT.md` 已刪，可由同一 commit 取回）。
+
+## Radiant Bow 1.4＋簡中層 進遊戲確認（2026-11-15）
+
+已裝進 `modpack-main`（profiles `6c48b43` 本體、`a4e3053` 中文層）：本體 `Radiant Bow-198744-1.4`（Nexus 198744 file 838616，FOMOD 選 English），上面疊 `Radiant Bow - CHS-198877-1.4`（mod-library `l10n/mods/Radiant-Bow-Simplified-Chinese-1.4`，1.2 簡中文字投射到 1.4 esp，MCM 173 句全中文）。靜態全過（缺 master 0、逐檔勝出者是中文層、fontgate 缺字 0），沒開過遊戲。玩的時候看：
+
+- **能不能用**：拿到法術書「法术书：召唤光辉弓」（`help 光辉` 或 `help radiant` 找 ID 再 `player.additem`），學會後召喚出弓、射一箭，有追蹤光箭；蓄力 5 秒放出激光。
+- **中文**：法術書書名與內文、法術名「光辉弓」、武器名「光辉弓」、箭「光辉箭」沒有方塊字或亂碼。
+- **MCM**：MCM 裡「光辉弓MCM设置」三頁都是中文；特別看新補的 6 句（箭矢／激光「飞行时间（秒）」、敵人偵測範圍）。
+
+還原：持 game.lock、MO2 關著，從新到舊跑 `python3 instance/tools/layer_apply.py --revert <revert.json>`：先中文層 `/tmp/skyrim-alt-modinstall/20261115-198877/revert-zh.json`，再本體 `revert-base.json`（在 `/tmp`，重開機會消失；消失時改為手動刪 modlist 兩行、plugins／loadorder 的 `RadiantBow.esp`，mod 資料夾停用不刪）。
