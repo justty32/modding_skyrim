@@ -41,7 +41,3 @@ cow 學院中文層（profiles `93261f4`）已部署、煙霧通過，剩人眼�
 ## 四 mod 與 Ambriel 外觀的自然遊玩驗證（2026-11-01 立）
 
 自然遊玩時抽查 Eilgird／Lenora 隨從對話、Paths 實際技能樹，以及原存檔 Ambriel 外觀快取與自然劇情人形／龍變身往返。Paths 技能效果、解鎖條件及自動施展說明請確認換行、右邊不超框、下方不重疊；r4 已部署但尚未實機驗收，見 Paths 斷詞部署紀錄（已刪：`agentctl/handoffs/home-2026-11-01/paths-wrap/REPORT.md`）。兩個新生人形膚色、Paths 空面板中文、Estates 中文 UI 與反射 UI 已驗收；這些不代表上述自然遊玩項已通過。見 部署驗證（已刪：`agentctl/handoffs/home-2026-11-01/wanted/INSTALL-QA.md`）。
-
-## 青蛙相關 crash 自然戰鬥復發觀察（2026-11-01 立）
-
-自然遊玩遭遇青蛙戰鬥時，留意是否再發生 crash。青蛙模型 Trial 層已部署，室內短窗模型載入通過，但尚未證明戰鬥中的 crash 已解決；見 部署紀錄（已刪：`agentctl/handoffs/home-2026-11-01/varinia-native-crash/DEPLOY.md`）。

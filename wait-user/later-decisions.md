@@ -52,3 +52,7 @@ modpack-design commit `652ed91`／`dd009b8`。
 ## PoE 凍結成品 10 條壞鏈：解凍重發時一起修（2026-11-05 裁示）
 
 PoE 凍結成品內 6 檔與 NativeCombat r2 `source/README.md` 4 條壞鏈被 MANIFEST hash 鎖住，現在不改；你 2026-11-05 說「都按照建議」，建議為解凍重發成品時一併修（重算 MANIFEST），在那之前不單獨動。細節見 [11-05 STATE](../agentctl/handoffs/home-2026-11-05/STATE.md#claude-code-場瘦身與-tidy)。
+
+## Mihail 青蛙／鴿子 mod 資料夾要不要刪（2026-11-15）
+
+你要求「解除安裝」青蛙、鴿子（兔子骨架的青蛙一併處理）。本輪只在 `modpack-main`、`dsport-dev` 停用（profiles `d607c3c`），以下 5 個 MO2 mod 資料夾仍在 `modorganizer2/mods/`：`Frogs 1.1.1 120998`、`Frogs CHS 1.1.1 148283`、`Mihail-Frogs-Skeleton-SE-Compat-Trial-1.1.1-2026-11-01`、`Pigeons 1.2 27238`、`Pigeons CHS 1.2 93577`。要刪就說一聲；Trial 層原件另有封存在 `mod-library/artifacts/`。見[停用紀錄](../agentctl/handoffs/home-2026-11-15/mihail-disable/REPORT.md)。
