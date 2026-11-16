@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kurone Soul Tomb 換臉挑選</title>
+<style>
+:root { color-scheme: light; --ink: #243a36; --muted: #5b6c66; --paper: #faf8f1; --panel: #fffef9; --line: #d5ddd2; --green: #215b4b; --red: #9c2837; --red-bg: #fff0ef; --gold: #72520d; --gold-bg: #fff1c7; --blue: #245777; --blue-bg: #e7f1fa; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: radial-gradient(ellipse at top right, #e5eadb 0, transparent 55%), repeating-linear-gradient(0deg, #f7f5ec 0, #f7f5ec 1px, var(--paper) 1px, var(--paper) 6px); font: 15px/1.6 "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif; }
+button, input, select, textarea { font: inherit; }
+button, select, input[type="search"] { min-height: 42px; border: 1px solid #9eafa3; border-radius: 5px; background: var(--panel); color: var(--ink); }
+button { padding: .5rem .95rem; cursor: pointer; font-weight: 650; }
+button:hover { background: #e7eee4; }
+button.primary { background: var(--green); color: white; border-color: var(--green); }
+button.primary:hover { background: #164537; }
+button.danger { color: var(--red); }
+:focus-visible { outline: 3px solid #b77c26; outline-offset: 3px; }
+input[type="search"], select { padding: .45rem .6rem; }
+input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--green); vertical-align: middle; }
+header, main, .toolbar-inner { max-width: 1840px; margin: auto; padding-left: 28px; padding-right: 28px; }
+header { padding-top: 38px; padding-bottom: 26px; border-top: 7px solid var(--green); }
+.eyebrow { margin: 0 0 8px; color: var(--green); font: 700 12px/1.4 Georgia, serif; letter-spacing: .18em; }
+h1, h2, h3, summary { font-family: "Noto Serif CJK TC", "PMingLiU", Georgia, serif; }
+h1 { margin: 0 0 14px; font-size: clamp(26px, 3vw, 40px); letter-spacing: .04em; line-height: 1.35; }
+h2 { margin: 0; font-size: 23px; }
+h3 { font-size: 18px; margin: 12px 0; }
+p { margin: .5rem 0; }
+.meta { color: var(--muted); overflow-wrap: anywhere; }
+.intro { max-width: 1100px; }
+.toolbar { position: sticky; top: 0; z-index: 20; background: #f4f5eb; border-block: 1px solid #b9c7b9; box-shadow: 0 4px 12px #243a3610; }
+.toolbar-inner { display: flex; align-items: end; gap: 10px 16px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 650; }
+.search-field { flex: 1 1 270px; }
+.mod-field { flex: 1 1 250px; max-width: 410px; min-width: 0; }
+.mod-field select { max-width: 100%; }
+.check { white-space: nowrap; padding-bottom: 8px; }
+.counts { flex-basis: 100%; margin: 0; color: var(--green); font-size: 14px; font-weight: 700; }
+main { padding-top: 22px; padding-bottom: 60px; }
+.summary-panel { border: 1px solid var(--line); background: var(--panel); border-left: 5px solid var(--green); border-radius: 6px; padding: 18px 20px; margin-bottom: 24px; }
+.summary-top { display: flex; gap: 15px 35px; align-items: baseline; flex-wrap: wrap; }
+.metrics { display: flex; gap: 25px; flex-wrap: wrap; }
+.metric strong { font: 700 27px/1.2 Georgia, serif; padding-right: 6px; }
+.duplicate-list { margin: 10px 0 0; padding-left: 22px; color: var(--red); overflow-wrap: anywhere; }
+.section-head { display: flex; gap: 12px; flex-wrap: wrap; align-items: baseline; justify-content: space-between; margin-bottom: 12px; }
+.help, .sub, .technical { color: var(--muted); font-size: 12px; }
+.sub, .technical { display: block; margin-top: 5px; }
+.technical, code { font-family: "Cascadia Mono", Consolas, monospace; font-size: 11px; overflow-wrap: anywhere; }
+.table-wrap { overflow: auto; max-height: 69vh; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); isolation: isolate; }
+table { width: 100%; border-collapse: separate; border-spacing: 0; text-align: left; }
+.main-table { min-width: 1660px; table-layout: fixed; }
+th { background: #e8eee3; font-size: 13px; font-weight: 700; }
+th, td { padding: 13px 12px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+thead th { position: sticky; top: 0; z-index: 2; box-shadow: 0 1px 0 #bdcbbb; }
+.main-table th:nth-child(1) { width: 215px; }
+.main-table th:nth-child(2) { width: 160px; }
+.main-table th:nth-child(3) { width: 125px; }
+.main-table th:nth-child(4) { width: 55px; }
+.main-table th:nth-child(5), .main-table th:nth-child(6) { width: 160px; }
+.main-table th:nth-child(7), .main-table th:nth-child(8) { width: 265px; }
+.main-table th:nth-child(9) { width: 255px; }
+tbody tr:nth-child(even) { background: #f5f7ef; }
+tbody tr.duplicate { background: var(--red-bg); }
+tbody tr:hover { box-shadow: inset 4px 0 var(--green); }
+.row-name { font-size: 16px; }
+.row-select { width: 100%; font-size: 13px; }
+.badge { display: inline-block; border-radius: 4px; padding: 3px 7px; margin: 3px 4px 3px 0; font-size: 12px; line-height: 1.6; border: 1px solid transparent; }
+.badge.red { color: var(--red); background: #ffe1e0; border-color: #edb6b7; }
+.badge.yellow { color: var(--gold); background: var(--gold-bg); border-color: #e3cf91; }
+.badge.blue { color: var(--blue); background: var(--blue-bg); border-color: #b7d2e5; }
+.badge.neutral { color: var(--green); background: #e4eee3; border-color: #bfd0ba; }
+.empty { padding: 24px; text-align: center; color: var(--muted); border: 1px solid var(--line); background: var(--panel); }
+.export-panel { margin: 30px 0; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); padding: 20px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
+textarea { display: block; width: 100%; min-height: 260px; resize: vertical; border: 1px solid #aab9ae; border-radius: 5px; padding: 12px; color: var(--ink); background: #f7f9f2; font: 12px/1.6 "Cascadia Mono", Consolas, monospace; }
+.status { margin: 10px 0; padding: 10px 12px; border: 1px solid #bfd0ba; border-radius: 4px; background: #edf4e9; white-space: pre-wrap; overflow-wrap: anywhere; }
+.status.error { color: var(--red); border-color: #edb6b7; background: var(--red-bg); }
+.status:empty { display: none; }
+.reference { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; margin: 12px 0; }
+summary { cursor: pointer; padding: 15px 18px; font-size: 18px; font-weight: 700; }
+.reference-content { padding: 0 18px 18px; }
+.reference .table-wrap { max-height: 460px; }
+.reference table { min-width: 960px; }
+.reason-group { border-top: 1px solid var(--line); margin-top: 8px; }
+.reason-group summary { font-size: 15px; padding-left: 0; }
+.reason-group ul { padding-left: 24px; }
+.reason-group li { margin-bottom: 10px; overflow-wrap: anywhere; }
+.body-list { display: grid; grid-template-columns: minmax(230px, 1fr) 2fr; margin: 0; }
+.body-list dt, .body-list dd { margin: 0; padding: 12px 8px; border-bottom: 1px solid var(--line); }
+.body-list dt { font-weight: 700; }
+[hidden] { display: none !important; }
+footer { margin-top: 22px; color: var(--muted); font-size: 12px; }
+@media (max-width: 700px) {
+  header, main, .toolbar-inner { padding-left: 14px; padding-right: 14px; }
+  header { padding-top: 24px; }
+  .toolbar-inner { gap: 6px 10px; padding-top: 8px; padding-bottom: 8px; }
+  .field { flex-basis: 40%; }
+  .search-field { flex-basis: 100%; }
+  .mod-field { max-width: none; }
+  .check { font-size: 12px; padding-bottom: 2px; }
+  .counts { font-size: 12px; }
+  .body-list { display: block; }
+  .body-list dt { border-bottom: 0; padding-bottom: 0; }
+  .summary-panel, .export-panel { padding: 14px; }
+  .table-wrap { max-height: 60vh; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  header, .summary-panel { animation: reveal .45s ease-out both; }
+  .summary-panel { animation-delay: .08s; }
+  @keyframes reveal { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+}
+</style>
+</head>
+<body>
+<header>
+  <p class="eyebrow">KURONE / SOUL TOMB / PICKER</p>
+  <h1>Kurone Soul Tomb 換臉挑選</h1>
+  <p id="metadata" class="meta"></p>
+  <p id="source" class="meta"></p>
+  <div class="intro">
+    <p>替隨從選擇換臉素材與身形，也可以維持原樣。換臉不會移除原 NPC。</p>
+    <p>標示「自訂種族」的素材施工比較費工；Kurone 身形都是女性身體，請留意男性目標的提醒。</p>
+  </div>
+  <noscript><p class="status error">此挑選頁需要啟用 JavaScript。</p></noscript>
+  <p id="fatal" class="status error" role="alert" hidden></p>
+</header>
+<section class="toolbar" aria-label="篩選目標">
+  <div class="toolbar-inner">
+    <label class="field search-field" for="search">搜尋隨從<input id="search" type="search" placeholder="名字、英文名、EditorID、mod 或 FormKey" autocomplete="off"></label>
+    <label class="field mod-field" for="mod-filter">來源 mod<select id="mod-filter"><option value="">全部 mod</option></select></label>
+    <label class="field" for="sex-filter">性別<select id="sex-filter"><option value="女" selected>女</option><option value="男">男</option><option value="">全部</option></select></label>
+    <label class="check"><input id="selected-only" type="checkbox"> 只看已選的</label>
+    <label class="check"><input id="kurone-only" type="checkbox"> 只看 11-07 已換身體的</label>
+    <label class="check"><input id="donor-all-sexes" type="checkbox"> 素材顯示全部性別</label>
+    <p id="visible-count" class="counts" role="status" aria-live="polite"></p>
+  </div>
+</section>
+<main>
+  <section class="summary-panel" aria-labelledby="summary-title">
+    <div class="summary-top">
+      <h2 id="summary-title">選擇摘要</h2>
+      <div class="metrics"><span class="metric"><strong id="picked-count">0</strong>列已選</span><span class="metric"><strong id="duplicate-count">0</strong>個重複素材</span><span class="metric"><strong id="warning-count">0</strong>則提醒</span></div>
+    </div>
+    <p class="help">摘要與匯出涵蓋全部目標，不受搜尋或篩選影響。選了素材或非「不換」身形，就算已選。</p>
+    <p id="no-duplicates" class="help">目前沒有重複素材。</p>
+    <ul id="duplicate-list" class="duplicate-list" hidden></ul>
+  </section>
+  <section aria-labelledby="targets-title">
+    <div class="section-head"><h2 id="targets-title">隨從選擇</h2><span class="help">素材預設只列同性別，已選的異性素材仍保留；可左右與上下捲動表格。</span></div>
+    <div id="target-scroll" class="table-wrap" tabindex="0" role="region" aria-label="隨從選擇表格，可橫向捲動">
+      <table class="main-table">
+        <thead><tr><th scope="col">名字 / 識別碼</th><th scope="col">mod</th><th scope="col">種族</th><th scope="col">性別</th><th scope="col">現在的臉</th><th scope="col">現在的身體</th><th scope="col">素材</th><th scope="col">身形</th><th scope="col">提醒</th></tr></thead>
+        <tbody id="target-rows"></tbody>
+      </table>
+    </div>
+    <p id="no-targets" class="empty" hidden>沒有符合篩選條件的目標。請調整搜尋、性別或勾選條件。</p>
+  </section>
+  <section class="export-panel" aria-labelledby="export-title">
+    <h2 id="export-title">保存與交付</h2>
+    <p class="help">選擇會嘗試自動存到本機瀏覽器。離線檔案的儲存權限因瀏覽器而異，離開前建議另存 JSON 備份。</p>
+    <p id="storage-status" class="status" role="status" aria-live="polite"></p>
+    <div class="actions">
+      <button id="download" class="primary" type="button">下載 JSON</button>
+      <button id="copy" type="button">複製到剪貼簿</button>
+      <button id="import" type="button">匯入 JSON</button>
+      <button id="clear" class="danger" type="button">清除全部選擇</button>
+    </div>
+    <input id="import-file" type="file" accept=".json,application/json" hidden>
+    <p class="help">匯入會取代目前選擇；找不到的 FormKey 會列出，其他有效選擇仍會還原。</p>
+    <p id="action-status" class="status" role="status" aria-live="polite"></p>
+    <label class="field" for="export-json">即時匯出預覽（唯讀）</label>
+    <textarea id="export-json" readonly spellcheck="false" aria-label="即時匯出 JSON"></textarea>
+  </section>
+  <section aria-label="參考資料">
+    <details class="reference"><summary id="donors-heading">素材總表</summary><div class="reference-content"><div class="table-wrap" tabindex="0" role="region" aria-label="素材總表，可橫向捲動"><table><thead><tr><th scope="col">名字</th><th scope="col">英文名</th><th scope="col">EditorID</th><th scope="col">FormKey</th><th scope="col">種族</th><th scope="col">性別</th><th scope="col">分組</th><th scope="col">備註</th><th scope="col">目前被誰選了</th></tr></thead><tbody id="donor-rows"></tbody></table></div></div></details>
+    <details class="reference"><summary id="excluded-donors-heading">排除的素材</summary><div class="reference-content"><div class="table-wrap" tabindex="0" role="region" aria-label="排除素材表，可橫向捲動"><table><thead><tr><th scope="col">名字</th><th scope="col">EditorID</th><th scope="col">原因</th></tr></thead><tbody id="excluded-donor-rows"></tbody></table></div></div></details>
+    <details class="reference"><summary id="bodies-heading">身形說明</summary><div class="reference-content"><dl id="body-descriptions" class="body-list"></dl></div></details>
+    <details class="reference"><summary id="excluded-targets-heading">排除的目標</summary><div id="excluded-target-groups" class="reference-content"></div></details>
+  </section>
+  <footer>這份頁面只記錄選擇，不會變更遊戲、NPC、mod 或任何設定檔。</footer>
+</main>
+<script id="pick-data" type="application/json">__PICK_DATA__</script>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const STORAGE_KEY = 'kurone-soultomb-pick/v1';
+  const FORMAT = 'kurone-soultomb-pick/1';
+  let data;
+  try {
+    data = JSON.parse(document.getElementById('pick-data').textContent);
+    if (!data.meta || !['donors', 'targets', 'bodies', 'donors_excluded', 'targets_excluded'].every(key => Array.isArray(data[key])) || !data.bodies.some(body => body.id === 'none')) {
+      throw new Error('Invalid picker data');
+    }
+  } catch (error) {
+    $('fatal').textContent = '資料無法讀取：此範本需要先由上游填入完整資料。';
+    $('fatal').hidden = false;
+    document.querySelectorAll('button, input, select').forEach(control => { control.disabled = true; });
+    return;
+  }
+  const donorById = new Map(data.donors.map(donor => [donor.id, donor]));
+  const bodyById = new Map(data.bodies.map(body => [body.id, body]));
+  const normalizeKey = value => typeof value === 'string' ? value.trim().toLowerCase() : '';
+  const targetByFormkey = new Map(data.targets.map(target => [normalizeKey(target.formkey), target]));
+  const donorByFormkey = new Map(data.donors.map(donor => [normalizeKey(donor.formkey), donor]));
+  const rows = new Map();
+  const donorUsageCells = new Map();
+  let selections = new Map();
+  let exportText = '';
+
+  function element(tag, text, className) {
+    const node = document.createElement(tag);
+    if (text !== undefined && text !== null) node.textContent = String(text);
+    if (className) node.className = className;
+    return node;
+  }
+  function cell(row, text, className) {
+    const td = element('td', text, className);
+    row.append(td);
+    return td;
+  }
+  function option(value, label, title) {
+    const node = element('option', label);
+    node.value = value;
+    if (title) node.title = title;
+    return node;
+  }
+  function selectionFor(target) {
+    return selections.get(target.id) || { donor_id: '', body_id: 'none' };
+  }
+  function isPicked(pick) {
+    return Boolean(pick.donor_id) || pick.body_id !== 'none';
+  }
+  function status(id, message, error = false) {
+    const node = $(id);
+    node.textContent = message;
+    node.classList.toggle('error', error);
+  }
+  function save() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.fromEntries(selections)));
+      status('storage-status', '選擇已自動儲存在此瀏覽器。');
+    } catch (error) {
+      status('storage-status', '無法自動儲存；目前選擇仍保留在頁面中，請下載 JSON 備份。', true);
+    }
+  }
+  function load() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        status('storage-status', '尚無本機存檔；選擇後會自動儲存。');
+        return;
+      }
+      const saved = JSON.parse(raw);
+      if (!saved || typeof saved !== 'object' || Array.isArray(saved)) throw new Error('Invalid saved selections');
+      const issues = [];
+      const knownTargets = new Set(data.targets.map(target => target.id));
+      for (const [targetId, pick] of Object.entries(saved)) {
+        if (!knownTargets.has(targetId)) {
+          issues.push('找不到目標 ID：' + targetId);
+          continue;
+        }
+        if (!pick || typeof pick !== 'object') {
+          issues.push('無效的目標選擇：' + targetId);
+          continue;
+        }
+        let donorId = pick.donor_id || '';
+        let bodyId = pick.body_id || 'none';
+        if (donorId && !donorById.has(donorId)) {
+          issues.push('找不到素材 ID：' + String(donorId));
+          donorId = '';
+        }
+        if (!bodyById.has(bodyId)) {
+          issues.push('找不到身形 ID：' + String(bodyId));
+          bodyId = 'none';
+        }
+        const next = { donor_id: donorId, body_id: bodyId };
+        if (isPicked(next)) selections.set(targetId, next);
+      }
+      status('storage-status', '已還原本機存檔，共 ' + selections.size + ' 列。' + (issues.length ? '\n' + issues.join('\n') : ''), issues.length > 0);
+    } catch (error) {
+      status('storage-status', '無法讀取本機存檔；頁面仍可使用，請用 JSON 備份還原。', true);
+    }
+  }
+
+  $('metadata').textContent = '資料日期：' + data.meta.extracted + '　｜　Profile：' + data.meta.profile + '　｜　素材 ' + data.donors.length + ' 位 / 目標 ' + data.targets.length + ' 位';
+  $('source').textContent = '素材來源：' + data.meta.donor_mod;
+  const modCounts = new Map();
+  data.targets.forEach(target => modCounts.set(target.mod, (modCounts.get(target.mod) || 0) + 1));
+  Array.from(modCounts.keys()).sort((a, b) => a.localeCompare(b, 'zh-Hant')).forEach(mod => {
+    $('mod-filter').append(option(mod, mod + '（' + modCounts.get(mod) + '）'));
+  });
+
+  const groups = [
+    ['主要角色・女', donor => donor.group === '主要角色' && donor.sex === '女'],
+    ['主要角色・男', donor => donor.group === '主要角色' && donor.sex === '男'],
+    ['雜兵', donor => donor.group === '雜兵']
+  ];
+  function syncDonorOptions(target, view, selectedId) {
+    const showAll = $('donor-all-sexes').checked;
+    const signature = JSON.stringify([showAll, target.sex, selectedId]);
+    if (view.donorOptionsSignature === signature) return;
+    const fragment = document.createDocumentFragment();
+    fragment.append(option('', '（不換臉）'));
+    groups.forEach(([label, matches]) => {
+      const group = element('optgroup');
+      group.label = label;
+      data.donors.filter(donor => matches(donor) && (showAll || donor.sex === target.sex || donor.id === selectedId)).forEach(donor => {
+        group.append(option(donor.id, donor.name_zh + '（' + donor.name_en + '）・' + donor.race + (donor.custom_race ? '・自訂種族' : ''), donor.edid + ' / ' + donor.formkey));
+      });
+      if (group.childElementCount) fragment.append(group);
+    });
+    // Rebuild from selection state so a selected cross-sex donor is never lost.
+    view.donorSelect.replaceChildren(fragment);
+    view.donorSelect.value = selectedId;
+    view.donorOptionsSignature = signature;
+  }
+  const bodyTemplate = element('select', null, 'row-select');
+  data.bodies.forEach(body => bodyTemplate.append(option(body.id, body.label, body.desc)));
+  load();
+
+  const targetFragment = document.createDocumentFragment();
+  data.targets.forEach((target, index) => {
+    const row = element('tr');
+    row.dataset.targetId = target.id;
+    const nameCell = cell(row);
+    nameCell.append(element('strong', target.name, 'row-name'));
+    if (target.name_en) nameCell.append(element('span', target.name_en, 'sub'));
+    nameCell.append(element('span', target.edid, 'technical'), element('span', target.formkey, 'technical'));
+    cell(row, target.mod);
+    cell(row, target.race);
+    cell(row, target.sex);
+    const faceCell = cell(row, target.face_now);
+    if (target.face_note) faceCell.append(element('br'), element('span', target.face_note, 'badge neutral'));
+    cell(row, target.body_now || '原樣');
+    const donorSelect = element('select', null, 'row-select');
+    donorSelect.id = 'donor-' + index;
+    donorSelect.setAttribute('aria-label', target.name + '的素材');
+    donorSelect.dataset.part = 'donor';
+    cell(row).append(donorSelect);
+    const bodySelect = bodyTemplate.cloneNode(true);
+    bodySelect.id = 'body-' + index;
+    bodySelect.setAttribute('aria-label', target.name + '的身形');
+    bodySelect.dataset.part = 'body';
+    cell(row).append(bodySelect);
+    const warningsCell = cell(row);
+    rows.set(target.id, { row, donorSelect, bodySelect, warningsCell, search: [target.name, target.name_en, target.edid, target.mod, target.formkey].join('\n').toLowerCase() });
+    targetFragment.append(row);
+  });
+  $('target-rows').append(targetFragment);
+
+  $('donors-heading').textContent = '素材總表（' + data.donors.length + '）';
+  data.donors.forEach(donor => {
+    const row = element('tr');
+    cell(row, donor.name_zh);
+    cell(row, donor.name_en);
+    cell(row, donor.edid, 'technical');
+    cell(row, donor.formkey, 'technical');
+    const raceCell = cell(row, donor.race);
+    if (donor.custom_race) raceCell.append(element('br'), element('span', '自訂種族', 'badge blue'));
+    cell(row, donor.sex);
+    cell(row, donor.group);
+    cell(row, donor.note || '—');
+    donorUsageCells.set(donor.id, cell(row, '尚未被選擇'));
+    $('donor-rows').append(row);
+  });
+  $('excluded-donors-heading').textContent = '排除的素材（' + data.donors_excluded.length + '）';
+  data.donors_excluded.forEach(donor => {
+    const row = element('tr');
+    const nameCell = cell(row, donor.name_zh);
+    if (donor.name_en) nameCell.append(element('span', donor.name_en, 'sub'));
+    cell(row, donor.edid, 'technical');
+    cell(row, donor.reason);
+    $('excluded-donor-rows').append(row);
+  });
+  $('bodies-heading').textContent = '身形說明（' + data.bodies.length + '）';
+  data.bodies.forEach(body => $('body-descriptions').append(element('dt', body.label), element('dd', body.desc)));
+  $('excluded-targets-heading').textContent = '排除的目標（' + data.targets_excluded.length + '）';
+  const excludedGroups = new Map();
+  data.targets_excluded.forEach(target => {
+    const reason = target.reason || '未提供原因';
+    if (!excludedGroups.has(reason)) excludedGroups.set(reason, []);
+    excludedGroups.get(reason).push(target);
+  });
+  excludedGroups.forEach((targets, reason) => {
+    const details = element('details', null, 'reason-group');
+    details.append(element('summary', reason + '（' + targets.length + '）'));
+    const list = element('ul');
+    targets.forEach(target => {
+      const item = element('li', target.name);
+      item.append(element('span', target.mod, 'sub'), element('span', target.edid + ' / ' + target.formkey, 'technical'));
+      list.append(item);
+    });
+    details.append(list);
+    $('excluded-target-groups').append(details);
+  });
+
+  function usageMap() {
+    const usage = new Map();
+    data.targets.forEach(target => {
+      const donorId = selectionFor(target).donor_id;
+      if (!donorId) return;
+      if (!usage.has(donorId)) usage.set(donorId, []);
+      usage.get(donorId).push(target);
+    });
+    return usage;
+  }
+  function warningsFor(target, pick, usage) {
+    const warnings = [];
+    const donor = donorById.get(pick.donor_id);
+    const others = (usage.get(pick.donor_id) || []).filter(other => other.id !== target.id);
+    if (others.length) warnings.push({ color: 'red', text: '這個素材也被 ' + others.map(other => other.name).join('、') + ' 選了' });
+    if (donor && donor.sex !== target.sex) warnings.push({ color: 'yellow', text: '性別不同' });
+    if (pick.body_id !== 'none' && target.sex === '男') warnings.push({ color: 'yellow', text: 'Kurone 身形是女性身體' });
+    if (donor && donor.custom_race) warnings.push({ color: 'blue', text: '自訂種族素材：施工較費工' });
+    if (pick.body_id !== 'none' && target.kurone_1107) warnings.push({ color: 'blue', text: '會換掉 11-07 的身形' });
+    return warnings;
+  }
+  function applyFilters() {
+    const query = $('search').value.trim().toLowerCase();
+    const mod = $('mod-filter').value;
+    const sex = $('sex-filter').value;
+    let visible = 0;
+    data.targets.forEach(target => {
+      const view = rows.get(target.id);
+      const show = (!query || view.search.includes(query)) && (!mod || target.mod === mod) && (!sex || target.sex === sex) && (!$('selected-only').checked || isPicked(selectionFor(target))) && (!$('kurone-only').checked || target.kurone_1107);
+      view.row.hidden = !show;
+      if (show) visible += 1;
+    });
+    $('visible-count').textContent = '目前顯示 ' + visible + '／' + data.targets.length + ' 列；已選 ' + selections.size + ' 列';
+    $('no-targets').hidden = visible !== 0;
+  }
+  function update() {
+    const usage = usageMap();
+    const exportPicks = [];
+    let warningCount = 0;
+    data.targets.forEach(target => {
+      const pick = selectionFor(target);
+      const view = rows.get(target.id);
+      const donor = donorById.get(pick.donor_id);
+      const body = bodyById.get(pick.body_id);
+      const warnings = warningsFor(target, pick, usage);
+      warningCount += warnings.length;
+      syncDonorOptions(target, view, pick.donor_id);
+      view.donorSelect.value = pick.donor_id;
+      view.bodySelect.value = pick.body_id;
+      view.donorSelect.title = donor ? donor.edid + ' / ' + donor.formkey : '不換臉，維持現在的臉';
+      view.bodySelect.title = body.desc;
+      view.row.classList.toggle('duplicate', warnings.some(warning => warning.color === 'red'));
+      view.warningsCell.replaceChildren(...warnings.map(warning => element('span', warning.text, 'badge ' + warning.color)));
+      if (!isPicked(pick)) return;
+      exportPicks.push({
+        target: { formkey: target.formkey, edid: target.edid, name: target.name, mod: target.mod, sex: target.sex },
+        donor: donor ? { formkey: donor.formkey, edid: donor.edid, name_zh: donor.name_zh, name_en: donor.name_en, race: donor.race, custom_race: donor.custom_race } : null,
+        parts: donor ? 'head' : null,
+        body: { id: body.id, label: body.label },
+        warnings: warnings.map(warning => warning.text)
+      });
+    });
+    const duplicates = Array.from(usage.entries()).filter(([, targets]) => targets.length > 1);
+    $('picked-count').textContent = exportPicks.length;
+    $('duplicate-count').textContent = duplicates.length;
+    $('warning-count').textContent = warningCount;
+    $('duplicate-list').replaceChildren(...duplicates.map(([donorId, targets]) => element('li', donorById.get(donorId).name_zh + ' → ' + targets.map(target => target.name).join('、'))));
+    $('duplicate-list').hidden = duplicates.length === 0;
+    $('no-duplicates').hidden = duplicates.length !== 0;
+    donorUsageCells.forEach((node, donorId) => { node.textContent = usage.has(donorId) ? usage.get(donorId).map(target => target.name).join('、') : '尚未被選擇'; });
+    exportText = JSON.stringify({
+      format: FORMAT,
+      generated_at: new Date().toISOString(),
+      data_extracted: data.meta.extracted,
+      profile: data.meta.profile,
+      remove_donor: false,
+      picks: exportPicks
+    }, null, 2);
+    $('export-json').value = exportText;
+    applyFilters();
+  }
+
+  $('target-rows').addEventListener('change', event => {
+    const control = event.target;
+    if (!control.matches('select[data-part]')) return;
+    const targetId = control.closest('tr').dataset.targetId;
+    const view = rows.get(targetId);
+    const pick = { donor_id: view.donorSelect.value, body_id: view.bodySelect.value };
+    if (isPicked(pick)) selections.set(targetId, pick);
+    else selections.delete(targetId);
+    update();
+    save();
+  });
+  $('donor-all-sexes').addEventListener('change', () => {
+    data.targets.forEach(target => syncDonorOptions(target, rows.get(target.id), selectionFor(target).donor_id));
+  });
+  $('search').addEventListener('input', applyFilters);
+  ['mod-filter', 'sex-filter', 'selected-only', 'kurone-only'].forEach(id => $(id).addEventListener('change', applyFilters));
+  $('clear').addEventListener('click', () => {
+    if (!confirm('確定清除全部選擇？本機存檔也會更新為空白。')) return;
+    selections.clear();
+    update();
+    save();
+    status('action-status', '已清除全部選擇。');
+  });
+  function filename() {
+    const now = new Date();
+    const pad = value => String(value).padStart(2, '0');
+    return 'kurone-soultomb-pick-' + now.getFullYear() + pad(now.getMonth() + 1) + pad(now.getDate()) + '-' + pad(now.getHours()) + pad(now.getMinutes()) + '.json';
+  }
+  $('download').addEventListener('click', () => {
+    let url;
+    let link;
+    try {
+      const blob = new Blob([exportText], { type: 'application/json;charset=utf-8' });
+      url = URL.createObjectURL(blob);
+      link = element('a');
+      link.href = url;
+      link.download = filename();
+      document.body.append(link);
+      link.click();
+      status('action-status', '已產生下載：' + link.download + '。');
+    } catch (error) {
+      status('action-status', '下載失敗；請複製 JSON 或從預覽欄手動備份。', true);
+    } finally {
+      if (link) link.remove();
+      if (url) setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+  });
+  function legacyCopy(text) {
+    const active = document.activeElement;
+    const helper = element('textarea');
+    helper.value = text;
+    helper.readOnly = true;
+    helper.style.cssText = 'position:fixed;left:-10000px;top:0;width:1px;height:1px;opacity:0;';
+    document.body.append(helper);
+    try {
+      helper.focus({ preventScroll: true });
+      helper.select();
+      helper.setSelectionRange(0, helper.value.length);
+      if (!document.execCommand('copy')) throw new Error('Copy command failed');
+    } finally {
+      helper.remove();
+      if (active && typeof active.focus === 'function') active.focus({ preventScroll: true });
+    }
+  }
+  $('copy').addEventListener('click', async () => {
+    const text = exportText;
+    try {
+      try {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard API unavailable');
+        await navigator.clipboard.writeText(text);
+      } catch (error) {
+        legacyCopy(text);
+      }
+      status('action-status', 'JSON 已複製到剪貼簿。');
+    } catch (error) {
+      status('action-status', '無法存取剪貼簿；請下載 JSON，或選取預覽欄的內容手動複製。', true);
+    }
+  });
+  $('import').addEventListener('click', () => $('import-file').click());
+  $('import-file').addEventListener('change', async event => {
+    const file = event.target.files[0];
+    event.target.value = '';
+    if (!file) return;
+    try {
+      const imported = JSON.parse(await file.text());
+      if (!imported || imported.format !== FORMAT || !Array.isArray(imported.picks)) throw new Error('Invalid import format');
+      const next = new Map();
+      const issues = [];
+      if (imported.profile !== data.meta.profile) issues.push('存檔的 profile 與目前資料不同，請確認目標。');
+      if (imported.remove_donor !== false) issues.push('已忽略存檔的移除設定；此頁永遠不移除原 NPC。');
+      imported.picks.forEach((pick, index) => {
+        if (!pick || typeof pick !== 'object') {
+          issues.push('第 ' + (index + 1) + ' 筆選擇不是有效物件，已略過。');
+          return;
+        }
+        const targetKey = pick.target && pick.target.formkey;
+        const target = targetByFormkey.get(normalizeKey(targetKey));
+        if (!target) {
+          issues.push('找不到目標 FormKey：' + (targetKey || '（未提供，第 ' + (index + 1) + ' 筆）'));
+          return;
+        }
+        let donorId = '';
+        if (pick.donor !== null && pick.donor !== undefined) {
+          const donorKey = pick.donor.formkey;
+          const donor = donorByFormkey.get(normalizeKey(donorKey));
+          if (donor) donorId = donor.id;
+          else issues.push('找不到素材 FormKey：' + (donorKey || '（未提供）') + '；目標：' + target.name + '，此列維持不換臉。');
+        }
+        let bodyId = pick.body && pick.body.id;
+        if (!bodyById.has(bodyId)) {
+          issues.push('找不到身形 ID：' + (bodyId || '（未提供）') + '；目標：' + target.name + '，此列身形設為不換。');
+          bodyId = 'none';
+        }
+        const selection = { donor_id: donorId, body_id: bodyId };
+        next.delete(target.id);
+        if (isPicked(selection)) next.set(target.id, selection);
+      });
+      selections = next;
+      update();
+      save();
+      status('action-status', '已匯入 ' + selections.size + ' 列選擇。' + (issues.length ? '\n匯入提醒：\n' + issues.join('\n') : '\n所有選擇均已還原。'), issues.length > 0);
+    } catch (error) {
+      status('action-status', '匯入失敗：請選擇格式為 ' + FORMAT + ' 且含 picks 陣列的有效 JSON 檔。原有選擇未變更。', true);
+    }
+  });
+  update();
+})();
+</script>
+</body>
+</html>

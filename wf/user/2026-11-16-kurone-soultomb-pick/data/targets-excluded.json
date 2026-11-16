@@ -1,0 +1,1777 @@
+{
+ "contract": "wf-table/1",
+ "source": "../README.md",
+ "extracted": "2026-11-16",
+ "columns": [
+  "id",
+  "formkey",
+  "edid",
+  "name",
+  "mod",
+  "race",
+  "sex",
+  "reason"
+ ],
+ "rows": [
+  {
+   "id": "t:109487:Skyrim.esm",
+   "formkey": "109487:Skyrim.esm",
+   "edid": "WEFollowerDog",
+   "name": "流浪狗",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DogCompanionRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:09A7AA:Skyrim.esm",
+   "formkey": "09A7AA:Skyrim.esm",
+   "edid": "TrainedDog",
+   "name": "警觉",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DogCompanionRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:01AA74:Dawnguard.esm",
+   "formkey": "01AA74:Dawnguard.esm",
+   "edid": "DLC1HireableHunterDog1",
+   "name": "布兰",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC1HuskyArmoredCompanionRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:01AA76:Dawnguard.esm",
+   "formkey": "01AA76:Dawnguard.esm",
+   "edid": "DLC1HireableHunterDog2",
+   "name": "修兰",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC1HuskyArmoredCompanionRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:01AA77:Dawnguard.esm",
+   "formkey": "01AA77:Dawnguard.esm",
+   "edid": "DLC1HireableVampireDeathhound1",
+   "name": "加莫尔",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC1DeathHoundCompanionRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:01AA78:Dawnguard.esm",
+   "formkey": "01AA78:Dawnguard.esm",
+   "edid": "DLC1HireableVampireDeathhound2",
+   "name": "库西斯",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC1DeathHoundCompanionRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:03D572:Dragonborn.esm",
+   "formkey": "03D572:Dragonborn.esm",
+   "edid": "DLC2LvlRieklingThirskOutsideMissile",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "FoxRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:03D571:Dragonborn.esm",
+   "formkey": "03D571:Dragonborn.esm",
+   "edid": "DLC2LvlRieklingThirskOutsideMelee",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "FoxRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:038E93:Dragonborn.esm",
+   "formkey": "038E93:Dragonborn.esm",
+   "edid": "DLC2LvlRieklingThirskPillarBuilder",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "FoxRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:038C0D:Dragonborn.esm",
+   "formkey": "038C0D:Dragonborn.esm",
+   "edid": "DLC2RieklingRescuer",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC2RieklingRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:038AB5:Dragonborn.esm",
+   "formkey": "038AB5:Dragonborn.esm",
+   "edid": "DLC2LvlRieklingThirskMissile",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "FoxRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:0353E3:Dragonborn.esm",
+   "formkey": "0353E3:Dragonborn.esm",
+   "edid": "DLC2EncThirskRiekling03Missile",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC2RieklingRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:0353E2:Dragonborn.esm",
+   "formkey": "0353E2:Dragonborn.esm",
+   "edid": "DLC2EncThirskRiekling03Melee",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC2RieklingRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:0353E1:Dragonborn.esm",
+   "formkey": "0353E1:Dragonborn.esm",
+   "edid": "DLC2EncThirskRiekling02Missile",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC2RieklingRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:0353E0:Dragonborn.esm",
+   "formkey": "0353E0:Dragonborn.esm",
+   "edid": "DLC2EncThirskRiekling02Melee",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC2RieklingRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:0353DF:Dragonborn.esm",
+   "formkey": "0353DF:Dragonborn.esm",
+   "edid": "DLC2EncThirskRiekling01Missile",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC2RieklingRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:0353DE:Dragonborn.esm",
+   "formkey": "0353DE:Dragonborn.esm",
+   "edid": "DLC2EncThirskRiekling01Melee",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "DLC2RieklingRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:0208D8:Dragonborn.esm",
+   "formkey": "0208D8:Dragonborn.esm",
+   "edid": "DLC2LvlRieklingThirskMelee",
+   "name": "",
+   "mod": "原版 Skyrim／DLC／CC",
+   "race": "FoxRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:000815:ccbgssse040-advobgobs.esl",
+   "formkey": "000815:ccbgssse040-advobgobs.esl",
+   "edid": "ccBGSSSE040_EncGoblinFollower",
+   "name": "谷赫",
+   "mod": "Creation Club - Anniversary Upgrade (2026-09-03 download)",
+   "race": "ccBGSSSE040_GoblinRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:016B5D:Phenderix Magic World.esm",
+   "formkey": "016B5D:Phenderix Magic World.esm",
+   "edid": "ZZDawnguardDireDeathhound",
+   "name": "可怕的地狱死亡猎犬",
+   "mod": "Phenderix Magic World - 7.0.0",
+   "race": "DLC1DeathHoundCompanionRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:2E8F53:Wyrmstooth.esp",
+   "formkey": "2E8F53:Wyrmstooth.esp",
+   "edid": "WTFaelor",
+   "name": "费洛尔",
+   "mod": "Wyrmstooth",
+   "race": "WTFaelorWolfRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:31D92B:Unslaad.esm",
+   "formkey": "31D92B:Unslaad.esm",
+   "edid": "zzzCrbMofuDog",
+   "name": "莫夫",
+   "mod": "Unlsaaad SE v302",
+   "race": "DogCompanionRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:0D5FF4:Vigilant.esm",
+   "formkey": "0D5FF4:Vigilant.esm",
+   "edid": "zzzCHHoundCompanion",
+   "name": "阿爾",
+   "mod": "VIGILANT English Voice 1.8.2 Dev 2026-08-21",
+   "race": "DogCompanionRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:00059C:KuroneSoulTomb.esp",
+   "formkey": "00059C:KuroneSoulTomb.esp",
+   "edid": "AAA_Seeker",
+   "name": "探求者",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0006AA:KuroneSoulTomb.esp",
+   "formkey": "0006AA:KuroneSoulTomb.esp",
+   "edid": "AAA_Clash",
+   "name": "柯拉什",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_ClashRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0002D6:KuroneSoulTomb.esp",
+   "formkey": "0002D6:KuroneSoulTomb.esp",
+   "edid": "AAA_Darkness",
+   "name": "黑暗",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000539:KuroneSoulTomb.esp",
+   "formkey": "000539:KuroneSoulTomb.esp",
+   "edid": "AAA_Lilith",
+   "name": "莉莉丝",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:00053E:KuroneSoulTomb.esp",
+   "formkey": "00053E:KuroneSoulTomb.esp",
+   "edid": "AAA_Balan",
+   "name": "刃兰",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000545:KuroneSoulTomb.esp",
+   "formkey": "000545:KuroneSoulTomb.esp",
+   "edid": "AAA_GraveKeeper",
+   "name": "守墓人格蕾芙",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:00054A:KuroneSoulTomb.esp",
+   "formkey": "00054A:KuroneSoulTomb.esp",
+   "edid": "AAA_Captor",
+   "name": "收集者",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000557:KuroneSoulTomb.esp",
+   "formkey": "000557:KuroneSoulTomb.esp",
+   "edid": "AAA_Ignite",
+   "name": "伊格妮",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000558:KuroneSoulTomb.esp",
+   "formkey": "000558:KuroneSoulTomb.esp",
+   "edid": "AAA_Abyss",
+   "name": "深渊",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0008C2:KuroneSoulTomb.esp",
+   "formkey": "0008C2:KuroneSoulTomb.esp",
+   "edid": "AAA_Chaos",
+   "name": "混沌乙女",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0009D9:KuroneSoulTomb.esp",
+   "formkey": "0009D9:KuroneSoulTomb.esp",
+   "edid": "AAA_Requiem",
+   "name": "守墓人安魂曲",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0009E0:KuroneSoulTomb.esp",
+   "formkey": "0009E0:KuroneSoulTomb.esp",
+   "edid": "AAA_Olivia",
+   "name": "奥利维亚",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0009E2:KuroneSoulTomb.esp",
+   "formkey": "0009E2:KuroneSoulTomb.esp",
+   "edid": "AAA_Nyx",
+   "name": "倪克斯",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0009E4:KuroneSoulTomb.esp",
+   "formkey": "0009E4:KuroneSoulTomb.esp",
+   "edid": "AAA_Grace",
+   "name": "守墓人格蕾茜",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000A0B:KuroneSoulTomb.esp",
+   "formkey": "000A0B:KuroneSoulTomb.esp",
+   "edid": "AAA_Chloe",
+   "name": "克罗艾",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000CEF:KuroneSoulTomb.esp",
+   "formkey": "000CEF:KuroneSoulTomb.esp",
+   "edid": "AAA_Lior",
+   "name": "丽奥尔",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000DBE:KuroneSoulTomb.esp",
+   "formkey": "000DBE:KuroneSoulTomb.esp",
+   "edid": "AAA_ChaosCorpse",
+   "name": "鲜血枯竭的混沌乙女",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000DFA:KuroneSoulTomb.esp",
+   "formkey": "000DFA:KuroneSoulTomb.esp",
+   "edid": "AAA_Zeno",
+   "name": "杰诺",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000E46:KuroneSoulTomb.esp",
+   "formkey": "000E46:KuroneSoulTomb.esp",
+   "edid": "AAA_Nova",
+   "name": "诺娃",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000B1A:KuroneSoulTomb_EX1.esp",
+   "formkey": "000B1A:KuroneSoulTomb_EX1.esp",
+   "edid": "AAA_BM_NPC1",
+   "name": "格尔多亚",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "ArgonianRace",
+   "sex": "男",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000B1B:KuroneSoulTomb_EX1.esp",
+   "formkey": "000B1B:KuroneSoulTomb_EX1.esp",
+   "edid": "AAA_BM_NPC2",
+   "name": "梅菲斯特",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "DarkElfRace",
+   "sex": "男",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000B1C:KuroneSoulTomb_EX1.esp",
+   "formkey": "000B1C:KuroneSoulTomb_EX1.esp",
+   "edid": "AAA_BM_NPC3",
+   "name": "巴尔扎克",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "OrcRace",
+   "sex": "男",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0005F1:KuroneSoulTomb_EX1.esp",
+   "formkey": "0005F1:KuroneSoulTomb_EX1.esp",
+   "edid": "AAA_Mana",
+   "name": "玛娜",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:00064A:KuroneSoulTomb_EX1.esp",
+   "formkey": "00064A:KuroneSoulTomb_EX1.esp",
+   "edid": "AAA_Venia",
+   "name": "薇尼雅",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0007AD:KuroneSoulTomb_EX1.esp",
+   "formkey": "0007AD:KuroneSoulTomb_EX1.esp",
+   "edid": "AAA_Folen",
+   "name": "弗伦",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:00096A:KuroneSoulTomb_EX1.esp",
+   "formkey": "00096A:KuroneSoulTomb_EX1.esp",
+   "edid": "AAA_Asil",
+   "name": "阿希尔",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000E88:KuroneSoulTomb_EX2.esp",
+   "formkey": "000E88:KuroneSoulTomb_EX2.esp",
+   "edid": "AAA_Kiera",
+   "name": "基艾拉",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000ED9:KuroneSoulTomb_EX2.esp",
+   "formkey": "000ED9:KuroneSoulTomb_EX2.esp",
+   "edid": "AAA_Yuri",
+   "name": "尤莉",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000324:KuroneSoulTomb_EX2.esp",
+   "formkey": "000324:KuroneSoulTomb_EX2.esp",
+   "edid": "AAA_Fiona",
+   "name": "菲奥娜",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0000E3:KuroneSoulTomb_EX2.esp",
+   "formkey": "0000E3:KuroneSoulTomb_EX2.esp",
+   "edid": "AAA_Rosen",
+   "name": "萝洁",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_OrcRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000E9E:KuroneSoulTomb_EX2.esp",
+   "formkey": "000E9E:KuroneSoulTomb_EX2.esp",
+   "edid": "AAA_Elysia",
+   "name": "爱丽西亚",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000E8C:KuroneSoulTomb_EX2.esp",
+   "formkey": "000E8C:KuroneSoulTomb_EX2.esp",
+   "edid": "AAA_Xena",
+   "name": "杰娜",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000E8A:KuroneSoulTomb_EX2.esp",
+   "formkey": "000E8A:KuroneSoulTomb_EX2.esp",
+   "edid": "AAA_Miriel",
+   "name": "米丽艾尔",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000E8B:KuroneSoulTomb_EX2.esp",
+   "formkey": "000E8B:KuroneSoulTomb_EX2.esp",
+   "edid": "AAA_Rhea",
+   "name": "蕾雅",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000072:KuroneSoulTomb_EX3.esp",
+   "formkey": "000072:KuroneSoulTomb_EX3.esp",
+   "edid": "AAA_Lamia",
+   "name": "拉米娅",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000102:KuroneSoulTomb_EX3.esp",
+   "formkey": "000102:KuroneSoulTomb_EX3.esp",
+   "edid": "AAA_Kirelya",
+   "name": "绮蕾丽雅",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000193:KuroneSoulTomb_EX3.esp",
+   "formkey": "000193:KuroneSoulTomb_EX3.esp",
+   "edid": "AAA_Shadow",
+   "name": "S",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:0001B9:KuroneSoulTomb_EX3.esp",
+   "formkey": "0001B9:KuroneSoulTomb_EX3.esp",
+   "edid": "AAA_Elara",
+   "name": "艾拉拉",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:00048D:KuroneSoulTomb_EX3.esp",
+   "formkey": "00048D:KuroneSoulTomb_EX3.esp",
+   "edid": "AAA_R",
+   "name": "R",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000B70:KuroneSoulTomb_EX3.esp",
+   "formkey": "000B70:KuroneSoulTomb_EX3.esp",
+   "edid": "AAA_Ais",
+   "name": "爱丝",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000C90:KuroneSoulTomb_EX3.esp",
+   "formkey": "000C90:KuroneSoulTomb_EX3.esp",
+   "edid": "AAA_Pico",
+   "name": "皮可",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRaceBigHead",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000C91:KuroneSoulTomb_EX3.esp",
+   "formkey": "000C91:KuroneSoulTomb_EX3.esp",
+   "edid": "AAA_Rino",
+   "name": "莉诺",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000FBD:KuroneSoulTomb_EX3.esp",
+   "formkey": "000FBD:KuroneSoulTomb_EX3.esp",
+   "edid": "AAA_Unknow",
+   "name": "未知的存在",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_FigureRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:00066E:KuroneSoulTomb_EX4.esp",
+   "formkey": "00066E:KuroneSoulTomb_EX4.esp",
+   "edid": "AAA_Clay",
+   "name": "克蕾",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000677:KuroneSoulTomb_EX4.esp",
+   "formkey": "000677:KuroneSoulTomb_EX4.esp",
+   "edid": "AAA_Jadis",
+   "name": "嘉蒂丝",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000018:KuroneSoulTomb_EX4.esp",
+   "formkey": "000018:KuroneSoulTomb_EX4.esp",
+   "edid": "AAA_UnknowS",
+   "name": "薪",
+   "mod": "Kurone Soul Tomb-150859-2.0fix9",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:000003:KuroneSoulTomb_Teleport_Addon.esp",
+   "formkey": "000003:KuroneSoulTomb_Teleport_Addon.esp",
+   "edid": "AAA_Emma",
+   "name": "艾玛",
+   "mod": "Kurone Soul Tomb Teleport Add-on-150859-2.1",
+   "race": "AAA_NordRace",
+   "sex": "女",
+   "reason": "Soul Tomb 自己的角色（本頁當素材）"
+  },
+  {
+   "id": "t:01C97F:SPERG-SSE.esp",
+   "formkey": "01C97F:SPERG-SSE.esp",
+   "edid": "SPEExplodingChicken",
+   "name": "爆炸雞",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "ChickenRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:0479F6:SPERG-SSE.esp",
+   "formkey": "0479F6:SPERG-SSE.esp",
+   "edid": "SPEBF_Dog",
+   "name": "巴德",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_DogRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:04CBE7:SPERG-SSE.esp",
+   "formkey": "04CBE7:SPERG-SSE.esp",
+   "edid": "SPEBF_Bear",
+   "name": "克爾德拉夫",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_BearBrownRace",
+   "sex": "女",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:04D14C:SPERG-SSE.esp",
+   "formkey": "04D14C:SPERG-SSE.esp",
+   "edid": "SPEBF_Mammoth",
+   "name": "蕾妮絲",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_MammothRace",
+   "sex": "女",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:04D14E:SPERG-SSE.esp",
+   "formkey": "04D14E:SPERG-SSE.esp",
+   "edid": "SPEBF_DwarvenSpider",
+   "name": "布贊澤克",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_DwarvenSpiderRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:04D14F:SPERG-SSE.esp",
+   "formkey": "04D14F:SPERG-SSE.esp",
+   "edid": "SPEBF_FrostbiteSpider",
+   "name": "阿特羅波斯",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_FrostbiteSpiderRace",
+   "sex": "女",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:04D150:SPERG-SSE.esp",
+   "formkey": "04D150:SPERG-SSE.esp",
+   "edid": "SPEBF_Horker",
+   "name": "米納佐",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_HorkerRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:04D151:SPERG-SSE.esp",
+   "formkey": "04D151:SPERG-SSE.esp",
+   "edid": "SPEBF_Mudcrab",
+   "name": "斯威特",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_MudcrabRace",
+   "sex": "女",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:04D152:SPERG-SSE.esp",
+   "formkey": "04D152:SPERG-SSE.esp",
+   "edid": "SPEBF_SabreCat",
+   "name": "弗拉迪米爾",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_SabreCatRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:04D153:SPERG-SSE.esp",
+   "formkey": "04D153:SPERG-SSE.esp",
+   "edid": "SPEBF_Wolf",
+   "name": "芬里爾",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_WolfRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:05D18E:SPERG-SSE.esp",
+   "formkey": "05D18E:SPERG-SSE.esp",
+   "edid": "SPEBF_DeathHound",
+   "name": "巴德",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_DeathHoundRace",
+   "sex": "女",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:05D18F:SPERG-SSE.esp",
+   "formkey": "05D18F:SPERG-SSE.esp",
+   "edid": "SPEBF_Husky",
+   "name": "巴德",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_HuskyRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:05D190:SPERG-SSE.esp",
+   "formkey": "05D190:SPERG-SSE.esp",
+   "edid": "SPEBF_Bristleback",
+   "name": "克爾德拉夫",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_BoarRace",
+   "sex": "女",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:05D191:SPERG-SSE.esp",
+   "formkey": "05D191:SPERG-SSE.esp",
+   "edid": "SPEBF_Netch",
+   "name": "克爾德拉夫",
+   "mod": "SPERG 1.8 Vokriinator Black Pin 2026-08-21",
+   "race": "SPEBF_NetchRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:118779:PROTEUS.esp",
+   "formkey": "118779:PROTEUS.esp",
+   "edid": "ZZOrcF2",
+   "name": "獸人女性角色2",
+   "mod": "PROTEUS",
+   "race": "OrcRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118778:PROTEUS.esp",
+   "formkey": "118778:PROTEUS.esp",
+   "edid": "ZZKhajiitF3",
+   "name": "虎人女性角色3",
+   "mod": "PROTEUS",
+   "race": "KhajiitRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118777:PROTEUS.esp",
+   "formkey": "118777:PROTEUS.esp",
+   "edid": "ZZKhajiitF2",
+   "name": "虎人女性角色2",
+   "mod": "PROTEUS",
+   "race": "KhajiitRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118776:PROTEUS.esp",
+   "formkey": "118776:PROTEUS.esp",
+   "edid": "ZZDarkElfF3",
+   "name": "黑暗精靈女性角色3",
+   "mod": "PROTEUS",
+   "race": "DarkElfRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11877A:PROTEUS.esp",
+   "formkey": "11877A:PROTEUS.esp",
+   "edid": "ZZOrcF3",
+   "name": "獸人女性角色3",
+   "mod": "PROTEUS",
+   "race": "OrcRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:0EFF36:PROTEUS.esp",
+   "formkey": "0EFF36:PROTEUS.esp",
+   "edid": "ZZNordF1",
+   "name": "諾德人女性角色1",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118775:PROTEUS.esp",
+   "formkey": "118775:PROTEUS.esp",
+   "edid": "ZZDarkElfF2",
+   "name": "黑暗精靈女性角色2",
+   "mod": "PROTEUS",
+   "race": "DarkElfRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBDD:PROTEUS.esp",
+   "formkey": "12CBDD:PROTEUS.esp",
+   "edid": "ZZCustomM9",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBDC:PROTEUS.esp",
+   "formkey": "12CBDC:PROTEUS.esp",
+   "edid": "ZZCustomM8",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBDB:PROTEUS.esp",
+   "formkey": "12CBDB:PROTEUS.esp",
+   "edid": "ZZCustomM7",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBDA:PROTEUS.esp",
+   "formkey": "12CBDA:PROTEUS.esp",
+   "edid": "ZZCustomM6",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBD9:PROTEUS.esp",
+   "formkey": "12CBD9:PROTEUS.esp",
+   "edid": "ZZCustomM5",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBD8:PROTEUS.esp",
+   "formkey": "12CBD8:PROTEUS.esp",
+   "edid": "ZZCustomM4",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBD7:PROTEUS.esp",
+   "formkey": "12CBD7:PROTEUS.esp",
+   "edid": "ZZCustomF10",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBD6:PROTEUS.esp",
+   "formkey": "12CBD6:PROTEUS.esp",
+   "edid": "ZZCustomF9",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBD5:PROTEUS.esp",
+   "formkey": "12CBD5:PROTEUS.esp",
+   "edid": "ZZCustomF8",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBD4:PROTEUS.esp",
+   "formkey": "12CBD4:PROTEUS.esp",
+   "edid": "ZZCustomF7",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBD3:PROTEUS.esp",
+   "formkey": "12CBD3:PROTEUS.esp",
+   "edid": "ZZCustomF6",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBD2:PROTEUS.esp",
+   "formkey": "12CBD2:PROTEUS.esp",
+   "edid": "ZZCustomF5",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBD1:PROTEUS.esp",
+   "formkey": "12CBD1:PROTEUS.esp",
+   "edid": "ZZCustomF4",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:12CBDE:PROTEUS.esp",
+   "formkey": "12CBDE:PROTEUS.esp",
+   "edid": "ZZCustomM10",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118774:PROTEUS.esp",
+   "formkey": "118774:PROTEUS.esp",
+   "edid": "ZZBretonF3",
+   "name": "布萊頓人女性角色3",
+   "mod": "PROTEUS",
+   "race": "BretonRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118773:PROTEUS.esp",
+   "formkey": "118773:PROTEUS.esp",
+   "edid": "ZZBretonF2",
+   "name": "布萊頓人女性角色2",
+   "mod": "PROTEUS",
+   "race": "BretonRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118772:PROTEUS.esp",
+   "formkey": "118772:PROTEUS.esp",
+   "edid": "ZZImperialF3",
+   "name": "帝國人女性角色3",
+   "mod": "PROTEUS",
+   "race": "ImperialRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118771:PROTEUS.esp",
+   "formkey": "118771:PROTEUS.esp",
+   "edid": "ZZImperialF2",
+   "name": "帝國人女性角色2",
+   "mod": "PROTEUS",
+   "race": "ImperialRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118770:PROTEUS.esp",
+   "formkey": "118770:PROTEUS.esp",
+   "edid": "ZZWoodElfM3",
+   "name": "木精靈男性角色3",
+   "mod": "PROTEUS",
+   "race": "WoodElfRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11876F:PROTEUS.esp",
+   "formkey": "11876F:PROTEUS.esp",
+   "edid": "ZZWoodElfM2",
+   "name": "木精靈男性角色2",
+   "mod": "PROTEUS",
+   "race": "WoodElfRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11876E:PROTEUS.esp",
+   "formkey": "11876E:PROTEUS.esp",
+   "edid": "ZZArgonianM3",
+   "name": "亞龍人男性角色3",
+   "mod": "PROTEUS",
+   "race": "ArgonianRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11876D:PROTEUS.esp",
+   "formkey": "11876D:PROTEUS.esp",
+   "edid": "ZZArgonianM2",
+   "name": "亞龍人男性角色2",
+   "mod": "PROTEUS",
+   "race": "ArgonianRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11876C:PROTEUS.esp",
+   "formkey": "11876C:PROTEUS.esp",
+   "edid": "ZZKhajiitM3",
+   "name": "虎人男性角色3",
+   "mod": "PROTEUS",
+   "race": "KhajiitRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11876B:PROTEUS.esp",
+   "formkey": "11876B:PROTEUS.esp",
+   "edid": "ZZKhajiitM2",
+   "name": "虎人男性角色2",
+   "mod": "PROTEUS",
+   "race": "KhajiitRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11876A:PROTEUS.esp",
+   "formkey": "11876A:PROTEUS.esp",
+   "edid": "ZZDarkElfM3",
+   "name": "黑暗精靈男性角色3",
+   "mod": "PROTEUS",
+   "race": "DarkElfRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118769:PROTEUS.esp",
+   "formkey": "118769:PROTEUS.esp",
+   "edid": "ZZDarkElfM2",
+   "name": "黑暗精靈男性角色2",
+   "mod": "PROTEUS",
+   "race": "DarkElfRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118768:PROTEUS.esp",
+   "formkey": "118768:PROTEUS.esp",
+   "edid": "ZZHighElfM3",
+   "name": "高等精靈男性角色3",
+   "mod": "PROTEUS",
+   "race": "HighElfRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118766:PROTEUS.esp",
+   "formkey": "118766:PROTEUS.esp",
+   "edid": "ZZOrcM3",
+   "name": "獸人男性角色3",
+   "mod": "PROTEUS",
+   "race": "OrcRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:1A15A3:PROTEUS.esp",
+   "formkey": "1A15A3:PROTEUS.esp",
+   "edid": "ZZCustomEvil",
+   "name": "自訂敵對角色",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118765:PROTEUS.esp",
+   "formkey": "118765:PROTEUS.esp",
+   "edid": "ZZOrcM2",
+   "name": "獸人男性角色2",
+   "mod": "PROTEUS",
+   "race": "OrcRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118761:PROTEUS.esp",
+   "formkey": "118761:PROTEUS.esp",
+   "edid": "ZZImperialM2",
+   "name": "帝國人男性角色2",
+   "mod": "PROTEUS",
+   "race": "ImperialRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118762:PROTEUS.esp",
+   "formkey": "118762:PROTEUS.esp",
+   "edid": "ZZImperialM3",
+   "name": "帝國人男性角色3",
+   "mod": "PROTEUS",
+   "race": "ImperialRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118763:PROTEUS.esp",
+   "formkey": "118763:PROTEUS.esp",
+   "edid": "ZZBretonM2",
+   "name": "布萊頓人男性角色2",
+   "mod": "PROTEUS",
+   "race": "BretonRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118764:PROTEUS.esp",
+   "formkey": "118764:PROTEUS.esp",
+   "edid": "ZZBretonM3",
+   "name": "布萊頓人男性角色3",
+   "mod": "PROTEUS",
+   "race": "BretonRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11877B:PROTEUS.esp",
+   "formkey": "11877B:PROTEUS.esp",
+   "edid": "ZZRedguardF2",
+   "name": "紅衛人女性角色2",
+   "mod": "PROTEUS",
+   "race": "RedguardRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11877C:PROTEUS.esp",
+   "formkey": "11877C:PROTEUS.esp",
+   "edid": "ZZRedguardF3",
+   "name": "紅衛人女性角色3",
+   "mod": "PROTEUS",
+   "race": "RedguardRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11877D:PROTEUS.esp",
+   "formkey": "11877D:PROTEUS.esp",
+   "edid": "ZZWoodElfF2",
+   "name": "木精靈女性角色2",
+   "mod": "PROTEUS",
+   "race": "WoodElfRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11877E:PROTEUS.esp",
+   "formkey": "11877E:PROTEUS.esp",
+   "edid": "ZZWoodElfF3",
+   "name": "木精靈女性角色3",
+   "mod": "PROTEUS",
+   "race": "WoodElfRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11877F:PROTEUS.esp",
+   "formkey": "11877F:PROTEUS.esp",
+   "edid": "ZZCustomF1",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118780:PROTEUS.esp",
+   "formkey": "118780:PROTEUS.esp",
+   "edid": "ZZCustomM1",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118781:PROTEUS.esp",
+   "formkey": "118781:PROTEUS.esp",
+   "edid": "ZZCustomF2",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118782:PROTEUS.esp",
+   "formkey": "118782:PROTEUS.esp",
+   "edid": "ZZCustomF3",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118783:PROTEUS.esp",
+   "formkey": "118783:PROTEUS.esp",
+   "edid": "ZZCustomM2",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118784:PROTEUS.esp",
+   "formkey": "118784:PROTEUS.esp",
+   "edid": "ZZCustomM3",
+   "name": "未使用欄位",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:1187C4:PROTEUS.esp",
+   "formkey": "1187C4:PROTEUS.esp",
+   "edid": "ZZHighElfF1",
+   "name": "高等精靈女性角色1",
+   "mod": "PROTEUS",
+   "race": "HighElfRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:1187C5:PROTEUS.esp",
+   "formkey": "1187C5:PROTEUS.esp",
+   "edid": "ZZHighElfF2",
+   "name": "高等精靈女性角色2",
+   "mod": "PROTEUS",
+   "race": "HighElfRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:1187C6:PROTEUS.esp",
+   "formkey": "1187C6:PROTEUS.esp",
+   "edid": "ZZHighElfF3",
+   "name": "高等精靈女性角色3",
+   "mod": "PROTEUS",
+   "race": "HighElfRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118767:PROTEUS.esp",
+   "formkey": "118767:PROTEUS.esp",
+   "edid": "ZZHighElfM2",
+   "name": "高等精靈男性角色2",
+   "mod": "PROTEUS",
+   "race": "HighElfRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118747:PROTEUS.esp",
+   "formkey": "118747:PROTEUS.esp",
+   "edid": "ZZNordM1",
+   "name": "諾德人男性角色1",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118748:PROTEUS.esp",
+   "formkey": "118748:PROTEUS.esp",
+   "edid": "ZZRedguardM1",
+   "name": "紅衛人男性角色1",
+   "mod": "PROTEUS",
+   "race": "RedguardRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118749:PROTEUS.esp",
+   "formkey": "118749:PROTEUS.esp",
+   "edid": "ZZImperialM1",
+   "name": "帝國人男性角色1",
+   "mod": "PROTEUS",
+   "race": "ImperialRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11874A:PROTEUS.esp",
+   "formkey": "11874A:PROTEUS.esp",
+   "edid": "ZZBretonM1",
+   "name": "布萊頓人男性角色1",
+   "mod": "PROTEUS",
+   "race": "BretonRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11874B:PROTEUS.esp",
+   "formkey": "11874B:PROTEUS.esp",
+   "edid": "ZZOrcM1",
+   "name": "獸人男性角色1",
+   "mod": "PROTEUS",
+   "race": "OrcRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11874C:PROTEUS.esp",
+   "formkey": "11874C:PROTEUS.esp",
+   "edid": "ZZHighElfM1",
+   "name": "高等精靈男性角色1",
+   "mod": "PROTEUS",
+   "race": "HighElfRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11874D:PROTEUS.esp",
+   "formkey": "11874D:PROTEUS.esp",
+   "edid": "ZZDarkElfM1",
+   "name": "黑暗精靈男性角色1",
+   "mod": "PROTEUS",
+   "race": "DarkElfRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11874E:PROTEUS.esp",
+   "formkey": "11874E:PROTEUS.esp",
+   "edid": "ZZKhajiitM1",
+   "name": "虎人男性角色1",
+   "mod": "PROTEUS",
+   "race": "KhajiitRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11874F:PROTEUS.esp",
+   "formkey": "11874F:PROTEUS.esp",
+   "edid": "ZZArgonianM1",
+   "name": "亞龍人男性角色1",
+   "mod": "PROTEUS",
+   "race": "ArgonianRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118750:PROTEUS.esp",
+   "formkey": "118750:PROTEUS.esp",
+   "edid": "ZZWoodElfM1",
+   "name": "木精靈男性角色1",
+   "mod": "PROTEUS",
+   "race": "WoodElfRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118751:PROTEUS.esp",
+   "formkey": "118751:PROTEUS.esp",
+   "edid": "ZZImperialF1",
+   "name": "帝國人女性角色1",
+   "mod": "PROTEUS",
+   "race": "ImperialRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118752:PROTEUS.esp",
+   "formkey": "118752:PROTEUS.esp",
+   "edid": "ZZArgonianF1",
+   "name": "亞龍人女性角色1",
+   "mod": "PROTEUS",
+   "race": "ArgonianRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118753:PROTEUS.esp",
+   "formkey": "118753:PROTEUS.esp",
+   "edid": "ZZBretonF1",
+   "name": "布萊頓人女性角色1",
+   "mod": "PROTEUS",
+   "race": "BretonRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118754:PROTEUS.esp",
+   "formkey": "118754:PROTEUS.esp",
+   "edid": "ZZDarkElfF1",
+   "name": "黑暗精靈女性角色1",
+   "mod": "PROTEUS",
+   "race": "DarkElfRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118755:PROTEUS.esp",
+   "formkey": "118755:PROTEUS.esp",
+   "edid": "ZZKhajiitF1",
+   "name": "虎人女性角色1",
+   "mod": "PROTEUS",
+   "race": "KhajiitRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118756:PROTEUS.esp",
+   "formkey": "118756:PROTEUS.esp",
+   "edid": "ZZOrcF1",
+   "name": "獸人女性角色1",
+   "mod": "PROTEUS",
+   "race": "OrcRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118757:PROTEUS.esp",
+   "formkey": "118757:PROTEUS.esp",
+   "edid": "ZZRedguardF1",
+   "name": "紅衛人女性角色1",
+   "mod": "PROTEUS",
+   "race": "RedguardRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118758:PROTEUS.esp",
+   "formkey": "118758:PROTEUS.esp",
+   "edid": "ZZWoodElfF1",
+   "name": "木精靈女性角色1",
+   "mod": "PROTEUS",
+   "race": "WoodElfRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118759:PROTEUS.esp",
+   "formkey": "118759:PROTEUS.esp",
+   "edid": "ZZArgonianF2",
+   "name": "亞龍人女性角色2",
+   "mod": "PROTEUS",
+   "race": "ArgonianRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11875A:PROTEUS.esp",
+   "formkey": "11875A:PROTEUS.esp",
+   "edid": "ZZArgonianF3",
+   "name": "亞龍人女性角色3",
+   "mod": "PROTEUS",
+   "race": "ArgonianRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11875B:PROTEUS.esp",
+   "formkey": "11875B:PROTEUS.esp",
+   "edid": "ZZNordF2",
+   "name": "諾德人女性角色2",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11875C:PROTEUS.esp",
+   "formkey": "11875C:PROTEUS.esp",
+   "edid": "ZZNordF3",
+   "name": "諾德人女性角色3",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "女",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11875D:PROTEUS.esp",
+   "formkey": "11875D:PROTEUS.esp",
+   "edid": "ZZNordM2",
+   "name": "諾德人男性角色2",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11875E:PROTEUS.esp",
+   "formkey": "11875E:PROTEUS.esp",
+   "edid": "ZZNordM3",
+   "name": "諾德人男性角色3",
+   "mod": "PROTEUS",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:11875F:PROTEUS.esp",
+   "formkey": "11875F:PROTEUS.esp",
+   "edid": "ZZRedguardM2",
+   "name": "紅衛人男性角色2",
+   "mod": "PROTEUS",
+   "race": "RedguardRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:118760:PROTEUS.esp",
+   "formkey": "118760:PROTEUS.esp",
+   "edid": "ZZRedguardM3",
+   "name": "紅衛人男性角色3",
+   "mod": "PROTEUS",
+   "race": "RedguardRace",
+   "sex": "男",
+   "reason": "PROTEUS 的玩家預設槽，不是角色"
+  },
+  {
+   "id": "t:5D74B1:Immersive Encounters.esp",
+   "formkey": "5D74B1:Immersive Encounters.esp",
+   "edid": "_SetteDLC1EncHuskyArmoredFollower",
+   "name": "狗",
+   "mod": "Immersive World Encounters SSE-chtV2-3",
+   "race": "DLC1HuskyArmoredCompanionRace",
+   "sex": "女",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:0093AE:Meridia.esp",
+   "formkey": "0093AE:Meridia.esp",
+   "edid": "NMeridia04Marith",
+   "name": "",
+   "mod": "Meridia's Order ESMIFIED-102584-1.5",
+   "race": "ImperialRace",
+   "sex": "女",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:00C64D:KWFPatch_Vigilant.esp",
+   "formkey": "00C64D:KWFPatch_Vigilant.esp",
+   "edid": "KWFV_BikhaiSkeleton",
+   "name": "比凯",
+   "mod": "FOL-KWF-Vigilant-Patch-2227-1.7.3.1",
+   "race": "KWFV_KhajiitSkeletonRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:01DF31:KWFPatch_Vigilant.esp",
+   "formkey": "01DF31:KWFPatch_Vigilant.esp",
+   "edid": "KWFV_NanakSkeleton",
+   "name": "纳纳克",
+   "mod": "FOL-KWF-Vigilant-Patch-2227-1.7.3.1",
+   "race": "KWFV_KhajiitSkeletonRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:01DF32:KWFPatch_Vigilant.esp",
+   "formkey": "01DF32:KWFPatch_Vigilant.esp",
+   "edid": "KWFV_SariqSkeleton",
+   "name": "萨里克",
+   "mod": "FOL-KWF-Vigilant-Patch-2227-1.7.3.1",
+   "race": "KWFV_KhajiitSkeletonRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:01DF30:KWFPatch_Vigilant.esp",
+   "formkey": "01DF30:KWFPatch_Vigilant.esp",
+   "edid": "KWFV_MakaraSkeleton",
+   "name": "玛卡拉",
+   "mod": "FOL-KWF-Vigilant-Patch-2227-1.7.3.1",
+   "race": "KWFV_KhajiitSkeletonRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:00086B:Destroy the Dark Brotherhood - Quest Expansion.esp",
+   "formkey": "00086B:Destroy the Dark Brotherhood - Quest Expansion.esp",
+   "edid": "DBDestroyFultheim",
+   "name": "",
+   "mod": "Destroy The Dark Brotherhood - Quest Expansion-118229-1.03",
+   "race": "NordRace",
+   "sex": "男",
+   "reason": "沒有名字（範本／生成用記錄）"
+  },
+  {
+   "id": "t:14A8FD:LostGrimoire.esp",
+   "formkey": "14A8FD:LostGrimoire.esp",
+   "edid": "GRIM_ACTOR_RES_CocoonSpider",
+   "name": "茧生蜘蛛",
+   "mod": "Lost Grimoire SSE-4455-1.8",
+   "race": "FrostbiteSpiderRaceLarge",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:14A90F:LostGrimoire.esp",
+   "formkey": "14A90F:LostGrimoire.esp",
+   "edid": "GRIM_ACTOR_RES_CocoonChaurusReaper",
+   "name": "茧生收割者",
+   "mod": "Lost Grimoire SSE-4455-1.8",
+   "race": "ChaurusReaperRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:42604E:LostGrimoire.esp",
+   "formkey": "42604E:LostGrimoire.esp",
+   "edid": "GRIM_ACTOR_RES_CocoonChaurus",
+   "name": "茧生查鲁斯",
+   "mod": "Lost Grimoire SSE-4455-1.8",
+   "race": "ChaurusRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  },
+  {
+   "id": "t:42B150:LostGrimoire.esp",
+   "formkey": "42B150:LostGrimoire.esp",
+   "edid": "GRIM_ACTOR_RES_CocoonChaurusHunter",
+   "name": "茧生查鲁斯猎手",
+   "mod": "Lost Grimoire SSE-4455-1.8",
+   "race": "DLC1ChaurusHunterRace",
+   "sex": "男",
+   "reason": "動物／生物隨從"
+  }
+ ]
+}

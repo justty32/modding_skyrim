@@ -1,0 +1,91 @@
+{
+ "contract": "wf-table/1",
+ "source": "../README.md",
+ "extracted": "2026-11-16",
+ "columns": [
+  "id",
+  "label",
+  "kind",
+  "desc"
+ ],
+ "rows": [
+  {
+   "id": "none",
+   "label": "不換",
+   "kind": "none",
+   "desc": "身體維持現狀（現在的身體欄怎麼寫就是怎樣）。"
+  },
+  {
+   "id": "rimlydia",
+   "label": "Kurone Big Change Body（Rim Lydia 預設）",
+   "kind": "preset",
+   "desc": "11-07 給 Aela、Camilla、Brelyna 等 9 人用的身形；作者 Rim Lydia RaceMenu 預設，CBBE 3BA 烘焙。"
+  },
+  {
+   "id": "bigchange_v2",
+   "label": "Kurone Big Change Body V2",
+   "kind": "preset",
+   "desc": "11-07 給 Jenassa、Frea、Jordis、Delphine 用的身形；V2 版，比 Rim Lydia 那版變化更大。"
+  },
+  {
+   "id": "main_sasha",
+   "label": "Kurone MAIN 原裝：Sasha",
+   "kind": "main",
+   "desc": "Kurone Followers MAIN 裡 Sasha 自帶的 3BA 身體與皮膚；11-07 給 Ryn 用。"
+  },
+  {
+   "id": "main_lili",
+   "label": "Kurone MAIN 原裝：Lili",
+   "kind": "main",
+   "desc": "Kurone Followers MAIN 裡 Lili 自帶的 3BA 身體與皮膚；11-07 給 Vilja 用。"
+  },
+  {
+   "id": "main_lamia",
+   "label": "Kurone MAIN 原裝：Lamia",
+   "kind": "main",
+   "desc": "Kurone Followers MAIN 裡 Lamia 自帶的 3BA 身體與皮膚；11-07 給 Morgaine 用。"
+  },
+  {
+   "id": "main_ela",
+   "label": "Kurone MAIN 原裝：Ela",
+   "kind": "main",
+   "desc": "Kurone Followers MAIN 裡 Ela 自帶的 3BA 身體與皮膚；11-07 給 Katana、Katana Shade 用。"
+  },
+  {
+   "id": "main_yumi",
+   "label": "Kurone MAIN 原裝：Yumi",
+   "kind": "main",
+   "desc": "Kurone Followers MAIN 裡 Yumi 自帶的 3BA 身體與皮膚；11-07 給 Megara 用。"
+  },
+  {
+   "id": "main_coco",
+   "label": "Kurone MAIN 原裝：Coco",
+   "kind": "main",
+   "desc": "Kurone Followers MAIN 裡 Coco 自帶的 3BA 身體與皮膚；11-07 給 Varinia 用。"
+  },
+  {
+   "id": "main_saya",
+   "label": "Kurone MAIN 原裝：Saya",
+   "kind": "main",
+   "desc": "Kurone Followers MAIN 裡 Saya 自帶的 3BA 身體與皮膚；11-07 給 Yoana 用。"
+  },
+  {
+   "id": "main_nina",
+   "label": "Kurone MAIN 原裝：Nina",
+   "kind": "main",
+   "desc": "Kurone Followers MAIN 裡 Nina 自帶的 3BA 身體與皮膚；11-07 給 Aniya 用。"
+  },
+  {
+   "id": "main_kyrie",
+   "label": "Kurone MAIN 原裝：Kyrie",
+   "kind": "main",
+   "desc": "Kurone Followers MAIN 裡 Kyrie 自帶的 3BA 身體與皮膚；11-07 給 Melana 用。"
+  },
+  {
+   "id": "kurone7",
+   "label": "Kurone7 預設身形（Soul Tomb 現用）",
+   "kind": "shared",
+   "desc": "Soul Tomb 48 位女性 NPC 現在用的身體（10-10 私有身體層指向 Kurone7 的 46560 預設烘焙）。"
+  }
+ ]
+}
