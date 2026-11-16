@@ -20,3 +20,6 @@ analysis/skyrim_mods/_sofia_extract/scripts/*.pex
 
 # 2026-11-05 slim 決策 7：wf/user 產頁輸出的 HTML 不進版控（只留產頁腳本與資料）
 wf/user/**/*.html
+
+# 2026-11-16 使用者裁示：wf/temp/ 是 aos 子 agent 的工作區（半持久，不進版控）
+wf/temp/
