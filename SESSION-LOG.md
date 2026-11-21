@@ -11,8 +11,6 @@
 
 ## 現役工作
 
-- [bodyslide] BodySlide 基礎包與本輪增量未收 → 先辨識歸屬再整包處理；[收尾交接](agentctl/handoffs/home-2026-11-18/bodyslide-close/REPORT.md)。
-
 - [aos] 第 1、2 期已落地（[aos.md](wf/workflows/aos.md)）；第 3～5 期未做 → 下一場由 skyrim-agent 排
 - [aos] 下一場：開唯讀調查線查 Apocalypse 中文層 69 筆 Cannot open store（instance 主導；起點 `instance/tmp/aos/skyrim-agent-instance/out/report.md` 補記節與 `out/pms-log0/`）
 - [aos] 舊記憶夾收尾 3 件（補約 3 條 lessons、MEMORY.md 改指回、刪原檔另問）→ 第 5 期
