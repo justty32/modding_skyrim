@@ -23,9 +23,11 @@
 
 先讀 [工具索引](../../../agentctl/docs/tool-index.md)。只做研究／隔離建置時，不改 `instance/`、DB 或 profile。使用者已授權的範圍直接續行；未授權部署時，先完成 output 與部署／回退計畫，再呈交具體差異。
 
-從現役 `modpack-main` 讀取啟用狀態與資源贏家；工具先用 `instance/tools/profile_query.py`、`whichmod.py`，參數依各自 `--help`。收集 BodySlide 執行檔及設定、`SliderSets`／`ShapeData`／`SliderPresets`／`SliderGroups`，並查專案實際引用的 NIF／OSD。不能只複製一個安裝目錄便宣稱等同 MO2 VFS；停用資源、`.mohidden`、大小寫、同路徑覆蓋及未處理的封裝資源都要明列。
+先區分隔離能力試驗、現役增量與部署，寫明所需來源保證；盤點後才凍結建置範圍。歷史原件可用於明標非現役的隔離試驗，不冒稱現役 winner；部署來源缺口不推翻已完成的限定試驗。
 
-在實體磁碟、`mods/` 與遊戲 Data 之外建立本輪 `work/`、`output/`、`evidence/`。以唯讀來源建立獨立合併 staging，記下每個相對路徑的來源、winner 與 hash；會修改的設定／OSP 必須複製，不可透過 hardlink／symlink 寫回來源。保留建置前來源 hash 與設定快照。
+現役增量／部署從 `modpack-main` 查啟用狀態與資源贏家；先用 `instance/tools/profile_query.py`。`whichmod.py` CLI 查詢會刷新 SQLite，禁止 DB 時不可執行；先查副作用。無 DB 的資產查詢仍須聲明 BSA／VFS 限制，不能以空索引充當完整查證。收集 BodySlide 執行檔及設定、`SliderSets`／`ShapeData`／`SliderPresets`／`SliderGroups`，並查專案實際引用的 NIF／OSD。不能只複製一個安裝目錄便宣稱等同 MO2 VFS；停用資源、`.mohidden`、大小寫、同路徑覆蓋及未處理的封裝資源都要明列。
+
+在實體磁碟、`mods/` 與遊戲 Data 之外建立本輪 `work/`、`output/`、`evidence/`。以唯讀來源建立獨立合併 staging，記下每個相對路徑的來源、winner 與 hash；會修改的設定／OSP 必須複製，不可透過 hardlink／symlink 寫回來源。建置前採集來源／設定及相關 live 目標的集合、hash／不存在基線；事後採樣不能冒稱前後未變。
 
 ### 2. 決定 preset、project 與輸出擁有者
 
@@ -49,9 +51,9 @@
 
 先比對預期／實際相對路徑集合：缺檔與額外檔都要解釋；檔案存在、大小非零只是初檢。再用本機已有的 NIF／TRI 解析工具檢查檔案可讀、shape／頂點與 morph 對應、材質路徑及適用的 low／high 配對；工具能力不足的項目明列未驗證。
 
-用同輸入重建 pilot 到第二個空目錄，比較 hash；若有非決定性，記錄差異位置與原因。另用至少一個非中性 slider 對照預期形狀／頂點差異，避免 preset 未套用卻產出合法原始 mesh。重驗來源 hash、設定與 live output 未被更動。失敗保留 log 與隔離現場，修正後重建該輪，避免混用舊檔。
+以 A／B／B-repeat 驗指定語義：同輸入 B 重建到另一空目錄，比較相對路徑與 hash；若有非決定性，記錄差異位置與原因。另用至少一個非中性 slider 對照預期形狀／頂點差異，避免 preset 未套用卻產出合法原始 mesh。重驗來源 hash、設定與 live output 未被更動。失敗保留 log 與隔離現場，修正後重建該輪，避免混用舊檔。
 
-OBody 動態分配的全域身體／服裝，先核現役 OBody 設定要求的零滑條基底與 TRI，再決定是否烤入非零 preset；私有 NPC 的固定體型及獨立模型路徑另行決策，不能把兩條路徑混成同一全批次。
+OBody 動態分配的全域身體／服裝，先逐 slider 核現役 OBody 所需基底與 TRI，區分形狀與接縫校正（見 [刷衣服](outfits.md#2-決定變體與身形路線)），再決定是否烤入非零 preset；私有 NPC 的固定體型及獨立模型路徑另行決策，不能把兩條路徑混成同一全批次。
 
 ### 5. 授權部署與回退
 
@@ -65,4 +67,4 @@ OBody 動態分配的全域身體／服裝，先核現役 OBody 設定要求的�
 
 本輪 manifest、log、驗證與 REPORT 放 private `agentctl` 任務證據目錄；大型 NIF／TRI 留外部磁碟，不進 public 母 repo。規模超過 1 KB 的明細依 [data-files](../common/data-files.md) 用 `wf-table/1` 資料檔與 `tabledb.py`，不把整批資產表塞進 Markdown。
 
-REPORT 分清「來源已讀／headless pilot 已跑／全批次已驗／已部署／實機已驗」，附可續跑命令與未決缺口。等使用者親自做的記 [WAIT_USER](../../../WAIT_USER.md)；跨 session 的 Skyrim 續行點記 [agentctl SESSION](../../../agentctl/SESSION-LOG.md)，母 repo 文件工作才記 [SESSION-LOG](../../../SESSION-LOG.md)。
+固定驗收完成即停止建置；獨立驗收可先用已凍結產物、配方與證據開始，不等 REPORT 潤稿。REPORT 分清「來源已讀／headless pilot 已跑／全批次已驗／已部署／實機已驗」，附可續跑命令與未決缺口。等使用者親自做的記 [WAIT_USER](../../../WAIT_USER.md)；跨 session 的 Skyrim 續行點記 [agentctl SESSION](../../../agentctl/SESSION-LOG.md)，母 repo 文件工作才記 [SESSION-LOG](../../../SESSION-LOG.md)。

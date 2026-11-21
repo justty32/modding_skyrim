@@ -63,9 +63,9 @@ Yoana the Wanderer 的預設 outfit「小紅帽 - 披風」ARMO 佔 **slot 31（
 
 > 2026-09-11 私有身體層實測：BodySlide 在 wine 下 Preset 下拉永遠空的，繞法是把預設值寫進 .osp 的 slider 預設屬性；NPC_ 的 NAM6 是身高、NAM7 才是體重；私有身體共用一套 ARMA/ARMO 就夠（三種族身體 TXST 同一張 dds＋FaceGenTextures）（原 type: memory）
 
-2026-09-11 Kurone 46560 私有身體（3BA 烤模）實測：
+上引「永遠空」只記錄 2026-09-11 Kurone 46560 私有身體（3BA 烤模）在當時 wine／Proton、從 staging 直接啟動的觀察，不是 Wine 不支援 preset 的通則。
 
-**BodySlide（wine／Proton，從 staging 直接跑）Preset 下拉永遠空**，連 CBBE 官方預設也讀不到。繞法：把 46560 預設的 slider 值直接寫進 `.osp` 專案檔的 slider 預設屬性，再 Batch Build。
+**該歷史環境的 GUI preset 下拉空白**，當時連 CBBE 官方預設也讀不到，故將 46560 slider 值寫入 `.osp` defaults 再 Batch Build。現行優先採已由 A／B 頂點與 repeat 證實的[原生 `-p` 路線](../workflows/bodyslide/headless.md#首選原生-preset-命令)；名稱存在、適用性及幾何哨兵仍必驗。OSP fallback 僅限有證據需要時，修改隔離副本並驗等價語義，不回寫來源。
 
 **NPC_ 欄位**：`NAM6`＝身高、`NAM7`＝體重（交接書曾把 NAM6 寫成體重，是筆誤）。
 
@@ -83,7 +83,7 @@ Yoana the Wanderer 的預設 outfit「小紅帽 - 披風」ARMO 佔 **slot 31（
 
 交接書寫死的單一欄位值可能依記錄的其他維度（種族/型別）而不同：「MorphRace 補回去用 013748」其實依種族有四個值，照字面手改成單一值五筆裡四筆會拿到錯的種族臉形；有疑慮優先用整筆 forward 自權威來源取代手改單一值，不要信交接書的字面值（2026-10-23，`agentctl/handoffs/done/2026-09/home-2026-09-09/body/REPORT.md:69-78`）。
 
-**How to apply:** 烤身體別指望 GUI 選預設；改 NPC 體重動 NAM7、整體大小動 NAM6；多層覆寫同一個 NPC_ 時最後載入的那層要 forward 全部欄位。
+**How to apply:** 烤身體先核本機版本的原生 preset 與幾何證據，不把歷史 GUI 個案泛化；改 NPC 體重動 NAM7、整體大小動 NAM6；多層覆寫同一個 NPC_ 時最後載入的那層要 forward 全部欄位。
 相關：[[look-layer-must-carry-hdpt-flst-clfm]]、[[look-transplant-workflow-and-picker]]
 
 ## daegon-2212-midsave-upgrade

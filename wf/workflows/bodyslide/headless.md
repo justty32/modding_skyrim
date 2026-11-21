@@ -72,13 +72,13 @@ env WINEPREFIX="$BS_PRIVATE_PREFIX" WINEDEBUG=-all \
 
 這是 Xvfb 上執行 wx／Wine 的無人值守路線；不是不需要顯示伺服器的純 CLI。歷史腳本 timeout 是 Python `subprocess.run(timeout=120)`，此處的 shell timeout 是流程守門範例；超時後按本輪 PID 查殘留，不全域 kill Wine。`-tri` 只在本輪需要 morph 且專案支援時啟用。
 
-歷史舊版 log 的完成字串是 `All group build sets processed successfully!`；官方新版為 `All command-line build sets processed successfully!`，見 [新版 cpp:6035–6127](https://github.com/ousnius/BodySlide-and-Outfit-Studio/blob/033016464d31761bfaf6966db3ea9c3c3cb6105a/src/program/BodySlideApp.cpp#L6035)。兩者都只是輔助訊號：保存本輪 `Log_BS.txt`，逐 project 核結果與輸出集合，不沿用舊 log。歷史 42 件是該輪輸入的斷言，不能照搬成本輪數量。
+歷史舊版 log 的完成字串是 `All group build sets processed successfully!`；官方新版為 `All command-line build sets processed successfully!`，見 [新版 cpp:6035–6127](https://github.com/ousnius/BodySlide-and-Outfit-Studio/blob/033016464d31761bfaf6966db3ea9c3c3cb6105a/src/program/BodySlideApp.cpp#L6035)。兩者都只是輔助訊號：`Log_BS.txt` 可能 append，建置前記 byte offset／前輪快照，驗精確 prefix 後切本輪新增段並記 byte range；保留原件，逐 project 核結果與輸出集合，不把舊完成字串算本輪成功。歷史 42 件是該輪輸入的斷言，不能照搬成本輪數量。
 
 ## Fallback：OSP defaults 與幾何哨兵
 
 下例是舊版本的本機歷史路線，來源為實體磁碟 `/home/lorkhan/skyrim_mods/_staging-2026-11-07-chronicon-kurone/native-bake/bake.py:35–48`，不是全現役 profile 的自動化工具。它把兩套 preset 的值寫入獨立 OSP default，使用專用 group、prefix 和 output；原腳本會複製／改 staging，因此**先閱讀並複製至本輪空目錄，不直接重跑歷史現場**。
 
-只在原生 preset 路線對本輪輸入不適用且有證據時，才採 OSP defaults；此時從共用命令移除 `-p`，必要時加 `-tri`。歷史腳本的「所有顯式值都有被寫入」斷言，只證明 XML 值被寫入 OSP；不能獨自證明執行時真的套用了那些值。兩條路線都建立相同 project 的 A／B 哨兵：A 為中性或已知基準，B 為一個已知有效且非零 slider；除 slider 外維持相同輸入，隔離輸出，解析對應 shape 頂點，確認出現可解釋的座標差異。hash 不同不能單獨當作幾何變化證明；若 A／B 幾何相同，先查 preset/group／default 覆蓋路徑與 slider 是否對該 shape 有效。
+只在原生 preset 路線對本輪輸入不適用且有證據時，才採 OSP defaults；此時從共用命令移除 `-p`，必要時加 `-tri`。歷史腳本的「所有顯式值都有被寫入」斷言，只證明 XML 值被寫入 OSP；不能獨自證明執行時真的套用了那些值。兩條路線都建立相同 project 的 A／B 哨兵：A 為中性或已知基準，B 為一個已知有效且非零 slider；除 slider 外維持相同輸入，隔離輸出，解析對應 shape 頂點，確認出現可解釋的座標差異。hash 不同不能單獨當作幾何變化證明；固定 A／B／B-repeat 已驗指定語義便停，不為收尾追加建置。若 A／B 幾何相同，先查 preset/group／default 覆蓋路徑與 slider 是否對該 shape 有效。
 
 同一路徑多 project 的選擇，必須在 manifest 明定並縮小 group 或使用該版本已查證的 conflict 選項。不可依列舉順序默認最後一件贏，也不可在 quiet 模式等互動選單。
 

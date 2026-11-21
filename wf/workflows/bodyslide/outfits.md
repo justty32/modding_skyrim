@@ -19,7 +19,7 @@
 
 先按母流程凍結輸入與授權，不把整個 installed group 當作已授權範圍。單件從 ARMO 的精確 FormKey／EDID 或可定位名稱開始；套裝列出實際要穿的各件，含手套／靴／配件；群組則先展開並審核成員，排除不在本輪範圍的裸身及其他裝備。
 
-讀取真實贏家 ARMO → Armature 的 ARMA，查適用性別／種族、第三人稱模型及需要時的第一人稱模型；ARMO world/inventory 模型不要當成穿在身上的模型。NPC outfit 可由 NPC_／OTFT 追到 ARMO，但只刷玩家裝備時不需要 NPC_ gate。透過既有 `whichmod.py`、houseCARL 或唯讀解析工具定位，具體介面先看工具索引／`--help`，不假造子命令。
+讀取真實贏家 ARMO → Armature 的 ARMA，查適用性別／種族、第三人稱模型及需要時的第一人稱模型；ARMO world/inventory 模型不要當成穿在身上的模型。NPC outfit 可由 NPC_／OTFT 追到 ARMO，但只刷玩家裝備時不需要 NPC_ gate。透過已確認副作用與授權的工具定位；`whichmod.py` CLI 會刷新 SQLite，禁止 DB 時不執行（見母流程）。houseCARL／解析器也先核介面與副作用，不以「查詢」之名假定唯讀。
 
 將目標相對模型路徑與 OSP `OutputPath`／`OutputFile` 比對，確認遊戲真的會載入此 project 的輸出。再記現役 VFS 中模型、OSP、ShapeData、OSD 與 preset 各自的 winner／hash。裝備本體和 BodySlide 轉換包可能不同來源；只看到相同服裝名稱不代表使用同一版。缺少專案或來源不相容時保留缺口，不把另一個名字相似的 project 當作修復。
 
@@ -39,7 +39,7 @@ python tools/bodyslide_outfit_plan.py --staging "$BS_TOOL_DIR" \
 
 同一件可能有 CBBE／3BA、物理／無物理、袖子／裸露、zap 等變體；依已裝本體、骨架及本輪目標選一個，對每個共同輸出路徑明訂勝者。群組只用來選已審核 project，不解決 variant 衝突。若單件有多個必要 project，依輸出集合一併納入，不以「只刷一件」誤縮成一個 project。
 
-動態 OBody 路線：依現役設定刷明確的零滑條基底與需要的 TRI，核對所有適用 small／big 值；名字叫 Zeroed 不能取代實際值驗證。固定身形路線：用精確 preset 的 low／high；是否產生 TRI 取決於是否仍需 runtime morph，不能把兩條路線無條件混刷。嵌入衣服的身體 shape、裸身及其他同穿部件要採相容基底，避免穿脫時身形跳變。
+動態 OBody 路線：依現役設定核定可分配形狀 slider 的零基底與 TRI，逐一核所有適用 small／big 有效值，包含 preset 未指定而回落的 OSP defaults；preset 名叫 Zeroed、被排除隨機分配或使用原 default，都不證明模型已零基底。區分可分配的形狀 slider 與接縫校正；例如 WristSize／AnkleSize／NeckSeam 的 small 可有非零 default，不能無證強行清零，須與裸身及同穿部件核相容。未核完不標「全滑條零」。固定身形路線：用精確 preset 的 low／high；是否產生 TRI 取決於是否仍需 runtime morph，不能把兩條路線無條件混刷。嵌入衣服的身體 shape、裸身及其他同穿部件要採相容基底，避免穿脫時身形跳變。
 
 不能只靠私有目錄判定排除 OBody；只有本輪涉及私有 NPC 時才查其模型指向、排除設定及既存 morph。沒有物理或 zap 的 project，不強加物理／zap 驗收；單一權重專案也不要求虛構 `_0`／`_1` 配對。
 
@@ -51,7 +51,7 @@ python tools/bodyslide_outfit_plan.py --staging "$BS_TOOL_DIR" \
 
 ### 4. 驗收與可交付結果
 
-逐 project 保存本輪 log、退出碼、輸入與產物 hash；比對實際／預期路徑集合，再解析適用的 NIF／TRI。核對 shape、材質路徑、skin／骨架、權重配對；有 TRI 才查 BODYTRI 指向、morph shape／頂點索引。內嵌身體、物理骨及 zap 只驗本輪實際包含的項目；解析器只支持 position morph 時列明 UV 等未驗部分，不冒稱完整 TRI 語義通過。
+逐 project 保存本輪 log、退出碼、輸入與產物 hash；比對實際／預期路徑集合，再解析適用的 NIF／TRI。核對 shape、材質路徑、skin／骨架、權重配對；skinned NIF 的 inline vertex count=0 不等於無頂點，須循命名 shape→skin instance→partition 解實際頂點，衣服要驗衣服 shape 本身。有 TRI 才查 BODYTRI 指向、position morph shape／頂點索引與有限 scale；以適用量化容差比較 A／B 位移與非零 delta 殘差。內嵌身體、物理骨及 zap 只驗本輪實際包含的項目；解析器只支持 position morph 時列明 UV 等未驗部分，不冒稱完整 TRI 語義通過。
 
 隔離建置通過後才產出獨立 output 層、覆蓋差異與回退清單；沿母流程的 [授權部署與回退](README.md#5-授權部署與回退) 進施工窗。重新解析實際裝備 ARMA 路徑與 VFS winner，確認穿到的是本輪產物，不只看檔案複製成功。
 

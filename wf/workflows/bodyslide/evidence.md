@@ -22,6 +22,12 @@ TRI parser 驗 PIRT header、三個 position morph shape section、索引均在�
 
 複製的來源 OSP 在原生建置後仍逐 bytes 等同原版，所有 ShapeData 同來源。錯 group 的探索輪仍套用 B，因 preset `set` 精確符合 project；不能把 group 當作唯一適用機制。形式 A／B fixture 的 group／set 皆相容。
 
+## 2026-11-18 固定三輪的獨立覆核
+
+同一 binary 另以原生 `-gbuild/-p/-tri/-t` 對 `CBBE 3BBB Body Amazing`、`CT77 Farm Clothes 4` 各跑 A／B／B-repeat；每輪兩 NIF＋一 TRI。身體用歷史官方解包輸入，衣服用現役 loose 子集，不宣稱完整 VFS 或現役 body winner。A／B 僅 Breasts small／big=0／100；其他值按明列的 OSP defaults，連 A 也不是已核全零基底。
+
+獨立直接解析的結果：3BA 每權重 7,709／18,436 點改變，FC4 為 522／2,627；位移對 Breasts TRI delta 的最大殘差分別約 0.000096258／0.000090789，在本輪量化容差內。兩 project 各自 B-repeat 三檔相對路徑及全檔 SHA-256 相同；BODYTRI 指向本件 TRI，position 索引與 scale 通過，UV 尾段未解碼。shape 的 inline count=0 時沿 skin／partition 取頂點，而非判成空 mesh；解析入口見 [服裝證據](outfit-evidence.md)。來源／相關 live 的建置前後基線一致，不擴張成全庫或 DB 稽核；未部署、未實機。這些結論支持指定語義的固定驗收，不要求為報告收尾再建置。本輪來源：`agentctl/handoffs/home-2026-11-18/bodyslide-trial/verify/REPORT.md`「獨立方法與實測」與「preset、來源保護與變體」；原始檔路徑由該 private 報告承接。
+
 ## 舊個案的驗證界線
 
 歷史驗證器 `agentctl/handoffs/home-2026-11-07/chronicon-kurone/work/final-review.py:234–258` 另行比對 preset XML 的 small／big 明確值與實際 OSP、輸入／輸出 hash、每套 21 件、low／high 及兩套作者 preset 的 `NiSkinPartition` block hash 不同；這比只看完成字串更強，但不是直接解析頂點座標的 A／B 哨兵，也不是全 profile 服裝驗收。場次檔可到期，不作本工作流的必要依賴。
