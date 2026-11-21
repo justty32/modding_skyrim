@@ -4,6 +4,18 @@
 Example: python tools/bodyslide_outfit_plan.py --staging /isolated/BodySlide \
   --project 'Exact XML project name' [--project 'Another project'] [--tri]
 
+Build the staging with tools/bodyslide_stage.py (real copies, single casing).
+SliderSets/ and ShapeData/ roots resolve case-insensitively; two case variants
+of one root (SliderSets/ + slidersets/) is fail-closed (exit 2). Symlinks are
+always refused: a symlinked OSP or directory becomes a catalog_error, a
+symlinked source becomes a source_error. Selected rows with source errors are
+kept so 'conflicts' still lists them. Unparseable or unrelated OSPs go to
+catalog_errors and do not change 'ok', but set variant_check_complete=false
+(also warned on stderr): unselected same-output variants may be missing.
+
+Exit: 0 ok; 1 selected projects have errors/conflicts/missing sources;
+2 staging precondition failed (missing or ambiguous roots, unreadable).
+
 Rules: ousnius/BodySlide-and-Outfit-Studio commit
 033016464d31761bfaf6966db3ea9c3c3cb6105a:
 src/components/SliderSet.cpp LoadSliderSet, GetInputFileName,
@@ -12,6 +24,7 @@ BuildBodies (NIF suffixes and conditional TRI creation).
 """
 import argparse
 import json
+import os
 from pathlib import Path
 import sys
 import xml.etree.ElementTree as ET
@@ -19,7 +32,9 @@ import xml.etree.ElementTree as ET
 
 LIMITS = [
     'Input must already be a merged staging; no MO2, archives or winner discovery.',
+    'Symlinks are refused everywhere; build the staging from real copies.',
     'Only .osp files under SliderSets are scanned; other project formats unverified.',
+    'catalog_errors/uninspected_projects make the unselected-variant check incomplete.',
     'Only standalone OSP version 1 SliderSet projects; inheritance/add-ons rejected.',
     'Source presence only: NIF/OSD/BSD validity, OSD member names and geometry unverified.',
     'No preset/group/slider/zap compatibility or runtime/OBody validation.',
@@ -53,9 +68,42 @@ def present(root, rel):
         if not matches:
             return False
         node = matches[0]
-        if not node.resolve().is_relative_to(root.resolve()):
-            raise ValueError(f'source symlink escapes staging: {rel}')
+        if node.is_symlink():
+            raise ValueError(f'source symlink refused: {rel}')
     return node.is_file()
+
+
+def root_dir(staging, name):
+    """Case-insensitive top-level directory; fail-closed on case variants or symlinks."""
+    matches = sorted(p for p in staging.iterdir() if p.name.casefold() == name.casefold())
+    if len(matches) > 1:
+        raise ValueError(f'ambiguous case-insensitive staging root: {[p.name for p in matches]}')
+    if not matches:
+        return None
+    if matches[0].is_symlink() or not matches[0].is_dir():
+        raise ValueError(f'staging root {matches[0].name} must be a real directory')
+    return matches[0]
+
+
+def osp_files(sliders, staging, catalog_errors):
+    """All .osp files below SliderSets without following symlinks."""
+    found = []
+    for dirpath, dirnames, filenames in os.walk(sliders, followlinks=False):
+        base = Path(dirpath)
+        for d in list(dirnames):
+            if (base / d).is_symlink():
+                catalog_errors.append(f'{(base / d).relative_to(staging)}: symlinked directory refused')
+                dirnames.remove(d)
+        dirnames.sort()
+        for f in sorted(filenames):
+            path = base / f
+            if path.suffix.casefold() != '.osp':
+                continue
+            if path.is_symlink():
+                catalog_errors.append(f'{path.relative_to(staging)}: symlinked OSP refused')
+            elif path.is_file():
+                found.append(path)
+    return found
 
 
 def boolean(element, name, default):
@@ -120,15 +168,17 @@ def describe(element, osp, tri):
 
 
 def plan(staging, selected, tri=False):
-    if not (staging / 'SliderSets').is_dir():
-        raise ValueError('staging must contain SliderSets/')
+    staging = Path(staging)
+    if not staging.is_dir():
+        raise ValueError(f'staging is not a directory: {staging}')
+    sliders = root_dir(staging, 'SliderSets')
+    if sliders is None:
+        raise ValueError('staging must contain SliderSets/ (any case)')
+    root_dir(staging, 'ShapeData')  # only the case-variant check; absence shows as missing sources
     catalog = {}
     errors = []
-    for osp in sorted((staging / 'SliderSets').rglob('*')):
-        if not osp.is_file() or osp.suffix.lower() != '.osp':
-            continue
-        if not osp.resolve().is_relative_to(staging.resolve()):
-            raise ValueError(f'OSP symlink escapes staging: {osp}')
+    catalog_errors = []
+    for osp in osp_files(sliders, staging, catalog_errors):
         try:
             root = ET.parse(osp).getroot()
             if root.tag != 'SliderSetInfo' or root.get('version') != '1':
@@ -136,8 +186,8 @@ def plan(staging, selected, tri=False):
             for element in root:
                 if element.tag in ('SliderSet', 'SliderSetAddOn'):
                     catalog.setdefault(element.get('name', ''), []).append((element, str(osp.relative_to(staging))))
-        except (ET.ParseError, ValueError) as exc:
-            errors.append(f'{osp.relative_to(staging)}: {exc}')
+        except (ET.ParseError, ValueError, OSError) as exc:
+            catalog_errors.append(f'{osp.relative_to(staging)}: {exc}')
     rows = []
     for name in dict.fromkeys(selected):
         matches = catalog.get(name, [])
@@ -146,13 +196,29 @@ def plan(staging, selected, tri=False):
             continue
         try:
             row = describe(*matches[0], tri)
-            row['missing_sources'] = [paths for paths in row['source_candidates']
-                                      if not any(present(staging, p) for p in paths)]
-            if row['missing_sources']:
-                errors.append(f'{name}: missing source files')
-            rows.append(row)
         except ValueError as exc:
             errors.append(f'{name}: {exc}')
+            continue
+        row['missing_sources'], problems = [], []
+        for paths in row['source_candidates']:
+            found, failed = False, False
+            for path in paths:
+                try:
+                    if present(staging, path):
+                        found = True
+                        break
+                except ValueError as exc:
+                    problems.append(str(exc))
+                    failed = True
+            if not found and not failed:
+                row['missing_sources'].append(paths)
+        if problems:
+            # Keep the row: its outputs must still take part in conflict detection (F8).
+            row['source_error'] = '; '.join(problems)
+            errors.append(f'{name}: {row["source_error"]}')
+        if row['missing_sources']:
+            errors.append(f'{name}: missing source files')
+        rows.append(row)
     owners = {}
     for row in rows:
         for path in row['outputs'] + row['conditional_outputs']:
@@ -173,14 +239,19 @@ def plan(staging, selected, tri=False):
                     alternatives.append(dict(project=name, osp=osp, overlapping_outputs=overlap))
             except ValueError as exc:
                 uninspected.append(dict(project=name, osp=osp, reason=str(exc)))
-    return dict(ok=not errors, projects=rows, conflicts=conflicts,
+    complete = not catalog_errors and not uninspected
+    warnings = [] if complete else [
+        'VARIANT CHECK INCOMPLETE: some OSPs/projects could not be inspected; '
+        'unselected same-output variants may be missing (see catalog_errors/uninspected_projects)']
+    return dict(ok=not errors, variant_check_complete=complete, warnings=warnings,
+                projects=rows, conflicts=conflicts,
                 unselected_variants=alternatives, uninspected_projects=uninspected,
-                errors=errors, limitations=LIMITS)
+                errors=errors, catalog_errors=catalog_errors, limitations=LIMITS)
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('--staging', type=Path, required=True, help='already merged isolated BodySlide resource root (read only)')
+    parser.add_argument('--staging', type=Path, required=True, help='merged isolated BodySlide root from bodyslide_stage.py (read only; symlinks refused)')
     parser.add_argument('--project', action='append', required=True, help='exact XML name; repeat for each selected project')
     parser.add_argument('--tri', action='store_true', help='include conditional TRI collision candidates')
     args = parser.parse_args(argv)
@@ -190,6 +261,8 @@ def main(argv=None):
         print(json.dumps({'ok': False, 'errors': [str(exc)]}))
         return 2
     print(json.dumps(report, ensure_ascii=False, indent=2))
+    for warning in report['warnings']:
+        print(f'WARNING: {warning}', file=sys.stderr)
     return 0 if report['ok'] else 1
 
 
