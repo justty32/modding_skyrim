@@ -58,3 +58,13 @@ done/ 的歷史 REPORT 連著自己產的截圖／log／work 目錄；這些檔�
 **How to apply**：產刪除清單的工具要內建入站連結掃描（tracked md 全掃、連結解析到 repo 相對路徑、與候選集取交集），命中的另列 `linked-review.tsv` 不自動列刪；處置二選一：排除該檔，或刪除批次裡同時帶上連結改寫。已實作：`agentctl/handoffs/home-2026-10-23/tidy/T1/tools/build_candidates.py` 的 `inbound_refs()`；註記工具同目錄 `annotate_dead_links.py`。
 
 封存判斷也適用：**「有人連過來」要先分辨連過來的是歷史文件還是 open 項——那決定的不是「能不能封存」，而是「封存後連結怎麼處理」**；「已結案但被連結釘住」不是不能動的理由（2026-10-23 使用者裁示「都可以清掉的」）。做法分兩路：被**純歷史文件**釘住的（遷移計畫、工作量估算）走標準 archive 規則，來源連結拿掉改純文字；被 **open 項**釘住的（`modlist-coverage-2026-09-01.md`）**封存不刪、來源連結改指 archive 新路徑**，open 項照樣連得到，封存只表示它退出維護鏈與盤點範圍，不表示待辦結案。另外「被 open 項連著」要實查狀態：點名的 open 項可能早就 `done` 了（10-23 點名的 `status/todo/05、06、17` 早在 2026-09-05 就 done）。
+
+## list-scripts-before-deleting-staging
+
+> 刪暫存／staging 夾前要先列出夾內的腳本與工具，逐類核對「已進版控」——紀錄、產物、腳本是三件事，不能整夾一句「內容已入版控」帶過。
+
+2026-11-21：使用者當場授權刪 `~/skyrim_mods/_staging-2026-11-18-bodyslide-{trial,retro,close}/`，頂層刪前只說是「試刷產物」、收包 REPORT 也寫「本包已入版控，只剩證據價值」。事後審查發現 trial 夾裡有 11-18 實際用來保證隔離的 bwrap runner 與驗 NIF／TRI 的解析器，都沒進版控，一併丟失，只好重做成 `tools/bodyslide_*.py`（[審查 F2／F3](../../agentctl/handoffs/home-2026-11-21/bodyslide-review/REPORT.md)）。
+
+**Why:** 「已入版控」通常只核了文件與證據；腳本藏在 `run/`、`tools/`、`probe/` 子目錄裡，名字也不像要留的東西。使用者授權的是他聽到的描述，描述漏了腳本，授權就不涵蓋腳本。
+
+**How to apply:** 刪前跑一次 `find <夾> -type f \( -name '*.py' -o -name '*.sh' -o -name '*.ps1' \)` 列出所有腳本，每支標「已有版控對應（路徑）」或「之後還要用、先收進 `tools/`」或「一次性、可丟」，連同大小一起放進給使用者的刪除說明。紀錄、產物、腳本分三行報，不合併成一句。相關：[[temp-dirs-double-as-offline-reinstall-library]]、[[scan-inbound-links-before-delete]]。

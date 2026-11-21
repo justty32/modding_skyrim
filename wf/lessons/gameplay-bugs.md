@@ -61,3 +61,19 @@
 **Why:** Proton 遊戲沒有獨立快取路徑；量化證據比 log 時間更能定因果。
 
 **How to apply:** 懷疑卡頓先查 GLCache 有無其他 Proton prefix 同時段活動；單一遊戲變數改在 `launch-mo2.sh` export 後 exec，不寫全域 environment.d；沒 frametime 的結論標嫌疑非真因。
+
+## eldenrim-weapon-art-scroll-no-menu
+
+> Elden Rim Weapon Arts 的戰技卷軸用了不跳選單是設計：卷軸只學會附魔，要到附魔台把戰技附到戰灰上（附魔台這步由 plugin record 推論，未實機）
+
+2026-11-21：卷軸效果掛 `WarAshPlayerKnow` 腳本，只呼叫 `SetPlayerKnows`，沒有開選單的呼叫；附魔帶 worn-restriction FLST，戰灰 ARMO 帶 keyword `WarAsh`，所以只能附在戰灰上。Nexus 65625 頁沒寫附魔台這一步（[REPORT](../../agentctl/handoffs/home-2026-11-21/eldenrim-arts/REPORT.md)）。
+
+**How to apply:** 使用者說「用了卷軸沒反應」先講附魔台流程（戰灰＋學會的戰技＋已充能靈魂石→加偏好綁數字鍵→右手持武器施放），不要先開衝突／依賴調查；實機在附魔台看不到戰技才算故障。
+
+## stutter-frametime-proxy-and-io-psi-false-alarm
+
+> 查掉幀沒有 frametime 時，可拿每幀寫一行的 SKSE log 時間戳當幀間隔代理；全機 `/proc/pressure/io` 偏高可能是 ghostty 的 io_uring 等待灌水，要看遊戲 cgroup 自己的 PSI
+
+2026-11-21：Path of the Companions 1.2.0.0 的 `SKSE/FightWithMePaths.log` 在附近有敵人時每幀寫一行 `[PartyBalance]`（毫秒時間戳），31 萬行切成 10 分鐘桶算中位／p99／>33 ms，就看出掉幀是連續數秒 25–60 ms、同 session 內沒惡化。同時全域 io PSI some 70%／full 58%，來源是 ghostty cgroup 的 `io_cqring_wait` 執行緒，遊戲 cgroup io PSI 是 0、磁碟幾乎閒置（[REPORT](../../agentctl/handoffs/home-2026-11-21/stutter/REPORT.md)）。
+
+**How to apply:** 先找有沒有每幀 log 可當代理（只涵蓋 log 會寫的時段，要註明）；IO 判斷看 `/sys/fs/cgroup/<遊戲 cgroup>/io.pressure` 與磁碟 io_ticks，不看全域 PSI；系統層全排除後，瓶頸在主執行緒時要寫「未定罪」，不硬找元兇。

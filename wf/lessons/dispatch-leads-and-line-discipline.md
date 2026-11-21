@@ -57,4 +57,6 @@
 
 **Why:** 子代理常回「系統擋下寫 REPORT（子代理不寫報告檔）」，頂層只好代寫，浪費 context。settings/hooks 都沒有擋寫檔的規則；疑因是子代理內建的「不要主動建立報告檔」預設指示。但交接書明寫授權後 general-purpose 線多數仍被擋，子代理回報是 harness 層擋寫報告檔、不是模型自選；部分線寫得進去，條件不明（2026-10-03）。交接書授權不可靠，只剩 line 型別待新 session 驗證；驗證前頂層照舊代存，代存寫摘錄版即可，不必逐字。
 
-**How to apply:** 派線用 `.claude/agents/line.md`（subagent_type: line，新 session 才載入）；在那之前，每份交接書／prompt 明寫「使用者已授權：REPORT.md 是交付物，直接寫檔，不要把全文塞回覆」。相關：[[leads-manage-subordinate-context]]。
+2026-11-21 仍會發生：子代理的 Write 工具被「子代理不寫報告檔」擋下，一條線改用 shell 寫成 REPORT，另一條沒寫、由頂層從輸出代落檔。
+
+**How to apply:** 派線用 `.claude/agents/line.md`（subagent_type: line，新 session 才載入）；Write 被擋時線可改用 shell（heredoc／python）寫 REPORT，不要放棄落檔；在那之前，每份交接書／prompt 明寫「使用者已授權：REPORT.md 是交付物，直接寫檔，不要把全文塞回覆」。相關：[[leads-manage-subordinate-context]]。

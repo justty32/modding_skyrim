@@ -23,7 +23,7 @@
 | [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 7 |
 | [repos-layout-and-remotes](repos-layout-and-remotes.md) | 版控：repo 佈局、remote 與 push | 5 |
 | [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、pathspec 與工作樹 | 5 |
-| [artifact-hygiene-and-ignores](artifact-hygiene-and-ignores.md) | 版控：產物衛生、.gitignore 與刪除前的掃描 | 4 |
+| [artifact-hygiene-and-ignores](artifact-hygiene-and-ignores.md) | 版控：產物衛生、.gitignore 與刪除前的掃描 | 5 |
 | [docs-organization](docs-organization.md) | 文件整理：封存、拆檔與頁面歸屬 | 5 |
 | [wf-kernel](wf-kernel.md) | wf 骨架（kernel）與工具形態 | 2 |
 | [mo2-profiles](mo2-profiles.md) | MO2 profile 三檔：還原、並行編輯與遊戲改寫 | 5 |
@@ -43,7 +43,7 @@
 | [animation-oar](animation-oar.md) | 動畫與 OAR | 6 |
 | [crash-dll-and-scripts](crash-dll-and-scripts.md) | CTD：SKSE DLL 與腳本 | 8 |
 | [crash-data-and-assets](crash-data-and-assets.md) | CTD：資料層與素材 | 6 |
-| [gameplay-bugs](gameplay-bugs.md) | 遊戲行為異常（非崩潰）的歸因 | 5 |
+| [gameplay-bugs](gameplay-bugs.md) | 遊戲行為異常（非崩潰）的歸因 | 7 |
 | [translation-and-zh](translation-and-zh.md) | 中文層部署 gate 與引擎的字串機制 | 6 |
 | [zh-policy-and-naming](zh-policy-and-naming.md) | 中文層政策：翻不翻、繁簡與命名 | 4 |
 | [zh-tooling-and-scans](zh-tooling-and-scans.md) | 中文層工具與掃描（zhport、靜態掃描、QA checker） | 5 |
