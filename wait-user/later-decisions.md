@@ -60,3 +60,7 @@ PoE 凍結成品內 6 檔與 NativeCombat r2 `source/README.md` 4 條壞鏈被 M
 ## Skyrim 間歇掉幀：先擱置，復發變嚴重再查（2026-11-21）
 
 2026-11-21 做了一次唯讀調查但未定罪：瓶頸在遊戲主執行緒（CPU），系統層（搶 CPU／記憶體／VRAM／過熱／磁碟／Papyrus）已排除。你裁示「目前還好，沒有很嚴重。總之先記錄下來之後再說」，所以先擱置、不續查。若復發變嚴重，待做三件：(a) 同地點讀 10 月舊存檔對照，分開存檔膨脹與 mod／驅動；(b) 用 `SKYRIM_DXVK_HUD=fps,frametimes,compiler` 啟動看幀時間與 shader 編譯（需你授權）；(c) 調低 Path of the Companions 的 log 等級（需你授權）。見[調查報告](../agentctl/handoffs/home-2026-11-21/stutter/REPORT.md)。
+
+## BodySlide 身體：選 preset、確認取代 Sofia-Body 全域身體（2026-11-21）
+
+你同意部署 BodySlide 烤的 CBBE 身體，也同意用新工具鏈重刷 CT77 Farm Clothes 4。動工前還要你決定兩件事：(a) 用哪個 BodySlide preset（衣服要跟身體同一個）；(b) 新的身體層排在 `Sofia-Body-CBBE-Dev-2026-09-05` 之上——現在 `femalebody_0/1.nif` 的贏家是 Sofia-Body，排在上面會換掉全域身體，排在下面則完全沒效果。答完後 agent 照 [deploy.md](../wf/workflows/bodyslide/deploy.md) 部署，再重刷 CT77。見[修補報告](../agentctl/handoffs/home-2026-11-21/bodyslide-fix/REPORT.md#需要使用者決定)。

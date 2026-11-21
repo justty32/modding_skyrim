@@ -15,6 +15,7 @@
 - [aos] 下一場：開唯讀調查線查 Apocalypse 中文層 69 筆 Cannot open store（instance 主導；起點 `instance/tmp/aos/skyrim-agent-instance/out/report.md` 補記節與 `out/pms-log0/`）
 - [aos] 舊記憶夾收尾 3 件（補約 3 條 lessons、MEMORY.md 改指回、刪原檔另問）→ 第 5 期
 - [aos] `tmp/aos-skyrim-agent/` 測試暫存夾 → 等使用者說要不要清
+- [bodyslide] 身體部署與 CT77 重刷已獲同意，等 preset 與排序 → [deploy](wf/workflows/bodyslide/deploy.md)
 
 子專案續行見 [agentctl SESSION](agentctl/SESSION-LOG.md)。
 
