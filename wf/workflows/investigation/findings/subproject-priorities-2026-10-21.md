@@ -1,6 +1,6 @@
 # 子專案續行價值盤點 2026-10-21
 
-本頁及資料檔保留開發前的盤點快照；使用者其後已選 DSP 與 houseCARL。最新離線成果與續接位置見 [修復與收尾記錄](../../../user/2026-10-21-offline-fixes.md)。
+本頁及資料檔保留開發前的盤點快照；使用者其後已選 DSP 與 houseCARL。當時的離線成果頁 `wf/user/2026-10-21-offline-fixes.md` 已於 2026-11-21 刪除（git history 可取回）。
 
 主推薦 **darksouls-port 的既有 P3 場景打磨**。使用者曾明確表示不滿意並要求北方不死院做完整（`projects/darksouls-port/p3/P3-PLAN.md:5–7`）；目前有尚未經實機確認的繞序修正候選，值得把已有場景做可靠。想優先玩隨從劇情則選 **Sofia Act1v2**；想修日常工具則選 **houseCARL 的 Linux 名稱解析**。
 

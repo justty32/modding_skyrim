@@ -26,9 +26,5 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 | [2026-10-26-follower-stats-gear.md](2026-10-26-follower-stats-gear.md) | 語音隨從能力值／裝備審批頁（59 人逐人勾選、產 VFSTATS 變更單）與重產方法 |
 | [2026-10-26-follower-look-pages.md](2026-10-26-follower-look-pages.md) | 隨從換頭三頁（換臉挑選／隨從名冊／素材目錄）的網址、10-26 刷新內容與重產方法 |
 | [2026-10-26-mod-library-viewer.md](2026-10-26-mod-library-viewer.md) | 天際儲藏庫（mod 資產庫頁）10-26 刷新：線上頁連結、這次更新了什麼、舊命名檔來源辨識怎麼看 |
-| [2026-10-21-offline-fixes.md](2026-10-21-offline-fixes.md) | DSP 候選包、houseCARL 名稱解析與 consumer 相容修補的離線成果及未部署界線 |
-| [2026-10-10-play-checklist.md](2026-10-10-play-checklist.md) | 10-10 十七線施工彙整總頁：開遊戲前、依地點分四頁的實測清單、今日安裝總表、不裝／延後 |
-| ↳ 四個分頁 | [城鎮與室內](2026-10-10-play-checklist-towns.md)、[戰鬥與系統](2026-10-10-play-checklist-combat.md)、[隨從與人物](2026-10-10-play-checklist-followers.md)、[野外與地點](2026-10-10-play-checklist-wild.md)（入口頁，再拆三頁在 [子資料夾](2026-10-10-play-checklist-wild/)） |
-| ↳ [installed.json](2026-10-10-play-checklist-installed.json) | 資料檔（`wf-table/1`）：10-10 當天安裝總表，每列一個 mod 與出處 REPORT；總頁「今天裝了什麼」從這裡讀 |
-| ↳ [mo2-reverify.json](2026-10-10-play-checklist-mo2-reverify.json) | 資料檔（`wf-table/1`）：MO2 首開後要重驗的 plugins.txt 行（行號、該不該有 `*`、順序要求）；總頁 1a 的依據 |
+| [2026-10-10-play-checklist-mo2-reverify.json](2026-10-10-play-checklist-mo2-reverify.json) | 資料檔（`wf-table/1`）：MO2 首開後要重驗的 plugins.txt 行（行號、該不該有 `*`、順序要求）；`instance/tools/reverify.py` 的輸入，10-10 總頁已於 2026-11-21 刪除 |
 | [2026-10-26-moveset-pages.md](2026-10-26-moveset-pages.md) | 招式五頁（姿態配置、裝備分配、總覽、MCO 挑選表、候選）10-26 現況版入口 |
