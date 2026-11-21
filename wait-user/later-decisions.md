@@ -56,3 +56,7 @@ PoE 凍結成品內 6 檔與 NativeCombat r2 `source/README.md` 4 條壞鏈被 M
 ## Mihail 青蛙／鴿子 mod 資料夾要不要刪（2026-11-15）
 
 你要求「解除安裝」青蛙、鴿子（兔子骨架的青蛙一併處理）。本輪只在 `modpack-main`、`dsport-dev` 停用（profiles `d607c3c`），以下 5 個 MO2 mod 資料夾仍在 `modorganizer2/mods/`：`Frogs 1.1.1 120998`、`Frogs CHS 1.1.1 148283`、`Mihail-Frogs-Skeleton-SE-Compat-Trial-1.1.1-2026-11-01`、`Pigeons 1.2 27238`、`Pigeons CHS 1.2 93577`。要刪就說一聲；Trial 層原件另有封存在 `mod-library/artifacts/`。見[停用紀錄](../agentctl/handoffs/home-2026-11-15/mihail-disable/REPORT.md)。
+
+## Skyrim 間歇掉幀：先擱置，復發變嚴重再查（2026-11-21）
+
+2026-11-21 做了一次唯讀調查但未定罪：瓶頸在遊戲主執行緒（CPU），系統層（搶 CPU／記憶體／VRAM／過熱／磁碟／Papyrus）已排除。你裁示「目前還好，沒有很嚴重。總之先記錄下來之後再說」，所以先擱置、不續查。若復發變嚴重，待做三件：(a) 同地點讀 10 月舊存檔對照，分開存檔膨脹與 mod／驅動；(b) 用 `SKYRIM_DXVK_HUD=fps,frametimes,compiler` 啟動看幀時間與 shader 編譯（需你授權）；(c) 調低 Path of the Companions 的 log 等級（需你授權）。見[調查報告](../agentctl/handoffs/home-2026-11-21/stutter/REPORT.md)。
