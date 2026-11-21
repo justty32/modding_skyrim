@@ -8,6 +8,9 @@
   "analysis.md": {
     "description": "陌生專案分析入口：初次接觸外部 repo、舊系統或大型資料夾時進來"
   },
+  "bodyslide": {
+    "description": "BodySlide 身體／服裝工作流；刷一件／一套衣服或指定群組見 outfits.md；VFS 輸入、preset 與衝突、headless 隔離建置、驗證及授權部署時進來"
+  },
   "common": {
     "description": "跨工作流共享：使用者偏好、慣例與 code map、資料檔契約、共通踩坑、回覆風格",
     "index": "common/_index.json"

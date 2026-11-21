@@ -19,6 +19,8 @@
 | 「要抓一整套系列（動作、perk、任務框架…）」 | nexus-intake | [workflows/nexus-intake/series.md](workflows/nexus-intake/series.md) —— 每層各自成批、生成式 output |
 | 「做中文層／補全現有中文層」 | localization | [workflows/localization/README.md](workflows/localization/README.md) |
 | 「改 MO2 profile：裝／移除／改排序」 | profile-change | [workflows/profile-change/README.md](workflows/profile-change/README.md) |
+| 「重烤 BodySlide 身體／服裝」「批次或 headless Build」 | bodyslide | [workflows/bodyslide/README.md](workflows/bodyslide/README.md) —— VFS／preset／衝突→隔離建置→驗證→授權部署 |
+| 「刷這件／這套衣服」「只刷指定 BodySlide 群組」 | bodyslide/outfits | [workflows/bodyslide/outfits.md](workflows/bodyslide/outfits.md) —— 裝備模型路徑→變體與身形→增量試刷→驗收 |
 | 「規劃整合包要玩什麼」 | modpack-planning | [workflows/modpack-planning/README.md](workflows/modpack-planning/README.md) |
 | 「派一條 codex 線去做事」 | agent-dispatch | [workflows/agent-dispatch/README.md](workflows/agent-dispatch/README.md)（aos 樹裡不走 codex，見 [workflows/aos.md](workflows/aos.md)；本列第 5 期退役） |
 | 「在 aos 樹裡派線（skyrim-agent 底下）」 | aos | [workflows/aos.md](workflows/aos.md) —— 樹與命名、起樹收樹、打架點聽誰的 |
