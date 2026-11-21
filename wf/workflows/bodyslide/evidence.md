@@ -1,47 +1,51 @@
 # 本機驗證證據
 
-[headless 路線](headless.md)｜[入口](README.md)
+[headless 路線](headless.md)｜[入口](README.md)｜[工具鏈](tools.md)
 
 服裝 project 的 CT77 現役／CBBE 對照、實際衣服 shape 與 TRI 驗證見 [服裝證據](outfit-evidence.md)。
 
-## 原生 preset：2026-11-18 四輪對照
+**讀法**：2026-11-18 的各節是 3BA（`CBBE 3BBB Body Amazing`）的隔離**能力試驗**，不是現役家族；現役是 CBBE 2.0.3，全域身體由 `Sofia-Body-CBBE` 層決定（見 [部署](deploy.md#1-先查現役贏家)）。11-18 的原件（`/tmp` 下的 probe 目錄與 11-18 的 bodyslide staging 夾）**已刪，結論保留**；要重現就用 [工具鏈](tools.md) 重跑，不找舊路徑。2026-11-21 節是用現役工具鏈對現役家族的實跑。
 
-`/tmp/bs-native-preset-test.py` 複製官方未修改 `SE 3BBB Amazing.osp`，在 staging 寫精確 group 與 A／B preset，再以 `xvfb-run -a wine BodySlide.exe -gbuild NativePresetTest -p <名稱> -t <隔離路徑>` 執行。本次沒有 `-tri`，每輪只有兩個 NIF；A、B、不存在名稱、B repeat 四輪 exit 0。
+## 2026-11-21 現役工具鏈端到端（CBBE Body）
 
-`/tmp/bs-native-preset-us4l112k/geometry.json` 的直接頂點比較：small／big 的 `Breasts` 同時由 0 改為 100，low／high 各在 18,436 頂點中有 7,709 個改變，最大距離約 2.088543；另兩個 1,905／201 頂點 shape 完全不變。B repeat 與 B 的全部頂點相同，證明此輸入下的幾何可重現；不是全檔 hash 的決定性聲明。
+stage → plan → 沙箱 runner → `bodyslide_mesh_check.py`，全程在 `~/skyrim_mods/_staging-2026-11-21-bodyslide-fix/run1/`；REPORT 在 private `agentctl/handoffs/home-2026-11-21/bodyslide-fix/`。
 
-不存在的 `Nonexistent Sentinel` 同樣 exit 0，兩個體重全部 shape 頂點卻與 A／default 相同。這直接證明 exit 0 不能證明 preset 有套用。原始 argv／退出碼／檔案 hash 在同目錄 `results.json`；暫存路徑不作永久依賴，這裡保存可重建的輸入與結論。此證據優先於較早 OSP fallback probe 的「原生 preset 未驗證」界線；未驗證完整裝備批次或遊戲外觀。
+- stage 只帶 `ShapeData/CBBE`：480 檔、exit 0；planner 對 `CBBE Body` exit 0、`conflicts=[]`、6 個未選同輸出變體，`variant_check_complete=false`（4 個無關 project 無法檢查）。
+- 原生 `-gbuild NativePresetTest -p 'Sentinel A|B' -tri`：A、B、B-repeat、不存在的 preset 四輪 runner 皆 exit 0，各 3 檔（`femalebody_0/1.nif`、`femalebody.tri`）；wine 每輪約 1.3 秒。
+- `compare` A／B／B-repeat exit 0：shape `CBBE` 每權重 13,554 頂點（inline count 0），Breasts 0→100 時 4,068 點位移、最大約 2.0934；B↔repeat 全同；TRI 136 morph、尾端 0 bytes。
+- 不存在的 preset 對 A：`compare` exit 1（「no vertex changed」），A／B 哨兵不能省。
+- safe-fallback 四輪後仍空；modlist.txt sha256 前後一致；沒有殘留 wine／Xvfb 行程。
 
-### 原生 B＋TRI 合測與 Config
+### BuildSelection 與同輸出（2026-11-21）
 
-同一目錄 `REPORT.md`、`tri.py`、`check-tri.py`／`tri-validation.json` 記錄後續同 group 的 `-p 'Sentinel B' -tri`。使用空的 `b-tri` output，Config 的 OutputDataPath 改為**已存在且帶結尾反斜線**的私有 safe-fallback。exit 0、log 僅一個 project 並完成；產生 low／high NIF 及 5,010,861-byte `femalebody.tri`。兩個 NIF 的全部頂點與未加 `-tri` 的 B 相同，safe-fallback 保持空白。
+同一 run、group 內放 `CBBE Body`＋`CBBE NeverNude`（同輸出 `femalebody`），本機 5.8.2 實測：
 
-TRI parser 驗 PIRT header、三個 position morph shape section、索引均在對應 NIF 頂點數內且 scale 有限；尾端 30,937 bytes 的 UV morph section 未解碼，因此只通過已解碼部分的結構與索引驗證，不宣稱完整 TRI 語義或遊戲 morph 已驗。
+| 輪 | tool 根的 `BuildSelection.xml` | 結果 |
+|---|---|---|
+| bs-none | 無 | 卡住到 120 秒 timeout，log 停在 `Started batch build`，無輸出（推測是看不見的衝突對話框）；runner 對本輪 prefix `wineserver -k` 後收乾淨 |
+| bs-choice | `OutputChoice path="meshes\actors\character\character assets\femalebody" choice="CBBE NeverNude"` | 只處理 `CBBE NeverNude`（1 of 1）；輸出有 `CBBE`／`Bra`／`Panty` 三 shape |
+| bs-zap | 上一列＋`ZapChoice project="CBBE NeverNude" zap="Remove Bra" choice="true"` | 同上，但 `Bra` shape 消失——zap 依 BuildSelection 套用 |
 
-早先四輪 Config 是逐字複製，空 game paths／ProjectPath `.`，OutputDataPath 當時仍為歷史值；每次明確 `-t`，log／產物路徑證明輸出在隔離目錄。後續合測才改 safe-fallback。第一次 fallback 不存在且未帶結尾反斜線時在 OpenGL 初始化後停滯，由本輪精確 PID 終止；根因未隔離，不能宣稱其中單一條件必然致錯。修正後未加特殊 GLX 選項也成功，GLX workaround 是另一次環境故障的處置。
+結論：本機 5.8.2 的 CLI 批次會照 BuildSelection 選同輸出勝者並套 zap；沒有 BuildSelection 時同輸出衝突**不會自動選一件，而是卡死**。所以同輸出一律靠縮小 group 解決，staging 帶進來的 BuildSelection 要照 stage 表逐條核。CLI 建置沒有自己建立 `BuildSelection.xml`（tool 根建置後仍無此檔）。
 
-複製的來源 OSP 在原生建置後仍逐 bytes 等同原版，所有 ShapeData 同來源。錯 group 的探索輪仍套用 B，因 preset `set` 精確符合 project；不能把 group 當作唯一適用機制。形式 A／B fixture 的 group／set 皆相容。
+## 原生 preset：2026-11-18 四輪對照（3BA 能力試驗）
+
+複製官方未修改 `SE 3BBB Amazing.osp`，在 staging 寫精確 group 與 A／B preset，`-gbuild NativePresetTest -p <名稱> -t <隔離路徑>` 執行，沒有 `-tri`。A、B、不存在名稱、B repeat 四輪 exit 0。small／big 的 `Breasts` 同時由 0 改為 100，low／high 各在 18,436 頂點中有 7,709 個改變，最大距離約 2.088543；另兩個 1,905／201 頂點 shape 完全不變。B repeat 與 B 的全部頂點相同。不存在的 `Nonexistent Sentinel` 同樣 exit 0，頂點卻與 A／default 相同。
+
+後續 B＋`-tri` 合測：Config 的 OutputDataPath 改為**已存在且帶結尾反斜線**的私有 safe-fallback，exit 0、產生 low／high NIF 及 5,010,861-byte `femalebody.tri`，NIF 頂點與未加 `-tri` 的 B 相同，safe-fallback 保持空白。當時的 TRI parser 只解 position 段、UV 尾段 30,937 bytes 未解；2026-11-21 的 `bodyslide_mesh_check.py` 已能解完 UV 段。
+
+第一次 fallback 不存在且未帶結尾反斜線時在 OpenGL 初始化後停滯，由本輪精確 PID 終止；根因未隔離。錯 group 的探索輪仍套用 B，因 preset `set` 精確符合 project；不能把 group 當作唯一適用機制。複製的來源 OSP 在建置後仍逐 bytes 等同原版。
 
 ## 2026-11-18 固定三輪的獨立覆核
 
-同一 binary 另以原生 `-gbuild/-p/-tri/-t` 對 `CBBE 3BBB Body Amazing`、`CT77 Farm Clothes 4` 各跑 A／B／B-repeat；每輪兩 NIF＋一 TRI。身體用歷史官方解包輸入，衣服用現役 loose 子集，不宣稱完整 VFS 或現役 body winner。A／B 僅 Breasts small／big=0／100；其他值按明列的 OSP defaults，連 A 也不是已核全零基底。
+同一 binary 以原生 `-gbuild/-p/-tri/-t` 對 `CBBE 3BBB Body Amazing`、`CT77 Farm Clothes 4` 各跑 A／B／B-repeat；每輪兩 NIF＋一 TRI。身體用歷史官方解包輸入，衣服用現役 loose 子集，不宣稱完整 VFS 或現役 body winner。A／B 僅 Breasts small／big=0／100，其他值按 OSP defaults（連 A 也不是全零基底）。3BA 每權重 7,709／18,436 點改變，FC4 為 522／2,627；位移對 Breasts TRI delta 的最大殘差約 0.000096258／0.000090789。兩 project 各自 B-repeat 三檔路徑及 SHA-256 相同；shape 的 inline count=0 時沿 skin／partition 取頂點。未部署、未實機。來源：`agentctl/handoffs/home-2026-11-18/bodyslide-trial/verify/REPORT.md`。
 
-獨立直接解析的結果：3BA 每權重 7,709／18,436 點改變，FC4 為 522／2,627；位移對 Breasts TRI delta 的最大殘差分別約 0.000096258／0.000090789，在本輪量化容差內。兩 project 各自 B-repeat 三檔相對路徑及全檔 SHA-256 相同；BODYTRI 指向本件 TRI，position 索引與 scale 通過，UV 尾段未解碼。shape 的 inline count=0 時沿 skin／partition 取頂點，而非判成空 mesh；解析入口見 [服裝證據](outfit-evidence.md)。來源／相關 live 的建置前後基線一致，不擴張成全庫或 DB 稽核；未部署、未實機。這些結論支持指定語義的固定驗收，不要求為報告收尾再建置。本輪來源：`agentctl/handoffs/home-2026-11-18/bodyslide-trial/verify/REPORT.md`「獨立方法與實測」與「preset、來源保護與變體」；原始檔路徑由該 private 報告承接。
+當時三條實跑都在 bwrap 內：`/` 唯讀、私有 `/tmp`、僅測試目錄可寫、停網路，HOME／WINEPREFIX 在測試夾；Xvfb `-displayfd`、關 GLX（本機預設 GLX 曾觸發 NVIDIA EGL segfault）。這個形狀已收進 `bodyslide_sandbox_run.py`。
+
+## 2026-11-18 OSP defaults 路線
+
+本機 binary SHA-256 為 `3ad463a665d6a735953f177fb87d0f1060ed9cf9c62685a23f681110b98177e2`。取歷史 OSP 的 `bcb1 CBBE 3BBB Body Amazing` 在專用 group `Probe` 跑 `-gbuild Probe -t <隔離路徑> -tri`。只把 OSP `Breasts small` 從 0 改為 100，僅 `_0.nif` 改變（low 7,709／18,436 點位移），`_1.nif`／TRI 不變。把 OutputPath 還原為歷史值時三檔與 2026-11-07 舊輸出逐位元組全等；不同輸出路徑會改變 BODYTRI 字串，所以不能用不同路徑的 NIF hash 推論身材變化。
 
 ## 舊個案的驗證界線
 
-歷史驗證器 `agentctl/handoffs/home-2026-11-07/chronicon-kurone/work/final-review.py:234–258` 另行比對 preset XML 的 small／big 明確值與實際 OSP、輸入／輸出 hash、每套 21 件、low／high 及兩套作者 preset 的 `NiSkinPartition` block hash 不同；這比只看完成字串更強，但不是直接解析頂點座標的 A／B 哨兵，也不是全 profile 服裝驗收。場次檔可到期，不作本工作流的必要依賴。
-
-同檔 `:225–232` 驗的是該輪精確 23 個 OBody NPC 排除，且明記既存 co-save morph 仍可能需要 runtime reset。不能把該輪排除數與設定搬到新任務，也不以改設定代替已載入角色的實機檢查。
-
-## 2026-11-18 隔離實跑
-
-本機 binary SHA-256 為 `3ad463a665d6a735953f177fb87d0f1060ed9cf9c62685a23f681110b98177e2`。取歷史 OSP 的 `bcb1 CBBE 3BBB Body Amazing` 與 `SE 3BBB Amazing` ShapeData（約 20 MB），在專用 group `Probe` 實跑。外層 `bwrap` 設 `/` 唯讀、私有 `/tmp`、僅測試目錄可寫、停網路，HOME／WINEPREFIX 在測試夾，移除 WAYLAND_DISPLAY／DBUS_SESSION_BUS_ADDRESS。本輪暫存 `/tmp` 只是可丟棄 probe，不是部署備份或永久證據。
-
-runner 起 `Xvfb -displayfd FD -screen 0 1280x1024x24 -nolisten tcp -extension GLX`，讀回 DISPLAY 後跑 `wine BodySlide.exe -gbuild Probe -t <隔離 Windows 路徑> -tri`，只關自己的 Xvfb。上面的 `xvfb-run` snippet 是等效啟動形狀，並非本次逐字 argv。本機預設 GLX 曾觸發 NVIDIA EGL segfault；關閉 GLX 後此批建成功，預覽／其他 OpenGL 功能不在此結論內。
-
-baseline 與 sentinel 兩輪 wrapper／Wine 皆 exit 0，且均有本輪完成 log。每輪三檔：`femalebody_0.nif`、`femalebody_1.nif` 各 2,007,438 bytes，`femalebody.tri` 5,010,861 bytes。只把 OSP `Breasts small` 從 0 改為 100，僅 `_0.nif` hash 改變，`_1.nif`／TRI 不變；後續 `vertex-comparison.json` 直接解析頂點，確認 low 在 18,436 點中有 7,709 點位移，high 全部頂點不變；與只改 small 的預期一致。
-
-第三輪把 OSP OutputPath 還原為歷史 `meshes/actors/character/kurone_native/bcb1`，三檔與 2026-11-07 舊輸出逐位元組全等。先前不同輸出路徑造成 BODYTRI 字串差異，因此不能直接用不同路徑的 NIF hash 推論身材變化。
-
-實證原件是 `/tmp/bs-probe-20261118-w0n92l00/` 的 `report.md`、`source.json`、`results.json`、`historical-comparison.json`、`clean-command.json` 與 `run_private.py`；暫存到期不影響上面的持久結論。此實測只證明指定真實 project 的 `-gbuild`＋OSP defaults 路線，未證明 CLI 直接挑 preset、全 profile 服裝批建、衝突選項、遊戲內外觀或 morph 運行。
+2026-11-07 `chronicon-kurone` 的驗證器比對 preset XML 的 small／big 明確值與實際 OSP、輸入／輸出 hash 與 `NiSkinPartition` block hash，但不是直接解析頂點的 A／B 哨兵；同輪 23 個 OBody NPC 排除也不能搬到新任務。場次檔可到期，不作本工作流的必要依賴。

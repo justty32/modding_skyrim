@@ -20,10 +20,10 @@
 
 兩套各輸出且僅輸出 `meshes/clothes/farmclothes04/robef_0.nif`、`robef_1.nif`、`robef.tri`，B repeat 三檔相對路徑與 SHA-256 全同。A／B 的 TRI hash 相同且含非零 Breasts morph，與基底值改變但 morph 基底相同一致；不能把「TRI hash 不變」當成 preset 沒作用。
 
-驗證器沿 BSTriShape→BSDismemberSkinInstance→NiSkinPartition 解實際命名 shape 頂點；來源基礎為 `projects/model-converter/nif2gltf/nif_reader.py:_read_header` 與 `_blocks.py:_read_bstrishape`。position morph 索引界內且 scale 有限，尾端 UV section 未解碼。未驗材質、skin weights、物理／zap 視覺、OBody 策略或遊戲貼合；此非建議部署非零全域基底。
+驗證器沿 BSTriShape→BSDismemberSkinInstance→NiSkinPartition 解實際命名 shape 頂點；來源基礎為 `projects/model-converter/nif2gltf/nif_reader.py:_read_header` 與 `_blocks.py:_read_bstrishape`。position morph 索引界內且 scale 有限，尾端 UV section 當時未解碼（2026-11-21 起 `bodyslide_mesh_check.py` 已解）。未驗材質、skin weights、物理／zap 視覺、OBody 策略或遊戲貼合；此非建議部署非零全域基底。
 
 ## 重現與邊界
 
-CT77 原件 `/tmp/bs-ct77-clothes-gswzurjn/`、CBBE 原件 `/tmp/bs-clothes-kmu8b0hi/` 內 `REPORT.md`、`manifest.json`、`prepare.py`、`results.json`、`validation.json` 保存來源 hash、argv、輸出與解析結果。`python <該目錄>/prepare.py` 會新建唯一暫存目錄重建；`python <該目錄>/validate.py <該目錄>` 重驗既有產物。不要將既有 tmp 路徑當作永久依賴。
+11-18 兩套試刷的原件（`/tmp` 下的 probe 目錄與其 `prepare.py`／`validate.py`／`results.json`）**已刪，結論保留**；當時的 SE 3BBB Amazing ShapeData 是 3BA 能力試驗的依賴，不代表現役身體家族（現役是 CBBE 2.0.3，見 [部署](deploy.md#1-先查現役贏家)）。要重現就用 [工具鏈](tools.md)：`bodyslide_stage.py` 照 modlist 合併、planner 點名 ShapeData、`bodyslide_sandbox_run.py` 跑 A／B／B-repeat、`bodyslide_mesh_check.py compare --tri-check --expect-changed FC4` 驗衣服 shape；後者已解 TRI 的 UV 段。2026-11-21 以新解析器重讀 11-18 留存的 `robef_0.nif` 抽樣：`FC4` 2,627 頂點、4 個 partition、inline count 0，TRI 117 morph、尾端 0 bytes，與上表一致。
 
-來源 hash 重查無變、safe-fallback 空、live output／profile／DB 未改。失敗原型 `/tmp/bs-clothes-idp123f7` 曾遺漏 OSP root `version="1"`，無輸出且以自身精確 PID 停止；縮寫測試 fixture 也必須保存版本語義。CBBE 只作對照，沒有取代 CT77 現役來源，也未產生第一人稱模型；兩套都尚未部署／實機驗收。
+當時來源 hash 重查無變、safe-fallback 空、live output／profile／DB 未改。一個失敗原型曾遺漏 OSP root `version="1"`，無輸出且以自身精確 PID 停止；縮寫測試 fixture 也必須保存版本語義。CBBE 只作對照，沒有取代 CT77 現役來源，也未產生第一人稱模型；兩套都尚未部署／實機驗收。另有一份 11-18 的 CT77 output 暫存不在 bwrap 內建置、用大小寫敏感路徑取第一個啟用 mod 當來源，不能直接當部署來源；要用就以工具鏈重建。
