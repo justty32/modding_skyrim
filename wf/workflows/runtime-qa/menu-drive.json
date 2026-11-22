@@ -1,0 +1,151 @@
+{
+ "contract": "wf-table/1",
+ "source": "menu-drive.md",
+ "extracted": "2026-11-22",
+ "columns": [
+  "op",
+  "status",
+  "method",
+  "verify",
+  "success",
+  "latency",
+  "notes"
+ ],
+ "rows": [
+  {
+   "op": "開關主控台",
+   "status": "可行",
+   "method": "`key grave`（開、關同一鍵）",
+   "verify": "`wait-menu Console --open/--closed`",
+   "success": "主選單 6/6（3 開 3 關）",
+   "latency": "送鍵 0.36 s＋偵測 0.03 s",
+   "notes": "主控台指令本身改走 AgentBridge `/console`（有輸出回讀），不靠打字"
+  },
+  {
+   "op": "Esc 選單",
+   "status": "可行",
+   "method": "`key Escape`",
+   "verify": "`Journal Menu` 出現在 menus_open",
+   "success": "2/2（開、關）",
+   "latency": "≈0.4 s",
+   "notes": "本存檔 Esc 直接落在任務分頁；系統分頁預設選中「快速存檔」，**絕不在系統分頁按 Enter／E**"
+  },
+  {
+   "op": "任務日誌",
+   "status": "可行",
+   "method": "`key j`",
+   "verify": "`Journal Menu`",
+   "success": "4/4（2 開 2 關）",
+   "latency": "≈0.4 s",
+   "notes": "任務分頁 Enter＝切換追蹤任務，不按"
+  },
+  {
+   "op": "日誌分頁切換",
+   "status": "可行（滑鼠）",
+   "method": "`aim X Y --click` 點分頁標題",
+   "verify": "截圖",
+   "success": "方向鍵 0/2；滑鼠 1/1",
+   "latency": "≈2 s（含歸零）",
+   "notes": "Left／Right 不換分頁"
+  },
+  {
+   "op": "MCM 進入 mod 頁讀值",
+   "status": "可行",
+   "method": "系統分頁 → `aim` 點 MOD CONFIGURATION → `aim` 點 mod 名",
+   "verify": "截圖人／agent 讀值（tesseract 只有 afr＋osd，不 OCR）",
+   "success": "1/1（Crafting XP 9 個值讀到）",
+   "latency": "≈10 s",
+   "notes": "MCM 不在 menus_open 另列（屬 Journal Menu）；離開：Tab 退一層、Esc 關日誌"
+  },
+  {
+   "op": "RaceMenu 開啟",
+   "status": "可行",
+   "method": "AgentBridge `/console showracemenu`",
+   "verify": "`RaceSex Menu`",
+   "success": "4/4",
+   "latency": "<0.1 s 偵測；畫面約 2 s 穩定",
+   "notes": ""
+  },
+  {
+   "op": "RaceMenu 切分頁／類別",
+   "status": "可行",
+   "method": "`aim` 點上方 Sliders／Presets／Camera／Sculpt，或左欄類別標題",
+   "verify": "截圖",
+   "success": "全部成功（約 12 次）",
+   "latency": "≈2 s",
+   "notes": "1920×1080：Sliders (1362,28)、Presets (1514,28)、Sculpt (1820,28)、類別 ALL (268,90)、種族 (418,90)"
+  },
+  {
+   "op": "RaceMenu 滑桿",
+   "status": "可行",
+   "method": "`aim` 點該列標籤選中 → `key Right/Left`",
+   "verify": "截圖讀數值",
+   "success": "2/2",
+   "latency": "每格 ≈0.4 s",
+   "notes": "每格 0.1；非格點原值（-0.39）來回後變 -0.4，不保證可逆"
+  },
+  {
+   "op": "RaceMenu 載入 preset",
+   "status": "可行",
+   "method": "Presets 分頁 → `key F9 --require-menu \"RaceSex Menu\"` → `aim` 點檔名（單擊即載入）",
+   "verify": "右下通知「Loaded preset from X.jslot」＋左欄 Head Parts 清單",
+   "success": "4/4",
+   "latency": "≈5 s",
+   "notes": "清單讀 VFS 的 `SKSE/Plugins/CharGen/Presets/`；第 4 列（Hatak）在 (722,394)"
+  },
+  {
+   "op": "RaceMenu 匯出頭",
+   "status": "可行",
+   "method": "Sculpt 分頁 → `key F5 --require-menu \"RaceSex Menu\"` → 對話框 `key Return`",
+   "verify": "overwrite 出現 `SKSE/Plugins/CharGen/Head_<日期>.nif|.dds`",
+   "success": "2/2",
+   "latency": "≈4 s",
+   "notes": "F5／F9 在遊戲中是快存／快讀，工具強制 --require-menu"
+  },
+  {
+   "op": "RaceMenu 關閉",
+   "status": "可行",
+   "method": "`key r` → AgentBridge `select_message_box(index=0)`（完成）→ 命名框 `key Return`",
+   "verify": "`RaceSex Menu` 消失",
+   "success": "4/4",
+   "latency": "≈4 s",
+   "notes": "命名框預填原名，Enter 不改名"
+  },
+  {
+   "op": "選單內滑鼠（絕對座標）",
+   "status": "不可行",
+   "method": "`xdotool mousemove X Y`",
+   "verify": "截圖游標不動",
+   "success": "0/1",
+   "latency": "",
+   "notes": "Skyrim 選單游標吃 raw 相對位移；絕對 warp 不產生位移"
+  },
+  {
+   "op": "選單內滑鼠（相對位移）",
+   "status": "可行",
+   "method": "`aim`：X 指標置中→相對位移歸零到左上→相對走到目標（增益≈1.52）",
+   "verify": "截圖游標位置",
+   "success": "S1–S3 約 20 次點擊全部命中（截圖逐次確認）",
+   "latency": "≈1.5–2 s／次",
+   "notes": "增益依遊戲滑鼠靈敏度；換機要重校"
+  },
+  {
+   "op": "AgentBridge input_tap",
+   "status": "不可行（選單內）",
+   "method": "`/input`",
+   "verify": "",
+   "success": "",
+   "latency": "",
+   "notes": "只在無選單、未暫停時派送（src/Input.cpp:32-42）"
+  },
+  {
+   "op": "暫停自動存檔",
+   "status": "部分",
+   "method": "`setini \"fAutosaveEveryXMins:SaveGame\" 99999`",
+   "verify": "`getini` 回讀 99999",
+   "success": "3/3",
+   "latency": "",
+   "notes": "`bSaveOnTravel／Wait／Rest／Pause` 在 `:SaveGame`、`:Main` 都 NOT FOUND（prefs 類設定 setini 碰不到）→ 靠不旅行／不等待／不休息＋場後存檔目錄雜湊比對"
+  }
+ ]
+}

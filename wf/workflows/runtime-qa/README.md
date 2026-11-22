@@ -63,13 +63,16 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
 ## AI 能對遊戲做什麼
 
 鍵盤 ✅（`xdotool --clearmodifiers` 對 XWayland，或 `sendkey.c` 在遊戲的 wineserver 內
-`SendInput`）、主控台與狀態查詢 ✅（AgentBridge）、截圖 ✅（`spectacle -b -n -f -o out.png`，
-**唯一可用的**）、load order 資料層 ✅（houseCARL）、**滑鼠 ✅ 有條件**。
+`SendInput`）、主控台與狀態查詢 ✅（AgentBridge）、截圖 ✅（AgentBridge `/screenshot` 只拍遊戲畫面，2026-11-22 實用；退路 `spectacle -b -n -f -o out.png`）、load order 資料層 ✅（houseCARL）、**滑鼠 ✅ 有條件**。
 
 **滑鼠**：`xdotool mousemove`／`click` 在**有 XWayland 視窗持有焦點**時
 可操作 MO2／Skyrim，需要滑鼠的驗收不必一律推給使用者；焦點落到原生 Wayland 視窗就失控，
 可用 `QT_QPA_PLATFORM=xcb konsole` 奪回。`ydotool` 不用：daemon 要寫 `/dev/uinput`，
 sudo／改 group／改 udev 都是紅線。
+
+**選單內操作**（Esc、日誌、MCM、RaceMenu 滑桿／preset／匯出頭）：2026-11-22 起用
+`agentctl/tools/menu_drive.py`，鍵盤走 `xdotool`、滑鼠走相對位移（遊戲游標不跟絕對座標）、開關選單以
+AgentBridge `menus_open` 驗；能力矩陣與做法見 [menu-drive](menu-drive.md)。AgentBridge `input_tap` 在選單內不派送。
 
 實測過的完整能力表與工具限制在
 [`agentctl/docs/resource-locks.md`](../../../agentctl/docs/resource-locks.md#這台機器的-hid-實況2026-08-27-重測取代-2026-08-23-版)；
