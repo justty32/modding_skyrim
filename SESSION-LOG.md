@@ -16,7 +16,6 @@
 - [aos] `tmp/aos-skyrim-agent/` 測試暫存夾 → 等使用者說要不要清
 - [bodyslide] 已部署且主體實機通過，剩選看 → [11-22 STATE](agentctl/handoffs/home-2026-11-22/STATE.md)
 - [racemenu] Muiri 臉層停用中；`face_loop` 校準與示範未完（要開遊戲）；R1、R2、R7 未做 → 同上
-- [profiles] 11-22 已本地 commit 未 push，等使用者一句話 → 同上
 
 子專案續行見 [agentctl SESSION](agentctl/SESSION-LOG.md)。
 
