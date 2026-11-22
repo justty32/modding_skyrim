@@ -2,6 +2,8 @@
 
 [wf/user](README.md)｜工作流 [racemenu／bake](../workflows/racemenu/bake.md)｜實機紀錄 `agentctl/handoffs/home-2026-11-22/runtime-3/`｜舊段落 [history](2026-11-22-npc-face-pilot/history.md)
 
+> **現況（2026-11-22 晚）**：使用者裁示「muiri那個就不管了，就這樣。」——Muiri 臉層維持已部署、已停用，不啟用、不刪；本頁以下內容保留作紀錄。
+
 ## 最新現況（runtime-3，2026-11-22 傍晚）
 
 **一句話**：做成了。Muiri 的新臉已裝好、實機看過沒問題，但**目前是停用的**（Muiri 還是 JH NPC Beauty 的臉）。請看下面的圖，喜歡就一行指令啟用。

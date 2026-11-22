@@ -157,12 +157,3 @@ agent 2026-11-22 已代驗第一點的前半：Save341（有 Estates 進度）�
 ## BodySlide 身體＋裝備曲線：剩選看項（2026-11-22）
 
 OBody 男女合一 Reset、主角 HIMBO 滑桿與裸身、路上男 NPC、一般女 NPC、原版甲／CC 衣、Aela、伊索爾達／簡拉薩穿甲貼合都已通過（使用者 2026-11-22：「全都OK」）。剩順路選看：VIGILANT／GLENMORIL 女裝貼身、小夜／瓦琳妮娅／Auri 穿甲、獸人男性與 Chadryn、UNSLAAD 披風、Ambriel 個別重置、女體滑桿；有問題才回報。清單見 [bodyslide-morph.md](feature-runtime/bodyslide-morph.md)。
-
-## 看 Muiri 新臉的圖，決定啟不啟用（2026-11-22）
-
-Hatak 的臉已做成 Muiri 的換臉層，agent 實機看過：無黑臉、部件與貼圖對、脖縫已修、體重維持原樣；**目前已部署但停用**，Muiri 還是 JH NPC Beauty 的臉。請看三方對照圖 `agentctl/handoffs/home-2026-11-22/runtime-3/shots/cmp-three-way.jpg`（左原 Muiri、中 Hatak 套在主角上、右新 Muiri），其他角度與已知缺陷（Hatak 妝很濃）見[試點頁](../wf/user/2026-11-22-npc-face-pilot.md)。MO2 與遊戲都關著時：
-
-- 喜歡就啟用：`python3 instance/tools/layer_apply.py agentctl/handoffs/home-2026-11-22/runtime-3/data/muiri-enable.layer-apply.json --apply --take-lock user-enable-muiri`（或在 MO2 勾選 `Muiri-Look-From-Hatak-Dev-2026-11-22` 與同名 esp）。
-- 不要：什麼都不用做（現在就是停用；MO2 已把停用 esp 從 plugin 清單拿掉）。要清資料夾就在 MO2 對該 mod 右鍵移除；不要用 r3 的 `--revert --force`（會整份蓋回三個設定檔）。
-
-回一句「啟用」或「移除」，agent 也可以代跑。
