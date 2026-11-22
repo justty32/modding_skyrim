@@ -55,29 +55,3 @@ agent 2026-11-22 已觀測：三塊指南牌的內容全是中文（唯一的英
 agent 2026-11-22 已觀測：第 1 步 log 已過（`WB_` store 錯 0，兩場新窗）；第 2 步 4 支都學得到、中文名正常，用 `player.cast` 對外景空地施放，烈焰冲击／霜冻球／启示录有明顯特效，**火山兩次都看不到效果**，傷害沒量到（靶沒被打中）。截圖 `agentctl/handoffs/home-2026-11-22/waituser-runtime/shots/S0-30…S0-33`、`S0-41`——請看一眼確認，並實戰放一次火山；第 3 步（技能選單）agent 開不了選單，仍要你看。
 
 依據與回退：`agentctl/handoffs/home-2026-11-22/apocalypse-swap/REPORT.md`。
-
-## VIGILANT 開場任務中文抽查（2026-11-22 立）
-
-`modpack-main` 已在 `VIGILANT - Delayed Start-57961-2.3` 上方加了繁中補完層，把被 Delayed Start 蓋回英文的開場任務名與 5 條目標換回中文；靜態驗證全綠，剩人眼。等級到門檻（Delayed Start 設定 25 級）、VIGILANT 開場任務啟動後，打開任務日誌：
-
-1. 任務名要是「斯丹達爾的警戒者」，不是 "Vigilant of Stendarr"。
-2. 目標依進度依序是「加入斯丹達爾的警戒者」「跟隨阿爾塔諾或在斯丹達爾神殿與他會合」「與阿爾塔諾交談」「與索隆迪爾交談」；看有沒有方框字或截斷。
-3. 任務照常會在 25 級觸發（本層沒動觸發條件，觸發不了就回報，那是別的問題）。
-
-agent 2026-11-22 已觀測：讀 Save342（37 級）時開場任務 `zzzAoMMq00` 已在跑但停在 stage 0，任務日誌裡還看不到它，所以中文字串沒法在遊戲裡看；離線讀到的任務名是「斯丹達爾的警戒者」。37 級還停在 stage 0 是否正常（Delayed Start 可能還有其他條件）未查——你遇到它跳出來時再看日誌。
-
-agent 2026-11-22 下午（runtime-3）用真按鍵打開任務日誌、捲完整個進行中清單：沒有這個任務（同上，還沒觸發），仍無法判定。
-
-依據與回退見[施工報告](../agentctl/handoffs/home-2026-11-22/small-fixes/REPORT.md)。
-
-## Headhunter 的 Missives 討伐告示能推進（2026-11-22 立）
-
-`modpack-main` 已在 `Headhunter - Bounties Redone 1.61-ZH-2026-09-11` 上方補了 `Headhunter - Missives Extension Scripts 1.61`：當初裝 Missives 補丁選項時只裝了 esp、漏了同包的 6 支腳本，所以 Headhunter 加進 Missives 告示板的討伐任務殺了目標也不會推進。靜態驗證全綠，剩實機；舊存檔不用清。
-
-agent 2026-11-22 已代驗通過原本的第 1、2 步（log 的 `_CTB_` store 錯 0；冬堡「殺死強盜」告示任務殺掉目標後 10 秒內推進到「割下強盜首級」），見[代驗報告](../agentctl/handoffs/home-2026-11-22/waituser-runtime/REPORT.md)。只剩：
-
-1. 順路：Headhunter 的逃犯／竊賊對話選項（說服、威嚇、跟我走、開打）選了要有效果。
-
-   agent 2026-11-22 下午（runtime-3）試過：主控台起「追蹤逃犯」任務起不來（別名填不上）；「追蹤竊賊」起得來、設到 stage 20，但沒有任務目標可傳送過去，找不到竊賊本人，無法判定。
-
-依據與回退見[施工報告](../agentctl/handoffs/home-2026-11-22/headhunter-fix/REPORT.md)。

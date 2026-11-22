@@ -154,22 +154,9 @@ agent 2026-11-22 已代驗第一點的前半：Save341（有 Estates 進度）�
 
 選了戰灰卻看不到剛學的戰技，就回報一聲，再開調查線查卷軸效果有沒有生效。見[調查報告](../agentctl/handoffs/home-2026-11-21/eldenrim-arts/REPORT.md)。
 
-## CRS 補裝前置 Andrealphus Papyrus Functions 1.9.0 後實機確認（2026-11-22）
+## BodySlide 身體＋裝備曲線：剩選看項（2026-11-22）
 
-你選了「補裝」。`modpack-main` 已在 Conversations Raise Speechcraft 下方加了 `Andrealphus Papyrus Functions-85252-1.9.0` 層（只有 DLL＋腳本，沒有 plugin）；靜態驗證全綠，剩實機。可以和上面 Apocalypse 那項同一場一起做：
-
-1. 開一場、讀檔，到城鎮找 NPC 問幾個沒問過的話題：右上角要跳「口才提升」之類的提示。
-2. 關遊戲後告訴 agent 一聲；agent 會查 SKSE log 有沒有 `ANDR_PapyrusFunctions` 載入成功，以及 `Papyrus.0.log` 裡 `GetCurrentTopicInfo not found` 是不是 0 筆（原本每場約 240 筆）。
-
-沒有提示或 log 還有錯，就回報一聲。依據與回退見[施工報告](../agentctl/handoffs/home-2026-11-22/crs-prereq/REPORT.md)。
-
-agent 2026-11-22 已代驗第 2 步：兩場新窗 SKSE log 都有 `ANDR_PapyrusFunctions` 載入成功、`GetCurrentTopicInfo not found` 0 筆。第 1 步 agent 做不到：CRS 只在你**按 E 或滑鼠左鍵**選對話時才觸發，agent 用工具選對話不經按鍵，所以這步仍要你玩的時候看一眼右上提示。
-
-agent 2026-11-22 下午（runtime-3）改用真按鍵（E）跟哈蘭對話、選了 3 個沒問過的話題：CRS 的按鍵處理有跑（它的忙碌旗標 `CRS_GLOB_IsBusy` 在按下後 0→1→0），新 log 窗 `GetCurrentTopicInfo` 錯誤 0。**但你的 CRS 設定 `CRS_GLOB_ShowMessage`＝0（不顯示訊息）**，所以本來就不會跳提示；每題加的口才經驗（`EXPGain`＝50）太小，看不出升級。你要確認的話：MCM 裡把 CRS 的「顯示訊息」打開，再問一個新話題看提示；或維持關閉、不用管。
-
-## BodySlide 身體＋裝備曲線第一梯次：先 Reset OBody 再看外觀（2026-11-22）
-
-全域身體、原版／DLC／CT77、CC、UNSLAAD 衣甲都換成帶 `.tri` 的 `CBBE Vanilla` 版，OBody 改成不隨機、Aela 指定身形。**進遊戲第一件事**：在空室內開 MCM `OBody NG`，先關 `Enable ORefit` 與兩個 randomization，再點 `Reset all distributed presets`，另存新檔、退出重開再讀。然後看一般女 NPC 外觀不變、原版甲／CC 衣服沒穿模、Aela 甲貼身。主角是男性，女體滑桿要用女 NPC 或新女角測。步驟、要看的清單與個別重置名單見 [bodyslide-morph.md](feature-runtime/bodyslide-morph.md)。第二梯次（VIGILANT 378 件、GLENMORIL 20 件女裝）同日也已上線，同一場一起看：找女 NPC 穿幾件，看貼身、沒隱形、名稱中文（該頁第 4b 節）。同日男體也上線（全域男性換 HIMBO 裸體版＋TNG、男裝跟身形、主角可在 RaceMenu 捏身形），**Reset 男女同一次做完**；之後打開 OBody 的 Respectful morph application、對主角 Reset 一次再去 RaceMenu 捏，看裸身與原版甲一起變、路上男 NPC 是零形（該頁第 1 步第 7–8 點與第 4c 節）。
+OBody 男女合一 Reset、主角 HIMBO 滑桿與裸身、路上男 NPC、一般女 NPC、原版甲／CC 衣、Aela、伊索爾達／簡拉薩穿甲貼合都已通過（使用者 2026-11-22：「全都OK」）。剩順路選看：VIGILANT／GLENMORIL 女裝貼身、小夜／瓦琳妮娅／Auri 穿甲、獸人男性與 Chadryn、UNSLAAD 披風、Ambriel 個別重置、女體滑桿；有問題才回報。清單見 [bodyslide-morph.md](feature-runtime/bodyslide-morph.md)。
 
 ## 看 Muiri 新臉的圖，決定啟不啟用（2026-11-22）
 
