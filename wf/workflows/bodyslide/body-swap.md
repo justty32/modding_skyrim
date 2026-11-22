@@ -1,6 +1,6 @@
 # 換身體、自己捏身形、逐 NPC 指定身形
 
-[入口](README.md)｜[工具鏈](tools.md)｜[部署](deploy.md)
+[入口](README.md)｜[工具鏈](tools.md)｜[部署](deploy.md)｜[自己捏身形](body-swap-self.md)｜[逐 NPC 指定](body-swap-npc.md)
 
 裝備跟著身形變，靠三件事：裝備帶 `.tri`（Build Morphs）、角色身上有 morph 值、morph 值是「相對於烤入基準的差量」。本頁把三件事收進一份設定檔，換基準、加裝備、改某個 NPC 都是「改設定 → 重跑一行」。
 
@@ -54,53 +54,11 @@ OBody 分男女：preset 的 `set` 含 himbo／talos／sam／sos／savren 就算
 
 ## 使用者自己捏身形
 
-**遊戲內（RaceMenu）**：適合「我的角色」。部署帶 `.tri` 的身體與裝備層後，RaceMenu 身體滑桿的改動會同時套到裸身與裝備。需要三樣東西：
-
-- 滑桿定義 `RaceMenuMorphsCBBE.esp`：現役沒有裝，3BA 包 `CBBE 3BA (3BBB)-30174` 的 `15 RaceMenuMorphs/00 RaceMenuMorphs - CBBE` 有附，不必另外下載。
-- 身體 `.tri`：由 `BSO-Body-*` 層提供。
-- EngineFixes 記憶體設定：現役 `bOverrideMemoryManager`／`bOverrideScaleformAllocator` 皆為 `true`。這會讓 RaceMenu 的 CBBE morph 調一兩次後就失效（Nexus 109080 的說明），要改設定或裝 109080。
-- 隨從／NPC：RaceMenu 不能直接捏 NPC，改用下文「逐 NPC 指定」。
-- 臉不歸這裡：RaceMenu 的臉部滑桿、preset（`.jslot`）與固化成 NPC patch 層走 [racemenu](../racemenu/README.md)。
-
-**BodySlide 視窗**：適合全域基準或某個 NPC 的固定樣子。在 MO2 的 Executables 新增 `Data/CalienteTools/BodySlide/BodySlide.exe`（實體在 `BodySlide and Outfit Studio 5.8.2` mod；改 `ModOrganizer.ini` 屬 `instance/`，由使用者或部署線做）。舊版 wine 下 preset 下拉曾空白（[lesson](../../lessons/faces-troubleshooting.md#bodyslide-wine-preset-empty-nam7-weight)），待實機。視窗裡**只存 preset、不按 Build**：Build 會落到 `overwrite/`，蓋過所有 `BSO-*` 層。preset 經 MO2 存進 `overwrite/CalienteTools/BodySlide/SliderPresets/<檔名>.xml`；告訴 agent 檔名與 preset 名，當基準就改 `base_preset`，給 NPC 用就加進 `obody.npc_presets`（新 `run` 的 stage 會收進 overwrite，或用 `preset_files` 點名）。
-
-headless 建置跑在 staging 的私有 prefix 與 bwrap 唯讀沙箱，讀 staging 當下的複本，不會和 GUI 改到同一個檔；只會搶 CPU，而 GUI 之後才存的 preset 要重 stage 或列進 `preset_files`。
-
-**怎麼選**：自己的角色在遊戲內捏，所見即所得。全域基準與 NPC 固定形在 BodySlide 存 preset，交給設定檔重建。
+遊戲內 RaceMenu 與 BodySlide 視窗兩條路、怎麼選，已移到 [使用者自己捏身形](body-swap-self.md)。
 
 ## 逐 NPC 指定身形
 
-機制選 OBody NG 的 JSON（`npcFormID`），不另做 esp。選它的理由：
-
-- 只要一個資產層，不改 plugin，換人只要改表。
-- OBody 依 FormID 指定 preset，優先於 faction／plugin／race 與隨機（Aietos/OBody-NG `e33bbc1` 的 `Body.cpp` `GenerateActorBody`）。
-- morph 透過 RaceMenu 同時套到裸身與帶 `.tri` 的裝備。
-
-改用專屬身體 mesh／skin patch esp 只改得到裸身，裝備仍是共用的基準形，正好是這次要解決的問題。
-
-設定檔 `obody` 段的 `npc_presets` 表：
-
-```json
-"npc_presets": [{"plugin": "Skyrim.esm", "formid": "01A696", "preset": "Kurone Big Change Body", "note": "Aela"}]
-```
-
-`bodyslide_rebuild.py obody` 依表產出獨立層 `<obody.layer>-<obody.revision>`，內容：
-
-- 每個 preset 對應一個差量 preset `BSO <preset> (morph)`，值為 preset 減 `base_preset`，可為負值。OBody 與 skee 都不夾值（同 commit 的 `PresetManager.cpp` `SliderSetFromNode`；SKSE64Plugins `479ecab` 的 `BodyMorphInterface.cpp`）。
-- 把該 NPC 寫進 `npcFormID`，並自動移出 `blacklistedNpcsFormID`（黑名單比指派先判斷）。
-- 隨機池只留 `BSO Neutral`（零形），其餘 preset 全部列入 `blacklistedPresetsFromRandomDistribution`。隨機池不可以是空的：OBody 4.4.3 在隨機池為空時，連指定的 NPC 都不處理。
-- `neutralize_tri` 會給「裸身已經烤成目標形」的私有身體放一個空 `.tri`，免得差量又推一次裸身。
-
-要改某個 NPC：改表、`obody.revision` 換新值、只跑 `obody` 一步，裝備層不用重刷。
-
-**流程**：使用者捏好並存成 preset → 告訴 agent「某 NPC 用某 preset」→ agent 改表重產 → 部署線換層 → 使用者進遊戲用 OBody MCM 的 reset actor（或 Reset Distribution）讓她重新套用。
-
-**人工判斷點**：
-
-- NPC 的身體家族：CBBE／3BA 才做得到，UNP 系與原版系拓樸不同，要先換身體。
-- 私有身體有沒有 `.tri`，以及它是否已等於目標 preset。用頂點比對當證據，不相等時用 [擬合](fit.md) 反推 preset。
-- preset 名與檔名不能含 OBody 會跳過的字（cloth、outfit、nevernude、bikini、feet、hands、push、cleavage、armor），工具會擋。
-- 存檔裡已經記住的舊隨機 morph 不會自己消失，要在遊戲內 reset，並由使用者看結果。
+以 OBody NG JSON 指定 NPC 身形（`obody.npc_presets`）、流程與人工判斷點，已移到 [逐 NPC 指定身形](body-swap-npc.md)。
 
 ## 換身體時的人工判斷點
 

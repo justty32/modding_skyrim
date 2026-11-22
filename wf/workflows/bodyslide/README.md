@@ -17,6 +17,7 @@
 | [headless.md](headless.md) | 版本證據、原生 preset、Config、BuildSelection／zap、OSP fallback |
 | [outfits.md](outfits.md) | 指定服裝的增量刷新 |
 | [body-swap.md](body-swap.md) | 設定檔一行重建全範圍、換身體、使用者自己捏身形、逐 NPC 指定身形（OBody） |
+| [body-swap-self.md](body-swap-self.md)、[body-swap-npc.md](body-swap-npc.md) | 自 body-swap 拆出：使用者自己捏身形（RaceMenu／BodySlide 視窗）、逐 NPC 指定身形（OBody） |
 | [fit.md](fit.md) | 自帶專屬身體的 NPC：把私有身體擬合成 preset，讓裝備跟上她的身形 |
 | [deploy.md](deploy.md) | 現役贏家查核、最小 manifest、部署後驗證與回退 |
 | [evidence.md](evidence.md)、[outfit-evidence.md](outfit-evidence.md) | 2026-11-18 隔離試驗的結論（原件已刪） |

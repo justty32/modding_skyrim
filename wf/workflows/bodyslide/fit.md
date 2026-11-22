@@ -2,7 +2,7 @@
 
 [入口](README.md)｜[換身體](body-swap.md)｜[部署](deploy.md)
 
-自帶專屬身體的 NPC，裸身是作者烤好的私有 mesh，共用裝備卻是基準形（`CBBE Vanilla`）。本頁把私有身體反推成「基準身體＋滑桿值」的 preset，再走 [逐 NPC 指定身形](body-swap.md#逐-npc-指定身形)，讓裝備跟上她的身形。
+自帶專屬身體的 NPC，裸身是作者烤好的私有 mesh，共用裝備卻是基準形（`CBBE Vanilla`）。本頁把私有身體反推成「基準身體＋滑桿值」的 preset，再走 [逐 NPC 指定身形](body-swap-npc.md)，讓裝備跟上她的身形。
 
 **何時用**：新裝了自帶身體的隨從或換身體 mod、盤點發現某些 NPC 穿甲不合身。
 **何時不用**：NPC 用全域身體（直接改 `npc_presets`）；UNP 系、原版系或拓樸不同的身體（要先換身體）。
