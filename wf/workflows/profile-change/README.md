@@ -51,7 +51,7 @@ main → feat/* → release/* → main
 | 6 | `record` → `start release/<版本>` → `promote` | `profile_workflow.py` |
 | 7 | 反序放鎖，收工對帳（鎖、dirty／unpushed） | `envsnap.sh` |
 
-`layer_apply.py --apply` 本身就做完：確認遊戲與 MO2 沒在跑 → 確認持有 `game.lock` → 三檔必須是 CRLF
+`layer_apply.py --apply` 本身就做完：確認遊戲與 MO2 沒在跑 → 確認持有 `game.lock` → manifest 會改到的檔必須是 CRLF（沒碰的檔不檢查、原位元組保留，例如遊戲寫回的 LF plugins.txt；真要改這種純 LF 檔，manifest 加 `"accept_lf": ["plugins.txt"]`，以 LF 寫回、混合行尾仍拒絕）
 → 備份三檔與受影響的 mod 目錄 → 套用（保留 CRLF）→ 套用前後各跑一次 `check_masters`，出現新的缺 master
 就自動還原 → 輸出 diff → 寫 `revert.json`（`--revert-out` 另存到交接書 `data/`）。
 
