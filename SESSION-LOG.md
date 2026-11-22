@@ -15,8 +15,8 @@
 - [aos] 舊記憶夾收尾 3 件（補約 3 條 lessons、MEMORY.md 改指回、刪原檔另問）→ 第 5 期
 - [aos] `tmp/aos-skyrim-agent/` 測試暫存夾 → 等使用者說要不要清
 - [bodyslide] 女體、男體 HIMBO（裸體＋TNG）、OBody n5 擬合身形 11-22 皆已部署，男女同一場實機驗收在 WAIT_USER → [11-22 STATE](agentctl/handoffs/home-2026-11-22/STATE.md)
-- [racemenu] NPC 臉試點卡點已解、Muiri 臉層建好，`runtime-3` 部署看臉中；R1、R2、R7 未做 → [racemenu-face](wf/workflows/plans/racemenu-face/README.md)
-- [profiles] 11-22 改動待最終 checkpoint → 同上
+- [racemenu] Muiri 臉層端到端做成（已部署、已停用，啟不啟用等使用者）；`face-loop` 做捏臉閉環中；R1、R2、R7 未做 → [racemenu-face](wf/workflows/plans/racemenu-face/README.md)
+- [profiles] 11-22 狀態已本地 commit（feat 分支、未 push），push／pin／晉升等使用者一句話 → 同上
 
 子專案續行見 [agentctl SESSION](agentctl/SESSION-LOG.md)。
 
