@@ -10,9 +10,11 @@ Done when: 下列每項都寫明做什麼、相依、要使用者授權的事、
 - `agentctl/tools/jslot/` 離線讀、驗、改、比工具。
 - 滑桿語意資料檔。
 
-以下各項都**未動工**。依據：調查 REPORT `agentctl/handoffs/home-2026-11-22/racemenu-survey/REPORT.md` §6d–6e。
+依據：調查 REPORT `agentctl/handoffs/home-2026-11-22/racemenu-survey/REPORT.md` §6d–6e。
 
-建議順序：R1→R2（離線看得到形狀）；R3＋R4 同一次開機做；R5 等 `npc-face-patch` 報告。R6、R7 可隨時插入。
+**進度（2026-11-22，`npc-face-tools` 線）**：R5 正向、R4 的觸發元件、R6 的驗證邏輯已做（離線，有測試），工具在 `agentctl/tools/npc_face/`；R1、R2、R3、R7 未動工。各項狀態寫在該節第一行。
+
+建議順序：R1→R2（離線看得到形狀）；R3＋R4 同一次開機做（試點授權頁 [npc-face-pilot](../../../user/2026-11-22-npc-face-pilot.md)）。R6 的 jslot 編輯開放、R7 可隨時插入。
 
 ## R1 FRTRI003 解析器＋把 NAM9 套到頂點
 
@@ -34,6 +36,8 @@ Done when: 下列每項都寫明做什麼、相依、要使用者授權的事、
 
 ## R3 遊戲內套 preset＋AgentBridge 截圖閉環（段 4）
 
+**狀態**：未動工。`cgf` 主控台路線找不到提供者（`npc-face-patch` REPORT §2），套 preset 改用 R4 的觸發 ESP。
+
 - **做什麼**：包裝 `qa_runner`。包含這些步驟：
   - 暫存 jslot 的放進與收回。
   - 用 `/console` 呼叫 `CharGen.LoadPreset`；`cgf` 不認時改用 ConsoleUtilSSE NG。
@@ -50,6 +54,8 @@ Done when: 下列每項都寫明做什麼、相依、要使用者授權的事、
 
 ## R4 匯出頭部試驗
 
+**狀態**：觸發元件已建置（`agentctl/tools/npc_face/trigger/`：小 ESP＋Papyrus，`player.addspell` 觸發），runtime 步驟寫成草案，**未實機**；等試點授權。
+
 - **做什麼**：在 R3 那次開機時呼叫 `CharGen.ExportHead("p1test")`，確認會不會產出 NIF 和 tint、檔案落在哪裡、shape 名長什麼樣子。
 - **相依**：R3（同一次開機）；`skee64.ini` `bEnableHeadExport=1`（已開）。
 - **授權**：同 R3。另外要授權在 `overwrite/` 產生匯出物、事後收回。
@@ -58,6 +64,8 @@ Done when: 下列每項都寫明做什麼、相依、要使用者授權的事、
 
 ## R5 jslot→NPC patch 層轉換（段 6）
 
+**狀態**：正向已做——`jslot2npc.py`（record）、`facegen_install.py`（上架，未以真實匯出檔驗證）、`build_layer.py`（一條指令；試點 Hatak→Muiri 停在缺匯出頭檔）。反向 NPC→jslot **未做**。工具改用 esplib 讀贏家＋自帶寫入器，不經 houseCARL `set_field`。
+
 - **做什麼**：產生換臉層，寫入 NAM9、NAMA、PNAM、FTST、TintLayers＋QNAM、NAM7、HCLF（找現成的 CLFM 或新建一筆）；加上上架工具，把 ExportHead 的 NIF 處理成 `facegeom/<plugin>/<id>.nif`（改 shape 名、改 slot、複製 tint、檢查和 PNAM 一致）。也要做反向的 NPC→jslot，給段 1 用「NPC 現有的臉」當基底。
 - **相依**：`npc-face-patch` 報告定案的途徑；R4 的結果；houseCARL `set_field`／`nif_set`／`place_asset`；`look_transplant` 的 gate。
 - **授權**：部署要走 profile-change 授權。
@@ -65,6 +73,8 @@ Done when: 下列每項都寫明做什麼、相依、要使用者授權的事、
 - **驗收**：層的 ESP 通過 `check_masters`；facegen 的 shape 名和 PNAM 一致；和 `transplant.py --verify` 同等的檢查綠燈；實機不是灰臉。
 
 ## R6 headParts 離線驗證
+
+**狀態**：驗證邏輯（性別旗標、valid races FLST、是否在現役載入序）已在 `npc_face/records.py`＋`jslot2npc.py`；jslot 工具的 `headpart` 修改**仍未開放**（待把同一套檢查接進 `jslot/edit.py`）。
 
 - **做什麼**：用 esplib 解析 `formIdentifier` 指到的 HDPT，檢查類型、性別、種族清單是否合法；通過的話，jslot 工具再開放 `headpart` 修改（換髮型、瞳色、眉型）。
 - **相依**：esplib、`whichmod`。

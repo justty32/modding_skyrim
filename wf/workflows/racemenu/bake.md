@@ -2,62 +2,77 @@
 
 [racemenu](README.md)｜[WORKFLOWS](../../WORKFLOWS.md)
 
-段 6–7。**目標定位：臉的最終產物是 NPC patch 層**——ESP 裡的 NPC_ 臉部欄位，加上 `facegeom/<plugin>/<id>.nif` 和 `facetint/<plugin>/<id>.dds`。這樣臉不依賴存檔，換存檔、換 profile 都還在。
+段 6–7。**臉的最終產物是 NPC patch 層**：ESP 裡的 NPC_ 臉部欄位，加上 `facegeom/<plugin>/<id>.nif` 和 `facetint/<plugin>/<id>.dds`。這樣臉不依賴存檔，換存檔、換 profile 都還在。
 
-**本段全部未實作。「preset→NPC patch」的途徑待 `npc-face-patch` 報告定案**（報告路徑：`agentctl/handoffs/home-2026-11-22/npc-face-patch/REPORT.md`，報告出來後把結論吸收進本檔）。下面只記已知的對應關係和硬規則，供那條線與下一階段施工參考。
+途徑已定案（`npc-face-patch` 報告 §4）：**主路線 A**＝主角在遊戲裡套 preset → skee 匯出頭 NIF＋tint → 離線上架；**備援 D1**＝Creation Kit Ctrl+F4。PROTEUS 只當遊戲內試戴，不產 patch。
 
 ## 6. 固化
 
 **主角**：選定的 jslot 收進一個 preset 層（例如 `RaceMenu Character Assets (private)` 那種層），檔放在 `SKSE/Plugins/CharGen/Presets/`，走 profile-change。
 
-**NPC**（依據：調查 REPORT §6a）：
+**NPC**：一條指令，工具在 `agentctl/tools/npc_face/`（[tool-index](../../../agentctl/docs/tool-index.md)「NPC 臉 patch」列）：
 
-| jslot | NPC_ |
-|---|---|
-| `morphs.default.morphs` | NAM9 |
-| `morphs.default.presets` | NAMA |
-| `headParts` | PNAM |
-| `actor.headTexture` | FTST |
-| `actor.hairColor` | HCLF→CLFM |
-| `tintInfo` | TintLayers＋QNAM |
-| `actor.weight` | NAM7 |
+```text
+python3 agentctl/tools/npc_face/build_layer.py --jslot <preset>.jslot --npc <XXXXXX:定義plugin> \
+    --staging ~/skyrim_mods/_staging-<日期>-npc-face [--head-nif X.nif --head-dds X.dds]
+```
 
-- sculpt、custom morph、overlay 在 record 裡**沒有欄位**，只能烤進頭 NIF。
-- 頭 NIF 的來源現在全斷：
-  - 本機沒有 CK。
-  - RaceMenu `ExportHead` 未驗證。
-  - 沒有自製的烘頭工具。
-- 候選途徑：
-  - (a) 遊戲內 `ExportHead`，再用上架工具處理 NIF。
-  - (b) PROTEUS 的 Copy Appearance 加 ExportHead。
-  - (c) CK。
-  
-  由 `npc-face-patch` 定案。
+| 步 | 工具 | 狀態 |
+|---|---|---|
+| 6a jslot→NPC_ 欄位 | `jslot2npc.py`：forward 現役贏家 record，只換 PNAM、HCLF、NAM7、FTST、QNAM、NAM9、NAMA、Tint Layers；ESL；MAST＝贏家的 MAST＋贏家 | **可用**（合成載入序測試＋試點 Hatak→Muiri 實產） |
+| 6b 匯出頭 | 觸發 ESP＋Papyrus（`npc_face/trigger/`）：`player.addspell` → 套 preset → `ExportHead`／`SaveExternalCharacter` | **已建置、未實機**；要授權（試點頁） |
+| 6c 上架 | `facegen_install.py`：改名搬檔、slot 6 指向新 tint、shape gate（重用 look_transplant `shape_gate`）、DDS 格式、貼圖 VFS 解析 | **可用，但未以真實 RaceMenu 匯出檔驗證**（本機無樣本；以合成 NIF＋原版 Lydia 測） |
+| 6d 組層 | `build_layer.py`：層目錄＋`.npc-face.json` manifest＋`layer_apply` manifest | **可用**；缺匯出頭時停在 exit 3，只出 record patch＋待補清單，`layer_apply` manifest 標 DRAFT |
+
+jslot 對 NPC_ 的換算（實證者附依據，見 `jslot2npc.py` 檔頭）：
+
+| jslot | NPC_ | 備註 |
+|---|---|---|
+| `headParts[].formIdentifier` | PNAM | `type` 欄**不是** HDPT 類型，不拿來驗 |
+| `actor.hairColor`＝(R<<16)\|(G<<8)\|B | HCLF | 先找同色現成 CLFM，找不到在 patch 內新建 |
+| `actor.weight` | NAM7 | `--keep-weight` 保留原值 |
+| `actor.headTexture` | FTST | |
+| `tintInfo[].texture` | TINI | 用貼圖路徑對 RACE tint 清單；jslot 的 `index` 不是 TINI |
+| `tintInfo[].color` | TINC＋TINV | 最高位元組當不透明度（推論） |
+| 膚色 tint RGB/255 | QNAM | |
+| `morphs.default.morphs`／`presets` | NAM9／NAMA | |
+
+- sculpt、custom morph、overlay 在 record 裡**沒有欄位**，只能靠匯出頭 NIF 帶過去；工具會出警告。
+- 會報錯停手：jslot lint error、NPC 用 template traits、headpart 的性別旗標或 valid races 不含目標、tint 不在目標種族該性別清單、headpart 來自不在現役載入序或不在 master 集合的 plugin（`--allow-extra-masters` 才加 master）。
+- **只有 record、沒有 FaceGen 的層不准部署**：舊 FaceGen 仍是贏家而 PNAM 已換，會素頭或錯臉。
 
 硬規則（工作區踩過的，見 `wf/lessons/faces-facegen-consistency.md`、`faces-troubleshooting.md`）：
 
-- facegen NIF 的 shape 名要和 HDPT EDID 一字不差。
-- 部件數量要和 PNAM 對得上。
+- facegen NIF 的 shape 名要和 HDPT EDID 一字不差；部件集合＝PNAM＋ExtraParts＋未被取代的種族預設件。
+- FaceGen 資料夾用**定義** plugin（`Skyrim.esm`），不是 patch esp。
 - 自訂種族不讀預烤 facegen。
-- 層名用 ASCII。
-- 不改來源 mod。
+- 層名用 ASCII；不改來源 mod。
 
-Done when（將來）：
+### 禁區
 
-- 層的 ESP 通過 `instance/tools/check_masters.py`，`present=no` 為 0。
-- facegen 的 shape 名和 PNAM 一致。
-- 和 `look_transplant/transplant.py --verify` 同等的檢查綠燈。
+- **PROTEUS 的「清除 NPC 編輯」與 Debug 第 5 項禁用**：它呼叫 `CharGen.DeleteFaceGenData`，會刪磁碟上的 `FaceGeom／FaceTint` 檔；MO2 下可能刪到已裝 mod（JH NPC Beauty、換臉層）的實體檔（`npc-face-patch` REPORT §1.2）。
+- 不借 PROTEUS 程式碼（授權未查證）；觸發元件只用 skee 公開的 Papyrus API。
+- 匯出那場**不存檔**：主角會被暫時改成目標的種族與性別。
+
+### 備援 D1：Creation Kit
+
+CK **已裝**（Steam app 1946180，獨立資料夾，`SLocalMasterPath=Data\` 只有 `Scripts.zip`）。Proton 下 Ctrl+F4 能否出 FaceGen、能否看到 MO2 的 mod plugin **未驗證**。路線 A 的匯出沒有產物、或產物結構不像 FaceGen 時，先申請「打通 CK」小專題；`jslot2npc` 產的 record 層兩條路線共用。
+
+Done when：
+
+- `build_layer` exit 0（`deployable=true`），層 ESP 是 ESL、FaceGen 兩檔在定義 plugin 路徑下。
+- `VERIFY.txt` 與 `FACEGEN-VERIFY-*.txt` 的 gate 全 PASS（WARN 要在回報裡逐條解釋）。
 
 ## 7. 部署與驗收
 
 沿用 [profile-change](../profile-change/README.md)：
 
-1. `instance/tools/layer_apply.py` dry-run。
+1. `python3 instance/tools/layer_apply.py <層>.layer-apply.json` dry-run（現役 `plugins.txt` 若是遊戲寫回的純 LF，manifest 要加 `"accept_lf": ["plugins.txt"]`）。
 2. 取得使用者授權。
-3. apply。
-4. 跑 `reverify.py`。
-5. 依 [runtime-qa](../runtime-qa/README.md) 實機看臉。
+3. `--apply`。
+4. `check_masters.py`（present=no 為 0）、`look_transplant/transplant.py --verify mods/<層>`、`reverify.py`。
+5. 依 [runtime-qa](../runtime-qa/README.md) 實機看臉：`placeatme` 複本與真身都看，排除存檔臉快取。
 
-Done when（將來）：遊戲內那個 NPC 不是灰臉或素頭，外觀和使用者選定的圖一致。外觀一致與否由使用者確認。
+Done when：遊戲內那個 NPC 不是灰臉或素頭，外觀和使用者選定的圖一致。外觀一致與否由使用者確認。**本段尚未跑過**；試點授權頁見 [npc-face-pilot](../../user/2026-11-22-npc-face-pilot.md)。
 
 NPC 對 NPC 的整臉換現在就能做：走 [look-swap runbook](../../../agentctl/docs/look-swap-runbook.md)，產出的換臉層同樣適用本段 7。

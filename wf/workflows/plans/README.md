@@ -24,7 +24,7 @@ idea → roadmap → 詳規（本夾）→ feature-dev
 | 計畫 | 出計畫日期 | 對應 spec | 狀態 |
 |------|------------|-----------|------|
 | [poe-skyrim-mapping](poe-skyrim-mapping/README.md) —— PoE 星盤效果落地 Skyrim | 2026-11-03 | 設計寫在計畫內 | 核心第一波source已有離線交付；八職24設計樣板已補齊待過目，source／部署／實機各自記證 |
-| [racemenu-face](racemenu-face/README.md) —— AI 捏臉第二階段起的派線清單（R1–R7） | 2026-11-22 | 設計寫在計畫內；工作流 [racemenu](../racemenu/README.md) | 未動工；每項可直接派線 |
+| [racemenu-face](racemenu-face/README.md) —— AI 捏臉第二階段起的派線清單（R1–R7） | 2026-11-22 | 設計寫在計畫內；工作流 [racemenu](../racemenu/README.md) | R5 正向、R4 觸發元件、R6 驗證已做（離線）；實機試點待授權；R1–R3、R7 未動工 |
 
 ## 已結案／被取代
 

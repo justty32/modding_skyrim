@@ -32,7 +32,7 @@
 
 | 事項 | 何時 / 順序 | 前提 |
 |------|------------|---------|
-| **RaceMenu AI 捏臉第二階段** R1–R7 | 未排程；詳規 [racemenu-face](plans/racemenu-face/README.md) | R3／R4 要當場授權開遊戲與動 `instance/`；R5 等 `npc-face-patch` 報告 |
+| **RaceMenu AI 捏臉第二階段** R1–R7 | 進行中；詳規 [racemenu-face](plans/racemenu-face/README.md) | R5 正向／R4 觸發元件／R6 驗證已做（2026-11-22 離線）；R3／R4 實機試點待使用者授權（[試點頁](../user/2026-11-22-npc-face-pilot.md)）；R1、R2、R7 未排程 |
 | **離線出圖原型**：拆用 Skyrim Universal Viewer 的 NIF 渲染器（2026-11-22）| 之後做，未排程、未授權 | 授權 pip 裝 PyQt6、執行 SUV 程式碼；依據 universal-viewer REPORT §4 A；是 [racemenu 段 3](racemenu/loop.md#3-離線預覽) 的相依 |
 | **SUV 裝進 MO2 當瀏覽器**（2026-11-22）| 之後做，未排程、未授權 | 授權改 MO2 安裝；它會刪檔、搬檔、寫 `.mohidden`；同上 §4 B |
 
