@@ -11,8 +11,8 @@ verify_batch():
     are reported as 'tri_missing' and judged by the caller.
   * samples: per sampled project the NIF parses (bodyslide_mesh_check.parse_nif), carries a
     BODYTRI string naming its .tri, and the .tri parses with in-range indices.
-  * body_match: embedded body shapes (CBBE/3BA/BaseShape) against the batch-0 body of the same
-    weight, nearest vertex; CBBE-topology bodies built on the base preset sit on it (p95 = 0),
+  * body_match: embedded body shapes (female CBBE/3BA/BaseShape, male per MALE_BODY_SHAPES;
+    body_sex picks the set and femalebody/malebody) against the batch-0 body of the same weight, nearest vertex; CBBE-topology bodies built on the base preset sit on it (p95 = 0),
     3BA-reference bodies only partly (extra loops and their own Vanilla slider data).
   * baseline: when reference directories are given (an old output layer built with the same
     base preset, or the live body), the sample's shapes are compared vertex by vertex; equal
@@ -33,6 +33,10 @@ TOLERANCE = 1e-4
 BODY_SHAPES = ('CBBE', '3BA', 'BaseShape')
 BODY_FILES = {'0': 'meshes/actors/character/character assets/femalebody_0.nif',
               '1': 'meshes/actors/character/character assets/femalebody_1.nif'}
+MALE_BODY_SHAPES = ('HIMBO - Body', 'HIMBO - Body HP')  # HIMBO v5 OSP shape names
+MALE_BODY_FILES = {'0': 'meshes/actors/character/character assets/malebody_0.nif',
+                   '1': 'meshes/actors/character/character assets/malebody_1.nif'}
+BODY_SETS = {'female': (BODY_SHAPES, BODY_FILES), 'male': (MALE_BODY_SHAPES, MALE_BODY_FILES)}
 
 
 def sha256(path: Path) -> str:
@@ -91,15 +95,16 @@ class _Grid:
 _BODY_CACHE: dict = {}
 
 
-def body_match(nif_rel: str, pos: dict, body_dir: Path | None) -> dict | None:
+def body_match(nif_rel: str, pos: dict, body_dir: Path | None, body_sex: str = 'female') -> dict | None:
     """Embedded body shapes vs the built global body of the same weight (nearest vertex)."""
-    names = [n for n in pos if n in BODY_SHAPES]
+    shapes, files = BODY_SETS[body_sex]
+    names = [n for n in pos if n in shapes]
     weight = nif_rel[-5] if nif_rel.endswith(('_0.nif', '_1.nif')) else None
     if not names or body_dir is None or weight is None:
         return None
-    key = (str(body_dir), weight)
+    key = (str(body_dir), weight, body_sex)
     if key not in _BODY_CACHE:
-        bpos = bmc.parse_nif(Path(body_dir) / BODY_FILES[weight])[1]
+        bpos = bmc.parse_nif(Path(body_dir) / files[weight])[1]
         _BODY_CACHE[key] = _Grid([q for v in bpos.values() for q in v])
     grid, out = _BODY_CACHE[key], {}
     for n in names:
@@ -117,7 +122,8 @@ def _shape_diff(pa, pb):
     return dict(same_count=True, vertices=len(pa), max_distance=round(d, 6), equal=d <= TOLERANCE)
 
 
-def check_sample(project: dict, files: dict, references: list, body_dir: Path | None = None) -> dict:
+def check_sample(project: dict, files: dict, references: list, body_dir: Path | None = None,
+                 body_sex: str = 'female') -> dict:
     nif_rel = project['outputs'][-1]  # _1.nif (high weight) or the single .nif
     row = dict(project=project['name'], osp=project['osp'], nif=nif_rel, failures=[])
     path = files.get(nif_rel.casefold())
@@ -131,7 +137,7 @@ def check_sample(project: dict, files: dict, references: list, body_dir: Path | 
         return row
     row['shapes'] = {s['name']: len(pos.get(s['name'], [])) for s in rep['shapes']}
     try:
-        match = body_match(nif_rel, pos, body_dir)
+        match = body_match(nif_rel, pos, body_dir, body_sex)
     except (bmc.FormatError, OSError) as exc:
         match = dict(error=str(exc))
     if match:
@@ -192,7 +198,7 @@ def scan_cached(root: Path) -> dict:
 
 
 def verify_batch(output: Path, selection: dict, samples: int = 5, references: list | None = None,
-                 body_dir: Path | None = None) -> dict:
+                 body_dir: Path | None = None, body_sex: str = 'female') -> dict:
     files = scan(output)
     expected = {p.casefold() for p in selection['expected']}
     expected_tri = {p.casefold() for p in selection['expected_tri']}
@@ -200,7 +206,7 @@ def verify_batch(output: Path, selection: dict, samples: int = 5, references: li
     missing = sorted(expected - actual)
     tri_missing = sorted(expected_tri - actual)
     extra = sorted(actual - expected - expected_tri)
-    rows = [check_sample(p, files, [Path(r) for r in references or []], body_dir)
+    rows = [check_sample(p, files, [Path(r) for r in references or []], body_dir, body_sex)
             for p in pick_samples(selection['projects'], samples)]
     failures = []
     if missing:

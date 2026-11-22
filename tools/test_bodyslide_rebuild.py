@@ -213,6 +213,22 @@ class RebuildTests(unittest.TestCase):
         self.assertIsNone(layer.body_match('meshes/x/a.nif', pos, self.base / 'body'))
         self.assertIsNone(layer.body_match('meshes/x/a_1.nif', {'Cloth': []}, self.base / 'body'))
 
+    def test_body_match_male(self):
+        body = self.base / 'mbody' / 'meshes/actors/character/character assets'
+        body.mkdir(parents=True)
+        (body / 'malebody_1.nif').write_bytes(skinned_nif(V3, shape='HIMBO - Body'))
+        pos = {'HIMBO - Body': [V3[1], V3[2]], 'CBBE': [(9.0, 9.0, 9.0)]}
+        m = layer.body_match('meshes/x/a_1.nif', pos, self.base / 'mbody', 'male')
+        self.assertEqual(list(m), ['HIMBO - Body'])
+        self.assertEqual(m['HIMBO - Body']['on_body'], 1.0)
+        self.assertIsNone(layer.body_match('meshes/x/a_1.nif', {'Cloth': []}, self.base / 'mbody', 'male'))
+
+    def test_body_sex_config(self):
+        self.write_cfg(body_sex='robot')
+        code, r = self.run_cli('plan')
+        self.assertEqual(code, 2)
+        self.assertIn('body_sex', r['error'])
+
     def test_pick_samples_spread(self):
         projects = [dict(name=f'p{i}', osp=f'o{i % 3}.osp') for i in range(9)]
         self.assertEqual([p['name'] for p in layer.pick_samples(projects, 3)], ['p0', 'p1', 'p2'])

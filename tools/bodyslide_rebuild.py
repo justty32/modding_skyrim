@@ -26,7 +26,9 @@ Config (JSON, schema bodyslide-rebuild/1; see wf/workflows/bodyslide/body-swap.m
   name, revision, mo2_dir, game_data, profile, staging_root, run, base_preset, morphs,
   preset_files [user preset XMLs copied into the staged SliderPresets, e.g. one saved from the
   BodySlide GUI, so base_preset can name it], obody {...},
-  timeout, samples, stage_shapedata ("all" | "none" | [folders]), stage_max_bytes, body_reference (dir with the built femalebody_0/1), extra_sources {label: dir},
+  timeout, samples, stage_shapedata ("all" | "none" | [folders]), stage_max_bytes, body_reference (dir with the built femalebody_0/1,
+  or malebody_0/1 with body_sex "male"), body_sex ("female" default | "male": which global body and embedded
+  body shapes verify compares against), extra_sources {label: dir},
   zaps {project: {zap: bool}},
   batches [{id, layer, before, replaces [mod names], references [dirs], select {...},
             prefer [...], avoid [...], exclude_projects [...], exclude_stems [...], choose {...}}]
@@ -76,6 +78,9 @@ def load_config(path: Path) -> dict:
     cfg.setdefault('morphs', True)
     cfg.setdefault('timeout', 7200)
     cfg.setdefault('samples', 5)
+    cfg.setdefault('body_sex', 'female')
+    if cfg['body_sex'] not in layer.BODY_SETS:
+        raise ConfigError(f"body_sex must be one of {sorted(layer.BODY_SETS)}")
     ids = [b.get('id') for b in cfg['batches']]
     for b in cfg['batches']:
         for key in ('id', 'layer'):
@@ -261,7 +266,8 @@ def cmd_verify(cfg, args) -> dict:
         plan = load_plan(cfg, batch)
         res = layer.verify_batch(cfg['_run'] / 'rounds' / label(cfg, batch, args.suffix) / 'output', plan,
                                  cfg['samples'], [under(cfg, r) for r in batch.get('references', [])],
-                                 under(cfg, cfg['body_reference']) if cfg.get('body_reference') else None)
+                                 under(cfg, cfg['body_reference']) if cfg.get('body_reference') else None,
+                                 cfg['body_sex'])
         layer.write_json(cfg['_run'] / 'verify' / f"{label(cfg, batch, args.suffix)}.json", res)
         out[batch['id']] = {k: res[k] for k in ('ok', 'failures', 'files', 'expected_nif', 'expected_tri')}
         out[batch['id']]['tri_missing'] = len(res['tri_missing'])

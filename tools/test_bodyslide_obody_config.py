@@ -114,6 +114,59 @@ class ObodyTests(unittest.TestCase):
         code, r = self.run_cli(dict(spec, base_preset=None), 'npc2')
         self.assertEqual(code, 2)
 
+    def male_spec(self):
+        (self.base / 'presets' / 'himbo.xml').write_text(
+            '<SliderPresets><Preset name="HIMBO Zero" set="HIMBO Body - Nude">'
+            '<SetSlider name="PecsMass" size="big" value="0"/></Preset>'
+            '<Preset name="Kaes" set="HIMBO Body - SOS"><SetSlider name="PecsMass" size="big" value="81"/>'
+            '<SetSlider name="PecsMass" size="small" value="20"/></Preset></SliderPresets>')
+        spec = {k: v for k, v in self.spec.items() if k not in ('deltas', 'assign', 'unblacklist')}
+        spec.update(base_preset='Vanilla', osp='osp.osp')
+        return spec
+
+    def test_male_pool_required_once_male_presets_load(self):
+        code, r = self.run_cli(self.male_spec(), 'm0')
+        self.assertEqual(code, 1)
+        self.assertIn('no male preset', ' '.join(r['problems']))
+
+    def test_male_and_female_groups(self):
+        spec = self.male_spec()
+        spec['neutral'] = [{'name': 'BSO Neutral', 'set': 'CBBE Body'},
+                           {'name': 'BSO HIMBO Neutral', 'set': 'HIMBO Body - Nude', 'sliders': ['PecsMass']}]
+        spec['random_pool'] = ['BSO Neutral', 'BSO HIMBO Neutral']
+        spec['male'] = {'base_preset': 'HIMBO Zero', 'delta_set': 'HIMBO Body - Nude'}
+        spec['npc_presets'] = [{'plugin': 'Aela.esp', 'formid': '000D63', 'preset': 'Target'},
+                               {'plugin': 'Other.esp', 'formid': '123', 'preset': 'Kaes', 'sex': 'male'}]
+        code, r = self.run_cli(spec, 'mf')
+        self.assertEqual(code, 0, r)
+        self.assertEqual(r['random_pool_by_sex'], {'female': ['BSO Neutral'], 'male': ['BSO HIMBO Neutral']})
+        self.assertEqual(r['deltas']['BSO Kaes (morph)'], {'PecsMass/big': 81, 'PecsMass/small': 20})
+        self.assertEqual(r['deltas']['BSO HIMBO Neutral'], {'PecsMass/small': 0.0, 'PecsMass/big': 0.0})
+        out = json.loads((self.base / 'mf/SKSE/Plugins/OBody_presetDistributionConfig.json').read_text())
+        self.assertEqual(out['npcFormID']['Other.esp'], {'123': ['BSO Kaes (morph)']})
+        for name in ('HIMBO Zero', 'Kaes', 'BSO Kaes (morph)', 'Random A'):
+            self.assertIn(name, out['blacklistedPresetsFromRandomDistribution'])
+        xml = ET.parse(self.base / 'mf/CalienteTools/BodySlide/SliderPresets/BSO-OBody-Presets.xml').getroot()
+        sets = {p.get('name'): p.get('set') for p in xml.iter('Preset')}
+        self.assertEqual(sets['BSO Kaes (morph)'], 'HIMBO Body - Nude')
+        self.assertEqual(sets['BSO Target (morph)'], 'CBBE 3BBB Body Amazing')  # female row: target's own set
+
+    def test_male_sex_mismatch_and_bad_rows(self):
+        spec = self.male_spec()
+        spec['neutral'] = [{'name': 'BSO Neutral', 'set': 'CBBE Body'}]
+        spec['random_pool'] = ['BSO Neutral', 'HIMBO Zero']
+        spec['male'] = {'base_preset': 'HIMBO Zero', 'delta_set': 'CBBE Body'}  # wrong: reads female
+        spec['npc_presets'] = [{'plugin': 'Other.esp', 'formid': '123', 'preset': 'Kaes', 'sex': 'male'}]
+        code, r = self.run_cli(spec, 'mm')
+        self.assertEqual(code, 1)
+        self.assertIn('reads as female', ' '.join(r['problems']))
+        for bad in ({'sex': 'x'}, {'sex': 'male'}):
+            s2 = dict(spec, npc_presets=[dict(plugin='O.esp', formid='1', preset='Kaes', **bad)])
+            if bad['sex'] == 'male':
+                s2.pop('male')
+            self.assertEqual(self.run_cli(s2, 'mx')[0], 2)
+        self.assertTrue(oc.is_male_set('HIMBO Body') and not oc.is_male_set('CBBE Body'))
+
     def test_validate_subset(self):
         self.assertEqual(oc.validate({'npcFormID': {}}, SCHEMA), [])
         self.assertTrue(oc.validate({'unknown': 1}, SCHEMA))

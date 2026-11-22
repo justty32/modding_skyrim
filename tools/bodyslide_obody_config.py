@@ -11,11 +11,16 @@ The `obody` section (inside a bodyslide-rebuild/1 config, or a standalone JSON f
   schema        OBody_presetDistributionConfig_schema.json (validated against; subset of JSON Schema)
   presets_dirs  SliderPresets directories whose presets OBody will load (to list names)
   presets_file  file name for generated presets (default BSO-OBody-Presets.xml)
-  neutral       {"name": ..., "set": ...}: one zero preset that stays in the random pool
+  neutral       {"name", "set", "sliders"?} or a list of them: zero presets that stay in the random
+                pool (one per sex). "sliders" names the slider(s) written as 0 (default Breasts);
+                a male neutral needs a slider of its own body, e.g. a HIMBO slider.
   random_pool   preset names left eligible for random distribution; every other loaded or
                 generated preset is added to blacklistedPresetsFromRandomDistribution.
-                OBody 4.4.3 returns before any per-NPC lookup when the random pool is empty
-                (Body.cpp GenerateActorBody, femalePresets.empty()), so the pool may not be empty.
+                OBody 4.4.3 splits presets by sex on the preset's set (IsFemalePreset: a set
+                containing himbo/talos/sam/sos/savren is male) and returns before any per-NPC
+                lookup when that sex's random pool is empty (Body.cpp GenerateActorBody), which
+                also leaves old morphs on those actors. So the female pool may not be empty, and
+                the male pool may not be empty once any male preset is loaded or generated.
   deltas        [{"name", "set", "target", "base", "osp"?}]: target preset minus base preset,
                 slider by slider and per size (small/big); a slider absent from one side uses
                 the OSP default from "osp" (else 0). Negative values are kept: OBody does not
@@ -23,9 +28,12 @@ The `obody` section (inside a bodyslide-rebuild/1 config, or a standalone JSON f
   assign        {"Plugin.esp": {"FormID": ["Preset"]}} -> npcFormID (merged)
   unblacklist   {"Plugin.esp": ["FormID"]} removed from blacklistedNpcsFormID; required for every
                 assigned NPC because the blacklist is checked first (Body.cpp).
-  npc_presets   the per-NPC table: [{"plugin", "formid", "preset", "note"}]. Each distinct preset P
+  npc_presets   the per-NPC table: [{"plugin", "formid", "preset", "sex"?, "note"}]. Each distinct preset P
                 becomes a delta 'BSO P (morph)' = P - base_preset (needs base_preset; optional osp,
                 delta_set), assigned to the NPC, and the NPC is removed from blacklistedNpcsFormID.
+                Rows with "sex": "male" use the "male" section instead.
+  male          {"base_preset", "osp"?, "delta_set"?}: base for male rows (the preset the male body
+                and male equipment were built with, e.g. "HIMBO Zero for OBody").
 Preset names and file names must avoid OBody's clothed-set words (IsClothedSet:
 cloth outfit nevernude bikini feet hands push cleavage armor) or OBody skips them.
 Source: Aietos/OBody-NG commit e33bbc1 (the 4.4.3 bump).
@@ -43,6 +51,11 @@ import xml.etree.ElementTree as ET
 
 CLOTHED = ('cloth', 'outfit', 'nevernude', 'bikini', 'feet', 'hands', 'push', 'cleavage', 'armor')
 MALE_BODY = ('himbo', 'talos', 'sam', 'sos', 'savren')
+
+
+def is_male_set(body_set: str) -> bool:
+    """OBody's IsFemalePreset, inverted: substring match on the preset's set."""
+    return any(w in (body_set or '').casefold() for w in MALE_BODY)
 
 
 class InputError(Exception):
@@ -177,10 +190,16 @@ def expand_npc_presets(spec: dict) -> dict:
     deltas = {d['name']: d for d in spec.setdefault('deltas', [])}
     for row in rows:
         fid = row['formid'].upper().removeprefix('0X')
+        sex = row.get('sex', 'female')
+        if sex not in ('female', 'male'):
+            raise InputError(f'npc_presets {row["plugin"]}:{row["formid"]}: sex must be female or male')
+        src = (spec.get('male') or {}) if sex == 'male' else spec
+        if not src.get('base_preset'):
+            raise InputError(f'npc_presets {row["plugin"]}:{row["formid"]}: male rows need male.base_preset')
         name = delta_name(row['preset'])
-        deltas.setdefault(name, {'name': name, 'target': row['preset'], 'base': spec['base_preset'],
-                                 **({'osp': spec['osp']} if spec.get('osp') else {}),
-                                 **({'set': spec['delta_set']} if spec.get('delta_set') else {})})
+        deltas.setdefault(name, {'name': name, 'target': row['preset'], 'base': src['base_preset'], 'sex': sex,
+                                 **({'osp': src['osp']} if src.get('osp') else {}),
+                                 **({'set': src['delta_set']} if src.get('delta_set') else {})})
         spec.setdefault('assign', {}).setdefault(row['plugin'], {})[fid] = [name]
         spec.setdefault('unblacklist', {}).setdefault(row['plugin'], []).append(fid)
     spec['deltas'] = list(deltas.values())
@@ -195,10 +214,12 @@ def build(spec: dict, base_dir: Path) -> tuple[dict, str, dict]:
     schema = json.loads(p(spec['schema']).read_text(encoding='utf-8-sig'))
     loaded = load_presets([p(d) for d in spec.get('presets_dirs', [])])
     generated, problems = [], []
-    if spec.get('neutral'):
-        n = spec['neutral']
-        generated.append({'name': n['name'], 'set': n.get('set', 'CBBE Body'),
-                          'sliders': {('Breasts', 'small'): 0.0, ('Breasts', 'big'): 0.0}})
+    neutrals = spec.get('neutral') or []
+    for n in [neutrals] if isinstance(neutrals, dict) else neutrals:
+        nset = n.get('set', 'CBBE Body')
+        generated.append({'name': n['name'], 'set': nset, 'sex': 'male' if is_male_set(nset) else 'female',
+                          'sliders': {(sl, size): 0.0 for sl in n.get('sliders', ['Breasts'])
+                                      for size in ('small', 'big')}})
     spec = expand_npc_presets(spec)
     for d in spec.get('deltas', []):
         for key in ('target', 'base'):
@@ -208,6 +229,7 @@ def build(spec: dict, base_dir: Path) -> tuple[dict, str, dict]:
             continue
         defaults = osp_defaults(p(d['osp'])) if d.get('osp') else {}
         generated.append({'name': d['name'], 'set': d.get('set', loaded[d['target']]['set']),
+                          'sex': d.get('sex', 'male' if is_male_set(loaded[d['target']]['set']) else 'female'),
                           'sliders': delta_sliders(loaded[d['target']]['sliders'],
                                                    loaded[d['base']]['sliders'], defaults)})
     pfile = spec.get('presets_file', 'BSO-OBody-Presets.xml')
@@ -215,15 +237,25 @@ def build(spec: dict, base_dir: Path) -> tuple[dict, str, dict]:
         if any(w in name.casefold() for w in CLOTHED):
             problems.append(f'{name!r} contains an OBody clothed-set word and would be skipped')
     for g in generated:
-        if any(w in g['set'].casefold() for w in MALE_BODY):
+        if g['sex'] == 'female' and is_male_set(g['set']):
             problems.append(f'{g["name"]!r}: set {g["set"]!r} reads as a male body to OBody')
+        if g['sex'] == 'male' and not is_male_set(g['set']):
+            problems.append(f'{g["name"]!r}: male preset but set {g["set"]!r} reads as female to OBody')
         if g['name'] in loaded:
             problems.append(f'{g["name"]!r} already exists in the loaded presets')
     names = set(loaded) | {g['name'] for g in generated}
+    sets = {**{k: v['set'] for k, v in loaded.items()}, **{g['name']: g['set'] for g in generated}}
     pool = list(spec.get('random_pool', []))
     if not pool:
         problems.append('random_pool is empty: OBody 4.4.3 would skip every female NPC, assignments included')
     problems += [f'random_pool: {n!r} is not a loaded or generated preset' for n in pool if n not in names]
+    by_sex = {'female': sorted(n for n in pool if n in sets and not is_male_set(sets[n])),
+              'male': sorted(n for n in pool if n in sets and is_male_set(sets[n]))}
+    if pool and not by_sex['female']:
+        problems.append('random_pool has no female preset: OBody 4.4.3 would skip every female NPC')
+    if not by_sex['male'] and any(is_male_set(v) for v in sets.values()):
+        problems.append('random_pool has no male preset while male presets are loaded: OBody 4.4.3 skips '
+                        'every male NPC (assignments included) and leaves their old morphs')
     new = copy.deepcopy(config)
     new['blacklistedPresetsFromRandomDistribution'] = sorted(
         set(config.get('blacklistedPresetsFromRandomDistribution', [])) | (names - set(pool)))
@@ -248,7 +280,7 @@ def build(spec: dict, base_dir: Path) -> tuple[dict, str, dict]:
             assigned.append(f'{plugin}:{fid}')
     problems += validate(new, schema)
     report = dict(loaded_presets=len(loaded), generated=[g['name'] for g in generated],
-                  random_pool=pool, blacklisted_presets=len(new['blacklistedPresetsFromRandomDistribution']),
+                  random_pool=pool, random_pool_by_sex=by_sex, blacklisted_presets=len(new['blacklistedPresetsFromRandomDistribution']),
                   unblacklisted=removed, assigned=assigned, problems=problems,
                   deltas={g['name']: {f'{k[0]}/{k[1]}': v for k, v in g['sliders'].items()} for g in generated})
     return new, preset_xml(generated), report
