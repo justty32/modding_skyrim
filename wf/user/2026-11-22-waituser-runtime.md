@@ -2,7 +2,19 @@
 
 你出門時 agent 開遊戲跑了 4 場（S0–S3），全程不存檔。第 5 場（S4）剛開就因額度到上限中止；S4–S7 沒跑。**你的存檔沒被動到**：每場前後 91 個存檔逐檔雜湊相同，三個 ini 也相同。詳細證據見[代驗報告](../../agentctl/handoffs/home-2026-11-22/waituser-runtime/REPORT.md)；截圖在 `agentctl/handoffs/home-2026-11-22/waituser-runtime/shots/`（只在本機）。
 
-## 已替你結案
+## 傍晚補跑（runtime-3，S4–S7＋補做項）
+
+agent 又跑了 6 場（B1–B6），一樣全程不存檔；**91 個存檔逐檔雜湊、三個 ini 每場前後都相同**。證據見[報告](../../agentctl/handoffs/home-2026-11-22/runtime-3/REPORT.md)，截圖在 `agentctl/handoffs/home-2026-11-22/runtime-3/shots/`（只在本機）。
+
+- **新問題｜Baan Malur 渡船**：船夫對話、扣 30 金、抵達 `BaanMalur15` 都對，沒被彈回；**但抵達約 1.5 分鐘後遊戲崩潰**（崩在 `EngineFixes.dll` 的記憶體配置器）。請你自己搭一次，看抵達後會不會崩；可能和「EngineFixes 三選一」同源（推論）。
+- **請看一眼｜10-18 貼圖巡點**：6 個室內點沒看到紫色／缺圖（`B2-*`）；Boethiah 神龕、Volkihar 外塔沒拍到。
+- **請看一眼｜kurone 23 人**：穿衣全身、卸裝正面／側面、頸部近照（`B6-*`；Jordis、Megara 叫不來）。身形要 Reset 後才準。
+- **請看一眼｜CRS 口才**：agent 用真按鍵（E）選了 3 個新話題，CRS 的按鍵處理有跑、log 錯 0；但**你的 CRS 設定是「不顯示訊息」**，所以本來就不會跳提示。要提示就到 MCM 打開。
+- **ESL 旗標／RaceMenu**：RaceMenu 開得起來、滑桿能動（換臉那場一口氣調了 100 格）；容器快捷鍵、換裝戒指沒測。
+- **無法判定**：VIGILANT 開場任務（日誌裡還沒有，未觸發）；Headhunter 逃犯／竊賊對話（主控台起任務找不到目標人物）。
+- **仍沒做**：S8（MCM／日誌截圖場）、S9（Scene ghost）；所有身形類要等你 OBody Reset。
+
+## 已替你結案（中午 S0–S3）
 
 - **NPC Spell Variance KID ini**：log 裡那 8 條規則（含 5 條 Apocalypse）全部生效、0 警告，已從清單刪掉。
 - **Headhunter 告示推進**的第 1、2 步：冬堡「殺死強盜」告示殺掉目標後推進到「割下強盜首級」。這項只剩「逃犯／竊賊對話選項」那一步。
@@ -23,9 +35,8 @@
 
 ## 仍要你本人
 
-- **CRS 口才提示**：只有你按 E 或滑鼠左鍵選對話才會觸發，agent 做不到。log 那半已過。
+- **CRS 口才提示**：傍晚已用真按鍵代驗按鍵處理有跑；提示被你的 MCM「不顯示訊息」關掉（見上）。
 - 要開選單的部分（MCM、日誌、技能選單、Estates 畫面、書翻頁、水晶球）。
 - 所有身形類項目：要先做 OBody Reset。
-- 沒跑的場：S4（10-18 貼圖巡點）、S5／S6（kurone 23 人，身形類要 Reset 後才準）、S7（Baan Malur 渡船、RaceMenu 開啟）。
 - 新的取捨：**EngineFixes 三選一**。男體上線後主角也會遇到滑桿失效，見[日後決定](../../wait-user/later-decisions.md)。
 - 一句話就能結案的 5 項，見報告「待你一句話確認」。

@@ -66,6 +66,8 @@ agent 2026-11-22 已觀測：第 1 步 log 已過（`WB_` store 錯 0，兩場�
 
 agent 2026-11-22 已觀測：讀 Save342（37 級）時開場任務 `zzzAoMMq00` 已在跑但停在 stage 0，任務日誌裡還看不到它，所以中文字串沒法在遊戲裡看；離線讀到的任務名是「斯丹達爾的警戒者」。37 級還停在 stage 0 是否正常（Delayed Start 可能還有其他條件）未查——你遇到它跳出來時再看日誌。
 
+agent 2026-11-22 下午（runtime-3）用真按鍵打開任務日誌、捲完整個進行中清單：沒有這個任務（同上，還沒觸發），仍無法判定。
+
 依據與回退見[施工報告](../agentctl/handoffs/home-2026-11-22/small-fixes/REPORT.md)。
 
 ## Headhunter 的 Missives 討伐告示能推進（2026-11-22 立）
@@ -75,5 +77,7 @@ agent 2026-11-22 已觀測：讀 Save342（37 級）時開場任務 `zzzAoMMq00`
 agent 2026-11-22 已代驗通過原本的第 1、2 步（log 的 `_CTB_` store 錯 0；冬堡「殺死強盜」告示任務殺掉目標後 10 秒內推進到「割下強盜首級」），見[代驗報告](../agentctl/handoffs/home-2026-11-22/waituser-runtime/REPORT.md)。只剩：
 
 1. 順路：Headhunter 的逃犯／竊賊對話選項（說服、威嚇、跟我走、開打）選了要有效果。
+
+   agent 2026-11-22 下午（runtime-3）試過：主控台起「追蹤逃犯」任務起不來（別名填不上）；「追蹤竊賊」起得來、設到 stage 20，但沒有任務目標可傳送過去，找不到竊賊本人，無法判定。
 
 依據與回退見[施工報告](../agentctl/handoffs/home-2026-11-22/headhunter-fix/REPORT.md)。

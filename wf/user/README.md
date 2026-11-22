@@ -13,7 +13,7 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 | 檔案 | 內容 |
 |------|------|
 | [2026-11-22-waituser-runtime.md](2026-11-22-waituser-runtime.md) | 11-22 agent 不存檔代驗 WAIT_USER 結果（S0–S3）：已結案／請看一眼／仍要你本人、EngineFixes 新取捨 |
-| [2026-11-22-npc-face-pilot.md](2026-11-22-npc-face-pilot.md) | NPC 換臉試點（Hatak→Muiri）：授權頁＋11-22 實機結果（匯出 4 場失敗、未部署、存檔未動）與下一步三選一 |
+| [2026-11-22-npc-face-pilot.md](2026-11-22-npc-face-pilot.md) | NPC 換臉試點（Hatak→Muiri）：runtime-3 做成、脖縫已修、已部署但停用，看三方對照圖決定啟用或移除；舊段落拆到子資料夾 |
 | [2026-11-16-kurone-soultomb-pick.md](2026-11-16-kurone-soultomb-pick.md) | Kurone Soul Tomb 換臉挑選：68 素材×256 隨從×13 身形，桌面離線頁、可匯出 JSON |
 | [2026-11-05-agent-bridge-screenshot.md](2026-11-05-agent-bridge-screenshot.md) | AgentBridge 0.10.0已部署：雙鏡頭目視、20次連拍與切出恢復結果，補充未驗邊界 |
 | [2026-11-04-all-classes.md](2026-11-04-all-classes.md) | 八職×三子類24設計樣板：240規則、真圖與High正負情境，可離線過目；新能力未實作／未部署 |

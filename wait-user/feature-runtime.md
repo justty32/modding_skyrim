@@ -12,6 +12,8 @@ Sofia 已新增黎明守衛18句、龍裔8句與原版隨從31句中文評論。
 
 請在遊玩時看以下 23 個 NPC：Aela、Camilla、Brelyna、Illia、Uthgerd、Ysolda、Elisif、Mjoll、Valerica、Jenassa、Frea、Jordis、Delphine、Rin、Vilja、Morgaine、Katana、Katana Shade、Megara、Varinia、Yoana、Aniya、Melana。卸下衣物後確認作者 3BA 身形、頭身膚色、脖子與手腳接縫；穿回衣服後確認沒有缺失部位、假髮與對話正常。衣服仍使用各自網格，請以卸裝外觀判斷身體。移除的素材換臉目標回到本體外觀，不另找替代。靜態證據及煙霧結果見 [REPORT](../agentctl/handoffs/home-2026-11-07/chronicon-kurone/REPORT.md)。
 
+agent 2026-11-22 傍晚（runtime-3）把 21 人逐一叫到 Riverwood 外景拍了穿衣全身、卸裝正面／側面、頸部近照：`agentctl/handoffs/home-2026-11-22/runtime-3/shots/B6-<EDID>-*.jpg`（Jordis、Megara 叫不來沒拍）。請看一眼；身形要 OBody Reset 後才準，對話沒測。
+
 ## AgentBridge 0.11.0 原生 keyboard tap（2026-11-05）
 
 0.11.0 已部署並完成有限實測：唯一一次空格請求被 environment guard 取消，down／up 均 false，未重試；跳躍與成功派送尚未驗。先釐清 guard 的 menu／foreground／snapshot 原因，再安排受控實測；其他 guard 與 release debt 亦待驗，現在不需要使用者操作。詳見[實機報告](../agentctl/handoffs/home-2026-11-05/agent-bridge-input/RUNTIME-REPORT.md)與[輸入契約](../projects/agent-bridge/docs/input.md)。
@@ -34,6 +36,8 @@ agent 2026-11-22 同一探針又試一次（Save342、無選單）：仍是 `can
 - **擺設**：ULP 各地點擺設回來（看過的格子可能有快取）；Dibella 神殿擺設沒浮空；JK 系列店內地毯位置正常。
 
 有任何一項壞掉，還原檔在 `~/skyrim_mods/_layer-apply/` 下三組 `*-20261018T*`。
+
+agent 2026-11-22 下午（runtime-3）巡了 6 個室內點各 3 張：Dragonsreach 寢室、Braidwood Inn、Markarth Dibella 神殿、Belethor、Warmaiden's、Arcadia，畫面上沒看到紫色或缺貼圖（但第三人稱視角常被主角擋住，酒櫃／隔間門／地毯沒逐一對準）。烏鴉岩 Boethiah 神龕（傳送沒成功）與 Volkihar 外塔（逾時）沒拍到。圖在 `agentctl/handoffs/home-2026-11-22/runtime-3/shots/B2-*.jpg`，請看一眼；這兩處和小麥、格擋仍要你玩時看。
 
 ## 雙手鋼製太刀 idle 的實際武器辨識（2026-10-17）
 
@@ -88,6 +92,8 @@ face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不�
 - **RaceMenu**：開得起來、滑桿能動（`showracemenu` 或鏡子）。
 - **Better Container Controls**：開容器，全取／分類快捷鍵照舊。
 - **換裝戒指（Dudestia Outfit Changer）**：對隨從用一次，換得上去。
+
+agent 2026-11-22 傍晚（runtime-3）：RaceMenu 開得起來、滑桿能動（換臉場用真按鍵把「體型」調了 100 格，`runtime-3/shots/A3-06/07`）。容器快捷鍵、換裝戒指沒測。
 
 還原：持 game.lock、MO2 關著，先取回 revert 檔 `git -C agentctl show 3db1b772:handoffs/home-2026-10-26/eslapply/data/layer-revert.json > /tmp/eslapply-layer-revert.json`，再跑 `python3 instance/tools/layer_apply.py --revert /tmp/eslapply-layer-revert.json`。它把 modlist 蓋回套用前、把舊 ESLify-Overlay 從 `~/skyrim_mods/_layer-apply/eslapply-r1-20261026T110518/mods/` 搬回、ESLify-Overlay-NSV 搬進備份（不刪），再 profiles `record --kind fix`。revert 沒有 dry-run；三檔被別線改過會拒絕，屆時手動刪 `+ESLify-Overlay-NSV` 那行、把 ESLify-Overlay 目錄換回備份。已用新 light 存檔再撤旗標的反向路徑沒測過，先拿存檔複本試；revert json 內若寫死來源路徑，執行前先確認（原 REPORT `agentctl/handoffs/home-2026-10-26/eslapply/REPORT.md` 已刪，可由同一 commit 取回）。
 
@@ -159,6 +165,17 @@ agent 2026-11-22 已代驗第一點的前半：Save341（有 Estates 進度）�
 
 agent 2026-11-22 已代驗第 2 步：兩場新窗 SKSE log 都有 `ANDR_PapyrusFunctions` 載入成功、`GetCurrentTopicInfo not found` 0 筆。第 1 步 agent 做不到：CRS 只在你**按 E 或滑鼠左鍵**選對話時才觸發，agent 用工具選對話不經按鍵，所以這步仍要你玩的時候看一眼右上提示。
 
+agent 2026-11-22 下午（runtime-3）改用真按鍵（E）跟哈蘭對話、選了 3 個沒問過的話題：CRS 的按鍵處理有跑（它的忙碌旗標 `CRS_GLOB_IsBusy` 在按下後 0→1→0），新 log 窗 `GetCurrentTopicInfo` 錯誤 0。**但你的 CRS 設定 `CRS_GLOB_ShowMessage`＝0（不顯示訊息）**，所以本來就不會跳提示；每題加的口才經驗（`EXPGain`＝50）太小，看不出升級。你要確認的話：MCM 裡把 CRS 的「顯示訊息」打開，再問一個新話題看提示；或維持關閉、不用管。
+
 ## BodySlide 身體＋裝備曲線第一梯次：先 Reset OBody 再看外觀（2026-11-22）
 
 全域身體、原版／DLC／CT77、CC、UNSLAAD 衣甲都換成帶 `.tri` 的 `CBBE Vanilla` 版，OBody 改成不隨機、Aela 指定身形。**進遊戲第一件事**：在空室內開 MCM `OBody NG`，先關 `Enable ORefit` 與兩個 randomization，再點 `Reset all distributed presets`，另存新檔、退出重開再讀。然後看一般女 NPC 外觀不變、原版甲／CC 衣服沒穿模、Aela 甲貼身。主角是男性，女體滑桿要用女 NPC 或新女角測。步驟、要看的清單與個別重置名單見 [bodyslide-morph.md](feature-runtime/bodyslide-morph.md)。第二梯次（VIGILANT 378 件、GLENMORIL 20 件女裝）同日也已上線，同一場一起看：找女 NPC 穿幾件，看貼身、沒隱形、名稱中文（該頁第 4b 節）。同日男體也上線（全域男性換 HIMBO 裸體版＋TNG、男裝跟身形、主角可在 RaceMenu 捏身形），**Reset 男女同一次做完**；之後打開 OBody 的 Respectful morph application、對主角 Reset 一次再去 RaceMenu 捏，看裸身與原版甲一起變、路上男 NPC 是零形（該頁第 1 步第 7–8 點與第 4c 節）。
+
+## 看 Muiri 新臉的圖，決定啟不啟用（2026-11-22）
+
+Hatak 的臉已做成 Muiri 的換臉層，agent 實機看過：無黑臉、部件與貼圖對、脖縫已修、體重維持原樣；**目前已部署但停用**，Muiri 還是 JH NPC Beauty 的臉。請看三方對照圖 `agentctl/handoffs/home-2026-11-22/runtime-3/shots/cmp-three-way.jpg`（左原 Muiri、中 Hatak 套在主角上、右新 Muiri），其他角度與已知缺陷（Hatak 妝很濃）見[試點頁](../wf/user/2026-11-22-npc-face-pilot.md)。MO2 與遊戲都關著時：
+
+- 喜歡就啟用：`python3 instance/tools/layer_apply.py agentctl/handoffs/home-2026-11-22/runtime-3/data/muiri-enable.layer-apply.json --apply --take-lock user-enable-muiri`（或在 MO2 勾選 `Muiri-Look-From-Hatak-Dev-2026-11-22` 與同名 esp）。
+- 不要：什麼都不用做（現在就是停用；MO2 已把停用 esp 從 plugin 清單拿掉）。要清資料夾就在 MO2 對該 mod 右鍵移除；不要用 r3 的 `--revert --force`（會整份蓋回三個設定檔）。
+
+回一句「啟用」或「移除」，agent 也可以代跑。

@@ -40,7 +40,7 @@
 | [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與工具 | 4 |
 | [faces-facegen-consistency](faces-facegen-consistency.md) | 臉：facegen 與頭部件一致性規則（大媽臉／素臉真因） | 5 |
 | [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：排錯與升級 | 6 |
-| [faces-racemenu-runtime](faces-racemenu-runtime.md) | 臉：RaceMenu 實機匯出頭與遊戲內取景 | 1 |
+| [faces-racemenu-runtime](faces-racemenu-runtime.md) | 臉：RaceMenu 實機匯出頭、脖縫與體型、遊戲內取景 | 2 |
 | [animation-oar](animation-oar.md) | 動畫與 OAR | 6 |
 | [crash-dll-and-scripts](crash-dll-and-scripts.md) | CTD：SKSE DLL 與腳本 | 8 |
 | [crash-data-and-assets](crash-data-and-assets.md) | CTD：資料層與素材 | 6 |
