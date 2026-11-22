@@ -16,9 +16,9 @@
 |---|---|---|---|
 | 1 需求凍結 | [author.md](author.md#1-需求凍結) | 目標 actor、基底 preset、要改的特徵 | **可用**（純文件流程） |
 | 2 合成 | [author.md](author.md#2-合成文字需求滑桿) | 文字需求→滑桿；用 `jslot` 工具產生候選、lint、diff | **可用**（離線、純數值，看不到圖） |
-| 3 離線預覽 | [loop.md](loop.md#3-離線預覽) | 正面、側面幾何圖 | **未實作** |
-| 4 遊戲內確認 | [loop.md](loop.md#4-遊戲內確認) | 套 preset＋截圖 | **截圖配方已實機**（tfc 取景）；Papyrus 套 preset **不換頭部件**，畫面只能看 tint／髮色；改在 RaceMenu UI 換種族＋載 preset 才會換（[bake-export](bake-export.md)） |
-| 5 使用者選定 | [loop.md](loop.md#5-使用者選定) | 挑選頁 | 沿用既有 `wf/user/` 頁面模式 |
+| 3 離線預覽 | [loop.md](loop.md#3-離線預覽) | 正面、側面幾何圖 | **未實作**（R1／R2） |
+| 4 遊戲內確認 | [loop.md](loop.md#4-遊戲內確認閉環) | jslot→RaceMenu 載入→截圖（`face_loop`） | **工具可用、已實機 6 場**：開場 2.5 分鐘，之後每份 12–36 秒；重現性不足（同 preset 重拍差異 10–31% 像素），±0.5 看得出、±0.1 看不準 |
+| 5 使用者選定 | [loop.md](loop.md#5-使用者選定) | 挑選頁 | 沿用既有 `wf/user/` 頁面模式（本輪未產挑選頁） |
 | 6 固化 | [bake.md](bake.md) | preset→NPC patch 層 | **實機通過**：UI 換種族、UI 載 preset、Sculpt F5 匯出、`build_layer`（含 `--drop-shape`）、gate 全 PASS（Muiri 試點）。**人工判斷**：美醜、妝濃淡、體重保不保留、耳朵等多餘 shape 刪不刪（[逐步狀態](bake.md#presetnpc-臉層整條流程逐步狀態)） |
 | 7 部署驗收 | [bake.md](bake.md#7-部署與驗收) | `layer_apply`＋實機看臉 | 已實機通過（runtime-3，部署後停用待使用者看圖）；脖縫要在匯出前對齊體型（[bake-export](bake-export.md)） |
 
@@ -50,7 +50,7 @@
 - **NPC 臉固化卡在匯出頭——已解**（11-22 face-pilot-2）：主控台改種族後頭不重建，改在 RaceMenu UI 點種族再匯出（[bake-export](bake-export.md)）；CK 仍是備援 D1；PROTEUS「清除 NPC 編輯」禁用（[bake](bake.md#禁區)）。
 - 身體滑桿 plugin `RaceMenuMorphsCBBE` 未裝，要裝用 3BA 30174 v2.48 包那份（CBBE 1.8.1 包那份缺 40 個滑桿）；屬身形，歸 bodyslide。
 - OBody 預設先清空 actor 的所有 morph 再套 preset，和 RaceMenu 的身體 morph 是**後寫者贏**；臉部欄位不受影響。
-- 臉部滑桿正負方向未實機校準（[author §3](author.md#3-方向還沒校準)）；自訂種族部分滑桿無效、也不讀預烤 facegen。
+- 臉部滑桿正負方向：Breton 女已確認 `Jaw_NarrowWide`（＋寬－窄，與推論同），`Chin_NarrowWide`、`Chin_UpDown`、`Eyes_ForwardBack` 只確認負向；其餘 14 軸與男性都未確認（[author §3](author.md#3-方向還沒校準)、sliders.json 的 `direction_verified`）；自訂種族部分滑桿無效、也不讀預烤 facegen。
 
 ## 交接
 

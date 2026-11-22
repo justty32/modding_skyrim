@@ -66,7 +66,7 @@ Done when：每份候選 `lint` exit 0；`diff` 對基底列出的欄位和需�
 
 欄位對應已有實證：NAM9 19 格的順序來自 xEdit `wbDefinitionsTES5.pas:8435-8455` 與 CommonLibSSE `TESNPC.h` `FaceData::Morphs`；每軸對到哪兩個 tri morph，來自 `femaleheadchargen.tri` 的 morph 名稱。
 
-**還沒實證的是「負值是 A 端還是 B 端」**。sliders.json 先依 xEdit 欄名的順序假設負值對 A 端（例如 `Nose Long/Short`：負值＝NoseLong）。在 [loop](loop.md) 的出圖或截圖做好之前：
+**大部分還沒實證「負值是 A 端還是 B 端」**。2026-11-22 face-loop 用遊戲內截圖校準 Breton 女：`Jaw_NarrowWide` 已確認與推論相同，另 3 軸只確認負向，結果寫在 sliders.json 的 `direction_verified`、`effect_zh`、`suggested_step`、`evidence` 欄；沒標「是」的軸照下面的規則寫。sliders.json 先依 xEdit 欄名的順序假設負值對 A 端（例如 `Nose Long/Short`：負值＝NoseLong）。在 [loop](loop.md) 的出圖或截圖做好之前：
 
 - 回報時一律寫成「往 JawNarrow 端 0.1（假設為負值，方向未校準）」。
 - 校準後只改 sliders.json 的 `neg_pole`／`pos_pole` 和 `confidence`。intents.json 不用動，因為它只寫目標端，不寫正負號。

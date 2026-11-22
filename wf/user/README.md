@@ -12,6 +12,7 @@ Agent 之間交接的內部報告（各線 `REPORT.md`、`STATE.md` 等）仍留
 <!-- wf-nav -->
 | 檔案 | 內容 |
 |------|------|
+| [2026-11-22-ai-face-loop.md](2026-11-22-ai-face-loop.md) | AI 捏臉看圖閉環進度：能自動開遊戲載 preset 拍臉、下顎方向已校準、重拍雜訊還大、示範輪未做；以後怎麼下需求 |
 | [2026-11-22-waituser-runtime.md](2026-11-22-waituser-runtime.md) | 11-22 agent 不存檔代驗 WAIT_USER 結果（S0–S3）：已結案／請看一眼／仍要你本人、EngineFixes 新取捨 |
 | [2026-11-22-npc-face-pilot.md](2026-11-22-npc-face-pilot.md) | NPC 換臉試點（Hatak→Muiri）：runtime-3 做成、脖縫已修、已部署但停用，看三方對照圖決定啟用或移除；舊段落拆到子資料夾 |
 | [2026-11-16-kurone-soultomb-pick.md](2026-11-16-kurone-soultomb-pick.md) | Kurone Soul Tomb 換臉挑選：68 素材×256 隨從×13 身形，桌面離線頁、可匯出 JSON |

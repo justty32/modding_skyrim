@@ -15,7 +15,11 @@
   "step",
   "editable",
   "source",
-  "confidence"
+  "confidence",
+  "direction_verified",
+  "effect_zh",
+  "suggested_step",
+  "evidence"
  ],
  "rows": [
   {
@@ -31,7 +35,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Nose_UpDown",
@@ -46,7 +52,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Jaw_UpDown",
@@ -61,7 +69,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Jaw_NarrowWide",
@@ -76,7 +86,11 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "是（Breton 女；3 場獨立觀察一致）",
+   "effect_zh": "＋＝下顎與下半臉變寬、臉變方；−＝下顎收窄、臉變瘦。與 neg_pole／pos_pole 推論相同",
+   "suggested_step": "0.1–0.2（±0.5 已非常明顯）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Jaw_ForwardBack",
@@ -91,7 +105,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Cheeks_UpDown",
@@ -106,7 +122,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Cheeks_ForwardBack",
@@ -121,7 +139,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Eyes_UpDown",
@@ -136,7 +156,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Eyes_InOut",
@@ -151,7 +173,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Brows_UpDown",
@@ -166,7 +190,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Brows_InOut",
@@ -181,7 +207,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Brows_ForwardBack",
@@ -196,7 +224,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Lips_UpDown",
@@ -211,7 +241,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Lips_InOut",
@@ -226,7 +258,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Chin_NarrowWide",
@@ -241,7 +275,11 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "部分（只判讀 −0.5 側）",
+   "effect_zh": "−＝下巴變窄變尖；與推論相同（neg＝ChinThin）",
+   "suggested_step": "0.15",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Chin_UpDown",
@@ -256,7 +294,11 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "部分（只判讀 −0.5 側）",
+   "effect_zh": "−＝下巴變短、臉略短；與推論相同（neg＝ChinMoveUp）",
+   "suggested_step": "0.1",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Chin_UnderbiteOverbite",
@@ -271,7 +313,9 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "否（已拍、未能判讀：RaceMenu 待機晃動與頭部追蹤造成的姿勢差蓋過 ±0.5 的差異）",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.Eyes_ForwardBack",
@@ -286,7 +330,11 @@
    "step": "微 0.05／小 0.1／中 0.2；單軸單輪 ≤0.3",
    "editable": "yes",
    "source": "xEdit wbDefinitionsTES5.pas:8435-8461；CommonLibSSE RE/T/TESNPC.h FaceData::Morphs／Parts；femaleheadchargen.tri 的 morph 名（strings）",
-   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準"
+   "confidence": "欄位與 tri 名＝實證；中文語意＝推論；neg_pole／pos_pole 的正負方向＝推論（依 xEdit 欄名 A/B 順序猜負值→A），未實機校準",
+   "direction_verified": "部分（只判讀 −0.5 側，弱）",
+   "effect_zh": "−＝眼球前凸、眼睛看起來略大；與推論相同（neg＝EyesForward）",
+   "suggested_step": "0.1",
+   "evidence": "face-loop 2026-11-22 Breton 女 ±0.5 對照圖（S3 選單內、S5 世界取景），圖在本機備份區，見 agentctl handoffs face-loop REPORT"
   },
   {
    "id": "nam9.VampireMorph",
