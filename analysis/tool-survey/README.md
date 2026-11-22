@@ -38,7 +38,9 @@ repos/
 | [SkyrimSE-Linux-Modding](findings/linux-modding-guide.md) | 指南 | ✅ 快照調查 | 過時的 Proton 3.16-4／SKSE／FAudio 指南；與現行 Manjaro＋MO2 的可借接點與缺口 |
 | [Mundusform](findings/mundusform.md) | SKSE worldbuilding toolkit | ✅ 原始碼調查 | 可借概念，不可直接用：玩家走位粗鋪 navmesh 與 connector/bounding-box block grammar 有研究價值，但現成 DLL／export 鏈停在 1.5.97-era 且缺完整 NAVM/NAVI、跨 cell 與 1.6.1170 證據。 |
 | [Mundusform 三片段借用評估](findings/mundusform-borrow-assessment.md) | 遊戲內編輯器移植評估 | ✅ 原始碼對照 | navmesh 鋪 quad＝PORT；cell 快照＝SKIP；block 生成＝CONCEPT。 |
+| [Skyrim Universal Viewer](findings/skyrim-universal-viewer.md) | MO2 Python 插件（資產瀏覽器） | ✅ 原始碼調查 | NIF／DDS／ESP／HKX 預覽；無 CLI，但 NIF 渲染器不依賴 MO2，可自寫驅動離線出圖當捏身形預覽；不套 `.tri` 滑桿；授權未宣告 |
 | [wrye-bash](findings/wrye-bash.md) | Python mod manager + Bashed Patch generator | ✅ 原始碼調查 | 可借概念：LeveledListsPatcher 的 master-delta＋Delev/Relev 合併可補我方缺口，但現成 Bashed Patch 沒有無頭 CLI/API，且 GPL-3.0 不宜直接嵌入。 |
+| [Interior Inspector](findings/interior-inspector.md) | 離線單檔 HTML/JS 室內 cell 稽核器 | ✅ 原始碼調查 | 瀏覽器內讀 MO2 的 plugin／BSA／NIF，有 navmesh／門／物件／燈光 15 類規則、原版校準與 3D 對照，修正寫成 ESL ESP；可借 NVNM 解析與原版基準率門檻，patch 不直接進包；授權未查證 |
 
 ---
 
