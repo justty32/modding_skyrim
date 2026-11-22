@@ -29,7 +29,7 @@
 | [mo2-profiles](mo2-profiles.md) | MO2 profile 三檔：還原、並行編輯與遊戲改寫 | 5 |
 | [mo2-behavior-quirks](mo2-behavior-quirks.md) | MO2 本體行為坑（首次啟動、幽靈 profile、靜默失效） | 6 |
 | [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（裝前評估、安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴） | 6 |
-| [mod-library-bookkeeping](mod-library-bookkeeping.md) | mod 庫帳務、暫存與清理安全（身分辨識、欄位可信度、破壞性動作） | 5 |
+| [mod-library-bookkeeping](mod-library-bookkeeping.md) | mod 庫帳務、暫存與清理安全（身分辨識、欄位可信度、破壞性動作） | 6 |
 | [asset-and-engine-loading](asset-and-engine-loading.md) | 素材存在性診斷與引擎載檔／runtime 狀態機制 | 4 |
 | [housecarl-and-tools](housecarl-and-tools.md) | houseCARL 本體與其 Nexus／bridge 端點的坑 | 6 |
 | [housecarl-on-linux](housecarl-on-linux.md) | houseCARL 在 Linux 的平台坑（路徑、環境變數、鏡像、靜默錯答） | 4 |

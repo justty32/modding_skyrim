@@ -56,3 +56,14 @@ source: agentctl/handoffs/done/2026-08-28/opus-lib-clean/STATE.md；agentctl/han
 
 **How to apply:** 寫刪除/大量修改腳本套這三道保險；回滾備份放非 tmpfs 的實體路徑；評估「中途拔除」風險先查該內容是否已被本周目存檔載入過、是覆寫腳本還是改 flags/SEQ；刪除前一律當下重讀現行狀態；判斷能不能刪先查下游相依與可還原性再看空間。
 source: agentctl/handoffs/done/2026-08-30/purge-2026-08-30/README.md:28-31；agentctl/handoffs/done/2026-09-01/hgate-2026-09-01/bandolier/FINDINGS.md
+
+## unadopted-archive-check-installed-version-and-variant
+
+> 「沒採用的調查包」刪前要逐包對照已裝層的版本與變體；同一 mod 的較新版或另一變體看起來像調查殘留，其實可能是已裝 mod 的唯一來源包
+
+2026-11-22 `dl-intake` 把 Feris 1.4.3、Lyra Master 1.0.0.6 判為未採用（log-followups 調查用）準備刪；頂層刪前才逐一查到：現役 Feris 層是 1.4.2（下載包是較新版）、Lyra 現役是 **Lite** 變體（下載包是 Master），兩包都不是已裝層的來源，才放行永久刪除，並記下重抓編號 Nexus 142226#841761、179416#749742（[dl-intake REPORT](../../agentctl/handoffs/home-2026-11-22/dl-intake/REPORT.md) §5）。若版本或變體剛好相同，刪掉的就是已裝 mod 唯一能重裝的來源。
+
+**Why:** 檔名相近時「這包是調查用的」只是來由，不代表它和已裝層無關；判斷依據該是已裝層 `meta.ini` 的 `installationFile`／版本欄與 MO2 層名，而不是哪條線下載的。
+
+**How to apply:** 刪下載包前列出每包的 Nexus `mod#file`、版本、變體（Lite／Master、CBBE／3BA 等），對 `modlist.txt` 啟用層與各層 `meta.ini`（`installationFile`、`version`；`installationFile` 指向不存在的路徑也要記下）比對；同 mod 不同版或不同變體要寫明「不是已裝層來源」的證據；刪前記下重抓編號；永久刪除走二段（先 trash＋sha256 核對，再在使用者面前清）。
+source: agentctl/handoffs/home-2026-11-22/dl-intake/REPORT.md；agentctl/handoffs/home-2026-11-22/last-wrap/REPORT.md
