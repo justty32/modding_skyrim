@@ -19,7 +19,9 @@ Subcommands (each reads the config; --batch ID limits to some batches, repeatabl
           <obody.layer>-<obody.revision> with OBody_presetDistributionConfig.json + delta presets;
           change one NPC = edit the table, bump obody.revision, rerun this step only;
           obody.neutralize_tri [Data-relative .tri paths] adds empty TRIs for private bodies that
-          are already baked to the target preset
+          are already baked to the target preset; obody.extra_files {Data-relative path: source}
+          copies files into the layer (e.g. a private body NIF retargeted by bodyslide_fit.py
+          retarget-bodytri); obody.staging_root puts layers/ and manifests/ under another staging
   all     stage, plan, build, verify, layer, obody; stops at the first failing step
 
 Config (JSON, schema bodyslide-rebuild/1; see wf/workflows/bodyslide/body-swap.md):
@@ -44,6 +46,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import sys
 
@@ -313,7 +316,10 @@ def cmd_obody(cfg, args) -> dict:
     if not ASCII_NAME.match(name):
         raise ConfigError(f'obody layer name must be ASCII: {name!r}')
     new, presets, report = oc.build(spec, cfg['_root'])
-    dest = cfg['_root'] / 'layers' / name
+    out_root = under(cfg, spec['staging_root']) if spec.get('staging_root') else cfg['_root']
+    dest = out_root / 'layers' / name
+    extra = {rel: under(cfg, src) for rel, src in (spec.get('extra_files') or {}).items()}
+    report['problems'] += [f'extra_files {rel}: source missing {src}' for rel, src in extra.items() if not src.is_file()]
     if report['problems'] or args.dry_run:
         return dict(ok=not report['problems'], layer=str(dest), **report)
     if dest.exists() and any(dest.iterdir()):
@@ -331,10 +337,18 @@ def cmd_obody(cfg, args) -> dict:
         tri = dest / rel.replace('\\', '/')
         tri.parent.mkdir(parents=True, exist_ok=True)
         tri.write_bytes(b'PIRT\x00\x00')
+    copied = {}
+    for rel, src in extra.items():
+        # e.g. a private body NIF whose BODYTRI was retargeted (bodyslide_fit.py retarget-bodytri)
+        dst = dest / rel.replace('\\', '/')
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(src, dst)
+        copied[rel] = layer.sha256(dst)
+    report['extra_files'] = copied
     (dest / 'meta.ini').write_text('[General]\ngameName=Skyrim Special Edition\nmodid=0\n'
                                    f'version={rev}\ncategory=0\ncomments=OBody NPC body assignments from '
                                    f"{cfg['name']} (base {spec['base_preset']!r})\n", encoding='utf-8')
-    mdir = cfg['_root'] / 'manifests'
+    mdir = out_root / 'manifests'
     draft = {'schema': 'layer-apply/1', 'name': 'bodyslide-obody', 'round': rev,
              'mods': [{'name': name, 'src': str(dest), 'replace': False}],
              'modlist': [{'mod': name, 'enabled': True, 'before': spec.get('before')}]}

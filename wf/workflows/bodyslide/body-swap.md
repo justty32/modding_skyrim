@@ -98,7 +98,7 @@ headless 建置跑在 staging 的私有 prefix 與 bwrap 唯讀沙箱，讀 stag
 **人工判斷點**：
 
 - NPC 的身體家族：CBBE／3BA 才做得到，UNP 系與原版系拓樸不同，要先換身體。
-- 私有身體有沒有 `.tri`，以及它是否已等於目標 preset。用頂點比對當證據，不相等時要人決定改用全域身體，或先在 Outfit Studio 擬合出 preset。
+- 私有身體有沒有 `.tri`，以及它是否已等於目標 preset。用頂點比對當證據，不相等時用 [擬合](fit.md) 反推 preset。
 - preset 名與檔名不能含 OBody 會跳過的字（cloth、outfit、nevernude、bikini、feet、hands、push、cleavage、armor），工具會擋。
 - 存檔裡已經記住的舊隨機 morph 不會自己消失，要在遊戲內 reset，並由使用者看結果。
 

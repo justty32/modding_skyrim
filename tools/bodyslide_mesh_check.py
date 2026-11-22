@@ -111,6 +111,7 @@ def read_nif_header(r: Reader) -> dict:
     block_types = [r.take(r.unpack("I")).decode("latin-1") for _ in range(r.unpack("H"))]
     type_idx = [r.unpack("H") & 0x7FFF for _ in range(num_blocks)]
     sizes = [r.unpack("I") for _ in range(num_blocks)]
+    strings_offset = r.p
     num_strings = r.unpack("I")
     r.unpack("I")  # max string length
     strings = [r.take(r.unpack("I")).decode("latin-1") for _ in range(num_strings)]
@@ -129,7 +130,8 @@ def read_nif_header(r: Reader) -> dict:
         raise FormatError(f"block sizes exceed file length ({cur} > {len(r.d)})")
     return {"header_string": header_string, "version": f"0x{version:08X}", "user_version": user_version,
             "bs_version": bs_version, "num_blocks": num_blocks, "types": types, "sizes": sizes,
-            "offsets": offsets, "strings": strings, "blocks_end": cur, "file_size": len(r.d)}
+            "offsets": offsets, "strings": strings, "strings_offset": strings_offset,
+            "blocks_end": cur, "file_size": len(r.d)}
 
 
 def string_at(h: dict, idx: int):

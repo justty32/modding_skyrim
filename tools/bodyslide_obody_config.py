@@ -262,19 +262,22 @@ def build(spec: dict, base_dir: Path) -> tuple[dict, str, dict]:
     bl = new.setdefault('blacklistedNpcsFormID', {})
     removed = []
     for plugin, ids in spec.get('unblacklist', {}).items():
-        keep = [x for x in bl.get(plugin, []) if x.upper().lstrip('0') not in {i.upper().lstrip('0') for i in ids}]
-        removed += [f'{plugin}:{x}' for x in bl.get(plugin, []) if x not in keep]
-        if plugin in bl:
-            bl[plugin] = keep
+        # plugin keys match case-insensitively (OBody resolves them with LookupModByName; a base
+        # config may say 'dragonborn.esm' while the table says 'Dragonborn.esm')
+        for key in [k for k in bl if k.casefold() == plugin.casefold()]:
+            keep = [x for x in bl[key] if x.upper().lstrip('0') not in {i.upper().lstrip('0') for i in ids}]
+            removed += [f'{key}:{x}' for x in bl[key] if x not in keep]
+            bl[key] = keep
             if not keep:
-                del bl[plugin]
+                del bl[key]
     assigned = []
     for plugin, ids in spec.get('assign', {}).items():
         for fid, presets in ids.items():
             for pr in presets:
                 if pr not in names:
                     problems.append(f'assign {plugin}:{fid}: preset {pr!r} not loaded or generated')
-            if any(fid.upper().lstrip('0') == x.upper().lstrip('0') for x in bl.get(plugin, [])):
+            if any(fid.upper().lstrip('0') == x.upper().lstrip('0')
+                   for k, xs in bl.items() if k.casefold() == plugin.casefold() for x in xs):
                 problems.append(f'assign {plugin}:{fid} is still in blacklistedNpcsFormID (add it to unblacklist)')
             new.setdefault('npcFormID', {}).setdefault(plugin, {})[fid] = list(presets)
             assigned.append(f'{plugin}:{fid}')

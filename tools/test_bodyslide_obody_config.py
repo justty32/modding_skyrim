@@ -114,6 +114,16 @@ class ObodyTests(unittest.TestCase):
         code, r = self.run_cli(dict(spec, base_preset=None), 'npc2')
         self.assertEqual(code, 2)
 
+    def test_unblacklist_plugin_key_case_insensitive(self):
+        spec = {k: v for k, v in self.spec.items() if k not in ('deltas', 'assign', 'unblacklist')}
+        spec.update(base_preset='Vanilla', osp='osp.osp', npc_presets=[
+            {'plugin': 'other.ESP', 'formid': '000123', 'preset': 'Target'}])
+        code, r = self.run_cli(spec, 'case')
+        self.assertEqual(code, 0, r)
+        out = json.loads((self.base / 'case/SKSE/Plugins/OBody_presetDistributionConfig.json').read_text())
+        self.assertNotIn('Other.esp', out['blacklistedNpcsFormID'])
+        self.assertEqual(r['unblacklisted'], ['Other.esp:000123'])
+
     def male_spec(self):
         (self.base / 'presets' / 'himbo.xml').write_text(
             '<SliderPresets><Preset name="HIMBO Zero" set="HIMBO Body - Nude">'

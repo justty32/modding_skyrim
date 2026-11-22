@@ -166,6 +166,29 @@ class RebuildTests(unittest.TestCase):
         user.write_text('<SliderPresets/>')
         self.assertEqual(self.run_cli('stage')[0], 2)  # same file name, other bytes
 
+    def test_obody_staging_root_and_extra_files(self):
+        (self.base / 'schema.json').write_text('{"type": "object"}')
+        (self.base / 'obase.json').write_text('{}')
+        nif = self.base / 'patched.nif'
+        nif.write_bytes(b'NIFDATA')
+        other = self.base / 'other-staging'
+        obody = {'base_config': str(self.base / 'obase.json'), 'schema': str(self.base / 'schema.json'),
+                 'neutral': {'name': 'BSO Neutral'}, 'random_pool': ['BSO Neutral'], 'revision': 'n2',
+                 'staging_root': str(other), 'extra_files': {'meshes\\x\\femalebody_1.nif': str(nif)}}
+        self.write_cfg(obody=obody)
+        code, r = self.run_cli('obody')
+        self.assertEqual(code, 0, r)
+        lay = other / 'layers' / 'BSO-NPC-Body-Assignments-n2'
+        self.assertEqual((lay / 'meshes/x/femalebody_1.nif').read_bytes(), b'NIFDATA')
+        self.assertIn('meshes\\x\\femalebody_1.nif', r['obody']['extra_files'])
+        self.assertTrue((other / 'manifests' / 'BSO-NPC-Body-Assignments-n2.layer-apply.json').is_file())
+        self.assertFalse((self.root / 'layers' / 'BSO-NPC-Body-Assignments-n2').exists())
+        obody['revision'], obody['extra_files'] = 'n3', {'meshes\\y.nif': str(self.base / 'missing.nif')}
+        self.write_cfg(obody=obody)
+        code, r = self.run_cli('obody')
+        self.assertEqual(code, 1)
+        self.assertTrue(any('source missing' in p for p in r['obody']['problems']))
+
     def test_mo2_build_selection_needs_review(self):
         (self.mo2 / 'mods' / 'Armor' / 'CalienteTools' / 'BodySlide' / 'BuildSelection.xml').write_text('<BuildSelection/>')
         self.assertEqual(self.run_cli('stage')[0], 0)

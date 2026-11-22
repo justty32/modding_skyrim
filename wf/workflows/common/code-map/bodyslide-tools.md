@@ -19,5 +19,6 @@
 | `tools/bodyslide_rebuild.py` | 設定檔（`bodyslide-rebuild/1`）驅動 stage→plan→build→verify→layer→obody 一行重建 |
 | `tools/bodyslide_select.py` | 寬鬆 OSP 目錄、批次選件（projects／osp_mods／stems／舊層／scope 表）、同輸出裁決、group 與 BuildSelection XML |
 | `tools/bodyslide_layer.py` | 批次驗收（路徑集合、抽樣 NIF／TRI／BODYTRI、舊層頂點比對、內嵌身體貼合）、硬連結組層、manifest |
+| `tools/bodyslide_fit.py`、`tools/bodyslide_fit_model.py` | 私有身體擬合成 preset（[擬合](../../bodyslide/fit.md)）：OSD／OSP 線性模型、帶界限最小平方、殘差與判定、批次、BODYTRI 改指；測試 `test_bodyslide_fit.py`（含 Aela 正控） |
 | `tools/bodyslide_obody_config.py` | OBody NG 覆蓋層：NPC→preset 表轉差量 preset、npcFormID、黑名單與隨機池；schema 子集驗證 |
 | `agentctl/tools/bodyslide_scope_scan.py`（private） | 現役 ARMO→ARMA 女性 mesh、VFS 贏家、`.tri`、OSP 對應的 scope 表（rebuild 的 `select.scope` 讀它） |
