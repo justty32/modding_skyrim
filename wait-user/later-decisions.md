@@ -70,3 +70,5 @@ PoE 凍結成品內 6 檔與 NativeCombat r2 `source/README.md` 4 條壞鏈被 M
 - (c) 兩項改 false：100% 修好，但作者提醒 mod 超過 1000 個可能偶發崩潰（你的 plugin 約 1,355 個）；之後崩潰變多就退回。
 
 都做成覆蓋層、可一步還原。見[部署報告](../agentctl/handoffs/home-2026-11-22/bodyslide-morph-deploy/REPORT.md#未做)、[男體施工報告](../agentctl/handoffs/home-2026-11-22/male-body-build/REPORT.md)。
+
+crash-ferry 建議：先選 (a) 不改。先花 1 分鐘驗證 EngineFixes 7.0.20 上滑桿是不是真的會失效：109080 是 EF6 時代的說法，而且它的 mod 檔是 6.x 格式的 toml，不要直接裝。真的失效，再選 (b)。另外，渡船那次崩潰跟這個設定無關（見[分析](../agentctl/handoffs/home-2026-11-22/crash-ferry/REPORT.md)），重走 3 次也沒重現，所以不用為了崩潰改它。那 1 分鐘的滑桿實測（男 HIMBO、女 CBBE，裸身＋原版鐵甲）還沒做：11-22 傍晚排到時你回來了，鍵鼠交還；要做需要你同意讓 agent 開遊戲，或你自己在 RaceMenu 連拉身體滑桿 5 次看會不會失效（[ferry-repro 報告](../agentctl/handoffs/home-2026-11-22/ferry-repro/REPORT.md)）。

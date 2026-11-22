@@ -6,7 +6,7 @@
 
 agent 又跑了 6 場（B1–B6），一樣全程不存檔；**91 個存檔逐檔雜湊、三個 ini 每場前後都相同**。證據見[報告](../../agentctl/handoffs/home-2026-11-22/runtime-3/REPORT.md)，截圖在 `agentctl/handoffs/home-2026-11-22/runtime-3/shots/`（只在本機）。
 
-- **新問題｜Baan Malur 渡船**：船夫對話、扣 30 金、抵達 `BaanMalur15` 都對，沒被彈回；**但抵達約 1.5 分鐘後遊戲崩潰**（崩在 `EngineFixes.dll` 的記憶體配置器）。請你自己搭一次，看抵達後會不會崩；可能和「EngineFixes 三選一」同源（推論）。
+- **新問題｜Baan Malur 渡船**：船夫對話、扣 30 金、抵達 `BaanMalur15` 都對，沒被彈回；**但抵達約 1.5 分鐘後遊戲崩潰**（崩在 `EngineFixes.dll` 的記憶體配置器）。請你自己搭一次，看抵達後會不會崩。**現況（傍晚 ferry-repro）**：分析判定不是 EngineFixes 的錯（它是受害者，兇手是某段把堆疊弄歪的程式，log 太短查不出），和「EngineFixes 三選一」無關；agent 同條件重走 3 次、各停 5～7 分鐘，**都沒崩**，目前算偶發。你玩時若卡死，先按 `Ctrl+Shift+F12` 再關遊戲（[報告](../../agentctl/handoffs/home-2026-11-22/ferry-repro/REPORT.md)）。
 - **請看一眼｜10-18 貼圖巡點**：6 個室內點沒看到紫色／缺圖（`B2-*`）；Boethiah 神龕、Volkihar 外塔沒拍到。
 - **請看一眼｜kurone 23 人**：穿衣全身、卸裝正面／側面、頸部近照（`B6-*`；Jordis、Megara 叫不來）。身形要 Reset 後才準。
 - **請看一眼｜CRS 口才**：agent 用真按鍵（E）選了 3 個新話題，CRS 的按鍵處理有跑、log 錯 0；但**你的 CRS 設定是「不顯示訊息」**，所以本來就不會跳提示。要提示就到 MCM 打開。
@@ -38,5 +38,5 @@ agent 又跑了 6 場（B1–B6），一樣全程不存檔；**91 個存檔逐�
 - **CRS 口才提示**：傍晚已用真按鍵代驗按鍵處理有跑；提示被你的 MCM「不顯示訊息」關掉（見上）。
 - 要開選單的部分（MCM、日誌、技能選單、Estates 畫面、書翻頁、水晶球）。
 - 所有身形類項目：要先做 OBody Reset。
-- 新的取捨：**EngineFixes 三選一**。男體上線後主角也會遇到滑桿失效，見[日後決定](../../wait-user/later-decisions.md)。
+- 新的取捨：**EngineFixes 三選一**。男體上線後主角也可能遇到滑桿失效，見[日後決定](../../wait-user/later-decisions.md)。**現況**：「拉一兩次就失效」是 EngineFixes 6.x 時代的說法，現行 7.0.20 還沒驗證；agent 排的 1 分鐘滑桿實測因你回來、鍵鼠交還而沒做。建議仍是先 (a) 不改，等實測。
 - 一句話就能結案的 5 項，見報告「待你一句話確認」。
