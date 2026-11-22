@@ -231,7 +231,7 @@ class CliTests(Base):
         self.assertIn('BODYTRI', text)
 
 
-STAGING = Path.home() / 'skyrim_mods/_staging-2026-11-22-bodyslide-morph'
+STAGING = Path.home() / 'skyrim_mods/bodyslide-sources/female'
 B3 = STAGING / 'src/3ba-30174/00 Base/CalienteTools/BodySlide'
 AELA = Path.home() / ('games/mod-organizer-2-skyrimspecialedition/modorganizer2/mods/'
                       'Kurone-All-Looks-Private3BA-2026-11-07/meshes/actors/character/kurone_native/bcb1')

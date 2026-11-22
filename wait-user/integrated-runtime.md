@@ -55,3 +55,7 @@ agent 2026-11-22 已觀測：三塊指南牌的內容全是中文（唯一的英
 agent 2026-11-22 已觀測：第 1 步 log 已過（`WB_` store 錯 0，兩場新窗）；第 2 步 4 支都學得到、中文名正常，用 `player.cast` 對外景空地施放，烈焰冲击／霜冻球／启示录有明顯特效，**火山兩次都看不到效果**，傷害沒量到（靶沒被打中）。截圖 `agentctl/handoffs/home-2026-11-22/waituser-runtime/shots/S0-30…S0-33`、`S0-41`——請看一眼確認，並實戰放一次火山；第 3 步（技能選單）agent 開不了選單，仍要你看。
 
 依據與回退：`agentctl/handoffs/home-2026-11-22/apocalypse-swap/REPORT.md`。
+
+## Headhunter 逃犯／竊賊對話選項（順路，2026-11-22 加回）
+
+Headhunter 討伐告示已依你「全都OK」結案，但原項剩的這一小步你沒驗過、隨整項被一起刪了，加回來：遇到 Headhunter 的逃犯／竊賊時，對話選項（說服、威嚇、跟我走、開打）選了要有效果。agent 試過主控台起任務找不到人，無法代驗。依據：`agentctl/handoffs/home-2026-11-22/headhunter-fix/REPORT.md`、`agentctl/handoffs/home-2026-11-22/profiles-main/REPORT.md`（結案表 Headhunter 列）。

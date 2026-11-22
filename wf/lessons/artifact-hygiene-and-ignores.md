@@ -68,3 +68,16 @@ done/ 的歷史 REPORT 連著自己產的截圖／log／work 目錄；這些檔�
 **Why:** 「已入版控」通常只核了文件與證據；腳本藏在 `run/`、`tools/`、`probe/` 子目錄裡，名字也不像要留的東西。使用者授權的是他聽到的描述，描述漏了腳本，授權就不涵蓋腳本。
 
 **How to apply:** 刪前跑一次 `find <夾> -type f \( -name '*.py' -o -name '*.sh' -o -name '*.ps1' \)` 列出所有腳本，每支標「已有版控對應（路徑）」或「之後還要用、先收進 `tools/`」或「一次性、可丟」，連同大小一起放進給使用者的刪除說明。紀錄、產物、腳本分三行報，不合併成一句。相關：[[temp-dirs-double-as-offline-reinstall-library]]、[[scan-inbound-links-before-delete]]。
+
+## rebuild-config-must-not-point-at-staging
+
+> 會重複用的流程（重建設定、測試）不可讀 staging 或 `wf/temp` 的東西：清暫存時才發現「換身體一行重建」直接讀 staging 的 `src/`、`run1/tool`，測試讀暫存裡的第三方檔複本
+
+2026-11-22：cleanup-temp 清暫存時發現四份 `agentctl/tools/bodyslide/*.json` 的 `staging_root`、`extra_sources`、`obody.presets_dirs` 全指向 `_staging-2026-11-22-*`，只好留下 7.9 GB 不清（[cleanup-temp REPORT](../../agentctl/handoffs/home-2026-11-22/cleanup-temp/REPORT.md)「KEEP」）；npc_face 測試寫死 staging 匯出物，`test_trigger` 讀 `wf/temp` 裡從 RaceMenu.bsa 抽的 `chargen.psc`，暫存一清就靜默 skip。final-wrap 把重建根搬到固定的 `~/skyrim_mods/bodyslide-sources/<female|male|body-fit>/`、測資移到 `~/skyrim_mods/test-samples/`、`chargen.psc` 改從已安裝 RaceMenu 的 BSA 讀（[final-wrap REPORT](../../agentctl/handoffs/home-2026-11-22/final-wrap/REPORT.md)）。
+
+**Why:** staging 的名字就說它是暫存，下一個清理者會照名字判斷；被長期流程引用的東西放在那裡，清理就只能二選一：斷流程或留垃圾。
+
+**How to apply:**
+- 線產出「之後還要重跑」的設定時，路徑指向固定位置（非 `_staging-<日期>`、非 `wf/temp`）；該線 REPORT 寫明哪些路徑是長期依賴。
+- 測試要的真樣本放固定樣本區並可用環境變數覆寫；第三方檔（mod 內附的 psc 等）不進版控，測試從已安裝的 mod 讀，找不到才 skip，skip 訊息寫清楚找過哪裡、怎麼指定。
+- 清 staging 前先 `grep -rn "_staging-<日期>"` 掃 `agentctl/tools`、`tools`、`wf/workflows`，有引用就先搬再改設定、跑 `plan --dry-run` 與測試，最後才刪。相關：[[list-scripts-before-deleting-staging]]。

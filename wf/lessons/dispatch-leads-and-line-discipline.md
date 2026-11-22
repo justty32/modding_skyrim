@@ -60,3 +60,15 @@
 2026-11-21 仍會發生：子代理的 Write 工具被「子代理不寫報告檔」擋下，一條線改用 shell 寫成 REPORT，另一條沒寫、由頂層從輸出代落檔。
 
 **How to apply:** 派線用 `.claude/agents/line.md`（subagent_type: line，新 session 才載入）；Write 被擋時線可改用 shell（heredoc／python）寫 REPORT，不要放棄落檔；在那之前，每份交接書／prompt 明寫「使用者已授權：REPORT.md 是交付物，直接寫檔，不要把全文塞回覆」。相關：[[leads-manage-subordinate-context]]。
+
+## checkpoint-line-silent-stall
+
+> 存檔線（STATE／commit／push）可能無聲停住：外部指令一律帶 `timeout`、每階段寫 PROGRESS、push 放最後且逾時不重試；頂層要主動看落檔時間，不要只等完成通知
+
+2026-11-22：checkpoint-1 停在「排好交接書分批清單、還沒 commit 第一批」那一步約 80 分鐘，沒有任何回報；頂層等通知等不到，看落檔時間才發現，改派 checkpoint-2 接手（[checkpoint-2 REPORT](../../agentctl/handoffs/home-2026-11-22/checkpoint-2/REPORT.md)「checkpoint-1 停在哪」）。之後 checkpoint-2～5 都加了三條規矩，全部順利收尾。
+
+**Why:** 存檔線串很多外部指令（lint、git、push、hook），任一個卡住（hook 等輸入、網路、鎖）整條線就靜止，而它自己不會發訊息。
+
+**How to apply:**
+- BRIEF 寫：每個外部指令帶 `timeout`（push `timeout 120`＋`GIT_TERMINAL_PROMPT=0`）、每完成一階段在 `PROGRESS.md` 追加一行時間戳、push 放最後一步且逾時不重試。
+- 頂層每隔一段看線夾的最新 mtime 與 PROGRESS；超過預期一倍沒有新行就去查，不要等通知。

@@ -111,3 +111,17 @@ Skyrim 忽略 xdotool 等合成的視窗定向輸入（2026-09-20），agent 不
 **Why:** mkdir 鎖只看目錄存不存在；owner 文字與狀態可能不一致，殘留不會自己清除。
 
 **How to apply:** 多工人共用鎖只讓領導管；取鎖失敗回 `Not a directory` 或 owner 寫已釋放先核實再清除。
+
+## runtime-proxy-save-protection
+
+> agent 代使用者跑實機時，存檔要能證明沒被動：saves／ini／overwrite 前後雜湊、`setini` 關計時存檔、讀檔走主選單「繼續遊戲」（主控台 `load` 在主選單可能無效，還會開出只能「新存檔」的面板）
+
+2026-11-22：runtime-pilot、waituser-runtime、face-pilot-2、runtime-3、ferry-repro、face-loop 都在使用者的 `modpack-main` 存檔上跑；每場前後 91 個存檔逐檔 sha256 全同、無新增，三個 ini md5 全同（[waituser-runtime REPORT](../../agentctl/handoffs/home-2026-11-22/waituser-runtime/REPORT.md)、[ferry-repro REPORT](../../agentctl/handoffs/home-2026-11-22/ferry-repro/REPORT.md)）。ferry-repro 17:12、17:18 兩次主控台 `load Save342` 在主選單無效，第一次還開出只有「新的進度檔」的存檔面板，那上面點下去就會存檔；改用主選單「繼續遊戲」並以金幣數確認讀對檔。
+
+**Why:** 使用者的存檔是唯一不能重來的東西；計時自動存檔、旅行存檔、誤點存檔面板都會寫新檔或覆蓋。
+
+**How to apply:**
+- 開場前與每場後：`saves/` 逐檔 sha256、三個 ini md5、overwrite 檔案清單、modlist 雜湊各存一份，收線比對（各實機線的 `guard.sh` 在 `~/skyrim_mods/_backups/handoff-data-2026-11-22/` 下）。
+- 讀檔後 `setini "fAutosaveEveryXMins:SaveGame" 999`、`bDisableAutoSave 1`，`getini` 回讀確認；`bSaveOnTravel` 等在 1.6.1170 `getini` 查不到，靠 profile 的 `skyrimprefs.ini` 本來就是 0。
+- 讀檔走主選單「繼續遊戲」；看到存檔面板只有「新的進度檔」就 Esc，不點。
+- 規則入口在 [runtime-qa](../workflows/runtime-qa/README.md)。

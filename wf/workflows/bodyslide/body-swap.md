@@ -15,7 +15,7 @@
 
 ## 設定檔與一行重建
 
-設定檔是 `bodyslide-rebuild/1` JSON；現役有兩份（private）：女體 `agentctl/tools/bodyslide/rebuild-cbbe.json`、男體 `rebuild-himbo.json`，各自一個 `base_preset`、一個 staging。欄位以 `python tools/bodyslide_rebuild.py --help` 為準，重點：
+設定檔是 `bodyslide-rebuild/1` JSON；現役有兩份（private）：女體 `agentctl/tools/bodyslide/rebuild-cbbe.json`、男體 `rebuild-himbo.json`，各自一個 `base_preset`、一個重建根（`staging_root`）。**重建根固定在 `~/skyrim_mods/bodyslide-sources/<female|male|body-fit>/`，不是暫存，清暫存時不可刪**；根內要留什麼、來源丟了怎麼從下載包重解，見設定檔夾的 README（private）。欄位以 `python tools/bodyslide_rebuild.py --help` 為準，重點：
 
 | 欄位 | 作用 |
 |---|---|

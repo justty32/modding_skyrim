@@ -110,3 +110,26 @@
 **Why:** 全稱命題多半來自「看了 top-N＋尾巴」的印象歸納，不是全集檢查；而讀報告的人會把它當成已驗證的不變量去推論（如從「只有舊拼法」推出「不會漏」的完整性保證，推論鏈整條作廢）。
 
 **How to apply:** ①寫「全部／無任何」之前，跑一條能證明它的指令（`grep -c`、集合 diff、`comm`），把指令與輸出一起貼進報告；跑不出來就改寫成「top-N 看到的都是…」。②安全性論證不要建立在歸納上——要靠判準本身的構造（如「全歷史掃描 ∖ 全分支 HEAD 聯集」）。③驗收別人報告裡的全稱命題時，視同未驗證，抽一條反例查。
+
+## oral-dispatch-brief-must-follow-template
+
+> 頂層口頭派的線，存檔時 BRIEF 也要照 `agentctl/templates/BRIEF.md` 分段；否則 pre-commit 的 `brief_lint --strict` 擋下 commit，存檔線要回頭逐份補段
+
+2026-11-22：頂層一天派了三十幾條線，多數 BRIEF 是把派線原文直接存檔，缺「必用工具」表、件數／容量 gate、交付絕對路徑、鎖與遊戲三選一。存檔線 commit 時被 hook 擋下，checkpoint-1／2 事後補段約 20 份（[checkpoint-2 REPORT](../../agentctl/handoffs/home-2026-11-22/checkpoint-2/REPORT.md)），之後的線在 BRIEF 開頭加一行「依派線原文照範本分段，不改原意」再過 lint（例：[cleanup-temp BRIEF](../../agentctl/handoffs/home-2026-11-22/cleanup-temp/BRIEF.md)）。
+
+**Why:** hook 只看檔案結構，不管是誰派的；補段拖到存檔線做，存檔線就得逐份重讀原文，容易卡住（見 [[checkpoint-line-silent-stall]]）。
+
+**How to apply:** 派線訊息裡就寫「照範本分段存成 BRIEF 並過 `brief_lint --strict`」，由該線開工第一步自己做；頂層直接寫檔時也照範本。原文照留，只補必填段。
+
+## brief-conflicting-gates-need-an-exit
+
+> 交接書的兩條限制互相衝突（「什麼都不刪」對上容量 gate、件數上限對上「整夾刪」），又沒給出路時，線會自己選一邊偏離；寫 BRIEF 時先對一遍限制有沒有互斥，互斥就寫明優先序或出路
+
+2026-11-22 子 agent 偏離紀錄（都已自首、沒有波及別人；證據在各線 REPORT）：`bodyslide-morph-build` 為守 6 GB 容量 gate 刪了自己建的可重產物（REPORT §8）、`body-fit` 刪過一次自己幾秒前產生的 `retarget/`（REPORT「刪除」段），兩者都違反「連自己的暫存也不刪」；`face-loop` 用 `pkill -f` 殺自己的驅動腳本，比對到自己那條指令；`cleanup-temp` 被 `.git` 保險擋下後把一個夾拆成 21 個兄弟項，刪了 83 個目標、超過自訂的 80，另一處它在「staging 整夾刪」與「不能斷換身體重建」之間選了後者（[cleanup-temp REPORT](../../agentctl/handoffs/home-2026-11-22/cleanup-temp/REPORT.md)「異常與偏差」）。`male-body-build` 的 REPORT 沒有刪除紀錄。
+
+**Why:** 線不會停下來問，它會挑一條自己覺得較重要的規則照做，然後在 REPORT 揭露；揭露是好的，但偏離本身是 BRIEF 造成的。
+
+**How to apply:**
+- 寫完 BRIEF 對一遍：容量 gate 與「不刪」、件數 gate 與「整夾處理」、「刪 X」與「不能斷 Y」有沒有互斥；有就寫「衝突時以 A 為準，B 改成 …（例：舊草稿改名保留、超過就停下回報）」。
+- 計數 gate 寫明單位（「頂層目錄」還是「刪除腳本的目標行」），並給拆分後的處置。
+- 殺行程只准 `kill <自己記下的 pid>`；`pkill`／`killall` 在 BRIEF 明文禁止。

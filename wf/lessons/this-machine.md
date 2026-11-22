@@ -37,3 +37,13 @@
 **Why:** 跟 [[interactive-grep-is-ugrep]] 同屬本機別名陷阱：手測看起來正常，腳本/子代理跑起來行為完全不同。
 
 **How to apply:** 腳本與子代理指令一律用 `/usr/bin/ls` 或 `find`，不要依賴互動殼的 `ls` 別名。
+
+## wait-loop-cmdline-trips-process-detection
+
+> 背景等待迴圈的命令列若含 `SkyrimSE.exe`／`ModOrganizer` 字樣，會讓按行程命令列判斷的工具（`profile_workflow.py record` 等）誤判遊戲在跑；條件永遠不成立的迴圈還會一直掛著
+
+2026-11-22：checkpoint-4 的 `record` 被擋（`runtime: RUNNING`），實際命中的是另一個 shell 的等待迴圈，命令列含 `SkyrimSE.exe`；遊戲與 MO2 都沒在跑（[checkpoint-4 REPORT](../../agentctl/handoffs/home-2026-11-22/checkpoint-4/REPORT.md)）。頂層兩個殘留迴圈其中一個條件永遠不成立，一直到手動停掉。`profiles-main` 第一次寫的 `pgrep -f "ModOrganizer.exe|SkyrimSE.exe"` 也比對到自己（[profiles-main REPORT](../../agentctl/handoffs/home-2026-11-22/profiles-main/REPORT.md)）。
+
+**Why:** 偵測工具掃的是所有行程的 cmdline，等待迴圈把要等的名字寫在自己的 cmdline 上，就成了「遊戲在跑」的證據；與 [[pgrep-self-match-beyond-brackets]] 同源。
+
+**How to apply:** 等待條件不要把行程名寫進自己的命令列——改看鎖檔、`ps -eo comm=` 精確比對，或把檢查放進獨立腳本；每個等待迴圈設上限（`timeout` 或次數），收線前確認沒有殘留迴圈。工具誤判時先 `ps -eo pid,args | grep -F SkyrimSE` 看命中的是誰。

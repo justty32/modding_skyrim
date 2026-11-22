@@ -41,6 +41,7 @@ Done when: <指定條數逐條有證據、鎖已釋放、profile 無殘留、結
   ```
 - **fresh log window**：每組驗收各自開新的 log 窗，`load_epoch` 要真的遞增。
   工具是 `agentctl/tools/{runtime,skse}_log_window.py`。
+- **代使用者跑實機時保護存檔**：saves／ini／overwrite 前後雜湊、`setini` 關計時存檔、讀檔走主選單「繼續遊戲」，細則見 [runtime-proxy-save-protection](../../lessons/locks-screen-and-game.md#runtime-proxy-save-protection)。
 - **一次只驗一組**。D3／D4 這類各自需要獨立的 fresh window，
   **無關的錯誤不得順手宣稱已解**。
 

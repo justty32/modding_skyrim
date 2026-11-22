@@ -16,14 +16,14 @@
 | [user-preferences](user-preferences.md) | 使用者偏好與邊界 | 10 |
 | [dispatch-roles](dispatch-roles.md) | 調度：頂層角色與誰來做 | 4 |
 | [dispatch-delegation](dispatch-delegation.md) | 調度：模型分級與委派給誰 | 6 |
-| [dispatch-leads-and-line-discipline](dispatch-leads-and-line-discipline.md) | 調度：領隊與線的運作紀律 | 5 |
-| [dispatch-handoffs](dispatch-handoffs.md) | 調度：交接書與查證 | 6 |
+| [dispatch-leads-and-line-discipline](dispatch-leads-and-line-discipline.md) | 調度：領隊與線的運作紀律 | 6 |
+| [dispatch-handoffs](dispatch-handoffs.md) | 調度：交接書與查證 | 8 |
 | [dispatch-cli-agents](dispatch-cli-agents.md) | 調度：驅動 codex／tmux | 5 |
 | [process-throttling](process-throttling.md) | 行程限流與別線行程的分寸 | 2 |
-| [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 7 |
+| [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 8 |
 | [repos-layout-and-remotes](repos-layout-and-remotes.md) | 版控：repo 佈局、remote 與 push | 5 |
 | [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、pathspec 與工作樹 | 5 |
-| [artifact-hygiene-and-ignores](artifact-hygiene-and-ignores.md) | 版控：產物衛生、.gitignore 與刪除前的掃描 | 5 |
+| [artifact-hygiene-and-ignores](artifact-hygiene-and-ignores.md) | 版控：產物衛生、.gitignore 與刪除前的掃描 | 6 |
 | [docs-organization](docs-organization.md) | 文件整理：封存、拆檔與頁面歸屬 | 5 |
 | [wf-kernel](wf-kernel.md) | wf 骨架（kernel）與工具形態 | 2 |
 | [mo2-profiles](mo2-profiles.md) | MO2 profile 三檔：還原、並行編輯與遊戲改寫 | 5 |
@@ -34,9 +34,9 @@
 | [housecarl-and-tools](housecarl-and-tools.md) | houseCARL 本體與其 Nexus／bridge 端點的坑 | 6 |
 | [housecarl-on-linux](housecarl-on-linux.md) | houseCARL 在 Linux 的平台坑（路徑、環境變數、鏡像、靜默錯答） | 4 |
 | [xedit-dyndolod-and-lod](xedit-dyndolod-and-lod.md) | xEdit、DynDOLOD 與 LOD 前置 | 3 |
-| [plugin-bsa-and-script-formats](plugin-bsa-and-script-formats.md) | plugin／BSA／腳本的格式事實與量測陷阱 | 5 |
+| [plugin-bsa-and-script-formats](plugin-bsa-and-script-formats.md) | plugin／BSA／腳本的格式事實與量測陷阱 | 6 |
 | [tool-portability](tool-portability.md) | 自製工具：repo 根推導、乾淨 clone 驗證、合法輸入不喊錯 | 2 |
-| [this-machine](this-machine.md) | 本機環境特性（shell、行程、工具差異） | 3 |
+| [this-machine](this-machine.md) | 本機環境特性（shell、行程、工具差異） | 4 |
 | [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與工具 | 4 |
 | [faces-facegen-consistency](faces-facegen-consistency.md) | 臉：facegen 與頭部件一致性規則（大媽臉／素臉真因） | 5 |
 | [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：排錯與升級 | 6 |

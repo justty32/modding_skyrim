@@ -14,7 +14,7 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 | 項目 | 設定 |
 |------|------|
 | 語言 | 回覆與文件一律**繁體中文**；技術專名（mod 名、API、指令、欄位）留原文。**mod 層繁簡皆可**——要的是有中文，不是正體；缺字破版才是硬 gate |
-| 分支慣例 | 直接 commit `main`，不開 branch 走 PR；**push 要使用者當場確認**（依鐵律 2）|
+| 分支慣例 | 直接 commit `main`，不開 branch 走 PR；**遠端只留 `main`**（2026-11-22「我希望遠端只有main」）；**push 要使用者當場確認**（依鐵律 2）|
 | 直接做、不用問 | 改文件、跑唯讀指令（`git status`／`grep`／`find`／查 Nexus）、跑測試與 lint |
 | 一定先問 | push、刪檔、動 `instance/`（MO2 profile／load order／已裝 mod）、動 DB（mod-library 的 MongoDB）、安裝依賴、開新的大型工作 |
 | 回覆風格 | 見 [reply-style](reply-style.md)；短、先結論。使用者問「**要不要**」時不要只回「不必」，附上可執行的判準（門檻數字）與後果，讓他能改數字 |
@@ -33,5 +33,7 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 2026-11-07 家中 Claude Code 場使用者裁示：Claude 額度剩 3%（16:00 重置），本場事情盡量交給 codex `gpt-6.1-sol`；若用 Claude agent，普通工作 Opus、簡單工作與雜活 Sonnet；除簡單工作與雜活外 agent 須先讀過 `wf/` 規矩；agent 可依每線 BRIEF 的子 agent 數量上限再派 agent、模型隨意，配額往下不倍增；本場可以隨意 push。後續裁示：家機每隊最多一個外部 codex，與同程序子 agent 分開計數；選人做設計決策／架構規劃時，GPT 的優先級較低，並非禁止使用；每線 BRIEF 必寫子 agent 數量上限，取代同日稍早的無上限寫法。
 
 2026-11-22 家中 Claude Code 場使用者裁示（長期偏好）：技術問題由 agent 自行決定（「反正這些都是技術問題，該怎麼做就怎麼做」）；「每隔一個大段就按照wf/規矩保存進度」＝每完成一大段就照 `wf/` 規矩做階段存檔（STATE、續行點、commit；push 仍看當場授權）；使用者外出時 agent 可自主持續做、可開遊戲／MO2（照 resource-locks 持鎖、不存檔覆蓋使用者進度），並注意 CPU／記憶體（「我出門在外，你自己持續做，可以開遊戲/mo2做事。注意cpu/mem。」）。同場一次性授權（當天可 commit／push、男體選項等）記在當場 STATE，不在此。
+
+2026-11-22 同場稍晚的長期偏好：遠端只留 `main` 已套用於母 repo、agentctl、instance、instance/profiles、mod-library；下載的 mod 壓縮包放 `~/skyrim_mods/` 根目錄保留（「下載的mod壓縮包可以丟到~/skyrim_mods」）；暫存用完可以清（「暫存全都可以清」「能刪就刪」；這是對清暫存的傾向，實際刪除仍照上表「刪檔」先問或有當場授權）。頂層詮釋（非原話）：清暫存不能弄斷可重複的流程——使用者也說「換身體這件事可能會經常做，所以這塊要留下一些口子」——所以長期流程要讀的東西放固定位置，不放 staging／`wf/temp`。
 
 領域詞彙常猜錯 → 開 `glossary.md`（見 [common/README](README.md)）。

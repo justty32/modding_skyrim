@@ -73,3 +73,13 @@ TES4 flags（含 ESL 位元 `0x00000200`）正確位置是 **offset 0x08**，不
 **Why:** 兩個坑都是「編譯成功＝看起來沒事」但產物其實壞了，只有逐字串/逐項比對才抓得到。
 
 **How to apply:** 任何要重編譯含中文字串的 `.psc`，存檔一律加 BOM；動手翻譯前先用未修改源碼做 round-trip 驗證當硬閘門，不要編完直接上。
+
+## formid-prefix-shifts-cite-plugin-and-local-id
+
+> 新增或移除一個 plugin，排在後面的所有 plugin 的 runtime FormID 前綴都會位移（2026-11-22 Apocalypse `69`→`6A`）；WAIT_USER、文件、主控台指令一律寫「plugin 名＋本地 ID」
+
+2026-11-22：apocalypse-swap 部署時 Apocalypse 在 runtime index `0x69`（[apocalypse-swap REPORT](../../agentctl/handoffs/home-2026-11-22/apocalypse-swap/REPORT.md)），之後 CRS 前置等層加進 load order，代驗時前綴已變成 `6A`；WAIT_USER 原本寫的完整 FormID 已失效，改寫成 plugin＋本地 ID（[waituser-runtime REPORT](../../agentctl/handoffs/home-2026-11-22/waituser-runtime/REPORT.md) I10）。
+
+**Why:** 完整 FormID 的前兩位是 load order 索引，是活值；ESL 的 `FE xxx` 也會隨 light plugin 數量位移。
+
+**How to apply:** 寫給人或別的 agent 的 FormID 用 `XXXXXX:Plugin.esp`（houseCARL 的文字格式，見 [common/gotchas](../workflows/common/gotchas.md)）；要在主控台用時，當場用 `whichmod.py` 或 load order 換算前綴，不抄舊值。
