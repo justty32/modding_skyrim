@@ -7,7 +7,7 @@
 **何時用**：重烤身體或服裝、批次 Build、排查 preset 空白／同路徑輸出衝突、評估 BodySlide 自動化。
 **何時不用**：找或下載素材 → [nexus-intake](../nexus-intake/README.md)；只改皮膚或指向既有私有 NIF → 先查 ARMA 路徑，不必重烤；只改 NPC 體重或身高 → 查 NPC_ `NAM7`／`NAM6`；修改工具原始碼 → [feature-dev](../feature-dev/README.md)。
 
-「刷這件／這套衣服」或指定群組增量重刷，先走 [刷衣服](outfits.md)；共用隔離、工具與部署規則沿本頁。
+「刷這件／這套衣服」或指定群組增量重刷，先走 [刷衣服](outfits.md)；整範圍重建、換身體、給 NPC 指定身形走 [換身體](body-swap.md)；共用隔離、工具與部署規則沿本頁。
 
 ## 內容
 
@@ -16,6 +16,7 @@
 | [tools.md](tools.md) | stage → plan → 沙箱建置 → 驗收的可照抄指令、exit code、暫存保留期 |
 | [headless.md](headless.md) | 版本證據、原生 preset、Config、BuildSelection／zap、OSP fallback |
 | [outfits.md](outfits.md) | 指定服裝的增量刷新 |
+| [body-swap.md](body-swap.md) | 設定檔一行重建全範圍、換身體、使用者自己捏身形、逐 NPC 指定身形（OBody） |
 | [deploy.md](deploy.md) | 現役贏家查核、最小 manifest、部署後驗證與回退 |
 | [evidence.md](evidence.md)、[outfit-evidence.md](outfit-evidence.md) | 2026-11-18 隔離試驗的結論（原件已刪） |
 

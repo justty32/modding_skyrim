@@ -32,7 +32,7 @@ CODE_MAP。不存在的根層 source tree 不另造索引。
 | `wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/tools/review_page.py`、`wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/tools/assets/` | 單次模板替換、審核狀態文字與 HTML/CSS/JS 內嵌；來源換行僅供閱讀，輸出保持單檔離線頁。 |
 | `wf/workflows/plans/poe-skyrim-mapping/combat-combinators/all-classes/tools/render-regions.py` | 只讀已核region／reservation／subtypes資料，重產8職局部SVG；裁切外部context，不改原座標、邊或配置。 |
 | `wf/user/2026-11-03-perk-units/render.py` | 從 private 研究表重產公開資料摘錄與離線效果單位過目頁。 |
-| `tools/test_bodyslide_outfit_plan.py`、`test_bodyslide_stage.py`、`test_bodyslide_sandbox_run.py`、`test_bodyslide_mesh_check.py`、`test_bodyslide_guard.py` | BodySlide 工具與測試：[bodyslide-tools](bodyslide-tools.md) |
+| `tools/bodyslide_*.py`、`tools/test_bodyslide_*.py` | BodySlide 工具與測試：[bodyslide-tools](bodyslide-tools.md) |
 | `tools/check_markdown_links.py` | 掃描母 repo 與非 `projects/` 工作區 submodules 的 tracked Markdown links；驗證檔案與 GitHub-style heading／explicit HTML anchors，理解 canonical symlink 位置，並支援 CI 的 `--skip-symlinks` 與 `--skip-uninitialized-submodules` 邊界（後者明報未初始化 gitlink 的未檢查目標，預設仍嚴格） |
 | `tools/markdown_links/parsing.py` | 解析本機連結與 heading anchors，驗證連結目標。 |
 | `tools/markdown_links/__init__.py` | Markdown 連結解析與驗證輔助套件入口。 |

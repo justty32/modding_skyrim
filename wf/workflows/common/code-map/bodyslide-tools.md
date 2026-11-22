@@ -11,3 +11,13 @@
 | `tools/bodyslide_outfit_plan.py` | 唯讀預檢 OSP project 的輸出、衝突、未選變體與來源缺項；大小寫變體 fail-closed |
 | `tools/bodyslide_sandbox_run.py` | 一輪 headless `-gbuild`：bwrap 唯讀根、唯一可寫 run 目錄、停網路、Xvfb＋私有 prefix；`result.json` |
 | `tools/bodyslide_mesh_check.py` | NIF partition 實際頂點、PIRT TRI 解析與 A／B／B-repeat 比對 |
+
+整範圍重建與 OBody（用法見 [換身體](../../bodyslide/body-swap.md)）：
+
+| 檔案 | 職責 |
+|---|---|
+| `tools/bodyslide_rebuild.py` | 設定檔（`bodyslide-rebuild/1`）驅動 stage→plan→build→verify→layer→obody 一行重建 |
+| `tools/bodyslide_select.py` | 寬鬆 OSP 目錄、批次選件（projects／osp_mods／stems／舊層／scope 表）、同輸出裁決、group 與 BuildSelection XML |
+| `tools/bodyslide_layer.py` | 批次驗收（路徑集合、抽樣 NIF／TRI／BODYTRI、舊層頂點比對、內嵌身體貼合）、硬連結組層、manifest |
+| `tools/bodyslide_obody_config.py` | OBody NG 覆蓋層：NPC→preset 表轉差量 preset、npcFormID、黑名單與隨機池；schema 子集驗證 |
+| `agentctl/tools/bodyslide_scope_scan.py`（private） | 現役 ARMO→ARMA 女性 mesh、VFS 贏家、`.tri`、OSP 對應的 scope 表（rebuild 的 `select.scope` 讀它） |

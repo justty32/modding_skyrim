@@ -59,6 +59,10 @@ python tools/bodyslide_mesh_check.py --out "$RUN/compare.json" compare \
 - 逐 shape 沿 skin instance → `NiSkinPartition` 取實際頂點（skinned mesh 的 inline count 可為 0，不是空 mesh）；A↔B 要有可解釋的位移、B↔repeat 頂點必須全同；相對路徑集合不同即失敗。
 - exit 0 全符合／1 期望不符／2 讀不到或格式不支援。`--out` 放在子命令之前；`--expect-changed` 點名必須有位移的 shape（衣服要點衣服 shape，不只內嵌身體）。不存在的 preset 會讓 runner exit 0 但 `compare` exit 1，A／B 哨兵不能省。單檔細節用 `nif FILE`、`tri FILE --nif FILE`。TRI 未解完的尾段以 `trailing_unparsed_bytes` 回報，未解的部分不冒稱驗過。
 
+## 整範圍重建：`bodyslide_rebuild.py`
+
+上面四步由 `bodyslide_rebuild.py` 依設定檔串起，另加批次選件（`bodyslide_select.py`：每個輸出只選一個 project，並寫 group 與 `BuildSelection.xml`）、批次驗收與輸出層組裝（`bodyslide_layer.py`：路徑集合、抽樣 NIF／TRI／BODYTRI、與舊層逐頂點比對、內嵌身體貼合度、硬連結成層＋manifest＋`layer_apply` 草稿），以及 OBody 設定層（`bodyslide_obody_config.py`）。用法與欄位見 [換身體](body-swap.md)。`bodyslide_stage.py --extra-source LABEL=DIR` 可把未安裝的轉換包解壓目錄併進 staging（優先序在 overwrite 之下、所有 mod 之上）。
+
 ## 暫存的保留與清除
 
 - `$RUN` 是證據現場，**不是工具的家**：之後還要用的腳本一律進版控（2026-11-21 前的 runner／驗證器就是隨 staging 一起刪掉的）。

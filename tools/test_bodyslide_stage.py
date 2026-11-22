@@ -136,6 +136,31 @@ class StageTests(unittest.TestCase):
         self.assertEqual(plan(self.out, ['A'])['projects'][0]['missing_sources'], [])
         self.assertEqual(sorted(plan(self.out, ['A', 'B'])['errors']), [])
 
+    def test_extra_source_between_overwrite_and_mods(self):
+        self.modlist('+M')
+        self.put('M', 'ShapeData/X/x.osd', 'mod')
+        self.put('M', 'ShapeData/X/only-mod.osd', 'mod only')
+        self.put(None, 'ShapeData/X/over.osd', 'over')
+        pack = self.base / 'packs' / 'conv'
+        (pack / 'CalienteTools' / 'BodySlide' / 'ShapeData' / 'X').mkdir(parents=True)
+        (pack / 'CalienteTools/BodySlide/ShapeData/X/x.osd').write_text('pack')
+        (pack / 'CalienteTools/BodySlide/ShapeData/X/over.osd').write_text('pack')
+        before = snapshot(pack)
+        code, report = self.run_cli('--extra-source', f'conv={pack}')
+        self.assertEqual(code, 0, report)
+        self.assertEqual(before, snapshot(pack))
+        rows = {r['staged_rel']: r for r in self.table()['rows']}
+        self.assertEqual(rows['ShapeData/X/x.osd']['winner_mod'], 'extra:conv')
+        self.assertEqual(rows['ShapeData/X/over.osd']['winner_mod'], '(overwrite)')
+        self.assertEqual(rows['ShapeData/X/only-mod.osd']['winner_mod'], 'M')
+        self.assertEqual((self.out / 'ShapeData/X/x.osd').read_text(), 'pack')
+        self.assertEqual(self.table()['summary']['extra_sources'], [dict(label='extra:conv', path=str(pack))])
+        code, report = self.run_cli('--extra-source', f'bad={self.base / "nope"}', out=self.work / 'o2')
+        self.assertEqual(code, 2, report)
+        with contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(main(['--mods-dir', str(self.mods), '--profile-dir', str(self.prof),
+                                   '--out', str(self.work / 'o3'), '--extra-source', 'no-equals']), 2)
+
     def test_mohidden_and_symlinks_excluded(self):
         self.modlist('+M')
         self.put('M', 'SliderSets/keep.osp')

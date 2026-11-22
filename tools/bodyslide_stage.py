@@ -14,7 +14,9 @@ modlist.txt semantics (MO2): first line = highest priority; '+Name' enabled,
 '-Name' disabled (excluded); '*' lines (unmanaged/DLC/CC), names ending in
 '_separator', '#' comments and blank lines are skipped; CRLF/BOM tolerated.
 Enabled mods whose directory is missing are listed in summary.missing_mod_dirs.
-overwrite/ outranks every mod.
+overwrite/ outranks every mod. --extra-source LABEL=DIR adds an unpacked,
+not-installed archive (e.g. a BodySlide conversion pack) between overwrite and
+the mods, in the order given; its rows show winner_mod 'extra:LABEL'.
 
 Inside each source, CalienteTools/BodySlide is located case-insensitively per
 level; two case variants at one level in the same source is fail-closed. Files
@@ -176,6 +178,9 @@ def collect(args, errors, counters):
         raise Fatal(f'--mods-dir is not a directory: {args.mods_dir}')
     if args.overwrite_dir is not None and not args.overwrite_dir.is_dir():
         raise Fatal(f'--overwrite-dir is not a directory: {args.overwrite_dir}')
+    for label, path in args.extra_source:
+        if not path.is_dir() or path.is_symlink():
+            raise Fatal(f'--extra-source {label}: not a real directory: {path}')
     try:
         data = modlist.read_bytes()
     except OSError as exc:
@@ -184,6 +189,8 @@ def collect(args, errors, counters):
     sources = []
     if args.overwrite_dir is not None:
         sources.append((OVERWRITE, args.overwrite_dir))
+    for label, path in args.extra_source:
+        sources.append((label, path))
     missing = []
     for name in enabled:
         path = args.mods_dir / name
@@ -204,6 +211,7 @@ def collect(args, errors, counters):
                 rank=rank, mod=label, rel=rel, mod_rel=mod_rel, abs=full, size=size,
                 sha256=sha256_file(full)))
     meta = dict(modlist=dict(path=str(modlist), sha256=hashlib.sha256(data).hexdigest()),
+                extra_sources=[dict(label=label, path=str(path)) for label, path in args.extra_source],
                 enabled_mods=len(enabled), disabled_mods=disabled, missing_mod_dirs=missing,
                 mods_with_bodyslide=with_bs)
     return providers, meta
@@ -345,6 +353,13 @@ def write_table(path: Path, rows, overrides, summary):
     os.replace(tmp, path)
 
 
+def extra_source(value: str):
+    label, sep, path = value.partition('=')
+    if not sep or not label.strip() or not path or label.startswith('('):
+        raise argparse.ArgumentTypeError('expected LABEL=DIR')
+    return 'extra:' + label.strip(), Path(path)
+
+
 def parse_args(argv):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument('--mods-dir', type=Path, required=True, help='MO2 mods/ (read only)')
@@ -354,6 +369,9 @@ def parse_args(argv):
     p.add_argument('--instance-dir', type=Path, help='instance dir, guarded against (else SKYRIM_REPO or git)')
     p.add_argument('--out', type=Path, required=True, help='staging root to create; must not exist or be empty')
     p.add_argument('--table', type=Path, help='source table JSON (default <out>.sources.json; never inside --out)')
+    p.add_argument('--extra-source', action='append', default=[], type=extra_source, metavar='LABEL=DIR',
+                   help='unpacked archive root (holding CalienteTools/) merged above every mod and '
+                        'below overwrite; repeat in priority order (first = highest). Read only.')
     p.add_argument('--dry-run', action='store_true', help='write the table only; copy nothing')
     g = p.add_mutually_exclusive_group()
     g.add_argument('--no-shapedata', action='store_true', help='copy nothing under ShapeData/')
