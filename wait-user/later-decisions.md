@@ -49,10 +49,6 @@ modpack-design commit `652ed91`／`dd009b8`。
 
 使用者 2026-10-24「這些都記下來，我下次做」留下的積壓：`MEMORY.md` 改成指向 `wf/lessons/` 的指標——memmig 搬家本體已做完（183 個小節、原檔全在），唯一剩的就是這個動作，`wf/lessons/README.md` 已寫明由頂層處理；在那之前兩邊並存、記憶目錄較新。
 
-## PoE 凍結成品 10 條壞鏈：解凍重發時一起修（2026-11-05 裁示）
-
-PoE 凍結成品內 6 檔與 NativeCombat r2 `source/README.md` 4 條壞鏈被 MANIFEST hash 鎖住，現在不改；你 2026-11-05 說「都按照建議」，建議為解凍重發成品時一併修（重算 MANIFEST），在那之前不單獨動。細節見 [11-05 STATE](../agentctl/handoffs/home-2026-11-05/STATE.md#claude-code-場瘦身與-tidy)。
-
 ## Mihail 青蛙／鴿子 mod 資料夾要不要刪（2026-11-15）
 
 你要求「解除安裝」青蛙、鴿子（兔子骨架的青蛙一併處理）。本輪只在 `modpack-main`、`dsport-dev` 停用（profiles `d607c3c`），以下 5 個 MO2 mod 資料夾仍在 `modorganizer2/mods/`：`Frogs 1.1.1 120998`、`Frogs CHS 1.1.1 148283`、`Mihail-Frogs-Skeleton-SE-Compat-Trial-1.1.1-2026-11-01`、`Pigeons 1.2 27238`、`Pigeons CHS 1.2 93577`。要刪就說一聲；Trial 層原件另有封存在 `mod-library/artifacts/`。見[停用紀錄](../agentctl/handoffs/home-2026-11-15/mihail-disable/REPORT.md)。
@@ -60,15 +56,3 @@ PoE 凍結成品內 6 檔與 NativeCombat r2 `source/README.md` 4 條壞鏈被 M
 ## Skyrim 間歇掉幀：先擱置，復發變嚴重再查（2026-11-21）
 
 2026-11-21 做了一次唯讀調查但未定罪：瓶頸在遊戲主執行緒（CPU），系統層（搶 CPU／記憶體／VRAM／過熱／磁碟／Papyrus）已排除。你裁示「目前還好，沒有很嚴重。總之先記錄下來之後再說」，所以先擱置、不續查。若復發變嚴重，待做三件：(a) 同地點讀 10 月舊存檔對照，分開存檔膨脹與 mod／驅動；(b) 用 `SKYRIM_DXVK_HUD=fps,frametimes,compiler` 啟動看幀時間與 shader 編譯（需你授權）；(c) 調低 Path of the Companions 的 log 等級（需你授權）。見[調查報告](../agentctl/handoffs/home-2026-11-21/stutter/REPORT.md)。
-
-## RaceMenu 身體滑桿：EngineFixes 記憶體設定要不要改（2026-11-22，男體上線後改寫）
-
-`EngineFixes.toml` 現在 `bOverrideMemoryManager=true`、`bOverrideScaleformAllocator=true`；Nexus 109080 作者說這兩項會讓 RaceMenu 裡的身體滑桿「拉一兩次就失效」。原本寫「主角是男性、用不到」，**11-22 男體 HIMBO 上線後已不成立**：主角現在可以在 RaceMenu 用 HIMBO 滑桿捏身形，同一個問題會打到主角。這只影響在 RaceMenu 裡即時拉身體滑桿，不影響 OBody 給 NPC 的身形。agent **沒改**，請三選一：
-
-- (a) 維持不改（預設）：拉滑桿失效時存檔重讀再拉。
-- (b) 只改 `skee64.ini` 的 `bBodyMorphGPUCopy=0`：作者說只修一半（剛開遊戲時有效），風險最低。
-- (c) 兩項改 false：100% 修好，但作者提醒 mod 超過 1000 個可能偶發崩潰（你的 plugin 約 1,355 個）；之後崩潰變多就退回。
-
-都做成覆蓋層、可一步還原。見[部署報告](../agentctl/handoffs/home-2026-11-22/bodyslide-morph-deploy/REPORT.md#未做)、[男體施工報告](../agentctl/handoffs/home-2026-11-22/male-body-build/REPORT.md)。
-
-crash-ferry 建議：先選 (a) 不改。先花 1 分鐘驗證 EngineFixes 7.0.20 上滑桿是不是真的會失效：109080 是 EF6 時代的說法，而且它的 mod 檔是 6.x 格式的 toml，不要直接裝。真的失效，再選 (b)。另外，渡船那次崩潰跟這個設定無關（見[分析](../agentctl/handoffs/home-2026-11-22/crash-ferry/REPORT.md)），重走 3 次也沒重現，所以不用為了崩潰改它。那 1 分鐘的滑桿實測（男 HIMBO、女 CBBE，裸身＋原版鐵甲）還沒做：11-22 傍晚排到時你回來了，鍵鼠交還；要做需要你同意讓 agent 開遊戲，或你自己在 RaceMenu 連拉身體滑桿 5 次看會不會失效（[ferry-repro 報告](../agentctl/handoffs/home-2026-11-22/ferry-repro/REPORT.md)）。

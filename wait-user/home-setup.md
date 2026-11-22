@@ -1,11 +1,5 @@
 # 回家下載／重建
 
-## LoreRim 借用後續：只剩一題（2026-11-14 再縮小）
-
-2026-09-03 已入庫 439 件／8.966 GB；原本六題，四題 09-03／09-04 已落地或裁示；地形 LOD（11-14 裁不跑）、`NO-PEX-UPSTREAM` 五件（11-14 裁留著）已移除。
-剩一題：中文層拓撲 FAIL（待回家補證）。
-內容見 [lorerim-leftovers.md](home-setup/lorerim-leftovers.md)。
-
 ## 自己改 `~/.zshrc` 的 `MODFORGE_TTS_BIN`（2026-10-26 立）
 
 `~/.zshrc` 的 `MODFORGE_TTS_BIN` 指向不存在的路徑，f5 venv 因此找不到；只有你能改 `~/.zshrc`（agent 不碰）。

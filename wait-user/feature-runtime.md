@@ -1,43 +1,8 @@
 # 獨立功能驗收
 
-## Baan Malur 渡船（2026-11-07）
-
-內容見 [baan-malur.md](feature-runtime/baan-malur.md)。
-
 ## Sofia DLC 對話擴充 1.0（2026-11-07）
 
 Sofia 已新增黎明守衛18句、龍裔8句與原版隨從31句中文評論。這版只有字幕、沒有語音包。帶 Sofia 推進兩個 DLC 主線時，確認中文沒有方框、亂碼或截斷；與 Lydia、Serana、Aela 等原版隨從同行並靠近 Sofia 時，順路確認評論可出現。隨從評論每次條件檢查20%機率、每句只觸發一次，不以短時間沒觸發判失效；部分黎明守衛字幕停留偏久為作者已知現象。確認既有 Sofia／SofiaVigilantAct 對話仍可正常使用。來源與主選單載入證據見 [REPORT](../agentctl/handoffs/home-2026-11-07/nexus-198176/REPORT.md)。
-
-## kurone 身體與移除換臉後的外觀（2026-11-07）
-
-請在遊玩時看以下 23 個 NPC：Aela、Camilla、Brelyna、Illia、Uthgerd、Ysolda、Elisif、Mjoll、Valerica、Jenassa、Frea、Jordis、Delphine、Rin、Vilja、Morgaine、Katana、Katana Shade、Megara、Varinia、Yoana、Aniya、Melana。卸下衣物後確認作者 3BA 身形、頭身膚色、脖子與手腳接縫；穿回衣服後確認沒有缺失部位、假髮與對話正常。衣服仍使用各自網格，請以卸裝外觀判斷身體。移除的素材換臉目標回到本體外觀，不另找替代。靜態證據及煙霧結果見 [REPORT](../agentctl/handoffs/home-2026-11-07/chronicon-kurone/REPORT.md)。
-
-agent 2026-11-22 傍晚（runtime-3）把 21 人逐一叫到 Riverwood 外景拍了穿衣全身、卸裝正面／側面、頸部近照：`agentctl/handoffs/home-2026-11-22/runtime-3/shots/B6-<EDID>-*.jpg`（Jordis、Megara 叫不來沒拍）。請看一眼；身形要 OBody Reset 後才準，對話沒測。
-
-## AgentBridge 0.11.0 原生 keyboard tap（2026-11-05）
-
-0.11.0 已部署並完成有限實測：唯一一次空格請求被 environment guard 取消，down／up 均 false，未重試；跳躍與成功派送尚未驗。先釐清 guard 的 menu／foreground／snapshot 原因，再安排受控實測；其他 guard 與 release debt 亦待驗，現在不需要使用者操作。詳見[實機報告](../agentctl/handoffs/home-2026-11-05/agent-bridge-input/RUNTIME-REPORT.md)與[輸入契約](../projects/agent-bridge/docs/input.md)。
-
-agent 2026-11-22 同一探針又試一次（Save342、無選單）：仍是 `cancelled`／`environment_blocked`，down／up 都沒送出。
-
-## AgentBridge 0.10.0 截圖：補充實機邊界（2026-11-05）
-
-基本截圖已部署並通過本輪有限實測：兩次場景畫面由使用者確認相符，主選單20次連拍、client中斷後存活與恢復後新圖均通過；這些不重驗。補充邊界留待日後有合適情境再測：真正無frame時有界失敗與恢復、resize／重建、開啟SMF等overlay的包含順序，以及長時間GPU資源觀察。這次切出後仍有新render，不能當無frame timeout已驗；目前不要求使用者繼續操作。見[本輪結果](../wf/user/2026-11-05-agent-bridge-screenshot.md)與[五項驗收狀態](../agentctl/handoffs/home-2026-11-05/agent-bridge-screenshot/runtime-checks.json)。
-
-## 2026-10-18 施工後實機驗收
-
-當天三批施工都只改 profile／mod 目錄，沒有開 MO2 或遊戲（profiles `fa48d3d`），以下只能玩的時候順路看。逐項證據見 當日現況（已刪：`agentctl/handoffs/home-2026-10-18/STATE.md`）。
-
-- **開 MO2 前後**：MO2 開關一輪後實讀 `plugins.txt`，`*` 總數應為 1291；當天停用的 39 支都沒有 `*`（agent 可代做）。
-- **讀檔**：舊存檔跳「缺少內容」可直接繼續。
-- **Hearthfire 小麥**：自宅田裡看得到、採得到、名稱是「小麥」（看不到就清空那格重種）。
-- **戰鬥**：打幾場持盾 NPC不卡永久舉盾、格擋頻率如常；閃避照舊。
-- **貼圖**：烏鴉岩 Boethiah 神龕、Castle Volkihar 外塔屋頂不再缺貼圖；Braidwood Inn 隔間門、Dragonsreach 寢室酒櫃不再紫色。
-- **擺設**：ULP 各地點擺設回來（看過的格子可能有快取）；Dibella 神殿擺設沒浮空；JK 系列店內地毯位置正常。
-
-有任何一項壞掉，還原檔在 `~/skyrim_mods/_layer-apply/` 下三組 `*-20261018T*`。
-
-agent 2026-11-22 下午（runtime-3）巡了 6 個室內點各 3 張：Dragonsreach 寢室、Braidwood Inn、Markarth Dibella 神殿、Belethor、Warmaiden's、Arcadia，畫面上沒看到紫色或缺貼圖（但第三人稱視角常被主角擋住，酒櫃／隔間門／地毯沒逐一對準）。烏鴉岩 Boethiah 神龕（傳送沒成功）與 Volkihar 外塔（逾時）沒拍到。圖在 `agentctl/handoffs/home-2026-11-22/runtime-3/shots/B2-*.jpg`，請看一眼；這兩處和小麥、格擋仍要你玩時看。
 
 ## 雙手鋼製太刀 idle 的實際武器辨識（2026-10-17）
 
@@ -97,30 +62,6 @@ agent 2026-11-22 傍晚（runtime-3）：RaceMenu 開得起來、滑桿能動（
 
 還原：持 game.lock、MO2 關著，先取回 revert 檔 `git -C agentctl show 3db1b772:handoffs/home-2026-10-26/eslapply/data/layer-revert.json > /tmp/eslapply-layer-revert.json`，再跑 `python3 instance/tools/layer_apply.py --revert /tmp/eslapply-layer-revert.json`。它把 modlist 蓋回套用前、把舊 ESLify-Overlay 從 `~/skyrim_mods/_layer-apply/eslapply-r1-20261026T110518/mods/` 搬回、ESLify-Overlay-NSV 搬進備份（不刪），再 profiles `record --kind fix`。revert 沒有 dry-run；三檔被別線改過會拒絕，屆時手動刪 `+ESLify-Overlay-NSV` 那行、把 ESLify-Overlay 目錄換回備份。已用新 light 存檔再撤旗標的反向路徑沒測過，先拿存檔複本試；revert json 內若寫死來源路徑，執行前先確認（原 REPORT `agentctl/handoffs/home-2026-10-26/eslapply/REPORT.md` 已刪，可由同一 commit 取回）。
 
-## Radiant Bow 1.4＋簡中層 進遊戲確認（2026-11-15）
-
-已裝進 `modpack-main`（profiles `6c48b43` 本體、`a4e3053` 中文層）：本體 `Radiant Bow-198744-1.4`（Nexus 198744 file 838616，FOMOD 選 English），上面疊 `Radiant Bow - CHS-198877-1.4`（mod-library `l10n/mods/Radiant-Bow-Simplified-Chinese-1.4`，1.2 簡中文字投射到 1.4 esp，MCM 173 句全中文）。靜態全過（缺 master 0、逐檔勝出者是中文層、fontgate 缺字 0），沒開過遊戲。玩的時候看：
-
-- **能不能用**：拿到法術書「法术书：召唤光辉弓」（`help 光辉` 或 `help radiant` 找 ID 再 `player.additem`），學會後召喚出弓、射一箭，有追蹤光箭；蓄力 5 秒放出激光。
-- **中文**：法術書書名與內文、法術名「光辉弓」、武器名「光辉弓」、箭「光辉箭」沒有方塊字或亂碼。
-- **MCM**：MCM 裡「光辉弓MCM设置」三頁都是中文；特別看新補的 6 句（箭矢／激光「飞行时间（秒）」、敵人偵測範圍）。
-
-還原：持 game.lock、MO2 關著，從新到舊跑 `python3 instance/tools/layer_apply.py --revert <revert.json>`：先中文層 `/tmp/skyrim-alt-modinstall/20261115-198877/revert-zh.json`，再本體 `revert-base.json`（在 `/tmp`，重開機會消失；消失時改為手動刪 modlist 兩行、plugins／loadorder 的 `RadiantBow.esp`，mod 資料夾停用不刪）。**2026-11-22 已確認這個 `/tmp` 還原檔已不存在**（重開機清掉），只能走括號裡的手動退路。
-
-agent 2026-11-22 已觀測（讀 Save341）：法術書名「法术书：召唤光辉弓」、施放後雙手拿著「光辉弓」、箭「光辉箭 (50)」，HUD 都是中文，截圖 `agentctl/handoffs/home-2026-11-22/waituser-runtime/shots/S3-bow-summoned.jpg`——請看一眼；射箭追蹤、蓄力激光、書內文、MCM 三頁 agent 做不到，仍要你看。
-
-## Falkreath Shop 1.0.6＋簡中 進遊戲確認（2026-11-15）
-
-已裝進 `modpack-main`（profiles `b42766c`）：本體 `Falkreath Shop-196703-1.0.6`（Nexus 196703 file 829471，依賴 Estates of Skyrim 0.1.8，同日發布），上面疊 `Falkreath Shop - CHS-197666-1.0.6`（Nexus 197666 file 831126，同版 gate 過：759 筆記錄全等、差異只在文字；字型缺字 0）。靜態全過，沒開過遊戲。使用者已說接受不穩定（「狠狠 crash」）。玩的時候看：
-
-- **能不能用**：到法爾克瑞斯「灰松货行」（Gray Pine Goods）找 Solaf，對話能買店（5000 金）、選掌櫃；放貨上架後有客人進來買。
-- **中文**：Solaf／Bolund 對話、MCM 設定頁、Estates 畫面上這間店（名稱「灰松货行」、類型「商店」）與提示訊息是中文、沒方塊字。Estates 畫面是 PrismaUI 網頁字型，跟遊戲字型不同，要特別看。
-- **崩潰／怪狀**：此 plugin 覆寫原版 Tamriel 的 WRLD、一個 CELL 與 NAVI（全域 navmesh 索引，載入序裡另有百來個 plugin 也覆寫它）；法爾克瑞斯一帶 NPC 走路卡住、地圖名稱變中文「天际」、或進城崩潰，就記下來。
-
-還原：持 game.lock、MO2 關著，跑 `python3 instance/tools/layer_apply.py --revert /tmp/skyrim-alt-modinstall/20261115-197666/revert.json`（在 `/tmp`，重開機會消失；消失時手動刪 modlist 兩行與 plugins／loadorder 的 `FalkreathShop.esp`，mod 資料夾停用不刪）。**2026-11-22 已確認這個 `/tmp` 還原檔已不存在**（重開機清掉），只能走括號裡的手動退路。
-
-agent 2026-11-22 已觀測（讀 Save341，存檔裡店已買下）：讀檔不崩；索拉夫的「关于商店……」→「生意怎么样？／装修进展如何？／就这些。」是中文、沒方框，截圖 `…/waituser-runtime/shots/S3-solaf-0.jpg`、`S3-solaf-1b.jpg`——請看一眼；買店、選掌櫃、客人購買、Estates 畫面與 MCM 仍要你看。
-
 ## VIGILANT 設定載入器 MCM 繁中＋停用 Falmer 重複中文層（2026-11-15）
 
 已改 `modpack-main`（profiles `a363e2c`）：新增 `VIGILANT SE - Settings Loader Traditional Chinese 1.2.0 Dev 2026-11-15`，排在 Settings Loader 上面（mod-library `l10n/mods/VIGILANT-Settings-Loader-Traditional-Chinese-1.2.0`，30 句：10 句沿用 VIGILANT 繁中、2 句重譯、18 句新譯）；停用被完全蓋住的 `Falmer-Servant-Lines-Expansion-Traditional-Chinese-Dev-2026-09-03b`（不刪，遊戲內容不變，生效的仍是 `ZH-LR-LR-0069`）。只動 modlist，plugins 不變；缺 master 0、字型缺字 0，沒開過遊戲。玩的時候看：
@@ -153,7 +94,3 @@ agent 2026-11-22 已代驗第一點的前半：Save341（有 Estates 進度）�
 3. 把附好魔的戰灰加進偏好，在偏好介面按數字鍵綁 1～8；右手拿武器，實戰按那個數字鍵放戰技。
 
 選了戰灰卻看不到剛學的戰技，就回報一聲，再開調查線查卷軸效果有沒有生效。見[調查報告](../agentctl/handoffs/home-2026-11-21/eldenrim-arts/REPORT.md)。
-
-## BodySlide 身體＋裝備曲線：剩選看項（2026-11-22）
-
-OBody 男女合一 Reset、主角 HIMBO 滑桿與裸身、路上男 NPC、一般女 NPC、原版甲／CC 衣、Aela、伊索爾達／簡拉薩穿甲貼合都已通過（使用者 2026-11-22：「全都OK」）。剩順路選看：VIGILANT／GLENMORIL 女裝貼身、小夜／瓦琳妮娅／Auri 穿甲、獸人男性與 Chadryn、UNSLAAD 披風、Ambriel 個別重置、女體滑桿；有問題才回報。清單見 [bodyslide-morph.md](feature-runtime/bodyslide-morph.md)。

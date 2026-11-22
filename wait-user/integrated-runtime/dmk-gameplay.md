@@ -16,22 +16,3 @@ agentctl commit `b009076`、`/home/lorkhan/repo/moddings/skyrim/agentctl/handoff
 **2026-09-25 22:2x 推進**：cx-wu-rt 已把 baseline pair 複製進 `modpack-main/saves/`（SHA 一致）
 並用 qa_console 載入（level 1、WhiterunBanneredMare）；**DMK 中文設定頁需使用者自己開 MCM 看**
 （agent 不送按鍵，拿不到畫面）。證據同上 REPORT 件 2。
-
-## Modpack-KR Batch 6 final gameplay
-
-自動 lane 21/21 PASS、`load_epoch 1 → 2`、0 new crash 不能代替真人。需驗新遊戲、城市／NPC、~~BFCO~~
-**MCO**、Mysticism／Adamant、CT77／~~AVE~~、RDO、VIGILANT Altano 入口／字幕／語音、
-自然跨 worldspace、MCM 與 description overlay 書。VIGILANT 四層須同版 1.8.2；Silent Voice 缺口已
-接受、不需 TTS。證據見 `Batch 6 RESULT`（已刪：`agentctl/logs/modpack-kr-final-smoke-2026-08-21/RESULT.md`）。
-
-**對象更正（2026-09-05 實讀，清單不刪只改名）**：
-- **BFCO → MCO**：2026-09-02 使用者裁示戰鬥框架從 BFCO 移回 MCO 並已施工。
-  `/home/lorkhan/repo/moddings/skyrim/instance/profiles/modpack-main/modlist.txt:407`＝`-BFCO - Attack Behavior Framework 3.100.5`（**停用**）、
-  `:403`＝`-BFCO Traditional Chinese 3.100.5 Dev 2026-08-16`（**停用**）；
-  現役是 `plugins.txt:864`＝`*Attack_MCO.esp`、`:865`＝`*scar-adxp-patch.esp`，`modlist.txt:404`＝`+SCAR 2.01`。
-  所以這條驗的是 **MCO 的輕／重／方向／sprint attack**，不是 BFCO。
-- **AVE**：`modlist.txt:620`＝`-Simonrim AVE Constellations Merge 1.5 Dev 2026-08-16`（**停用**）、
-  `:457`＝`-Thaumaturgy AVE Patch 1.1 Reference Dev 2026-08-16`（**停用**）。AVE 那半**作廢**，
-  CT77 仍在（`:610`／`:613`／`:614`／`:615` 皆 `+`），只驗 CT77。
-- Silent Voice 仍在：`modlist.txt:1319`＝`+Fuz Ro D-oh - Silent Voice`。
-

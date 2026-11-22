@@ -1,11 +1,3 @@
-## VIGILANT 1.8.2 正體中文
-
-現役已是 exact 1.8.2，45 筆 `BOOK.DESC` 私人 text-only layer 亦已升版。到晨星城風岳旅店找
-Altano，抽查主線開場、對話／字幕、日誌／目標、書籍、物品／效果、MCM，至少打開一件「石之碎片」
-確認描述為正體。英／日配音保留；作者檔與私人修正不公開重發。
-
-agent 2026-11-22 已觀測：阿爾塔諾在**晨星城風岳客棧**（DawnstarWindpeakInn），開場兩層對話「你們是在招募斯丹達爾的警戒者嗎？」→「好，請讓我加入你們。／不需要，謝謝。我對這沒興趣。」是正體、沒方框；「石之碎片：警戒者阿爾塔諾」物品名正體。截圖 `agentctl/handoffs/home-2026-11-22/waituser-runtime/shots/S3-altano-0.jpg`、`S3-altano-1b.jpg`——請看一眼；日誌／目標、書、碎片描述、MCM 要開選單，仍要你看。
-
 ## 2026-08-20 任務內容批
 
 抽查 UNSLAAD 3.0.6b、Missives 2.03、DAc0da 1.1.0b、GLENMORIL 0.96.80b 的 MCM／任務入口、

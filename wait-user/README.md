@@ -15,7 +15,7 @@
 <!-- wf-nav -->
 | 檔案 | 內容 |
 |---|---|
-| [home-setup.md](home-setup.md) | 回家下載／重建（細節在 `home-setup/`） |
+| [home-setup.md](home-setup.md) | 回家下載／重建 |
 | [integrated-runtime.md](integrated-runtime.md) | 整包 UI／中文／任務驗收（細節在 `integrated-runtime/`） |
 | [feature-runtime.md](feature-runtime.md) | 獨立功能驗收（細節在 `feature-runtime/`） |
 | [later-decisions.md](later-decisions.md) | 日後素材／清理決定 |
