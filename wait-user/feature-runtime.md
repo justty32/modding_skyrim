@@ -16,6 +16,8 @@ Sofia 已新增黎明守衛18句、龍裔8句與原版隨從31句中文評論。
 
 0.11.0 已部署並完成有限實測：唯一一次空格請求被 environment guard 取消，down／up 均 false，未重試；跳躍與成功派送尚未驗。先釐清 guard 的 menu／foreground／snapshot 原因，再安排受控實測；其他 guard 與 release debt 亦待驗，現在不需要使用者操作。詳見[實機報告](../agentctl/handoffs/home-2026-11-05/agent-bridge-input/RUNTIME-REPORT.md)與[輸入契約](../projects/agent-bridge/docs/input.md)。
 
+agent 2026-11-22 同一探針又試一次（Save342、無選單）：仍是 `cancelled`／`environment_blocked`，down／up 都沒送出。
+
 ## AgentBridge 0.10.0 截圖：補充實機邊界（2026-11-05）
 
 基本截圖已部署並通過本輪有限實測：兩次場景畫面由使用者確認相符，主選單20次連拍、client中斷後存活與恢復後新圖均通過；這些不重驗。補充邊界留待日後有合適情境再測：真正無frame時有界失敗與恢復、resize／重建、開啟SMF等overlay的包含順序，以及長時間GPU資源觀察。這次切出後仍有新render，不能當無frame timeout已驗；目前不要求使用者繼續操作。見[本輪結果](../wf/user/2026-11-05-agent-bridge-screenshot.md)與[五項驗收狀態](../agentctl/handoffs/home-2026-11-05/agent-bridge-screenshot/runtime-checks.json)。
@@ -36,6 +38,8 @@ Sofia 已新增黎明守衛18句、龍裔8句與原版隨從31句中文評論。
 ## 雙手鋼製太刀 idle 的實際武器辨識（2026-10-17）
 
 使用者描述「鋼鐵武士刀／鋼製大太刀」，名稱不確定。已證實 DaiKatana 姿態格只配攻擊、缺雙手 idle，近似名稱武器另有太刀 keyword 缺漏／Samurai 專屬路由。10-17 載入最新 Save76，當前右手實為鐵製彎刀，不能用此畫面宣稱太刀已重現；本輪未改裝備或配招。下次使用該雙手刀時，確認完整物品名稱或 FormID，再按需要取 OAR `2hm_idle.hkx` 播放來源；若要站姿隨選招，還須另選相容雙手 idle，不能直接把缺檔的攻擊包當成有站姿。見 調查報告（已刪：`agentctl/handoffs/home-2026-10-17/katana/REPORT.md`）。
+
+agent 2026-11-22 已查：最新存檔 Save342 的背包裡沒有太刀類武器（只有伐木斧、碎岩者、灰燼之王的劍等），沒法從存檔認出是哪一把；下次拿到那把刀時告訴 agent 名稱即可。
 
 ## 2026-09-24：長毛象 CTD（`SkyrimSE+02B789A`）
 
@@ -95,7 +99,9 @@ face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不�
 - **中文**：法術書書名與內文、法術名「光辉弓」、武器名「光辉弓」、箭「光辉箭」沒有方塊字或亂碼。
 - **MCM**：MCM 裡「光辉弓MCM设置」三頁都是中文；特別看新補的 6 句（箭矢／激光「飞行时间（秒）」、敵人偵測範圍）。
 
-還原：持 game.lock、MO2 關著，從新到舊跑 `python3 instance/tools/layer_apply.py --revert <revert.json>`：先中文層 `/tmp/skyrim-alt-modinstall/20261115-198877/revert-zh.json`，再本體 `revert-base.json`（在 `/tmp`，重開機會消失；消失時改為手動刪 modlist 兩行、plugins／loadorder 的 `RadiantBow.esp`，mod 資料夾停用不刪）。
+還原：持 game.lock、MO2 關著，從新到舊跑 `python3 instance/tools/layer_apply.py --revert <revert.json>`：先中文層 `/tmp/skyrim-alt-modinstall/20261115-198877/revert-zh.json`，再本體 `revert-base.json`（在 `/tmp`，重開機會消失；消失時改為手動刪 modlist 兩行、plugins／loadorder 的 `RadiantBow.esp`，mod 資料夾停用不刪）。**2026-11-22 已確認這個 `/tmp` 還原檔已不存在**（重開機清掉），只能走括號裡的手動退路。
+
+agent 2026-11-22 已觀測（讀 Save341）：法術書名「法术书：召唤光辉弓」、施放後雙手拿著「光辉弓」、箭「光辉箭 (50)」，HUD 都是中文，截圖 `agentctl/handoffs/home-2026-11-22/waituser-runtime/shots/S3-bow-summoned.jpg`——請看一眼；射箭追蹤、蓄力激光、書內文、MCM 三頁 agent 做不到，仍要你看。
 
 ## Falkreath Shop 1.0.6＋簡中 進遊戲確認（2026-11-15）
 
@@ -105,7 +111,9 @@ face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不�
 - **中文**：Solaf／Bolund 對話、MCM 設定頁、Estates 畫面上這間店（名稱「灰松货行」、類型「商店」）與提示訊息是中文、沒方塊字。Estates 畫面是 PrismaUI 網頁字型，跟遊戲字型不同，要特別看。
 - **崩潰／怪狀**：此 plugin 覆寫原版 Tamriel 的 WRLD、一個 CELL 與 NAVI（全域 navmesh 索引，載入序裡另有百來個 plugin 也覆寫它）；法爾克瑞斯一帶 NPC 走路卡住、地圖名稱變中文「天际」、或進城崩潰，就記下來。
 
-還原：持 game.lock、MO2 關著，跑 `python3 instance/tools/layer_apply.py --revert /tmp/skyrim-alt-modinstall/20261115-197666/revert.json`（在 `/tmp`，重開機會消失；消失時手動刪 modlist 兩行與 plugins／loadorder 的 `FalkreathShop.esp`，mod 資料夾停用不刪）。
+還原：持 game.lock、MO2 關著，跑 `python3 instance/tools/layer_apply.py --revert /tmp/skyrim-alt-modinstall/20261115-197666/revert.json`（在 `/tmp`，重開機會消失；消失時手動刪 modlist 兩行與 plugins／loadorder 的 `FalkreathShop.esp`，mod 資料夾停用不刪）。**2026-11-22 已確認這個 `/tmp` 還原檔已不存在**（重開機清掉），只能走括號裡的手動退路。
+
+agent 2026-11-22 已觀測（讀 Save341，存檔裡店已買下）：讀檔不崩；索拉夫的「关于商店……」→「生意怎么样？／装修进展如何？／就这些。」是中文、沒方框，截圖 `…/waituser-runtime/shots/S3-solaf-0.jpg`、`S3-solaf-1b.jpg`——請看一眼；買店、選掌櫃、客人購買、Estates 畫面與 MCM 仍要你看。
 
 ## VIGILANT 設定載入器 MCM 繁中＋停用 Falmer 重複中文層（2026-11-15）
 
@@ -126,7 +134,9 @@ profiles `7def9b0`：新資料夾 `Estates-Of-Skyrim-196696-0.1.21`（Nexus 1966
 - **中文**：天際領地畫面各分頁（總覽、工人、倉儲、升級）、建造列與快速建造選單、拆除兩段確認、尋找工人；MCM 新項目（快速建造按鍵、貨車遇襲）；聘任新職業的對話。看有沒有方框字、截斷、重疊。
 - **崩潰**：讀檔或開 Estates 畫面崩潰就記下來。
 
-還原：持 game.lock、MO2 關著，`python3 instance/tools/layer_apply.py --revert /tmp/skyrim-alt-modinstall/20261115-196696/revert.json`（在 `/tmp`，重開機會消失；先退中文層 `revert-zh.json` 再退本體；消失時手動把 modlist 的 ZH-0.1.21 與 0.1.21 改 `-`、0.1.8 與 ZH-0.1.8-r2 改回 `+`）。新版存過的檔退回舊版不保證能讀。
+還原：持 game.lock、MO2 關著，`python3 instance/tools/layer_apply.py --revert /tmp/skyrim-alt-modinstall/20261115-196696/revert.json`（在 `/tmp`，重開機會消失；先退中文層 `revert-zh.json` 再退本體；消失時手動把 modlist 的 ZH-0.1.21 與 0.1.21 改 `-`、0.1.8 與 ZH-0.1.8-r2 改回 `+`）。新版存過的檔退回舊版不保證能讀。**2026-11-22 已確認這個 `/tmp` 還原檔已不存在**（重開機清掉），只能走括號裡的手動退路。
+
+agent 2026-11-22 已代驗第一點的前半：Save341（有 Estates 進度）讀得進來、沒崩、沒有新 crash log；Estates 畫面、Build Mode、分頁中文要開選單，agent 做不到，仍要你看。
 
 ## Elden Rim 戰技配到戰灰：附魔台流程實機試（2026-11-21）
 
@@ -137,3 +147,18 @@ profiles `7def9b0`：新資料夾 `Estates-Of-Skyrim-196696-0.1.21`（Nexus 1966
 3. 把附好魔的戰灰加進偏好，在偏好介面按數字鍵綁 1～8；右手拿武器，實戰按那個數字鍵放戰技。
 
 選了戰灰卻看不到剛學的戰技，就回報一聲，再開調查線查卷軸效果有沒有生效。見[調查報告](../agentctl/handoffs/home-2026-11-21/eldenrim-arts/REPORT.md)。
+
+## CRS 補裝前置 Andrealphus Papyrus Functions 1.9.0 後實機確認（2026-11-22）
+
+你選了「補裝」。`modpack-main` 已在 Conversations Raise Speechcraft 下方加了 `Andrealphus Papyrus Functions-85252-1.9.0` 層（只有 DLL＋腳本，沒有 plugin）；靜態驗證全綠，剩實機。可以和上面 Apocalypse 那項同一場一起做：
+
+1. 開一場、讀檔，到城鎮找 NPC 問幾個沒問過的話題：右上角要跳「口才提升」之類的提示。
+2. 關遊戲後告訴 agent 一聲；agent 會查 SKSE log 有沒有 `ANDR_PapyrusFunctions` 載入成功，以及 `Papyrus.0.log` 裡 `GetCurrentTopicInfo not found` 是不是 0 筆（原本每場約 240 筆）。
+
+沒有提示或 log 還有錯，就回報一聲。依據與回退見[施工報告](../agentctl/handoffs/home-2026-11-22/crs-prereq/REPORT.md)。
+
+agent 2026-11-22 已代驗第 2 步：兩場新窗 SKSE log 都有 `ANDR_PapyrusFunctions` 載入成功、`GetCurrentTopicInfo not found` 0 筆。第 1 步 agent 做不到：CRS 只在你**按 E 或滑鼠左鍵**選對話時才觸發，agent 用工具選對話不經按鍵，所以這步仍要你玩的時候看一眼右上提示。
+
+## BodySlide 身體＋裝備曲線第一梯次：先 Reset OBody 再看外觀（2026-11-22）
+
+全域身體、原版／DLC／CT77、CC、UNSLAAD 衣甲都換成帶 `.tri` 的 `CBBE Vanilla` 版，OBody 改成不隨機、Aela 指定身形。**進遊戲第一件事**：在空室內開 MCM `OBody NG`，先關 `Enable ORefit` 與兩個 randomization，再點 `Reset all distributed presets`，另存新檔、退出重開再讀。然後看一般女 NPC 外觀不變、原版甲／CC 衣服沒穿模、Aela 甲貼身。主角是男性，女體滑桿要用女 NPC 或新女角測。步驟、要看的清單與個別重置名單見 [bodyslide-morph.md](feature-runtime/bodyslide-morph.md)。第二梯次（VIGILANT 378 件、GLENMORIL 20 件女裝）同日也已上線，同一場一起看：找女 NPC 穿幾件，看貼身、沒隱形、名稱中文（該頁第 4b 節）。同日男體也上線（全域男性換 HIMBO 裸體版＋TNG、男裝跟身形、主角可在 RaceMenu 捏身形），**Reset 男女同一次做完**；之後打開 OBody 的 Respectful morph application、對主角 Reset 一次再去 RaceMenu 捏，看裸身與原版甲一起變、路上男 NPC 是零形（該頁第 1 步第 7–8 點與第 4c 節）。

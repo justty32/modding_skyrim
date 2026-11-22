@@ -35,6 +35,8 @@
 
 離線 topology、文字與 script-binding gates 已過；抽查關係對話／字幕、任務／通知、賄賂金額、
 Gelebor／Isran／Valerica 等待／離隊通知，確認無方框、亂碼、空白、未替換 token、截斷、新 crash。
+
+agent 2026-11-22 已觀測（Save342 冬駐城）：旅店老闆達古爾的話題與字幕、冬駐城衛兵的犯罪對話 5 個選項都是中文、沒方框，賞金金額 token 已換成「（50 金幣）」；沒出現「賄賂」選項（可能要口才天賦）。截圖 `agentctl/handoffs/home-2026-11-22/waituser-runtime/shots/S1-crs-dagur-關於-1.jpg`、`S1-14-guard-b.jpg`——請看一眼；關係對話、任務通知、Gelebor／Isran／Valerica 仍要你看。
 **抽查清單本身從來沒過期，過期的是抽查對象與「尚未落地」那句**，所以改寫而不是刪除：
 
 <!-- wf-nav -->
