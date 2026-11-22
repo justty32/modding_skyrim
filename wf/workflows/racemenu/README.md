@@ -17,10 +17,10 @@
 | 1 需求凍結 | [author.md](author.md#1-需求凍結) | 目標 actor、基底 preset、要改的特徵 | **可用**（純文件流程） |
 | 2 合成 | [author.md](author.md#2-合成文字需求滑桿) | 文字需求→滑桿；用 `jslot` 工具產生候選、lint、diff | **可用**（離線、純數值，看不到圖） |
 | 3 離線預覽 | [loop.md](loop.md#3-離線預覽) | 正面、側面幾何圖 | **未實作** |
-| 4 遊戲內確認 | [loop.md](loop.md#4-遊戲內確認) | 套 preset＋AgentBridge 截圖 | **未實作、未實機** |
+| 4 遊戲內確認 | [loop.md](loop.md#4-遊戲內確認) | 套 preset＋截圖 | **截圖配方已實機**（tfc 取景）；Papyrus 套 preset **不換頭部件**，畫面只能看 tint／髮色 |
 | 5 使用者選定 | [loop.md](loop.md#5-使用者選定) | 挑選頁 | 沿用既有 `wf/user/` 頁面模式 |
-| 6 固化 | [bake.md](bake.md) | preset→NPC patch 層 | record／上架／組層**可用**；匯出頭**未實機** |
-| 7 部署驗收 | [bake.md](bake.md#7-部署與驗收) | `layer_apply`＋實機看臉 | manifest 自動產出；**未實機**，試點待授權 |
+| 6 固化 | [bake.md](bake.md) | preset→NPC patch 層 | record／組層**可用**；上架工具格式已用真匯出物驗；**匯出頭實機 4 場失敗**（部件沒換），改評估使用者手動 RaceMenu 或 CK |
+| 7 部署驗收 | [bake.md](bake.md#7-部署與驗收) | `layer_apply`＋實機看臉 | manifest 自動產出；**未跑**（沒有可用匯出頭，Muiri 層未產出） |
 
 下一階段工具與授權清單見計畫 [racemenu-face](../plans/racemenu-face/README.md)。
 
@@ -47,7 +47,7 @@
 
 - **主角是男性 Imperial、原版男體**：可以捏臉，捏身形目前做不到（男體方案由 `male-body-survey` 調查）。
 - 私人 preset `Hatak`、`Prisoner` 都是**女性**臉，套到男主角時 tint 與頭型會錯位，只能當數值參考。
-- **NPC 臉固化缺一場實機匯出**（`ExportHead` 從沒產出過）；CK 已裝（Steam 1946180）但 Proton 下未驗證，列備援 D1；PROTEUS「清除 NPC 編輯」禁用。見 [bake](bake.md#禁區)。
+- **NPC 臉固化卡在匯出頭**：2026-11-22 實機 4 場，`ExportHead` 有出檔但頭部件是原主角／新角色預設件（[lessons](../../lessons/faces-racemenu-runtime.md)）；CK 已裝（Steam 1946180）但 Proton 下未驗證，列備援 D1；PROTEUS「清除 NPC 編輯」禁用。見 [bake](bake.md#禁區)。
 - 身體滑桿 plugin `RaceMenuMorphsCBBE` 未裝，要裝用 3BA 30174 v2.48 包那份（CBBE 1.8.1 包那份缺 40 個滑桿）；屬身形，歸 bodyslide。
 - OBody 預設先清空 actor 的所有 morph 再套 preset，和 RaceMenu 的身體 morph 是**後寫者贏**；臉部欄位不受影響。
 - 臉部滑桿正負方向未實機校準（[author §3](author.md#3-方向還沒校準)）；自訂種族部分滑桿無效、也不讀預烤 facegen。

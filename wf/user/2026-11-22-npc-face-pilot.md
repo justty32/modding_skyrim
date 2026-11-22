@@ -4,6 +4,30 @@
 
 **一句話**：離線能做的都做好了。現在只差「進一次遊戲，讓主角戴上 Hatak 的臉，把頭匯出成檔案」。這一步要開遊戲、要暫時改 MO2 設定，所以要你點頭。
 
+## 試點結果（2026-11-22，你出門時 agent 跑的）
+
+**結論：這次沒做成。Muiri 的臉沒有換，換臉層沒產出、沒部署；遊戲裡什麼都沒留下。**
+
+- agent 開了 4 場遊戲做匯出（上限 4 場），每場都**沒存檔**。你的存檔目錄 91 個檔，前後 sha256 逐檔相同。
+- 匯出這一步有跑：觸發檔放進去、遊戲吐出頭檔、收回。卡在**遊戲沒有把 Hatak 的頭部件（臉型、髮型、眉眼、疤）真的換上去**。換上去的只有膚色、戰紋、唇色、髮色；頭型、頭髮還是主角原本的。匯出的頭拿去給 Muiri 用會變成錯臉，所以 agent 停手。
+- 換了三種做法、外加用全新角色試一次，結果都一樣。細節見 [REPORT](../../agentctl/handoffs/home-2026-11-22/runtime-pilot/REPORT.md)。
+
+| 原本的 Muiri（JH NPC Beauty） | 主角套 Hatak 後（只換到妝與膚色） |
+|---|---|
+| ![原 Muiri](../../agentctl/handoffs/home-2026-11-22/runtime-pilot/s2/08-muiri-orig-front.jpg) | ![主角套 Hatak](../../agentctl/handoffs/home-2026-11-22/runtime-pilot/s2/06-player-hatak-front.jpg) |
+
+（主角側面：[s2/07](../../agentctl/handoffs/home-2026-11-22/runtime-pilot/s2/07-player-hatak-side.jpg)。原 Muiri 那張是在你存檔場景裡用 `placeatme` 叫出來的暫時複本，拍完刪掉，沒存檔。）
+
+**順帶看到**：Hatak 的眼妝、唇色、戰紋是全黑、不透明，近看很重。套到 NPC 上也會是這樣；若不是你要的，之後改 preset。
+
+### 接下來可以怎麼走（你選）
+
+1. **你手動一次**（約 2 分鐘）：你開遊戲時在 RaceMenu 介面載入 Hatak preset，關掉介面前喊 agent，agent 只負責按「匯出頭」並收檔。這是 RaceMenu 正常的用法，最可能成功。
+2. **打通 Creation Kit**：CK 已裝，但 Linux 上沒驗過能不能出臉，要另開小專題。
+3. **先不做**。
+
+不論哪條，Muiri 的資料層（髮色、膚色、臉型滑桿）已備好；頂層裁定試點**保留 Muiri 原本體重**，產層時會加 `--keep-weight`。
+
 ## 現在已經有的（不用你做事）
 
 - Muiri 的臉部 record patch：`~/skyrim_mods/_staging-2026-11-22-npc-face/Muiri-Look-From-Hatak-Dev-2026-11-22/`。它沿用 Muiri 現在生效的那筆資料（JH NPC Beauty），只換臉的欄位：頭部件、髮色、膚色、臉型滑桿、體重。

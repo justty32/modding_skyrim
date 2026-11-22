@@ -20,8 +20,8 @@ python3 agentctl/tools/npc_face/build_layer.py --jslot <preset>.jslot --npc <XXX
 | 步 | 工具 | 狀態 |
 |---|---|---|
 | 6a jslot→NPC_ 欄位 | `jslot2npc.py`：forward 現役贏家 record，只換 PNAM、HCLF、NAM7、FTST、QNAM、NAM9、NAMA、Tint Layers；ESL；MAST＝贏家的 MAST＋贏家 | **可用**（合成載入序測試＋試點 Hatak→Muiri 實產） |
-| 6b 匯出頭 | 觸發 ESP＋Papyrus（`npc_face/trigger/`）：`player.addspell` → 套 preset → `ExportHead`／`SaveExternalCharacter` | **已建置、未實機**；要授權（試點頁） |
-| 6c 上架 | `facegen_install.py`：改名搬檔、slot 6 指向新 tint、shape gate（重用 look_transplant `shape_gate`）、DDS 格式、貼圖 VFS 解析 | **可用，但未以真實 RaceMenu 匯出檔驗證**（本機無樣本；以合成 NIF＋原版 Lydia 測） |
+| 6b 匯出頭 | 觸發 ESP＋Papyrus（`npc_face/trigger/`）：`player.addspell` → 強制第三人稱 → `LoadCharacter`／`LoadPreset` → `ExportHead`／`SaveExternalCharacter` | **實機 4 場失敗**：觸發、GLOB、出檔都正常，但頭部件沒換（見下「實機紀錄」） |
+| 6c 上架 | `facegen_install.py`：改名搬檔、slot 6 指向新 tint、根節點補名、shape gate（重用 look_transplant `shape_gate`）、DDS 格式、貼圖 VFS 解析 | **格式已用真匯出物驗**（根無名、512² 未壓縮 RGBA、slot 6 原值）；部件錯的匯出物 gate a 確實擋下 |
 | 6d 組層 | `build_layer.py`：層目錄＋`.npc-face.json` manifest＋`layer_apply` manifest | **可用**；缺匯出頭時停在 exit 3，只出 record patch＋待補清單，`layer_apply` manifest 標 DRAFT |
 
 jslot 對 NPC_ 的換算（實證者附依據，見 `jslot2npc.py` 檔頭）：
@@ -48,6 +48,19 @@ jslot 對 NPC_ 的換算（實證者附依據，見 `jslot2npc.py` 檔頭）：
 - 自訂種族不讀預烤 facegen。
 - 層名用 ASCII；不改來源 mod。
 
+### 6b 實機紀錄（2026-11-22 runtime-pilot，場 2–5）
+
+| 場 | 做法 | 結果 |
+|---|---|---|
+| 2 | console `sexchange`＋`setrace`，觸發 `LoadPreset`（等 2 秒）→ 匯出 | 5 檔都出了；shape 是原主角 `MaleHeadImperial` 等 8 件＋女嘴 |
+| 3 | 腳本先 `ForceThirdPerson`、等 5 秒；另在主角可見時重觸發 | 同上 |
+| 4 | 腳本改 `LoadCharacter` → `LoadPreset` → `LoadCharacter` | 同上 |
+| 5 | 主選單 `coc QASmoke` 新角色（Nord 男），同流程 | Nord 男預設件＋女嘴＋女眉；Hatak 部件一件都沒上 |
+
+- 匯出檔本身格式正常（`facegen_install` 測試以場 5 檔為真樣本）；問題在遊戲裡的頭部件沒被換掉。
+- 真因未定位。不要再用同一組 Papyrus 呼叫重試；候選：使用者在 RaceMenu 介面手動載 preset 後由 agent 觸發 `ExportHead`（一分鐘的人手），或打通 CK（D1）。
+- 收回流程照 trigger README 跑了 4 輪，每輪 `layer_apply --revert` 逐位元組還原、overwrite 匯出檔搬進備份夾，profile 雜湊回到放入前。
+
 ### 禁區
 
 - **PROTEUS 的「清除 NPC 編輯」與 Debug 第 5 項禁用**：它呼叫 `CharGen.DeleteFaceGenData`，會刪磁碟上的 `FaceGeom／FaceTint` 檔；MO2 下可能刪到已裝 mod（JH NPC Beauty、換臉層）的實體檔（`npc-face-patch` REPORT §1.2）。
@@ -73,6 +86,6 @@ Done when：
 4. `check_masters.py`（present=no 為 0）、`look_transplant/transplant.py --verify mods/<層>`、`reverify.py`。
 5. 依 [runtime-qa](../runtime-qa/README.md) 實機看臉：`placeatme` 複本與真身都看，排除存檔臉快取。
 
-Done when：遊戲內那個 NPC 不是灰臉或素頭，外觀和使用者選定的圖一致。外觀一致與否由使用者確認。**本段尚未跑過**；試點授權頁見 [npc-face-pilot](../../user/2026-11-22-npc-face-pilot.md)。
+Done when：遊戲內那個 NPC 不是灰臉或素頭，外觀和使用者選定的圖一致。外觀一致與否由使用者確認。**本段尚未跑過**（6b 沒有可用匯出頭）；試點結果見 [npc-face-pilot](../../user/2026-11-22-npc-face-pilot.md)。
 
 NPC 對 NPC 的整臉換現在就能做：走 [look-swap runbook](../../../agentctl/docs/look-swap-runbook.md)，產出的換臉層同樣適用本段 7。

@@ -124,5 +124,8 @@
   },
   "zh-tooling-and-scans.md": {
     "description": "中文層工具與掃描：zhport、靜態掃描、QA checker；做中文層驗收時進來"
+  },
+  "faces-racemenu-runtime.md": {
+    "description": "RaceMenu 實機匯出頭：Papyrus 套 preset 不換頭部件的坑、匯出物先驗 shape 名、tfc 取景配方；做 NPC 臉匯出或遊戲內拍臉前讀"
   }
 }
