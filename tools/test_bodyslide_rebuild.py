@@ -102,6 +102,7 @@ class RebuildTests(unittest.TestCase):
         self.assertEqual(g.find('Group').get('name'), 'BSO b1')
         bsel = ET.parse(tool / 'BuildSelection.xml').getroot()
         self.assertEqual(bsel.find('OutputChoice').get('choice'), 'Iron')
+        self.assertEqual(self.run_cli('plan')[0], 0)  # our own BuildSelection does not block a re-plan
         code, r = self.run_cli('build', '--dry-run')
         argv = r['build']['batches']['b1']
         self.assertIn('exit', argv)
@@ -164,6 +165,15 @@ class RebuildTests(unittest.TestCase):
         self.assertEqual(self.run_cli('obody')[0], 2)  # same revision twice: refuse
         user.write_text('<SliderPresets/>')
         self.assertEqual(self.run_cli('stage')[0], 2)  # same file name, other bytes
+
+    def test_mo2_build_selection_needs_review(self):
+        (self.mo2 / 'mods' / 'Armor' / 'CalienteTools' / 'BodySlide' / 'BuildSelection.xml').write_text('<BuildSelection/>')
+        self.assertEqual(self.run_cli('stage')[0], 0)
+        code, r = self.run_cli('plan')
+        self.assertEqual(code, 1)
+        self.assertIn('override_build_selection', ' '.join(r['plan']['errors']))
+        self.write_cfg(override_build_selection=True)
+        self.assertEqual(self.run_cli('plan')[0], 0)
 
     def test_verify_failures(self):
         self.run_cli('stage')

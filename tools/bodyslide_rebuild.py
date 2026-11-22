@@ -153,8 +153,9 @@ def cmd_stage(cfg, args) -> dict:
     elif shapedata != 'all':
         raise ConfigError('stage_shapedata must be "all", "none" or a list of ShapeData folders')
     proc = subprocess.run(argv, capture_output=True, text=True)
-    out = dict(ok=proc.returncode == 0, exit=proc.returncode, argv=argv)
-    if proc.returncode == 0:
+    # exit 1 = staged but needs a human (symlinks skipped / MO2 BuildSelection); plan enforces the latter.
+    out = dict(ok=proc.returncode in (0, 1), exit=proc.returncode, argv=argv)
+    if proc.returncode in (0, 1):
         out['preset_files'] = add_preset_files(cfg, tool)
     try:
         out['stage'] = json.loads(proc.stdout)
@@ -192,7 +193,9 @@ def cmd_plan(cfg, args) -> dict:
             errors.append(f"{batch['id']}: {len(res['unresolved'])} unresolved same-output stems")
     if cfg['base_preset'] not in preset_names(tool):
         errors.append(f"preset {cfg['base_preset']!r} not found in staged SliderPresets")
-    staged_bs = [p.name for p in tool.iterdir() if p.name.casefold().startswith('buildselection')]
+    # Only a BuildSelection that came from MO2 (stage table) needs review; our own one is rewritten.
+    staged_bs = [b['staged_rel'] for b in json.loads(stage_table(cfg).read_text(encoding='utf-8'))
+                 ['summary'].get('build_selection', [])] if stage_table(cfg).is_file() else []
     plan_dir = cfg['_run'] / 'plan'
     summary = {}
     for batch in cfg['batches']:
