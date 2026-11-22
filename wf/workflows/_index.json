@@ -67,6 +67,9 @@
   "profile-change": {
     "description": "改 MO2 profile（裝、移除、改排序）的工作流入口；動 profile 前進來"
   },
+  "racemenu": {
+    "description": "RaceMenu 捏臉工作流：文字需求→jslot 候選（滑桿語意表、jslot 工具）、出圖確認、固化成 NPC patch 層；捏臉或改 NPC 臉時進來"
+  },
   "refactor": {
     "description": "重構整理工作流入口與搬移注意事項；搬檔或重構時進來"
   },

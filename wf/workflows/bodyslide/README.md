@@ -5,7 +5,7 @@
 把指定 preset 套到指定身體／服裝專案，先在隔離目錄產生可驗證的 NIF／TRI，再交付獨立 output 層。走可重跑的 headless 路線，四支工具串成一條鏈，見 [工具鏈](tools.md)。
 
 **何時用**：重烤身體或服裝、批次 Build、排查 preset 空白／同路徑輸出衝突、評估 BodySlide 自動化。
-**何時不用**：找或下載素材 → [nexus-intake](../nexus-intake/README.md)；只改皮膚或指向既有私有 NIF → 先查 ARMA 路徑，不必重烤；只改 NPC 體重或身高 → 查 NPC_ `NAM7`／`NAM6`；修改工具原始碼 → [feature-dev](../feature-dev/README.md)。
+**何時不用**：找或下載素材 → [nexus-intake](../nexus-intake/README.md)；只改皮膚或指向既有私有 NIF → 先查 ARMA 路徑，不必重烤；只改 NPC 體重或身高 → 查 NPC_ `NAM7`／`NAM6`；修改工具原始碼 → [feature-dev](../feature-dev/README.md)；捏臉、改 NPC 的臉（NAM9／headpart／tint／FaceGen）→ [racemenu](../racemenu/README.md)。
 
 「刷這件／這套衣服」或指定群組增量重刷，先走 [刷衣服](outfits.md)；整範圍重建、換身體、給 NPC 指定身形走 [換身體](body-swap.md)；共用隔離、工具與部署規則沿本頁。
 

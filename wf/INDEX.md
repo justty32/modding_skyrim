@@ -20,6 +20,7 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | `wf/` | 工作流骨架：派發見 [WORKFLOWS.md](WORKFLOWS.md)、結構原則見 [STRUCTURE.md](STRUCTURE.md)、共享區 [workflows/common/](workflows/common/README.md)、檢查腳本 `wf/tools/wf-lint.sh` |
 | [隨從戰鬥相容修補](workflows/follower-combat-compat.md) | 自訂隨從與框架的單角色診斷、配置／source 修補、部署與回退；個案證據留 private agentctl |
 | [BodySlide 建置](workflows/bodyslide/README.md) | 身體／服裝的 VFS 輸入、preset、headless 隔離建置、驗證與授權部署；[刷衣服](workflows/bodyslide/outfits.md) 管指定服裝增量 |
+| [RaceMenu 捏臉](workflows/racemenu/README.md) | 文字需求→RaceMenu preset（`.jslot`）候選、離線驗改比；出圖確認與固化成 NPC patch 層尚未實作，下一階段見 [racemenu-face 計畫](workflows/plans/racemenu-face/README.md) |
 | [`wf/user/`](user/README.md) | 給使用者本人看的頁面（開玩前清單、審批頁、裁示單）；agent 內部報告仍留 `agentctl/handoffs/` |
 | [`wf/lessons/`](lessons/README.md) | 從 Claude 記憶搬來的教訓庫：使用者偏好、調度、版控、MO2、工具坑、臉／動畫、CTD、中文層等主題，各檔一條教訓一個 `##` 小節 |
 | `wf/tools/` | `wf-lint.sh`（連結／超標／BIGLIST／殘留檢查）、`tabledb.py`＋`tabledb_links.py`（`wf-table/1` 資料檔 CRUD 與連結檢查）、`find_big_lists.py`（找 >1 KB 條列區塊）、`fix_moved_links.py`（搬檔後按 moves.tsv 重寫連結）|

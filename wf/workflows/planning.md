@@ -26,11 +26,15 @@
 | 想法 | 一句話 | 狀態（想想 / 會做→搬 roadmap / 不做＋原因）|
 |------|--------|------------------------------------------|
 | **把無心人物外觀用進未來任務**（2026-08-13）| 這只是人物美化完成後的可選延伸；目前主要工作是先讓經典無心人物美化在 SE/AE 1.6.1170 正常運作，見 [適配調查](investigation/findings/wuxin-character-overhaul-se-ae-compatibility.md)。若日後真的建立全新具名 NPC 群，私人原型仍需從合法來源拆分 FaceGen／head parts；公開發布則必須取得 `Decent Women` 與髮型、皮膚、眉毛等完整資產許可，否則只能重做相近審美的原創外觀。| 想想 |
+| **自製室內 cell／navmesh 檢查工具**（2026-11-22）| 以 Interior Inspector 1.0 為參考（只借思路、不抄碼，它的授權未知）：檢查各 mod 改過的室內是否刪 navmesh、門通虛空等。它是單檔網頁、整套 mod 一次讀進瀏覽器，要改成不爆記憶體、符合本工作區需求的版本。依據 `agentctl/handoffs/home-2026-11-22/interior-inspector/REPORT.md`、[finding](../../analysis/tool-survey/findings/interior-inspector.md)。使用者：「以後有需要可以把它當參考，我們另外做不會爆記憶體的」| 想想：有需要再做；未排程、未授權動工 |
 
 ## roadmap（會做，何時）
 
 | 事項 | 何時 / 順序 | 前提 |
 |------|------------|---------|
+| **RaceMenu AI 捏臉第二階段** R1–R7 | 未排程；詳規 [racemenu-face](plans/racemenu-face/README.md) | R3／R4 要當場授權開遊戲與動 `instance/`；R5 等 `npc-face-patch` 報告 |
+| **離線出圖原型**：拆用 Skyrim Universal Viewer 的 NIF 渲染器（2026-11-22）| 之後做，未排程、未授權 | 授權 pip 裝 PyQt6、執行 SUV 程式碼；依據 universal-viewer REPORT §4 A；是 [racemenu 段 3](racemenu/loop.md#3-離線預覽) 的相依 |
+| **SUV 裝進 MO2 當瀏覽器**（2026-11-22）| 之後做，未排程、未授權 | 授權改 MO2 安裝；它會刪檔、搬檔、寫 `.mohidden`；同上 §4 B |
 
 ## 交接
 

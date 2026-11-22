@@ -1,0 +1,145 @@
+{
+ "contract": "wf-table/1",
+ "source": "author.md",
+ "extracted": "2026-11-22",
+ "columns": [
+  "intent",
+  "adjust",
+  "note",
+  "confidence"
+ ],
+ "rows": [
+  {
+   "intent": "臉瘦一點／瓜子臉",
+   "adjust": "nam9.Jaw_NarrowWide→JawNarrow 0.1；nam9.Chin_NarrowWide→ChinThin 0.05；可加 tint:Cheeks2 alpha +32",
+   "note": "先動下顎寬窄，下巴只跟一半；陰影是錦上添花",
+   "confidence": "推論"
+  },
+  {
+   "intent": "臉寬一點／圓臉",
+   "adjust": "nam9.Jaw_NarrowWide→JawWide 0.1；nam9.Cheeks_ForwardBack→CheeksOut 0.05；weight +10",
+   "note": "weight 會連身體一起變，先問要不要",
+   "confidence": "推論"
+  },
+  {
+   "intent": "臉短一點",
+   "adjust": "nam9.Chin_UpDown→ChinMoveUp 0.1；nam9.Jaw_UpDown→JawUp 0.05",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "臉長一點",
+   "adjust": "nam9.Chin_UpDown→ChinMoveDown 0.1；nam9.Jaw_UpDown→JawDown 0.05",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "下巴尖一點",
+   "adjust": "nam9.Chin_NarrowWide→ChinThin 0.15",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "眼睛大一點",
+   "adjust": "preset.eyes 換相鄰 2-3 個候選＋nam9.Eyes_ForwardBack→EyesForward 0.05",
+   "note": "原版沒有連續的眼睛大小滑桿；眼型是離散編號，必須出圖或截圖挑。裝 ECE／EFM 後才有連續滑桿（本機未裝）",
+   "confidence": "推論；需要看圖"
+  },
+  {
+   "intent": "眼距寬一點／窄一點",
+   "adjust": "nam9.Eyes_InOut→EyesMoveOut／EyesMoveIn 0.1",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "眼窩深一點／輪廓深",
+   "adjust": "nam9.Eyes_ForwardBack→EyesBack 0.1；nam9.Brows_ForwardBack→BrowForward 0.1",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "眼神柔和",
+   "adjust": "nam9.Brows_UpDown→BrowUp 0.1；nam9.Brows_ForwardBack→BrowBack 0.05",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "鼻子挺一點",
+   "adjust": "preset.nose 換候選；nam9.Nose_LongShort→NoseLong 0.05",
+   "note": "挺度主要在鼻型；長短軸只微調",
+   "confidence": "推論；需要看圖"
+  },
+  {
+   "intent": "鼻子小一點",
+   "adjust": "nam9.Nose_LongShort→NoseShort 0.1",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "顴骨高一點",
+   "adjust": "nam9.Cheeks_UpDown→CheeksUp 0.1；nam9.Cheeks_ForwardBack→CheeksOut 0.05",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "嘴巴小一點／嘴唇厚一點",
+   "adjust": "preset.mouth 換候選",
+   "note": "嘴型是離散編號",
+   "confidence": "推論；需要看圖"
+  },
+  {
+   "intent": "人中短一點",
+   "adjust": "nam9.Lips_UpDown→LipMoveUp 0.1",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "膚色白一點",
+   "adjust": "tint:SkinTone color 三通道各 +16（保持色相）",
+   "note": "只改 RGB，alpha 不動；過白會失真，單輪最多 +32",
+   "confidence": "推論"
+  },
+  {
+   "intent": "膚色深一點／小麥色",
+   "adjust": "tint:SkinTone color 各 -16，紅黃略多",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "腮紅／氣色好",
+   "adjust": "tint:Cheeks alpha +32、color 偏紅",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "唇色紅一點",
+   "adjust": "tint:Lips color 偏紅、alpha +32",
+   "note": "",
+   "confidence": "推論"
+  },
+  {
+   "intent": "年輕一點",
+   "adjust": "tint:FrownLines alpha -64；tint:Dirt alpha 0",
+   "note": "骨架年齡感要改 headTexture／膚色貼圖，屬唯讀",
+   "confidence": "推論"
+  },
+  {
+   "intent": "臉乾淨一點（去妝去髒）",
+   "adjust": "tint:Dirt、tint:WarPaint、tint:Tattoo 的 alpha 設 0",
+   "note": "",
+   "confidence": "實證（alpha 0＝不畫）"
+  },
+  {
+   "intent": "頭髮／瞳色／眉型／加疤",
+   "adjust": "headParts（唯讀）",
+   "note": "離線不改；在遊戲裡選或由使用者指定 formIdentifier，等 headpart 驗證工具",
+   "confidence": "—"
+  },
+  {
+   "intent": "胸／腰／臀／身材",
+   "adjust": "轉 bodyslide（BodySlide preset／OBody 指派）",
+   "note": "不在 racemenu 改",
+   "confidence": "—"
+  }
+ ]
+}
