@@ -32,4 +32,6 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 
 2026-11-07 家中 Claude Code 場使用者裁示：Claude 額度剩 3%（16:00 重置），本場事情盡量交給 codex `gpt-6.1-sol`；若用 Claude agent，普通工作 Opus、簡單工作與雜活 Sonnet；除簡單工作與雜活外 agent 須先讀過 `wf/` 規矩；agent 可依每線 BRIEF 的子 agent 數量上限再派 agent、模型隨意，配額往下不倍增；本場可以隨意 push。後續裁示：家機每隊最多一個外部 codex，與同程序子 agent 分開計數；選人做設計決策／架構規劃時，GPT 的優先級較低，並非禁止使用；每線 BRIEF 必寫子 agent 數量上限，取代同日稍早的無上限寫法。
 
+2026-11-22 家中 Claude Code 場使用者裁示（長期偏好）：技術問題由 agent 自行決定（「反正這些都是技術問題，該怎麼做就怎麼做」）；「每隔一個大段就按照wf/規矩保存進度」＝每完成一大段就照 `wf/` 規矩做階段存檔（STATE、續行點、commit；push 仍看當場授權）；使用者外出時 agent 可自主持續做、可開遊戲／MO2（照 resource-locks 持鎖、不存檔覆蓋使用者進度），並注意 CPU／記憶體（「我出門在外，你自己持續做，可以開遊戲/mo2做事。注意cpu/mem。」）。同場一次性授權（當天可 commit／push、男體選項等）記在當場 STATE，不在此。
+
 領域詞彙常猜錯 → 開 `glossary.md`（見 [common/README](README.md)）。
