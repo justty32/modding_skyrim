@@ -15,6 +15,10 @@
     "description": "教訓庫：由記憶搬來、按主題分檔的事實與做法；做事前查同主題有無既有坑",
     "index": "lessons/_index.json"
   },
+  "org": {
+    "description": "組織文件（草稿）：四部門座位卡、誰管哪塊、下一棒給誰；決定工作交給誰時進來",
+    "index": "org/_index.json"
+  },
   "tools": {
     "description": "wf 骨架的腳本：tabledb 資料檔讀寫、條列偵測、連結修正、錨點檢查；處理 wf-table 資料檔時進來"
   },
