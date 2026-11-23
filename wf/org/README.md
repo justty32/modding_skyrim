@@ -4,7 +4,7 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 
 `wf/workflows/` 講一種工作怎麼做。這個夾只講：這件事歸誰、做完交給誰。別處已有的規矩（[AGENTS.md](../../AGENTS.md)、[user.md](../workflows/common/user.md)、怎麼 commit）只連過去，不抄。
 
-**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D14 與三份部門定義、org-rev2 補 D15–D19；部門座位 `instance` 2026-11-23 已掛，其餘未掛。標「（提案）」的都還沒定。
+**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D14 與三份部門定義、org-rev2 補 D15–D19；部門座位 `instance` 2026-11-23 掛過、收工已 stop，其餘未掛。標「（提案）」的都還沒定。
 
 **什麼時候讀**：決定一件事交給誰、開或關座位、掛短工、改交接方式。
 **不在這裡找**：怎麼操作 aos（看 aos 知識庫與 [aos.md](../workflows/aos.md)）、一種工作怎麼做（看 [WORKFLOWS](../WORKFLOWS.md)）。
@@ -25,7 +25,7 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 | 座位 | 誰（在哪台） | 一句話 | 狀態 |
 |---|---|---|---|
 | [lead](lead/README.md) | `main`（`mod_skyrim`） | 管理部門：使用者的窗口、派工、驗收、仲裁、活狀態 | 已掛 |
-| [instance](instance/README.md) | `instance`（`mod_skyrim`） | 實體部門：已裝的 mod、profile、遊戲設定、跑著的遊戲 | 已掛（2026-11-23） |
+| [instance](instance/README.md) | `instance`（`mod_skyrim`） | 實體部門：已裝的 mod、profile、遊戲設定、跑著的遊戲 | 掛過，現在 stopped（2026-11-23 收工）；做過唯讀盤點冬堡學院衝突 |
 | [library](library/README.md) | `library`（`mod_skyrim`） | 館藏部門：沒裝的 mod、`~/skyrim_mods`、搜尋下載、簡單漢化與 patch | 定義好、未掛 |
 | [dev](dev/README.md) | `dev`（`mod_skyrim`） | 開發部門：`projects/*` 與 `analysis/`，替別的部門提供開發服務 | 定義好、未掛 |
 

@@ -4,7 +4,7 @@
 
 回 [org](../README.md)。
 
-**狀態**：已掛（2026-11-23，使用者同意後 `main` 照 [RUNBOOK-seats](../../../agentctl/aos/RUNBOOK-seats.md) 第 1、2 步掛上；第一件事是唯讀盤點冬堡學院內的 mod 衝突）。定義 `agentctl/aos/defs/seat-instance`。agent 名 `instance`，掛在 `mod_skyrim`（使用者 2026-11-23，D13）。有工作才用，沒事 sleep（使用者 2026-11-23，D12）。沒掛時由 lead 派代班，代班先讀本卡、`instance/AGENTS.md`、筆記 `wf/temp/instance/notes.md`，收工前把學到的寫回筆記（提案，CHOICE 2）。
+**狀態**：掛過，現在 stopped（2026-11-23 收工）。使用者同意後 `main` 照 [RUNBOOK-seats](../../../agentctl/aos/RUNBOOK-seats.md) 第 1、2 步掛上，做了一件事：唯讀盤點冬堡學院內的 mod 衝突（報告在 agentctl `handoffs/home-2026-11-23/winterhold-conflicts/`）；收工照第 5 步 stop。定義 `agentctl/aos/defs/seat-instance`。agent 名 `instance`，掛在 `mod_skyrim`（使用者 2026-11-23，D13）。有工作才用，沒事 sleep（使用者 2026-11-23，D12）。沒掛時由 lead 派代班，代班先讀本卡、`instance/AGENTS.md`、筆記 `wf/temp/instance/notes.md`，收工前把學到的寫回筆記（提案，CHOICE 2）。
 
 每行使用者定的標日期，其餘是提案。
 
