@@ -1,0 +1,11 @@
+{
+  "README.md": {
+    "description": "實機驗收流程與 agentctl/qa 指向；要跑遊戲驗收前讀"
+  },
+  "menu-drive.json": {
+    "description": "選單操作步驟表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "menu-drive.md": {
+    "description": "agent 操作遊戲內選單（Esc、MCM、RaceMenu）的做法"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "REPORT.md": {
+    "description": "八職 24 型真圖 reservation 報告；先讀這份"
+  },
+  "connectors.json": {
+    "description": "共享 connector 表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "numeric-source-identity.json": {
+    "description": "數值來源身份核對（一般 JSON）"
+  },
+  "region-C.json": {
+    "description": "術師區域節點（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region-C.svg": {
+    "description": "術師區域圖（render-regions.py 產物）"
+  },
+  "region-D.json": {
+    "description": "重裝區域節點（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region-D.svg": {
+    "description": "重裝區域圖（render-regions.py 產物）"
+  },
+  "region-G.json": {
+    "description": "近衛區域節點（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region-G.svg": {
+    "description": "近衛區域圖（render-regions.py 產物）"
+  },
+  "region-M.json": {
+    "description": "醫療區域節點（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region-M.svg": {
+    "description": "醫療區域圖（render-regions.py 產物）"
+  },
+  "region-R.json": {
+    "description": "狙擊區域節點（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region-R.svg": {
+    "description": "狙擊區域圖（render-regions.py 產物）"
+  },
+  "region-S.json": {
+    "description": "輔助區域節點（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region-S.svg": {
+    "description": "輔助區域圖（render-regions.py 產物）"
+  },
+  "region-V.json": {
+    "description": "先鋒區域節點（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region-V.svg": {
+    "description": "先鋒區域圖（render-regions.py 產物）"
+  },
+  "region-X.json": {
+    "description": "特種區域節點（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region-X.svg": {
+    "description": "特種區域圖（render-regions.py 產物）"
+  },
+  "reservation.json": {
+    "description": "規則 slot reservation 表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "subtypes.json": {
+    "description": "子型入口表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "verification.json": {
+    "description": "幾何驗證結果（sha 與計數，一般 JSON）"
+  },
+  "warnings.json": {
+    "description": "幾何警訊表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  }
+}

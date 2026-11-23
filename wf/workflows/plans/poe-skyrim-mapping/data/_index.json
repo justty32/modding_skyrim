@@ -1,0 +1,17 @@
+{
+  "atoms.json": {
+    "description": "效果 atom 表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "family-rules.json": {
+    "description": "節點 family 對應規則表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "grade-dist.csv": {
+    "description": "節點分級（A／裁示…）筆數分布（csv，用 tabledb.py 讀）"
+  },
+  "keystones.json": {
+    "description": "keystone 方案表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "mechanic-decisions.csv": {
+    "description": "各機制做不做與規格的裁示表（csv，用 tabledb.py 讀）"
+  }
+}

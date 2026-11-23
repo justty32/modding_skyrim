@@ -1,0 +1,8 @@
+{
+  "render.py": {
+    "description": "從私有研究表產公開過目資料與離線頁的腳本；重產星盤單位頁時跑"
+  },
+  "review-data.json": {
+    "description": "星盤效果單位過目資料（render.py 產物）（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  }
+}

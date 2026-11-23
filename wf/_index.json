@@ -9,7 +9,8 @@
     "description": "工作流派發器：依使用者意圖選工作流再讀入口檔；要動手做事時進來"
   },
   "knowledge": {
-    "description": "機讀知識表：放 outside-places.json（repo 外位置的絕對路徑表），用 index_view {\"index\": \"wf/knowledge/outside-places.json\"} 看"
+    "description": "機讀知識表：放 outside-places.json（repo 外位置的絕對路徑表），用 index_view {\"index\": \"wf/knowledge/outside-places.json\"} 看",
+    "index": "knowledge/_index.json"
   },
   "lessons": {
     "description": "教訓庫：由記憶搬來、按主題分檔的事實與做法；做事前查同主題有無既有坑",
@@ -20,10 +21,12 @@
     "index": "org/_index.json"
   },
   "tools": {
-    "description": "wf 骨架的腳本：tabledb 資料檔讀寫、條列偵測、連結修正、錨點檢查；處理 wf-table 資料檔時進來"
+    "description": "wf 骨架的腳本：tabledb 資料檔讀寫、條列偵測、連結修正、錨點檢查；處理 wf-table 資料檔時進來",
+    "index": "tools/_index.json"
   },
   "user": {
-    "description": "給使用者本人看的頁面：開玩清單、審批頁、裁示單；要產出或整理這類頁時進來"
+    "description": "給使用者本人看的頁面：開玩清單、審批頁、裁示單；要產出或整理這類頁時進來",
+    "index": "user/_index.json"
   },
   "workflows": {
     "description": "各工作流的入口檔與共用規範（開發環境、測試、profile 變更、中文層、崩潰歸因等）",

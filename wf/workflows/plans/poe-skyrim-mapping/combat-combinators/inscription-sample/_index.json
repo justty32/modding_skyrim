@@ -1,0 +1,41 @@
+{
+  "README.md": {
+    "description": "刻印 NativeBridge 候選說明；先讀這份"
+  },
+  "candidates.json": {
+    "description": "填充候選（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "feasibility.md": {
+    "description": "刻印樣板的輕量實作核查"
+  },
+  "native-archetypes.json": {
+    "description": "原生法術原型表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "native-bridge-bindings.json": {
+    "description": "NativeBridge 綁定表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "native-first-candidate.json": {
+    "description": "原生優先候選（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "native-first-review.md": {
+    "description": "原生施法優先的短重審（舊稿保留）"
+  },
+  "native-template-groups.json": {
+    "description": "原生範本分組（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "proportional-values.json": {
+    "description": "比例數值表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region.json": {
+    "description": "原生區域節點（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region.svg": {
+    "description": "原生區域圖"
+  },
+  "rules.json": {
+    "description": "規則表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "unplaced-variants.json": {
+    "description": "未放置變體（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  }
+}

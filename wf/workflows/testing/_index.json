@@ -1,0 +1,17 @@
+{
+  "environment.md": {
+    "description": "本機影響測試判讀的已知環境條件；測試結果怪時進來"
+  },
+  "green-light-evidence.json": {
+    "description": "恆真檢查實例表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "green-light-evidence.md": {
+    "description": "綠燈不等於有檢查的實例與推論；新增檢查前讀"
+  },
+  "offline-matrix.json": {
+    "description": "離線測試命令表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "offline-matrix.md": {
+    "description": "常用離線測試矩陣（歷史基線）；要跑離線測試時進來"
+  }
+}

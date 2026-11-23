@@ -1,0 +1,35 @@
+{
+  "dac0da-1.1.0b-cht-voice-matrix.md": {
+    "description": "DAc0da 1.1.0b 繁中與英語語音版本矩陣（08-20）"
+  },
+  "dialogue-translation-gaps-nff-gyh-ussep.md": {
+    "description": "NFF、Glad You're Here、USSEP 對話翻譯缺口（08-16）"
+  },
+  "ifd-lydia-4.2.2-translation-audit.md": {
+    "description": "IFD Lydia 4.2.2 中文 archive 差異稽核（08-16）"
+  },
+  "mo2-moshortcut-steam-modal-2026-08-21.md": {
+    "description": "MO2 moshortcut 啟動被 Steam modal 阻塞的真因（08-21）"
+  },
+  "mo2ctl-static-gates-asset-scope.md": {
+    "description": "mo2ctl static-gates 的 asset scope 與零輸出假象（08-16）"
+  },
+  "rdo-final-translation-audit.md": {
+    "description": "RDO Final 繁中相容性與覆寫審計（08-16）"
+  },
+  "subproject-priorities-2026-10-21-audit.json": {
+    "description": "10-21 子專案盤點的稽核表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "subproject-priorities-2026-10-21-rules.json": {
+    "description": "10-21 子專案盤點的評分規則（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "subproject-priorities-2026-10-21.json": {
+    "description": "10-21 子專案盤點主表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "subproject-priorities-2026-10-21.md": {
+    "description": "子專案續行價值盤點快照（10-21）；查當時為何選 DSP 與 houseCARL 時進來"
+  },
+  "wuxin-character-overhaul-se-ae-compatibility.md": {
+    "description": "無心人物美化在 SE/AE 1.6.1170 的適配路線（08-13）"
+  }
+}

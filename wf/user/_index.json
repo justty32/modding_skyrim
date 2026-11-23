@@ -1,0 +1,80 @@
+{
+  "2026-10-10-play-checklist-mo2-reverify.json": {
+    "description": "10-10 開玩清單的 MO2 重驗資料表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "2026-10-26-follower-look-pages.md": {
+    "description": "隨從換頭三頁的網址與用途（10-26 刷新）；要找換頭頁時進來"
+  },
+  "2026-10-26-follower-stats-gear.md": {
+    "description": "語音隨從能力值與裝備審批頁的網址（10-26）；審隨從數值裝備時進來"
+  },
+  "2026-10-26-mod-library-viewer.md": {
+    "description": "天際儲藏庫（mod 資產庫線上頁）說明（10-26 刷新）；要看館藏頁時進來"
+  },
+  "2026-10-26-moveset-pages.md": {
+    "description": "五個招式頁面的網址與用法（10-26 現況）；要換招時進來"
+  },
+  "2026-11-02-follower-options.json": {
+    "description": "11-02 隨從可選工作候選表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "2026-11-02-follower-options.md": {
+    "description": "隨從可選工作候選清單（11-02，尚未施工）；要點名修哪位隨從時進來"
+  },
+  "2026-11-03-perk-units": {
+    "description": "星盤效果單位過目頁的重產腳本與資料；要重產該頁時進來",
+    "index": "2026-11-03-perk-units/_index.json"
+  },
+  "2026-11-03-perk-units.md": {
+    "description": "星盤效果單位候選過目頁入口（PoE 暫凍）；審星盤數值候選時進來"
+  },
+  "2026-11-04-all-classes.md": {
+    "description": "八職業×三子類 24 設計樣板的使用者頁（PoE 暫凍）；看全職業設計時進來"
+  },
+  "2026-11-04-combat-playstyles.md": {
+    "description": "八職業 24 種戰鬥玩法提案總覽頁；看玩法提案全貌時進來"
+  },
+  "2026-11-04-guard-double-beat-sample.md": {
+    "description": "近衛・浪潮鬥士單型設計稿（未接 runtime）；審這一型時進來"
+  },
+  "2026-11-04-heavy-warden-sample.md": {
+    "description": "重裝・守衛者（可攜隊友護援）設計稿；審這一型時進來"
+  },
+  "2026-11-04-inscription-sample.md": {
+    "description": "刻印（高階附印）設計稿與隔離候選狀態；審刻印型時進來"
+  },
+  "2026-11-04-native-spell-templates.md": {
+    "description": "Skyrim 原生法術零件盤點（技術附錄）；設計法術類規則時進來"
+  },
+  "2026-11-04-sword-shield-design.md": {
+    "description": "先前劍盾局部玩法草案（歷史比較，非現行）；查舊劍盾案時進來"
+  },
+  "2026-11-05-agent-bridge-screenshot.md": {
+    "description": "AgentBridge 0.10.0 截圖實測結果；查 agent 遊戲截圖能力時進來"
+  },
+  "2026-11-05-nativecombat-r3-home-check.md": {
+    "description": "NativeCombat r3 回家自然實戰觀察指引；要驗 r3 實戰時進來"
+  },
+  "2026-11-16-kurone-soultomb-pick": {
+    "description": "Kurone Soul Tomb 換臉挑選頁的資料表與重產腳本；要重產挑選頁時進來",
+    "index": "2026-11-16-kurone-soultomb-pick/_index.json"
+  },
+  "2026-11-16-kurone-soultomb-pick.md": {
+    "description": "Kurone Soul Tomb 換臉挑選頁入口（11-16）；挑換臉素材與身形時進來"
+  },
+  "2026-11-22-ai-face-loop.md": {
+    "description": "AI 捏臉看圖閉環進度（11-22）；想知道 AI 捏臉做到哪時進來"
+  },
+  "2026-11-22-npc-face-pilot": {
+    "description": "NPC 換臉試點頁的舊段落（歷史）；查試點舊內容時進來",
+    "index": "2026-11-22-npc-face-pilot/_index.json"
+  },
+  "2026-11-22-npc-face-pilot.md": {
+    "description": "NPC 換臉試點（Hatak 臉做成 Muiri patch），等看圖決定；裁示試點時進來"
+  },
+  "2026-11-22-waituser-runtime.md": {
+    "description": "11-22 agent 代驗 WAIT_USER 的結果（S0–S3）；看代驗結論時進來"
+  },
+  "README.md": {
+    "description": "wf/user 說明：只放給使用者親自讀、親自裁示的濃縮頁；新增使用者頁前先讀"
+  }
+}

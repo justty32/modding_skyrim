@@ -1,0 +1,11 @@
+{
+  "CODE_MAP.md": {
+    "description": "原始碼導航總表：各專案在哪、先讀什麼；改程式前進來"
+  },
+  "bodyslide-tools.md": {
+    "description": "BodySlide 工具鏈的原始碼導航；改 tools/ 下 bodyslide 腳本時進來"
+  },
+  "projects.md": {
+    "description": "projects/ 各子專案入口索引；找某個子專案時進來"
+  }
+}

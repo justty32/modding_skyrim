@@ -1,0 +1,5 @@
+{
+  "outside-places.json": {
+    "description": "repo 外位置的絕對路徑表（Steam、housecarl 等）；找 repo 外檔案時用 index_view 以它當 index 看"
+  }
+}

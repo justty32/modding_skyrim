@@ -1,0 +1,17 @@
+{
+  "REPORT.md": {
+    "description": "近衛三型設計交付報告；先讀這份"
+  },
+  "feasibility.json": {
+    "description": "近衛可行性缺口與仲裁（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "parameters.json": {
+    "description": "近衛未定參數（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "rules.json": {
+    "description": "近衛 30 條規則（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "subtypes.json": {
+    "description": "近衛三子型與計數（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  }
+}

@@ -15,21 +15,27 @@
     "description": "座位之間的信：請求要寫什麼、六種狀態、回信怎麼寫"
   },
   "lead": {
-    "description": "管理部門 lead（main）的卡：窗口、派工、驗收、仲裁、活狀態"
+    "description": "管理部門 lead（main）的卡：窗口、派工、驗收、仲裁、活狀態",
+    "index": "lead/_index.json"
   },
   "instance": {
-    "description": "實體部門的卡：已裝 mod、MO2 profile、遊戲設定、跑著的遊戲、遊戲鎖"
+    "description": "實體部門的卡：已裝 mod、MO2 profile、遊戲設定、跑著的遊戲、遊戲鎖",
+    "index": "instance/_index.json"
   },
   "library": {
-    "description": "館藏部門的卡：沒裝的 mod、~/skyrim_mods、搜尋下載、簡單漢化與 patch、modpack-design"
+    "description": "館藏部門的卡：沒裝的 mod、~/skyrim_mods、搜尋下載、簡單漢化與 patch、modpack-design",
+    "index": "library/_index.json"
   },
   "dev": {
-    "description": "開發部門的卡：projects/* 與 analysis/，替其他部門提供開發服務"
+    "description": "開發部門的卡：projects/* 與 analysis/，替其他部門提供開發服務",
+    "index": "dev/_index.json"
   },
   "helper": {
-    "description": "短工卡（寫給掛短工的人）：能交什麼、不能交什麼、怎麼掛與收"
+    "description": "短工卡（寫給掛短工的人）：能交什麼、不能交什麼、怎麼掛與收",
+    "index": "helper/_index.json"
   },
   "seat": {
-    "description": "空白座位卡樣板；開新座位時複製，裡面的角括號佔位是刻意留的"
+    "description": "空白座位卡樣板；開新座位時複製，裡面的角括號佔位是刻意留的",
+    "index": "seat/_index.json"
   }
 }

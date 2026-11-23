@@ -3,7 +3,8 @@
     "description": "教訓庫入口：分類表與新增規則；新增或查找教訓時先讀"
   },
   "animation-oar": {
-    "description": "動畫取證：clip、替換與握持契約的分篇；從上層動畫與 OAR 教訓連進來看細節"
+    "description": "動畫取證：clip、替換與握持契約的分篇；從上層動畫與 OAR 教訓連進來看細節",
+    "index": "animation-oar/_index.json"
   },
   "animation-oar.md": {
     "description": "動畫與 OAR 教訓：clip、替換、握持與 OAR 條件判斷；動畫異常或裝動畫 mod 時進來"
@@ -84,7 +85,8 @@
     "description": "Nexus 下載自動化：profile 複本、CDP、file_id、並行；自動下載前進來"
   },
   "plugin-bsa-and-script-formats": {
-    "description": "存檔體積、身份解析與清理證據的分篇；從上層格式教訓連進來看細節"
+    "description": "存檔體積、身份解析與清理證據的分篇；從上層格式教訓連進來看細節",
+    "index": "plugin-bsa-and-script-formats/_index.json"
   },
   "plugin-bsa-and-script-formats.md": {
     "description": "plugin、BSA 與腳本的格式事實及量測陷阱；解析或量測這類檔案時進來"

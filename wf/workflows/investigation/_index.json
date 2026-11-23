@@ -1,0 +1,9 @@
+{
+  "README.md": {
+    "description": "調查／解碼流程：把不確定變成可行或不可行；開始技術調查前讀"
+  },
+  "findings": {
+    "description": "各次調查的結論檔與資料表；查某題以前有沒有調查過時進來",
+    "index": "findings/_index.json"
+  }
+}

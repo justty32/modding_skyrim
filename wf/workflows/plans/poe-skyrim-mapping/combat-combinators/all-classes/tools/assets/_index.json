@@ -1,0 +1,23 @@
+{
+  "card.html": {
+    "description": "審閱頁子型卡片範本；由 review_page.py 內嵌"
+  },
+  "class.html": {
+    "description": "審閱頁職業分組範本；由 review_page.py 內嵌"
+  },
+  "geometry.html": {
+    "description": "審閱頁真圖段範本；由 review_page.py 內嵌"
+  },
+  "review.css": {
+    "description": "審閱頁樣式；由 review_page.py 內嵌"
+  },
+  "review.html": {
+    "description": "審閱頁頁面骨架範本；由 review_page.py 內嵌"
+  },
+  "review.js": {
+    "description": "審閱頁展開／跳轉腳本；由 review_page.py 內嵌"
+  },
+  "rule.html": {
+    "description": "審閱頁規則卡範本；由 review_page.py 內嵌"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "README.md": {
+    "description": "捏臉工作流入口：preset 合成、確認、固化成 NPC patch；先讀這份"
+  },
+  "author.md": {
+    "description": "段 1–2：把文字需求變成候選 .jslot（離線）"
+  },
+  "bake-export.md": {
+    "description": "段 6b：用 skee 在 RaceMenu 內匯出頭 NIF＋tint"
+  },
+  "bake.md": {
+    "description": "段 6–7：固化成 NPC patch 層與部署"
+  },
+  "intents.json": {
+    "description": "文字需求→滑桿意圖表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "loop.md": {
+    "description": "段 3–5：看結果、遊戲內確認、使用者選定"
+  },
+  "sliders.json": {
+    "description": "滑桿語意表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  }
+}

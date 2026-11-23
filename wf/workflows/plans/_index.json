@@ -1,0 +1,13 @@
+{
+  "README.md": {
+    "description": "實作規劃入口與規劃階梯；寫詳規前讀"
+  },
+  "poe-skyrim-mapping": {
+    "description": "PoE 星盤效果落地 Skyrim 的定案設計與施工計畫（暫凍）；碰星盤計畫時進來",
+    "index": "poe-skyrim-mapping/_index.json"
+  },
+  "racemenu-face": {
+    "description": "AI 捏臉第二階段起的派線清單；要派捏臉後續線時進來",
+    "index": "racemenu-face/_index.json"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "REPORT.md": {
+    "description": "特種三型設計交付報告；先讀這份"
+  },
+  "feasibility.json": {
+    "description": "特種可行性缺口與仲裁（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "parameters.json": {
+    "description": "特種未定參數（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "rules.json": {
+    "description": "特種 30 條規則（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "subtypes.json": {
+    "description": "特種三子型與計數（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  }
+}

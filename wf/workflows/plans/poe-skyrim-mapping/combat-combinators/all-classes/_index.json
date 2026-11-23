@@ -1,0 +1,67 @@
+{
+  "C": {
+    "description": "術師（C）三型設計交付：規則、子型、參數、可行性",
+    "index": "C/_index.json"
+  },
+  "D": {
+    "description": "重裝（D）三型設計交付：規則、子型、參數、可行性",
+    "index": "D/_index.json"
+  },
+  "G": {
+    "description": "近衛（G）三型設計交付：規則、子型、參數、可行性",
+    "index": "G/_index.json"
+  },
+  "M": {
+    "description": "醫療（M）三型設計交付：規則、子型、參數、可行性",
+    "index": "M/_index.json"
+  },
+  "R": {
+    "description": "狙擊（R）三型設計交付：規則、子型、參數、可行性",
+    "index": "R/_index.json"
+  },
+  "README.md": {
+    "description": "24 型設計樣板入口與重產方式；先讀這份"
+  },
+  "REPORT.md": {
+    "description": "24 型設計的主管驗收報告"
+  },
+  "S": {
+    "description": "輔助（S）三型設計交付：規則、子型、參數、可行性",
+    "index": "S/_index.json"
+  },
+  "V": {
+    "description": "先鋒（V）三型設計交付：規則、子型、參數、可行性",
+    "index": "V/_index.json"
+  },
+  "X": {
+    "description": "特種（X）三型設計交付：規則、子型、參數、可行性",
+    "index": "X/_index.json"
+  },
+  "audit": {
+    "description": "八職業各自的獨立玩法審核與總審核報告",
+    "index": "audit/_index.json"
+  },
+  "collection-status.json": {
+    "description": "各職業收集狀態表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "effective-rules.json": {
+    "description": "合併後的現行規則表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "geometry": {
+    "description": "八職業真圖 reservation：區域節點、SVG、驗證表",
+    "index": "geometry/_index.json"
+  },
+  "geometry-join.json": {
+    "description": "規則與真圖幾何的對接表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "implementation-readiness.md": {
+    "description": "浪潮鬥士／守衛者實作前置核對（11-04）；要開工實作前讀"
+  },
+  "tools": {
+    "description": "收集、驗證與產審閱頁 HTML／區域 SVG 的腳本",
+    "index": "tools/_index.json"
+  },
+  "validator-controls.json": {
+    "description": "驗證器控制項表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  }
+}

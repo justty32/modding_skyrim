@@ -1,0 +1,77 @@
+{
+  "check_anchors.py": {
+    "description": "檢查 markdown 連結的 #錨點是否存在；wf-lint 會呼叫"
+  },
+  "find_big_lists.py": {
+    "description": "找 md 裡超過門檻的表格／清單；判斷要不要抽資料檔時用"
+  },
+  "fix_moved_links.py": {
+    "description": "搬檔後照「舊<TAB>新」表重寫 md 與資料檔的相對連結；搬檔時用"
+  },
+  "fix_moved_links_fmt.py": {
+    "description": "fix_moved_links 的 $fmt 路徑代號重寫半段；不直接呼叫"
+  },
+  "fix_moved_links_scan.py": {
+    "description": "fix_moved_links 的掃描與搬移表半段；不直接呼叫"
+  },
+  "fmt-vars.json": {
+    "description": "$fmt 路徑變數表（契約 wf-fmt-vars/1）；要加或改路徑變數時改這份"
+  },
+  "tabledb.py": {
+    "description": "wf-table/1 資料檔（.json/.csv）的 CRUD 與連結解析 CLI；讀寫資料檔一律用它"
+  },
+  "tabledb_fmt.py": {
+    "description": "tabledb 的 $fmt 路徑代號展開門面；改 $fmt 行為時看"
+  },
+  "tabledb_fmt_expand.py": {
+    "description": "$fmt 變數解析與代換的實作；由 tabledb_fmt 使用"
+  },
+  "tabledb_fmt_vars.py": {
+    "description": "fmt-vars.json 的載入與合併；由 tabledb_fmt 使用"
+  },
+  "tabledb_links.py": {
+    "description": "資料檔連結欄位的抽取與解析，tabledb links/check/open/resolve 的實作"
+  },
+  "tabledb_table.py": {
+    "description": "wf-table/1 的資料模型（Table 讀寫與 CRUD）；由 tabledb 使用"
+  },
+  "test_check_anchors.py": {
+    "description": "check_anchors.py 的單元測試"
+  },
+  "test_find_big_lists.py": {
+    "description": "find_big_lists.py 的單元測試"
+  },
+  "test_fix_moved_links.py": {
+    "description": "fix_moved_links 對 $fmt 代號重寫的測試"
+  },
+  "test_tabledb.py": {
+    "description": "tabledb.py CLI 的測試"
+  },
+  "test_tabledb_fmt.py": {
+    "description": "$fmt 路徑代號展開的測試"
+  },
+  "test_tabledb_fmt_vars.py": {
+    "description": "fmt-vars.json 載入與合併的測試"
+  },
+  "test_wf_lint.py": {
+    "description": "wf-lint.sh 的測試"
+  },
+  "test_wf_lint_local.py": {
+    "description": "wf-lint 專案自訂 hook（wf-lint-local.sh）的測試"
+  },
+  "test_wf_lint_scope.py": {
+    "description": "wf-lint 掃描範圍與計數的測試"
+  },
+  "wf-lint-checks.sh": {
+    "description": "wf-lint.sh 的檢查函式庫，由它 source，不單獨跑"
+  },
+  "wf-lint-local.sh": {
+    "description": "本 repo 的 wf-lint 自訂外掛（非 kernel，升級時別覆蓋）"
+  },
+  "wf-lint-retention.sh": {
+    "description": "「過時即刪」與保留期檢查，四個 repo 同內容；由 wf-lint-local.sh 呼叫"
+  },
+  "wf-lint.sh": {
+    "description": "工作流文檔機械檢查（連結、大小、條列、資料檔、殘留）；改完文檔收工前跑"
+  }
+}

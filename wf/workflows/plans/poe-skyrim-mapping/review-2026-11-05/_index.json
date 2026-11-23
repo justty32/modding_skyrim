@@ -1,0 +1,11 @@
+{
+  "README.md": {
+    "description": "11-05 審查總覽與範圍；先讀這份"
+  },
+  "issues-low.md": {
+    "description": "低嚴重度問題 8–23"
+  },
+  "issues-mid.md": {
+    "description": "中嚴重度問題 1–7"
+  }
+}

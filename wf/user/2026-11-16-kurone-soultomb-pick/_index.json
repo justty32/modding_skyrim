@@ -1,0 +1,13 @@
+{
+  "README.md": {
+    "description": "挑選頁資料與重產方法說明；要重產或改資料時先讀"
+  },
+  "data": {
+    "description": "挑選頁的 wf-table/1 資料表（素材、目標、身形與排除表）；用 tabledb.py 讀",
+    "index": "data/_index.json"
+  },
+  "tools": {
+    "description": "挑選頁的掃描、整表、組頁與煙霧測試腳本；重產頁面時用",
+    "index": "tools/_index.json"
+  }
+}

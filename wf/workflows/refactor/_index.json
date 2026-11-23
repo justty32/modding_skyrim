@@ -1,0 +1,8 @@
+{
+  "README.md": {
+    "description": "重構整理流程；做 behavior-preserving 拆分前讀"
+  },
+  "moving-things.md": {
+    "description": "搬檔與改名的六類斷裂與偵測；搬檔前讀"
+  }
+}

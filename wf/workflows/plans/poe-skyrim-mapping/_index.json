@@ -1,0 +1,41 @@
+{
+  "README.md": {
+    "description": "星盤計畫總入口：狀態、範圍與分頁導航；先讀這份"
+  },
+  "combat-combinators": {
+    "description": "戰鬥效果組合子與八職業 24 型玩法設計；看職業玩法設計時進來",
+    "index": "combat-combinators/_index.json"
+  },
+  "data": {
+    "description": "星盤計畫的資料表（atoms、family 規則、keystone、分級分布、機制裁示）；用 tabledb.py 讀",
+    "index": "data/_index.json"
+  },
+  "decisions.md": {
+    "description": "使用者已定的裁示（現行）；要確認某事定了沒時進來"
+  },
+  "design.md": {
+    "description": "數值設計：預算、拆分規則與驗證；調數值時進來"
+  },
+  "keystones.md": {
+    "description": "48 個規則型 keystone 的方案與分批；做 keystone 時進來"
+  },
+  "mechanics.md": {
+    "description": "C／B 級機制與共用系統的落地方案；做機制時進來"
+  },
+  "phases-core.md": {
+    "description": "施工切片 S1–S7（核心星盤，第一波）"
+  },
+  "phases-mechanics.md": {
+    "description": "施工切片 S8–S14（機制與 keystone，第二波起）"
+  },
+  "phases.md": {
+    "description": "施工計畫總頁：切片、依賴與驗收；排施工時進來"
+  },
+  "review-2026-11-05": {
+    "description": "11-05 Fable 只讀審查的問題清單；解凍前要處理的待辦",
+    "index": "review-2026-11-05/_index.json"
+  },
+  "user-words-2026-11-03.md": {
+    "description": "使用者 11-03 原話全文（節點權重與數值）；要對照原話時進來"
+  }
+}

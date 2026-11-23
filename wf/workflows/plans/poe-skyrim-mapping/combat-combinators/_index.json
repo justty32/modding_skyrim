@@ -1,0 +1,54 @@
+{
+  "README.md": {
+    "description": "組合子與八職業玩法總覽入口；先讀這份"
+  },
+  "all-classes": {
+    "description": "八職業×三子類 24 型設計交付、審核與幾何；看全職業設計細節時進來",
+    "index": "all-classes/_index.json"
+  },
+  "arknights-reference.json": {
+    "description": "明日方舟職業機制參考表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "class-reference.json": {
+    "description": "八職業定位參考表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "double-beat-sample": {
+    "description": "近衛通用＋浪潮鬥士單型真圖候選",
+    "index": "double-beat-sample/_index.json"
+  },
+  "inscription-sample": {
+    "description": "術師通用與刻印 NativeBridge 候選",
+    "index": "inscription-sample/_index.json"
+  },
+  "loops.md": {
+    "description": "第一版劍盾規則驗證用例"
+  },
+  "mixes.json": {
+    "description": "跨類混搭組合表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "model.md": {
+    "description": "觸發-條件-效果的共用規則模型；寫規則前讀"
+  },
+  "parameters.json": {
+    "description": "劍盾規則未定參數表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "playstyles.json": {
+    "description": "劍盾玩法候選完整資料（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "playstyles.md": {
+    "description": "劍盾六種玩法幻想（待選提案）"
+  },
+  "roster.json": {
+    "description": "職業與子型名冊（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "rules.json": {
+    "description": "劍盾 9 條完整規則（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "template-requirements.md": {
+    "description": "每個子型填圖範本的要求；做新子型樣板前讀"
+  },
+  "warden-sample": {
+    "description": "重裝通用＋守衛者可攜護援候選",
+    "index": "warden-sample/_index.json"
+  }
+}

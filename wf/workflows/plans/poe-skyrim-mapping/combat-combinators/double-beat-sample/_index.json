@@ -1,0 +1,17 @@
+{
+  "README.md": {
+    "description": "浪潮鬥士真圖候選說明；先讀這份"
+  },
+  "candidates.json": {
+    "description": "19 點填充候選（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region.json": {
+    "description": "原生區域節點（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "region.svg": {
+    "description": "原生區域圖"
+  },
+  "rules.json": {
+    "description": "14 條規則（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  }
+}

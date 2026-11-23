@@ -15,6 +15,7 @@
     "description": "管理線簡報；派整理管理線時進來"
   },
   "reports": {
-    "description": "整理工作的報告存放夾；查舊整理結論時進來"
+    "description": "整理工作的報告存放夾；查舊整理結論時進來",
+    "index": "reports/_index.json"
   }
 }

@@ -3,7 +3,8 @@
     "description": "common 入口：跨工作流共享檔的導覽"
   },
   "code-map": {
-    "description": "程式地圖：CODE_MAP 與各專案分頁；碰原始碼前查"
+    "description": "程式地圖：CODE_MAP 與各專案分頁；碰原始碼前查",
+    "index": "code-map/_index.json"
   },
   "conventions.md": {
     "description": "程式碼慣例與 CODE_MAP 維護鏈；碰原始碼前進來"

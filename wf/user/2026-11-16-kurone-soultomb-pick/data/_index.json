@@ -1,0 +1,17 @@
+{
+  "bodies.json": {
+    "description": "可選 Kurone 身形表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "donors-excluded.json": {
+    "description": "被排除的素材角色與原因（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "donors.json": {
+    "description": "Soul Tomb 換臉素材角色表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "targets-excluded.json": {
+    "description": "被排除的隨從目標與原因（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "targets.json": {
+    "description": "可換臉的隨從目標表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  }
+}

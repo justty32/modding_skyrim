@@ -1,0 +1,27 @@
+{
+  "assets": {
+    "description": "審閱頁的 HTML 片段範本、CSS、JS",
+    "index": "assets/_index.json"
+  },
+  "collect.py": {
+    "description": "收集已驗證的規則索引（保留原 CLI）"
+  },
+  "collection.py": {
+    "description": "驗規則身份、職業層級與幾何前置"
+  },
+  "render-regions.py": {
+    "description": "從公開表產各職業區域 SVG"
+  },
+  "render.py": {
+    "description": "從各職業表產審閱頁 HTML"
+  },
+  "review_content.py": {
+    "description": "審閱頁的職業導航、子型卡與規則段"
+  },
+  "review_fields.py": {
+    "description": "審閱頁顯示欄位跳脫與 legacy 解析"
+  },
+  "review_page.py": {
+    "description": "把範本與資產內嵌成單檔離線頁"
+  }
+}

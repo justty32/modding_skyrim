@@ -1,0 +1,38 @@
+{
+  "C-review.md": {
+    "description": "術師（C）獨立玩法審核與需修項"
+  },
+  "D-review.md": {
+    "description": "重裝（D）獨立玩法審核與需修項"
+  },
+  "G-review.md": {
+    "description": "近衛（G）獨立玩法審核與需修項"
+  },
+  "M-review.md": {
+    "description": "醫療（M）獨立玩法審核與需修項"
+  },
+  "R-review.md": {
+    "description": "狙擊（R）獨立玩法審核與需修項"
+  },
+  "REPORT.md": {
+    "description": "24 樣板獨立審閱總報告；先讀這份"
+  },
+  "S-review.md": {
+    "description": "輔助（S）獨立玩法審核與需修項"
+  },
+  "V-review.md": {
+    "description": "先鋒（V）獨立玩法審核與需修項"
+  },
+  "X-review.md": {
+    "description": "特種（X）獨立玩法審核與需修項"
+  },
+  "class-audit-status.json": {
+    "description": "各職業審核狀態表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "fixed-acceptance.json": {
+    "description": "固定驗收項結果表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "geometry-independent-check.json": {
+    "description": "幾何獨立核驗結果（sha 與計數，一般 JSON）"
+  }
+}

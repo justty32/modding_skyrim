@@ -1,0 +1,23 @@
+{
+  "NOTES.md": {
+    "description": "挑選頁單檔範本的需求與完成條件筆記；改範本前讀"
+  },
+  "build_page.py": {
+    "description": "把資料表注入 page-template.html.in 產出單檔離線頁"
+  },
+  "dump_soultomb_npcs.py": {
+    "description": "唯讀匯出 Soul Tomb plugin 的 NPC_ 贏家記錄為 JSON"
+  },
+  "ff_test.py": {
+    "description": "用 headless Firefox 對挑選頁做煙霧測試"
+  },
+  "page-template.html.in": {
+    "description": "挑選頁 HTML 範本（含資料佔位符），由 build_page.py 填入"
+  },
+  "prep_tables.py": {
+    "description": "把原始匯出轉成挑選頁的三張 wf-table/1 表"
+  },
+  "scan_followers.py": {
+    "description": "唯讀掃 modpack-main 載入順序找隨從 NPC"
+  }
+}

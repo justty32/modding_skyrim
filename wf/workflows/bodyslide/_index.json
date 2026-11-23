@@ -1,0 +1,35 @@
+{
+  "README.md": {
+    "description": "BodySlide 工作流入口：隔離建置、驗證、部署總覽；刷身體或衣服先讀"
+  },
+  "body-swap-npc.md": {
+    "description": "逐 NPC 指定身形的做法；替特定 NPC 換身形時進來"
+  },
+  "body-swap-self.md": {
+    "description": "使用者自己捏身形的做法；使用者要自訂身形時進來"
+  },
+  "body-swap.md": {
+    "description": "換身體總頁：裝備跟身形走的三要件；要換身形時進來"
+  },
+  "deploy.md": {
+    "description": "授權部署與回退；隔離建置驗收通過後進來"
+  },
+  "evidence.md": {
+    "description": "本機 headless 驗證證據；判斷某路線是否已實證時進來"
+  },
+  "fit.md": {
+    "description": "把專屬私有身體反推成 preset；NPC 自帶身體裝備對不上時進來"
+  },
+  "headless.md": {
+    "description": "headless 建置路線與版本證據；要跑無頭建置時進來"
+  },
+  "outfit-evidence.md": {
+    "description": "服裝隔離試刷的本機證據；刷衣服遇問題對照時進來"
+  },
+  "outfits.md": {
+    "description": "刷指定衣服／一套裝備的增量建置流程；要刷某件衣服時進來"
+  },
+  "tools.md": {
+    "description": "四支工具鏈（stage→plan→沙箱建置→驗收）的用法；實際跑工具時進來"
+  }
+}

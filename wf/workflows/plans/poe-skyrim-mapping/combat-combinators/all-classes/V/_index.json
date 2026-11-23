@@ -1,0 +1,17 @@
+{
+  "REPORT.md": {
+    "description": "先鋒三型設計交付報告；先讀這份"
+  },
+  "feasibility.json": {
+    "description": "先鋒可行性缺口與仲裁（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "parameters.json": {
+    "description": "先鋒未定參數（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "rules.json": {
+    "description": "先鋒 30 條規則（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "subtypes.json": {
+    "description": "先鋒三子型與計數（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  }
+}
