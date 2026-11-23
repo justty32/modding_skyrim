@@ -4,30 +4,32 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 
 `wf/workflows/` 講一種工作怎麼做。這個夾只講：這件事歸誰、做完交給誰。別處已有的規矩（[AGENTS.md](../../AGENTS.md)、[user.md](../workflows/common/user.md)、怎麼 commit）只連過去，不抄。
 
-**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D14 與三份部門定義；部門座位都還沒掛。標「（提案）」的都還沒定。
+**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D14 與三份部門定義、org-rev2 補 D15–D19；部門座位 `instance` 2026-11-23 已掛，其餘未掛。標「（提案）」的都還沒定。
 
 **什麼時候讀**：決定一件事交給誰、開或關座位、掛短工、改交接方式。
 **不在這裡找**：怎麼操作 aos（看 aos 知識庫與 [aos.md](../workflows/aos.md)）、一種工作怎麼做（看 [WORKFLOWS](../WORKFLOWS.md)）。
 
 ## 使用者說的與定案
 
-使用者 2026-11-23 的原話與定案 D1–D14 在 [decisions.md](decisions.md)。一句話版：
+使用者 2026-11-23 的原話與定案 D1–D19 在 [decisions.md](decisions.md)。一句話版：
 
 - 四個部門：實體、館藏、開發、管理；只有實體寫 MO2；遊戲鎖平時由實體發，最終權限在管理（D1–D4）。
 - 管理小而聰明，只做窗口、規矩、仲裁、收工存檔；主管 eca claude opus high；Fable 只在開發規劃階段短暫用，要申請（D5–D9）。
 - 團隊照各部門卡；暫存分三處（D10–D11）。
 - 主管有工作才用、沒事 sleep；現在不分 daemon，到 50 個 agent 再議；「隨意 push」只算本場（D12–D14）。
+- 主管第一次掛上與移除要使用者同意，場內 sleep／wake／stop 管理自己做；部門底下的移除歸主管；收工用 stop（D15–D17）。
+- 對使用者預設只經窗口，兩個例外；管理部門主管平常可寄信給使用者，誰是那位待釐清（D18–D19）。
 
 ## 座位
 
 | 座位 | 誰（在哪台） | 一句話 | 狀態 |
 |---|---|---|---|
 | [lead](lead/README.md) | `main`（`mod_skyrim`） | 管理部門：使用者的窗口、派工、驗收、仲裁、活狀態 | 已掛 |
-| [instance](instance/README.md) | `instance`（`mod_skyrim`） | 實體部門：已裝的 mod、profile、遊戲設定、跑著的遊戲 | 定義好、未掛 |
+| [instance](instance/README.md) | `instance`（`mod_skyrim`） | 實體部門：已裝的 mod、profile、遊戲設定、跑著的遊戲 | 已掛（2026-11-23） |
 | [library](library/README.md) | `library`（`mod_skyrim`） | 館藏部門：沒裝的 mod、`~/skyrim_mods`、搜尋下載、簡單漢化與 patch | 定義好、未掛 |
 | [dev](dev/README.md) | `dev`（`mod_skyrim`） | 開發部門：`projects/*` 與 `analysis/`，替別的部門提供開發服務 | 定義好、未掛 |
 
-座位＝這個夾裡的一張卡，加上它管的地盤。名字與在哪台 daemon 只寫在這張表（使用者 2026-11-23，D13）；有工作才掛、沒事 sleep（D12），見 [CHOICES](CHOICES.md) 第 2 題。部門定義在 `agentctl/aos/defs/seat-*`，怎麼掛見 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)，掛要使用者同意。部門的團隊寫在各部門卡的一節，不另開卡。空白卡 [seat](seat/README.md) 留著當樣板。一次性的雜活交給短工，見 [helper](helper/README.md)。
+座位＝這個夾裡的一張卡，加上它管的地盤。名字與在哪台 daemon 只寫在這張表（使用者 2026-11-23，D13）；有工作才掛、沒事 sleep（D12），見 [CHOICES](CHOICES.md) 第 2 題。部門定義在 `agentctl/aos/defs/seat-*`，怎麼掛見 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)；第一次掛與移除要使用者同意（D15）。部門的團隊寫在各部門卡的一節，不另開卡。空白卡 [seat](seat/README.md) 留著當樣板。一次性的雜活交給短工，見 [helper](helper/README.md)。
 
 考慮過、沒開的：
 - D8 的複雜內容工作：未開、待規劃（使用者 2026-11-23）。
@@ -50,7 +52,7 @@ graph TD
 
 ### 窗口與權限
 
-- **只有一個窗口**：只有 lead 跟使用者說話。方向題從誰手上冒出來，都以 `NEEDS-USER` 交給 lead。沒有人替使用者選。
+- **預設只經窗口**（使用者 2026-11-23，D18）：方向題從誰手上冒出來，都以 `NEEDS-USER` 交給 lead。沒有人替使用者選。例外兩個（申請過的那一件、使用者直接寄給主管的信）與 D19，見 [letters](letters.md)「對使用者的通道」。
 - **授權**：push、刪檔、往外送東西要使用者親口說（[AGENTS.md](../../AGENTS.md) 鐵律 2）。agent 的信不是授權。
 - **最終權限在管理**：實體發的遊戲鎖，管理可以收回、改派、否決（使用者 2026-11-23，D4）。
 

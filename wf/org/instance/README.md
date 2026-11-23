@@ -4,7 +4,7 @@
 
 回 [org](../README.md)。
 
-**狀態**：定義已做好（`agentctl/aos/defs/seat-instance`），還沒掛；掛要使用者同意，步驟見 [RUNBOOK-seats](../../../agentctl/aos/RUNBOOK-seats.md)。agent 名 `instance`，掛在 `mod_skyrim`（使用者 2026-11-23，D13）。有工作才用，沒事 sleep（使用者 2026-11-23，D12）。沒掛時由 lead 派代班，代班先讀本卡、`instance/AGENTS.md`、筆記 `wf/temp/instance/notes.md`，收工前把學到的寫回筆記（提案，CHOICE 2）。
+**狀態**：已掛（2026-11-23，使用者同意後 `main` 照 [RUNBOOK-seats](../../../agentctl/aos/RUNBOOK-seats.md) 第 1、2 步掛上；第一件事是唯讀盤點冬堡學院內的 mod 衝突）。定義 `agentctl/aos/defs/seat-instance`。agent 名 `instance`，掛在 `mod_skyrim`（使用者 2026-11-23，D13）。有工作才用，沒事 sleep（使用者 2026-11-23，D12）。沒掛時由 lead 派代班，代班先讀本卡、`instance/AGENTS.md`、筆記 `wf/temp/instance/notes.md`，收工前把學到的寫回筆記（提案，CHOICE 2）。
 
 每行使用者定的標日期，其餘是提案。
 
@@ -53,6 +53,7 @@ profile 三檔實讀過（plugins.txt 那行的 `*`）、`instance/profiles` 有
 - **崩潰查出要改工具或 DLL** → 不自己改；寫清楚哪支、哪行、證據 → 請 `dev`，或交 lead。
 - **崩潰查出要改漢化層或 patch** → 同上 → 請 `library`。
 - **方向題** → 寫提案 → `NEEDS-USER` 交 lead，附提案路徑。
+- **使用者直接寄來的信**（例如遊戲 crash、遊戲中的問題）→ 直接處理、回使用者 → `PROGRESS` 知會 lead（D18；見 [letters](../letters.md)「對使用者的通道」）。
 
 ## 團隊（使用者 2026-11-23，D10）
 
