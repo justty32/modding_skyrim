@@ -4,7 +4,7 @@
 
 回 [org](../README.md)。
 
-**狀態**：未開。agent 名 `instance`（提案）。沒掛時由 lead 派代班，代班先讀本卡、`instance/AGENTS.md`、筆記 `wf/temp/instance/notes.md`，收工前把學到的寫回筆記（提案，CHOICE 2）。
+**狀態**：未開。agent 名 `instance`（提案；使用者 2026-11-23 看過未回應）。沒掛時由 lead 派代班，代班先讀本卡、`instance/AGENTS.md`、筆記 `wf/temp/instance/notes.md`，收工前把學到的寫回筆記（提案；使用者 2026-11-23 看過未回應，CHOICE 2）。
 
 每行使用者定的標日期，其餘是提案。
 
@@ -38,7 +38,7 @@ profile 三檔實讀過（plugins.txt 那行的 `*`）、`instance/profiles` 有
 - **只讀**：`~/skyrim_mods/`（館藏的；建置團隊讀 `bodyslide-sources/`）、`mod-library/`、`projects/*`；其他一切。
 - **只有這個座位做的事**：寫 MO2 mods 與 profile；發遊戲鎖。
 - **長期產出**：`instance/` 自己的 docs 與 tools。
-- **暫存**：`wf/temp/{agent 名}/`。
+- **暫存**：照 CHOICE 7 三分法；座位筆記與中間產物在 `wf/temp/{agent 名}/`。
 
 ## 交接
 
@@ -54,7 +54,7 @@ profile 三檔實讀過（plugins.txt 那行的 `*`）、`instance/profiles` 有
 - **崩潰查出要改漢化層或 patch** → 同上 → 請 `library`。
 - **方向題** → 寫提案 → `NEEDS-USER` 交 lead，附提案路徑。
 
-## 團隊（提案）
+## 團隊（使用者 2026-11-23，D10）
 
 - **安裝**：[profile-change](../../workflows/profile-change/README.md)、FOMOD 工具鏈、[mod-update](../../workflows/mod-update.md) 的後置清單。
 - **實機**：[runtime-qa](../../workflows/runtime-qa/README.md)，持遊戲鎖。

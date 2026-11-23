@@ -25,7 +25,7 @@ skyrim 的東西放哪、為什麼寫入範圍只是約定、怎麼開座位、�
 | 是一次調查、計畫、審查的紀錄？ | `agentctl/handoffs/home-{日期}/{線名}/REPORT.md` |
 | 是還沒做完的事？ | `SESSION-LOG.md`、`agentctl/SESSION-LOG.md`、`agentctl/handoffs/NEXT-SESSION.md`；只有 lead 寫，其他人寫在信裡 |
 | 是給使用者的題目？ | 經 lead：對話裡問；要拍板的頁放 [wf/user/](../user/README.md)；要實機驗的記 `WAIT_USER.md` |
-| 是可丟的東西：log、跑出來的輸出、複本？ | `wf/temp/{agent 名}/`（不進版控，可隨時清） |
+| 是可丟的東西：log、跑出來的輸出、複本？ | 照 CHOICE 7 三分法：中間產物與要給驗收看的 `wf/temp/{agent 名}/`；一次性小東西 `/tmp/{agent 名}/`；GB 級解壓與建置 `~/skyrim_mods/_staging-{日期}-{主題}/`（使用者 2026-11-23，D11） |
 
 只有要留下來的進 `wf/`。還在動的東西（進度、等使用者的題）不放 `wf/org/`。
 

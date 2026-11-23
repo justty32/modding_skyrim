@@ -19,14 +19,14 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **有工作才掛**：座位＝卡＋筆記；沒掛時由窗口派代班，代班先讀卡和筆記，收工前把學到的寫回。工作斷斷續續時選它。
 - **一批一掛、做完拆掉**：每批都要使用者點頭、不想帶上一批記憶時選它。
 
-**Ours:** 有工作才掛（提案）。出處：[aos.md](../workflows/aos.md) 第 2 節「用到才起」，一場開工時掛、收工時 stop 不 rm。
+**Ours:** 有工作才掛（提案；使用者 2026-11-23 看過未回應）。出處：[aos.md](../workflows/aos.md) 第 2 節「用到才起」，一場開工時掛、收工時 stop 不 rm。主管全掛在現有 `mod_skyrim` 一台，不另開子 daemon；agent 名用短名 `instance`、`library`、`dev`（提案；使用者 2026-11-23 看過未回應）。
 
 ## 3. 座位怎麼切？
 
 - **按能寫什麼切**：一個座位管一塊地盤，兩個座位不寫同一個檔，沒有只負責轉手的座位。
 - **按工作階段切**：設計、施工、審查、測試、整合。每個改動都要過同一條檢查線時選它。
 
-**Ours:** 按能寫什麼切（使用者 2026-11-23：D1 四部門、D2 `modpack-design/` 歸館藏、D3 只有實體寫 MO2）。部門底下的團隊按工作種類分（提案）。
+**Ours:** 按能寫什麼切（使用者 2026-11-23：D1 四部門、D2 `modpack-design/` 歸館藏、D3 只有實體寫 MO2）。部門底下的團隊按工作種類分，內容照各部門卡的團隊節（使用者 2026-11-23，D10）。
 
 ## 4. 誰 commit？
 
@@ -34,7 +34,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **各座位在自己地盤內 commit，事後回報**：要出地盤、刪檔、動到跑著的 agent 時先問窗口。配按地盤切。
 - **只有窗口 commit**：共用檔本來就只有一個寫手時選它。
 
-**Ours:** 各部門在自己的 submodule 內 commit，事後回報（出處：[aos.md](../workflows/aos.md) 第 1 節「主導是該 submodule 唯一的 commit 者」）。母 repo 的 `wf/`、活狀態檔與 gitlink pin 由窗口派書記短工 commit（出處同上）。`projects/*` 與 `analysis/` 由開發部門 commit（提案）。commit 只加明確路徑（出處：aos.md 第 3 節第 7 條）。push：2026-11-23 本場使用者說「可以隨意push」；平時仍照 [user.md](../workflows/common/user.md) 要當場授權。
+**Ours:** 各部門在自己的 submodule 內 commit，事後回報（出處：[aos.md](../workflows/aos.md) 第 1 節「主導是該 submodule 唯一的 commit 者」）。母 repo 的 `wf/`、活狀態檔與 gitlink pin 由窗口派書記短工 commit（出處同上）。`projects/*` 與 `analysis/` 由開發部門 commit（提案）。commit 只加明確路徑（出處：aos.md 第 3 節第 7 條）。push：2026-11-23 本場使用者說「可以隨意push」，只算本場（提案；使用者 2026-11-23 看過未回應）；平時仍照 [user.md](../workflows/common/user.md) 要當場授權。
 
 ## 5. 不是做事的人怎麼檢查？
 
@@ -57,9 +57,19 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **筆記**：不常駐的座位要有一份筆記，下一個坐上來的人先讀。
 - **長期產出**：放 `wf/org/` 底下的座位夾，或放座位自己的地盤。二選一。
 
-**Ours:**
-- 暫存與 agent 工作區：`S/wf/temp/{agent 名}/`（出處：`.gitignore` 第 24 行「2026-11-16 使用者裁示：wf/temp/ 是 aos 子 agent 的工作區」）。舊的 `tmp/aos/{名}/` 不再新增、也不刪（提案）。選這套的理由：它是較新的使用者裁示，而且一處就好，不用記四個 submodule 各自的 `tmp/aos/`。
-- 筆記：`wf/temp/{agent 名}/notes.md`，寫目前的請求、做到哪、未解的題（出處：11-15～16 功能隊定義的做法）。會重跑的流程不准讀這裡（出處：[user.md](../workflows/common/user.md) 11-22 段）。
+**Ours:** 暫存按東西分三處放（使用者 2026-11-23，D11：「好，就用這個」）。
+
+| 東西 | 放哪 | 理由 |
+|---|---|---|
+| 座位筆記、跑到一半的中間產物、要給驗收看的輸出 | `S/wf/temp/{agent 名}/` | 重開機要還在；已在 `.gitignore`（第 24 行，使用者 2026-11-16 裁示） |
+| 純一次性的小東西：commit 訊息檔、指令輸出；小於約 100 MB 且掉了可以重跑 | `/tmp/{agent 名}/` | `/tmp` 是記憶體碟（tmpfs），重開機自動清、佔 RAM |
+| 大的解壓與建置產物（GB 級） | `~/skyrim_mods/_staging-{日期}-{主題}/` | 不佔 RAM、不塞進 repo 目錄 |
+
+- 100 MB 是頂層定的線，可調。
+- 不做「平常放 `/tmp`、定期 cp 到 `wf/temp/`」：使用者問過，頂層說明不建議，使用者接受三分法。
+- `~/skyrim_mods/` 的夾名照既有慣例 `_staging-*`（出處：[git-commit-hygiene](../lessons/git-commit-hygiene.md) 的 commit-explicit-paths-only；磁碟上現有 `_staging-2026-11-01-ambriel-appearance` 這類）。寫入前的備份另照 [safe-apply](../workflows/safe-apply.md) 放 `_backup-*`，絕不放 `/tmp`。
+- 舊的 `tmp/aos/{名}/` 不再新增、也不刪（提案）。
+- 筆記：`wf/temp/{agent 名}/notes.md`，寫目前的請求、做到哪、未解的題（出處：11-15～16 功能隊定義的做法）。會重跑的流程不准讀暫存的任何一處（出處：[user.md](../workflows/common/user.md) 11-22 段）。
 - 長期產出：放部門自己的地盤，不放 `wf/org/`（提案）。
 
 ## 8. 座位可以開下屬、閒時改進自己嗎？

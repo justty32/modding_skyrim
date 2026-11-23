@@ -36,4 +36,6 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 
 2026-11-22 同場稍晚的長期偏好：遠端只留 `main` 已套用於母 repo、agentctl、instance、instance/profiles、mod-library；下載的 mod 壓縮包放 `~/skyrim_mods/` 根目錄保留（「下載的mod壓縮包可以丟到~/skyrim_mods」）；暫存用完可以清（「暫存全都可以清」「能刪就刪」；這是對清暫存的傾向，實際刪除仍照上表「刪檔」先問或有當場授權）。頂層詮釋（非原話）：清暫存不能弄斷可重複的流程——使用者也說「換身體這件事可能會經常做，所以這塊要留下一些口子」——所以長期流程要讀的東西放固定位置，不放 staging／`wf/temp`。
 
+2026-11-23 家中 Claude Code 場使用者裁示：本場普通工作交給 Opus、簡單工作與雜活交給 Sonnet；agent 可以再派 agent、模型隨意；除簡單工作與雜活外 agent 須先讀過 `wf/` 規矩。「可以隨意push」以本場為界，平時仍依上表確認。組織（四部門、團隊）與模型的長期定案在 [wf/org/](../../org/README.md)；暫存三分法在 [wf/org/CHOICES.md](../../org/CHOICES.md) 第 7 題。
+
 領域詞彙常猜錯 → 開 `glossary.md`（見 [common/README](README.md)）。

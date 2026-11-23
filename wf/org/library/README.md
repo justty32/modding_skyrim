@@ -4,7 +4,7 @@
 
 回 [org](../README.md)。
 
-**狀態**：未開。agent 名 `library`（提案）。沒掛時由 lead 派代班，代班先讀本卡、`mod-library/AGENTS.md`、`modpack-design/AGENTS.md`、筆記 `wf/temp/library/notes.md`，收工前寫回（提案，CHOICE 2）。
+**狀態**：未開。agent 名 `library`（提案；使用者 2026-11-23 看過未回應）。沒掛時由 lead 派代班，代班先讀本卡、`mod-library/AGENTS.md`、`modpack-design/AGENTS.md`、筆記 `wf/temp/library/notes.md`，收工前寫回（提案；使用者 2026-11-23 看過未回應，CHOICE 2）。
 
 每行使用者定的標日期，其餘是提案。
 
@@ -38,7 +38,7 @@
 - **只讀**：`instance/`（看現在裝了什麼）、MO2 實例、`projects/*`；其他一切。
 - **只有這個座位做的事**：Nexus 下載與入庫。
 - **長期產出**：`mod-library/l10n/mods/`、`mod-library/plugins/`（成品）；`modpack-design/` 的規劃。
-- **暫存**：`wf/temp/{agent 名}/`。
+- **暫存**：照 CHOICE 7 三分法；座位筆記與中間產物在 `wf/temp/{agent 名}/`。
 
 ## 交接
 
@@ -54,7 +54,7 @@
 - **要改 l10n 工具、houseCARL** → 不自己改；寫清楚哪支、哪行 → 請 `dev`。
 - **方向題**（要不要裝、選哪個版本）→ 寫提案 → `NEEDS-USER` 交 lead。
 
-## 團隊（提案）
+## 團隊（使用者 2026-11-23，D10）
 
 - **搜尋評估**：[mod-discovery](../../workflows/mod-discovery/README.md)；一個 mod 開一個評估 agent。
 - **下載入庫**：[nexus-intake](../../workflows/nexus-intake/README.md)；瀏覽器、DB。

@@ -4,7 +4,7 @@
 
 回 [org](../README.md)。
 
-**狀態**：未開。agent 名 `dev`（提案）。沒掛時由 lead 派代班，代班先讀本卡、該 project 的 `AGENTS.md`、筆記 `wf/temp/dev/notes.md`，收工前寫回（提案，CHOICE 2）。
+**狀態**：未開。agent 名 `dev`（提案；使用者 2026-11-23 看過未回應）。沒掛時由 lead 派代班，代班先讀本卡、該 project 的 `AGENTS.md`、筆記 `wf/temp/dev/notes.md`，收工前寫回（提案；使用者 2026-11-23 看過未回應，CHOICE 2）。
 
 每行使用者定的標日期，其餘是提案。
 
@@ -38,7 +38,7 @@
 - **只讀**：`instance/`、`mod-library/`、`agentctl/`、MO2 實例；其他一切。
 - **只有這個座位做的事**：改 subproject 的原始碼。
 - **長期產出**：各 project 自己的 docs；研究結論進 `analysis/`。
-- **暫存**：`wf/temp/{agent 名}/`。測試在 worktree 跑，不在主樹（出處：[git-commit-hygiene](../../lessons/git-commit-hygiene.md) 的 run-tests-in-worktree-not-main-tree）。
+- **暫存**：照 CHOICE 7 三分法；座位筆記與中間產物在 `wf/temp/{agent 名}/`。測試在 worktree 跑，不在主樹（出處：[git-commit-hygiene](../../lessons/git-commit-hygiene.md) 的 run-tests-in-worktree-not-main-tree）。
 
 ## 交接
 
@@ -54,7 +54,7 @@
 - **規劃階段要 Fable** → 寫申請：什麼規劃、要多久 → 交 lead（D7）。
 - **方向題** → 寫提案 → `NEEDS-USER` 交 lead，附提案路徑。
 
-## 團隊（提案）
+## 團隊（使用者 2026-11-23，D10）
 
 - **各 subproject 線**：用到才開，一個 project 一條（如 houseCARL、ModForge、agent-bridge）。
 - **服務隊**：替其他部門修工具、修 DLL、寫腳本；產出交地盤主人 commit。上游 SKSE DLL 修法照 fork＋CI 的做法（出處：[crash-dll-and-scripts](../../lessons/crash-dll-and-scripts.md) 的 upstream-skse-dll-fix-via-fork-ci）。
