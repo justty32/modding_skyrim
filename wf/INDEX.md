@@ -11,7 +11,7 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 | [`modpack-design/`](../modpack-design/) | **四條主線之一**：整合包設計——Gameplay 遷移批次、技術債、選型調查 |
 | [`agentctl/`](../agentctl/) | **四條主線之一**：AI 操控總控——派線協議、agent 交接、資源鎖、QA harness、執行證據 |
 | [`agentctl/handoffs/`](../agentctl/handoffs/) | 每場交接書與各隊 `REPORT.md`；場次夾 30 天或最近 5 場，到期即刪（不再月結搬 `done/`） |
-| [`agentctl/inbox/`](../agentctl/inbox/) | 五通道信箱與 `ROSTER.md` 身份聲明簿；信件 ack 後刪 |
+| [`agentctl/inbox/`](../agentctl/inbox/) | md 信箱，2026-11-14 凍結唯讀（見 `FROZEN.md`）；樹裡用 aos 信箱 |
 | [`agentctl/docs/`](../agentctl/docs/) | 驅動 agent、資源鎖、模型分級與 houseCARL 現行文件 |
 | [`projects/`](../projects/README.md) | 獨立開發專案；工具、內容專案與 Git 操作說明都在這一層入口。各子 repo（含四條主線）有自己的 `AGENTS.md`＋`wf/`（例外見根 README）|
 | [`analysis/`](../analysis/README.md) | 引擎、mod、工具與素材來源的研究分類；文件慣例見 [analysis 工作流](workflows/analysis.md) |

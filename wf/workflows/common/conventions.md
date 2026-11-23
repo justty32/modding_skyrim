@@ -44,4 +44,4 @@ code/tests > schema/examples/fixtures > CODE_MAP > docs > generated/html
 
 現行三層角色與模型分級見 [`agentctl/docs/team-model.md`](../../../agentctl/docs/team-model.md)，領地與互斥範圍見
 [`agentctl/docs/line-claims.md`](../../../agentctl/docs/line-claims.md)，通訊與上游路由見
-[`agentctl/tools/agent_inbox/PROTOCOL.md`](../../../agentctl/tools/agent_inbox/PROTOCOL.md)。
+[`wf/org/letters.md`](../../org/letters.md)。

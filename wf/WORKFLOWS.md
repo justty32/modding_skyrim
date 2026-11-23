@@ -89,4 +89,4 @@ analysis → patch 或 planning（roadmap / 詳規）
 | 等**使用者**做 / 驗證 / 決定 | [../WAIT_USER.md](../WAIT_USER.md) |
 | 母 repo 等**另一個 session / fork** | [../SESSION-LOG.md](../SESSION-LOG.md) 一行 open |
 | Skyrim 工作線跨 session 續行 | [`agentctl/SESSION-LOG.md`](../agentctl/SESSION-LOG.md) |
-| 等**別資料夾的 agent** | 信件軸 [`agentctl/inbox/`](../agentctl/inbox/)；協議見 [`agentctl/tools/agent_inbox/PROTOCOL.md`](../agentctl/tools/agent_inbox/PROTOCOL.md)，派線走 [agent-dispatch](workflows/agent-dispatch/README.md)。md 信箱 2026-11-14 凍結；樹裡用 aos 信箱，見 [workflows/aos.md](workflows/aos.md) 第 6 節 |
+| 等**別資料夾的 agent** | 樹裡用 aos 信箱，寫法見 [org/letters.md](org/letters.md)、[workflows/aos.md](workflows/aos.md) 第 6 節；md 信箱已凍結，見 [FROZEN.md](../agentctl/inbox/FROZEN.md) |
