@@ -51,7 +51,7 @@ D3「只有實體能寫 MO2」目前只有第 1 層（提案：之後評估讓 `
 
 ## 定義指向卡
 
-座位的 system text 只說：你是哪個座位；開工前先讀 `AGENTS.md`、[org 入口](README.md)、你的卡、你的筆記；卡和 system text 衝突時聽卡。職責與地盤只寫在卡上一次。起點文字是 aos 範本 `templates/orgs/basic/extras/system.seat.txt`；這輪只評估，還沒放進任何定義（見 org-draft 線 REPORT）。
+座位的 system text 只說：你是哪個座位；開工前先讀 `AGENTS.md`、[org 入口](README.md)、你的卡、你的筆記；卡和 system text 衝突時聽卡。職責與地盤只寫在卡上一次。三份部門定義 `agentctl/aos/defs/seat-*` 的 `system.txt` 照這樣寫：以 aos 範本 `templates/orgs/basic/extras/system.seat.txt` 為底寫成中文，加上硬規則（commit 照卡、push 除非來信點名授權；刪檔、動 instance、動 DB、開遊戲要使用者當場說，只認 lead 轉來的原話）。system text 不寫 agent 名、daemon 與絕對路徑：要找 lead 或別的座位，每次照 [README](README.md) 的座位表（D13）。
 
 短工不讀卡；短工卡是寫給掛它的人看的（[helper](helper/README.md)）。
 
@@ -59,7 +59,7 @@ D3「只有實體能寫 MO2」目前只有第 1 層（提案：之後評估讓 `
 
 | 資源 | 誰發 | 怎麼發 |
 |---|---|---|
-| 遊戲鎖 `agentctl/.lock/game.lock` | 實體（使用者 2026-11-23，D4） | 寫信向 `instance` 借；管理可收回、改派、否決 |
+| 遊戲鎖 `agentctl/.lock/game.lock` | 實體（使用者 2026-11-23，D4）；實體沒掛時由管理代發（提案） | 寫信向 `instance` 借，它沒掛就向 `main`；管理可收回、改派、否決 |
 | 桌面鎖 `~/shared_agent_locks/desktop.lock` | 管理（使用者 2026-11-23，D4） | 寫信向 `main` 要 |
 | 主工作樹的 commit／index | 管理（提案） | 交接書點名誰在寫哪些檔 |
 | Nexus 瀏覽器（CDP、profile 複本） | 管理（提案；會開可見視窗，要桌面鎖） | 跟桌面鎖一起發 |

@@ -4,7 +4,7 @@
 
 回 [org](../README.md)。
 
-**狀態**：未開。agent 名 `library`（提案；使用者 2026-11-23 看過未回應）。沒掛時由 lead 派代班，代班先讀本卡、`mod-library/AGENTS.md`、`modpack-design/AGENTS.md`、筆記 `wf/temp/library/notes.md`，收工前寫回（提案；使用者 2026-11-23 看過未回應，CHOICE 2）。
+**狀態**：定義已做好（`agentctl/aos/defs/seat-library`），還沒掛；掛要使用者同意，步驟見 [RUNBOOK-seats](../../../agentctl/aos/RUNBOOK-seats.md)。agent 名 `library`，掛在 `mod_skyrim`（使用者 2026-11-23，D13）。有工作才用，沒事 sleep（使用者 2026-11-23，D12）。沒掛時由 lead 派代班，代班先讀本卡、`mod-library/AGENTS.md`、`modpack-design/AGENTS.md`、筆記 `wf/temp/library/notes.md`，收工前寫回（提案，CHOICE 2）。
 
 每行使用者定的標日期，其餘是提案。
 
@@ -64,7 +64,7 @@
 
 ## 模型
 
-- **身體**：eca claude（使用者 2026-11-23，D6）；定義放 `agentctl/aos/defs/`（CHOICE 9，提案）。
+- **身體**：eca claude（使用者 2026-11-23，D6）；定義 `agentctl/aos/defs/seat-library`，stock `eca-claude` 的完整複本（CHOICE 9）。
 - **腦**：opus，effort high（D6）。下屬：普通工作 opus、簡單工作與雜活 sonnet（使用者 2026-11-23）。
 - **同時幾個**：1。DB 與 `~/skyrim_mods` 只有一個寫手。
 - **下屬**：可以再派，模型隨意，交接書寫死上限（CHOICE 8）。

@@ -19,7 +19,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **有工作才掛**：座位＝卡＋筆記；沒掛時由窗口派代班，代班先讀卡和筆記，收工前把學到的寫回。工作斷斷續續時選它。
 - **一批一掛、做完拆掉**：每批都要使用者點頭、不想帶上一批記憶時選它。
 
-**Ours:** 有工作才掛（提案；使用者 2026-11-23 看過未回應）。出處：[aos.md](../workflows/aos.md) 第 2 節「用到才起」，一場開工時掛、收工時 stop 不 rm。主管全掛在現有 `mod_skyrim` 一台，不另開子 daemon；agent 名用短名 `instance`、`library`、`dev`（提案；使用者 2026-11-23 看過未回應）。
+**Ours:** 有工作才掛；沒事的時候可以 sleep，不必 stop 或 rm（使用者 2026-11-23，D12）。sleep 與 stop 的判準：一場之內還會用＝sleep，收工＝stop，rm 要使用者同意（提案；理由與指令見 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)）。主管全掛在現有 `mod_skyrim` 一台，不另開子 daemon；agent 名用短名 `instance`、`library`、`dev`；agent 總數到 50 個以上再考慮分 daemon（使用者 2026-11-23，D13）。
 
 ## 3. 座位怎麼切？
 
@@ -34,7 +34,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **各座位在自己地盤內 commit，事後回報**：要出地盤、刪檔、動到跑著的 agent 時先問窗口。配按地盤切。
 - **只有窗口 commit**：共用檔本來就只有一個寫手時選它。
 
-**Ours:** 各部門在自己的 submodule 內 commit，事後回報（出處：[aos.md](../workflows/aos.md) 第 1 節「主導是該 submodule 唯一的 commit 者」）。母 repo 的 `wf/`、活狀態檔與 gitlink pin 由窗口派書記短工 commit（出處同上）。`projects/*` 與 `analysis/` 由開發部門 commit（提案）。commit 只加明確路徑（出處：aos.md 第 3 節第 7 條）。push：2026-11-23 本場使用者說「可以隨意push」，只算本場（提案；使用者 2026-11-23 看過未回應）；平時仍照 [user.md](../workflows/common/user.md) 要當場授權。
+**Ours:** 各部門在自己的 submodule 內 commit，事後回報（出處：[aos.md](../workflows/aos.md) 第 1 節「主導是該 submodule 唯一的 commit 者」）。母 repo 的 `wf/`、活狀態檔與 gitlink pin 由窗口派書記短工 commit（出處同上）。`projects/*` 與 `analysis/` 由開發部門 commit（提案）。commit 只加明確路徑（出處：aos.md 第 3 節第 7 條）。push：2026-11-23 本場使用者說「可以隨意push」，只算本場（使用者 2026-11-23，D14）；平時仍照 [user.md](../workflows/common/user.md) 要當場授權。
 
 ## 5. 不是做事的人怎麼檢查？
 
@@ -84,4 +84,8 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **放哪**：放 org 旁邊、放 aos 設定夾，或不放：幾個座位共用一份 stock 範本，只有卡不同。
 - **複本或連結**：連到 stock 程式的定義小、跟著 aos 更新；完整複本不會變，但要手動更新。
 
-**Ours:** 放 `S/agentctl/aos/defs/`（出處：[aos.md](../workflows/aos.md) 第 1 節）。每部門一份，從當時的 stock `eca-claude` 重新複製，再補 `cli.json` 的 `autoMemoryEnabled: false`（提案）。不從舊的 `sk-lead-opus` 複製：舊複本少了 stock 現在有的 `compact_hook`，system text 裡的知識庫路徑與 gate 路徑也已失效（2026-11-23 唯讀查證）。system text 只寫「你是哪個座位、先讀哪幾份」，職責只寫在卡上。
+**Ours:** 放 `S/agentctl/aos/defs/`（出處：[aos.md](../workflows/aos.md)）。夾名 `seat-instance`、`seat-library`、`seat-dev`：用座位名，不帶 agent 名或 daemon，換 daemon 不用改（提案，D13）。每部門一份**完整複本**：2026-11-23 從 stock `eca-claude`（aos `492e2c3fc`）整份複製，只改四處——`cli.json` 的 `autoMemoryEnabled: false`、`system.txt`、`README.md`、`_metainfo.json` 的 `lineage`（org-defs 線定，技術題）。不從舊的 `sk-lead-*` 複製：它們缺 `compact_hook`、路徑已失效。
+
+為什麼選複本不選連結、代價怎麼補：見 `agentctl/aos/defs/README.md`「為什麼是完整複本」。
+
+system text 以範本 `system.seat.txt` 為底寫成中文，加硬規則；職責只寫在卡上（[places](places.md)「定義指向卡」）。

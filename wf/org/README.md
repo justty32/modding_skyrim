@@ -4,71 +4,34 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 
 `wf/workflows/` 講一種工作怎麼做。這個夾只講：這件事歸誰、做完交給誰。別處已有的規矩（[AGENTS.md](../../AGENTS.md)、[user.md](../workflows/common/user.md)、怎麼 commit）只連過去，不抄。
 
-**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11；還沒掛任何座位 agent。標「（提案）」的都還沒定。
+**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D14 與三份部門定義；部門座位都還沒掛。標「（提案）」的都還沒定。
 
 **什麼時候讀**：決定一件事交給誰、開或關座位、掛短工、改交接方式。
 **不在這裡找**：怎麼操作 aos（看 aos 知識庫與 [aos.md](../workflows/aos.md)）、一種工作怎麼做（看 [WORKFLOWS](../WORKFLOWS.md)）。
 
-## 使用者說的
+## 使用者說的與定案
 
-2026-11-23 原話：
+使用者 2026-11-23 的原話與定案 D1–D14 在 [decisions.md](decisions.md)。一句話版：
 
-> 我們可以基於agentctl去設計，然後我們就主要分幾大塊，一個是管理我的遊戲實體instance，他主管安裝着的mod，遊戲設定，跑着的遊戲等等，他底下還會切分出一些職責，一些agent負責mod安裝，一些負責遊戲的crash分析之類。一個是規劃現有的mod儲藏，他主管沒安裝的mod, ~/skyrim_mods，還有從網路上抓mod，上網搜尋mod，分析mod，給mod做一些簡單的漢化和patch，不過一些複雜的分析/開發工作會從這個體系拉出來單獨做，後續會再規劃。然後是開發部門，負責一些subproject的開發，subproject中也不只有開發，同時這個部門底下也會有一些團隊，負責向其他團隊提供開發服務。最後是管理部門，從agentctl延伸出來，主管各團隊各agent的行爲，他們之間的交流，一些權限/資源的分派管理等，同時也是負責對接我這個使用者的窗口。
-
-頂層提了四個邊界，使用者逐點回：
-
-> 1.好。2.好。3.可以，但最終權限仍在管理部門手上。4.對，管理部門盡量小巧，並且要最聰明。然後主管級別的人物請使用eca claude opus high。fable僅在開發中的規劃階段短暫使用，並且需要向管理部門申請。
-
-頂層問「管理窗口用什麼模型」，使用者答：
-
-> 都先用opus。窗口這塊我會直接用claude code cli操作，有需要的時候我會自己將其提升爲fable
-
-同場的分工指示：
-
-> 事情都盡量交給agent做，普通工作交給opus，簡單工作與雜活交給sonnet。除了簡單工作與雜活外，agent做事前都要讀過wf/規矩。agent可以再派agent做事，模型隨意。可以隨意push。
-
-頂層列五點提案與部門團隊表，使用者回：
-
-> 團隊分法OK，草稿好了給我看。但是暫存這塊，不考慮放/tmp嗎？還有，暫存有進git ignore吧。或是平常放/tmp，定期cp到wf/temp？
-
-頂層回了暫存三分法，使用者答：
-
-> 好，就用這個
-
-### 已定案：部門與地盤（使用者 2026-11-23）
-
-- D1 四個部門：實體、館藏、開發、管理。
-- D2 `modpack-design/` 歸館藏。館藏管「有什麼、想要什麼」，實體管「實際裝了什麼」。
-- D3 只有實體能寫 MO2 的 mods 與 profile。館藏做的漢化／patch 只交「可以直接裝的包」，由實體裝、由實體驗。
-- D4 遊戲鎖平時由實體發，開發要實機測試向實體借；最終權限在管理（可收回、改派、否決）。桌面鎖與其他跨部門資源由管理發。
-
-### 已定案：管理與模型（使用者 2026-11-23）
-
-- D5 管理部門盡量小、要最聰明；只做窗口、規矩、仲裁、收工存檔，不做內容。部門之間可直接寫信互相請求，事後知會管理。
-- D6 部門主管＝eca claude、opus、effort high。
-- D7 Fable 只在開發的規劃階段短暫使用，要先向管理申請。
-- D8 複雜的分析／開發型內容工作（換臉、PoE 星盤、地圖移植等）不放進這四塊：未開、待規劃。
-- D9 全體預設 opus，包含窗口。窗口是使用者自己開的 Claude Code CLI；要不要升 Fable 由使用者當場手動切，agent 不自己升。
-
-### 已定案：團隊與暫存（使用者 2026-11-23）
-
-- D10 部門底下的團隊照各部門卡的團隊節。舊功能隊：裝 mod→實體、漢化→館藏、雜事→管理書記短工、換臉→D8 未開。
-- D11 暫存分三處：`wf/temp/`、`/tmp/`、`~/skyrim_mods/_staging-*`；見 [CHOICES](CHOICES.md) 第 7 題。
+- 四個部門：實體、館藏、開發、管理；只有實體寫 MO2；遊戲鎖平時由實體發，最終權限在管理（D1–D4）。
+- 管理小而聰明，只做窗口、規矩、仲裁、收工存檔；主管 eca claude opus high；Fable 只在開發規劃階段短暫用，要申請（D5–D9）。
+- 團隊照各部門卡；暫存分三處（D10–D11）。
+- 主管有工作才用、沒事 sleep；現在不分 daemon，到 50 個 agent 再議；「隨意 push」只算本場（D12–D14）。
 
 ## 座位
 
-| 座位 | 誰 | 一句話 | 狀態 |
+| 座位 | 誰（在哪台） | 一句話 | 狀態 |
 |---|---|---|---|
-| [lead](lead/README.md) | `main` | 管理部門：使用者的窗口、派工、驗收、仲裁、活狀態 | 已掛 |
-| [instance](instance/README.md) | `instance`（提案） | 實體部門：已裝的 mod、profile、遊戲設定、跑著的遊戲 | 未開 |
-| [library](library/README.md) | `library`（提案） | 館藏部門：沒裝的 mod、`~/skyrim_mods`、搜尋下載、簡單漢化與 patch | 未開 |
-| [dev](dev/README.md) | `dev`（提案） | 開發部門：`projects/*` 與 `analysis/`，替別的部門提供開發服務 | 未開 |
+| [lead](lead/README.md) | `main`（`mod_skyrim`） | 管理部門：使用者的窗口、派工、驗收、仲裁、活狀態 | 已掛 |
+| [instance](instance/README.md) | `instance`（`mod_skyrim`） | 實體部門：已裝的 mod、profile、遊戲設定、跑著的遊戲 | 定義好、未掛 |
+| [library](library/README.md) | `library`（`mod_skyrim`） | 館藏部門：沒裝的 mod、`~/skyrim_mods`、搜尋下載、簡單漢化與 patch | 定義好、未掛 |
+| [dev](dev/README.md) | `dev`（`mod_skyrim`） | 開發部門：`projects/*` 與 `analysis/`，替別的部門提供開發服務 | 定義好、未掛 |
 
-座位＝這個夾裡的一張卡，加上它管的地盤。座位是不是一直掛著、主管短名、掛在哪台 daemon，見 [CHOICES](CHOICES.md) 第 2 題（提案；使用者 2026-11-23 看過未回應）。部門的團隊寫在各部門卡的一節，不另開卡。空白卡 [seat](seat/README.md) 留著當樣板。一次性的雜活交給短工，見 [helper](helper/README.md)。
+座位＝這個夾裡的一張卡，加上它管的地盤。名字與在哪台 daemon 只寫在這張表（使用者 2026-11-23，D13）；有工作才掛、沒事 sleep（D12），見 [CHOICES](CHOICES.md) 第 2 題。部門定義在 `agentctl/aos/defs/seat-*`，怎麼掛見 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)，掛要使用者同意。部門的團隊寫在各部門卡的一節，不另開卡。空白卡 [seat](seat/README.md) 留著當樣板。一次性的雜活交給短工，見 [helper](helper/README.md)。
 
 考慮過、沒開的：
 - D8 的複雜內容工作：未開、待規劃（使用者 2026-11-23）。
-- 11-15～16 在 `skyrim-alt` 底下的功能隊（漢化、裝 mod、換臉、雜事）不另開座位，歸法見 D10。
+- 11-15～16 在 `skyrim-alt` 底下的功能隊（漢化、裝 mod、換臉、雜事）不另開座位，歸法見 [decisions](decisions.md) 的 D10。
 
 ## 標準流程
 

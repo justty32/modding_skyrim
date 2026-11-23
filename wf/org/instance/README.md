@@ -4,7 +4,7 @@
 
 回 [org](../README.md)。
 
-**狀態**：未開。agent 名 `instance`（提案；使用者 2026-11-23 看過未回應）。沒掛時由 lead 派代班，代班先讀本卡、`instance/AGENTS.md`、筆記 `wf/temp/instance/notes.md`，收工前把學到的寫回筆記（提案；使用者 2026-11-23 看過未回應，CHOICE 2）。
+**狀態**：定義已做好（`agentctl/aos/defs/seat-instance`），還沒掛；掛要使用者同意，步驟見 [RUNBOOK-seats](../../../agentctl/aos/RUNBOOK-seats.md)。agent 名 `instance`，掛在 `mod_skyrim`（使用者 2026-11-23，D13）。有工作才用，沒事 sleep（使用者 2026-11-23，D12）。沒掛時由 lead 派代班，代班先讀本卡、`instance/AGENTS.md`、筆記 `wf/temp/instance/notes.md`，收工前把學到的寫回筆記（提案，CHOICE 2）。
 
 每行使用者定的標日期，其餘是提案。
 
@@ -64,7 +64,7 @@ profile 三檔實讀過（plugins.txt 那行的 `*`）、`instance/profiles` 有
 
 ## 模型
 
-- **身體**：eca claude（使用者 2026-11-23，D6）；定義放 `agentctl/aos/defs/`，從 stock `eca-claude` 複製（CHOICE 9，提案）。
+- **身體**：eca claude（使用者 2026-11-23，D6）；定義 `agentctl/aos/defs/seat-instance`，stock `eca-claude` 的完整複本（CHOICE 9）。
 - **腦**：opus，effort high（使用者 2026-11-23，D6）。下屬：普通工作 opus、簡單工作與雜活 sonnet（使用者 2026-11-23）。
 - **同時幾個**：1。兩個寫手同時寫 profile 會撞；遊戲同時只能一條線用。
 - **下屬**：可以再派，模型隨意，交接書寫死上限（CHOICE 8）。

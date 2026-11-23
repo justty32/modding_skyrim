@@ -1,13 +1,14 @@
 # aos 樹裡的 skyrim 隊：怎麼排、聽誰的
 
-← [WORKFLOWS](../WORKFLOWS.md)｜在 aos 樹裡跑的 agent（daemon 表上名字是 `skyrim-agent` 或 `skyrim-agent-*` 的）開工先讀這份
+← [WORKFLOWS](../WORKFLOWS.md)｜在 aos 樹裡跑的 skyrim agent（`mod_skyrim` 子 daemon 上的 `main` 與部門座位，以及它們掛的工人）開工先讀這份
 
 **結論**：
 - skyrim 的規矩仍以 [AGENTS.md](../../AGENTS.md) 為準。aos 知識庫只教怎麼用樹。
+- 誰管哪塊、下一棒給誰、座位叫什麼名字：[wf/org/](../org/README.md)。本頁不重寫。
 - 兩邊打架的地方，看本頁第 4 節。
 - 找路用 `index_view`，從 skyrim 根開始一層一層往下走。
 
-定案出處：使用者 2026-11-14 13:45 的專區回信（6 題，已 verify），以及 skyrim-agent 當天 05:51 的裁定。
+定案出處：使用者 2026-11-14 13:45 的專區回信（6 題，已 verify），以及當時的頂層 skyrim-agent（舊樹，已不在）當天 05:51 的裁定。
 
 經驗、已知毛病與繞法：[wf/lessons/aos-tree-onboarding-and-leading.md](../lessons/aos-tree-onboarding-and-leading.md)。
 
@@ -15,39 +16,31 @@
 
 ```mermaid
 graph TD
-  U[使用者] --- T[skyrim-agent<br>fable・根・開 gate]
-  T --> A[skyrim-agent-agentctl<br>fable]
-  T --> I[skyrim-agent-instance<br>opus]
-  T --> M[skyrim-agent-mod-library<br>opus]
-  T --> D[skyrim-agent-modpack-design<br>opus]
-  T --> S[skyrim-agent-opus-MMDDx<br>母 repo 短工]
-  A --> W[skyrim-agent-agentctl-sonnet-MMDDx<br>工人]
+  U[使用者] --- R[根 daemon<br>使用者起停]
+  R --> M[mod_skyrim 子 daemon<br>工作區＝skyrim 根]
+  M --> L[main<br>管理窗口]
+  M --> I[instance<br>定義好、未掛]
+  M --> B[library<br>定義好、未掛]
+  M --> D[dev<br>定義好、未掛]
 ```
 
-- **頂層** `skyrim-agent`：獨立的根，開 gate；下令、仲裁資源、驗收、跟使用者說話，不親手施工。
-- **主導** `skyrim-agent-<區>`：工作區＝該 submodule 根，是它唯一的 commit 者；用到才起。instance 第 1、2 期配 opus。
-- **母 repo**：沒有專屬主導，寫入、commit、wrap 由頂層臨時掛的 opus 短工做。
+- **座位與名字**：四個部門的座位、agent 短名、在哪台 daemon，只寫在 [wf/org/README.md](../org/README.md) 的座位表（使用者 2026-11-23，D13）。到 50 個 agent 以上再考慮分 daemon。
+- **定義**：部門主管用 [agentctl/aos/defs/](../../agentctl/aos/defs/README.md) 的 `seat-*`。`main` 跑 stock `eca-claude`。夾裡其他 `sk-*`、`skyrim-top` 是舊樹留下的，未整修前不掛。
 - **工人** `<上游名>-<角色>-<MMDD><序>`：名字不重用（同名會接上舊對話），做完由上游 rm。
-- **工人工作區**：四個子 repo（agentctl、instance、mod-library、modpack-design）都用自己已忽略的 `tmp/aos/<名>/`；母 repo 層用 `S/tmp/aos/<名>/`。
-- **掛子 agent** 一律帶 `AOS_KERNEL`＝skyrim-agent 的 gate 信箱（單一出處 [agentctl/aos/defs/GATE.md](../../agentctl/aos/defs/GATE.md)）。定義在 [agentctl/aos/defs/](../../agentctl/aos/defs/)。
+- **工人工作區**：照 [wf/org/CHOICES.md](../org/CHOICES.md) 第 7 題三分法。舊的 `tmp/aos/<名>/` 不再新增。
+- **gate**：現在沒有。`main` 沒開 `kernel_gate`，掛 agent 不帶 `AOS_KERNEL`。舊的 [GATE.md](../../agentctl/aos/defs/GATE.md) 已標失效。
 
-## 2. 起樹與收樹（用到才起）
+## 2. 起樹與收樹
 
-一場工作開始時起樹，整場常駐，收工時整棵收掉。沒開工的日子不掛。
+- **樹本身**（根 daemon、`mod_skyrim`、`main`）由使用者起停，agent 不動。
+- **部門主管**：有工作才掛，沒事 sleep（使用者 2026-11-23，D12）。掛要使用者同意。指令與 sleep／stop 的判準在 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)。
 
-**起樹**，由外往內：
-1. 起 skyrim-agent。
-2. 確認它的 gate 開著。
-3. 只起這場要用的主導。
-4. 主導照任務書掛工人。
-
-**收樹**，由內往外：
+**收工**，由內往外：
 1. 工人做完就 rm。
-2. 主導寫完 REPORT、commit 自己的 submodule 後回報 DONE。
-3. 頂層對主導 `subagent stop`。不 rm，保留對話紀錄給下一場接。
-4. 頂層的 opus 短工跑 wrap，pin 由內往外：`instance/profiles` → `instance` → 母 repo。
-5. 問使用者要不要 push。
-6. 停掉 skyrim-agent。
+2. 部門主管寫完 REPORT、commit 自己的 submodule 後回報 DONE。
+3. `main` 對主管 `stop`。不 rm，保留對話紀錄給下一場接。
+4. `main` 派書記短工跑 wrap，pin 由內往外：`instance/profiles` → `instance` → 母 repo。
+5. push 要使用者當場授權（D14）。
 
 ## 3. aos 活樹硬規則裡適用 skyrim 的四條
 
@@ -64,7 +57,7 @@ graph TD
   - 不用 commit-request，那是 aos repo 的工具。
 - **第 8 條**（原文）：「叫真模型測試時只給它真的小工作；不編理由、不繞它講明的限制。」
 
-skyrim 隊另加兩條（skyrim-agent 2026-11-14 定）：
+skyrim 隊另加兩條（當時的頂層 skyrim-agent 2026-11-14 定）：
 - **不寫整份環境**：不把整份環境變數寫進檔、印進 log 或放進信（`env`、`printenv`、`/proc/*/environ` 都算）；要看只列變數名或 `AOS_*`。
 - **暫存也不刪**：暫存檔、暫存夾一律不刪；要重來就換新夾名。
 
@@ -95,6 +88,6 @@ skyrim 隊另加兩條（skyrim-agent 2026-11-14 定）：
 
 ## 6. 信箱、鎖、gate
 
-- **信箱**：md 信箱已凍結，見 [agentctl/inbox/FROZEN.md](../../agentctl/inbox/FROZEN.md)。樹外的 session 要寄信進樹，用 `aos-post send` 寄到該區主導的 mailbox。
-- **遊戲／桌面鎖**：照舊用 agentctl 的 [lock.sh](../../agentctl/tools/lock.sh)。要鎖先寄 REQUEST 給 skyrim-agent，回信點名你才取（細節見 [agentctl/docs/resource-locks/aos-tree.md](../../agentctl/docs/resource-locks/aos-tree.md)）。不用 aos-lock（實驗見 [lock-exp/](../../agentctl/handoffs/home-2026-11-14/lock-exp/)）。
-- **gate 處理程式**：[agentctl/aos/gate/gate_hold.py](../../agentctl/aos/gate/gate_hold.py)。
+- **信箱**：md 信箱已凍結，見 [agentctl/inbox/FROZEN.md](../../agentctl/inbox/FROZEN.md)。樹外的 session 要寄信進樹，用 `aos-post send` 寄到該部門主管的 mailbox。
+- **遊戲／桌面鎖**：照舊用 agentctl 的 [lock.sh](../../agentctl/tools/lock.sh)。遊戲鎖向 `instance` 借，它沒掛就向 `main`；桌面鎖向 `main` 要；回信點名你才取（使用者 2026-11-23，D4；細節見 [agentctl/docs/resource-locks/aos-tree.md](../../agentctl/docs/resource-locks/aos-tree.md)）。不用 aos-lock（實驗見 [lock-exp/](../../agentctl/handoffs/home-2026-11-14/lock-exp/)）。
+- **gate**：現在沒有（見第 1 節）。舊的處理程式 [agentctl/aos/gate/gate_hold.py](../../agentctl/aos/gate/gate_hold.py) 留著備查。

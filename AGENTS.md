@@ -10,7 +10,8 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 - **要你動手做事** → [WORKFLOWS.md](wf/WORKFLOWS.md) 依意圖派發，再讀該工作流入口檔。
 - **想看結構** → [INDEX.md](wf/INDEX.md)；完整佈局在根 [README.md](README.md)——它是外來 agent 的入口，改佈局或新增產物類型時同步更新。
 - 使用者偏好與邊界 → [user.md](wf/workflows/common/user.md)。
-- **在 aos 樹裡跑的 agent**（daemon 表上的 `skyrim-agent`、`skyrim-agent-*`）→ 先讀 [aos.md](wf/workflows/aos.md)；找路用 `index_view`。
+- **誰管哪塊、下一棒給誰**（四個部門的座位與交接）→ [wf/org/README.md](wf/org/README.md)。
+- **在 aos 樹裡跑的 agent**（`mod_skyrim` 子 daemon 上的 `main`、部門座位與它們掛的工人）→ 先讀 [aos.md](wf/workflows/aos.md)；找路用 `index_view`。
 - **動手前先查有沒有現成工具** → [工具索引](agentctl/docs/tool-index.md)（任務類型 → 必用工具；在 private 的 agentctl，母 repo 只放這一行指標）。
 - **給使用者看的頁面**（清單／審批／裁示）→ [wf/user/](wf/user/README.md)，不放 agentctl。
 

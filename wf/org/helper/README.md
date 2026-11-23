@@ -46,7 +46,7 @@ skyrim 短工（helper）的卡，寫給掛短工的人看：能交給它什麼�
 兩種，先選第一種：
 
 1. **Claude Code 自己的子 agent**（Agent 工具，型別 `line`；要寫 REPORT 時交接書寫明「REPORT 是交付物」）。不佔 aos 名額。
-2. **aos 子 agent**：定義 `agentctl/aos/defs/sk-worker-sonnet`（沒有 subagent、def 包，不能 commit、不能掛 agent）。名字 `{上游名}-{角色}-{MMDD}{序}`，不重用（出處 aos.md 第 1 節）。派工用 `mailbox_send`，信裡叫它做完自己收掉（出處：[aos 樹教訓](../../lessons/aos-tree-onboarding-and-leading.md)）。
+2. **aos 子 agent**：定義 `agentctl/aos/defs/sk-worker-sonnet`（沒有 subagent、def 包，不能 commit、不能掛 agent）。這份是舊樹留下的，未整修前不得掛（2026-11-23 org-defs，見 `agentctl/aos/defs/README.md`）；這條路現在走不通，先用第 1 種。名字 `{上游名}-{角色}-{MMDD}{序}`，不重用（出處 aos.md 第 1 節）。派工用 `mailbox_send`，信裡叫它做完自己收掉（出處：[aos 樹教訓](../../lessons/aos-tree-onboarding-and-leading.md)）。
 
 sol（agent-fsm、沒有 shell）只做蒐集與量大呆板的事，全樹同時最多 1 隻（出處 aos.md 第 4 節）。這輪不取 aos 範本的 `site.txt`，因為短工不是從 kit 做的（見 org-draft 線 REPORT）。
 
