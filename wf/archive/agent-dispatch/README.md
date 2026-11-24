@@ -1,3 +1,5 @@
+> 封存 2026-11-24：codex 退役，工人改用 Claude 系（Opus／Sonnet）或 fsm gpt（使用者 2026-11-24，D20）；現行派工見 `wf/workflows/aos.md` 與 `wf/org/README.md`。本頁只留作舊線紀錄，不再維護。
+
 # agent-dispatch — 指揮 codex 或其他 coding agent
 
 把整條工作線外包給同機的其他 CLI agent（`codex`／`pi`），自己當調度者。
@@ -52,11 +54,11 @@ Done when: <該線發了終局狀態、逐條對過驗收、工作樹／commit �
    `housecarl_nexus_*` 查得到，所以 Nexus 查證可以派給 codex 線（403 是 curl 的限制，不是 codex 的限制）。
    交接書要明寫「Nexus 事實一律走 `housecarl_nexus_*`，不 curl 網頁」。下載是另一回事：
    調度者先用 houseCARL 把 id／fileId／版本／bytes 寫死，線只做離線收斂；下載由調度者跑 Claude in Chrome，
-   或指定**唯一一條**瀏覽器線走 CDP，見 [nexus-intake 第 3 段](../nexus-intake/README.md#3-下載)。
+   或指定**唯一一條**瀏覽器線走 CDP，見 [nexus-intake 第 3 段](../../workflows/nexus-intake/README.md#3-下載)。
 6. **範圍詞會被線遞移展開。** 「相關的」若只寫包含條件，線會沿依賴圖忠實展開成遞移閉包，
    每多一跳都可能讓件數升一個數量級。交接書要用排除法界定邊界，並把容量 gate 與件數 gate 並列；
    任一觸發就停下來問。可直接抄用的三條排除規則與雙 gate 格式見
-   [nexus-intake 的範圍樣板](../nexus-intake/README.md#派下載線前範圍樣板與雙-gate)。
+   [nexus-intake 的範圍樣板](../../workflows/nexus-intake/README.md#派下載線前範圍樣板與雙-gate)。
 
 ## 通訊：五通道與輪詢義務
 

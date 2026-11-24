@@ -1,0 +1,9 @@
+{
+  "README.md": {
+    "description": "退役 wf 文件的索引：檔名、封存日、取代者；找舊工作流去哪了時進來"
+  },
+  "agent-dispatch": {
+    "description": "已退役（2026-11-24，D20）：舊的 codex 派線工作流，只留作紀錄",
+    "index": "agent-dispatch/_index.json"
+  }
+}

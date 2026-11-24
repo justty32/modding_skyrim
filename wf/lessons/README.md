@@ -18,7 +18,7 @@
 | [dispatch-delegation](dispatch-delegation.md) | 調度：模型分級與委派給誰 | 6 |
 | [dispatch-leads-and-line-discipline](dispatch-leads-and-line-discipline.md) | 調度：領隊與線的運作紀律 | 6 |
 | [dispatch-handoffs](dispatch-handoffs.md) | 調度：交接書與查證 | 8 |
-| [dispatch-cli-agents](dispatch-cli-agents.md) | 調度：驅動 codex／tmux | 5 |
+| [dispatch-cli-agents](dispatch-cli-agents.md) | 調度：驅動 codex／tmux（codex 2026-11-24 退役，留作紀錄）| 5 |
 | [process-throttling](process-throttling.md) | 行程限流與別線行程的分寸 | 2 |
 | [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 8 |
 | [repos-layout-and-remotes](repos-layout-and-remotes.md) | 版控：repo 佈局、remote 與 push | 5 |

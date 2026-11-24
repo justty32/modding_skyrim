@@ -23,7 +23,7 @@
 | 「刷這件／這套衣服」「只刷指定 BodySlide 群組」 | bodyslide/outfits | [workflows/bodyslide/outfits.md](workflows/bodyslide/outfits.md) —— 裝備模型路徑→變體與身形→增量試刷→驗收 |
 | 「幫我捏臉」「改某 NPC 的臉」「臉再瘦一點」「套 RaceMenu preset」 | racemenu | [workflows/racemenu/README.md](workflows/racemenu/README.md) —— 需求凍結→jslot 候選（可用）→出圖／截圖確認→固化成 NPC patch 層（未實作）；身形走 bodyslide |
 | 「規劃整合包要玩什麼」 | modpack-planning | [workflows/modpack-planning/README.md](workflows/modpack-planning/README.md) |
-| 「派一條 codex 線去做事」 | agent-dispatch | [workflows/agent-dispatch/README.md](workflows/agent-dispatch/README.md)（aos 樹裡不走 codex，見 [workflows/aos.md](workflows/aos.md)；本列在 aos 接入第 5 期退役） |
+| 「派工人／開一條線去做事」 | aos | [workflows/aos.md](workflows/aos.md) —— 工人用 Claude 系（Opus／Sonnet）或 fsm gpt；codex 2026-11-24 退役（D20）|
 | 「在 aos 樹裡派線（`mod_skyrim` 底下，`main` 或部門座位）」 | aos | [workflows/aos.md](workflows/aos.md) —— 樹與命名、收工、打架點聽誰的；誰管哪塊見 [org/](org/README.md) |
 | 「讓 agent 操作遊戲做測試／實機驗收」 | runtime-qa | [workflows/runtime-qa/README.md](workflows/runtime-qa/README.md) |
 | 「配置頁挑好招了／貼變更單」「要專屬裝備的招強制發動」 | movesets | [workflows/movesets/README.md](workflows/movesets/README.md) —— 模擬→閘門→排除→套用→MO2 循環→煙霧→重發頁面 |

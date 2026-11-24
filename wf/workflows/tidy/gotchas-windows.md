@@ -3,6 +3,8 @@
 [tidy](README.md)｜[gotchas 本體](gotchas.md)。2026-09-02 自 `gotchas.md` 拆出（母檔 9781 B 超過 8 KB 上限）；
 本檔只記公司 Windows 機專屬的坑，跨平台通則仍在 gotchas 本體。
 
+> 2026-11-24 起 codex 退役，見 D20（[user.md](../common/user.md) 2026-11-24 段）；下面的 codex 條目留作舊線紀錄。
+
 <!-- wf-nav -->
 - **codex sandbox 內整個 shell 是壞的，不只 `inbox_send.sh`**：`bash`／`sh`／`grep`／`find`／`wc` 全死在 `fatal error - CreateFileMapping <SID>.1, Win32 error 5`；PowerShell 可用但**指令一長就 `CreateProcessAsUserW failed: 5`**（實測 `env_u16_len=6454` 被拒），不能拿來當一行式替代。**唯一穩的是 `python`（`python3` 不存在）與原生 `git.exe`。** 處置：交接書裡所有 bash 管線的驗收命令（`bash wf/tools/wf-lint.sh`、`find … | wc -l`、`git status --short | grep -v …`）對 codex 工人**一律無效**，工人的自證命令全改寫成 `python`；bash 那面的驗收改由**管理線自己跑**——別拿自己測得通就推論工人也能用。驗收條數不必改，只換執行者。
 - **codex 工人拿不到 `.git/modules/<sub>/index.lock` 的寫權限，做不了 `git mv`**，它們改用 `os.rename`／`shutil.move`：2026-08-31 四個 codex 搬完後，git 看到的是 **242 個未 stage 的刪除 ＋ 242 個未追蹤新檔**，`-M` 完全偵測不到 rename，交出去像刪了 242 個檔。處置：管理線收線時用**明確路徑**補 `git add -A <該線領地> <對應的 archive 路徑>`，**不可以 `git add -A .`**（會把別隊同時在動的檔一起 stage）；補完逐筆比對 `moves.tsv`——新路徑不存在 0 筆、舊路徑還在 0 筆，才算沒弄丟東西。

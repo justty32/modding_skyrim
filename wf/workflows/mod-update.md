@@ -36,4 +36,4 @@
 
 ## 交接
 
-- 實機行為驗收 → runtime-qa 或 WAIT_USER；升版引發崩潰 → [crash-triage](crash-triage.md)；大批升版排程 → agent-dispatch。
+- 實機行為驗收 → runtime-qa 或 WAIT_USER；升版引發崩潰 → [crash-triage](crash-triage.md)；大批升版排程 → 派工人（見 [aos.md](aos.md)）。

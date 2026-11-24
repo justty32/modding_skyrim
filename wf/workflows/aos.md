@@ -30,6 +30,8 @@ graph TD
 - **工人工作區**：照 [wf/org/CHOICES.md](../org/CHOICES.md) 第 7 題三分法。舊的 `tmp/aos/<名>/` 不再新增。
 - **gate**：現在沒有。`main` 沒開 `kernel_gate`，掛 agent 不帶 `AOS_KERNEL`。舊的 [GATE.md](../../agentctl/aos/defs/GATE.md) 已標失效。
 
+**工人用什麼**：Claude 系（Opus／Sonnet）或 fsm gpt（`agent-fsm` 範本接 llm kernel 的 GPT 端點，掛法在 `agentctl/aos/fsm-gpt/`）；codex 2026-11-24 退役，不再派（D20，原話見 [user.md](common/user.md)）。
+
 ## 2. 起樹與收樹
 
 - **樹本身**（根 daemon、`mod_skyrim`、`main`）由使用者起停，agent 不動。

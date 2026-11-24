@@ -2,6 +2,8 @@
 
 [lessons 索引](README.md)
 
+> 2026-11-24 起 codex 退役，見 D20（[user.md](../workflows/common/user.md) 2026-11-24 段）；下面派 codex 的做法只留作舊線紀錄，現行工人用 Claude 系或 fsm gpt。
+
 現行選型、子 agent 數量上限、親讀 wf 與 `/goal` 以 [team-model](../../agentctl/docs/team-model.md)／
 [派線流程](../../agentctl/docs/driving-codex.md) 為準；歷史型號不當預設。每步且至少每 20 分鐘發 PROGRESS，頂層 ≤20 分鐘巡檢。
 

@@ -8,6 +8,10 @@
   "WORKFLOWS.md": {
     "description": "工作流派發器：依使用者意圖選工作流再讀入口檔；要動手做事時進來"
   },
+  "archive": {
+    "description": "已退役的 wf 文件（不在維護鏈）；找舊工作流去哪了時進來",
+    "index": "archive/_index.json"
+  },
   "knowledge": {
     "description": "機讀知識表：放 outside-places.json（repo 外位置的絕對路徑表），用 index_view {\"index\": \"wf/knowledge/outside-places.json\"} 看",
     "index": "knowledge/_index.json"

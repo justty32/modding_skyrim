@@ -17,4 +17,4 @@
 - 任一 gate 觸發就停下來問；另一項沒有超標也不得繼續。
 ```
 
-派線端為什麼必須用排除法界定範圍，見 [agent-dispatch 的第六條防錯規則](../agent-dispatch/README.md#六條最容易錯的)。
+派線端為什麼必須用排除法界定範圍，見教訓 [handoff-scope-words-expand](../../lessons/dispatch-handoffs.md#handoff-scope-words-expand)。

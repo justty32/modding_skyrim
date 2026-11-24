@@ -2,6 +2,8 @@
 
 [lessons 索引](README.md)
 
+> 2026-11-24 起 codex 退役，見 D20（[user.md](../workflows/common/user.md) 2026-11-24 段）；下面派 codex 的做法只留作舊線紀錄，現行工人用 Claude 系或 fsm gpt。
+
 角色與現行選型以 [team-model](../../agentctl/docs/team-model.md) 為準；下列使用者原話保留，舊場次隊數／模型路由不當今日配額。
 
 ## im-dispatcher-codex-implements

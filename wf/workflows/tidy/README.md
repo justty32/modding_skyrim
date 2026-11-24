@@ -53,7 +53,7 @@
 ## 本工作區的實際跑法
 
 <!-- wf-nav -->
-- **三層與選人**：角色三層、模型分級與六項選人判準一律以 [team-model](../../../agentctl/docs/team-model.md) 為準；簡報骨架見 [manager-brief.md](manager-brief.md)，交接書契約見 [agent-dispatch](../agent-dispatch/README.md)。
+- **三層與選人**：角色三層、模型分級與六項選人判準一律以 [team-model](../../../agentctl/docs/team-model.md) 為準；簡報骨架見 [manager-brief.md](manager-brief.md)，請求（交接書）要寫什麼見 [org/letters](../../org/letters.md)「請求要寫什麼」；工人用 Claude 系或 fsm gpt（codex 2026-11-24 退役，D20）。
 - 盤點加兩條：`git log --since=<兩週前> --oneline -- <檔>`（誰沒人動）、`grep -rlE --include='*.md' '<repo>/<dir>/' <其他 repo…> | wc -l`（入站連結量）。
 - Done when 加碼：子資料夾 README ≤ 300 行、入口 README ≤ 100 行；名冊／登記表 ≤ 8192 bytes；`SESSION-LOG.md` ≤ 2048 bytes 只列 open；母 repo 根 `python3 tools/check_markdown_links.py`（不帶參數、全庫）→ OK。
 - 跨 repo 連結：各線收完後由調度者拿各線的 `moves.tsv` 跑 [`wf/tools/fix_moved_links.py`](../../tools/fix_moved_links.py) `--prefix <submodule>`，再全庫 `check_markdown_links.py`；交接書明寫「跨 repo 壞連結不追」，否則線會自己列對映表想幫忙修。

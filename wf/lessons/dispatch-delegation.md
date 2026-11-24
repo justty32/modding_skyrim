@@ -2,6 +2,8 @@
 
 [lessons 索引](README.md)
 
+> 2026-11-24 起 codex 退役，見 D20（[user.md](../workflows/common/user.md) 2026-11-24 段）；下面派 codex 的做法只留作舊線紀錄，現行工人用 Claude 系或 fsm gpt。
+
 現行分工與子 agent 規則只依 [team-model](../../agentctl/docs/team-model.md)；歷史預設路由／配額不覆蓋 11-07 裁示。
 
 ## model-tiers-and-headcount

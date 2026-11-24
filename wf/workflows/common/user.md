@@ -18,24 +18,27 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 | 直接做、不用問 | 改文件、跑唯讀指令（`git status`／`grep`／`find`／查 Nexus）、跑測試與 lint |
 | 一定先問 | push、刪檔、動 `instance/`（MO2 profile／load order／已裝 mod）、動 DB（mod-library 的 MongoDB）、安裝依賴、開新的大型工作 |
 | 回覆風格 | 見 [reply-style](reply-style.md)；短、先結論。使用者問「**要不要**」時不要只回「不必」，附上可執行的判準（門檻數字）與後果，讓他能改數字 |
+| 派工人 | Claude 系或 fsm gpt；codex 已退役（D20）|
 | 時區 | Asia/Taipei |
 
 2026-10-21 使用者裁示：所有負責實質工作的 agent 必須先親自讀過適用的 `wf/` 規矩，不能只靠領隊摘要；簡單工作或雜活例外。
 
-2026-11-03 使用者裁示：事情盡量交給 agent 做，普通工作交給 `gpt-6.1-sol`，簡單工作與雜活交給 `gpt-6.1-terra`；除簡單工作與雜活外，agent 須先親自讀過適用的 `wf/` 規矩。這取代同日公司端 Opus／Sonnet 的分工偏好；頂層負責與使用者交流，領隊依平台限制與任務需要處理分派，agent 可派子 agent。2026-11-04 使用者再次確認此分工。
+2026-11-03 使用者裁示：事情盡量交給 agent 做，普通工作交給 `gpt-6.1-sol`，簡單工作與雜活交給 `gpt-6.1-terra`；除簡單工作與雜活外，agent 須先親自讀過適用的 `wf/` 規矩。這取代同日公司端 Opus／Sonnet 的分工偏好；頂層負責與使用者交流，領隊依平台限制與任務需要處理分派，agent 可派子 agent。2026-11-04 使用者再次確認此分工。〔codex 部分 2026-11-24 起失效，見下方 2026-11-24 段〕
 
-2026-11-05 公司端 Claude Code 場使用者裁示：普通工作交給 Opus、簡單工作與雜活交給 Sonnet，頂層只負責與使用者交流；除簡單工作與雜活外，agent 須先親自讀過 `wf/` 規矩才開工。此為 Claude Code 平台的分工，codex 平台仍依上段 gpt-6.1-sol／terra。
+2026-11-05 公司端 Claude Code 場使用者裁示：普通工作交給 Opus、簡單工作與雜活交給 Sonnet，頂層只負責與使用者交流；除簡單工作與雜活外，agent 須先親自讀過 `wf/` 規矩才開工。此為 Claude Code 平台的分工，codex 平台仍依上段 gpt-6.1-sol／terra。〔codex 平台 2026-11-24 退役，見下方 2026-11-24 段〕
 
 2026-11-03 本場使用者授權可以隨意 push；此授權以本場為界，平時仍依上表確認。
 
 2026-11-04 家中場使用者再次授權「可以隨意push」，運動約一個半小時期間持續做；本場可直接推送經核對的成果，其他動作邊界不由push授權擴張。
 
-2026-11-07 家中 Claude Code 場使用者裁示：Claude 額度剩 3%（16:00 重置），本場事情盡量交給 codex `gpt-6.1-sol`；若用 Claude agent，普通工作 Opus、簡單工作與雜活 Sonnet；除簡單工作與雜活外 agent 須先讀過 `wf/` 規矩；agent 可依每線 BRIEF 的子 agent 數量上限再派 agent、模型隨意，配額往下不倍增；本場可以隨意 push。後續裁示：家機每隊最多一個外部 codex，與同程序子 agent 分開計數；選人做設計決策／架構規劃時，GPT 的優先級較低，並非禁止使用；每線 BRIEF 必寫子 agent 數量上限，取代同日稍早的無上限寫法。
+2026-11-07 家中 Claude Code 場使用者裁示：Claude 額度剩 3%（16:00 重置），本場事情盡量交給 codex `gpt-6.1-sol`；若用 Claude agent，普通工作 Opus、簡單工作與雜活 Sonnet；除簡單工作與雜活外 agent 須先讀過 `wf/` 規矩；agent 可依每線 BRIEF 的子 agent 數量上限再派 agent、模型隨意，配額往下不倍增；本場可以隨意 push。後續裁示：家機每隊最多一個外部 codex，與同程序子 agent 分開計數；選人做設計決策／架構規劃時，GPT 的優先級較低，並非禁止使用；每線 BRIEF 必寫子 agent 數量上限，取代同日稍早的無上限寫法。〔codex 部分 2026-11-24 起失效，見下方 2026-11-24 段〕
 
 2026-11-22 家中 Claude Code 場使用者裁示（長期偏好）：技術問題由 agent 自行決定（「反正這些都是技術問題，該怎麼做就怎麼做」）；「每隔一個大段就按照wf/規矩保存進度」＝每完成一大段就照 `wf/` 規矩做階段存檔（STATE、續行點、commit；push 仍看當場授權）；使用者外出時 agent 可自主持續做、可開遊戲／MO2（照 resource-locks 持鎖、不存檔覆蓋使用者進度），並注意 CPU／記憶體（「我出門在外，你自己持續做，可以開遊戲/mo2做事。注意cpu/mem。」）。同場一次性授權（當天可 commit／push、男體選項等）記在當場 STATE，不在此。
 
 2026-11-22 同場稍晚的長期偏好：遠端只留 `main` 已套用於母 repo、agentctl、instance、instance/profiles、mod-library；下載的 mod 壓縮包放 `~/skyrim_mods/` 根目錄保留（「下載的mod壓縮包可以丟到~/skyrim_mods」）；暫存用完可以清（「暫存全都可以清」「能刪就刪」；這是對清暫存的傾向，實際刪除仍照上表「刪檔」先問或有當場授權）。頂層詮釋（非原話）：清暫存不能弄斷可重複的流程——使用者也說「換身體這件事可能會經常做，所以這塊要留下一些口子」——所以長期流程要讀的東西放固定位置，不放 staging／`wf/temp`。
 
 2026-11-23 家中 Claude Code 場使用者裁示：本場普通工作交給 Opus、簡單工作與雜活交給 Sonnet；agent 可以再派 agent、模型隨意；除簡單工作與雜活外 agent 須先讀過 `wf/` 規矩。「可以隨意push」以本場為界，平時仍依上表確認。組織（四部門、團隊）與模型的長期定案在 [wf/org/](../../org/README.md)；暫存三分法在 [wf/org/CHOICES.md](../../org/CHOICES.md) 第 7 題。
+
+2026-11-24 家中 Claude Code 場使用者裁示（長期偏好，D20）：頂層問 `wf/workflows/agent-dispatch/` 要不要退役，使用者答「1.退役，以後都不要用codex了，就用fsm gpt。」從此不派 codex 線；工人用 Claude 系（Opus／Sonnet）或 fsm gpt（aos 的 `agent-fsm` 範本，腦接 llm kernel 的 GPT 端點；掛法在 `agentctl/aos/fsm-gpt/`）。上面 11-03、11-05、11-07 段裡經 codex 跑的部分（codex 平台、家機每隊一個外部 codex）一併失效，GPT 模型改經 fsm gpt 用，選哪個端點見掛法文件；「選人做設計決策／架構規劃時 GPT 優先級較低」與每線 BRIEF 寫子 agent 上限照舊。舊 codex 派線工作流已封存到 `wf/archive/agent-dispatch/`。
 
 領域詞彙常猜錯 → 開 `glossary.md`（見 [common/README](README.md)）。

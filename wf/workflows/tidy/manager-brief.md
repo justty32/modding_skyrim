@@ -4,7 +4,7 @@
 
 派管理線時把本檔路徑＋交接書路徑一起給它。
 
-角色三層與選人依 [team-model](../../../agentctl/docs/team-model.md)，交接書格式與線的驅動依 [driving-codex](../../../agentctl/docs/driving-codex.md)，回報通道依 [agent inbox 契約](../../../agentctl/tools/agent_inbox/PROTOCOL.md)。
+角色三層與選人依 [team-model](../../../agentctl/docs/team-model.md)，交接書要寫什麼依 [org/letters](../../org/letters.md)「請求要寫什麼」、工人怎麼掛依 [aos.md](../aos.md)（工人用 Claude 系或 fsm gpt；codex 2026-11-24 退役，D20），回報通道依 [agent inbox 契約](../../../agentctl/tools/agent_inbox/PROTOCOL.md)。
 
 你是**管理線**，直屬調度者。你的工作是**指揮**，不是親手拆檔：
 

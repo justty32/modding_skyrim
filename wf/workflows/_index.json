@@ -2,10 +2,6 @@
   "TEMPLATE.workflow.md": {
     "description": "新工作流入口檔的範本；新增工作流時進來"
   },
-  "agent-dispatch": {
-    "description": "指揮 codex 或其他 coding agent 的工作流入口；要派線、驅動 CLI agent 時進來",
-    "index": "agent-dispatch/_index.json"
-  },
   "analysis.md": {
     "description": "陌生專案分析入口：初次接觸外部 repo、舊系統或大型資料夾時進來"
   },

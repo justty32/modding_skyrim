@@ -25,7 +25,7 @@
     "description": "CTD 的 SKSE DLL 與腳本成因；崩潰疑似 DLL 或 Papyrus 時進來"
   },
   "dispatch-cli-agents.md": {
-    "description": "調度：驅動 codex／tmux 的實務；派 CLI agent 前進來"
+    "description": "調度：驅動 codex／tmux 的舊實務（codex 2026-11-24 退役）；碰 tmux 或外部 CLI 行程時進來"
   },
   "dispatch-delegation.md": {
     "description": "調度：模型分級與委派給誰；決定誰來做事時進來"
