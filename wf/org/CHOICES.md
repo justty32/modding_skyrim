@@ -34,7 +34,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **各座位在自己地盤內 commit，事後回報**：要出地盤、刪檔、動到跑著的 agent 時先問窗口。配按地盤切。
 - **只有窗口 commit**：共用檔本來就只有一個寫手時選它。
 
-**Ours:** 各部門在自己的 submodule 內 commit，事後回報（出處：[aos.md](../workflows/aos.md) 第 1 節「主導是該 submodule 唯一的 commit 者」）。母 repo 的 `wf/`、活狀態檔與 gitlink pin 由窗口派書記短工 commit（出處同上）。`projects/*` 與 `analysis/` 由開發部門 commit（提案）。commit 只加明確路徑（出處：aos.md 第 3 節第 7 條）。push：2026-11-23 本場使用者說「可以隨意push」，只算本場（使用者 2026-11-23，D14）；平時仍照 [user.md](../workflows/common/user.md) 要當場授權。
+**Ours:** 各部門在自己的 submodule 內 commit，事後回報（出處：[aos.md](../workflows/aos.md) 第 1 節「主導是該 submodule 唯一的 commit 者」）。母 repo 的 `wf/`、活狀態檔與 gitlink pin 由窗口派書記短工 commit（出處同上）。`projects/*` 與 `analysis/` 由開發部門 commit（提案）。commit 只加明確路徑（出處：aos.md 第 3 節第 7 條）。push：2026-11-23 本場使用者說「可以隨意push」，只算本場（使用者 2026-11-23，D14）；平時每天 23:00 由 lead 統一 push（D25）。
 
 ## 5. 不是做事的人怎麼檢查？
 

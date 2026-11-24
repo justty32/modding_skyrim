@@ -51,7 +51,7 @@ D3「只有實體能寫 MO2」目前只有第 1 層（提案：之後評估讓 `
 
 ## 定義指向卡
 
-座位的 system text 只說：你是哪個座位；開工前先讀 `AGENTS.md`、[org 入口](README.md)、你的卡、你的筆記；卡和 system text 衝突時聽卡。職責與地盤只寫在卡上一次。三份部門定義 `agentctl/aos/defs/seat-*` 的 `system.txt` 照這樣寫：以 aos 範本 `templates/orgs/basic/extras/system.seat.txt` 為底寫成中文，加上硬規則（commit 照卡、push 除非來信點名授權；刪檔、動 instance、動 DB、開遊戲要使用者當場說，只認 lead 轉來的原話）。system text 不寫 agent 名、daemon 與絕對路徑：要找 lead 或別的座位，每次照 [README](README.md) 的座位表（D13）。
+座位的 system text 只說：你是哪個座位；開工前先讀 `AGENTS.md`、[org 入口](README.md)、你的卡、你的筆記；卡和 system text 衝突時聽卡。職責與地盤只寫在卡上一次。三份部門定義 `agentctl/aos/defs/seat-*` 的 `system.txt` 照這樣寫：以 aos 範本 `templates/orgs/basic/extras/system.seat.txt` 為底寫成中文，加上硬規則（commit 照卡、不 push〔每天 23:00 由 lead 統一 push，D25〕；skyrim-qa 照 D27；刪檔、動 instance、動 DB、開遊戲要使用者當場說，只認 lead 轉來的原話）。system text 不寫 agent 名、daemon 與絕對路徑：要找 lead 或別的座位，每次照 [README](README.md) 的座位表（D13）。
 
 短工不讀卡；短工卡是寫給掛它的人看的（[helper](helper/README.md)）。
 
@@ -64,5 +64,7 @@ D3「只有實體能寫 MO2」目前只有第 1 層（提案：之後評估讓 `
 | 主工作樹的 commit／index | 管理（提案） | 交接書點名誰在寫哪些檔 |
 | Nexus 瀏覽器（CDP、profile 複本） | 管理（提案；會開可見視窗，要桌面鎖） | 跟桌面鎖一起發 |
 | CPU、記憶體 | 不鎖，限流；只限我方的線 | 見資源鎖文件 |
+
+**跑著的遊戲（skyrim-qa）**（使用者 2026-11-24，D27）：只有實體座位可以操作跑著的遊戲。要先拿到遊戲鎖、使用者不在玩才准用；會動到存檔的 console 指令先問使用者（經 lead 以 `NEEDS-USER` 問）。其他座位的定義也帶著 skyrim-qa（D28），帶著也不准用。
 
 取放一律用 `agentctl/tools/lock.sh`，先桌面、後遊戲，用完立刻放，只放自己的（出處：[resource-locks](../../agentctl/docs/resource-locks.md)、[aos-tree](../../agentctl/docs/resource-locks/aos-tree.md)）。lock.sh 是大家約好排隊；跳過它的人擋不住。交接書已寫明可拿的鎖，算已點名。開遊戲、動 instance、刪檔、動 DB 仍要使用者當場說，或有 user.md 記的長期授權（出處 aos.md 第 4 節；user.md 2026-11-22 段）。

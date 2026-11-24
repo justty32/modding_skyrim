@@ -14,9 +14,9 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 | 項目 | 設定 |
 |------|------|
 | 語言 | 回覆與文件一律**繁體中文**；技術專名（mod 名、API、指令、欄位）留原文。**mod 層繁簡皆可**——要的是有中文，不是正體；缺字破版才是硬 gate |
-| 分支慣例 | 直接 commit `main`，不開 branch 走 PR；**遠端只留 `main`**（2026-11-22「我希望遠端只有main」）；**push 要使用者當場確認**（依鐵律 2）|
+| 分支慣例 | 直接 commit `main`，不開 branch 走 PR；**遠端只留 `main`**（2026-11-22「我希望遠端只有main」）；**push 每晚 23:00 統一做**（D25）|
 | 直接做、不用問 | 改文件、跑唯讀指令（`git status`／`grep`／`find`／查 Nexus）、跑測試與 lint |
-| 一定先問 | push、刪檔、動 `instance/`（MO2 profile／load order／已裝 mod）、動 DB（mod-library 的 MongoDB）、安裝依賴、開新的大型工作 |
+| 一定先問 | 臨時 push、刪檔、動 `instance/`（MO2 profile／load order／已裝 mod）、動 DB（mod-library 的 MongoDB）、安裝依賴、開新的大型工作 |
 | 回覆風格 | 見 [reply-style](reply-style.md)；短、先結論。使用者問「**要不要**」時不要只回「不必」，附上可執行的判準（門檻數字）與後果，讓他能改數字 |
 | 派工人 | Claude 系或 fsm gpt；codex 已退役（D20）|
 | 時區 | Asia/Taipei |
@@ -39,6 +39,8 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 
 2026-11-23 家中 Claude Code 場使用者裁示：本場普通工作交給 Opus、簡單工作與雜活交給 Sonnet；agent 可以再派 agent、模型隨意；除簡單工作與雜活外 agent 須先讀過 `wf/` 規矩。「可以隨意push」以本場為界，平時仍依上表確認。組織（四部門、團隊）與模型的長期定案在 [wf/org/](../../org/README.md)；暫存三分法在 [wf/org/CHOICES.md](../../org/CHOICES.md) 第 7 題。
 
-2026-11-24 家中 Claude Code 場使用者裁示（長期偏好，D20）：頂層問 `wf/workflows/agent-dispatch/` 要不要退役，使用者答「1.退役，以後都不要用codex了，就用fsm gpt。」從此不派 codex 線；工人用 Claude 系（Opus／Sonnet）或 fsm gpt（aos 的 `agent-fsm` 範本，腦接 llm kernel 的 GPT 端點；掛法在 `agentctl/aos/fsm-gpt/`）。上面 11-03、11-05、11-07 段裡經 codex 跑的部分（codex 平台、家機每隊一個外部 codex）一併失效，GPT 模型改經 fsm gpt 用，選哪個端點見掛法文件；「選人做設計決策／架構規劃時 GPT 優先級較低」與每線 BRIEF 寫子 agent 上限照舊。舊 codex 派線工作流已封存到 `wf/archive/agent-dispatch/`。
+2026-11-24 家中 Claude Code 場使用者裁示（長期偏好，D20）：頂層問 `wf/workflows/agent-dispatch/` 要不要退役，使用者答「1.退役，以後都不要用codex了，就用fsm gpt。」從此不派 codex 線；工人用 Claude 系（Opus／Sonnet）或 fsm gpt（aos 的 `agent-fsm` 範本，腦接 llm kernel 的 GPT 端點；掛法在 `agentctl/aos/fsm-gpt/`）。上面 11-03、11-05、11-07 段裡經 codex 跑的部分（codex 平台、家機每隊一個外部 codex）一併失效，GPT 模型改經 fsm gpt 用，選哪個端點見掛法文件；「選人做設計決策／架構規劃時 GPT 優先級較低」與每線 BRIEF 寫子 agent 上限照舊。舊 codex 派線工作流同日先封存到 `wf/archive/agent-dispatch/`，隨後照 D26 刪掉，只剩 git 歷史。
+
+2026-11-24 家中 Claude Code 場第二批使用者裁示（長期偏好，D25–D29）：頂層問五題（今天能不能 push；`wf/archive/` 要不要 `git rm`；skyrim-qa 要不要加規矩；館藏與開發座位要不要也帶 MCP；sol 該做什麼），使用者答「push就是晚上十一點統一push。可以git rm。可以加上規矩。都可以帶mcp。這兩個sol的任務分配都可以，通常是建議普通工作，至於量大呆板的，則看難易度，簡單一點的可以交給terra。」現行：每天 23:00 由頂層統一 push，各線只 commit 不 push（D25，取代上面各段「以本場為界」的逐場授權；D14 原文留在 org）；`wf/archive/` 已刪，封存照 STRUCTURE「過時即刪」（D26）；skyrim-qa 只有實體座位能用，要先拿遊戲鎖、使用者不在玩，動存檔的 console 指令先問（D27）；三個座位都帶 MCP（D28）；fsm gpt 普通工作建議 sol，量大呆板的看難易度，簡單一點的交 terra（D29；11-03 段與 aos.md 舊說法留作歷史）。定案全文在 [wf/org/decisions-2026-11b](../../org/decisions-2026-11b.md)。
 
 領域詞彙常猜錯 → 開 `glossary.md`（見 [common/README](README.md)）。

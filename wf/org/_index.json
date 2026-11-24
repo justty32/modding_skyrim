@@ -5,6 +5,9 @@
   "decisions.md": {
     "description": "使用者 2026-11-23、11-24 原話照抄與定案 D1–D24（部門、模型、團隊、暫存、sleep、daemon、push、開關座位、對使用者的通道、codex 退役、houseCARL）"
   },
+  "decisions-2026-11b.md": {
+    "description": "使用者 2026-11-24 第二批原話與定案 D25 起（23:00 統一 push、刪 wf/archive、skyrim-qa 規矩、三座位都帶 MCP、sol 與 terra）；decisions.md 滿了從這裡續"
+  },
   "CHOICES.md": {
     "description": "九個組織選擇的答案與來源（使用者定／出處／提案）"
   },

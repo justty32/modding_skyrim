@@ -42,7 +42,7 @@ graph TD
 2. 部門主管寫完 REPORT、commit 自己的 submodule 後回報 DONE。
 3. `main` 對主管 `stop`。不 rm，保留對話紀錄給下一場接。
 4. `main` 派書記短工跑 wrap，pin 由內往外：`instance/profiles` → `instance` → 母 repo。
-5. push 要使用者當場授權（D14）。
+5. push 每晚 23:00 由 `main` 統一做；各座位、工人只 commit（使用者 2026-11-24，D25）。
 
 ## 3. aos 活樹硬規則裡適用 skyrim 的四條
 
@@ -67,11 +67,13 @@ skyrim 隊另加兩條（當時的頂層 skyrim-agent 2026-11-14 定）：
 
 | 打架點 | 定案 | 出處 |
 |---|---|---|
-| 模型 | opus 主導、sonnet 做事；sol 只做蒐集與量大呆板；gpt 不做設計決策 | 專區 q5 |
+| 模型 | opus 主導、sonnet 做事；fsm gpt 普通工作建議 sol，量大呆板看難易度、簡單的交 terra；gpt 不做設計決策 | 專區 q5；D29 |
 | 記憶 | 自動記憶停止新增（定義已關）；教訓以 [wf/lessons/](../lessons/) 為準，偏好寫 [user.md](common/user.md)；舊記憶夾只備查 | 專區 q2 |
 | 刪檔 | 使用者在對話裡當場說了才刪 | 設計 2.2、D5 |
-| 授權 | 專區回信只認普通工作與 push；刪檔、instance、DB、開遊戲仍要當場說 | 專區 q3 |
+| 授權 | 專區回信只認普通工作；push 每晚 23:00 統一；刪檔、instance、DB、開遊戲仍要當場說 | 專區 q3；D25 |
 | sol 槽 | 全樹同時最多 1 隻 | 專區 q5 |
+
+模型列的舊說法：專區 q5 原寫「sol 只做蒐集與量大呆板」，使用者 2026-11-24 改成上表（D29，原話見 [user.md](common/user.md) 2026-11-24 第二批段）。
 
 - **記憶細節**：定義的 `cli.json` 帶 `autoMemoryEnabled: false`；教訓用 `index_view` 找。舊夾（`~/.claude/projects/` 底下 skyrim 根那一夾的 `memory/`）不寫不改，刪原檔另外問。
 - **保留期清理**：hygiene 出清單 → 寄專區通知（附清單）→ 使用者當場說 → 頂層派短工刪。
