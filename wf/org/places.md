@@ -67,4 +67,6 @@ D3「只有實體能寫 MO2」目前只有第 1 層（提案：之後評估讓 `
 
 **跑著的遊戲（skyrim-qa）**（使用者 2026-11-24，D27）：只有實體座位可以操作跑著的遊戲。要先拿到遊戲鎖、使用者不在玩才准用；會動到存檔的 console 指令先問使用者（經 lead 以 `NEEDS-USER` 問）。其他座位的定義也帶著 skyrim-qa（D28），帶著也不准用。
 
+**怎麼判斷「使用者不在玩」**（main 2026-11-24 依 D4 定）：實體座位只有在**持有遊戲鎖**時才准用 skyrim-qa；遊戲鎖只在使用者說了不玩、把遊戲交出來之後，由管理發給實體（或使用者直接寄信給實體交代）。沒拿到鎖＝當作使用者在玩。
+
 取放一律用 `agentctl/tools/lock.sh`，先桌面、後遊戲，用完立刻放，只放自己的（出處：[resource-locks](../../agentctl/docs/resource-locks.md)、[aos-tree](../../agentctl/docs/resource-locks/aos-tree.md)）。lock.sh 是大家約好排隊；跳過它的人擋不住。交接書已寫明可拿的鎖，算已點名。開遊戲、動 instance、刪檔、動 DB 仍要使用者當場說，或有 user.md 記的長期授權（出處 aos.md 第 4 節；user.md 2026-11-22 段）。

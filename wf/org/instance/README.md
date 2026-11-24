@@ -68,6 +68,7 @@ profile 三檔實讀過（plugins.txt 那行的 `*`）、`instance/profiles` 有
 - **身體**：eca claude（使用者 2026-11-23，D6）；定義 `agentctl/aos/defs/seat-instance`，stock `eca-claude` 的完整複本（CHOICE 9）。
 - **工具**：帶 houseCARL（使用者 2026-11-24，D24）：定義的 `claude_mcp` 抄進使用者帳號 Claude Code 登記的 MCP server，2026-11-24 查是 `housecarl`、`skyrim-qa` 兩台（後者能操作跑著的遊戲；開遊戲仍照硬規則要使用者當場說）。
 - **skyrim-qa 的規矩**（使用者 2026-11-24，D27）：只有本座位可以操作跑著的遊戲；先拿到遊戲鎖、使用者不在玩才准用；會動到存檔的 console 指令先問使用者（`NEEDS-USER` 交 lead）。別的座位也帶著（D28），但不准用。
+  **怎麼判斷「使用者不在玩」**（main 2026-11-24 依 D4 定）：本座位只有在**持有遊戲鎖**時才准用 skyrim-qa；遊戲鎖只在使用者說了不玩、把遊戲交出來之後，由管理發給本座位（或使用者直接寄信給本座位交代）。沒拿到鎖＝當作使用者在玩。
 - **腦**：opus，effort high（使用者 2026-11-23，D6）。下屬：普通工作 opus、簡單工作與雜活 sonnet（使用者 2026-11-23）。
 - **同時幾個**：1。兩個寫手同時寫 profile 會撞；遊戲同時只能一條線用。
 - **下屬**：可以再派，模型隨意，交接書寫死上限（CHOICE 8）。
