@@ -31,3 +31,7 @@
 ## 冬堡學院：外景冰柱、冰板的貼圖（2026-11-23）
 
 只有靜態證據：Icy Mesh Remaster 要的 `textures/landscape/ENV_I.dds`、`ENV_G.dds` 全機找不到，影響不只學院。要實機看學院外景冰柱、冰板。見 [REPORT](../agentctl/handoffs/home-2026-11-23/winterhold-conflicts/REPORT.md)。
+
+## 冬堡學院：門的造型與貼圖（2026-11-24）
+
+winterhold-apply 已套用（profiles `c714424`，未 push）：停用 JK's College 的 Relighting 補丁，Praedy's 的三支門 nif（ldoor01、ldoor02、animdoor01）改名 `.mohidden`，改由 OCW 的 BSA 供門模型，貼圖仍用 Praedy's 木紋。要實機看學院主門與塔門：應是 OCW 造型（有鋼條）配 Praedy's 木紋，看有沒有紫色或破面；順手看學院內光照有沒有異常。見 [REPORT](../agentctl/handoffs/home-2026-11-24/winterhold-apply/REPORT.md)。
