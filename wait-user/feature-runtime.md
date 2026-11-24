@@ -75,3 +75,7 @@ face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不�
 ## 換臉六人實機看臉與身形（2026-11-24）
 
 內容見 [kurone-looks.md](feature-runtime/kurone-looks.md)。
+
+## Aniya 換黑暗與 OK 十個女隨從換 Kurone 臉（2026-11-24）
+
+內容見 [kurone-looks.md](feature-runtime/kurone-looks.md)（後兩節）。
