@@ -11,7 +11,7 @@
 5. **Lydia、Melana、Aniya 要在 OBody 選單各重置一次**：她們之前被 OBody 分配過 preset，存檔裡已套的不會自己換。
 6. **Ambriel**：劇情變身前後（D62 與 DB 兩筆）臉一致。
 7. **Recorder**：失落檔案回憶場景的過去版本也是克羅艾。
-8. **Sofia**：名字回到中文「索菲亚」。**裝補丁前別在她的 MCM 改戰鬥風格或職業**，`SofiaMCMscript` 關 MCM 時會 `SetRace` 回原版諾德，可能毀掉換好的臉。
+8. **Sofia**：名字回到中文「索菲亚」。MCM 補丁 `Sofia-MCM-KeepRace-Dev-2026-11-24` 已裝（profiles `2c6dc92`）。先主控台點她打 `GetIsRace AAA_NordRace`：回 `1` 正常；回 `0` 表示存檔早被改回原版諾德，回報頂層，先別動 MCM。回 `1` 再到 MCM 改一次戰鬥風格，確認臉、身體、身高不變、`GetIsRace` 仍 `1`、MCM 中文沒亂碼。細節見 [sofia-mcm-race INSTALL](../../agentctl/handoffs/home-2026-11-24/sofia-mcm-race/INSTALL.md) 末節。
 9. 其他已知：Melana、Aniya 原本的私有身體被 Kurone7 取代；Aniya 劇情戴原版商人帽時頭髮會被蓋住（原版規則）；Melana 只換臉身，動畫照舊。
 
 還原指令與逐項驗收表見 [INSTALL-REPORT](../../agentctl/handoffs/home-2026-11-24/kurone-looks-r2/INSTALL-REPORT.md)；安裝單見 [r1](../../agentctl/handoffs/home-2026-11-24/kurone-looks/INSTALL.md)、[r2](../../agentctl/handoffs/home-2026-11-24/kurone-looks-r2/INSTALL.md)。
