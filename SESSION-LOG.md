@@ -11,10 +11,11 @@
 
 ## 現役工作
 
-- [aos] 第 1、2 期已落地（[aos.md](wf/workflows/aos.md)）；第 3～5 期（含舊記憶夾收尾、`tmp/aos-skyrim-agent/` 清不清）延後至 2026-11-28 再議，由使用者開口
-- [bodyslide] 已部署、實機通過，選看項 11-22 依裁示結案；範圍外 61 人未擬合 → [11-22 STATE](agentctl/handoffs/home-2026-11-22/STATE.md)
-- [racemenu] Muiri 臉層停用中；`face_loop` 取景穩定化、校準與示範延後至 2026-11-28 再議；R1、R2、R7 未做 → 同上
+- [aos] 第 1、2 期已落地（[aos.md](wf/workflows/aos.md)）；第 3～5 期延後至 11-28 再議，由使用者開口
+- [bodyslide] 已結案；範圍外 61 人未擬合 → [11-22 STATE](agentctl/handoffs/home-2026-11-22/STATE.md)
+- [racemenu] Muiri 臉層停用；`face_loop` 等 11-28 再議 → 同上
 - [org] D1–D19 落地；`instance` 已 stop；冬堡報告已出，等實機與使用者選→[STATE](agentctl/handoffs/home-2026-11-23/STATE.md)
+- [wf-aos] index 骨架已鋪、重疊盤點已出、A1–A3 已套；其餘等使用者 → 同上
 
 子專案續行見 [agentctl SESSION](agentctl/SESSION-LOG.md)。
 
