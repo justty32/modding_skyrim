@@ -3,7 +3,7 @@
     "description": "org 入口（草稿）：四部門座位表（名字與在哪台 daemon）、標準流程、定案一句話版；決定一件事交給誰時先讀"
   },
   "decisions.md": {
-    "description": "使用者 2026-11-23 原話照抄與定案 D1–D19（部門、模型、團隊、暫存、sleep、daemon、push、開關座位、對使用者的通道）"
+    "description": "使用者 2026-11-23、11-24 原話照抄與定案 D1–D24（部門、模型、團隊、暫存、sleep、daemon、push、開關座位、對使用者的通道、codex 退役、houseCARL）"
   },
   "CHOICES.md": {
     "description": "九個組織選擇的答案與來源（使用者定／出處／提案）"

@@ -19,7 +19,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **有工作才掛**：座位＝卡＋筆記；沒掛時由窗口派代班，代班先讀卡和筆記，收工前把學到的寫回。工作斷斷續續時選它。
 - **一批一掛、做完拆掉**：每批都要使用者點頭、不想帶上一批記憶時選它。
 
-**Ours:** 有工作才掛；沒事的時候可以 sleep，不必 stop 或 rm（使用者 2026-11-23，D12）。一場之內還會用＝sleep，收工＝stop（D17）；誰能開關見 D15、D16。指令見 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)。主管全掛在現有 `mod_skyrim` 一台，不另開子 daemon；agent 名用短名 `instance`、`library`、`dev`；agent 總數到 50 個以上再考慮分 daemon（使用者 2026-11-23，D13）。
+**Ours:** 有工作才掛；沒事的時候可以 sleep，不必 stop 或 rm（使用者 2026-11-23，D12）。一場之內還會用＝sleep，收工＝stop（D17）；誰能開關見 D15、D16、D22。指令見 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)。主管全掛在現有 `mod_skyrim` 一台，不另開子 daemon；agent 名用短名 `instance`、`library`、`dev`；agent 總數到 50 個以上再考慮分 daemon（使用者 2026-11-23，D13）。
 
 ## 3. 座位怎麼切？
 
@@ -84,7 +84,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **放哪**：放 org 旁邊、放 aos 設定夾，或不放：幾個座位共用一份 stock 範本，只有卡不同。
 - **複本或連結**：連到 stock 程式的定義小、跟著 aos 更新；完整複本不會變，但要手動更新。
 
-**Ours:** 放 `S/agentctl/aos/defs/`（出處：[aos.md](../workflows/aos.md)）。夾名 `seat-instance`、`seat-library`、`seat-dev`：用座位名，不帶 agent 名或 daemon，換 daemon 不用改（提案，D13）。每部門一份**完整複本**：2026-11-23 從 stock `eca-claude`（aos `492e2c3fc`）整份複製，只改四處——`cli.json` 的 `autoMemoryEnabled: false`、`system.txt`、`README.md`、`_metainfo.json` 的 `lineage`（org-defs 線定，技術題）。不從舊的 `sk-lead-*` 複製：它們缺 `compact_hook`、路徑已失效。
+**Ours:** 放 `S/agentctl/aos/defs/`（出處：[aos.md](../workflows/aos.md)）。夾名 `seat-instance`、`seat-library`、`seat-dev`：用座位名，不帶 agent 名或 daemon，換 daemon 不用改（提案，D13）。每部門一份**完整複本**：2026-11-24 從 stock `agents/eca-claude`（aos `e3edcb02d`）重做，只改四處——`cli.json`（`autoMemoryEnabled: false`；`claude_mcp` 只實體帶，D24）、`system.txt`、`README.md`、`_metainfo.json`（技術題）。不從舊的 `sk-lead-*` 複製：它們缺 `compact_hook`、路徑已失效。
 
 為什麼選複本不選連結、代價怎麼補：見 `agentctl/aos/defs/README.md`「為什麼是完整複本」。
 

@@ -4,14 +4,14 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 
 `wf/workflows/` 講一種工作怎麼做。這個夾只講：這件事歸誰、做完交給誰。別處已有的規矩（[AGENTS.md](../../AGENTS.md)、[user.md](../workflows/common/user.md)、怎麼 commit）只連過去，不抄。
 
-**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D14 與三份部門定義、org-rev2 補 D15–D19；部門座位 `instance` 2026-11-23 掛過、收工已 stop，其餘未掛。標「（提案）」的都還沒定。
+**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D14 與三份部門定義、org-rev2 補 D15–D19、org-rev3 補 D20–D24；部門座位 `instance` 2026-11-23 掛過、收工已 stop，其餘未掛。標「（提案）」的都還沒定。
 
 **什麼時候讀**：決定一件事交給誰、開或關座位、掛短工、改交接方式。
 **不在這裡找**：怎麼操作 aos（看 aos 知識庫與 [aos.md](../workflows/aos.md)）、一種工作怎麼做（看 [WORKFLOWS](../WORKFLOWS.md)）。
 
 ## 使用者說的與定案
 
-使用者 2026-11-23 的原話與定案 D1–D19 在 [decisions.md](decisions.md)。一句話版：
+使用者 2026-11-23、11-24 的原話與定案 D1–D24 在 [decisions.md](decisions.md)。一句話版：
 
 - 四個部門：實體、館藏、開發、管理；只有實體寫 MO2；遊戲鎖平時由實體發，最終權限在管理（D1–D4）。
 - 管理小而聰明，只做窗口、規矩、仲裁、收工存檔；主管 eca claude opus high；Fable 只在開發規劃階段短暫用，要申請（D5–D9）。
@@ -19,6 +19,7 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 - 主管有工作才用、沒事 sleep；現在不分 daemon，到 50 個 agent 再議；「隨意 push」只算本場（D12–D14）。
 - 主管第一次掛上與移除要使用者同意，場內 sleep／wake／stop 管理自己做；部門底下的移除歸主管；收工用 stop（D15–D17）。
 - 對使用者預設只經窗口，兩個例外；管理部門主管（就是 `main`）平常可寄信給使用者（D18–D19）。
+- 11-24：codex 退役改 fsm gpt；直寄主管的信不算授權；stop 的主管再 start 不用問；D18 流程照用；實體帶 houseCARL（D20–D24）。
 
 ## 座位
 

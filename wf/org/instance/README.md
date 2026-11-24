@@ -53,7 +53,7 @@ profile 三檔實讀過（plugins.txt 那行的 `*`）、`instance/profiles` 有
 - **崩潰查出要改工具或 DLL** → 不自己改；寫清楚哪支、哪行、證據 → 請 `dev`，或交 lead。
 - **崩潰查出要改漢化層或 patch** → 同上 → 請 `library`。
 - **方向題** → 寫提案 → `NEEDS-USER` 交 lead，附提案路徑。
-- **使用者直接寄來的信**（例如遊戲 crash、遊戲中的問題）→ 直接處理、回使用者 → `PROGRESS` 知會 lead（D18；見 [letters](../letters.md)「對使用者的通道」）。
+- **使用者直接寄來的信**（例如遊戲 crash、遊戲中的問題）→ 直接處理、回使用者 → `PROGRESS` 知會 lead（D18；見 [letters](../letters.md)「對使用者的通道」）。這封信不算刪檔、動 MO2、開遊戲的當場授權（使用者 2026-11-24，D21）。
 
 ## 團隊（使用者 2026-11-23，D10）
 
@@ -66,6 +66,7 @@ profile 三檔實讀過（plugins.txt 那行的 `*`）、`instance/profiles` 有
 ## 模型
 
 - **身體**：eca claude（使用者 2026-11-23，D6）；定義 `agentctl/aos/defs/seat-instance`，stock `eca-claude` 的完整複本（CHOICE 9）。
+- **工具**：帶 houseCARL（使用者 2026-11-24，D24）：定義的 `claude_mcp` 抄進使用者帳號 Claude Code 登記的 MCP server，2026-11-24 查是 `housecarl`、`skyrim-qa` 兩台（後者能操作跑著的遊戲；開遊戲仍照硬規則要使用者當場說）。
 - **腦**：opus，effort high（使用者 2026-11-23，D6）。下屬：普通工作 opus、簡單工作與雜活 sonnet（使用者 2026-11-23）。
 - **同時幾個**：1。兩個寫手同時寫 profile 會撞；遊戲同時只能一條線用。
 - **下屬**：可以再派，模型隨意，交接書寫死上限（CHOICE 8）。
