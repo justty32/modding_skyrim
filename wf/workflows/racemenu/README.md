@@ -48,7 +48,7 @@
 - **主角是男性 Imperial、原版男體**：可以捏臉，捏身形目前做不到（男體方案由 `male-body-survey` 調查）。
 - 私人 preset `Hatak`、`Prisoner` 都是**女性**臉，套到男主角時 tint 與頭型會錯位，只能當數值參考。
 - **NPC 臉固化卡在匯出頭——已解**（11-22 face-pilot-2）：主控台改種族後頭不重建，改在 RaceMenu UI 點種族再匯出（[bake-export](bake-export.md)）；CK 仍是備援 D1；PROTEUS「清除 NPC 編輯」禁用（[bake](bake.md#禁區)）。
-- 身體滑桿 plugin `RaceMenuMorphsCBBE` 未裝，要裝用 3BA 30174 v2.48 包那份（CBBE 1.8.1 包那份缺 40 個滑桿）；屬身形，歸 bodyslide。
+- 身體滑桿 `RaceMenuMorphsCBBE-30174-2.48` 已啟用（3BA v2.48 版）；EngineFixes 兩個 allocator override 目前皆 true，可能讓身體 morph 調幾次後失效，見 [身形前提](../bodyslide/body-swap-self.md) 與 [本輪查核](../../../agentctl/handoffs/home-2026-11-25/miku-face/gpt-bodymorph/INSTALL.md)。
 - OBody 預設先清空 actor 的所有 morph 再套 preset，和 RaceMenu 的身體 morph 是**後寫者贏**；臉部欄位不受影響。
 - 臉部滑桿正負方向：Breton 女已確認 `Jaw_NarrowWide`（＋寬－窄，與推論同），`Chin_NarrowWide`、`Chin_UpDown`、`Eyes_ForwardBack` 只確認負向；其餘 14 軸與男性都未確認（[author §3](author.md#3-方向還沒校準)、sliders.json 的 `direction_verified`）；自訂種族部分滑桿無效、也不讀預烤 facegen。
 
