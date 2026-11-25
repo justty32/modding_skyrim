@@ -30,6 +30,16 @@
 - AgentBridge 0.11.0 `input_tap` 在焦點正常時仍回 `environment_blocked`；`xdotool key`（Skyrim 是 XWayland 視窗）可用，滾輪 `click 5` 可拉遠到第三人稱。
 - console `setrace` 會跳 crossbow 模組的 MessageBox（「changed race in 1st person」），用 `select_message_box(index=0)` 關；`coc` 新角色會跳 `Done Writing`。
 - Papyrus 字串常數不分大小寫地共用字串表：腳本寫 `"OK"`，log 印出 `ok`（`DONE status=ok`）。比對 log 時不分大小寫。
+**2026-11-25 補強（miku-face，F5 真頭是開拍整批前的閘門）**：
+現象：玩家已是 KuroneNord，畫面也有尖耳，F5 卻是 FemaleHeadNord 996 點／原版眉 102 點；眼 176 點、嘴 141 點已吃到 Chloe 雕刻，尖耳另來自 Goam。
+
+真因／邊界：HDPT 可玩性及種族預設配置未符合預期，但不能斷言「record header NonPlayable 單獨造成回退」。原 HDPT header 0x04、DATA 0x04；S1v2 成功時 DATA 已為 0x05、女性種族預設已換，**header 仍是 0x04**。多因素同改沒有隔離單一旗標因果。
+
+驗法：先載一份基準，Sculpt F5 匯出 NIF，核 shape 名、拓撲及點數。本案 H1 才確認 AAA_HPH 3832／眉 371／Ocean 176，並用 Goam 空白耳 000850 排除耳殼。jslot 的 headParts 是記錄層，不可替代 live NIF；996／3832 是本案指紋，不是通用頭模常數。
+
+避法：旗標、RNAM、預設、載入後 3D 分層排錯；真頭過關再批次拍照。不要把「髮色變了」「lint 過」「getisrace 正確」當作換頭成功。
+
+出處：`agentctl/handoffs/home-2026-11-25/miku-face/` 下 `REPLIES-2.md:5`、`:7`、`:29`（agentctl `21355dee`）；`REPORT.md:21`（`44c11491`）。
 相關：[[custom-race-blocks-facegen-load]]、[[face-bugs-check-real-actor-and-upstream-fomod]]
 
 ## facegen-neck-seam-export-weight
@@ -45,3 +55,23 @@
 - 匯出前先決定 NPC 最終體重：`--keep-weight` 用 NPC 原 NAM7，否則用 preset 的 weight；滑桿調到那個值÷100 再匯出（[bake-export](../workflows/racemenu/bake-export.md) 第 4 步）。
 - `build_layer` 帶 `--export-weight <滑桿值×100>`，gate 會擋體型不一致的層；沒帶只有 WARN。
 - 頸部一點陰影是光照，和接縫分開看：接縫是一圈斷開、能透看到後方。
+
+## custom-race-playable-and-valid-headparts
+
+> 自訂種族列得出來與頭部件可選，是兩道不同的門。
+
+- 現象：原 Kurone 種族不能直接在 RaceMenu 選；補出種族也不代表 KS 髮、眉、眼可用。
+- 真因：RACE 缺 Playable；部件的有效種族 FLST 也要含目標種族。S1 修改兩筆 RACE 的 Playable 與名稱，並在八張贏家 FLST 保留既有成員後追加兩種 Kurone。種族預設頭仍可能是原版 Nord。
+- 驗法：讀 RACE／HDPT RNAM／FLST 的實際贏家；遊戲內用 getisrace 確認 actor，不信列表座標或 jslot metadata。載 preset 後另匯出真頭驗部件。
+- 避法：把「可選種族」「部件適用種族」「預設及實載部件」分開驗收；覆寫 FLST 要 forward 贏家，不用自己的短清單蓋掉別人。只在獲授權的隔離測試層部署。
+- 出處：`agentctl/handoffs/home-2026-11-25/miku-face/support/REPORT.md:18`、`:23`（agentctl `18953859`）；`REPLIES-2.md:5`（`21355dee`）。
+
+## eye-sculpt-requires-matching-head
+
+> 黑眼窩先查部件與相對位置，不先改貼圖或把所有眼雕刪光。
+
+- 現象：早期完整眼雕出現黑眼窩；關眼雕的對照能看見虹膜。
+- 真因／邊界：眼部件已移動、頭仍為錯誤的 Nord 部件，造成相對幾何不匹配。這支持眼雕與頭的組合有問題，不能單憑當時照片判定 Chloe 眼雕本身壞掉，也不能當作「任何整顆眼睛位移必黑」的定律。最後在正確頭眉上局部改上瞼可成功。
+- 驗法：先過 live 頭部件 gate，再固定頭、貼圖、燈光，分別開關頭雕／眼雕；核眼球、眼瞼與虹膜位置。定稿上瞼只動頭 154 點、眼件 54 點，F5 最大位移 0.237133，離線預期 0.237130。
+- 避法：不要把整顆眼球平移當作開瞼；使用局部遮罩，保留眼球與下瞼，最後用 F5 與正側照一起驗。
+- 出處：`agentctl/handoffs/home-2026-11-25/miku-face/REPLIES-instance.md:5`（agentctl `a43517d9`，R7 對照）；`REPLIES-2.md:5`（`21355dee`）；`REPORT.md:21`（`44c11491`）。

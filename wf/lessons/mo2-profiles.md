@@ -98,3 +98,13 @@ modlist.txt 的 separator 行位於它所轄群組「之後」（歸屬＝行號
 **Why:** 本工作區常態多線碰同一份 profile；讀工作樹或 `--force` revert 都會吃掉別線進度。
 
 **How to apply:** 只讀腳本一律 `git show <ref>:<path>`；撤銷某輪且中間已有別線動作，優先寫反向 manifest 並 dry-run。來源：`agentctl/handoffs/done/2026-10/home-2026-10-03/worldfix/REPORT.md`。
+
+## mo2-revert-check-normalized-diff
+
+> MO2 回寫會使還原前置 hash 不符；強制還原不是例行跳過保護。
+
+- 現象：S1／S1v2 收場，MO2 回寫 plugins／loadorder，普通 revert 遇到基線差異。
+- 真因：本次確認差異限標頭、行尾，以及停用的 Miriel 行；不能簡化為永遠只有 CRLF／LF。
+- 驗法：停止遊戲及 MO2 後，保留原 bytes／hash／還原前副本；另做正規化行尾的 diff，並人工核啟用星號、有效順序及所有非行尾差異。最終對照裝前 hash，本場四個 profile 檔一致。
+- 避法：只有授權的實體座位在差異全數可解釋、確認沒有新使用者改動後，才按工具還原程序評估 `--force`。遇不明差異停下回報，不把 force 當工具拒絕的繞過法。本草稿沒有執行還原。
+- 出處：`agentctl/handoffs/home-2026-11-25/miku-face/gpt-nomouse/REPLIES-instance.md:31`、`:48`（agentctl `a43517d9`）。

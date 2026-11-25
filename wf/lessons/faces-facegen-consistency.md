@@ -77,3 +77,17 @@ MO2 在 wine 下的 VFS 對目錄大小寫不敏感，facegen 目錄大小寫不
 **How to apply:** 分別驗證位置與三角連接（排除三角列次序／繞序差異），標明索引對應是否已證；TRI 未驗就保持未證，不直接移接。不要以 NIF 大小推形狀，也不要以內嵌貼圖路徑代替 ARMA／TXST 的皮膚解析。
 
 來源：private `agentctl/handoffs/home-2026-11-02/kurone-intake/REPORT.md:28–40`（既有 NIF、OSP、TRI 與 record 離線比較）。
+
+## facegen-not-recoverable-from-npc-record-alone
+
+> NPC 記錄轉成 jslot，不等於還原作者的臉。
+
+現象：Chloe 無 NAM9／NAMA；只轉 headParts 與記錄值，得到普通圓耳臉而非 FaceGen 的 Chloe。
+
+真因／邊界：FaceGen 與 HDPT 頭同拓撲 3832 點，但位移平均 0.42、最大 2.26；UV 也不同。本機 33 支 Kurone 女性 HDPT 頭相同。132 個已提供 TRI morph 擬合仍殘差 38%，且需超範圍權重。因此現有記錄／滑桿不能還原。**「用未發佈底模烤成」僅是可能製作來源，資料不足以證明作者流程或有一顆未發佈底模**；可證的是外觀差異保留在 FaceGen。
+
+驗法：沿 NPC PNAM、HDPT 模型與 FaceGeom 分別解析，對齊座標空間，核拓撲、頂點差與 UV；不要只看 NAM9 有沒有值。
+
+避法：保留原 FaceGen 為外觀依據；同拓撲且座標／體重確認後才做 FaceGen-HDPT sculpt 差值。頂點差不會自動搬 UV、材質或皮膚。
+
+出處：`agentctl/handoffs/home-2026-11-25/miku-face/offline-render/O-DETAILS.md:28`、`:30`、`:32`（agentctl `4d98b502`）；`REPORT.md:19`（`44c11491`）。

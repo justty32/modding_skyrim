@@ -118,3 +118,23 @@ Yoana the Wanderer 的預設 outfit「小紅帽 - 披風」ARMO 佔 **slot 31（
 OBody NG 4.4.3 的 preset 黑名單（2026-10-23）：逐字串精確比對，不支援萬用字元/子字串（黑名單裡的「Zeroed Sliders」擋不住「CT77 Zeroed Sliders - Zap Panties」）；且只擋「之後」的新分配，已套到 NPC 身上、存進 cosave 的 preset 不會自動清除（走 ORefit 換裝路徑，只讀 cosave 不查黑名單）。建黑名單前先掃出全部啟用中的實際 preset 名稱逐一核對；加黑名單後對已中過的角色要額外手動重置或清 skee morph cache（`agentctl/handoffs/done/2026-10/home-2026-10-04/aniya/REPORT-fix.md`）。
 
 整個 modlist 一次性 facegen 一致化重烤的參考流程（2026-10-23，第三方快照未實測）：Synthesis NPCs-Face-Data patcher 補 master → 產出 NPCsWithFaces.esp 設 Active File → CK 依 RAM 分段 Ctrl+F4（低於 32GB 要按種族區間分 5 批）→ 排除小孩（TRI 結構特殊會生成失敗）與 Astrid（會燒焦全部 NPC 臉）→ CAO BSA Packer 打包時 Maximum Size 須鎖 1.96，超過不會被遊戲載入（`modpack-design/sources/animonculory-modding-resources-2026-09-02/facegen-regeneration-ck.md`）。此上限也適用任何用 CAO 打包 facegen 進 BSA 的場景。
+
+## npc-wornarmor-is-part-of-appearance
+
+> 原 NPC 的頭髮與身體不一定在 headParts，也不一定跟玩家種族皮膚相同。
+
+- 現象：Soul Tomb preset 載入玩家後，沒有原 NPC 頭髮，也不是原私有身體。
+- 真因：Chloe 的 WornArmor 皮膚包含 AAA_Hair_Chloe、AAANakedTorso；HDPT 髮 AAA_Dum_HL 是空殼。玩家走種族皮膚，不會因 jslot 自動繼承 NPC WornArmor。
+- 驗法：沿 NPC WornArmor → ARMO → ARMA → 女性模型查 VFS 贏家，與 HDPT／FaceGen 分層盤點；髮肩碰撞也要用實際部署的身體與體重。
+- 避法：玩家髮型用合適 HDPT；套回 NPC 時先複製共用皮膚，只在專屬複本替換髮，避免連帶改到 Recorder。靜態零穿越不代表走動或 SMP 過關。
+- 出處：`agentctl/handoffs/home-2026-11-25/miku-face/support/REPORT.md:17`（agentctl `18953859`）；`REPORT.md:3`、`:22`（`44c11491`）。
+
+## installed-state-before-install-plan
+
+> 文件說缺外掛時，先查現役，不先再裝一份。
+
+- 現象：安裝 RaceMenu 身體滑桿的前提已過時；RaceMenuMorphsCBBE 2.48 其實已啟用。
+- 真因：文件未跟上部署。只讀核對 modlist、plugins、loadorder 與 VFS 後，來源包的 11 檔和既有層 bytes 相同。
+- 驗法：交叉確認 mod 啟用、ESP 星號、排序及 winner；裝了滑桿腳本不等於各身體 BODYTRI 支援全數 morph，仍需實機測試。OBody 重新指派預設可清除其他 key 的手捏 morph。
+- 避法：先核現役再申請安裝；測試副本只能替身，不重複啟用，也不能收工拆掉原本已有的層。OBody 設定及修正方案另取授權，不能順手改。
+- 出處：`agentctl/handoffs/home-2026-11-25/miku-face/gpt-bodymorph/INSTALL.md:5`、`:19`、`:39`（agentctl `2b02a23a`）；`REPORT.md:30`（`44c11491`）。

@@ -26,7 +26,7 @@
 | [artifact-hygiene-and-ignores](artifact-hygiene-and-ignores.md) | 版控：產物衛生、.gitignore 與刪除前的掃描 | 6 |
 | [docs-organization](docs-organization.md) | 文件整理：封存、拆檔與頁面歸屬 | 5 |
 | [wf-kernel](wf-kernel.md) | wf 骨架（kernel）與工具形態 | 2 |
-| [mo2-profiles](mo2-profiles.md) | MO2 profile 三檔：還原、並行編輯與遊戲改寫 | 5 |
+| [mo2-profiles](mo2-profiles.md) | MO2 profile 三檔：還原、並行編輯與遊戲改寫 | 6 |
 | [mo2-behavior-quirks](mo2-behavior-quirks.md) | MO2 本體行為坑（首次啟動、幽靈 profile、靜默失效） | 6 |
 | [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（裝前評估、安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴） | 6 |
 | [mod-library-bookkeeping](mod-library-bookkeeping.md) | mod 庫帳務、暫存與清理安全（身分辨識、欄位可信度、破壞性動作） | 6 |
@@ -38,9 +38,9 @@
 | [tool-portability](tool-portability.md) | 自製工具：repo 根推導、乾淨 clone 驗證、合法輸入不喊錯 | 2 |
 | [this-machine](this-machine.md) | 本機環境特性（shell、行程、工具差異） | 4 |
 | [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與工具 | 4 |
-| [faces-facegen-consistency](faces-facegen-consistency.md) | 臉：facegen 與頭部件一致性規則（大媽臉／素臉真因） | 5 |
-| [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：排錯與升級 | 6 |
-| [faces-racemenu-runtime](faces-racemenu-runtime.md) | 臉：RaceMenu 實機匯出頭、脖縫與體型、遊戲內取景 | 2 |
+| [faces-facegen-consistency](faces-facegen-consistency.md) | 臉：facegen 與頭部件一致性規則（大媽臉／素臉真因） | 6 |
+| [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：排錯與升級 | 8 |
+| [faces-racemenu-runtime](faces-racemenu-runtime.md) | 臉：RaceMenu 實機匯出頭、脖縫與體型、遊戲內取景 | 4 |
 | [animation-oar](animation-oar.md) | 動畫與 OAR | 6 |
 | [crash-dll-and-scripts](crash-dll-and-scripts.md) | CTD：SKSE DLL 與腳本 | 8 |
 | [crash-data-and-assets](crash-data-and-assets.md) | CTD：資料層與素材 | 6 |
