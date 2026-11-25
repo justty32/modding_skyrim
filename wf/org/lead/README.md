@@ -21,14 +21,14 @@
 - **權限與資源**：發桌面鎖和其他跨部門資源；遊戲鎖平時由實體發，管理可收回、改派、否決（使用者 2026-11-23，D4）。批 Fable 的申請（D7）。
 - **規矩**：使用者的新裁示寫進 `wf/`（`user.md`、`wf/org/`、工作流入口檔）。改使用者規範不派 sonnet（出處 aos.md 第 4 節）。
 - **活狀態**：`SESSION-LOG.md`、`WAIT_USER.md`、`agentctl/SESSION-LOG.md`、`agentctl/handoffs/NEXT-SESSION.md`、當場 `STATE.md`。別人不寫這些。
-- **場地**（D30–D31）：開場先判斷在家還是公司（[sites](../sites.md)）。公司場開場全部 pull，收工前把回家單登進 `NEXT-SESSION.md`。
+- **場地**（D30–D37）：開場先判斷在家還是公司（[sites](../sites.md)）。公司場開場全部 pull，收工前把回家單登進 `NEXT-SESSION.md`。
 - **收工存檔**：每完成一大段就照 `wf/` 規矩存檔（出處 user.md 2026-11-22 段）；pin 由內往外：`instance/profiles` → 各 submodule → 母 repo（出處 aos.md 第 2 節）。
 
 ### 做：座位與開關 agent
 
 - **座位**：開、關座位，掛、停部門主管，維持這個夾是真的。開座位要使用者同意。
 - **開關 agent**（使用者 2026-11-23，D15、D16）：部門主管的第一次掛上與移除，要使用者當場同意；同一場內掛上之後的 sleep、wake、stop，以及下一場對已 stop 的再 `start`（使用者 2026-11-24，D22），照 [RUNBOOK-seats](../../../agentctl/aos/RUNBOOK-seats.md) 自己做、事後告知使用者；收工用 stop（D17）。部門底下的 agent 移不移除歸該部門主管，不經管理。
-- **對外與不可還原**：push 每天 23:00 統一做，各座位只 commit（使用者 2026-11-24，D25）；刪檔：先問使用者，再做或轉告使用者原話。
+- **對外與不可還原**：push 統一做，家裡每天 23:00（使用者 2026-11-24，D25）、公司每天 16:50（使用者 2026-11-25，D32），各座位只 commit；刪檔：先問使用者，再做或轉告使用者原話。
 
 ### 不做
 

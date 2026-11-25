@@ -6,7 +6,7 @@
     "description": "使用者 2026-11-23、11-24 原話照抄與定案 D1–D24（部門、模型、團隊、暫存、sleep、daemon、push、開關座位、對使用者的通道、codex 退役、houseCARL）"
   },
   "decisions-2026-11b.md": {
-    "description": "使用者 2026-11-24 第二批原話與定案 D25 起（23:00 統一 push、刪 wf/archive、skyrim-qa 規矩、三座位都帶 MCP、sol 與 terra），2026-11-25 公司場 D30–D31（兩個場地）；decisions.md 滿了從這裡續"
+    "description": "使用者 2026-11-24 第二批原話與定案 D25 起（23:00 統一 push、刪 wf/archive、skyrim-qa 規矩、三座位都帶 MCP、sol 與 terra），2026-11-25 公司場 D30–D37（兩個場地、公司 16:50 push、審查座位、回家單、靜態為止、空檔改進、profiles 只讀）；decisions.md 滿了從這裡續"
   },
   "CHOICES.md": {
     "description": "九個組織選擇的答案與來源（使用者定／出處／提案）"
@@ -37,7 +37,7 @@
     "index": "dev/_index.json"
   },
   "review": {
-    "description": "審查座位的卡（提案，只有公司場有）：獨立檢查 diff、回家單、規矩改寫，只提意見",
+    "description": "審查座位的卡（使用者 2026-11-25 同意開，只有公司場有）：獨立檢查 diff、回家單、規矩改寫，只提意見",
     "index": "review/_index.json"
   },
   "helper": {

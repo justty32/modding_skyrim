@@ -14,7 +14,7 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 | 項目 | 設定 |
 |------|------|
 | 語言 | 回覆與文件一律**繁體中文**；技術專名（mod 名、API、指令、欄位）留原文。**mod 層繁簡皆可**——要的是有中文，不是正體；缺字破版才是硬 gate |
-| 分支慣例 | 直接 commit `main`，不開 branch 走 PR；**遠端只留 `main`**（2026-11-22「我希望遠端只有main」）；**push 每晚 23:00 統一做**（D25）|
+| 分支慣例 | 直接 commit `main`，不開 branch 走 PR；**遠端只留 `main`**（2026-11-22「我希望遠端只有main」）；**push 每晚 23:00 統一做**（D25；公司 WSL 16:50，D32）|
 | 直接做、不用問 | 改文件、跑唯讀指令（`git status`／`grep`／`find`／查 Nexus）、跑測試與 lint |
 | 一定先問 | 臨時 push、刪檔、動 `instance/`（MO2 profile／load order／已裝 mod）、動 DB（mod-library 的 MongoDB）、安裝依賴、開新的大型工作 |
 | 回覆風格 | 見 [reply-style](reply-style.md)；短、先結論。使用者問「**要不要**」時不要只回「不必」，附上可執行的判準（門檻數字）與後果，讓他能改數字 |
@@ -43,6 +43,6 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 
 2026-11-24 家中 Claude Code 場第二批使用者裁示（長期偏好，D25–D29）：頂層問五題（今天能不能 push；`wf/archive/` 要不要 `git rm`；skyrim-qa 要不要加規矩；館藏與開發座位要不要也帶 MCP；sol 該做什麼），使用者答「push就是晚上十一點統一push。可以git rm。可以加上規矩。都可以帶mcp。這兩個sol的任務分配都可以，通常是建議普通工作，至於量大呆板的，則看難易度，簡單一點的可以交給terra。」現行：每天 23:00 由頂層統一 push，各線只 commit 不 push（D25，取代上面各段「以本場為界」的逐場授權；D14 原文留在 org）；`wf/archive/` 已刪，封存照 STRUCTURE「過時即刪」（D26）；skyrim-qa 只有實體座位能用，要先拿遊戲鎖、使用者不在玩，動存檔的 console 指令先問（D27）；三個座位都帶 MCP（D28）；fsm gpt 普通工作建議 sol，量大呆板的看難易度，簡單一點的交 terra（D29；11-03 段與 aos.md 舊說法留作歷史）。定案全文在 [wf/org/decisions-2026-11b](../../org/decisions-2026-11b.md)。
 
-2026-11-25 公司端 Claude Code 場使用者裁示（長期，D30–D31）：公司沒有遊戲和 MO2，鍵盤螢幕滑鼠不給 agent；`wf/org` 兩地共用，公司可擴充公司專屬的部分。原話與做法在 [wf/org/sites](../../org/sites.md)。
+2026-11-25 公司端 Claude Code 場使用者裁示（長期，D30–D37）：公司沒有遊戲和 MO2，鍵盤螢幕滑鼠不給 agent；`wf/org` 兩地共用，公司可擴充公司專屬的部分；「公司WSL這邊就是每天四點五十統一push」（16:50，家裡仍 23:00）。原話與做法在 [wf/org/sites](../../org/sites.md)。
 
 領域詞彙常猜錯 → 開 `glossary.md`（見 [common/README](README.md)）。

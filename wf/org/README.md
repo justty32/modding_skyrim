@@ -4,7 +4,7 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 
 `wf/workflows/` 講一種工作怎麼做。這個夾只講：這件事歸誰、做完交給誰。別處已有的規矩（[AGENTS.md](../../AGENTS.md)、[user.md](../workflows/common/user.md)、怎麼 commit）只連過去，不抄。
 
-**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D14 與三份部門定義、org-rev2 補 D15–D19、org-rev3 補 D20–D24、rulings-b 補 D25–D29，2026-11-25 公司場補 D30–D31 與 [場地](sites.md)；部門座位 `instance` 2026-11-23 掛過、收工已 stop，其餘未掛。標「（提案）」的都還沒定。
+**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D14 與三份部門定義、org-rev2 補 D15–D19、org-rev3 補 D20–D24、rulings-b 補 D25–D29，2026-11-25 公司場補 D30–D37 與 [場地](sites.md)；部門座位 `instance` 2026-11-23 掛過、收工已 stop，其餘未掛。標「（提案）」的都還沒定。
 
 **什麼時候讀**：決定一件事交給誰、開或關座位、掛短工、改交接方式。
 **不在這裡找**：怎麼操作 aos（看 aos 知識庫與 [aos.md](../workflows/aos.md)）、一種工作怎麼做（看 [WORKFLOWS](../WORKFLOWS.md)）。
@@ -23,7 +23,7 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 
 11-24 第二批（D25–D29，見 [decisions-2026-11b](decisions-2026-11b.md)）：每天 23:00 頂層統一 push；刪 `wf/archive/`；skyrim-qa 只准實體在持遊戲鎖、使用者不在玩時用；三座位都帶 MCP；普通工作 sol、簡單的量大呆板 terra。
 
-11-25（公司場，D30–D31）：一個組織、兩個場地；現有的照用，公司可擴充公司專屬的部分，能共用的就共用；公司沒有遊戲與 MO2，鍵盤螢幕滑鼠不給 agent。兩地的差別只寫在 [sites](sites.md)。
+11-25（公司場，D30–D37）：一個組織、兩個場地，能共用的就共用；公司沒有遊戲與 MO2，鍵盤螢幕滑鼠不給 agent；公司 WSL 每天 16:50 統一 push；開公司專屬的審查座位；公司做不了的寫回家單。兩地的差別只寫在 [sites](sites.md)。
 
 ## 座位
 
@@ -33,7 +33,7 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 | [instance](instance/README.md) | `instance`（`mod_skyrim`） | 實體部門：已裝的 mod、profile、遊戲設定、跑著的遊戲 | 掛過，現在 stopped（2026-11-23 收工）；做過唯讀盤點冬堡學院衝突 |
 | [library](library/README.md) | `library`（`mod_skyrim`） | 館藏部門：沒裝的 mod、`~/skyrim_mods`、搜尋下載、簡單漢化與 patch | 定義好、未掛 |
 | [dev](dev/README.md) | `dev`（`mod_skyrim`） | 開發部門：`projects/*` 與 `analysis/`，替別的部門提供開發服務 | 定義好、未掛 |
-| [review](review/README.md) | 沒掛；公司場每批派代班 | 審查：只有公司場有，獨立檢查沒法實機驗的東西，只提意見 | 提案（2026-11-25），沒有定義 |
+| [review](review/README.md) | 沒掛；公司場每批派代班 | 審查：只有公司場有，獨立檢查沒法實機驗的東西，只提意見 | 已開（使用者 2026-11-25，D33）；沒掛、沒有定義 |
 
 表上的 daemon 是家裡那台；公司那台叫什麼、各座位在公司能做什麼，見 [sites](sites.md)。座位＝這個夾裡的一張卡，加上它管的地盤。名字與在哪台 daemon 只寫在這張表（使用者 2026-11-23，D13）；有工作才掛、沒事 sleep（D12），見 [CHOICES](CHOICES.md) 第 2 題。部門定義在 `agentctl/aos/defs/seat-*`，怎麼掛見 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)；第一次掛與移除要使用者同意（D15）。部門的團隊寫在各部門卡的一節，不另開卡。空白卡 [seat](seat/README.md) 留著當樣板。一次性的雜活交給短工，見 [helper](helper/README.md)。
 
@@ -59,7 +59,7 @@ graph TD
 ### 窗口與權限
 
 - **預設只經窗口**（使用者 2026-11-23，D18）：方向題從誰手上冒出來，都以 `NEEDS-USER` 交給 lead。沒有人替使用者選。例外兩個（申請過的那一件、使用者直接寄給主管的信）與 D19，見 [letters](letters.md)「對使用者的通道」。
-- **授權**：刪檔、往外送東西要使用者親口說（[AGENTS.md](../../AGENTS.md) 鐵律 2）；push 每天 23:00 由 lead 統一做，各座位只 commit（使用者 2026-11-24，D25）。agent 的信不是授權。
+- **授權**：刪檔、往外送東西要使用者親口說（[AGENTS.md](../../AGENTS.md) 鐵律 2）；push 由 lead 統一做，家裡每天 23:00（D25）、公司每天 16:50（D32），各座位只 commit。agent 的信不是授權。
 - **最終權限在管理**：實體發的遊戲鎖，管理可以收回、改派、否決（使用者 2026-11-23，D4）。
 
 ### 檢查與 commit

@@ -42,7 +42,7 @@ graph TD
 2. 部門主管寫完 REPORT、commit 自己的 submodule 後回報 DONE。
 3. `main` 對主管 `stop`。不 rm，保留對話紀錄給下一場接。
 4. `main` 派書記短工跑 wrap，pin 由內往外：`instance/profiles` → `instance` → 母 repo。
-5. push 每晚 23:00 由 `main` 統一做；各座位、工人只 commit（使用者 2026-11-24，D25）。
+5. push 由 `main` 統一做，家裡每晚 23:00（使用者 2026-11-24，D25）、公司 WSL 每天 16:50（使用者 2026-11-25，D32）；各座位、工人只 commit。
 
 ## 3. aos 活樹硬規則裡適用 skyrim 的四條
 
