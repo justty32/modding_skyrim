@@ -21,6 +21,7 @@
 - **權限與資源**：發桌面鎖和其他跨部門資源；遊戲鎖平時由實體發，管理可收回、改派、否決（使用者 2026-11-23，D4）。批 Fable 的申請（D7）。
 - **規矩**：使用者的新裁示寫進 `wf/`（`user.md`、`wf/org/`、工作流入口檔）。改使用者規範不派 sonnet（出處 aos.md 第 4 節）。
 - **活狀態**：`SESSION-LOG.md`、`WAIT_USER.md`、`agentctl/SESSION-LOG.md`、`agentctl/handoffs/NEXT-SESSION.md`、當場 `STATE.md`。別人不寫這些。
+- **場地**（D30–D31）：開場先判斷在家還是公司（[sites](../sites.md)）。公司場開場全部 pull，收工前把回家單登進 `NEXT-SESSION.md`。
 - **收工存檔**：每完成一大段就照 `wf/` 規矩存檔（出處 user.md 2026-11-22 段）；pin 由內往外：`instance/profiles` → 各 submodule → 母 repo（出處 aos.md 第 2 節）。
 
 ### 做：座位與開關 agent

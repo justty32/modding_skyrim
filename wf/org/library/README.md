@@ -6,7 +6,7 @@
 
 **狀態**：定義已做好（`agentctl/aos/defs/seat-library`），還沒掛；掛要使用者同意，步驟見 [RUNBOOK-seats](../../../agentctl/aos/RUNBOOK-seats.md)。agent 名 `library`，掛在 `mod_skyrim`（使用者 2026-11-23，D13）。有工作才用，沒事 sleep（使用者 2026-11-23，D12）。沒掛時由 lead 派代班，代班先讀本卡、`mod-library/AGENTS.md`、`modpack-design/AGENTS.md`、筆記 `wf/temp/library/notes.md`，收工前寫回（提案，CHOICE 2）。
 
-每行使用者定的標日期，其餘是提案。
+每行使用者定的標日期，其餘是提案。本卡寫的是家裡；公司場這個座位能做什麼，見 [sites](../sites.md)「公司場各座位能做什麼」。
 
 ## 職責
 

@@ -1,15 +1,18 @@
 {
   "README.md": {
-    "description": "org 入口（草稿）：四部門座位表（名字與在哪台 daemon）、標準流程、定案一句話版；決定一件事交給誰時先讀"
+    "description": "org 入口（草稿）：座位表（名字與在哪台 daemon）、標準流程、定案一句話版；決定一件事交給誰時先讀"
   },
   "decisions.md": {
     "description": "使用者 2026-11-23、11-24 原話照抄與定案 D1–D24（部門、模型、團隊、暫存、sleep、daemon、push、開關座位、對使用者的通道、codex 退役、houseCARL）"
   },
   "decisions-2026-11b.md": {
-    "description": "使用者 2026-11-24 第二批原話與定案 D25 起（23:00 統一 push、刪 wf/archive、skyrim-qa 規矩、三座位都帶 MCP、sol 與 terra）；decisions.md 滿了從這裡續"
+    "description": "使用者 2026-11-24 第二批原話與定案 D25 起（23:00 統一 push、刪 wf/archive、skyrim-qa 規矩、三座位都帶 MCP、sol 與 terra），2026-11-25 公司場 D30–D31（兩個場地）；decisions.md 滿了從這裡續"
   },
   "CHOICES.md": {
     "description": "九個組織選擇的答案與來源（使用者定／出處／提案）"
+  },
+  "sites.md": {
+    "description": "家與公司兩個場地：兩地差在哪、只有家裡有的、公司場各座位能做什麼、公司能驗到哪、回家單、同步；開場判斷場地與公司場派工前讀"
   },
   "places.md": {
     "description": "東西放哪、寫入範圍是約定、開座位、定義指向卡、跨部門資源誰發"
@@ -32,6 +35,10 @@
   "dev": {
     "description": "開發部門的卡：projects/* 與 analysis/，替其他部門提供開發服務",
     "index": "dev/_index.json"
+  },
+  "review": {
+    "description": "審查座位的卡（提案，只有公司場有）：獨立檢查 diff、回家單、規矩改寫，只提意見",
+    "index": "review/_index.json"
   },
   "helper": {
     "description": "短工卡（寫給掛短工的人）：能交什麼、不能交什麼、怎麼掛與收",
