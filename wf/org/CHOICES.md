@@ -4,14 +4,14 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 
 回 [org](README.md)。
 
-每個組織只在這九處不同。選項沒有對錯，每個選項後面寫它適合什麼情況。答案寫在 **Ours:** 後面，並標來源：「使用者 2026-11-23」＝使用者親口定；「出處」＝照現行文件；「（提案）」＝起草線的建議，使用者還沒確認。其他檔寫 `CHOICE n` 的地方，照這裡填。
+每個組織只在這九處不同。選項沒有對錯，每個選項後面寫它適合什麼情況。答案寫在 **Ours:** 後面，並標來源：「使用者 2026-11-23」或 D 編號＝使用者親口定（D 的現行與否見 [decisions-index](decisions-index.json)）；「出處」＝照現行文件；「（提案）」＝起草線的建議，使用者還沒確認。其他檔寫 `CHOICE n` 的地方，照這裡填。
 
 ## 1. 管理窗口用什麼身體？
 
 - **coding CLI（eca）**：有 CLI 自己的工具、能看圖、能開自己的子 agent。窗口要讀很多碼或看圖時選它。
 - **agent-fsm**：只有給它的 aos 工具，經 llm kernel 問腦。工作只有文件和信、工具要少時選它。
 
-**Ours:** eca（Claude Code）。出處：2026-11-23 唯讀查 `mod_skyrim` 子 daemon 的表，`main` 跑的是 stock `eca-claude`，`llm.json` 是 opus／high。**模型**：預設 opus；窗口是使用者自己開的 Claude Code CLI，要不要升 Fable 由使用者當場手動切，agent 不自己升（使用者 2026-11-23，D9）。
+**Ours:** eca（Claude Code）。出處：2026-11-23 唯讀查 `mod_skyrim` 子 daemon 的表，`main` 跑的是 stock `eca-claude`，`llm.json` 是 opus／high。**模型**：照 D9（預設 opus，升 Fable 由使用者手動切）。
 
 ## 2. 座位一直掛著嗎？
 
@@ -19,14 +19,14 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **有工作才掛**：座位＝卡＋筆記；沒掛時由窗口派代班，代班先讀卡和筆記，收工前把學到的寫回。工作斷斷續續時選它。
 - **一批一掛、做完拆掉**：每批都要使用者點頭、不想帶上一批記憶時選它。
 
-**Ours:** 有工作才掛；沒事的時候可以 sleep，不必 stop 或 rm（使用者 2026-11-23，D12）。一場之內還會用＝sleep，收工＝stop（D17）；誰能開關見 D15、D16、D22。指令見 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)。主管全掛在現有 `mod_skyrim` 一台，不另開子 daemon；agent 名用短名 `instance`、`library`、`dev`；agent 總數到 50 個以上再考慮分 daemon（使用者 2026-11-23，D13）。
+**Ours:** 有工作才掛、沒事 sleep（D12）；收工 stop（D17）；誰能開關見 D15、D16、D22；指令見 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)。不另開子 daemon、用短名、到 50 個 agent 再議（D13）。
 
 ## 3. 座位怎麼切？
 
 - **按能寫什麼切**：一個座位管一塊地盤，兩個座位不寫同一個檔，沒有只負責轉手的座位。
 - **按工作階段切**：設計、施工、審查、測試、整合。每個改動都要過同一條檢查線時選它。
 
-**Ours:** 按能寫什麼切（使用者 2026-11-23：D1 四部門、D2 `modpack-design/` 歸館藏、D3 只有實體寫 MO2）。部門底下的團隊按工作種類分，內容照各部門卡的團隊節（使用者 2026-11-23，D10）。
+**Ours:** 按能寫什麼切（D1–D3）。部門底下的團隊按工作種類分，照各部門卡的團隊節（D10）。
 
 ## 4. 誰 commit？
 
@@ -34,7 +34,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **各座位在自己地盤內 commit，事後回報**：要出地盤、刪檔、動到跑著的 agent 時先問窗口。配按地盤切。
 - **只有窗口 commit**：共用檔本來就只有一個寫手時選它。
 
-**Ours:** 各部門在自己的 submodule 內 commit，事後回報（出處：[aos.md](../workflows/aos.md) 第 1 節「主導是該 submodule 唯一的 commit 者」）。母 repo 的 `wf/`、活狀態檔與 gitlink pin 由窗口派書記短工 commit（出處同上）。`projects/*` 與 `analysis/` 由開發部門 commit（提案）。commit 只加明確路徑（出處：aos.md 第 3 節第 7 條）。push：2026-11-23 那場的「可以隨意push」只算那場（D14）；lead 統一 push，家裡每天 23:00（D25）、公司 16:50（D32）。
+**Ours:** 各部門在自己的 submodule 內 commit，事後回報（出處：[aos.md](../workflows/aos.md) 第 1 節「主導是該 submodule 唯一的 commit 者」）。母 repo 的 `wf/`、活狀態檔與 gitlink pin 由窗口派書記短工 commit（出處同上）。`projects/*` 與 `analysis/` 由開發部門 commit（提案）。commit 只加明確路徑（出處：aos.md 第 3 節第 7 條）。push：lead 統一做，家裡 23:00（D25）、公司 16:50（D32）；11-23 的「可以隨意push」只算那場（D14）。
 
 ## 5. 不是做事的人怎麼檢查？
 
@@ -42,7 +42,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **每批一個檢查者**，跟寫的人不同實例，讀來源不讀寫手的自述；最多 N 輪，之後停下告訴使用者。
 - **窗口看證據**；要第二雙眼時另派一件單獨的工作。
 
-**Ours:** 窗口看證據，要第二雙眼另派（提案，頂層傾向）。館藏交出的可裝包，由實體裝、由實體驗（使用者 2026-11-23，D3）。同一處檢查來回 3 輪還不過就停下問使用者（提案）。
+**Ours:** 窗口看證據，要第二雙眼另派（提案，頂層傾向）。館藏交出的可裝包，由實體裝、由實體驗（D3）。同一處檢查來回 3 輪還不過就停下問使用者（提案）。
 
 ## 6. 遇到不是你做的改動怎麼辦？
 
@@ -77,14 +77,14 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **不可以**：只有窗口開 agent。
 - **可以，照規矩**：下屬只拿這件事要的工具，不給能擴權的工具；請求寫明可讀寫的範圍；回信說開了誰、做了什麼、已經收掉。改進只來自做過至少兩次的事。
 
-**Ours:** 可以開下屬，模型隨意（使用者 2026-11-23：「agent可以再派agent做事，模型隨意」）。每份交接書寫死子 agent 上限，配額往下不倍增（出處：[user.md](../workflows/common/user.md) 11-07 段）。要用 Fable 先向窗口申請（使用者 2026-11-23，D7）。下屬收不收歸部門主管（D16）。閒時自我改進：家裡不做（提案；座位不常駐，沒有閒時）；公司場做（D36）。
+**Ours:** 可以開下屬，模型隨意（使用者 2026-11-23：「agent可以再派agent做事，模型隨意」）。每份交接書寫死子 agent 上限，配額往下不倍增（出處：[user.md](../workflows/common/user.md) 11-07 段）。要用 Fable 先向窗口申請（D7）。下屬收不收歸部門主管（D16）。閒時自我改進：家裡不做（提案；座位不常駐，沒有閒時）；公司場做（D36）。
 
 ## 9. 定義放哪、是不是複本？
 
 - **放哪**：放 org 旁邊、放 aos 設定夾，或不放：幾個座位共用一份 stock 範本，只有卡不同。
 - **複本或連結**：連到 stock 程式的定義小、跟著 aos 更新；完整複本不會變，但要手動更新。
 
-**Ours:** 放 `S/agentctl/aos/defs/`（出處：[aos.md](../workflows/aos.md)）。夾名 `seat-instance`、`seat-library`、`seat-dev`：用座位名，不帶 agent 名或 daemon，換 daemon 不用改（提案，D13）。每部門一份**完整複本**：2026-11-24 從 stock `agents/eca-claude`（aos `e3edcb02d`）重做，只改四處——`cli.json`（`autoMemoryEnabled: false`；`claude_mcp` 只實體帶，D24）、`system.txt`、`README.md`、`_metainfo.json`（技術題）。不從舊的 `sk-lead-*` 複製：它們缺 `compact_hook`、路徑已失效。
+**Ours:** 放 `S/agentctl/aos/defs/`（出處：[aos.md](../workflows/aos.md)）。夾名 `seat-instance`、`seat-library`、`seat-dev`：用座位名，不帶 agent 名或 daemon，換 daemon 不用改（提案，D13）。每部門一份**完整複本**：2026-11-24 從 stock `agents/eca-claude`（aos `e3edcb02d`）重做，只改四處——`cli.json`（`autoMemoryEnabled: false`；`claude_mcp` 三份都帶，D24、D28）、`system.txt`、`README.md`、`_metainfo.json`（技術題）。不從舊的 `sk-lead-*` 複製：它們缺 `compact_hook`、路徑已失效。
 
 為什麼選複本不選連結、代價怎麼補：見 `agentctl/aos/defs/README.md`「為什麼是完整複本」。
 

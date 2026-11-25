@@ -1,0 +1,401 @@
+{
+ "contract": "wf-table/1",
+ "source": "decisions.md",
+ "extracted": "2026-11-25",
+ "about": "每條 D 一列。status：現行／已被取代／一次性；superseded_by：取代它的編號；defined_in：原話與條文所在（相對本檔）；cited_in：另外提到這條的檔（相對 repo 根，不含原檔；D1–D24、D1–D38 這種十條以上的範圍不算），2026-11-25 掃 wf/、AGENTS.md、agentctl/aos、agentctl/docs。",
+ "columns": [
+  "id",
+  "date",
+  "status",
+  "superseded_by",
+  "summary",
+  "defined_in",
+  "cited_in",
+  "note"
+ ],
+ "link_columns": [
+  "defined_in"
+ ],
+ "rows": [
+  {
+   "id": "D1",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "四個部門：實體、館藏、開發、管理。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/CHOICES.md、wf/org/README.md",
+   "note": ""
+  },
+  {
+   "id": "D2",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "`modpack-design/` 歸館藏；館藏管「有什麼、想要什麼」，實體管「實際裝了什麼」。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/CHOICES.md、wf/org/README.md、wf/org/library/README.md",
+   "note": ""
+  },
+  {
+   "id": "D3",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "只有實體能寫 MO2 的 mods 與 profile；館藏只交可以直接裝的包，由實體裝、實體驗。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/CHOICES.md、wf/org/README.md、wf/org/dev/README.md、wf/org/instance/README.md、wf/org/library/README.md、wf/org/places.md、wf/org/sites.md",
+   "note": "公司沒有 MO2，只有家裡適用（D31、sites）。"
+  },
+  {
+   "id": "D4",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "遊戲鎖平時由實體發，開發實機測試向實體借；最終權限在管理；桌面鎖與其他跨部門資源由管理發。",
+   "defined_in": "decisions.md",
+   "cited_in": "agentctl/docs/resource-locks/aos-tree.md、wf/org/README.md、wf/org/dev/README.md、wf/org/instance/README.md、wf/org/lead/README.md、wf/org/library/README.md、wf/org/places.md、wf/org/sites.md、wf/workflows/aos.md",
+   "note": "遊戲鎖、桌面鎖只有家裡有（sites）。"
+  },
+  {
+   "id": "D5",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "管理盡量小、要最聰明，只做窗口、規矩、仲裁、收工存檔；部門之間可直接寫信，事後知會管理。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/README.md、wf/org/dev/README.md、wf/org/lead/README.md、wf/org/library/README.md、wf/workflows/aos.md",
+   "note": ""
+  },
+  {
+   "id": "D6",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "部門主管＝eca claude、opus、effort high。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/README.md、wf/org/dev/README.md、wf/org/instance/README.md、wf/org/library/README.md",
+   "note": "與 D9 在「opus」重疊：D6 管部門主管的身體與等級，D9 管全體預設與窗口；不衝突，兩條都現行。"
+  },
+  {
+   "id": "D7",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "Fable 只在開發的規劃階段短暫使用，要先向管理申請。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/CHOICES.md、wf/org/README.md、wf/org/dev/README.md、wf/org/lead/README.md",
+   "note": ""
+  },
+  {
+   "id": "D8",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "複雜的分析／開發型內容工作（換臉、PoE 星盤、地圖移植等）不放進四塊：未開、待規劃。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/README.md、wf/org/dev/README.md、wf/org/instance/README.md、wf/org/library/README.md",
+   "note": ""
+  },
+  {
+   "id": "D9",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "全體預設 opus，包含窗口；窗口是使用者自己開的 Claude Code CLI，升 Fable 由使用者當場手動切。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/CHOICES.md、wf/org/README.md、wf/org/lead/README.md",
+   "note": "與 D6 重疊，見 D6。下屬分工「普通工作 opus、簡單工作與雜活 sonnet」是同場另一句原話，沒有編號。"
+  },
+  {
+   "id": "D10",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "部門底下的團隊照各部門卡的團隊節；舊功能隊：裝 mod→實體、漢化→館藏、雜事→管理書記短工、換臉→D8 未開。",
+   "defined_in": "decisions.md",
+   "cited_in": "agentctl/aos/defs/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/dev/README.md、wf/org/instance/README.md、wf/org/lead/README.md、wf/org/library/README.md",
+   "note": ""
+  },
+  {
+   "id": "D11",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "暫存分三處：`wf/temp/`、`/tmp/`、`~/skyrim_mods/_staging-*`（CHOICES 第 7 題）。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/CHOICES.md、wf/org/README.md、wf/org/places.md、wf/workflows/common/user.md",
+   "note": "第三處只有家裡有（sites）。"
+  },
+  {
+   "id": "D12",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "部門主管有工作才用；沒事可以 sleep，不必 stop 或 rm。",
+   "defined_in": "decisions.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/dev/README.md、wf/org/instance/README.md、wf/org/library/README.md、wf/workflows/aos.md",
+   "note": ""
+  },
+  {
+   "id": "D13",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "不另開子 daemon：主管掛在 `mod_skyrim`、短名 `instance`／`library`／`dev`；agent 到 50 個以上再議；名字與在哪台只寫在 README 座位表。",
+   "defined_in": "decisions.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/defs/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/dev/README.md、wf/org/instance/README.md、wf/org/library/README.md、wf/org/places.md、wf/workflows/aos.md",
+   "note": "`mod_skyrim` 是家裡那台；D30 之後公司那台的 daemon 名寫在 sites，座位表註明「表上的 daemon 是家裡那台」。"
+  },
+  {
+   "id": "D14",
+   "date": "2026-11-23",
+   "status": "一次性",
+   "superseded_by": "D25",
+   "summary": "「可以隨意 push」只算 2026-11-23 那場；平時照 user.md 要使用者當場授權。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/CHOICES.md、wf/org/README.md、wf/org/decisions-2026-11b.md、wf/workflows/common/user.md",
+   "note": "前半只算那場；平時的 push 由 D25（家）、D32（公司）的定時統一 push 取代。臨時 push 照 user.md「一定先問」。"
+  },
+  {
+   "id": "D15",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "部門主管掛上之後，同一場內的 sleep、wake、stop 由管理自己做、事後告知；第一次掛上與移除要使用者當場同意。",
+   "defined_in": "decisions.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/lead/README.md、wf/org/review/README.md、wf/org/sites.md",
+   "note": "下一場對已 stop 的 start 見 D22。"
+  },
+  {
+   "id": "D16",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "部門底下的 agent 要不要移除由該部門主管處理，事後在回信裡說開了誰、收了誰。",
+   "defined_in": "decisions.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/lead/README.md",
+   "note": ""
+  },
+  {
+   "id": "D17",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "收工用 stop；一場之內暫時沒事用 sleep。",
+   "defined_in": "decisions.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/lead/README.md",
+   "note": ""
+  },
+  {
+   "id": "D18",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "對使用者的通道預設只經窗口；例外：申請通過後可寄使用者專區、使用者直接寄給部門主管的信。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/README.md、wf/org/instance/README.md、wf/org/lead/README.md、wf/org/letters.md、wf/org/places.md、wf/workflows/aos.md",
+   "note": "申請流程見 D23 與 letters。"
+  },
+  {
+   "id": "D19",
+   "date": "2026-11-23",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "管理部門的主管（就是 `main`）平常可以寄信給使用者，不必每次申請，不另掛 `agentctl` 座位。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/README.md、wf/org/lead/README.md、wf/org/letters.md、wf/org/places.md、wf/workflows/aos.md",
+   "note": ""
+  },
+  {
+   "id": "D20",
+   "date": "2026-11-24",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "codex 退役，工人改用 fsm gpt（另有 Claude 系）。",
+   "defined_in": "decisions.md",
+   "cited_in": "AGENTS.md、agentctl/AGENTS.md、agentctl/docs/README.md、agentctl/docs/dispatch-windows/README.md、agentctl/docs/dispatch-windows.md、agentctl/docs/driving-codex/README.md、agentctl/docs/driving-codex.md、agentctl/docs/session-goal-template.md、agentctl/docs/team-model/context.md、agentctl/docs/team-model/intelligence-tiers.md、agentctl/docs/team-model/plans.md、agentctl/docs/team-model/roles.md、agentctl/docs/team-model.md、agentctl/docs/tool-index.md、wf/WORKFLOWS.md、wf/lessons/dispatch-cli-agents.md、wf/lessons/dispatch-delegation.md、wf/lessons/dispatch-roles.md、wf/org/README.md、wf/workflows/aos.md、wf/workflows/common/user.md、wf/workflows/tidy/gotchas-windows.md",
+   "note": ""
+  },
+  {
+   "id": "D21",
+   "date": "2026-11-24",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "使用者直接寄給部門主管的信，不算刪檔、動 MO2、開遊戲的當場授權。",
+   "defined_in": "decisions.md",
+   "cited_in": "agentctl/aos/defs/seat-dev/system.txt、agentctl/aos/defs/seat-instance/system.txt、agentctl/aos/defs/seat-library/system.txt、wf/org/README.md、wf/org/instance/README.md、wf/org/letters.md、wf/org/sites.md",
+   "note": ""
+  },
+  {
+   "id": "D22",
+   "date": "2026-11-24",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "已 stop 的部門主管，下一場再 start 不用先問，管理自己做、事後告知。",
+   "defined_in": "decisions.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/lead/README.md",
+   "note": ""
+  },
+  {
+   "id": "D23",
+   "date": "2026-11-24",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "D18 的申請直寄流程照提案用（letters「對使用者的通道」）。",
+   "defined_in": "decisions.md",
+   "cited_in": "wf/org/README.md、wf/org/lead/README.md、wf/org/letters.md",
+   "note": ""
+  },
+  {
+   "id": "D24",
+   "date": "2026-11-24",
+   "status": "已被取代",
+   "superseded_by": "D28",
+   "summary": "實體座位 `seat-instance` 帶 houseCARL 工具（`claude_mcp`）；另兩份先不帶。",
+   "defined_in": "decisions.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/defs/README.md、agentctl/aos/defs/seat-instance/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/decisions-2026-11b.md、wf/org/instance/README.md",
+   "note": "只有後半「另兩份先不帶」被 D28 取代；實體帶 MCP 照舊，現在三份都帶。"
+  },
+  {
+   "id": "D25",
+   "date": "2026-11-24",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "家裡每天 23:00 由頂層統一 push；各線、各座位只 commit；取代每場逐次授權（D14 那種）。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "agentctl/aos/defs/seat-dev/system.txt、agentctl/aos/defs/seat-instance/system.txt、agentctl/aos/defs/seat-library/system.txt、agentctl/docs/team-model.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/decisions.md、wf/org/lead/README.md、wf/org/places.md、wf/org/sites.md、wf/workflows/aos.md、wf/workflows/common/user.md",
+   "note": "公司場見 D32；週末與放假白天在家照 D25（D38）。"
+  },
+  {
+   "id": "D26",
+   "date": "2026-11-24",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "`wf/archive/` 用 `git rm` 刪掉，封存改回 STRUCTURE 的「過時即刪」。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "wf/org/README.md、wf/workflows/common/user.md",
+   "note": "刪除那一步已做完；現行的部分是不再建 `wf/archive/`，規矩本身在 STRUCTURE local 段。"
+  },
+  {
+   "id": "D27",
+   "date": "2026-11-24",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "skyrim-qa 只有實體座位能操作跑著的遊戲：先拿遊戲鎖、使用者不在玩才准用；動存檔的 console 指令先問；其他座位帶著也不准用。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "agentctl/aos/defs/README.md、agentctl/aos/defs/presence/README.md、agentctl/aos/defs/seat-dev/README.md、agentctl/aos/defs/seat-dev/system.txt、agentctl/aos/defs/seat-instance/README.md、agentctl/aos/defs/seat-instance/system.txt、agentctl/aos/defs/seat-library/README.md、agentctl/aos/defs/seat-library/system.txt、agentctl/docs/tool-index.md、wf/org/README.md、wf/org/instance/README.md、wf/org/places.md、wf/org/sites.md、wf/workflows/common/user.md",
+   "note": "只有家裡適用（sites）。"
+  },
+  {
+   "id": "D28",
+   "date": "2026-11-24",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "館藏、開發座位也帶 MCP：`claude_mcp` 跟 stock 一樣。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/defs/README.md、agentctl/aos/defs/seat-dev/README.md、agentctl/aos/defs/seat-library/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/decisions.md、wf/org/instance/README.md、wf/org/places.md、wf/workflows/common/user.md",
+   "note": "取代 D24 後半。"
+  },
+  {
+   "id": "D29",
+   "date": "2026-11-24",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "fsm gpt：普通工作建議交 sol；量大呆板的看難易度，簡單一點的交 terra。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "agentctl/aos/fsm-gpt/RUNBOOK.md、agentctl/docs/team-model/intelligence-tiers.md、agentctl/docs/team-model.md、wf/org/README.md、wf/org/helper/README.md、wf/workflows/aos.md、wf/workflows/common/user.md",
+   "note": "user.md 11-03 段與 aos.md 舊說法由此統一，舊說法留作歷史（不在 D 編號內）。"
+  },
+  {
+   "id": "D30",
+   "date": "2026-11-25",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "一個組織、兩個場地：現有 `wf/org` 是家裡的照用，公司可擴充公司專屬的，能共用的就共用。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "wf/org/README.md、wf/org/lead/README.md、wf/org/sites.md、wf/workflows/common/user.md",
+   "note": ""
+  },
+  {
+   "id": "D31",
+   "date": "2026-11-25",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "公司場沒有遊戲和 MO2，鍵盤、螢幕、滑鼠不給 agent。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "wf/org/README.md、wf/org/lead/README.md、wf/org/review/README.md、wf/org/sites.md、wf/workflows/common/user.md",
+   "note": ""
+  },
+  {
+   "id": "D32",
+   "date": "2026-11-25",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "公司 WSL 每天 16:50 由頂層統一 push；各線、各座位只 commit；家裡仍是 D25 的 23:00。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "wf/org/CHOICES.md、wf/org/README.md、wf/org/lead/README.md、wf/org/sites.md、wf/workflows/aos.md、wf/workflows/common/user.md",
+   "note": "與 D25 是兩地各一條，不互相取代。"
+  },
+  {
+   "id": "D33",
+   "date": "2026-11-25",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "開公司專屬的審查座位 review：獨立檢查 diff、回家單、規矩改寫，只提意見不改。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "wf/org/README.md、wf/org/lead/README.md、wf/org/review/README.md、wf/org/sites.md、wf/workflows/common/user.md",
+   "note": "家裡要不要也用，沒問到，沒定。"
+  },
+  {
+   "id": "D34",
+   "date": "2026-11-25",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "回家單：公司做不了的步驟寫成給家裡座位的 `REQUEST` 存成檔，家裡下一場照單派。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "wf/org/README.md、wf/org/lead/README.md、wf/org/sites.md、wf/workflows/common/user.md",
+   "note": ""
+  },
+  {
+   "id": "D35",
+   "date": "2026-11-25",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "公司的「做完」只到靜態：沒過實機的寫「靜態通過，待回家驗」，不寫「完成」。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "wf/org/README.md、wf/org/lead/README.md、wf/org/sites.md、wf/workflows/common/user.md",
+   "note": ""
+  },
+  {
+   "id": "D36",
+   "date": "2026-11-25",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "公司場的空檔拿來做工具與檢查清單，題目只從做過兩次以上的事裡找。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "wf/org/CHOICES.md、wf/org/README.md、wf/org/dev/improvements.md、wf/org/lead/README.md、wf/org/sites.md、wf/workflows/common/user.md",
+   "note": "CHOICES 第 8 題的「閒時不做改進」從此只管家裡。"
+  },
+  {
+   "id": "D37",
+   "date": "2026-11-25",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "`instance/profiles` 在公司只讀。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "wf/org/README.md、wf/org/lead/README.md、wf/org/sites.md、wf/workflows/common/user.md",
+   "note": ""
+  },
+  {
+   "id": "D38",
+   "date": "2026-11-25",
+   "status": "現行",
+   "superseded_by": "",
+   "summary": "能在公司做的盡量在公司做、回家再驗（台灣白天用 AI 避開美國高峰）；公司場＝週一到週五，週末與放假白天在家照家裡。",
+   "defined_in": "decisions-2026-11b.md",
+   "cited_in": "wf/org/README.md、wf/org/sites.md、wf/workflows/common/user.md",
+   "note": "實體座位在公司也可以改 `instance/` 裡不碰實機狀態的東西。"
+  }
+ ]
+}

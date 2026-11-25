@@ -11,19 +11,19 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 
 ## 使用者說的與定案
 
-使用者 2026-11-23、11-24 的原話與定案：D1–D24 在 [decisions.md](decisions.md)，D25 起在 [decisions-2026-11b](decisions-2026-11b.md)。一句話版：
+使用者 2026-11-23 起的原話與定案：D1–D24 在 [decisions.md](decisions.md)，D25 起在 [decisions-2026-11b](decisions-2026-11b.md)。每條 D 現行與否、被誰取代、寫在哪些檔：[decisions-index.json](decisions-index.json)。一句話版：
 
 - 四個部門：實體、館藏、開發、管理；只有實體寫 MO2；遊戲鎖平時由實體發，最終權限在管理（D1–D4）。
 - 管理小而聰明，只做窗口、規矩、仲裁、收工存檔；主管 eca claude opus high；Fable 只在開發規劃階段短暫用，要申請（D5–D9）。
 - 團隊照各部門卡；暫存分三處（D10–D11）。
-- 主管有工作才用、沒事 sleep；現在不分 daemon，到 50 個 agent 再議；「隨意 push」只算本場（D12–D14）。
+- 主管有工作才用、沒事 sleep；現在不分 daemon，到 50 個 agent 再議；「隨意 push」只算 11-23 那場（D12–D14；平時見 D25）。
 - 主管第一次掛上與移除要使用者同意，場內 sleep／wake／stop 管理自己做；部門底下的移除歸主管；收工用 stop（D15–D17）。
 - 對使用者預設只經窗口，兩個例外；管理部門主管（就是 `main`）平常可寄信給使用者（D18–D19）。
-- 11-24：codex 退役改 fsm gpt；直寄主管的信不算授權；stop 的主管再 start 不用問；D18 流程照用；實體帶 houseCARL（D20–D24）。
+- 11-24：codex 退役改 fsm gpt；直寄主管的信不算授權；stop 的主管再 start 不用問；D18 流程照用；實體帶 houseCARL（D20–D24；D24 後半被 D28 取代）。
 
 11-24 第二批（D25–D29，見 [decisions-2026-11b](decisions-2026-11b.md)）：每天 23:00 頂層統一 push；刪 `wf/archive/`；skyrim-qa 只准實體在持遊戲鎖、使用者不在玩時用；三座位都帶 MCP；普通工作 sol、簡單的量大呆板 terra。
 
-11-25（公司場，D30–D37）：一個組織、兩個場地，能共用的就共用；公司沒有遊戲與 MO2，鍵盤螢幕滑鼠不給 agent；公司 WSL 每天 16:50 統一 push；開公司專屬的審查座位；公司做不了的寫回家單。兩地的差別只寫在 [sites](sites.md)。
+11-25（公司場，D30–D38）：一個組織、兩個場地，能共用的就共用；公司沒有遊戲與 MO2，鍵盤螢幕滑鼠不給 agent；公司 WSL 每天 16:50 統一 push；開公司專屬的審查座位；公司做不了的寫回家單；平日能在公司做的盡量做、回家再驗（D38）。兩地的差別只寫在 [sites](sites.md)。
 
 ## 座位
 

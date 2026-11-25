@@ -2,7 +2,7 @@ skyrim 組織的使用者原話與定案 D25 起：2026-11-24 第二批（push �
 
 # 定案（續）：使用者說的與 D25 起
 
-回 [org](README.md)。D1–D24 在 [decisions](decisions.md)（該檔已近 8 KB，從這裡續寫）。原話照抄，不改字。D 編號在其他檔照這裡引用。
+回 [org](README.md)。D1–D24 在 [decisions](decisions.md)（該檔已近 8 KB，從這裡續寫）。原話照抄，不改字。D 編號在其他檔照這裡引用；現行表見 [decisions-index](decisions-index.json)。
 
 ## 使用者說的
 
