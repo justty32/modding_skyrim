@@ -184,5 +184,34 @@ class VenvPruneTest(unittest.TestCase):
         self.assertNotIn("/venv/", r.stdout)
 
 
+class OversizeLfBytesTest(unittest.TestCase):
+    """OVERSIZE 照 LF 量：CRLF checkout 上 raw bytes 超 8192、LF 未超的不報。"""
+
+    def setUp(self):
+        self.d = tempfile.TemporaryDirectory()
+        self.root = self.d.name
+
+    def tearDown(self):
+        self.d.cleanup()
+
+    def _write_bytes(self, rel, data):
+        p = os.path.join(self.root, rel)
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, "wb") as fh:
+            fh.write(data)
+
+    def test_crlf_under_limit_in_lf_not_reported(self):
+        body = ("x" * 39 + "\r\n") * 200   # raw 8200、LF 8000
+        self._write_bytes("workflows/a.md", ("# a\r\n\r\n" + body).encode())
+        r = run(self.root)
+        self.assertNotIn("OVERSIZE", r.stdout)
+
+    def test_over_limit_in_lf_reported(self):
+        body = ("x" * 41 + "\r\n") * 200   # LF 8400
+        self._write_bytes("workflows/a.md", ("# a\r\n\r\n" + body).encode())
+        r = run(self.root)
+        self.assertIn("OVERSIZE workflows/a.md", r.stdout)
+
+
 if __name__ == "__main__":
     unittest.main()

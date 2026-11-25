@@ -112,7 +112,7 @@ lint_dir() {
 
   for f in "${md_files[@]}"; do
     case "$f" in */workflows/*) ;; *) continue ;; esac
-    n=$(wc -c <"$f")
+    n=$(tr -d '\r' <"$f" | wc -c)   # 照 LF 量：CRLF checkout 不該因換行多算
     [[ $n -le 8192 ]] && continue
     echo "OVERSIZE ${f#$root/} ($n bytes > 8192)"
     oversize=$((oversize + 1))
