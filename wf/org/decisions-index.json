@@ -148,16 +148,6 @@
    "note": "`mod_skyrim` 是家裡那台；D30 之後公司那台的 daemon 名寫在 sites，座位表註明「表上的 daemon 是家裡那台」。"
   },
   {
-   "id": "D14",
-   "date": "2026-11-23",
-   "status": "一次性",
-   "superseded_by": "D25",
-   "summary": "「可以隨意 push」只算 2026-11-23 那場；平時照 user.md 要使用者當場授權。",
-   "defined_in": "decisions.md",
-   "cited_in": "wf/org/CHOICES.md、wf/org/README.md、wf/org/decisions-2026-11b.md、wf/workflows/common/user.md",
-   "note": "前半只算那場；平時的 push 由 D25（家）、D32（公司）的定時統一 push 取代。臨時 push 照 user.md「一定先問」。"
-  },
-  {
    "id": "D15",
    "date": "2026-11-23",
    "status": "現行",
@@ -248,23 +238,13 @@
    "note": ""
   },
   {
-   "id": "D24",
-   "date": "2026-11-24",
-   "status": "已被取代",
-   "superseded_by": "D28",
-   "summary": "實體座位 `seat-instance` 帶 houseCARL 工具（`claude_mcp`）；另兩份先不帶。",
-   "defined_in": "decisions.md",
-   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/defs/README.md、agentctl/aos/defs/seat-instance/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/decisions-2026-11b.md、wf/org/instance/README.md",
-   "note": "只有後半「另兩份先不帶」被 D28 取代；實體帶 MCP 照舊，現在三份都帶。"
-  },
-  {
    "id": "D25",
    "date": "2026-11-24",
    "status": "現行",
    "superseded_by": "",
-   "summary": "家裡每天 23:00 由頂層統一 push；各線、各座位只 commit；取代每場逐次授權（D14 那種）。",
+   "summary": "家裡每天 23:00 由頂層統一 push；各線、各座位只 commit；取代每場逐次授權。",
    "defined_in": "decisions-2026-11b.md",
-   "cited_in": "agentctl/aos/defs/seat-dev/system.txt、agentctl/aos/defs/seat-instance/system.txt、agentctl/aos/defs/seat-library/system.txt、agentctl/docs/team-model.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/decisions.md、wf/org/lead/README.md、wf/org/places.md、wf/org/sites.md、wf/workflows/aos.md、wf/workflows/common/user.md",
+   "cited_in": "agentctl/aos/defs/seat-dev/system.txt、agentctl/aos/defs/seat-instance/system.txt、agentctl/aos/defs/seat-library/system.txt、agentctl/docs/team-model.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/_index.json、wf/org/decisions.md、wf/org/lead/README.md、wf/org/places.md、wf/org/sites.md、wf/workflows/aos.md、wf/workflows/common/user.md",
    "note": "公司場見 D32；週末與放假白天在家照 D25（D38）。"
   },
   {
@@ -292,10 +272,10 @@
    "date": "2026-11-24",
    "status": "現行",
    "superseded_by": "",
-   "summary": "館藏、開發座位也帶 MCP：`claude_mcp` 跟 stock 一樣。",
+   "summary": "三個座位都帶 MCP：`claude_mcp` 跟 stock 一樣，帶得到 houseCARL 與 skyrim-qa。",
    "defined_in": "decisions-2026-11b.md",
-   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/defs/README.md、agentctl/aos/defs/seat-dev/README.md、agentctl/aos/defs/seat-library/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/decisions.md、wf/org/instance/README.md、wf/org/places.md、wf/workflows/common/user.md",
-   "note": "取代 D24 後半。"
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/defs/README.md、agentctl/aos/defs/seat-dev/README.md、agentctl/aos/defs/seat-instance/README.md、agentctl/aos/defs/seat-library/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/instance/README.md、wf/org/places.md",
+   "note": "併入舊 D24（實體帶 houseCARL）；D24 已刪。"
   },
   {
    "id": "D29",

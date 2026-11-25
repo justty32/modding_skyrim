@@ -1,6 +1,6 @@
-skyrim 組織的使用者原話與定案 D1–D24。
+skyrim 組織的使用者原話與定案 D1–D23。
 
-# 定案：使用者說的與 D1–D24
+# 定案：使用者說的與 D1–D23
 
 回 [org](README.md)。原話照抄，不改字。D 編號在其他檔照這裡引用；現行表見 [index](decisions-index.json)。
 
@@ -70,11 +70,10 @@ skyrim 組織的使用者原話與定案 D1–D24。
 - D10 部門底下的團隊照各部門卡的團隊節。舊功能隊：裝 mod→實體、漢化→館藏、雜事→管理書記短工、換臉→D8 未開。
 - D11 暫存分三處：`wf/temp/`、`/tmp/`、`~/skyrim_mods/_staging-*`；見 [CHOICES](CHOICES.md) 第 7 題。
 
-### 已定案：座位怎麼掛、push（2026-11-23）
+### 已定案：座位怎麼掛（2026-11-23）
 
 - D12 部門主管有工作才用；沒事的時候可以讓它 sleep，不必 stop 或 rm。判準見 D17；效果、理由與指令見 [RUNBOOK-seats](../../agentctl/aos/RUNBOOK-seats.md)「什麼時候用哪個」。
 - D13 現在不另開子 daemon：三個主管掛在 `mod_skyrim` 底下，用短名 `instance`、`library`、`dev`。agent 總數到 50 個以上就重新考慮分 daemon，所以定義與 system text 不寫 agent 名、daemon 與絕對路徑；名字與在哪台只寫在 [README](README.md) 的座位表一處。
-- D14「可以隨意 push」只算 2026-11-23 本場；平時照 [user.md](../workflows/common/user.md) 要使用者當場授權。〔一次性，只算那場；見 D25〕
 
 ### 已定案：開關座位（2026-11-23）
 
@@ -93,6 +92,5 @@ skyrim 組織的使用者原話與定案 D1–D24。
 - D21 使用者直接寄給部門主管的信，不算刪檔、動 MO2、開遊戲的當場授權；維持原規矩。
 - D22 已 stop 的部門主管，下一場再 `start` 不用先問使用者，管理自己做、事後告知。
 - D23 D18 申請直寄流程照提案用（[letters](letters.md)）。
-- D24 實體座位 `seat-instance` 帶 houseCARL 工具（`claude_mcp`）；另兩份沒說，先不帶。〔後半被 D28 取代〕
 
 D25 起見 [decisions-2026-11b](decisions-2026-11b.md)。

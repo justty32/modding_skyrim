@@ -14,7 +14,7 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 | 項目 | 設定 |
 |------|------|
 | 語言 | 回覆與文件一律**繁體中文**；技術專名（mod 名、API、指令、欄位）留原文。**mod 層繁簡皆可**——要的是有中文，不是正體；缺字破版才是硬 gate |
-| 分支慣例 | 直接 commit `main`，不開 branch 走 PR；**遠端只留 `main`**（2026-11-22「我希望遠端只有main」）；**push 每晚 23:00 統一做**（D25；公司 WSL 16:50，D32）|
+| 分支慣例 | 直接 commit `main`，不開 branch 走 PR；**遠端只留 `main`**（2026-11-22「我希望遠端只有main」）；**push 定時統一做**（D25、D32）|
 | 直接做、不用問 | 改文件、跑唯讀指令（`git status`／`grep`／`find`／查 Nexus）、跑測試與 lint |
 | 一定先問 | 臨時 push、刪檔、動 `instance/`（MO2 profile／load order／已裝 mod）、動 DB（mod-library 的 MongoDB）、安裝依賴、開新的大型工作 |
 | 回覆風格 | 見 [reply-style](reply-style.md)；短、先結論。使用者問「**要不要**」時不要只回「不必」，附上可執行的判準（門檻數字）與後果，讓他能改數字 |
@@ -37,9 +37,9 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 
 2026-11-22 同場稍晚的長期偏好：遠端只留 `main` 已套用於母 repo、agentctl、instance、instance/profiles、mod-library；下載的 mod 壓縮包放 `~/skyrim_mods/` 根目錄保留（「下載的mod壓縮包可以丟到~/skyrim_mods」）；暫存用完可以清（「暫存全都可以清」「能刪就刪」；這是對清暫存的傾向，實際刪除仍照上表「刪檔」先問或有當場授權）。頂層詮釋（非原話）：清暫存不能弄斷可重複的流程——使用者也說「換身體這件事可能會經常做，所以這塊要留下一些口子」——所以長期流程要讀的東西放固定位置，不放 staging／`wf/temp`。
 
-2026-11-23 起講組織的規矩（部門、座位、模型、push、對使用者的通道、兩個場地）見 wf/org 定案 D1–D38：D1–D24 在 [decisions](../../org/decisions.md)、D25 起在 [decisions-2026-11b](../../org/decisions-2026-11b.md)，哪條現行見 [decisions-index](../../org/decisions-index.json)；使用者原話都在那兩檔。下面各段只留現行要點。
+2026-11-23 起講組織的規矩（部門、座位、模型、push、對使用者的通道、兩個場地）見 wf/org 定案 D1–D38：D1–D23 在 [decisions](../../org/decisions.md)、D25 起在 [decisions-2026-11b](../../org/decisions-2026-11b.md)，哪條現行見 [decisions-index](../../org/decisions-index.json)；使用者原話都在那兩檔。下面各段只留現行要點。
 
-2026-11-23 家中場（D1–D19）：本場普通工作交給 Opus、簡單工作與雜活交給 Sonnet；agent 可以再派 agent、模型隨意；除簡單工作與雜活外 agent 須先讀過 `wf/` 規矩。「可以隨意push」只算那場（D14）。暫存三分法見 [CHOICES](../../org/CHOICES.md) 第 7 題（D11）。
+2026-11-23 家中場（D1–D19）：本場普通工作交給 Opus、簡單工作與雜活交給 Sonnet；agent 可以再派 agent、模型隨意；除簡單工作與雜活外 agent 須先讀過 `wf/` 規矩。暫存三分法見 [CHOICES](../../org/CHOICES.md) 第 7 題（D11）。
 
 2026-11-24 家中場（D20）：codex 退役，工人用 Claude 系或 fsm gpt（掛法在 `agentctl/aos/fsm-gpt/`）；上面 11-03、11-05、11-07 段經 codex 的部分失效，「選人做設計決策／架構規劃時 GPT 優先級較低」與每線 BRIEF 寫子 agent 上限照舊。
 

@@ -4,22 +4,22 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 
 `wf/workflows/` 講一種工作怎麼做。這個夾只講：這件事歸誰、做完交給誰。別處已有的規矩（[AGENTS.md](../../AGENTS.md)、[user.md](../workflows/common/user.md)、怎麼 commit）只連過去，不抄。
 
-**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D14 與三份部門定義、org-rev2 補 D15–D19、org-rev3 補 D20–D24、rulings-b 補 D25–D29，2026-11-25 公司場補 D30–D37 與 [場地](sites.md)；部門座位 `instance` 2026-11-23 掛過、收工已 stop，其餘未掛。標「（提案）」的都還沒定。
+**草稿**：2026-11-23 org-draft 起草、org-rev1 補 D10–D11、org-defs 補 D12–D13 與三份部門定義、org-rev2 補 D15–D19、org-rev3 補 D20–D23、rulings-b 補 D25–D29，2026-11-25 公司場補 D30–D37 與 [場地](sites.md)；部門座位 `instance` 2026-11-23 掛過、收工已 stop，其餘未掛。標「（提案）」的都還沒定。
 
 **什麼時候讀**：決定一件事交給誰、開或關座位、掛短工、改交接方式。
 **不在這裡找**：怎麼操作 aos（看 aos 知識庫與 [aos.md](../workflows/aos.md)）、一種工作怎麼做（看 [WORKFLOWS](../WORKFLOWS.md)）。
 
 ## 使用者說的與定案
 
-使用者 2026-11-23 起的原話與定案：D1–D24 在 [decisions.md](decisions.md)，D25 起在 [decisions-2026-11b](decisions-2026-11b.md)。每條 D 現行與否、被誰取代、寫在哪些檔：[decisions-index.json](decisions-index.json)。一句話版：
+使用者 2026-11-23 起的原話與定案：D1–D23 在 [decisions.md](decisions.md)，D25 起在 [decisions-2026-11b](decisions-2026-11b.md)。每條 D 現行與否、被誰取代、寫在哪些檔：[decisions-index.json](decisions-index.json)。一句話版：
 
 - 四個部門：實體、館藏、開發、管理；只有實體寫 MO2；遊戲鎖平時由實體發，最終權限在管理（D1–D4）。
 - 管理小而聰明，只做窗口、規矩、仲裁、收工存檔；主管 eca claude opus high；Fable 只在開發規劃階段短暫用，要申請（D5–D9）。
 - 團隊照各部門卡；暫存分三處（D10–D11）。
-- 主管有工作才用、沒事 sleep；現在不分 daemon，到 50 個 agent 再議；「隨意 push」只算 11-23 那場（D12–D14；平時見 D25）。
+- 主管有工作才用、沒事 sleep；現在不分 daemon，到 50 個 agent 再議（D12–D13）；push 見 D25、D32。
 - 主管第一次掛上與移除要使用者同意，場內 sleep／wake／stop 管理自己做；部門底下的移除歸主管；收工用 stop（D15–D17）。
 - 對使用者預設只經窗口，兩個例外；管理部門主管（就是 `main`）平常可寄信給使用者（D18–D19）。
-- 11-24：codex 退役改 fsm gpt；直寄主管的信不算授權；stop 的主管再 start 不用問；D18 流程照用；實體帶 houseCARL（D20–D24；D24 後半被 D28 取代）。
+- 11-24：codex 退役改 fsm gpt；直寄主管的信不算授權；stop 的主管再 start 不用問；D18 流程照用；三個座位都帶 MCP（D20–D23、D28）。
 
 11-24 第二批（D25–D29，見 [decisions-2026-11b](decisions-2026-11b.md)）：每天 23:00 頂層統一 push；刪 `wf/archive/`；skyrim-qa 只准實體在持遊戲鎖、使用者不在玩時用；三座位都帶 MCP；普通工作 sol、簡單的量大呆板 terra。
 

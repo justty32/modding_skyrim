@@ -34,7 +34,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **各座位在自己地盤內 commit，事後回報**：要出地盤、刪檔、動到跑著的 agent 時先問窗口。配按地盤切。
 - **只有窗口 commit**：共用檔本來就只有一個寫手時選它。
 
-**Ours:** 各部門在自己的 submodule 內 commit，事後回報（出處：[aos.md](../workflows/aos.md) 第 1 節「主導是該 submodule 唯一的 commit 者」）。母 repo 的 `wf/`、活狀態檔與 gitlink pin 由窗口派書記短工 commit（出處同上）。`projects/*` 與 `analysis/` 由開發部門 commit（提案）。commit 只加明確路徑（出處：aos.md 第 3 節第 7 條）。push：lead 統一做，家裡 23:00（D25）、公司 16:50（D32）；11-23 的「可以隨意push」只算那場（D14）。
+**Ours:** 各部門在自己的 submodule 內 commit，事後回報（出處：[aos.md](../workflows/aos.md) 第 1 節「主導是該 submodule 唯一的 commit 者」）。母 repo 的 `wf/`、活狀態檔與 gitlink pin 由窗口派書記短工 commit（出處同上）。`projects/*` 與 `analysis/` 由開發部門 commit（提案）。commit 只加明確路徑（出處：aos.md 第 3 節第 7 條）。push：lead 統一做，家裡 23:00（D25）、公司 16:50（D32）。
 
 ## 5. 不是做事的人怎麼檢查？
 
@@ -84,7 +84,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **放哪**：放 org 旁邊、放 aos 設定夾，或不放：幾個座位共用一份 stock 範本，只有卡不同。
 - **複本或連結**：連到 stock 程式的定義小、跟著 aos 更新；完整複本不會變，但要手動更新。
 
-**Ours:** 放 `S/agentctl/aos/defs/`（出處：[aos.md](../workflows/aos.md)）。夾名 `seat-instance`、`seat-library`、`seat-dev`：用座位名，不帶 agent 名或 daemon，換 daemon 不用改（提案，D13）。每部門一份**完整複本**：2026-11-24 從 stock `agents/eca-claude`（aos `e3edcb02d`）重做，只改四處——`cli.json`（`autoMemoryEnabled: false`；`claude_mcp` 三份都帶，D24、D28）、`system.txt`、`README.md`、`_metainfo.json`（技術題）。不從舊的 `sk-lead-*` 複製：它們缺 `compact_hook`、路徑已失效。
+**Ours:** 放 `S/agentctl/aos/defs/`（出處：[aos.md](../workflows/aos.md)）。夾名 `seat-instance`、`seat-library`、`seat-dev`：用座位名，不帶 agent 名或 daemon，換 daemon 不用改（提案，D13）。每部門一份**完整複本**：2026-11-24 從 stock `agents/eca-claude`（aos `e3edcb02d`）重做，只改四處——`cli.json`（`autoMemoryEnabled: false`；`claude_mcp` 三份都帶，D28）、`system.txt`、`README.md`、`_metainfo.json`（技術題）。不從舊的 `sk-lead-*` 複製：它們缺 `compact_hook`、路徑已失效。
 
 為什麼選複本不選連結、代價怎麼補：見 `agentctl/aos/defs/README.md`「為什麼是完整複本」。
 

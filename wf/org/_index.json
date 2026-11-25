@@ -3,7 +3,7 @@
     "description": "org 入口（草稿）：座位表（名字與在哪台 daemon）、標準流程、定案一句話版；決定一件事交給誰時先讀"
   },
   "decisions.md": {
-    "description": "使用者 2026-11-23、11-24 原話照抄與定案 D1–D24（部門、模型、團隊、暫存、sleep、daemon、push、開關座位、對使用者的通道、codex 退役、houseCARL）"
+    "description": "使用者 2026-11-23、11-24 原話照抄與定案 D1–D23（部門、模型、團隊、暫存、sleep、daemon、開關座位、對使用者的通道、codex 退役）"
   },
   "decisions-2026-11b.md": {
     "description": "使用者 2026-11-24 第二批原話與定案 D25 起（23:00 統一 push、刪 wf/archive、skyrim-qa 規矩、三座位都帶 MCP、sol 與 terra），2026-11-25 公司場 D30–D38（兩個場地、公司 16:50 push、審查座位、回家單、靜態為止、空檔改進、profiles 只讀、能在公司做的盡量做）；decisions.md 滿了從這裡續"
