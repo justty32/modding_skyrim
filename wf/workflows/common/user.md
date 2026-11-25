@@ -43,6 +43,6 @@ agent 不用重猜的事。always-on 鐵律在 `AGENTS.md`，這裡是**這位�
 
 2026-11-24 家中 Claude Code 場第二批使用者裁示（長期偏好，D25–D29）：頂層問五題（今天能不能 push；`wf/archive/` 要不要 `git rm`；skyrim-qa 要不要加規矩；館藏與開發座位要不要也帶 MCP；sol 該做什麼），使用者答「push就是晚上十一點統一push。可以git rm。可以加上規矩。都可以帶mcp。這兩個sol的任務分配都可以，通常是建議普通工作，至於量大呆板的，則看難易度，簡單一點的可以交給terra。」現行：每天 23:00 由頂層統一 push，各線只 commit 不 push（D25，取代上面各段「以本場為界」的逐場授權；D14 原文留在 org）；`wf/archive/` 已刪，封存照 STRUCTURE「過時即刪」（D26）；skyrim-qa 只有實體座位能用，要先拿遊戲鎖、使用者不在玩，動存檔的 console 指令先問（D27）；三個座位都帶 MCP（D28）；fsm gpt 普通工作建議 sol，量大呆板的看難易度，簡單一點的交 terra（D29；11-03 段與 aos.md 舊說法留作歷史）。定案全文在 [wf/org/decisions-2026-11b](../../org/decisions-2026-11b.md)。
 
-2026-11-25 公司端 Claude Code 場使用者裁示（長期，D30–D37）：公司沒有遊戲和 MO2，鍵盤螢幕滑鼠不給 agent；`wf/org` 兩地共用，公司可擴充公司專屬的部分；「公司WSL這邊就是每天四點五十統一push」（16:50，家裡仍 23:00）。原話與做法在 [wf/org/sites](../../org/sites.md)。
+2026-11-25 公司端 Claude Code 場使用者裁示（長期，D30–D38）：公司沒有遊戲和 MO2，鍵盤螢幕滑鼠不給 agent；`wf/org` 兩地共用，公司可擴充公司專屬的部分；「公司WSL這邊就是每天四點五十統一push」（16:50，家裡仍 23:00）；「能在公司做的就盡量做」，回家再驗（D38，理由是台灣白天避開美國高峰）。原話與做法在 [wf/org/sites](../../org/sites.md)。
 
 領域詞彙常猜錯 → 開 `glossary.md`（見 [common/README](README.md)）。

@@ -1,6 +1,6 @@
 {
   "environment.md": {
-    "description": "本機影響測試判讀的已知環境條件；測試結果怪時進來"
+    "description": "影響測試判讀的已知環境條件，分家裡那台與公司 WSL 那台（CRLF、缺 Pillow／dotnet）；測試結果怪時進來"
   },
   "green-light-evidence.json": {
     "description": "恆真檢查實例表（wf-table/1，用 wf/tools/tabledb.py 讀）"

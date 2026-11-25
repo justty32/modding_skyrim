@@ -14,6 +14,7 @@ skyrim 組織的兩個場地（家、公司）：哪些共用、哪些只有一�
 
 - 現有的 `wf/org` 是家裡的，照用；公司可以擴充只有公司才有的；兩者合一，能共用的就共用（D30）。
 - 公司沒有遊戲和 MO2，鍵盤、螢幕、滑鼠也不給 agent（D31）。
+- 能在公司做的盡量在公司做，回家再驗：台灣白天用 AI 能避開美國高峰（D38）。
 - 公司 WSL 每天 16:50 統一 push（D32）；審查座位、回家單、公司的「做完」只到靜態、空檔拿來改進、`instance/profiles` 在公司只讀，都答「好」（D33–D37）。
 
 ## 怎麼知道自己在哪
@@ -55,7 +56,7 @@ test -d ~/games/mod-organizer-2-skyrimspecialedition && echo 家 || echo 公司
 - **lead**：照卡。多兩件：開場先全部 pull；收工前把回家單登進 `NEXT-SESSION.md`。
 - **dev**：照卡，少了實機測試。測試照 [testing](../workflows/testing.md)；要實機才驗得到的行為寫回家單交實體。
 - **library**：`modpack-design/` 的規劃、讀得到來源的 mod 評估、repo 裡已有來源的中文層。要下載、入庫、動 DB 的寫回家單。
-- **instance**：只做唯讀分析（`instance/` 裡進了 git 的清單、文件、工具），產出是回家單。
+- **instance**：改 `instance/` 裡不碰實機狀態的東西（工具、文件、repo 設定），回家單交家裡驗（D38）；`profiles` 只讀。
 - **review**：只有公司有（D33），見 [review](review/README.md)。
 
 三個部門座位在公司那台都沒掛過。公司場照 CHOICE 2 由 lead 派代班（Claude Code `line`，或 fsm gpt），代班先讀卡和筆記。要在公司那台第一次掛部門主管，照 D15 要使用者同意。
@@ -86,15 +87,15 @@ test -d ~/games/mod-organizer-2-skyrimspecialedition && echo 家 || echo 公司
 
 ## 同步
 
-- **開場**：全部 pull（使用者 2026-11-25：「請先git pull全部」）。`foreach` 不會動 `instance/profiles` 這層巢狀 submodule 的 pin，要另外對齊：
+- **開場**：全部 pull（使用者 2026-11-25：「請先git pull全部」）。每個 repo 都要在分支上，不能是 detached HEAD，否則 pull 會失敗，收工的 `wrap.sh --push` 也會停下（2026-11-25 實際遇到：`profiles` 沒有上游分支）：
 
 ```sh
-git pull --ff-only && git submodule foreach 'git pull --ff-only'
-git -C instance submodule update profiles
+git pull --ff-only && git submodule foreach --recursive 'git pull --ff-only'
 ```
 
+  有 repo 是 detached：先確認本地分支沒有自己的 commit，再 `git checkout main && git merge --ff-only origin/main`。
 - **收工**：各 submodule 與母 repo commit，pin 由內往外（[lead](lead/README.md) 卡）。
-- **push**：公司 WSL 每天 16:50 由 lead 統一 push（使用者 2026-11-25，D32）；家裡仍是 23:00（D25）。各線、各座位兩地都只 commit。順序由內往外：`instance/profiles` → 各 submodule → 母 repo。
+- **push**：公司 WSL 每天 16:50 由 lead 統一 push（使用者 2026-11-25，D32）；家裡仍是 23:00（D25）。各線、各座位兩地都只 commit。用 `agentctl/tools/wrap.sh --push`，先不帶 `--apply` 看計畫；它由內往外推。公司這台沒設 `push.recurseSubmodules`，母 repo 的 pre-push 仍會擋遠端沒有的 pin。
 
 ## 公司場的空檔拿來改進（使用者 2026-11-25，D36）
 
@@ -108,9 +109,4 @@ CHOICE 8 答「閒時自我改進：不做」，理由是座位不常駐、沒�
 
 ## 考慮過、沒開的
 
-參考的是使用者 2026-11-25 點名的另一個工作區的 `wf/org`（按階段切：策劃、開發、測試、審查、整合、知識庫）與 aos 範本 `templates/orgs/basic`。這裡按地盤切（CHOICE 3），所以只取審查一個：
-
-- **知識庫 `kb`**：管 `wf/` 結構與壞連結。這裡已有 [tidy](../workflows/tidy/README.md) 工作流與 lead 的書記短工。
-- **測試 `qa`**：這裡的實機驗收歸實體；公司沒有遊戲，開了也沒事做。
-- **策劃 `design`、整合 `integration`**：各座位自己規劃、自己 commit（CHOICE 4），不設只管一個階段的座位。
-- **留言板**：同時在線的 agent 少，信就夠。
+參考另一個工作區的 `wf/org` 時看過、沒開的座位（kb、qa、design、integration、留言板）與理由，在 [decisions-2026-11b](decisions-2026-11b.md)「考慮過、沒開的」。

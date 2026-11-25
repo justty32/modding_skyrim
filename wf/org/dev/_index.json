@@ -1,5 +1,8 @@
 {
   "README.md": {
     "description": "開發部門 dev 的座位卡：管 projects/ 與 analysis/；派開發工作前進來"
+  },
+  "improvements.md": {
+    "description": "dev 的改進紀錄（D36）：一行一項，看到什麼 → 提案 → 狀態"
   }
 }
