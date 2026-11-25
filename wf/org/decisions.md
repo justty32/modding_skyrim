@@ -93,4 +93,4 @@ skyrim 組織的使用者原話與定案 D1–D23。
 - D22 已 stop 的部門主管，下一場再 `start` 不用先問使用者，管理自己做、事後告知。
 - D23 D18 申請直寄流程照提案用（[letters](letters.md)）。
 
-D25 起見 [decisions-2026-11b](decisions-2026-11b.md)。
+D25 起見 [decisions-2026-11b](decisions-2026-11b.md)。上面引用裡 11-23 的「可以隨意push」只算那場（現行 push 見 D25、D32）；11-24 第 6 題見 D28。D14、D24 已於 2026-11-25 刪除，編號不重用。

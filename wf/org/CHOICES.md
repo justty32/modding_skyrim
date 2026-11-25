@@ -11,7 +11,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **coding CLI（eca）**：有 CLI 自己的工具、能看圖、能開自己的子 agent。窗口要讀很多碼或看圖時選它。
 - **agent-fsm**：只有給它的 aos 工具，經 llm kernel 問腦。工作只有文件和信、工具要少時選它。
 
-**Ours:** eca（Claude Code）。出處：2026-11-23 唯讀查 `mod_skyrim` 子 daemon 的表，`main` 跑的是 stock `eca-claude`，`llm.json` 是 opus／high。**模型**：照 D9（預設 opus，升 Fable 由使用者手動切）。
+**Ours:** eca（Claude Code）。出處：2026-11-23 唯讀查 `mod_skyrim` 子 daemon 的表，`main` 跑的是 stock `eca-claude`，`llm.json` 是 opus／high。**模型**：照 D9（預設 opus；升 Fable 由使用者手動切，agent 不自己升）。
 
 ## 2. 座位一直掛著嗎？
 
@@ -84,7 +84,7 @@ skyrim 組織一次定下的九個選擇：每題的選項、我們的答案、�
 - **放哪**：放 org 旁邊、放 aos 設定夾，或不放：幾個座位共用一份 stock 範本，只有卡不同。
 - **複本或連結**：連到 stock 程式的定義小、跟著 aos 更新；完整複本不會變，但要手動更新。
 
-**Ours:** 放 `S/agentctl/aos/defs/`（出處：[aos.md](../workflows/aos.md)）。夾名 `seat-instance`、`seat-library`、`seat-dev`：用座位名，不帶 agent 名或 daemon，換 daemon 不用改（提案，D13）。每部門一份**完整複本**：2026-11-24 從 stock `agents/eca-claude`（aos `e3edcb02d`）重做，只改四處——`cli.json`（`autoMemoryEnabled: false`；`claude_mcp` 三份都帶，D28）、`system.txt`、`README.md`、`_metainfo.json`（技術題）。不從舊的 `sk-lead-*` 複製：它們缺 `compact_hook`、路徑已失效。
+**Ours:** 放 `S/agentctl/aos/defs/`（出處：[aos.md](../workflows/aos.md)）。夾名 `seat-instance`、`seat-library`、`seat-dev`：用座位名，不帶 agent 名或 daemon，換 daemon 不用改（提案，D13）。每部門一份**完整複本**：2026-11-24 從 stock `agents/eca-claude`（aos `e3edcb02d`）重做，只改四處——`cli.json`（`autoMemoryEnabled: false`；`claude_mcp` 照 stock，D28）、`system.txt`、`README.md`、`_metainfo.json`（技術題）。不從舊的 `sk-lead-*` 複製：它們缺 `compact_hook`、路徑已失效。
 
 為什麼選複本不選連結、代價怎麼補：見 `agentctl/aos/defs/README.md`「為什麼是完整複本」。
 

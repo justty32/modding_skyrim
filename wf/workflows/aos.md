@@ -30,7 +30,7 @@ graph TD
 - **工人工作區**：照 [wf/org/CHOICES.md](../org/CHOICES.md) 第 7 題三分法。舊的 `tmp/aos/<名>/` 不再新增。
 - **gate**：現在沒有。`main` 沒開 `kernel_gate`，掛 agent 不帶 `AOS_KERNEL`。舊的 [GATE.md](../../agentctl/aos/defs/GATE.md) 已標失效。
 
-**工人用什麼**：Claude 系（Opus／Sonnet）或 fsm gpt（`agent-fsm` 範本接 llm kernel 的 GPT 端點，掛法在 `agentctl/aos/fsm-gpt/`）；codex 2026-11-24 退役，不再派（D20，原話見 [user.md](common/user.md)）。
+**工人用什麼**：Claude 系（Opus／Sonnet）或 fsm gpt（`agent-fsm` 範本接 llm kernel 的 GPT 端點，掛法在 `agentctl/aos/fsm-gpt/`）；codex 2026-11-24 退役，不再派（D20，原話見 [decisions](../org/decisions.md)）。
 
 ## 2. 起樹與收樹
 
@@ -73,7 +73,7 @@ skyrim 隊另加兩條（當時的頂層 skyrim-agent 2026-11-14 定）：
 | 授權 | 專區回信只認普通工作；push 每晚 23:00 統一；刪檔、instance、DB、開遊戲仍要當場說 | 專區 q3；D25 |
 | sol 槽 | 全樹同時最多 1 隻 | 專區 q5 |
 
-模型列的舊說法：專區 q5 原寫「sol 只做蒐集與量大呆板」，使用者 2026-11-24 改成上表（D29，原話見 [user.md](common/user.md) 2026-11-24 第二批段）。
+模型列的舊說法：專區 q5 原寫「sol 只做蒐集與量大呆板」，使用者 2026-11-24 改成上表（D29，原話見 [decisions-2026-11b](../org/decisions-2026-11b.md)）。
 
 - **記憶細節**：定義的 `cli.json` 帶 `autoMemoryEnabled: false`；教訓用 `index_view` 找。舊夾（`~/.claude/projects/` 底下 skyrim 根那一夾的 `memory/`）不寫不改，刪原檔另外問。
 - **保留期清理**：hygiene 出清單 → 寄專區通知（附清單）→ 使用者當場說 → 頂層派短工刪。

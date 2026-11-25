@@ -9,7 +9,7 @@
     "description": "使用者 2026-11-24 第二批原話與定案 D25 起（23:00 統一 push、刪 wf/archive、skyrim-qa 規矩、三座位都帶 MCP、sol 與 terra），2026-11-25 公司場 D30–D38（兩個場地、公司 16:50 push、審查座位、回家單、靜態為止、空檔改進、profiles 只讀、能在公司做的盡量做）；decisions.md 滿了從這裡續"
   },
   "decisions-index.json": {
-    "description": "現行規矩表（wf-table/1）：D1–D38 每條一列——日期、現行／已被取代／一次性、被誰取代、一句話、原文在哪、還有哪些檔提到；要知道某條 D 還算不算時查它"
+    "description": "現行規矩表（wf-table/1）：每條現行的 D 一列（D14、D24 已刪）——日期、現行／已被取代／一次性、被誰取代、一句話、原文在哪、還有哪些檔提到；要知道某條 D 還算不算時查它"
   },
   "CHOICES.md": {
     "description": "九個組織選擇的答案與來源（使用者定／出處／提案）"

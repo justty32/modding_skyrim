@@ -19,7 +19,7 @@ skyrim 誰管哪塊、下一棒給誰：四個部門的座位、標準流程、�
 - 主管有工作才用、沒事 sleep；現在不分 daemon，到 50 個 agent 再議（D12–D13）；push 見 D25、D32。
 - 主管第一次掛上與移除要使用者同意，場內 sleep／wake／stop 管理自己做；部門底下的移除歸主管；收工用 stop（D15–D17）。
 - 對使用者預設只經窗口，兩個例外；管理部門主管（就是 `main`）平常可寄信給使用者（D18–D19）。
-- 11-24：codex 退役改 fsm gpt；直寄主管的信不算授權；stop 的主管再 start 不用問；D18 流程照用；三個座位都帶 MCP（D20–D23、D28）。
+- 11-24：codex 退役改 fsm gpt；直寄主管的信不算授權；stop 的主管再 start 不用問；D18 流程照用（D20–D23）。
 
 11-24 第二批（D25–D29，見 [decisions-2026-11b](decisions-2026-11b.md)）：每天 23:00 頂層統一 push；刪 `wf/archive/`；skyrim-qa 只准實體在持遊戲鎖、使用者不在玩時用；三座位都帶 MCP；普通工作 sol、簡單的量大呆板 terra。
 

@@ -2,7 +2,7 @@
  "contract": "wf-table/1",
  "source": "decisions.md",
  "extracted": "2026-11-25",
- "about": "每條 D 一列。status：現行／已被取代／一次性；superseded_by：取代它的編號；defined_in：原話與條文所在（相對本檔）；cited_in：另外提到這條的檔（相對 repo 根，不含原檔；D1–D24、D1–D38 這種十條以上的範圍不算），2026-11-25 掃 wf/、AGENTS.md、agentctl/aos、agentctl/docs。",
+ "about": "每條 D 一列。status：現行／已被取代／一次性；superseded_by：取代它的編號；defined_in：原話與條文所在（相對本檔）；cited_in：另外提到這條的檔（相對 repo 根，不含原檔；D1–D23、D1–D38 這種十條以上的範圍不算），2026-11-25 掃 wf/、AGENTS.md、agentctl/aos、agentctl/docs。 D14、D24 於 2026-11-25 刪除（使用者「過時的直接刪掉」），編號不重用。",
  "columns": [
   "id",
   "date",
@@ -102,7 +102,7 @@
    "date": "2026-11-23",
    "status": "現行",
    "superseded_by": "",
-   "summary": "全體預設 opus，包含窗口；窗口是使用者自己開的 Claude Code CLI，升 Fable 由使用者當場手動切。",
+   "summary": "全體預設 opus，包含窗口；窗口是使用者自己開的 Claude Code CLI，升 Fable 由使用者當場手動切；agent 不自己升。",
    "defined_in": "decisions.md",
    "cited_in": "wf/org/CHOICES.md、wf/org/README.md、wf/org/lead/README.md",
    "note": "與 D6 重疊，見 D6。下屬分工「普通工作 opus、簡單工作與雜活 sonnet」是同場另一句原話，沒有編號。"
@@ -162,7 +162,7 @@
    "date": "2026-11-23",
    "status": "現行",
    "superseded_by": "",
-   "summary": "部門底下的 agent 要不要移除由該部門主管處理，事後在回信裡說開了誰、收了誰。",
+   "summary": "部門底下的 agent 要不要移除由該部門主管處理，事後在回信裡說開了誰、收了誰；不用問使用者、不用問管理。",
    "defined_in": "decisions.md",
    "cited_in": "agentctl/aos/RUNBOOK-seats.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/lead/README.md",
    "note": ""
@@ -204,7 +204,7 @@
    "superseded_by": "",
    "summary": "codex 退役，工人改用 fsm gpt（另有 Claude 系）。",
    "defined_in": "decisions.md",
-   "cited_in": "AGENTS.md、agentctl/AGENTS.md、agentctl/docs/README.md、agentctl/docs/dispatch-windows/README.md、agentctl/docs/dispatch-windows.md、agentctl/docs/driving-codex/README.md、agentctl/docs/driving-codex.md、agentctl/docs/session-goal-template.md、agentctl/docs/team-model/context.md、agentctl/docs/team-model/intelligence-tiers.md、agentctl/docs/team-model/plans.md、agentctl/docs/team-model/roles.md、agentctl/docs/team-model.md、agentctl/docs/tool-index.md、wf/WORKFLOWS.md、wf/lessons/dispatch-cli-agents.md、wf/lessons/dispatch-delegation.md、wf/lessons/dispatch-roles.md、wf/org/README.md、wf/workflows/aos.md、wf/workflows/common/user.md、wf/workflows/tidy/gotchas-windows.md",
+   "cited_in": "AGENTS.md、agentctl/AGENTS.md、agentctl/docs/README.md、agentctl/docs/dispatch-windows.md、agentctl/docs/dispatch-windows/README.md、agentctl/docs/driving-codex.md、agentctl/docs/driving-codex/README.md、agentctl/docs/session-goal-template.md、agentctl/docs/team-model.md、agentctl/docs/team-model/context.md、agentctl/docs/team-model/intelligence-tiers.md、agentctl/docs/team-model/plans.md、agentctl/docs/team-model/roles.md、agentctl/docs/tool-index.md、wf/WORKFLOWS.md、wf/lessons/dispatch-cli-agents.md、wf/lessons/dispatch-delegation.md、wf/lessons/dispatch-roles.md、wf/org/README.md、wf/workflows/aos.md、wf/workflows/common/user.md、wf/workflows/tidy/README.md、wf/workflows/tidy/gotchas-windows.md、wf/workflows/tidy/manager-brief.md",
    "note": ""
   },
   {
@@ -244,7 +244,7 @@
    "superseded_by": "",
    "summary": "家裡每天 23:00 由頂層統一 push；各線、各座位只 commit；取代每場逐次授權。",
    "defined_in": "decisions-2026-11b.md",
-   "cited_in": "agentctl/aos/defs/seat-dev/system.txt、agentctl/aos/defs/seat-instance/system.txt、agentctl/aos/defs/seat-library/system.txt、agentctl/docs/team-model.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/_index.json、wf/org/decisions.md、wf/org/lead/README.md、wf/org/places.md、wf/org/sites.md、wf/workflows/aos.md、wf/workflows/common/user.md",
+   "cited_in": "agentctl/aos/defs/seat-dev/system.txt、agentctl/aos/defs/seat-instance/system.txt、agentctl/aos/defs/seat-library/system.txt、agentctl/docs/team-model.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/decisions.md、wf/org/lead/README.md、wf/org/places.md、wf/org/sites.md、wf/workflows/aos.md、wf/workflows/common/user.md",
    "note": "公司場見 D32；週末與放假白天在家照 D25（D38）。"
   },
   {
@@ -272,9 +272,9 @@
    "date": "2026-11-24",
    "status": "現行",
    "superseded_by": "",
-   "summary": "三個座位都帶 MCP：`claude_mcp` 跟 stock 一樣，帶得到 houseCARL 與 skyrim-qa。",
+   "summary": "三個座位都帶 MCP：`claude_mcp` 跟 stock 一樣（2026-11-24 查是 housecarl、skyrim-qa 兩台）。",
    "defined_in": "decisions-2026-11b.md",
-   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/defs/README.md、agentctl/aos/defs/seat-dev/README.md、agentctl/aos/defs/seat-instance/README.md、agentctl/aos/defs/seat-library/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/instance/README.md、wf/org/places.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/defs/README.md、agentctl/aos/defs/seat-dev/README.md、agentctl/aos/defs/seat-instance/README.md、agentctl/aos/defs/seat-library/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/instance/README.md、wf/org/places.md、wf/workflows/common/user.md",
    "note": "併入舊 D24（實體帶 houseCARL）；D24 已刪。"
   },
   {

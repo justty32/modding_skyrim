@@ -12,7 +12,7 @@ skyrim = **Skyrim SE modding 工作區**：母 repo 管開發（`projects/`）�
 - 使用者偏好與邊界 → [user.md](wf/workflows/common/user.md)。
 - **誰管哪塊、下一棒給誰**（四個部門的座位與交接）→ [wf/org/README.md](wf/org/README.md)。
 - **在 aos 樹裡跑的 agent**（`mod_skyrim` 子 daemon 上的 `main`、部門座位與它們掛的工人）→ 先讀 [aos.md](wf/workflows/aos.md)；找路用 `index_view`。
-- **派工人用什麼**：Claude 系（普通工作 Opus、簡單工作與雜活 Sonnet）或 fsm gpt（aos 的 `agent-fsm` 範本接 llm kernel 的 GPT 端點，掛法在 `agentctl/aos/fsm-gpt/`）。codex 2026-11-24 退役，不再派（使用者原話與 D20 見 [user.md](wf/workflows/common/user.md)、[org/decisions](wf/org/decisions.md)）。
+- **派工人用什麼**：Claude 系（普通工作 Opus、簡單工作與雜活 Sonnet）或 fsm gpt（aos 的 `agent-fsm` 範本接 llm kernel 的 GPT 端點，掛法在 `agentctl/aos/fsm-gpt/`）。codex 2026-11-24 退役，不再派（使用者原話與 D20 見 [org/decisions](wf/org/decisions.md)）。
 - **動手前先查有沒有現成工具** → [工具索引](agentctl/docs/tool-index.md)（任務類型 → 必用工具；在 private 的 agentctl，母 repo 只放這一行指標）。
 - **給使用者看的頁面**（清單／審批／裁示）→ [wf/user/](wf/user/README.md)，不放 agentctl。
 

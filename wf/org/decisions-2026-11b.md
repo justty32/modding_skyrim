@@ -12,13 +12,13 @@ skyrim 組織的使用者原話與定案 D25 起：2026-11-24 第二批（push �
 
 ### 已定案：push 與封存（使用者 2026-11-24）
 
-- D25 push：每天晚上 23:00 由頂層統一 push；各線、各座位只 commit 不 push。取代「每場逐次授權」的做法；11-23 那場「可以隨意push」的原話留在 [decisions](decisions.md) 的引用裡，當作 那場的紀錄。寫在 [user.md](../workflows/common/user.md) 2026-11-24 段。
+- D25 push：每天晚上 23:00 由頂層統一 push；各線、各座位只 commit 不 push。取代「每場逐次授權」的做法；11-23 那場「可以隨意push」的原話留在 [decisions](decisions.md) 的引用裡，當作那場的紀錄。寫在 [user.md](../workflows/common/user.md) 2026-11-24 段。
 - D26 `wf/archive/` 刪掉：`git rm`，封存改回 wf 既有的「過時即刪」（[STRUCTURE](../STRUCTURE.md) local 段）。舊 codex 派線工作流只剩 git 歷史可查。
 
 ### 已定案：遊戲與工具（使用者 2026-11-24）
 
 - D27 skyrim-qa：只有實體座位可以操作跑著的遊戲；要先拿到遊戲鎖、使用者不在玩才准用；會動到存檔的 console 指令要先問使用者（座位經 lead 以 `NEEDS-USER` 問）。其他座位帶著也不准用。寫在 [instance 卡](instance/README.md)、[places](places.md)「跨部門資源」與三份 `seat-*` 的 `system.txt`。
-- D28 三個座位都帶 MCP：`seat-instance`、`seat-library`、`seat-dev` 的 `claude_mcp` 跟 stock 一樣，帶得到 houseCARL 與 skyrim-qa（實體帶 houseCARL 是 11-24 第一批定的，館藏、開發是這批補的；舊 D24 已刪）。
+- D28 三個座位都帶 MCP：`seat-instance`、`seat-library`、`seat-dev` 的 `claude_mcp` 跟 stock 一樣（2026-11-24 查是 `housecarl`、`skyrim-qa` 兩台）。實體那份是 11-24 第一批第 6 題答「好」（[decisions](decisions.md)「2026-11-24 頂層問六題」），館藏、開發是這批補的；舊 D24 已刪。
 
 ### 已定案：模型（使用者 2026-11-24）
 
@@ -74,3 +74,11 @@ D33–D37 的全文在 [sites](sites.md) 與 review 卡。
 - **測試 `qa`**：這裡的實機驗收歸實體；公司沒有遊戲，開了也沒事做。
 - **策劃 `design`、整合 `integration`**：各座位自己規劃、自己 commit（CHOICE 4），不設只管一個階段的座位。
 - **留言板**：同時在線的 agent 少，信就夠。
+
+### 整理（使用者 2026-11-25 下午）
+
+頂層提整理 D 條目（過時的看不出來、同一條寫在好幾處、兩個檔快滿），使用者答「好」，接著說：
+
+> 過時的直接刪掉
+
+所以 D14、D24 刪了（引用保留，因為它們跟現行條目包在同一句原話裡），現行表見 [decisions-index](decisions-index.json)。
