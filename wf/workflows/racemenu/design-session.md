@@ -58,11 +58,11 @@
 5. overwrite 裡遊戲寫的 `CharGen/Head_*` 匯出搬到暫存，不留在 overwrite。
 6. 放鎖：先放 game、再放 desktop。
 
-頂層到點自己用 `qa_status` 與 `git status` 再查一次，不只看回報。
+裝拆走 `testlayer` 租約、收場判定用它的複查（[tool-index](../../../agentctl/docs/tool-index.md)「臨時測試層」兩列）；頂層到點再用 `qa_status` 與 `git status` 查一次，不只看回報。
 
 ## 閘門
 
-批次拍照前，先載一份基準、在 Sculpt 頁按 F5 匯出真頭，核 shape 名與頂點數。試點靠 996 對 3832 抓到頭根本沒換成。`getisrace` 只證明種族、不證明頭；「髮色變了」「lint 過」也都不算（[lesson](../../lessons/faces-racemenu-runtime.md#racemenu-export-head-parts-not-applied)）。
+批次拍照前，先載一份基準、在 Sculpt 頁按 F5 匯出真頭，核 shape 名與頂點數（判定用 `f5gate`，同見 tool-index）。試點靠 996 對 3832 抓到頭根本沒換成。`getisrace` 只證明種族、不證明頭；「髮色變了」「lint 過」也都不算（[lesson](../../lessons/faces-racemenu-runtime.md#racemenu-export-head-parts-not-applied)）。
 
 ## 離線優先與額度
 
@@ -83,9 +83,9 @@
 
 ## 已工具化／仍人工
 
-逐步對照（22 列：狀態、工具、缺口、值不值得做成程序、優先序、依據）已抽到 [design-session-steps.json](design-session-steps.json)。各類程序候選的總表見 [PROCEDURE-CANDIDATES](../../../agentctl/handoffs/home-2026-11-24/PROCEDURE-CANDIDATES.md)（本場是追加的第 8–11 類）。統計：已工具化 6、半工具化 10、仍人工 6。給工具線的優先序：
+逐步對照（22 列：狀態、工具、缺口、值不值得做成程序、優先序、依據）已抽到 [design-session-steps.json](design-session-steps.json)。各類程序候選的總表見 [PROCEDURE-CANDIDATES](../../../agentctl/handoffs/home-2026-11-24/PROCEDURE-CANDIDATES.md)（本場是追加的第 8–11 類）。統計：已工具化 10、半工具化 6、仍人工 6。給工具線的優先序：
 
-- **P0**：收場複查腳本（第 13 列）、F5 真頭閘門 CLI（第 12 列）。
-- **P1**：測試種族補丁產生器、臨時測試層租約、無滑鼠代拍實機試驗、jslot 直接離線出圖。
+- **P0**（2026-11-25 已工具化）：收場複查（第 13 列）、F5 真頭閘門（第 12 列）。
+- **P1**：測試種族補丁產生器、臨時測試層租約（已工具化）；無滑鼠代拍實機試驗、jslot 直接離線出圖（待做）。
 - **P2**：挑基底圖鑑、請求協定 CLI、滑桿校準寫回、髮型變形、成品搬檔。
 - **P3** 與「不值得」：其餘，理由寫在資料檔。

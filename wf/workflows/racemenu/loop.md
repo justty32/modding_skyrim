@@ -2,17 +2,17 @@
 
 [racemenu](README.md)｜[WORKFLOWS](../../WORKFLOWS.md)
 
-段 3–5。**段 4 有工具、已實機跑通，但取景重現性還不夠好**；段 3 未做；段 5 沿用 `wf/user/` 模式。現況依據：`agentctl/handoffs/home-2026-11-22/face-loop/REPORT.md`（2026-11-22，6 場）。
+段 3–5。**段 4 有工具、已實機跑通，但取景重現性還不夠好**；段 3 只做到 NIF 出圖；段 5 沿用 `wf/user/` 模式。現況依據：`agentctl/handoffs/home-2026-11-22/face-loop/REPORT.md`（2026-11-22，6 場）。
 
 | 迴路 | 看得到什麼 | 每輪成本（實測） | 定位 |
 |---|---|---|---|
 | ③ 純數值（[author](author.md)） | 只有數值 | 秒級 | 產生候選、插值 |
-| ② 離線出圖（段 3） | — | — | **未實作**（計畫 R1／R2） |
+| ② 離線出圖（段 3） | 頭部／髮型 NIF 的正側與 45 度 PNG | 秒級 | 先篩候選；jslot 套滑桿直接出圖未做 |
 | ① 遊戲內截圖（段 4） | 真實畫面 | 開場 2.5 分鐘（主選單 110 秒＋設定 40 秒）；之後每份 12–20 秒（選單內）或 30–36 秒（世界取景） | agent 自己篩、最後 1–3 份給使用者看 |
 
 ## 3. 離線預覽
 
-**未實作**。需要 FRTRI003 解析與渲染器（計畫 R1／R2），SUV 路線要使用者授權裝 PyQt6。
+已有 NIF 離線出圖：[head_render](../../../agentctl/tools/head_render/README.md)（[tool-index](../../../agentctl/docs/tool-index.md)「離線頭部／髮型 NIF 出圖」列；唯讀 VFS／BSA，不開遊戲）。限制：沒有法線貼圖、tint 是近似、**不套滑桿**——候選 jslot 要先轉成頭 NIF（例如 F5 匯出頭）才能出圖；jslot 直接出圖（tri 套用＋sculpt）是 design-session 的 P1 待做項。
 
 ## 4. 遊戲內確認（閉環）
 

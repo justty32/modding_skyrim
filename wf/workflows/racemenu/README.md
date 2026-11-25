@@ -16,7 +16,7 @@
 |---|---|---|---|
 | 1 需求凍結 | [author.md](author.md#1-需求凍結) | 目標 actor、基底 preset、要改的特徵 | **可用**（純文件流程） |
 | 2 合成 | [author.md](author.md#2-合成文字需求滑桿) | 文字需求→滑桿；用 `jslot` 工具產生候選、lint、diff | **可用**（離線、純數值，看不到圖） |
-| 3 離線預覽 | [loop.md](loop.md#3-離線預覽) | 正面、側面幾何圖 | **未實作**（R1／R2） |
+| 3 離線預覽 | [loop.md](loop.md#3-離線預覽) | 正面、側面、45 度圖 | **部分可用**：頭部／髮型 NIF 離線出圖用 [head_render](../../../agentctl/tools/head_render/README.md)；jslot 套滑桿直接出圖未做 |
 | 4 遊戲內確認 | [loop.md](loop.md#4-遊戲內確認閉環) | jslot→RaceMenu 載入→截圖（`face_loop`） | **工具可用、已實機 6 場**：開場 2.5 分鐘，之後每份 12–36 秒；重現性不足（同 preset 重拍差異 10–31% 像素），±0.5 看得出、±0.1 看不準 |
 | 5 使用者選定 | [loop.md](loop.md#5-使用者選定) | 挑選頁 | 沿用既有 `wf/user/` 頁面模式（本輪未產挑選頁） |
 | 6 固化 | [bake.md](bake.md) | preset→NPC patch 層 | **實機通過**：UI 換種族、UI 載 preset、Sculpt F5 匯出、`build_layer`（含 `--drop-shape`）、gate 全 PASS（Muiri 試點）。**人工判斷**：美醜、妝濃淡、體重保不保留、耳朵等多餘 shape 刪不刪（[逐步狀態](bake.md#presetnpc-臉層整條流程逐步狀態)） |

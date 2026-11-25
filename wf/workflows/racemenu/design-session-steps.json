@@ -2,6 +2,9 @@
  "contract": "wf-table/1",
  "source": "design-session.md",
  "extracted": "2026-11-25",
+ "link_columns": [
+  "evidence_path"
+ ],
  "columns": [
   "id",
   "phase",
@@ -11,9 +14,6 @@
   "gap",
   "programmable",
   "priority",
-  "evidence_path"
- ],
- "link_columns": [
   "evidence_path"
  ],
  "rows": [
@@ -76,12 +76,12 @@
    "id": "6",
    "phase": "前置",
    "step": "自訂種族測試可玩補丁（RACE Playable、FLST、HDPT Playable、種族預設頭眉）",
-   "status": "半工具化",
-   "tool": "線夾 `support/build_s1_esl.py`、`build_s1v2_esl.py`",
-   "gap": "寫死 Kurone 兩種族與 FormID；v1 漏 HDPT 與種族預設，靠 F5 才發現",
-   "programmable": "值得：通用產生器，輸入種族＋要用的部件，一次做完 v2 的全部改動",
-   "priority": "P1",
-   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/support/INSTALL-v2.md"
+   "status": "已工具化",
+   "tool": "`agentctl/tools/racetest/build.py <spec.json>`＋`compare.py`（spec 範例 `examples/s1v2.json`）",
+   "gap": "兩個種族贏家要共用同一組 master 表，否則拆兩份 spec；產物只進 staging，裝拆交實體走租約",
+   "programmable": "已足",
+   "priority": "—",
+   "evidence_path": "../../../agentctl/tools/racetest/README.md"
   },
   {
    "id": "7",
@@ -120,12 +120,12 @@
    "id": "10",
    "phase": "借遊戲",
    "step": "臨時測試層裝 → 拍 → 拆",
-   "status": "半工具化",
-   "tool": "`instance/tools/layer_apply.py`、`instance/tools/mo2_cycle_verify.sh`",
-   "gap": "裝前基線、期限、同名升版先還原、收場證據都靠實體手做",
-   "programmable": "值得：「臨時測試層租約」狀態機（候選第 8 類）",
-   "priority": "P1",
-   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/REPLIES-instance.md"
+   "status": "已工具化",
+   "tool": "`agentctl/tools/testlayer/lease.py install｜remove｜check-closeout｜status`（包 `instance/tools/layer_apply.py`；`--apply` 只限實體座位）",
+   "gap": "`--apply` 還沒實機跑過；拍照本身不在租約內",
+   "programmable": "已足；下次借遊戲當首跑驗收",
+   "priority": "—",
+   "evidence_path": "../../../agentctl/tools/testlayer/README.md"
   },
   {
    "id": "11",
@@ -142,23 +142,23 @@
    "id": "12",
    "phase": "借遊戲",
    "step": "F5 真頭閘門（shape 名、頂點數）",
-   "status": "半工具化",
-   "tool": "Sculpt F5 由實體手按；讀回用 houseCARL `housecarl_nif_inspect` 或線夾 `sculpt/compare_export.py`",
-   "gap": "沒有「預期清單 → PASS／FAIL」的一步；按 F5 本身仍人工",
-   "programmable": "值得：小 CLI 讀匯出 NIF 對預期 shape／點數出判定，實體收圖即跑",
-   "priority": "P0",
-   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/REPLIES-2.md"
+   "status": "已工具化",
+   "tool": "`agentctl/tools/f5gate/gate.py check <匯出頭.nif|.zip> --expect <預期.json>`（按 F5 仍由實體手做）",
+   "gap": "按 F5 本身仍人工；每個角色要一份預期檔（`expect` 子命令從已知正確的頭產）",
+   "programmable": "已足",
+   "priority": "—",
+   "evidence_path": "../../../agentctl/tools/f5gate/README.md"
   },
   {
    "id": "13",
    "phase": "借遊戲",
    "step": "收場（stop、關遊戲與 MO2、revert、profile 四檔 sha256、CharGen 匯出搬走、放鎖）",
-   "status": "半工具化",
-   "tool": "face_loop `stop`（存檔／INI 比對）、layer_apply `--revert`、`instance/tools/check_masters.py`",
-   "gap": "四檔回基線、mods 夾無測試層、overwrite 無 `CharGen/Head_*`、鎖 free 要逐項手查；頂層再複查",
-   "programmable": "值得：一支收場複查腳本，吃裝前基線出逐項 PASS／FAIL",
-   "priority": "P0",
-   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/REPLIES-instance.md"
+   "status": "已工具化",
+   "tool": "`agentctl/tools/testlayer/closeout.py snapshot｜check`（`lease.py remove` 自動跑）",
+   "gap": "stop、關遊戲與 MO2、revert、搬 CharGen 匯出、放鎖仍由實體手做；工具只判 PASS／FAIL",
+   "programmable": "已足；成品搬檔（第 20 列）可併進來",
+   "priority": "—",
+   "evidence_path": "../../../agentctl/tools/testlayer/README.md"
   },
   {
    "id": "14",
