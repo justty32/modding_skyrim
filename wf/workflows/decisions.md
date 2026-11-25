@@ -9,20 +9,15 @@
 
 ## Done when
 
-- 下表新增一列，且「決定」「前提」兩欄非空。
+- [decisions.json](decisions.json) 新增一列（放最前），且 `decision`、`premise` 兩欄非空。
 
 ## 記錄（新的在上）
 
-| 日期 | 決定 | 來源（使用者原文或誰定的）| 前提（變了就重看）|
-|------|------|-------------------------|-----------------|
-| 2026-11-22 | **EngineFixes 維持現行官方預設、不改**（`bOverrideMemoryManager`／`bOverrideScaleformAllocator` 照舊 true，`skee64.ini` 不動）：EngineFixes 7.0.20 下 RaceMenu 身體滑桿經使用者實測正常；渡船那次崩潰也與此設定無關 | 使用者 2026-11-22「我試過了，看起來正常。」；依據 [crash-ferry](../../agentctl/handoffs/home-2026-11-22/crash-ferry/REPORT.md)、[bodyslide-morph-deploy](../../agentctl/handoffs/home-2026-11-22/bodyslide-morph-deploy/REPORT.md#未做) | 滑桿連拉後失效、EngineFixes 升版或 plugin 數大增時重看（候選：只改 `bBodyMorphGPUCopy=0`，或兩項改 false） |
-| 2026-11-05 | **暫緩**：projects/darksouls-port、projects/sofia-patch、projects/godot-worldspace-editor（自 10-26 實質閒置）、chim／AI 世界相關研究；不刪資料，等使用者重新指示 | 使用者先前「dark souls, sofia, chim/ai世界都暫緩」；2026-11-05「godot-worldspace-editor也暫緩。」 | 使用者重新指示時重看；原只寫在 NEXT-SESSION（會被覆寫），此為正本 |
-| 2026-11-05 | **恢復主動推進**：agent-bridge 實作 `/screenshot`、`/input` 端點（原未實作、無人追）；model-converter、scene-capture-bridge 同步推進。下場開線才定第一個切片，本日不實作 | 使用者 2026-11-05「agent-bridge的截圖、按鍵功能得做。model-converter,scene-capture-bridge都該同步推進。」 | 下場先讀各 repo README／SESSION-LOG |
-| 2026-11-05 | **過時即刪**取代「搬 archive/、不刪」：封存／done／superseded／history 目錄廢除，場次夾、hub、信件、結案項各有保留期（STRUCTURE local 段） | 使用者 2026-11-05「封存的其實也可以刪掉了。該來把整個repo做瘦身」，照計畫 2026-11-05-slim 建議勾選 | git history 仍完整可取回（不改寫歷史、不 gc）；要改寫歷史縮 pack 時重看 |
-| 2026-10-26 | Tomebound、Spellforge、Dragons Keep **不裝**：modlist 改 `-`，mod 目錄保留（profiles `6784720`） | 使用者 2026-10-26 裁示；施工 `agentctl/handoffs/home-2026-10-26/decide1026/REPORT.md` | 想重裝其中任一件時另開評估線（法術覆寫順序、槽位、中文層） |
-| 2026-10-26 | OBody 黑名單收齊所有 Kurone7 私有身體隨從：Aniya、Melana 補進 `OBody-PrivateBody-Blacklist-2026-10-04` | 使用者 2026-10-26 裁示；同上 | 有人換成帶 `.tri`／要 OBody 形變的身體時重看 |
-| 2026-10-26 | Varinia 永遠是 Coco 的頭髮、不戴假髮：新層 `Varinia-NoWig-Scripts-Dev-2026-10-26` 只拿掉換裝腳本裡「發假髮／戴假髮」兩類行（換衣服照舊），接受偽裝劇情的假髮失效 | 使用者 2026-10-26 裁示；同上 | Varinia 本體更新（pex 換版）要重做這層 |
-| 2026-10-26 | Remiel 兩件怪事（placeatme 複本消失、來源不明的「Done Writing」框）**不追** | 使用者 2026-10-26 裁示；出處 `agentctl/handoffs/home-2026-10-26/remiel/REPORT.md` §6 | 正常遊玩再出現時重看 |
-| 2026-10-26 | model-converter `wf-import` 分支等下次 DSPort 重釘 converter pin 時一起 ff 回 main，同批跑 converter contract 測試 | 使用者 2026-10-26 裁示；出處 `agentctl/handoffs/home-2026-10-26/tidyall/squad/REPORT.md` | DSPort 不再釘 converter 時改成單獨併 |
-| 2026-10-26 | ESL：現役存檔期間不再轉；新周目開檔前做 T1x＋T2（31 支），T3 交 ESLifier 前先做 Linux PoC | 使用者 2026-10-26 裁示；出處 `agentctl/handoffs/home-2026-10-26/shell-esl/REPORT.md` 選項 C／D；Linux PoC 已做（`eslifierpoc`，離線 0 問題） | 開新周目即觸發，照 [新周目 ESL 流程](../../agentctl/docs/new-playthrough-esl-runbook.md) 施工；full 槽逼近 254 時提前重看 |
-| 2026-10-26 | houseCARL fork 的 `main` 與 `fix/dialogue-encoding-lint` 一起 fast-forward 到 CJK 名稱修補＋wf 導入（`f0148dc8`），主 checkout 仍在 `fix/dialogue-encoding-lint`；部署 build 跟著換。取代 10-23「刻意停在 `fix/dialogue-encoding-lint`、不動」 | 使用者 2026-10-26 拍板「快轉兩分支＋換 build」；施工見 `agentctl/handoffs/home-2026-10-26/hcdeploy/REPORT.md` | 只 ff、不 merge／force；兩分支分岔時再裁 |
+已抽到 [decisions.json](decisions.json)（11 列，新的在前），md 不留表的副本。欄位：
+
+- `date`：日期
+- `decision`：決定
+- `source`：來源（使用者原文或誰定的）
+- `premise`：前提（變了就重看）
+
+統計：11 列（2026-11-22 一列、2026-11-05 三列、2026-10-26 七列）；查法見工作流的資料檔說明。

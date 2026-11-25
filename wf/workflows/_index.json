@@ -19,6 +19,9 @@
   "decisions.md": {
     "description": "決策記錄：定了什麼、前提是什麼；想知道為什麼這樣選時進來"
   },
+  "decisions.json": {
+    "description": "decisions.md 的記錄表（wf-table/1：日期、決定、來源、前提）；新增決策寫這裡"
+  },
   "dev-env.md": {
     "description": "開發環境入口：各機器能做什麼、fresh clone 後要做的事、houseCARL 建置；環境問題時進來"
   },
