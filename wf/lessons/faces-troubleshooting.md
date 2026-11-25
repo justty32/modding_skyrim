@@ -14,7 +14,7 @@
 - 兩種族 RACE DATA flags 只差 Playable 位元；Playable 層做了但使用者裁示直接改種族，沒驗。
 - 執行期 `setrace` 指令**不能**當種族實驗（會單向毀掉預烤頭，換回也救不回）。
 
-修法：層 `Yoana-Race-Imperial-Dev-2026-09-11`（NPC_ RNAM=013744，其餘 forward 贏家）。代價：失去該自訂種族的 spells／抗性／技能加成（使用者：隨從強度不是考量）；對話 GetIsRace 全序 0 筆。`Yoana-Outfit-NoWig`（披風假髮）、`Yoana-FaceGen-Match`（補嘴）兩層仍在。
+修法：層 `Yoana-Race-Imperial-Dev-2026-09-11`（NPC_ RNAM=013744，其餘 forward 贏家）。代價：失去該自訂種族的 spells／抗性／技能加成（使用者：隨從強度不是考量）；對話 GetIsRace 全序 0 筆。`Yoana-Outfit-NoWig`（披風假髮）、`Yoana-FaceGen-Match`（補嘴）兩層仍在。NoWig 曾於 2026-09-11 照裁示 37「披風穿回」停用；2026-11-25 第四輪換臉後使用者改口「yoana那塊確實需要這個拿掉假髮的」，裁示 37 作廢、NoWig 重開（換了髮型就要拿掉假髮）。
 
 **How to apply：**
 1. 換臉目標若是**自訂種族**，第一步不是改層，是做 B1「外來頭塞路徑」：零變化＝種族閘門，直接評估改 RNAM；有變化才去比 nif／PNAM。
