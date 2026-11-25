@@ -2,6 +2,9 @@
   "README.md": {
     "description": "實作規劃入口與規劃階梯；寫詳規前讀"
   },
+  "closed.json": {
+    "description": "已結案／被取代的計畫表（wf-table/1：計畫、結果、最後所在 commit），只留最近 10 列；找舊計畫取回點時進來"
+  },
   "poe-skyrim-mapping": {
     "description": "PoE 星盤效果落地 Skyrim 的定案設計與施工計畫（暫凍）；碰星盤計畫時進來",
     "index": "poe-skyrim-mapping/_index.json"

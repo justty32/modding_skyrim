@@ -1,0 +1,52 @@
+{
+ "contract": "wf-table/1",
+ "source": "README.md",
+ "extracted": "2026-11-25",
+ "columns": [
+  "plan",
+  "result",
+  "last_commit"
+ ],
+ "column_labels": {
+  "plan": "計畫",
+  "result": "結果",
+  "last_commit": "最後所在 commit"
+ },
+ "rows": [
+  {
+   "plan": "2026-11-05-slim —— 全 repo 瘦身（刪封存、止增長、測試刪減、清壞連結）",
+   "result": "2026-11-05 結案；C1–C4、待議測試照使用者裁定刪",
+   "last_commit": "`9f68d75`"
+  },
+  {
+   "plan": "mod-library-catalog —— mod 壓縮檔建檔與清理",
+   "result": "L1–L4 完成，2026-10-26 結案；結論在 Mongo `archives.l4_identity`",
+   "last_commit": "`944fc45`"
+  },
+  {
+   "plan": "third-party-mod-pipeline —— 第三方 mod 取得–安裝–驗證流水線",
+   "result": "2026-08-07 結案；P0–P4 完成，Bend Time Rings 端到端實機驗過",
+   "last_commit": "`944fc45`"
+  },
+  {
+   "plan": "consolidation-2026-08-23 —— 工作區統整與四條新線",
+   "result": "2026-08-23 執行完成；四條線落地、profile 改名、Downloads 歸檔",
+   "last_commit": "`944fc45`"
+  },
+  {
+   "plan": "round-2026-08-07-catalog-and-korean —— mod 庫收尾＋韓文站採集",
+   "result": "2026-08-07 執行完成；韓文 inbox 已併入通用 inbox",
+   "last_commit": "`944fc45`"
+  },
+  {
+   "plan": "ai-ingame-qa-loop",
+   "result": "2026-08-02 結案；Phase 0–3 與實機 QA runner 通過",
+   "last_commit": "`944fc45`"
+  },
+  {
+   "plan": "workspace-reorg",
+   "result": "被 consolidation-2026-08-23 取代並刪除",
+   "last_commit": "—"
+  }
+ ]
+}
