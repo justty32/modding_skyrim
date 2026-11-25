@@ -59,7 +59,7 @@ test -d ~/games/mod-organizer-2-skyrimspecialedition && echo 家 || echo 公司
 - **instance**：改 `instance/` 裡不碰實機狀態的東西（工具、文件、repo 設定），回家單交家裡驗（D38）；`profiles` 只讀。
 - **review**：只有公司有（D33），見 [review](review/README.md)。
 
-三個部門座位在公司那台都沒掛過。公司場照 CHOICE 2 由 lead 派代班（Claude Code `line`，或 fsm gpt），代班先讀卡和筆記。要在公司那台第一次掛部門主管，照 D15 要使用者同意。
+`dev` 2026-11-25 在公司那台掛過一次（用第一個帳號，收信回 DONE 正常，已 stop）。公司場照 CHOICE 2 由 lead 派代班（Claude Code `line`，或 fsm gpt），代班先讀卡和筆記。要在公司那台第一次掛部門主管，照 D15 要使用者同意。
 
 ## 公司能驗到哪
 
