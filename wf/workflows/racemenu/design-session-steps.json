@@ -1,0 +1,263 @@
+{
+ "contract": "wf-table/1",
+ "source": "design-session.md",
+ "extracted": "2026-11-25",
+ "columns": [
+  "id",
+  "phase",
+  "step",
+  "status",
+  "tool",
+  "gap",
+  "programmable",
+  "priority",
+  "evidence_path"
+ ],
+ "link_columns": [
+  "evidence_path"
+ ],
+ "rows": [
+  {
+   "id": "1",
+   "phase": "開工",
+   "step": "三問（借遊戲、測試補丁、身形）",
+   "status": "仍人工",
+   "tool": "—",
+   "gap": "問題固定、答案要使用者給",
+   "programmable": "不值得：只做成範本題目（本檔「開工」）",
+   "priority": "—",
+   "evidence_path": "design-session.md#開工十分鐘內"
+  },
+  {
+   "id": "2",
+   "phase": "開工",
+   "step": "寫設計線／支援線交接書",
+   "status": "已工具化",
+   "tool": "`agentctl/tools/brief_lint.py --strict`＋範本 BRIEF-design／BRIEF-support",
+   "gap": "範本照填仍要人判範圍",
+   "programmable": "已足",
+   "priority": "—",
+   "evidence_path": "../../../agentctl/templates/README.md"
+  },
+  {
+   "id": "3",
+   "phase": "前置",
+   "step": "挑基底角色（看臉型）",
+   "status": "半工具化",
+   "tool": "線夾 `gallery/build_gallery.py`（呼叫 head_render）",
+   "gap": "腳本在場次夾，不在 tools/；寫死 donors.json 篩女",
+   "programmable": "值得：升成 tools/ 的名單→manifest→分頁工具（候選第 10 類）",
+   "priority": "P2",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/gallery/README.md"
+  },
+  {
+   "id": "4",
+   "phase": "前置",
+   "step": "NPC 記錄 → jslot 基底",
+   "status": "已工具化",
+   "tool": "`agentctl/tools/npc_face/npc2jslot.py`",
+   "gap": "只轉記錄；FaceGen 雕刻要第 5 步",
+   "programmable": "已足",
+   "priority": "—",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/support/REPORT.md"
+  },
+  {
+   "id": "5",
+   "phase": "前置",
+   "step": "FaceGen 頭雕 → jslot sculpt",
+   "status": "已工具化",
+   "tool": "`agentctl/tools/facegen_sculpt/cli.py`",
+   "gap": "新工具；跨種族、F5 配對基準只驗過 Chloe 一人",
+   "programmable": "已足；下一個角色當回歸",
+   "priority": "—",
+   "evidence_path": "../../../agentctl/tools/facegen_sculpt/README.md"
+  },
+  {
+   "id": "6",
+   "phase": "前置",
+   "step": "自訂種族測試可玩補丁（RACE Playable、FLST、HDPT Playable、種族預設頭眉）",
+   "status": "半工具化",
+   "tool": "線夾 `support/build_s1_esl.py`、`build_s1v2_esl.py`",
+   "gap": "寫死 Kurone 兩種族與 FormID；v1 漏 HDPT 與種族預設，靠 F5 才發現",
+   "programmable": "值得：通用產生器，輸入種族＋要用的部件，一次做完 v2 的全部改動",
+   "priority": "P1",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/support/INSTALL-v2.md"
+  },
+  {
+   "id": "7",
+   "phase": "前置",
+   "step": "看圖工具選測試種族",
+   "status": "已工具化",
+   "tool": "`agentctl/tools/face_loop/cli.py --race … --race-scan N`",
+   "gap": "列座標推估；長期改用 getisrace 掃描定位",
+   "programmable": "小修即可",
+   "priority": "P3",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/REPLIES.md"
+  },
+  {
+   "id": "8",
+   "phase": "協作",
+   "step": "請求／回覆協定（REQUESTS、REPLIES 分主筆）",
+   "status": "仍人工",
+   "tool": "—",
+   "gap": "編號、認領、完成狀態全靠人讀檔",
+   "programmable": "值得：範本＋小 CLI（claim／done／skipped，附件摘要）（候選第 9 類）",
+   "priority": "P2",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-24/PROCEDURE-CANDIDATES-2.md"
+  },
+  {
+   "id": "9",
+   "phase": "協作",
+   "step": "中途改需求（ADDENDUM＋tmux 通知；子 agent 線約定 `… ready` commit）",
+   "status": "仍人工",
+   "tool": "範本 ADDENDUM.md",
+   "gap": "盯 git log 是人工",
+   "programmable": "可選：git log 標題 watcher",
+   "priority": "P3",
+   "evidence_path": "../../../agentctl/templates/ADDENDUM.md"
+  },
+  {
+   "id": "10",
+   "phase": "借遊戲",
+   "step": "臨時測試層裝 → 拍 → 拆",
+   "status": "半工具化",
+   "tool": "`instance/tools/layer_apply.py`、`instance/tools/mo2_cycle_verify.sh`",
+   "gap": "裝前基線、期限、同名升版先還原、收場證據都靠實體手做",
+   "programmable": "值得：「臨時測試層租約」狀態機（候選第 8 類）",
+   "priority": "P1",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/REPLIES-instance.md"
+  },
+  {
+   "id": "11",
+   "phase": "借遊戲",
+   "step": "實體代拍（換種族、F9 載 preset、截圖）",
+   "status": "半工具化",
+   "tool": "`agentctl/tools/face_loop/cli.py`（要滑鼠）；`agentctl/tools/nomouse_loop/`（離線零件，未實測）",
+   "gap": "滑鼠歸使用者時 face_loop 不能用；無滑鼠路線未驗換種族＋重建頭",
+   "programmable": "值得：無滑鼠路線實機試驗（要使用者授權）",
+   "priority": "P1",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/gpt-nomouse/DESIGN.md"
+  },
+  {
+   "id": "12",
+   "phase": "借遊戲",
+   "step": "F5 真頭閘門（shape 名、頂點數）",
+   "status": "半工具化",
+   "tool": "Sculpt F5 由實體手按；讀回用 houseCARL `housecarl_nif_inspect` 或線夾 `sculpt/compare_export.py`",
+   "gap": "沒有「預期清單 → PASS／FAIL」的一步；按 F5 本身仍人工",
+   "programmable": "值得：小 CLI 讀匯出 NIF 對預期 shape／點數出判定，實體收圖即跑",
+   "priority": "P0",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/REPLIES-2.md"
+  },
+  {
+   "id": "13",
+   "phase": "借遊戲",
+   "step": "收場（stop、關遊戲與 MO2、revert、profile 四檔 sha256、CharGen 匯出搬走、放鎖）",
+   "status": "半工具化",
+   "tool": "face_loop `stop`（存檔／INI 比對）、layer_apply `--revert`、`instance/tools/check_masters.py`",
+   "gap": "四檔回基線、mods 夾無測試層、overwrite 無 `CharGen/Head_*`、鎖 free 要逐項手查；頂層再複查",
+   "programmable": "值得：一支收場複查腳本，吃裝前基線出逐項 PASS／FAIL",
+   "priority": "P0",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/REPLIES-instance.md"
+  },
+  {
+   "id": "14",
+   "phase": "離線",
+   "step": "頭部 NIF 離線出圖",
+   "status": "已工具化",
+   "tool": "`agentctl/tools/head_render/cli.py`",
+   "gap": "無法線貼圖、tint 為近似、不套滑桿",
+   "programmable": "已足",
+   "priority": "—",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/offline-render/REPORT.md"
+  },
+  {
+   "id": "15",
+   "phase": "離線",
+   "step": "候選 jslot → 離線預覽（套 NAM9／sculpt 再出圖）",
+   "status": "半工具化",
+   "tool": "線夾 `render_candidate.py`、`sculpt/chloe_sculpt.py preview`",
+   "gap": "滑桿 tri 套用沒進 head_render；腳本在場次夾",
+   "programmable": "值得：head_render 接 tri 套用器＋sculpt，jslot 直接出圖（調查 parts P2）",
+   "priority": "P1",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/offline-survey/REPORT.md"
+  },
+  {
+   "id": "16",
+   "phase": "離線",
+   "step": "滑桿正負方向校準",
+   "status": "半工具化",
+   "tool": "線夾 `eyes/`、`sliders/` 腳本",
+   "gap": "結果未併回 sliders.json",
+   "programmable": "值得：校準腳本升 tools/ 並寫回 sliders.json 的 direction_verified",
+   "priority": "P2",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/sliders/README.md"
+  },
+  {
+   "id": "17",
+   "phase": "離線",
+   "step": "改髮型網格（長度、束點、避肩）",
+   "status": "半工具化",
+   "tool": "線夾 `hair/parody.py`、`hair/clearance.py`",
+   "gap": "只對 Parody 一款；寫 NIF 依賴線夾工具",
+   "programmable": "值得但量大：通用髮束變形＋穿模量測；或等 Outfit Studio 6.2 MCP（要授權下載）",
+   "priority": "P2",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/hair/README.md"
+  },
+  {
+   "id": "18",
+   "phase": "離線",
+   "step": "身形值與穿模量測",
+   "status": "半工具化",
+   "tool": "線夾 `body/contacts.py`；身體滑桿外掛已裝",
+   "gap": "OBody 會清 morph；套 NPC 走 bodyslide 工作流",
+   "programmable": "待定：先看身形試驗的頻率",
+   "priority": "P3",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/body/README.md"
+  },
+  {
+   "id": "19",
+   "phase": "離線",
+   "step": "衣服／裝備／武器",
+   "status": "仍人工",
+   "tool": "—",
+   "gap": "只盤點過素材；建模要 Blender＋PyNifly 或 Outfit Studio MCP，都要授權",
+   "programmable": "待定：使用者說是更遠的一步",
+   "priority": "P3",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/gpt-nomouse/OUTFIT.md"
+  },
+  {
+   "id": "20",
+   "phase": "收尾",
+   "step": "成品圖與匯出頭從 /tmp 搬進線夾",
+   "status": "仍人工",
+   "tool": "—",
+   "gap": "圖片被 .gitignore 擋，/tmp 重開機清",
+   "programmable": "值得：併進第 13 步的收場腳本（搬檔＋列本機路徑）",
+   "priority": "P2",
+   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/REPORT.md"
+  },
+  {
+   "id": "21",
+   "phase": "收尾",
+   "step": "固化成 NPC 臉層",
+   "status": "已工具化",
+   "tool": "`agentctl/tools/npc_face/build_layer.py`",
+   "gap": "本場沒走到；自訂種族還要帶部件與皮膚複本",
+   "programmable": "已足",
+   "priority": "—",
+   "evidence_path": "bake.md"
+  },
+  {
+   "id": "22",
+   "phase": "全程",
+   "step": "額度管理（重置前讓工人有活、重置後收）",
+   "status": "仍人工",
+   "tool": "—",
+   "gap": "要看重置時刻與 slot",
+   "programmable": "不值得：判斷題；寫在 BRIEF 時程",
+   "priority": "—",
+   "evidence_path": "design-session.md#離線優先與額度"
+  }
+ ]
+}

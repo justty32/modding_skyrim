@@ -19,5 +19,11 @@
   },
   "sliders.json": {
     "description": "滑桿語意表（wf-table/1，用 wf/tools/tabledb.py 讀）"
+  },
+  "design-session.md": {
+    "description": "捏人試驗場：派設計線、支援線、實體代拍、離線工具的組織與時間線；派一組線試捏人時進來"
+  },
+  "design-session-steps.json": {
+    "description": "design-session 的已工具化／仍人工逐步對照（wf-table/1，用 wf/tools/tabledb.py 讀）；工具線挑題用"
   }
 }

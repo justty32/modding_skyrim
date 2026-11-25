@@ -24,6 +24,8 @@
 
 下一階段工具與授權清單見計畫 [racemenu-face](../plans/racemenu-face/README.md)。
 
+**要派一整組線做捏人試驗**（設計線＋支援線＋實體代拍＋離線工具，可能借遊戲）→ [design-session](design-session.md)：角色、開工三問、請求協定、借遊戲窗口與收場清單、已工具化／仍人工對照。
+
 ## Done when
 
 依本輪走到哪段而定，開工時寫明：

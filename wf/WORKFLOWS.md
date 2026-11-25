@@ -21,7 +21,7 @@
 | 「改 MO2 profile：裝／移除／改排序」 | profile-change | [workflows/profile-change/README.md](workflows/profile-change/README.md) |
 | 「重烤 BodySlide 身體／服裝」「批次或 headless Build」 | bodyslide | [workflows/bodyslide/README.md](workflows/bodyslide/README.md) —— VFS／preset／衝突→隔離建置→驗證→授權部署 |
 | 「刷這件／這套衣服」「只刷指定 BodySlide 群組」 | bodyslide/outfits | [workflows/bodyslide/outfits.md](workflows/bodyslide/outfits.md) —— 裝備模型路徑→變體與身形→增量試刷→驗收 |
-| 「幫我捏臉」「改某 NPC 的臉」「臉再瘦一點」「套 RaceMenu preset」 | racemenu | [workflows/racemenu/README.md](workflows/racemenu/README.md) —— 需求凍結→jslot 候選（可用）→出圖／截圖確認→固化成 NPC patch 層（未實作）；身形走 bodyslide |
+| 「幫我捏臉」「改某 NPC 的臉」「臉再瘦一點」「套 RaceMenu preset」 | racemenu | [workflows/racemenu/README.md](workflows/racemenu/README.md) —— 需求凍結→jslot 候選（可用）→出圖／截圖確認→固化成 NPC patch 層（未實作）；身形走 bodyslide；派組線試捏人見 [design-session](workflows/racemenu/design-session.md) |
 | 「規劃整合包要玩什麼」 | modpack-planning | [workflows/modpack-planning/README.md](workflows/modpack-planning/README.md) |
 | 「派工人／開一條線去做事」 | aos | [workflows/aos.md](workflows/aos.md) —— 工人用 Claude 系（Opus／Sonnet）或 fsm gpt；codex 2026-11-24 退役（D20）|
 | 「在 aos 樹裡派線（`mod_skyrim` 底下，`main` 或部門座位）」 | aos | [workflows/aos.md](workflows/aos.md) —— 樹與命名、收工、打架點聽誰的；誰管哪塊見 [org/](org/README.md) |
