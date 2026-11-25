@@ -17,7 +17,7 @@ idea → roadmap → 詳規（本夾）→ feature-dev
   目錄型的切線是「環境事實與設計決策／分階段任務／重審／附錄／執行紀錄」。
 - 設計取捨直接寫進計畫本身；本 repo 不另設 `specs/` 夾。
 - 計畫要切成 bite-sized task，每步都有驗證。
-- 落地或被取代後直接 `git rm` 計畫檔（[STRUCTURE](../../STRUCTURE.md) local 段「過時即刪」），活文件裡指向它的連結拿掉；刪除時在下面「已結案／被取代」表留一列：計畫名、結案日、最後 commit hash（可 `git show <hash>:<路徑>` 取回）。表只留最近 10 列。還在維護鏈上的留原地。
+- 落地或被取代後直接 `git rm` 計畫檔（[STRUCTURE](../../STRUCTURE.md) local 段「過時即刪」），活文件裡指向它的連結拿掉；刪除時在 [closed.json](closed.json)（已結案／被取代表）加一列：計畫名、結案日、最後 commit hash（可 `git show <hash>:<路徑>` 取回）。表只留最近 10 列。還在維護鏈上的留原地。
 
 ## 現役計畫
 

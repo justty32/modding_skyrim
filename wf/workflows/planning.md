@@ -10,7 +10,7 @@
 ## Done when
 
 - idea / roadmap：下方對應表多一列，或既有列狀態欄更新。
-- 詳規：[`plans/`](plans/README.md) 底下有一份計畫，含「步驟 / 驗證」段；動工完成後在 plans 的「已結案／被取代」表登記結果。
+- 詳規：[`plans/`](plans/README.md) 底下有一份計畫，含「步驟 / 驗證」段；動工完成後在 plans 的 [closed.json](plans/closed.json)（已結案／被取代表）登記結果。
 
 ## 階段
 

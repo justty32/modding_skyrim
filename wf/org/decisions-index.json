@@ -144,7 +144,7 @@
    "superseded_by": "",
    "summary": "不另開子 daemon：主管掛在 `mod_skyrim`、短名 `instance`／`library`／`dev`；agent 到 50 個以上再議；名字與在哪台只寫在 README 座位表。",
    "defined_in": "decisions.md",
-   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/defs/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/dev/README.md、wf/org/instance/README.md、wf/org/library/README.md、wf/org/places.md、wf/workflows/aos.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/RUNBOOK-seats/redefine-and-align.md、agentctl/aos/defs/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/dev/README.md、wf/org/instance/README.md、wf/org/library/README.md、wf/org/places.md、wf/workflows/aos.md",
    "note": "`mod_skyrim` 是家裡那台；D30 之後公司那台的 daemon 名寫在 sites，座位表註明「表上的 daemon 是家裡那台」。"
   },
   {
@@ -224,7 +224,7 @@
    "superseded_by": "",
    "summary": "已 stop 的部門主管，下一場再 start 不用先問，管理自己做、事後告知。",
    "defined_in": "decisions.md",
-   "cited_in": "agentctl/aos/RUNBOOK-seats.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/lead/README.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/RUNBOOK-seats/mount-and-run.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/lead/README.md",
    "note": ""
   },
   {
@@ -274,7 +274,7 @@
    "superseded_by": "",
    "summary": "三個座位都帶 MCP：`claude_mcp` 跟 stock 一樣（2026-11-24 查是 housecarl、skyrim-qa 兩台）。",
    "defined_in": "decisions-2026-11b.md",
-   "cited_in": "agentctl/aos/RUNBOOK-seats.md、agentctl/aos/defs/README.md、agentctl/aos/defs/seat-dev/README.md、agentctl/aos/defs/seat-instance/README.md、agentctl/aos/defs/seat-library/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/instance/README.md、wf/org/places.md、wf/workflows/common/user.md",
+   "cited_in": "agentctl/aos/RUNBOOK-seats/mount-and-run.md、agentctl/aos/RUNBOOK-seats/redefine-and-align.md、agentctl/aos/defs/README.md、agentctl/aos/defs/seat-dev/README.md、agentctl/aos/defs/seat-instance/README.md、agentctl/aos/defs/seat-library/README.md、wf/org/CHOICES.md、wf/org/README.md、wf/org/instance/README.md、wf/org/places.md、wf/workflows/common/user.md",
    "note": "併入舊 D24（實體帶 houseCARL）；D24 已刪。"
   },
   {
