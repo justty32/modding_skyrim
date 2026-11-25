@@ -175,12 +175,12 @@
    "id": "15",
    "phase": "離線",
    "step": "候選 jslot → 離線預覽（套 NAM9／sculpt 再出圖）",
-   "status": "半工具化",
-   "tool": "線夾 `render_candidate.py`、`sculpt/chloe_sculpt.py preview`",
-   "gap": "滑桿 tri 套用沒進 head_render；腳本在場次夾",
-   "programmable": "值得：head_render 接 tri 套用器＋sculpt，jslot 直接出圖（調查 parts P2）",
+   "status": "已工具化",
+   "tool": "agentctl/tools/jslot_render/cli.py（--race 必填；可 --overlay 唯讀歷史插件）",
+   "gap": "未校準 morph 明列 unresolved；tint 為離線近似，非遊戲材質驗收",
+   "programmable": "已提供一指令頭部件、TRI、sculpt、髮色與 tint 預覽",
    "priority": "P1",
-   "evidence_path": "../../../agentctl/handoffs/home-2026-11-25/miku-face/offline-survey/REPORT.md"
+   "evidence_path": "../../../agentctl/tools/jslot_render/README.md"
   },
   {
    "id": "16",
