@@ -177,6 +177,38 @@ class ObodyTests(unittest.TestCase):
             self.assertEqual(self.run_cli(s2, 'mx')[0], 2)
         self.assertTrue(oc.is_male_set('HIMBO Body') and not oc.is_male_set('CBBE Body'))
 
+    def test_declared_utf16_but_utf8_bom_is_read(self):
+        # CT77SE.xml shape: says UTF-16, is UTF-8 with a BOM; expat refuses it, OBody (pugixml) loads it
+        body = ('<?xml version="1.0" encoding="UTF-16"?>\r\n<SliderPresets><Preset name="Liar Né" set="CBBE Body">'
+                '<SetSlider name="Butt" size="big" value="70"/></Preset></SliderPresets>')
+        f = self.base / 'presets' / 'liar.xml'
+        f.write_bytes(b'\xef\xbb\xbf' + body.encode('utf-8'))
+        with self.assertRaises(ET.ParseError):
+            ET.parse(f)
+        self.assertEqual(oc.read_presets(f)['Liar Né']['sliders'], {('Butt', 'big'): 70.0})
+        # real UTF-16 declared as UTF-8, and BOM-less UTF-16, are decoded from the bytes too
+        (self.base / 'presets' / 'u16.xml').write_bytes(
+            body.replace('UTF-16', 'UTF-8').replace('Liar Né', 'Wide A').encode('utf-16'))
+        (self.base / 'presets' / 'u16le.xml').write_bytes(body.replace('Liar Né', 'Wide B').encode('utf-16-le'))
+        code, r = self.run_cli(self.spec, 'enc')
+        self.assertEqual(code, 0, r)
+        self.assertEqual(r['loaded_presets'], 6)
+        bl = json.loads((self.base / 'enc/SKSE/Plugins/OBody_presetDistributionConfig.json').read_text())[
+            'blacklistedPresetsFromRandomDistribution']
+        for name in ('Liar Né', 'Wide A', 'Wide B'):
+            self.assertIn(name, bl)
+
+    def test_unreadable_preset_file_is_an_error(self):
+        (self.base / 'presets' / 'broken one.xml').write_text('<SliderPresets><Preset name="Half"')
+        (self.base / 'presets' / 'bad bytes.xml').write_bytes(b'<SliderPresets name="\xff\xfe\xfa"/>')
+        code, r = self.run_cli(self.spec, 'broken')
+        self.assertEqual(code, 2)
+        self.assertFalse(r['ok'])
+        self.assertIn('2 preset file(s) unreadable', r['error'])
+        self.assertIn('broken one.xml', r['error'])
+        self.assertIn('bad bytes.xml', r['error'])
+        self.assertFalse((self.base / 'broken').exists())
+
     def test_validate_subset(self):
         self.assertEqual(oc.validate({'npcFormID': {}}, SCHEMA), [])
         self.assertTrue(oc.validate({'unknown': 1}, SCHEMA))

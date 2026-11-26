@@ -9,7 +9,9 @@ and prints a JSON report. Exit 0 ok, 1 validation failed (nothing written), 2 ba
 The `obody` section (inside a bodyslide-rebuild/1 config, or a standalone JSON file):
   base_config   current winning OBody_presetDistributionConfig.json (copied, then edited)
   schema        OBody_presetDistributionConfig_schema.json (validated against; subset of JSON Schema)
-  presets_dirs  SliderPresets directories whose presets OBody will load (to list names)
+  presets_dirs  SliderPresets directories whose presets OBody will load (to list names). Files are
+                decoded like OBody's pugixml (BOM first, not the declared encoding); a file that
+                still fails to parse is listed and exits 2 instead of being skipped.
   presets_file  file name for generated presets (default BSO-OBody-Presets.xml)
   neutral       {"name", "set", "sliders"?} or a list of them: zero presets that stay in the random
                 pool (one per sex). "sliders" names the slider(s) written as 0 (default Breasts);
@@ -62,10 +64,35 @@ class InputError(Exception):
     pass
 
 
+_BOMS = ((b'\xef\xbb\xbf', 'utf-8'), (b'\xff\xfe\x00\x00', 'utf-32-le'), (b'\x00\x00\xfe\xff', 'utf-32-be'),
+         (b'\xff\xfe', 'utf-16-le'), (b'\xfe\xff', 'utf-16-be'))
+_NO_BOM = ((b'<\x00\x00\x00', 'utf-32-le'), (b'\x00\x00\x00<', 'utf-32-be'),
+           (b'<\x00', 'utf-16-le'), (b'\x00<', 'utf-16-be'))
+_DECL_ENCODING = re.compile(r'''\A(\s*<\?xml\b[^>]*?)\s+encoding\s*=\s*(["'])([^"']*)\2''')
+
+
+def xml_text(path: Path) -> str:
+    """Decode an XML file the way OBody's pugixml (encoding_auto) does, not by its declaration.
+
+    A BOM decides; without one, UTF-16/32 is recognised from the bytes of the leading '<'; anything
+    else is UTF-8 (Latin-1 only when declared so). Real files lie: CT77SE.xml says UTF-16 but is
+    UTF-8 with a BOM, which expat rejects while OBody loads it. The declared encoding is dropped so
+    ElementTree parses the decoded text. Raises UnicodeDecodeError when the bytes do not decode."""
+    raw = Path(path).read_bytes()
+    enc = next(((e, len(b)) for b, e in _BOMS if raw.startswith(b)), None)
+    if enc is None:
+        enc = next(((e, 0) for b, e in _NO_BOM if raw.startswith(b)), ('utf-8', 0))
+        m = _DECL_ENCODING.match(raw[:200].decode('latin-1'))
+        if enc[0] == 'utf-8' and m and m.group(3).strip().casefold() in ('latin1', 'latin-1', 'iso-8859-1'):
+            enc = ('latin-1', 0)
+    text = raw[enc[1]:].decode(enc[0])
+    return _DECL_ENCODING.sub(r'\1', text, count=1)
+
+
 def read_presets(path: Path) -> dict:
     """{name: {'set': str, 'sliders': {(slider, size): value}}} from one SliderPresets XML."""
     out = {}
-    root = ET.parse(path).getroot()
+    root = ET.fromstring(xml_text(path))
     for p in root.iter('Preset'):
         sliders = {}
         for s in p.iter('SetSlider'):
@@ -75,18 +102,27 @@ def read_presets(path: Path) -> dict:
 
 
 def load_presets(dirs) -> dict:
-    """Like OBody: top-level *.xml only, clothed file names skipped."""
-    found = {}
+    """Like OBody: top-level *.xml only, clothed file names skipped.
+
+    A file that still does not parse is an error, never a silent skip: OBody (pugixml) is more
+    lenient than ElementTree, so a skipped file can hold presets OBody distributes at random while
+    they are missing from the random blacklist (CT77 SE, 2026-11-26)."""
+    found, bad = {}, []
     for d in dirs:
         for f in sorted(Path(d).glob('*.xml')):
             if any(w in f.name.casefold() for w in CLOTHED):  # OBody sees Data\CalienteTools\...\<name>
                 continue
             try:
-                for name, p in read_presets(f).items():
-                    if not any(w in name.casefold() for w in CLOTHED):
-                        found.setdefault(name, p)
-            except ET.ParseError:
+                presets = read_presets(f)
+            except (ET.ParseError, UnicodeDecodeError) as exc:
+                bad.append(f'{f}: {type(exc).__name__}: {exc}')
                 continue
+            for name, p in presets.items():
+                if not any(w in name.casefold() for w in CLOTHED):
+                    found.setdefault(name, p)
+    if bad:
+        raise InputError(f'{len(bad)} preset file(s) unreadable; OBody may still load them, so their presets '
+                         f'cannot be left out of the random blacklist. Fix or remove: ' + ' | '.join(bad))
     return found
 
 
