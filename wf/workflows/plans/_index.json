@@ -12,5 +12,9 @@
   "racemenu-face": {
     "description": "AI 捏臉第二階段起的派線清單；要派捏臉後續線時進來",
     "index": "racemenu-face/_index.json"
+  },
+  "miku-outfit": {
+    "description": "初音整套（換色、武器、網格、特效、物理）的分階段計畫；做初音服裝或派相關線時進來",
+    "index": "miku-outfit/_index.json"
   }
 }

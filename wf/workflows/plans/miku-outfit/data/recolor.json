@@ -1,0 +1,111 @@
+{
+ "contract": "wf-table/1",
+ "source": "../recolor.md",
+ "extracted": "2026-11-26",
+ "columns": [
+  "id",
+  "piece",
+  "shape",
+  "source_dds",
+  "native",
+  "method",
+  "z_bands",
+  "target",
+  "measured",
+  "handling",
+  "decision"
+ ],
+ "rows": [
+  {
+   "id": "C1",
+   "piece": "shirt",
+   "shape": "Corset",
+   "source_dds": "textures/zzjay/armors/huntressarmor/pirate/armor_d.dds",
+   "native": "4096²",
+   "method": "UV 帶",
+   "z_bands": "77.0–79.4、92.5–95.2",
+   "target": "青綠帶；主片可選轉灰（整片去飽和）",
+   "measured": "帶內 99.75%、帶外 0%、alpha 變 0",
+   "handling": "照帶做；轉灰版另出一份",
+   "decision": "D3、D4"
+  },
+  {
+   "id": "C2",
+   "piece": "shirt",
+   "shape": "touka",
+   "source_dds": "textures/zzjay/armors/huntressarmor/pirate/main.dds",
+   "native": "2048²",
+   "method": "UV 帶",
+   "z_bands": "81.5–84.4、105–110",
+   "target": "青綠袖口與下緣",
+   "measured": "帶內 99.47%、帶外 0.36%（四鏡位可見 14／3／8／0 像素）",
+   "handling": "在閘門門檻內；家裡看真圖，溢處若可見就用 repair 模式排除遠端共用 texel",
+   "decision": "D3"
+  },
+  {
+   "id": "C3",
+   "piece": "shirt",
+   "shape": "0HWUNP0",
+   "source_dds": "嵌身皮膚",
+   "native": "—",
+   "method": "不染",
+   "z_bands": "—",
+   "target": "—",
+   "measured": "—",
+   "handling": "皮膚與法線不染；缺的 FemaleBody_0_msn.dds 回家查",
+   "decision": ""
+  },
+  {
+   "id": "C4",
+   "piece": "skirt",
+   "shape": "Skirt",
+   "source_dds": "textures/actors/character/ok_sela/item/skirt.dds",
+   "native": "2048×512",
+   "method": "UV 帶",
+   "z_bands": "60–63.7（下擺）、81.6–83.0（腰）",
+   "target": "青綠下擺；主片可選轉黑",
+   "measured": "帶內 99.34%、帶外 0%",
+   "handling": "照帶做；轉黑版另出一份",
+   "decision": "D3、D4"
+  },
+  {
+   "id": "C5",
+   "piece": "sleeves",
+   "shape": "Sleeves",
+   "source_dds": "textures/armor/dwarven/DwarvenShield.dds",
+   "native": "2048²",
+   "method": "整張（不用帶）",
+   "z_bands": "—",
+   "target": "三選一：原金屬色／整張轉黑金屬／等拆 UV 再上青綠帶",
+   "measured": "帶狀初版帶外 57.03%；選區 6,709／6,717 texel 與遠端共用",
+   "handling": "帶狀禁用。整張轉黑不會溢色（整片都要變），新路徑不影響原版矮人盾",
+   "decision": "D5"
+  },
+  {
+   "id": "C6",
+   "piece": "boots",
+   "shape": "cynthiashit_def_def",
+   "source_dds": "textures/cynthianilfgaard/cynthia_nilfgaard.dds",
+   "native": "2048²",
+   "method": "UV 帶",
+   "z_bands": "21.5–23.5、43.7–47.6",
+   "target": "青綠靴口與靴帶；主片已近黑",
+   "measured": "帶內 99.55%、帶外 0.27%；左右共用 16,423 texel 未落到遠端",
+   "handling": "照帶做",
+   "decision": "D3"
+  },
+  {
+   "id": "C7",
+   "piece": "ribbon",
+   "shape": "group_0",
+   "source_dds": "textures/shingcheng/armor/leah lilith/ribbon headband.dds",
+   "native": "1024²",
+   "method": "UV 帶＋repair",
+   "z_bands": "128.7–130.7",
+   "target": "青綠邊；或改紅黑仿髮飾",
+   "measured": "初版帶外 75.82%；repair 後正面帶外 0／229、選區保留 71.00%",
+   "handling": "一定要 repair：先排除遠端面用到的 texel，再向外保護 1 texel",
+   "decision": "D6"
+  }
+ ]
+}

@@ -1,0 +1,148 @@
+{
+ "contract": "wf-table/1",
+ "source": "../inventory.md",
+ "extracted": "2026-11-26",
+ "columns": [
+  "id",
+  "part",
+  "kind",
+  "editorid",
+  "armo",
+  "arma",
+  "slots",
+  "fit",
+  "race",
+  "color_trial",
+  "gaps",
+  "candidates",
+  "evidence_path"
+ ],
+ "link_columns": [
+  "evidence_path"
+ ],
+ "rows": [
+  {
+   "id": "shirt",
+   "part": "上衣（寬袖束腰）",
+   "kind": "現有",
+   "editorid": "0_RecorderShirt",
+   "armo": "00D6B3:Recorder Follower Base.esp",
+   "arma": "00183C:Recorder Follower Base.esp",
+   "slots": "ARMO 32；ARMA 32／34／38",
+   "fit": "女性 NIF 三個 shape：0HWUNP0（UNP 嵌身）、Corset、touka；不是 CBBE／3BA，跟 Kurone7 身體不同模型",
+   "race": "ARMA 主種族 DefaultRace，等於 KuroneNord 的 armor race（preview.py 實讀）；額外種族逐項未驗",
+   "color_trial": "Corset、touka 上青綠帶；touka 帶外 0.36%，Corset 0%",
+   "gaps": "有寬袖，不是無袖；沒有領帶；主片不是灰；非色彩槽缺 FemaleBody_0_msn.dds；雙尾交叉：嵌身 80、Corset 25、touka 146 對（修正版髮）",
+   "candidates": "無袖只能改網格（mesh.md）",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/gpt-nomouse/OUTFIT.md"
+  },
+  {
+   "id": "skirt",
+   "part": "裙",
+   "kind": "現有",
+   "editorid": "OK_Sela_SkirtBlue",
+   "armo": "216C6E:OK_Followers.esp",
+   "arma": "216C6D:OK_Followers.esp",
+   "slots": "ARMO 49",
+   "fit": "裙單件、無裸身 shape；CBBE／3BA 未證實",
+   "race": "同上，ARMA 主種族 DefaultRace",
+   "color_trial": "下擺、腰帶兩條青綠帶；帶外 0%",
+   "gaps": "底色藍不是黑；短百褶輪廓與裙長未量；雙尾交叉 232 對",
+   "candidates": "OK_Cheryl_Skirt（同 49，互斥）備案",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/outfit/README.md"
+  },
+  {
+   "id": "sleeves",
+   "part": "袖套（含手）",
+   "kind": "現有",
+   "editorid": "NellArchmageSleeves",
+   "armo": "000010:KuroneNellSecretBase.esp",
+   "arma": "000017:KuroneNellSecretBase.esp",
+   "slots": "ARMO 33（Sleeves＋Hands）",
+   "fit": "Nell Bracers.osp 的 Hands 是 CBBE；袖跟現役體型合身未驗",
+   "race": "同上",
+   "color_trial": "初版帶外 57.03%；6,717 個選區 texel 有 6,709 個被遠端面共用，排除後袖帶也消失，定稿保留金屬原色",
+   "gaps": "金屬色，不是黑布青綠口；要上青綠帶得拆 UV 或分材質",
+   "candidates": "zzzMisfitBracerConjuration（33，互斥）次選",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/outfit/COLOR.md"
+  },
+  {
+   "id": "boots",
+   "part": "長靴",
+   "kind": "現有",
+   "editorid": "0_RecorderBoots",
+   "armo": "00D6B2:Recorder Follower Base.esp",
+   "arma": "00D6AE:Recorder Follower Base.esp",
+   "slots": "ARMO 37；ARMA 37／38",
+   "fit": "女性路徑 longboots/Cynthia；體型未證實",
+   "race": "同上",
+   "color_trial": "靴口、靴帶兩條青綠帶；帶外 0.27%；左右共用 UV 但沒落到遠端",
+   "gaps": "`cynthia_nilfgaard_s.dds` 沒解析到啟用資產，要回家查是不是缺件",
+   "candidates": "",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/outfit/COLOR.md"
+  },
+  {
+   "id": "ribbon",
+   "part": "髮帶",
+   "kind": "現有",
+   "editorid": "_LeahLilith_Circlet_Ribbon21",
+   "armo": "00094A:Shingcheng Follower.esp",
+   "arma": "000953:Shingcheng Follower.esp",
+   "slots": "ARMO 42；同 ARMO 的亞龍／虎人 ChefHat 分支 ARMA 用 31／41（虎人另 43）",
+   "fit": "頭部配件，體型不適用",
+   "race": "人類女性分支 OK；整顆不能當全種族不碰頭髮",
+   "color_trial": "初版帶外 75.82%；保守版正面帶外 0／229，選區保留 71% 著色",
+   "gaps": "單一髮帶，不是左右成對的紅黑方形髮飾；雙尾交叉 367 對，換髮形不變",
+   "candidates": "Ribbon22／23 同模型變體（42，互斥）",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/outfit/COLOR.md"
+  },
+  {
+   "id": "tie",
+   "part": "領帶",
+   "kind": "缺",
+   "gaps": "載入序 editorid 查 tie 只中 panties 等字串；Nexus 名稱查 necktie／neck tie 0 筆",
+   "candidates": "新做：簡單幾何（mesh.md M6）",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/gpt-nomouse/OUTFIT.md"
+  },
+  {
+   "id": "sleeveless",
+   "part": "無袖剪裁",
+   "kind": "缺",
+   "gaps": "RecorderShirt 是寬袖；Nexus 名稱含 sleeveless 的只有原版裝備無袖版",
+   "candidates": "改 RecorderShirt 刪袖（M2）；Miku rock girl outfit for SSE（38675，UNP，授權未查）可看",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/outfit/README.md"
+  },
+  {
+   "id": "ornaments",
+   "part": "左右成對的紅黑方形髮飾",
+   "kind": "缺",
+   "gaps": "三色 Ribbon 都是 42，互斥，不能各戴一顆拼雙飾",
+   "candidates": "新做方塊幾何（M5）；Wa Ribbon - SMP（21281）是和風緞帶不是方形",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/gpt-nomouse/OUTFIT.md"
+  },
+  {
+   "id": "pleats",
+   "part": "黑色短百褶裙輪廓",
+   "kind": "待驗",
+   "gaps": "Sela 裙長、褶線未渲染量；換色只改顏色",
+   "candidates": "看家裡對照圖再決定要不要改網格",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/gpt-nomouse/OUTFIT.md"
+  },
+  {
+   "id": "headset",
+   "part": "耳機麥克風",
+   "kind": "缺（本計畫補列）",
+   "gaps": "原型文件沒列；官方設定圖有。Nexus 名稱查 headset 0 筆",
+   "candidates": "階段 2 新建模；要不要做待使用者決定",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/DESIGN.md"
+  },
+  {
+   "id": "tattoo",
+   "part": "左上臂紅色 01",
+   "kind": "缺（本計畫補列）",
+   "gaps": "原型文件沒列；有袖時看不到",
+   "candidates": "無袖做完後用 RaceMenu overlay 貼",
+   "evidence_path": "../../../../../agentctl/handoffs/home-2026-11-25/miku-face/DESIGN.md"
+  }
+ ]
+}

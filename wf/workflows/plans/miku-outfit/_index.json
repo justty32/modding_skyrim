@@ -1,0 +1,26 @@
+{
+  "README.md": {
+    "description": "初音整套計畫入口：目標、階段依賴、工作量、閘門、建議順序；先讀這份"
+  },
+  "inventory.md": {
+    "description": "現況盤點：五件現成服裝、缺件、種族涵蓋、試色與交叉結論"
+  },
+  "recolor.md": {
+    "description": "階段 A 換色規格與記錄補丁、階段 I 整套穿上（用 outfit-tools）"
+  },
+  "weapons.md": {
+    "description": "階段 W 武器：蔥、麥克風架候選與 WEAP 注意事項"
+  },
+  "mesh.md": {
+    "description": "階段 M 網格：Outfit Studio 6.2 MCP、無袖、貼身、修穿模、髮飾、領帶"
+  },
+  "effects.md": {
+    "description": "階段 E 特效：EffectShader 邊光、光源、武器附魔、發光貼圖"
+  },
+  "physics.md": {
+    "description": "階段 P 物理：現役 FSMP、雙尾、裙、緞帶 SMP"
+  },
+  "data": {
+    "description": "資料檔（wf-table/1）：pieces、recolor、weapons、tasks-near、tasks-later、decisions"
+  }
+}

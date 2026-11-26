@@ -1,0 +1,217 @@
+{
+ "contract": "wf-table/1",
+ "source": "../README.md",
+ "extracted": "2026-11-26",
+ "columns": [
+  "id",
+  "stage",
+  "task",
+  "site",
+  "auth",
+  "verify",
+  "depends",
+  "effort"
+ ],
+ "rows": [
+  {
+   "id": "M0",
+   "stage": "M",
+   "task": "使用者決定 D1（家裡准 Outfit Studio 6.2 下載與 MO2 外沙箱）",
+   "site": "—",
+   "auth": "D1",
+   "verify": "D1 有答案",
+   "depends": "—",
+   "effort": "—"
+  },
+  {
+   "id": "M1",
+   "stage": "M",
+   "task": "os_runner 從骨架補到能起 OS 6.2 `--mcp`（loopback＋llvmpipe GLX），pilot 一次",
+   "site": "家",
+   "auth": "下載安裝 OS 6.2、改沙箱 runner",
+   "verify": "health 回 OK；render_view 出一張圖；stop 後無殘留行程",
+   "depends": "M0",
+   "effort": "1 天"
+  },
+  {
+   "id": "M2",
+   "stage": "M",
+   "task": "RecorderShirt 複本刪袖（無袖剪裁）",
+   "site": "家",
+   "auth": "同 M1",
+   "verify": "新 NIF 頂點數減少、無破洞（正背出圖）；嵌身與 touka 邊界閉合",
+   "depends": "M1",
+   "effort": "1 天"
+  },
+  {
+   "id": "M3",
+   "stage": "M",
+   "task": "五件以 Chloe 的 Kurone7 體重 0／100 身體為參考 conform，修衣×身穿模",
+   "site": "家",
+   "auth": "同 M1",
+   "verify": "擴 surface_audit 加衣物×身體模式；中立姿交叉對 0；_0／_1 兩端都過",
+   "depends": "M1",
+   "effort": "2–3 天"
+  },
+  {
+   "id": "M4",
+   "stage": "M",
+   "task": "修雙尾×衣穿模（Ribbon 367、裙 232、touka 146、嵌身 80、Corset 25 對）",
+   "site": "家",
+   "auth": "同 M1",
+   "verify": "surface_audit 交叉對 0，或使用者看圖接受的值",
+   "depends": "M3",
+   "effort": "1 天"
+  },
+  {
+   "id": "M5",
+   "stage": "M",
+   "task": "方形髮飾：程式產左右兩個方塊 OBJ（紅黑兩材質）→OS 匯入、綁頭骨、存 NIF；新 ARMO 佔一個現役沒衝突的槽（44–48 中挑）",
+   "site": "家",
+   "auth": "同 M1",
+   "verify": "nif_inspect 兩個 shape、權重全在頭骨；槽位不跟頭髮 31、髮帶 42 衝突；跟雙尾交叉 0",
+   "depends": "M1",
+   "effort": "1 天"
+  },
+  {
+   "id": "M6",
+   "stage": "M",
+   "task": "領帶：同 M5 做扁平幾何綁 Spine2／Neck，或等階段 2",
+   "site": "家",
+   "auth": "同 M1",
+   "verify": "同 M5；跟上衣交叉 0",
+   "depends": "M2",
+   "effort": "1 天"
+  },
+  {
+   "id": "M7",
+   "stage": "M",
+   "task": "使用者決定 D2；准了才編 PyNifly（PR #453）＋裝 Blender",
+   "site": "家",
+   "auth": "D2",
+   "verify": "讀寫一個原版 NIF 與一個 TRI 煙霧測試過",
+   "depends": "D2",
+   "effort": "1 天"
+  },
+  {
+   "id": "M8",
+   "stage": "M",
+   "task": "階段 2 新建模（麥克風架 WP5、耳機 D16、重做襯衫）",
+   "site": "家",
+   "auth": "同 M7",
+   "verify": "各件照 M3 的 surface_audit；實機同 A6",
+   "depends": "M7",
+   "effort": "每件 1–3 天"
+  },
+  {
+   "id": "E0",
+   "stage": "E",
+   "task": "查現役有沒有 ENB 或 Community Shaders（影響發光與光源呈現）",
+   "site": "家",
+   "auth": "無",
+   "verify": "遊戲目錄與 modlist 結論寫進計畫",
+   "depends": "—",
+   "effort": "半小時"
+  },
+  {
+   "id": "E1",
+   "stage": "E",
+   "task": "擴 esplib 寫入器：EFSH、MGEF、SPEL、ENCH 四種記錄（照 custom_race 的 esp.py 框架）",
+   "site": "公司",
+   "auth": "無",
+   "verify": "合成 plugin 先紅後綠；讀回欄位一致",
+   "depends": "—",
+   "effort": "1 天"
+  },
+  {
+   "id": "E2",
+   "stage": "E",
+   "task": "青綠邊光 EffectShader 掛成 Chloe 常駐能力（SPEL＋MGEF）",
+   "site": "家",
+   "auth": "使用者當場說（裝層、開遊戲）",
+   "verify": "實機截圖看得到邊光；脫戰、讀檔後還在；不影響別的 NPC",
+   "depends": "E1、I2",
+   "effort": "半天"
+  },
+  {
+   "id": "E3",
+   "stage": "E",
+   "task": "青綠小光源（MGEF 光源欄，同燭光術做法）",
+   "site": "家",
+   "auth": "同 E2",
+   "verify": "實機夜間截圖有光；不閃",
+   "depends": "E1",
+   "effort": "2 小時"
+  },
+  {
+   "id": "E4",
+   "stage": "E",
+   "task": "蔥武器附魔光效（ENCH＋MGEF 的附魔 shader）",
+   "site": "家",
+   "auth": "同 E2",
+   "verify": "實機拔出時有光效；收起消失",
+   "depends": "E1、W4",
+   "effort": "2 小時"
+  },
+  {
+   "id": "E5",
+   "stage": "E",
+   "task": "發光貼圖：複製 NIF、開 glow map 旗標、加 _g.dds；houseCARL nif_set 現在不能改 shader 旗標，要先擴",
+   "site": "公司＋家",
+   "auth": "同 E2",
+   "verify": "合成 NIF 先紅後綠；nif_inspect 讀回旗標與第 3 槽；實機發光",
+   "depends": "E0、A4",
+   "effort": "1–1.5 天"
+  },
+  {
+   "id": "P0",
+   "stage": "P",
+   "task": "確認 FSMP 4.1.1 實際載入（SKSE 日誌），以及 KS Hairdos SSE 1.10 的 Parody 有沒有物理 block",
+   "site": "家",
+   "auth": "無",
+   "verify": "日誌有 hdtSMP64 初始化；Parody NIF 有沒有 HDT 字串寫進計畫",
+   "depends": "—",
+   "effort": "半小時"
+  },
+  {
+   "id": "P1",
+   "stage": "P",
+   "task": "依 D12 做雙尾物理：(a) 查 KS Hairdos - HDT SMP（31300）有沒有 Parody、頂點是否同為 9,480；(b) OS make_physics_chains＋write_physics_xml",
+   "site": "家",
+   "auth": "(a) 下載；(b) 同 M1",
+   "verify": "(a) 拓撲相同才沿用 sculpt；(b) XML 讀得回；實機走跑不爆、不穿肩",
+   "depends": "P0、M1 或下載授權",
+   "effort": "1–3 天"
+  },
+  {
+   "id": "P2",
+   "stage": "P",
+   "task": "身體碰撞：Kurone7 私有身體沒有 SMP 碰撞，要在 XML 補身體碰撞形狀",
+   "site": "家",
+   "auth": "同 M1",
+   "verify": "實機雙尾、裙不穿過身體",
+   "depends": "P1",
+   "effort": "1 天"
+  },
+  {
+   "id": "P3",
+   "stage": "P",
+   "task": "裙物理：Sela 裙加骨鏈與權重、寫 XML",
+   "site": "家",
+   "auth": "同 M1",
+   "verify": "實機走、跑、坐下不爆；離線交叉對不增加",
+   "depends": "M3、P2",
+   "effort": "2 天"
+  },
+  {
+   "id": "P4",
+   "stage": "P",
+   "task": "緞帶／髮帶尾端物理（或換 Wa Ribbon - SMP 21281）",
+   "site": "家",
+   "auth": "同 M1 或下載",
+   "verify": "實機飄動；不穿髮",
+   "depends": "P1",
+   "effort": "半天"
+  }
+ ]
+}

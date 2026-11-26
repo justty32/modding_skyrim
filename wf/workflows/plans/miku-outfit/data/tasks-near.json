@@ -1,0 +1,157 @@
+{
+ "contract": "wf-table/1",
+ "source": "../README.md",
+ "extracted": "2026-11-26",
+ "columns": [
+  "id",
+  "stage",
+  "task",
+  "site",
+  "auth",
+  "verify",
+  "depends",
+  "effort"
+ ],
+ "rows": [
+  {
+   "id": "A1",
+   "stage": "A",
+   "task": "把 recolor.json 七列寫成 outfit-tools 的選區規格 JSON（五件、七個 shape），色值先用 #39C5BB 與 D3 的另一候選各一份",
+   "site": "公司",
+   "auth": "無",
+   "verify": "outfit-tools 的規格檢查在合成資料上 PASS；故意打錯一個 key 要報錯",
+   "depends": "outfit-tools 交付",
+   "effort": "1 小時"
+  },
+  {
+   "id": "A2",
+   "stage": "A",
+   "task": "家裡照 outfit-tools 回家單，用真素材跑七個 shape 到 staging（不裝）",
+   "site": "家",
+   "auth": "無（只寫 staging 白名單）",
+   "verify": "溢色閘門 exit 0；alpha 逐像素相等；帶外顯著變色 ≤0.5%（現有最高 0.36%）；C7 用 repair 後正面帶外 0；每張輸出記 SHA-256",
+   "depends": "A1",
+   "effort": "半天"
+  },
+  {
+   "id": "A3",
+   "stage": "A",
+   "task": "換色 DDS 餵 preview.py／selected_look.py 出正、背、35°、上身特寫",
+   "site": "家",
+   "auth": "無",
+   "verify": "同機位四張對照圖；給使用者看圖答 D3–D6",
+   "depends": "A2",
+   "effort": "1 小時"
+  },
+  {
+   "id": "A4",
+   "stage": "A",
+   "task": "產記錄補丁 ESL：五件 ARMO＋ARMA 複製成新 EDID，貼圖改指換色 DDS（路線照 outfit-tools README）",
+   "site": "家",
+   "auth": "無",
+   "verify": "outfit-tools 閘門：master 都在、FormID 換算對、新貼圖路徑在層裡找得到、race_gear 涵蓋 KuroneNord；check_masters 0 缺",
+   "depends": "A2、D17",
+   "effort": "半天"
+  },
+  {
+   "id": "A5",
+   "stage": "A",
+   "task": "staging 層照 layer_apply manifest 裝進 MO2",
+   "site": "家",
+   "auth": "使用者當場說（裝層）",
+   "verify": "profile 三檔 diff 只多本層；check_masters 0 缺",
+   "depends": "A4",
+   "effort": "半小時"
+  },
+  {
+   "id": "A6",
+   "stage": "A",
+   "task": "實機：玩家 additem 五件穿上，拍正背",
+   "site": "家",
+   "auth": "使用者當場說（開遊戲、持鎖）",
+   "verify": "沒有紫色缺貼圖；跟 A3 離線圖同處同色；收場 profile 稽核綠燈",
+   "depends": "A5",
+   "effort": "1 小時"
+  },
+  {
+   "id": "I1",
+   "stage": "I",
+   "task": "做 OTFT（五件）",
+   "site": "家",
+   "auth": "無",
+   "verify": "ESL 讀回 OTFT 的 INAM 正好五筆、都指新 ARMO",
+   "depends": "A4",
+   "effort": "1 小時"
+  },
+  {
+   "id": "I2",
+   "stage": "I",
+   "task": "依 D8 把 OTFT 掛給 Chloe（DOFT）或只給玩家",
+   "site": "家",
+   "auth": "使用者當場說（裝層、開遊戲）",
+   "verify": "Chloe 生成後身上是新套；原 Recorder 共用皮膚不受影響（body/README 的複本做法）",
+   "depends": "I1、D8",
+   "effort": "半天"
+  },
+  {
+   "id": "W1",
+   "stage": "W",
+   "task": "讀 Skyrim.esm 食材 000669A5 的 EditorID 與 MODL，確認原版 Leek NIF 路徑與 shape",
+   "site": "家",
+   "auth": "無",
+   "verify": "houseCARL nif_inspect 列得出 shape、貼圖路徑、有沒有 collision block",
+   "depends": "D9",
+   "effort": "半小時"
+  },
+  {
+   "id": "W2",
+   "stage": "W",
+   "task": "擴 NIF 工具：根節點平移（握點）；先查工具索引，沒有就擴 houseCARL nif_set 加 set_translation",
+   "site": "公司",
+   "auth": "無",
+   "verify": "合成 NIF 先紅後綠；寫回後 nif_inspect 讀回值一致；原檔不動",
+   "depends": "—",
+   "effort": "半天"
+  },
+  {
+   "id": "W3",
+   "stage": "W",
+   "task": "複製 Leek NIF 到新路徑，縮放（D10 定長度）、移握點、貼圖換青綠",
+   "site": "家",
+   "auth": "無",
+   "verify": "nif_inspect：scale、translation、貼圖路徑都對；head_render 出圖看比例",
+   "depends": "W1、W2",
+   "effort": "半天"
+  },
+  {
+   "id": "W4",
+   "stage": "W",
+   "task": "用 outfit-tools 的 WEAP 路線做蔥武器記錄（動作類型照 D10、關鍵字配套）",
+   "site": "家",
+   "auth": "無",
+   "verify": "ESL 讀回 DNAM 動作類型、MODL 指新 NIF、關鍵字 WeapTypeMace（或對應類型）",
+   "depends": "W3",
+   "effort": "2 小時"
+  },
+  {
+   "id": "W5",
+   "stage": "W",
+   "task": "實機：裝備、揮砍、收刀、丟地、第一人稱",
+   "site": "家",
+   "auth": "使用者當場說（裝層、開遊戲）",
+   "verify": "握點在手心；MCO 動作正常；丟地不穿地、不彈飛（碰撞）；無 CTD",
+   "depends": "W4",
+   "effort": "1 小時"
+  },
+  {
+   "id": "W6",
+   "stage": "W",
+   "task": "保底：現成武器換色改名（weapons.json 的 WP3），跟 W4 同一顆 ESL",
+   "site": "家",
+   "auth": "同 W5",
+   "verify": "同 W4、W5",
+   "depends": "A4",
+   "effort": "半天"
+  }
+ ]
+}

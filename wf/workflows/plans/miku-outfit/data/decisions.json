@@ -1,0 +1,115 @@
+{
+ "contract": "wf-table/1",
+ "source": "../README.md",
+ "extracted": "2026-11-26",
+ "columns": [
+  "id",
+  "question",
+  "recommend",
+  "blocks"
+ ],
+ "rows": [
+  {
+   "id": "D1",
+   "question": "家裡准不准下載 Outfit Studio 6.2，放在 MO2 外的沙箱跑它的 MCP？（公司已答先不要）",
+   "recommend": "准：無袖、貼身、修穿模、髮飾、物理都卡在它",
+   "blocks": "M1–M6、P1(b)–P4"
+  },
+  {
+   "id": "D2",
+   "question": "家裡准不准 pacman 裝 Blender、clone 並自編未合併的 PyNifly Linux 版？",
+   "recommend": "先不准，等階段 1 做完、確定要新建模再准",
+   "blocks": "M7、M8、WP5"
+  },
+  {
+   "id": "D3",
+   "question": "衣服的青綠用 #39C5BB，還是配合髮色深一階的 #278E9A？",
+   "recommend": "兩版都出對照圖再挑；遊戲光會把 #39C5BB 打成近白薄荷",
+   "blocks": "A1–A3"
+  },
+  {
+   "id": "D4",
+   "question": "上衣主片要不要轉灰、裙主片要不要轉黑？",
+   "recommend": "要，比較像初音；各留一份原色版對照",
+   "blocks": "A1–A3"
+  },
+  {
+   "id": "D5",
+   "question": "Nell 袖套保留金屬原色、整張轉黑，還是等拆 UV 後再上青綠帶？",
+   "recommend": "整張轉黑：現在就能做，也不會溢色",
+   "blocks": "A1"
+  },
+  {
+   "id": "D6",
+   "question": "Ribbon21 用保守青綠、改紅黑仿髮飾，還是方形髮飾做好後就拿掉？",
+   "recommend": "先保守青綠；方形髮飾做好後換掉",
+   "blocks": "A1、M5"
+  },
+  {
+   "id": "D7",
+   "question": "換色 DDS 先用無損 RGBA8（大，4096² 的 Corset 含 mip 約 85 MiB），還是壓縮？壓縮要 Pillow 寫 BC3 或另裝 texconv。",
+   "recommend": "實機先試 RGBA8，定稿再壓縮；texconv 要裝時再問",
+   "blocks": "A2、A4"
+  },
+  {
+   "id": "D8",
+   "question": "整套給誰穿：Chloe 的預設服、只給玩家 additem，還是兩者？",
+   "recommend": "先給玩家驗，再掛 Chloe",
+   "blocks": "I2"
+  },
+  {
+   "id": "D9",
+   "question": "武器走哪條：原版 Leek 放大（WP1）、下載高模蔥（WP2）、現成武器換色改名（WP3）？",
+   "recommend": "WP1 為主、WP3 保底；WP1 貼圖太糊再看 WP2",
+   "blocks": "W1–W6"
+  },
+  {
+   "id": "D10",
+   "question": "蔥做成哪種武器、多長？單手錘、單手劍或法杖。",
+   "recommend": "單手錘，約單手錘原長；握柄形狀合，MCO 也有錘動作",
+   "blocks": "W3、W4"
+  },
+  {
+   "id": "D11",
+   "question": "要不要做第二把：麥克風架？",
+   "recommend": "要，但排在 Blender 授權之後（WP5）；想先有就用 WP4 替身",
+   "blocks": "W4、W5"
+  },
+  {
+   "id": "D12",
+   "question": "雙尾物理：下載 KS Hairdos - HDT SMP 版沿用，還是用 Outfit Studio 自己做骨鏈？",
+   "recommend": "先查 31300 有沒有 Parody 且頂點數相同；相同就下載，不同才自做",
+   "blocks": "P1"
+  },
+  {
+   "id": "D13",
+   "question": "要不要另裝 CBPC？",
+   "recommend": "不裝；FSMP 4.1.1 已在，髮、裙、緞帶都用它",
+   "blocks": "P1–P4"
+  },
+  {
+   "id": "D14",
+   "question": "特效做到哪：只做記錄層（邊光、光源、武器附魔），還是也做發光貼圖？",
+   "recommend": "先做記錄層；發光貼圖等網格階段一起改 NIF",
+   "blocks": "E2–E5"
+  },
+  {
+   "id": "D15",
+   "question": "缺件要不要先從 Nexus 撿現成（Miku rock girl 38675、Energetic Idol 175729 等）？",
+   "recommend": "先在家看頁面授權與圖；風格差太多或成人標記的不採",
+   "blocks": "M2、M6"
+  },
+  {
+   "id": "D16",
+   "question": "要不要補耳機麥克風和左上臂的紅色 01？",
+   "recommend": "耳機放階段 2；01 等無袖做完再用 RaceMenu overlay 貼",
+   "blocks": "M8"
+  },
+  {
+   "id": "D17",
+   "question": "新 ESL 名稱與 EDID 前綴",
+   "recommend": "`MikuOutfit-Dev-<日期>`、EDID 前綴 `Miku_`",
+   "blocks": "A4"
+  }
+ ]
+}
