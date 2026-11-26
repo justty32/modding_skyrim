@@ -1,6 +1,6 @@
 # 階段 M 網格：無袖、貼身、修穿模、髮飾、領帶
 
-[計畫入口](README.md)｜工具調查 [offline-survey](../../../../agentctl/handoffs/home-2026-11-25/miku-face/offline-survey/REPORT.md)
+[計畫入口](README.md)｜工具調查 [offline-survey](../../../../agentctl/handoffs/home-2026-11-25/miku-face/offline-survey/REPORT.md)｜生成式 AI 調查 [ai-3d-survey](../../../../agentctl/handoffs/home-2026-11-26/ai-3d-survey/REPORT.md)
 
 換色只能改顏色。無袖剪裁、領帶、方形髮飾、貼合 Chloe 身體、修掉跟雙尾的穿模，都要動網格。
 
@@ -12,12 +12,15 @@
 
 **階段 2：Blender＋自編 PyNifly**。從零建模才需要：麥克風架、耳機、重做襯衫。PyNifly 官方只支援 Windows，Linux 版是 2026-11-20 開、還沒合併的 PR #453。兩樣都是 GPL-3.0，自用沒問題，程式碼不搬進 repo。
 
+**生成式 AI（2026-11-26 調查，使用者「可以併入」）**：開源文字／圖片轉 3D 出的是幾十萬面三角網格，要減面、重展 UV、再烘焙才能進遊戲，所以領帶、方形髮飾、麥克風架改用 agent 寫 Blender 腳本（`blender -b --python`）程序化建模；無袖、蔥是改現有網格，AI 用不上。AI 只用在兩處：耳機麥克風的草模（TripoSG，MIT，約 8 GB VRAM，有 CLI 可限面數），以及在我們自己的 UV 上畫紋理（StableGen，本地，8 GB 起，可沿用既有 UV；TRELLIS.2 texturing 要 24 GB；Meshy Retexture 是雲端付費備援）。PBR 轉 Skyrim：albedo→`_d`，normal→`_n` RGB，roughness 反相進 `_n` alpha。Blender 有官方 MCP（Blender Lab，GPL，可無頭）。AI 綁骨套不了 Skyrim 骨架，權重照舊從身體複製。Hunyuan3D 授權排除 EU、英國、南韓，而且上紋理會重展 UV，不用。各件路線見調查的 `parts.json`，工具比較見 `tools.json`（40 列）。回家先查顯卡 VRAM 與原版 normal 綠通道方向。
+
 **量測**：`hair/phase2/surface_audit.py` 已能量雙尾×衣服的三角交叉。衣服×身體還沒有現成模式，要擴（M3）。
 
 ## 要使用者授權的
 
 - **D1**：家裡下載 Outfit Studio 6.2，放在 MO2 外的沙箱，跑它的 MCP，並改沙箱 runner 開 loopback 與 GLX。公司已答先不要。
 - **D2**：家裡 pacman 裝 Blender，clone 並編譯未合併的 PyNifly 分支。推薦等階段 1 做完再准。
+- 要用 AI 那兩處時：下載 TripoSG、StableGen（含 ComfyUI）的模型權重，各要使用者點頭；雲端備援要帳號＋付費。
 - 做出來的 NIF 要裝進 MO2、要開遊戲，照舊每次當場說。
 
 ## 各件做法
@@ -32,7 +35,7 @@
 
 **M6 領帶**：扁平幾何，綁 Neck／Spine2，做法同 M5。要跟著胸口動，權重比髮飾難，做不好就等階段 2。
 
-**M8 新建模**：麥克風架（[weapons.md](weapons.md) 的 WP5）、耳機（D16）、重做襯衫。每件都照 M3 的量測與 A6 的實機流程驗。
+**M8 新建模**：麥克風架（[weapons.md](weapons.md) 的 WP5，Blender 程序化建模）、耳機（D16，TripoSG 草模→減面→上色）、重做襯衫。每件都照 M3 的量測與 A6 的實機流程驗。
 
 ## 家裡與公司
 

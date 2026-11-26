@@ -1,0 +1,194 @@
+{
+ "contract": "wf-table/1",
+ "source": "../README.md",
+ "extracted": "2026-11-26",
+ "columns": [
+  "id",
+  "phase",
+  "what",
+  "lock_first",
+  "company",
+  "home",
+  "effort",
+  "depends",
+  "revert"
+ ],
+ "rows": [
+  {
+   "id": "S0",
+   "phase": "準備",
+   "what": "記基線：主套件、look_transplant 子套件、nexus_dl、jslot_render、facegen_sculpt 各自的條數／skip／失敗；建 agentctl/tools/lib/__init__.py（空）與 lib/README.md（只寫「共用庫、行為以各模組測試為準」）；TESTS.md 加一行 lib/ 由主套件 discover 掃到",
+   "lock_first": "—",
+   "company": "基線數字寫進施工 REPORT；新增空套件後主套件條數不變",
+   "home": "—",
+   "effort": "1 小時",
+   "depends": "使用者答 Q1",
+   "revert": "刪 lib/ 兩檔、還原 TESTS.md 一行"
+  },
+  {
+   "id": "A1",
+   "phase": "A 鎖行為",
+   "what": "transplant_lib 補特性測試：合成 SE NIF（兩個 BSShaderTextureSet、一個非貼圖 block）跑 rewrite_body_nif，比輸出 sha256 與 block size；合成 plugin（含壓縮 HDPT）跑 rewrite_hdpt_edids／restore_donor_edids，比 sha256；iter_plugin_subrecords 對 XXXX 的行為",
+   "lock_first": "本步就是加測試",
+   "company": "新測試在現行碼上綠；故意改一個位元組（mutate）會紅",
+   "home": "—",
+   "effort": "半天",
+   "depends": "S0",
+   "revert": "刪新測試檔"
+  },
+  {
+   "id": "A2",
+   "phase": "A 鎖行為",
+   "what": "寫入器位元組鎖：PluginWriter 對固定輸入（ESL／ESM、XXXX、三種 sig 排序、新 ID）出的 sha256；custom_race build_layer 對 test_custom_race 既有合成配對表出的 ESP sha256；esp_reforward 既有測試補一條整檔 sha256",
+   "lock_first": "本步就是加測試",
+   "company": "同上，先綠、mutate 紅",
+   "home": "—",
+   "effort": "半天",
+   "depends": "S0",
+   "revert": "刪新測試"
+  },
+  {
+   "id": "A3",
+   "phase": "A 鎖行為",
+   "what": "DDS／白名單／manifest 的差異表測試：同一組 DDS bytes 餵 npc_face read_dds、outfit describe、jslot _missing_alpha，鎖住各自輸出；同一組路徑（MO2、Data、layer_apply、testlayer、/tmp、handoffs、symlink、硬連結）餵三家 guard，鎖住准／拒矩陣；四家 manifest 函式各餵一組輸入鎖 JSON 字面",
+   "lock_first": "本步就是加測試",
+   "company": "矩陣全綠；矩陣本身就是行為差異的文件",
+   "home": "—",
+   "effort": "半天",
+   "depends": "S0",
+   "revert": "刪新測試"
+  },
+  {
+   "id": "B1",
+   "phase": "B 搬共用庫",
+   "what": "lib/nif.py ← npc_face/nifio.py 原封複製；npc_face/nifio.py 改成 sys.modules 別名（見 design.md「舊路徑怎麼留」）；custom_race 的 nif_shape_names 原樣搬進 lib/nif.py 當 shape_names_any_bs，verify.py 改 import",
+   "lock_first": "A3（N4 的 BS 83 檔要收）；既有 test_facegen_install、test_drop_shape",
+   "company": "主套件與 look_transplant 子套件條數同基線、全綠；`npc_face.nifio is lib.nif`；舊 handoff 腳本 import 冒煙（python -c import）",
+   "home": "H1 批：Lydia 真檔、S3 drop_shape、f5gate Chloe、head_render Chloe、custom_race 四輪",
+   "effort": "半天",
+   "depends": "S0、A3",
+   "revert": "git revert 單一 commit（別名檔回原檔）"
+  },
+  {
+   "id": "B2",
+   "phase": "B 搬共用庫",
+   "what": "lib/nifgeom.py ← head_render/geom.py；給 _avobject、_decode_vertices、_skin_partition、_skin_data、_tri_shape_data、_R、NifGeometry._trishape／_nitrishape 公開名（舊名留著）；facegen_sculpt/geometry.py、outfit/recolor.py 改用公開名",
+   "lock_first": "既有 head_render、facegen_sculpt/test_geometry、outfit 測試",
+   "company": "同上；合成頭 PNG sha256 同修前（fix-tools C 的做法）",
+   "home": "H1 批：head_render Chloe、jslot H6 三款 sha、compare H6、gallery；outfit shapes",
+   "effort": "半天",
+   "depends": "B1",
+   "revert": "git revert"
+  },
+  {
+   "id": "B3",
+   "phase": "B 搬共用庫",
+   "what": "lib/dds.py：read_dds＋facetint_gate（原 npc_face）、describe／read_image／mip_chain／write_rgba（原 outfit）、open_rgba(max_side, wrap_errors)（併 head_render load_image 與 outfit read_image，兩個舊名各帶原預設）、sampler_from_image、is_dxt1_sniff（原 jslot 語意）；三處舊模組改成別名或薄包裝",
+   "lock_first": "A3 的 DDS 表；R4 解回逐像素相等",
+   "company": "同上；outfit 合成 run 的換色 DDS sha256 同修前",
+   "home": "H1 批：Lydia DDS gate、jslot H6 tint 圖、outfit recolor（真素材）",
+   "effort": "半天",
+   "depends": "S0、A3",
+   "revert": "git revert"
+  },
+  {
+   "id": "B4",
+   "phase": "B 搬共用庫",
+   "what": "lib/espwrite.py ← npc_face/espwrite.py 原封複製；舊路徑別名。五個呼叫端先不動（別名讓它們照跑），之後逐一改 import，一支一個 commit",
+   "lock_first": "A2 的 PluginWriter sha256",
+   "company": "A2 全綠；racetest 合成 build sha256 同修前",
+   "home": "H1 批：racetest S1v2 md5 43a9c7a4…",
+   "effort": "2 小時＋每支呼叫端 15 分",
+   "depends": "A2",
+   "revert": "git revert"
+  },
+  {
+   "id": "B5",
+   "phase": "B 搬共用庫",
+   "what": "lib/writeguard.py：Guard(allowed=…, denied=…, env=…, per_file=True)；check_target、make_dirs、write_bytes、write_text、replace_into 原樣搬（outfit 版）。outfit 直接用；custom_race 傳自己的根（table.mods、profiles、data；env CUSTOM_RACE_WRITE_ROOTS；resolve 語意）；racetest 傳自己的根、只判 esp＋manifest；npc_face 只用 denied 段",
+   "lock_first": "A3 的准／拒矩陣",
+   "company": "矩陣逐格同修前；outfit／custom_race／racetest 測試全綠",
+   "home": "H2 批：custom_race 四輪（寫 /tmp）、outfit run（寫 staging）、racetest S1v2 build",
+   "effort": "1 天",
+   "depends": "A3",
+   "revert": "git revert（每家一個 commit，可單獨退）"
+  },
+  {
+   "id": "B6",
+   "phase": "B 搬共用庫",
+   "what": "lib/layerapply.py：build_manifest(name, round, mods, modlist, plugins, accept_lf, always_accept_lf, disable_*)；四家 make_manifest 改呼叫它（參數照各家差異）",
+   "lock_first": "A3 的 manifest 字面",
+   "company": "四家輸出 JSON 逐位元組同修前",
+   "home": "H2 批：custom_race 四份 manifest 比對、racetest manifest、lease dry-run",
+   "effort": "半天",
+   "depends": "A3",
+   "revert": "git revert"
+  },
+  {
+   "id": "B7",
+   "phase": "B 搬共用庫",
+   "what": "lib/facegen.py：facegeom／facetint 路徑樣板、slot 6 字串、vfs_key 與 texture_key（兩個各留原語意，不合併）",
+   "lock_first": "既有 facegen_install、jslot2npc、custom_race、outfit 測試",
+   "company": "全綠",
+   "home": "H2 批（跟 B5 同跑）",
+   "effort": "2 小時",
+   "depends": "S0",
+   "revert": "git revert"
+  },
+  {
+   "id": "C1",
+   "phase": "C 收寫入器",
+   "what": "custom_race/esp.py 改走 lib/espwrite：PluginWriter 加 keyword 參數 count_groups（預設 True）、sort_records（預設 True）、text_encoding（預設 cp1252）、allow_xxxx（預設 True）、next_object_id（預設自動）；custom_race 傳 False／False／utf-8／False／0x800；FormID inline 換算改 raw_formid",
+   "lock_first": "A2 的 custom_race ESP sha256",
+   "company": "A2 sha256 不變；PluginWriter 預設值下其他五家 sha256 不變",
+   "home": "H2 批：custom_race 四輪黃金（逐位元組層數 r1 1/4、r2 4/4、aniya 1/1、r4 2/12 不變）、r5／r6 verify",
+   "effort": "1 天",
+   "depends": "B4、A2",
+   "revert": "git revert"
+  },
+  {
+   "id": "C2",
+   "phase": "C 收寫入器（可選）",
+   "what": "lib/esptree.py：esp_reforward_tree 的 parse_tree／serialize／body_of／set_body；transplant_lib/plugin.rewrite_hdpt_edids 改用它；transplant_lib/nif.py 改走 lib/nif 的貼圖 slot 改寫（UTF-8／ASCII 語意要另開參數）",
+   "lock_first": "A1、A2",
+   "company": "A1／A2 sha256 不變",
+   "home": "要 houseCARL 跑一次 transplant.py 對照（目前沒有黃金，見 Q6）",
+   "effort": "1 天",
+   "depends": "B1、A1",
+   "revert": "git revert"
+  },
+  {
+   "id": "E1",
+   "phase": "接續（miku-outfit 計畫）",
+   "what": "特效記錄寫入器（EFSH／MGEF／SPEL／ENCH）建在 lib/espwrite 上，不另起一份",
+   "lock_first": "E1 自己先紅後綠",
+   "company": "合成 plugin 讀回",
+   "home": "見 miku-outfit effects",
+   "effort": "約 1 天（原估）",
+   "depends": "B4（C1 不必等）",
+   "revert": "—"
+  },
+  {
+   "id": "D1",
+   "phase": "D 收尾",
+   "what": "文件同步：agentctl/tools/README.md、TESTS.md、tool-index、CODE_MAP 指標、npc_face 那列職責描述、各工具 README 提到 nifio／espwrite／dds 的地方；跑 toolindex_check、hygiene_check、wf-lint",
+   "lock_first": "—",
+   "company": "lint 不增加問題；toolindex_check 0",
+   "home": "—",
+   "effort": "半天",
+   "depends": "B1–B7（C 可後補）",
+   "revert": "git revert"
+  },
+  {
+   "id": "F1",
+   "phase": "F 拆大檔",
+   "what": "face_loop/cli.py 拆四檔（見 big-files.json）",
+   "lock_first": "先加「改 cli.OVERWRITE 後 slot_path 跟著變」等測試",
+   "company": "test_face_loop 21＋新測試全綠；cli.main --help 字面同",
+   "home": "face_loop run 一輪（要遊戲與鎖，使用者當場說）",
+   "effort": "半天",
+   "depends": "無（可與 B 平行）",
+   "revert": "git revert"
+  }
+ ]
+}

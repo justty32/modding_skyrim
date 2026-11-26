@@ -1,0 +1,145 @@
+{
+ "contract": "wf-table/1",
+ "source": "../README.md",
+ "extracted": "2026-11-26",
+ "columns": [
+  "id",
+  "batch",
+  "name",
+  "cmd",
+  "expect",
+  "steps",
+  "source_path"
+ ],
+ "link_columns": [
+  "source_path"
+ ],
+ "rows": [
+  {
+   "id": "R1",
+   "batch": "H1",
+   "name": "NIF 無損讀寫：Lydia 原版 FaceGen",
+   "cmd": "cd agentctl/tools && python3 -m unittest npc_face.test_facegen_install -v（找得到遊戲 Data 的 BSA 或設 NPC_FACE_SAMPLES）",
+   "expect": "TestRealLydia 不 skip、全綠：parse→serialize 逐位元組、DDS gate PASS",
+   "steps": "B1、B3",
+   "source_path": "../../../../../agentctl/tools/npc_face/test_facegen_install.py"
+  },
+  {
+   "id": "R2",
+   "batch": "H1",
+   "name": "drop_shape 真匯出頭（face-pilot-2 S3）與 s5 真匯出物",
+   "cmd": "python3 -m unittest npc_face.test_drop_shape npc_face.test_facegen_install -v（S3 staging、~/skyrim_mods/test-samples/npc-face/s5 在才跑）",
+   "expect": "不 skip、全綠",
+   "steps": "B1",
+   "source_path": "../../../../../agentctl/tools/npc_face/test_drop_shape.py"
+  },
+  {
+   "id": "R3",
+   "batch": "H1",
+   "name": "f5gate Chloe F5 zip",
+   "cmd": "fix-tools A 回家單第 2 步",
+   "expect": "rc 0；AAA_HPH 3832、AAA_HPH_Brows_HD 371 PASS",
+   "steps": "B1",
+   "source_path": "../../../../../agentctl/handoffs/home-2026-11-26/fix-tools/A/HOME-REQUEST.md"
+  },
+  {
+   "id": "R4",
+   "batch": "H1",
+   "name": "head_render Chloe",
+   "cmd": "fix-tools C 回家單第 1 步與第 5 步後半（O-DETAILS 的 Chloe 指令加 --no-live --textured --sheet）",
+   "expect": "20 條 OK、0 skip；JSON 無 dropped_tris、overwritten；PNG sha256 同 before",
+   "steps": "B1、B2、B3",
+   "source_path": "../../../../../agentctl/handoffs/home-2026-11-26/fix-tools/C/HOME-REQUEST.md"
+  },
+  {
+   "id": "R5",
+   "batch": "H1",
+   "name": "jslot H6 三款＋compare H6",
+   "cmd": "fix-tools C 回家單第 2、4 步（新夾）",
+   "expect": "front.png、q45.png sha256 同 before；report.json 除 preset 路徑外相同；comparison.json 同 before",
+   "steps": "B1、B2、B3",
+   "source_path": "../../../../../agentctl/handoffs/home-2026-11-26/fix-tools/C/HOME-REQUEST.md"
+  },
+  {
+   "id": "R6",
+   "batch": "H1",
+   "name": "miku-face 圖鑑（舊 handoff 腳本走舊 import 路徑）",
+   "cmd": "fix-tools C 回家單第 5 步前半 build_gallery.py",
+   "expect": "跑完、無「越界」「NIF 解析失敗」；逐人圖 sha256 同 before",
+   "steps": "B1、B2（驗舊路徑別名）",
+   "source_path": "../../../../../agentctl/handoffs/home-2026-11-26/fix-tools/C/HOME-REQUEST.md"
+  },
+  {
+   "id": "R7",
+   "batch": "H1",
+   "name": "racetest S1v2 重建",
+   "cmd": "fix-tools A 回家單第 5 步",
+   "expect": "build rc 0、compare rc 0、整檔 md5 43a9c7a46a7a25636ec13116fd319dc5",
+   "steps": "B4、B5、B6、C1（PluginWriter 預設值不變）",
+   "source_path": "../../../../../agentctl/handoffs/home-2026-11-26/fix-tools/A/HOME-REQUEST.md"
+  },
+  {
+   "id": "R8",
+   "batch": "H1",
+   "name": "facegen_sculpt 原版 FaceGeom",
+   "cmd": "FACEGEN_STOCK_DATA=<遊戲 Data> PYTHONPATH=tools python3 -m unittest discover -s tools/facegen_sculpt -p 'test_*.py'（在 agentctl 根）",
+   "expect": "test_baseline 的真檔段不 skip、全綠",
+   "steps": "B1、B2",
+   "source_path": "../../../../../agentctl/tools/TESTS.md"
+  },
+  {
+   "id": "R9",
+   "batch": "H2",
+   "name": "custom_race 四輪黃金",
+   "cmd": "fix-tools B 回家單第 2、3 步（regress_all.sh 新 /tmp 夾＋四輪 --verify-verdicts-only）",
+   "expect": "逐位元組一致層數 r1 1/4、r2 4/4、aniya 1/1、r4 2/12；13 層只差 VERIFY.txt、gate_verdicts_equal 全 true；四份 manifest 比對通過",
+   "steps": "B1、B5、B6、B7、C1",
+   "source_path": "../../../../../agentctl/handoffs/home-2026-11-26/fix-tools/B/HOME-REQUEST.md"
+  },
+  {
+   "id": "R10",
+   "batch": "H2",
+   "name": "custom_race r5／r6 verify 與 old-layers",
+   "cmd": "fix-tools B 回家單第 4、5 步",
+   "expect": "r5 兩層、r6 三層 ALL PASS；old-layers action 同既有檔",
+   "steps": "B1、C1",
+   "source_path": "../../../../../agentctl/handoffs/home-2026-11-26/fix-tools/B/HOME-REQUEST.md"
+  },
+  {
+   "id": "R11",
+   "batch": "H2",
+   "name": "outfit 真素材 staging",
+   "cmd": "outfit-tools 回家單第 3–7 步（before 用現行 main 跑一次、after 用新碼跑一次，各寫新 staging 夾）",
+   "expect": "rc 與 gates 同 before；換色 DDS、ESL sha256 同 before",
+   "steps": "B2、B3、B4、B5、B6",
+   "source_path": "../../../../../agentctl/handoffs/home-2026-11-26/outfit-tools/HOME-REQUEST.md"
+  },
+  {
+   "id": "R12",
+   "batch": "H2",
+   "name": "lease dry-run 與 closeout",
+   "cmd": "fix-tools A 回家單第 3、6 步",
+   "expect": "同該單預期（只讀）",
+   "steps": "B6",
+   "source_path": "../../../../../agentctl/handoffs/home-2026-11-26/fix-tools/A/HOME-REQUEST.md"
+  },
+  {
+   "id": "R13",
+   "batch": "H2",
+   "name": "npc_face build_layer 重建一層",
+   "cmd": "拿 11-22／11-23 已出過的一層（jslot＋匯出頭＋目標 NPC）重跑 build_layer 到新 staging",
+   "expect": "ESP、FaceGen NIF／DDS、兩份 manifest 的 sha256 同 before（before 用現行 main 重跑同一層到另一個新夾）",
+   "steps": "B1、B3、B4、B5、B6、B7",
+   "source_path": "../../../../../wf/workflows/racemenu/bake.md"
+  },
+  {
+   "id": "R14",
+   "batch": "C2 才要",
+   "name": "transplant.py 換臉一輪",
+   "cmd": "要 houseCARL；目前沒有黃金。做 C2 前先在家用現行碼跑一輪留輸出當黃金",
+   "expect": "改後輸出 sha256 同黃金",
+   "steps": "C2",
+   "source_path": "../../../../../agentctl/tools/look_transplant/transplant.py"
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+  "contract": "wf-table/1",
+  "source": "../README.md",
+  "extracted": "2026-11-26",
+  "columns": [
+    "id",
+    "question",
+    "options",
+    "recommend",
+    "answer"
+  ],
+  "rows": [
+    {
+      "id": "Q1",
+      "question": "共用庫放哪、叫什麼？",
+      "options": "(a) agentctl/tools/lib/（nif、nifgeom、dds、espwrite、writeguard、layerapply、facegen）；(b) agentctl/tools/skylib/（名字較不撞）；(c) 塞進 esplib",
+      "recommend": "(a)。各工具開機碼已把 tools/ 放進 sys.path 第 0 位，`import lib.nif` 解到自己的；本機與 instance/tools 都沒有叫 lib 的模組。(c) 不要：esplib 有跨 repo 的 ESPLIB_PATH 契約、README 寫明「不寫 esp」",
+      "answer": "(a) agentctl/tools/lib/：使用者 2026-11-26「都按照推薦。」（頂層提的精簡版）"
+    },
+    {
+      "id": "Q2",
+      "question": "舊路徑（npc_face/nifio.py、npc_face/espwrite.py、npc_face/dds.py、outfit/dds.py、head_render/geom.py）要不要留？",
+      "options": "(a) 永久留成 sys.modules 別名（每檔約 5 行）；(b) 呼叫端改完、回家回歸綠了就刪",
+      "recommend": "(a)。11-25 miku-face 底下約 20 支 handoff 腳本走舊路徑，其中 build_gallery.py 還是 fix-tools C 回家單的回歸步驟；刪了這些紀錄腳本就跑不動",
+      "answer": "(a) 永久別名：使用者 2026-11-26「都按照推薦。」（頂層提的精簡版）"
+    },
+    {
+      "id": "Q3",
+      "question": "三家寫入白名單要不要統一成同一組根？",
+      "options": "(a) 收成一份程式、每家照舊傳自己的根（行為不變）；(b) 統一到最嚴的 outfit 版（racetest、custom_race、npc_face 會多拒 overwrite／layer_apply／testlayer 等，racetest 會多一層逐檔 symlink／硬連結檢查）",
+      "recommend": "(a)。鐵律 1 要求重構行為不變；(b) 算行為變更，要另外點頭（Q4）",
+      "answer": "(a) 一份程式、各家傳自己的根：使用者 2026-11-26「都按照推薦。」（頂層提的精簡版）"
+    },
+    {
+      "id": "Q4",
+      "question": "racetest 與 custom_race 的 staging 內檔（ESP、facegen 複本、meta.ini、obody）目前沒有逐檔 symlink／硬連結檢查；收完 Q3(a) 之後要不要補？",
+      "options": "(a) 補，另開一步、算行為變更、回家跑 R7、R9；(b) 不補",
+      "recommend": "(a)，排在 B5 之後；新層夾本來就要求不存在，實際風險低，但三家一致比較好審",
+      "answer": "本輪不做（精簡版範圍外）；之後照推薦 (a) 另議：使用者 2026-11-26「都按照推薦。」（頂層提的精簡版）"
+    },
+    {
+      "id": "Q5",
+      "question": "custom_race 改走 PluginWriter 時，ESP 位元組要不要維持現狀？差在 HEDR 記錄數（custom_race 不算 GRUP，PluginWriter 與 xEdit 慣例算）、record 排序、CNAM／MAST 編碼（UTF-8 對 cp1252）、超長子記錄（拒對 XXXX）",
+      "options": "(a) 加相容參數，位元組不變，四輪黃金照舊比；(b) 統一成 PluginWriter 寫法，四輪黃金要重錄",
+      "recommend": "(a)。能用現有黃金一次證明沒改壞；要不要改成 (b) 等之後有理由（例如 xEdit 報記錄數錯）再說",
+      "answer": "不用答：C1 本輪不做：使用者 2026-11-26「都按照推薦。」（頂層提的精簡版）"
+    },
+    {
+      "id": "Q6",
+      "question": "transplant_lib（transplant.py 換臉）的 NIF 貼圖改寫與 ESP EDID 改寫要不要收？",
+      "options": "(a) 這輪不收，只在 A1 補特性測試；(b) 收（C2），做之前先在家用 houseCARL 跑一輪留黃金",
+      "recommend": "(a)。它沒有直接測試、黃金測試 11-05 刪了、真流程要 houseCARL；收益只有省約 150 行",
+      "answer": "(a) 不收：使用者 2026-11-26「都按照推薦。」（頂層提的精簡版）"
+    },
+    {
+      "id": "Q7",
+      "question": "movesets/espdb.py（唯讀，與 esplib 重複）要不要改走 esplib？",
+      "options": "(a) 不動；(b) 改走 esplib.Plugin",
+      "recommend": "(a)。movesets 停在 toolify 狀態，espdb 有自己的快取格式，改了要回家跑招式總覽對照",
+      "answer": "(a) 不動：使用者 2026-11-26「都按照推薦。」（頂層提的精簡版）"
+    },
+    {
+      "id": "Q8",
+      "question": "大檔要拆哪些？",
+      "options": "face_loop/cli.py（782 行）、movesets/movecond.py（626 行）；300–600 行的見 big-files.json",
+      "recommend": "只拆 face_loop/cli.py（F1，可與 B 平行）；movecond 不拆；其餘 300–600 行的不拆，或收攏後自然變小",
+      "answer": "本輪不拆；F1 要開遊戲驗，延到家裡有遊戲時：使用者 2026-11-26「都按照推薦。」（頂層提的精簡版）"
+    },
+    {
+      "id": "Q9",
+      "question": "E1（特效記錄寫入器）的位置",
+      "options": "(a) 建在 lib/espwrite（等 B4，約半天後就能開工）；(b) 照 miku-outfit effects.md 現寫的「照 custom_race/esp.py 框架擴 esplib 寫入器」",
+      "recommend": "(a)；effects.md 那句由頂層改成指 lib/espwrite（不在本線範圍）",
+      "answer": "(a) 建在 lib/espwrite：使用者 2026-11-26「都按照推薦。」（頂層提的精簡版）"
+    },
+    {
+      "id": "Q10",
+      "question": "回家回歸怎麼排？",
+      "options": "(a) 兩批：H1（B1–B4 做完，R1–R8）、H2（B5–C1 做完，R9–R13）；(b) 每步都回家一次",
+      "recommend": "(a)。每批開跑前先用現行 main 出 before，再換新碼出 after 比 sha256，不靠 /tmp 舊夾還在不在",
+      "answer": "(a) 兩批（只含本輪步驟）：使用者 2026-11-26「都按照推薦。」（頂層提的精簡版）"
+    }
+  ]
+}

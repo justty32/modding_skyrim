@@ -1,0 +1,287 @@
+{
+ "contract": "wf-table/1",
+ "source": "../README.md",
+ "extracted": "2026-11-26",
+ "columns": [
+  "id",
+  "area",
+  "file",
+  "symbol",
+  "used_by",
+  "tests",
+  "behavior",
+  "step"
+ ],
+ "rows": [
+  {
+   "id": "N1",
+   "area": "NIF 讀寫",
+   "file": "agentctl/tools/npc_face/nifio.py（472 行）",
+   "symbol": "Nif 101–472（drop_shape 394–472）、NifError、TRISHAPE_TYPES、NODE_TYPES、SKIN_INSTANCE_TYPES",
+   "used_by": "f5gate/gate.py、facegen_sculpt/geometry.py、facegen_sculpt/resolve.py、head_render/cli.py、head_render/geom.py、npc_face/facegen_install.py、outfit/recolor.py（只取 TRISHAPE_TYPES）；另有 11-25 miku-face handoff 腳本約 20 支走舊路徑",
+   "tests": "npc_face/test_facegen_install.py（合成＋Lydia 真檔，找不到 Data 就 skip）、npc_face/test_drop_shape.py（16 條，S3 真樣本 skip）；間接：head_render、facegen_sculpt、outfit、f5gate 測試",
+   "behavior": "無損 parse→serialize 逐位元組；只收 20.2.0.7／user 12／BS 100；字串 cp1252＋surrogateescape；幾何等不認得的 block 一律原 bytes；drop_shape 遇版面未知的 block 拒做",
+   "step": "B1：原封搬成 lib/nif.py，舊路徑留別名"
+  },
+  {
+   "id": "N2",
+   "area": "NIF 幾何",
+   "file": "agentctl/tools/head_render/geom.py（428 行）",
+   "symbol": "NifGeometry 202–357、Xf、Mesh、_R、_half、_avobject 124–133、_decode_vertices 136–147、_skin_partition 150–183、_skin_data 186–199、_tri_shape_data 360–387、resolve_skinning、load_meshes、bounds",
+   "used_by": "head_render/cli.py、jslot_render/core.py、jslot_render/cli.py（bounds）、facegen_sculpt/geometry.py（import 6 個底線私有名）、outfit/recolor.py（呼叫 doc._trishape、doc._nitrishape 私有方法）",
+   "tests": "head_render/test_head_render.py（20 條，Chloe 真樣本 skip）、facegen_sculpt/test_geometry.py、outfit/test_outfit.py 間接",
+   "behavior": "建在 nifio 上，解 BSTriShape 頂點描述、half float、蒙皮分割／skin data、NiTriShapeData；其他套件靠私有名耦合",
+   "step": "B2：搬成 lib/nifgeom.py，私有名照舊可 import，另給公開別名；呼叫端改用公開名"
+  },
+  {
+   "id": "N3",
+   "area": "NIF 改寫",
+   "file": "agentctl/tools/look_transplant/transplant_lib/nif.py（95 行）",
+   "symbol": "nif_texture_blocks 9–60、rewrite_body_nif 63–94",
+   "used_by": "look_transplant/transplant_lib/body.py（transplant.py 換臉的身體貼圖私有化）",
+   "tests": "無直接測試（11-05 刪了 characterization golden）",
+   "behavior": "自帶 header walk，同樣只收 BS 100；貼圖路徑讀 UTF-8、寫 ASCII（nifio 是 cp1252）；錯誤丟 HousecarlError；只改 BSShaderTextureSet",
+   "step": "C2（推薦延後，見決定 Q6）；先在 A1 補特性測試"
+  },
+  {
+   "id": "N4",
+   "area": "NIF 讀",
+   "file": "agentctl/tools/look_transplant/custom_race/verify.py",
+   "symbol": "nif_shape_names 29–59、SHAPE_TYPES 26",
+   "used_by": "custom_race verify（G 閘門比 shape 名）",
+   "tests": "look_transplant/tests/test_custom_race.py；家：四輪黃金",
+   "behavior": "只要版本 20.2.0.7，BS 不限（≥103 讀 4 個 export string）→ 收 LE（BS 83）檔，nifio 會拒；shape 型別含 BSSubIndexTriShape／BSDynamicTriShape、不含 NiTriStrips；字串 cp1252 嚴格解",
+   "step": "B1：原樣搬進 lib/nif.py 當獨立函式 shape_names_any_bs，不改走 Nif（會拒 BS 83）"
+  },
+  {
+   "id": "N5",
+   "area": "NIF 讀（範圍外）",
+   "file": "tools/bodyslide_mesh_check.py（母 repo，554 行）；projects/darksouls-port/tools/nif_bounds.py 等；projects/model-converter/nif2gltf",
+   "symbol": "read_nif_header 88–135、read_shape 等",
+   "used_by": "母 repo BodySlide 驗收；子專案",
+   "tests": "tools/test_bodyslide_mesh_check.py",
+   "behavior": "公開母 repo 不能 import private 的 agentctl；子專案各自獨立",
+   "step": "不收"
+  },
+  {
+   "id": "D1",
+   "area": "DDS header",
+   "file": "agentctl/tools/npc_face/dds.py（117 行）",
+   "symbol": "read_dds 58–83、DdsInfo、top_mip_bytes 86–91、facetint_gate 94–117",
+   "used_by": "npc_face/facegen_install.py",
+   "tests": "npc_face/test_facegen_install.py（make_dds 也被 test_build_layer、test_drop_shape、test_export_weight 共用）",
+   "behavior": "只讀 header、不解像素：驗 magic＋header size 124；FourCC 表 DXT1/3/5、ATI1/2、BC4U/5U；DX10 讀 DXGI（BC1–BC7、RGBA32）；未壓縮看 DDPF_RGB＋alpha 旗標或 alpha mask；facetint_gate 是 FaceTint 專用判準",
+   "step": "B3：搬進 lib/dds.py（header 段）"
+  },
+  {
+   "id": "D2",
+   "area": "DDS 讀／寫",
+   "file": "agentctl/tools/outfit/dds.py（68 行）",
+   "symbol": "read_image 21–29、describe 32–39、mip_chain 42–49、write_rgba 52–68",
+   "used_by": "outfit/recolor.py、outfit/cli.py",
+   "tests": "outfit/test_outfit.py（R4 解回逐像素相等）",
+   "behavior": "解像素交給 Pillow（取最上層 mip、轉 RGBA，例外包成 DDSError）；describe 是另一份迷你 header：不驗 header size、不看 DDPF_FOURCC 旗標、FourCC 全 0 回 uncompressed、size 回 [w,h]，輸出進換色報告；write_rgba 是全區唯一的 DDS 寫出（A8R8G8B8 未壓縮＋BOX mip 鏈）",
+   "step": "B3：搬進 lib/dds.py；describe 原樣保留（報告字面靠它），不併進 read_dds"
+  },
+  {
+   "id": "D3",
+   "area": "DDS 讀",
+   "file": "agentctl/tools/head_render/assets.py（123 行）",
+   "symbol": "load_image 101–110、sampler_from_image 113–123",
+   "used_by": "head_render/cli.py、jslot_render/cli.py",
+   "tests": "head_render/test_head_render.py、jslot_render/test_jslot_render.py",
+   "behavior": "Pillow 解、轉 RGBA，最長邊 > max_side（1024）用 LANCZOS 縮；不包例外（Pillow 原例外往上丟）",
+   "step": "B3：lib/dds.open_rgba(data, max_side=None, wrap_errors=False)，兩個舊名各帶自己的預設"
+  },
+  {
+   "id": "D4",
+   "area": "DDS 嗅格式",
+   "file": "agentctl/tools/jslot_render/cli.py",
+   "symbol": "_missing_alpha 27–32",
+   "used_by": "jslot_render tint_image",
+   "tests": "jslot_render/test_jslot_render.py（alpha 警告三分支）",
+   "behavior": "只看 offset 84–88 是不是 DXT1（不檢 DDPF_FOURCC、不驗 header），否則 Pillow getbands",
+   "step": "B3：改呼叫 lib/dds 的同語意函式；字面照舊"
+  },
+  {
+   "id": "E1",
+   "area": "ESP 新寫",
+   "file": "agentctl/tools/npc_face/espwrite.py（152 行）",
+   "symbol": "PluginWriter 71–152、sub 39–46、join、zstring、record_bytes 58–63、group_bytes 66–68、TOP_ORDER",
+   "used_by": "npc_face/jslot2npc.py、npc_face/trigger/build_trigger_esp.py、outfit/records.py、racetest/build.py、nomouse_loop/build.py；測試 fixture：facegen_sculpt/test_convert、test_resolve、npc_face/test_npc2jslot、racetest/test_racetest",
+   "tests": "npc_face/test_jslot2npc.py（ESL 寫入器段）；家：racetest S1v2 整檔 md5",
+   "behavior": "從零寫：TES4 HEDR 1.71、記錄數＝record＋GRUP、nextObjectId＝下一個新 ID；CNAM／SNAM／MAST 用 cp1252；MAST 重複或 >254 拒；ESL 新 ID 限 0x800–0xFFF；GRUP 照 Skyrim.esm 頂層順序、組內依 FormID 排序；子記錄 >65535 自動 XXXX；不寫壓縮；CELL／WRLD／DIAL 拒",
+   "step": "B4：搬成 lib/espwrite.py；這已經是五家共用的那一份"
+  },
+  {
+   "id": "E2",
+   "area": "ESP 新寫",
+   "file": "agentctl/tools/look_transplant/custom_race/esp.py（307 行）",
+   "symbol": "sub 42–45、rec_bytes 48–49、grup 52–54、build_layer 266–307；FormID 換算 inline 三處（165、223、252 行）",
+   "used_by": "custom_race build／run",
+   "tests": "look_transplant/tests/test_custom_race.py；家：四輪黃金 regress_all、r5／r6 verify",
+   "behavior": "自組 TES4：旗標固定 0x200；HEDR 記錄數只算 record（不含 GRUP）；nextObjectId 固定 0x800；CNAM／SNAM／MAST 用 UTF-8；子記錄 >65535 直接拒；record 照 targets 順序（不排序）；固定 NPC_ 組再 ARMA 組",
+   "step": "C1：改走 lib/espwrite，加相容參數讓位元組不變（見決定 Q5）"
+  },
+  {
+   "id": "E3",
+   "area": "ESP 改寫",
+   "file": "agentctl/tools/look_transplant/transplant_lib/plugin.py（153 行）",
+   "symbol": "iter_plugin_subrecords 32–65、rewrite_hdpt_edids 68–119、plugin_identities 12–29、restore_donor_edids 122–152",
+   "used_by": "look_transplant/transplant_lib/process.py（transplant.py）",
+   "tests": "無直接測試",
+   "behavior": "自帶唯讀 walker（與 esplib 重複，不驗解壓長度）；原地改 HDPT EDID、重算 GRUP 大小、壓縮 record 用 zlib 預設等級重壓；EDID 寫 UTF-8",
+   "step": "C2（推薦延後）；A1 補特性測試"
+  },
+  {
+   "id": "E4",
+   "area": "ESP 改寫",
+   "file": "agentctl/tools/esp_reforward_tree.py（99 行）＋esp_reforward.py（219 行）",
+   "symbol": "parse_tree 18–37、serialize 40–50、body_of 61–70、set_body 73–75、subs_raw 78–90、join_subs 93–99；rewrite_tes4 86–104、parse_formkey 44–48、raw_formid 51–58",
+   "used_by": "esp_reforward.py（拔 master 保留自製層）",
+   "tests": "test_esp_reforward.py（CLI 端到端 6 條）",
+   "behavior": "位元組樹解析／重組；解壓驗長度；重壓 zlib 預設等級；子記錄遇 XXXX 拒、>65535 拒；MAST 改名 cp1252",
+   "step": "C2：與 E3 共用 lib/esptree.py（可選）"
+  },
+  {
+   "id": "E5",
+   "area": "ESP 讀（不是寫入器）",
+   "file": "agentctl/tools/movesets/espdb.py（221 行）",
+   "symbol": "parse 101–187、strings 73–89、dec 92–98",
+   "used_by": "movesets/movecond.py、build_movesets_all.py、test_scan_eval.py",
+   "tests": "movesets/test_scan_eval.py",
+   "behavior": "唯讀；自帶 GRUP walker 與 .strings 讀取，與 esplib 重複；有自己的 JSON 快取格式。movesets 底下沒有 ESP 寫入器",
+   "step": "不收（movesets 停在 toolify 狀態；見決定 Q7）"
+  },
+  {
+   "id": "E6",
+   "area": "ESP 讀（範圍外）",
+   "file": "instance/tools/check_masters.py（tes4_masters 134 起）、reverify_checks.py 214；mod-library/l10n/tools 二十多支",
+   "symbol": "各自的 TES4 讀寫",
+   "used_by": "instance 驗 master；中文層建層",
+   "tests": "instance/tools/test_*.py",
+   "behavior": "別的 repo；check_masters 自足、不 import agentctl；l10n 的遷移另有計畫（tool-index「中文層建層」列）",
+   "step": "不收"
+  },
+  {
+   "id": "E7",
+   "area": "ESP 測試 fixture",
+   "file": "agentctl/tools/esplib/_testfixture.py、movesets/_fixture.py",
+   "symbol": "TES4／GRUP 組法",
+   "used_by": "只給測試",
+   "tests": "—",
+   "behavior": "測試用最小寫法",
+   "step": "不收"
+  },
+  {
+   "id": "W1",
+   "area": "寫入白名單",
+   "file": "agentctl/tools/outfit/paths.py（145 行）",
+   "symbol": "denied_roots 51–60、allowed_write_roots 63–66、guard_write 74–83、check_target 86–100、make_dirs 103–110、write_bytes 113–118、replace_into 121–141、write_text",
+   "used_by": "outfit 全部寫檔",
+   "tests": "outfit/test_outfit.py（白名單、symlink、硬連結、暫存檔＋os.replace）",
+   "behavior": "准：~/skyrim_mods、tempdir、/tmp、agentctl/handoffs、$OUTFIT_WRITE_ROOTS；拒：MO2 整棵（$MO2_DIR）、$MO2_MODS_DIR、遊戲 Data（$SKYRIM_DATA）、layer_apply 備份根、testlayer 租約根；每個檔都 realpath 判、末段 symlink 拒、硬連結拒、同夾暫存檔 O_EXCL＋os.replace；env 每次呼叫才讀",
+   "step": "B5：搬成 lib/writeguard.py，根清單由呼叫端給"
+  },
+  {
+   "id": "W2",
+   "area": "寫入白名單",
+   "file": "agentctl/tools/look_transplant/custom_race/cli.py（405 行）",
+   "symbol": "check_target 36–50、write_text 59–65、_replace_into 68–88、allowed_write_roots 91–96、guard_write 99–110",
+   "used_by": "custom_race 所有 --out 文字檔；--staging 只判根",
+   "tests": "look_transplant/tests/test_custom_race.py",
+   "behavior": "symlink／硬連結／暫存＋replace 與 outfit 同一套寫法（outfit/paths.py 檔頭：白名單照 custom_race＋racetest 合併）；差在：拒的根取自配對表 mods／data（預設寫死家機路徑）＋mods 旁的 profiles，不拒 overwrite、layer_apply、testlayer；env 名 CUSTOM_RACE_WRITE_ROOTS；用 Path.resolve；只有文字版——staging 內的 ESP、facegen 複本、meta.ini、obody 檔直接寫，沒有逐檔判",
+   "step": "B5：改呼叫 lib/writeguard，傳自己的根清單（行為不變）"
+  },
+  {
+   "id": "W3",
+   "area": "寫入白名單",
+   "file": "agentctl/tools/racetest/build.py（537 行）",
+   "symbol": "_under 178–180、out_roots 192–196、resolve_paths 199–218、layer_apply_root、testlayer_root",
+   "used_by": "racetest build",
+   "tests": "racetest/test_racetest.py（拒 layer_apply／testlayer 根）",
+   "behavior": "准：~/skyrim_mods、tempdir、$RACETEST_OUT_ROOTS（沒有 /tmp 字面、沒有 handoffs）；拒：MO2 mods、MO2 夾、layer_apply、testlayer；只判 esp 與 manifest 兩個路徑；沒有 symlink／硬連結防護；manifest 不准放進 mod 夾",
+   "step": "B5：改呼叫 lib/writeguard（行為不變）；補 symlink 防護另案（決定 Q4）"
+  },
+  {
+   "id": "W4",
+   "area": "寫入白名單",
+   "file": "agentctl/tools/npc_face/facegen_install.py、npc_face/jslot2npc.py",
+   "symbol": "FORBIDDEN_ROOTS 80–83、_forbidden 125–133；refuse_live_path 419–422（facegen_sculpt/cli.py 也用）",
+   "used_by": "facegen_install、build_layer、jslot2npc、facegen_sculpt",
+   "tests": "npc_face/test_facegen_install.py（拒寫 MO2）",
+   "behavior": "黑名單式：只拒寫死的家機 MO2 夾與 Data（abspath＋realpath 都比）；沒有白名單",
+   "step": "B5：改走 lib/writeguard 的拒寫段（只拒、不加白名單＝行為不變）"
+  },
+  {
+   "id": "W5",
+   "area": "寫入白名單",
+   "file": "agentctl/tools/nomouse_loop/build.py、nomouse_loop/drive.py",
+   "symbol": "ROOT 是 symlink 或 resolve 不等就拒",
+   "used_by": "nomouse_loop（試驗）",
+   "tests": "nomouse_loop/test_nomouse.py",
+   "behavior": "固定單一根",
+   "step": "不收（試驗工具）"
+  },
+  {
+   "id": "X1",
+   "area": "FormKey 解析",
+   "file": "agentctl/tools/esplib/formid.py FormKey.parse 28–37；custom_race/pairs.py parse_fk 23–33；npc_face/facegen_install.py parse_target 96–103；esp_reforward.py parse_formkey 44–48；outfit/spec.py _fk、racetest/build.py _fk",
+   "symbol": "五種",
+   "used_by": "各自 CLI",
+   "tests": "各自測試",
+   "behavior": "esplib：1–8 位 hex、三種寫法、截成 24 位；pairs：恰 6 位、回 (plugin, local)；facegen_install：1–8 位、>0xFFFFFF 拒（不截）；reforward：只切冒號、不驗副檔名、截 24 位、回 (local, plugin)；outfit／racetest 已包 esplib 只換錯誤類別",
+   "step": "不統一解析（錯誤訊息與接受範圍是各工具契約）；只收 FormKey→raw 換算（X2）"
+  },
+  {
+   "id": "X2",
+   "area": "FormKey→raw",
+   "file": "agentctl/tools/npc_face/espwrite.py raw_formid 101–102；esp_reforward.py raw_formid 51–58；custom_race/esp.py inline 165／223／252",
+   "symbol": "三份",
+   "used_by": "寫入器",
+   "tests": "同各自",
+   "behavior": "espwrite：不在 MAST 就拒；reforward：可指本檔；custom_race：list.index 小寫比對",
+   "step": "C1 時一起改走 PluginWriter.raw_formid"
+  },
+  {
+   "id": "X3",
+   "area": "layer_apply manifest 草稿",
+   "file": "agentctl/tools/custom_race/install.py make_manifest 20–42；outfit/install.py make_manifest 11–18；racetest/build.py manifest 475–484；npc_face/build_layer.py layer_apply_manifest 95–106；母 repo tools/bodyslide_rebuild.py 296、352",
+   "symbol": "五份 layer-apply/1",
+   "used_by": "各自 run／build",
+   "tests": "各自（custom_race 四份 manifest 比對、racetest manifest）",
+   "behavior": "欄位同（mods／modlist top／plugins end）；差：racetest 一律帶 accept_lf（可能空串列），outfit／custom_race 有才帶；custom_race 多層、disable_mods／disable_plugins；build_layer 用 before 錨點、name 小寫截 60、round 固定 r1",
+   "step": "B6：lib/layerapply.py 組字典，參數照各家；JSON 逐位元組比"
+  },
+  {
+   "id": "X4",
+   "area": "FaceGen 路徑",
+   "file": "agentctl/tools/npc_face/facegen_install.py facegen_paths 106–112、vfs_key 115–122；npc_face/jslot2npc.py facegen_paths 101–106；custom_race/esp.py FACEGEOM／FACETINT 29–30；outfit/recolor.py texture_key 48–52",
+   "symbol": "四份",
+   "used_by": "npc_face、custom_race、outfit",
+   "tests": "各自",
+   "behavior": "facegeom／facetint 樣板同；facegen_install 多回 slot 6 反斜線字串；vfs_key 先 strip 空白、空字串會變 textures/，texture_key 空字串回空",
+   "step": "B7：lib/facegen.py，兩個 key 函式各留原語意"
+  },
+  {
+   "id": "X5",
+   "area": "大小寫不敏感找檔",
+   "file": "agentctl/tools/head_render/assets.py _ci_find 29–45；custom_race/pairs.py find_ci 40–48；outfit/verify.py find_ci 43–53；movesets/oar_scan.py find_ci 37；instance/tools/whichmod_vfs.py ci_resolve 74",
+   "symbol": "五份",
+   "used_by": "資產讀取",
+   "tests": "各自",
+   "behavior": "head_render／outfit：每段取第一個符合、找不到回 None；custom_race：每段必須恰一個、否則丟 FileNotFoundError；whichmod：所有大小寫變體都展開",
+   "step": "不收（語意不同；見風險）"
+  },
+  {
+   "id": "X6",
+   "area": "sys.path 開機",
+   "file": "agentctl/tools/約 60 支非測試檔",
+   "symbol": "sys.path.insert(0, TOOLS) 等",
+   "used_by": "—",
+   "tests": "—",
+   "behavior": "各自推 TOOLS／instance/tools",
+   "step": "不收；lib/ 放 TOOLS 下，現有開機碼已涵蓋"
+  }
+ ]
+}

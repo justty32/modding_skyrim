@@ -1,0 +1,168 @@
+{
+ "contract": "wf-table/1",
+ "source": "../README.md",
+ "extracted": "2026-11-26",
+ "columns": [
+  "file",
+  "lines",
+  "verdict",
+  "how",
+  "risk"
+ ],
+ "rows": [
+  {
+   "file": "agentctl/tools/face_loop/cli.py",
+   "lines": "782",
+   "verdict": "拆（F1）",
+   "how": "按檔內既有分段切四檔：guard.py（資源、鎖、保護 75–113）、game.py（遊戲內小動作 117–218＋open/close_racemenu、load_preset 401–438）、session.py（session 與 slot 222–280）、frame.py（frame_world／frame_menu／_pick_save 440–524）；cli.py 留常數、cmd_*、main，約 330 行",
+   "risk": "測試直接改 cli.OVERWRITE 並呼叫 cli.place_slot／retract_slot／slot_path／guard_compare：搬走的函式若在自己模組讀 OVERWRITE，測試的覆寫就失效。做法：常數留 cli，搬走的函式從 cli 取（或改成參數），cli 照舊 re-export 被測試用到的名字；先加一條「改 cli.OVERWRITE 後 slot_path 跟著變」的測試鎖住"
+  },
+  {
+   "file": "agentctl/tools/movesets/movecond.py",
+   "lines": "626",
+   "verdict": "暫不拆（推薦）",
+   "how": "若要拆：翻白話段（kw_desc、oar_atom、oar_render、dar_*、summarize 97–410）切 movecond_text.py，movecond 留資料、閘門、build",
+   "risk": "import 時就跑 PLAN = load_plan()（讀 MODS 夾與 stances-plan.csv）；test_scan_eval 直接覆寫 M.rec、M.run_scan、M.cell_sources，翻白話段靠模組全域 rec 查表，切開後覆寫失效；四支 movesets 工具 import 它。movesets 停在 toolify 狀態、近期沒人改，拆的風險大於收益"
+  },
+  {
+   "file": "agentctl/tools/facegen_sculpt/resolve.py",
+   "lines": "594",
+   "verdict": "不拆；公開化",
+   "how": "單一職責（resolve_npc）。jslot_render/core.py import 它的私有名 _effective_parts、_morphs、_text、_asset_path：給公開別名即可",
+   "risk": "下次加功能就會過 600，屆時把核對段（_static_comparison、_unmatched_consumer、_read_part）切 resolve_checks.py"
+  },
+  {
+   "file": "agentctl/tools/outfit/records.py",
+   "lines": "577",
+   "verdict": "可拆，排在 E1 之後",
+   "how": "值型別與 decode／encode（60–198）切 outfit/fields.py，Builder 留",
+   "risk": "E1 會動寫入器，等 B4／C1 定了再拆，免得同一檔連改兩次"
+  },
+  {
+   "file": "agentctl/tools/racetest/build.py",
+   "lines": "537",
+   "verdict": "收攏後自然變小",
+   "how": "白名單段（176–220）走 lib/writeguard、manifest（475–484）走 lib/layerapply，約剩 480",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/bodyslide_scope_scan.py",
+   "lines": "509",
+   "verdict": "不拆",
+   "how": "已分「純函式／I-O」兩段",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/npc_face/nifio.py",
+   "lines": "472",
+   "verdict": "整檔搬 lib/nif.py，不拆",
+   "how": "drop_shape 的 ref 版面表（312–392）若再長可切 lib/nif_refs.py",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/npc_face/jslot2npc.py",
+   "lines": "463",
+   "verdict": "不拆檔",
+   "how": "plan_patch 一個函式 217 行（187–403），要拆是拆函式，等下次改它時做",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/facegen_sculpt/geometry.py",
+   "lines": "460",
+   "verdict": "不拆",
+   "how": "B2 後改 import lib/nifgeom 的公開名",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/outfit/recolor.py",
+   "lines": "447",
+   "verdict": "不拆",
+   "how": "run() 176 行；B2 後 nif_shapes 改呼叫公開方法",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/head_render/geom.py",
+   "lines": "428",
+   "verdict": "整檔搬 lib/nifgeom.py，不拆",
+   "how": "—",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/npc_face/facegen_install.py",
+   "lines": "427",
+   "verdict": "收攏後變小",
+   "how": "_forbidden、facegen_paths、vfs_key 走 lib（B5、B7）",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/outfit/verify.py、outfit/spec.py",
+   "lines": "423",
+   "verdict": "不拆",
+   "how": "各 400 出頭、單一職責",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/look_transplant/custom_race/cli.py",
+   "lines": "405",
+   "verdict": "收攏後變小",
+   "how": "白名單＋寫檔 36–110 走 lib/writeguard，約剩 330",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/look_transplant/custom_race/checks.py、esp.py",
+   "lines": "372",
+   "verdict": "不拆",
+   "how": "esp.py 寫入段走 lib/espwrite 後約剩 280",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/movesets/build_movesets_all.py、force_gates.py、apply_force.py、oar_eval.py",
+   "lines": "415",
+   "verdict": "不拆",
+   "how": "movesets 凍結",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/menu_drive.py、presence/presence.py、runtime_log_window.py",
+   "lines": "434",
+   "verdict": "不拆",
+   "how": "單一 CLI，範圍外",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/testlayer/closeout.py、lease.py",
+   "lines": "412",
+   "verdict": "不拆",
+   "how": "—",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/facegen_sculpt/calibration/stock_parts.py、baseline.py、capture.py",
+   "lines": "434",
+   "verdict": "不拆",
+   "how": "—",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/esplib/core.py",
+   "lines": "364",
+   "verdict": "不拆",
+   "how": "跨 repo 契約（ESPLIB_PATH），不動",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/crash_triage/winestacks.py",
+   "lines": "307",
+   "verdict": "不拆",
+   "how": "在 gdb 裡 source 的單檔，拆了 gdb 端 import 會壞",
+   "risk": "—"
+  },
+  {
+   "file": "agentctl/tools/outfit/test_outfit.py、look_transplant/tests/test_custom_race.py",
+   "lines": "1098",
+   "verdict": "暫不拆",
+   "how": "測試檔；拆了要改 TESTS.md 與 discover 路徑，收益小",
+   "risk": "—"
+  }
+ ]
+}

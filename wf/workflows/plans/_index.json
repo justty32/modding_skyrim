@@ -16,5 +16,9 @@
   "miku-outfit": {
     "description": "初音整套（換色、武器、網格、特效、物理）的分階段計畫；做初音服裝或派相關線時進來",
     "index": "miku-outfit/_index.json"
+  },
+  "tools-lib-refactor": {
+    "description": "agentctl/tools 的 NIF、DDS、ESP 寫入、白名單、manifest 重複收成 tools/lib/ 的分步計畫；動共用庫或派重構線時進來",
+    "index": "tools-lib-refactor/_index.json"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "README.md": {
+    "description": "agentctl/tools 共用庫收攏計畫入口：盤點結論、檔案、先後順序、工作量、待決題；先讀這份"
+  },
+  "design.md": {
+    "description": "目標結構（tools/lib/ 各模組來源）、每步通則、舊路徑別名做法、公司／回家驗證方法、風險、大檔結論"
+  },
+  "data": {
+    "description": "資料檔（wf-table/1）：inventory（重複盤點）、steps（分步）、home-regress（回家黃金回歸）、big-files（大檔拆不拆）、decisions（待決 Q1–Q10）"
+  }
+}
