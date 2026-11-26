@@ -3,3 +3,7 @@
 
 # Shell scripts are executed by bash (WSL); keep LF in the working tree.
 *.sh text eol=lf
+
+# Executable .py (shebang) are run directly by WSL; keep LF. Blobs are LF.
+/tools/check_submodule_pins.py text eol=lf
+/wf/tools/tabledb.py text eol=lf
