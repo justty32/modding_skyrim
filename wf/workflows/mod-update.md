@@ -17,14 +17,14 @@
 
 ### 查證與隔離比對
 
-1. **查證**：`housecarl_update_status` 讀本地快取拿 `id#fileid`，餵 `housecarl_nexus_check_updates` 對檔案級確認（版本字串比較會騙人，多檔頁要對準確的 fileid）；`changelog=true` 讀更新內容。版本比較判不出就標 UNKNOWN，不硬猜（lessons/housecarl-and-tools 的 version-compare 節）。
+1. **查證**：`housecarl_update_status` 讀本地快取拿 `id#fileid`，餵 `housecarl_nexus_check_updates` 對檔案級確認（版本字串比較會騙人，多檔頁要對準確的 fileid）；`changelog=true` 讀更新內容。版本比較判不出就標 UNKNOWN，不硬猜（lessons/mod-library-cleanup-safety 的 version-compare 節）。
 2. **隔離安裝**：新版裝進**新的 MO2 資料夾**，不覆寫舊版；FOMOD 件先跑 `instance/tools/fomod/` 工具鏈，選項對照舊版 fomod-choices／audit 結果逐項核對（照抄選項要重跑軟依賴稽核）。
 3. **比對**：plugin 有變 → houseCARL 比 record 數／FormID 集合／masters（拓撲比對是同版與相容的真閘門，API 版號不是）；純素材 → 檔案清單＋md5 抽樣。比對結果決定衍生物哪些要重做。
 ### 後置清單（逐項勾）
 
 4. 衍生物重做：
-   - [ ] **SEQ／BSA 重打包**：該 mod 若在重打包 SEQ 的 BSA 清單內，更新後要重做（lessons/mo2-profiles 的 game-rewrites 節）。
-   - [ ] **中文層**：同名覆蓋的 zh 層先跑拓撲比對，落後就以新本體 esp 為載體重搬字串，不拿舊 zh esp 出貨（lessons/translation-and-zh 的 zh-carrier 節）。
+   - [ ] **SEQ／BSA 重打包**：該 mod 若在重打包 SEQ 的 BSA 清單內，更新後要重做（lessons/mo2-auto-rewrites 的 game-rewrites 節）。
+   - [ ] **中文層**：同名覆蓋的 zh 層先跑拓撲比對，落後就以新本體 esp 為載體重搬字串，不拿舊 zh esp 出貨（lessons/zh-layer-version-and-carrier 的 zh-carrier 節）。
    - [ ] **facegen／換臉層**：素材更新會改 FormID、HDPT；有 Look-From 層的要重驗 facegen 對應。
    - [ ] **LOD**：查 `DynDOLOD.esp`／`Occlusion.esp` 的 master 是否釘住此 mod，有就排 LOD 重跑。
    - [ ] **補丁與下游 master**：`check_masters.py` 掃誰依賴舊版 plugin；ESL 化／FormID 重排的升版要全套 addon 跟著換。

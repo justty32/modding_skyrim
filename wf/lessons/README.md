@@ -13,46 +13,55 @@
 <!-- wf-nav -->
 | 檔案 | 主題 | 條數 |
 |---|---|---|
-| [user-preferences](user-preferences.md) | 使用者偏好與邊界 | 10 |
-| [dispatch-roles](dispatch-roles.md) | 調度：頂層角色與誰來做 | 4 |
+| [user-preferences](user-preferences.md) | 使用者偏好與邊界 | 7 |
+| [user-intent-and-pacing](user-intent-and-pacing.md) | 使用者偏好：讀懂他的話與施工節奏 | 3 |
+| [dispatch-roles](dispatch-roles.md) | 調度：頂層角色與誰來做 | 2 |
 | [dispatch-delegation](dispatch-delegation.md) | 調度：模型分級與委派給誰 | 6 |
 | [dispatch-leads-and-line-discipline](dispatch-leads-and-line-discipline.md) | 調度：領隊與線的運作紀律 | 6 |
-| [dispatch-handoffs](dispatch-handoffs.md) | 調度：交接書與查證 | 8 |
-| [dispatch-cli-agents](dispatch-cli-agents.md) | 調度：驅動 codex／tmux（codex 2026-11-24 退役，留作紀錄）| 5 |
-| [process-throttling](process-throttling.md) | 行程限流與別線行程的分寸 | 2 |
-| [locks-screen-and-game](locks-screen-and-game.md) | 鎖、螢幕與開遊戲 | 8 |
+| [dispatch-handoffs](dispatch-handoffs.md) | 調度：交接書 | 5 |
+| [dispatch-evidence-and-reports](dispatch-evidence-and-reports.md) | 調度：收線查證與報告證據 | 4 |
+| [dispatch-cli-agents](dispatch-cli-agents.md) | 調度：驅動 CLI agent／tmux 與多線護欄 | 3 |
+| [aos-tree-onboarding-and-leading](aos-tree-onboarding-and-leading.md) | aos 樹：接入與帶隊（gate、信、定義、sol、pin 與 push） | 13 |
+| [locks-screen-and-game](locks-screen-and-game.md) | 鎖與開遊戲 | 5 |
+| [screen-and-user-presence](screen-and-user-presence.md) | 螢幕使用權：使用者在場與同機 session | 2 |
+| [this-machine](this-machine.md) | 本機環境特性（shell、行程、限流） | 6 |
+| [tool-portability](tool-portability.md) | 自製工具：repo 根推導、乾淨 clone 驗證、合法輸入不喊錯、改名規則順序 | 3 |
 | [repos-layout-and-remotes](repos-layout-and-remotes.md) | 版控：repo 佈局、remote 與 push | 5 |
 | [git-commit-hygiene](git-commit-hygiene.md) | 版控：commit、pathspec 與工作樹 | 5 |
-| [artifact-hygiene-and-ignores](artifact-hygiene-and-ignores.md) | 版控：產物衛生、.gitignore 與刪除前的掃描 | 6 |
-| [docs-organization](docs-organization.md) | 文件整理：封存、拆檔與頁面歸屬 | 5 |
+| [artifact-hygiene-and-ignores](artifact-hygiene-and-ignores.md) | 版控：產物衛生與 .gitignore | 5 |
+| [deletion-safety](deletion-safety.md) | 刪除前的檢查：入站連結與家目錄級刪除 | 2 |
+| [docs-organization](docs-organization.md) | 文件整理：刪過時、拆檔與頁面歸屬 | 4 |
 | [wf-kernel](wf-kernel.md) | wf 骨架（kernel）與工具形態 | 2 |
-| [mo2-profiles](mo2-profiles.md) | MO2 profile 三檔：還原、並行編輯與遊戲改寫 | 6 |
-| [mo2-behavior-quirks](mo2-behavior-quirks.md) | MO2 本體行為坑（首次啟動、幽靈 profile、靜默失效） | 6 |
-| [mod-install-audit](mod-install-audit.md) | 裝／拔 mod 的稽核（裝前評估、安裝包對帳、FOMOD、同概念兄弟、LOD master、照抄選項的軟依賴） | 6 |
-| [mod-library-bookkeeping](mod-library-bookkeeping.md) | mod 庫帳務、暫存與清理安全（身分辨識、欄位可信度、破壞性動作） | 6 |
-| [asset-and-engine-loading](asset-and-engine-loading.md) | 素材存在性診斷與引擎載檔／runtime 狀態機制 | 4 |
-| [housecarl-and-tools](housecarl-and-tools.md) | houseCARL 本體與其 Nexus／bridge 端點的坑 | 6 |
+| [mo2-profiles](mo2-profiles.md) | MO2 profile：還原、回寫與並行編輯 | 4 |
+| [mo2-auto-rewrites](mo2-auto-rewrites.md) | MO2／遊戲自動改寫：load order、plugins.txt、雜目錄與幽靈 profile | 4 |
+| [mo2-behavior-quirks](mo2-behavior-quirks.md) | MO2 本體行為坑（首次啟動、CC 落點、overlay、靜默失效） | 4 |
+| [mod-install-audit](mod-install-audit.md) | 裝 mod 的稽核（裝前評估、安裝包對帳、FOMOD） | 3 |
+| [mod-removal-and-soft-deps](mod-removal-and-soft-deps.md) | 拔 mod 與隱性依賴（同概念兄弟、LOD master、照抄選項的軟依賴） | 3 |
+| [mod-library-bookkeeping](mod-library-bookkeeping.md) | mod 庫帳務：身分辨識與欄位可信度 | 2 |
+| [mod-library-cleanup-safety](mod-library-cleanup-safety.md) | mod 庫清理與刪除安全 | 5 |
+| [nexus-download-ops](nexus-download-ops.md) | Nexus 下載自動化（profile 複本、CDP、file_id、並行） | 3 |
+| [housecarl-and-tools](housecarl-and-tools.md) | houseCARL 工具坑（Nexus 欄位、寫入與複製語意）與 agent-bridge | 5 |
 | [housecarl-on-linux](housecarl-on-linux.md) | houseCARL 在 Linux 的平台坑（路徑、環境變數、鏡像、靜默錯答） | 4 |
 | [xedit-dyndolod-and-lod](xedit-dyndolod-and-lod.md) | xEdit、DynDOLOD 與 LOD 前置 | 3 |
+| [asset-and-engine-loading](asset-and-engine-loading.md) | 素材存在性診斷與引擎載檔／runtime 狀態機制 | 4 |
 | [plugin-bsa-and-script-formats](plugin-bsa-and-script-formats.md) | plugin／BSA／腳本的格式事實與量測陷阱 | 6 |
-| [tool-portability](tool-portability.md) | 自製工具：repo 根推導、乾淨 clone 驗證、合法輸入不喊錯 | 2 |
-| [this-machine](this-machine.md) | 本機環境特性（shell、行程、工具差異） | 4 |
 | [faces-look-transplant](faces-look-transplant.md) | 臉：換臉流程與工具 | 4 |
-| [faces-facegen-consistency](faces-facegen-consistency.md) | 臉：facegen 與頭部件一致性規則（大媽臉／素臉真因） | 6 |
-| [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：排錯與升級 | 8 |
+| [faces-facegen-consistency](faces-facegen-consistency.md) | 臉：facegen 與頭部件一致性規則（大媽臉／素臉真因） | 4 |
+| [faces-facegen-paths-and-loading](faces-facegen-paths-and-loading.md) | 臉：facegen 沒生效（存檔快取、漏裝、自訂種族、路徑、升級） | 4 |
 | [faces-racemenu-runtime](faces-racemenu-runtime.md) | 臉：RaceMenu 實機匯出頭、脖縫與體型、遊戲內取景 | 4 |
-| [animation-oar](animation-oar.md) | 動畫與 OAR | 6 |
-| [crash-dll-and-scripts](crash-dll-and-scripts.md) | CTD：SKSE DLL 與腳本 | 8 |
-| [crash-data-and-assets](crash-data-and-assets.md) | CTD：資料層與素材 | 6 |
+| [faces-troubleshooting](faces-troubleshooting.md) | 臉與身體：裝備、身體與部署狀態排錯 | 4 |
+| [animation-oar](animation-oar.md) | 動畫與 OAR | 5 |
+| [crash-dll-and-scripts](crash-dll-and-scripts.md) | CTD：SKSE DLL 與腳本 | 5 |
+| [crash-data-and-assets](crash-data-and-assets.md) | CTD：資料層與素材 | 5 |
+| [crash-log-reading-and-attribution](crash-log-reading-and-attribution.md) | CTD：crash log 讀法與歸因陷阱 | 3 |
 | [gameplay-bugs](gameplay-bugs.md) | 遊戲行為異常（非崩潰）的歸因 | 7 |
-| [translation-and-zh](translation-and-zh.md) | 中文層部署 gate 與引擎的字串機制 | 6 |
-| [zh-policy-and-naming](zh-policy-and-naming.md) | 中文層政策：翻不翻、繁簡與命名 | 4 |
-| [zh-tooling-and-scans](zh-tooling-and-scans.md) | 中文層工具與掃描（zhport、靜態掃描、QA checker） | 5 |
+| [translation-and-zh](translation-and-zh.md) | 中文層部署 gate 與引擎的字串機制 | 3 |
+| [zh-layer-version-and-carrier](zh-layer-version-and-carrier.md) | 中文層對版與載體型態 | 2 |
+| [zh-policy-and-naming](zh-policy-and-naming.md) | 中文層政策：翻不翻、繁簡與命名 | 3 |
+| [zh-tooling-and-scans](zh-tooling-and-scans.md) | 中文層工具與掃描（zhport、靜態掃描、QA checker） | 3 |
 | [project-decisions](project-decisions.md) | 專案裁示與開發／驗證流程的嚴謹度 | 6 |
 | [map-port-and-world-conflicts](map-port-and-world-conflicts.md) | 地圖移植的引擎限制與世界／內容衝突 | 5 |
-| [nexus-download-ops](nexus-download-ops.md) | Nexus 下載自動化（profile 複本、CDP、file_id、並行） | 4 |
 | [porting-and-modforge](porting-and-modforge.md) | 資產移植與 ModForge 能力邊界 | 3 |
-| [aos-tree-onboarding-and-leading](aos-tree-onboarding-and-leading.md) | aos 樹：接入與帶隊（gate、信、定義、sol、pin 與 push） | 13 |
 
 ## 新增規則
 

@@ -2,83 +2,69 @@
 
 [lessons 索引](README.md)
 
-> 2026-11-24 起 codex 退役，見 D20（[user.md](../workflows/common/user.md) 2026-11-24 段）；下面派 codex 的做法只留作舊線紀錄，現行工人用 Claude 系或 fsm gpt。
-
-現行分工與子 agent 規則只依 [team-model](../../agentctl/docs/team-model.md)；歷史預設路由／配額不覆蓋 11-07 裁示。
+現行分工與子 agent 規則只依 [team-model](../../agentctl/docs/team-model.md)（codex 2026-11-24 退役，D20；fsm gpt 端點分工 D29，[decisions-2026-11b](../org/decisions-2026-11b.md)）；下列原話裡的「codex gpt-sol」照現行選型讀成 fsm gpt 的 sol 端點或 Claude 系工人。
 
 ## model-tiers-and-headcount
 
-> 使用者定的模型分級（S/A/B/C/D、GPT 消耗下移兩級）、角色三層、選人判準；2026-09-25 起 GPT 沒退，A 級是 Opus 5.5／gpt-6-astra／gpt-6-sol（原 type: user）
+> 使用者定的模型分級、角色三層、選人判準、context 管理、信箱分層與執行速度，全文已收進 team-model；本條只留指標與使用者原話
 
-2026-08-30 使用者定調「依用途分配團隊與角色」的模型，正式文件在 agentctl/docs/（team-model.md 第二／五／七節、team-model/plans.md、team-model/speed-and-driving.md）。使用者說**不用上網查方案**。
+2026-08-30 使用者定調「依用途分配團隊與角色」，並說**不用上網查方案**。現行全文：角色三層 [team-model/roles.md](../../agentctl/docs/team-model/roles.md)、聰明度分級 [intelligence-tiers.md](../../agentctl/docs/team-model/intelligence-tiers.md)、消耗速度與選人判準 [team-model.md](../../agentctl/docs/team-model.md) 第三、四節（gpt-sol 是 A 級腦、C 級消耗的「性價比之神」）、context 管理 [context.md](../../agentctl/docs/team-model/context.md)、執行速度與逐模型指揮心得 [speed-and-driving.md](../../agentctl/docs/team-model/speed-and-driving.md)（使用者有時要求「幾小時內完成」，排時程依各模型速度）、方案 [plans.md](../../agentctl/docs/team-model/plans.md)。
 
 2026-09-25 使用者當場說的「隊伍無上限」只限那一輪，並明說不要記成通則；今日子 agent 數量依每線 BRIEF 上限，配額往下不倍增。
 
-**角色三層**：頂層 agent（接指令、開團隊、傳達、協調使用者也會用的資源——HID／螢幕／CPU／硬碟／網路；資源使用權源頭是使用者）**通常 Opus 就夠**，某些情況 Sonnet 也行——頂層只轉達調度，比領導笨是正常的；頂層**可以有自己的輔助者 agent**（例如 Sonnet 查資料／盤點／事實查證），不經團隊領導、不算團隊 headcount，數量使用者指定，沒指定默認兩個。團隊領導＝計畫制定者，依難度用 **Fable 或 Opus**，**不建議 gpt-sol**（另一套體系、跟頂層溝通不便）；領導負擔重（計畫＋指揮＋匯報）所以 Opus 是最低標準，但若「制定計畫」分給某個成員，領導 Sonnet 也可；codex 可管理自己的子 agent，角色與跨體系成本依現行 team-model。工人依難度、內容、**使用者給的 headcount** 開，便宜 AI（gpt-sol／terra／luna）在這層大量用，但要算溝通成本（inbox 協議也有摩擦）與**領導的管理上限**（開太多管不動）；每線 BRIEF 必寫子 agent 數量上限，與本機程序／直屬配額分開記，配額往下不倍增。
-
-**聰明度（總分，之後會按用途細分）**：S＝Fable；A＝Opus（軟體工程）、gpt-sol（各方面，軟體工程算 B+）；B＝Opus（軟體工程之外）；C＝gpt-terra、Sonnet；D＝gpt-luna。分級以 Claude 收費為基準，往下補 E/F 很正常（terra/luna 消耗 E/F；DeepSeek 更低）。
-**消耗速度**：Claude 系列與聰明度成正比；GPT 系列整體下移兩級——gpt-sol A 級腦、C 級消耗，「性價比之神」。
-
-**context 管理**（2026-08-30）：每個 agent 管自己下級的 context，一大段任務結束就 compact；計畫制定者要在計畫裡預定大段任務間的 compact 間隙；頂層的 compact 與使用者商量；gpt-sol 的 `/compact` 從 stdin（tmux）送；Claude subagent 沒外部 compact 入口就一段一條線接力。目的是清雜訊、提升決策品質。
-
-**信箱分層**（2026-08-30）：頂層平常不盯 inbox，但**若團隊裡有外部 agent（codex／別台機器）要直接跟頂層交流，頂層也要盯自己的信箱**。方向是**大家都可以有自己的信箱，團隊內部信箱與 agent 個人信箱都算**。個人與團隊信箱均已實作，路由與醒鐘依現行通訊協議。
-
-**執行速度與時程**（2026-08-30）：使用者有時要求「幾小時內完成」，**計畫制定者要依各模型執行速度排時程**。速度三因素：① token 產出速度——通常越聰明越慢但不一概而論、廠商也有影響；體感上分兩檔：**B 級以上比以下慢 1.5 倍**；② 聰明度——笨的要多繞幾圈，聰明的一次搞定（所以慢模型未必總時間長）；③ **模型癖好**——gpt-sol 每做一小事就驗證，硬把時間拉長 1–2 倍（交接書要寫死驗收條數壓這個）。
+信箱分層（2026-08-30）：頂層平常不盯信箱，但團隊裡有外部 agent（別台機器、樹外 session）要直接跟頂層交流時，頂層也要盯自己的信箱。
 
 相關：[[fable-top-opus-middle-management]]、[[trust-gpt-sol-more]]、[[delegate-simple-work-to-sonnet]]
 
 ## prefer-gpt-sol-for-all-tasks
 
-> 2026-09-11 使用者原話「可以的話，之後的任務都盡量用 codex gpt-sol」；Opus 領隊只切工、合併、覆核，實作／掃描／翻譯／腳本一律交 gpt-sol（可自開 terra/luna），領隊自己動手＝違反（原 type: feedback）
+> 領隊只切工、合併、覆核，實作／掃描／翻譯／腳本一律派給工人，領隊自己動手＝違反；派誰依現行選型（Claude 系或 fsm gpt，端點分工照 D29）
 
 使用者原話：
 - 2026-09-11：「可以的話，之後的任務都盡量用 codex gpt-sol」。
 - 2026-09-12：「盡量讓所有agent都指揮gpt-sol去做事。至於漢化這塊，則可以讓gpt-sol去指揮更低階更便宜的gpt-terra/luna」。
 - 2026-09-16（頂層親手改 profile 裝 patch、關 MO2、開遊戲之後被糾正）：「你盡量不要自己做事。要麼gpt-sol，要麼opus, sonnet」。
 
-**Why：** 省 Claude token；gpt-sol 便宜且可自開 terra/luna 做呆板量大的事。
+**Why:** 省 Claude token；GPT 端點便宜，量大呆板的事再往下交更便宜的端點。
 
-**How to apply：**
-1. 交接書寫死「領隊只分派／合併／覆核，不自己跑掃描或寫產物」；量小的事也丟一條 gpt-sol（`cx-<隊>-a`）。Opus 領隊的實作工人一律 codex gpt-sol。
-2. 中文層交接書明寫 gpt-sol 可自開 terra／luna 做量大翻譯搬字串，gpt-sol 只做切工與 gate。額度用盡時暫改 Sonnet，重置後換回。
-3. 頂層也一樣：查資料／整理表／產頁腳本能交就交，不自己寫。連「一行 profile 編輯」「裝一支 esp」「開遊戲煙霧」都要派線；自己只留：寫交接書、驗收、鎖仲裁、對使用者說話。crash log 初判可以自己看，但修法要派線。
-4. 例外：拿遊戲鎖的實機段、需要 MCP（houseCARL／qa）的步驟，gpt-sol 沒有 MCP 時由領隊代跑，但只跑那一步。
+**How to apply:**
+1. 交接書寫死「領隊只分派／合併／覆核，不自己跑掃描或寫產物」；量小的事也派一個工人。
+2. 中文層：量大翻譯、搬字串交 terra／luna 這類便宜端點，sol 只做切工與 gate。額度或 API 不穩時 Claude 系與 fsm gpt 互為備援，恢復後換回。
+3. 頂層同 [[im-dispatcher-codex-implements]]：連「一行 profile 編輯」「裝一支 esp」「開遊戲煙霧」都派線；crash log 初判可以自己看，修法派線。
+4. 例外：要拿遊戲鎖的實機段、工人沒有的 MCP（houseCARL／qa）步驟，由領隊代跑，但只跑那一步。
 
-相關：[[im-dispatcher-codex-implements]]、[[trust-gpt-sol-more]]、[[model-tiers-and-headcount]]
+相關：[[trust-gpt-sol-more]]、[[model-tiers-and-headcount]]
 
 ## delegate-simple-work-to-sonnet
 
-> 使用者要我把簡單/機械性的工作丟給 sonnet subagent，不要自己全做（原 type: memory）
+> 使用者要我把簡單/機械性的工作丟給 sonnet subagent，不要自己全做
 
 簡單的工作可以交給 sonnet agent（2026-08-03 使用者主動提出）。適用：查版本/日期/相容性這類有明確答案的事實查證、grep/盤點、抓 CI log、讀多檔做摘要。
 
 **Why:** 這類工作不需要主 context，丟出去可以並行，也不會把大量原始輸出灌進主對話。
 
-**How to apply:** `Agent` + `model: "sonnet"`，背景跑，同時我繼續做需要判斷的部分。指派時把「不要改檔案、回傳簡潔事實 + 出處」寫清楚——sonnet 會照做。動到程式碼與整條線的實作要開 codex gpt-sol 線，不是自己來（2026-08-21），見 [[im-dispatcher-codex-implements]]。這條 feedback 是本專案的委派授權，數量仍依每線 BRIEF 上限，配額往下不倍增。相關：[[push-and-remote-actions]]
+**How to apply:** `Agent` + `model: "sonnet"`，背景跑，同時繼續做需要判斷的部分。指派時寫清楚「不要改檔案、回傳簡潔事實 + 出處」——sonnet 會照做。動到程式碼與整條線的實作也派工人線，不是自己來（2026-08-21，見 [[im-dispatcher-codex-implements]]）。數量依每線 BRIEF 上限，配額往下不倍增。相關：[[push-and-remote-actions]]
 
 ## trust-gpt-sol-more
 
-> gpt-sol 是僅次於 opus 的一線模型,要給大任務、少複查;把它當 sonnet 微管理會燒光 Claude 的 token（原 type: feedback）
+> gpt-sol 是僅次於 opus 的一線模型，要給大任務、少複查；把它當 sonnet 微管理會燒光 Claude 的 token
 
 2026-08-20 夜間，使用者看到我短時間燒掉大量 token 時說：
 
 > 你這是把 codex gpt 當成是 sonnet 在用。不是的，你應該多信任他們一些，gpt-sol 是僅次於 opus 的
 > 一線模型，除了會彎彎繞繞之外沒啥問題。
 
-要避免的浪費模式：把 codex 報告過的每個 SHA-256 自己再算一遍、每幾十秒 `capture-pane` 一次、交接書寫到上百行、每一批做完都要我收成果再派下一批。
-
-**Why:** gpt-sol 的能力足以自己完成整條工作線並自我驗證。重複驗證它已經給出證據的東西是純浪費；真正該由 Claude 做的是**規劃、分工、跨線協調、以及它做不到或不該自己決定的事**（例如產品取捨、會破壞既有契約的選項、跨 repo 的順序）。
+**Why:** gpt-sol 能自己完成整條工作線並自我驗證，重複驗證它已附證據的東西是純浪費；Claude 該做的是規劃、分工、跨線協調，以及它做不到或不該自己決定的事（產品取捨、破壞既有契約的選項、跨 repo 順序）。
 
 **How to apply:**
-- 一次給**整條線**的任務，不要拆成一批一批等我派工。讓它連續跑完多個 batch。
-- **不要重算它已經附證據的 hash／數字**。抽驗一次建立信任即可，之後看報告。
-- 讓它自己 commit **並 push**（使用者當次授權 push 的前提下），把 Claude 從迴圈裡拿掉。
-- 依三訊號監看，保留每步／至少每 20 分鐘 PROGRESS 與頂層 ≤20 分鐘巡檢。
-- 交接書寫護欄與驗收清單就好，不用把每個步驟都寫死——它自己會設計做法。
-- 它唯一需要被壓住的是「為了保險亂跑驗證／彎彎繞繞」，那用「驗收就這幾條，做完就停」解決。
-- 判斷密集、產出是資料表或程式的線，固定配一條不讀實作的獨立覆核線自己重跑驗收——它抓得到領導自己的驗收沒抓到的真問題，成本遠低於把錯數字交出去（2026-10-23，`agentctl/handoffs/done/2026-09-02/spike-2026-09-02/REPORT.md:126-143`）。
+- 一次給**整條線**，讓它連續跑完多個 batch，不要拆成一批一批等我派。
+- **不要重算它已附證據的 hash／數字**，抽驗一次建立信任即可；不要每幾十秒看一次畫面或信箱；交接書寫護欄與驗收清單就好，不必上百行寫死每一步。
+- 讓它自己 commit（push 由頂層每天 23:00 統一，D25）。
+- 工人每步寫 PROGRESS、頂層 ≤20 分鐘巡檢一次就夠。
+- 唯一要壓住的是「為了保險亂跑驗證／彎彎繞繞」：寫「驗收就這幾條，做完就停」。
+- 判斷密集、產出是資料表或程式的線，固定配一條不讀實作的獨立覆核線自己重跑驗收——它抓得到領導驗收漏掉的真問題，成本遠低於交出錯數字（2026-10-23，`agentctl/handoffs/done/2026-09-02/spike-2026-09-02/REPORT.md:126-143`）。
 
-相關：[[codex-tmux-operational-notes]]、[[driving-other-cli-agents]]、[[delegate-simple-work-to-sonnet]]
+相關：[[codex-tmux-operational-notes]]、[[delegate-simple-work-to-sonnet]]
 
 ## delegate-mod-evaluation-to-agents
 
@@ -86,9 +72,9 @@
 
 使用者原話（2026-10-10，他連貼 Nexus 連結問「這個如何」、頂層一直自己查時）：「關於調查mod，建議你都開agent去調查」；同日再定：「一個mod開一個評估agent。你這邊就負責跟我報告」；稍晚：「你可以開無上限個agent，事情也盡量都交給agent做」。
 
-**Why:** 頂層 context 被 mod 描述灌爆；評估是可外包的機械工作（[[im-dispatcher-codex-implements]]、[[prefer-gpt-sol-for-all-tasks]]）。
+**Why:** 頂層 context 被 mod 描述灌爆；評估是可外包的機械工作。
 
-**How to apply:** 收到 mod 連結就派評估 agent，**一個 mod 一個 agent**（別用常駐線排隊）；評估要含：做什麼、本機前置是否已有、同概念 mod 撞車（[[rule-out-a-concept-scan-same-batch-siblings]]）、中文層、穩定度、給判準的建議（[[answer-should-we-with-a-threshold]]）。頂層只轉述白話結論與待裁示項。今日 agent 數量依每線 BRIEF 上限，配額往下不倍增；家機每隊最多一個外部 codex，與同程序子 agent 分開計數。施工與評估都派線，頂層只轉述、出選項、排 profile 寫入順序。
+**How to apply:** 收到 mod 連結就派評估 agent，**一個 mod 一個 agent**（別用常駐線排隊）；評估要含：做什麼、本機前置是否已有、同概念 mod 撞車（[[rule-out-a-concept-scan-same-batch-siblings]]）、中文層、穩定度、給判準的建議（[[answer-should-we-with-a-threshold]]）。頂層只轉述白話結論與待裁示項、出選項、排 profile 寫入順序。今日 agent 數量依每線 BRIEF 上限，配額往下不倍增。相關：[[im-dispatcher-codex-implements]]
 
 ## line-agents-refuse-relayed-delete-approval
 
@@ -99,7 +85,7 @@ line 子代理會把清單和刪除腳本（purge.py，含 dry-run 與閘門）�
 **Why:** 鐵律 2 要求使用者當場確認或親自登記；子代理看不到主 session 的 AskUserQuestion 回答。
 
 **How to apply:**
-- 破壞性步驟要讓子代理產出「可審的腳本＋目標清單＋dry-run」，頂層用 AskUserQuestion 取得確認後自己跑 `--yes`，別再把刪除指令轉派一輪。
-- 大批刪除／搬移前先建一份固定欄位的刪除帳本（來源路徑、大小、憑證、可否重下、處置方式），帳本列數＝授權筆數的 gate 全過才動手；預設 `mv` 到暫存 trash，只有使用者單獨明確授權「永久刪除」才用 `rm`，容量或任何一筆對不上就整批停手（2026-10-23，`agentctl/handoffs/done/2026-08-31/clean-2026-08-31/HANDOFF.md:51-101`）。
+- 破壞性步驟讓子代理產出「可審的腳本＋目標清單＋dry-run」，頂層用 AskUserQuestion 取得確認後自己跑 `--yes`，別再把刪除指令轉派一輪。
+- 大批刪除／搬移前先建固定欄位的刪除帳本（來源路徑、大小、憑證、可否重下、處置方式），帳本列數＝授權筆數的 gate 全過才動手；預設 `mv` 到暫存 trash，只有使用者單獨明確授權「永久刪除」才用 `rm`，容量或任何一筆對不上就整批停手（2026-10-23，`agentctl/handoffs/done/2026-08-31/clean-2026-08-31/HANDOFF.md:51-101`）。
 
 相關：[[dont-clutter-home-with-agent-output]]
