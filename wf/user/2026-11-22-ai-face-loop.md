@@ -8,11 +8,11 @@
 
 下顎寬窄（左到右：−0.5／原樣／＋0.5，前三格正面、後三格轉身）。這一軸的方向已確認：正值變寬、負值變窄。
 
-![下顎寬窄](../../agentctl/handoffs/home-2026-11-22/face-loop/shots/jaw-narrowwide-aligned.jpg)
+下顎寬窄（本機圖 `agentctl/handoffs/home-2026-11-22/face-loop/shots/jaw-narrowwide-aligned.jpg`）
 
 同一份 preset 拍兩次（上下兩列），可以看到頭的角度不一樣，這就是目前的雜訊：
 
-![重拍兩次](../../agentctl/handoffs/home-2026-11-22/face-loop/shots/repeat-aligned.jpg)
+重拍兩次（本機圖 `agentctl/handoffs/home-2026-11-22/face-loop/shots/repeat-aligned.jpg`）
 
 圖是本機檔、不進版控；更多圖在 `~/skyrim_mods/_backups/face-loop-2026-11-22/`。
 

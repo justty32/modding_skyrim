@@ -18,9 +18,9 @@
 
 | 原本的 Muiri（JH NPC Beauty） | 主角套 Hatak 後（只換到妝與膚色） |
 |---|---|
-| ![原 Muiri](../../../agentctl/handoffs/home-2026-11-22/runtime-pilot/s2/08-muiri-orig-front.jpg) | ![主角套 Hatak](../../../agentctl/handoffs/home-2026-11-22/runtime-pilot/s2/06-player-hatak-front.jpg) |
+| 原 Muiri（本機圖 `agentctl/handoffs/home-2026-11-22/runtime-pilot/s2/08-muiri-orig-front.jpg`） | 主角套 Hatak（本機圖 `agentctl/handoffs/home-2026-11-22/runtime-pilot/s2/06-player-hatak-front.jpg`） |
 
-（主角側面：[s2/07](../../../agentctl/handoffs/home-2026-11-22/runtime-pilot/s2/07-player-hatak-side.jpg)。原 Muiri 那張是用 `placeatme` 叫出的暫時複本，拍完刪掉，沒存檔。）
+（主角側面：本機圖 `agentctl/handoffs/home-2026-11-22/runtime-pilot/s2/07-player-hatak-side.jpg`。原 Muiri 那張是用 `placeatme` 叫出的暫時複本，拍完刪掉，沒存檔。）
 
 當時給的三條路：你手動一次在 RaceMenu 載 preset／打通 Creation Kit／先不做。後來 face-pilot-2 找到真因（主控台改種族後頭不重建），改在 RaceMenu 介面點種族就解了，三條路都不必走。
 

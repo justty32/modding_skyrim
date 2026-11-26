@@ -12,13 +12,13 @@
 
 三方對照（左：原本的 Muiri，昏暗酒館；中：Hatak 套在主角身上；右：新 Muiri）：
 
-![三方對照](../../agentctl/handoffs/home-2026-11-22/runtime-3/shots/cmp-three-way.jpg)
+三方對照（本機圖 `agentctl/handoffs/home-2026-11-22/runtime-3/shots/cmp-three-way.jpg`）
 
 脖子接縫修前修後對照：
 
-![脖縫修前修後](../../agentctl/handoffs/home-2026-11-22/runtime-3/shots/cmp-neck-before-after.jpg)
+脖縫修前修後（本機圖 `agentctl/handoffs/home-2026-11-22/runtime-3/shots/cmp-neck-before-after.jpg`）
 
-更多角度：[正面](../../agentctl/handoffs/home-2026-11-22/runtime-3/shots/A4-01-front.jpg)、[左側](../../agentctl/handoffs/home-2026-11-22/runtime-3/shots/A4-02-left.jpg)、[右側](../../agentctl/handoffs/home-2026-11-22/runtime-3/shots/A4-03-right.jpg)、[頸部](../../agentctl/handoffs/home-2026-11-22/runtime-3/shots/A4-04-neck-front.jpg)、[全身](../../agentctl/handoffs/home-2026-11-22/runtime-3/shots/A4-06-body.jpg)；體重試驗（上 100、中 0、下 50）：[cmp-weight-test-grid](../../agentctl/handoffs/home-2026-11-22/runtime-3/shots/cmp-weight-test-grid.jpg)。圖是本機檔、不進版控，備份在 `~/skyrim_mods/_backups/runtime-3-2026-11-22/shots/`。
+更多角度（同一夾 `agentctl/handoffs/home-2026-11-22/runtime-3/shots/`）：正面（`A4-01-front.jpg`）、左側（`A4-02-left.jpg`）、右側（`A4-03-right.jpg`）、頸部（`A4-04-neck-front.jpg`）、全身（`A4-06-body.jpg`）；體重試驗（上 100、中 0、下 50）：cmp-weight-test-grid（`cmp-weight-test-grid.jpg`）。圖是本機檔、不進版控，備份在 `~/skyrim_mods/_backups/runtime-3-2026-11-22/shots/`。
 
 ### 技術檢查（agent 實機看過）
 
