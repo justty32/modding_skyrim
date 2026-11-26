@@ -5,6 +5,9 @@
   "inventory.md": {
     "description": "現況盤點：五件現成服裝、缺件、種族涵蓋、試色與交叉結論"
   },
+  "wish-v6.md": {
+    "description": "許願單：使用者給的 V6 範例圖 → 取色與逐件改法（貼圖／網格／新件）、先後"
+  },
   "recolor.md": {
     "description": "階段 A 換色規格與記錄補丁、階段 I 整套穿上（用 outfit-tools）"
   },
