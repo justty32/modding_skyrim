@@ -14,6 +14,8 @@
 
 **生成式 AI（2026-11-26 調查，使用者「可以併入」）**：開源文字／圖片轉 3D 出的是幾十萬面三角網格，要減面、重展 UV、再烘焙才能進遊戲，所以領帶、方形髮飾、麥克風架改用 agent 寫 Blender 腳本（`blender -b --python`）程序化建模；無袖、蔥是改現有網格，AI 用不上。AI 只用在兩處：耳機麥克風的草模（TripoSG，MIT，約 8 GB VRAM，有 CLI 可限面數），以及在我們自己的 UV 上畫紋理（StableGen，本地，8 GB 起，可沿用既有 UV；TRELLIS.2 texturing 要 24 GB；Meshy Retexture 是雲端付費備援）。PBR 轉 Skyrim：albedo→`_d`，normal→`_n` RGB，roughness 反相進 `_n` alpha。Blender 有官方 MCP（Blender Lab，GPL，可無頭）。AI 綁骨套不了 Skyrim 骨架，權重照舊從身體複製。Hunyuan3D 授權排除 EU、英國、南韓，而且上紋理會重展 UV，不用。各件路線見調查的 `parts.json`，工具比較見 `tools.json`（40 列）。回家先查顯卡 VRAM 與原版 normal 綠通道方向。
 
+**model-converter 不用在蒙皮衣服（2026-11-26 [mc-skin](../../../../agentctl/handoffs/home-2026-11-26/mc-skin/REPORT.md)）**：`nif2gltf` 不讀 skin block，純蒙皮 NIF 回 rc 3，混靜態 shape 時蒙皮塊默默消失；`gltf2nif`／`any2nif` 只寫靜態 NIF，有 `node.skin` 就拒收。靜態件來回也丟切線、頂點色、貼圖路徑、shader flags、alpha，且放大 70.03 倍。補齊估 6–9 天，不做；無袖、貼身、修穿模走階段 1，蒙皮配件走 Outfit Studio 匯入或階段 2。回家要驗：SE 衣服 NIF 的頂點是否放在 NiSkinPartition。
+
 **量測**：`hair/phase2/surface_audit.py` 已能量雙尾×衣服的三角交叉。衣服×身體還沒有現成模式，要擴（M3）。
 
 ## 要使用者授權的
