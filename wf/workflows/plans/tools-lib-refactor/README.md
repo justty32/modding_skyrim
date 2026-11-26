@@ -77,4 +77,7 @@ E1（[miku-outfit 特效](../miku-outfit/effects.md)的記錄寫入器）只要�
 
 ## 狀態
 
-2026-11-26 出計畫（公司場，tools-refactor-plan 線，只讀程式、沒改程式）。尚未動工，等使用者看過、答待決題。
+- 2026-11-26 出計畫（公司場，tools-refactor-plan 線，只讀程式、沒改程式）。
+- 2026-11-26 使用者答「都按照推薦。」，走精簡版。同日 tools-lib 線做完 S0、A2、A3、B1、B3、B4、B5、D1（agentctl `e3d23606`..`a253b56c`，REPORT `agentctl/handoffs/home-2026-11-26/tools-lib/REPORT.md`）：靜態通過，待回家 H1＋H2（同夾 HOME-REQUEST）；審查 `review-tools-lib/`。A1、B2、B6、B7、C1、C2、E1、F1 未做。
+- 實作與 `data/steps.json` 的出入：B5 沒有 `per_file` 參數，逐檔判一直是 `check_target`／`write_bytes` 的事，racetest 不呼叫它們就等於不逐檔。
+- `lib/espwrite` 已就位，miku-outfit 的 E1 可以開工。

@@ -27,7 +27,7 @@ idea → roadmap → 詳規（本夾）→ feature-dev
 | [poe-skyrim-mapping](poe-skyrim-mapping/README.md) —— PoE 星盤效果落地 Skyrim | 2026-11-03 | 設計寫在計畫內 | 核心第一波source已有離線交付；八職24設計樣板已補齊待過目，source／部署／實機各自記證 |
 | [racemenu-face](racemenu-face/README.md) —— AI 捏臉第二階段起的派線清單（R1–R7） | 2026-11-22 | 設計寫在計畫內；工作流 [racemenu](../racemenu/README.md) | R5 正向、R4 觸發元件、R6 驗證已做（離線）；實機試點待授權；R1–R3、R7 未動工 |
 | [miku-outfit](miku-outfit/README.md) —— 初音整套：換色、武器，及網格、特效、物理的後續 | 2026-11-26 | 設計寫在計畫內；工作流 [design-session](../racemenu/design-session.md) | 階段 0 工具由 outfit-tools 線施工中（公司）；其餘未動工，待使用者答 17 題決定清單 |
-| [tools-lib-refactor](tools-lib-refactor/README.md) —— agentctl/tools 的 NIF、DDS、ESP 寫入等重複收成 tools/lib/ | 2026-11-26 | 設計寫在計畫內；工作流 [refactor](../refactor/README.md) | 使用者 11-26 答「都按照推薦。」：精簡版（S0、A2、A3、B1、B3、B4、B5、D1）施工中；其餘步驟本輪不做 |
+| [tools-lib-refactor](tools-lib-refactor/README.md) —— agentctl/tools 的 NIF、DDS、ESP 寫入等重複收成 tools/lib/ | 2026-11-26 | 設計寫在計畫內；工作流 [refactor](../refactor/README.md) | 使用者 11-26 答「都按照推薦。」：精簡版（S0、A2、A3、B1、B3、B4、B5、D1）11-26 做完，靜態通過，待回家驗；其餘步驟本輪不做 |
 
 ## 已結案／被取代
 

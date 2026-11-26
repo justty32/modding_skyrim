@@ -20,7 +20,7 @@
 
 ## 要什麼工具
 
-記錄層四種記錄（EFSH、MGEF、SPEL、ENCH）現有寫入器沒有。建在共用庫 `agentctl/tools/lib/espwrite`（[tools-lib-refactor](../tools-lib-refactor/README.md) B4 之後；使用者 2026-11-26 答 Q9 照推薦），不擴 esplib（它只讀），不另起一份。這是 E1，公司就能做，用合成 plugin 先紅後綠。
+記錄層四種記錄（EFSH、MGEF、SPEL、ENCH）現有寫入器沒有。建在共用庫 `agentctl/tools/lib/espwrite`（[tools-lib-refactor](../tools-lib-refactor/README.md) B4 已於 2026-11-26 做完，可以開工；使用者 2026-11-26 答 Q9 照推薦），不擴 esplib（它只讀），不另起一份。這是 E1，公司就能做，用合成 plugin 先紅後綠。
 
 E5 要擴 houseCARL `nif_set`（C#）加 shader 旗標與 emissive 色兩個操作，照它現有 `set_path` 的寫法與回讀檢查。
 
