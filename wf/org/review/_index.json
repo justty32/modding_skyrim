@@ -4,5 +4,8 @@
   },
   "checklist.md": {
     "description": "review 的檢查清單（同一類問題第二次出現才收）：寫檔白名單、閘門不得安靜 PASS、回家單預期要跟新行為一致"
+  },
+  "loop.md": {
+    "description": "審查迴圈（寫→審→修→複審）的固定步驟與 commit 規矩；lead 在公司場派審查／修正線前讀"
   }
 }
