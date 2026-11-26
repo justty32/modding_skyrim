@@ -17,5 +17,6 @@
 ## 回家單
 
 - **預期結果要跟工具的新行為對得上**：修正改了預設（例如新的 FAIL 條件）時，回家單的「預期 rc」要跟著改；會被新條件擋的步驟寫明停下來交誰定。出處：2026-11-26 fix-tools C 的 J2 警告（rereview-tools C N1）、outfit 袖套 R3（rereview-outfit N3）。
+- **預期不能在指令失敗時也成立**：「兩邊 rc 相同」「兩邊 diff 無差」在兩邊同樣失敗時也成立，要附「rc 不是 2」或「產物存在」。出處：2026-11-26 tools-lib 回家單 11(b) 漏必填參數、兩邊 rc 2 被判相同（rereview-tools-lib N1）；outfit R3「帶內 0%」同類。
 
 上面 handoff 名稱都在 `agentctl/handoffs/home-2026-11-26/` 底下。
