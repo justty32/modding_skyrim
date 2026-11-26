@@ -17,6 +17,7 @@
 | [`godot-worldspace-editor/`](godot-worldspace-editor/) | Godot 4 離線地形、紋理與物件編輯器，是 CK 地形編輯的替代前端 | heightmap/splatmap PNG + `placements.json` |
 | [`scene-capture-bridge/`](scene-capture-bridge/) | SKSE C++ DLL，在遊戲內採集與編輯場景 | `scene.json` → 生 patch esp |
 | [`model-converter/`](model-converter/) | Skyrim `.nif` ↔ glTF/FBX/OBJ 雙向轉換（Python） | `MODFORGE_NIF2GLTF_BIN` |
+| [`ai3d/`](ai3d/) | AI 編輯 3D 素材：使用者給範例圖或描述，agent 改衣服貼圖與模型（2026-11-26 開） | 格式互轉用 model-converter |
 | [`skyrim-voicegen/`](skyrim-voicegen/) | 語音合成：臺詞、情緒、參考嗓音 → `.wav` | `MODFORGE_TTS_BIN` |
 | [`agent-bridge/`](agent-bridge/) | AI 自動 mod QA：遊戲內 HTTP DLL，加上 Linux 端 mo2ctl、runner、MCP；也是 [`agentctl/`](../agentctl/) 的核心插件 | console + runtime state |
 | [`game-data/`](game-data/) | 抽取整個遊戲的文本與清單（vanilla、DLC、CC、mod），讓 agent 唯讀使用 | 消費 CLI `gamedata` |
@@ -55,7 +56,7 @@
 
 houseCARL 是上游 `Avick3110/houseCARL` 的 fork：submodule 的 `url` 指 fork `justty32/houseCARL`，`branch = main` 指 fork 的 `main`（含本機三項修正，部署的 MCP dll 建自此）。工作樹裡 `origin` 是上游、`fork` 是我們的 fork，本機 `main` 追的是上游，不是 fork。
 
-`.gitmodules` 的 URL 混用是刻意保留的：`projects/` 下 11 個走 https，`instance`、`mod-library`、`modpack-design`、`agentctl` 四條主線走 ssh。改其中一邊時不必統一。
+`.gitmodules` 的 URL 混用是刻意保留的：`projects/` 下 12 個走 https，`instance`、`mod-library`、`modpack-design`、`agentctl` 四條主線走 ssh。改其中一邊時不必統一。
 
 若遞迴更新出現 `not our ref`，表示母 repo 的 gitlink 指到遠端拿不到的 commit：可能還沒 push，或所在分支已刪除。先進該 submodule 跑 `git fetch --all`，再跑 `git branch -r --contains <pin>`；不要把 gitlink 倒退。push 時 [`../tools/check_submodule_pins.py`](../tools/check_submodule_pins.py) 會檢查遠端拿不到的 pin；它掛在 `../tools/hooks/pre-push`，但無法阻止 pin 推出後所在側分支才被刪除的情況。
 

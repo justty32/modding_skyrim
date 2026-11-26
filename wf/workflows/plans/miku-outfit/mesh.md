@@ -1,6 +1,6 @@
 # 階段 M 網格：無袖、貼身、修穿模、髮飾、領帶
 
-[計畫入口](README.md)｜工具調查 [offline-survey](../../../../agentctl/handoffs/home-2026-11-25/miku-face/offline-survey/REPORT.md)｜生成式 AI 調查 [ai-3d-survey](../../../../agentctl/handoffs/home-2026-11-26/ai-3d-survey/REPORT.md)
+[計畫入口](README.md)｜工具調查 [offline-survey](../../../../agentctl/handoffs/home-2026-11-25/miku-face/offline-survey/REPORT.md)｜生成式 AI 調查 [ai-3d-survey](../../../../agentctl/handoffs/home-2026-11-26/ai-3d-survey/REPORT.md)｜工具放 [projects/ai3d](../../../../projects/ai3d/README.md)
 
 換色只能改顏色。無袖剪裁、領帶、方形髮飾、貼合 Chloe 身體、修掉跟雙尾的穿模，都要動網格。
 

@@ -44,3 +44,6 @@
 [submodule "agentctl"]
 	path = agentctl
 	url = git@github.com:justty32/skyrim_agentctl.git
+[submodule "projects/ai3d"]
+	path = projects/ai3d
+	url = https://github.com/justty32/skyrim_ai3d.git

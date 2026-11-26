@@ -6,6 +6,10 @@
   "README.md": {
     "description": "projects 入口：各專案分工與依賴關係；要找某個工具或 plugin 時先讀"
   },
+  "ai3d": {
+    "description": "AI 編輯 Skyrim 3D 素材（貼圖編輯、網格編輯腳本、AI 生成管線）；使用者許願要改衣服貼圖或模型時進來",
+    "index": "ai3d/_index.json"
+  },
   "agent-bridge": {
     "description": "SKSE plugin，在遊戲行程內開 localhost HTTP 讓 agent 讀遊戲狀態與執行 console；實機驗收時用",
     "index": "agent-bridge/_index.json"
