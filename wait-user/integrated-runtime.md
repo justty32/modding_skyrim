@@ -31,3 +31,27 @@
 ## 冬堡學院：外景冰柱、冰板的貼圖（2026-11-23）
 
 只有靜態證據：Icy Mesh Remaster 要的 `textures/landscape/ENV_I.dds`、`ENV_G.dds` 全機找不到，影響不只學院。要實機看學院外景冰柱、冰板。見 [REPORT](../agentctl/handoffs/home-2026-11-23/winterhold-conflicts/REPORT.md)。
+
+## Vaelyra 中文抽查（2026-11-26）
+
+找 Vaelyra 對話，確認問候、跟隨選項和閒聊字幕沒有方框、截斷或亂碼；請她唸一本書並選「繼續」數輪，確認字幕中文。物品欄打開《雪中燈火》看書頁；MCM 的「隨從／女巫面相／書籍」三頁都要有內容，舊存檔選單名稱仍為英文是預期。不對請回報句子或頁面與截圖。[REPORT](../agentctl/handoffs/home-2026-11-26/vaelyra-zh/REPORT.md)
+
+## Vaelyra 相容修正實機抽查（2026-11-26）
+
+到金丘農場看工棚名稱「金丘農場工棚」、農舍名稱「金丘農園」及光照；到沉睡巨人旅店確認沒有多出的灰塵光束。找 Yoana 看頭上只剩換臉髮型；Feris 的臉與 OBody 項另見換臉清單。不對請回報地點及截圖。[REPORT](../agentctl/handoffs/home-2026-11-26/vaelyra-fix/REPORT.md)
+
+## OBody 全域重置（2026-11-26）
+
+先保留重置前存檔，因舊分配值只能從該存檔找回。到空室內開 OBody MCM，關閉 ORefit 和兩個 randomization，執行 `Reset all distributed presets`；男女都會重置，約 930 名男性舊隨機 HIMBO 值也會清成零形。另存新檔、退出遊戲重開並讀新檔，看卡蘿塔等路人女 NPC 是否回到 BSO Neutral；Sofia、Lydia 若仍不對，再選中個別執行 `Reset this actor`。不對請回報人物與重置後畫面。[REPORT](../agentctl/handoffs/home-2026-11-26/obody-ct77fix/REPORT.md)
+
+## Frozen in Time 0.30 實機抽查（2026-11-27）
+
+野外遭死靈術士「奪體者」襲擊後，撿《賈納夫的日記》，看任務日誌、目標及手寫書是否中文且無方框；在黑境營地看《人造雪精靈配方》內頁、召喚法陣與身體部位名稱。復活雪精靈後選命名對話，確認文字框顯示中文、可輸入英文名，召喚法術名為「召喚＋名字」；字幕應對得上語音。《普尼艾備忘錄》第一頁法莫符文保留原文、第二頁中文。看鍛莫機巧盒／儲藏盒說明是否中文無亂碼，並到索瑟海姆默斯靈峰北邊遺跡外圍看 ULP 與 FiT 物件有無重疊。不要用 AFT／NFF 收她，使用她自己的對話系統。異常回報場景及截圖。[REPORT](../agentctl/handoffs/home-2026-11-27/fit-030/REPORT.md)
+
+## Taeka 1.2.1 實機抽查（2026-11-27）
+
+在冬堡冻炉客栈找迭卡，臉若素臉或黑臉先對真身 `disable`、`enable`；`unequipall` 看身體破洞及衣服穿模。對話字幕、玩家選項應為簡中且不截斷；試「叫我……」稱呼請求，配方及帽子效果通知應為中文。物品欄打開《奶奶的来信》《66号订单》看手寫中文無方框，晚餐任務日誌與目標也應中文。第一輪以外的通知要等 r2 裝好才翻譯；異常回報文字、場景及截圖。[REPORT](../agentctl/handoffs/home-2026-11-27/taeka/REPORT.md)
+
+## Taeka r2 通知與技能抽查（2026-11-27）
+
+r2 報告只到 staging，待部署後再驗。跟迭卡說「叫我的名字吧」選杰森等名字，看右上中文通知無方框或截斷；晚餐任務攪鍋、採蜂蜜、拿胡蘿蔔、打水時看通知中文。喝愛情藥水或慢燉燉菜後，確認通知中文且口才／毀滅／幻術技能照樣 +1。不對回報動作、通知及技能變化。[REPORT](../agentctl/handoffs/home-2026-11-27/taeka-pex2/REPORT.md)
