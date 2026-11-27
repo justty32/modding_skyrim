@@ -84,6 +84,6 @@ face3 實機拍到 Astrid 真身 `BD54B31B`（金髮、眼罩、造型臉，不�
 
 內容見 [kurone-audio.md](feature-runtime/kurone-audio.md)。
 
-## 11-26／11-27 換臉與 OBody 實機驗收
+## 11-26／11-27 OBody 與其他實機驗收
 
-各輪人物與步驟見 [kurone-looks.md](feature-runtime/kurone-looks.md)；全域重置見 [整包驗收](integrated-runtime.md)。
+各輪人物的剩餘驗收步驟見 [kurone-looks.md](feature-runtime/kurone-looks.md)；全域重置見 [整包驗收](integrated-runtime.md)。
