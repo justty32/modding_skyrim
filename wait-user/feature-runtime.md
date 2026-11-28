@@ -4,6 +4,8 @@
 
 Sofia 已新增黎明守衛18句、龍裔8句與原版隨從31句中文評論。這版只有字幕、沒有語音包。帶 Sofia 推進兩個 DLC 主線時，確認中文沒有方框、亂碼或截斷；與 Lydia、Serana、Aela 等原版隨從同行並靠近 Sofia 時，順路確認評論可出現。隨從評論每次條件檢查20%機率、每句只觸發一次，不以短時間沒觸發判失效；部分黎明守衛字幕停留偏久為作者已知現象。確認既有 Sofia／SofiaVigilantAct 對話仍可正常使用。來源與主選單載入證據見 [REPORT](../agentctl/handoffs/home-2026-11-07/nexus-198176/REPORT.md)。
 
+- 代驗 2026-11-28：PASS（1.1 存檔升級部分）——升級前 Save335 與升級後 Save393 讀檔都沒跳缺內容提示，索菲亚在場、16 個選項（含 SofiaVigilantAct 8 條）全中文；DLC 評論與回話沒觸發，無法代驗（見 agentctl/handoffs/home-2026-11-28/rt-proxy/REPORT.md）
+
 ## 雙手鋼製太刀 idle 的實際武器辨識（2026-10-17）
 
 使用者描述「鋼鐵武士刀／鋼製大太刀」，名稱不確定。已證實 DaiKatana 姿態格只配攻擊、缺雙手 idle，近似名稱武器另有太刀 keyword 缺漏／Samurai 專屬路由。10-17 載入最新 Save76，當前右手實為鐵製彎刀，不能用此畫面宣稱太刀已重現；本輪未改裝備或配招。下次使用該雙手刀時，確認完整物品名稱或 FormID，再按需要取 OAR `2hm_idle.hkx` 播放來源；若要站姿隨選招，還須另選相容雙手 idle，不能直接把缺檔的攻擊包當成有站姿。見 調查報告（已刪：`agentctl/handoffs/home-2026-10-17/katana/REPORT.md`）。
